@@ -1,0 +1,92 @@
+package percentile_exc
+
+import (
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
+type Percentile_ExcRequestBody struct {
+    additionalData map[string]interface{};
+    array *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    k *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+}
+func NewPercentile_ExcRequestBody()(*Percentile_ExcRequestBody) {
+    m := &Percentile_ExcRequestBody{
+    }
+    m.SetAdditionalData(make(map[string]interface{}));
+    return m
+}
+func (m *Percentile_ExcRequestBody) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
+}
+func (m *Percentile_ExcRequestBody) GetArray()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
+    if m == nil {
+        return nil
+    } else {
+        return m.array
+    }
+}
+func (m *Percentile_ExcRequestBody) GetK()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
+    if m == nil {
+        return nil
+    } else {
+        return m.k
+    }
+}
+func (m *Percentile_ExcRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["array"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewJson() })
+        if err != nil {
+            return err
+        }
+        m.SetArray(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        return nil
+    }
+    res["k"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewJson() })
+        if err != nil {
+            return err
+        }
+        m.SetK(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        return nil
+    }
+    return res
+}
+func (m *Percentile_ExcRequestBody) IsNil()(bool) {
+    return m == nil
+}
+func (m *Percentile_ExcRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("array", m.GetArray())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("k", m.GetK())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+func (m *Percentile_ExcRequestBody) SetAdditionalData(value map[string]interface{})() {
+    m.additionalData = value
+}
+func (m *Percentile_ExcRequestBody) SetArray(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
+    m.array = value
+}
+func (m *Percentile_ExcRequestBody) SetK(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
+    m.k = value
+}

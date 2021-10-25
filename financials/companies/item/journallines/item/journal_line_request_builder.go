@@ -1,0 +1,143 @@
+package item
+
+import (
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i0f4b7429c40ce7038f81fb2c58fac8bab2a548c5b805d8929297f8d7d010c5cd "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/journallines/item/account"
+)
+
+type JournalLineRequestBuilder struct {
+    pathParameters map[string]string;
+    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    urlTemplate string;
+}
+type JournalLineRequestBuilderGetQueryParameters struct {
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    Expand []string;
+    Select_escpaped []string;
+}
+func (m *JournalLineRequestBuilder) Account()(*i0f4b7429c40ce7038f81fb2c58fac8bab2a548c5b805d8929297f8d7d010c5cd.AccountRequestBuilder) {
+    return i0f4b7429c40ce7038f81fb2c58fac8bab2a548c5b805d8929297f8d7d010c5cd.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func NewJournalLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalLineRequestBuilder) {
+    m := &JournalLineRequestBuilder{
+    }
+    m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/journalLines/{journalLine_id}{?select,expand}";
+    urlTplParams := make(map[string]string)
+    if pathParameters != nil {
+        for idx, item := range pathParameters {
+            urlTplParams[idx] = item
+        }
+    }
+    m.pathParameters = pathParameters;
+    m.requestAdapter = requestAdapter;
+    return m
+}
+func NewJournalLineRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalLineRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewJournalLineRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *JournalLineRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
+    if h != nil {
+        err := h(requestInfo.Headers)
+        if err != nil {
+            return nil, err
+        }
+    }
+    if o != nil {
+        err := requestInfo.AddRequestOptions(o)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+func (m *JournalLineRequestBuilder) CreateGetRequestInformation(q func (value *JournalLineRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
+    if q != nil {
+        qParams := new(JournalLineRequestBuilderGetQueryParameters)
+        err := q(qParams)
+        if err != nil {
+            return nil, err
+        }
+        err = qParams.AddQueryParameters(requestInfo.QueryParameters)
+        if err != nil {
+            return nil, err
+        }
+    }
+    if h != nil {
+        err := h(requestInfo.Headers)
+        if err != nil {
+            return nil, err
+        }
+    }
+    if o != nil {
+        err := requestInfo.AddRequestOptions(o)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+func (m *JournalLineRequestBuilder) CreatePatchRequestInformation(body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JournalLine, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if h != nil {
+        err := h(requestInfo.Headers)
+        if err != nil {
+            return nil, err
+        }
+    }
+    if o != nil {
+        err := requestInfo.AddRequestOptions(o)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+func (m *JournalLineRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformation(h, o);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+func (m *JournalLineRequestBuilder) Get(q func (value *JournalLineRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JournalLine, error) {
+    requestInfo, err := m.CreateGetRequestInformation(q, h, o);
+    if err != nil {
+        return nil, err
+    }
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewJournalLine() }, responseHandler)
+    if err != nil {
+        return nil, err
+    }
+    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JournalLine), nil
+}
+func (m *JournalLineRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JournalLine, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    if err != nil {
+        return err
+    }
+    return nil
+}
