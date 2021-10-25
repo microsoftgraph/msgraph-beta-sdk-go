@@ -42,10 +42,8 @@ func (m *WorkbookRequestBuilder) Comments()(*i647f490057b53e37e38653c202616c3cc8
 }
 func (m *WorkbookRequestBuilder) CommentsById(id string)(*i3a0d56dad4369a5d9cf3a6a486f02ab27a978bf5bd0f244b4818a5545a33c86f.WorkbookCommentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookComment_id"] = id
@@ -57,10 +55,8 @@ func NewWorkbookRequestBuilderInternal(pathParameters map[string]string, request
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook{?expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -173,10 +169,8 @@ func (m *WorkbookRequestBuilder) Names()(*if4db95c02393d77e59708772db1eaa49cba9b
 }
 func (m *WorkbookRequestBuilder) NamesById(id string)(*i9ac7989d9ff70ea302db904397b794ae2fad56336704a40bc51e618121e1694e.WorkbookNamedItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookNamedItem_id"] = id
@@ -188,10 +182,8 @@ func (m *WorkbookRequestBuilder) Operations()(*i40923e493d0991ef76895cd594cb15df
 }
 func (m *WorkbookRequestBuilder) OperationsById(id string)(*i68c15a4aa20a1299663783bdd656d9cb2266d4f39cc5c38fc5983467711cbb63.WorkbookOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookOperation_id"] = id
@@ -220,10 +212,8 @@ func (m *WorkbookRequestBuilder) Tables()(*i83c36f1293101ad37747f2f4ea8bec7d0499
 }
 func (m *WorkbookRequestBuilder) TablesById(id string)(*i4b60d00caadb08f14bf0d8baa40f4fade758c1587c4f267c5653fc188d3449dc.WorkbookTableRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookTable_id"] = id
@@ -235,10 +225,8 @@ func (m *WorkbookRequestBuilder) Worksheets()(*idf9992a2b81be84e0ba33cd27843ef24
 }
 func (m *WorkbookRequestBuilder) WorksheetsById(id string)(*ifc040da8887c50e91cd72907529f062b905d7860286051d4744e9f5257816c1c.WorkbookWorksheetRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookWorksheet_id"] = id

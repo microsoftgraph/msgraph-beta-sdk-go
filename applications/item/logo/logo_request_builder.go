@@ -14,10 +14,8 @@ func NewLogoRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/applications/{application_id}/logo";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

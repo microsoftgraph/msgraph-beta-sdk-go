@@ -16,17 +16,15 @@ type DeviceCompliancePolicySettingStateSummaryRequestBuilder struct {
 type DeviceCompliancePolicySettingStateSummaryRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewDeviceCompliancePolicySettingStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePolicySettingStateSummaryRequestBuilder) {
     m := &DeviceCompliancePolicySettingStateSummaryRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -122,10 +120,8 @@ func (m *DeviceCompliancePolicySettingStateSummaryRequestBuilder) DeviceComplian
 }
 func (m *DeviceCompliancePolicySettingStateSummaryRequestBuilder) DeviceComplianceSettingStatesById(id string)(*i623eaf2a0acafba67f551c159b5f0c09a5a15743477194b11a435ff9831edaa1.DeviceComplianceSettingStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceComplianceSettingState_id"] = id

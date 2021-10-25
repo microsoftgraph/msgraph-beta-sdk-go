@@ -37,7 +37,7 @@ type DataClassificationRequestBuilder struct {
 type DataClassificationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *DataClassificationRequestBuilder) ClassifyExactMatches()(*i8fb53346ef40e76f80dc166fa4d90c7b83b5c39805b01bfbb5c0714b774ae860.ClassifyExactMatchesRequestBuilder) {
     return i8fb53346ef40e76f80dc166fa4d90c7b83b5c39805b01bfbb5c0714b774ae860.NewClassifyExactMatchesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -47,10 +47,8 @@ func (m *DataClassificationRequestBuilder) ClassifyFile()(*ic6b82df222a8a700bc0a
 }
 func (m *DataClassificationRequestBuilder) ClassifyFileById(id string)(*idd1a815d516e23b374b9b127ceaa407b8f4e99a7b2d6b9faf512ed6c6581965f.FileClassificationRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["fileClassificationRequest_id"] = id
@@ -62,10 +60,8 @@ func (m *DataClassificationRequestBuilder) ClassifyFileJobs()(*i89b152cd04bb38d0
 }
 func (m *DataClassificationRequestBuilder) ClassifyFileJobsById(id string)(*i4792e57c8d9125efc146f0b2e40e63e9de13f444548ccb305eb4736a1a5be3a5.JobResponseBaseRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["jobResponseBase_id"] = id
@@ -77,10 +73,8 @@ func (m *DataClassificationRequestBuilder) ClassifyText()(*i3cff8239684e50220c01
 }
 func (m *DataClassificationRequestBuilder) ClassifyTextById(id string)(*ic8fa6b5aea70c4c29088711c4efe56023dceaa26babb0879a81e2e2b0ac67178.TextClassificationRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["textClassificationRequest_id"] = id
@@ -92,10 +86,8 @@ func (m *DataClassificationRequestBuilder) ClassifyTextJobs()(*ifbc5c976485c8ce6
 }
 func (m *DataClassificationRequestBuilder) ClassifyTextJobsById(id string)(*i45cfe1305c2a625c914638131757b68e2e595331b1cb835c1b30df24ea16f31f.JobResponseBaseRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["jobResponseBase_id"] = id
@@ -107,10 +99,8 @@ func NewDataClassificationRequestBuilderInternal(pathParameters map[string]strin
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/dataClassification{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -176,10 +166,8 @@ func (m *DataClassificationRequestBuilder) EvaluateDlpPoliciesJobs()(*ie0685d2de
 }
 func (m *DataClassificationRequestBuilder) EvaluateDlpPoliciesJobsById(id string)(*i4d55b1afcc01d53334597316e2857e2085d3a6c2a3947cdde8abd9a1f813161f.JobResponseBaseRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["jobResponseBase_id"] = id
@@ -191,10 +179,8 @@ func (m *DataClassificationRequestBuilder) EvaluateLabelJobs()(*i4fea7db9ec3dfb8
 }
 func (m *DataClassificationRequestBuilder) EvaluateLabelJobsById(id string)(*id639ff5c7f5dd2905bbbcf9dbcd6a7912904f3f8da7f947d8b3eec42a0d9bfd4.JobResponseBaseRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["jobResponseBase_id"] = id
@@ -206,10 +192,8 @@ func (m *DataClassificationRequestBuilder) ExactMatchDataStores()(*i073bf3b84f9c
 }
 func (m *DataClassificationRequestBuilder) ExactMatchDataStoresById(id string)(*i839259d04bc1e0752cd1dfcdc547564ab43c76e7472ad42df51a84e7b5459230.ExactMatchDataStoreRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["exactMatchDataStore_id"] = id
@@ -221,10 +205,8 @@ func (m *DataClassificationRequestBuilder) ExactMatchUploadAgents()(*i373b8bc295
 }
 func (m *DataClassificationRequestBuilder) ExactMatchUploadAgentsById(id string)(*i6031e0e8286fe11a8cf1dce07b526e8cf9498b49a741cc2cc1f28e944ef6db8b.ExactMatchUploadAgentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["exactMatchUploadAgent_id"] = id
@@ -247,10 +229,8 @@ func (m *DataClassificationRequestBuilder) Jobs()(*i6594c9c85b2fe737b67f8e7096b7
 }
 func (m *DataClassificationRequestBuilder) JobsById(id string)(*i787f440e60431af3738f5d22582c9098279e6cf44887787414a87feaede3518a.JobResponseBaseRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["jobResponseBase_id"] = id
@@ -273,10 +253,8 @@ func (m *DataClassificationRequestBuilder) SensitiveTypes()(*if188e6305418a24469
 }
 func (m *DataClassificationRequestBuilder) SensitiveTypesById(id string)(*i7eaf730996e637195332ee006d958f53fdc086a573ef5e8ccc04f904d293e94c.SensitiveTypeRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sensitiveType_id"] = id
@@ -288,10 +266,8 @@ func (m *DataClassificationRequestBuilder) SensitivityLabels()(*i6d2bd6b47f18fd2
 }
 func (m *DataClassificationRequestBuilder) SensitivityLabelsById(id string)(*i27eb8dd6f1e19fde6babe9ea8109f5b765c6eb4971d149bdf4ac63504c239dbf.SensitivityLabelRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sensitivityLabel_id"] = id

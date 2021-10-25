@@ -8,7 +8,7 @@ type ItemPhone struct {
     ItemFacet
     displayName *string;
     number *string;
-    type_escpaped *PhoneType;
+    type_escaped *PhoneType;
 }
 func NewItemPhone()(*ItemPhone) {
     m := &ItemPhone{
@@ -30,11 +30,11 @@ func (m *ItemPhone) GetNumber()(*string) {
         return m.number
     }
 }
-func (m *ItemPhone) GetType_escpaped()(*PhoneType) {
+func (m *ItemPhone) GetType_escaped()(*PhoneType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *ItemPhone) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -55,13 +55,13 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         m.SetNumber(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePhoneType)
         if err != nil {
             return err
         }
         cast := val.(PhoneType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -86,9 +86,9 @@ func (m *ItemPhone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err = writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err = writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -101,6 +101,6 @@ func (m *ItemPhone) SetDisplayName(value *string)() {
 func (m *ItemPhone) SetNumber(value *string)() {
     m.number = value
 }
-func (m *ItemPhone) SetType_escpaped(value *PhoneType)() {
-    m.type_escpaped = value
+func (m *ItemPhone) SetType_escaped(value *PhoneType)() {
+    m.type_escaped = value
 }

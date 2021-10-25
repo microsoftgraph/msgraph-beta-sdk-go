@@ -34,7 +34,7 @@ type EventRequestBuilder struct {
 type EventRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *EventRequestBuilder) Accept()(*iab097ad642bee606b7266ec0e626e72fd150acb2506817557369fe0cb5773e87.AcceptRequestBuilder) {
     return iab097ad642bee606b7266ec0e626e72fd150acb2506817557369fe0cb5773e87.NewAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -44,10 +44,8 @@ func (m *EventRequestBuilder) Attachments()(*i4d0b018ae4445247bb45375ac01fa18bc2
 }
 func (m *EventRequestBuilder) AttachmentsById(id string)(*ic2f36ebf4800cd886805d7095eacef0d70ab09aea70f9f65bfbffa7743ebeed3.AttachmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["attachment_id"] = id
@@ -65,10 +63,8 @@ func NewEventRequestBuilderInternal(pathParameters map[string]string, requestAda
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/events/{event_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -170,10 +166,8 @@ func (m *EventRequestBuilder) ExceptionOccurrences()(*i40ef9dbec34f6598bd5e64b07
 }
 func (m *EventRequestBuilder) ExceptionOccurrencesById(id string)(*i3b6f4b55b6a0f7c3d67c1c2d0128cef539616d6fe442226352eb6f0541025401.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["event_id1"] = id
@@ -185,10 +179,8 @@ func (m *EventRequestBuilder) Extensions()(*i0ab944a433b01a980614ef06794522864fa
 }
 func (m *EventRequestBuilder) ExtensionsById(id string)(*i680e72a8871bfb354a7d740cfe6334270689df7bd9c7773514f13b397b147673.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["extension_id"] = id
@@ -214,10 +206,8 @@ func (m *EventRequestBuilder) Instances()(*iaceed976ce69c3a839e3e0dfb72613875353
 }
 func (m *EventRequestBuilder) InstancesById(id string)(*ic6a9a2d098cefb19cb3a8450d4ebad5f9826aa605e840b30d7fe0de5e82fce36.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["event_id1"] = id
@@ -229,10 +219,8 @@ func (m *EventRequestBuilder) MultiValueExtendedProperties()(*i77a0682874bb4a370
 }
 func (m *EventRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i7bec747178558ca6942fd148663b71eecd9c1332bc0dda2fbabcce59ff4bf809.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
@@ -255,10 +243,8 @@ func (m *EventRequestBuilder) SingleValueExtendedProperties()(*iec1b43a554ce0caa
 }
 func (m *EventRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ifdcda3bbafdd32c31e3d590c71e85f7bdbca6a9d3893208625188afb3ab40a08.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id

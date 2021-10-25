@@ -15,17 +15,15 @@ type UnifiedGroupSourceRequestBuilder struct {
 type UnifiedGroupSourceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewUnifiedGroupSourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedGroupSourceRequestBuilder) {
     m := &UnifiedGroupSourceRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/legalHolds/{legalHold_id}/unifiedGroupSources/{unifiedGroupSource_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

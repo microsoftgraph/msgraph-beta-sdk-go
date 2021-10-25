@@ -16,17 +16,15 @@ type ExternalGroupRequestBuilder struct {
 type ExternalGroupRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewExternalGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalGroupRequestBuilder) {
     m := &ExternalGroupRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/connections/{externalConnection_id}/groups/{externalGroup_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +131,8 @@ func (m *ExternalGroupRequestBuilder) Members()(*i0076de30666e5a2bbac488b5589060
 }
 func (m *ExternalGroupRequestBuilder) MembersById(id string)(*i6bcc0207423f237bfcb4579df45dd5e5b9ff58acfaec84876442aecc9aa12072.ExternalGroupMemberRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["externalGroupMember_id"] = id

@@ -15,7 +15,7 @@ type DeviceManagementReportSchedule struct {
     recurrence *DeviceManagementScheduledReportRecurrence;
     reportName *string;
     reportScheduleName *string;
-    select_escpaped []string;
+    select_escaped []string;
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     subject *string;
     userId *string;
@@ -82,11 +82,11 @@ func (m *DeviceManagementReportSchedule) GetReportScheduleName()(*string) {
         return m.reportScheduleName
     }
 }
-func (m *DeviceManagementReportSchedule) GetSelect_escpaped()([]string) {
+func (m *DeviceManagementReportSchedule) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.select_escpaped
+        return m.select_escaped
     }
 }
 func (m *DeviceManagementReportSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -186,7 +186,7 @@ func (m *DeviceManagementReportSchedule) GetFieldDeserializers()(map[string]func
         m.SetReportScheduleName(val)
         return nil
     }
-    res["select_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *DeviceManagementReportSchedule) GetFieldDeserializers()(map[string]func
         for i, v := range val {
             res[i] = v.(string)
         }
-        m.SetSelect_escpaped(res)
+        m.SetSelect_escaped(res)
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -283,7 +283,7 @@ func (m *DeviceManagementReportSchedule) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err = writer.WriteCollectionOfStringValues("select_escpaped", m.GetSelect_escpaped())
+        err = writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
         if err != nil {
             return err
         }
@@ -332,8 +332,8 @@ func (m *DeviceManagementReportSchedule) SetReportName(value *string)() {
 func (m *DeviceManagementReportSchedule) SetReportScheduleName(value *string)() {
     m.reportScheduleName = value
 }
-func (m *DeviceManagementReportSchedule) SetSelect_escpaped(value []string)() {
-    m.select_escpaped = value
+func (m *DeviceManagementReportSchedule) SetSelect_escaped(value []string)() {
+    m.select_escaped = value
 }
 func (m *DeviceManagementReportSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value

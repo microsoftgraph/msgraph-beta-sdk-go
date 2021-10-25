@@ -9,7 +9,7 @@ type AttributeMappingSource struct {
     expression *string;
     name *string;
     parameters []StringKeyAttributeMappingSourceValuePair;
-    type_escpaped *AttributeMappingSourceType;
+    type_escaped *AttributeMappingSourceType;
 }
 func NewAttributeMappingSource()(*AttributeMappingSource) {
     m := &AttributeMappingSource{
@@ -45,11 +45,11 @@ func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSour
         return m.parameters
     }
 }
-func (m *AttributeMappingSource) GetType_escpaped()(*AttributeMappingSourceType) {
+func (m *AttributeMappingSource) GetType_escaped()(*AttributeMappingSourceType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -82,13 +82,13 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interfa
         m.SetParameters(res)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeMappingSourceType)
         if err != nil {
             return err
         }
         cast := val.(AttributeMappingSourceType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -120,9 +120,9 @@ func (m *AttributeMappingSource) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -147,6 +147,6 @@ func (m *AttributeMappingSource) SetName(value *string)() {
 func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMappingSourceValuePair)() {
     m.parameters = value
 }
-func (m *AttributeMappingSource) SetType_escpaped(value *AttributeMappingSourceType)() {
-    m.type_escpaped = value
+func (m *AttributeMappingSource) SetType_escaped(value *AttributeMappingSourceType)() {
+    m.type_escaped = value
 }

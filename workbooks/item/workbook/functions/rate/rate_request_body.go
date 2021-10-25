@@ -12,7 +12,7 @@ type RateRequestBody struct {
     nper *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
     pmt *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
     pv *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
-    type_escpaped *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    type_escaped *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
 func NewRateRequestBody()(*RateRequestBody) {
     m := &RateRequestBody{
@@ -62,11 +62,11 @@ func (m *RateRequestBody) GetPv()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6c
         return m.pv
     }
 }
-func (m *RateRequestBody) GetType_escpaped()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
+func (m *RateRequestBody) GetType_escaped()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *RateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -111,12 +111,12 @@ func (m *RateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         m.SetPv(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewJson() })
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        m.SetType_escaped(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
         return nil
     }
     return res
@@ -156,7 +156,7 @@ func (m *RateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err := writer.WriteObjectValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteObjectValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -187,6 +187,6 @@ func (m *RateRequestBody) SetPmt(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f
 func (m *RateRequestBody) SetPv(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.pv = value
 }
-func (m *RateRequestBody) SetType_escpaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.type_escpaped = value
+func (m *RateRequestBody) SetType_escaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
+    m.type_escaped = value
 }

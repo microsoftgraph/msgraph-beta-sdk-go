@@ -7,7 +7,7 @@ import (
 type SynchronizationTemplate struct {
     Entity
     applicationId *string;
-    default_escpaped *bool;
+    default_escaped *bool;
     description *string;
     discoverable *bool;
     factoryTag *string;
@@ -27,11 +27,11 @@ func (m *SynchronizationTemplate) GetApplicationId()(*string) {
         return m.applicationId
     }
 }
-func (m *SynchronizationTemplate) GetDefault_escpaped()(*bool) {
+func (m *SynchronizationTemplate) GetDefault_escaped()(*bool) {
     if m == nil {
         return nil
     } else {
-        return m.default_escpaped
+        return m.default_escaped
     }
 }
 func (m *SynchronizationTemplate) GetDescription()(*string) {
@@ -79,12 +79,12 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         m.SetApplicationId(val)
         return nil
     }
-    res["default_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["default_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
-        m.SetDefault_escpaped(val)
+        m.SetDefault_escaped(val)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +148,7 @@ func (m *SynchronizationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
-        err = writer.WriteBoolValue("default_escpaped", m.GetDefault_escpaped())
+        err = writer.WriteBoolValue("default_escaped", m.GetDefault_escaped())
         if err != nil {
             return err
         }
@@ -193,8 +193,8 @@ func (m *SynchronizationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c847
 func (m *SynchronizationTemplate) SetApplicationId(value *string)() {
     m.applicationId = value
 }
-func (m *SynchronizationTemplate) SetDefault_escpaped(value *bool)() {
-    m.default_escpaped = value
+func (m *SynchronizationTemplate) SetDefault_escaped(value *bool)() {
+    m.default_escaped = value
 }
 func (m *SynchronizationTemplate) SetDescription(value *string)() {
     m.description = value

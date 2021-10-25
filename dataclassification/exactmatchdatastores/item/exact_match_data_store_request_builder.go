@@ -17,17 +17,15 @@ type ExactMatchDataStoreRequestBuilder struct {
 type ExactMatchDataStoreRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewExactMatchDataStoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchDataStoreRequestBuilder) {
     m := &ExactMatchDataStoreRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/dataClassification/exactMatchDataStores/{exactMatchDataStore_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -148,10 +146,8 @@ func (m *ExactMatchDataStoreRequestBuilder) Sessions()(*i2c50a6af5b17b681669f493
 }
 func (m *ExactMatchDataStoreRequestBuilder) SessionsById(id string)(*i1dcb0390b62e6994f2eedf162f9337be1ed916a12c0cd74064045e244b407892.ExactMatchSessionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["exactMatchSession_id"] = id

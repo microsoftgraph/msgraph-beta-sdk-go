@@ -14,10 +14,8 @@ func NewResetToDefaultRequestBuilderInternal(pathParameters map[string]string, r
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/settings/microsoft.graph.ediscovery.resetToDefault";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

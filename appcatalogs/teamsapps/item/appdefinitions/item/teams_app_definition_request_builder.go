@@ -17,7 +17,7 @@ type TeamsAppDefinitionRequestBuilder struct {
 type TeamsAppDefinitionRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *TeamsAppDefinitionRequestBuilder) Bot()(*i70a313db942b6cd8128b15e8f9fd04ec94d45d6f6d1c4bdc0549bf835c924839.BotRequestBuilder) {
     return i70a313db942b6cd8128b15e8f9fd04ec94d45d6f6d1c4bdc0549bf835c924839.NewBotRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -30,10 +30,8 @@ func NewTeamsAppDefinitionRequestBuilderInternal(pathParameters map[string]strin
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/appCatalogs/teamsApps/{teamsApp_id}/appDefinitions/{teamsAppDefinition_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

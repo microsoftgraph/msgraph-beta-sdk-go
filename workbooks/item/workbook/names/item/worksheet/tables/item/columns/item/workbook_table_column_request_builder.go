@@ -5,10 +5,10 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i1362cbc0cab6ed9bd7fa91638adc4e3f60f4aafc46d441a8e9c395dbdd8b40d8 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/databodyrange"
-    i39dc2215c4f52fb30bad37831a3cbe858032b6154c65d7294e0b1c5d8300b39b "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/range_escpaped"
     i5baac89d317e6c6826be1fd842f5bfe712bd3b4fec439c5d6bb3b6957193e309 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/headerrowrange"
     ia861fa8bb974eeaec16e6a8897e48002ba16a1dc14bb92da3eccd624e9be4301 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/totalrowrange"
     ic4e0951a61f51f6e21fe3d5ea26d68d429d8f4d6245e3636253a65b0d1af2f3c "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter"
+    ifcb19eb044149b972a3eb701d6f39cf2ce9bfde706662be1cc9193bea8446921 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/range_escaped"
 )
 
 type WorkbookTableColumnRequestBuilder struct {
@@ -19,17 +19,15 @@ type WorkbookTableColumnRequestBuilder struct {
 type WorkbookTableColumnRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewWorkbookTableColumnRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookTableColumnRequestBuilder) {
     m := &WorkbookTableColumnRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/names/{workbookNamedItem_id}/worksheet/tables/{workbookTable_id}/columns/{workbookTableColumn_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -151,8 +149,8 @@ func (m *WorkbookTableColumnRequestBuilder) Patch(body *i535684e11b5500196ecb4b5
     }
     return nil
 }
-func (m *WorkbookTableColumnRequestBuilder) Range_escpaped()(*i39dc2215c4f52fb30bad37831a3cbe858032b6154c65d7294e0b1c5d8300b39b.RangeRequestBuilder) {
-    return i39dc2215c4f52fb30bad37831a3cbe858032b6154c65d7294e0b1c5d8300b39b.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *WorkbookTableColumnRequestBuilder) Range_escaped()(*ifcb19eb044149b972a3eb701d6f39cf2ce9bfde706662be1cc9193bea8446921.RangeRequestBuilder) {
+    return ifcb19eb044149b972a3eb701d6f39cf2ce9bfde706662be1cc9193bea8446921.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *WorkbookTableColumnRequestBuilder) TotalRowRange()(*ia861fa8bb974eeaec16e6a8897e48002ba16a1dc14bb92da3eccd624e9be4301.TotalRowRangeRequestBuilder) {
     return ia861fa8bb974eeaec16e6a8897e48002ba16a1dc14bb92da3eccd624e9be4301.NewTotalRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -15,7 +15,7 @@ type TargetRequestBuilder struct {
 type TargetRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *TargetRequestBuilder) ConnectedOrganization()(*i5838ece434a5a8f0e62668f2201e7d740fb6cb8ddc8c371ba4476c1e718fc4f3.ConnectedOrganizationRequestBuilder) {
     return i5838ece434a5a8f0e62668f2201e7d740fb6cb8ddc8c371ba4476c1e718fc4f3.NewConnectedOrganizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewTargetRequestBuilderInternal(pathParameters map[string]string, requestAd
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole_id}/accessPackageAssignments/{accessPackageAssignment_id}/target{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

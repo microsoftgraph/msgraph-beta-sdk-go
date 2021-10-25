@@ -17,17 +17,15 @@ type ConversationThreadRequestBuilder struct {
 type ConversationThreadRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewConversationThreadRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConversationThreadRequestBuilder) {
     m := &ConversationThreadRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/groups/{group_id}/threads/{conversationThread_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -145,10 +143,8 @@ func (m *ConversationThreadRequestBuilder) Posts()(*ic469e64dd7cbcacacb9f4b3c0fe
 }
 func (m *ConversationThreadRequestBuilder) PostsById(id string)(*i4e2619f0471e4cce8101739f21c83490aef6c29642b652a22192dbdd5edd8b10.PostRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["post_id"] = id

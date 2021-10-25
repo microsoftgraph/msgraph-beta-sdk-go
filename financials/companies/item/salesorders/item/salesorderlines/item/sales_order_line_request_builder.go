@@ -16,7 +16,7 @@ type SalesOrderLineRequestBuilder struct {
 type SalesOrderLineRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *SalesOrderLineRequestBuilder) Account()(*ib49c97dbf4bd716bc89a234050d0ac7dd1df748d7754a9602d16995b6d3f7534.AccountRequestBuilder) {
     return ib49c97dbf4bd716bc89a234050d0ac7dd1df748d7754a9602d16995b6d3f7534.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewSalesOrderLineRequestBuilderInternal(pathParameters map[string]string, r
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/salesOrders/{salesOrder_id}/salesOrderLines/{salesOrderLine_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -15,10 +15,8 @@ func NewGetYammerActivityUserDetailWithDateRequestBuilderInternal(pathParameters
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/reports/microsoft.graph.getYammerActivityUserDetail(date={date})";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if date != nil {
         urlTplParams["date"] = *date

@@ -24,17 +24,15 @@ type AccessPackageRequestBuilder struct {
 type AccessPackageRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *AccessPackageRequestBuilder) AccessPackageAssignmentPolicies()(*if2e34baa9d5f486470dc4a9e3087ec6cb55685341f5b383564a57c1cdd6a62ea.AccessPackageAssignmentPoliciesRequestBuilder) {
     return if2e34baa9d5f486470dc4a9e3087ec6cb55685341f5b383564a57c1cdd6a62ea.NewAccessPackageAssignmentPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *AccessPackageRequestBuilder) AccessPackageAssignmentPoliciesById(id string)(*i9616a87af7f3c7810303cf2a99a508cb66680536b1ac2e435928362fcc6514fc.AccessPackageAssignmentPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageAssignmentPolicy_id"] = id
@@ -49,10 +47,8 @@ func (m *AccessPackageRequestBuilder) AccessPackageResourceRoleScopes()(*i8a8700
 }
 func (m *AccessPackageRequestBuilder) AccessPackageResourceRoleScopesById(id string)(*if10b7ce5e756ef96bfc4cf4bb17c7bd568a9095cd3f8b40831944167f04716b8.AccessPackageResourceRoleScopeRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageResourceRoleScope_id"] = id
@@ -67,10 +63,8 @@ func NewAccessPackageRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole_id}/accessPackageAssignments/{accessPackageAssignment_id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -183,10 +177,8 @@ func (m *AccessPackageRequestBuilder) IncompatibleGroups()(*i9833a1555432d936ca4
 }
 func (m *AccessPackageRequestBuilder) IncompatibleGroupsById(id string)(*ic15fa732fd94aca01d0c675909da26f44abd7b76c06c2524d9f8eb53be1aea72.GroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["group_id"] = id

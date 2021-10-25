@@ -16,7 +16,7 @@ type PurchaseInvoiceLineRequestBuilder struct {
 type PurchaseInvoiceLineRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PurchaseInvoiceLineRequestBuilder) Account()(*ie2e5bef67a7e8106830897b4790a818964af4e79807a777a83c0395718133484.AccountRequestBuilder) {
     return ie2e5bef67a7e8106830897b4790a818964af4e79807a777a83c0395718133484.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewPurchaseInvoiceLineRequestBuilderInternal(pathParameters map[string]stri
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/purchaseInvoices/{purchaseInvoice_id}/purchaseInvoiceLines/{purchaseInvoiceLine_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

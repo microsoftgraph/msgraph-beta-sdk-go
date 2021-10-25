@@ -76,10 +76,8 @@ func NewOffboardTenantRequestBuilderInternal(pathParameters map[string]string, r
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/tenantRelationships/managedTenants/tenants/{tenant_id}/microsoft.graph.managedTenants.offboardTenant";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

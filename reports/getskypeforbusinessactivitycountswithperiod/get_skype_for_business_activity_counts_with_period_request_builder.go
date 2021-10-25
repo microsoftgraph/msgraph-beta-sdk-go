@@ -15,10 +15,8 @@ func NewGetSkypeForBusinessActivityCountsWithPeriodRequestBuilderInternal(pathPa
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/reports/microsoft.graph.getSkypeForBusinessActivityCounts(period='{period}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if period != nil {
         urlTplParams["period"] = *period

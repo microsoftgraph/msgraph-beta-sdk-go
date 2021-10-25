@@ -17,7 +17,7 @@ type CloudPcUserSettingRequestBuilder struct {
 type CloudPcUserSettingRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *CloudPcUserSettingRequestBuilder) Assign()(*i9d6cd161b5702397f00796096fd7147b6055fb37bdf326a2e129a220db3b853a.AssignRequestBuilder) {
     return i9d6cd161b5702397f00796096fd7147b6055fb37bdf326a2e129a220db3b853a.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -27,10 +27,8 @@ func (m *CloudPcUserSettingRequestBuilder) Assignments()(*ic3ffef09d5c574354c768
 }
 func (m *CloudPcUserSettingRequestBuilder) AssignmentsById(id string)(*ibb7d5a14b18ba56a542032028c627fe3f293b78e14bb9cd30cce1fce050756f2.CloudPcUserSettingAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["cloudPcUserSettingAssignment_id"] = id
@@ -42,10 +40,8 @@ func NewCloudPcUserSettingRequestBuilderInternal(pathParameters map[string]strin
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

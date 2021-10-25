@@ -16,17 +16,15 @@ type AuthenticationMethodsPolicyRequestBuilder struct {
 type AuthenticationMethodsPolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurations()(*ifbcb6e4306715eec65df434e87123d856ff8c34fe725168cb7b45d077677289c.AuthenticationMethodConfigurationsRequestBuilder) {
     return ifbcb6e4306715eec65df434e87123d856ff8c34fe725168cb7b45d077677289c.NewAuthenticationMethodConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurationsById(id string)(*ic1965c116b2845c7b5c4b42b800359023eeecbbfda18af95b7f99e614ccd6f81.AuthenticationMethodConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["authenticationMethodConfiguration_id"] = id
@@ -38,10 +36,8 @@ func NewAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[str
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/authenticationMethodsPolicy{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

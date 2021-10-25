@@ -14,10 +14,8 @@ func NewContentRequestBuilderInternal(pathParameters map[string]string, requestA
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/onenote/pages/{onenotePage_id}/parentNotebook/sectionGroups/{sectionGroup_id}/sections/{onenoteSection_id}/pages/{onenotePage_id1}/content";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

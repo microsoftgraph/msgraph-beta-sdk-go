@@ -16,17 +16,15 @@ type SecurityBaselineStateRequestBuilder struct {
 type SecurityBaselineStateRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewSecurityBaselineStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityBaselineStateRequestBuilder) {
     m := &SecurityBaselineStateRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/managedDevices/{managedDevice_id}/securityBaselineStates/{securityBaselineState_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *SecurityBaselineStateRequestBuilder) SettingStates()(*i64ea8dbf66e324b8
 }
 func (m *SecurityBaselineStateRequestBuilder) SettingStatesById(id string)(*i83f77e2a59e24a87792a5c5508923f3c9937362ffc35e0563eb35ae64d7b91ce.SecurityBaselineSettingStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["securityBaselineSettingState_id"] = id

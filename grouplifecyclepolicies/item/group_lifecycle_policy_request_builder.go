@@ -16,7 +16,7 @@ type GroupLifecyclePolicyRequestBuilder struct {
 type GroupLifecyclePolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *GroupLifecyclePolicyRequestBuilder) AddGroup()(*i00d9fc4b79802ae3527433ffaaf17aa631fcff648dd8e7cdf9addea2f64e7fa0.AddGroupRequestBuilder) {
     return i00d9fc4b79802ae3527433ffaaf17aa631fcff648dd8e7cdf9addea2f64e7fa0.NewAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewGroupLifecyclePolicyRequestBuilderInternal(pathParameters map[string]str
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/groupLifecyclePolicies/{groupLifecyclePolicy_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

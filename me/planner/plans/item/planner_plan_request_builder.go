@@ -19,17 +19,15 @@ type PlannerPlanRequestBuilder struct {
 type PlannerPlanRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PlannerPlanRequestBuilder) Buckets()(*i97f4aa0504a94677b48d17585be69f3adfec35ef126990f5c0fa1deb971970ee.BucketsRequestBuilder) {
     return i97f4aa0504a94677b48d17585be69f3adfec35ef126990f5c0fa1deb971970ee.NewBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PlannerPlanRequestBuilder) BucketsById(id string)(*i3466366278330596cef17ffa7a24be314ef4f15e7e9d83c16fc122c5d7bbec9d.PlannerBucketRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["plannerBucket_id"] = id
@@ -41,10 +39,8 @@ func NewPlannerPlanRequestBuilderInternal(pathParameters map[string]string, requ
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/planner/plans/{plannerPlan_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -165,10 +161,8 @@ func (m *PlannerPlanRequestBuilder) Tasks()(*i889297e93166312716592efbb05995455a
 }
 func (m *PlannerPlanRequestBuilder) TasksById(id string)(*ie21edb59ce06faac589655d693ce3b2317a4cec27df5b0fb71362a772a5e4fbd.PlannerTaskRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["plannerTask_id"] = id

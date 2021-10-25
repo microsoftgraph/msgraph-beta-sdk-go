@@ -15,7 +15,7 @@ type AccessPackageResourceRoleRequestBuilder struct {
 type AccessPackageResourceRoleRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *AccessPackageResourceRoleRequestBuilder) AccessPackageResource()(*i79cb8b86a0033ce862a745b97bd9594d29ba410630e610e6d57d1cea12d3ea87.AccessPackageResourceRequestBuilder) {
     return i79cb8b86a0033ce862a745b97bd9594d29ba410630e610e6d57d1cea12d3ea87.NewAccessPackageResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewAccessPackageResourceRoleRequestBuilderInternal(pathParameters map[strin
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole_id}/accessPackageAssignments/{accessPackageAssignment_id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope_id}/accessPackageResource/accessPackageResourceRoles/{accessPackageResourceRole_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

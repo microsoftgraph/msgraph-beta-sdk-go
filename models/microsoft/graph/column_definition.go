@@ -35,7 +35,7 @@ type ColumnDefinition struct {
     term *TermColumn;
     text *TextColumn;
     thumbnail *ThumbnailColumn;
-    type_escpaped *ColumnTypes;
+    type_escaped *ColumnTypes;
     validation *ColumnValidation;
 }
 func NewColumnDefinition()(*ColumnDefinition) {
@@ -247,11 +247,11 @@ func (m *ColumnDefinition) GetThumbnail()(*ThumbnailColumn) {
         return m.thumbnail
     }
 }
-func (m *ColumnDefinition) GetType_escpaped()(*ColumnTypes) {
+func (m *ColumnDefinition) GetType_escaped()(*ColumnTypes) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *ColumnDefinition) GetValidation()(*ColumnValidation) {
@@ -495,13 +495,13 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         m.SetThumbnail(val.(*ThumbnailColumn))
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseColumnTypes)
         if err != nil {
             return err
         }
         cast := val.(ColumnTypes)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     res["validation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -696,9 +696,9 @@ func (m *ColumnDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err = writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err = writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -798,8 +798,8 @@ func (m *ColumnDefinition) SetText(value *TextColumn)() {
 func (m *ColumnDefinition) SetThumbnail(value *ThumbnailColumn)() {
     m.thumbnail = value
 }
-func (m *ColumnDefinition) SetType_escpaped(value *ColumnTypes)() {
-    m.type_escpaped = value
+func (m *ColumnDefinition) SetType_escaped(value *ColumnTypes)() {
+    m.type_escaped = value
 }
 func (m *ColumnDefinition) SetValidation(value *ColumnValidation)() {
     m.validation = value

@@ -15,7 +15,7 @@ type DeploymentRequestBuilder struct {
 type DeploymentRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *DeploymentRequestBuilder) Audience()(*ie56f34c670a0240ffc9813245b1aeb627629abdb5deb1fba39a36235ceecb0af.AudienceRequestBuilder) {
     return ie56f34c670a0240ffc9813245b1aeb627629abdb5deb1fba39a36235ceecb0af.NewAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewDeploymentRequestBuilderInternal(pathParameters map[string]string, reque
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/admin/windows/updates/deployments/{deployment_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

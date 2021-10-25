@@ -17,17 +17,15 @@ type AccessReviewScheduleDefinitionRequestBuilder struct {
 type AccessReviewScheduleDefinitionRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewAccessReviewScheduleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewScheduleDefinitionRequestBuilder) {
     m := &AccessReviewScheduleDefinitionRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -134,10 +132,8 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) Instances()(*i5591bb26750
 }
 func (m *AccessReviewScheduleDefinitionRequestBuilder) InstancesById(id string)(*idac0b3111695ecd4dc16b6628acb0b3c5ae374573f87c852ffc058f95d7abdab.AccessReviewInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessReviewInstance_id"] = id

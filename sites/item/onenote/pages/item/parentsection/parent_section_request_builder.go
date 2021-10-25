@@ -20,17 +20,15 @@ type ParentSectionRequestBuilder struct {
 type ParentSectionRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewParentSectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentSectionRequestBuilder) {
     m := &ParentSectionRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/sites/{site_id}/onenote/pages/{onenotePage_id}/parentSection{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -143,10 +141,8 @@ func (m *ParentSectionRequestBuilder) Pages()(*id9bc2c916f69adb2a4037d65186ada1e
 }
 func (m *ParentSectionRequestBuilder) PagesById(id string)(*ie29649cb55d37b3de45c1354722b0f3bd5f92deb1306589b9e0c81585baed77e.OnenotePageRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenotePage_id1"] = id

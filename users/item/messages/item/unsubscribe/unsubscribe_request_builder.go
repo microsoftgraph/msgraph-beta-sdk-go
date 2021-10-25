@@ -14,10 +14,8 @@ func NewUnsubscribeRequestBuilderInternal(pathParameters map[string]string, requ
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/messages/{message_id}/microsoft.graph.unsubscribe";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

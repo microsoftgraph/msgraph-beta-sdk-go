@@ -9,7 +9,7 @@ type SecurityVendorInformation struct {
     provider *string;
     providerVersion *string;
     subProvider *string;
-    vendor *string;
+    vendor_escaped *string;
 }
 func NewSecurityVendorInformation()(*SecurityVendorInformation) {
     m := &SecurityVendorInformation{
@@ -45,11 +45,11 @@ func (m *SecurityVendorInformation) GetSubProvider()(*string) {
         return m.subProvider
     }
 }
-func (m *SecurityVendorInformation) GetVendor()(*string) {
+func (m *SecurityVendorInformation) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.vendor
+        return m.vendor_escaped
     }
 }
 func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -78,12 +78,12 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(inte
         m.SetSubProvider(val)
         return nil
     }
-    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetVendor(val)
+        m.SetVendor_escaped(val)
         return nil
     }
     return res
@@ -111,7 +111,7 @@ func (m *SecurityVendorInformation) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
         if err != nil {
             return err
         }
@@ -136,6 +136,6 @@ func (m *SecurityVendorInformation) SetProviderVersion(value *string)() {
 func (m *SecurityVendorInformation) SetSubProvider(value *string)() {
     m.subProvider = value
 }
-func (m *SecurityVendorInformation) SetVendor(value *string)() {
-    m.vendor = value
+func (m *SecurityVendorInformation) SetVendor_escaped(value *string)() {
+    m.vendor_escaped = value
 }

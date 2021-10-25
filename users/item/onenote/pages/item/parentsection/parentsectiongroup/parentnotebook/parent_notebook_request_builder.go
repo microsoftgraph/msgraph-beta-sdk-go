@@ -19,17 +19,15 @@ type ParentNotebookRequestBuilder struct {
 type ParentNotebookRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewParentNotebookRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentNotebookRequestBuilder) {
     m := &ParentNotebookRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/onenote/pages/{onenotePage_id}/parentSection/parentSectionGroup/parentNotebook{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -150,10 +148,8 @@ func (m *ParentNotebookRequestBuilder) SectionGroups()(*ifab3e156e63f801ab46fb4a
 }
 func (m *ParentNotebookRequestBuilder) SectionGroupsById(id string)(*i66c099d40e3663605f3c6960c53223488b536496ca0a779fa6e2c2e3c7bf2fb1.SectionGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sectionGroup_id"] = id
@@ -165,10 +161,8 @@ func (m *ParentNotebookRequestBuilder) Sections()(*idba132636c8ed1e805c58859aee8
 }
 func (m *ParentNotebookRequestBuilder) SectionsById(id string)(*i72fccef2ebc3726435da3dd5dd49aba6aa930aa75f8525353b8ee375ea695bcf.OnenoteSectionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenoteSection_id"] = id

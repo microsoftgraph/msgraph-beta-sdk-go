@@ -15,7 +15,7 @@ type CaseOperationRequestBuilder struct {
 type CaseOperationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *CaseOperationRequestBuilder) CaseExportOperation()(*i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d.CaseExportOperationRequestBuilder) {
     return i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewCaseOperationRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/operations/{caseOperation_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -14,10 +14,8 @@ func NewForceDeleteRequestBuilderInternal(pathParameters map[string]string, requ
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/domains/{domain_id}/microsoft.graph.forceDelete";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

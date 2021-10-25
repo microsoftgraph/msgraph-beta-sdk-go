@@ -14,17 +14,15 @@ type RegionalAndLanguageSettingsRequestBuilder struct {
 type RegionalAndLanguageSettingsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewRegionalAndLanguageSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RegionalAndLanguageSettingsRequestBuilder) {
     m := &RegionalAndLanguageSettingsRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/settings/regionalAndLanguageSettings{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

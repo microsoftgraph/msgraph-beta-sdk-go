@@ -16,7 +16,7 @@ type CalendarRequestBuilder struct {
 type CalendarRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *CalendarRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*i7e93404567a7e1e125c3313613529e76aa79476fa7f17f09d0dca30749f1e4d2.AllowedCalendarSharingRolesWithUserRequestBuilder) {
     return i7e93404567a7e1e125c3313613529e76aa79476fa7f17f09d0dca30749f1e4d2.NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.pathParameters, m.requestAdapter, user);
@@ -26,10 +26,8 @@ func NewCalendarRequestBuilderInternal(pathParameters map[string]string, request
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/calendar/events/{event_id}/calendar{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

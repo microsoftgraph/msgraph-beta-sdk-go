@@ -45,17 +45,15 @@ type DriveItemRequestBuilder struct {
 type DriveItemRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *DriveItemRequestBuilder) Activities()(*i68453248b6adc2e0a123184b9f0397803b74547d93a538bca62fb45840ec7c39.ActivitiesRequestBuilder) {
     return i68453248b6adc2e0a123184b9f0397803b74547d93a538bca62fb45840ec7c39.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *DriveItemRequestBuilder) ActivitiesById(id string)(*ib3b0b0b8db03e078a58d5fd2c684b9c2f06f5e77dde80b3c46359e8e3f0480ba.ItemActivityOLDRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["itemActivityOLD_id"] = id
@@ -76,10 +74,8 @@ func (m *DriveItemRequestBuilder) Children()(*i0146b9e31c3cc4f2ab496bd8b7648bd74
 }
 func (m *DriveItemRequestBuilder) ChildrenById(id string)(*i07d08684839c1c52e4e2f97c0ac854b38d29ec3cfe7f59122208e108260cbb4d.DriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["driveItem_id1"] = id
@@ -91,10 +87,8 @@ func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, reques
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -242,10 +236,8 @@ func (m *DriveItemRequestBuilder) Permissions()(*ia10d6bc417675919b129deccbb4a8f
 }
 func (m *DriveItemRequestBuilder) PermissionsById(id string)(*i8af00cb19bae1d8d547aa285fc2e34cbe5c5c5096ff8de885009b1dcd3611d71.PermissionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["permission_id"] = id
@@ -266,10 +258,8 @@ func (m *DriveItemRequestBuilder) Subscriptions()(*i1ffc874dc11bc59b8f43e08f999b
 }
 func (m *DriveItemRequestBuilder) SubscriptionsById(id string)(*ic2204a9b8bb31b272b46aa5d8e8e1802c6b262a7377a2425b7aeb9b634548a33.SubscriptionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["subscription_id"] = id
@@ -281,10 +271,8 @@ func (m *DriveItemRequestBuilder) Thumbnails()(*i4403a8b36ffdd31c6449e834ff73544
 }
 func (m *DriveItemRequestBuilder) ThumbnailsById(id string)(*if9d9f1bd841c39df4ae58bdaf1c987671d7244b7fbc793a0e55c2c3bcb60d75b.ThumbnailSetRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["thumbnailSet_id"] = id
@@ -302,10 +290,8 @@ func (m *DriveItemRequestBuilder) Versions()(*iea15fd2e4983cd4bc7f77c56f9e7d10b7
 }
 func (m *DriveItemRequestBuilder) VersionsById(id string)(*i23745af441bc7e806a6ea374d93773d7f5b4d51f0b23dbfc2e289f9ed360c56f.DriveItemVersionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["driveItemVersion_id"] = id

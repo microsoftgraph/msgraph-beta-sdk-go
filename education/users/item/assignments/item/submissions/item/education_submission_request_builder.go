@@ -9,7 +9,7 @@ import (
     i29e598c0e3132502e75ebc5f97d630c0d489e1a3695a279765b136eb63851edb "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/unsubmit"
     i620d352f6d923470da79c3942b8c8aaaf958d8aaa2e3d4eb26af40a92833870f "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/resources"
     i6ba46d6835c0a47a27d09f0253c579859dcd40873b53932a91d1e8d864ea4af4 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/outcomes"
-    i80a1281eb0b576d298b514fc90347e66750486fa7e9fdfd1403829774fe5acba "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/return_escpaped"
+    i7dd6fe92e931b3075c9a3419ab371f02a77ec29b4fe853adf3e476b895fc4af4 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/return_escaped"
     if15e4fd1817bfddf93807ec99a8a0cbce18f2c72a43161efa316e4ff2ad07585 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/setupresourcesfolder"
     idcb18db22001d0c8560f4e04f592d2ab741e41fdccd32e2bbd2826405e8162b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/outcomes/item"
     ided68156635ca8883976581f28a920199cc5242c12a0b15c16f989f304e5824b "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/resources/item"
@@ -24,17 +24,15 @@ type EducationSubmissionRequestBuilder struct {
 type EducationSubmissionRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewEducationSubmissionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSubmissionRequestBuilder) {
     m := &EducationSubmissionRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/education/users/{educationUser_id}/assignments/{educationAssignment_id}/submissions/{educationSubmission_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -141,10 +139,8 @@ func (m *EducationSubmissionRequestBuilder) Outcomes()(*i6ba46d6835c0a47a27d09f0
 }
 func (m *EducationSubmissionRequestBuilder) OutcomesById(id string)(*idcb18db22001d0c8560f4e04f592d2ab741e41fdccd32e2bbd2826405e8162b6.EducationOutcomeRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["educationOutcome_id"] = id
@@ -167,18 +163,16 @@ func (m *EducationSubmissionRequestBuilder) Resources()(*i620d352f6d923470da79c3
 }
 func (m *EducationSubmissionRequestBuilder) ResourcesById(id string)(*ided68156635ca8883976581f28a920199cc5242c12a0b15c16f989f304e5824b.EducationSubmissionResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["educationSubmissionResource_id"] = id
     }
     return ided68156635ca8883976581f28a920199cc5242c12a0b15c16f989f304e5824b.NewEducationSubmissionResourceRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-func (m *EducationSubmissionRequestBuilder) Return_escpaped()(*i80a1281eb0b576d298b514fc90347e66750486fa7e9fdfd1403829774fe5acba.ReturnRequestBuilder) {
-    return i80a1281eb0b576d298b514fc90347e66750486fa7e9fdfd1403829774fe5acba.NewReturnRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *EducationSubmissionRequestBuilder) Return_escaped()(*i7dd6fe92e931b3075c9a3419ab371f02a77ec29b4fe853adf3e476b895fc4af4.ReturnRequestBuilder) {
+    return i7dd6fe92e931b3075c9a3419ab371f02a77ec29b4fe853adf3e476b895fc4af4.NewReturnRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *EducationSubmissionRequestBuilder) SetUpResourcesFolder()(*if15e4fd1817bfddf93807ec99a8a0cbce18f2c72a43161efa316e4ff2ad07585.SetUpResourcesFolderRequestBuilder) {
     return if15e4fd1817bfddf93807ec99a8a0cbce18f2c72a43161efa316e4ff2ad07585.NewSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -191,10 +185,8 @@ func (m *EducationSubmissionRequestBuilder) SubmittedResources()(*i164979e9c6e40
 }
 func (m *EducationSubmissionRequestBuilder) SubmittedResourcesById(id string)(*ie8d02aac9f22a617e7db20c68df056fad4bb1fb1425faaa25cf4ef67594043ec.EducationSubmissionResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["educationSubmissionResource_id"] = id

@@ -16,17 +16,15 @@ type PrintServiceRequestBuilder struct {
 type PrintServiceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewPrintServiceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintServiceRequestBuilder) {
     m := &PrintServiceRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/print/services/{printService_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -122,10 +120,8 @@ func (m *PrintServiceRequestBuilder) Endpoints()(*i5156d63463fd84dabf998d1b720e3
 }
 func (m *PrintServiceRequestBuilder) EndpointsById(id string)(*i556b3043d8dcb4e4f5bcc1d4092ed9b7dc4973097ec58cda9e66e1e069e31b42.PrintServiceEndpointRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printServiceEndpoint_id"] = id

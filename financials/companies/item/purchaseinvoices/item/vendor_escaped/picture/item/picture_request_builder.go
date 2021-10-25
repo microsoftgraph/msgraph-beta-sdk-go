@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    ibe04dece724c3bed01ecf76c00b5d2602349facac490626ed24904459aad6891 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/purchaseinvoices/item/vendor/picture/item/content"
+    i82f0675da191bdc99f6e21da715b3cd9176756623be0ad043ecf09fea75c4062 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/purchaseinvoices/item/vendor_escaped/picture/item/content"
 )
 
 type PictureRequestBuilder struct {
@@ -15,17 +15,15 @@ type PictureRequestBuilder struct {
 type PictureRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewPictureRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PictureRequestBuilder) {
     m := &PictureRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/purchaseInvoices/{purchaseInvoice_id}/vendor/picture/{picture_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -36,8 +34,8 @@ func NewPictureRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewPictureRequestBuilderInternal(urlParams, requestAdapter)
 }
-func (m *PictureRequestBuilder) Content()(*ibe04dece724c3bed01ecf76c00b5d2602349facac490626ed24904459aad6891.ContentRequestBuilder) {
-    return ibe04dece724c3bed01ecf76c00b5d2602349facac490626ed24904459aad6891.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PictureRequestBuilder) Content()(*i82f0675da191bdc99f6e21da715b3cd9176756623be0ad043ecf09fea75c4062.ContentRequestBuilder) {
+    return i82f0675da191bdc99f6e21da715b3cd9176756623be0ad043ecf09fea75c4062.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PictureRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()

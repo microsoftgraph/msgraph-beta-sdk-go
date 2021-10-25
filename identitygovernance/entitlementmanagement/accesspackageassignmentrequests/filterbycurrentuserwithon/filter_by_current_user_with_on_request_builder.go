@@ -15,10 +15,8 @@ func NewFilterByCurrentUserWithOnRequestBuilderInternal(pathParameters map[strin
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if on != nil {
         urlTplParams["on"] = *on

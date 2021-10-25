@@ -28,17 +28,15 @@ type MailFolderRequestBuilder struct {
 type MailFolderRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *MailFolderRequestBuilder) ChildFolders()(*ib3cf1b898320f5fb70f999d2aff83698cee085e8dbf2e1b033c20e55909c2147.ChildFoldersRequestBuilder) {
     return ib3cf1b898320f5fb70f999d2aff83698cee085e8dbf2e1b033c20e55909c2147.NewChildFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *MailFolderRequestBuilder) ChildFoldersById(id string)(*i99d414649a0b801dbd6f28f6fabe9640fa48f50ba20d21ff4dfc91c4e616dd1d.MailFolderRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mailFolder_id1"] = id
@@ -50,10 +48,8 @@ func NewMailFolderRequestBuilderInternal(pathParameters map[string]string, reque
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/mailFolders/{mailFolder_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -163,10 +159,8 @@ func (m *MailFolderRequestBuilder) MessageRules()(*ib552f46594b7d9ebc22e518b339e
 }
 func (m *MailFolderRequestBuilder) MessageRulesById(id string)(*i310b07fcb064069d6015f73b2ca186f6408a1a4dd1e21397434cfff499a2801b.MessageRuleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["messageRule_id"] = id
@@ -178,10 +172,8 @@ func (m *MailFolderRequestBuilder) Messages()(*i11b56dd67bcd5d9695e59af2c58c5547
 }
 func (m *MailFolderRequestBuilder) MessagesById(id string)(*i9584fba2233b5641465d19d502543b266d2bee87dfef4b622dc1a93ebf076c8c.MessageRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["message_id"] = id
@@ -196,10 +188,8 @@ func (m *MailFolderRequestBuilder) MultiValueExtendedProperties()(*icb8f096fe09e
 }
 func (m *MailFolderRequestBuilder) MultiValueExtendedPropertiesById(id string)(*iddf7155795dc366c49b367caf52234a860a61a06b42dd87bc5aa2b9c61fe336a.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
@@ -222,10 +212,8 @@ func (m *MailFolderRequestBuilder) SingleValueExtendedProperties()(*i8c8bf593802
 }
 func (m *MailFolderRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i688b613b4c12c110c627749a3da9032a2c37f515bc98ee032ce8a1d7ba196a04.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id
@@ -237,10 +225,8 @@ func (m *MailFolderRequestBuilder) UserConfigurations()(*i6878489e6e5c5366487958
 }
 func (m *MailFolderRequestBuilder) UserConfigurationsById(id string)(*i4659db7620dc79f8074a55700b4675ba25eb98811afff3bd143e845e53916070.UserConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["userConfiguration_id"] = id

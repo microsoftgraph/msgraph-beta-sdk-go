@@ -76,10 +76,8 @@ func NewItemWithNameRequestBuilderInternal(pathParameters map[string]string, req
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/worksheets/{workbookWorksheet_id}/charts/microsoft.graph.item(name='{name}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if name != nil {
         urlTplParams["name"] = *name

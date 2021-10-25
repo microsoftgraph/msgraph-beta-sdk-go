@@ -16,17 +16,15 @@ type DeviceManagementSettingCategoryRequestBuilder struct {
 type DeviceManagementSettingCategoryRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewDeviceManagementSettingCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementSettingCategoryRequestBuilder) {
     m := &DeviceManagementSettingCategoryRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/categories/{deviceManagementSettingCategory_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *DeviceManagementSettingCategoryRequestBuilder) SettingDefinitions()(*i3
 }
 func (m *DeviceManagementSettingCategoryRequestBuilder) SettingDefinitionsById(id string)(*i10eafe8b9031d51f633fe756b3250d9fb153bbbb882ee32b99c91a8d691b7fa4.DeviceManagementSettingDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceManagementSettingDefinition_id"] = id

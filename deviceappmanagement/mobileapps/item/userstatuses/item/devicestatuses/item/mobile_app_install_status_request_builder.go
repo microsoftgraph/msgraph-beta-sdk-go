@@ -15,7 +15,7 @@ type MobileAppInstallStatusRequestBuilder struct {
 type MobileAppInstallStatusRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *MobileAppInstallStatusRequestBuilder) App()(*i1ca2a6bf0d0a45f69d222079c45d762427b4fe5401c30a616072b3dfabbdded1.AppRequestBuilder) {
     return i1ca2a6bf0d0a45f69d222079c45d762427b4fe5401c30a616072b3dfabbdded1.NewAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewMobileAppInstallStatusRequestBuilderInternal(pathParameters map[string]s
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/mobileApps/{mobileApp_id}/userStatuses/{userAppInstallStatus_id}/deviceStatuses/{mobileAppInstallStatus_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

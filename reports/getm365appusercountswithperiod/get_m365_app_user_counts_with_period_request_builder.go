@@ -16,10 +16,8 @@ func NewGetM365AppUserCountsWithPeriodRequestBuilderInternal(pathParameters map[
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/reports/microsoft.graph.getM365AppUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if period != nil {
         urlTplParams["period"] = *period

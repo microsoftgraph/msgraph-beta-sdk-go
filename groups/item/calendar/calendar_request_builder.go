@@ -26,7 +26,7 @@ type CalendarRequestBuilder struct {
 type CalendarRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *CalendarRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*icd7a045db01e44db897afd8ba5343e7d38c1599413b6a17400da01b527973e57.AllowedCalendarSharingRolesWithUserRequestBuilder) {
     return icd7a045db01e44db897afd8ba5343e7d38c1599413b6a17400da01b527973e57.NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.pathParameters, m.requestAdapter, user);
@@ -36,10 +36,8 @@ func (m *CalendarRequestBuilder) CalendarPermissions()(*ic79a06981e01676a5b41be5
 }
 func (m *CalendarRequestBuilder) CalendarPermissionsById(id string)(*i6389000acb4a221ddef87343d30894dc16987ef37595f24421ad461fe767083f.CalendarPermissionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["calendarPermission_id"] = id
@@ -51,10 +49,8 @@ func (m *CalendarRequestBuilder) CalendarView()(*ib7ee09a2619abb2c78701384def8fc
 }
 func (m *CalendarRequestBuilder) CalendarViewById(id string)(*i2877c9d97209d99b4d909de67ba8cd762e6a506898bb79d3f55b0659900ca31c.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["event_id"] = id
@@ -66,10 +62,8 @@ func NewCalendarRequestBuilderInternal(pathParameters map[string]string, request
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/groups/{group_id}/calendar{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -165,10 +159,8 @@ func (m *CalendarRequestBuilder) Events()(*i06cb71e1758c94dc508ff81b35d70e6b87e4
 }
 func (m *CalendarRequestBuilder) EventsById(id string)(*iafdc3a5c49cb6bb0133e40dda5d4c139576d35278bf232fa62de70f01714f934.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["event_id"] = id
@@ -194,10 +186,8 @@ func (m *CalendarRequestBuilder) MultiValueExtendedProperties()(*ic906c3aa3cff80
 }
 func (m *CalendarRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i2b0a7eca3f232e3b28e09ce2398345a2762596c5fc5f1b3b203b447ca9d62dcd.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
@@ -220,10 +210,8 @@ func (m *CalendarRequestBuilder) SingleValueExtendedProperties()(*ie357553e3f299
 }
 func (m *CalendarRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i7135f234b9b77ac7d1f38566664eb079da2d1647d2b78e7e1558a59a4f6a8ae5.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id

@@ -18,7 +18,7 @@ type OnlineMeetingRequestBuilder struct {
 type OnlineMeetingRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *OnlineMeetingRequestBuilder) AlternativeRecording()(*ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9.AlternativeRecordingRequestBuilder) {
     return ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9.NewAlternativeRecordingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -31,10 +31,8 @@ func NewOnlineMeetingRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/communications/onlineMeetings/{onlineMeeting_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

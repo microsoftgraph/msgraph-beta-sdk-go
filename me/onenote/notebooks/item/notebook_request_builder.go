@@ -19,17 +19,15 @@ type NotebookRequestBuilder struct {
 type NotebookRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewNotebookRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotebookRequestBuilder) {
     m := &NotebookRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/onenote/notebooks/{notebook_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -150,10 +148,8 @@ func (m *NotebookRequestBuilder) SectionGroups()(*i89fbe2b1190890ca84a05c5096693
 }
 func (m *NotebookRequestBuilder) SectionGroupsById(id string)(*i3f00dfe11dc80f8dc89245dfc252539bafb21801cbf86246b69d954c672d338d.SectionGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sectionGroup_id"] = id
@@ -165,10 +161,8 @@ func (m *NotebookRequestBuilder) Sections()(*icbed685e2e636d8456410ce7979f7e8efe
 }
 func (m *NotebookRequestBuilder) SectionsById(id string)(*i19963dbb0aa98905c26ce8a529538787051a4b642038a22254dcede2f66802dd.OnenoteSectionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenoteSection_id"] = id

@@ -138,7 +138,7 @@ type MeRequestBuilder struct {
 type MeRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *MeRequestBuilder) ActivateServicePlan()(*iff3e752f4ecf4dec684b2068c0ed6eed3b3822d4c0d9c259e1f976d12f88e194.ActivateServicePlanRequestBuilder) {
     return iff3e752f4ecf4dec684b2068c0ed6eed3b3822d4c0d9c259e1f976d12f88e194.NewActivateServicePlanRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -148,10 +148,8 @@ func (m *MeRequestBuilder) Activities()(*if53d06a6944a15601fc9e0ecdcd8e010fb0ac3
 }
 func (m *MeRequestBuilder) ActivitiesById(id string)(*i4839dd1e34130c46f192e50856e4104f29c91c197b815b494b1a69ba6342e13b.UserActivityRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["userActivity_id"] = id
@@ -169,10 +167,8 @@ func (m *MeRequestBuilder) AppConsentRequestsForApproval()(*i21ad1b6dc11aa1d9306
 }
 func (m *MeRequestBuilder) AppConsentRequestsForApprovalById(id string)(*i964afe288259202a4e1a7dec3dd29d7b0e636062c4231f642d5958afce7f732f.AppConsentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["appConsentRequest_id"] = id
@@ -184,10 +180,8 @@ func (m *MeRequestBuilder) AppRoleAssignments()(*i3aea592c6cb33f9e19fb4c62bdecfe
 }
 func (m *MeRequestBuilder) AppRoleAssignmentsById(id string)(*i61d4b18aabe612d406051c63cdd71a82846d2421be7afc134002abc5e139f3e0.AppRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["appRoleAssignment_id"] = id
@@ -199,10 +193,8 @@ func (m *MeRequestBuilder) Approvals()(*i56a77360b87654a0c9a4dc6869de45fd14b76ff
 }
 func (m *MeRequestBuilder) ApprovalsById(id string)(*ia9d1397713a75de885b5f1c5f94ee39bba9f659b5ea81f0dc7406a018b1a48c3.ApprovalRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["approval_id"] = id
@@ -223,10 +215,8 @@ func (m *MeRequestBuilder) CalendarGroups()(*i32b15a9294b27af382e25627185a912974
 }
 func (m *MeRequestBuilder) CalendarGroupsById(id string)(*i88cb1f65e88e2be976a13788c7251e4bd43b629bce1c058fad78b21dc16f7062.CalendarGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["calendarGroup_id"] = id
@@ -238,10 +228,8 @@ func (m *MeRequestBuilder) Calendars()(*if54b727c8f82e94874a8380d8e6c910ef5f2b56
 }
 func (m *MeRequestBuilder) CalendarsById(id string)(*i44d43c5e67fd914a879c6699eebbfd2589387d74bdc6e95565084cb16342c066.CalendarRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["calendar_id"] = id
@@ -253,10 +241,8 @@ func (m *MeRequestBuilder) CalendarView()(*i58d75b863c46999036fda79f4f851a6091e0
 }
 func (m *MeRequestBuilder) CalendarViewById(id string)(*if8b811d7fbecff009f6661aef902befaba11f32ccbaaa91de716f8c4b103c293.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["event_id"] = id
@@ -271,10 +257,8 @@ func (m *MeRequestBuilder) Chats()(*i59f8bb1b42aa564603d502b2fba98210a12453d9b9b
 }
 func (m *MeRequestBuilder) ChatsById(id string)(*if68ffab8944bb223858e55142c815f29e64d6051ab2ef6f6ce0d495d4d87f4a9.ChatRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["chat_id"] = id
@@ -292,10 +276,8 @@ func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapte
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -311,10 +293,8 @@ func (m *MeRequestBuilder) ContactFolders()(*i50cc07d8bbb211c98359ee0edb3bbe464c
 }
 func (m *MeRequestBuilder) ContactFoldersById(id string)(*icccda8c1e029711a6c2c010bde446ea283c88f9167583edd4cb4b8891df462bd.ContactFolderRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["contactFolder_id"] = id
@@ -326,10 +306,8 @@ func (m *MeRequestBuilder) Contacts()(*i90fa087b5c274048383161e7735aac09f360b766
 }
 func (m *MeRequestBuilder) ContactsById(id string)(*i03cc0125fff403f10c9217cf6465d79f8b49c6205fad977f867396abf1c69779.ContactRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["contact_id"] = id
@@ -394,10 +372,8 @@ func (m *MeRequestBuilder) DeviceEnrollmentConfigurations()(*i8cce4b6e74c8589123
 }
 func (m *MeRequestBuilder) DeviceEnrollmentConfigurationsById(id string)(*i18a300ce18206c9aa35cc46abd9486be5d2faa2ceb82ea15418d59e63400891b.DeviceEnrollmentConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceEnrollmentConfiguration_id"] = id
@@ -409,10 +385,8 @@ func (m *MeRequestBuilder) DeviceManagementTroubleshootingEvents()(*i817e3209fc0
 }
 func (m *MeRequestBuilder) DeviceManagementTroubleshootingEventsById(id string)(*i044d2d5a570570eb3a834c3174faaabdad4efba49df934fb07c40ac12ad4b23d.DeviceManagementTroubleshootingEventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceManagementTroubleshootingEvent_id"] = id
@@ -424,10 +398,8 @@ func (m *MeRequestBuilder) Devices()(*i5db4fee05cecd2bed7cb42dc5c6046db8f61d4b37
 }
 func (m *MeRequestBuilder) DevicesById(id string)(*id23f8c7e0c3929eeb36c197eb371fd7242f148f968513d3b42532b35904d2c7e.DeviceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["device_id"] = id
@@ -445,10 +417,8 @@ func (m *MeRequestBuilder) Drives()(*ib4b34bad27f650f5cc9e03461b6d4c452608904535
 }
 func (m *MeRequestBuilder) DrivesById(id string)(*i3c8eaf1c6dffbb0f85330d394a60715c6b08b77fd1865fa06fb70c1395e95efd.DriveRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["drive_id"] = id
@@ -460,10 +430,8 @@ func (m *MeRequestBuilder) Events()(*i34ae02cf2ff34fd803e19d8c2f9af8318285107c66
 }
 func (m *MeRequestBuilder) EventsById(id string)(*icc221144e4bd42176c4e6641427cf56400dd43be43d6c4b3c993c43b91a69c05.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["event_id"] = id
@@ -484,10 +452,8 @@ func (m *MeRequestBuilder) Extensions()(*ia8fd6d4235fbe5ae19767a14b931820ca5e311
 }
 func (m *MeRequestBuilder) ExtensionsById(id string)(*i0653b5ffd95682aea4c98ecb6c539dcb517315be3e2dc79188b7541f859ea8f7.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["extension_id"] = id
@@ -567,10 +533,8 @@ func (m *MeRequestBuilder) JoinedGroups()(*i93405a8f89e4184693c09c0e84c792b95674
 }
 func (m *MeRequestBuilder) JoinedGroupsById(id string)(*idfa7cbdcf3a4fd875b312422b4564830d91af1ad3d8dd44db9012918e850751f.GroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["group_id"] = id
@@ -585,10 +549,8 @@ func (m *MeRequestBuilder) LicenseDetails()(*i1e3b0d7a9333d29fe71e530e04f6c5df33
 }
 func (m *MeRequestBuilder) LicenseDetailsById(id string)(*i1e3b0d7a9333d29fe71e530e04f6c5df334b5fc86243d3de0a534cd1921b4342.LicenseDetailsRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["licenseDetails_id"] = id
@@ -600,10 +562,8 @@ func (m *MeRequestBuilder) MailFolders()(*ic3e86b248df5ff542e4828dcd02d564185edf
 }
 func (m *MeRequestBuilder) MailFoldersById(id string)(*i4ae3afd01d0851c73223650832b296a7fc705ea82f59dc6662bdc0e4bd134cb8.MailFolderRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mailFolder_id"] = id
@@ -618,10 +578,8 @@ func (m *MeRequestBuilder) ManagedDevices()(*ia16187a55eb9c3b9d429798be330d5df57
 }
 func (m *MeRequestBuilder) ManagedDevicesById(id string)(*i05218ac15109586aa0bf9d6b77b99bb99266067c1544901cbf50ca419e3741de.ManagedDeviceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["managedDevice_id"] = id
@@ -639,10 +597,8 @@ func (m *MeRequestBuilder) Messages()(*i14f21981f966d7340ab241a9387463ba0fa4f07f
 }
 func (m *MeRequestBuilder) MessagesById(id string)(*i3a460a91d75d2133059711f9a41626eb89eb964605a87101f4ce61ca4b32eccc.MessageRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["message_id"] = id
@@ -654,10 +610,8 @@ func (m *MeRequestBuilder) MobileAppIntentAndStates()(*ifae3a8927e14c995c44faea1
 }
 func (m *MeRequestBuilder) MobileAppIntentAndStatesById(id string)(*id7edb04c2fe4b42c55656962bf3bb27391a93462cc5a89234df1ddf704bdf49d.MobileAppIntentAndStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mobileAppIntentAndState_id"] = id
@@ -669,10 +623,8 @@ func (m *MeRequestBuilder) MobileAppTroubleshootingEvents()(*ib8352abd928cf31d46
 }
 func (m *MeRequestBuilder) MobileAppTroubleshootingEventsById(id string)(*iac4e70fbd3847a4ded822f798b430d1011dd4ece8cf666478eff963f7ae42837.MobileAppTroubleshootingEventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mobileAppTroubleshootingEvent_id"] = id
@@ -684,10 +636,8 @@ func (m *MeRequestBuilder) Notifications()(*i352fab4a04ba762c64656855e65ab019a25
 }
 func (m *MeRequestBuilder) NotificationsById(id string)(*i4013f2adca2e80594707aa753bbc43cfa3c88b1f94557550a9de9a87010a65c9.NotificationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["notification_id"] = id
@@ -705,10 +655,8 @@ func (m *MeRequestBuilder) OnlineMeetings()(*i73355d68106cd7f92ed5b9ffb4a52e59ba
 }
 func (m *MeRequestBuilder) OnlineMeetingsById(id string)(*ie23caf2134464ac7a439e71ae9e04c43d1e7edeb9f60834c6450c46b2a73ef3d.OnlineMeetingRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onlineMeeting_id"] = id
@@ -740,10 +688,8 @@ func (m *MeRequestBuilder) PendingAccessReviewInstances()(*ie92980fd5edaafba8f00
 }
 func (m *MeRequestBuilder) PendingAccessReviewInstancesById(id string)(*ifd2db3d8aa0a0ec27c89cb2949e6936c2d3de139fb986c5773dfe17008496fc0.AccessReviewInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessReviewInstance_id"] = id
@@ -755,10 +701,8 @@ func (m *MeRequestBuilder) People()(*i96b86fb89d12c60762a9b35297bd48c5f5a1f0a29a
 }
 func (m *MeRequestBuilder) PeopleById(id string)(*iedd9b42c61703c4f6442a904b683a6508ee4bf335825ff84ce57fb2616e2cce3.PersonRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["person_id"] = id
@@ -773,10 +717,8 @@ func (m *MeRequestBuilder) Photos()(*i3340a668307034bde84b6a65c934778fd43edb7307
 }
 func (m *MeRequestBuilder) PhotosById(id string)(*i35b6d595de33f1d461b0d50276e049227be20e321f99ec0e204fb7be2adcec52.ProfilePhotoRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["profilePhoto_id"] = id
@@ -815,10 +757,8 @@ func (m *MeRequestBuilder) ScopedRoleMemberOf()(*i832752c7fc0bc2aa43f3e00911325b
 }
 func (m *MeRequestBuilder) ScopedRoleMemberOfById(id string)(*i08f6400faf92b934d06b0b6861e5bf74d25a77d5b3d67c02b4779a1c0c52e960.ScopedRoleMembershipRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["scopedRoleMembership_id"] = id
@@ -854,10 +794,8 @@ func (m *MeRequestBuilder) UsageRights()(*ib5b4d50478937130cb8d53f4c75d274229e4c
 }
 func (m *MeRequestBuilder) UsageRightsById(id string)(*i634abce1c174c1a4b8f987a99848dda449764fbd35f786e01464e876d22d956f.UsageRightRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["usageRight_id"] = id

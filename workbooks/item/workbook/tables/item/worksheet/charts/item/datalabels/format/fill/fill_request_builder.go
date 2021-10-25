@@ -16,7 +16,7 @@ type FillRequestBuilder struct {
 type FillRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *FillRequestBuilder) Clear()(*i50464ec6e281aa9169d8b81970edfa72db404ca0b925a93f255f4dc3c03c2984.ClearRequestBuilder) {
     return i50464ec6e281aa9169d8b81970edfa72db404ca0b925a93f255f4dc3c03c2984.NewClearRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewFillRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/{workbookChart_id}/dataLabels/format/fill{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

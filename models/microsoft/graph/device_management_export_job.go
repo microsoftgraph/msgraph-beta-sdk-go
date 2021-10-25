@@ -13,7 +13,7 @@ type DeviceManagementExportJob struct {
     localizationType *DeviceManagementExportJobLocalizationType;
     reportName *string;
     requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    select_escpaped []string;
+    select_escaped []string;
     snapshotId *string;
     status *DeviceManagementReportStatus;
     url *string;
@@ -66,11 +66,11 @@ func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6
         return m.requestDateTime
     }
 }
-func (m *DeviceManagementExportJob) GetSelect_escpaped()([]string) {
+func (m *DeviceManagementExportJob) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.select_escpaped
+        return m.select_escaped
     }
 }
 func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
@@ -146,7 +146,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         m.SetRequestDateTime(val)
         return nil
     }
-    res["select_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         for i, v := range val {
             res[i] = v.(string)
         }
-        m.SetSelect_escpaped(res)
+        m.SetSelect_escaped(res)
         return nil
     }
     res["snapshotId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,7 +232,7 @@ func (m *DeviceManagementExportJob) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     {
-        err = writer.WriteCollectionOfStringValues("select_escpaped", m.GetSelect_escpaped())
+        err = writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
         if err != nil {
             return err
         }
@@ -276,8 +276,8 @@ func (m *DeviceManagementExportJob) SetReportName(value *string)() {
 func (m *DeviceManagementExportJob) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.requestDateTime = value
 }
-func (m *DeviceManagementExportJob) SetSelect_escpaped(value []string)() {
-    m.select_escpaped = value
+func (m *DeviceManagementExportJob) SetSelect_escaped(value []string)() {
+    m.select_escaped = value
 }
 func (m *DeviceManagementExportJob) SetSnapshotId(value *string)() {
     m.snapshotId = value

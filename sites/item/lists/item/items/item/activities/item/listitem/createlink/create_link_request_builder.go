@@ -76,10 +76,8 @@ func NewCreateLinkRequestBuilderInternal(pathParameters map[string]string, reque
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/sites/{site_id}/lists/{list_id}/items/{listItem_id}/activities/{itemActivityOLD_id}/listItem/microsoft.graph.createLink";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

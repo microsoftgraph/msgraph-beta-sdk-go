@@ -16,17 +16,15 @@ type SensitivityLabelRequestBuilder struct {
 type SensitivityLabelRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewSensitivityLabelRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SensitivityLabelRequestBuilder) {
     m := &SensitivityLabelRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/dataClassification/sensitivityLabels/{sensitivityLabel_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *SensitivityLabelRequestBuilder) Sublabels()(*i0ebb5fdf0c79aadd2604c5da3
 }
 func (m *SensitivityLabelRequestBuilder) SublabelsById(id string)(*i3630d6f6d79513e44a9891cfe409bb263cdd3730992166964305a4249381df87.SensitivityLabelRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sensitivityLabel_id1"] = id

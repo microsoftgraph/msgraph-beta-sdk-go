@@ -14,10 +14,8 @@ func NewEstimateStatisticsRequestBuilderInternal(pathParameters map[string]strin
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/sourceCollections/{sourceCollection_id}/microsoft.graph.ediscovery.estimateStatistics";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

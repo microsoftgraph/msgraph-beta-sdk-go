@@ -14,10 +14,8 @@ func NewForwardRequestBuilderInternal(pathParameters map[string]string, requestA
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/calendarView/{event_id}/microsoft.graph.forward";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

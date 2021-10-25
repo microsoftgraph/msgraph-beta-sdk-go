@@ -15,7 +15,7 @@ type JournalLineRequestBuilder struct {
 type JournalLineRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *JournalLineRequestBuilder) Account()(*i790e45982e30e4b38a213bd1d3ce9b7f8ad62bd16bffdadcbd565cb706700be4.AccountRequestBuilder) {
     return i790e45982e30e4b38a213bd1d3ce9b7f8ad62bd16bffdadcbd565cb706700be4.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewJournalLineRequestBuilderInternal(pathParameters map[string]string, requ
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/journals/{journal_id}/journalLines/{journalLine_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

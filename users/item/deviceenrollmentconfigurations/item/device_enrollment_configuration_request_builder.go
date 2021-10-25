@@ -18,7 +18,7 @@ type DeviceEnrollmentConfigurationRequestBuilder struct {
 type DeviceEnrollmentConfigurationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *DeviceEnrollmentConfigurationRequestBuilder) Assign()(*icaa99ae9f7101879792bea499febb85724e7e9b797da108c4987daca0e192244.AssignRequestBuilder) {
     return icaa99ae9f7101879792bea499febb85724e7e9b797da108c4987daca0e192244.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -28,10 +28,8 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) Assignments()(*ic1d9737fc1
 }
 func (m *DeviceEnrollmentConfigurationRequestBuilder) AssignmentsById(id string)(*i2743b28ceb0dd313f262858ca8786962b9d8aea0a4285b4dd4cb11ca6ed541da.EnrollmentConfigurationAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["enrollmentConfigurationAssignment_id"] = id
@@ -43,10 +41,8 @@ func NewDeviceEnrollmentConfigurationRequestBuilderInternal(pathParameters map[s
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

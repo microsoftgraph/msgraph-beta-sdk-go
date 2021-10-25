@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i6fafd9a3690b1137857452bdd78226cbde141bb6383f6b7362226ebc981d9aff "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/importedwindowsautopilotdeviceidentities/import_escpaped"
+    i8a259409215ade9230da33cd772df83ffd3fb56d6e0feedce6800757cfe3df34 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/importedwindowsautopilotdeviceidentities/import_escaped"
 )
 
 type ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder struct {
@@ -19,7 +19,7 @@ type ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters st
     Filter *string;
     Orderby []string;
     Search *string;
-    Select_escpaped []string;
+    Select_escaped []string;
     Skip *int32;
     Top *int32;
 }
@@ -28,10 +28,8 @@ func NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(pathParam
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/importedWindowsAutopilotDeviceIdentities{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -103,8 +101,8 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Get(q func (val
     }
     return res.(*ImportedWindowsAutopilotDeviceIdentitiesResponse), nil
 }
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Import_escpaped()(*i6fafd9a3690b1137857452bdd78226cbde141bb6383f6b7362226ebc981d9aff.ImportRequestBuilder) {
-    return i6fafd9a3690b1137857452bdd78226cbde141bb6383f6b7362226ebc981d9aff.NewImportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Import_escaped()(*i8a259409215ade9230da33cd772df83ffd3fb56d6e0feedce6800757cfe3df34.ImportRequestBuilder) {
+    return i8a259409215ade9230da33cd772df83ffd3fb56d6e0feedce6800757cfe3df34.NewImportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Post(body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedWindowsAutopilotDeviceIdentity, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedWindowsAutopilotDeviceIdentity, error) {
     requestInfo, err := m.CreatePostRequestInformation(body, h, o);

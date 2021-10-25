@@ -17,17 +17,15 @@ type UnifiedRbacResourceNamespaceRequestBuilder struct {
 type UnifiedRbacResourceNamespaceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewUnifiedRbacResourceNamespaceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRbacResourceNamespaceRequestBuilder) {
     m := &UnifiedRbacResourceNamespaceRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -148,10 +146,8 @@ func (m *UnifiedRbacResourceNamespaceRequestBuilder) ResourceActions()(*i521f969
 }
 func (m *UnifiedRbacResourceNamespaceRequestBuilder) ResourceActionsById(id string)(*i1bd327838574e2c7b13b32882215f119088325a073e145691dea633100ae5eb4.UnifiedRbacResourceActionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRbacResourceAction_id"] = id

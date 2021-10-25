@@ -52,17 +52,15 @@ type ProfileRequestBuilder struct {
 type ProfileRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ProfileRequestBuilder) Account()(*ibdb9324e3601482a2267b1d9c0949c7d55a8080f5a4519f50c9653dc218292c0.AccountRequestBuilder) {
     return ibdb9324e3601482a2267b1d9c0949c7d55a8080f5a4519f50c9653dc218292c0.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ProfileRequestBuilder) AccountById(id string)(*i4833578e352a59b2b789284b4629d725d6ab0b3e30e29b40d1cb5c47837338b1.UserAccountInformationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["userAccountInformation_id"] = id
@@ -74,10 +72,8 @@ func (m *ProfileRequestBuilder) Addresses()(*ie9dcb8d043e17128686c43a95d98248fba
 }
 func (m *ProfileRequestBuilder) AddressesById(id string)(*i275a2397cc537d02a6de5d369b78e7f403c669152aed225ff04fe014e548e2bb.ItemAddressRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["itemAddress_id"] = id
@@ -89,10 +85,8 @@ func (m *ProfileRequestBuilder) Anniversaries()(*i56d5cd06e8002d9e89308b824b11d5
 }
 func (m *ProfileRequestBuilder) AnniversariesById(id string)(*i2d0d6da11cb59700ac3ab9dd6b295e2ff497574052fdc8dc8cb99cfc50b629df.PersonAnnualEventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["personAnnualEvent_id"] = id
@@ -104,10 +98,8 @@ func (m *ProfileRequestBuilder) Awards()(*ic849b639cf0ed78d9c66d6ef19cccba41d193
 }
 func (m *ProfileRequestBuilder) AwardsById(id string)(*i277bbd8b071a4d604a140752a228f28f247bd56c8d6ae617cd3a07f842cb6bf9.PersonAwardRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["personAward_id"] = id
@@ -119,10 +111,8 @@ func (m *ProfileRequestBuilder) Certifications()(*i0ca2cf05aa0ab8d575b29715dcde4
 }
 func (m *ProfileRequestBuilder) CertificationsById(id string)(*i5052f9ec51b905e901e62b11f8a759a974f0cc7ab06fa1608d9d0c8d5fe5405b.PersonCertificationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["personCertification_id"] = id
@@ -134,10 +124,8 @@ func NewProfileRequestBuilderInternal(pathParameters map[string]string, requestA
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/profile{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -233,10 +221,8 @@ func (m *ProfileRequestBuilder) EducationalActivities()(*idcb1d0f8bedd7256bb0cc1
 }
 func (m *ProfileRequestBuilder) EducationalActivitiesById(id string)(*i37b1fa517414e7c68dfd4a974844cbe1bf639c58cc2428815d70a432874a7634.EducationalActivityRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["educationalActivity_id"] = id
@@ -248,10 +234,8 @@ func (m *ProfileRequestBuilder) Emails()(*i2d051d9e5b7dd4aa7e3df2ef2eef981e643ad
 }
 func (m *ProfileRequestBuilder) EmailsById(id string)(*i31cef5d667451b5423d5636714b09b3604e36345dba29f9ef24b76262d978aa5.ItemEmailRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["itemEmail_id"] = id
@@ -274,10 +258,8 @@ func (m *ProfileRequestBuilder) Interests()(*i7898d9baa7e9e2d6a7d32a761e8091d644
 }
 func (m *ProfileRequestBuilder) InterestsById(id string)(*i6a6a22b5e119da36bfd8b745f8ed59696bcbb84cbfc7c4b034075d1c1251b1f0.PersonInterestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["personInterest_id"] = id
@@ -289,10 +271,8 @@ func (m *ProfileRequestBuilder) Languages()(*i1ee4d65d3257fb4603ee33eeff42b44140
 }
 func (m *ProfileRequestBuilder) LanguagesById(id string)(*i9ff4662c3294ee098e0632304f1ef015fe0a686ef176fe16350508a3f9841068.LanguageProficiencyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["languageProficiency_id"] = id
@@ -304,10 +284,8 @@ func (m *ProfileRequestBuilder) Names()(*i922a0397b3daba132d5755f51b216f39966edb
 }
 func (m *ProfileRequestBuilder) NamesById(id string)(*i89842cc8c04e65e1b1e88f5b767cc55ce09a0f30cc2e56c4f131d32c16de1159.PersonNameRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["personName_id"] = id
@@ -319,10 +297,8 @@ func (m *ProfileRequestBuilder) Notes()(*i5fac82f5724c79260d3690b79cac6213e87abd
 }
 func (m *ProfileRequestBuilder) NotesById(id string)(*ifa892d3191635eb436fe2e0ead51770cb25545dd430d2739450e3a0ab2fcff3a.PersonAnnotationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["personAnnotation_id"] = id
@@ -345,10 +321,8 @@ func (m *ProfileRequestBuilder) Patents()(*i2669dd5ed2aedac6dfd0c6508f784eed419f
 }
 func (m *ProfileRequestBuilder) PatentsById(id string)(*i6bbd51d2e2c2915bc291e644b1546ce4e0decac456826169fb0b87161ca8409e.ItemPatentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["itemPatent_id"] = id
@@ -360,10 +334,8 @@ func (m *ProfileRequestBuilder) Phones()(*idcfa0e287194c044fbfe4f5ea53c45e3e9260
 }
 func (m *ProfileRequestBuilder) PhonesById(id string)(*ia79fb7e80b53cbbeaf958a755dd5660915548586799859d56f03c9b38f615a9d.ItemPhoneRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["itemPhone_id"] = id
@@ -375,10 +347,8 @@ func (m *ProfileRequestBuilder) Positions()(*ief55708ca4039096496623eb43c04c4cab
 }
 func (m *ProfileRequestBuilder) PositionsById(id string)(*i59e9bd57c2f134047fa9d3ccde515ff620af19f86e8137229ea2935f1d483683.WorkPositionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workPosition_id"] = id
@@ -390,10 +360,8 @@ func (m *ProfileRequestBuilder) Projects()(*i71cc69ae1f1790552d0d1f7b97f8fea4bcc
 }
 func (m *ProfileRequestBuilder) ProjectsById(id string)(*ib1d4f89ea65a822d70151ba9c171cd4c59a63443f8b798ab2f57a88825b43c6b.ProjectParticipationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["projectParticipation_id"] = id
@@ -405,10 +373,8 @@ func (m *ProfileRequestBuilder) Publications()(*i17eb4344c5a0ad3def19ab63c562d6a
 }
 func (m *ProfileRequestBuilder) PublicationsById(id string)(*i69ec9c16bbd15d4073a76419fab5dc22c3bddfcd0d392900a5ce53a55c061e2f.ItemPublicationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["itemPublication_id"] = id
@@ -420,10 +386,8 @@ func (m *ProfileRequestBuilder) Skills()(*i66da464502bfa2f3d7040895c2dabd17e6fb7
 }
 func (m *ProfileRequestBuilder) SkillsById(id string)(*ib252e438900aca60fecae4f455e0915c86da07bd52b6015206b1a2debaf6ed36.SkillProficiencyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["skillProficiency_id"] = id
@@ -435,10 +399,8 @@ func (m *ProfileRequestBuilder) WebAccounts()(*ic78d01b72199f27822bf3cf257e4574c
 }
 func (m *ProfileRequestBuilder) WebAccountsById(id string)(*i7058e34b903fc8140673df6d1d8a644b427bfd66ffd15315f8c31382480ed4f6.WebAccountRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["webAccount_id"] = id
@@ -450,10 +412,8 @@ func (m *ProfileRequestBuilder) Websites()(*i51f3dc08dba3b9e52299dbf08214cce0f1e
 }
 func (m *ProfileRequestBuilder) WebsitesById(id string)(*i5aa75bab3c02d7858a6bebecc29f8be43656cd44abcb0c3034d29e7461821067.PersonWebsiteRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["personWebsite_id"] = id

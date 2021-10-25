@@ -16,17 +16,15 @@ type ItemRequestBuilder struct {
 type ItemRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemRequestBuilder) {
     m := &ItemRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/salesQuoteLines/{salesQuoteLine_id}/item{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -147,10 +145,8 @@ func (m *ItemRequestBuilder) Picture()(*i2cea23b55a9c1d50ed6eedbe4ced2b5bb1c976f
 }
 func (m *ItemRequestBuilder) PictureById(id string)(*i2cea23b55a9c1d50ed6eedbe4ced2b5bb1c976f5439db079afe40f7acd5afbb1.PictureRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["picture_id"] = id

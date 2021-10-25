@@ -16,7 +16,7 @@ type TagRequestBuilder struct {
 type TagRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *TagRequestBuilder) ChildTags()(*ifd0bc700953e86731dc6b8f4d24856110197f3a2f3a5c274adce92d84c52a38b.ChildTagsRequestBuilder) {
     return ifd0bc700953e86731dc6b8f4d24856110197f3a2f3a5c274adce92d84c52a38b.NewChildTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewTagRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/tags/{tag_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

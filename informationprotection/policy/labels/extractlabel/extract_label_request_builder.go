@@ -76,10 +76,8 @@ func NewExtractLabelRequestBuilderInternal(pathParameters map[string]string, req
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/informationProtection/policy/labels/microsoft.graph.extractLabel";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

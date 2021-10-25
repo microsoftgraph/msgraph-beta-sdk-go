@@ -15,7 +15,7 @@ type RequestorRequestBuilder struct {
 type RequestorRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *RequestorRequestBuilder) ConnectedOrganization()(*i9416ef03b97679c8e1c0a052d0f24a00d9abb0e71c7fd8cfebb987629d4c54ce.ConnectedOrganizationRequestBuilder) {
     return i9416ef03b97679c8e1c0a052d0f24a00d9abb0e71c7fd8cfebb987629d4c54ce.NewConnectedOrganizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewRequestorRequestBuilderInternal(pathParameters map[string]string, reques
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageResourceRequests/{accessPackageResourceRequest_id}/requestor{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

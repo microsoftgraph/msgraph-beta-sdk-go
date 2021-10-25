@@ -14,10 +14,8 @@ func NewAlternativeRecordingRequestBuilderInternal(pathParameters map[string]str
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/onlineMeetings/{onlineMeeting_id}/alternativeRecording";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

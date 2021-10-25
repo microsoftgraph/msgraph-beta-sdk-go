@@ -76,10 +76,8 @@ func NewRevokeGrantsRequestBuilderInternal(pathParameters map[string]string, req
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/permissions/{permission_id}/microsoft.graph.revokeGrants";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

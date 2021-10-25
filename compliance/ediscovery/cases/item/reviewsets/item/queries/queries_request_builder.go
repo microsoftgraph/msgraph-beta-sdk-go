@@ -18,7 +18,7 @@ type QueriesRequestBuilderGetQueryParameters struct {
     Filter *string;
     Orderby []string;
     Search *string;
-    Select_escpaped []string;
+    Select_escaped []string;
     Skip *int32;
     Top *int32;
 }
@@ -27,10 +27,8 @@ func NewQueriesRequestBuilderInternal(pathParameters map[string]string, requestA
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/reviewSets/{reviewSet_id}/queries{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

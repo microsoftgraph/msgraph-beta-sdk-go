@@ -18,7 +18,7 @@ type PlannerTaskRequestBuilder struct {
 type PlannerTaskRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PlannerTaskRequestBuilder) AssignedToTaskBoardFormat()(*i03d760f0745afb2e527ee13748d84b2f0de3894a0226bfa588aae6763d558921.AssignedToTaskBoardFormatRequestBuilder) {
     return i03d760f0745afb2e527ee13748d84b2f0de3894a0226bfa588aae6763d558921.NewAssignedToTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -31,10 +31,8 @@ func NewPlannerTaskRequestBuilderInternal(pathParameters map[string]string, requ
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/groups/{group_id}/planner/plans/{plannerPlan_id}/tasks/{plannerTask_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

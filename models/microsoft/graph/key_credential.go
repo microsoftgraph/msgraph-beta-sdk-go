@@ -13,7 +13,7 @@ type KeyCredential struct {
     key []byte;
     keyId *string;
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    type_escpaped *string;
+    type_escaped *string;
     usage *string;
 }
 func NewKeyCredential()(*KeyCredential) {
@@ -71,11 +71,11 @@ func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.startDateTime
     }
 }
-func (m *KeyCredential) GetType_escpaped()(*string) {
+func (m *KeyCredential) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *KeyCredential) GetUsage()(*string) {
@@ -135,12 +135,12 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(interface{}, i04
         m.SetStartDateTime(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     res["usage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +194,7 @@ func (m *KeyCredential) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        err := writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -234,8 +234,8 @@ func (m *KeyCredential) SetKeyId(value *string)() {
 func (m *KeyCredential) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-func (m *KeyCredential) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *KeyCredential) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }
 func (m *KeyCredential) SetUsage(value *string)() {
     m.usage = value

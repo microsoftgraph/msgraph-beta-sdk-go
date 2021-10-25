@@ -14,10 +14,8 @@ func NewTentativelyAcceptRequestBuilderInternal(pathParameters map[string]string
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/mailFolders/{mailFolder_id}/messages/{message_id}/microsoft.graph.eventMessageRequest/microsoft.graph.tentativelyAccept";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

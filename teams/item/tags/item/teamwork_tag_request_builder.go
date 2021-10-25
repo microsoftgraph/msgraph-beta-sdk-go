@@ -16,17 +16,15 @@ type TeamworkTagRequestBuilder struct {
 type TeamworkTagRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewTeamworkTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkTagRequestBuilder) {
     m := &TeamworkTagRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/teams/{team_id}/tags/{teamworkTag_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +131,8 @@ func (m *TeamworkTagRequestBuilder) Members()(*i7ef667304f23dd1e4eca59b31ef36d3f
 }
 func (m *TeamworkTagRequestBuilder) MembersById(id string)(*i25c803795748ee2ba5ab98a3433bc351e872e8d852e28b0bcec4e5382139b2b5.TeamworkTagMemberRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["teamworkTagMember_id"] = id

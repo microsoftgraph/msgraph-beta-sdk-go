@@ -16,17 +16,15 @@ type MobileAppTroubleshootingEventRequestBuilder struct {
 type MobileAppTroubleshootingEventRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *MobileAppTroubleshootingEventRequestBuilder) AppLogCollectionRequests()(*i035611f159c2adb2e81761a75b199ca3a45851b4f4d2f40513b65d77188bc11f.AppLogCollectionRequestsRequestBuilder) {
     return i035611f159c2adb2e81761a75b199ca3a45851b4f4d2f40513b65d77188bc11f.NewAppLogCollectionRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *MobileAppTroubleshootingEventRequestBuilder) AppLogCollectionRequestsById(id string)(*iabeafd074385c8a1a46dd1c7e7e3752dfe2f7a0e547353df410243bf28cb8721.AppLogCollectionRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["appLogCollectionRequest_id"] = id
@@ -38,10 +36,8 @@ func NewMobileAppTroubleshootingEventRequestBuilderInternal(pathParameters map[s
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

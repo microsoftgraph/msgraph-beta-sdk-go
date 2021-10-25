@@ -21,7 +21,7 @@ type EventRequestBuilder struct {
 type EventRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *EventRequestBuilder) Accept()(*id7bddaa58f8d7c0f2fbefa3379c51cd50652f9e40203a33e998b1ba9be46e375.AcceptRequestBuilder) {
     return id7bddaa58f8d7c0f2fbefa3379c51cd50652f9e40203a33e998b1ba9be46e375.NewAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -34,10 +34,8 @@ func NewEventRequestBuilderInternal(pathParameters map[string]string, requestAda
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/calendars/{calendar_id}/calendarView/{event_id}/instances/{event_id1}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

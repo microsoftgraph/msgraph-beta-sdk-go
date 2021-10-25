@@ -20,7 +20,7 @@ type GroupPolicyConfigurationRequestBuilder struct {
 type GroupPolicyConfigurationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *GroupPolicyConfigurationRequestBuilder) Assign()(*if10892f25c880cff6f351597e09e418fb5b4358d3bea03afb26c9d1e6f52d6e1.AssignRequestBuilder) {
     return if10892f25c880cff6f351597e09e418fb5b4358d3bea03afb26c9d1e6f52d6e1.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -30,10 +30,8 @@ func (m *GroupPolicyConfigurationRequestBuilder) Assignments()(*ib82d0e0e2e13d1b
 }
 func (m *GroupPolicyConfigurationRequestBuilder) AssignmentsById(id string)(*i0cb6dc720cdfefbc227fbe58a3f3d6fae0bd97db3acd773de3b5dc3e12dd5792.GroupPolicyConfigurationAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["groupPolicyConfigurationAssignment_id"] = id
@@ -45,10 +43,8 @@ func NewGroupPolicyConfigurationRequestBuilderInternal(pathParameters map[string
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +129,8 @@ func (m *GroupPolicyConfigurationRequestBuilder) DefinitionValues()(*i2573cd7f18
 }
 func (m *GroupPolicyConfigurationRequestBuilder) DefinitionValuesById(id string)(*id5d6fab6089b28b24032ceb492d4726a5f5b3dd8719e632a9f878e2fd9a9c9e8.GroupPolicyDefinitionValueRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["groupPolicyDefinitionValue_id"] = id

@@ -8,7 +8,7 @@ import (
 type CasesResponse struct {
     additionalData map[string]interface{};
     nextLink *string;
-    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escpaped;
+    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escaped;
 }
 func NewCasesResponse()(*CasesResponse) {
     m := &CasesResponse{
@@ -30,7 +30,7 @@ func (m *CasesResponse) GetNextLink()(*string) {
         return m.nextLink
     }
 }
-func (m *CasesResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escpaped) {
+func (m *CasesResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escaped) {
     if m == nil {
         return nil
     } else {
@@ -48,13 +48,13 @@ func (m *CasesResponse) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCase_escpaped() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCase_escaped() })
         if err != nil {
             return err
         }
-        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escpaped, len(val))
+        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escaped, len(val))
         for i, v := range val {
-            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escpaped))
+            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escaped))
         }
         m.SetValue(res)
         return nil
@@ -96,6 +96,6 @@ func (m *CasesResponse) SetAdditionalData(value map[string]interface{})() {
 func (m *CasesResponse) SetNextLink(value *string)() {
     m.nextLink = value
 }
-func (m *CasesResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escpaped)() {
+func (m *CasesResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escaped)() {
     m.value = value
 }

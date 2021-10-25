@@ -76,10 +76,8 @@ func NewCreateUploadSessionRequestBuilderInternal(pathParameters map[string]stri
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/groups/{group_id}/calendar/events/{event_id}/attachments/microsoft.graph.createUploadSession";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

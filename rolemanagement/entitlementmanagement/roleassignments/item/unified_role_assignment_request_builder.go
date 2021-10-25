@@ -18,7 +18,7 @@ type UnifiedRoleAssignmentRequestBuilder struct {
 type UnifiedRoleAssignmentRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *UnifiedRoleAssignmentRequestBuilder) AppScope()(*i8ee3a5618c7f60f979ef845c115f14c43eee57ec17d6197cc7cf7eda05e63873.AppScopeRequestBuilder) {
     return i8ee3a5618c7f60f979ef845c115f14c43eee57ec17d6197cc7cf7eda05e63873.NewAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -28,10 +28,8 @@ func NewUnifiedRoleAssignmentRequestBuilderInternal(pathParameters map[string]st
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

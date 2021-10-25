@@ -20,7 +20,7 @@ type UserAttributeAssignmentsRequestBuilderGetQueryParameters struct {
     Filter *string;
     Orderby []string;
     Search *string;
-    Select_escpaped []string;
+    Select_escaped []string;
     Skip *int32;
     Top *int32;
 }
@@ -29,10 +29,8 @@ func NewUserAttributeAssignmentsRequestBuilderInternal(pathParameters map[string
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

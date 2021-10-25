@@ -28,7 +28,7 @@ type WorkbookChartRequestBuilder struct {
 type WorkbookChartRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *WorkbookChartRequestBuilder) Axes()(*i6c767d0f0aeafa0422ac258cb03f2f748ab5ff0f24e33eb53db0105c62751f12.AxesRequestBuilder) {
     return i6c767d0f0aeafa0422ac258cb03f2f748ab5ff0f24e33eb53db0105c62751f12.NewAxesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -38,10 +38,8 @@ func NewWorkbookChartRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/{workbookChart_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -180,10 +178,8 @@ func (m *WorkbookChartRequestBuilder) Series()(*i1a6fc94f2f407ef3ebbe51616e637c9
 }
 func (m *WorkbookChartRequestBuilder) SeriesById(id string)(*i7d3d41b3c182984a4875637200cb5f4c401fec09228cccd72c9da2b28993aea9.WorkbookChartSeriesRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookChartSeries_id"] = id

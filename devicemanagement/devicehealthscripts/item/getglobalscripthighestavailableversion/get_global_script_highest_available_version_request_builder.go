@@ -14,10 +14,8 @@ func NewGetGlobalScriptHighestAvailableVersionRequestBuilderInternal(pathParamet
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/{deviceHealthScript_id}/microsoft.graph.getGlobalScriptHighestAvailableVersion";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

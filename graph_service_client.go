@@ -188,10 +188,8 @@ func (m *GraphServiceClient) AccessReviewDecisions()(*i424c8587488111febed6b9b4d
 }
 func (m *GraphServiceClient) AccessReviewDecisionsById(id string)(*i9568b23d9e69e9a4defd55b61d890372f14eadc42ca82c111ec03da32b7ae304.AccessReviewDecisionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessReviewDecision_id"] = id
@@ -203,10 +201,8 @@ func (m *GraphServiceClient) AccessReviews()(*i1dfcb6e17563ae78b6dbaf02d32cee890
 }
 func (m *GraphServiceClient) AccessReviewsById(id string)(*i1013b3624b41d6ff1f6ebeba5ecd89cd7627a75e8f2716bcd854eca9c4f128bf.AccessReviewRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessReview_id"] = id
@@ -218,10 +214,8 @@ func (m *GraphServiceClient) Activitystatistics()(*i8d3c03812535daaab5e9e28f4990
 }
 func (m *GraphServiceClient) ActivitystatisticsById(id string)(*i8d3c03812535daaab5e9e28f499097b08f09a8a7ab62e664ebf24dd8af17e77c.ActivitystatisticsRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["activityStatistics_id"] = id
@@ -236,10 +230,8 @@ func (m *GraphServiceClient) AdministrativeUnits()(*i895a6f3a85eea8558280363fb92
 }
 func (m *GraphServiceClient) AdministrativeUnitsById(id string)(*i1838d03f06f3481fda4d2c9d067a6dae8c67a7a45256e9fc560c1aad4b954b44.AdministrativeUnitRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["administrativeUnit_id"] = id
@@ -251,10 +243,8 @@ func (m *GraphServiceClient) AgreementAcceptances()(*i15e329825c659329448e12b302
 }
 func (m *GraphServiceClient) AgreementAcceptancesById(id string)(*i2bb1d5c6cd7c743a7653900816a2fe176fb6e05046db53e58a4851c68cc0baa9.AgreementAcceptanceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["agreementAcceptance_id"] = id
@@ -266,10 +256,8 @@ func (m *GraphServiceClient) Agreements()(*i493c694f665c6b8116f1d28cef9c35839e2b
 }
 func (m *GraphServiceClient) AgreementsById(id string)(*i4a1aa16a38122b30b82f053fe001f17ca01cdd4d01f908800c1e275735405be9.AgreementRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["agreement_id"] = id
@@ -281,10 +269,8 @@ func (m *GraphServiceClient) AllowedDataLocations()(*i8283dbd0b9136717b100e1ef6f
 }
 func (m *GraphServiceClient) AllowedDataLocationsById(id string)(*ib59058cb28b3ce2c94afbcff270a3ef835dbaf3a5098531014b61463524855b8.AllowedDataLocationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["allowedDataLocation_id"] = id
@@ -302,10 +288,8 @@ func (m *GraphServiceClient) Applications()(*ie1b2fd35e4b1f7cbc7bd808e462c966c4e
 }
 func (m *GraphServiceClient) ApplicationsById(id string)(*i8aa59152dd26b67bc666e64bae862e596a1b291f95d9cd6ec0569c024334c2ea.ApplicationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["application_id"] = id
@@ -317,10 +301,8 @@ func (m *GraphServiceClient) ApplicationTemplates()(*i9fb9a4d9d99571d2cc1de51809
 }
 func (m *GraphServiceClient) ApplicationTemplatesById(id string)(*ifb9dfb0b8ef1c8b2922bb3079994ba58d4aea3ca66033b8bb4dd80598f8f22ee.ApplicationTemplateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["applicationTemplate_id"] = id
@@ -332,10 +314,8 @@ func (m *GraphServiceClient) AppRoleAssignments()(*i35277464b5f866fcf2cb5324cd28
 }
 func (m *GraphServiceClient) AppRoleAssignmentsById(id string)(*i5ba1440a4f16b81498d14796ed766b1d72d556daecb751300394b56c30f71708.AppRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["appRoleAssignment_id"] = id
@@ -347,10 +327,8 @@ func (m *GraphServiceClient) ApprovalWorkflowProviders()(*if4a9faac580b9d5510ead
 }
 func (m *GraphServiceClient) ApprovalWorkflowProvidersById(id string)(*ie93af5fe517f51cf4801d2bf147043b2ea15ac3c26d73444ee01180255ba4c17.ApprovalWorkflowProviderRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["approvalWorkflowProvider_id"] = id
@@ -365,10 +343,8 @@ func (m *GraphServiceClient) AuthenticationMethodConfigurations()(*i8e667c6208be
 }
 func (m *GraphServiceClient) AuthenticationMethodConfigurationsById(id string)(*i9f2a6fa6c0a6eea0dc75c47461a955c3bf5d0e4f31c4695f5fda45cd2ac85e37.AuthenticationMethodConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["authenticationMethodConfiguration_id"] = id
@@ -383,10 +359,8 @@ func (m *GraphServiceClient) BookingBusinesses()(*ibf9394d7c54feda53ca523241dde6
 }
 func (m *GraphServiceClient) BookingBusinessesById(id string)(*ice28ccdda7ef9b32e133796796ceb464781909e74f15c614ef119ccb7cda6317.BookingBusinessRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["bookingBusiness_id"] = id
@@ -398,10 +372,8 @@ func (m *GraphServiceClient) BookingCurrencies()(*ie573fcc25112f624100d67f5c4380
 }
 func (m *GraphServiceClient) BookingCurrenciesById(id string)(*id4f763cc022952ed4430efa30c2908af332dea6f57f936d1cf7ef11fa10b8be8.BookingCurrencyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["bookingCurrency_id"] = id
@@ -416,10 +388,8 @@ func (m *GraphServiceClient) BusinessFlowTemplates()(*i97c9750160852aa25d52a4c6f
 }
 func (m *GraphServiceClient) BusinessFlowTemplatesById(id string)(*iced651caca0254342ce35ea2308d19515b0c471b819960bd801a22997ef6f386.BusinessFlowTemplateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["businessFlowTemplate_id"] = id
@@ -431,10 +401,8 @@ func (m *GraphServiceClient) CertificateBasedAuthConfiguration()(*id53bdaa191b82
 }
 func (m *GraphServiceClient) CertificateBasedAuthConfigurationById(id string)(*id53bdaa191b823f3e2f4009f4cc095b46d1c7a433bde3b6d09ef0bd8df3514c2.CertificateBasedAuthConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["certificateBasedAuthConfiguration_id"] = id
@@ -446,10 +414,8 @@ func (m *GraphServiceClient) Chats()(*i2bd7b88e5d2b5a20231449a09cd2703774075c53c
 }
 func (m *GraphServiceClient) ChatsById(id string)(*ifc0fc132a789c973aa4786767e2f987d59e214f4abef3a4e82a606459d4b00c2.ChatRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["chat_id"] = id
@@ -461,10 +427,8 @@ func (m *GraphServiceClient) Commands()(*i81513db44a7796569414887f1110e1d158078c
 }
 func (m *GraphServiceClient) CommandsById(id string)(*ie39c059add8b730dc85b7d2449e4b26b98f9a83d3807fabe7cb9009271179970.CommandRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["command_id"] = id
@@ -482,10 +446,8 @@ func (m *GraphServiceClient) Connections()(*i29b3182886b8fc3d309db2628f3911e671f
 }
 func (m *GraphServiceClient) ConnectionsById(id string)(*ie9b2b2a73483057a6575063ce71086fbc54437022d4c53761e7a4a058d7dd091.ExternalConnectionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["externalConnection_id"] = id
@@ -507,10 +469,8 @@ func (m *GraphServiceClient) Contacts()(*i716e3204a4c47d24737c05f3b4c2ef2462fa5a
 }
 func (m *GraphServiceClient) ContactsById(id string)(*i6e94fa7602e5cf30291b967fc83a01373300f1d5183cc458d161d85fa3dc2baf.OrgContactRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["orgContact_id"] = id
@@ -522,10 +482,8 @@ func (m *GraphServiceClient) Contracts()(*i5e88b3e8025e26d21777096f2c7525a182545
 }
 func (m *GraphServiceClient) ContractsById(id string)(*i09e36d06bea20a5d152cc52ffa7ef3c082c8cdfbf6d2116b226488cbb8f849ed.ContractRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["contract_id"] = id
@@ -559,10 +517,8 @@ func (m *GraphServiceClient) DataPolicyOperations()(*i0f747ff1f24810ff51160697ed
 }
 func (m *GraphServiceClient) DataPolicyOperationsById(id string)(*i5cb8828c84548ec02b63ac985f24d0e6038f8ba987f6d69cc0a62c4e8c7d7df4.DataPolicyOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["dataPolicyOperation_id"] = id
@@ -580,10 +536,8 @@ func (m *GraphServiceClient) Devices()(*i0b4892b2f92a31e44541567b8065e8e7760cb33
 }
 func (m *GraphServiceClient) DevicesById(id string)(*i3629807faa94b36aa56a99f728c28616ef4be3a1816bf7413ce360f3f6ef1c9d.DeviceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["device_id"] = id
@@ -598,10 +552,8 @@ func (m *GraphServiceClient) DirectoryObjects()(*iaec68a3d2c3ba0a78ebb66cd93fd1c
 }
 func (m *GraphServiceClient) DirectoryObjectsById(id string)(*i901e1ca524c6a851c60abc23bfdb47050e754ebcf438922b25817ff66d56276a.DirectoryObjectRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["directoryObject_id"] = id
@@ -613,10 +565,8 @@ func (m *GraphServiceClient) DirectoryRoles()(*i20621ebd49d2bb1ed6c592ae35dfa701
 }
 func (m *GraphServiceClient) DirectoryRolesById(id string)(*i993beddae5d86c1977387e8b393295fbee6f591297fb6a91fc3501c6cb5ae0d8.DirectoryRoleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["directoryRole_id"] = id
@@ -628,10 +578,8 @@ func (m *GraphServiceClient) DirectoryRoleTemplates()(*i5b4eb770497618728398e41e
 }
 func (m *GraphServiceClient) DirectoryRoleTemplatesById(id string)(*i98e280807a93b84e9092eeb27b7840b536491d6fa3c9de876973f203933ecf7f.DirectoryRoleTemplateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["directoryRoleTemplate_id"] = id
@@ -643,10 +591,8 @@ func (m *GraphServiceClient) DirectorySettingTemplates()(*iabd30d9ba6ae302fd2d31
 }
 func (m *GraphServiceClient) DirectorySettingTemplatesById(id string)(*i942fb2a58a06777c286167881e19f5c2b00590a6cc7831e7a502f112db658679.DirectorySettingTemplateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["directorySettingTemplate_id"] = id
@@ -658,10 +604,8 @@ func (m *GraphServiceClient) DomainDnsRecords()(*i5db103717157eeba829a6a8580002d
 }
 func (m *GraphServiceClient) DomainDnsRecordsById(id string)(*if2c2cfdc1fc8e4c78fc654fd9ff30fce9a231a7ccf8c16c510d1dbb98e3aa7ab.DomainDnsRecordRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["domainDnsRecord_id"] = id
@@ -673,10 +617,8 @@ func (m *GraphServiceClient) Domains()(*i9e22e53c888822daa9264a72be4d11f335e3170
 }
 func (m *GraphServiceClient) DomainsById(id string)(*ia82ac058caa6740adb23fd487affca202963b9786c4890c80eaec27b6d7ced24.DomainRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["domain_id"] = id
@@ -691,10 +633,8 @@ func (m *GraphServiceClient) Drives()(*i2b9cd6123f9a7ca2d7c253973e81bb3965ee0b78
 }
 func (m *GraphServiceClient) DrivesById(id string)(*ib8b674690e8be27a974ea55202f0d976b3d187306aca08f5642097d6cfed398b.DriveRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["drive_id"] = id
@@ -712,10 +652,8 @@ func (m *GraphServiceClient) FilterOperators()(*i0b9d70018d3c267f9f34a818ce43cc8
 }
 func (m *GraphServiceClient) FilterOperatorsById(id string)(*i330b70aeb45059ed2410e099c3692c88ec3d2474fbb8363fffbecba6f900c494.FilterOperatorSchemaRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["filterOperatorSchema_id"] = id
@@ -730,10 +668,8 @@ func (m *GraphServiceClient) Functions()(*i054b68521cee54ec767d07cf7a8a6d50a0d24
 }
 func (m *GraphServiceClient) FunctionsById(id string)(*ib3f85f7711d9ea4057703e0171ba196ac1d884a1e2389602111d38d84fb1380f.AttributeMappingFunctionSchemaRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["attributeMappingFunctionSchema_id"] = id
@@ -756,10 +692,8 @@ func (m *GraphServiceClient) GovernanceResources()(*i3b7da1b693d5428b20b0bf3340a
 }
 func (m *GraphServiceClient) GovernanceResourcesById(id string)(*iaeceabcb9ce892827c1e040d7ed5dec4e2fb051c4a1cb3b857ac26d621e94638.GovernanceResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceResource_id"] = id
@@ -771,10 +705,8 @@ func (m *GraphServiceClient) GovernanceRoleAssignmentRequests()(*i3de07fd1833246
 }
 func (m *GraphServiceClient) GovernanceRoleAssignmentRequestsById(id string)(*if03454ccae6aab82c8d7c01d50047eceb6218bf085d9949f9f4ff37652bab5a0.GovernanceRoleAssignmentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceRoleAssignmentRequest_id"] = id
@@ -786,10 +718,8 @@ func (m *GraphServiceClient) GovernanceRoleAssignments()(*i14752cfec59ab915e7c63
 }
 func (m *GraphServiceClient) GovernanceRoleAssignmentsById(id string)(*i5e0d644f8c8abdc66bf30911d1b935134f92408badf2ef700cf692be1de56856.GovernanceRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceRoleAssignment_id"] = id
@@ -801,10 +731,8 @@ func (m *GraphServiceClient) GovernanceRoleDefinitions()(*i8a18cb7418541221b2c3f
 }
 func (m *GraphServiceClient) GovernanceRoleDefinitionsById(id string)(*i005472295f05513a4d4bcabd67693926f332f4d4740482ce99613ae21d4ea87a.GovernanceRoleDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceRoleDefinition_id"] = id
@@ -816,10 +744,8 @@ func (m *GraphServiceClient) GovernanceRoleSettings()(*ib71e32ed3a7f0f8a512aa55c
 }
 func (m *GraphServiceClient) GovernanceRoleSettingsById(id string)(*i2a5979c2bdbc99c804ec546b7cec503201936edc913e5d36d239a54c3ad002ad.GovernanceRoleSettingRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceRoleSetting_id"] = id
@@ -831,10 +757,8 @@ func (m *GraphServiceClient) GovernanceSubjects()(*ifcac309012d761a79a74e6d79fad
 }
 func (m *GraphServiceClient) GovernanceSubjectsById(id string)(*i6f49755cbc32687ce5fd8e0bc2cdb1808c45f60ba20889d053bac06929b7d9ea.GovernanceSubjectRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceSubject_id"] = id
@@ -846,10 +770,8 @@ func (m *GraphServiceClient) GroupLifecyclePolicies()(*i71438b4a3f9d4a17f8c873a4
 }
 func (m *GraphServiceClient) GroupLifecyclePoliciesById(id string)(*if2d4db22e4ec9d990102702a0f1b228fbfa6a90e349c6dfb2f3c798d2c5ec77f.GroupLifecyclePolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["groupLifecyclePolicy_id"] = id
@@ -861,10 +783,8 @@ func (m *GraphServiceClient) Groups()(*i79f2b866e8bec3ee9349dc885ecb3691e94b2045
 }
 func (m *GraphServiceClient) GroupsById(id string)(*ic6c550f1e18a80bf95a0e1377fab585951c941746c2a2739d2b1d77b17b80a94.GroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["group_id"] = id
@@ -885,10 +805,8 @@ func (m *GraphServiceClient) IdentityProviders()(*i531b1efd1768fd272d51921ff5812
 }
 func (m *GraphServiceClient) IdentityProvidersById(id string)(*ib66730b67f84ecbb45dd98e1ce34bd456667b7437238322804d692193cbb7cd6.IdentityProviderRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["identityProvider_id"] = id
@@ -903,10 +821,8 @@ func (m *GraphServiceClient) Invitations()(*i4cb6edb865a0e38bb1799dcb0c7881b92fe
 }
 func (m *GraphServiceClient) InvitationsById(id string)(*i5cfcfa8bc4a6d5fed3fa8ff67c53050a2b9493ff4ba9481077f03d4df2e84db6.InvitationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["invitation_id"] = id
@@ -921,10 +837,8 @@ func (m *GraphServiceClient) MobilityManagementPolicies()(*i05bd1def68419ff4c77b
 }
 func (m *GraphServiceClient) MobilityManagementPoliciesById(id string)(*i0740547a5aa3dd54a8b262a3d1cd5e0bb409b1a645795e041ffa10dcb9019e0a.MobilityManagementPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mobilityManagementPolicy_id"] = id
@@ -936,10 +850,8 @@ func (m *GraphServiceClient) Oauth2PermissionGrants()(*ie2e0818e93fcfbb33fde071a
 }
 func (m *GraphServiceClient) Oauth2PermissionGrantsById(id string)(*if237177d98e26841b842fcf602048c102ab53f50428ff601c17ea0795d7fb828.OAuth2PermissionGrantRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["oAuth2PermissionGrant_id"] = id
@@ -954,10 +866,8 @@ func (m *GraphServiceClient) OnPremisesPublishingProfiles()(*i0d38f6e6ea6126fff7
 }
 func (m *GraphServiceClient) OnPremisesPublishingProfilesById(id string)(*ie1c23a9b73355bb18364b81d44931ba2a9c3f409f2e091f8c44725c8075f8cf9.OnPremisesPublishingProfileRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onPremisesPublishingProfile_id"] = id
@@ -969,10 +879,8 @@ func (m *GraphServiceClient) Organization()(*ie58948149bb028757a64f16376df00cc5a
 }
 func (m *GraphServiceClient) OrganizationById(id string)(*ie58948149bb028757a64f16376df00cc5a99ad93e0d57affa0ac24ff6d096aaf.OrganizationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["organization_id"] = id
@@ -984,10 +892,8 @@ func (m *GraphServiceClient) PayloadResponse()(*i22f037221f506c5b5751f13095cc17c
 }
 func (m *GraphServiceClient) PayloadResponseById(id string)(*i22f037221f506c5b5751f13095cc17caaf248e93588f883123c452cb4f1ec6a9.PayloadResponseRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["payloadResponse_id"] = id
@@ -999,10 +905,8 @@ func (m *GraphServiceClient) PermissionGrants()(*i48a68a7c83dc874f9d9fdf942afed7
 }
 func (m *GraphServiceClient) PermissionGrantsById(id string)(*i79b93b64b0d0d7fc163598b550442694212cae76f99c0fc0cc0b570453d3decb.ResourceSpecificPermissionGrantRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["resourceSpecificPermissionGrant_id"] = id
@@ -1014,10 +918,8 @@ func (m *GraphServiceClient) Places()(*ic21cf429efd6fc3199e67b5b4288a3193ff5e9cf
 }
 func (m *GraphServiceClient) PlacesById(id string)(*ia6735253ec4d9448b4b9541b92358386ce1936ac15c0298ba04aaff0a1e74e3d.PlaceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["place_id"] = id
@@ -1038,10 +940,8 @@ func (m *GraphServiceClient) PrivilegedAccess()(*i2f87335be6a07866636e1f602f5bed
 }
 func (m *GraphServiceClient) PrivilegedAccessById(id string)(*i2f87335be6a07866636e1f602f5beda6b47bc99969e216fac59efff432ff2345.PrivilegedAccessRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["privilegedAccess_id"] = id
@@ -1053,10 +953,8 @@ func (m *GraphServiceClient) PrivilegedApproval()(*i613e9d4b5596faf0dba59087b1a6
 }
 func (m *GraphServiceClient) PrivilegedApprovalById(id string)(*i613e9d4b5596faf0dba59087b1a65d06d17aab1ca9d69170b292a4e0d90063ab.PrivilegedApprovalRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["privilegedApproval_id"] = id
@@ -1068,10 +966,8 @@ func (m *GraphServiceClient) PrivilegedOperationEvents()(*i82672a497b8f66c510d59
 }
 func (m *GraphServiceClient) PrivilegedOperationEventsById(id string)(*i34d9be3c24f9832412eaf838a313f099ae8c0f497b918534db057b1bd9c8316f.PrivilegedOperationEventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["privilegedOperationEvent_id"] = id
@@ -1083,10 +979,8 @@ func (m *GraphServiceClient) PrivilegedRoleAssignmentRequests()(*if11203f2b5e631
 }
 func (m *GraphServiceClient) PrivilegedRoleAssignmentRequestsById(id string)(*i7732e0def4b0366de3c1a4a0c7517a0f56ccce5a90b647e1a0e72997c0060fb1.PrivilegedRoleAssignmentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["privilegedRoleAssignmentRequest_id"] = id
@@ -1098,10 +992,8 @@ func (m *GraphServiceClient) PrivilegedRoleAssignments()(*i85eafc30b6e6233aefbca
 }
 func (m *GraphServiceClient) PrivilegedRoleAssignmentsById(id string)(*i7a3a499cefaec6ced318a596ac37e721c173d3074f10b53b0db7be2eb1d91d1a.PrivilegedRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["privilegedRoleAssignment_id"] = id
@@ -1113,10 +1005,8 @@ func (m *GraphServiceClient) PrivilegedRoles()(*i32f7b810493504f82bd6c97020faab5
 }
 func (m *GraphServiceClient) PrivilegedRolesById(id string)(*i83a555d9eb9470ebf76ece54f97987bafd2a508dc0aa9e61e7d07311c57975c0.PrivilegedRoleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["privilegedRole_id"] = id
@@ -1128,10 +1018,8 @@ func (m *GraphServiceClient) PrivilegedSignupStatus()(*i6b96a96c52bbdff1731b8a54
 }
 func (m *GraphServiceClient) PrivilegedSignupStatusById(id string)(*i6b96a96c52bbdff1731b8a5490cd5f342e33866e0931912944d323bc79f663e4.PrivilegedSignupStatusRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["privilegedSignupStatus_id"] = id
@@ -1143,10 +1031,8 @@ func (m *GraphServiceClient) ProgramControls()(*i178f0aa4e5987fcbfe2e98cbb6dd777
 }
 func (m *GraphServiceClient) ProgramControlsById(id string)(*i9897ce060c8c140b6319d9eec7b10f1133ddeadce443b5c08d9e6e0b1a90a1fa.ProgramControlRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["programControl_id"] = id
@@ -1158,10 +1044,8 @@ func (m *GraphServiceClient) ProgramControlTypes()(*if5cd0cf36bc86d9253920d73c41
 }
 func (m *GraphServiceClient) ProgramControlTypesById(id string)(*if01cb9f5e03c6cceecfc9647206bb0dc6e0bb97d9f416977b2683028defae8c7.ProgramControlTypeRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["programControlType_id"] = id
@@ -1173,10 +1057,8 @@ func (m *GraphServiceClient) Programs()(*ib85b32f0384596c14f04b8d0f3dc8737da4b97
 }
 func (m *GraphServiceClient) ProgramsById(id string)(*i5b0c38b2eba003d29699607d25825d237b1b42b0380942484eba07941fd7ff1d.ProgramRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["program_id"] = id
@@ -1191,10 +1073,8 @@ func (m *GraphServiceClient) RiskDetections()(*i24b998459b0fbcdc6fbd83b90048a098
 }
 func (m *GraphServiceClient) RiskDetectionsById(id string)(*i4dba4c746f2c06c2fec91dc54833c1da81c07726a80b85b29e72221e93c811ff.RiskDetectionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["riskDetection_id"] = id
@@ -1206,10 +1086,8 @@ func (m *GraphServiceClient) RiskyUsers()(*iac77c9b5b86109e8ad626e30830db719efb3
 }
 func (m *GraphServiceClient) RiskyUsersById(id string)(*i4f10f292ecab93ead1a3540c8285847ac93e9fd17579d21e923687140834b553.RiskyUserRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["riskyUser_id"] = id
@@ -1224,10 +1102,8 @@ func (m *GraphServiceClient) SchemaExtensions()(*i1b84a2c37ba0bbd175c6da40c8679d
 }
 func (m *GraphServiceClient) SchemaExtensionsById(id string)(*i03c5278b23fd725e2f49b358180d02b8204a81547ad7b8391ef4d31869b4e77c.SchemaExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["schemaExtension_id"] = id
@@ -1239,10 +1115,8 @@ func (m *GraphServiceClient) ScopedRoleMemberships()(*i712907ad27a66d6ac32a26e01
 }
 func (m *GraphServiceClient) ScopedRoleMembershipsById(id string)(*i9febca1a7c0d482f5cfd0d294e0b42f41284df1fc0f26b63341fd7066192a1d0.ScopedRoleMembershipRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["scopedRoleMembership_id"] = id
@@ -1260,10 +1134,8 @@ func (m *GraphServiceClient) ServicePrincipals()(*ibd3e65bb14e91a8a05d902c54fade
 }
 func (m *GraphServiceClient) ServicePrincipalsById(id string)(*i1486770fbd64ddb3f673e750b91158c408009c45bd8e48463d5e06498271cd9c.ServicePrincipalRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["servicePrincipal_id"] = id
@@ -1275,10 +1147,8 @@ func (m *GraphServiceClient) Settings()(*i714cbeb65962cb4d3e58007792fa4832d175c0
 }
 func (m *GraphServiceClient) SettingsById(id string)(*ie532fdcd6a215be3d5886dcd2e4608af81583d060c7156a283880daf04ed9903.DirectorySettingRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["directorySetting_id"] = id
@@ -1290,10 +1160,8 @@ func (m *GraphServiceClient) Shares()(*i73583652789c7aab226ac5bae66bc7b5fd924607
 }
 func (m *GraphServiceClient) SharesById(id string)(*id8327d9e69ee76052759df500e96668a03b01b09bae354eaa67bbcf83427dc00.SharedDriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sharedDriveItem_id"] = id
@@ -1305,10 +1173,8 @@ func (m *GraphServiceClient) Sites()(*i2817c6849b286be20c56215e039110b08a4109a12
 }
 func (m *GraphServiceClient) SitesById(id string)(*ic557b65175a90fb05406286b014b07b096a266f27fc59e78636733800d66ff09.SiteRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["site_id"] = id
@@ -1320,10 +1186,8 @@ func (m *GraphServiceClient) SubscribedSkus()(*ie934faa615fb56652e5964395b3dc205
 }
 func (m *GraphServiceClient) SubscribedSkusById(id string)(*i3e0ee15b77f1a6df2686711e1700bf6812443daf08105eb0b15f4b72d6077b93.SubscribedSkuRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["subscribedSku_id"] = id
@@ -1335,10 +1199,8 @@ func (m *GraphServiceClient) Subscriptions()(*i60392bb6eb86abe7a3079e3b2b1e202f7
 }
 func (m *GraphServiceClient) SubscriptionsById(id string)(*ide40baaefabe61fc7133751aae85320ce5f6bc70e3dde81b419c4861d1e1bfe0.SubscriptionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["subscription_id"] = id
@@ -1350,10 +1212,8 @@ func (m *GraphServiceClient) Teams()(*iff395ba1da21566390b02b5bed781aecf3bb849fc
 }
 func (m *GraphServiceClient) TeamsById(id string)(*i86ffda5c6f886142a63c7cd1c0f489d73a5f8c36310f880ba8dd82807977d46e.TeamRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["team_id"] = id
@@ -1365,10 +1225,8 @@ func (m *GraphServiceClient) TeamsTemplates()(*i66f18ccab4e34309d26d1056f0e7dd8b
 }
 func (m *GraphServiceClient) TeamsTemplatesById(id string)(*i44e397fa023407b3a9722e619d02140543ef889c8c03de376d8341cec5a43794.TeamsTemplateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["teamsTemplate_id"] = id
@@ -1392,10 +1250,8 @@ func (m *GraphServiceClient) Users()(*icd01c84a90833c55ac2309fd7034cb1962c60f59e
 }
 func (m *GraphServiceClient) UsersById(id string)(*id9f276010196e2d79e634ec622333b5c53dc0fbc407a6c9aa27ca92d4f388ed3.UserRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["user_id"] = id
@@ -1407,10 +1263,8 @@ func (m *GraphServiceClient) Workbooks()(*i0c8acb61c4c4d82e7ac6f352bd7cdb24dcd0d
 }
 func (m *GraphServiceClient) WorkbooksById(id string)(*i36b4c1bee4db70277ed8b9217e494480565564fd187f7a35b920807b10c82740.DriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["driveItem_id"] = id

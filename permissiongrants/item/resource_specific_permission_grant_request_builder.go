@@ -19,7 +19,7 @@ type ResourceSpecificPermissionGrantRequestBuilder struct {
 type ResourceSpecificPermissionGrantRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ResourceSpecificPermissionGrantRequestBuilder) CheckMemberGroups()(*ie01778f41a26871b3f51e401f57da7e144998794d08141d92ee03a581180728e.CheckMemberGroupsRequestBuilder) {
     return ie01778f41a26871b3f51e401f57da7e144998794d08141d92ee03a581180728e.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -32,10 +32,8 @@ func NewResourceSpecificPermissionGrantRequestBuilderInternal(pathParameters map
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/permissionGrants/{resourceSpecificPermissionGrant_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

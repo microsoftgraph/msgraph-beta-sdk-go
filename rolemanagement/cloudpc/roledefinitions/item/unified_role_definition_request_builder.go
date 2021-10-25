@@ -16,17 +16,15 @@ type UnifiedRoleDefinitionRequestBuilder struct {
 type UnifiedRoleDefinitionRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewUnifiedRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleDefinitionRequestBuilder) {
     m := &UnifiedRoleDefinitionRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +131,8 @@ func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFrom()(*i8e6c46
 }
 func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFromById(id string)(*i910eeff5cdb0ea7e39c034cb7a200cb7c6a260f552de68963d047895d11d1fed.UnifiedRoleDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleDefinition_id1"] = id

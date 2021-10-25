@@ -44,7 +44,7 @@ type Company struct {
     taxAreas []TaxArea;
     taxGroups []TaxGroup;
     unitsOfMeasure []UnitOfMeasure;
-    vendors []Vendor;
+    vendors []Vendor_escaped;
 }
 func NewCompany()(*Company) {
     m := &Company{
@@ -318,7 +318,7 @@ func (m *Company) GetUnitsOfMeasure()([]UnitOfMeasure) {
         return m.unitsOfMeasure
     }
 }
-func (m *Company) GetVendors()([]Vendor) {
+func (m *Company) GetVendors()([]Vendor_escaped) {
     if m == nil {
         return nil
     } else {
@@ -768,13 +768,13 @@ func (m *Company) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["vendors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVendor() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVendor_escaped() })
         if err != nil {
             return err
         }
-        res := make([]Vendor, len(val))
+        res := make([]Vendor_escaped, len(val))
         for i, v := range val {
-            res[i] = *(v.(*Vendor))
+            res[i] = *(v.(*Vendor_escaped))
         }
         m.SetVendors(res)
         return nil
@@ -1314,6 +1314,6 @@ func (m *Company) SetTaxGroups(value []TaxGroup)() {
 func (m *Company) SetUnitsOfMeasure(value []UnitOfMeasure)() {
     m.unitsOfMeasure = value
 }
-func (m *Company) SetVendors(value []Vendor)() {
+func (m *Company) SetVendors(value []Vendor_escaped)() {
     m.vendors = value
 }

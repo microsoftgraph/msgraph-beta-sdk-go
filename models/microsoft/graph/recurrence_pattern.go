@@ -12,7 +12,7 @@ type RecurrencePattern struct {
     index *WeekIndex;
     interval *int32;
     month *int32;
-    type_escpaped *RecurrencePatternType;
+    type_escaped *RecurrencePatternType;
 }
 func NewRecurrencePattern()(*RecurrencePattern) {
     m := &RecurrencePattern{
@@ -69,11 +69,11 @@ func (m *RecurrencePattern) GetMonth()(*int32) {
         return m.month
     }
 }
-func (m *RecurrencePattern) GetType_escpaped()(*RecurrencePatternType) {
+func (m *RecurrencePattern) GetType_escaped()(*RecurrencePatternType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -132,13 +132,13 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         m.SetMonth(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecurrencePatternType)
         if err != nil {
             return err
         }
         cast := val.(RecurrencePatternType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -185,9 +185,9 @@ func (m *RecurrencePattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -221,6 +221,6 @@ func (m *RecurrencePattern) SetInterval(value *int32)() {
 func (m *RecurrencePattern) SetMonth(value *int32)() {
     m.month = value
 }
-func (m *RecurrencePattern) SetType_escpaped(value *RecurrencePatternType)() {
-    m.type_escpaped = value
+func (m *RecurrencePattern) SetType_escaped(value *RecurrencePatternType)() {
+    m.type_escaped = value
 }

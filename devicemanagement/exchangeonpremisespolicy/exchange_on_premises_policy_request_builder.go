@@ -15,7 +15,7 @@ type ExchangeOnPremisesPolicyRequestBuilder struct {
 type ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ExchangeOnPremisesPolicyRequestBuilder) ConditionalAccessSettings()(*i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c.ConditionalAccessSettingsRequestBuilder) {
     return i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c.NewConditionalAccessSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewExchangeOnPremisesPolicyRequestBuilderInternal(pathParameters map[string
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/exchangeOnPremisesPolicy{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

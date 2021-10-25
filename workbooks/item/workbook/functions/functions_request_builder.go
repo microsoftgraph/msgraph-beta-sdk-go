@@ -11,6 +11,7 @@ import (
     i01ade93e966b7ef3ad3978d2f1d90704ba31d11a2d416ea326f25b442162d957 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/min"
     i01d278483174ac301bcbeac39516b56e97a8a5f1352e96fe34181f0ff94b1ee0 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/sec"
     i02e07df104c71232444b95fc5b1e62f0293d740e0b69b73e13add9e338bb0d96 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/nominal"
+    i0453e21d45f8ed2aab3a312355a9cdffae8562a8747da1d10b0964833762a270 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/if_escaped"
     i0494ccdd128ce2f5c8821e6a849105650c4b4c0bee4f2530ceb6fbdeb4e8c7c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/stdevpa"
     i04b1ad703d7e9b5de1347bbe2e166dc427117fc2d5694354e996a14506873246 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/pmt"
     i04bc21ac86d9392376c6b121e63d25df0567e9a3fc8da2e91db63efdd803c37b "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/vara"
@@ -147,7 +148,6 @@ import (
     i65fb0cdaf5c4b3936c8b0cfcc9c69c364c6f66cbf16cfac1a196908e8e0af0e3 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/lognorm_inv"
     i67edd6c2573b42e032248aa937dbe9903d23f394d8ec053e7f97a11f2b38c3ea "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/percentile_inc"
     i68aeb1985b4e03322a4c461c36962d4d5d0c61538152110f09a942acaac1394a "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/replaceb"
-    i6904e189dc64e2505bc1116051145bddf60802b2deca285accbd2c0a87644bb0 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/if_escpaped"
     i69c2649aba19ccdd2dd0f5bf255ddf8d0aa623a6c022229dbd77634b2c88bed8 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/yield"
     i6a61af20e5713d0e4714cb59cf2e4d3c54a8491ed03cc4eef0303857d4c09194 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/cos"
     i6a81c49a0cbd281c42b4e3a543ce420c090faa981e28dac41ae63e33eddc10a5 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/imreal"
@@ -186,6 +186,7 @@ import (
     i80a969686b2a16a658360a90a8280dface60a263cccd4ac61782a7ab3aa075c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/imcos"
     i80cae408a9fb23c0b3d5973b3b36036f8f86da13604a2df9e4f5d82335af9b89 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/var_p"
     i81f182730936652d80d21614c48a4de559dd8e4a172aef9bd71b56f481f09e64 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/odd"
+    i822d92a8a540ae6b23416a1ba6edd6eff35f4abed7953e4928fbd2b4ee76d341 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/type_escaped"
     i8263a2a05c5a495103660fe69cb0c9bd613de25e80e8b7679cf8eaf7fcfdb389 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/erfc"
     i82ad818b67403f8f447c71dc2a945eaf3946b28652d715954fd417474a3bb758 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/log10"
     i82ed0aa8211f2c0cb3c379fcec65435bc44073411288d8ff080fdcb136272548 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/proper"
@@ -354,7 +355,6 @@ import (
     if394010a3655e451e9502ee93545f5fe9f2d41f16ca348052e9a061dfb3bae6c "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/var_s"
     if579faccaec7d615e7f4e3259a551dcb170851c1b18626ed6b952606d4f270c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/imcot"
     if5c0edc21dffeb380c263c85352bea05578a6349dd520aeb5d85a35c845c2645 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/expon_dist"
-    if66e5f4976b4415e90c05aa4990a3d5cad4010b63f82066cc7252040e3c3066b "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/type_escpaped"
     if73719a1dc2b6d6991df34ae8b7e7dfb30eb62bf72a584adf4ecd9394edee50d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/countifs"
     if7e94ba699066e6986bb11cb8c1fe185dfeac6238c220ba28a74982e8abf6364 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/imtan"
     if8cd7bff2592738d8202fe4b64adb52b0349bd683eb7b2883788632cf859eb8f "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/stdeva"
@@ -380,7 +380,7 @@ type FunctionsRequestBuilder struct {
 type FunctionsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *FunctionsRequestBuilder) Abs()(*i782c59c275368a34292a362686f23a3045f8e4b667c49f94302584781b7ab08b.AbsRequestBuilder) {
     return i782c59c275368a34292a362686f23a3045f8e4b667c49f94302584781b7ab08b.NewAbsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -564,10 +564,8 @@ func NewFunctionsRequestBuilderInternal(pathParameters map[string]string, reques
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/functions{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -963,8 +961,8 @@ func (m *FunctionsRequestBuilder) Hyperlink()(*ib6796fab19a8e38b93a3039b8faeebbb
 func (m *FunctionsRequestBuilder) HypGeom_Dist()(*id8942bdf6d4be967967837cf31114bfc0c30976ed4db096b9a586023b010d8c7.HypGeom_DistRequestBuilder) {
     return id8942bdf6d4be967967837cf31114bfc0c30976ed4db096b9a586023b010d8c7.NewHypGeom_DistRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *FunctionsRequestBuilder) If_escpaped()(*i6904e189dc64e2505bc1116051145bddf60802b2deca285accbd2c0a87644bb0.IfRequestBuilder) {
-    return i6904e189dc64e2505bc1116051145bddf60802b2deca285accbd2c0a87644bb0.NewIfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *FunctionsRequestBuilder) If_escaped()(*i0453e21d45f8ed2aab3a312355a9cdffae8562a8747da1d10b0964833762a270.IfRequestBuilder) {
+    return i0453e21d45f8ed2aab3a312355a9cdffae8562a8747da1d10b0964833762a270.NewIfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *FunctionsRequestBuilder) ImAbs()(*ida2deeed82524cc3dfb4db9745f9ac68bd6bd46ca0996c86cc6552be00df989d.ImAbsRequestBuilder) {
     return ida2deeed82524cc3dfb4db9745f9ac68bd6bd46ca0996c86cc6552be00df989d.NewImAbsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -1523,8 +1521,8 @@ func (m *FunctionsRequestBuilder) True()(*i7063fea931c4bd333bf58cae4ae95006d880a
 func (m *FunctionsRequestBuilder) Trunc()(*ib5af4e9a26a97744aea932645181a72915add2b5f542a4712f8a88e0fb711a6a.TruncRequestBuilder) {
     return ib5af4e9a26a97744aea932645181a72915add2b5f542a4712f8a88e0fb711a6a.NewTruncRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *FunctionsRequestBuilder) Type_escpaped()(*if66e5f4976b4415e90c05aa4990a3d5cad4010b63f82066cc7252040e3c3066b.TypeRequestBuilder) {
-    return if66e5f4976b4415e90c05aa4990a3d5cad4010b63f82066cc7252040e3c3066b.NewTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *FunctionsRequestBuilder) Type_escaped()(*i822d92a8a540ae6b23416a1ba6edd6eff35f4abed7953e4928fbd2b4ee76d341.TypeRequestBuilder) {
+    return i822d92a8a540ae6b23416a1ba6edd6eff35f4abed7953e4928fbd2b4ee76d341.NewTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *FunctionsRequestBuilder) Unichar()(*i3f56cdb4a69ef320a75d1586206b7dfb437b5a604fce57a5019673319644e355.UnicharRequestBuilder) {
     return i3f56cdb4a69ef320a75d1586206b7dfb437b5a604fce57a5019673319644e355.NewUnicharRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -6,7 +6,7 @@ import (
 
 type GetUserOwnedObjectsRequestBody struct {
     additionalData map[string]interface{};
-    type_escpaped *string;
+    type_escaped *string;
     userId *string;
 }
 func NewGetUserOwnedObjectsRequestBody()(*GetUserOwnedObjectsRequestBody) {
@@ -22,11 +22,11 @@ func (m *GetUserOwnedObjectsRequestBody) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-func (m *GetUserOwnedObjectsRequestBody) GetType_escpaped()(*string) {
+func (m *GetUserOwnedObjectsRequestBody) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *GetUserOwnedObjectsRequestBody) GetUserId()(*string) {
@@ -38,12 +38,12 @@ func (m *GetUserOwnedObjectsRequestBody) GetUserId()(*string) {
 }
 func (m *GetUserOwnedObjectsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +61,7 @@ func (m *GetUserOwnedObjectsRequestBody) IsNil()(bool) {
 }
 func (m *GetUserOwnedObjectsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -83,8 +83,8 @@ func (m *GetUserOwnedObjectsRequestBody) Serialize(writer i04eb5309aeaafadd28374
 func (m *GetUserOwnedObjectsRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-func (m *GetUserOwnedObjectsRequestBody) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *GetUserOwnedObjectsRequestBody) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }
 func (m *GetUserOwnedObjectsRequestBody) SetUserId(value *string)() {
     m.userId = value

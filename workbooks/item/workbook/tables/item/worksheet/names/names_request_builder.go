@@ -20,7 +20,7 @@ type NamesRequestBuilderGetQueryParameters struct {
     Filter *string;
     Orderby []string;
     Search *string;
-    Select_escpaped []string;
+    Select_escaped []string;
     Skip *int32;
     Top *int32;
 }
@@ -35,10 +35,8 @@ func NewNamesRequestBuilderInternal(pathParameters map[string]string, requestAda
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/names{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

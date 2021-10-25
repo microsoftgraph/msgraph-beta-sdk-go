@@ -70,7 +70,7 @@ type GroupRequestBuilder struct {
 type GroupRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *GroupRequestBuilder) AcceptedSenders()(*i02fee0fcbb14d5af244cac0c2b5cc69f5aa82b85ec7d224e6dbae566d1646d5d.AcceptedSendersRequestBuilder) {
     return i02fee0fcbb14d5af244cac0c2b5cc69f5aa82b85ec7d224e6dbae566d1646d5d.NewAcceptedSendersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -83,10 +83,8 @@ func (m *GroupRequestBuilder) AppRoleAssignments()(*i1e180c98492486bc886a6593521
 }
 func (m *GroupRequestBuilder) AppRoleAssignmentsById(id string)(*i9f44ea42f796eb814c4952a992e9dc83e10e462621a158d473fd625c512ef4bc.AppRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["appRoleAssignment_id"] = id
@@ -104,10 +102,8 @@ func (m *GroupRequestBuilder) CalendarView()(*ia430883e94cb7abce482535ac8c7253ae
 }
 func (m *GroupRequestBuilder) CalendarViewById(id string)(*i9e89b77447821dbf477a68b13c79a69139c1946756898bdc20b285e001539ea1.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["event_id"] = id
@@ -128,10 +124,8 @@ func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAda
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/groups/{group_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -147,10 +141,8 @@ func (m *GroupRequestBuilder) Conversations()(*idca52ceeaf754eed01a2ea52af72bb7b
 }
 func (m *GroupRequestBuilder) ConversationsById(id string)(*i7d987f66a62915c3b7f44d0edad9deb15f79e59e58f2d9c5ad9b71bf48f15eec.ConversationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["conversation_id"] = id
@@ -248,10 +240,8 @@ func (m *GroupRequestBuilder) Drives()(*i8daf117241c7766d7ff29c5cbcabcc082be0444
 }
 func (m *GroupRequestBuilder) DrivesById(id string)(*i1b00a3ee52b67a17dd6db2a8f1625a38323a6135625081fb54b40b44232e89bf.DriveRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["drive_id"] = id
@@ -263,10 +253,8 @@ func (m *GroupRequestBuilder) Endpoints()(*i8b52f30152d353621c99bf7bb2121f0421df
 }
 func (m *GroupRequestBuilder) EndpointsById(id string)(*i98092eb6315426df8755d93b1458a713452cb101bc01a6e4f43e716dc0143e8f.EndpointRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["endpoint_id"] = id
@@ -281,10 +269,8 @@ func (m *GroupRequestBuilder) Events()(*i22f4b02027f167f9f99b20aa4eae4d0871053f6
 }
 func (m *GroupRequestBuilder) EventsById(id string)(*i40372e5830ab7b777e2a31cda4dd8ad81dac267969ff1e25f7608a8298cc1dad.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["event_id"] = id
@@ -296,10 +282,8 @@ func (m *GroupRequestBuilder) Extensions()(*i8837566c7fd9bfa1e091bc591d6d52db9c0
 }
 func (m *GroupRequestBuilder) ExtensionsById(id string)(*i963f882f3f2b0d209b4c91218281e65677ae124fdb171aff79661733b37fc788.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["extension_id"] = id
@@ -328,10 +312,8 @@ func (m *GroupRequestBuilder) GroupLifecyclePolicies()(*id94a57871bbab0456d687ee
 }
 func (m *GroupRequestBuilder) GroupLifecyclePoliciesById(id string)(*id4a401ad94d1a1e42e6580fcd9d3d1f570370ff23b48a112b9e47f17279acf9f.GroupLifecyclePolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["groupLifecyclePolicy_id"] = id
@@ -369,10 +351,8 @@ func (m *GroupRequestBuilder) PermissionGrants()(*ib51c2fbc52f6d50414f9159f3ead9
 }
 func (m *GroupRequestBuilder) PermissionGrantsById(id string)(*i2a0b85f77a81e8f4f18cb792065ad27157bce3afd57f90f15a90fd83196308f8.ResourceSpecificPermissionGrantRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["resourceSpecificPermissionGrant_id"] = id
@@ -387,10 +367,8 @@ func (m *GroupRequestBuilder) Photos()(*i44f2125d842af13a8f7093916e1621e93cdf4c5
 }
 func (m *GroupRequestBuilder) PhotosById(id string)(*i20ad8636c32bde1b97aa6dbe46a82bfcc7dec5240d558da351ccb4e7801c7cae.ProfilePhotoRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["profilePhoto_id"] = id
@@ -420,10 +398,8 @@ func (m *GroupRequestBuilder) Settings()(*i5740a9548283ec6d1f78bd07c0e97c4b41045
 }
 func (m *GroupRequestBuilder) SettingsById(id string)(*ib7c0afd37a4b7a5f14bbce80fa4fb24e2e0339815e98c21882b0619e5898b56e.DirectorySettingRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["directorySetting_id"] = id
@@ -435,10 +411,8 @@ func (m *GroupRequestBuilder) Sites()(*i3afd98d50e381574faac1f866015db15f1e2f6dd
 }
 func (m *GroupRequestBuilder) SitesById(id string)(*ife496b0c6e03a5eae3a225783a9684a940a4c1aa359a015613fe0091a2704801.SiteRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["site_id"] = id
@@ -456,10 +430,8 @@ func (m *GroupRequestBuilder) Threads()(*i5c5a2c806ddf65cb48eca8a02a8bb45136bda5
 }
 func (m *GroupRequestBuilder) ThreadsById(id string)(*if3d2858206557e4f8b00ac2f74098e2775aa239b7ce50e535d3e73ff34555b4f.ConversationThreadRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["conversationThread_id"] = id

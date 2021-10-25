@@ -46,7 +46,7 @@ type PoliciesRequestBuilder struct {
 type PoliciesRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PoliciesRequestBuilder) AccessReviewPolicy()(*i8ab23dd53a7ba192025fbd1c53f22ecde4f5853cf55f14dadae7c3d54bfe6ecc.AccessReviewPolicyRequestBuilder) {
     return i8ab23dd53a7ba192025fbd1c53f22ecde4f5853cf55f14dadae7c3d54bfe6ecc.NewAccessReviewPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -56,10 +56,8 @@ func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPolicies()(*ib06edf2243c232
 }
 func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPoliciesById(id string)(*ie2aa8a198ac4cb5a2a1216675a0ebc84eb1ccb50965ba209e1e87acfa29f6a87.ActivityBasedTimeoutPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["activityBasedTimeoutPolicy_id"] = id
@@ -80,10 +78,8 @@ func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*idf9e8b9f9da041893e6b6cb
 }
 func (m *PoliciesRequestBuilder) AuthorizationPolicyById(id string)(*idf9e8b9f9da041893e6b6cb24dd45425a8696e3da093aef925b748ba4b81e936.AuthorizationPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["authorizationPolicy_id"] = id
@@ -98,10 +94,8 @@ func (m *PoliciesRequestBuilder) ClaimsMappingPolicies()(*i82a0672e3a16707a14cf8
 }
 func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*i3d72a8d05a1bc29e49b08e440b0f124e60a0a17cca39da307f0fc359f9ba8100.ClaimsMappingPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["claimsMappingPolicy_id"] = id
@@ -113,10 +107,8 @@ func (m *PoliciesRequestBuilder) ConditionalAccessPolicies()(*ia589aeb3468208863
 }
 func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*if5c99775547db21eee7a16da27e1a94c2a2912f7796bc11e4a67761a02798bdb.ConditionalAccessPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["conditionalAccessPolicy_id"] = id
@@ -128,10 +120,8 @@ func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, request
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/policies{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -200,10 +190,8 @@ func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*i089acabe34d65ca8bb4a
 }
 func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*i5632bf91798252c9bca8fa6eadd95db82f90a142d927c3c26e684ab6f2d90a28.FeatureRolloutPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["featureRolloutPolicy_id"] = id
@@ -226,10 +214,8 @@ func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPolicies()(*iea55f9833b3f70a2
 }
 func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*ic2c067f4697fa94bc77e049a3cf157ed99ce46ed86b0a4e4b688d09062795945.HomeRealmDiscoveryPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["homeRealmDiscoveryPolicy_id"] = id
@@ -244,10 +230,8 @@ func (m *PoliciesRequestBuilder) MobileAppManagementPolicies()(*ife15f5c3e6b78fb
 }
 func (m *PoliciesRequestBuilder) MobileAppManagementPoliciesById(id string)(*ic80fa25ff11a44e63435e8a7ab079ccac6e26dd9dc32f6b7a64be90be2f58011.MobilityManagementPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mobilityManagementPolicy_id"] = id
@@ -259,10 +243,8 @@ func (m *PoliciesRequestBuilder) MobileDeviceManagementPolicies()(*ia91d9fa5e7c3
 }
 func (m *PoliciesRequestBuilder) MobileDeviceManagementPoliciesById(id string)(*i987e92fec12c74acd600441b6cc0e2c18b324562d146333edb4272ddc51cc302.MobilityManagementPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mobilityManagementPolicy_id"] = id
@@ -285,10 +267,8 @@ func (m *PoliciesRequestBuilder) PermissionGrantPolicies()(*i4235b128855e4ef4e73
 }
 func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*i2e9acaa79a19f61068a524155872974e6a98a1692e31a3056613d7fadf7058aa.PermissionGrantPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["permissionGrantPolicy_id"] = id
@@ -300,10 +280,8 @@ func (m *PoliciesRequestBuilder) RoleManagementPolicies()(*i50186836a679beade2d8
 }
 func (m *PoliciesRequestBuilder) RoleManagementPoliciesById(id string)(*if796ee537abe837147e4bdf42134467182183733786146dccb3e3c9dd5e93b54.UnifiedRoleManagementPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleManagementPolicy_id"] = id
@@ -315,10 +293,8 @@ func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignments()(*i23c105ad486
 }
 func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignmentsById(id string)(*i3718ba1ac7c6b6b07b29bbaa42dc50cc122da4f510e54af905f2c63f5fba5585.UnifiedRoleManagementPolicyAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleManagementPolicyAssignment_id"] = id
@@ -330,10 +306,8 @@ func (m *PoliciesRequestBuilder) TokenIssuancePolicies()(*i8da786288f6b1e12f48f4
 }
 func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*i45b1afd0d7bc9158e4c62ccf7aeb399e7aef62431980207f6b6df372b62073b9.TokenIssuancePolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["tokenIssuancePolicy_id"] = id
@@ -345,10 +319,8 @@ func (m *PoliciesRequestBuilder) TokenLifetimePolicies()(*ib78e441cfc724e7ca2b7a
 }
 func (m *PoliciesRequestBuilder) TokenLifetimePoliciesById(id string)(*i1e97552013b3bffa16b2d23c422d3b88e120ef118f30ef817760eb98fdf1c32e.TokenLifetimePolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["tokenLifetimePolicy_id"] = id

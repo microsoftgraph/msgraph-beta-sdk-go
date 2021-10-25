@@ -37,17 +37,15 @@ type MessageRequestBuilder struct {
 type MessageRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *MessageRequestBuilder) Attachments()(*ic7f35c75b6e62e54c20816e6b842b525069091b3705f0eda5abb2f06698b2e46.AttachmentsRequestBuilder) {
     return ic7f35c75b6e62e54c20816e6b842b525069091b3705f0eda5abb2f06698b2e46.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *MessageRequestBuilder) AttachmentsById(id string)(*i9dfb9baf1034d4d76f7676658c28a48bb59e8a78be7fe78076e5c63c401df6ee.AttachmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["attachment_id"] = id
@@ -62,10 +60,8 @@ func NewMessageRequestBuilderInternal(pathParameters map[string]string, requestA
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/messages/{message_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -179,10 +175,8 @@ func (m *MessageRequestBuilder) Extensions()(*ia02e177b92e83647b153fece558ac26fa
 }
 func (m *MessageRequestBuilder) ExtensionsById(id string)(*i492cbc6c0049fb5261ffb6826b11ec61ae24e4935436c10ef66e6d3adf6d07ed.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["extension_id"] = id
@@ -208,10 +202,8 @@ func (m *MessageRequestBuilder) Mentions()(*i25d6ea23f29436bc3a139a769323a750624
 }
 func (m *MessageRequestBuilder) MentionsById(id string)(*i340f83e62384fa8614f95e359ba5bc4e913d7996b1fea9840ca4fbb8ab177ec8.MentionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mention_id"] = id
@@ -226,10 +218,8 @@ func (m *MessageRequestBuilder) MultiValueExtendedProperties()(*iae74de854139dab
 }
 func (m *MessageRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i5114ea7bc7e0bddf25a0022c76f1aa4ea041eb41634ed63956fb24a1c7417d21.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
@@ -261,10 +251,8 @@ func (m *MessageRequestBuilder) SingleValueExtendedProperties()(*ia5ef716c57bbcc
 }
 func (m *MessageRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i71a573e50c8dcf20dad2d6f95ff5ba431744934140f7d3c80ab47bf4e765775a.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id

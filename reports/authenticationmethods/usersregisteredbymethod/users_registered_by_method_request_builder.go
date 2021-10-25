@@ -16,10 +16,8 @@ func NewUsersRegisteredByMethodRequestBuilderInternal(pathParameters map[string]
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod()";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

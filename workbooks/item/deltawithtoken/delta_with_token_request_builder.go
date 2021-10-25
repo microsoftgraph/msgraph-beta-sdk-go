@@ -15,10 +15,8 @@ func NewDeltaWithTokenRequestBuilderInternal(pathParameters map[string]string, r
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/microsoft.graph.delta(token='{token}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if token != nil {
         urlTplParams["token"] = *token

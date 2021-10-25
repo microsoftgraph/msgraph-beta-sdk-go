@@ -18,17 +18,15 @@ type OnPremisesAgentGroupRequestBuilder struct {
 type OnPremisesAgentGroupRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *OnPremisesAgentGroupRequestBuilder) Agents()(*ia1f378fe0766dfc5dfea6349a05cfa28f3e62a895660c36f63e44f99148d8843.AgentsRequestBuilder) {
     return ia1f378fe0766dfc5dfea6349a05cfa28f3e62a895660c36f63e44f99148d8843.NewAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *OnPremisesAgentGroupRequestBuilder) AgentsById(id string)(*i7e840fa7b37fef7aff16c31565cd806fb2481b9e74e26cb7fc98957b305799d2.OnPremisesAgentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onPremisesAgent_id1"] = id
@@ -40,10 +38,8 @@ func NewOnPremisesAgentGroupRequestBuilderInternal(pathParameters map[string]str
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/agents/{onPremisesAgent_id}/agentGroups/{onPremisesAgentGroup_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -161,10 +157,8 @@ func (m *OnPremisesAgentGroupRequestBuilder) PublishedResources()(*i367fc7ef9476
 }
 func (m *OnPremisesAgentGroupRequestBuilder) PublishedResourcesById(id string)(*ifae56f8c6511fee3e2bb5415d36058ab3f529b5629909455a1b4b59c293a0479.PublishedResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["publishedResource_id"] = id

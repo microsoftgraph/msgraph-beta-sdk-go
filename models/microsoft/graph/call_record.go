@@ -16,7 +16,7 @@ type CallRecord struct {
     participants []IdentitySet;
     sessions []Session;
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    type_escpaped *if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CallType;
+    type_escaped *if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CallType;
     version *int64;
 }
 func NewCallRecord()(*CallRecord) {
@@ -81,11 +81,11 @@ func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.startDateTime
     }
 }
-func (m *CallRecord) GetType_escpaped()(*if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CallType) {
+func (m *CallRecord) GetType_escaped()(*if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CallType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *CallRecord) GetVersion()(*int64) {
@@ -173,13 +173,13 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         m.SetStartDateTime(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.ParseCallType)
         if err != nil {
             return err
         }
         cast := val.(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CallType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,9 +258,9 @@ func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err = writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err = writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -297,8 +297,8 @@ func (m *CallRecord) SetSessions(value []Session)() {
 func (m *CallRecord) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-func (m *CallRecord) SetType_escpaped(value *if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CallType)() {
-    m.type_escpaped = value
+func (m *CallRecord) SetType_escaped(value *if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CallType)() {
+    m.type_escaped = value
 }
 func (m *CallRecord) SetVersion(value *int64)() {
     m.version = value

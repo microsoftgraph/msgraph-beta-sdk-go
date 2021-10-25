@@ -21,17 +21,15 @@ type ContactRequestBuilder struct {
 type ContactRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewContactRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactRequestBuilder) {
     m := &ContactRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/contactFolders/{contactFolder_id}/contacts/{contact_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -127,10 +125,8 @@ func (m *ContactRequestBuilder) Extensions()(*i52980e71a95c6997485ce47d4102d3333
 }
 func (m *ContactRequestBuilder) ExtensionsById(id string)(*iffcd3d1e1cf26dabcd109b4514bbd3f3c5eeffd74b5b1db80bb25d65a776d3bd.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["extension_id"] = id
@@ -153,10 +149,8 @@ func (m *ContactRequestBuilder) MultiValueExtendedProperties()(*id135be1faebc3a4
 }
 func (m *ContactRequestBuilder) MultiValueExtendedPropertiesById(id string)(*iaf512c028c7972dbb22a68b938957b64ed1aa9c89e8bfc77ed0aa39d7f9cce46.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
@@ -182,10 +176,8 @@ func (m *ContactRequestBuilder) SingleValueExtendedProperties()(*id821620ff4f9ab
 }
 func (m *ContactRequestBuilder) SingleValueExtendedPropertiesById(id string)(*id26ee7cb435738682451f095aaaa69f8c9e03886d56355d147fef1acef738b9b.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id

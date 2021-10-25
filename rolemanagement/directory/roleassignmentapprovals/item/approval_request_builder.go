@@ -16,17 +16,15 @@ type ApprovalRequestBuilder struct {
 type ApprovalRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewApprovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalRequestBuilder) {
     m := &ApprovalRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/directory/roleAssignmentApprovals/{approval_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *ApprovalRequestBuilder) Steps()(*i2a617ab6ee775287ab3e8262072cdcd8016c0
 }
 func (m *ApprovalRequestBuilder) StepsById(id string)(*i61183631e81808bdb658211f8958674eaa35f5af8b78fc2b5c3d95dc8b52019a.ApprovalStepRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["approvalStep_id"] = id

@@ -14,10 +14,8 @@ func NewRotateBitLockerKeysRequestBuilderInternal(pathParameters map[string]stri
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceManagementScripts/{deviceManagementScript_id}/userRunStates/{deviceManagementScriptUserState_id}/deviceRunStates/{deviceManagementScriptDeviceState_id}/managedDevice/microsoft.graph.rotateBitLockerKeys";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

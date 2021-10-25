@@ -14,17 +14,15 @@ type ManagedAppOperationRequestBuilder struct {
 type ManagedAppOperationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewManagedAppOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppOperationRequestBuilder) {
     m := &ManagedAppOperationRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/managedAppRegistrations/{managedAppRegistration_id}/operations/{managedAppOperation_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

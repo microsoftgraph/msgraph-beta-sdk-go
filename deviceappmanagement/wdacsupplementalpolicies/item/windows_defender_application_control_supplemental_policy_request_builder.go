@@ -20,7 +20,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder struct {
 type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Assign()(*i406c14183761992d0042e2f9ff1bea41245b27611fe8826e75799a28823ca007.AssignRequestBuilder) {
     return i406c14183761992d0042e2f9ff1bea41245b27611fe8826e75799a28823ca007.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -30,10 +30,8 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Assi
 }
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) AssignmentsById(id string)(*ibf0406f487f23a25d59623f151d2327c977ef4cb5bf52e23fcd9992cbf752eb2.WindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["windowsDefenderApplicationControlSupplementalPolicyAssignment_id"] = id
@@ -45,10 +43,8 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyRequestBuilderInterna
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -147,10 +143,8 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Devi
 }
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) DeviceStatusesById(id string)(*if7f30d88a5e2c08a355aab945ead20a738d45d9716825973a8471d163909ac9b.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus_id"] = id

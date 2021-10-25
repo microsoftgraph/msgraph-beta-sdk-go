@@ -16,17 +16,15 @@ type DeviceManagementScriptUserStateRequestBuilder struct {
 type DeviceManagementScriptUserStateRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewDeviceManagementScriptUserStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementScriptUserStateRequestBuilder) {
     m := &DeviceManagementScriptUserStateRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceShellScripts/{deviceShellScript_id}/userRunStates/{deviceManagementScriptUserState_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -122,10 +120,8 @@ func (m *DeviceManagementScriptUserStateRequestBuilder) DeviceRunStates()(*ifd1b
 }
 func (m *DeviceManagementScriptUserStateRequestBuilder) DeviceRunStatesById(id string)(*ie02f7444f17b405ab81813464bbea986673c2874d7fd7541205713b2b2c0e066.DeviceManagementScriptDeviceStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceManagementScriptDeviceState_id"] = id

@@ -16,17 +16,15 @@ type OutlookTaskGroupRequestBuilder struct {
 type OutlookTaskGroupRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewOutlookTaskGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookTaskGroupRequestBuilder) {
     m := &OutlookTaskGroupRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/outlook/taskGroups/{outlookTaskGroup_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *OutlookTaskGroupRequestBuilder) TaskFolders()(*i84e5204b6057266524dd3c5
 }
 func (m *OutlookTaskGroupRequestBuilder) TaskFoldersById(id string)(*i9ff51a09dafb0317480e93c5051c0dab6aba16d2dd4fc769ca0378dfb685a890.OutlookTaskFolderRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["outlookTaskFolder_id"] = id

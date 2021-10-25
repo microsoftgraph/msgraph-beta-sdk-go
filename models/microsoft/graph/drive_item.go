@@ -21,7 +21,7 @@ type DriveItem struct {
     listItem *ListItem;
     location *GeoCoordinates;
     media *Media;
-    package_escpaped *Package_escpaped;
+    package_escaped *Package_escaped;
     pendingOperations *PendingOperations;
     permissions []Permission;
     photo *Photo;
@@ -152,11 +152,11 @@ func (m *DriveItem) GetMedia()(*Media) {
         return m.media
     }
 }
-func (m *DriveItem) GetPackage_escpaped()(*Package_escpaped) {
+func (m *DriveItem) GetPackage_escaped()(*Package_escaped) {
     if m == nil {
         return nil
     } else {
-        return m.package_escpaped
+        return m.package_escaped
     }
 }
 func (m *DriveItem) GetPendingOperations()(*PendingOperations) {
@@ -415,12 +415,12 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         m.SetMedia(val.(*Media))
         return nil
     }
-    res["package_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPackage_escpaped() })
+    res["package_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPackage_escaped() })
         if err != nil {
             return err
         }
-        m.SetPackage_escpaped(val.(*Package_escpaped))
+        m.SetPackage_escaped(val.(*Package_escaped))
         return nil
     }
     res["pendingOperations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -694,7 +694,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     {
-        err = writer.WriteObjectValue("package_escpaped", m.GetPackage_escpaped())
+        err = writer.WriteObjectValue("package_escaped", m.GetPackage_escaped())
         if err != nil {
             return err
         }
@@ -874,8 +874,8 @@ func (m *DriveItem) SetLocation(value *GeoCoordinates)() {
 func (m *DriveItem) SetMedia(value *Media)() {
     m.media = value
 }
-func (m *DriveItem) SetPackage_escpaped(value *Package_escpaped)() {
-    m.package_escpaped = value
+func (m *DriveItem) SetPackage_escaped(value *Package_escaped)() {
+    m.package_escaped = value
 }
 func (m *DriveItem) SetPendingOperations(value *PendingOperations)() {
     m.pendingOperations = value

@@ -14,10 +14,8 @@ func NewScopedForResourceWithResourceRequestBuilderInternal(pathParameters map[s
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/microsoft.graph.scopedForResource(resource='{resource}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if resource != nil {
         urlTplParams["resource"] = *resource

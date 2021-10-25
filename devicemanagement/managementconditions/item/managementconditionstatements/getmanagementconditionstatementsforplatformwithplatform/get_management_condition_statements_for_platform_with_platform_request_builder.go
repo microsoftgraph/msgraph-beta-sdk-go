@@ -15,10 +15,8 @@ func NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInt
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/managementConditions/{managementCondition_id}/managementConditionStatements/microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if platform != nil {
         urlTplParams["platform"] = *platform

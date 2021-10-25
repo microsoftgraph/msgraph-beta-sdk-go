@@ -22,7 +22,7 @@ type CloudAppSecurityProfile struct {
     publisher *string;
     riskScore *string;
     tags []string;
-    type_escpaped *string;
+    type_escaped *string;
     vendorInformation *SecurityVendorInformation;
 }
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
@@ -136,11 +136,11 @@ func (m *CloudAppSecurityProfile) GetTags()([]string) {
         return m.tags
     }
 }
-func (m *CloudAppSecurityProfile) GetType_escpaped()(*string) {
+func (m *CloudAppSecurityProfile) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *CloudAppSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
@@ -277,12 +277,12 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         m.SetTags(res)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -395,7 +395,7 @@ func (m *CloudAppSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
-        err = writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -453,8 +453,8 @@ func (m *CloudAppSecurityProfile) SetRiskScore(value *string)() {
 func (m *CloudAppSecurityProfile) SetTags(value []string)() {
     m.tags = value
 }
-func (m *CloudAppSecurityProfile) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *CloudAppSecurityProfile) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }
 func (m *CloudAppSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
     m.vendorInformation = value

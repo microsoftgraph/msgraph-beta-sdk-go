@@ -15,7 +15,7 @@ type UserScopeTeamsAppInstallationRequestBuilder struct {
 type UserScopeTeamsAppInstallationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *UserScopeTeamsAppInstallationRequestBuilder) Chat()(*i9c2c75062efa766ba4253d2941888a3609138856e9c444293d018420b9091a75.ChatRequestBuilder) {
     return i9c2c75062efa766ba4253d2941888a3609138856e9c444293d018420b9091a75.NewChatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewUserScopeTeamsAppInstallationRequestBuilderInternal(pathParameters map[s
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/teamwork/installedApps/{userScopeTeamsAppInstallation_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -14,10 +14,8 @@ func NewRestoreVersionRequestBuilderInternal(pathParameters map[string]string, r
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/sites/{site_id}/lists/{list_id}/activities/{itemActivityOLD_id}/listItem/versions/{listItemVersion_id}/microsoft.graph.restoreVersion";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

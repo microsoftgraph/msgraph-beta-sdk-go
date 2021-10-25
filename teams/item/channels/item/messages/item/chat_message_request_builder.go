@@ -18,17 +18,15 @@ type ChatMessageRequestBuilder struct {
 type ChatMessageRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewChatMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatMessageRequestBuilder) {
     m := &ChatMessageRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/teams/{team_id}/channels/{channel_id}/messages/{chatMessage_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -135,10 +133,8 @@ func (m *ChatMessageRequestBuilder) HostedContents()(*ic7911f027ae12f16bb89acd60
 }
 func (m *ChatMessageRequestBuilder) HostedContentsById(id string)(*iec560df93d9cd19a7417d1fe6507471d4816e2b38a76c1a4aba5388725057df0.ChatMessageHostedContentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["chatMessageHostedContent_id"] = id
@@ -161,10 +157,8 @@ func (m *ChatMessageRequestBuilder) Replies()(*i0eb575354a51cdfd1727d6eca2667f37
 }
 func (m *ChatMessageRequestBuilder) RepliesById(id string)(*iac048f7a0c7d4679eb71836062548197334ebe4cbe6f16f4ebd73d539e6b1431.ChatMessageRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["chatMessage_id1"] = id

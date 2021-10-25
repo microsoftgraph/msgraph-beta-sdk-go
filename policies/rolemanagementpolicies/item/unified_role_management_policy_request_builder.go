@@ -18,17 +18,15 @@ type UnifiedRoleManagementPolicyRequestBuilder struct {
 type UnifiedRoleManagementPolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewUnifiedRoleManagementPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleManagementPolicyRequestBuilder) {
     m := &UnifiedRoleManagementPolicyRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/policies/roleManagementPolicies/{unifiedRoleManagementPolicy_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -124,10 +122,8 @@ func (m *UnifiedRoleManagementPolicyRequestBuilder) EffectiveRules()(*if0d351035
 }
 func (m *UnifiedRoleManagementPolicyRequestBuilder) EffectiveRulesById(id string)(*i811ba195cae1e905ab5d23c338b5965c64cfa723b2a7cbaf79f558bcd492389e.UnifiedRoleManagementPolicyRuleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleManagementPolicyRule_id"] = id
@@ -161,10 +157,8 @@ func (m *UnifiedRoleManagementPolicyRequestBuilder) Rules()(*ifc39611d357a9b76d0
 }
 func (m *UnifiedRoleManagementPolicyRequestBuilder) RulesById(id string)(*ie226ae78525b483a512018ed5f5bf2023846009012cd463b4e7b22c6a6585ac7.UnifiedRoleManagementPolicyRuleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleManagementPolicyRule_id"] = id

@@ -17,7 +17,7 @@ type PrinterShareRequestBuilder struct {
 type PrinterShareRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PrinterShareRequestBuilder) AllowedGroups()(*ia38aafee6e99eed8fcd1a421defe593236a7b1a6baa17cc46600d14ef087a65c.AllowedGroupsRequestBuilder) {
     return ia38aafee6e99eed8fcd1a421defe593236a7b1a6baa17cc46600d14ef087a65c.NewAllowedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -30,10 +30,8 @@ func NewPrinterShareRequestBuilderInternal(pathParameters map[string]string, req
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/print/shares/{printerShare_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

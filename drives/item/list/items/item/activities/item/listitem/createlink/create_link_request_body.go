@@ -12,7 +12,7 @@ type CreateLinkRequestBody struct {
     password *string;
     recipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient;
     scope *string;
-    type_escpaped *string;
+    type_escaped *string;
 }
 func NewCreateLinkRequestBody()(*CreateLinkRequestBody) {
     m := &CreateLinkRequestBody{
@@ -55,11 +55,11 @@ func (m *CreateLinkRequestBody) GetScope()(*string) {
         return m.scope
     }
 }
-func (m *CreateLinkRequestBody) GetType_escpaped()(*string) {
+func (m *CreateLinkRequestBody) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -100,12 +100,12 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         m.SetScope(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     return res
@@ -144,7 +144,7 @@ func (m *CreateLinkRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -172,6 +172,6 @@ func (m *CreateLinkRequestBody) SetRecipients(value []i535684e11b5500196ecb4b5c6
 func (m *CreateLinkRequestBody) SetScope(value *string)() {
     m.scope = value
 }
-func (m *CreateLinkRequestBody) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *CreateLinkRequestBody) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }

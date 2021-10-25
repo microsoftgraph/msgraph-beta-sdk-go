@@ -17,7 +17,7 @@ type ConnectorGroupRequestBuilder struct {
 type ConnectorGroupRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ConnectorGroupRequestBuilder) Applications()(*i0d379e41d9c32c6519435f6e926fbe053eab746388226510a9c33352ec511ca6.ApplicationsRequestBuilder) {
     return i0d379e41d9c32c6519435f6e926fbe053eab746388226510a9c33352ec511ca6.NewApplicationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -27,10 +27,8 @@ func NewConnectorGroupRequestBuilderInternal(pathParameters map[string]string, r
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/connectors/{connector_id}/memberOf/{connectorGroup_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -137,10 +135,8 @@ func (m *ConnectorGroupRequestBuilder) Members()(*i8aff2b2cac29b846766f4a1af8577
 }
 func (m *ConnectorGroupRequestBuilder) MembersById(id string)(*i82c8b3d2353acb0a4672105fe986b65b6e62d6f13c3baa88e3e3e323ccb1c3f2.ConnectorRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["connector_id1"] = id

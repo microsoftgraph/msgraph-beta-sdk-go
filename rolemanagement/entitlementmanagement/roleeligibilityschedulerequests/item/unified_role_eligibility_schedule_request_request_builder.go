@@ -20,7 +20,7 @@ type UnifiedRoleEligibilityScheduleRequestRequestBuilder struct {
 type UnifiedRoleEligibilityScheduleRequestRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *UnifiedRoleEligibilityScheduleRequestRequestBuilder) AppScope()(*ia2562bf876dabdf8b8f2d1964328f124aa93d0bdee7008197fc224aa17175c37.AppScopeRequestBuilder) {
     return ia2562bf876dabdf8b8f2d1964328f124aa93d0bdee7008197fc224aa17175c37.NewAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -33,10 +33,8 @@ func NewUnifiedRoleEligibilityScheduleRequestRequestBuilderInternal(pathParamete
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

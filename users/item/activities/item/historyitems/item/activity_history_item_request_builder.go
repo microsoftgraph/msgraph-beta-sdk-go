@@ -15,7 +15,7 @@ type ActivityHistoryItemRequestBuilder struct {
 type ActivityHistoryItemRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ActivityHistoryItemRequestBuilder) Activity()(*i4eb2dabfb34e364071230428c3f13b123c6c2b1de9a744725920e0ecddc9252e.ActivityRequestBuilder) {
     return i4eb2dabfb34e364071230428c3f13b123c6c2b1de9a744725920e0ecddc9252e.NewActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewActivityHistoryItemRequestBuilderInternal(pathParameters map[string]stri
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/activities/{userActivity_id}/historyItems/{activityHistoryItem_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

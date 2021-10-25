@@ -9,7 +9,7 @@ type DomainRegistrant struct {
     countryOrRegionCode *string;
     organization *string;
     url *string;
-    vendor *string;
+    vendor_escaped *string;
 }
 func NewDomainRegistrant()(*DomainRegistrant) {
     m := &DomainRegistrant{
@@ -45,11 +45,11 @@ func (m *DomainRegistrant) GetUrl()(*string) {
         return m.url
     }
 }
-func (m *DomainRegistrant) GetVendor()(*string) {
+func (m *DomainRegistrant) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.vendor
+        return m.vendor_escaped
     }
 }
 func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -78,12 +78,12 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, 
         m.SetUrl(val)
         return nil
     }
-    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetVendor(val)
+        m.SetVendor_escaped(val)
         return nil
     }
     return res
@@ -111,7 +111,7 @@ func (m *DomainRegistrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
         if err != nil {
             return err
         }
@@ -136,6 +136,6 @@ func (m *DomainRegistrant) SetOrganization(value *string)() {
 func (m *DomainRegistrant) SetUrl(value *string)() {
     m.url = value
 }
-func (m *DomainRegistrant) SetVendor(value *string)() {
-    m.vendor = value
+func (m *DomainRegistrant) SetVendor_escaped(value *string)() {
+    m.vendor_escaped = value
 }

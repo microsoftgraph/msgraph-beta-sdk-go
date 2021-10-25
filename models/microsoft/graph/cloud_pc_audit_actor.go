@@ -12,7 +12,7 @@ type CloudPcAuditActor struct {
     remoteTenantId *string;
     remoteUserId *string;
     servicePrincipalName *string;
-    type_escpaped *CloudPcAuditActorType;
+    type_escaped *CloudPcAuditActorType;
     userId *string;
     userPermissions []string;
     userPrincipalName *string;
@@ -73,11 +73,11 @@ func (m *CloudPcAuditActor) GetServicePrincipalName()(*string) {
         return m.servicePrincipalName
     }
 }
-func (m *CloudPcAuditActor) GetType_escpaped()(*CloudPcAuditActorType) {
+func (m *CloudPcAuditActor) GetType_escaped()(*CloudPcAuditActorType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *CloudPcAuditActor) GetUserId()(*string) {
@@ -158,13 +158,13 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         m.SetServicePrincipalName(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcAuditActorType)
         if err != nil {
             return err
         }
         cast := val.(CloudPcAuditActorType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -249,9 +249,9 @@ func (m *CloudPcAuditActor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -314,8 +314,8 @@ func (m *CloudPcAuditActor) SetRemoteUserId(value *string)() {
 func (m *CloudPcAuditActor) SetServicePrincipalName(value *string)() {
     m.servicePrincipalName = value
 }
-func (m *CloudPcAuditActor) SetType_escpaped(value *CloudPcAuditActorType)() {
-    m.type_escpaped = value
+func (m *CloudPcAuditActor) SetType_escaped(value *CloudPcAuditActorType)() {
+    m.type_escaped = value
 }
 func (m *CloudPcAuditActor) SetUserId(value *string)() {
     m.userId = value

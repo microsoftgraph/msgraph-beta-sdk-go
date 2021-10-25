@@ -27,17 +27,15 @@ type PostRequestBuilder struct {
 type PostRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PostRequestBuilder) Attachments()(*i9df977ca780dc0d140675ce87069d982d3151d901c7fd2a7e5823b3934fa25f4.AttachmentsRequestBuilder) {
     return i9df977ca780dc0d140675ce87069d982d3151d901c7fd2a7e5823b3934fa25f4.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PostRequestBuilder) AttachmentsById(id string)(*i31e115848de504a674c4e13d6beadc9b2d83e879a5fdc82f93f5ddfb706ac343.AttachmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["attachment_id"] = id
@@ -49,10 +47,8 @@ func NewPostRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/groups/{group_id}/threads/{conversationThread_id}/posts/{post_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -148,10 +144,8 @@ func (m *PostRequestBuilder) Extensions()(*ic609b04e6ef2ba4b655b061ece719f396858
 }
 func (m *PostRequestBuilder) ExtensionsById(id string)(*i0f1e494ef605c5c995db7dbaa4086c416a19342429243811dc9e2320600ae90e.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["extension_id"] = id
@@ -180,10 +174,8 @@ func (m *PostRequestBuilder) Mentions()(*i156960fb543e0ce4bf625d42526a73c4f7a0ec
 }
 func (m *PostRequestBuilder) MentionsById(id string)(*i767b4645e14dda89ea8a901343958f824c9cc0eb861a5ea7515de33e1d921593.MentionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mention_id"] = id
@@ -195,10 +187,8 @@ func (m *PostRequestBuilder) MultiValueExtendedProperties()(*i89db43ff66f4472090
 }
 func (m *PostRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i4120f55900fac33f51a526e959eeabc979bb8d2ba02378a3af4bf2b6fb858a02.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
@@ -224,10 +214,8 @@ func (m *PostRequestBuilder) SingleValueExtendedProperties()(*i248c2e72a3592bf28
 }
 func (m *PostRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ie83abea890f828e4525d3a6f7a17ab8967c2b4d3e746928994f05c75ce15a262.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id

@@ -16,7 +16,7 @@ type SalesCreditMemoLineRequestBuilder struct {
 type SalesCreditMemoLineRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *SalesCreditMemoLineRequestBuilder) Account()(*id2c5ff2b49eab78f2b34cad646e49ae4754a34a20d78c44affcc140dd7675880.AccountRequestBuilder) {
     return id2c5ff2b49eab78f2b34cad646e49ae4754a34a20d78c44affcc140dd7675880.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewSalesCreditMemoLineRequestBuilderInternal(pathParameters map[string]stri
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/salesCreditMemoLines/{salesCreditMemoLine_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

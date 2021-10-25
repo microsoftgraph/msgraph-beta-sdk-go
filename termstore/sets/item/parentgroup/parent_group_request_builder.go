@@ -16,17 +16,15 @@ type ParentGroupRequestBuilder struct {
 type ParentGroupRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewParentGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentGroupRequestBuilder) {
     m := &ParentGroupRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/termStore/sets/{set_id}/parentGroup{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *ParentGroupRequestBuilder) Sets()(*i43c167cd384e4e355582478f7238e481e83
 }
 func (m *ParentGroupRequestBuilder) SetsById(id string)(*i87a6d4ecbee023b1ef2a3329e77a5bd711fb636d399433824ef9f7d14ff577c7.SetRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["set_id1"] = id

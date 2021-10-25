@@ -20,7 +20,7 @@ type DeviceConfigurationRequestBuilder struct {
 type DeviceConfigurationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *DeviceConfigurationRequestBuilder) Assign()(*i44855f5003b56d3b7820710073dec689deaa89cd719504f222558d1f1a396d40.AssignRequestBuilder) {
     return i44855f5003b56d3b7820710073dec689deaa89cd719504f222558d1f1a396d40.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -33,10 +33,8 @@ func NewDeviceConfigurationRequestBuilderInternal(pathParameters map[string]stri
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations/{deviceConfiguration_id}/groupAssignments/{deviceConfigurationGroupAssignment_id}/deviceConfiguration{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

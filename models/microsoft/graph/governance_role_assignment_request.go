@@ -19,7 +19,7 @@ type GovernanceRoleAssignmentRequest struct {
     status *GovernanceRoleAssignmentRequestStatus;
     subject *GovernanceSubject;
     subjectId *string;
-    type_escpaped *string;
+    type_escaped *string;
 }
 func NewGovernanceRoleAssignmentRequest()(*GovernanceRoleAssignmentRequest) {
     m := &GovernanceRoleAssignmentRequest{
@@ -111,11 +111,11 @@ func (m *GovernanceRoleAssignmentRequest) GetSubjectId()(*string) {
         return m.subjectId
     }
 }
-func (m *GovernanceRoleAssignmentRequest) GetType_escpaped()(*string) {
+func (m *GovernanceRoleAssignmentRequest) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -216,12 +216,12 @@ func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         m.SetSubjectId(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     return res
@@ -307,7 +307,7 @@ func (m *GovernanceRoleAssignmentRequest) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     {
-        err = writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -350,6 +350,6 @@ func (m *GovernanceRoleAssignmentRequest) SetSubject(value *GovernanceSubject)()
 func (m *GovernanceRoleAssignmentRequest) SetSubjectId(value *string)() {
     m.subjectId = value
 }
-func (m *GovernanceRoleAssignmentRequest) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *GovernanceRoleAssignmentRequest) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }

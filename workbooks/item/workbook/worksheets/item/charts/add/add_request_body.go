@@ -9,7 +9,7 @@ type AddRequestBody struct {
     additionalData map[string]interface{};
     seriesBy *string;
     sourceData *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
-    type_escpaped *string;
+    type_escaped *string;
 }
 func NewAddRequestBody()(*AddRequestBody) {
     m := &AddRequestBody{
@@ -38,11 +38,11 @@ func (m *AddRequestBody) GetSourceData()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.sourceData
     }
 }
-func (m *AddRequestBody) GetType_escpaped()(*string) {
+func (m *AddRequestBody) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *AddRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -63,12 +63,12 @@ func (m *AddRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
         m.SetSourceData(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     return res
@@ -90,7 +90,7 @@ func (m *AddRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err := writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -112,6 +112,6 @@ func (m *AddRequestBody) SetSeriesBy(value *string)() {
 func (m *AddRequestBody) SetSourceData(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.sourceData = value
 }
-func (m *AddRequestBody) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *AddRequestBody) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }

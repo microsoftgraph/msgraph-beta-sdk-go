@@ -8,26 +8,30 @@ import (
 type WindowsProtectionState struct {
     Entity
     antiMalwareVersion *string;
-    detectedMalwareState []WindowsDeviceMalwareState;
-    deviceState *WindowsDeviceHealthState;
+    attentionRequired *bool;
+    deviceDeleted *bool;
+    devicePropertyRefreshDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     engineVersion *string;
     fullScanOverdue *bool;
     fullScanRequired *bool;
-    isVirtualMachine *bool;
     lastFullScanDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     lastFullScanSignatureVersion *string;
     lastQuickScanDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     lastQuickScanSignatureVersion *string;
+    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     malwareProtectionEnabled *bool;
+    managedDeviceHealthState *string;
+    managedDeviceId *string;
+    managedDeviceName *string;
     networkInspectionSystemEnabled *bool;
-    productStatus *WindowsDefenderProductStatus;
     quickScanOverdue *bool;
     realTimeProtectionEnabled *bool;
     rebootRequired *bool;
     signatureUpdateOverdue *bool;
     signatureVersion *string;
-    tamperProtectionEnabled *bool;
+    tenantDisplayName *string;
+    tenantId *string;
 }
 func NewWindowsProtectionState()(*WindowsProtectionState) {
     m := &WindowsProtectionState{
@@ -42,18 +46,25 @@ func (m *WindowsProtectionState) GetAntiMalwareVersion()(*string) {
         return m.antiMalwareVersion
     }
 }
-func (m *WindowsProtectionState) GetDetectedMalwareState()([]WindowsDeviceMalwareState) {
+func (m *WindowsProtectionState) GetAttentionRequired()(*bool) {
     if m == nil {
         return nil
     } else {
-        return m.detectedMalwareState
+        return m.attentionRequired
     }
 }
-func (m *WindowsProtectionState) GetDeviceState()(*WindowsDeviceHealthState) {
+func (m *WindowsProtectionState) GetDeviceDeleted()(*bool) {
     if m == nil {
         return nil
     } else {
-        return m.deviceState
+        return m.deviceDeleted
+    }
+}
+func (m *WindowsProtectionState) GetDevicePropertyRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.devicePropertyRefreshDateTime
     }
 }
 func (m *WindowsProtectionState) GetEngineVersion()(*string) {
@@ -75,13 +86,6 @@ func (m *WindowsProtectionState) GetFullScanRequired()(*bool) {
         return nil
     } else {
         return m.fullScanRequired
-    }
-}
-func (m *WindowsProtectionState) GetIsVirtualMachine()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isVirtualMachine
     }
 }
 func (m *WindowsProtectionState) GetLastFullScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -112,6 +116,13 @@ func (m *WindowsProtectionState) GetLastQuickScanSignatureVersion()(*string) {
         return m.lastQuickScanSignatureVersion
     }
 }
+func (m *WindowsProtectionState) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshedDateTime
+    }
+}
 func (m *WindowsProtectionState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -126,18 +137,32 @@ func (m *WindowsProtectionState) GetMalwareProtectionEnabled()(*bool) {
         return m.malwareProtectionEnabled
     }
 }
+func (m *WindowsProtectionState) GetManagedDeviceHealthState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceHealthState
+    }
+}
+func (m *WindowsProtectionState) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+func (m *WindowsProtectionState) GetManagedDeviceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceName
+    }
+}
 func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
     if m == nil {
         return nil
     } else {
         return m.networkInspectionSystemEnabled
-    }
-}
-func (m *WindowsProtectionState) GetProductStatus()(*WindowsDefenderProductStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productStatus
     }
 }
 func (m *WindowsProtectionState) GetQuickScanOverdue()(*bool) {
@@ -175,11 +200,18 @@ func (m *WindowsProtectionState) GetSignatureVersion()(*string) {
         return m.signatureVersion
     }
 }
-func (m *WindowsProtectionState) GetTamperProtectionEnabled()(*bool) {
+func (m *WindowsProtectionState) GetTenantDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.tamperProtectionEnabled
+        return m.tenantDisplayName
+    }
+}
+func (m *WindowsProtectionState) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
     }
 }
 func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -192,25 +224,28 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         m.SetAntiMalwareVersion(val)
         return nil
     }
-    res["detectedMalwareState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsDeviceMalwareState() })
+    res["attentionRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
-        res := make([]WindowsDeviceMalwareState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsDeviceMalwareState))
-        }
-        m.SetDetectedMalwareState(res)
+        m.SetAttentionRequired(val)
         return nil
     }
-    res["deviceState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsDeviceHealthState)
+    res["deviceDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
-        cast := val.(WindowsDeviceHealthState)
-        m.SetDeviceState(&cast)
+        m.SetDeviceDeleted(val)
+        return nil
+    }
+    res["devicePropertyRefreshDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        m.SetDevicePropertyRefreshDateTime(val)
         return nil
     }
     res["engineVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,14 +270,6 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         m.SetFullScanRequired(val)
-        return nil
-    }
-    res["isVirtualMachine"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        m.SetIsVirtualMachine(val)
         return nil
     }
     res["lastFullScanDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,6 +304,14 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         m.SetLastQuickScanSignatureVersion(val)
         return nil
     }
+    res["lastRefreshedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        m.SetLastRefreshedDateTime(val)
+        return nil
+    }
     res["lastReportedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -293,21 +328,36 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         m.SetMalwareProtectionEnabled(val)
         return nil
     }
+    res["managedDeviceHealthState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        m.SetManagedDeviceHealthState(val)
+        return nil
+    }
+    res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        m.SetManagedDeviceId(val)
+        return nil
+    }
+    res["managedDeviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        m.SetManagedDeviceName(val)
+        return nil
+    }
     res["networkInspectionSystemEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
         m.SetNetworkInspectionSystemEnabled(val)
-        return nil
-    }
-    res["productStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsDefenderProductStatus)
-        if err != nil {
-            return err
-        }
-        cast := val.(WindowsDefenderProductStatus)
-        m.SetProductStatus(&cast)
         return nil
     }
     res["quickScanOverdue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -350,12 +400,20 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         m.SetSignatureVersion(val)
         return nil
     }
-    res["tamperProtectionEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
+    res["tenantDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetTamperProtectionEnabled(val)
+        m.SetTenantDisplayName(val)
+        return nil
+    }
+    res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        m.SetTenantId(val)
         return nil
     }
     return res
@@ -375,19 +433,19 @@ func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDetectedMalwareState()))
-        for i, v := range m.GetDetectedMalwareState() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
-        }
-        err = writer.WriteCollectionOfObjectValues("detectedMalwareState", cast)
+        err = writer.WriteBoolValue("attentionRequired", m.GetAttentionRequired())
         if err != nil {
             return err
         }
     }
-    if m.GetDeviceState() != nil {
-        cast := m.GetDeviceState().String()
-        err = writer.WriteStringValue("deviceState", &cast)
+    {
+        err = writer.WriteBoolValue("deviceDeleted", m.GetDeviceDeleted())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("devicePropertyRefreshDateTime", m.GetDevicePropertyRefreshDateTime())
         if err != nil {
             return err
         }
@@ -406,12 +464,6 @@ func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     {
         err = writer.WriteBoolValue("fullScanRequired", m.GetFullScanRequired())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isVirtualMachine", m.GetIsVirtualMachine())
         if err != nil {
             return err
         }
@@ -441,6 +493,12 @@ func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
+        err = writer.WriteTimeValue("lastRefreshedDateTime", m.GetLastRefreshedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastReportedDateTime", m.GetLastReportedDateTime())
         if err != nil {
             return err
@@ -453,14 +511,25 @@ func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err = writer.WriteBoolValue("networkInspectionSystemEnabled", m.GetNetworkInspectionSystemEnabled())
+        err = writer.WriteStringValue("managedDeviceHealthState", m.GetManagedDeviceHealthState())
         if err != nil {
             return err
         }
     }
-    if m.GetProductStatus() != nil {
-        cast := m.GetProductStatus().String()
-        err = writer.WriteStringValue("productStatus", &cast)
+    {
+        err = writer.WriteStringValue("managedDeviceId", m.GetManagedDeviceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("managedDeviceName", m.GetManagedDeviceName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("networkInspectionSystemEnabled", m.GetNetworkInspectionSystemEnabled())
         if err != nil {
             return err
         }
@@ -496,7 +565,13 @@ func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err = writer.WriteBoolValue("tamperProtectionEnabled", m.GetTamperProtectionEnabled())
+        err = writer.WriteStringValue("tenantDisplayName", m.GetTenantDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
         }
@@ -506,11 +581,14 @@ func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471
 func (m *WindowsProtectionState) SetAntiMalwareVersion(value *string)() {
     m.antiMalwareVersion = value
 }
-func (m *WindowsProtectionState) SetDetectedMalwareState(value []WindowsDeviceMalwareState)() {
-    m.detectedMalwareState = value
+func (m *WindowsProtectionState) SetAttentionRequired(value *bool)() {
+    m.attentionRequired = value
 }
-func (m *WindowsProtectionState) SetDeviceState(value *WindowsDeviceHealthState)() {
-    m.deviceState = value
+func (m *WindowsProtectionState) SetDeviceDeleted(value *bool)() {
+    m.deviceDeleted = value
+}
+func (m *WindowsProtectionState) SetDevicePropertyRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.devicePropertyRefreshDateTime = value
 }
 func (m *WindowsProtectionState) SetEngineVersion(value *string)() {
     m.engineVersion = value
@@ -520,9 +598,6 @@ func (m *WindowsProtectionState) SetFullScanOverdue(value *bool)() {
 }
 func (m *WindowsProtectionState) SetFullScanRequired(value *bool)() {
     m.fullScanRequired = value
-}
-func (m *WindowsProtectionState) SetIsVirtualMachine(value *bool)() {
-    m.isVirtualMachine = value
 }
 func (m *WindowsProtectionState) SetLastFullScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastFullScanDateTime = value
@@ -536,17 +611,26 @@ func (m *WindowsProtectionState) SetLastQuickScanDateTime(value *i336074805fc853
 func (m *WindowsProtectionState) SetLastQuickScanSignatureVersion(value *string)() {
     m.lastQuickScanSignatureVersion = value
 }
+func (m *WindowsProtectionState) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.lastRefreshedDateTime = value
+}
 func (m *WindowsProtectionState) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastReportedDateTime = value
 }
 func (m *WindowsProtectionState) SetMalwareProtectionEnabled(value *bool)() {
     m.malwareProtectionEnabled = value
 }
+func (m *WindowsProtectionState) SetManagedDeviceHealthState(value *string)() {
+    m.managedDeviceHealthState = value
+}
+func (m *WindowsProtectionState) SetManagedDeviceId(value *string)() {
+    m.managedDeviceId = value
+}
+func (m *WindowsProtectionState) SetManagedDeviceName(value *string)() {
+    m.managedDeviceName = value
+}
 func (m *WindowsProtectionState) SetNetworkInspectionSystemEnabled(value *bool)() {
     m.networkInspectionSystemEnabled = value
-}
-func (m *WindowsProtectionState) SetProductStatus(value *WindowsDefenderProductStatus)() {
-    m.productStatus = value
 }
 func (m *WindowsProtectionState) SetQuickScanOverdue(value *bool)() {
     m.quickScanOverdue = value
@@ -563,6 +647,9 @@ func (m *WindowsProtectionState) SetSignatureUpdateOverdue(value *bool)() {
 func (m *WindowsProtectionState) SetSignatureVersion(value *string)() {
     m.signatureVersion = value
 }
-func (m *WindowsProtectionState) SetTamperProtectionEnabled(value *bool)() {
-    m.tamperProtectionEnabled = value
+func (m *WindowsProtectionState) SetTenantDisplayName(value *string)() {
+    m.tenantDisplayName = value
+}
+func (m *WindowsProtectionState) SetTenantId(value *string)() {
+    m.tenantId = value
 }

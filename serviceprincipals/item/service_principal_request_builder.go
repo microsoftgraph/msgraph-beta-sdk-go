@@ -44,7 +44,7 @@ type ServicePrincipalRequestBuilder struct {
 type ServicePrincipalRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ServicePrincipalRequestBuilder) AddTokenSigningCertificate()(*icd93e098c0af3fad76be5463dae742feef1548ad1abbe576f34223e3d452835f.AddTokenSigningCertificateRequestBuilder) {
     return icd93e098c0af3fad76be5463dae742feef1548ad1abbe576f34223e3d452835f.NewAddTokenSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -54,10 +54,8 @@ func (m *ServicePrincipalRequestBuilder) AppRoleAssignedTo()(*i11c002c434a5b4d14
 }
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignedToById(id string)(*i73410d76321ebd4b4207e0ffdf54200d41fb342ffc03bc6d921827db529b903c.AppRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["appRoleAssignment_id"] = id
@@ -69,10 +67,8 @@ func (m *ServicePrincipalRequestBuilder) AppRoleAssignments()(*i8c780b5242f53b8b
 }
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignmentsById(id string)(*ieaae3e55e6f40942560f470e7e5fb2380c1742e2c611f1397ebadf664105f6e3.AppRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["appRoleAssignment_id"] = id
@@ -93,10 +89,8 @@ func NewServicePrincipalRequestBuilderInternal(pathParameters map[string]string,
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/servicePrincipals/{servicePrincipal_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -187,10 +181,8 @@ func (m *ServicePrincipalRequestBuilder) DelegatedPermissionClassifications()(*i
 }
 func (m *ServicePrincipalRequestBuilder) DelegatedPermissionClassificationsById(id string)(*if711a515916176e7c09aa3e5a8f78d5306dd95e446b78ea2cdac1f4050779e27.DelegatedPermissionClassificationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["delegatedPermissionClassification_id"] = id
@@ -216,10 +208,8 @@ func (m *ServicePrincipalRequestBuilder) Endpoints()(*ia14a94af6e363e7e0fd636560
 }
 func (m *ServicePrincipalRequestBuilder) EndpointsById(id string)(*i62a4342854a4da102701b12124cb86be14b4c17b8b8691f57c0ae992cd399674.EndpointRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["endpoint_id"] = id
@@ -254,10 +244,8 @@ func (m *ServicePrincipalRequestBuilder) LicenseDetails()(*i3ba0e028cf2fd2dd6f6e
 }
 func (m *ServicePrincipalRequestBuilder) LicenseDetailsById(id string)(*i3ba0e028cf2fd2dd6f6e9af983b18664a1fd2f9f97df4e4f239075c5d82ee6d9.LicenseDetailsRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["licenseDetails_id"] = id

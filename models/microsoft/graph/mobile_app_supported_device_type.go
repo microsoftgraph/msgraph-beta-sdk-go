@@ -8,7 +8,7 @@ type MobileAppSupportedDeviceType struct {
     additionalData map[string]interface{};
     maximumOperatingSystemVersion *string;
     minimumOperatingSystemVersion *string;
-    type_escpaped *DeviceType;
+    type_escaped *DeviceType;
 }
 func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
     m := &MobileAppSupportedDeviceType{
@@ -37,11 +37,11 @@ func (m *MobileAppSupportedDeviceType) GetMinimumOperatingSystemVersion()(*strin
         return m.minimumOperatingSystemVersion
     }
 }
-func (m *MobileAppSupportedDeviceType) GetType_escpaped()(*DeviceType) {
+func (m *MobileAppSupportedDeviceType) GetType_escaped()(*DeviceType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -62,13 +62,13 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
         m.SetMinimumOperatingSystemVersion(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceType)
         if err != nil {
             return err
         }
         cast := val.(DeviceType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -89,9 +89,9 @@ func (m *MobileAppSupportedDeviceType) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -113,6 +113,6 @@ func (m *MobileAppSupportedDeviceType) SetMaximumOperatingSystemVersion(value *s
 func (m *MobileAppSupportedDeviceType) SetMinimumOperatingSystemVersion(value *string)() {
     m.minimumOperatingSystemVersion = value
 }
-func (m *MobileAppSupportedDeviceType) SetType_escpaped(value *DeviceType)() {
-    m.type_escpaped = value
+func (m *MobileAppSupportedDeviceType) SetType_escaped(value *DeviceType)() {
+    m.type_escaped = value
 }

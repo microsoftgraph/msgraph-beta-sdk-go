@@ -15,17 +15,15 @@ type AnalyticsRequestBuilder struct {
 type AnalyticsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *AnalyticsRequestBuilder) ActivityStatistics()(*i1e115a2335fb5f8e1a3c2d7951ef09c80693c57808f289e045697fac9b94114c.ActivityStatisticsRequestBuilder) {
     return i1e115a2335fb5f8e1a3c2d7951ef09c80693c57808f289e045697fac9b94114c.NewActivityStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *AnalyticsRequestBuilder) ActivityStatisticsById(id string)(*i1e115a2335fb5f8e1a3c2d7951ef09c80693c57808f289e045697fac9b94114c.ActivityStatisticsRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["activityStatistics_id"] = id
@@ -37,10 +35,8 @@ func NewAnalyticsRequestBuilderInternal(pathParameters map[string]string, reques
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/analytics{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -15,7 +15,7 @@ type BookingAppointmentRequestBuilder struct {
 type BookingAppointmentRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *BookingAppointmentRequestBuilder) Cancel()(*i5eef93069e105b81bb3eeb7de23f0b8a0bee9f669d45209c4f9d7c03fdfc883c.CancelRequestBuilder) {
     return i5eef93069e105b81bb3eeb7de23f0b8a0bee9f669d45209c4f9d7c03fdfc883c.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewBookingAppointmentRequestBuilderInternal(pathParameters map[string]strin
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/bookingBusinesses/{bookingBusiness_id}/appointments/{bookingAppointment_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -17,7 +17,7 @@ type RemoteItem struct {
     lastModifiedBy *IdentitySet;
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     name *string;
-    package_escpaped *Package_escpaped;
+    package_escaped *Package_escaped;
     parentReference *ItemReference;
     shared *Shared;
     sharepointIds *SharepointIds;
@@ -110,11 +110,11 @@ func (m *RemoteItem) GetName()(*string) {
         return m.name
     }
 }
-func (m *RemoteItem) GetPackage_escpaped()(*Package_escpaped) {
+func (m *RemoteItem) GetPackage_escaped()(*Package_escaped) {
     if m == nil {
         return nil
     } else {
-        return m.package_escpaped
+        return m.package_escaped
     }
 }
 func (m *RemoteItem) GetParentReference()(*ItemReference) {
@@ -255,12 +255,12 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         m.SetName(val)
         return nil
     }
-    res["package_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPackage_escpaped() })
+    res["package_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPackage_escaped() })
         if err != nil {
             return err
         }
-        m.SetPackage_escpaped(val.(*Package_escpaped))
+        m.SetPackage_escaped(val.(*Package_escaped))
         return nil
     }
     res["parentReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -394,7 +394,7 @@ func (m *RemoteItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err := writer.WriteObjectValue("package_escpaped", m.GetPackage_escpaped())
+        err := writer.WriteObjectValue("package_escaped", m.GetPackage_escaped())
         if err != nil {
             return err
         }
@@ -488,8 +488,8 @@ func (m *RemoteItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *RemoteItem) SetName(value *string)() {
     m.name = value
 }
-func (m *RemoteItem) SetPackage_escpaped(value *Package_escpaped)() {
-    m.package_escpaped = value
+func (m *RemoteItem) SetPackage_escaped(value *Package_escaped)() {
+    m.package_escaped = value
 }
 func (m *RemoteItem) SetParentReference(value *ItemReference)() {
     m.parentReference = value

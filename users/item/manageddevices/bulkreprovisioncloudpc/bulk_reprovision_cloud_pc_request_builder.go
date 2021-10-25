@@ -14,10 +14,8 @@ func NewBulkReprovisionCloudPcRequestBuilderInternal(pathParameters map[string]s
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/managedDevices/microsoft.graph.bulkReprovisionCloudPc";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

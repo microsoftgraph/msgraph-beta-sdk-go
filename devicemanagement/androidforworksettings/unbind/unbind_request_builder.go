@@ -14,10 +14,8 @@ func NewUnbindRequestBuilderInternal(pathParameters map[string]string, requestAd
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/androidForWorkSettings/microsoft.graph.unbind";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

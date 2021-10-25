@@ -16,17 +16,15 @@ type FeatureRolloutPolicyRequestBuilder struct {
 type FeatureRolloutPolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *FeatureRolloutPolicyRequestBuilder) AppliesTo()(*if14b8a57f122d6d1ffeaa97dd10814e0c5978ae31d20c889a9ca740cf1e0679c.AppliesToRequestBuilder) {
     return if14b8a57f122d6d1ffeaa97dd10814e0c5978ae31d20c889a9ca740cf1e0679c.NewAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *FeatureRolloutPolicyRequestBuilder) AppliesToById(id string)(*i2dc3aa009c18f5c05efa3500757064318f19e2843ed4d370a25664f6c711f118.DirectoryObjectRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["directoryObject_id"] = id
@@ -38,10 +36,8 @@ func NewFeatureRolloutPolicyRequestBuilderInternal(pathParameters map[string]str
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/policies/featureRolloutPolicies/{featureRolloutPolicy_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -16,7 +16,7 @@ type PresenceRequestBuilder struct {
 type PresenceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PresenceRequestBuilder) ClearPresence()(*i3783ecca2e180950ea8455123aaec3dca5384fc8410f062bca07795be89adfa0.ClearPresenceRequestBuilder) {
     return i3783ecca2e180950ea8455123aaec3dca5384fc8410f062bca07795be89adfa0.NewClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewPresenceRequestBuilderInternal(pathParameters map[string]string, request
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/communications/presences/{presence_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

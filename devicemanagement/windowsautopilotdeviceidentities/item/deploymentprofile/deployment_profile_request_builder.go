@@ -16,7 +16,7 @@ type DeploymentProfileRequestBuilder struct {
 type DeploymentProfileRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *DeploymentProfileRequestBuilder) Assign()(*i1165f0f943f657842b100195e60d9a7d27a5df0291bbcc71b0d2106a7e46b5da.AssignRequestBuilder) {
     return i1165f0f943f657842b100195e60d9a7d27a5df0291bbcc71b0d2106a7e46b5da.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewDeploymentProfileRequestBuilderInternal(pathParameters map[string]string
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity_id}/deploymentProfile{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

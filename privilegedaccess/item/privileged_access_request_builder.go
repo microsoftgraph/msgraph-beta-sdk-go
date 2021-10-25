@@ -24,17 +24,15 @@ type PrivilegedAccessRequestBuilder struct {
 type PrivilegedAccessRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewPrivilegedAccessRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedAccessRequestBuilder) {
     m := &PrivilegedAccessRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/privilegedAccess/{privilegedAccess_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -152,10 +150,8 @@ func (m *PrivilegedAccessRequestBuilder) Resources()(*i9a0b2cd1cee2ff8b6db6a3196
 }
 func (m *PrivilegedAccessRequestBuilder) ResourcesById(id string)(*ifef34655781055c0461c93a60eb94832b88d5e7127511a01d91517b0dbb2056f.GovernanceResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceResource_id"] = id
@@ -167,10 +163,8 @@ func (m *PrivilegedAccessRequestBuilder) RoleAssignmentRequests()(*i13776d5c18df
 }
 func (m *PrivilegedAccessRequestBuilder) RoleAssignmentRequestsById(id string)(*i055f2c9d21e7d744d266e629aae4492646c4497616eefa08e3bdc13deae816bc.GovernanceRoleAssignmentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceRoleAssignmentRequest_id"] = id
@@ -182,10 +176,8 @@ func (m *PrivilegedAccessRequestBuilder) RoleAssignments()(*i6517906c52d298f87f2
 }
 func (m *PrivilegedAccessRequestBuilder) RoleAssignmentsById(id string)(*i669c13d28c7fa4ec2373a44ba75602285da1019797e39c430f2ede5ee0850356.GovernanceRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceRoleAssignment_id"] = id
@@ -197,10 +189,8 @@ func (m *PrivilegedAccessRequestBuilder) RoleDefinitions()(*ie0282f7e2e54b40fe41
 }
 func (m *PrivilegedAccessRequestBuilder) RoleDefinitionsById(id string)(*i93a22192c0fdf52ece01982a56d4c7f6efcce6d81281c6a74a3a9d90200baf9d.GovernanceRoleDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceRoleDefinition_id"] = id
@@ -212,10 +202,8 @@ func (m *PrivilegedAccessRequestBuilder) RoleSettings()(*i83aba682e003297032480b
 }
 func (m *PrivilegedAccessRequestBuilder) RoleSettingsById(id string)(*id87892c36f8f2494356ab0b890f05c975ca897b7061b4af81b617506bdd996cf.GovernanceRoleSettingRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["governanceRoleSetting_id"] = id

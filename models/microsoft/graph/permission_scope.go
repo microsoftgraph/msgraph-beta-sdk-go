@@ -11,7 +11,7 @@ type PermissionScope struct {
     id *string;
     isEnabled *bool;
     origin *string;
-    type_escpaped *string;
+    type_escaped *string;
     userConsentDescription *string;
     userConsentDisplayName *string;
     value *string;
@@ -64,11 +64,11 @@ func (m *PermissionScope) GetOrigin()(*string) {
         return m.origin
     }
 }
-func (m *PermissionScope) GetType_escpaped()(*string) {
+func (m *PermissionScope) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *PermissionScope) GetUserConsentDescription()(*string) {
@@ -134,12 +134,12 @@ func (m *PermissionScope) GetFieldDeserializers()(map[string]func(interface{}, i
         m.SetOrigin(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     res["userConsentDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -203,7 +203,7 @@ func (m *PermissionScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err := writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -252,8 +252,8 @@ func (m *PermissionScope) SetIsEnabled(value *bool)() {
 func (m *PermissionScope) SetOrigin(value *string)() {
     m.origin = value
 }
-func (m *PermissionScope) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *PermissionScope) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }
 func (m *PermissionScope) SetUserConsentDescription(value *string)() {
     m.userConsentDescription = value

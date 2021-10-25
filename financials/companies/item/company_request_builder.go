@@ -80,17 +80,15 @@ type CompanyRequestBuilder struct {
 type CompanyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *CompanyRequestBuilder) Accounts()(*ibe5eb65fe22e268725128bcf2845841605d9d1eef38f8068c89a3ccafdcb245d.AccountsRequestBuilder) {
     return ibe5eb65fe22e268725128bcf2845841605d9d1eef38f8068c89a3ccafdcb245d.NewAccountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *CompanyRequestBuilder) AccountsById(id string)(*i8bb41f9aaafe2872cf4a7f16919a0ea7a6265e4e8c2dde4370cbb7a491e99b17.AccountRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["account_id"] = id
@@ -102,10 +100,8 @@ func (m *CompanyRequestBuilder) AgedAccountsPayable()(*i7d7d65e7b883cd40a4d185e1
 }
 func (m *CompanyRequestBuilder) AgedAccountsPayableById(id string)(*i7d7d65e7b883cd40a4d185e170461c0df63bc2db571565c4b08605b6a6b39d56.AgedAccountsPayableRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["agedAccountsPayable_id"] = id
@@ -117,10 +113,8 @@ func (m *CompanyRequestBuilder) AgedAccountsReceivable()(*icb4ac224f7dda176b38d0
 }
 func (m *CompanyRequestBuilder) AgedAccountsReceivableById(id string)(*icb4ac224f7dda176b38d0f2720a5c09dc25b1e4000589439ed85ea14acbf34b7.AgedAccountsReceivableRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["agedAccountsReceivable_id"] = id
@@ -132,10 +126,8 @@ func (m *CompanyRequestBuilder) CompanyInformation()(*i4150f690ea3d8f1505214d237
 }
 func (m *CompanyRequestBuilder) CompanyInformationById(id string)(*i4150f690ea3d8f1505214d237ce4d724022a2128b537709f0ee5446c49db5f18.CompanyInformationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["companyInformation_id"] = id
@@ -147,10 +139,8 @@ func NewCompanyRequestBuilderInternal(pathParameters map[string]string, requestA
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -166,10 +156,8 @@ func (m *CompanyRequestBuilder) CountriesRegions()(*idbb5b19dc644044a2e4208047f3
 }
 func (m *CompanyRequestBuilder) CountriesRegionsById(id string)(*ib4173258919a2470076856e048a74747e88c26282e025907c42dbae5ec6030ca.CountryRegionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["countryRegion_id"] = id
@@ -250,10 +238,8 @@ func (m *CompanyRequestBuilder) Currencies()(*i39cfe575a2df965e199497b478ce23488
 }
 func (m *CompanyRequestBuilder) CurrenciesById(id string)(*i10be44ffc518b9ffebfc696f5c34a3302d87645d22fc12694c9904aca1044d58.CurrencyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["currency_id"] = id
@@ -265,10 +251,8 @@ func (m *CompanyRequestBuilder) CustomerPaymentJournals()(*ia4bfc6e27a07d01219c3
 }
 func (m *CompanyRequestBuilder) CustomerPaymentJournalsById(id string)(*i2fa657acc59d6b7630ef46de77a50036226d4b074450ccaebde8cf00abc68dec.CustomerPaymentJournalRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["customerPaymentJournal_id"] = id
@@ -280,10 +264,8 @@ func (m *CompanyRequestBuilder) CustomerPayments()(*ia59c5b754460daf1c032eae861b
 }
 func (m *CompanyRequestBuilder) CustomerPaymentsById(id string)(*i156a2925868947a7298582f37c6bf9442997ed01292975d5f12ae6a54051c565.CustomerPaymentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["customerPayment_id"] = id
@@ -295,10 +277,8 @@ func (m *CompanyRequestBuilder) Customers()(*i57a164edcc262a1e7d0cc54eccb32cb5b3
 }
 func (m *CompanyRequestBuilder) CustomersById(id string)(*i0a22f9350aef914933c2bf7011f507fef010436ad65aed8403b06d3550b3f89d.CustomerRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["customer_id"] = id
@@ -321,10 +301,8 @@ func (m *CompanyRequestBuilder) Dimensions()(*if536310c607589fc4a894ef1c99860106
 }
 func (m *CompanyRequestBuilder) DimensionsById(id string)(*ib663fe9a724ce0e5ad43315594f7b7c19a9e8e35fe77f81dc1945c6e3936fe2f.DimensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["dimension_id"] = id
@@ -336,10 +314,8 @@ func (m *CompanyRequestBuilder) DimensionValues()(*i5f4c33d5e43228d9388a0cc80ea3
 }
 func (m *CompanyRequestBuilder) DimensionValuesById(id string)(*i11e6e00b839a93742244aa3549a6868991eeeed6ccefdbcf294e91fbbee4ff3a.DimensionValueRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["dimensionValue_id"] = id
@@ -351,10 +327,8 @@ func (m *CompanyRequestBuilder) Employees()(*ib2dabce3215c46b19ea19a0fbff4f14d66
 }
 func (m *CompanyRequestBuilder) EmployeesById(id string)(*i1659c475e4793613cba0cab9ebd1d7cb4807826d1a70462923f4606aefaf2923.EmployeeRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["employee_id"] = id
@@ -366,10 +340,8 @@ func (m *CompanyRequestBuilder) GeneralLedgerEntries()(*i6945f10b9fe3e8587a632f8
 }
 func (m *CompanyRequestBuilder) GeneralLedgerEntriesById(id string)(*i3d03e8e7981c4382b0b7fec2f585dcb2af2df5976ea20ae1de1c5ef9996f16ae.GeneralLedgerEntryRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["generalLedgerEntry_id"] = id
@@ -392,10 +364,8 @@ func (m *CompanyRequestBuilder) ItemCategories()(*ia681f3c1a272d62548404c0148103
 }
 func (m *CompanyRequestBuilder) ItemCategoriesById(id string)(*i86e272c5906623aaa71eb00713179597400af0b135903dd413a7d82af37200de.ItemCategoryRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["itemCategory_id"] = id
@@ -407,10 +377,8 @@ func (m *CompanyRequestBuilder) Items()(*i9d6749cb386b81deff47b86d48c6a76416836b
 }
 func (m *CompanyRequestBuilder) ItemsById(id string)(*i301463334e1dbc7c5c31947d397ff9c42f6aa8bb9cd25e2f928c02448534b4ce.ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["item_id"] = id
@@ -422,10 +390,8 @@ func (m *CompanyRequestBuilder) JournalLines()(*iec2f8a5133e2722b7ee0b2f37cee34f
 }
 func (m *CompanyRequestBuilder) JournalLinesById(id string)(*i1e5b9e1d2db51439f7c83d74f5933dd50bab82a742de2085d38ded8ed8ba25db.JournalLineRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["journalLine_id"] = id
@@ -437,10 +403,8 @@ func (m *CompanyRequestBuilder) Journals()(*i4daeb4853bc59f25aaa8ca4b3cb947d07e9
 }
 func (m *CompanyRequestBuilder) JournalsById(id string)(*ie72c90b132e5b7adcd798955c629efd15447d563e9da1b63bdf14accfee955b3.JournalRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["journal_id"] = id
@@ -463,10 +427,8 @@ func (m *CompanyRequestBuilder) PaymentMethods()(*i0b33ef160f8fead222ec024e88407
 }
 func (m *CompanyRequestBuilder) PaymentMethodsById(id string)(*i76069eb1d0c9bbb6e1ddd559e78b0833a04dd47f1a8d9e0b257bb372e8385bbe.PaymentMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["paymentMethod_id"] = id
@@ -478,10 +440,8 @@ func (m *CompanyRequestBuilder) PaymentTerms()(*iae6b3d23c80fa7919b43dad2eea2141
 }
 func (m *CompanyRequestBuilder) PaymentTermsById(id string)(*iadc383c56ae6d955e657e8f3c19445f8290a6719a267f96792db35bd6b54360b.PaymentTermRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["paymentTerm_id"] = id
@@ -493,10 +453,8 @@ func (m *CompanyRequestBuilder) Picture()(*i5e18d51e07e898798b6ff5aee9efe5bacc62
 }
 func (m *CompanyRequestBuilder) PictureById(id string)(*i5e18d51e07e898798b6ff5aee9efe5bacc623efdbcc4f25783d9b6d6c244fd86.PictureRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["picture_id"] = id
@@ -508,10 +466,8 @@ func (m *CompanyRequestBuilder) PurchaseInvoiceLines()(*i5cf0b22deb67122c3b9b804
 }
 func (m *CompanyRequestBuilder) PurchaseInvoiceLinesById(id string)(*ic1d69dea9cc76c8f4fc048660687abdf627bd9aa0c48a4b0f12a4f51e369b3e5.PurchaseInvoiceLineRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["purchaseInvoiceLine_id"] = id
@@ -523,10 +479,8 @@ func (m *CompanyRequestBuilder) PurchaseInvoices()(*ifa3c2f447ab84ba49123c2e10b5
 }
 func (m *CompanyRequestBuilder) PurchaseInvoicesById(id string)(*i7cb486a3270e9b712ce5b39298bcbfc2b57bf6b95bb368048dafb6ec20554fdc.PurchaseInvoiceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["purchaseInvoice_id"] = id
@@ -538,10 +492,8 @@ func (m *CompanyRequestBuilder) SalesCreditMemoLines()(*i85f9226d91c649fe1e2b304
 }
 func (m *CompanyRequestBuilder) SalesCreditMemoLinesById(id string)(*ie940ae608019de62a242d937e70fdc6a489372a4d225a99b69483a2d8f07d28f.SalesCreditMemoLineRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesCreditMemoLine_id"] = id
@@ -553,10 +505,8 @@ func (m *CompanyRequestBuilder) SalesCreditMemos()(*i5850b0e5e17f88c9d6f7fe7ed58
 }
 func (m *CompanyRequestBuilder) SalesCreditMemosById(id string)(*ia5d480bc2a01a45ad601eaa1115f60ec63562dff910b91f3deaa3c8f23c43dba.SalesCreditMemoRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesCreditMemo_id"] = id
@@ -568,10 +518,8 @@ func (m *CompanyRequestBuilder) SalesInvoiceLines()(*i332f46d9c7722cf45bd813ad62
 }
 func (m *CompanyRequestBuilder) SalesInvoiceLinesById(id string)(*i9c35c34fc619450ab198d055e4b3cf4a1cab7f96ff4114906a9df998e1d21369.SalesInvoiceLineRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesInvoiceLine_id"] = id
@@ -583,10 +531,8 @@ func (m *CompanyRequestBuilder) SalesInvoices()(*ib2010f51431a20b492efa7c1681142
 }
 func (m *CompanyRequestBuilder) SalesInvoicesById(id string)(*i3978e2784e815c55b4d52990268524305c63abc98ce85a086e22764f5fcffda4.SalesInvoiceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesInvoice_id"] = id
@@ -598,10 +544,8 @@ func (m *CompanyRequestBuilder) SalesOrderLines()(*i328f372295131e7ef46207b8702c
 }
 func (m *CompanyRequestBuilder) SalesOrderLinesById(id string)(*i9846434aac0b13311c51deaa6afdfc6e1fab10eda8f3d43f1bb2854df18aee02.SalesOrderLineRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesOrderLine_id"] = id
@@ -613,10 +557,8 @@ func (m *CompanyRequestBuilder) SalesOrders()(*if043e0c78816cb07629640b9329b95ec
 }
 func (m *CompanyRequestBuilder) SalesOrdersById(id string)(*i4c029305791a428f4d91149325952557c61cb631a48256abdb31d83808246516.SalesOrderRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesOrder_id"] = id
@@ -628,10 +570,8 @@ func (m *CompanyRequestBuilder) SalesQuoteLines()(*i103871e8833aa81b6a751678ed46
 }
 func (m *CompanyRequestBuilder) SalesQuoteLinesById(id string)(*i5b30584ee167dc3eb4b88ff0d3279d8a5281517c79e75344ae87f0c6fe4c7c80.SalesQuoteLineRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesQuoteLine_id"] = id
@@ -643,10 +583,8 @@ func (m *CompanyRequestBuilder) SalesQuotes()(*i264d8c8ae3f67c790cbd458ad458bb66
 }
 func (m *CompanyRequestBuilder) SalesQuotesById(id string)(*iac037dfe92e14a8772fe5c3815a269ac463e8c4bca84adc7dbd464941fbe1577.SalesQuoteRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesQuote_id"] = id
@@ -658,10 +596,8 @@ func (m *CompanyRequestBuilder) ShipmentMethods()(*ie68804c62ab9b670efbb79712b21
 }
 func (m *CompanyRequestBuilder) ShipmentMethodsById(id string)(*i58aeaf7a36a4d971a858c890c12bf007187d01813c9ad9fd928e8a479673214a.ShipmentMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["shipmentMethod_id"] = id
@@ -673,10 +609,8 @@ func (m *CompanyRequestBuilder) TaxAreas()(*i9c4b4f369d684a41d4d589022b498cbd7f0
 }
 func (m *CompanyRequestBuilder) TaxAreasById(id string)(*id553a6763a1078b0430a865a003eb6fc6d871225b59b6baa3a1e8c60e21486f7.TaxAreaRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["taxArea_id"] = id
@@ -688,10 +622,8 @@ func (m *CompanyRequestBuilder) TaxGroups()(*i83151930b4fc33055bc41c29656d8bc1cc
 }
 func (m *CompanyRequestBuilder) TaxGroupsById(id string)(*i390a707b0da26114fde002ae7c016ee59e47ebd9deaea17652eb6719aaa75ee4.TaxGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["taxGroup_id"] = id
@@ -703,10 +635,8 @@ func (m *CompanyRequestBuilder) UnitsOfMeasure()(*ic2c6ec504e40a95618e6ce500464a
 }
 func (m *CompanyRequestBuilder) UnitsOfMeasureById(id string)(*i43b91397b09aeedb6d1e1bcb250e49ac7a93101a0d0ba2122cdf554aa68abba8.UnitOfMeasureRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unitOfMeasure_id"] = id
@@ -718,10 +648,8 @@ func (m *CompanyRequestBuilder) Vendors()(*ibc26fe33984b8d2f64068005ad1791207561
 }
 func (m *CompanyRequestBuilder) VendorsById(id string)(*i5e7a3640c332a9cd86f5c015ca58ce4c450090db118feb1bc32ead77f958303f.VendorRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["vendor_id"] = id

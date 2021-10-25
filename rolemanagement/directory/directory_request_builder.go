@@ -36,17 +36,15 @@ type DirectoryRequestBuilder struct {
 type DirectoryRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRequestBuilder) {
     m := &DirectoryRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/directory{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -164,10 +162,8 @@ func (m *DirectoryRequestBuilder) ResourceNamespaces()(*if7ad3988c943ab6c47fb727
 }
 func (m *DirectoryRequestBuilder) ResourceNamespacesById(id string)(*i04dea7bcc2de46d7f933671fce512fa0699d5fc5d83576e03b7ac0fe57cc5704.UnifiedRbacResourceNamespaceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRbacResourceNamespace_id"] = id
@@ -179,10 +175,8 @@ func (m *DirectoryRequestBuilder) RoleAssignmentApprovals()(*i4196e83a4bae24d0ae
 }
 func (m *DirectoryRequestBuilder) RoleAssignmentApprovalsById(id string)(*i44fbfcce41c9eaa7ba9ff5f6ba24f61e5a9c03cdb24c3bc25beed0e1d6216960.ApprovalRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["approval_id"] = id
@@ -194,10 +188,8 @@ func (m *DirectoryRequestBuilder) RoleAssignments()(*if3967cc171135f8ae89f635c0a
 }
 func (m *DirectoryRequestBuilder) RoleAssignmentsById(id string)(*i0dc801eaa7e34f0715fe9868f950fd4b68e0050fd9669d9d65ab28af2e0d7f73.UnifiedRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleAssignment_id"] = id
@@ -209,10 +201,8 @@ func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstances()(*i955424cf34
 }
 func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstancesById(id string)(*if172e05e5a1d156d04fd91e88341824ca485364aaa7f2ee21ded1804029cf1f5.UnifiedRoleAssignmentScheduleInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleAssignmentScheduleInstance_id"] = id
@@ -224,10 +214,8 @@ func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequests()(*i003e247115f
 }
 func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequestsById(id string)(*i1a1177924b99f8b8668ec4e5b307b5e9d537c2cfa54abdf2bf1fddde3af81044.UnifiedRoleAssignmentScheduleRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleAssignmentScheduleRequest_id"] = id
@@ -239,10 +227,8 @@ func (m *DirectoryRequestBuilder) RoleAssignmentSchedules()(*ie88f7587d0b612d6aa
 }
 func (m *DirectoryRequestBuilder) RoleAssignmentSchedulesById(id string)(*i5e4e5e8e6ab57f21346122383935dbe84160f647fde997fe85fe2ae4a427c50e.UnifiedRoleAssignmentScheduleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleAssignmentSchedule_id"] = id
@@ -254,10 +240,8 @@ func (m *DirectoryRequestBuilder) RoleDefinitions()(*ic09a099122154ece987c7f8563
 }
 func (m *DirectoryRequestBuilder) RoleDefinitionsById(id string)(*i15fef4d98a25fc03a5a29e7e66cec2ffeccb757e532a20aa82098881625f052a.UnifiedRoleDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleDefinition_id"] = id
@@ -269,10 +253,8 @@ func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstances()(*ie00125ef6
 }
 func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstancesById(id string)(*i322381699c08d5273b2d2e8a72a478e9a4b2c80cb977ad926aa502c1353b499a.UnifiedRoleEligibilityScheduleInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleEligibilityScheduleInstance_id"] = id
@@ -284,10 +266,8 @@ func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequests()(*i99441748b6
 }
 func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequestsById(id string)(*id0ebe1fb3bbbfdf8b2d57215ab0ec7662faabe46ca681bc46803c9c70d11cab5.UnifiedRoleEligibilityScheduleRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleEligibilityScheduleRequest_id"] = id
@@ -299,10 +279,8 @@ func (m *DirectoryRequestBuilder) RoleEligibilitySchedules()(*ib3f3f9905e601fb21
 }
 func (m *DirectoryRequestBuilder) RoleEligibilitySchedulesById(id string)(*i2b3fa3ea5b323a0c2dca9d12e3d5f7bdadbc4bbf1e526ea51f794a5d0f803d75.UnifiedRoleEligibilityScheduleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleEligibilitySchedule_id"] = id

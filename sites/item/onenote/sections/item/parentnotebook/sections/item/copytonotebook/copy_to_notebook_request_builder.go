@@ -76,10 +76,8 @@ func NewCopyToNotebookRequestBuilderInternal(pathParameters map[string]string, r
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/sites/{site_id}/onenote/sections/{onenoteSection_id}/parentNotebook/sections/{onenoteSection_id1}/microsoft.graph.copyToNotebook";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -10,7 +10,7 @@ type SharingLink struct {
     configuratorUrl *string;
     preventsDownload *bool;
     scope *string;
-    type_escpaped *string;
+    type_escaped *string;
     webHtml *string;
     webUrl *string;
 }
@@ -55,11 +55,11 @@ func (m *SharingLink) GetScope()(*string) {
         return m.scope
     }
 }
-func (m *SharingLink) GetType_escpaped()(*string) {
+func (m *SharingLink) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *SharingLink) GetWebHtml()(*string) {
@@ -110,12 +110,12 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         m.SetScope(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     res["webHtml"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +165,7 @@ func (m *SharingLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err := writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -205,8 +205,8 @@ func (m *SharingLink) SetPreventsDownload(value *bool)() {
 func (m *SharingLink) SetScope(value *string)() {
     m.scope = value
 }
-func (m *SharingLink) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *SharingLink) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }
 func (m *SharingLink) SetWebHtml(value *string)() {
     m.webHtml = value

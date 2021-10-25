@@ -19,17 +19,15 @@ type SchemaRequestBuilder struct {
 type SchemaRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewSchemaRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchemaRequestBuilder) {
     m := &SchemaRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/applications/{application_id}/synchronization/jobs/{synchronizationJob_id}/schema{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -125,10 +123,8 @@ func (m *SchemaRequestBuilder) Directories()(*i6ee51d7b052a2996a1de210399bcba9e5
 }
 func (m *SchemaRequestBuilder) DirectoriesById(id string)(*ief99c576a2437c90f6668478d921f23511414ad3967ae9fa00350a32c4507ad7.DirectoryDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["directoryDefinition_id"] = id

@@ -17,7 +17,7 @@ type AttributeDefinition struct {
     name *string;
     referencedObjects []ReferencedObject;
     required *bool;
-    type_escpaped *AttributeType;
+    type_escaped *AttributeType;
 }
 func NewAttributeDefinition()(*AttributeDefinition) {
     m := &AttributeDefinition{
@@ -109,11 +109,11 @@ func (m *AttributeDefinition) GetRequired()(*bool) {
         return m.required
     }
 }
-func (m *AttributeDefinition) GetType_escpaped()(*AttributeType) {
+func (m *AttributeDefinition) GetType_escaped()(*AttributeType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -219,13 +219,13 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         m.SetRequired(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeType)
         if err != nil {
             return err
         }
         cast := val.(AttributeType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -316,9 +316,9 @@ func (m *AttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -367,6 +367,6 @@ func (m *AttributeDefinition) SetReferencedObjects(value []ReferencedObject)() {
 func (m *AttributeDefinition) SetRequired(value *bool)() {
     m.required = value
 }
-func (m *AttributeDefinition) SetType_escpaped(value *AttributeType)() {
-    m.type_escpaped = value
+func (m *AttributeDefinition) SetType_escaped(value *AttributeType)() {
+    m.type_escaped = value
 }

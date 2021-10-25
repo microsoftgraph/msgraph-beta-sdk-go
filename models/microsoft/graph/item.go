@@ -21,7 +21,7 @@ type Item struct {
     priceIncludesTax *bool;
     taxGroupCode *string;
     taxGroupId *string;
-    type_escpaped *string;
+    type_escaped *string;
     unitCost *float64;
     unitPrice *float64;
 }
@@ -129,11 +129,11 @@ func (m *Item) GetTaxGroupId()(*string) {
         return m.taxGroupId
     }
 }
-func (m *Item) GetType_escpaped()(*string) {
+func (m *Item) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *Item) GetUnitCost()(*float64) {
@@ -268,12 +268,12 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         m.SetTaxGroupId(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     res["unitCost"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -392,7 +392,7 @@ func (m *Item) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     {
-        err = writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -453,8 +453,8 @@ func (m *Item) SetTaxGroupCode(value *string)() {
 func (m *Item) SetTaxGroupId(value *string)() {
     m.taxGroupId = value
 }
-func (m *Item) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *Item) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }
 func (m *Item) SetUnitCost(value *float64)() {
     m.unitCost = value

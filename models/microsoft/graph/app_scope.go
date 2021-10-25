@@ -7,7 +7,7 @@ import (
 type AppScope struct {
     Entity
     displayName *string;
-    type_escpaped *string;
+    type_escaped *string;
 }
 func NewAppScope()(*AppScope) {
     m := &AppScope{
@@ -22,11 +22,11 @@ func (m *AppScope) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-func (m *AppScope) GetType_escpaped()(*string) {
+func (m *AppScope) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *AppScope) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,12 +39,12 @@ func (m *AppScope) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         m.SetDisplayName(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     return res
@@ -64,7 +64,7 @@ func (m *AppScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
-        err = writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -74,6 +74,6 @@ func (m *AppScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 func (m *AppScope) SetDisplayName(value *string)() {
     m.displayName = value
 }
-func (m *AppScope) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *AppScope) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }

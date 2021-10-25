@@ -14,10 +14,8 @@ func NewGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderInter
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations/{deviceConfiguration_id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if secretReferenceValueId != nil {
         urlTplParams["secretReferenceValueId"] = *secretReferenceValueId

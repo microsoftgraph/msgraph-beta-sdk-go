@@ -20,7 +20,7 @@ type BaseRequestBuilder struct {
 type BaseRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *BaseRequestBuilder) AssociateWithHubSites()(*i6120d63ec050fcd2c66e9cb891d59795ad2a334fe1cfae904272cc459b519673.AssociateWithHubSitesRequestBuilder) {
     return i6120d63ec050fcd2c66e9cb891d59795ad2a334fe1cfae904272cc459b519673.NewAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -30,10 +30,8 @@ func NewBaseRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/shares/{sharedDriveItem_id}/list/contentTypes/{contentType_id}/base{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

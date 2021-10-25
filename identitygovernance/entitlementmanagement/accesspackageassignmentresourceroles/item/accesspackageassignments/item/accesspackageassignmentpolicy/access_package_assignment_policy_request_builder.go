@@ -16,7 +16,7 @@ type AccessPackageAssignmentPolicyRequestBuilder struct {
 type AccessPackageAssignmentPolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *AccessPackageAssignmentPolicyRequestBuilder) AccessPackage()(*i327adbd8e9c0920974b225c697b9e8edb3c7bb19c633e9d717d17f97a65f69aa.AccessPackageRequestBuilder) {
     return i327adbd8e9c0920974b225c697b9e8edb3c7bb19c633e9d717d17f97a65f69aa.NewAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -29,10 +29,8 @@ func NewAccessPackageAssignmentPolicyRequestBuilderInternal(pathParameters map[s
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole_id}/accessPackageAssignments/{accessPackageAssignment_id}/accessPackageAssignmentPolicy{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -14,10 +14,8 @@ func NewGetMobileAppCountWithStatusRequestBuilderInternal(pathParameters map[str
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/mobileApps/microsoft.graph.getMobileAppCount(status='{status}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if status != nil {
         urlTplParams["status"] = *status

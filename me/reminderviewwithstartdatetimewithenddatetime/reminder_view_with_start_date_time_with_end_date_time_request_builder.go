@@ -15,10 +15,8 @@ func NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathP
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if startDateTime != nil {
         urlTplParams["StartDateTime"] = *startDateTime

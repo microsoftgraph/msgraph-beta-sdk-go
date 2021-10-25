@@ -8,7 +8,7 @@ type ItemEmail struct {
     ItemFacet
     address *string;
     displayName *string;
-    type_escpaped *EmailType;
+    type_escaped *EmailType;
 }
 func NewItemEmail()(*ItemEmail) {
     m := &ItemEmail{
@@ -30,11 +30,11 @@ func (m *ItemEmail) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-func (m *ItemEmail) GetType_escpaped()(*EmailType) {
+func (m *ItemEmail) GetType_escaped()(*EmailType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *ItemEmail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -55,13 +55,13 @@ func (m *ItemEmail) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         m.SetDisplayName(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseEmailType)
         if err != nil {
             return err
         }
         cast := val.(EmailType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -86,9 +86,9 @@ func (m *ItemEmail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err = writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err = writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -101,6 +101,6 @@ func (m *ItemEmail) SetAddress(value *string)() {
 func (m *ItemEmail) SetDisplayName(value *string)() {
     m.displayName = value
 }
-func (m *ItemEmail) SetType_escpaped(value *EmailType)() {
-    m.type_escpaped = value
+func (m *ItemEmail) SetType_escaped(value *EmailType)() {
+    m.type_escaped = value
 }

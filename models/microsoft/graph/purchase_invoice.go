@@ -31,7 +31,7 @@ type PurchaseInvoice struct {
     totalAmountExcludingTax *float64;
     totalAmountIncludingTax *float64;
     totalTaxAmount *float64;
-    vendor *Vendor;
+    vendor_escaped *Vendor_escaped;
     vendorId *string;
     vendorInvoiceNumber *string;
     vendorName *string;
@@ -211,11 +211,11 @@ func (m *PurchaseInvoice) GetTotalTaxAmount()(*float64) {
         return m.totalTaxAmount
     }
 }
-func (m *PurchaseInvoice) GetVendor()(*Vendor) {
+func (m *PurchaseInvoice) GetVendor_escaped()(*Vendor_escaped) {
     if m == nil {
         return nil
     } else {
-        return m.vendor
+        return m.vendor_escaped
     }
 }
 func (m *PurchaseInvoice) GetVendorId()(*string) {
@@ -444,12 +444,12 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(interface{}, i
         m.SetTotalTaxAmount(val)
         return nil
     }
-    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVendor() })
+    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVendor_escaped() })
         if err != nil {
             return err
         }
-        m.SetVendor(val.(*Vendor))
+        m.SetVendor_escaped(val.(*Vendor_escaped))
         return nil
     }
     res["vendorId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -644,7 +644,7 @@ func (m *PurchaseInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err = writer.WriteObjectValue("vendor", m.GetVendor())
+        err = writer.WriteObjectValue("vendor_escaped", m.GetVendor_escaped())
         if err != nil {
             return err
         }
@@ -747,8 +747,8 @@ func (m *PurchaseInvoice) SetTotalAmountIncludingTax(value *float64)() {
 func (m *PurchaseInvoice) SetTotalTaxAmount(value *float64)() {
     m.totalTaxAmount = value
 }
-func (m *PurchaseInvoice) SetVendor(value *Vendor)() {
-    m.vendor = value
+func (m *PurchaseInvoice) SetVendor_escaped(value *Vendor_escaped)() {
+    m.vendor_escaped = value
 }
 func (m *PurchaseInvoice) SetVendorId(value *string)() {
     m.vendorId = value

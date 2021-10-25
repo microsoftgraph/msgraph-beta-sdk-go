@@ -34,7 +34,7 @@ type CallRequestBuilder struct {
 type CallRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *CallRequestBuilder) Answer()(*i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305.AnswerRequestBuilder) {
     return i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305.NewAnswerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -44,10 +44,8 @@ func (m *CallRequestBuilder) AudioRoutingGroups()(*ic54ac4adcd492f82a003801c0ce3
 }
 func (m *CallRequestBuilder) AudioRoutingGroupsById(id string)(*i151a479d1626e685450cad3f10b2ae807a5841c52441c261bfec932663c91e9f.AudioRoutingGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["audioRoutingGroup_id"] = id
@@ -65,10 +63,8 @@ func NewCallRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/communications/calls/{call_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -181,10 +177,8 @@ func (m *CallRequestBuilder) Operations()(*i8659ea4008fd7459c7570b3b977a99568235
 }
 func (m *CallRequestBuilder) OperationsById(id string)(*ifc54b1625a5ef155b182402b189053da9800796fb7507ed629f84919426791d1.CommsOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["commsOperation_id"] = id
@@ -196,10 +190,8 @@ func (m *CallRequestBuilder) Participants()(*if78246d1256eb5bc7db2b2c1dcd3d9daaa
 }
 func (m *CallRequestBuilder) ParticipantsById(id string)(*ie3ddf2285119a257859e618e7d13130592dc1f6e886e271f46d05000453bffd2.ParticipantRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["participant_id"] = id

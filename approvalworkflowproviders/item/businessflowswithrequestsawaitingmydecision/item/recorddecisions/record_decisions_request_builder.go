@@ -14,10 +14,8 @@ func NewRecordDecisionsRequestBuilderInternal(pathParameters map[string]string, 
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/approvalWorkflowProviders/{approvalWorkflowProvider_id}/businessFlowsWithRequestsAwaitingMyDecision/{businessFlow_id}/microsoft.graph.recordDecisions";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

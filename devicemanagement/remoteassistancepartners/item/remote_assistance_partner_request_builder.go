@@ -16,7 +16,7 @@ type RemoteAssistancePartnerRequestBuilder struct {
 type RemoteAssistancePartnerRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *RemoteAssistancePartnerRequestBuilder) BeginOnboarding()(*id0d53dab897cd68adbdccb455d85697abd98f9e5792c35eb1a92375c1451257b.BeginOnboardingRequestBuilder) {
     return id0d53dab897cd68adbdccb455d85697abd98f9e5792c35eb1a92375c1451257b.NewBeginOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewRemoteAssistancePartnerRequestBuilderInternal(pathParameters map[string]
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

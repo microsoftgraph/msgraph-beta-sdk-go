@@ -26,17 +26,15 @@ type OnenoteRequestBuilder struct {
 type OnenoteRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewOnenoteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenoteRequestBuilder) {
     m := &OnenoteRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/onenote{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -143,10 +141,8 @@ func (m *OnenoteRequestBuilder) Notebooks()(*ib36bb6d1f9df6c799554962aa9140a8a21
 }
 func (m *OnenoteRequestBuilder) NotebooksById(id string)(*i6a069b84ae32266e6bf82920f1fc07006063c6ab8d79686cfce6e0db10cec4fc.NotebookRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["notebook_id"] = id
@@ -158,10 +154,8 @@ func (m *OnenoteRequestBuilder) Operations()(*ia8902f185c65ac001b224597887a8a6dc
 }
 func (m *OnenoteRequestBuilder) OperationsById(id string)(*i36dec7ba02338ec80d0aadc341f3d430bf7ba2ef0fcca488cf6d5aaec6351f30.OnenoteOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenoteOperation_id"] = id
@@ -173,10 +167,8 @@ func (m *OnenoteRequestBuilder) Pages()(*if4b33feb03b4a8caa24f40658d33331ee1954b
 }
 func (m *OnenoteRequestBuilder) PagesById(id string)(*i495a4f57349504b33382ebc4e69b340892a5c5cd5bf47598ede5ed4df2a6cd22.OnenotePageRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenotePage_id"] = id
@@ -199,10 +191,8 @@ func (m *OnenoteRequestBuilder) Resources()(*idba9eccbf195e309903e4604967906aaec
 }
 func (m *OnenoteRequestBuilder) ResourcesById(id string)(*iff82d48b107b0f1d8ee510d162980e8db7a234cfcf7a181c6a873e365fc3ef91.OnenoteResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenoteResource_id"] = id
@@ -214,10 +204,8 @@ func (m *OnenoteRequestBuilder) SectionGroups()(*i9a0d1550f162cbcf8d4569ad9dd880
 }
 func (m *OnenoteRequestBuilder) SectionGroupsById(id string)(*i8c97de23d86177fac613e5e517b2f328d38f7e895d89cfa79aafa8584928f191.SectionGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sectionGroup_id"] = id
@@ -229,10 +217,8 @@ func (m *OnenoteRequestBuilder) Sections()(*iee0b7ad0f78d8a497b365124b87d1521a0f
 }
 func (m *OnenoteRequestBuilder) SectionsById(id string)(*i363789c75b25a6e269f3137e023c6136e7a619b6ddce9124c56a65d3e0d28445.OnenoteSectionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenoteSection_id"] = id

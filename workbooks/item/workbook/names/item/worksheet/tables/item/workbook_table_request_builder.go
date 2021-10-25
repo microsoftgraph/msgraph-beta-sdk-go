@@ -5,9 +5,9 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i3e76f3b694b2892b3559305dd73a32d8e8037daa8dfa3ed58c3dbe4ce9c458b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/sort"
-    i40f756f54e39a333f44cec339418af3d72840be1d7bf15ad924a67f5f36a4551 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/range_escpaped"
     i50aec57cf26af7ac706e2ca57bb86ae58f9386583f9c6c389255c7e7b5d9cd3d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/reapplyfilters"
     i60fb9ac6ba5d60f25faed4ae4631ee0fbd3fa80d6bfe4c2f3094cf9d4915cf9b "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/clearfilters"
+    i6c37a4555679a908182aa3b897857e1a736ea412af7cc59d82636dffce75be27 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/range_escaped"
     i9037314378a6d8a47f599ff5a814639cb40d42e904c840797e1d4d61f484adc5 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/converttorange"
     i906f1a36fbc3b92bef4711dc68af87cef1d5a363f436d2f95b56f94b90ae115d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/headerrowrange"
     i9d0ee725d6e4543c865c576ed69cb4522119358727e8883a237aad8de98b9ec8 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/databodyrange"
@@ -27,7 +27,7 @@ type WorkbookTableRequestBuilder struct {
 type WorkbookTableRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *WorkbookTableRequestBuilder) ClearFilters()(*i60fb9ac6ba5d60f25faed4ae4631ee0fbd3fa80d6bfe4c2f3094cf9d4915cf9b.ClearFiltersRequestBuilder) {
     return i60fb9ac6ba5d60f25faed4ae4631ee0fbd3fa80d6bfe4c2f3094cf9d4915cf9b.NewClearFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -37,10 +37,8 @@ func (m *WorkbookTableRequestBuilder) Columns()(*ib8ad0582ac6d5eb3fa199ccb2b91d1
 }
 func (m *WorkbookTableRequestBuilder) ColumnsById(id string)(*if5cfda93cad0d5440d4a9f28ff3f91b09852f8ebbb9f5f3bad3ad640e342b69b.WorkbookTableColumnRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookTableColumn_id"] = id
@@ -52,10 +50,8 @@ func NewWorkbookTableRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/names/{workbookNamedItem_id}/worksheet/tables/{workbookTable_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -177,8 +173,8 @@ func (m *WorkbookTableRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6634e
     }
     return nil
 }
-func (m *WorkbookTableRequestBuilder) Range_escpaped()(*i40f756f54e39a333f44cec339418af3d72840be1d7bf15ad924a67f5f36a4551.RangeRequestBuilder) {
-    return i40f756f54e39a333f44cec339418af3d72840be1d7bf15ad924a67f5f36a4551.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *WorkbookTableRequestBuilder) Range_escaped()(*i6c37a4555679a908182aa3b897857e1a736ea412af7cc59d82636dffce75be27.RangeRequestBuilder) {
+    return i6c37a4555679a908182aa3b897857e1a736ea412af7cc59d82636dffce75be27.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *WorkbookTableRequestBuilder) ReapplyFilters()(*i50aec57cf26af7ac706e2ca57bb86ae58f9386583f9c6c389255c7e7b5d9cd3d.ReapplyFiltersRequestBuilder) {
     return i50aec57cf26af7ac706e2ca57bb86ae58f9386583f9c6c389255c7e7b5d9cd3d.NewReapplyFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -188,10 +184,8 @@ func (m *WorkbookTableRequestBuilder) Rows()(*ifd3e20ee0c127a275b04eabd7711e7c5d
 }
 func (m *WorkbookTableRequestBuilder) RowsById(id string)(*i5b99478514fc578dc975ffd5c62f32cd2dc2aeda4f651eb15e98d94ee0c38aae.WorkbookTableRowRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookTableRow_id"] = id

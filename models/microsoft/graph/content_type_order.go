@@ -6,7 +6,7 @@ import (
 
 type ContentTypeOrder struct {
     additionalData map[string]interface{};
-    default_escpaped *bool;
+    default_escaped *bool;
     position *int32;
 }
 func NewContentTypeOrder()(*ContentTypeOrder) {
@@ -22,11 +22,11 @@ func (m *ContentTypeOrder) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-func (m *ContentTypeOrder) GetDefault_escpaped()(*bool) {
+func (m *ContentTypeOrder) GetDefault_escaped()(*bool) {
     if m == nil {
         return nil
     } else {
-        return m.default_escpaped
+        return m.default_escaped
     }
 }
 func (m *ContentTypeOrder) GetPosition()(*int32) {
@@ -38,12 +38,12 @@ func (m *ContentTypeOrder) GetPosition()(*int32) {
 }
 func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["default_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["default_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
-        m.SetDefault_escpaped(val)
+        m.SetDefault_escaped(val)
         return nil
     }
     res["position"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +61,7 @@ func (m *ContentTypeOrder) IsNil()(bool) {
 }
 func (m *ContentTypeOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteBoolValue("default_escpaped", m.GetDefault_escpaped())
+        err := writer.WriteBoolValue("default_escaped", m.GetDefault_escaped())
         if err != nil {
             return err
         }
@@ -83,8 +83,8 @@ func (m *ContentTypeOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 func (m *ContentTypeOrder) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-func (m *ContentTypeOrder) SetDefault_escpaped(value *bool)() {
-    m.default_escpaped = value
+func (m *ContentTypeOrder) SetDefault_escaped(value *bool)() {
+    m.default_escaped = value
 }
 func (m *ContentTypeOrder) SetPosition(value *int32)() {
     m.position = value

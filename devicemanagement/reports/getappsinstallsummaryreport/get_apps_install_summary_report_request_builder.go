@@ -14,10 +14,8 @@ func NewGetAppsInstallSummaryReportRequestBuilderInternal(pathParameters map[str
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/reports/microsoft.graph.getAppsInstallSummaryReport";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

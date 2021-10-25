@@ -15,7 +15,7 @@ type LineRequestBuilder struct {
 type LineRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *LineRequestBuilder) Clear()(*ic06c7fe80a9760195f3c718c5bca5aebb52e54c0dc6d0e6228ef8846af26bbae.ClearRequestBuilder) {
     return ic06c7fe80a9760195f3c718c5bca5aebb52e54c0dc6d0e6228ef8846af26bbae.NewClearRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewLineRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/{workbookChart_id}/axes/categoryAxis/minorGridlines/format/line{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

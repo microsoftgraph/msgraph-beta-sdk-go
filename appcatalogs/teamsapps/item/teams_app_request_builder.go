@@ -16,17 +16,15 @@ type TeamsAppRequestBuilder struct {
 type TeamsAppRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *TeamsAppRequestBuilder) AppDefinitions()(*ia4ebc11dd032304ffa14250ed04d31f8c778e5ad4538b0fbda5634d98cdc51b4.AppDefinitionsRequestBuilder) {
     return ia4ebc11dd032304ffa14250ed04d31f8c778e5ad4538b0fbda5634d98cdc51b4.NewAppDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *TeamsAppRequestBuilder) AppDefinitionsById(id string)(*i17cd5242c756bd84355b785c450d2409fb222ae189e4e7a205efdab79ef3c7f2.TeamsAppDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["teamsAppDefinition_id"] = id
@@ -38,10 +36,8 @@ func NewTeamsAppRequestBuilderInternal(pathParameters map[string]string, request
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/appCatalogs/teamsApps/{teamsApp_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

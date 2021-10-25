@@ -16,7 +16,7 @@ type PolicyRequestBuilder struct {
 type PolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PolicyRequestBuilder) Assign()(*i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797.AssignRequestBuilder) {
     return i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAd
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy_id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus_id}/policy{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

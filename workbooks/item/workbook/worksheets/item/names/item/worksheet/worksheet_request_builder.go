@@ -4,10 +4,10 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i59ad7695f7a015349f86daabb34970fa6476214cede1042be62fd1a62dbe6e88 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/names/item/worksheet/range_escpaped"
     i68dba92f63520456da4504cf822c0efef4f51410a5c5581e30f39f304ab83d16 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/names/item/worksheet/usedrangewithvaluesonly"
     i83b6289eb990ae98f6f777cd668965c0c61e71d1959dd7f81d43ff3a62c1e53b "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/names/item/worksheet/usedrange"
     i852d8ffa193616a923d4c0f35cdc94ad3307e2002261ed4df6bee986849121ba "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/names/item/worksheet/cellwithrowwithcolumn"
+    ic9a0245daedcffb6114b5e8c821915274ff56f3d4d415caf933a3fb49fa199b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/names/item/worksheet/range_escaped"
     ifa41c533cbbee8763606174ca778fde2bef643ae1a16fddc8b6f868a5aeb2d3c "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/names/item/worksheet/rangewithaddress"
 )
 
@@ -19,7 +19,7 @@ type WorksheetRequestBuilder struct {
 type WorksheetRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *WorksheetRequestBuilder) CellWithRowWithColumn(row *int32, column *int32)(*i852d8ffa193616a923d4c0f35cdc94ad3307e2002261ed4df6bee986849121ba.CellWithRowWithColumnRequestBuilder) {
     return i852d8ffa193616a923d4c0f35cdc94ad3307e2002261ed4df6bee986849121ba.NewCellWithRowWithColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter, row, column);
@@ -29,10 +29,8 @@ func NewWorksheetRequestBuilderInternal(pathParameters map[string]string, reques
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/worksheets/{workbookWorksheet_id}/names/{workbookNamedItem_id}/worksheet{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -145,8 +143,8 @@ func (m *WorksheetRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6634e0651
     }
     return nil
 }
-func (m *WorksheetRequestBuilder) Range_escpaped()(*i59ad7695f7a015349f86daabb34970fa6476214cede1042be62fd1a62dbe6e88.RangeRequestBuilder) {
-    return i59ad7695f7a015349f86daabb34970fa6476214cede1042be62fd1a62dbe6e88.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *WorksheetRequestBuilder) Range_escaped()(*ic9a0245daedcffb6114b5e8c821915274ff56f3d4d415caf933a3fb49fa199b3.RangeRequestBuilder) {
+    return ic9a0245daedcffb6114b5e8c821915274ff56f3d4d415caf933a3fb49fa199b3.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *WorksheetRequestBuilder) RangeWithAddress(address *string)(*ifa41c533cbbee8763606174ca778fde2bef643ae1a16fddc8b6f868a5aeb2d3c.RangeWithAddressRequestBuilder) {
     return ifa41c533cbbee8763606174ca778fde2bef643ae1a16fddc8b6f868a5aeb2d3c.NewRangeWithAddressRequestBuilderInternal(m.pathParameters, m.requestAdapter, address);

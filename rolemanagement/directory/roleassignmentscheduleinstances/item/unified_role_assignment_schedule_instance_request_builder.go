@@ -15,7 +15,7 @@ type UnifiedRoleAssignmentScheduleInstanceRequestBuilder struct {
 type UnifiedRoleAssignmentScheduleInstanceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) ActivatedUsing()(*i233e1c93c2988760d8278e4466846e70296b939fb7b6b7da933b407ab0fa771c.ActivatedUsingRequestBuilder) {
     return i233e1c93c2988760d8278e4466846e70296b939fb7b6b7da933b407ab0fa771c.NewActivatedUsingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewUnifiedRoleAssignmentScheduleInstanceRequestBuilderInternal(pathParamete
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

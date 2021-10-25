@@ -38,7 +38,7 @@ type SiteRequestBuilder struct {
 type SiteRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *SiteRequestBuilder) Analytics()(*i842757c0e3ad7774d9626c19093a7db6bb052d1a0ac574cbe23bc486c5cb9c24.AnalyticsRequestBuilder) {
     return i842757c0e3ad7774d9626c19093a7db6bb052d1a0ac574cbe23bc486c5cb9c24.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -48,10 +48,8 @@ func (m *SiteRequestBuilder) Columns()(*i41d40ece57596aff17bbd4e071da917e9696de9
 }
 func (m *SiteRequestBuilder) ColumnsById(id string)(*i414042b7d435cf3a5ea7119418d530da6e7fbf15fcc40be074e1d7c9a6996fd1.ColumnDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["columnDefinition_id"] = id
@@ -63,10 +61,8 @@ func NewSiteRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/sites/{site_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -82,10 +78,8 @@ func (m *SiteRequestBuilder) ContentTypes()(*i163b1106365b137fdb131300f3c0f6b8e2
 }
 func (m *SiteRequestBuilder) ContentTypesById(id string)(*i3721ddd37978ed5887e741cd4ec530f247da77968194df669e6b5cf53370bed5.ContentTypeRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["contentType_id"] = id
@@ -180,10 +174,8 @@ func (m *SiteRequestBuilder) Drives()(*i0d031e5a8bc99797a387d266d9cbab194ba77e02
 }
 func (m *SiteRequestBuilder) DrivesById(id string)(*i7c78829e5ecb7ce49dec3e15a0823e233af9edec6a7211cb55cf0d8ee73c2a68.DriveRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["drive_id"] = id
@@ -218,10 +210,8 @@ func (m *SiteRequestBuilder) Items()(*i7991f174b586f44e549c3d8dce6877288c6b0fbc7
 }
 func (m *SiteRequestBuilder) ItemsById(id string)(*icf0323a037a02f8c72110955832cfede83bf2251b506c77f844efff04e3320d5.BaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["baseItem_id"] = id
@@ -233,10 +223,8 @@ func (m *SiteRequestBuilder) Lists()(*i7f031c5d4daa82a55f4b2c1717082c661c29d6eee
 }
 func (m *SiteRequestBuilder) ListsById(id string)(*ic0a30c9fcd69c709d292863ba51b88fe2799046dcce950f9d1bc1a372381eb06.ListRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["list_id"] = id
@@ -251,10 +239,8 @@ func (m *SiteRequestBuilder) Pages()(*i470ba8ba4f5c4ab0e450363d2c299e7fcf6425475
 }
 func (m *SiteRequestBuilder) PagesById(id string)(*i13de7ce6001c6b4559e0a6f9bb09511cb1f9e883a741518534e6b03fba66897a.SitePageRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sitePage_id"] = id
@@ -277,10 +263,8 @@ func (m *SiteRequestBuilder) Permissions()(*ic4329a5ed1e54000b3f53e26c12bea37b9b
 }
 func (m *SiteRequestBuilder) PermissionsById(id string)(*if030207cd960e3ca95a11c646417c461af3fa2b3617d9b9b2af40510bf1e4eb9.PermissionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["permission_id"] = id
@@ -292,10 +276,8 @@ func (m *SiteRequestBuilder) Sites()(*i827abacdcee64b9285bd46dfe43361a6c33ec040f
 }
 func (m *SiteRequestBuilder) SitesById(id string)(*i0e66ddd1911d4faa407029ec9d0d44af8f3f0dffd6d4ff8e37227f18c6dcb9e5.SiteRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["site_id1"] = id

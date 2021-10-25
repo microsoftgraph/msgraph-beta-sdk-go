@@ -16,17 +16,15 @@ type CatalogRequestBuilder struct {
 type CatalogRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewCatalogRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CatalogRequestBuilder) {
     m := &CatalogRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/admin/windows/updates/catalog{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -122,10 +120,8 @@ func (m *CatalogRequestBuilder) Entries()(*i4968f4ec9198198a442624bbae5280f764e6
 }
 func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.CatalogEntryRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["catalogEntry_id"] = id

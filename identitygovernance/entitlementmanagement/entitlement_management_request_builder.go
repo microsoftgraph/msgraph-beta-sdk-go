@@ -39,17 +39,15 @@ type EntitlementManagementRequestBuilder struct {
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovals()(*i4457cf48628c9e6d5d1e3963ea8a19dd7f20c98f2fd6035004babfeb7e44fbc8.AccessPackageAssignmentApprovalsRequestBuilder) {
     return i4457cf48628c9e6d5d1e3963ea8a19dd7f20c98f2fd6035004babfeb7e44fbc8.NewAccessPackageAssignmentApprovalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovalsById(id string)(*ifa7e2fb3dcb6477dacae87733273579930d76bee0f987eee04a36237466ad30b.ApprovalRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["approval_id"] = id
@@ -61,10 +59,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentPolicies()(
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentPoliciesById(id string)(*i259297720910df1e18cab41eaf6e93c6e506e2f6ead7e552913518ba4de7df35.AccessPackageAssignmentPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageAssignmentPolicy_id"] = id
@@ -76,10 +72,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentRequests()(
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentRequestsById(id string)(*i76c412e0065634c6fc606ecd0b6e09322c5b7f7b51446f949b2f794f2fc40926.AccessPackageAssignmentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageAssignmentRequest_id"] = id
@@ -91,10 +85,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentResourceRol
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentResourceRolesById(id string)(*i46b0d052826008fb4b9e2de18eaadb28b08fda0c4481c35e9fdf6c08800480a1.AccessPackageAssignmentResourceRoleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageAssignmentResourceRole_id"] = id
@@ -106,10 +98,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignments()(*i288a3
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentsById(id string)(*ib0d512b118f91cf1bc458b5feacf403e01f72b051f66b4e84985a41cb52dab99.AccessPackageAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageAssignment_id"] = id
@@ -121,10 +111,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageCatalogs()(*i7b6be768
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageCatalogsById(id string)(*i82310b3d54600cbafcfbb579b511cc82bb29ed7fb49516f06dce0fcc7951bdf0.AccessPackageCatalogRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageCatalog_id"] = id
@@ -136,10 +124,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceEnvironments(
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceEnvironmentsById(id string)(*id480c6778d8753dfd5aecaa8cfff24f904f1d9cfb89137f57d90578c37490dde.AccessPackageResourceEnvironmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageResourceEnvironment_id"] = id
@@ -151,10 +137,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRequests()(*i
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRequestsById(id string)(*if945e55d38fc375c56dbf90cf6e39a7d61a6cd01059d47fb2b23e38f45842f3e.AccessPackageResourceRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageResourceRequest_id"] = id
@@ -166,10 +150,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRoleScopes()(
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRoleScopesById(id string)(*i73885afb0012ccafe2d98c7ad3770430abc8b68787e78c60063bf998dee8be11.AccessPackageResourceRoleScopeRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageResourceRoleScope_id"] = id
@@ -181,10 +163,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResources()(*if86a045
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourcesById(id string)(*ia3f92f11727041477c1ada6bfc08139cadda160d066f173db00cce4f8358bc50.AccessPackageResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageResource_id"] = id
@@ -196,10 +176,8 @@ func (m *EntitlementManagementRequestBuilder) AccessPackages()(*ib411956083b5fb1
 }
 func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*i832824d2195e5d19b0fbdef0bb45eca79f632cf74d39d2b1535ca2c63e49b230.AccessPackageRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackage_id"] = id
@@ -211,10 +189,8 @@ func (m *EntitlementManagementRequestBuilder) ConnectedOrganizations()(*i3d425a2
 }
 func (m *EntitlementManagementRequestBuilder) ConnectedOrganizationsById(id string)(*i6733f0715c511b6a99e8e8280d52d93704622cda212a0d03f6340a8c98c403e5.ConnectedOrganizationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["connectedOrganization_id"] = id
@@ -226,10 +202,8 @@ func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]st
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

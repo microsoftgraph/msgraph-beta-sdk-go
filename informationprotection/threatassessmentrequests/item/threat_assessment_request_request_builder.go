@@ -16,17 +16,15 @@ type ThreatAssessmentRequestRequestBuilder struct {
 type ThreatAssessmentRequestRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewThreatAssessmentRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ThreatAssessmentRequestRequestBuilder) {
     m := &ThreatAssessmentRequestRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/informationProtection/threatAssessmentRequests/{threatAssessmentRequest_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *ThreatAssessmentRequestRequestBuilder) Results()(*id6831cc7f80026a72507
 }
 func (m *ThreatAssessmentRequestRequestBuilder) ResultsById(id string)(*i49b97f74066b80fc2f06e1a623b395eb4de07f58502cf70313d6e6838b92b518.ThreatAssessmentResultRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["threatAssessmentResult_id"] = id

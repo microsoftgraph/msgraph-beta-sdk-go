@@ -7,8 +7,8 @@ import (
     i1c01909c6ef3a0b4ecbc547ebda2d4d3030e1f239fe94abca03a2b8636100659 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/tables/item/columns/item/totalrowrange"
     i2031989fac21e80481589ae99eea2c21e846169673d6fe52746cf4b95567115d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/tables/item/columns/item/headerrowrange"
     i8cbe9ec24cd170564bbc5ceed6da18fe92023e1c1b14dd38868a97143b2cd9c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/tables/item/columns/item/databodyrange"
-    icfbf7de7fec4df624f90cd4ad8bada61c88d77d5603e0f76f83cdcf0feb002b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/tables/item/columns/item/range_escpaped"
     idc2fe0ff521a1ee12439bdd984987a56af65fad4d10a0950d94038a3987fb18d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/tables/item/columns/item/filter"
+    ief4e49c07a533652a95135c05dbc709d39752d40946fba45a92c856b38ce0974 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/tables/item/columns/item/range_escaped"
 )
 
 type WorkbookTableColumnRequestBuilder struct {
@@ -19,17 +19,15 @@ type WorkbookTableColumnRequestBuilder struct {
 type WorkbookTableColumnRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewWorkbookTableColumnRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookTableColumnRequestBuilder) {
     m := &WorkbookTableColumnRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/worksheets/{workbookWorksheet_id}/tables/{workbookTable_id}/columns/{workbookTableColumn_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -151,8 +149,8 @@ func (m *WorkbookTableColumnRequestBuilder) Patch(body *i535684e11b5500196ecb4b5
     }
     return nil
 }
-func (m *WorkbookTableColumnRequestBuilder) Range_escpaped()(*icfbf7de7fec4df624f90cd4ad8bada61c88d77d5603e0f76f83cdcf0feb002b5.RangeRequestBuilder) {
-    return icfbf7de7fec4df624f90cd4ad8bada61c88d77d5603e0f76f83cdcf0feb002b5.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *WorkbookTableColumnRequestBuilder) Range_escaped()(*ief4e49c07a533652a95135c05dbc709d39752d40946fba45a92c856b38ce0974.RangeRequestBuilder) {
+    return ief4e49c07a533652a95135c05dbc709d39752d40946fba45a92c856b38ce0974.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *WorkbookTableColumnRequestBuilder) TotalRowRange()(*i1c01909c6ef3a0b4ecbc547ebda2d4d3030e1f239fe94abca03a2b8636100659.TotalRowRangeRequestBuilder) {
     return i1c01909c6ef3a0b4ecbc547ebda2d4d3030e1f239fe94abca03a2b8636100659.NewTotalRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);

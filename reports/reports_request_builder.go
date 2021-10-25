@@ -148,17 +148,15 @@ type ReportsRequestBuilder struct {
 type ReportsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.ApplicationSignInDetailedSummaryRequestBuilder) {
     return i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.NewApplicationSignInDetailedSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(*i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.ApplicationSignInDetailedSummaryRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["applicationSignInDetailedSummary_id"] = id
@@ -173,10 +171,8 @@ func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestA
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/reports{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -242,10 +238,8 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetails()(*i4b201efc99
 }
 func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)(*i4b201efc99cccf9ab4d4acd90fb2df1aee6c33be6c22339b8c5424063e857dc2.CredentialUserRegistrationDetailsRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["credentialUserRegistrationDetails_id"] = id
@@ -257,10 +251,8 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*i3c5eb35d4514961f4cb
 }
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*id64618d3ddc94c3dc7162d9da67abd3172a3d1bf99f56c9991906d6421e665be.PrintUsageByPrinterRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printUsageByPrinter_id"] = id
@@ -272,10 +264,8 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUser()(*i2993fd51754851864ba7c1
 }
 func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i6325a2796f62004e900be3097636ac3cdb4b5f89fff67309d7747a1f3c033bf5.PrintUsageByUserRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printUsageByUser_id"] = id
@@ -287,10 +277,8 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinter()(*i51d8f12ca8
 }
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)(*i81f53b8b26ae53be90ad15f1e85f74bb88ada9cad7e6d8f0b3cb9ce23e2e0f46.PrintUsageByPrinterRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printUsageByPrinter_id"] = id
@@ -302,10 +290,8 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUser()(*i6858d47e90b13
 }
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUserById(id string)(*if50f0dbd8a90dfcd7816cc16a43a257b56afed52876190fb217ae57a9d4679e0.PrintUsageByUserRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printUsageByUser_id"] = id
@@ -667,10 +653,8 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*i37eb861166f6d0555
 }
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i9d3332b918775296ebe9eb5ed2e432af9b61c784aceacaca03a043c49a0ff6db.PrintUsageByPrinterRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printUsageByPrinter_id"] = id
@@ -682,10 +666,8 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUser()(*ifbd8842a6664ec96c7d8
 }
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*i5983a969121cc458289b2e9bf5b347bab6120a3ecd4adca075e2189cc9460c6f.PrintUsageByUserRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printUsageByUser_id"] = id
@@ -697,10 +679,8 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinter()(*i59460f77
 }
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id string)(*i9e0e6696a72655a2583635eb551d9445661402ca5fa5c8f22f82920d3cbae9a3.PrintUsageByPrinterRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printUsageByPrinter_id"] = id
@@ -712,10 +692,8 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUser()(*i70064870921
 }
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUserById(id string)(*ie40751cac1559213f1bbd658ede6043abd8ffd3463aa7abc8847eea9e36a36f8.PrintUsageByUserRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printUsageByUser_id"] = id
@@ -738,10 +716,8 @@ func (m *ReportsRequestBuilder) UserCredentialUsageDetails()(*ie1a7217ebe434d381
 }
 func (m *ReportsRequestBuilder) UserCredentialUsageDetailsById(id string)(*ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.UserCredentialUsageDetailsRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["userCredentialUsageDetails_id"] = id

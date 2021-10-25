@@ -16,17 +16,15 @@ type WorkbookCommentRequestBuilder struct {
 type WorkbookCommentRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewWorkbookCommentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookCommentRequestBuilder) {
     m := &WorkbookCommentRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/comments/{workbookComment_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *WorkbookCommentRequestBuilder) Replies()(*ibf192a870e338e40cb05c3c9fd94
 }
 func (m *WorkbookCommentRequestBuilder) RepliesById(id string)(*i5a11dae76e3869fe0e24891bffef9c15d413fb3bbebb67973c7da7128c810e10.WorkbookCommentReplyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["workbookCommentReply_id"] = id

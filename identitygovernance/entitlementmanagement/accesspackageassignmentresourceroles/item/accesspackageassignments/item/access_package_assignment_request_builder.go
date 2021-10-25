@@ -21,7 +21,7 @@ type AccessPackageAssignmentRequestBuilder struct {
 type AccessPackageAssignmentRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackage()(*iec81b0373c4da350b26d8984817114f28880005dadeeefba0eaccb6aa243f8ea.AccessPackageRequestBuilder) {
     return iec81b0373c4da350b26d8984817114f28880005dadeeefba0eaccb6aa243f8ea.NewAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -34,10 +34,8 @@ func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentRequests(
 }
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentRequestsById(id string)(*i48399c4b2202ca662aaa0213380e828fbb875b4ba9647a0e692b5ac58ed4deed.AccessPackageAssignmentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageAssignmentRequest_id"] = id
@@ -49,10 +47,8 @@ func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentResourceR
 }
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentResourceRolesById(id string)(*i27994df1d0f4c91ae8ca583362cd3504a5e0201c5d06854f136e8de282fbae2a.AccessPackageAssignmentResourceRoleRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessPackageAssignmentResourceRole_id1"] = id
@@ -64,10 +60,8 @@ func NewAccessPackageAssignmentRequestBuilderInternal(pathParameters map[string]
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole_id}/accessPackageAssignments/{accessPackageAssignment_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -19,17 +19,15 @@ type TermRequestBuilder struct {
 type TermRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *TermRequestBuilder) Children()(*i06f1e08316e6d513040d571df20771afa3cc90759cf7871a87710d28106c203c.ChildrenRequestBuilder) {
     return i06f1e08316e6d513040d571df20771afa3cc90759cf7871a87710d28106c203c.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *TermRequestBuilder) ChildrenById(id string)(*i8725ca95c2031f0753cea01c7c79e98f0edd64d78fc303b128fc552c601a2453.TermRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["term_id1"] = id
@@ -41,10 +39,8 @@ func NewTermRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/termStore/groups/{group_id}/sets/{set_id}/terms/{term_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -162,10 +158,8 @@ func (m *TermRequestBuilder) Relations()(*i3d70c03e1e62301e655e05ff1becef8400eb2
 }
 func (m *TermRequestBuilder) RelationsById(id string)(*i261bf93a735d97835147d5a6b001ad93504bcec36e8f906b0cebe5b07320adb0.RelationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["relation_id"] = id

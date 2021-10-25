@@ -11,7 +11,7 @@ type GetAppsInstallSummaryReportRequestBody struct {
     name *string;
     orderBy []string;
     search *string;
-    select_escpaped []string;
+    select_escaped []string;
     sessionId *string;
     skip *int32;
     top *int32;
@@ -64,11 +64,11 @@ func (m *GetAppsInstallSummaryReportRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
-func (m *GetAppsInstallSummaryReportRequestBody) GetSelect_escpaped()([]string) {
+func (m *GetAppsInstallSummaryReportRequestBody) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.select_escpaped
+        return m.select_escaped
     }
 }
 func (m *GetAppsInstallSummaryReportRequestBody) GetSessionId()(*string) {
@@ -142,7 +142,7 @@ func (m *GetAppsInstallSummaryReportRequestBody) GetFieldDeserializers()(map[str
         m.SetSearch(val)
         return nil
     }
-    res["select_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *GetAppsInstallSummaryReportRequestBody) GetFieldDeserializers()(map[str
         for i, v := range val {
             res[i] = v.(string)
         }
-        m.SetSelect_escpaped(res)
+        m.SetSelect_escaped(res)
         return nil
     }
     res["sessionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +215,7 @@ func (m *GetAppsInstallSummaryReportRequestBody) Serialize(writer i04eb5309aeaaf
         }
     }
     {
-        err := writer.WriteCollectionOfStringValues("select_escpaped", m.GetSelect_escpaped())
+        err := writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
         if err != nil {
             return err
         }
@@ -264,8 +264,8 @@ func (m *GetAppsInstallSummaryReportRequestBody) SetOrderBy(value []string)() {
 func (m *GetAppsInstallSummaryReportRequestBody) SetSearch(value *string)() {
     m.search = value
 }
-func (m *GetAppsInstallSummaryReportRequestBody) SetSelect_escpaped(value []string)() {
-    m.select_escpaped = value
+func (m *GetAppsInstallSummaryReportRequestBody) SetSelect_escaped(value []string)() {
+    m.select_escaped = value
 }
 func (m *GetAppsInstallSummaryReportRequestBody) SetSessionId(value *string)() {
     m.sessionId = value

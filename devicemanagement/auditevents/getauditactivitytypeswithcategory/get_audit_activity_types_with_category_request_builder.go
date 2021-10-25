@@ -14,10 +14,8 @@ func NewGetAuditActivityTypesWithCategoryRequestBuilderInternal(pathParameters m
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category='{category}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if category != nil {
         urlTplParams["category"] = *category

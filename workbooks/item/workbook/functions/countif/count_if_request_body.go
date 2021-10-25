@@ -8,7 +8,7 @@ import (
 type CountIfRequestBody struct {
     additionalData map[string]interface{};
     criteria *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
-    range_escpaped *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    range_escaped *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
 func NewCountIfRequestBody()(*CountIfRequestBody) {
     m := &CountIfRequestBody{
@@ -30,11 +30,11 @@ func (m *CountIfRequestBody) GetCriteria()(*i535684e11b5500196ecb4b5c6634e0651fe
         return m.criteria
     }
 }
-func (m *CountIfRequestBody) GetRange_escpaped()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
+func (m *CountIfRequestBody) GetRange_escaped()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
     } else {
-        return m.range_escpaped
+        return m.range_escaped
     }
 }
 func (m *CountIfRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -47,12 +47,12 @@ func (m *CountIfRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         m.SetCriteria(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
         return nil
     }
-    res["range_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["range_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewJson() })
         if err != nil {
             return err
         }
-        m.SetRange_escpaped(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        m.SetRange_escaped(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
         return nil
     }
     return res
@@ -68,7 +68,7 @@ func (m *CountIfRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err := writer.WriteObjectValue("range_escpaped", m.GetRange_escpaped())
+        err := writer.WriteObjectValue("range_escaped", m.GetRange_escaped())
         if err != nil {
             return err
         }
@@ -87,6 +87,6 @@ func (m *CountIfRequestBody) SetAdditionalData(value map[string]interface{})() {
 func (m *CountIfRequestBody) SetCriteria(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.criteria = value
 }
-func (m *CountIfRequestBody) SetRange_escpaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.range_escpaped = value
+func (m *CountIfRequestBody) SetRange_escaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
+    m.range_escaped = value
 }

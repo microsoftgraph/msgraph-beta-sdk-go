@@ -23,7 +23,7 @@ type AccessReviewInstanceRequestBuilder struct {
 type AccessReviewInstanceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *AccessReviewInstanceRequestBuilder) AcceptRecommendations()(*ia0d94a184a000bb845f57559a39262d0cde1e4cbd62ba5b70e7f517eff968628.AcceptRecommendationsRequestBuilder) {
     return ia0d94a184a000bb845f57559a39262d0cde1e4cbd62ba5b70e7f517eff968628.NewAcceptRecommendationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -39,10 +39,8 @@ func NewAccessReviewInstanceRequestBuilderInternal(pathParameters map[string]str
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/pendingAccessReviewInstances/{accessReviewInstance_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -127,10 +125,8 @@ func (m *AccessReviewInstanceRequestBuilder) Decisions()(*i857369f7b2494f5fc9841
 }
 func (m *AccessReviewInstanceRequestBuilder) DecisionsById(id string)(*i92a83f24221d12aedaef668e1fbb993200a107c50dd873c65f56c93ab8abaa7e.AccessReviewInstanceDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["accessReviewInstanceDecisionItem_id"] = id

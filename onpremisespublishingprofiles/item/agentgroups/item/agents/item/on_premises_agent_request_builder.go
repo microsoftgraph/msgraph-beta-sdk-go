@@ -16,17 +16,15 @@ type OnPremisesAgentRequestBuilder struct {
 type OnPremisesAgentRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *OnPremisesAgentRequestBuilder) AgentGroups()(*ic5b773b9a2f87a9a0d39beb8d04ff84c8d38fb9f333715e477637a7acdcebdc2.AgentGroupsRequestBuilder) {
     return ic5b773b9a2f87a9a0d39beb8d04ff84c8d38fb9f333715e477637a7acdcebdc2.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *OnPremisesAgentRequestBuilder) AgentGroupsById(id string)(*ia814786eadcd2b0189d170254332f827e51d2e3846d822eb70beb148b8414841.OnPremisesAgentGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onPremisesAgentGroup_id1"] = id
@@ -38,10 +36,8 @@ func NewOnPremisesAgentRequestBuilderInternal(pathParameters map[string]string, 
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/agentGroups/{onPremisesAgentGroup_id}/agents/{onPremisesAgent_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

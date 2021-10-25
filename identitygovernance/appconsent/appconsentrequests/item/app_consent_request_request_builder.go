@@ -16,17 +16,15 @@ type AppConsentRequestRequestBuilder struct {
 type AppConsentRequestRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewAppConsentRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppConsentRequestRequestBuilder) {
     m := &AppConsentRequestRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/appConsent/appConsentRequests/{appConsentRequest_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *AppConsentRequestRequestBuilder) UserConsentRequests()(*ie9bfbf0e213108
 }
 func (m *AppConsentRequestRequestBuilder) UserConsentRequestsById(id string)(*i60af31a2f3f01ae0558591bc8f2d3ca141db9c46daef0f57ffd582e3b9d2d3e4.UserConsentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["userConsentRequest_id"] = id

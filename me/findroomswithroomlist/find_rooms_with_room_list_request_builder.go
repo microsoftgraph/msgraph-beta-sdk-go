@@ -15,10 +15,8 @@ func NewFindRoomsWithRoomListRequestBuilderInternal(pathParameters map[string]st
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/microsoft.graph.findRooms(RoomList='{RoomList}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if roomList != nil {
         urlTplParams["RoomList"] = *roomList

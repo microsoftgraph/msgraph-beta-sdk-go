@@ -16,17 +16,15 @@ type DeviceComplianceScheduledActionForRuleRequestBuilder struct {
 type DeviceComplianceScheduledActionForRuleRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewDeviceComplianceScheduledActionForRuleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceScheduledActionForRuleRequestBuilder) {
     m := &DeviceComplianceScheduledActionForRuleRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy_id}/scheduledActionsForRule/{deviceComplianceScheduledActionForRule_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) ScheduledActionCo
 }
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) ScheduledActionConfigurationsById(id string)(*i30c81441182809790d7deb6c0da1307530c3dbb5567c662d63e456dddcb16f5a.DeviceComplianceActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceComplianceActionItem_id"] = id

@@ -18,17 +18,15 @@ type TermsOfUseRequestBuilder struct {
 type TermsOfUseRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *TermsOfUseRequestBuilder) AgreementAcceptances()(*idbdd55c4f874f351f01786070df721944ce5b3467ee40a9186d8e1d8254c5038.AgreementAcceptancesRequestBuilder) {
     return idbdd55c4f874f351f01786070df721944ce5b3467ee40a9186d8e1d8254c5038.NewAgreementAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*ib81ff97ec65f62c7e3bf45944864f15e6a426c2a95656377c94aedf6454d4d96.AgreementAcceptanceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["agreementAcceptance_id"] = id
@@ -40,10 +38,8 @@ func (m *TermsOfUseRequestBuilder) Agreements()(*i7a12547468a4d42ab8f3d3d3cd4e30
 }
 func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*i4c625eec080c8046d067dfb89b7686880f5fffd058fe784176bdef86f3d98004.AgreementRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["agreement_id"] = id
@@ -55,10 +51,8 @@ func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, reque
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/termsOfUse{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

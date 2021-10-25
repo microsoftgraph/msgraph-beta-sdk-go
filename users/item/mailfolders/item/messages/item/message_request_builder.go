@@ -37,17 +37,15 @@ type MessageRequestBuilder struct {
 type MessageRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *MessageRequestBuilder) Attachments()(*ie25dbd4775466b7a05037c48ef048e5a9634efd19de463e40384afaa61eb7bcc.AttachmentsRequestBuilder) {
     return ie25dbd4775466b7a05037c48ef048e5a9634efd19de463e40384afaa61eb7bcc.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *MessageRequestBuilder) AttachmentsById(id string)(*i758243302df29cce2fe9041a95e536b614e1bce0fa181ec51735b45c28450aac.AttachmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["attachment_id"] = id
@@ -62,10 +60,8 @@ func NewMessageRequestBuilderInternal(pathParameters map[string]string, requestA
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/mailFolders/{mailFolder_id}/messages/{message_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -179,10 +175,8 @@ func (m *MessageRequestBuilder) Extensions()(*i779693a4ed700a6242a8750d06dd0c544
 }
 func (m *MessageRequestBuilder) ExtensionsById(id string)(*i41df3c0d8cbd67958e95ec7d8e5e8caeba6577f510da216d6243755d4d47e60b.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["extension_id"] = id
@@ -208,10 +202,8 @@ func (m *MessageRequestBuilder) Mentions()(*id21d4bcffeb94fbdc758f4d604a94503e40
 }
 func (m *MessageRequestBuilder) MentionsById(id string)(*idb97761d489a095537daad3218e84b76808b5d8fc51cba00b233be4c0e0f9e9f.MentionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["mention_id"] = id
@@ -226,10 +218,8 @@ func (m *MessageRequestBuilder) MultiValueExtendedProperties()(*i884f837848c6f0c
 }
 func (m *MessageRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i8914b25cf327deb26ccf2e46fc7a562348efa5e5885764ce98f231989db617ab.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
@@ -261,10 +251,8 @@ func (m *MessageRequestBuilder) SingleValueExtendedProperties()(*i8d70e83d3fc5a5
 }
 func (m *MessageRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i9617bb1755b63307a9fbb614af96ed336375ccfbf08d3da6a1dd89acbde80d5b.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id

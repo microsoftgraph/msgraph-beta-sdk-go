@@ -29,17 +29,15 @@ type PrintRequestBuilder struct {
 type PrintRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PrintRequestBuilder) Connectors()(*ie0ee21308c5a5876efdcb565ab54dddf497480052514698aa5df8076282afb54.ConnectorsRequestBuilder) {
     return ie0ee21308c5a5876efdcb565ab54dddf497480052514698aa5df8076282afb54.NewConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PrintRequestBuilder) ConnectorsById(id string)(*id93d2fbcff2a13af1a3388fed5faf01351e12efec3ce632d2152e37f5ad29d99.PrintConnectorRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printConnector_id"] = id
@@ -51,10 +49,8 @@ func NewPrintRequestBuilderInternal(pathParameters map[string]string, requestAda
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/print{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -131,10 +127,8 @@ func (m *PrintRequestBuilder) Operations()(*i844ad4158981a129d54aa4a317c17dc8b56
 }
 func (m *PrintRequestBuilder) OperationsById(id string)(*i20c82299a583bf997be8654a60766afa3b225e0e8b54ab661cb734c46c2add9b.PrintOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printOperation_id"] = id
@@ -157,10 +151,8 @@ func (m *PrintRequestBuilder) Printers()(*i92d1f50b33fa740ede98125a2225a30e70427
 }
 func (m *PrintRequestBuilder) PrintersById(id string)(*i21ad7a37923a403c8172690e362e15a8a0298e4a82eecbedee9e691ff99bdde3.PrinterRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printer_id"] = id
@@ -172,10 +164,8 @@ func (m *PrintRequestBuilder) PrinterShares()(*i2a6efa35f1da64a13760e57fe6078241
 }
 func (m *PrintRequestBuilder) PrinterSharesById(id string)(*i6ac2f8e4588dd2304d6a10565c050a97a9cab528db29bf610191796b5477b498.PrinterShareRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printerShare_id"] = id
@@ -190,10 +180,8 @@ func (m *PrintRequestBuilder) Services()(*i32ff24c6864832ad0f41a0c6482a3f153c54a
 }
 func (m *PrintRequestBuilder) ServicesById(id string)(*i9508344ddcc1d2a6a0ed36e7aeb07d60730f841e1e8d4674d8ae4d356d4932a9.PrintServiceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printService_id"] = id
@@ -205,10 +193,8 @@ func (m *PrintRequestBuilder) Shares()(*i0d270c48a37eef745b51dd39fcd6e6c396a49d6
 }
 func (m *PrintRequestBuilder) SharesById(id string)(*i041fa93b1b8c4c6acaa44fa25a4bab5b60619191120dc3943102fdec799fca39.PrinterShareRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printerShare_id"] = id
@@ -220,10 +206,8 @@ func (m *PrintRequestBuilder) TaskDefinitions()(*i4c4b7dddb590dec724ed827d1d5c27
 }
 func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*i5ec86a089dc848e3bf34cce2d116379624ef91e1c58d8a32e664e6fb5397c958.PrintTaskDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printTaskDefinition_id"] = id

@@ -17,7 +17,7 @@ type AxesRequestBuilder struct {
 type AxesRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *AxesRequestBuilder) CategoryAxis()(*i4057ccef11426072bc4e3d3ad9f5d6a9d8d53ec2276a4ac27274ac995da5082e.CategoryAxisRequestBuilder) {
     return i4057ccef11426072bc4e3d3ad9f5d6a9d8d53ec2276a4ac27274ac995da5082e.NewCategoryAxisRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -27,10 +27,8 @@ func NewAxesRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/names/{workbookNamedItem_id}/worksheet/charts/{workbookChart_id}/axes{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

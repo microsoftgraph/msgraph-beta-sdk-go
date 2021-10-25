@@ -15,10 +15,8 @@ func NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(pathParamet
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if timeZoneStandard != nil {
         urlTplParams["TimeZoneStandard"] = *timeZoneStandard

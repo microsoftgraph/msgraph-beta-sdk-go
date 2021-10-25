@@ -11,7 +11,7 @@ type GetFailedMobileAppsSummaryReportRequestBody struct {
     name *string;
     orderBy []string;
     search *string;
-    select_escpaped []string;
+    select_escaped []string;
     sessionId *string;
     skip *int32;
     top *int32;
@@ -64,11 +64,11 @@ func (m *GetFailedMobileAppsSummaryReportRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
-func (m *GetFailedMobileAppsSummaryReportRequestBody) GetSelect_escpaped()([]string) {
+func (m *GetFailedMobileAppsSummaryReportRequestBody) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.select_escpaped
+        return m.select_escaped
     }
 }
 func (m *GetFailedMobileAppsSummaryReportRequestBody) GetSessionId()(*string) {
@@ -142,7 +142,7 @@ func (m *GetFailedMobileAppsSummaryReportRequestBody) GetFieldDeserializers()(ma
         m.SetSearch(val)
         return nil
     }
-    res["select_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *GetFailedMobileAppsSummaryReportRequestBody) GetFieldDeserializers()(ma
         for i, v := range val {
             res[i] = v.(string)
         }
-        m.SetSelect_escpaped(res)
+        m.SetSelect_escaped(res)
         return nil
     }
     res["sessionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +215,7 @@ func (m *GetFailedMobileAppsSummaryReportRequestBody) Serialize(writer i04eb5309
         }
     }
     {
-        err := writer.WriteCollectionOfStringValues("select_escpaped", m.GetSelect_escpaped())
+        err := writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
         if err != nil {
             return err
         }
@@ -264,8 +264,8 @@ func (m *GetFailedMobileAppsSummaryReportRequestBody) SetOrderBy(value []string)
 func (m *GetFailedMobileAppsSummaryReportRequestBody) SetSearch(value *string)() {
     m.search = value
 }
-func (m *GetFailedMobileAppsSummaryReportRequestBody) SetSelect_escpaped(value []string)() {
-    m.select_escpaped = value
+func (m *GetFailedMobileAppsSummaryReportRequestBody) SetSelect_escaped(value []string)() {
+    m.select_escaped = value
 }
 func (m *GetFailedMobileAppsSummaryReportRequestBody) SetSessionId(value *string)() {
     m.sessionId = value

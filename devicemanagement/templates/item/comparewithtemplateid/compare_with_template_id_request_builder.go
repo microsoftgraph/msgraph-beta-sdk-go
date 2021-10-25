@@ -15,10 +15,8 @@ func NewCompareWithTemplateIdRequestBuilderInternal(pathParameters map[string]st
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/templates/{deviceManagementTemplate_id}/microsoft.graph.compare(templateId='{templateId}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if templateId != nil {
         urlTplParams["templateId"] = *templateId

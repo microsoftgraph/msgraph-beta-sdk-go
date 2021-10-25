@@ -37,7 +37,7 @@ type TeamRequestBuilder struct {
 type TeamRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *TeamRequestBuilder) Archive()(*i39e1c08574131f72876adb29d6160e8debd9e80a5d56f6e5667bb4466e655518.ArchiveRequestBuilder) {
     return i39e1c08574131f72876adb29d6160e8debd9e80a5d56f6e5667bb4466e655518.NewArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -47,10 +47,8 @@ func (m *TeamRequestBuilder) Channels()(*i3e307cff6710e4b62c7cd2d770514afca50fee
 }
 func (m *TeamRequestBuilder) ChannelsById(id string)(*i816caa6537457ad2108f6d14fc5f83f30b010c0f3ebaa1f99a81c44641b9d1e8.ChannelRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["channel_id"] = id
@@ -68,10 +66,8 @@ func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/teams/{team_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -181,10 +177,8 @@ func (m *TeamRequestBuilder) InstalledApps()(*i048dd3eda626b5c64ad8acc7d562355d6
 }
 func (m *TeamRequestBuilder) InstalledAppsById(id string)(*i75af39801867d39724f8d806372cf754dc48d3407d87f336daf7647dbed1347f.TeamsAppInstallationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["teamsAppInstallation_id"] = id
@@ -196,10 +190,8 @@ func (m *TeamRequestBuilder) Members()(*ia3d84312b941dc5c3aaa9a4a37bc36866b77998
 }
 func (m *TeamRequestBuilder) MembersById(id string)(*i15093721720dbb1ad7a9823d9c98bb0b1b6afb6839ccc9b99d7f9f369fea596c.ConversationMemberRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["conversationMember_id"] = id
@@ -211,10 +203,8 @@ func (m *TeamRequestBuilder) Operations()(*i0acc5a25a7c609872781f3db26798489e738
 }
 func (m *TeamRequestBuilder) OperationsById(id string)(*ib1fa9341ce0e195b37a0fcac629719d660cd28ed736c3abf54fe54102868c36d.TeamsAsyncOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["teamsAsyncOperation_id"] = id
@@ -240,10 +230,8 @@ func (m *TeamRequestBuilder) PermissionGrants()(*iecf1ce1fbbc38cbe05b8bcd58d24b2
 }
 func (m *TeamRequestBuilder) PermissionGrantsById(id string)(*iba461bd7c348411b42a81c1813125516bec205337ca79a73172439185e9cd1c4.ResourceSpecificPermissionGrantRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["resourceSpecificPermissionGrant_id"] = id
@@ -267,10 +255,8 @@ func (m *TeamRequestBuilder) Tags()(*i3c28f7755196c773e7492789789df058eacb0aa39d
 }
 func (m *TeamRequestBuilder) TagsById(id string)(*i7b61bd390262c74ea942911c717d521b8d8938c0bc5a556ea5c1aa8faf593708.TeamworkTagRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["teamworkTag_id"] = id

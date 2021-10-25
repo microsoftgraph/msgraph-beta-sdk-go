@@ -4,13 +4,13 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i03e8315740e50741be28e0de5b0dbc979248935d5a52b8bd57ae1a03bb0cc9ce "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/range_escaped"
     i32ae25ae9d9d6e1f97d393a3512d4664345ae284435f62e14907150840fb4f23 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/totalrowrange"
     i33f608b1a5b1f40cbedd25ca23610dc70efd3ef30bdf83ca0364a5bcc6219b3c "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/databodyrange"
     i576ef957c75800d01681f5c99bb2e8bdf4192b3bc6a0aeb0e21eeb43b3c558af "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/headerrowrange"
     i62b751f5318254f7603879bab6c4ed76db74fc7e7c7b9e719a6a79312b0b88f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/reapplyfilters"
     i8aa38c528205520959488d8f2a7e023f19e7f8a0bf2f36873d6c50ab2150f8c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/clearfilters"
     ia19841dfd8dac02a16ef964e9ae689716da5ba326c0089ac50187e4ce5fa6e7d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/converttorange"
-    iddbd6732cbea6de44b365a81e3def223412272e5880673965f4bc3199dfd44bf "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/range_escpaped"
 )
 
 type WorkbookTableRequestBuilder struct {
@@ -21,7 +21,7 @@ type WorkbookTableRequestBuilder struct {
 type WorkbookTableRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *WorkbookTableRequestBuilder) ClearFilters()(*i8aa38c528205520959488d8f2a7e023f19e7f8a0bf2f36873d6c50ab2150f8c3.ClearFiltersRequestBuilder) {
     return i8aa38c528205520959488d8f2a7e023f19e7f8a0bf2f36873d6c50ab2150f8c3.NewClearFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -31,10 +31,8 @@ func NewWorkbookTableRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/tables/{workbookTable_id1}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -156,8 +154,8 @@ func (m *WorkbookTableRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6634e
     }
     return nil
 }
-func (m *WorkbookTableRequestBuilder) Range_escpaped()(*iddbd6732cbea6de44b365a81e3def223412272e5880673965f4bc3199dfd44bf.RangeRequestBuilder) {
-    return iddbd6732cbea6de44b365a81e3def223412272e5880673965f4bc3199dfd44bf.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *WorkbookTableRequestBuilder) Range_escaped()(*i03e8315740e50741be28e0de5b0dbc979248935d5a52b8bd57ae1a03bb0cc9ce.RangeRequestBuilder) {
+    return i03e8315740e50741be28e0de5b0dbc979248935d5a52b8bd57ae1a03bb0cc9ce.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *WorkbookTableRequestBuilder) ReapplyFilters()(*i62b751f5318254f7603879bab6c4ed76db74fc7e7c7b9e719a6a79312b0b88f1.ReapplyFiltersRequestBuilder) {
     return i62b751f5318254f7603879bab6c4ed76db74fc7e7c7b9e719a6a79312b0b88f1.NewReapplyFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);

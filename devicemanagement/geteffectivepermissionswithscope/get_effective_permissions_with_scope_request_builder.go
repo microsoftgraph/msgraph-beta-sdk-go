@@ -15,10 +15,8 @@ func NewGetEffectivePermissionsWithScopeRequestBuilderInternal(pathParameters ma
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/microsoft.graph.getEffectivePermissions(scope='{scope}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if scope != nil {
         urlTplParams["scope"] = *scope

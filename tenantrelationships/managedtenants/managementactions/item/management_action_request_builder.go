@@ -15,7 +15,7 @@ type ManagementActionRequestBuilder struct {
 type ManagementActionRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ManagementActionRequestBuilder) Apply()(*i02a0acf8de02ec6d8ae4b62929ab4b9b5af1a13131d5aab7c33afdb467de17e0.ApplyRequestBuilder) {
     return i02a0acf8de02ec6d8ae4b62929ab4b9b5af1a13131d5aab7c33afdb467de17e0.NewApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -25,10 +25,8 @@ func NewManagementActionRequestBuilderInternal(pathParameters map[string]string,
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/tenantRelationships/managedTenants/managementActions/{managementAction_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

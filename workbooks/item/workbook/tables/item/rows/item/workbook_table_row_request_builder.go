@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i303af5ea34876bdddaa418c48b29a8aec50353e5d88ea75da151a90d2f8c057e "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/rows/item/range_escpaped"
+    i9412efae50e158e4c45770b4201876d691e3e378ffcddc8be79115bb45db123e "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/rows/item/range_escaped"
 )
 
 type WorkbookTableRowRequestBuilder struct {
@@ -15,17 +15,15 @@ type WorkbookTableRowRequestBuilder struct {
 type WorkbookTableRowRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewWorkbookTableRowRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookTableRowRequestBuilder) {
     m := &WorkbookTableRowRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/rows/{workbookTableRow_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -138,6 +136,6 @@ func (m *WorkbookTableRowRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c66
     }
     return nil
 }
-func (m *WorkbookTableRowRequestBuilder) Range_escpaped()(*i303af5ea34876bdddaa418c48b29a8aec50353e5d88ea75da151a90d2f8c057e.RangeRequestBuilder) {
-    return i303af5ea34876bdddaa418c48b29a8aec50353e5d88ea75da151a90d2f8c057e.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *WorkbookTableRowRequestBuilder) Range_escaped()(*i9412efae50e158e4c45770b4201876d691e3e378ffcddc8be79115bb45db123e.RangeRequestBuilder) {
+    return i9412efae50e158e4c45770b4201876d691e3e378ffcddc8be79115bb45db123e.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

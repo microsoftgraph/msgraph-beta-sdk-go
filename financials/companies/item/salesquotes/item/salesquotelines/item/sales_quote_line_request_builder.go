@@ -16,7 +16,7 @@ type SalesQuoteLineRequestBuilder struct {
 type SalesQuoteLineRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *SalesQuoteLineRequestBuilder) Account()(*iaedea421f986c2290ff5e85cf9cd350ce7d46ab761c4a52f3368aa7a04a81155.AccountRequestBuilder) {
     return iaedea421f986c2290ff5e85cf9cd350ce7d46ab761c4a52f3368aa7a04a81155.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,10 +26,8 @@ func NewSalesQuoteLineRequestBuilderInternal(pathParameters map[string]string, r
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/salesQuotes/{salesQuote_id}/salesQuoteLines/{salesQuoteLine_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

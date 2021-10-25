@@ -76,10 +76,8 @@ func NewGetByPathWithPathRequestBuilderInternal(pathParameters map[string]string
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/sites/{site_id}/microsoft.graph.getByPath(path='{path}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if path != nil {
         urlTplParams["path"] = *path

@@ -21,17 +21,15 @@ type OutlookTaskRequestBuilder struct {
 type OutlookTaskRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *OutlookTaskRequestBuilder) Attachments()(*i30d7001f23621738f5c0ebf4de402aa0940898dabde9c286e7bde7c8fe3a247a.AttachmentsRequestBuilder) {
     return i30d7001f23621738f5c0ebf4de402aa0940898dabde9c286e7bde7c8fe3a247a.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *OutlookTaskRequestBuilder) AttachmentsById(id string)(*ic6491e7b1ea237fd1a5fc05790050c780572b7f37e967ddffd4225e1dc62ce51.AttachmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["attachment_id"] = id
@@ -46,10 +44,8 @@ func NewOutlookTaskRequestBuilderInternal(pathParameters map[string]string, requ
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/outlook/taskFolders/{outlookTaskFolder_id}/tasks/{outlookTask_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -156,10 +152,8 @@ func (m *OutlookTaskRequestBuilder) MultiValueExtendedProperties()(*ibeff8c7ce77
 }
 func (m *OutlookTaskRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i8c19f39e583cd9a1b9f36e6c8fe3732bbb945cb45363ddd749683c9976564002.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
@@ -182,10 +176,8 @@ func (m *OutlookTaskRequestBuilder) SingleValueExtendedProperties()(*i07134841e1
 }
 func (m *OutlookTaskRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i42d4fa154ff58194c41d7a068d2ef0ea649f669575467c50bac921280cece148.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id

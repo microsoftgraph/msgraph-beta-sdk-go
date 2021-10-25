@@ -76,10 +76,8 @@ func NewRangeWithAddressRequestBuilderInternal(pathParameters map[string]string,
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/worksheets/{workbookWorksheet_id}/names/{workbookNamedItem_id}/worksheet/microsoft.graph.range(address='{address}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if address != nil {
         urlTplParams["address"] = *address

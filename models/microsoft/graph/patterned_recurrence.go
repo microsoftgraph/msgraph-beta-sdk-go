@@ -7,7 +7,7 @@ import (
 type PatternedRecurrence struct {
     additionalData map[string]interface{};
     pattern *RecurrencePattern;
-    range_escpaped *RecurrenceRange;
+    range_escaped *RecurrenceRange;
 }
 func NewPatternedRecurrence()(*PatternedRecurrence) {
     m := &PatternedRecurrence{
@@ -29,11 +29,11 @@ func (m *PatternedRecurrence) GetPattern()(*RecurrencePattern) {
         return m.pattern
     }
 }
-func (m *PatternedRecurrence) GetRange_escpaped()(*RecurrenceRange) {
+func (m *PatternedRecurrence) GetRange_escaped()(*RecurrenceRange) {
     if m == nil {
         return nil
     } else {
-        return m.range_escpaped
+        return m.range_escaped
     }
 }
 func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -46,12 +46,12 @@ func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(interface{
         m.SetPattern(val.(*RecurrencePattern))
         return nil
     }
-    res["range_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["range_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecurrenceRange() })
         if err != nil {
             return err
         }
-        m.SetRange_escpaped(val.(*RecurrenceRange))
+        m.SetRange_escaped(val.(*RecurrenceRange))
         return nil
     }
     return res
@@ -67,7 +67,7 @@ func (m *PatternedRecurrence) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err := writer.WriteObjectValue("range_escpaped", m.GetRange_escpaped())
+        err := writer.WriteObjectValue("range_escaped", m.GetRange_escaped())
         if err != nil {
             return err
         }
@@ -86,6 +86,6 @@ func (m *PatternedRecurrence) SetAdditionalData(value map[string]interface{})() 
 func (m *PatternedRecurrence) SetPattern(value *RecurrencePattern)() {
     m.pattern = value
 }
-func (m *PatternedRecurrence) SetRange_escpaped(value *RecurrenceRange)() {
-    m.range_escpaped = value
+func (m *PatternedRecurrence) SetRange_escaped(value *RecurrenceRange)() {
+    m.range_escaped = value
 }

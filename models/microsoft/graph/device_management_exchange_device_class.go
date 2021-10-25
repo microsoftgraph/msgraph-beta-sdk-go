@@ -7,7 +7,7 @@ import (
 type DeviceManagementExchangeDeviceClass struct {
     additionalData map[string]interface{};
     name *string;
-    type_escpaped *DeviceManagementExchangeAccessRuleType;
+    type_escaped *DeviceManagementExchangeAccessRuleType;
 }
 func NewDeviceManagementExchangeDeviceClass()(*DeviceManagementExchangeDeviceClass) {
     m := &DeviceManagementExchangeDeviceClass{
@@ -29,11 +29,11 @@ func (m *DeviceManagementExchangeDeviceClass) GetName()(*string) {
         return m.name
     }
 }
-func (m *DeviceManagementExchangeDeviceClass) GetType_escpaped()(*DeviceManagementExchangeAccessRuleType) {
+func (m *DeviceManagementExchangeDeviceClass) GetType_escaped()(*DeviceManagementExchangeAccessRuleType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -46,13 +46,13 @@ func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string
         m.SetName(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementExchangeAccessRuleType)
         if err != nil {
             return err
         }
         cast := val.(DeviceManagementExchangeAccessRuleType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -67,9 +67,9 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i04eb5309aeaafadd
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -88,6 +88,6 @@ func (m *DeviceManagementExchangeDeviceClass) SetAdditionalData(value map[string
 func (m *DeviceManagementExchangeDeviceClass) SetName(value *string)() {
     m.name = value
 }
-func (m *DeviceManagementExchangeDeviceClass) SetType_escpaped(value *DeviceManagementExchangeAccessRuleType)() {
-    m.type_escpaped = value
+func (m *DeviceManagementExchangeDeviceClass) SetType_escaped(value *DeviceManagementExchangeAccessRuleType)() {
+    m.type_escaped = value
 }

@@ -10,7 +10,7 @@ type SecurityProviderStatus struct {
     endpoint *string;
     provider *string;
     region *string;
-    vendor *string;
+    vendor_escaped *string;
 }
 func NewSecurityProviderStatus()(*SecurityProviderStatus) {
     m := &SecurityProviderStatus{
@@ -53,11 +53,11 @@ func (m *SecurityProviderStatus) GetRegion()(*string) {
         return m.region
     }
 }
-func (m *SecurityProviderStatus) GetVendor()(*string) {
+func (m *SecurityProviderStatus) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.vendor
+        return m.vendor_escaped
     }
 }
 func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -94,12 +94,12 @@ func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(interfa
         m.SetRegion(val)
         return nil
     }
-    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetVendor(val)
+        m.SetVendor_escaped(val)
         return nil
     }
     return res
@@ -133,7 +133,7 @@ func (m *SecurityProviderStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
         if err != nil {
             return err
         }
@@ -161,6 +161,6 @@ func (m *SecurityProviderStatus) SetProvider(value *string)() {
 func (m *SecurityProviderStatus) SetRegion(value *string)() {
     m.region = value
 }
-func (m *SecurityProviderStatus) SetVendor(value *string)() {
-    m.vendor = value
+func (m *SecurityProviderStatus) SetVendor_escaped(value *string)() {
+    m.vendor_escaped = value
 }

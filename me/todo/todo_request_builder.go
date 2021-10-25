@@ -16,17 +16,15 @@ type TodoRequestBuilder struct {
 type TodoRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewTodoRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TodoRequestBuilder) {
     m := &TodoRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/todo{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +131,8 @@ func (m *TodoRequestBuilder) Lists()(*id75f0095f22203cc09ed8fc919b75dfd02efd63b1
 }
 func (m *TodoRequestBuilder) ListsById(id string)(*i5e991ca0464d18e60a05b993dc8c574e8a58bf3ebae3e3c4d116810ffccd2df6.TodoTaskListRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["todoTaskList_id"] = id

@@ -49,7 +49,7 @@ type Event struct {
     start *DateTimeTimeZone;
     subject *string;
     transactionId *string;
-    type_escpaped *EventType;
+    type_escaped *EventType;
     uid *string;
     webLink *string;
 }
@@ -353,11 +353,11 @@ func (m *Event) GetTransactionId()(*string) {
         return m.transactionId
     }
 }
-func (m *Event) GetType_escpaped()(*EventType) {
+func (m *Event) GetType_escaped()(*EventType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *Event) GetUid()(*string) {
@@ -752,13 +752,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         m.SetTransactionId(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseEventType)
         if err != nil {
             return err
         }
         cast := val.(EventType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     res["uid"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -1083,9 +1083,9 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err = writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err = writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -1230,8 +1230,8 @@ func (m *Event) SetSubject(value *string)() {
 func (m *Event) SetTransactionId(value *string)() {
     m.transactionId = value
 }
-func (m *Event) SetType_escpaped(value *EventType)() {
-    m.type_escpaped = value
+func (m *Event) SetType_escaped(value *EventType)() {
+    m.type_escaped = value
 }
 func (m *Event) SetUid(value *string)() {
     m.uid = value

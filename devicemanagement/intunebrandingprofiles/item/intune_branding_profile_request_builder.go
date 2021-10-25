@@ -17,7 +17,7 @@ type IntuneBrandingProfileRequestBuilder struct {
 type IntuneBrandingProfileRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *IntuneBrandingProfileRequestBuilder) Assign()(*iabf54a6528230cc6fd8becb59f999d1ad986020b16420c27db539498922c2851.AssignRequestBuilder) {
     return iabf54a6528230cc6fd8becb59f999d1ad986020b16420c27db539498922c2851.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -27,10 +27,8 @@ func (m *IntuneBrandingProfileRequestBuilder) Assignments()(*id933fdbaba78809734
 }
 func (m *IntuneBrandingProfileRequestBuilder) AssignmentsById(id string)(*i43e2d15146d44703f2826df7d20b0717eda3da488c1e8099cae91884e38e54c4.IntuneBrandingProfileAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["intuneBrandingProfileAssignment_id"] = id
@@ -42,10 +40,8 @@ func NewIntuneBrandingProfileRequestBuilderInternal(pathParameters map[string]st
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/intuneBrandingProfiles/{intuneBrandingProfile_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

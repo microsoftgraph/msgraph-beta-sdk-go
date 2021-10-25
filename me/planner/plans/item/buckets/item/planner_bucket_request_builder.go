@@ -16,17 +16,15 @@ type PlannerBucketRequestBuilder struct {
 type PlannerBucketRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewPlannerBucketRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerBucketRequestBuilder) {
     m := &PlannerBucketRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/planner/plans/{plannerPlan_id}/buckets/{plannerBucket_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *PlannerBucketRequestBuilder) Tasks()(*i12ab27f648103e540d1861a5b964683c
 }
 func (m *PlannerBucketRequestBuilder) TasksById(id string)(*i0f8986b3f266c22792052974599848882cf67cedb71cd4fd9c5ee9193423a794.PlannerTaskRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["plannerTask_id"] = id

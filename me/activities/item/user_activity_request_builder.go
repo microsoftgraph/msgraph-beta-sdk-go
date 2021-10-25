@@ -16,17 +16,15 @@ type UserActivityRequestBuilder struct {
 type UserActivityRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewUserActivityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserActivityRequestBuilder) {
     m := &UserActivityRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/me/activities/{userActivity_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +131,8 @@ func (m *UserActivityRequestBuilder) HistoryItems()(*ie1c601e4dd41fcae7e31389e8b
 }
 func (m *UserActivityRequestBuilder) HistoryItemsById(id string)(*id4fb8186962ae843968f84a2402cea3d6de0930370a8e765edcd9813e3e72aff.ActivityHistoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["activityHistoryItem_id"] = id

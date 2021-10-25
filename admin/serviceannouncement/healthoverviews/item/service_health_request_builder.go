@@ -16,17 +16,15 @@ type ServiceHealthRequestBuilder struct {
 type ServiceHealthRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewServiceHealthRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServiceHealthRequestBuilder) {
     m := &ServiceHealthRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/admin/serviceAnnouncement/healthOverviews/{serviceHealth_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +131,8 @@ func (m *ServiceHealthRequestBuilder) Issues()(*i18a6924091a3c9bbbe468505115ea5a
 }
 func (m *ServiceHealthRequestBuilder) IssuesById(id string)(*i92fa557a83a3a5f72f390d4ba2371036b32f13a2df0fcd47d44a7d53c414e7d8.ServiceHealthIssueRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["serviceHealthIssue_id"] = id

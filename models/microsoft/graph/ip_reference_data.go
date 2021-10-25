@@ -11,7 +11,7 @@ type IpReferenceData struct {
     countryOrRegionCode *string;
     organization *string;
     state *string;
-    vendor *string;
+    vendor_escaped *string;
 }
 func NewIpReferenceData()(*IpReferenceData) {
     m := &IpReferenceData{
@@ -61,11 +61,11 @@ func (m *IpReferenceData) GetState()(*string) {
         return m.state
     }
 }
-func (m *IpReferenceData) GetVendor()(*string) {
+func (m *IpReferenceData) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.vendor
+        return m.vendor_escaped
     }
 }
 func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -110,12 +110,12 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
         m.SetState(val)
         return nil
     }
-    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetVendor(val)
+        m.SetVendor_escaped(val)
         return nil
     }
     return res
@@ -155,7 +155,7 @@ func (m *IpReferenceData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
         if err != nil {
             return err
         }
@@ -186,6 +186,6 @@ func (m *IpReferenceData) SetOrganization(value *string)() {
 func (m *IpReferenceData) SetState(value *string)() {
     m.state = value
 }
-func (m *IpReferenceData) SetVendor(value *string)() {
-    m.vendor = value
+func (m *IpReferenceData) SetVendor_escaped(value *string)() {
+    m.vendor_escaped = value
 }

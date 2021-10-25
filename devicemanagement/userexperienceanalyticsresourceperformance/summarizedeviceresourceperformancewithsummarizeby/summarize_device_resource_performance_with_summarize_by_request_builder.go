@@ -15,10 +15,8 @@ func NewSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderInternal(
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/userExperienceAnalyticsResourcePerformance/microsoft.graph.summarizeDeviceResourcePerformance(summarizeBy={summarizeBy})";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if summarizeBy != nil {
         urlTplParams["summarizeBy"] = *summarizeBy

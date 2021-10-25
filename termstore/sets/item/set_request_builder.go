@@ -21,17 +21,15 @@ type SetRequestBuilder struct {
 type SetRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *SetRequestBuilder) Children()(*i08ca4c5bb1fe453cf948a9337ebc77517c10861b960c120f6a7bdf151e23091e.ChildrenRequestBuilder) {
     return i08ca4c5bb1fe453cf948a9337ebc77517c10861b960c120f6a7bdf151e23091e.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *SetRequestBuilder) ChildrenById(id string)(*ia9e638bcb5f0cac6ab821e69fff2fbadde36cbb4ae8162280da0e79f201144d2.TermRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["term_id"] = id
@@ -43,10 +41,8 @@ func NewSetRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/termStore/sets/{set_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -167,10 +163,8 @@ func (m *SetRequestBuilder) Relations()(*ibdb574ef03f0eec0fc47939c5b968e4c54cff1
 }
 func (m *SetRequestBuilder) RelationsById(id string)(*icad4fc6304f6da07b148cc11a131410e87779371a7fe5d2470d5b412287bc38d.RelationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["relation_id"] = id
@@ -182,10 +176,8 @@ func (m *SetRequestBuilder) Terms()(*ib4bf2188d376329fec86f06954eedc5c031d970078
 }
 func (m *SetRequestBuilder) TermsById(id string)(*i1fdd91eaeb77b5232aaa6637b51c8335e644143a6bec1447e4639d345a19ce09.TermRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["term_id"] = id

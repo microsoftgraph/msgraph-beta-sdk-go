@@ -10,7 +10,7 @@ type TargetResource struct {
     groupType *GroupType;
     id *string;
     modifiedProperties []ModifiedProperty;
-    type_escpaped *string;
+    type_escaped *string;
     userPrincipalName *string;
 }
 func NewTargetResource()(*TargetResource) {
@@ -54,11 +54,11 @@ func (m *TargetResource) GetModifiedProperties()([]ModifiedProperty) {
         return m.modifiedProperties
     }
 }
-func (m *TargetResource) GetType_escpaped()(*string) {
+func (m *TargetResource) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *TargetResource) GetUserPrincipalName()(*string) {
@@ -107,12 +107,12 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(interface{}, i0
         m.SetModifiedProperties(res)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +160,7 @@ func (m *TargetResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err := writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -194,8 +194,8 @@ func (m *TargetResource) SetId(value *string)() {
 func (m *TargetResource) SetModifiedProperties(value []ModifiedProperty)() {
     m.modifiedProperties = value
 }
-func (m *TargetResource) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *TargetResource) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }
 func (m *TargetResource) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value

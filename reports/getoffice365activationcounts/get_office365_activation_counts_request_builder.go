@@ -15,10 +15,8 @@ func NewGetOffice365ActivationCountsRequestBuilderInternal(pathParameters map[st
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/reports/microsoft.graph.getOffice365ActivationCounts()";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

@@ -16,17 +16,15 @@ type FileRequestBuilder struct {
 type FileRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewFileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FileRequestBuilder) {
     m := &FileRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/agreements/{agreement_id}/file{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +131,8 @@ func (m *FileRequestBuilder) Localizations()(*i2358a7b294dbfc5af99c78f6f0b89ef66
 }
 func (m *FileRequestBuilder) LocalizationsById(id string)(*i56d60d06da3a58c57524bb6ec4cf3035a69ad1a68d0bf2782a6baa9716c68dc3.AgreementFileLocalizationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["agreementFileLocalization_id"] = id

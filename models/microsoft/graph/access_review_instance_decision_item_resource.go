@@ -8,7 +8,7 @@ type AccessReviewInstanceDecisionItemResource struct {
     additionalData map[string]interface{};
     displayName *string;
     id *string;
-    type_escpaped *string;
+    type_escaped *string;
 }
 func NewAccessReviewInstanceDecisionItemResource()(*AccessReviewInstanceDecisionItemResource) {
     m := &AccessReviewInstanceDecisionItemResource{
@@ -37,11 +37,11 @@ func (m *AccessReviewInstanceDecisionItemResource) GetId()(*string) {
         return m.id
     }
 }
-func (m *AccessReviewInstanceDecisionItemResource) GetType_escpaped()(*string) {
+func (m *AccessReviewInstanceDecisionItemResource) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *AccessReviewInstanceDecisionItemResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -62,12 +62,12 @@ func (m *AccessReviewInstanceDecisionItemResource) GetFieldDeserializers()(map[s
         m.SetId(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     return res
@@ -89,7 +89,7 @@ func (m *AccessReviewInstanceDecisionItemResource) Serialize(writer i04eb5309aea
         }
     }
     {
-        err := writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -111,6 +111,6 @@ func (m *AccessReviewInstanceDecisionItemResource) SetDisplayName(value *string)
 func (m *AccessReviewInstanceDecisionItemResource) SetId(value *string)() {
     m.id = value
 }
-func (m *AccessReviewInstanceDecisionItemResource) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *AccessReviewInstanceDecisionItemResource) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }

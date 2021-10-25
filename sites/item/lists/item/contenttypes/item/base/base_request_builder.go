@@ -20,7 +20,7 @@ type BaseRequestBuilder struct {
 type BaseRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *BaseRequestBuilder) AssociateWithHubSites()(*id20077693ba13ea0db568e9a8b1822f6ff2ccd2d5dd590ffd8dc544ef5b2f7fe.AssociateWithHubSitesRequestBuilder) {
     return id20077693ba13ea0db568e9a8b1822f6ff2ccd2d5dd590ffd8dc544ef5b2f7fe.NewAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -30,10 +30,8 @@ func NewBaseRequestBuilderInternal(pathParameters map[string]string, requestAdap
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/sites/{site_id}/lists/{list_id}/contentTypes/{contentType_id}/base{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

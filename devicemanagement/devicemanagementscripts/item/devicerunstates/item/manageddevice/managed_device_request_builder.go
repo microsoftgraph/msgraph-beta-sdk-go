@@ -49,7 +49,7 @@ type ManagedDeviceRequestBuilder struct {
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ManagedDeviceRequestBuilder) ActivateDeviceEsim()(*i63a60c66200dc227be5ca2d5b63a465840df9eb4645ddcb19a2d1ea1a87389e1.ActivateDeviceEsimRequestBuilder) {
     return i63a60c66200dc227be5ca2d5b63a465840df9eb4645ddcb19a2d1ea1a87389e1.NewActivateDeviceEsimRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -65,10 +65,8 @@ func NewManagedDeviceRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceManagementScripts/{deviceManagementScript_id}/deviceRunStates/{deviceManagementScriptDeviceState_id}/managedDevice{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

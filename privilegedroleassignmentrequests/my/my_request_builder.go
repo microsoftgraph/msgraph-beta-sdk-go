@@ -15,10 +15,8 @@ func NewMyRequestBuilderInternal(pathParameters map[string]string, requestAdapte
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/privilegedRoleAssignmentRequests/microsoft.graph.my()";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

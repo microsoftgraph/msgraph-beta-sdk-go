@@ -16,17 +16,15 @@ type DeviceManagementConfigurationSettingTemplateRequestBuilder struct {
 type DeviceManagementConfigurationSettingTemplateRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewDeviceManagementConfigurationSettingTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationSettingTemplateRequestBuilder) {
     m := &DeviceManagementConfigurationSettingTemplateRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate_id}/settingTemplates/{deviceManagementConfigurationSettingTemplate_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) SettingDefi
 }
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) SettingDefinitionsById(id string)(*i17e29a57a5f9a404c2017596b5ae58278006f69df8d598ba8b023689b417d3b1.DeviceManagementConfigurationSettingDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceManagementConfigurationSettingDefinition_id"] = id

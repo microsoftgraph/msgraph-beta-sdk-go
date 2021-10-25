@@ -16,17 +16,15 @@ type DeviceManagementTemplateSettingCategoryRequestBuilder struct {
 type DeviceManagementTemplateSettingCategoryRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewDeviceManagementTemplateSettingCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementTemplateSettingCategoryRequestBuilder) {
     m := &DeviceManagementTemplateSettingCategoryRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/templates/{deviceManagementTemplate_id}/categories/{deviceManagementTemplateSettingCategory_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *DeviceManagementTemplateSettingCategoryRequestBuilder) RecommendedSetti
 }
 func (m *DeviceManagementTemplateSettingCategoryRequestBuilder) RecommendedSettingsById(id string)(*i8cca88b6428aa5e0aef1f88b2eea712467f69b4bcd843cf74b8d35246b3c0873.DeviceManagementSettingInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceManagementSettingInstance_id"] = id

@@ -8,7 +8,7 @@ type Website struct {
     additionalData map[string]interface{};
     address *string;
     displayName *string;
-    type_escpaped *WebsiteType;
+    type_escaped *WebsiteType;
 }
 func NewWebsite()(*Website) {
     m := &Website{
@@ -37,11 +37,11 @@ func (m *Website) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-func (m *Website) GetType_escpaped()(*WebsiteType) {
+func (m *Website) GetType_escaped()(*WebsiteType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *Website) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -62,13 +62,13 @@ func (m *Website) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         m.SetDisplayName(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseWebsiteType)
         if err != nil {
             return err
         }
         cast := val.(WebsiteType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -89,9 +89,9 @@ func (m *Website) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -113,6 +113,6 @@ func (m *Website) SetAddress(value *string)() {
 func (m *Website) SetDisplayName(value *string)() {
     m.displayName = value
 }
-func (m *Website) SetType_escpaped(value *WebsiteType)() {
-    m.type_escpaped = value
+func (m *Website) SetType_escaped(value *WebsiteType)() {
+    m.type_escaped = value
 }

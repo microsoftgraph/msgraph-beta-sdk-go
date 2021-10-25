@@ -11,7 +11,7 @@ type GetHistoricalReportRequestBody struct {
     name *string;
     orderBy []string;
     search *string;
-    select_escpaped []string;
+    select_escaped []string;
     skip *int32;
     top *int32;
 }
@@ -63,11 +63,11 @@ func (m *GetHistoricalReportRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
-func (m *GetHistoricalReportRequestBody) GetSelect_escpaped()([]string) {
+func (m *GetHistoricalReportRequestBody) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.select_escpaped
+        return m.select_escaped
     }
 }
 func (m *GetHistoricalReportRequestBody) GetSkip()(*int32) {
@@ -134,7 +134,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         m.SetSearch(val)
         return nil
     }
-    res["select_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         for i, v := range val {
             res[i] = v.(string)
         }
-        m.SetSelect_escpaped(res)
+        m.SetSelect_escaped(res)
         return nil
     }
     res["skip"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +199,7 @@ func (m *GetHistoricalReportRequestBody) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err := writer.WriteCollectionOfStringValues("select_escpaped", m.GetSelect_escpaped())
+        err := writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
         if err != nil {
             return err
         }
@@ -242,8 +242,8 @@ func (m *GetHistoricalReportRequestBody) SetOrderBy(value []string)() {
 func (m *GetHistoricalReportRequestBody) SetSearch(value *string)() {
     m.search = value
 }
-func (m *GetHistoricalReportRequestBody) SetSelect_escpaped(value []string)() {
-    m.select_escpaped = value
+func (m *GetHistoricalReportRequestBody) SetSelect_escaped(value []string)() {
+    m.select_escaped = value
 }
 func (m *GetHistoricalReportRequestBody) SetSkip(value *int32)() {
     m.skip = value

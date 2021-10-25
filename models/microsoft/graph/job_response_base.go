@@ -13,7 +13,7 @@ type JobResponseBase struct {
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     status *string;
     tenantId *string;
-    type_escpaped *string;
+    type_escaped *string;
 }
 func NewJobResponseBase()(*JobResponseBase) {
     m := &JobResponseBase{
@@ -63,11 +63,11 @@ func (m *JobResponseBase) GetTenantId()(*string) {
         return m.tenantId
     }
 }
-func (m *JobResponseBase) GetType_escpaped()(*string) {
+func (m *JobResponseBase) GetType_escaped()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -120,12 +120,12 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(interface{}, i
         m.SetTenantId(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     return res
@@ -175,7 +175,7 @@ func (m *JobResponseBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err = writer.WriteStringValue("type_escpaped", m.GetType_escpaped())
+        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -200,6 +200,6 @@ func (m *JobResponseBase) SetStatus(value *string)() {
 func (m *JobResponseBase) SetTenantId(value *string)() {
     m.tenantId = value
 }
-func (m *JobResponseBase) SetType_escpaped(value *string)() {
-    m.type_escpaped = value
+func (m *JobResponseBase) SetType_escaped(value *string)() {
+    m.type_escaped = value
 }

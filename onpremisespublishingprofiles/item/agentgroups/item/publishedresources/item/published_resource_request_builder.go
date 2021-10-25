@@ -16,17 +16,15 @@ type PublishedResourceRequestBuilder struct {
 type PublishedResourceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *PublishedResourceRequestBuilder) AgentGroups()(*i93349e74bb039f3ba024302c7c8e7990c3684ed86252469ae3fbb8ec0392f332.AgentGroupsRequestBuilder) {
     return i93349e74bb039f3ba024302c7c8e7990c3684ed86252469ae3fbb8ec0392f332.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PublishedResourceRequestBuilder) AgentGroupsById(id string)(*i53c004c7e712f9215897e95c2cd7b307b2e5ea15e608be4819d2910d4be70c3a.OnPremisesAgentGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onPremisesAgentGroup_id1"] = id
@@ -38,10 +36,8 @@ func NewPublishedResourceRequestBuilderInternal(pathParameters map[string]string
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/agentGroups/{onPremisesAgentGroup_id}/publishedResources/{publishedResource_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

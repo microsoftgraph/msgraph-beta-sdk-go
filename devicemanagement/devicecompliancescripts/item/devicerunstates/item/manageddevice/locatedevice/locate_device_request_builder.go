@@ -14,10 +14,8 @@ func NewLocateDeviceRequestBuilderInternal(pathParameters map[string]string, req
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceComplianceScripts/{deviceComplianceScript_id}/deviceRunStates/{deviceComplianceScriptDeviceState_id}/managedDevice/microsoft.graph.locateDevice";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

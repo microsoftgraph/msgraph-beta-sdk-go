@@ -16,17 +16,15 @@ type CalendarGroupRequestBuilder struct {
 type CalendarGroupRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *CalendarGroupRequestBuilder) Calendars()(*ifade711c7d2924283c812e71262208baa8028dafdc5301dac9b787b67d06bdcb.CalendarsRequestBuilder) {
     return ifade711c7d2924283c812e71262208baa8028dafdc5301dac9b787b67d06bdcb.NewCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *CalendarGroupRequestBuilder) CalendarsById(id string)(*ib0740006afc2efaa13e5a3695cf0deb65949f14e10d066d658f528334687356e.CalendarRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["calendar_id"] = id
@@ -38,10 +36,8 @@ func NewCalendarGroupRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/calendarGroups/{calendarGroup_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

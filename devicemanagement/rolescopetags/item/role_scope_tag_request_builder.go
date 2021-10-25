@@ -17,7 +17,7 @@ type RoleScopeTagRequestBuilder struct {
 type RoleScopeTagRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *RoleScopeTagRequestBuilder) Assign()(*i75b21611d6b6b96c1c95e37193e653d7c1be7468679cf5785af829f0827b9b05.AssignRequestBuilder) {
     return i75b21611d6b6b96c1c95e37193e653d7c1be7468679cf5785af829f0827b9b05.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -27,10 +27,8 @@ func (m *RoleScopeTagRequestBuilder) Assignments()(*iab305975e356746fe6505f00637
 }
 func (m *RoleScopeTagRequestBuilder) AssignmentsById(id string)(*ic12c5ef80a8671db45da105570fcb6fe91462ab2daa7529a50e81a4c171aa147.RoleScopeTagAutoAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["roleScopeTagAutoAssignment_id"] = id
@@ -42,10 +40,8 @@ func NewRoleScopeTagRequestBuilderInternal(pathParameters map[string]string, req
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/roleScopeTags/{roleScopeTag_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

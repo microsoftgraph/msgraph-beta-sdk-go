@@ -76,10 +76,8 @@ func NewSessionInfoResourceWithKeyRequestBuilderInternal(pathParameters map[stri
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/microsoft.graph.sessionInfoResource(key='{key}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if key != nil {
         urlTplParams["key"] = *key

@@ -64,7 +64,7 @@ type ManagedDeviceRequestBuilder struct {
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *ManagedDeviceRequestBuilder) ActivateDeviceEsim()(*i5ae4c7a466c77f89b7aa19644a7526bfa120aae290c0135467b1726a5dcc4b74.ActivateDeviceEsimRequestBuilder) {
     return i5ae4c7a466c77f89b7aa19644a7526bfa120aae290c0135467b1726a5dcc4b74.NewActivateDeviceEsimRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -74,10 +74,8 @@ func (m *ManagedDeviceRequestBuilder) AssignmentFilterEvaluationStatusDetails()(
 }
 func (m *ManagedDeviceRequestBuilder) AssignmentFilterEvaluationStatusDetailsById(id string)(*i99dec72ee11b01609d1196b9050a524115dc380fdce7b3b78d8e55baed22b886.AssignmentFilterEvaluationStatusDetailsRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["assignmentFilterEvaluationStatusDetails_id"] = id
@@ -95,10 +93,8 @@ func NewManagedDeviceRequestBuilderInternal(pathParameters map[string]string, re
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/managedDevices/{managedDevice_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -206,10 +202,8 @@ func (m *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStates()(*i5eaa1df83
 }
 func (m *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStatesById(id string)(*i65e95ece1102722d622003107d0aa2ccfe851d7e2fabb973183179f667d18a80.DeviceCompliancePolicyStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceCompliancePolicyState_id"] = id
@@ -221,10 +215,8 @@ func (m *ManagedDeviceRequestBuilder) DeviceConfigurationStates()(*ic81852c6f9b4
 }
 func (m *ManagedDeviceRequestBuilder) DeviceConfigurationStatesById(id string)(*ic00c9fedb4afbfc7936f03fe8ea7225c855e68f67c7490496a41c8f4dce8bded.DeviceConfigurationStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceConfigurationState_id"] = id
@@ -265,10 +257,8 @@ func (m *ManagedDeviceRequestBuilder) LogCollectionRequests()(*ib95cc79f1b970000
 }
 func (m *ManagedDeviceRequestBuilder) LogCollectionRequestsById(id string)(*i2a82226506d5f05d37438f9f94f66b38d770f96152002714c86a78a15dac14e9.DeviceLogCollectionResponseRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceLogCollectionResponse_id"] = id
@@ -283,10 +273,8 @@ func (m *ManagedDeviceRequestBuilder) ManagedDeviceMobileAppConfigurationStates(
 }
 func (m *ManagedDeviceRequestBuilder) ManagedDeviceMobileAppConfigurationStatesById(id string)(*i155341708cf86beaf312872f82d66abfe65af0c332ff01dd38d70ec1d3c966a2.ManagedDeviceMobileAppConfigurationStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["managedDeviceMobileAppConfigurationState_id"] = id
@@ -348,10 +336,8 @@ func (m *ManagedDeviceRequestBuilder) SecurityBaselineStates()(*if1c46a53b673c29
 }
 func (m *ManagedDeviceRequestBuilder) SecurityBaselineStatesById(id string)(*ie4fe9c1b0775a3ba213a1b61d1fec1140c6cb4da5fc41c5c5997e96597f42ba8.SecurityBaselineStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["securityBaselineState_id"] = id
@@ -381,10 +367,8 @@ func (m *ManagedDeviceRequestBuilder) Users()(*i09952ccb17be64d9f17a719949773805
 }
 func (m *ManagedDeviceRequestBuilder) UsersById(id string)(*ibc5b5c5e8fe886b351671f57d7556b73f89066ca96ad4e212401f0b0115ed8ad.UserRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["user_id1"] = id

@@ -16,17 +16,15 @@ type UserInstallStateSummaryRequestBuilder struct {
 type UserInstallStateSummaryRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewUserInstallStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserInstallStateSummaryRequestBuilder) {
     m := &UserInstallStateSummaryRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/managedEBooks/{managedEBook_id}/userStateSummary/{userInstallStateSummary_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -122,10 +120,8 @@ func (m *UserInstallStateSummaryRequestBuilder) DeviceStates()(*ice92a2364d3170e
 }
 func (m *UserInstallStateSummaryRequestBuilder) DeviceStatesById(id string)(*idc329a0e0b09b202736e7f9a9174d125e0d5561944e9e3f9cae9eb436a61c885.DeviceInstallStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceInstallState_id"] = id

@@ -14,10 +14,8 @@ func NewGetScopesForUserWithUseridRequestBuilderInternal(pathParameters map[stri
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/resourceOperations/{resourceOperation_id}/microsoft.graph.getScopesForUser(userid='{userid}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if userid != nil {
         urlTplParams["userid"] = *userid

@@ -15,10 +15,8 @@ func NewGetCredentialUserRegistrationCountRequestBuilderInternal(pathParameters 
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/reports/microsoft.graph.getCredentialUserRegistrationCount()";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

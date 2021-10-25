@@ -15,10 +15,8 @@ func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderIntern
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/mobileApps/{mobileApp_id}/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if userPrincipalName != nil {
         urlTplParams["userPrincipalName"] = *userPrincipalName

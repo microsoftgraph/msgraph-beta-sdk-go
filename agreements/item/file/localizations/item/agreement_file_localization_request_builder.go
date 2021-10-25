@@ -16,17 +16,15 @@ type AgreementFileLocalizationRequestBuilder struct {
 type AgreementFileLocalizationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewAgreementFileLocalizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementFileLocalizationRequestBuilder) {
     m := &AgreementFileLocalizationRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/agreements/{agreement_id}/file/localizations/{agreementFileLocalization_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -144,10 +142,8 @@ func (m *AgreementFileLocalizationRequestBuilder) Versions()(*i1bfeb14b00e82ba27
 }
 func (m *AgreementFileLocalizationRequestBuilder) VersionsById(id string)(*i59b8285d8b9da798aec45fee2e33d08b5aefbd44b6ea832ee6113712ad4d9f25.AgreementFileVersionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["agreementFileVersion_id"] = id

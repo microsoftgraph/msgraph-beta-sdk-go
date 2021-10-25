@@ -16,17 +16,15 @@ type PolicyRequestBuilder struct {
 type PolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyRequestBuilder) {
     m := &PolicyRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/informationProtection/policy{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -133,10 +131,8 @@ func (m *PolicyRequestBuilder) Labels()(*i1900faee127036955bb1240ae0350b96972d27
 }
 func (m *PolicyRequestBuilder) LabelsById(id string)(*ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde.InformationProtectionLabelRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["informationProtectionLabel_id"] = id

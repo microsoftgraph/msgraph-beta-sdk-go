@@ -34,17 +34,15 @@ type AuthenticationRequestBuilder struct {
 type AuthenticationRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewAuthenticationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationRequestBuilder) {
     m := &AuthenticationRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/authentication{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -140,10 +138,8 @@ func (m *AuthenticationRequestBuilder) EmailMethods()(*i3c82d3c069d877192717ae25
 }
 func (m *AuthenticationRequestBuilder) EmailMethodsById(id string)(*i8e4613fe9beae47166d3199e35bebd1eacc7b9fb65d987f75b5d6cf3fa8be437.EmailAuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["emailAuthenticationMethod_id"] = id
@@ -155,10 +151,8 @@ func (m *AuthenticationRequestBuilder) Fido2Methods()(*ib8d8d8244d3eb013f4bc094c
 }
 func (m *AuthenticationRequestBuilder) Fido2MethodsById(id string)(*i467ded3a4537cbf8edac7f6b51c34bc6260059e41501cb558b59f959687f3ead.Fido2AuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["fido2AuthenticationMethod_id"] = id
@@ -181,10 +175,8 @@ func (m *AuthenticationRequestBuilder) Methods()(*ibbe313e164cc65dcee7e84b36906c
 }
 func (m *AuthenticationRequestBuilder) MethodsById(id string)(*ia0ffdc8f006fc6f17388d1138910ea760bda5327cb7954a36443dafdd3d6fbfa.AuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["authenticationMethod_id"] = id
@@ -196,10 +188,8 @@ func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethods()(*ida0d057
 }
 func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethodsById(id string)(*ib3cdab32f2c2a8097f7c565b3cb7cb087b04b57f65b7f9c169711dc829cef01c.MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["microsoftAuthenticatorAuthenticationMethod_id"] = id
@@ -211,10 +201,8 @@ func (m *AuthenticationRequestBuilder) Operations()(*i28848822f3980fdce6726498e9
 }
 func (m *AuthenticationRequestBuilder) OperationsById(id string)(*ib16a6b42b7b0fb91aacf9e83541f6f5c6a5266c8492af0c9840118f0f8230fda.LongRunningOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["longRunningOperation_id"] = id
@@ -226,10 +214,8 @@ func (m *AuthenticationRequestBuilder) PasswordlessMicrosoftAuthenticatorMethods
 }
 func (m *AuthenticationRequestBuilder) PasswordlessMicrosoftAuthenticatorMethodsById(id string)(*i8b94c7ec519f49a4ce821818ba1007cd615cbf88b35e60111f6243e2381a0a30.PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["passwordlessMicrosoftAuthenticatorAuthenticationMethod_id"] = id
@@ -241,10 +227,8 @@ func (m *AuthenticationRequestBuilder) PasswordMethods()(*i2a0e0508cb5dac8c4a5ff
 }
 func (m *AuthenticationRequestBuilder) PasswordMethodsById(id string)(*i0199bdc7d0e31ba40e9079a671271952b6c664dd52228e453e3aa4029592e679.PasswordAuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["passwordAuthenticationMethod_id"] = id
@@ -267,10 +251,8 @@ func (m *AuthenticationRequestBuilder) PhoneMethods()(*if78b7f6c376cc85f14bbf69c
 }
 func (m *AuthenticationRequestBuilder) PhoneMethodsById(id string)(*i2fa2bed3b2bf85fb6d420cebcc1e3022721013a245e0c8e9488904d31b8c82cf.PhoneAuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["phoneAuthenticationMethod_id"] = id
@@ -282,10 +264,8 @@ func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethods()(*ia55b6dd661
 }
 func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethodsById(id string)(*i5959cb956fb6583f70d31a45fd1df7ec1f6063d4908ec79970275f6476e0c9c4.TemporaryAccessPassAuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["temporaryAccessPassAuthenticationMethod_id"] = id
@@ -297,10 +277,8 @@ func (m *AuthenticationRequestBuilder) WindowsHelloForBusinessMethods()(*i3de92b
 }
 func (m *AuthenticationRequestBuilder) WindowsHelloForBusinessMethodsById(id string)(*ief9d84a1c52ab385faa5763ce3c89c06416ddd2ebf7f8093933c9cb404554238.WindowsHelloForBusinessAuthenticationMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["windowsHelloForBusinessAuthenticationMethod_id"] = id

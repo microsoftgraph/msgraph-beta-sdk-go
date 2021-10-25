@@ -10,7 +10,7 @@ type RecurrenceRange struct {
     numberOfOccurrences *int32;
     recurrenceTimeZone *string;
     startDate *string;
-    type_escpaped *RecurrenceRangeType;
+    type_escaped *RecurrenceRangeType;
 }
 func NewRecurrenceRange()(*RecurrenceRange) {
     m := &RecurrenceRange{
@@ -53,11 +53,11 @@ func (m *RecurrenceRange) GetStartDate()(*string) {
         return m.startDate
     }
 }
-func (m *RecurrenceRange) GetType_escpaped()(*RecurrenceRangeType) {
+func (m *RecurrenceRange) GetType_escaped()(*RecurrenceRangeType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -94,13 +94,13 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         m.SetStartDate(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecurrenceRangeType)
         if err != nil {
             return err
         }
         cast := val.(RecurrenceRangeType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -133,9 +133,9 @@ func (m *RecurrenceRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -163,6 +163,6 @@ func (m *RecurrenceRange) SetRecurrenceTimeZone(value *string)() {
 func (m *RecurrenceRange) SetStartDate(value *string)() {
     m.startDate = value
 }
-func (m *RecurrenceRange) SetType_escpaped(value *RecurrenceRangeType)() {
-    m.type_escpaped = value
+func (m *RecurrenceRange) SetType_escaped(value *RecurrenceRangeType)() {
+    m.type_escaped = value
 }

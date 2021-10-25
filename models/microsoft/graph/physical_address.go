@@ -12,7 +12,7 @@ type PhysicalAddress struct {
     postOfficeBox *string;
     state *string;
     street *string;
-    type_escpaped *PhysicalAddressType;
+    type_escaped *PhysicalAddressType;
 }
 func NewPhysicalAddress()(*PhysicalAddress) {
     m := &PhysicalAddress{
@@ -69,11 +69,11 @@ func (m *PhysicalAddress) GetStreet()(*string) {
         return m.street
     }
 }
-func (m *PhysicalAddress) GetType_escpaped()(*PhysicalAddressType) {
+func (m *PhysicalAddress) GetType_escaped()(*PhysicalAddressType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -126,13 +126,13 @@ func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(interface{}, i
         m.SetStreet(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePhysicalAddressType)
         if err != nil {
             return err
         }
         cast := val.(PhysicalAddressType)
-        m.SetType_escpaped(&cast)
+        m.SetType_escaped(&cast)
         return nil
     }
     return res
@@ -177,9 +177,9 @@ func (m *PhysicalAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    if m.GetType_escpaped() != nil {
-        cast := m.GetType_escpaped().String()
-        err := writer.WriteStringValue("type_escpaped", &cast)
+    if m.GetType_escaped() != nil {
+        cast := m.GetType_escaped().String()
+        err := writer.WriteStringValue("type_escaped", &cast)
         if err != nil {
             return err
         }
@@ -213,6 +213,6 @@ func (m *PhysicalAddress) SetState(value *string)() {
 func (m *PhysicalAddress) SetStreet(value *string)() {
     m.street = value
 }
-func (m *PhysicalAddress) SetType_escpaped(value *PhysicalAddressType)() {
-    m.type_escpaped = value
+func (m *PhysicalAddress) SetType_escaped(value *PhysicalAddressType)() {
+    m.type_escaped = value
 }

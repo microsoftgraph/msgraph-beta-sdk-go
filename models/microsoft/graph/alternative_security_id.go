@@ -8,7 +8,7 @@ type AlternativeSecurityId struct {
     additionalData map[string]interface{};
     identityProvider *string;
     key []byte;
-    type_escpaped *int32;
+    type_escaped *int32;
 }
 func NewAlternativeSecurityId()(*AlternativeSecurityId) {
     m := &AlternativeSecurityId{
@@ -37,11 +37,11 @@ func (m *AlternativeSecurityId) GetKey()([]byte) {
         return m.key
     }
 }
-func (m *AlternativeSecurityId) GetType_escpaped()(*int32) {
+func (m *AlternativeSecurityId) GetType_escaped()(*int32) {
     if m == nil {
         return nil
     } else {
-        return m.type_escpaped
+        return m.type_escaped
     }
 }
 func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -62,12 +62,12 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(interfac
         m.SetKey(val)
         return nil
     }
-    res["type_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
-        m.SetType_escpaped(val)
+        m.SetType_escaped(val)
         return nil
     }
     return res
@@ -89,7 +89,7 @@ func (m *AlternativeSecurityId) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteInt32Value("type_escpaped", m.GetType_escpaped())
+        err := writer.WriteInt32Value("type_escaped", m.GetType_escaped())
         if err != nil {
             return err
         }
@@ -111,6 +111,6 @@ func (m *AlternativeSecurityId) SetIdentityProvider(value *string)() {
 func (m *AlternativeSecurityId) SetKey(value []byte)() {
     m.key = value
 }
-func (m *AlternativeSecurityId) SetType_escpaped(value *int32)() {
-    m.type_escpaped = value
+func (m *AlternativeSecurityId) SetType_escaped(value *int32)() {
+    m.type_escaped = value
 }

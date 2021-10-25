@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i999fb56907c4c1e9fcc5b7f07cdda38145ae3c0f07c28561a4e33a7fece9ff4a "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/range_escpaped"
+    i6e3d8dce03eee5ef94d5ea83671dcc0b34e0faf607c47005002d739bcddfabdc "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/range_escaped"
     ic5ab72f2509c26a6ead26315249723415727732137fd2982404739af38832196 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet"
 )
 
@@ -16,17 +16,15 @@ type WorkbookNamedItemRequestBuilder struct {
 type WorkbookNamedItemRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func NewWorkbookNamedItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookNamedItemRequestBuilder) {
     m := &WorkbookNamedItemRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/names/{workbookNamedItem_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
@@ -139,8 +137,8 @@ func (m *WorkbookNamedItemRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6
     }
     return nil
 }
-func (m *WorkbookNamedItemRequestBuilder) Range_escpaped()(*i999fb56907c4c1e9fcc5b7f07cdda38145ae3c0f07c28561a4e33a7fece9ff4a.RangeRequestBuilder) {
-    return i999fb56907c4c1e9fcc5b7f07cdda38145ae3c0f07c28561a4e33a7fece9ff4a.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *WorkbookNamedItemRequestBuilder) Range_escaped()(*i6e3d8dce03eee5ef94d5ea83671dcc0b34e0faf607c47005002d739bcddfabdc.RangeRequestBuilder) {
+    return i6e3d8dce03eee5ef94d5ea83671dcc0b34e0faf607c47005002d739bcddfabdc.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *WorkbookNamedItemRequestBuilder) Worksheet()(*ic5ab72f2509c26a6ead26315249723415727732137fd2982404739af38832196.WorksheetRequestBuilder) {
     return ic5ab72f2509c26a6ead26315249723415727732137fd2982404739af38832196.NewWorksheetRequestBuilderInternal(m.pathParameters, m.requestAdapter);

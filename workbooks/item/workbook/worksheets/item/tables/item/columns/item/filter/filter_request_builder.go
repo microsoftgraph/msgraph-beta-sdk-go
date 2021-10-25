@@ -26,7 +26,7 @@ type FilterRequestBuilder struct {
 type FilterRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *FilterRequestBuilder) Apply()(*i1cddcb4acebc500eca65aa379cb89ede1dcbedfb3bec9dd882f230ef16fd380f.ApplyRequestBuilder) {
     return i1cddcb4acebc500eca65aa379cb89ede1dcbedfb3bec9dd882f230ef16fd380f.NewApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -69,10 +69,8 @@ func NewFilterRequestBuilderInternal(pathParameters map[string]string, requestAd
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/worksheets/{workbookWorksheet_id}/tables/{workbookTable_id}/columns/{workbookTableColumn_id}/filter{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

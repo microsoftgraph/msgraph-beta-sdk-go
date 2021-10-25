@@ -16,17 +16,15 @@ type EdiscoveryRequestBuilder struct {
 type EdiscoveryRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     Expand []string;
-    Select_escpaped []string;
+    Select_escaped []string;
 }
 func (m *EdiscoveryRequestBuilder) Cases()(*i11d895b13fb719aa1efc1375b26199040ecaddfd8d2c7a3988be9eb44cb349f9.CasesRequestBuilder) {
     return i11d895b13fb719aa1efc1375b26199040ecaddfd8d2c7a3988be9eb44cb349f9.NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *EdiscoveryRequestBuilder) CasesById(id string)(*i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1.CaseRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["case_id"] = id
@@ -38,10 +36,8 @@ func NewEdiscoveryRequestBuilderInternal(pathParameters map[string]string, reque
     }
     m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
