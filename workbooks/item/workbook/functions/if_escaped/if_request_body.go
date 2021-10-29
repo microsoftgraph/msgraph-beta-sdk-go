@@ -5,18 +5,25 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type IfRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     logicalTest *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     valueIfFalse *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     valueIfTrue *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new ifRequestBody and sets the default values.
 func NewIfRequestBody()(*IfRequestBody) {
     m := &IfRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IfRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *IfRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the logicalTest property value. 
 func (m *IfRequestBody) GetLogicalTest()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *IfRequestBody) GetLogicalTest()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.logicalTest
     }
 }
+// Gets the valueIfFalse property value. 
 func (m *IfRequestBody) GetValueIfFalse()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *IfRequestBody) GetValueIfFalse()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.valueIfFalse
     }
 }
+// Gets the valueIfTrue property value. 
 func (m *IfRequestBody) GetValueIfTrue()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *IfRequestBody) GetValueIfTrue()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.valueIfTrue
     }
 }
+// The deserialization information for the current model
 func (m *IfRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["logicalTest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *IfRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *IfRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *IfRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("logicalTest", m.GetLogicalTest())
@@ -103,15 +117,27 @@ func (m *IfRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *IfRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the logicalTest property value. 
+// Parameters:
+//  - value : Value to set for the logicalTest property.
 func (m *IfRequestBody) SetLogicalTest(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.logicalTest = value
 }
+// Sets the valueIfFalse property value. 
+// Parameters:
+//  - value : Value to set for the valueIfFalse property.
 func (m *IfRequestBody) SetValueIfFalse(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.valueIfFalse = value
 }
+// Sets the valueIfTrue property value. 
+// Parameters:
+//  - value : Value to set for the valueIfTrue property.
 func (m *IfRequestBody) SetValueIfTrue(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.valueIfTrue = value
 }

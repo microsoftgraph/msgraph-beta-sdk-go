@@ -5,44 +5,76 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type PurchaseInvoice struct {
     Entity
+    // 
     buyFromAddress *PostalAddressType;
+    // 
     currency *Currency;
+    // 
     currencyCode *string;
+    // 
     currencyId *string;
+    // 
     discountAmount *float64;
+    // 
     discountAppliedBeforeTax *bool;
+    // 
     dueDate *string;
+    // 
     invoiceDate *string;
+    // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     number *string;
+    // 
     payToAddress *PostalAddressType;
+    // 
     payToContact *string;
+    // 
     payToName *string;
+    // 
     payToVendorId *string;
+    // 
     payToVendorNumber *string;
+    // 
     pricesIncludeTax *bool;
+    // 
     purchaseInvoiceLines []PurchaseInvoiceLine;
+    // 
     shipToAddress *PostalAddressType;
+    // 
     shipToContact *string;
+    // 
     shipToName *string;
+    // 
     status *string;
+    // 
     totalAmountExcludingTax *float64;
+    // 
     totalAmountIncludingTax *float64;
+    // 
     totalTaxAmount *float64;
+    // 
     vendor_escaped *Vendor_escaped;
+    // 
     vendorId *string;
+    // 
     vendorInvoiceNumber *string;
+    // 
     vendorName *string;
+    // 
     vendorNumber *string;
 }
+// Instantiates a new purchaseInvoice and sets the default values.
 func NewPurchaseInvoice()(*PurchaseInvoice) {
     m := &PurchaseInvoice{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the buyFromAddress property value. 
 func (m *PurchaseInvoice) GetBuyFromAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -50,6 +82,7 @@ func (m *PurchaseInvoice) GetBuyFromAddress()(*PostalAddressType) {
         return m.buyFromAddress
     }
 }
+// Gets the currency property value. 
 func (m *PurchaseInvoice) GetCurrency()(*Currency) {
     if m == nil {
         return nil
@@ -57,6 +90,7 @@ func (m *PurchaseInvoice) GetCurrency()(*Currency) {
         return m.currency
     }
 }
+// Gets the currencyCode property value. 
 func (m *PurchaseInvoice) GetCurrencyCode()(*string) {
     if m == nil {
         return nil
@@ -64,6 +98,7 @@ func (m *PurchaseInvoice) GetCurrencyCode()(*string) {
         return m.currencyCode
     }
 }
+// Gets the currencyId property value. 
 func (m *PurchaseInvoice) GetCurrencyId()(*string) {
     if m == nil {
         return nil
@@ -71,6 +106,7 @@ func (m *PurchaseInvoice) GetCurrencyId()(*string) {
         return m.currencyId
     }
 }
+// Gets the discountAmount property value. 
 func (m *PurchaseInvoice) GetDiscountAmount()(*float64) {
     if m == nil {
         return nil
@@ -78,6 +114,7 @@ func (m *PurchaseInvoice) GetDiscountAmount()(*float64) {
         return m.discountAmount
     }
 }
+// Gets the discountAppliedBeforeTax property value. 
 func (m *PurchaseInvoice) GetDiscountAppliedBeforeTax()(*bool) {
     if m == nil {
         return nil
@@ -85,6 +122,7 @@ func (m *PurchaseInvoice) GetDiscountAppliedBeforeTax()(*bool) {
         return m.discountAppliedBeforeTax
     }
 }
+// Gets the dueDate property value. 
 func (m *PurchaseInvoice) GetDueDate()(*string) {
     if m == nil {
         return nil
@@ -92,6 +130,7 @@ func (m *PurchaseInvoice) GetDueDate()(*string) {
         return m.dueDate
     }
 }
+// Gets the invoiceDate property value. 
 func (m *PurchaseInvoice) GetInvoiceDate()(*string) {
     if m == nil {
         return nil
@@ -99,6 +138,7 @@ func (m *PurchaseInvoice) GetInvoiceDate()(*string) {
         return m.invoiceDate
     }
 }
+// Gets the lastModifiedDateTime property value. 
 func (m *PurchaseInvoice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -106,6 +146,7 @@ func (m *PurchaseInvoice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
         return m.lastModifiedDateTime
     }
 }
+// Gets the number property value. 
 func (m *PurchaseInvoice) GetNumber()(*string) {
     if m == nil {
         return nil
@@ -113,6 +154,7 @@ func (m *PurchaseInvoice) GetNumber()(*string) {
         return m.number
     }
 }
+// Gets the payToAddress property value. 
 func (m *PurchaseInvoice) GetPayToAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -120,6 +162,7 @@ func (m *PurchaseInvoice) GetPayToAddress()(*PostalAddressType) {
         return m.payToAddress
     }
 }
+// Gets the payToContact property value. 
 func (m *PurchaseInvoice) GetPayToContact()(*string) {
     if m == nil {
         return nil
@@ -127,6 +170,7 @@ func (m *PurchaseInvoice) GetPayToContact()(*string) {
         return m.payToContact
     }
 }
+// Gets the payToName property value. 
 func (m *PurchaseInvoice) GetPayToName()(*string) {
     if m == nil {
         return nil
@@ -134,6 +178,7 @@ func (m *PurchaseInvoice) GetPayToName()(*string) {
         return m.payToName
     }
 }
+// Gets the payToVendorId property value. 
 func (m *PurchaseInvoice) GetPayToVendorId()(*string) {
     if m == nil {
         return nil
@@ -141,6 +186,7 @@ func (m *PurchaseInvoice) GetPayToVendorId()(*string) {
         return m.payToVendorId
     }
 }
+// Gets the payToVendorNumber property value. 
 func (m *PurchaseInvoice) GetPayToVendorNumber()(*string) {
     if m == nil {
         return nil
@@ -148,6 +194,7 @@ func (m *PurchaseInvoice) GetPayToVendorNumber()(*string) {
         return m.payToVendorNumber
     }
 }
+// Gets the pricesIncludeTax property value. 
 func (m *PurchaseInvoice) GetPricesIncludeTax()(*bool) {
     if m == nil {
         return nil
@@ -155,6 +202,7 @@ func (m *PurchaseInvoice) GetPricesIncludeTax()(*bool) {
         return m.pricesIncludeTax
     }
 }
+// Gets the purchaseInvoiceLines property value. 
 func (m *PurchaseInvoice) GetPurchaseInvoiceLines()([]PurchaseInvoiceLine) {
     if m == nil {
         return nil
@@ -162,6 +210,7 @@ func (m *PurchaseInvoice) GetPurchaseInvoiceLines()([]PurchaseInvoiceLine) {
         return m.purchaseInvoiceLines
     }
 }
+// Gets the shipToAddress property value. 
 func (m *PurchaseInvoice) GetShipToAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -169,6 +218,7 @@ func (m *PurchaseInvoice) GetShipToAddress()(*PostalAddressType) {
         return m.shipToAddress
     }
 }
+// Gets the shipToContact property value. 
 func (m *PurchaseInvoice) GetShipToContact()(*string) {
     if m == nil {
         return nil
@@ -176,6 +226,7 @@ func (m *PurchaseInvoice) GetShipToContact()(*string) {
         return m.shipToContact
     }
 }
+// Gets the shipToName property value. 
 func (m *PurchaseInvoice) GetShipToName()(*string) {
     if m == nil {
         return nil
@@ -183,6 +234,7 @@ func (m *PurchaseInvoice) GetShipToName()(*string) {
         return m.shipToName
     }
 }
+// Gets the status property value. 
 func (m *PurchaseInvoice) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -190,6 +242,7 @@ func (m *PurchaseInvoice) GetStatus()(*string) {
         return m.status
     }
 }
+// Gets the totalAmountExcludingTax property value. 
 func (m *PurchaseInvoice) GetTotalAmountExcludingTax()(*float64) {
     if m == nil {
         return nil
@@ -197,6 +250,7 @@ func (m *PurchaseInvoice) GetTotalAmountExcludingTax()(*float64) {
         return m.totalAmountExcludingTax
     }
 }
+// Gets the totalAmountIncludingTax property value. 
 func (m *PurchaseInvoice) GetTotalAmountIncludingTax()(*float64) {
     if m == nil {
         return nil
@@ -204,6 +258,7 @@ func (m *PurchaseInvoice) GetTotalAmountIncludingTax()(*float64) {
         return m.totalAmountIncludingTax
     }
 }
+// Gets the totalTaxAmount property value. 
 func (m *PurchaseInvoice) GetTotalTaxAmount()(*float64) {
     if m == nil {
         return nil
@@ -211,6 +266,7 @@ func (m *PurchaseInvoice) GetTotalTaxAmount()(*float64) {
         return m.totalTaxAmount
     }
 }
+// Gets the vendor_escaped property value. 
 func (m *PurchaseInvoice) GetVendor_escaped()(*Vendor_escaped) {
     if m == nil {
         return nil
@@ -218,6 +274,7 @@ func (m *PurchaseInvoice) GetVendor_escaped()(*Vendor_escaped) {
         return m.vendor_escaped
     }
 }
+// Gets the vendorId property value. 
 func (m *PurchaseInvoice) GetVendorId()(*string) {
     if m == nil {
         return nil
@@ -225,6 +282,7 @@ func (m *PurchaseInvoice) GetVendorId()(*string) {
         return m.vendorId
     }
 }
+// Gets the vendorInvoiceNumber property value. 
 func (m *PurchaseInvoice) GetVendorInvoiceNumber()(*string) {
     if m == nil {
         return nil
@@ -232,6 +290,7 @@ func (m *PurchaseInvoice) GetVendorInvoiceNumber()(*string) {
         return m.vendorInvoiceNumber
     }
 }
+// Gets the vendorName property value. 
 func (m *PurchaseInvoice) GetVendorName()(*string) {
     if m == nil {
         return nil
@@ -239,6 +298,7 @@ func (m *PurchaseInvoice) GetVendorName()(*string) {
         return m.vendorName
     }
 }
+// Gets the vendorNumber property value. 
 func (m *PurchaseInvoice) GetVendorNumber()(*string) {
     if m == nil {
         return nil
@@ -246,6 +306,7 @@ func (m *PurchaseInvoice) GetVendorNumber()(*string) {
         return m.vendorNumber
     }
 }
+// The deserialization information for the current model
 func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["buyFromAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -489,6 +550,9 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *PurchaseInvoice) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *PurchaseInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -675,90 +739,177 @@ func (m *PurchaseInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
+// Sets the buyFromAddress property value. 
+// Parameters:
+//  - value : Value to set for the buyFromAddress property.
 func (m *PurchaseInvoice) SetBuyFromAddress(value *PostalAddressType)() {
     m.buyFromAddress = value
 }
+// Sets the currency property value. 
+// Parameters:
+//  - value : Value to set for the currency property.
 func (m *PurchaseInvoice) SetCurrency(value *Currency)() {
     m.currency = value
 }
+// Sets the currencyCode property value. 
+// Parameters:
+//  - value : Value to set for the currencyCode property.
 func (m *PurchaseInvoice) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
+// Sets the currencyId property value. 
+// Parameters:
+//  - value : Value to set for the currencyId property.
 func (m *PurchaseInvoice) SetCurrencyId(value *string)() {
     m.currencyId = value
 }
+// Sets the discountAmount property value. 
+// Parameters:
+//  - value : Value to set for the discountAmount property.
 func (m *PurchaseInvoice) SetDiscountAmount(value *float64)() {
     m.discountAmount = value
 }
+// Sets the discountAppliedBeforeTax property value. 
+// Parameters:
+//  - value : Value to set for the discountAppliedBeforeTax property.
 func (m *PurchaseInvoice) SetDiscountAppliedBeforeTax(value *bool)() {
     m.discountAppliedBeforeTax = value
 }
+// Sets the dueDate property value. 
+// Parameters:
+//  - value : Value to set for the dueDate property.
 func (m *PurchaseInvoice) SetDueDate(value *string)() {
     m.dueDate = value
 }
+// Sets the invoiceDate property value. 
+// Parameters:
+//  - value : Value to set for the invoiceDate property.
 func (m *PurchaseInvoice) SetInvoiceDate(value *string)() {
     m.invoiceDate = value
 }
+// Sets the lastModifiedDateTime property value. 
+// Parameters:
+//  - value : Value to set for the lastModifiedDateTime property.
 func (m *PurchaseInvoice) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
+// Sets the number property value. 
+// Parameters:
+//  - value : Value to set for the number property.
 func (m *PurchaseInvoice) SetNumber(value *string)() {
     m.number = value
 }
+// Sets the payToAddress property value. 
+// Parameters:
+//  - value : Value to set for the payToAddress property.
 func (m *PurchaseInvoice) SetPayToAddress(value *PostalAddressType)() {
     m.payToAddress = value
 }
+// Sets the payToContact property value. 
+// Parameters:
+//  - value : Value to set for the payToContact property.
 func (m *PurchaseInvoice) SetPayToContact(value *string)() {
     m.payToContact = value
 }
+// Sets the payToName property value. 
+// Parameters:
+//  - value : Value to set for the payToName property.
 func (m *PurchaseInvoice) SetPayToName(value *string)() {
     m.payToName = value
 }
+// Sets the payToVendorId property value. 
+// Parameters:
+//  - value : Value to set for the payToVendorId property.
 func (m *PurchaseInvoice) SetPayToVendorId(value *string)() {
     m.payToVendorId = value
 }
+// Sets the payToVendorNumber property value. 
+// Parameters:
+//  - value : Value to set for the payToVendorNumber property.
 func (m *PurchaseInvoice) SetPayToVendorNumber(value *string)() {
     m.payToVendorNumber = value
 }
+// Sets the pricesIncludeTax property value. 
+// Parameters:
+//  - value : Value to set for the pricesIncludeTax property.
 func (m *PurchaseInvoice) SetPricesIncludeTax(value *bool)() {
     m.pricesIncludeTax = value
 }
+// Sets the purchaseInvoiceLines property value. 
+// Parameters:
+//  - value : Value to set for the purchaseInvoiceLines property.
 func (m *PurchaseInvoice) SetPurchaseInvoiceLines(value []PurchaseInvoiceLine)() {
     m.purchaseInvoiceLines = value
 }
+// Sets the shipToAddress property value. 
+// Parameters:
+//  - value : Value to set for the shipToAddress property.
 func (m *PurchaseInvoice) SetShipToAddress(value *PostalAddressType)() {
     m.shipToAddress = value
 }
+// Sets the shipToContact property value. 
+// Parameters:
+//  - value : Value to set for the shipToContact property.
 func (m *PurchaseInvoice) SetShipToContact(value *string)() {
     m.shipToContact = value
 }
+// Sets the shipToName property value. 
+// Parameters:
+//  - value : Value to set for the shipToName property.
 func (m *PurchaseInvoice) SetShipToName(value *string)() {
     m.shipToName = value
 }
+// Sets the status property value. 
+// Parameters:
+//  - value : Value to set for the status property.
 func (m *PurchaseInvoice) SetStatus(value *string)() {
     m.status = value
 }
+// Sets the totalAmountExcludingTax property value. 
+// Parameters:
+//  - value : Value to set for the totalAmountExcludingTax property.
 func (m *PurchaseInvoice) SetTotalAmountExcludingTax(value *float64)() {
     m.totalAmountExcludingTax = value
 }
+// Sets the totalAmountIncludingTax property value. 
+// Parameters:
+//  - value : Value to set for the totalAmountIncludingTax property.
 func (m *PurchaseInvoice) SetTotalAmountIncludingTax(value *float64)() {
     m.totalAmountIncludingTax = value
 }
+// Sets the totalTaxAmount property value. 
+// Parameters:
+//  - value : Value to set for the totalTaxAmount property.
 func (m *PurchaseInvoice) SetTotalTaxAmount(value *float64)() {
     m.totalTaxAmount = value
 }
+// Sets the vendor_escaped property value. 
+// Parameters:
+//  - value : Value to set for the vendor_escaped property.
 func (m *PurchaseInvoice) SetVendor_escaped(value *Vendor_escaped)() {
     m.vendor_escaped = value
 }
+// Sets the vendorId property value. 
+// Parameters:
+//  - value : Value to set for the vendorId property.
 func (m *PurchaseInvoice) SetVendorId(value *string)() {
     m.vendorId = value
 }
+// Sets the vendorInvoiceNumber property value. 
+// Parameters:
+//  - value : Value to set for the vendorInvoiceNumber property.
 func (m *PurchaseInvoice) SetVendorInvoiceNumber(value *string)() {
     m.vendorInvoiceNumber = value
 }
+// Sets the vendorName property value. 
+// Parameters:
+//  - value : Value to set for the vendorName property.
 func (m *PurchaseInvoice) SetVendorName(value *string)() {
     m.vendorName = value
 }
+// Sets the vendorNumber property value. 
+// Parameters:
+//  - value : Value to set for the vendorNumber property.
 func (m *PurchaseInvoice) SetVendorNumber(value *string)() {
     m.vendorNumber = value
 }

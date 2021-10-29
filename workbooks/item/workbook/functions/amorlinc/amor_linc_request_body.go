@@ -5,22 +5,33 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type AmorLincRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     basis *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     cost *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     datePurchased *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     firstPeriod *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     period *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     rate *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     salvage *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new amorLincRequestBody and sets the default values.
 func NewAmorLincRequestBody()(*AmorLincRequestBody) {
     m := &AmorLincRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AmorLincRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,6 +39,7 @@ func (m *AmorLincRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the basis property value. 
 func (m *AmorLincRequestBody) GetBasis()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -35,6 +47,7 @@ func (m *AmorLincRequestBody) GetBasis()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.basis
     }
 }
+// Gets the cost property value. 
 func (m *AmorLincRequestBody) GetCost()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -42,6 +55,7 @@ func (m *AmorLincRequestBody) GetCost()(*i535684e11b5500196ecb4b5c6634e0651fe2c2
         return m.cost
     }
 }
+// Gets the datePurchased property value. 
 func (m *AmorLincRequestBody) GetDatePurchased()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -49,6 +63,7 @@ func (m *AmorLincRequestBody) GetDatePurchased()(*i535684e11b5500196ecb4b5c6634e
         return m.datePurchased
     }
 }
+// Gets the firstPeriod property value. 
 func (m *AmorLincRequestBody) GetFirstPeriod()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -56,6 +71,7 @@ func (m *AmorLincRequestBody) GetFirstPeriod()(*i535684e11b5500196ecb4b5c6634e06
         return m.firstPeriod
     }
 }
+// Gets the period property value. 
 func (m *AmorLincRequestBody) GetPeriod()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -63,6 +79,7 @@ func (m *AmorLincRequestBody) GetPeriod()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.period
     }
 }
+// Gets the rate property value. 
 func (m *AmorLincRequestBody) GetRate()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -70,6 +87,7 @@ func (m *AmorLincRequestBody) GetRate()(*i535684e11b5500196ecb4b5c6634e0651fe2c2
         return m.rate
     }
 }
+// Gets the salvage property value. 
 func (m *AmorLincRequestBody) GetSalvage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -77,6 +95,7 @@ func (m *AmorLincRequestBody) GetSalvage()(*i535684e11b5500196ecb4b5c6634e0651fe
         return m.salvage
     }
 }
+// The deserialization information for the current model
 func (m *AmorLincRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["basis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,6 +159,9 @@ func (m *AmorLincRequestBody) GetFieldDeserializers()(map[string]func(interface{
 func (m *AmorLincRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *AmorLincRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("basis", m.GetBasis())
@@ -191,27 +213,51 @@ func (m *AmorLincRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *AmorLincRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the basis property value. 
+// Parameters:
+//  - value : Value to set for the basis property.
 func (m *AmorLincRequestBody) SetBasis(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.basis = value
 }
+// Sets the cost property value. 
+// Parameters:
+//  - value : Value to set for the cost property.
 func (m *AmorLincRequestBody) SetCost(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.cost = value
 }
+// Sets the datePurchased property value. 
+// Parameters:
+//  - value : Value to set for the datePurchased property.
 func (m *AmorLincRequestBody) SetDatePurchased(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.datePurchased = value
 }
+// Sets the firstPeriod property value. 
+// Parameters:
+//  - value : Value to set for the firstPeriod property.
 func (m *AmorLincRequestBody) SetFirstPeriod(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.firstPeriod = value
 }
+// Sets the period property value. 
+// Parameters:
+//  - value : Value to set for the period property.
 func (m *AmorLincRequestBody) SetPeriod(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.period = value
 }
+// Sets the rate property value. 
+// Parameters:
+//  - value : Value to set for the rate property.
 func (m *AmorLincRequestBody) SetRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.rate = value
 }
+// Sets the salvage property value. 
+// Parameters:
+//  - value : Value to set for the salvage property.
 func (m *AmorLincRequestBody) SetSalvage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.salvage = value
 }

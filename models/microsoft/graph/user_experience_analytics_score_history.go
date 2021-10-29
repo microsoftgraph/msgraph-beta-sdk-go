@@ -5,16 +5,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type UserExperienceAnalyticsScoreHistory struct {
     Entity
+    // The user experience analytics device startup date time.
     startupDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
+// Instantiates a new userExperienceAnalyticsScoreHistory and sets the default values.
 func NewUserExperienceAnalyticsScoreHistory()(*UserExperienceAnalyticsScoreHistory) {
     m := &UserExperienceAnalyticsScoreHistory{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the startupDateTime property value. The user experience analytics device startup date time.
 func (m *UserExperienceAnalyticsScoreHistory) GetStartupDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -22,6 +26,7 @@ func (m *UserExperienceAnalyticsScoreHistory) GetStartupDateTime()(*i336074805fc
         return m.startupDateTime
     }
 }
+// The deserialization information for the current model
 func (m *UserExperienceAnalyticsScoreHistory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["startupDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -37,6 +42,9 @@ func (m *UserExperienceAnalyticsScoreHistory) GetFieldDeserializers()(map[string
 func (m *UserExperienceAnalyticsScoreHistory) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UserExperienceAnalyticsScoreHistory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -50,6 +58,9 @@ func (m *UserExperienceAnalyticsScoreHistory) Serialize(writer i04eb5309aeaafadd
     }
     return nil
 }
+// Sets the startupDateTime property value. The user experience analytics device startup date time.
+// Parameters:
+//  - value : Value to set for the startupDateTime property.
 func (m *UserExperienceAnalyticsScoreHistory) SetStartupDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startupDateTime = value
 }

@@ -5,21 +5,30 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetSkypeForBusinessActivityUserCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     organized *int64;
+    // 
     participated *int64;
+    // 
     peerToPeer *int64;
+    // 
     reportDate *string;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
 }
+// Instantiates a new getSkypeForBusinessActivityUserCountsWithPeriod and sets the default values.
 func NewGetSkypeForBusinessActivityUserCountsWithPeriod()(*GetSkypeForBusinessActivityUserCountsWithPeriod) {
     m := &GetSkypeForBusinessActivityUserCountsWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the organized property value. 
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetOrganized()(*int64) {
     if m == nil {
         return nil
@@ -27,6 +36,7 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetOrganized()(*int64)
         return m.organized
     }
 }
+// Gets the participated property value. 
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetParticipated()(*int64) {
     if m == nil {
         return nil
@@ -34,6 +44,7 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetParticipated()(*int
         return m.participated
     }
 }
+// Gets the peerToPeer property value. 
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetPeerToPeer()(*int64) {
     if m == nil {
         return nil
@@ -41,6 +52,7 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetPeerToPeer()(*int64
         return m.peerToPeer
     }
 }
+// Gets the reportDate property value. 
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetReportDate()(*string) {
     if m == nil {
         return nil
@@ -48,6 +60,7 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetReportDate()(*strin
         return m.reportDate
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -55,6 +68,7 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetReportPeriod()(*str
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -62,6 +76,7 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetReportRefreshDate()
         return m.reportRefreshDate
     }
 }
+// The deserialization information for the current model
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["organized"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,6 +132,9 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) GetFieldDeserializers(
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -160,21 +178,39 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) Serialize(writer i04eb
     }
     return nil
 }
+// Sets the organized property value. 
+// Parameters:
+//  - value : Value to set for the organized property.
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) SetOrganized(value *int64)() {
     m.organized = value
 }
+// Sets the participated property value. 
+// Parameters:
+//  - value : Value to set for the participated property.
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) SetParticipated(value *int64)() {
     m.participated = value
 }
+// Sets the peerToPeer property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeer property.
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) SetPeerToPeer(value *int64)() {
     m.peerToPeer = value
 }
+// Sets the reportDate property value. 
+// Parameters:
+//  - value : Value to set for the reportDate property.
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) SetReportDate(value *string)() {
     m.reportDate = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetSkypeForBusinessActivityUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }

@@ -4,20 +4,29 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type EducationRoot struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     classes []EducationClass;
+    // 
     me *EducationUser;
+    // 
     schools []EducationSchool;
+    // 
     synchronizationProfiles []EducationSynchronizationProfile;
+    // 
     users []EducationUser;
 }
+// Instantiates a new EducationRoot and sets the default values.
 func NewEducationRoot()(*EducationRoot) {
     m := &EducationRoot{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationRoot) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -25,6 +34,7 @@ func (m *EducationRoot) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the classes property value. 
 func (m *EducationRoot) GetClasses()([]EducationClass) {
     if m == nil {
         return nil
@@ -32,6 +42,7 @@ func (m *EducationRoot) GetClasses()([]EducationClass) {
         return m.classes
     }
 }
+// Gets the me property value. 
 func (m *EducationRoot) GetMe()(*EducationUser) {
     if m == nil {
         return nil
@@ -39,6 +50,7 @@ func (m *EducationRoot) GetMe()(*EducationUser) {
         return m.me
     }
 }
+// Gets the schools property value. 
 func (m *EducationRoot) GetSchools()([]EducationSchool) {
     if m == nil {
         return nil
@@ -46,6 +58,7 @@ func (m *EducationRoot) GetSchools()([]EducationSchool) {
         return m.schools
     }
 }
+// Gets the synchronizationProfiles property value. 
 func (m *EducationRoot) GetSynchronizationProfiles()([]EducationSynchronizationProfile) {
     if m == nil {
         return nil
@@ -53,6 +66,7 @@ func (m *EducationRoot) GetSynchronizationProfiles()([]EducationSynchronizationP
         return m.synchronizationProfiles
     }
 }
+// Gets the users property value. 
 func (m *EducationRoot) GetUsers()([]EducationUser) {
     if m == nil {
         return nil
@@ -60,6 +74,7 @@ func (m *EducationRoot) GetUsers()([]EducationUser) {
         return m.users
     }
 }
+// The deserialization information for the current model
 func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["classes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,6 +138,9 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *EducationRoot) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClasses()))
@@ -182,21 +200,39 @@ func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *EducationRoot) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the classes property value. 
+// Parameters:
+//  - value : Value to set for the classes property.
 func (m *EducationRoot) SetClasses(value []EducationClass)() {
     m.classes = value
 }
+// Sets the me property value. 
+// Parameters:
+//  - value : Value to set for the me property.
 func (m *EducationRoot) SetMe(value *EducationUser)() {
     m.me = value
 }
+// Sets the schools property value. 
+// Parameters:
+//  - value : Value to set for the schools property.
 func (m *EducationRoot) SetSchools(value []EducationSchool)() {
     m.schools = value
 }
+// Sets the synchronizationProfiles property value. 
+// Parameters:
+//  - value : Value to set for the synchronizationProfiles property.
 func (m *EducationRoot) SetSynchronizationProfiles(value []EducationSynchronizationProfile)() {
     m.synchronizationProfiles = value
 }
+// Sets the users property value. 
+// Parameters:
+//  - value : Value to set for the users property.
 func (m *EducationRoot) SetUsers(value []EducationUser)() {
     m.users = value
 }

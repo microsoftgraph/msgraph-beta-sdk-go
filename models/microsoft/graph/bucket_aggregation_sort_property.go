@@ -3,16 +3,18 @@ import (
     "strings"
     "errors"
 )
+// 
 type BucketAggregationSortProperty int
 
 const (
     COUNT_BUCKETAGGREGATIONSORTPROPERTY BucketAggregationSortProperty = iota
     KEYASSTRING_BUCKETAGGREGATIONSORTPROPERTY
     KEYASNUMBER_BUCKETAGGREGATIONSORTPROPERTY
+    UNKNOWNFUTUREVALUE_BUCKETAGGREGATIONSORTPROPERTY
 )
 
 func (i BucketAggregationSortProperty) String() string {
-    return []string{"COUNT", "KEYASSTRING", "KEYASNUMBER"}[i]
+    return []string{"COUNT", "KEYASSTRING", "KEYASNUMBER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseBucketAggregationSortProperty(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -22,6 +24,8 @@ func ParseBucketAggregationSortProperty(v string) (interface{}, error) {
             return KEYASSTRING_BUCKETAGGREGATIONSORTPROPERTY, nil
         case "KEYASNUMBER":
             return KEYASNUMBER_BUCKETAGGREGATIONSORTPROPERTY, nil
+        case "UNKNOWNFUTUREVALUE":
+            return UNKNOWNFUTUREVALUE_BUCKETAGGREGATIONSORTPROPERTY, nil
     }
     return 0, errors.New("Unknown BucketAggregationSortProperty value: " + v)
 }

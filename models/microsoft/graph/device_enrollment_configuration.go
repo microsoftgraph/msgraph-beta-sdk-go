@@ -5,23 +5,34 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DeviceEnrollmentConfiguration struct {
     Entity
+    // The list of group assignments for the device configuration profile
     assignments []EnrollmentConfigurationAssignment;
+    // Created date time in UTC of the device enrollment configuration
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // The description of the device enrollment configuration
     description *string;
+    // The display name of the device enrollment configuration
     displayName *string;
+    // Last modified date time in UTC of the device enrollment configuration
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
     priority *int32;
+    // Optional role scope tags for the enrollment restrictions.
     roleScopeTagIds []string;
+    // The version of the device enrollment configuration
     version *int32;
 }
+// Instantiates a new deviceEnrollmentConfiguration and sets the default values.
 func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     m := &DeviceEnrollmentConfiguration{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the assignments property value. The list of group assignments for the device configuration profile
 func (m *DeviceEnrollmentConfiguration) GetAssignments()([]EnrollmentConfigurationAssignment) {
     if m == nil {
         return nil
@@ -29,6 +40,7 @@ func (m *DeviceEnrollmentConfiguration) GetAssignments()([]EnrollmentConfigurati
         return m.assignments
     }
 }
+// Gets the createdDateTime property value. Created date time in UTC of the device enrollment configuration
 func (m *DeviceEnrollmentConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -36,6 +48,7 @@ func (m *DeviceEnrollmentConfiguration) GetCreatedDateTime()(*i336074805fc853987
         return m.createdDateTime
     }
 }
+// Gets the description property value. The description of the device enrollment configuration
 func (m *DeviceEnrollmentConfiguration) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -43,6 +56,7 @@ func (m *DeviceEnrollmentConfiguration) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. The display name of the device enrollment configuration
 func (m *DeviceEnrollmentConfiguration) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -50,6 +64,7 @@ func (m *DeviceEnrollmentConfiguration) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the lastModifiedDateTime property value. Last modified date time in UTC of the device enrollment configuration
 func (m *DeviceEnrollmentConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -57,6 +72,7 @@ func (m *DeviceEnrollmentConfiguration) GetLastModifiedDateTime()(*i336074805fc8
         return m.lastModifiedDateTime
     }
 }
+// Gets the priority property value. Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
 func (m *DeviceEnrollmentConfiguration) GetPriority()(*int32) {
     if m == nil {
         return nil
@@ -64,6 +80,7 @@ func (m *DeviceEnrollmentConfiguration) GetPriority()(*int32) {
         return m.priority
     }
 }
+// Gets the roleScopeTagIds property value. Optional role scope tags for the enrollment restrictions.
 func (m *DeviceEnrollmentConfiguration) GetRoleScopeTagIds()([]string) {
     if m == nil {
         return nil
@@ -71,6 +88,7 @@ func (m *DeviceEnrollmentConfiguration) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
+// Gets the version property value. The version of the device enrollment configuration
 func (m *DeviceEnrollmentConfiguration) GetVersion()(*int32) {
     if m == nil {
         return nil
@@ -78,6 +96,7 @@ func (m *DeviceEnrollmentConfiguration) GetVersion()(*int32) {
         return m.version
     }
 }
+// The deserialization information for the current model
 func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,6 +176,9 @@ func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(
 func (m *DeviceEnrollmentConfiguration) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DeviceEnrollmentConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -217,27 +239,51 @@ func (m *DeviceEnrollmentConfiguration) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
+// Sets the assignments property value. The list of group assignments for the device configuration profile
+// Parameters:
+//  - value : Value to set for the assignments property.
 func (m *DeviceEnrollmentConfiguration) SetAssignments(value []EnrollmentConfigurationAssignment)() {
     m.assignments = value
 }
+// Sets the createdDateTime property value. Created date time in UTC of the device enrollment configuration
+// Parameters:
+//  - value : Value to set for the createdDateTime property.
 func (m *DeviceEnrollmentConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
+// Sets the description property value. The description of the device enrollment configuration
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *DeviceEnrollmentConfiguration) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. The display name of the device enrollment configuration
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *DeviceEnrollmentConfiguration) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the lastModifiedDateTime property value. Last modified date time in UTC of the device enrollment configuration
+// Parameters:
+//  - value : Value to set for the lastModifiedDateTime property.
 func (m *DeviceEnrollmentConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
+// Sets the priority property value. Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+// Parameters:
+//  - value : Value to set for the priority property.
 func (m *DeviceEnrollmentConfiguration) SetPriority(value *int32)() {
     m.priority = value
 }
+// Sets the roleScopeTagIds property value. Optional role scope tags for the enrollment restrictions.
+// Parameters:
+//  - value : Value to set for the roleScopeTagIds property.
 func (m *DeviceEnrollmentConfiguration) SetRoleScopeTagIds(value []string)() {
     m.roleScopeTagIds = value
 }
+// Sets the version property value. The version of the device enrollment configuration
+// Parameters:
+//  - value : Value to set for the version property.
 func (m *DeviceEnrollmentConfiguration) SetVersion(value *int32)() {
     m.version = value
 }

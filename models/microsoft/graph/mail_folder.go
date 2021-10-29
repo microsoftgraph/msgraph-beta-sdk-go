@@ -4,28 +4,44 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type MailFolder struct {
     Entity
+    // The number of immediate child mailFolders in the current mailFolder.
     childFolderCount *int32;
+    // The collection of child folders in the mailFolder.
     childFolders []MailFolder;
+    // The mailFolder's display name.
     displayName *string;
+    // Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
     isHidden *bool;
+    // The collection of rules that apply to the user's Inbox folder.
     messageRules []MessageRule;
+    // The collection of messages in the mailFolder.
     messages []Message;
+    // The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
     multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    // The unique identifier for the mailFolder's parent mailFolder.
     parentFolderId *string;
+    // The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    // The number of items in the mailFolder.
     totalItemCount *int32;
+    // The number of items in the mailFolder marked as unread.
     unreadItemCount *int32;
+    // 
     userConfigurations []UserConfiguration;
+    // The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.
     wellKnownName *string;
 }
+// Instantiates a new mailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {
     m := &MailFolder{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the childFolderCount property value. The number of immediate child mailFolders in the current mailFolder.
 func (m *MailFolder) GetChildFolderCount()(*int32) {
     if m == nil {
         return nil
@@ -33,6 +49,7 @@ func (m *MailFolder) GetChildFolderCount()(*int32) {
         return m.childFolderCount
     }
 }
+// Gets the childFolders property value. The collection of child folders in the mailFolder.
 func (m *MailFolder) GetChildFolders()([]MailFolder) {
     if m == nil {
         return nil
@@ -40,6 +57,7 @@ func (m *MailFolder) GetChildFolders()([]MailFolder) {
         return m.childFolders
     }
 }
+// Gets the displayName property value. The mailFolder's display name.
 func (m *MailFolder) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -47,6 +65,7 @@ func (m *MailFolder) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the isHidden property value. Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
 func (m *MailFolder) GetIsHidden()(*bool) {
     if m == nil {
         return nil
@@ -54,6 +73,7 @@ func (m *MailFolder) GetIsHidden()(*bool) {
         return m.isHidden
     }
 }
+// Gets the messageRules property value. The collection of rules that apply to the user's Inbox folder.
 func (m *MailFolder) GetMessageRules()([]MessageRule) {
     if m == nil {
         return nil
@@ -61,6 +81,7 @@ func (m *MailFolder) GetMessageRules()([]MessageRule) {
         return m.messageRules
     }
 }
+// Gets the messages property value. The collection of messages in the mailFolder.
 func (m *MailFolder) GetMessages()([]Message) {
     if m == nil {
         return nil
@@ -68,6 +89,7 @@ func (m *MailFolder) GetMessages()([]Message) {
         return m.messages
     }
 }
+// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
 func (m *MailFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -75,6 +97,7 @@ func (m *MailFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtende
         return m.multiValueExtendedProperties
     }
 }
+// Gets the parentFolderId property value. The unique identifier for the mailFolder's parent mailFolder.
 func (m *MailFolder) GetParentFolderId()(*string) {
     if m == nil {
         return nil
@@ -82,6 +105,7 @@ func (m *MailFolder) GetParentFolderId()(*string) {
         return m.parentFolderId
     }
 }
+// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
 func (m *MailFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -89,6 +113,7 @@ func (m *MailFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExten
         return m.singleValueExtendedProperties
     }
 }
+// Gets the totalItemCount property value. The number of items in the mailFolder.
 func (m *MailFolder) GetTotalItemCount()(*int32) {
     if m == nil {
         return nil
@@ -96,6 +121,7 @@ func (m *MailFolder) GetTotalItemCount()(*int32) {
         return m.totalItemCount
     }
 }
+// Gets the unreadItemCount property value. The number of items in the mailFolder marked as unread.
 func (m *MailFolder) GetUnreadItemCount()(*int32) {
     if m == nil {
         return nil
@@ -103,6 +129,7 @@ func (m *MailFolder) GetUnreadItemCount()(*int32) {
         return m.unreadItemCount
     }
 }
+// Gets the userConfigurations property value. 
 func (m *MailFolder) GetUserConfigurations()([]UserConfiguration) {
     if m == nil {
         return nil
@@ -110,6 +137,7 @@ func (m *MailFolder) GetUserConfigurations()([]UserConfiguration) {
         return m.userConfigurations
     }
 }
+// Gets the wellKnownName property value. The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.
 func (m *MailFolder) GetWellKnownName()(*string) {
     if m == nil {
         return nil
@@ -117,6 +145,7 @@ func (m *MailFolder) GetWellKnownName()(*string) {
         return m.wellKnownName
     }
 }
+// The deserialization information for the current model
 func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childFolderCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,6 +281,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *MailFolder) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *MailFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -367,42 +399,81 @@ func (m *MailFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
+// Sets the childFolderCount property value. The number of immediate child mailFolders in the current mailFolder.
+// Parameters:
+//  - value : Value to set for the childFolderCount property.
 func (m *MailFolder) SetChildFolderCount(value *int32)() {
     m.childFolderCount = value
 }
+// Sets the childFolders property value. The collection of child folders in the mailFolder.
+// Parameters:
+//  - value : Value to set for the childFolders property.
 func (m *MailFolder) SetChildFolders(value []MailFolder)() {
     m.childFolders = value
 }
+// Sets the displayName property value. The mailFolder's display name.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *MailFolder) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the isHidden property value. Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
+// Parameters:
+//  - value : Value to set for the isHidden property.
 func (m *MailFolder) SetIsHidden(value *bool)() {
     m.isHidden = value
 }
+// Sets the messageRules property value. The collection of rules that apply to the user's Inbox folder.
+// Parameters:
+//  - value : Value to set for the messageRules property.
 func (m *MailFolder) SetMessageRules(value []MessageRule)() {
     m.messageRules = value
 }
+// Sets the messages property value. The collection of messages in the mailFolder.
+// Parameters:
+//  - value : Value to set for the messages property.
 func (m *MailFolder) SetMessages(value []Message)() {
     m.messages = value
 }
+// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the multiValueExtendedProperties property.
 func (m *MailFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
+// Sets the parentFolderId property value. The unique identifier for the mailFolder's parent mailFolder.
+// Parameters:
+//  - value : Value to set for the parentFolderId property.
 func (m *MailFolder) SetParentFolderId(value *string)() {
     m.parentFolderId = value
 }
+// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the singleValueExtendedProperties property.
 func (m *MailFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }
+// Sets the totalItemCount property value. The number of items in the mailFolder.
+// Parameters:
+//  - value : Value to set for the totalItemCount property.
 func (m *MailFolder) SetTotalItemCount(value *int32)() {
     m.totalItemCount = value
 }
+// Sets the unreadItemCount property value. The number of items in the mailFolder marked as unread.
+// Parameters:
+//  - value : Value to set for the unreadItemCount property.
 func (m *MailFolder) SetUnreadItemCount(value *int32)() {
     m.unreadItemCount = value
 }
+// Sets the userConfigurations property value. 
+// Parameters:
+//  - value : Value to set for the userConfigurations property.
 func (m *MailFolder) SetUserConfigurations(value []UserConfiguration)() {
     m.userConfigurations = value
 }
+// Sets the wellKnownName property value. The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.
+// Parameters:
+//  - value : Value to set for the wellKnownName property.
 func (m *MailFolder) SetWellKnownName(value *string)() {
     m.wellKnownName = value
 }

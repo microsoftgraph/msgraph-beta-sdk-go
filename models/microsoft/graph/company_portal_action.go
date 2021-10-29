@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type CompanyPortalAction int
 
 const (

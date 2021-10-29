@@ -4,21 +4,30 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type InformationProtection struct {
     Entity
+    // 
     bitlocker *Bitlocker;
+    // 
     dataLossPreventionPolicies []DataLossPreventionPolicy;
+    // 
     policy *InformationProtectionPolicy;
+    // 
     sensitivityLabels []SensitivityLabel;
+    // 
     sensitivityPolicySettings *SensitivityPolicySettings;
+    // 
     threatAssessmentRequests []ThreatAssessmentRequest;
 }
+// Instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
     m := &InformationProtection{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the bitlocker property value. 
 func (m *InformationProtection) GetBitlocker()(*Bitlocker) {
     if m == nil {
         return nil
@@ -26,6 +35,7 @@ func (m *InformationProtection) GetBitlocker()(*Bitlocker) {
         return m.bitlocker
     }
 }
+// Gets the dataLossPreventionPolicies property value. 
 func (m *InformationProtection) GetDataLossPreventionPolicies()([]DataLossPreventionPolicy) {
     if m == nil {
         return nil
@@ -33,6 +43,7 @@ func (m *InformationProtection) GetDataLossPreventionPolicies()([]DataLossPreven
         return m.dataLossPreventionPolicies
     }
 }
+// Gets the policy property value. 
 func (m *InformationProtection) GetPolicy()(*InformationProtectionPolicy) {
     if m == nil {
         return nil
@@ -40,6 +51,7 @@ func (m *InformationProtection) GetPolicy()(*InformationProtectionPolicy) {
         return m.policy
     }
 }
+// Gets the sensitivityLabels property value. 
 func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabel) {
     if m == nil {
         return nil
@@ -47,6 +59,7 @@ func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabel) {
         return m.sensitivityLabels
     }
 }
+// Gets the sensitivityPolicySettings property value. 
 func (m *InformationProtection) GetSensitivityPolicySettings()(*SensitivityPolicySettings) {
     if m == nil {
         return nil
@@ -54,6 +67,7 @@ func (m *InformationProtection) GetSensitivityPolicySettings()(*SensitivityPolic
         return m.sensitivityPolicySettings
     }
 }
+// Gets the threatAssessmentRequests property value. 
 func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequest) {
     if m == nil {
         return nil
@@ -61,6 +75,7 @@ func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessment
         return m.threatAssessmentRequests
     }
 }
+// The deserialization information for the current model
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bitlocker"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,6 +143,9 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
 func (m *InformationProtection) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *InformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -186,21 +204,39 @@ func (m *InformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
+// Sets the bitlocker property value. 
+// Parameters:
+//  - value : Value to set for the bitlocker property.
 func (m *InformationProtection) SetBitlocker(value *Bitlocker)() {
     m.bitlocker = value
 }
+// Sets the dataLossPreventionPolicies property value. 
+// Parameters:
+//  - value : Value to set for the dataLossPreventionPolicies property.
 func (m *InformationProtection) SetDataLossPreventionPolicies(value []DataLossPreventionPolicy)() {
     m.dataLossPreventionPolicies = value
 }
+// Sets the policy property value. 
+// Parameters:
+//  - value : Value to set for the policy property.
 func (m *InformationProtection) SetPolicy(value *InformationProtectionPolicy)() {
     m.policy = value
 }
+// Sets the sensitivityLabels property value. 
+// Parameters:
+//  - value : Value to set for the sensitivityLabels property.
 func (m *InformationProtection) SetSensitivityLabels(value []SensitivityLabel)() {
     m.sensitivityLabels = value
 }
+// Sets the sensitivityPolicySettings property value. 
+// Parameters:
+//  - value : Value to set for the sensitivityPolicySettings property.
 func (m *InformationProtection) SetSensitivityPolicySettings(value *SensitivityPolicySettings)() {
     m.sensitivityPolicySettings = value
 }
+// Sets the threatAssessmentRequests property value. 
+// Parameters:
+//  - value : Value to set for the threatAssessmentRequests property.
 func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequest)() {
     m.threatAssessmentRequests = value
 }

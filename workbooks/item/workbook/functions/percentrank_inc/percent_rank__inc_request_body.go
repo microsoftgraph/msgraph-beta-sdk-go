@@ -5,18 +5,25 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type PercentRank_IncRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     array *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     significance *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     x *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new percentRank_IncRequestBody and sets the default values.
 func NewPercentRank_IncRequestBody()(*PercentRank_IncRequestBody) {
     m := &PercentRank_IncRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PercentRank_IncRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *PercentRank_IncRequestBody) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
+// Gets the array property value. 
 func (m *PercentRank_IncRequestBody) GetArray()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *PercentRank_IncRequestBody) GetArray()(*i535684e11b5500196ecb4b5c6634e0
         return m.array
     }
 }
+// Gets the significance property value. 
 func (m *PercentRank_IncRequestBody) GetSignificance()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *PercentRank_IncRequestBody) GetSignificance()(*i535684e11b5500196ecb4b5
         return m.significance
     }
 }
+// Gets the x property value. 
 func (m *PercentRank_IncRequestBody) GetX()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *PercentRank_IncRequestBody) GetX()(*i535684e11b5500196ecb4b5c6634e0651f
         return m.x
     }
 }
+// The deserialization information for the current model
 func (m *PercentRank_IncRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["array"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *PercentRank_IncRequestBody) GetFieldDeserializers()(map[string]func(int
 func (m *PercentRank_IncRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *PercentRank_IncRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("array", m.GetArray())
@@ -103,15 +117,27 @@ func (m *PercentRank_IncRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *PercentRank_IncRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the array property value. 
+// Parameters:
+//  - value : Value to set for the array property.
 func (m *PercentRank_IncRequestBody) SetArray(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.array = value
 }
+// Sets the significance property value. 
+// Parameters:
+//  - value : Value to set for the significance property.
 func (m *PercentRank_IncRequestBody) SetSignificance(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.significance = value
 }
+// Sets the x property value. 
+// Parameters:
+//  - value : Value to set for the x property.
 func (m *PercentRank_IncRequestBody) SetX(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.x = value
 }

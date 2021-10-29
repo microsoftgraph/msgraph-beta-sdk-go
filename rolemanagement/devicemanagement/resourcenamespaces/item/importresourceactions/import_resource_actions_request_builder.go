@@ -6,21 +6,41 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// Builds and executes requests for operations under \roleManagement\deviceManagement\resourceNamespaces\{unifiedRbacResourceNamespace-id}\microsoft.graph.importResourceActions
 type ImportResourceActionsRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Options for Post
+type ImportResourceActionsRequestBuilderPostOptions struct {
+    // 
+    Body *ImportResourceActionsRequestBody;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// Union type wrapper for classes unifiedRbacResourceNamespace
 type ImportResourceActionsResponse struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Union type representation for type unifiedRbacResourceNamespace
     unifiedRbacResourceNamespace *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace;
 }
+// Instantiates a new importResourceActionsResponse and sets the default values.
 func NewImportResourceActionsResponse()(*ImportResourceActionsResponse) {
     m := &ImportResourceActionsResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportResourceActionsResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,6 +48,7 @@ func (m *ImportResourceActionsResponse) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
+// Gets the unifiedRbacResourceNamespace property value. Union type representation for type unifiedRbacResourceNamespace
 func (m *ImportResourceActionsResponse) GetUnifiedRbacResourceNamespace()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace) {
     if m == nil {
         return nil
@@ -35,6 +56,7 @@ func (m *ImportResourceActionsResponse) GetUnifiedRbacResourceNamespace()(*i5356
         return m.unifiedRbacResourceNamespace
     }
 }
+// The deserialization information for the current model
 func (m *ImportResourceActionsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["unifiedRbacResourceNamespace"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -50,6 +72,9 @@ func (m *ImportResourceActionsResponse) GetFieldDeserializers()(map[string]func(
 func (m *ImportResourceActionsResponse) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ImportResourceActionsResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("unifiedRbacResourceNamespace", m.GetUnifiedRbacResourceNamespace())
@@ -65,12 +90,22 @@ func (m *ImportResourceActionsResponse) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *ImportResourceActionsResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the unifiedRbacResourceNamespace property value. Union type representation for type unifiedRbacResourceNamespace
+// Parameters:
+//  - value : Value to set for the unifiedRbacResourceNamespace property.
 func (m *ImportResourceActionsResponse) SetUnifiedRbacResourceNamespace(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace)() {
     m.unifiedRbacResourceNamespace = value
 }
+// Instantiates a new ImportResourceActionsRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewImportResourceActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportResourceActionsRequestBuilder) {
     m := &ImportResourceActionsRequestBuilder{
     }
@@ -83,37 +118,44 @@ func NewImportResourceActionsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new ImportResourceActionsRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewImportResourceActionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportResourceActionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportResourceActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-func (m *ImportResourceActionsRequestBuilder) CreatePostRequestInformation(body *ImportResourceActionsRequestBody, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// Invoke action importResourceActions
+// Parameters:
+//  - options : Options for the request
+func (m *ImportResourceActionsRequestBuilder) CreatePostRequestInformation(options *ImportResourceActionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ImportResourceActionsRequestBuilder) Post(body *ImportResourceActionsRequestBody, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*ImportResourceActionsResponse, error) {
-    requestInfo, err := m.CreatePostRequestInformation(body, h, o);
+// Invoke action importResourceActions
+// Parameters:
+//  - options : Options for the request
+func (m *ImportResourceActionsRequestBuilder) Post(options *ImportResourceActionsRequestBuilderPostOptions)(*ImportResourceActionsResponse, error) {
+    requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewImportResourceActionsResponse() }, responseHandler)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewImportResourceActionsResponse() }, nil)
     if err != nil {
         return nil, err
     }

@@ -5,20 +5,28 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
+// 
 type ManagementTemplate struct {
     Entity
+    // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
     category *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory;
+    // The description for the management template. Optional. Read-only.
     description *string;
+    // The display name for the management template. Required. Read-only.
     displayName *string;
+    // The collection of parameters used by the management template. Optional. Read-only.
     parameters []TemplateParameter;
+    // The collection of workload actions associated with the management template. Optional. Read-only.
     workloadActions []WorkloadAction;
 }
+// Instantiates a new managementTemplate and sets the default values.
 func NewManagementTemplate()(*ManagementTemplate) {
     m := &ManagementTemplate{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplate) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory) {
     if m == nil {
         return nil
@@ -26,6 +34,7 @@ func (m *ManagementTemplate) GetCategory()(*i5c2592132064055aae424492b066923068e
         return m.category
     }
 }
+// Gets the description property value. The description for the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -33,6 +42,7 @@ func (m *ManagementTemplate) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplate) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -40,6 +50,7 @@ func (m *ManagementTemplate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetParameters()([]TemplateParameter) {
     if m == nil {
         return nil
@@ -47,6 +58,7 @@ func (m *ManagementTemplate) GetParameters()([]TemplateParameter) {
         return m.parameters
     }
 }
+// Gets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetWorkloadActions()([]WorkloadAction) {
     if m == nil {
         return nil
@@ -54,6 +66,7 @@ func (m *ManagementTemplate) GetWorkloadActions()([]WorkloadAction) {
         return m.workloadActions
     }
 }
+// The deserialization information for the current model
 func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,6 +123,9 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
 func (m *ManagementTemplate) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -158,18 +174,33 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
+// Sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+// Parameters:
+//  - value : Value to set for the category property.
 func (m *ManagementTemplate) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
     m.category = value
 }
+// Sets the description property value. The description for the management template. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *ManagementTemplate) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. The display name for the management template. Required. Read-only.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *ManagementTemplate) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the parameters property.
 func (m *ManagementTemplate) SetParameters(value []TemplateParameter)() {
     m.parameters = value
 }
+// Sets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the workloadActions property.
 func (m *ManagementTemplate) SetWorkloadActions(value []WorkloadAction)() {
     m.workloadActions = value
 }

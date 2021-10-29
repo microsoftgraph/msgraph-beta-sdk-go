@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type AppLogUploadState int
 
 const (

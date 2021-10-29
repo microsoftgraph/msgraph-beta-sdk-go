@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type SynchronizationSchema struct {
     Entity
+    // Contains the collection of directories and all of their objects.
     directories []DirectoryDefinition;
+    // A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
     synchronizationRules []SynchronizationRule;
+    // The version of the schema, updated automatically with every schema change.
     version *string;
 }
+// Instantiates a new synchronizationSchema and sets the default values.
 func NewSynchronizationSchema()(*SynchronizationSchema) {
     m := &SynchronizationSchema{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the directories property value. Contains the collection of directories and all of their objects.
 func (m *SynchronizationSchema) GetDirectories()([]DirectoryDefinition) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *SynchronizationSchema) GetDirectories()([]DirectoryDefinition) {
         return m.directories
     }
 }
+// Gets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
 func (m *SynchronizationSchema) GetSynchronizationRules()([]SynchronizationRule) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *SynchronizationSchema) GetSynchronizationRules()([]SynchronizationRule)
         return m.synchronizationRules
     }
 }
+// Gets the version property value. The version of the schema, updated automatically with every schema change.
 func (m *SynchronizationSchema) GetVersion()(*string) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *SynchronizationSchema) GetVersion()(*string) {
         return m.version
     }
 }
+// The deserialization information for the current model
 func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["directories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +85,9 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(interfac
 func (m *SynchronizationSchema) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SynchronizationSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -111,12 +123,21 @@ func (m *SynchronizationSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
+// Sets the directories property value. Contains the collection of directories and all of their objects.
+// Parameters:
+//  - value : Value to set for the directories property.
 func (m *SynchronizationSchema) SetDirectories(value []DirectoryDefinition)() {
     m.directories = value
 }
+// Sets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
+// Parameters:
+//  - value : Value to set for the synchronizationRules property.
 func (m *SynchronizationSchema) SetSynchronizationRules(value []SynchronizationRule)() {
     m.synchronizationRules = value
 }
+// Sets the version property value. The version of the schema, updated automatically with every schema change.
+// Parameters:
+//  - value : Value to set for the version property.
 func (m *SynchronizationSchema) SetVersion(value *string)() {
     m.version = value
 }

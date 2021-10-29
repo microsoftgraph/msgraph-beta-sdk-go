@@ -5,18 +5,25 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type NetworkDaysRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     endDate *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     holidays *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     startDate *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new networkDaysRequestBody and sets the default values.
 func NewNetworkDaysRequestBody()(*NetworkDaysRequestBody) {
     m := &NetworkDaysRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkDaysRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *NetworkDaysRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the endDate property value. 
 func (m *NetworkDaysRequestBody) GetEndDate()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *NetworkDaysRequestBody) GetEndDate()(*i535684e11b5500196ecb4b5c6634e065
         return m.endDate
     }
 }
+// Gets the holidays property value. 
 func (m *NetworkDaysRequestBody) GetHolidays()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *NetworkDaysRequestBody) GetHolidays()(*i535684e11b5500196ecb4b5c6634e06
         return m.holidays
     }
 }
+// Gets the startDate property value. 
 func (m *NetworkDaysRequestBody) GetStartDate()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *NetworkDaysRequestBody) GetStartDate()(*i535684e11b5500196ecb4b5c6634e0
         return m.startDate
     }
 }
+// The deserialization information for the current model
 func (m *NetworkDaysRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["endDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *NetworkDaysRequestBody) GetFieldDeserializers()(map[string]func(interfa
 func (m *NetworkDaysRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *NetworkDaysRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("endDate", m.GetEndDate())
@@ -103,15 +117,27 @@ func (m *NetworkDaysRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *NetworkDaysRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the endDate property value. 
+// Parameters:
+//  - value : Value to set for the endDate property.
 func (m *NetworkDaysRequestBody) SetEndDate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.endDate = value
 }
+// Sets the holidays property value. 
+// Parameters:
+//  - value : Value to set for the holidays property.
 func (m *NetworkDaysRequestBody) SetHolidays(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.holidays = value
 }
+// Sets the startDate property value. 
+// Parameters:
+//  - value : Value to set for the startDate property.
 func (m *NetworkDaysRequestBody) SetStartDate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.startDate = value
 }

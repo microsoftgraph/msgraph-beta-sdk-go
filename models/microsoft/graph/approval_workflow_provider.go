@@ -4,19 +4,26 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ApprovalWorkflowProvider struct {
     Entity
+    // 
     businessFlows []BusinessFlow;
+    // 
     businessFlowsWithRequestsAwaitingMyDecision []BusinessFlow;
+    // 
     displayName *string;
+    // 
     policyTemplates []GovernancePolicyTemplate;
 }
+// Instantiates a new approvalWorkflowProvider and sets the default values.
 func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     m := &ApprovalWorkflowProvider{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the businessFlows property value. 
 func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlow) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlow) {
         return m.businessFlows
     }
 }
+// Gets the businessFlowsWithRequestsAwaitingMyDecision property value. 
 func (m *ApprovalWorkflowProvider) GetBusinessFlowsWithRequestsAwaitingMyDecision()([]BusinessFlow) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *ApprovalWorkflowProvider) GetBusinessFlowsWithRequestsAwaitingMyDecisio
         return m.businessFlowsWithRequestsAwaitingMyDecision
     }
 }
+// Gets the displayName property value. 
 func (m *ApprovalWorkflowProvider) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *ApprovalWorkflowProvider) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the policyTemplates property value. 
 func (m *ApprovalWorkflowProvider) GetPolicyTemplates()([]GovernancePolicyTemplate) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *ApprovalWorkflowProvider) GetPolicyTemplates()([]GovernancePolicyTempla
         return m.policyTemplates
     }
 }
+// The deserialization information for the current model
 func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["businessFlows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,6 +107,9 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
 func (m *ApprovalWorkflowProvider) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -142,15 +156,27 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
+// Sets the businessFlows property value. 
+// Parameters:
+//  - value : Value to set for the businessFlows property.
 func (m *ApprovalWorkflowProvider) SetBusinessFlows(value []BusinessFlow)() {
     m.businessFlows = value
 }
+// Sets the businessFlowsWithRequestsAwaitingMyDecision property value. 
+// Parameters:
+//  - value : Value to set for the businessFlowsWithRequestsAwaitingMyDecision property.
 func (m *ApprovalWorkflowProvider) SetBusinessFlowsWithRequestsAwaitingMyDecision(value []BusinessFlow)() {
     m.businessFlowsWithRequestsAwaitingMyDecision = value
 }
+// Sets the displayName property value. 
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *ApprovalWorkflowProvider) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the policyTemplates property value. 
+// Parameters:
+//  - value : Value to set for the policyTemplates property.
 func (m *ApprovalWorkflowProvider) SetPolicyTemplates(value []GovernancePolicyTemplate)() {
     m.policyTemplates = value
 }

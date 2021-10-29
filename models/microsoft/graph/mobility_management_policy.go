@@ -4,23 +4,34 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type MobilityManagementPolicy struct {
     Entity
+    // Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
     appliesTo *PolicyScope;
+    // Compliance URL of the mobility management application.
     complianceUrl *string;
+    // Description of the mobility management application.
     description *string;
+    // Discovery URL of the mobility management application.
     discoveryUrl *string;
+    // Display name of the mobility management application.
     displayName *string;
+    // Azure AD groups under the scope of the mobility management application if appliesTo is selected
     includedGroups []Group;
+    // Whether policy is valid. Invalid policies may not be updated and should be deleted.
     isValid *bool;
+    // Terms of Use URL of the mobility management application.
     termsOfUseUrl *string;
 }
+// Instantiates a new mobilityManagementPolicy and sets the default values.
 func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
     m := &MobilityManagementPolicy{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
     if m == nil {
         return nil
@@ -28,6 +39,7 @@ func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
         return m.appliesTo
     }
 }
+// Gets the complianceUrl property value. Compliance URL of the mobility management application.
 func (m *MobilityManagementPolicy) GetComplianceUrl()(*string) {
     if m == nil {
         return nil
@@ -35,6 +47,7 @@ func (m *MobilityManagementPolicy) GetComplianceUrl()(*string) {
         return m.complianceUrl
     }
 }
+// Gets the description property value. Description of the mobility management application.
 func (m *MobilityManagementPolicy) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -42,6 +55,7 @@ func (m *MobilityManagementPolicy) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the discoveryUrl property value. Discovery URL of the mobility management application.
 func (m *MobilityManagementPolicy) GetDiscoveryUrl()(*string) {
     if m == nil {
         return nil
@@ -49,6 +63,7 @@ func (m *MobilityManagementPolicy) GetDiscoveryUrl()(*string) {
         return m.discoveryUrl
     }
 }
+// Gets the displayName property value. Display name of the mobility management application.
 func (m *MobilityManagementPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -56,6 +71,7 @@ func (m *MobilityManagementPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
 func (m *MobilityManagementPolicy) GetIncludedGroups()([]Group) {
     if m == nil {
         return nil
@@ -63,6 +79,7 @@ func (m *MobilityManagementPolicy) GetIncludedGroups()([]Group) {
         return m.includedGroups
     }
 }
+// Gets the isValid property value. Whether policy is valid. Invalid policies may not be updated and should be deleted.
 func (m *MobilityManagementPolicy) GetIsValid()(*bool) {
     if m == nil {
         return nil
@@ -70,6 +87,7 @@ func (m *MobilityManagementPolicy) GetIsValid()(*bool) {
         return m.isValid
     }
 }
+// Gets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
 func (m *MobilityManagementPolicy) GetTermsOfUseUrl()(*string) {
     if m == nil {
         return nil
@@ -77,6 +95,7 @@ func (m *MobilityManagementPolicy) GetTermsOfUseUrl()(*string) {
         return m.termsOfUseUrl
     }
 }
+// The deserialization information for the current model
 func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appliesTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,6 +172,9 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
 func (m *MobilityManagementPolicy) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *MobilityManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -214,27 +236,51 @@ func (m *MobilityManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
+// Sets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
+// Parameters:
+//  - value : Value to set for the appliesTo property.
 func (m *MobilityManagementPolicy) SetAppliesTo(value *PolicyScope)() {
     m.appliesTo = value
 }
+// Sets the complianceUrl property value. Compliance URL of the mobility management application.
+// Parameters:
+//  - value : Value to set for the complianceUrl property.
 func (m *MobilityManagementPolicy) SetComplianceUrl(value *string)() {
     m.complianceUrl = value
 }
+// Sets the description property value. Description of the mobility management application.
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *MobilityManagementPolicy) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the discoveryUrl property value. Discovery URL of the mobility management application.
+// Parameters:
+//  - value : Value to set for the discoveryUrl property.
 func (m *MobilityManagementPolicy) SetDiscoveryUrl(value *string)() {
     m.discoveryUrl = value
 }
+// Sets the displayName property value. Display name of the mobility management application.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *MobilityManagementPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
+// Parameters:
+//  - value : Value to set for the includedGroups property.
 func (m *MobilityManagementPolicy) SetIncludedGroups(value []Group)() {
     m.includedGroups = value
 }
+// Sets the isValid property value. Whether policy is valid. Invalid policies may not be updated and should be deleted.
+// Parameters:
+//  - value : Value to set for the isValid property.
 func (m *MobilityManagementPolicy) SetIsValid(value *bool)() {
     m.isValid = value
 }
+// Sets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
+// Parameters:
+//  - value : Value to set for the termsOfUseUrl property.
 func (m *MobilityManagementPolicy) SetTermsOfUseUrl(value *string)() {
     m.termsOfUseUrl = value
 }

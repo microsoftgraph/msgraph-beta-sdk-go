@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type DeviceAndAppManagementAssignmentFilterType int
 
 const (

@@ -4,6 +4,11 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i08ed1bcbc2935e740bb1a75a82536d462055f7eb6c3b9f8c54f292796af881e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getmalwaresummaryreport"
+    i0fcc2fe709581d2d74944b1f48febf27a4779c937c3a15442be80066edd36e63 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getgrouppolicysettingsdevicesettingsreport"
+    i10798401aaaa8bec22bd9808818b05c618c65b4aa8de7cb7241d06e2eb24fd23 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getenrollmentconfigurationpoliciesbydevice"
+    i17c7cf0accb5d03c972835746749cfe0eb895bec6658e210ece13d82213fd070 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancepoliciesreportfordevice"
+    i1948951f1fadee39cec5840b7fb1388d50eceac2036ce74a8ece8724792a1636 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancepolicydevicesummaryreport"
+    i1c7e958d1d2cd9f9a07df9fde55f97df047b41716fe43eeddc02616d301d9405 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancepolicydevicesreport"
     i1d42b2baf1a1b776afa9e69081dc91559e4cdd90109e8ba39f1c3cfd8c36b3b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcachedreport"
     i246fa2e435cd7622048a0471ca5df979d86e83142f57f108d53701f4d8c17c18 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationsettingdetailsreport"
     i2660e5353accb6f61768bb2883c08d64660fe2c8c67503cb521191b4c4e33e41 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationpolicynoncompliancesummaryreport"
@@ -18,22 +23,27 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5b82ca25c293ac194e35ceb34a2eb3523dd2a1568f2e61c9458b2d7fe4f1d970 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancepolicynoncompliancesummaryreport"
     i5d960953aeefdfe382eaaeee66b54c5138188e0487e4a969bc66342437b3efc3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getpolicynoncompliancereport"
+    i71062c76ab59540ed61b75db2e8378ccdfa322ba04cfe5afa641522cd26d9367 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getdeviceconfigurationpolicysettingssummaryreport"
     i711aceb383b63eb4ad8db059fe173d8b78d6bb1bdcfaf386735b20a8e54c2748 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancesettingnoncompliancereport"
     i71903f4f495c2ba2d1bec9d9d52c924a6bd43444cea991fb60e1874f824ed54e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getfailedmobileappssummaryreport"
     i75076cf3e3d6371cc0bb5d2810006d6e49e086cb781c7867b1093cfc1cf69827 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getappsinstallsummaryreport"
     i7611b2ea51c277728d8bca812a4642adb44f343f51f28de5c5e087ec400d0645 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getdevicemanagementintentsettingsreport"
+    i788f436053d26e542373ad7c025d3a1a70768b96972d545d5aec67d0881993fb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getquiettimepolicyusersummaryreport"
     i8ad2db41d58439c4405d08911118b14826289f800859f884ca28da1387d489c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getsettingnoncompliancereport"
     i95054c49fc60448e61ba13d5075f71dd6ae5b29fcc1f0307e8b5e38c80345642 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getwindowsupdatealertsummaryreport"
     i9819883d2f88a17d06e7a89c99985f254bca57d86a82a07526740f4057982566 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationpolicynoncompliancereport"
+    ia038b54cc9cc6b16a2ce646f288d86bbc4f28df40b41525d8397a84fa2a524ab "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getremoteassistancesessionsreport"
     ia7100ea2edcc786fe9054729a54d7600f750ebcc9be73a96446bf4b9bc605356 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getdeviceinstallstatusreport"
     iaa2bd508f982ae7d95dc62bbaefe9eb13e0c3fc9ad77d9389f8d82f3fb1dd151 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getrelatedappsstatusreport"
     iad468b4335f9e19b6476bd9d2cb864bb58150160cddf3825611adcbb6a864f65 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getreportfilters"
+    iaf13e8679fcb6c2a8e3dd6221c05721a160c4ae39dc431f95147f9ceb536c688 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getdevicemanagementintentpersettingcontributingprofiles"
     ib57779f05872bd3be1d691d1b254dbe109c8ac7c77e7a265ef928aedbba3d32d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getunhealthydefenderagentsreport"
     ib6b7e73b832065adf3e2ef8550d271d24c62fdb5128ea16eae3808e57561d401 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getallcertificatesreport"
     ib6f9fa86536428e22220c67df5e0bf322aa3124cb40d39ca6a96b97728e8551f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/gethistoricalreport"
     ibb77da97a1e31c9bb16ce4681732ad7475ae450918c13097176fab6ef841fcdf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationpolicysettingsdevicesummaryreport"
     ic029e50a08072e00092e7667a1fc68f437d1be340acce2c03ee7a004dea3e5f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationpolicydevicesreport"
     ic09bfed61d7acf9bcd44dfdcb91600937d60cff331615b3b8a208a31e277cd7d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigmanagerdevicepolicystatusreport"
+    ic72a13840aa7734c378a9cc2064090c5894fdd482f7d082fc5d0ebe8829cc479 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getquiettimepolicyusersreport"
     icd46e1255a1aee0bc5f9216ddd5fb29e365c5848ea3edecfd78d864191ca9748 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getdevicenoncompliancereport"
     icef6de0280daff5ea2bb1854119e785ff95cb81abf14b3546d97c564e7d27123 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getwindowsqualityupdatealertsperpolicyperdevicereport"
     id1df61af1e3874f797c91e9607c99dfd3cb6f0dbf128a90ab44536b912adf005 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationpoliciesreportfordevice"
@@ -53,19 +63,60 @@ import (
     if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/exportjobs/item"
 )
 
+// Builds and executes requests for operations under \deviceManagement\reports
 type ReportsRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Options for Delete
+type ReportsRequestBuilderDeleteOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// Options for Get
+type ReportsRequestBuilderGetOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Request query parameters
+    Q *ReportsRequestBuilderGetQueryParameters;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// Reports singleton
 type ReportsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
+    // Select properties to be returned
     Select_escaped []string;
+}
+// Options for Patch
+type ReportsRequestBuilderPatchOptions struct {
+    // 
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReports;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 func (m *ReportsRequestBuilder) CachedReportConfigurations()(*i2a7e95d28bcab38f85f05fe3f131357d5c408f5fbd47fb213b7aac8dbd71328a.CachedReportConfigurationsRequestBuilder) {
     return i2a7e95d28bcab38f85f05fe3f131357d5c408f5fbd47fb213b7aac8dbd71328a.NewCachedReportConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.reports.cachedReportConfigurations.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*i2bf9ce7fb7bd0fa9fc75119c61d3de5e2e31a446f3ebba40eaf7f289544d9943.DeviceManagementCachedReportConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -76,6 +127,10 @@ func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*i2bf9
     }
     return i2bf9ce7fb7bd0fa9fc75119c61d3de5e2e31a446f3ebba40eaf7f289544d9943.NewDeviceManagementCachedReportConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Instantiates a new ReportsRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportsRequestBuilder) {
     m := &ReportsRequestBuilder{
     }
@@ -88,86 +143,88 @@ func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new ReportsRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewReportsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-func (m *ReportsRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// Reports singleton
+// Parameters:
+//  - options : Options for the request
+func (m *ReportsRequestBuilder) CreateDeleteRequestInformation(options *ReportsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ReportsRequestBuilder) CreateGetRequestInformation(q func (value *ReportsRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// Reports singleton
+// Parameters:
+//  - options : Options for the request
+func (m *ReportsRequestBuilder) CreateGetRequestInformation(options *ReportsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if q != nil {
-        qParams := new(ReportsRequestBuilderGetQueryParameters)
-        err := q(qParams)
-        if err != nil {
-            return nil, err
-        }
-        err = qParams.AddQueryParameters(requestInfo.QueryParameters)
+    if options != nil && options.Q != nil {
+        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
         if err != nil {
             return nil, err
         }
     }
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ReportsRequestBuilder) CreatePatchRequestInformation(body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReports, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// Reports singleton
+// Parameters:
+//  - options : Options for the request
+func (m *ReportsRequestBuilder) CreatePatchRequestInformation(options *ReportsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ReportsRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformation(h, o);
+// Reports singleton
+// Parameters:
+//  - options : Options for the request
+func (m *ReportsRequestBuilder) Delete(options *ReportsRequestBuilderDeleteOptions)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
     if err != nil {
         return err
     }
@@ -176,6 +233,9 @@ func (m *ReportsRequestBuilder) Delete(h func (value map[string]string) (err err
 func (m *ReportsRequestBuilder) ExportJobs()(*if7d41ece7783a25f185dc8071dfbd2363227c4fb6d8e08d2a9412f206c7279a9.ExportJobsRequestBuilder) {
     return if7d41ece7783a25f185dc8071dfbd2363227c4fb6d8e08d2a9412f206c7279a9.NewExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.reports.exportJobs.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) ExportJobsById(id string)(*if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02.DeviceManagementExportJobRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -186,12 +246,15 @@ func (m *ReportsRequestBuilder) ExportJobsById(id string)(*if607fcbf4c23ed3b14db
     }
     return if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02.NewDeviceManagementExportJobRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-func (m *ReportsRequestBuilder) Get(q func (value *ReportsRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReports, error) {
-    requestInfo, err := m.CreateGetRequestInformation(q, h, o);
+// Reports singleton
+// Parameters:
+//  - options : Options for the request
+func (m *ReportsRequestBuilder) Get(options *ReportsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReports, error) {
+    requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementReports() }, responseHandler)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementReports() }, nil)
     if err != nil {
         return nil, err
     }
@@ -217,6 +280,15 @@ func (m *ReportsRequestBuilder) GetCachedReport()(*i1d42b2baf1a1b776afa9e69081dc
 }
 func (m *ReportsRequestBuilder) GetCertificatesReport()(*i5284d7a78de859429101f202a37b95a2897b7a115a509f7ea9be6db8a70482a3.GetCertificatesReportRequestBuilder) {
     return i5284d7a78de859429101f202a37b95a2897b7a115a509f7ea9be6db8a70482a3.NewGetCertificatesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetCompliancePoliciesReportForDevice()(*i17c7cf0accb5d03c972835746749cfe0eb895bec6658e210ece13d82213fd070.GetCompliancePoliciesReportForDeviceRequestBuilder) {
+    return i17c7cf0accb5d03c972835746749cfe0eb895bec6658e210ece13d82213fd070.NewGetCompliancePoliciesReportForDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetCompliancePolicyDevicesReport()(*i1c7e958d1d2cd9f9a07df9fde55f97df047b41716fe43eeddc02616d301d9405.GetCompliancePolicyDevicesReportRequestBuilder) {
+    return i1c7e958d1d2cd9f9a07df9fde55f97df047b41716fe43eeddc02616d301d9405.NewGetCompliancePolicyDevicesReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetCompliancePolicyDeviceSummaryReport()(*i1948951f1fadee39cec5840b7fb1388d50eceac2036ce74a8ece8724792a1636.GetCompliancePolicyDeviceSummaryReportRequestBuilder) {
+    return i1948951f1fadee39cec5840b7fb1388d50eceac2036ce74a8ece8724792a1636.NewGetCompliancePolicyDeviceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceReport()(*i45eba99273cfc2518cc265806b0cba99d31c259eee99db3fa9a93ca6fbd11d28.GetCompliancePolicyNonComplianceReportRequestBuilder) {
     return i45eba99273cfc2518cc265806b0cba99d31c259eee99db3fa9a93ca6fbd11d28.NewGetCompliancePolicyNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -257,8 +329,14 @@ func (m *ReportsRequestBuilder) GetConfigurationSettingNonComplianceReport()(*if
 func (m *ReportsRequestBuilder) GetConfigurationSettingsReport()(*i2abf29284e813349f3083b2dc57f6553c2b467c8f68ad9c82e8950ce8d0afd2d.GetConfigurationSettingsReportRequestBuilder) {
     return i2abf29284e813349f3083b2dc57f6553c2b467c8f68ad9c82e8950ce8d0afd2d.NewGetConfigurationSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+func (m *ReportsRequestBuilder) GetDeviceConfigurationPolicySettingsSummaryReport()(*i71062c76ab59540ed61b75db2e8378ccdfa322ba04cfe5afa641522cd26d9367.GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) {
+    return i71062c76ab59540ed61b75db2e8378ccdfa322ba04cfe5afa641522cd26d9367.NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 func (m *ReportsRequestBuilder) GetDeviceInstallStatusReport()(*ia7100ea2edcc786fe9054729a54d7600f750ebcc9be73a96446bf4b9bc605356.GetDeviceInstallStatusReportRequestBuilder) {
     return ia7100ea2edcc786fe9054729a54d7600f750ebcc9be73a96446bf4b9bc605356.NewGetDeviceInstallStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetDeviceManagementIntentPerSettingContributingProfiles()(*iaf13e8679fcb6c2a8e3dd6221c05721a160c4ae39dc431f95147f9ceb536c688.GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
+    return iaf13e8679fcb6c2a8e3dd6221c05721a160c4ae39dc431f95147f9ceb536c688.NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) GetDeviceManagementIntentSettingsReport()(*i7611b2ea51c277728d8bca812a4642adb44f343f51f28de5c5e087ec400d0645.GetDeviceManagementIntentSettingsReportRequestBuilder) {
     return i7611b2ea51c277728d8bca812a4642adb44f343f51f28de5c5e087ec400d0645.NewGetDeviceManagementIntentSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -266,11 +344,17 @@ func (m *ReportsRequestBuilder) GetDeviceManagementIntentSettingsReport()(*i7611
 func (m *ReportsRequestBuilder) GetDeviceNonComplianceReport()(*icd46e1255a1aee0bc5f9216ddd5fb29e365c5848ea3edecfd78d864191ca9748.GetDeviceNonComplianceReportRequestBuilder) {
     return icd46e1255a1aee0bc5f9216ddd5fb29e365c5848ea3edecfd78d864191ca9748.NewGetDeviceNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+func (m *ReportsRequestBuilder) GetEnrollmentConfigurationPoliciesByDevice()(*i10798401aaaa8bec22bd9808818b05c618c65b4aa8de7cb7241d06e2eb24fd23.GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) {
+    return i10798401aaaa8bec22bd9808818b05c618c65b4aa8de7cb7241d06e2eb24fd23.NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 func (m *ReportsRequestBuilder) GetFailedMobileAppsReport()(*id7b1135fd80c87263a81483b65064413c7251dd0137f48118d1471f835eefab4.GetFailedMobileAppsReportRequestBuilder) {
     return id7b1135fd80c87263a81483b65064413c7251dd0137f48118d1471f835eefab4.NewGetFailedMobileAppsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) GetFailedMobileAppsSummaryReport()(*i71903f4f495c2ba2d1bec9d9d52c924a6bd43444cea991fb60e1874f824ed54e.GetFailedMobileAppsSummaryReportRequestBuilder) {
     return i71903f4f495c2ba2d1bec9d9d52c924a6bd43444cea991fb60e1874f824ed54e.NewGetFailedMobileAppsSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetGroupPolicySettingsDeviceSettingsReport()(*i0fcc2fe709581d2d74944b1f48febf27a4779c937c3a15442be80066edd36e63.GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) {
+    return i0fcc2fe709581d2d74944b1f48febf27a4779c937c3a15442be80066edd36e63.NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) GetHistoricalReport()(*ib6f9fa86536428e22220c67df5e0bf322aa3124cb40d39ca6a96b97728e8551f.GetHistoricalReportRequestBuilder) {
     return ib6f9fa86536428e22220c67df5e0bf322aa3124cb40d39ca6a96b97728e8551f.NewGetHistoricalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -287,8 +371,17 @@ func (m *ReportsRequestBuilder) GetPolicyNonComplianceReport()(*i5d960953aeefdfe
 func (m *ReportsRequestBuilder) GetPolicyNonComplianceSummaryReport()(*idf207024cf64a316ff9c7fa94616461d390fe5977d0687432c3309d78ba029ac.GetPolicyNonComplianceSummaryReportRequestBuilder) {
     return idf207024cf64a316ff9c7fa94616461d390fe5977d0687432c3309d78ba029ac.NewGetPolicyNonComplianceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+func (m *ReportsRequestBuilder) GetQuietTimePolicyUsersReport()(*ic72a13840aa7734c378a9cc2064090c5894fdd482f7d082fc5d0ebe8829cc479.GetQuietTimePolicyUsersReportRequestBuilder) {
+    return ic72a13840aa7734c378a9cc2064090c5894fdd482f7d082fc5d0ebe8829cc479.NewGetQuietTimePolicyUsersReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetQuietTimePolicyUserSummaryReport()(*i788f436053d26e542373ad7c025d3a1a70768b96972d545d5aec67d0881993fb.GetQuietTimePolicyUserSummaryReportRequestBuilder) {
+    return i788f436053d26e542373ad7c025d3a1a70768b96972d545d5aec67d0881993fb.NewGetQuietTimePolicyUserSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 func (m *ReportsRequestBuilder) GetRelatedAppsStatusReport()(*iaa2bd508f982ae7d95dc62bbaefe9eb13e0c3fc9ad77d9389f8d82f3fb1dd151.GetRelatedAppsStatusReportRequestBuilder) {
     return iaa2bd508f982ae7d95dc62bbaefe9eb13e0c3fc9ad77d9389f8d82f3fb1dd151.NewGetRelatedAppsStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetRemoteAssistanceSessionsReport()(*ia038b54cc9cc6b16a2ce646f288d86bbc4f28df40b41525d8397a84fa2a524ab.GetRemoteAssistanceSessionsReportRequestBuilder) {
+    return ia038b54cc9cc6b16a2ce646f288d86bbc4f28df40b41525d8397a84fa2a524ab.NewGetRemoteAssistanceSessionsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) GetReportFilters()(*iad468b4335f9e19b6476bd9d2cb864bb58150160cddf3825611adcbb6a864f65.GetReportFiltersRequestBuilder) {
     return iad468b4335f9e19b6476bd9d2cb864bb58150160cddf3825611adcbb6a864f65.NewGetReportFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -320,12 +413,15 @@ func (m *ReportsRequestBuilder) GetWindowsUpdateAlertsPerPolicyPerDeviceReport()
 func (m *ReportsRequestBuilder) GetWindowsUpdateAlertSummaryReport()(*i95054c49fc60448e61ba13d5075f71dd6ae5b29fcc1f0307e8b5e38c80345642.GetWindowsUpdateAlertSummaryReportRequestBuilder) {
     return i95054c49fc60448e61ba13d5075f71dd6ae5b29fcc1f0307e8b5e38c80345642.NewGetWindowsUpdateAlertSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *ReportsRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReports, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
-    requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
+// Reports singleton
+// Parameters:
+//  - options : Options for the request
+func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions)(error) {
+    requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
     if err != nil {
         return err
     }
@@ -334,6 +430,9 @@ func (m *ReportsRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6634e0651fe
 func (m *ReportsRequestBuilder) ReportSchedules()(*iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc.ReportSchedulesRequestBuilder) {
     return iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc.NewReportSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.reports.reportSchedules.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) ReportSchedulesById(id string)(*id6b331ae2f0cb2af60ba8b44c9282d7a2ff2e031c38004db15739c1402e76714.DeviceManagementReportScheduleRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

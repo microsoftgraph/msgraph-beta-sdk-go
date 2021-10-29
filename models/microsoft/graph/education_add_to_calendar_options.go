@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type EducationAddToCalendarOptions int
 
 const (
@@ -10,10 +11,11 @@ const (
     STUDENTSANDPUBLISHER_EDUCATIONADDTOCALENDAROPTIONS
     STUDENTSANDTEAMOWNERS_EDUCATIONADDTOCALENDAROPTIONS
     UNKNOWNFUTUREVALUE_EDUCATIONADDTOCALENDAROPTIONS
+    STUDENTSONLY_EDUCATIONADDTOCALENDAROPTIONS
 )
 
 func (i EducationAddToCalendarOptions) String() string {
-    return []string{"NONE", "STUDENTSANDPUBLISHER", "STUDENTSANDTEAMOWNERS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"NONE", "STUDENTSANDPUBLISHER", "STUDENTSANDTEAMOWNERS", "UNKNOWNFUTUREVALUE", "STUDENTSONLY"}[i]
 }
 func ParseEducationAddToCalendarOptions(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -25,6 +27,8 @@ func ParseEducationAddToCalendarOptions(v string) (interface{}, error) {
             return STUDENTSANDTEAMOWNERS_EDUCATIONADDTOCALENDAROPTIONS, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_EDUCATIONADDTOCALENDAROPTIONS, nil
+        case "STUDENTSONLY":
+            return STUDENTSONLY_EDUCATIONADDTOCALENDAROPTIONS, nil
     }
     return 0, errors.New("Unknown EducationAddToCalendarOptions value: " + v)
 }

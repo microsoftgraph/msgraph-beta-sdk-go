@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type ConnectorStatus int
 
 const (

@@ -5,50 +5,88 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetSkypeForBusinessActivityUserDetailWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     assignedProducts []string;
+    // 
     deletedDate *string;
+    // 
     isDeleted *bool;
+    // 
     lastActivityDate *string;
+    // 
     organizedConferenceAppSharingCount *int64;
+    // 
     organizedConferenceAudioVideoCount *int64;
+    // 
     organizedConferenceAudioVideoMinutes *int64;
+    // 
     organizedConferenceCloudDialInMicrosoftMinutes *int64;
+    // 
     organizedConferenceCloudDialInOutMicrosoftCount *int64;
+    // 
     organizedConferenceCloudDialOutMicrosoftMinutes *int64;
+    // 
     organizedConferenceDialInOut3rdPartyCount *int64;
+    // 
     organizedConferenceIMCount *int64;
+    // 
     organizedConferenceLastActivityDate *string;
+    // 
     organizedConferenceWebCount *int64;
+    // 
     participatedConferenceAppSharingCount *int64;
+    // 
     participatedConferenceAudioVideoCount *int64;
+    // 
     participatedConferenceAudioVideoMinutes *int64;
+    // 
     participatedConferenceDialInOut3rdPartyCount *int64;
+    // 
     participatedConferenceIMCount *int64;
+    // 
     participatedConferenceLastActivityDate *string;
+    // 
     participatedConferenceWebCount *int64;
+    // 
     peerToPeerAppSharingCount *int64;
+    // 
     peerToPeerAudioCount *int64;
+    // 
     peerToPeerAudioMinutes *int64;
+    // 
     peerToPeerFileTransferCount *int64;
+    // 
     peerToPeerIMCount *int64;
+    // 
     peerToPeerLastActivityDate *string;
+    // 
     peerToPeerVideoCount *int64;
+    // 
     peerToPeerVideoMinutes *int64;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
+    // 
     totalOrganizedConferenceCount *int64;
+    // 
     totalParticipatedConferenceCount *int64;
+    // 
     totalPeerToPeerSessionCount *int64;
+    // 
     userPrincipalName *string;
 }
+// Instantiates a new getSkypeForBusinessActivityUserDetailWithPeriod and sets the default values.
 func NewGetSkypeForBusinessActivityUserDetailWithPeriod()(*GetSkypeForBusinessActivityUserDetailWithPeriod) {
     m := &GetSkypeForBusinessActivityUserDetailWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the assignedProducts property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetAssignedProducts()([]string) {
     if m == nil {
         return nil
@@ -56,6 +94,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetAssignedProducts()(
         return m.assignedProducts
     }
 }
+// Gets the deletedDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetDeletedDate()(*string) {
     if m == nil {
         return nil
@@ -63,6 +102,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetDeletedDate()(*stri
         return m.deletedDate
     }
 }
+// Gets the isDeleted property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetIsDeleted()(*bool) {
     if m == nil {
         return nil
@@ -70,6 +110,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetIsDeleted()(*bool) 
         return m.isDeleted
     }
 }
+// Gets the lastActivityDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -77,6 +118,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetLastActivityDate()(
         return m.lastActivityDate
     }
 }
+// Gets the organizedConferenceAppSharingCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceAppSharingCount()(*int64) {
     if m == nil {
         return nil
@@ -84,6 +126,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceAppSharingCount
     }
 }
+// Gets the organizedConferenceAudioVideoCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceAudioVideoCount()(*int64) {
     if m == nil {
         return nil
@@ -91,6 +134,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceAudioVideoCount
     }
 }
+// Gets the organizedConferenceAudioVideoMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceAudioVideoMinutes()(*int64) {
     if m == nil {
         return nil
@@ -98,6 +142,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceAudioVideoMinutes
     }
 }
+// Gets the organizedConferenceCloudDialInMicrosoftMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceCloudDialInMicrosoftMinutes()(*int64) {
     if m == nil {
         return nil
@@ -105,6 +150,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceCloudDialInMicrosoftMinutes
     }
 }
+// Gets the organizedConferenceCloudDialInOutMicrosoftCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceCloudDialInOutMicrosoftCount()(*int64) {
     if m == nil {
         return nil
@@ -112,6 +158,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceCloudDialInOutMicrosoftCount
     }
 }
+// Gets the organizedConferenceCloudDialOutMicrosoftMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceCloudDialOutMicrosoftMinutes()(*int64) {
     if m == nil {
         return nil
@@ -119,6 +166,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceCloudDialOutMicrosoftMinutes
     }
 }
+// Gets the organizedConferenceDialInOut3rdPartyCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceDialInOut3rdPartyCount()(*int64) {
     if m == nil {
         return nil
@@ -126,6 +174,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceDialInOut3rdPartyCount
     }
 }
+// Gets the organizedConferenceIMCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceIMCount()(*int64) {
     if m == nil {
         return nil
@@ -133,6 +182,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceIMCount
     }
 }
+// Gets the organizedConferenceLastActivityDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -140,6 +190,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceLastActivityDate
     }
 }
+// Gets the organizedConferenceWebCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConferenceWebCount()(*int64) {
     if m == nil {
         return nil
@@ -147,6 +198,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetOrganizedConference
         return m.organizedConferenceWebCount
     }
 }
+// Gets the participatedConferenceAppSharingCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConferenceAppSharingCount()(*int64) {
     if m == nil {
         return nil
@@ -154,6 +206,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConfere
         return m.participatedConferenceAppSharingCount
     }
 }
+// Gets the participatedConferenceAudioVideoCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConferenceAudioVideoCount()(*int64) {
     if m == nil {
         return nil
@@ -161,6 +214,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConfere
         return m.participatedConferenceAudioVideoCount
     }
 }
+// Gets the participatedConferenceAudioVideoMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConferenceAudioVideoMinutes()(*int64) {
     if m == nil {
         return nil
@@ -168,6 +222,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConfere
         return m.participatedConferenceAudioVideoMinutes
     }
 }
+// Gets the participatedConferenceDialInOut3rdPartyCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConferenceDialInOut3rdPartyCount()(*int64) {
     if m == nil {
         return nil
@@ -175,6 +230,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConfere
         return m.participatedConferenceDialInOut3rdPartyCount
     }
 }
+// Gets the participatedConferenceIMCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConferenceIMCount()(*int64) {
     if m == nil {
         return nil
@@ -182,6 +238,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConfere
         return m.participatedConferenceIMCount
     }
 }
+// Gets the participatedConferenceLastActivityDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConferenceLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -189,6 +246,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConfere
         return m.participatedConferenceLastActivityDate
     }
 }
+// Gets the participatedConferenceWebCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConferenceWebCount()(*int64) {
     if m == nil {
         return nil
@@ -196,6 +254,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetParticipatedConfere
         return m.participatedConferenceWebCount
     }
 }
+// Gets the peerToPeerAppSharingCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerAppSharingCount()(*int64) {
     if m == nil {
         return nil
@@ -203,6 +262,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerAppSharin
         return m.peerToPeerAppSharingCount
     }
 }
+// Gets the peerToPeerAudioCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerAudioCount()(*int64) {
     if m == nil {
         return nil
@@ -210,6 +270,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerAudioCoun
         return m.peerToPeerAudioCount
     }
 }
+// Gets the peerToPeerAudioMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerAudioMinutes()(*int64) {
     if m == nil {
         return nil
@@ -217,6 +278,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerAudioMinu
         return m.peerToPeerAudioMinutes
     }
 }
+// Gets the peerToPeerFileTransferCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerFileTransferCount()(*int64) {
     if m == nil {
         return nil
@@ -224,6 +286,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerFileTrans
         return m.peerToPeerFileTransferCount
     }
 }
+// Gets the peerToPeerIMCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerIMCount()(*int64) {
     if m == nil {
         return nil
@@ -231,6 +294,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerIMCount()
         return m.peerToPeerIMCount
     }
 }
+// Gets the peerToPeerLastActivityDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -238,6 +302,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerLastActiv
         return m.peerToPeerLastActivityDate
     }
 }
+// Gets the peerToPeerVideoCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerVideoCount()(*int64) {
     if m == nil {
         return nil
@@ -245,6 +310,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerVideoCoun
         return m.peerToPeerVideoCount
     }
 }
+// Gets the peerToPeerVideoMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerVideoMinutes()(*int64) {
     if m == nil {
         return nil
@@ -252,6 +318,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetPeerToPeerVideoMinu
         return m.peerToPeerVideoMinutes
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -259,6 +326,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetReportPeriod()(*str
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -266,6 +334,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetReportRefreshDate()
         return m.reportRefreshDate
     }
 }
+// Gets the totalOrganizedConferenceCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetTotalOrganizedConferenceCount()(*int64) {
     if m == nil {
         return nil
@@ -273,6 +342,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetTotalOrganizedConfe
         return m.totalOrganizedConferenceCount
     }
 }
+// Gets the totalParticipatedConferenceCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetTotalParticipatedConferenceCount()(*int64) {
     if m == nil {
         return nil
@@ -280,6 +350,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetTotalParticipatedCo
         return m.totalParticipatedConferenceCount
     }
 }
+// Gets the totalPeerToPeerSessionCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetTotalPeerToPeerSessionCount()(*int64) {
     if m == nil {
         return nil
@@ -287,6 +358,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetTotalPeerToPeerSess
         return m.totalPeerToPeerSessionCount
     }
 }
+// Gets the userPrincipalName property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -294,6 +366,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetUserPrincipalName()
         return m.userPrincipalName
     }
 }
+// The deserialization information for the current model
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedProducts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -585,6 +658,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) GetFieldDeserializers(
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -802,108 +878,213 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) Serialize(writer i04eb
     }
     return nil
 }
+// Sets the assignedProducts property value. 
+// Parameters:
+//  - value : Value to set for the assignedProducts property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetAssignedProducts(value []string)() {
     m.assignedProducts = value
 }
+// Sets the deletedDate property value. 
+// Parameters:
+//  - value : Value to set for the deletedDate property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetDeletedDate(value *string)() {
     m.deletedDate = value
 }
+// Sets the isDeleted property value. 
+// Parameters:
+//  - value : Value to set for the isDeleted property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetIsDeleted(value *bool)() {
     m.isDeleted = value
 }
+// Sets the lastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the lastActivityDate property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetLastActivityDate(value *string)() {
     m.lastActivityDate = value
 }
+// Sets the organizedConferenceAppSharingCount property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceAppSharingCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceAppSharingCount(value *int64)() {
     m.organizedConferenceAppSharingCount = value
 }
+// Sets the organizedConferenceAudioVideoCount property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceAudioVideoCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceAudioVideoCount(value *int64)() {
     m.organizedConferenceAudioVideoCount = value
 }
+// Sets the organizedConferenceAudioVideoMinutes property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceAudioVideoMinutes property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceAudioVideoMinutes(value *int64)() {
     m.organizedConferenceAudioVideoMinutes = value
 }
+// Sets the organizedConferenceCloudDialInMicrosoftMinutes property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceCloudDialInMicrosoftMinutes property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceCloudDialInMicrosoftMinutes(value *int64)() {
     m.organizedConferenceCloudDialInMicrosoftMinutes = value
 }
+// Sets the organizedConferenceCloudDialInOutMicrosoftCount property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceCloudDialInOutMicrosoftCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceCloudDialInOutMicrosoftCount(value *int64)() {
     m.organizedConferenceCloudDialInOutMicrosoftCount = value
 }
+// Sets the organizedConferenceCloudDialOutMicrosoftMinutes property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceCloudDialOutMicrosoftMinutes property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceCloudDialOutMicrosoftMinutes(value *int64)() {
     m.organizedConferenceCloudDialOutMicrosoftMinutes = value
 }
+// Sets the organizedConferenceDialInOut3rdPartyCount property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceDialInOut3rdPartyCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceDialInOut3rdPartyCount(value *int64)() {
     m.organizedConferenceDialInOut3rdPartyCount = value
 }
+// Sets the organizedConferenceIMCount property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceIMCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceIMCount(value *int64)() {
     m.organizedConferenceIMCount = value
 }
+// Sets the organizedConferenceLastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceLastActivityDate property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceLastActivityDate(value *string)() {
     m.organizedConferenceLastActivityDate = value
 }
+// Sets the organizedConferenceWebCount property value. 
+// Parameters:
+//  - value : Value to set for the organizedConferenceWebCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceWebCount(value *int64)() {
     m.organizedConferenceWebCount = value
 }
+// Sets the participatedConferenceAppSharingCount property value. 
+// Parameters:
+//  - value : Value to set for the participatedConferenceAppSharingCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceAppSharingCount(value *int64)() {
     m.participatedConferenceAppSharingCount = value
 }
+// Sets the participatedConferenceAudioVideoCount property value. 
+// Parameters:
+//  - value : Value to set for the participatedConferenceAudioVideoCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceAudioVideoCount(value *int64)() {
     m.participatedConferenceAudioVideoCount = value
 }
+// Sets the participatedConferenceAudioVideoMinutes property value. 
+// Parameters:
+//  - value : Value to set for the participatedConferenceAudioVideoMinutes property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceAudioVideoMinutes(value *int64)() {
     m.participatedConferenceAudioVideoMinutes = value
 }
+// Sets the participatedConferenceDialInOut3rdPartyCount property value. 
+// Parameters:
+//  - value : Value to set for the participatedConferenceDialInOut3rdPartyCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceDialInOut3rdPartyCount(value *int64)() {
     m.participatedConferenceDialInOut3rdPartyCount = value
 }
+// Sets the participatedConferenceIMCount property value. 
+// Parameters:
+//  - value : Value to set for the participatedConferenceIMCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceIMCount(value *int64)() {
     m.participatedConferenceIMCount = value
 }
+// Sets the participatedConferenceLastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the participatedConferenceLastActivityDate property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceLastActivityDate(value *string)() {
     m.participatedConferenceLastActivityDate = value
 }
+// Sets the participatedConferenceWebCount property value. 
+// Parameters:
+//  - value : Value to set for the participatedConferenceWebCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceWebCount(value *int64)() {
     m.participatedConferenceWebCount = value
 }
+// Sets the peerToPeerAppSharingCount property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeerAppSharingCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerAppSharingCount(value *int64)() {
     m.peerToPeerAppSharingCount = value
 }
+// Sets the peerToPeerAudioCount property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeerAudioCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerAudioCount(value *int64)() {
     m.peerToPeerAudioCount = value
 }
+// Sets the peerToPeerAudioMinutes property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeerAudioMinutes property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerAudioMinutes(value *int64)() {
     m.peerToPeerAudioMinutes = value
 }
+// Sets the peerToPeerFileTransferCount property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeerFileTransferCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerFileTransferCount(value *int64)() {
     m.peerToPeerFileTransferCount = value
 }
+// Sets the peerToPeerIMCount property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeerIMCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerIMCount(value *int64)() {
     m.peerToPeerIMCount = value
 }
+// Sets the peerToPeerLastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeerLastActivityDate property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerLastActivityDate(value *string)() {
     m.peerToPeerLastActivityDate = value
 }
+// Sets the peerToPeerVideoCount property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeerVideoCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerVideoCount(value *int64)() {
     m.peerToPeerVideoCount = value
 }
+// Sets the peerToPeerVideoMinutes property value. 
+// Parameters:
+//  - value : Value to set for the peerToPeerVideoMinutes property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerVideoMinutes(value *int64)() {
     m.peerToPeerVideoMinutes = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
+// Sets the totalOrganizedConferenceCount property value. 
+// Parameters:
+//  - value : Value to set for the totalOrganizedConferenceCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetTotalOrganizedConferenceCount(value *int64)() {
     m.totalOrganizedConferenceCount = value
 }
+// Sets the totalParticipatedConferenceCount property value. 
+// Parameters:
+//  - value : Value to set for the totalParticipatedConferenceCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetTotalParticipatedConferenceCount(value *int64)() {
     m.totalParticipatedConferenceCount = value
 }
+// Sets the totalPeerToPeerSessionCount property value. 
+// Parameters:
+//  - value : Value to set for the totalPeerToPeerSessionCount property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetTotalPeerToPeerSessionCount(value *int64)() {
     m.totalPeerToPeerSessionCount = value
 }
+// Sets the userPrincipalName property value. 
+// Parameters:
+//  - value : Value to set for the userPrincipalName property.
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

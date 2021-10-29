@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type RemoteAssistanceState int
 
 const (

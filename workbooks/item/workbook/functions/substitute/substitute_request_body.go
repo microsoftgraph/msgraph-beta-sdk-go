@@ -5,19 +5,27 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type SubstituteRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     instanceNum *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     newText *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     oldText *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     text *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new substituteRequestBody and sets the default values.
 func NewSubstituteRequestBody()(*SubstituteRequestBody) {
     m := &SubstituteRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubstituteRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -25,6 +33,7 @@ func (m *SubstituteRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the instanceNum property value. 
 func (m *SubstituteRequestBody) GetInstanceNum()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -32,6 +41,7 @@ func (m *SubstituteRequestBody) GetInstanceNum()(*i535684e11b5500196ecb4b5c6634e
         return m.instanceNum
     }
 }
+// Gets the newText property value. 
 func (m *SubstituteRequestBody) GetNewText()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -39,6 +49,7 @@ func (m *SubstituteRequestBody) GetNewText()(*i535684e11b5500196ecb4b5c6634e0651
         return m.newText
     }
 }
+// Gets the oldText property value. 
 func (m *SubstituteRequestBody) GetOldText()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -46,6 +57,7 @@ func (m *SubstituteRequestBody) GetOldText()(*i535684e11b5500196ecb4b5c6634e0651
         return m.oldText
     }
 }
+// Gets the text property value. 
 func (m *SubstituteRequestBody) GetText()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -53,6 +65,7 @@ func (m *SubstituteRequestBody) GetText()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.text
     }
 }
+// The deserialization information for the current model
 func (m *SubstituteRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["instanceNum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,6 +105,9 @@ func (m *SubstituteRequestBody) GetFieldDeserializers()(map[string]func(interfac
 func (m *SubstituteRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SubstituteRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("instanceNum", m.GetInstanceNum())
@@ -125,18 +141,33 @@ func (m *SubstituteRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *SubstituteRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the instanceNum property value. 
+// Parameters:
+//  - value : Value to set for the instanceNum property.
 func (m *SubstituteRequestBody) SetInstanceNum(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.instanceNum = value
 }
+// Sets the newText property value. 
+// Parameters:
+//  - value : Value to set for the newText property.
 func (m *SubstituteRequestBody) SetNewText(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.newText = value
 }
+// Sets the oldText property value. 
+// Parameters:
+//  - value : Value to set for the oldText property.
 func (m *SubstituteRequestBody) SetOldText(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.oldText = value
 }
+// Sets the text property value. 
+// Parameters:
+//  - value : Value to set for the text property.
 func (m *SubstituteRequestBody) SetText(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.text = value
 }

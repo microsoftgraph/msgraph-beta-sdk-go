@@ -5,17 +5,23 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type SendMailRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     message *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message;
+    // 
     saveToSentItems *bool;
 }
+// Instantiates a new sendMailRequestBody and sets the default values.
 func NewSendMailRequestBody()(*SendMailRequestBody) {
     m := &SendMailRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendMailRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *SendMailRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the Message property value. 
 func (m *SendMailRequestBody) GetMessage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *SendMailRequestBody) GetMessage()(*i535684e11b5500196ecb4b5c6634e0651fe
         return m.message
     }
 }
+// Gets the SaveToSentItems property value. 
 func (m *SendMailRequestBody) GetSaveToSentItems()(*bool) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *SendMailRequestBody) GetSaveToSentItems()(*bool) {
         return m.saveToSentItems
     }
 }
+// The deserialization information for the current model
 func (m *SendMailRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,6 +69,9 @@ func (m *SendMailRequestBody) GetFieldDeserializers()(map[string]func(interface{
 func (m *SendMailRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SendMailRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("message", m.GetMessage())
@@ -81,12 +93,21 @@ func (m *SendMailRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *SendMailRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the Message property value. 
+// Parameters:
+//  - value : Value to set for the Message property.
 func (m *SendMailRequestBody) SetMessage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message)() {
     m.message = value
 }
+// Sets the SaveToSentItems property value. 
+// Parameters:
+//  - value : Value to set for the SaveToSentItems property.
 func (m *SendMailRequestBody) SetSaveToSentItems(value *bool)() {
     m.saveToSentItems = value
 }

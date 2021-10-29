@@ -5,31 +5,50 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type FileSecurityProfile struct {
     Entity
+    // 
     activityGroupNames []string;
+    // 
     azureSubscriptionId *string;
+    // 
     azureTenantId *string;
+    // 
     certificateThumbprint *string;
+    // 
     extensions []string;
+    // 
     fileType *string;
+    // 
     firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     hashes []FileHash;
+    // 
     lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     malwareStates []MalwareState;
+    // 
     names []string;
+    // 
     riskScore *string;
+    // 
     size *int64;
+    // 
     tags []string;
+    // 
     vendorInformation *SecurityVendorInformation;
+    // 
     vulnerabilityStates []VulnerabilityState;
 }
+// Instantiates a new fileSecurityProfile and sets the default values.
 func NewFileSecurityProfile()(*FileSecurityProfile) {
     m := &FileSecurityProfile{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the activityGroupNames property value. 
 func (m *FileSecurityProfile) GetActivityGroupNames()([]string) {
     if m == nil {
         return nil
@@ -37,6 +56,7 @@ func (m *FileSecurityProfile) GetActivityGroupNames()([]string) {
         return m.activityGroupNames
     }
 }
+// Gets the azureSubscriptionId property value. 
 func (m *FileSecurityProfile) GetAzureSubscriptionId()(*string) {
     if m == nil {
         return nil
@@ -44,6 +64,7 @@ func (m *FileSecurityProfile) GetAzureSubscriptionId()(*string) {
         return m.azureSubscriptionId
     }
 }
+// Gets the azureTenantId property value. 
 func (m *FileSecurityProfile) GetAzureTenantId()(*string) {
     if m == nil {
         return nil
@@ -51,6 +72,7 @@ func (m *FileSecurityProfile) GetAzureTenantId()(*string) {
         return m.azureTenantId
     }
 }
+// Gets the certificateThumbprint property value. 
 func (m *FileSecurityProfile) GetCertificateThumbprint()(*string) {
     if m == nil {
         return nil
@@ -58,6 +80,7 @@ func (m *FileSecurityProfile) GetCertificateThumbprint()(*string) {
         return m.certificateThumbprint
     }
 }
+// Gets the extensions property value. 
 func (m *FileSecurityProfile) GetExtensions()([]string) {
     if m == nil {
         return nil
@@ -65,6 +88,7 @@ func (m *FileSecurityProfile) GetExtensions()([]string) {
         return m.extensions
     }
 }
+// Gets the fileType property value. 
 func (m *FileSecurityProfile) GetFileType()(*string) {
     if m == nil {
         return nil
@@ -72,6 +96,7 @@ func (m *FileSecurityProfile) GetFileType()(*string) {
         return m.fileType
     }
 }
+// Gets the firstSeenDateTime property value. 
 func (m *FileSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -79,6 +104,7 @@ func (m *FileSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe
         return m.firstSeenDateTime
     }
 }
+// Gets the hashes property value. 
 func (m *FileSecurityProfile) GetHashes()([]FileHash) {
     if m == nil {
         return nil
@@ -86,6 +112,7 @@ func (m *FileSecurityProfile) GetHashes()([]FileHash) {
         return m.hashes
     }
 }
+// Gets the lastSeenDateTime property value. 
 func (m *FileSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -93,6 +120,7 @@ func (m *FileSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3
         return m.lastSeenDateTime
     }
 }
+// Gets the malwareStates property value. 
 func (m *FileSecurityProfile) GetMalwareStates()([]MalwareState) {
     if m == nil {
         return nil
@@ -100,6 +128,7 @@ func (m *FileSecurityProfile) GetMalwareStates()([]MalwareState) {
         return m.malwareStates
     }
 }
+// Gets the names property value. 
 func (m *FileSecurityProfile) GetNames()([]string) {
     if m == nil {
         return nil
@@ -107,6 +136,7 @@ func (m *FileSecurityProfile) GetNames()([]string) {
         return m.names
     }
 }
+// Gets the riskScore property value. 
 func (m *FileSecurityProfile) GetRiskScore()(*string) {
     if m == nil {
         return nil
@@ -114,6 +144,7 @@ func (m *FileSecurityProfile) GetRiskScore()(*string) {
         return m.riskScore
     }
 }
+// Gets the size property value. 
 func (m *FileSecurityProfile) GetSize()(*int64) {
     if m == nil {
         return nil
@@ -121,6 +152,7 @@ func (m *FileSecurityProfile) GetSize()(*int64) {
         return m.size
     }
 }
+// Gets the tags property value. 
 func (m *FileSecurityProfile) GetTags()([]string) {
     if m == nil {
         return nil
@@ -128,6 +160,7 @@ func (m *FileSecurityProfile) GetTags()([]string) {
         return m.tags
     }
 }
+// Gets the vendorInformation property value. 
 func (m *FileSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
     if m == nil {
         return nil
@@ -135,6 +168,7 @@ func (m *FileSecurityProfile) GetVendorInformation()(*SecurityVendorInformation)
         return m.vendorInformation
     }
 }
+// Gets the vulnerabilityStates property value. 
 func (m *FileSecurityProfile) GetVulnerabilityStates()([]VulnerabilityState) {
     if m == nil {
         return nil
@@ -142,6 +176,7 @@ func (m *FileSecurityProfile) GetVulnerabilityStates()([]VulnerabilityState) {
         return m.vulnerabilityStates
     }
 }
+// The deserialization information for the current model
 func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityGroupNames"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,6 +340,9 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
 func (m *FileSecurityProfile) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -423,51 +461,99 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
+// Sets the activityGroupNames property value. 
+// Parameters:
+//  - value : Value to set for the activityGroupNames property.
 func (m *FileSecurityProfile) SetActivityGroupNames(value []string)() {
     m.activityGroupNames = value
 }
+// Sets the azureSubscriptionId property value. 
+// Parameters:
+//  - value : Value to set for the azureSubscriptionId property.
 func (m *FileSecurityProfile) SetAzureSubscriptionId(value *string)() {
     m.azureSubscriptionId = value
 }
+// Sets the azureTenantId property value. 
+// Parameters:
+//  - value : Value to set for the azureTenantId property.
 func (m *FileSecurityProfile) SetAzureTenantId(value *string)() {
     m.azureTenantId = value
 }
+// Sets the certificateThumbprint property value. 
+// Parameters:
+//  - value : Value to set for the certificateThumbprint property.
 func (m *FileSecurityProfile) SetCertificateThumbprint(value *string)() {
     m.certificateThumbprint = value
 }
+// Sets the extensions property value. 
+// Parameters:
+//  - value : Value to set for the extensions property.
 func (m *FileSecurityProfile) SetExtensions(value []string)() {
     m.extensions = value
 }
+// Sets the fileType property value. 
+// Parameters:
+//  - value : Value to set for the fileType property.
 func (m *FileSecurityProfile) SetFileType(value *string)() {
     m.fileType = value
 }
+// Sets the firstSeenDateTime property value. 
+// Parameters:
+//  - value : Value to set for the firstSeenDateTime property.
 func (m *FileSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.firstSeenDateTime = value
 }
+// Sets the hashes property value. 
+// Parameters:
+//  - value : Value to set for the hashes property.
 func (m *FileSecurityProfile) SetHashes(value []FileHash)() {
     m.hashes = value
 }
+// Sets the lastSeenDateTime property value. 
+// Parameters:
+//  - value : Value to set for the lastSeenDateTime property.
 func (m *FileSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastSeenDateTime = value
 }
+// Sets the malwareStates property value. 
+// Parameters:
+//  - value : Value to set for the malwareStates property.
 func (m *FileSecurityProfile) SetMalwareStates(value []MalwareState)() {
     m.malwareStates = value
 }
+// Sets the names property value. 
+// Parameters:
+//  - value : Value to set for the names property.
 func (m *FileSecurityProfile) SetNames(value []string)() {
     m.names = value
 }
+// Sets the riskScore property value. 
+// Parameters:
+//  - value : Value to set for the riskScore property.
 func (m *FileSecurityProfile) SetRiskScore(value *string)() {
     m.riskScore = value
 }
+// Sets the size property value. 
+// Parameters:
+//  - value : Value to set for the size property.
 func (m *FileSecurityProfile) SetSize(value *int64)() {
     m.size = value
 }
+// Sets the tags property value. 
+// Parameters:
+//  - value : Value to set for the tags property.
 func (m *FileSecurityProfile) SetTags(value []string)() {
     m.tags = value
 }
+// Sets the vendorInformation property value. 
+// Parameters:
+//  - value : Value to set for the vendorInformation property.
 func (m *FileSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
     m.vendorInformation = value
 }
+// Sets the vulnerabilityStates property value. 
+// Parameters:
+//  - value : Value to set for the vulnerabilityStates property.
 func (m *FileSecurityProfile) SetVulnerabilityStates(value []VulnerabilityState)() {
     m.vulnerabilityStates = value
 }

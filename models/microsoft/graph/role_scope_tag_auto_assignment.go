@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type RoleScopeTagAutoAssignment struct {
     Entity
+    // The auto-assignment target for the specific Role Scope Tag.
     target *DeviceAndAppManagementAssignmentTarget;
 }
+// Instantiates a new roleScopeTagAutoAssignment and sets the default values.
 func NewRoleScopeTagAutoAssignment()(*RoleScopeTagAutoAssignment) {
     m := &RoleScopeTagAutoAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the target property value. The auto-assignment target for the specific Role Scope Tag.
 func (m *RoleScopeTagAutoAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *RoleScopeTagAutoAssignment) GetTarget()(*DeviceAndAppManagementAssignme
         return m.target
     }
 }
+// The deserialization information for the current model
 func (m *RoleScopeTagAutoAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -36,6 +41,9 @@ func (m *RoleScopeTagAutoAssignment) GetFieldDeserializers()(map[string]func(int
 func (m *RoleScopeTagAutoAssignment) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *RoleScopeTagAutoAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -49,6 +57,9 @@ func (m *RoleScopeTagAutoAssignment) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
+// Sets the target property value. The auto-assignment target for the specific Role Scope Tag.
+// Parameters:
+//  - value : Value to set for the target property.
 func (m *RoleScopeTagAutoAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
     m.target = value
 }

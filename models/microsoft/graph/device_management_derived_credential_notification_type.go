@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type DeviceManagementDerivedCredentialNotificationType int
 
 const (

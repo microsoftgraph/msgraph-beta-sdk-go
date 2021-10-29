@@ -5,26 +5,40 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type AuditEvent struct {
     Entity
+    // Friendly name of the activity.
     activity *string;
+    // The date time in UTC when the activity was performed.
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // The HTTP operation type of the activity.
     activityOperationType *string;
+    // The result of the activity.
     activityResult *string;
+    // The type of activity that was being performed.
     activityType *string;
+    // AAD user and application that are associated with the audit event.
     actor *AuditActor;
+    // Audit category.
     category *string;
+    // Component name.
     componentName *string;
+    // The client request Id that is used to correlate activity within the system.
     correlationId *string;
+    // Event display name.
     displayName *string;
+    // Resources being modified.
     resources []AuditResource;
 }
+// Instantiates a new auditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the activity property value. Friendly name of the activity.
 func (m *AuditEvent) GetActivity()(*string) {
     if m == nil {
         return nil
@@ -32,6 +46,7 @@ func (m *AuditEvent) GetActivity()(*string) {
         return m.activity
     }
 }
+// Gets the activityDateTime property value. The date time in UTC when the activity was performed.
 func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -39,6 +54,7 @@ func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.activityDateTime
     }
 }
+// Gets the activityOperationType property value. The HTTP operation type of the activity.
 func (m *AuditEvent) GetActivityOperationType()(*string) {
     if m == nil {
         return nil
@@ -46,6 +62,7 @@ func (m *AuditEvent) GetActivityOperationType()(*string) {
         return m.activityOperationType
     }
 }
+// Gets the activityResult property value. The result of the activity.
 func (m *AuditEvent) GetActivityResult()(*string) {
     if m == nil {
         return nil
@@ -53,6 +70,7 @@ func (m *AuditEvent) GetActivityResult()(*string) {
         return m.activityResult
     }
 }
+// Gets the activityType property value. The type of activity that was being performed.
 func (m *AuditEvent) GetActivityType()(*string) {
     if m == nil {
         return nil
@@ -60,6 +78,7 @@ func (m *AuditEvent) GetActivityType()(*string) {
         return m.activityType
     }
 }
+// Gets the actor property value. AAD user and application that are associated with the audit event.
 func (m *AuditEvent) GetActor()(*AuditActor) {
     if m == nil {
         return nil
@@ -67,6 +86,7 @@ func (m *AuditEvent) GetActor()(*AuditActor) {
         return m.actor
     }
 }
+// Gets the category property value. Audit category.
 func (m *AuditEvent) GetCategory()(*string) {
     if m == nil {
         return nil
@@ -74,6 +94,7 @@ func (m *AuditEvent) GetCategory()(*string) {
         return m.category
     }
 }
+// Gets the componentName property value. Component name.
 func (m *AuditEvent) GetComponentName()(*string) {
     if m == nil {
         return nil
@@ -81,6 +102,7 @@ func (m *AuditEvent) GetComponentName()(*string) {
         return m.componentName
     }
 }
+// Gets the correlationId property value. The client request Id that is used to correlate activity within the system.
 func (m *AuditEvent) GetCorrelationId()(*string) {
     if m == nil {
         return nil
@@ -88,6 +110,7 @@ func (m *AuditEvent) GetCorrelationId()(*string) {
         return m.correlationId
     }
 }
+// Gets the displayName property value. Event display name.
 func (m *AuditEvent) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -95,6 +118,7 @@ func (m *AuditEvent) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the resources property value. Resources being modified.
 func (m *AuditEvent) GetResources()([]AuditResource) {
     if m == nil {
         return nil
@@ -102,6 +126,7 @@ func (m *AuditEvent) GetResources()([]AuditResource) {
         return m.resources
     }
 }
+// The deserialization information for the current model
 func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,6 +226,9 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *AuditEvent) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *AuditEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -279,36 +307,69 @@ func (m *AuditEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
+// Sets the activity property value. Friendly name of the activity.
+// Parameters:
+//  - value : Value to set for the activity property.
 func (m *AuditEvent) SetActivity(value *string)() {
     m.activity = value
 }
+// Sets the activityDateTime property value. The date time in UTC when the activity was performed.
+// Parameters:
+//  - value : Value to set for the activityDateTime property.
 func (m *AuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.activityDateTime = value
 }
+// Sets the activityOperationType property value. The HTTP operation type of the activity.
+// Parameters:
+//  - value : Value to set for the activityOperationType property.
 func (m *AuditEvent) SetActivityOperationType(value *string)() {
     m.activityOperationType = value
 }
+// Sets the activityResult property value. The result of the activity.
+// Parameters:
+//  - value : Value to set for the activityResult property.
 func (m *AuditEvent) SetActivityResult(value *string)() {
     m.activityResult = value
 }
+// Sets the activityType property value. The type of activity that was being performed.
+// Parameters:
+//  - value : Value to set for the activityType property.
 func (m *AuditEvent) SetActivityType(value *string)() {
     m.activityType = value
 }
+// Sets the actor property value. AAD user and application that are associated with the audit event.
+// Parameters:
+//  - value : Value to set for the actor property.
 func (m *AuditEvent) SetActor(value *AuditActor)() {
     m.actor = value
 }
+// Sets the category property value. Audit category.
+// Parameters:
+//  - value : Value to set for the category property.
 func (m *AuditEvent) SetCategory(value *string)() {
     m.category = value
 }
+// Sets the componentName property value. Component name.
+// Parameters:
+//  - value : Value to set for the componentName property.
 func (m *AuditEvent) SetComponentName(value *string)() {
     m.componentName = value
 }
+// Sets the correlationId property value. The client request Id that is used to correlate activity within the system.
+// Parameters:
+//  - value : Value to set for the correlationId property.
 func (m *AuditEvent) SetCorrelationId(value *string)() {
     m.correlationId = value
 }
+// Sets the displayName property value. Event display name.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *AuditEvent) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the resources property value. Resources being modified.
+// Parameters:
+//  - value : Value to set for the resources property.
 func (m *AuditEvent) SetResources(value []AuditResource)() {
     m.resources = value
 }

@@ -4,20 +4,28 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type SitePage struct {
     BaseItem
+    // The content type of the page.
     contentType *ContentTypeInfo;
+    // 
     pageLayoutType *string;
+    // 
     publishingState *PublicationFacet;
+    // 
     title *string;
+    // 
     webParts []WebPart;
 }
+// Instantiates a new sitePage and sets the default values.
 func NewSitePage()(*SitePage) {
     m := &SitePage{
         BaseItem: *NewBaseItem(),
     }
     return m
 }
+// Gets the contentType property value. The content type of the page.
 func (m *SitePage) GetContentType()(*ContentTypeInfo) {
     if m == nil {
         return nil
@@ -25,6 +33,7 @@ func (m *SitePage) GetContentType()(*ContentTypeInfo) {
         return m.contentType
     }
 }
+// Gets the pageLayoutType property value. 
 func (m *SitePage) GetPageLayoutType()(*string) {
     if m == nil {
         return nil
@@ -32,6 +41,7 @@ func (m *SitePage) GetPageLayoutType()(*string) {
         return m.pageLayoutType
     }
 }
+// Gets the publishingState property value. 
 func (m *SitePage) GetPublishingState()(*PublicationFacet) {
     if m == nil {
         return nil
@@ -39,6 +49,7 @@ func (m *SitePage) GetPublishingState()(*PublicationFacet) {
         return m.publishingState
     }
 }
+// Gets the title property value. 
 func (m *SitePage) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -46,6 +57,7 @@ func (m *SitePage) GetTitle()(*string) {
         return m.title
     }
 }
+// Gets the webParts property value. 
 func (m *SitePage) GetWebParts()([]WebPart) {
     if m == nil {
         return nil
@@ -53,6 +65,7 @@ func (m *SitePage) GetWebParts()([]WebPart) {
         return m.webParts
     }
 }
+// The deserialization information for the current model
 func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,6 +117,9 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *SitePage) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SitePage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.BaseItem.Serialize(writer)
     if err != nil {
@@ -146,18 +162,33 @@ func (m *SitePage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
+// Sets the contentType property value. The content type of the page.
+// Parameters:
+//  - value : Value to set for the contentType property.
 func (m *SitePage) SetContentType(value *ContentTypeInfo)() {
     m.contentType = value
 }
+// Sets the pageLayoutType property value. 
+// Parameters:
+//  - value : Value to set for the pageLayoutType property.
 func (m *SitePage) SetPageLayoutType(value *string)() {
     m.pageLayoutType = value
 }
+// Sets the publishingState property value. 
+// Parameters:
+//  - value : Value to set for the publishingState property.
 func (m *SitePage) SetPublishingState(value *PublicationFacet)() {
     m.publishingState = value
 }
+// Sets the title property value. 
+// Parameters:
+//  - value : Value to set for the title property.
 func (m *SitePage) SetTitle(value *string)() {
     m.title = value
 }
+// Sets the webParts property value. 
+// Parameters:
+//  - value : Value to set for the webParts property.
 func (m *SitePage) SetWebParts(value []WebPart)() {
     m.webParts = value
 }

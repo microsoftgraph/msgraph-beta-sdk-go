@@ -5,18 +5,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ShipmentMethod struct {
     Entity
+    // 
     code *string;
+    // 
     displayName *string;
+    // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
+// Instantiates a new shipmentMethod and sets the default values.
 func NewShipmentMethod()(*ShipmentMethod) {
     m := &ShipmentMethod{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the code property value. 
 func (m *ShipmentMethod) GetCode()(*string) {
     if m == nil {
         return nil
@@ -24,6 +30,7 @@ func (m *ShipmentMethod) GetCode()(*string) {
         return m.code
     }
 }
+// Gets the displayName property value. 
 func (m *ShipmentMethod) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -31,6 +38,7 @@ func (m *ShipmentMethod) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the lastModifiedDateTime property value. 
 func (m *ShipmentMethod) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -38,6 +46,7 @@ func (m *ShipmentMethod) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
         return m.lastModifiedDateTime
     }
 }
+// The deserialization information for the current model
 func (m *ShipmentMethod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["code"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,6 +78,9 @@ func (m *ShipmentMethod) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *ShipmentMethod) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ShipmentMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,12 +106,21 @@ func (m *ShipmentMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
+// Sets the code property value. 
+// Parameters:
+//  - value : Value to set for the code property.
 func (m *ShipmentMethod) SetCode(value *string)() {
     m.code = value
 }
+// Sets the displayName property value. 
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *ShipmentMethod) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the lastModifiedDateTime property value. 
+// Parameters:
+//  - value : Value to set for the lastModifiedDateTime property.
 func (m *ShipmentMethod) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }

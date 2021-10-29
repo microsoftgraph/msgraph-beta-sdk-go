@@ -4,24 +4,37 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type GetConfigurationPolicyDeviceSummaryReportRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     filter *string;
+    // 
     groupBy []string;
+    // 
     name *string;
+    // 
     orderBy []string;
+    // 
     search *string;
+    // 
     select_escaped []string;
+    // 
     sessionId *string;
+    // 
     skip *int32;
+    // 
     top *int32;
 }
+// Instantiates a new getConfigurationPolicyDeviceSummaryReportRequestBody and sets the default values.
 func NewGetConfigurationPolicyDeviceSummaryReportRequestBody()(*GetConfigurationPolicyDeviceSummaryReportRequestBody) {
     m := &GetConfigurationPolicyDeviceSummaryReportRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,6 +42,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetAdditionalData
         return m.additionalData
     }
 }
+// Gets the filter property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetFilter()(*string) {
     if m == nil {
         return nil
@@ -36,6 +50,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetFilter()(*stri
         return m.filter
     }
 }
+// Gets the groupBy property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetGroupBy()([]string) {
     if m == nil {
         return nil
@@ -43,6 +58,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetGroupBy()([]st
         return m.groupBy
     }
 }
+// Gets the name property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetName()(*string) {
     if m == nil {
         return nil
@@ -50,6 +66,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetName()(*string
         return m.name
     }
 }
+// Gets the orderBy property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetOrderBy()([]string) {
     if m == nil {
         return nil
@@ -57,6 +74,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetOrderBy()([]st
         return m.orderBy
     }
 }
+// Gets the search property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetSearch()(*string) {
     if m == nil {
         return nil
@@ -64,6 +82,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetSearch()(*stri
         return m.search
     }
 }
+// Gets the select_escaped property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
@@ -71,6 +90,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetSelect_escaped
         return m.select_escaped
     }
 }
+// Gets the sessionId property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetSessionId()(*string) {
     if m == nil {
         return nil
@@ -78,6 +98,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetSessionId()(*s
         return m.sessionId
     }
 }
+// Gets the skip property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetSkip()(*int32) {
     if m == nil {
         return nil
@@ -85,6 +106,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetSkip()(*int32)
         return m.skip
     }
 }
+// Gets the top property value. 
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetTop()(*int32) {
     if m == nil {
         return nil
@@ -92,6 +114,7 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetTop()(*int32) 
         return m.top
     }
 }
+// The deserialization information for the current model
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["filter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,6 +206,9 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) GetFieldDeseriali
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("filter", m.GetFilter())
@@ -246,33 +272,63 @@ func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) Serialize(writer 
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the filter property value. 
+// Parameters:
+//  - value : Value to set for the filter property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetFilter(value *string)() {
     m.filter = value
 }
+// Sets the groupBy property value. 
+// Parameters:
+//  - value : Value to set for the groupBy property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetGroupBy(value []string)() {
     m.groupBy = value
 }
+// Sets the name property value. 
+// Parameters:
+//  - value : Value to set for the name property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetName(value *string)() {
     m.name = value
 }
+// Sets the orderBy property value. 
+// Parameters:
+//  - value : Value to set for the orderBy property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetOrderBy(value []string)() {
     m.orderBy = value
 }
+// Sets the search property value. 
+// Parameters:
+//  - value : Value to set for the search property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetSearch(value *string)() {
     m.search = value
 }
+// Sets the select_escaped property value. 
+// Parameters:
+//  - value : Value to set for the select_escaped property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetSelect_escaped(value []string)() {
     m.select_escaped = value
 }
+// Sets the sessionId property value. 
+// Parameters:
+//  - value : Value to set for the sessionId property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetSessionId(value *string)() {
     m.sessionId = value
 }
+// Sets the skip property value. 
+// Parameters:
+//  - value : Value to set for the skip property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetSkip(value *int32)() {
     m.skip = value
 }
+// Sets the top property value. 
+// Parameters:
+//  - value : Value to set for the top property.
 func (m *GetConfigurationPolicyDeviceSummaryReportRequestBody) SetTop(value *int32)() {
     m.top = value
 }

@@ -4,45 +4,79 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type HardwareInformation struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
     batteryChargeCycles *int32;
+    // The device’s current battery’s health percentage. Valid values 0 to 100
     batteryHealthPercentage *int32;
+    // The serial number of the device’s current battery
     batterySerialNumber *string;
+    // Cellular technology of the device
     cellularTechnology *string;
+    // Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.
     deviceFullQualifiedDomainName *string;
+    // Local System Authority (LSA) credential guard status. . Possible values are: running, rebootRequired, notLicensed, notConfigured, virtualizationBasedSecurityNotRunning.
     deviceGuardLocalSystemAuthorityCredentialGuardState *DeviceGuardLocalSystemAuthorityCredentialGuardState;
+    // Virtualization-based security hardware requirement status. Possible values are: meetHardwareRequirements, secureBootRequired, dmaProtectionRequired, hyperVNotSupportedForGuestVM, hyperVNotAvailable.
     deviceGuardVirtualizationBasedSecurityHardwareRequirementState *DeviceGuardVirtualizationBasedSecurityHardwareRequirementState;
+    // Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.
     deviceGuardVirtualizationBasedSecurityState *DeviceGuardVirtualizationBasedSecurityState;
+    // eSIM identifier
     esimIdentifier *string;
+    // Free storage space of the device.
     freeStorageSpace *int64;
+    // IMEI
     imei *string;
+    // IPAddressV4
     ipAddressV4 *string;
+    // Encryption status of the device
     isEncrypted *bool;
+    // Shared iPad
     isSharedDevice *bool;
+    // Supervised mode of the device
     isSupervised *bool;
+    // Manufacturer of the device
     manufacturer *string;
+    // MEID
     meid *string;
+    // Model of the device
     model *string;
+    // String that specifies the OS edition.
     operatingSystemEdition *string;
+    // Operating system language of the device
     operatingSystemLanguage *string;
+    // Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
     operatingSystemProductType *int32;
+    // Operating System Build Number on Android device
     osBuildNumber *string;
+    // Phone number of the device
     phoneNumber *string;
+    // Serial number.
     serialNumber *string;
+    // All users on the shared Apple device
     sharedDeviceCachedUsers []SharedAppleDeviceUser;
+    // SubnetAddress
     subnetAddress *string;
+    // Subscriber carrier of the device
     subscriberCarrier *string;
+    // Total storage space of the device.
     totalStorageSpace *int64;
+    // String that specifies the specification version.
     tpmSpecificationVersion *string;
+    // WiFi MAC address of the device
     wifiMac *string;
 }
+// Instantiates a new hardwareInformation and sets the default values.
 func NewHardwareInformation()(*HardwareInformation) {
     m := &HardwareInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HardwareInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -50,6 +84,7 @@ func (m *HardwareInformation) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the batteryChargeCycles property value. The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
 func (m *HardwareInformation) GetBatteryChargeCycles()(*int32) {
     if m == nil {
         return nil
@@ -57,6 +92,7 @@ func (m *HardwareInformation) GetBatteryChargeCycles()(*int32) {
         return m.batteryChargeCycles
     }
 }
+// Gets the batteryHealthPercentage property value. The device’s current battery’s health percentage. Valid values 0 to 100
 func (m *HardwareInformation) GetBatteryHealthPercentage()(*int32) {
     if m == nil {
         return nil
@@ -64,6 +100,7 @@ func (m *HardwareInformation) GetBatteryHealthPercentage()(*int32) {
         return m.batteryHealthPercentage
     }
 }
+// Gets the batterySerialNumber property value. The serial number of the device’s current battery
 func (m *HardwareInformation) GetBatterySerialNumber()(*string) {
     if m == nil {
         return nil
@@ -71,6 +108,7 @@ func (m *HardwareInformation) GetBatterySerialNumber()(*string) {
         return m.batterySerialNumber
     }
 }
+// Gets the cellularTechnology property value. Cellular technology of the device
 func (m *HardwareInformation) GetCellularTechnology()(*string) {
     if m == nil {
         return nil
@@ -78,6 +116,7 @@ func (m *HardwareInformation) GetCellularTechnology()(*string) {
         return m.cellularTechnology
     }
 }
+// Gets the deviceFullQualifiedDomainName property value. Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.
 func (m *HardwareInformation) GetDeviceFullQualifiedDomainName()(*string) {
     if m == nil {
         return nil
@@ -85,6 +124,7 @@ func (m *HardwareInformation) GetDeviceFullQualifiedDomainName()(*string) {
         return m.deviceFullQualifiedDomainName
     }
 }
+// Gets the deviceGuardLocalSystemAuthorityCredentialGuardState property value. Local System Authority (LSA) credential guard status. . Possible values are: running, rebootRequired, notLicensed, notConfigured, virtualizationBasedSecurityNotRunning.
 func (m *HardwareInformation) GetDeviceGuardLocalSystemAuthorityCredentialGuardState()(*DeviceGuardLocalSystemAuthorityCredentialGuardState) {
     if m == nil {
         return nil
@@ -92,6 +132,7 @@ func (m *HardwareInformation) GetDeviceGuardLocalSystemAuthorityCredentialGuardS
         return m.deviceGuardLocalSystemAuthorityCredentialGuardState
     }
 }
+// Gets the deviceGuardVirtualizationBasedSecurityHardwareRequirementState property value. Virtualization-based security hardware requirement status. Possible values are: meetHardwareRequirements, secureBootRequired, dmaProtectionRequired, hyperVNotSupportedForGuestVM, hyperVNotAvailable.
 func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState()(*DeviceGuardVirtualizationBasedSecurityHardwareRequirementState) {
     if m == nil {
         return nil
@@ -99,6 +140,7 @@ func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityHardwareR
         return m.deviceGuardVirtualizationBasedSecurityHardwareRequirementState
     }
 }
+// Gets the deviceGuardVirtualizationBasedSecurityState property value. Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.
 func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityState()(*DeviceGuardVirtualizationBasedSecurityState) {
     if m == nil {
         return nil
@@ -106,6 +148,7 @@ func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityState()(*
         return m.deviceGuardVirtualizationBasedSecurityState
     }
 }
+// Gets the esimIdentifier property value. eSIM identifier
 func (m *HardwareInformation) GetEsimIdentifier()(*string) {
     if m == nil {
         return nil
@@ -113,6 +156,7 @@ func (m *HardwareInformation) GetEsimIdentifier()(*string) {
         return m.esimIdentifier
     }
 }
+// Gets the freeStorageSpace property value. Free storage space of the device.
 func (m *HardwareInformation) GetFreeStorageSpace()(*int64) {
     if m == nil {
         return nil
@@ -120,6 +164,7 @@ func (m *HardwareInformation) GetFreeStorageSpace()(*int64) {
         return m.freeStorageSpace
     }
 }
+// Gets the imei property value. IMEI
 func (m *HardwareInformation) GetImei()(*string) {
     if m == nil {
         return nil
@@ -127,6 +172,7 @@ func (m *HardwareInformation) GetImei()(*string) {
         return m.imei
     }
 }
+// Gets the ipAddressV4 property value. IPAddressV4
 func (m *HardwareInformation) GetIpAddressV4()(*string) {
     if m == nil {
         return nil
@@ -134,6 +180,7 @@ func (m *HardwareInformation) GetIpAddressV4()(*string) {
         return m.ipAddressV4
     }
 }
+// Gets the isEncrypted property value. Encryption status of the device
 func (m *HardwareInformation) GetIsEncrypted()(*bool) {
     if m == nil {
         return nil
@@ -141,6 +188,7 @@ func (m *HardwareInformation) GetIsEncrypted()(*bool) {
         return m.isEncrypted
     }
 }
+// Gets the isSharedDevice property value. Shared iPad
 func (m *HardwareInformation) GetIsSharedDevice()(*bool) {
     if m == nil {
         return nil
@@ -148,6 +196,7 @@ func (m *HardwareInformation) GetIsSharedDevice()(*bool) {
         return m.isSharedDevice
     }
 }
+// Gets the isSupervised property value. Supervised mode of the device
 func (m *HardwareInformation) GetIsSupervised()(*bool) {
     if m == nil {
         return nil
@@ -155,6 +204,7 @@ func (m *HardwareInformation) GetIsSupervised()(*bool) {
         return m.isSupervised
     }
 }
+// Gets the manufacturer property value. Manufacturer of the device
 func (m *HardwareInformation) GetManufacturer()(*string) {
     if m == nil {
         return nil
@@ -162,6 +212,7 @@ func (m *HardwareInformation) GetManufacturer()(*string) {
         return m.manufacturer
     }
 }
+// Gets the meid property value. MEID
 func (m *HardwareInformation) GetMeid()(*string) {
     if m == nil {
         return nil
@@ -169,6 +220,7 @@ func (m *HardwareInformation) GetMeid()(*string) {
         return m.meid
     }
 }
+// Gets the model property value. Model of the device
 func (m *HardwareInformation) GetModel()(*string) {
     if m == nil {
         return nil
@@ -176,6 +228,7 @@ func (m *HardwareInformation) GetModel()(*string) {
         return m.model
     }
 }
+// Gets the operatingSystemEdition property value. String that specifies the OS edition.
 func (m *HardwareInformation) GetOperatingSystemEdition()(*string) {
     if m == nil {
         return nil
@@ -183,6 +236,7 @@ func (m *HardwareInformation) GetOperatingSystemEdition()(*string) {
         return m.operatingSystemEdition
     }
 }
+// Gets the operatingSystemLanguage property value. Operating system language of the device
 func (m *HardwareInformation) GetOperatingSystemLanguage()(*string) {
     if m == nil {
         return nil
@@ -190,6 +244,7 @@ func (m *HardwareInformation) GetOperatingSystemLanguage()(*string) {
         return m.operatingSystemLanguage
     }
 }
+// Gets the operatingSystemProductType property value. Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
 func (m *HardwareInformation) GetOperatingSystemProductType()(*int32) {
     if m == nil {
         return nil
@@ -197,6 +252,7 @@ func (m *HardwareInformation) GetOperatingSystemProductType()(*int32) {
         return m.operatingSystemProductType
     }
 }
+// Gets the osBuildNumber property value. Operating System Build Number on Android device
 func (m *HardwareInformation) GetOsBuildNumber()(*string) {
     if m == nil {
         return nil
@@ -204,6 +260,7 @@ func (m *HardwareInformation) GetOsBuildNumber()(*string) {
         return m.osBuildNumber
     }
 }
+// Gets the phoneNumber property value. Phone number of the device
 func (m *HardwareInformation) GetPhoneNumber()(*string) {
     if m == nil {
         return nil
@@ -211,6 +268,7 @@ func (m *HardwareInformation) GetPhoneNumber()(*string) {
         return m.phoneNumber
     }
 }
+// Gets the serialNumber property value. Serial number.
 func (m *HardwareInformation) GetSerialNumber()(*string) {
     if m == nil {
         return nil
@@ -218,6 +276,7 @@ func (m *HardwareInformation) GetSerialNumber()(*string) {
         return m.serialNumber
     }
 }
+// Gets the sharedDeviceCachedUsers property value. All users on the shared Apple device
 func (m *HardwareInformation) GetSharedDeviceCachedUsers()([]SharedAppleDeviceUser) {
     if m == nil {
         return nil
@@ -225,6 +284,7 @@ func (m *HardwareInformation) GetSharedDeviceCachedUsers()([]SharedAppleDeviceUs
         return m.sharedDeviceCachedUsers
     }
 }
+// Gets the subnetAddress property value. SubnetAddress
 func (m *HardwareInformation) GetSubnetAddress()(*string) {
     if m == nil {
         return nil
@@ -232,6 +292,7 @@ func (m *HardwareInformation) GetSubnetAddress()(*string) {
         return m.subnetAddress
     }
 }
+// Gets the subscriberCarrier property value. Subscriber carrier of the device
 func (m *HardwareInformation) GetSubscriberCarrier()(*string) {
     if m == nil {
         return nil
@@ -239,6 +300,7 @@ func (m *HardwareInformation) GetSubscriberCarrier()(*string) {
         return m.subscriberCarrier
     }
 }
+// Gets the totalStorageSpace property value. Total storage space of the device.
 func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
     if m == nil {
         return nil
@@ -246,6 +308,7 @@ func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
         return m.totalStorageSpace
     }
 }
+// Gets the tpmSpecificationVersion property value. String that specifies the specification version.
 func (m *HardwareInformation) GetTpmSpecificationVersion()(*string) {
     if m == nil {
         return nil
@@ -253,6 +316,7 @@ func (m *HardwareInformation) GetTpmSpecificationVersion()(*string) {
         return m.tpmSpecificationVersion
     }
 }
+// Gets the wifiMac property value. WiFi MAC address of the device
 func (m *HardwareInformation) GetWifiMac()(*string) {
     if m == nil {
         return nil
@@ -260,6 +324,7 @@ func (m *HardwareInformation) GetWifiMac()(*string) {
         return m.wifiMac
     }
 }
+// The deserialization information for the current model
 func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["batteryChargeCycles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -514,6 +579,9 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
 func (m *HardwareInformation) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *HardwareInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("batteryChargeCycles", m.GetBatteryChargeCycles())
@@ -711,96 +779,189 @@ func (m *HardwareInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *HardwareInformation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the batteryChargeCycles property value. The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
+// Parameters:
+//  - value : Value to set for the batteryChargeCycles property.
 func (m *HardwareInformation) SetBatteryChargeCycles(value *int32)() {
     m.batteryChargeCycles = value
 }
+// Sets the batteryHealthPercentage property value. The device’s current battery’s health percentage. Valid values 0 to 100
+// Parameters:
+//  - value : Value to set for the batteryHealthPercentage property.
 func (m *HardwareInformation) SetBatteryHealthPercentage(value *int32)() {
     m.batteryHealthPercentage = value
 }
+// Sets the batterySerialNumber property value. The serial number of the device’s current battery
+// Parameters:
+//  - value : Value to set for the batterySerialNumber property.
 func (m *HardwareInformation) SetBatterySerialNumber(value *string)() {
     m.batterySerialNumber = value
 }
+// Sets the cellularTechnology property value. Cellular technology of the device
+// Parameters:
+//  - value : Value to set for the cellularTechnology property.
 func (m *HardwareInformation) SetCellularTechnology(value *string)() {
     m.cellularTechnology = value
 }
+// Sets the deviceFullQualifiedDomainName property value. Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.
+// Parameters:
+//  - value : Value to set for the deviceFullQualifiedDomainName property.
 func (m *HardwareInformation) SetDeviceFullQualifiedDomainName(value *string)() {
     m.deviceFullQualifiedDomainName = value
 }
+// Sets the deviceGuardLocalSystemAuthorityCredentialGuardState property value. Local System Authority (LSA) credential guard status. . Possible values are: running, rebootRequired, notLicensed, notConfigured, virtualizationBasedSecurityNotRunning.
+// Parameters:
+//  - value : Value to set for the deviceGuardLocalSystemAuthorityCredentialGuardState property.
 func (m *HardwareInformation) SetDeviceGuardLocalSystemAuthorityCredentialGuardState(value *DeviceGuardLocalSystemAuthorityCredentialGuardState)() {
     m.deviceGuardLocalSystemAuthorityCredentialGuardState = value
 }
+// Sets the deviceGuardVirtualizationBasedSecurityHardwareRequirementState property value. Virtualization-based security hardware requirement status. Possible values are: meetHardwareRequirements, secureBootRequired, dmaProtectionRequired, hyperVNotSupportedForGuestVM, hyperVNotAvailable.
+// Parameters:
+//  - value : Value to set for the deviceGuardVirtualizationBasedSecurityHardwareRequirementState property.
 func (m *HardwareInformation) SetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(value *DeviceGuardVirtualizationBasedSecurityHardwareRequirementState)() {
     m.deviceGuardVirtualizationBasedSecurityHardwareRequirementState = value
 }
+// Sets the deviceGuardVirtualizationBasedSecurityState property value. Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.
+// Parameters:
+//  - value : Value to set for the deviceGuardVirtualizationBasedSecurityState property.
 func (m *HardwareInformation) SetDeviceGuardVirtualizationBasedSecurityState(value *DeviceGuardVirtualizationBasedSecurityState)() {
     m.deviceGuardVirtualizationBasedSecurityState = value
 }
+// Sets the esimIdentifier property value. eSIM identifier
+// Parameters:
+//  - value : Value to set for the esimIdentifier property.
 func (m *HardwareInformation) SetEsimIdentifier(value *string)() {
     m.esimIdentifier = value
 }
+// Sets the freeStorageSpace property value. Free storage space of the device.
+// Parameters:
+//  - value : Value to set for the freeStorageSpace property.
 func (m *HardwareInformation) SetFreeStorageSpace(value *int64)() {
     m.freeStorageSpace = value
 }
+// Sets the imei property value. IMEI
+// Parameters:
+//  - value : Value to set for the imei property.
 func (m *HardwareInformation) SetImei(value *string)() {
     m.imei = value
 }
+// Sets the ipAddressV4 property value. IPAddressV4
+// Parameters:
+//  - value : Value to set for the ipAddressV4 property.
 func (m *HardwareInformation) SetIpAddressV4(value *string)() {
     m.ipAddressV4 = value
 }
+// Sets the isEncrypted property value. Encryption status of the device
+// Parameters:
+//  - value : Value to set for the isEncrypted property.
 func (m *HardwareInformation) SetIsEncrypted(value *bool)() {
     m.isEncrypted = value
 }
+// Sets the isSharedDevice property value. Shared iPad
+// Parameters:
+//  - value : Value to set for the isSharedDevice property.
 func (m *HardwareInformation) SetIsSharedDevice(value *bool)() {
     m.isSharedDevice = value
 }
+// Sets the isSupervised property value. Supervised mode of the device
+// Parameters:
+//  - value : Value to set for the isSupervised property.
 func (m *HardwareInformation) SetIsSupervised(value *bool)() {
     m.isSupervised = value
 }
+// Sets the manufacturer property value. Manufacturer of the device
+// Parameters:
+//  - value : Value to set for the manufacturer property.
 func (m *HardwareInformation) SetManufacturer(value *string)() {
     m.manufacturer = value
 }
+// Sets the meid property value. MEID
+// Parameters:
+//  - value : Value to set for the meid property.
 func (m *HardwareInformation) SetMeid(value *string)() {
     m.meid = value
 }
+// Sets the model property value. Model of the device
+// Parameters:
+//  - value : Value to set for the model property.
 func (m *HardwareInformation) SetModel(value *string)() {
     m.model = value
 }
+// Sets the operatingSystemEdition property value. String that specifies the OS edition.
+// Parameters:
+//  - value : Value to set for the operatingSystemEdition property.
 func (m *HardwareInformation) SetOperatingSystemEdition(value *string)() {
     m.operatingSystemEdition = value
 }
+// Sets the operatingSystemLanguage property value. Operating system language of the device
+// Parameters:
+//  - value : Value to set for the operatingSystemLanguage property.
 func (m *HardwareInformation) SetOperatingSystemLanguage(value *string)() {
     m.operatingSystemLanguage = value
 }
+// Sets the operatingSystemProductType property value. Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
+// Parameters:
+//  - value : Value to set for the operatingSystemProductType property.
 func (m *HardwareInformation) SetOperatingSystemProductType(value *int32)() {
     m.operatingSystemProductType = value
 }
+// Sets the osBuildNumber property value. Operating System Build Number on Android device
+// Parameters:
+//  - value : Value to set for the osBuildNumber property.
 func (m *HardwareInformation) SetOsBuildNumber(value *string)() {
     m.osBuildNumber = value
 }
+// Sets the phoneNumber property value. Phone number of the device
+// Parameters:
+//  - value : Value to set for the phoneNumber property.
 func (m *HardwareInformation) SetPhoneNumber(value *string)() {
     m.phoneNumber = value
 }
+// Sets the serialNumber property value. Serial number.
+// Parameters:
+//  - value : Value to set for the serialNumber property.
 func (m *HardwareInformation) SetSerialNumber(value *string)() {
     m.serialNumber = value
 }
+// Sets the sharedDeviceCachedUsers property value. All users on the shared Apple device
+// Parameters:
+//  - value : Value to set for the sharedDeviceCachedUsers property.
 func (m *HardwareInformation) SetSharedDeviceCachedUsers(value []SharedAppleDeviceUser)() {
     m.sharedDeviceCachedUsers = value
 }
+// Sets the subnetAddress property value. SubnetAddress
+// Parameters:
+//  - value : Value to set for the subnetAddress property.
 func (m *HardwareInformation) SetSubnetAddress(value *string)() {
     m.subnetAddress = value
 }
+// Sets the subscriberCarrier property value. Subscriber carrier of the device
+// Parameters:
+//  - value : Value to set for the subscriberCarrier property.
 func (m *HardwareInformation) SetSubscriberCarrier(value *string)() {
     m.subscriberCarrier = value
 }
+// Sets the totalStorageSpace property value. Total storage space of the device.
+// Parameters:
+//  - value : Value to set for the totalStorageSpace property.
 func (m *HardwareInformation) SetTotalStorageSpace(value *int64)() {
     m.totalStorageSpace = value
 }
+// Sets the tpmSpecificationVersion property value. String that specifies the specification version.
+// Parameters:
+//  - value : Value to set for the tpmSpecificationVersion property.
 func (m *HardwareInformation) SetTpmSpecificationVersion(value *string)() {
     m.tpmSpecificationVersion = value
 }
+// Sets the wifiMac property value. WiFi MAC address of the device
+// Parameters:
+//  - value : Value to set for the wifiMac property.
 func (m *HardwareInformation) SetWifiMac(value *string)() {
     m.wifiMac = value
 }

@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type ManagedAppDeviceThreatLevel int
 
 const (

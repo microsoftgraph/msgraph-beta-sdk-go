@@ -6,17 +6,23 @@ import (
     ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/windowsupdates"
 )
 
+// 
 type UnenrollAssetsRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     assets []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset;
+    // 
     updateCategory *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory;
 }
+// Instantiates a new unenrollAssetsRequestBody and sets the default values.
 func NewUnenrollAssetsRequestBody()(*UnenrollAssetsRequestBody) {
     m := &UnenrollAssetsRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnenrollAssetsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +30,7 @@ func (m *UnenrollAssetsRequestBody) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
+// Gets the assets property value. 
 func (m *UnenrollAssetsRequestBody) GetAssets()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset) {
     if m == nil {
         return nil
@@ -31,6 +38,7 @@ func (m *UnenrollAssetsRequestBody) GetAssets()([]i535684e11b5500196ecb4b5c6634e
         return m.assets
     }
 }
+// Gets the updateCategory property value. 
 func (m *UnenrollAssetsRequestBody) GetUpdateCategory()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory) {
     if m == nil {
         return nil
@@ -38,6 +46,7 @@ func (m *UnenrollAssetsRequestBody) GetUpdateCategory()(*ifded49a845bbaa9057da6e
         return m.updateCategory
     }
 }
+// The deserialization information for the current model
 func (m *UnenrollAssetsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -66,6 +75,9 @@ func (m *UnenrollAssetsRequestBody) GetFieldDeserializers()(map[string]func(inte
 func (m *UnenrollAssetsRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UnenrollAssetsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssets()))
@@ -93,12 +105,21 @@ func (m *UnenrollAssetsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *UnenrollAssetsRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the assets property value. 
+// Parameters:
+//  - value : Value to set for the assets property.
 func (m *UnenrollAssetsRequestBody) SetAssets(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset)() {
     m.assets = value
 }
+// Sets the updateCategory property value. 
+// Parameters:
+//  - value : Value to set for the updateCategory property.
 func (m *UnenrollAssetsRequestBody) SetUpdateCategory(value *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory)() {
     m.updateCategory = value
 }

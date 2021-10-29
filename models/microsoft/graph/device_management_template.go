@@ -5,27 +5,42 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DeviceManagementTemplate struct {
     Entity
+    // Collection of setting categories within the template
     categories []DeviceManagementTemplateSettingCategory;
+    // The template's description
     description *string;
+    // The template's display name
     displayName *string;
+    // Number of Intents created from this template.
     intentCount *int32;
+    // The template is deprecated or not. Intents cannot be created from a deprecated template.
     isDeprecated *bool;
+    // Collection of templates this template can migrate to
     migratableTo []DeviceManagementTemplate;
+    // The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
     platformType *PolicyPlatformType;
+    // When the template was published
     publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // Collection of all settings this template has
     settings []DeviceManagementSettingInstance;
+    // The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.
     templateSubtype *DeviceManagementTemplateSubtype;
+    // The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
     templateType *DeviceManagementTemplateType;
+    // The template's version information
     versionInfo *string;
 }
+// Instantiates a new deviceManagementTemplate and sets the default values.
 func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
     m := &DeviceManagementTemplate{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the categories property value. Collection of setting categories within the template
 func (m *DeviceManagementTemplate) GetCategories()([]DeviceManagementTemplateSettingCategory) {
     if m == nil {
         return nil
@@ -33,6 +48,7 @@ func (m *DeviceManagementTemplate) GetCategories()([]DeviceManagementTemplateSet
         return m.categories
     }
 }
+// Gets the description property value. The template's description
 func (m *DeviceManagementTemplate) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -40,6 +56,7 @@ func (m *DeviceManagementTemplate) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. The template's display name
 func (m *DeviceManagementTemplate) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -47,6 +64,7 @@ func (m *DeviceManagementTemplate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the intentCount property value. Number of Intents created from this template.
 func (m *DeviceManagementTemplate) GetIntentCount()(*int32) {
     if m == nil {
         return nil
@@ -54,6 +72,7 @@ func (m *DeviceManagementTemplate) GetIntentCount()(*int32) {
         return m.intentCount
     }
 }
+// Gets the isDeprecated property value. The template is deprecated or not. Intents cannot be created from a deprecated template.
 func (m *DeviceManagementTemplate) GetIsDeprecated()(*bool) {
     if m == nil {
         return nil
@@ -61,6 +80,7 @@ func (m *DeviceManagementTemplate) GetIsDeprecated()(*bool) {
         return m.isDeprecated
     }
 }
+// Gets the migratableTo property value. Collection of templates this template can migrate to
 func (m *DeviceManagementTemplate) GetMigratableTo()([]DeviceManagementTemplate) {
     if m == nil {
         return nil
@@ -68,6 +88,7 @@ func (m *DeviceManagementTemplate) GetMigratableTo()([]DeviceManagementTemplate)
         return m.migratableTo
     }
 }
+// Gets the platformType property value. The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
 func (m *DeviceManagementTemplate) GetPlatformType()(*PolicyPlatformType) {
     if m == nil {
         return nil
@@ -75,6 +96,7 @@ func (m *DeviceManagementTemplate) GetPlatformType()(*PolicyPlatformType) {
         return m.platformType
     }
 }
+// Gets the publishedDateTime property value. When the template was published
 func (m *DeviceManagementTemplate) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -82,6 +104,7 @@ func (m *DeviceManagementTemplate) GetPublishedDateTime()(*i336074805fc853987abe
         return m.publishedDateTime
     }
 }
+// Gets the settings property value. Collection of all settings this template has
 func (m *DeviceManagementTemplate) GetSettings()([]DeviceManagementSettingInstance) {
     if m == nil {
         return nil
@@ -89,6 +112,7 @@ func (m *DeviceManagementTemplate) GetSettings()([]DeviceManagementSettingInstan
         return m.settings
     }
 }
+// Gets the templateSubtype property value. The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.
 func (m *DeviceManagementTemplate) GetTemplateSubtype()(*DeviceManagementTemplateSubtype) {
     if m == nil {
         return nil
@@ -96,6 +120,7 @@ func (m *DeviceManagementTemplate) GetTemplateSubtype()(*DeviceManagementTemplat
         return m.templateSubtype
     }
 }
+// Gets the templateType property value. The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
 func (m *DeviceManagementTemplate) GetTemplateType()(*DeviceManagementTemplateType) {
     if m == nil {
         return nil
@@ -103,6 +128,7 @@ func (m *DeviceManagementTemplate) GetTemplateType()(*DeviceManagementTemplateTy
         return m.templateType
     }
 }
+// Gets the versionInfo property value. The template's version information
 func (m *DeviceManagementTemplate) GetVersionInfo()(*string) {
     if m == nil {
         return nil
@@ -110,6 +136,7 @@ func (m *DeviceManagementTemplate) GetVersionInfo()(*string) {
         return m.versionInfo
     }
 }
+// The deserialization information for the current model
 func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,6 +255,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
 func (m *DeviceManagementTemplate) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DeviceManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -325,39 +355,75 @@ func (m *DeviceManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
+// Sets the categories property value. Collection of setting categories within the template
+// Parameters:
+//  - value : Value to set for the categories property.
 func (m *DeviceManagementTemplate) SetCategories(value []DeviceManagementTemplateSettingCategory)() {
     m.categories = value
 }
+// Sets the description property value. The template's description
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *DeviceManagementTemplate) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. The template's display name
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *DeviceManagementTemplate) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the intentCount property value. Number of Intents created from this template.
+// Parameters:
+//  - value : Value to set for the intentCount property.
 func (m *DeviceManagementTemplate) SetIntentCount(value *int32)() {
     m.intentCount = value
 }
+// Sets the isDeprecated property value. The template is deprecated or not. Intents cannot be created from a deprecated template.
+// Parameters:
+//  - value : Value to set for the isDeprecated property.
 func (m *DeviceManagementTemplate) SetIsDeprecated(value *bool)() {
     m.isDeprecated = value
 }
+// Sets the migratableTo property value. Collection of templates this template can migrate to
+// Parameters:
+//  - value : Value to set for the migratableTo property.
 func (m *DeviceManagementTemplate) SetMigratableTo(value []DeviceManagementTemplate)() {
     m.migratableTo = value
 }
+// Sets the platformType property value. The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
+// Parameters:
+//  - value : Value to set for the platformType property.
 func (m *DeviceManagementTemplate) SetPlatformType(value *PolicyPlatformType)() {
     m.platformType = value
 }
+// Sets the publishedDateTime property value. When the template was published
+// Parameters:
+//  - value : Value to set for the publishedDateTime property.
 func (m *DeviceManagementTemplate) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.publishedDateTime = value
 }
+// Sets the settings property value. Collection of all settings this template has
+// Parameters:
+//  - value : Value to set for the settings property.
 func (m *DeviceManagementTemplate) SetSettings(value []DeviceManagementSettingInstance)() {
     m.settings = value
 }
+// Sets the templateSubtype property value. The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.
+// Parameters:
+//  - value : Value to set for the templateSubtype property.
 func (m *DeviceManagementTemplate) SetTemplateSubtype(value *DeviceManagementTemplateSubtype)() {
     m.templateSubtype = value
 }
+// Sets the templateType property value. The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
+// Parameters:
+//  - value : Value to set for the templateType property.
 func (m *DeviceManagementTemplate) SetTemplateType(value *DeviceManagementTemplateType)() {
     m.templateType = value
 }
+// Sets the versionInfo property value. The template's version information
+// Parameters:
+//  - value : Value to set for the versionInfo property.
 func (m *DeviceManagementTemplate) SetVersionInfo(value *string)() {
     m.versionInfo = value
 }

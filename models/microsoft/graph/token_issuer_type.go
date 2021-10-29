@@ -3,16 +3,18 @@ import (
     "strings"
     "errors"
 )
+// 
 type TokenIssuerType int
 
 const (
     AZUREAD_TOKENISSUERTYPE TokenIssuerType = iota
     ADFEDERATIONSERVICES_TOKENISSUERTYPE
     UNKNOWNFUTUREVALUE_TOKENISSUERTYPE
+    AZUREADBACKUPAUTH_TOKENISSUERTYPE
 )
 
 func (i TokenIssuerType) String() string {
-    return []string{"AZUREAD", "ADFEDERATIONSERVICES", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"AZUREAD", "ADFEDERATIONSERVICES", "UNKNOWNFUTUREVALUE", "AZUREADBACKUPAUTH"}[i]
 }
 func ParseTokenIssuerType(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -22,6 +24,8 @@ func ParseTokenIssuerType(v string) (interface{}, error) {
             return ADFEDERATIONSERVICES_TOKENISSUERTYPE, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_TOKENISSUERTYPE, nil
+        case "AZUREADBACKUPAUTH":
+            return AZUREADBACKUPAUTH_TOKENISSUERTYPE, nil
     }
     return 0, errors.New("Unknown TokenIssuerType value: " + v)
 }

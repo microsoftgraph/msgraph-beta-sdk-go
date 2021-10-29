@@ -4,20 +4,31 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type WebApplication struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Home page or landing page of the application.
     homePageUrl *string;
+    // Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
     implicitGrantSettings *ImplicitGrantSettings;
+    // Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
     logoutUrl *string;
+    // 
     oauth2AllowImplicitFlow *bool;
+    // Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
     redirectUris []string;
+    // Specifies the index of the URLs where user tokens are sent for sign-in. This is only valid for applications using SAML.
+    redirectUriSettings []RedirectUriSettings;
 }
+// Instantiates a new webApplication and sets the default values.
 func NewWebApplication()(*WebApplication) {
     m := &WebApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebApplication) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -25,6 +36,7 @@ func (m *WebApplication) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the homePageUrl property value. Home page or landing page of the application.
 func (m *WebApplication) GetHomePageUrl()(*string) {
     if m == nil {
         return nil
@@ -32,6 +44,7 @@ func (m *WebApplication) GetHomePageUrl()(*string) {
         return m.homePageUrl
     }
 }
+// Gets the implicitGrantSettings property value. Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
 func (m *WebApplication) GetImplicitGrantSettings()(*ImplicitGrantSettings) {
     if m == nil {
         return nil
@@ -39,6 +52,7 @@ func (m *WebApplication) GetImplicitGrantSettings()(*ImplicitGrantSettings) {
         return m.implicitGrantSettings
     }
 }
+// Gets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
 func (m *WebApplication) GetLogoutUrl()(*string) {
     if m == nil {
         return nil
@@ -46,6 +60,7 @@ func (m *WebApplication) GetLogoutUrl()(*string) {
         return m.logoutUrl
     }
 }
+// Gets the oauth2AllowImplicitFlow property value. 
 func (m *WebApplication) GetOauth2AllowImplicitFlow()(*bool) {
     if m == nil {
         return nil
@@ -53,6 +68,7 @@ func (m *WebApplication) GetOauth2AllowImplicitFlow()(*bool) {
         return m.oauth2AllowImplicitFlow
     }
 }
+// Gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 func (m *WebApplication) GetRedirectUris()([]string) {
     if m == nil {
         return nil
@@ -60,6 +76,15 @@ func (m *WebApplication) GetRedirectUris()([]string) {
         return m.redirectUris
     }
 }
+// Gets the redirectUriSettings property value. Specifies the index of the URLs where user tokens are sent for sign-in. This is only valid for applications using SAML.
+func (m *WebApplication) GetRedirectUriSettings()([]RedirectUriSettings) {
+    if m == nil {
+        return nil
+    } else {
+        return m.redirectUriSettings
+    }
+}
+// The deserialization information for the current model
 func (m *WebApplication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["homePageUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,11 +131,26 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         m.SetRedirectUris(res)
         return nil
     }
+    res["redirectUriSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRedirectUriSettings() })
+        if err != nil {
+            return err
+        }
+        res := make([]RedirectUriSettings, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*RedirectUriSettings))
+        }
+        m.SetRedirectUriSettings(res)
+        return nil
+    }
     return res
 }
 func (m *WebApplication) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *WebApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("homePageUrl", m.GetHomePageUrl())
@@ -143,6 +183,17 @@ func (m *WebApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRedirectUriSettings()))
+        for i, v := range m.GetRedirectUriSettings() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err := writer.WriteCollectionOfObjectValues("redirectUriSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -150,21 +201,45 @@ func (m *WebApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *WebApplication) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the homePageUrl property value. Home page or landing page of the application.
+// Parameters:
+//  - value : Value to set for the homePageUrl property.
 func (m *WebApplication) SetHomePageUrl(value *string)() {
     m.homePageUrl = value
 }
+// Sets the implicitGrantSettings property value. Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
+// Parameters:
+//  - value : Value to set for the implicitGrantSettings property.
 func (m *WebApplication) SetImplicitGrantSettings(value *ImplicitGrantSettings)() {
     m.implicitGrantSettings = value
 }
+// Sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
+// Parameters:
+//  - value : Value to set for the logoutUrl property.
 func (m *WebApplication) SetLogoutUrl(value *string)() {
     m.logoutUrl = value
 }
+// Sets the oauth2AllowImplicitFlow property value. 
+// Parameters:
+//  - value : Value to set for the oauth2AllowImplicitFlow property.
 func (m *WebApplication) SetOauth2AllowImplicitFlow(value *bool)() {
     m.oauth2AllowImplicitFlow = value
 }
+// Sets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
+// Parameters:
+//  - value : Value to set for the redirectUris property.
 func (m *WebApplication) SetRedirectUris(value []string)() {
     m.redirectUris = value
+}
+// Sets the redirectUriSettings property value. Specifies the index of the URLs where user tokens are sent for sign-in. This is only valid for applications using SAML.
+// Parameters:
+//  - value : Value to set for the redirectUriSettings property.
+func (m *WebApplication) SetRedirectUriSettings(value []RedirectUriSettings)() {
+    m.redirectUriSettings = value
 }

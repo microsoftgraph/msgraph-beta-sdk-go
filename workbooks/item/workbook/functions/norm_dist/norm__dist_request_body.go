@@ -5,19 +5,27 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type Norm_DistRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     cumulative *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     mean *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     standardDev *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     x *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new norm_DistRequestBody and sets the default values.
 func NewNorm_DistRequestBody()(*Norm_DistRequestBody) {
     m := &Norm_DistRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Norm_DistRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -25,6 +33,7 @@ func (m *Norm_DistRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the cumulative property value. 
 func (m *Norm_DistRequestBody) GetCumulative()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -32,6 +41,7 @@ func (m *Norm_DistRequestBody) GetCumulative()(*i535684e11b5500196ecb4b5c6634e06
         return m.cumulative
     }
 }
+// Gets the mean property value. 
 func (m *Norm_DistRequestBody) GetMean()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -39,6 +49,7 @@ func (m *Norm_DistRequestBody) GetMean()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.mean
     }
 }
+// Gets the standardDev property value. 
 func (m *Norm_DistRequestBody) GetStandardDev()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -46,6 +57,7 @@ func (m *Norm_DistRequestBody) GetStandardDev()(*i535684e11b5500196ecb4b5c6634e0
         return m.standardDev
     }
 }
+// Gets the x property value. 
 func (m *Norm_DistRequestBody) GetX()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -53,6 +65,7 @@ func (m *Norm_DistRequestBody) GetX()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f7
         return m.x
     }
 }
+// The deserialization information for the current model
 func (m *Norm_DistRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cumulative"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,6 +105,9 @@ func (m *Norm_DistRequestBody) GetFieldDeserializers()(map[string]func(interface
 func (m *Norm_DistRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Norm_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("cumulative", m.GetCumulative())
@@ -125,18 +141,33 @@ func (m *Norm_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *Norm_DistRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the cumulative property value. 
+// Parameters:
+//  - value : Value to set for the cumulative property.
 func (m *Norm_DistRequestBody) SetCumulative(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.cumulative = value
 }
+// Sets the mean property value. 
+// Parameters:
+//  - value : Value to set for the mean property.
 func (m *Norm_DistRequestBody) SetMean(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.mean = value
 }
+// Sets the standardDev property value. 
+// Parameters:
+//  - value : Value to set for the standardDev property.
 func (m *Norm_DistRequestBody) SetStandardDev(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.standardDev = value
 }
+// Sets the x property value. 
+// Parameters:
+//  - value : Value to set for the x property.
 func (m *Norm_DistRequestBody) SetX(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.x = value
 }

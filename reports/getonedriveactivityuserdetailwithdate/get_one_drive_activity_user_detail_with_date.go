@@ -5,26 +5,40 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetOneDriveActivityUserDetailWithDate struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     assignedProducts []string;
+    // 
     deletedDate *string;
+    // 
     isDeleted *bool;
+    // 
     lastActivityDate *string;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
+    // 
     sharedExternallyFileCount *int64;
+    // 
     sharedInternallyFileCount *int64;
+    // 
     syncedFileCount *int64;
+    // 
     userPrincipalName *string;
+    // 
     viewedOrEditedFileCount *int64;
 }
+// Instantiates a new getOneDriveActivityUserDetailWithDate and sets the default values.
 func NewGetOneDriveActivityUserDetailWithDate()(*GetOneDriveActivityUserDetailWithDate) {
     m := &GetOneDriveActivityUserDetailWithDate{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the assignedProducts property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetAssignedProducts()([]string) {
     if m == nil {
         return nil
@@ -32,6 +46,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetAssignedProducts()([]string) 
         return m.assignedProducts
     }
 }
+// Gets the deletedDate property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetDeletedDate()(*string) {
     if m == nil {
         return nil
@@ -39,6 +54,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetDeletedDate()(*string) {
         return m.deletedDate
     }
 }
+// Gets the isDeleted property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetIsDeleted()(*bool) {
     if m == nil {
         return nil
@@ -46,6 +62,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetIsDeleted()(*bool) {
         return m.isDeleted
     }
 }
+// Gets the lastActivityDate property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -53,6 +70,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetLastActivityDate()(*string) {
         return m.lastActivityDate
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -60,6 +78,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetReportPeriod()(*string) {
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -67,6 +86,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetReportRefreshDate()(*string) 
         return m.reportRefreshDate
     }
 }
+// Gets the sharedExternallyFileCount property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetSharedExternallyFileCount()(*int64) {
     if m == nil {
         return nil
@@ -74,6 +94,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetSharedExternallyFileCount()(*
         return m.sharedExternallyFileCount
     }
 }
+// Gets the sharedInternallyFileCount property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetSharedInternallyFileCount()(*int64) {
     if m == nil {
         return nil
@@ -81,6 +102,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetSharedInternallyFileCount()(*
         return m.sharedInternallyFileCount
     }
 }
+// Gets the syncedFileCount property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetSyncedFileCount()(*int64) {
     if m == nil {
         return nil
@@ -88,6 +110,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetSyncedFileCount()(*int64) {
         return m.syncedFileCount
     }
 }
+// Gets the userPrincipalName property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -95,6 +118,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetUserPrincipalName()(*string) 
         return m.userPrincipalName
     }
 }
+// Gets the viewedOrEditedFileCount property value. 
 func (m *GetOneDriveActivityUserDetailWithDate) GetViewedOrEditedFileCount()(*int64) {
     if m == nil {
         return nil
@@ -102,6 +126,7 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetViewedOrEditedFileCount()(*in
         return m.viewedOrEditedFileCount
     }
 }
+// The deserialization information for the current model
 func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedProducts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,6 +226,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
 func (m *GetOneDriveActivityUserDetailWithDate) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetOneDriveActivityUserDetailWithDate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -274,36 +302,69 @@ func (m *GetOneDriveActivityUserDetailWithDate) Serialize(writer i04eb5309aeaafa
     }
     return nil
 }
+// Sets the assignedProducts property value. 
+// Parameters:
+//  - value : Value to set for the assignedProducts property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetAssignedProducts(value []string)() {
     m.assignedProducts = value
 }
+// Sets the deletedDate property value. 
+// Parameters:
+//  - value : Value to set for the deletedDate property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetDeletedDate(value *string)() {
     m.deletedDate = value
 }
+// Sets the isDeleted property value. 
+// Parameters:
+//  - value : Value to set for the isDeleted property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetIsDeleted(value *bool)() {
     m.isDeleted = value
 }
+// Sets the lastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the lastActivityDate property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetLastActivityDate(value *string)() {
     m.lastActivityDate = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
+// Sets the sharedExternallyFileCount property value. 
+// Parameters:
+//  - value : Value to set for the sharedExternallyFileCount property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetSharedExternallyFileCount(value *int64)() {
     m.sharedExternallyFileCount = value
 }
+// Sets the sharedInternallyFileCount property value. 
+// Parameters:
+//  - value : Value to set for the sharedInternallyFileCount property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetSharedInternallyFileCount(value *int64)() {
     m.sharedInternallyFileCount = value
 }
+// Sets the syncedFileCount property value. 
+// Parameters:
+//  - value : Value to set for the syncedFileCount property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetSyncedFileCount(value *int64)() {
     m.syncedFileCount = value
 }
+// Sets the userPrincipalName property value. 
+// Parameters:
+//  - value : Value to set for the userPrincipalName property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }
+// Sets the viewedOrEditedFileCount property value. 
+// Parameters:
+//  - value : Value to set for the viewedOrEditedFileCount property.
 func (m *GetOneDriveActivityUserDetailWithDate) SetViewedOrEditedFileCount(value *int64)() {
     m.viewedOrEditedFileCount = value
 }

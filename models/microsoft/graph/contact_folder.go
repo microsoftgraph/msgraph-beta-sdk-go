@@ -4,22 +4,32 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ContactFolder struct {
     Entity
+    // The collection of child folders in the folder. Navigation property. Read-only. Nullable.
     childFolders []ContactFolder;
+    // The contacts in the folder. Navigation property. Read-only. Nullable.
     contacts []Contact;
+    // The folder's display name.
     displayName *string;
+    // The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
     multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    // The ID of the folder's parent folder.
     parentFolderId *string;
+    // The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    // The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
     wellKnownName *string;
 }
+// Instantiates a new contactFolder and sets the default values.
 func NewContactFolder()(*ContactFolder) {
     m := &ContactFolder{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *ContactFolder) GetChildFolders()([]ContactFolder) {
     if m == nil {
         return nil
@@ -27,6 +37,7 @@ func (m *ContactFolder) GetChildFolders()([]ContactFolder) {
         return m.childFolders
     }
 }
+// Gets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
 func (m *ContactFolder) GetContacts()([]Contact) {
     if m == nil {
         return nil
@@ -34,6 +45,7 @@ func (m *ContactFolder) GetContacts()([]Contact) {
         return m.contacts
     }
 }
+// Gets the displayName property value. The folder's display name.
 func (m *ContactFolder) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -41,6 +53,7 @@ func (m *ContactFolder) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *ContactFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -48,6 +61,7 @@ func (m *ContactFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExte
         return m.multiValueExtendedProperties
     }
 }
+// Gets the parentFolderId property value. The ID of the folder's parent folder.
 func (m *ContactFolder) GetParentFolderId()(*string) {
     if m == nil {
         return nil
@@ -55,6 +69,7 @@ func (m *ContactFolder) GetParentFolderId()(*string) {
         return m.parentFolderId
     }
 }
+// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *ContactFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -62,6 +77,7 @@ func (m *ContactFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyEx
         return m.singleValueExtendedProperties
     }
 }
+// Gets the wellKnownName property value. The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
 func (m *ContactFolder) GetWellKnownName()(*string) {
     if m == nil {
         return nil
@@ -69,6 +85,7 @@ func (m *ContactFolder) GetWellKnownName()(*string) {
         return m.wellKnownName
     }
 }
+// The deserialization information for the current model
 func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,6 +165,9 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *ContactFolder) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ContactFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -217,24 +237,45 @@ func (m *ContactFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
+// Sets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the childFolders property.
 func (m *ContactFolder) SetChildFolders(value []ContactFolder)() {
     m.childFolders = value
 }
+// Sets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the contacts property.
 func (m *ContactFolder) SetContacts(value []Contact)() {
     m.contacts = value
 }
+// Sets the displayName property value. The folder's display name.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *ContactFolder) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the multiValueExtendedProperties property.
 func (m *ContactFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
+// Sets the parentFolderId property value. The ID of the folder's parent folder.
+// Parameters:
+//  - value : Value to set for the parentFolderId property.
 func (m *ContactFolder) SetParentFolderId(value *string)() {
     m.parentFolderId = value
 }
+// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the singleValueExtendedProperties property.
 func (m *ContactFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }
+// Sets the wellKnownName property value. The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
+// Parameters:
+//  - value : Value to set for the wellKnownName property.
 func (m *ContactFolder) SetWellKnownName(value *string)() {
     m.wellKnownName = value
 }

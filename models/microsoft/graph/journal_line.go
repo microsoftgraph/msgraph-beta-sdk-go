@@ -5,27 +5,42 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type JournalLine struct {
     Entity
+    // 
     account *Account;
+    // 
     accountId *string;
+    // 
     accountNumber *string;
+    // 
     amount *float64;
+    // 
     comment *string;
+    // 
     description *string;
+    // 
     documentNumber *string;
+    // 
     externalDocumentNumber *string;
+    // 
     journalDisplayName *string;
+    // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     lineNumber *int32;
+    // 
     postingDate *string;
 }
+// Instantiates a new journalLine and sets the default values.
 func NewJournalLine()(*JournalLine) {
     m := &JournalLine{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the account property value. 
 func (m *JournalLine) GetAccount()(*Account) {
     if m == nil {
         return nil
@@ -33,6 +48,7 @@ func (m *JournalLine) GetAccount()(*Account) {
         return m.account
     }
 }
+// Gets the accountId property value. 
 func (m *JournalLine) GetAccountId()(*string) {
     if m == nil {
         return nil
@@ -40,6 +56,7 @@ func (m *JournalLine) GetAccountId()(*string) {
         return m.accountId
     }
 }
+// Gets the accountNumber property value. 
 func (m *JournalLine) GetAccountNumber()(*string) {
     if m == nil {
         return nil
@@ -47,6 +64,7 @@ func (m *JournalLine) GetAccountNumber()(*string) {
         return m.accountNumber
     }
 }
+// Gets the amount property value. 
 func (m *JournalLine) GetAmount()(*float64) {
     if m == nil {
         return nil
@@ -54,6 +72,7 @@ func (m *JournalLine) GetAmount()(*float64) {
         return m.amount
     }
 }
+// Gets the comment property value. 
 func (m *JournalLine) GetComment()(*string) {
     if m == nil {
         return nil
@@ -61,6 +80,7 @@ func (m *JournalLine) GetComment()(*string) {
         return m.comment
     }
 }
+// Gets the description property value. 
 func (m *JournalLine) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -68,6 +88,7 @@ func (m *JournalLine) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the documentNumber property value. 
 func (m *JournalLine) GetDocumentNumber()(*string) {
     if m == nil {
         return nil
@@ -75,6 +96,7 @@ func (m *JournalLine) GetDocumentNumber()(*string) {
         return m.documentNumber
     }
 }
+// Gets the externalDocumentNumber property value. 
 func (m *JournalLine) GetExternalDocumentNumber()(*string) {
     if m == nil {
         return nil
@@ -82,6 +104,7 @@ func (m *JournalLine) GetExternalDocumentNumber()(*string) {
         return m.externalDocumentNumber
     }
 }
+// Gets the journalDisplayName property value. 
 func (m *JournalLine) GetJournalDisplayName()(*string) {
     if m == nil {
         return nil
@@ -89,6 +112,7 @@ func (m *JournalLine) GetJournalDisplayName()(*string) {
         return m.journalDisplayName
     }
 }
+// Gets the lastModifiedDateTime property value. 
 func (m *JournalLine) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -96,6 +120,7 @@ func (m *JournalLine) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.lastModifiedDateTime
     }
 }
+// Gets the lineNumber property value. 
 func (m *JournalLine) GetLineNumber()(*int32) {
     if m == nil {
         return nil
@@ -103,6 +128,7 @@ func (m *JournalLine) GetLineNumber()(*int32) {
         return m.lineNumber
     }
 }
+// Gets the postingDate property value. 
 func (m *JournalLine) GetPostingDate()(*string) {
     if m == nil {
         return nil
@@ -110,6 +136,7 @@ func (m *JournalLine) GetPostingDate()(*string) {
         return m.postingDate
     }
 }
+// The deserialization information for the current model
 func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,6 +240,9 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *JournalLine) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *JournalLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -292,39 +322,75 @@ func (m *JournalLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
+// Sets the account property value. 
+// Parameters:
+//  - value : Value to set for the account property.
 func (m *JournalLine) SetAccount(value *Account)() {
     m.account = value
 }
+// Sets the accountId property value. 
+// Parameters:
+//  - value : Value to set for the accountId property.
 func (m *JournalLine) SetAccountId(value *string)() {
     m.accountId = value
 }
+// Sets the accountNumber property value. 
+// Parameters:
+//  - value : Value to set for the accountNumber property.
 func (m *JournalLine) SetAccountNumber(value *string)() {
     m.accountNumber = value
 }
+// Sets the amount property value. 
+// Parameters:
+//  - value : Value to set for the amount property.
 func (m *JournalLine) SetAmount(value *float64)() {
     m.amount = value
 }
+// Sets the comment property value. 
+// Parameters:
+//  - value : Value to set for the comment property.
 func (m *JournalLine) SetComment(value *string)() {
     m.comment = value
 }
+// Sets the description property value. 
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *JournalLine) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the documentNumber property value. 
+// Parameters:
+//  - value : Value to set for the documentNumber property.
 func (m *JournalLine) SetDocumentNumber(value *string)() {
     m.documentNumber = value
 }
+// Sets the externalDocumentNumber property value. 
+// Parameters:
+//  - value : Value to set for the externalDocumentNumber property.
 func (m *JournalLine) SetExternalDocumentNumber(value *string)() {
     m.externalDocumentNumber = value
 }
+// Sets the journalDisplayName property value. 
+// Parameters:
+//  - value : Value to set for the journalDisplayName property.
 func (m *JournalLine) SetJournalDisplayName(value *string)() {
     m.journalDisplayName = value
 }
+// Sets the lastModifiedDateTime property value. 
+// Parameters:
+//  - value : Value to set for the lastModifiedDateTime property.
 func (m *JournalLine) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
+// Sets the lineNumber property value. 
+// Parameters:
+//  - value : Value to set for the lineNumber property.
 func (m *JournalLine) SetLineNumber(value *int32)() {
     m.lineNumber = value
 }
+// Sets the postingDate property value. 
+// Parameters:
+//  - value : Value to set for the postingDate property.
 func (m *JournalLine) SetPostingDate(value *string)() {
     m.postingDate = value
 }

@@ -4,26 +4,40 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DeviceManagementSettingDefinition struct {
     Entity
+    // Collection of constraints for the setting value
     constraints []DeviceManagementConstraint;
+    // Collection of dependencies on other settings
     dependencies []DeviceManagementSettingDependency;
+    // The setting's description
     description *string;
+    // The setting's display name
     displayName *string;
+    // Url to setting documentation
     documentationUrl *string;
+    // subtitle of the setting header for more details about the category/section
     headerSubtitle *string;
+    // title of the setting header represents a category/section of a setting/settings
     headerTitle *string;
+    // If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
     isTopLevel *bool;
+    // Keywords associated with the setting
     keywords []string;
+    // Placeholder text as an example of valid input
     placeholderText *string;
+    // The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
     valueType *DeviceManangementIntentValueType;
 }
+// Instantiates a new deviceManagementSettingDefinition and sets the default values.
 func NewDeviceManagementSettingDefinition()(*DeviceManagementSettingDefinition) {
     m := &DeviceManagementSettingDefinition{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the constraints property value. Collection of constraints for the setting value
 func (m *DeviceManagementSettingDefinition) GetConstraints()([]DeviceManagementConstraint) {
     if m == nil {
         return nil
@@ -31,6 +45,7 @@ func (m *DeviceManagementSettingDefinition) GetConstraints()([]DeviceManagementC
         return m.constraints
     }
 }
+// Gets the dependencies property value. Collection of dependencies on other settings
 func (m *DeviceManagementSettingDefinition) GetDependencies()([]DeviceManagementSettingDependency) {
     if m == nil {
         return nil
@@ -38,6 +53,7 @@ func (m *DeviceManagementSettingDefinition) GetDependencies()([]DeviceManagement
         return m.dependencies
     }
 }
+// Gets the description property value. The setting's description
 func (m *DeviceManagementSettingDefinition) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -45,6 +61,7 @@ func (m *DeviceManagementSettingDefinition) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. The setting's display name
 func (m *DeviceManagementSettingDefinition) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -52,6 +69,7 @@ func (m *DeviceManagementSettingDefinition) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the documentationUrl property value. Url to setting documentation
 func (m *DeviceManagementSettingDefinition) GetDocumentationUrl()(*string) {
     if m == nil {
         return nil
@@ -59,6 +77,7 @@ func (m *DeviceManagementSettingDefinition) GetDocumentationUrl()(*string) {
         return m.documentationUrl
     }
 }
+// Gets the headerSubtitle property value. subtitle of the setting header for more details about the category/section
 func (m *DeviceManagementSettingDefinition) GetHeaderSubtitle()(*string) {
     if m == nil {
         return nil
@@ -66,6 +85,7 @@ func (m *DeviceManagementSettingDefinition) GetHeaderSubtitle()(*string) {
         return m.headerSubtitle
     }
 }
+// Gets the headerTitle property value. title of the setting header represents a category/section of a setting/settings
 func (m *DeviceManagementSettingDefinition) GetHeaderTitle()(*string) {
     if m == nil {
         return nil
@@ -73,6 +93,7 @@ func (m *DeviceManagementSettingDefinition) GetHeaderTitle()(*string) {
         return m.headerTitle
     }
 }
+// Gets the isTopLevel property value. If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
 func (m *DeviceManagementSettingDefinition) GetIsTopLevel()(*bool) {
     if m == nil {
         return nil
@@ -80,6 +101,7 @@ func (m *DeviceManagementSettingDefinition) GetIsTopLevel()(*bool) {
         return m.isTopLevel
     }
 }
+// Gets the keywords property value. Keywords associated with the setting
 func (m *DeviceManagementSettingDefinition) GetKeywords()([]string) {
     if m == nil {
         return nil
@@ -87,6 +109,7 @@ func (m *DeviceManagementSettingDefinition) GetKeywords()([]string) {
         return m.keywords
     }
 }
+// Gets the placeholderText property value. Placeholder text as an example of valid input
 func (m *DeviceManagementSettingDefinition) GetPlaceholderText()(*string) {
     if m == nil {
         return nil
@@ -94,6 +117,7 @@ func (m *DeviceManagementSettingDefinition) GetPlaceholderText()(*string) {
         return m.placeholderText
     }
 }
+// Gets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
 func (m *DeviceManagementSettingDefinition) GetValueType()(*DeviceManangementIntentValueType) {
     if m == nil {
         return nil
@@ -101,6 +125,7 @@ func (m *DeviceManagementSettingDefinition) GetValueType()(*DeviceManangementInt
         return m.valueType
     }
 }
+// The deserialization information for the current model
 func (m *DeviceManagementSettingDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["constraints"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,6 +234,9 @@ func (m *DeviceManagementSettingDefinition) GetFieldDeserializers()(map[string]f
 func (m *DeviceManagementSettingDefinition) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -293,36 +321,69 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
+// Sets the constraints property value. Collection of constraints for the setting value
+// Parameters:
+//  - value : Value to set for the constraints property.
 func (m *DeviceManagementSettingDefinition) SetConstraints(value []DeviceManagementConstraint)() {
     m.constraints = value
 }
+// Sets the dependencies property value. Collection of dependencies on other settings
+// Parameters:
+//  - value : Value to set for the dependencies property.
 func (m *DeviceManagementSettingDefinition) SetDependencies(value []DeviceManagementSettingDependency)() {
     m.dependencies = value
 }
+// Sets the description property value. The setting's description
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *DeviceManagementSettingDefinition) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. The setting's display name
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *DeviceManagementSettingDefinition) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the documentationUrl property value. Url to setting documentation
+// Parameters:
+//  - value : Value to set for the documentationUrl property.
 func (m *DeviceManagementSettingDefinition) SetDocumentationUrl(value *string)() {
     m.documentationUrl = value
 }
+// Sets the headerSubtitle property value. subtitle of the setting header for more details about the category/section
+// Parameters:
+//  - value : Value to set for the headerSubtitle property.
 func (m *DeviceManagementSettingDefinition) SetHeaderSubtitle(value *string)() {
     m.headerSubtitle = value
 }
+// Sets the headerTitle property value. title of the setting header represents a category/section of a setting/settings
+// Parameters:
+//  - value : Value to set for the headerTitle property.
 func (m *DeviceManagementSettingDefinition) SetHeaderTitle(value *string)() {
     m.headerTitle = value
 }
+// Sets the isTopLevel property value. If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
+// Parameters:
+//  - value : Value to set for the isTopLevel property.
 func (m *DeviceManagementSettingDefinition) SetIsTopLevel(value *bool)() {
     m.isTopLevel = value
 }
+// Sets the keywords property value. Keywords associated with the setting
+// Parameters:
+//  - value : Value to set for the keywords property.
 func (m *DeviceManagementSettingDefinition) SetKeywords(value []string)() {
     m.keywords = value
 }
+// Sets the placeholderText property value. Placeholder text as an example of valid input
+// Parameters:
+//  - value : Value to set for the placeholderText property.
 func (m *DeviceManagementSettingDefinition) SetPlaceholderText(value *string)() {
     m.placeholderText = value
 }
+// Sets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
+// Parameters:
+//  - value : Value to set for the valueType property.
 func (m *DeviceManagementSettingDefinition) SetValueType(value *DeviceManangementIntentValueType)() {
     m.valueType = value
 }

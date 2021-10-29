@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type EntityType int
 
 const (
@@ -15,11 +16,10 @@ const (
     LISTITEM_ENTITYTYPE
     DRIVE_ENTITYTYPE
     UNKNOWNFUTUREVALUE_ENTITYTYPE
-    PERSON_ENTITYTYPE
 )
 
 func (i EntityType) String() string {
-    return []string{"EVENT", "MESSAGE", "DRIVEITEM", "EXTERNALITEM", "SITE", "LIST", "LISTITEM", "DRIVE", "UNKNOWNFUTUREVALUE", "PERSON"}[i]
+    return []string{"EVENT", "MESSAGE", "DRIVEITEM", "EXTERNALITEM", "SITE", "LIST", "LISTITEM", "DRIVE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEntityType(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -41,8 +41,6 @@ func ParseEntityType(v string) (interface{}, error) {
             return DRIVE_ENTITYTYPE, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_ENTITYTYPE, nil
-        case "PERSON":
-            return PERSON_ENTITYTYPE, nil
     }
     return 0, errors.New("Unknown EntityType value: " + v)
 }

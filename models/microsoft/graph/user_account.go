@@ -5,21 +5,31 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type UserAccount struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     displayName *string;
+    // 
     lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     riskScore *string;
+    // 
     service *string;
+    // 
     signinName *string;
+    // 
     status *AccountStatus;
 }
+// Instantiates a new userAccount and sets the default values.
 func NewUserAccount()(*UserAccount) {
     m := &UserAccount{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAccount) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,6 +37,7 @@ func (m *UserAccount) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the displayName property value. 
 func (m *UserAccount) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -34,6 +45,7 @@ func (m *UserAccount) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the lastSeenDateTime property value. 
 func (m *UserAccount) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -41,6 +53,7 @@ func (m *UserAccount) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.lastSeenDateTime
     }
 }
+// Gets the riskScore property value. 
 func (m *UserAccount) GetRiskScore()(*string) {
     if m == nil {
         return nil
@@ -48,6 +61,7 @@ func (m *UserAccount) GetRiskScore()(*string) {
         return m.riskScore
     }
 }
+// Gets the service property value. 
 func (m *UserAccount) GetService()(*string) {
     if m == nil {
         return nil
@@ -55,6 +69,7 @@ func (m *UserAccount) GetService()(*string) {
         return m.service
     }
 }
+// Gets the signinName property value. 
 func (m *UserAccount) GetSigninName()(*string) {
     if m == nil {
         return nil
@@ -62,6 +77,7 @@ func (m *UserAccount) GetSigninName()(*string) {
         return m.signinName
     }
 }
+// Gets the status property value. 
 func (m *UserAccount) GetStatus()(*AccountStatus) {
     if m == nil {
         return nil
@@ -69,6 +85,7 @@ func (m *UserAccount) GetStatus()(*AccountStatus) {
         return m.status
     }
 }
+// The deserialization information for the current model
 func (m *UserAccount) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,6 +142,9 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *UserAccount) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UserAccount) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -171,24 +191,45 @@ func (m *UserAccount) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *UserAccount) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the displayName property value. 
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *UserAccount) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the lastSeenDateTime property value. 
+// Parameters:
+//  - value : Value to set for the lastSeenDateTime property.
 func (m *UserAccount) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastSeenDateTime = value
 }
+// Sets the riskScore property value. 
+// Parameters:
+//  - value : Value to set for the riskScore property.
 func (m *UserAccount) SetRiskScore(value *string)() {
     m.riskScore = value
 }
+// Sets the service property value. 
+// Parameters:
+//  - value : Value to set for the service property.
 func (m *UserAccount) SetService(value *string)() {
     m.service = value
 }
+// Sets the signinName property value. 
+// Parameters:
+//  - value : Value to set for the signinName property.
 func (m *UserAccount) SetSigninName(value *string)() {
     m.signinName = value
 }
+// Sets the status property value. 
+// Parameters:
+//  - value : Value to set for the status property.
 func (m *UserAccount) SetStatus(value *AccountStatus)() {
     m.status = value
 }

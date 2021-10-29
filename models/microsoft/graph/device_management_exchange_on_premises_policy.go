@@ -4,20 +4,28 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
+    // The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
     accessRules []DeviceManagementExchangeAccessRule;
+    // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
     conditionalAccessSettings *OnPremisesConditionalAccessSettings;
+    // Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
     defaultAccessLevel *DeviceManagementExchangeAccessLevel;
+    // The list of device classes known to Exchange
     knownDeviceClasses []DeviceManagementExchangeDeviceClass;
+    // Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
     notificationContent []byte;
 }
+// Instantiates a new deviceManagementExchangeOnPremisesPolicy and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPremisesPolicy) {
     m := &DeviceManagementExchangeOnPremisesPolicy{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the accessRules property value. The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetAccessRules()([]DeviceManagementExchangeAccessRule) {
     if m == nil {
         return nil
@@ -25,6 +33,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetAccessRules()([]DeviceMana
         return m.accessRules
     }
 }
+// Gets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {
     if m == nil {
         return nil
@@ -32,6 +41,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetConditionalAccessSettings(
         return m.conditionalAccessSettings
     }
 }
+// Gets the defaultAccessLevel property value. Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*DeviceManagementExchangeAccessLevel) {
     if m == nil {
         return nil
@@ -39,6 +49,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*Devi
         return m.defaultAccessLevel
     }
 }
+// Gets the knownDeviceClasses property value. The list of device classes known to Exchange
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetKnownDeviceClasses()([]DeviceManagementExchangeDeviceClass) {
     if m == nil {
         return nil
@@ -46,6 +57,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetKnownDeviceClasses()([]Dev
         return m.knownDeviceClasses
     }
 }
+// Gets the notificationContent property value. Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetNotificationContent()([]byte) {
     if m == nil {
         return nil
@@ -53,6 +65,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetNotificationContent()([]by
         return m.notificationContent
     }
 }
+// The deserialization information for the current model
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,6 +122,9 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
 func (m *DeviceManagementExchangeOnPremisesPolicy) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -157,18 +173,33 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aea
     }
     return nil
 }
+// Sets the accessRules property value. The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
+// Parameters:
+//  - value : Value to set for the accessRules property.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetAccessRules(value []DeviceManagementExchangeAccessRule)() {
     m.accessRules = value
 }
+// Sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+// Parameters:
+//  - value : Value to set for the conditionalAccessSettings property.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetConditionalAccessSettings(value *OnPremisesConditionalAccessSettings)() {
     m.conditionalAccessSettings = value
 }
+// Sets the defaultAccessLevel property value. Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
+// Parameters:
+//  - value : Value to set for the defaultAccessLevel property.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetDefaultAccessLevel(value *DeviceManagementExchangeAccessLevel)() {
     m.defaultAccessLevel = value
 }
+// Sets the knownDeviceClasses property value. The list of device classes known to Exchange
+// Parameters:
+//  - value : Value to set for the knownDeviceClasses property.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetKnownDeviceClasses(value []DeviceManagementExchangeDeviceClass)() {
     m.knownDeviceClasses = value
 }
+// Sets the notificationContent property value. Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
+// Parameters:
+//  - value : Value to set for the notificationContent property.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetNotificationContent(value []byte)() {
     m.notificationContent = value
 }

@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DirectorySetting struct {
     Entity
+    // Display name of this group of settings, which comes from the associated template. Read-only.
     displayName *string;
+    // Unique identifier for the template used to create this group of settings. Read-only.
     templateId *string;
+    // Collection of name value pairs. Must contain and set all the settings defined in the template.
     values []SettingValue;
 }
+// Instantiates a new directorySetting and sets the default values.
 func NewDirectorySetting()(*DirectorySetting) {
     m := &DirectorySetting{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the displayName property value. Display name of this group of settings, which comes from the associated template. Read-only.
 func (m *DirectorySetting) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *DirectorySetting) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
 func (m *DirectorySetting) GetTemplateId()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *DirectorySetting) GetTemplateId()(*string) {
         return m.templateId
     }
 }
+// Gets the values property value. Collection of name value pairs. Must contain and set all the settings defined in the template.
 func (m *DirectorySetting) GetValues()([]SettingValue) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *DirectorySetting) GetValues()([]SettingValue) {
         return m.values
     }
 }
+// The deserialization information for the current model
 func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,6 +81,9 @@ func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *DirectorySetting) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DirectorySetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -102,12 +114,21 @@ func (m *DirectorySetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
+// Sets the displayName property value. Display name of this group of settings, which comes from the associated template. Read-only.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *DirectorySetting) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
+// Parameters:
+//  - value : Value to set for the templateId property.
 func (m *DirectorySetting) SetTemplateId(value *string)() {
     m.templateId = value
 }
+// Sets the values property value. Collection of name value pairs. Must contain and set all the settings defined in the template.
+// Parameters:
+//  - value : Value to set for the values property.
 func (m *DirectorySetting) SetValues(value []SettingValue)() {
     m.values = value
 }

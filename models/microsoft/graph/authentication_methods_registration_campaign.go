@@ -4,19 +4,27 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type AuthenticationMethodsRegistrationCampaign struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Users and groups of users that are excluded from being prompted to set up the authentication method.
     excludeTargets []ExcludeTarget;
+    // Users and groups of users that are prompted to set up the authentication method.
     includeTargets []AuthenticationMethodsRegistrationCampaignIncludeTarget;
+    // Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
     snoozeDurationInDays *int32;
+    // Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.
     state *AdvancedConfigState;
 }
+// Instantiates a new authenticationMethodsRegistrationCampaign and sets the default values.
 func NewAuthenticationMethodsRegistrationCampaign()(*AuthenticationMethodsRegistrationCampaign) {
     m := &AuthenticationMethodsRegistrationCampaign{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +32,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[stri
         return m.additionalData
     }
 }
+// Gets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]ExcludeTarget) {
     if m == nil {
         return nil
@@ -31,6 +40,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]Exclud
         return m.excludeTargets
     }
 }
+// Gets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]AuthenticationMethodsRegistrationCampaignIncludeTarget) {
     if m == nil {
         return nil
@@ -38,6 +48,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]Authen
         return m.includeTargets
     }
 }
+// Gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
 func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*int32) {
     if m == nil {
         return nil
@@ -45,6 +56,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*i
         return m.snoozeDurationInDays
     }
 }
+// Gets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.
 func (m *AuthenticationMethodsRegistrationCampaign) GetState()(*AdvancedConfigState) {
     if m == nil {
         return nil
@@ -52,6 +64,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetState()(*AdvancedConfigSt
         return m.state
     }
 }
+// The deserialization information for the current model
 func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["excludeTargets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,6 +113,9 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
 func (m *AuthenticationMethodsRegistrationCampaign) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExcludeTargets()))
@@ -144,18 +160,33 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i04eb5309ae
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *AuthenticationMethodsRegistrationCampaign) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
+// Parameters:
+//  - value : Value to set for the excludeTargets property.
 func (m *AuthenticationMethodsRegistrationCampaign) SetExcludeTargets(value []ExcludeTarget)() {
     m.excludeTargets = value
 }
+// Sets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
+// Parameters:
+//  - value : Value to set for the includeTargets property.
 func (m *AuthenticationMethodsRegistrationCampaign) SetIncludeTargets(value []AuthenticationMethodsRegistrationCampaignIncludeTarget)() {
     m.includeTargets = value
 }
+// Sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+// Parameters:
+//  - value : Value to set for the snoozeDurationInDays property.
 func (m *AuthenticationMethodsRegistrationCampaign) SetSnoozeDurationInDays(value *int32)() {
     m.snoozeDurationInDays = value
 }
+// Sets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.
+// Parameters:
+//  - value : Value to set for the state property.
 func (m *AuthenticationMethodsRegistrationCampaign) SetState(value *AdvancedConfigState)() {
     m.state = value
 }

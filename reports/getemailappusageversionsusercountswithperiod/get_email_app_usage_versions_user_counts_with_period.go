@@ -5,24 +5,36 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetEmailAppUsageVersionsUserCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     outlook2007 *int64;
+    // 
     outlook2010 *int64;
+    // 
     outlook2013 *int64;
+    // 
     outlook2016 *int64;
+    // 
     outlook2019 *int64;
+    // 
     outlookM365 *int64;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
+    // 
     undetermined *int64;
 }
+// Instantiates a new getEmailAppUsageVersionsUserCountsWithPeriod and sets the default values.
 func NewGetEmailAppUsageVersionsUserCountsWithPeriod()(*GetEmailAppUsageVersionsUserCountsWithPeriod) {
     m := &GetEmailAppUsageVersionsUserCountsWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the outlook2007 property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2007()(*int64) {
     if m == nil {
         return nil
@@ -30,6 +42,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2007()(*int64) 
         return m.outlook2007
     }
 }
+// Gets the outlook2010 property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2010()(*int64) {
     if m == nil {
         return nil
@@ -37,6 +50,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2010()(*int64) 
         return m.outlook2010
     }
 }
+// Gets the outlook2013 property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2013()(*int64) {
     if m == nil {
         return nil
@@ -44,6 +58,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2013()(*int64) 
         return m.outlook2013
     }
 }
+// Gets the outlook2016 property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2016()(*int64) {
     if m == nil {
         return nil
@@ -51,6 +66,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2016()(*int64) 
         return m.outlook2016
     }
 }
+// Gets the outlook2019 property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2019()(*int64) {
     if m == nil {
         return nil
@@ -58,6 +74,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlook2019()(*int64) 
         return m.outlook2019
     }
 }
+// Gets the outlookM365 property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlookM365()(*int64) {
     if m == nil {
         return nil
@@ -65,6 +82,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetOutlookM365()(*int64) 
         return m.outlookM365
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -72,6 +90,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetReportPeriod()(*string
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -79,6 +98,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetReportRefreshDate()(*s
         return m.reportRefreshDate
     }
 }
+// Gets the undetermined property value. 
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetUndetermined()(*int64) {
     if m == nil {
         return nil
@@ -86,6 +106,7 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetUndetermined()(*int64)
         return m.undetermined
     }
 }
+// The deserialization information for the current model
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["outlook2007"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,6 +186,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -226,30 +250,57 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) Serialize(writer i04eb530
     }
     return nil
 }
+// Sets the outlook2007 property value. 
+// Parameters:
+//  - value : Value to set for the outlook2007 property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetOutlook2007(value *int64)() {
     m.outlook2007 = value
 }
+// Sets the outlook2010 property value. 
+// Parameters:
+//  - value : Value to set for the outlook2010 property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetOutlook2010(value *int64)() {
     m.outlook2010 = value
 }
+// Sets the outlook2013 property value. 
+// Parameters:
+//  - value : Value to set for the outlook2013 property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetOutlook2013(value *int64)() {
     m.outlook2013 = value
 }
+// Sets the outlook2016 property value. 
+// Parameters:
+//  - value : Value to set for the outlook2016 property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetOutlook2016(value *int64)() {
     m.outlook2016 = value
 }
+// Sets the outlook2019 property value. 
+// Parameters:
+//  - value : Value to set for the outlook2019 property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetOutlook2019(value *int64)() {
     m.outlook2019 = value
 }
+// Sets the outlookM365 property value. 
+// Parameters:
+//  - value : Value to set for the outlookM365 property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetOutlookM365(value *int64)() {
     m.outlookM365 = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
+// Sets the undetermined property value. 
+// Parameters:
+//  - value : Value to set for the undetermined property.
 func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) SetUndetermined(value *int64)() {
     m.undetermined = value
 }

@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type TrustFrameworkKeySet struct {
     Entity
+    // A collection of the keys.
     keys []TrustFrameworkKey;
 }
+// Instantiates a new trustFrameworkKeySet and sets the default values.
 func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {
     m := &TrustFrameworkKeySet{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the keys property value. A collection of the keys.
 func (m *TrustFrameworkKeySet) GetKeys()([]TrustFrameworkKey) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *TrustFrameworkKeySet) GetKeys()([]TrustFrameworkKey) {
         return m.keys
     }
 }
+// The deserialization information for the current model
 func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["keys"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -40,6 +45,9 @@ func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(interface
 func (m *TrustFrameworkKeySet) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *TrustFrameworkKeySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -58,6 +66,9 @@ func (m *TrustFrameworkKeySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
+// Sets the keys property value. A collection of the keys.
+// Parameters:
+//  - value : Value to set for the keys property.
 func (m *TrustFrameworkKeySet) SetKeys(value []TrustFrameworkKey)() {
     m.keys = value
 }

@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type DeviceGuardVirtualizationBasedSecurityHardwareRequirementState int
 
 const (

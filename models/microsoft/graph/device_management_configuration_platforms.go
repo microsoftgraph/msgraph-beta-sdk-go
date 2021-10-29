@@ -3,22 +3,29 @@ import (
     "strings"
     "errors"
 )
+// 
 type DeviceManagementConfigurationPlatforms int
 
 const (
     NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS DeviceManagementConfigurationPlatforms = iota
+    ANDROID_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    IOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
     MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
     WINDOWS10X_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
     WINDOWS10_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
 )
 
 func (i DeviceManagementConfigurationPlatforms) String() string {
-    return []string{"NONE", "MACOS", "WINDOWS10X", "WINDOWS10"}[i]
+    return []string{"NONE", "ANDROID", "IOS", "MACOS", "WINDOWS10X", "WINDOWS10"}[i]
 }
 func ParseDeviceManagementConfigurationPlatforms(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
         case "NONE":
             return NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
+        case "ANDROID":
+            return ANDROID_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
+        case "IOS":
+            return IOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
         case "MACOS":
             return MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
         case "WINDOWS10X":

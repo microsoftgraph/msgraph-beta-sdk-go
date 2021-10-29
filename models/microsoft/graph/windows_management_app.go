@@ -4,19 +4,26 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type WindowsManagementApp struct {
     Entity
+    // Windows management app available version.
     availableVersion *string;
+    // The list of health states for installed Windows management app.
     healthStates []WindowsManagementAppHealthState;
+    // Managed Installer Status. Possible values are: disabled, enabled.
     managedInstaller *ManagedInstallerStatus;
+    // Managed Installer Configured Date Time
     managedInstallerConfiguredDateTime *string;
 }
+// Instantiates a new windowsManagementApp and sets the default values.
 func NewWindowsManagementApp()(*WindowsManagementApp) {
     m := &WindowsManagementApp{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the availableVersion property value. Windows management app available version.
 func (m *WindowsManagementApp) GetAvailableVersion()(*string) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *WindowsManagementApp) GetAvailableVersion()(*string) {
         return m.availableVersion
     }
 }
+// Gets the healthStates property value. The list of health states for installed Windows management app.
 func (m *WindowsManagementApp) GetHealthStates()([]WindowsManagementAppHealthState) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *WindowsManagementApp) GetHealthStates()([]WindowsManagementAppHealthSta
         return m.healthStates
     }
 }
+// Gets the managedInstaller property value. Managed Installer Status. Possible values are: disabled, enabled.
 func (m *WindowsManagementApp) GetManagedInstaller()(*ManagedInstallerStatus) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *WindowsManagementApp) GetManagedInstaller()(*ManagedInstallerStatus) {
         return m.managedInstaller
     }
 }
+// Gets the managedInstallerConfiguredDateTime property value. Managed Installer Configured Date Time
 func (m *WindowsManagementApp) GetManagedInstallerConfiguredDateTime()(*string) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *WindowsManagementApp) GetManagedInstallerConfiguredDateTime()(*string) 
         return m.managedInstallerConfiguredDateTime
     }
 }
+// The deserialization information for the current model
 func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["availableVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,6 +100,9 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
 func (m *WindowsManagementApp) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *WindowsManagementApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -126,15 +140,27 @@ func (m *WindowsManagementApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
+// Sets the availableVersion property value. Windows management app available version.
+// Parameters:
+//  - value : Value to set for the availableVersion property.
 func (m *WindowsManagementApp) SetAvailableVersion(value *string)() {
     m.availableVersion = value
 }
+// Sets the healthStates property value. The list of health states for installed Windows management app.
+// Parameters:
+//  - value : Value to set for the healthStates property.
 func (m *WindowsManagementApp) SetHealthStates(value []WindowsManagementAppHealthState)() {
     m.healthStates = value
 }
+// Sets the managedInstaller property value. Managed Installer Status. Possible values are: disabled, enabled.
+// Parameters:
+//  - value : Value to set for the managedInstaller property.
 func (m *WindowsManagementApp) SetManagedInstaller(value *ManagedInstallerStatus)() {
     m.managedInstaller = value
 }
+// Sets the managedInstallerConfiguredDateTime property value. Managed Installer Configured Date Time
+// Parameters:
+//  - value : Value to set for the managedInstallerConfiguredDateTime property.
 func (m *WindowsManagementApp) SetManagedInstallerConfiguredDateTime(value *string)() {
     m.managedInstallerConfiguredDateTime = value
 }

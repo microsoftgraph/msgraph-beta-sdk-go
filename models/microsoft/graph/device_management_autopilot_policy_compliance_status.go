@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type DeviceManagementAutopilotPolicyComplianceStatus int
 
 const (

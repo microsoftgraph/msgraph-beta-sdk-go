@@ -5,19 +5,27 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type UpdateRequestBody struct {
+    // 
     addedPolicySetItems []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem;
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     assignments []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetAssignment;
+    // 
     deletedPolicySetItems []string;
+    // 
     updatedPolicySetItems []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem;
 }
+// Instantiates a new updateRequestBody and sets the default values.
 func NewUpdateRequestBody()(*UpdateRequestBody) {
     m := &UpdateRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the addedPolicySetItems property value. 
 func (m *UpdateRequestBody) GetAddedPolicySetItems()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem) {
     if m == nil {
         return nil
@@ -25,6 +33,7 @@ func (m *UpdateRequestBody) GetAddedPolicySetItems()([]i535684e11b5500196ecb4b5c
         return m.addedPolicySetItems
     }
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,6 +41,7 @@ func (m *UpdateRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the assignments property value. 
 func (m *UpdateRequestBody) GetAssignments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetAssignment) {
     if m == nil {
         return nil
@@ -39,6 +49,7 @@ func (m *UpdateRequestBody) GetAssignments()([]i535684e11b5500196ecb4b5c6634e065
         return m.assignments
     }
 }
+// Gets the deletedPolicySetItems property value. 
 func (m *UpdateRequestBody) GetDeletedPolicySetItems()([]string) {
     if m == nil {
         return nil
@@ -46,6 +57,7 @@ func (m *UpdateRequestBody) GetDeletedPolicySetItems()([]string) {
         return m.deletedPolicySetItems
     }
 }
+// Gets the updatedPolicySetItems property value. 
 func (m *UpdateRequestBody) GetUpdatedPolicySetItems()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem) {
     if m == nil {
         return nil
@@ -53,6 +65,7 @@ func (m *UpdateRequestBody) GetUpdatedPolicySetItems()([]i535684e11b5500196ecb4b
         return m.updatedPolicySetItems
     }
 }
+// The deserialization information for the current model
 func (m *UpdateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["addedPolicySetItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,6 +121,9 @@ func (m *UpdateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
 func (m *UpdateRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UpdateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAddedPolicySetItems()))
@@ -156,18 +172,33 @@ func (m *UpdateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
+// Sets the addedPolicySetItems property value. 
+// Parameters:
+//  - value : Value to set for the addedPolicySetItems property.
 func (m *UpdateRequestBody) SetAddedPolicySetItems(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem)() {
     m.addedPolicySetItems = value
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *UpdateRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the assignments property value. 
+// Parameters:
+//  - value : Value to set for the assignments property.
 func (m *UpdateRequestBody) SetAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetAssignment)() {
     m.assignments = value
 }
+// Sets the deletedPolicySetItems property value. 
+// Parameters:
+//  - value : Value to set for the deletedPolicySetItems property.
 func (m *UpdateRequestBody) SetDeletedPolicySetItems(value []string)() {
     m.deletedPolicySetItems = value
 }
+// Sets the updatedPolicySetItems property value. 
+// Parameters:
+//  - value : Value to set for the updatedPolicySetItems property.
 func (m *UpdateRequestBody) SetUpdatedPolicySetItems(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem)() {
     m.updatedPolicySetItems = value
 }

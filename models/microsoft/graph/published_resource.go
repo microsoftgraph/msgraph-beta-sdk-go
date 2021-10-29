@@ -4,19 +4,26 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type PublishedResource struct {
     Entity
+    // List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
     agentGroups []OnPremisesAgentGroup;
+    // Display Name of the publishedResource.
     displayName *string;
+    // Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
     publishingType *OnPremisesPublishingType;
+    // Name of the publishedResource.
     resourceName *string;
 }
+// Instantiates a new publishedResource and sets the default values.
 func NewPublishedResource()(*PublishedResource) {
     m := &PublishedResource{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
 func (m *PublishedResource) GetAgentGroups()([]OnPremisesAgentGroup) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *PublishedResource) GetAgentGroups()([]OnPremisesAgentGroup) {
         return m.agentGroups
     }
 }
+// Gets the displayName property value. Display Name of the publishedResource.
 func (m *PublishedResource) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *PublishedResource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
 func (m *PublishedResource) GetPublishingType()(*OnPremisesPublishingType) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *PublishedResource) GetPublishingType()(*OnPremisesPublishingType) {
         return m.publishingType
     }
 }
+// Gets the resourceName property value. Name of the publishedResource.
 func (m *PublishedResource) GetResourceName()(*string) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *PublishedResource) GetResourceName()(*string) {
         return m.resourceName
     }
 }
+// The deserialization information for the current model
 func (m *PublishedResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agentGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,6 +100,9 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(interface{},
 func (m *PublishedResource) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *PublishedResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -126,15 +140,27 @@ func (m *PublishedResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
+// Sets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the agentGroups property.
 func (m *PublishedResource) SetAgentGroups(value []OnPremisesAgentGroup)() {
     m.agentGroups = value
 }
+// Sets the displayName property value. Display Name of the publishedResource.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *PublishedResource) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+// Parameters:
+//  - value : Value to set for the publishingType property.
 func (m *PublishedResource) SetPublishingType(value *OnPremisesPublishingType)() {
     m.publishingType = value
 }
+// Sets the resourceName property value. Name of the publishedResource.
+// Parameters:
+//  - value : Value to set for the resourceName property.
 func (m *PublishedResource) SetResourceName(value *string)() {
     m.resourceName = value
 }

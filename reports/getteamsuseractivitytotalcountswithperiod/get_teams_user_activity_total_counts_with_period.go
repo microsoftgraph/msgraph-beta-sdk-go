@@ -5,22 +5,32 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetTeamsUserActivityTotalCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // The number of unique 1:1 calls that users participated in.
     calls *int64;
+    // The number of unique online meetings that users participated in.
     meetings *int64;
+    // The number of unique messages that users posted in a private chat.
     privateChatMessages *int64;
+    // The date on which the users performed the activities.
     reportDate *string;
+    // The number of days the report covers.
     reportPeriod *string;
+    // The latest date of the content.
     reportRefreshDate *string;
+    // The number of unique messages that users posted in a team chat.
     teamChatMessages *int64;
 }
+// Instantiates a new getTeamsUserActivityTotalCountsWithPeriod and sets the default values.
 func NewGetTeamsUserActivityTotalCountsWithPeriod()(*GetTeamsUserActivityTotalCountsWithPeriod) {
     m := &GetTeamsUserActivityTotalCountsWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the calls property value. The number of unique 1:1 calls that users participated in.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetCalls()(*int64) {
     if m == nil {
         return nil
@@ -28,6 +38,7 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetCalls()(*int64) {
         return m.calls
     }
 }
+// Gets the meetings property value. The number of unique online meetings that users participated in.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetMeetings()(*int64) {
     if m == nil {
         return nil
@@ -35,6 +46,7 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetMeetings()(*int64) {
         return m.meetings
     }
 }
+// Gets the privateChatMessages property value. The number of unique messages that users posted in a private chat.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetPrivateChatMessages()(*int64) {
     if m == nil {
         return nil
@@ -42,6 +54,7 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetPrivateChatMessages()(*in
         return m.privateChatMessages
     }
 }
+// Gets the reportDate property value. The date on which the users performed the activities.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetReportDate()(*string) {
     if m == nil {
         return nil
@@ -49,6 +62,7 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetReportDate()(*string) {
         return m.reportDate
     }
 }
+// Gets the reportPeriod property value. The number of days the report covers.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -56,6 +70,7 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetReportPeriod()(*string) {
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. The latest date of the content.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -63,6 +78,7 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetReportRefreshDate()(*stri
         return m.reportRefreshDate
     }
 }
+// Gets the teamChatMessages property value. The number of unique messages that users posted in a team chat.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetTeamChatMessages()(*int64) {
     if m == nil {
         return nil
@@ -70,6 +86,7 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetTeamChatMessages()(*int64
         return m.teamChatMessages
     }
 }
+// The deserialization information for the current model
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["calls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,6 +150,9 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) GetFieldDeserializers()(map[
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -182,24 +202,45 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriod) Serialize(writer i04eb5309ae
     }
     return nil
 }
+// Sets the calls property value. The number of unique 1:1 calls that users participated in.
+// Parameters:
+//  - value : Value to set for the calls property.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) SetCalls(value *int64)() {
     m.calls = value
 }
+// Sets the meetings property value. The number of unique online meetings that users participated in.
+// Parameters:
+//  - value : Value to set for the meetings property.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) SetMeetings(value *int64)() {
     m.meetings = value
 }
+// Sets the privateChatMessages property value. The number of unique messages that users posted in a private chat.
+// Parameters:
+//  - value : Value to set for the privateChatMessages property.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) SetPrivateChatMessages(value *int64)() {
     m.privateChatMessages = value
 }
+// Sets the reportDate property value. The date on which the users performed the activities.
+// Parameters:
+//  - value : Value to set for the reportDate property.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) SetReportDate(value *string)() {
     m.reportDate = value
 }
+// Sets the reportPeriod property value. The number of days the report covers.
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. The latest date of the content.
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
+// Sets the teamChatMessages property value. The number of unique messages that users posted in a team chat.
+// Parameters:
+//  - value : Value to set for the teamChatMessages property.
 func (m *GetTeamsUserActivityTotalCountsWithPeriod) SetTeamChatMessages(value *int64)() {
     m.teamChatMessages = value
 }

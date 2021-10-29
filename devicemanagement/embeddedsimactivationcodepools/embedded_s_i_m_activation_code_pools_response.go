@@ -5,17 +5,23 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type EmbeddedSIMActivationCodePoolsResponse struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     nextLink *string;
+    // 
     value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePool;
 }
+// Instantiates a new embeddedSIMActivationCodePoolsResponse and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsResponse()(*EmbeddedSIMActivationCodePoolsResponse) {
     m := &EmbeddedSIMActivationCodePoolsResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EmbeddedSIMActivationCodePoolsResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *EmbeddedSIMActivationCodePoolsResponse) GetAdditionalData()(map[string]
         return m.additionalData
     }
 }
+// Gets the nextLink property value. 
 func (m *EmbeddedSIMActivationCodePoolsResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *EmbeddedSIMActivationCodePoolsResponse) GetNextLink()(*string) {
         return m.nextLink
     }
 }
+// Gets the value property value. 
 func (m *EmbeddedSIMActivationCodePoolsResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePool) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *EmbeddedSIMActivationCodePoolsResponse) GetValue()([]i535684e11b5500196
         return m.value
     }
 }
+// The deserialization information for the current model
 func (m *EmbeddedSIMActivationCodePoolsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["@odata.nextLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,6 +73,9 @@ func (m *EmbeddedSIMActivationCodePoolsResponse) GetFieldDeserializers()(map[str
 func (m *EmbeddedSIMActivationCodePoolsResponse) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *EmbeddedSIMActivationCodePoolsResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
@@ -90,12 +102,21 @@ func (m *EmbeddedSIMActivationCodePoolsResponse) Serialize(writer i04eb5309aeaaf
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *EmbeddedSIMActivationCodePoolsResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the nextLink property value. 
+// Parameters:
+//  - value : Value to set for the nextLink property.
 func (m *EmbeddedSIMActivationCodePoolsResponse) SetNextLink(value *string)() {
     m.nextLink = value
 }
+// Sets the value property value. 
+// Parameters:
+//  - value : Value to set for the value property.
 func (m *EmbeddedSIMActivationCodePoolsResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePool)() {
     m.value = value
 }

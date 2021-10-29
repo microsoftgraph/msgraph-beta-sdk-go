@@ -5,21 +5,31 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type IpmtRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     fv *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     nper *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     per *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     pv *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     rate *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     type_escaped *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new ipmtRequestBody and sets the default values.
 func NewIpmtRequestBody()(*IpmtRequestBody) {
     m := &IpmtRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpmtRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,6 +37,7 @@ func (m *IpmtRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the fv property value. 
 func (m *IpmtRequestBody) GetFv()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -34,6 +45,7 @@ func (m *IpmtRequestBody) GetFv()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6c
         return m.fv
     }
 }
+// Gets the nper property value. 
 func (m *IpmtRequestBody) GetNper()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -41,6 +53,7 @@ func (m *IpmtRequestBody) GetNper()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b
         return m.nper
     }
 }
+// Gets the per property value. 
 func (m *IpmtRequestBody) GetPer()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -48,6 +61,7 @@ func (m *IpmtRequestBody) GetPer()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.per
     }
 }
+// Gets the pv property value. 
 func (m *IpmtRequestBody) GetPv()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -55,6 +69,7 @@ func (m *IpmtRequestBody) GetPv()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6c
         return m.pv
     }
 }
+// Gets the rate property value. 
 func (m *IpmtRequestBody) GetRate()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -62,6 +77,7 @@ func (m *IpmtRequestBody) GetRate()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b
         return m.rate
     }
 }
+// Gets the type_escaped property value. 
 func (m *IpmtRequestBody) GetType_escaped()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -69,6 +85,7 @@ func (m *IpmtRequestBody) GetType_escaped()(*i535684e11b5500196ecb4b5c6634e0651f
         return m.type_escaped
     }
 }
+// The deserialization information for the current model
 func (m *IpmtRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["fv"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,6 +141,9 @@ func (m *IpmtRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *IpmtRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *IpmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("fv", m.GetFv())
@@ -169,24 +189,45 @@ func (m *IpmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *IpmtRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the fv property value. 
+// Parameters:
+//  - value : Value to set for the fv property.
 func (m *IpmtRequestBody) SetFv(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.fv = value
 }
+// Sets the nper property value. 
+// Parameters:
+//  - value : Value to set for the nper property.
 func (m *IpmtRequestBody) SetNper(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.nper = value
 }
+// Sets the per property value. 
+// Parameters:
+//  - value : Value to set for the per property.
 func (m *IpmtRequestBody) SetPer(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.per = value
 }
+// Sets the pv property value. 
+// Parameters:
+//  - value : Value to set for the pv property.
 func (m *IpmtRequestBody) SetPv(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.pv = value
 }
+// Sets the rate property value. 
+// Parameters:
+//  - value : Value to set for the rate property.
 func (m *IpmtRequestBody) SetRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.rate = value
 }
+// Sets the type_escaped property value. 
+// Parameters:
+//  - value : Value to set for the type_escaped property.
 func (m *IpmtRequestBody) SetType_escaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.type_escaped = value
 }

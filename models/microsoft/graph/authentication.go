@@ -4,25 +4,40 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Authentication struct {
     Entity
+    // 
     emailMethods []EmailAuthenticationMethod;
+    // 
     fido2Methods []Fido2AuthenticationMethod;
+    // 
     methods []AuthenticationMethod;
+    // 
     microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethod;
+    // 
     operations []LongRunningOperation;
+    // 
     passwordlessMicrosoftAuthenticatorMethods []PasswordlessMicrosoftAuthenticatorAuthenticationMethod;
+    // 
     passwordMethods []PasswordAuthenticationMethod;
+    // 
     phoneMethods []PhoneAuthenticationMethod;
+    // 
+    softwareOathMethods []SoftwareOathAuthenticationMethod;
+    // 
     temporaryAccessPassMethods []TemporaryAccessPassAuthenticationMethod;
+    // 
     windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethod;
 }
+// Instantiates a new authentication and sets the default values.
 func NewAuthentication()(*Authentication) {
     m := &Authentication{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the emailMethods property value. 
 func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethod) {
     if m == nil {
         return nil
@@ -30,6 +45,7 @@ func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethod) {
         return m.emailMethods
     }
 }
+// Gets the fido2Methods property value. 
 func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethod) {
     if m == nil {
         return nil
@@ -37,6 +53,7 @@ func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethod) {
         return m.fido2Methods
     }
 }
+// Gets the methods property value. 
 func (m *Authentication) GetMethods()([]AuthenticationMethod) {
     if m == nil {
         return nil
@@ -44,6 +61,7 @@ func (m *Authentication) GetMethods()([]AuthenticationMethod) {
         return m.methods
     }
 }
+// Gets the microsoftAuthenticatorMethods property value. 
 func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethod) {
     if m == nil {
         return nil
@@ -51,6 +69,7 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
         return m.microsoftAuthenticatorMethods
     }
 }
+// Gets the operations property value. 
 func (m *Authentication) GetOperations()([]LongRunningOperation) {
     if m == nil {
         return nil
@@ -58,6 +77,7 @@ func (m *Authentication) GetOperations()([]LongRunningOperation) {
         return m.operations
     }
 }
+// Gets the passwordlessMicrosoftAuthenticatorMethods property value. 
 func (m *Authentication) GetPasswordlessMicrosoftAuthenticatorMethods()([]PasswordlessMicrosoftAuthenticatorAuthenticationMethod) {
     if m == nil {
         return nil
@@ -65,6 +85,7 @@ func (m *Authentication) GetPasswordlessMicrosoftAuthenticatorMethods()([]Passwo
         return m.passwordlessMicrosoftAuthenticatorMethods
     }
 }
+// Gets the passwordMethods property value. 
 func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethod) {
     if m == nil {
         return nil
@@ -72,6 +93,7 @@ func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethod) {
         return m.passwordMethods
     }
 }
+// Gets the phoneMethods property value. 
 func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethod) {
     if m == nil {
         return nil
@@ -79,6 +101,15 @@ func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethod) {
         return m.phoneMethods
     }
 }
+// Gets the softwareOathMethods property value. 
+func (m *Authentication) GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethod) {
+    if m == nil {
+        return nil
+    } else {
+        return m.softwareOathMethods
+    }
+}
+// Gets the temporaryAccessPassMethods property value. 
 func (m *Authentication) GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethod) {
     if m == nil {
         return nil
@@ -86,6 +117,7 @@ func (m *Authentication) GetTemporaryAccessPassMethods()([]TemporaryAccessPassAu
         return m.temporaryAccessPassMethods
     }
 }
+// Gets the windowsHelloForBusinessMethods property value. 
 func (m *Authentication) GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethod) {
     if m == nil {
         return nil
@@ -93,6 +125,7 @@ func (m *Authentication) GetWindowsHelloForBusinessMethods()([]WindowsHelloForBu
         return m.windowsHelloForBusinessMethods
     }
 }
+// The deserialization information for the current model
 func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["emailMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,6 +224,18 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         m.SetPhoneMethods(res)
         return nil
     }
+    res["softwareOathMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSoftwareOathAuthenticationMethod() })
+        if err != nil {
+            return err
+        }
+        res := make([]SoftwareOathAuthenticationMethod, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*SoftwareOathAuthenticationMethod))
+        }
+        m.SetSoftwareOathMethods(res)
+        return nil
+    }
     res["temporaryAccessPassMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTemporaryAccessPassAuthenticationMethod() })
         if err != nil {
@@ -220,6 +265,9 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *Authentication) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -314,6 +362,17 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSoftwareOathMethods()))
+        for i, v := range m.GetSoftwareOathMethods() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("softwareOathMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTemporaryAccessPassMethods()))
         for i, v := range m.GetTemporaryAccessPassMethods() {
             temp := v
@@ -337,33 +396,69 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
+// Sets the emailMethods property value. 
+// Parameters:
+//  - value : Value to set for the emailMethods property.
 func (m *Authentication) SetEmailMethods(value []EmailAuthenticationMethod)() {
     m.emailMethods = value
 }
+// Sets the fido2Methods property value. 
+// Parameters:
+//  - value : Value to set for the fido2Methods property.
 func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethod)() {
     m.fido2Methods = value
 }
+// Sets the methods property value. 
+// Parameters:
+//  - value : Value to set for the methods property.
 func (m *Authentication) SetMethods(value []AuthenticationMethod)() {
     m.methods = value
 }
+// Sets the microsoftAuthenticatorMethods property value. 
+// Parameters:
+//  - value : Value to set for the microsoftAuthenticatorMethods property.
 func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethod)() {
     m.microsoftAuthenticatorMethods = value
 }
+// Sets the operations property value. 
+// Parameters:
+//  - value : Value to set for the operations property.
 func (m *Authentication) SetOperations(value []LongRunningOperation)() {
     m.operations = value
 }
+// Sets the passwordlessMicrosoftAuthenticatorMethods property value. 
+// Parameters:
+//  - value : Value to set for the passwordlessMicrosoftAuthenticatorMethods property.
 func (m *Authentication) SetPasswordlessMicrosoftAuthenticatorMethods(value []PasswordlessMicrosoftAuthenticatorAuthenticationMethod)() {
     m.passwordlessMicrosoftAuthenticatorMethods = value
 }
+// Sets the passwordMethods property value. 
+// Parameters:
+//  - value : Value to set for the passwordMethods property.
 func (m *Authentication) SetPasswordMethods(value []PasswordAuthenticationMethod)() {
     m.passwordMethods = value
 }
+// Sets the phoneMethods property value. 
+// Parameters:
+//  - value : Value to set for the phoneMethods property.
 func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethod)() {
     m.phoneMethods = value
 }
+// Sets the softwareOathMethods property value. 
+// Parameters:
+//  - value : Value to set for the softwareOathMethods property.
+func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethod)() {
+    m.softwareOathMethods = value
+}
+// Sets the temporaryAccessPassMethods property value. 
+// Parameters:
+//  - value : Value to set for the temporaryAccessPassMethods property.
 func (m *Authentication) SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethod)() {
     m.temporaryAccessPassMethods = value
 }
+// Sets the windowsHelloForBusinessMethods property value. 
+// Parameters:
+//  - value : Value to set for the windowsHelloForBusinessMethods property.
 func (m *Authentication) SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethod)() {
     m.windowsHelloForBusinessMethods = value
 }

@@ -4,20 +4,29 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type SensitiveContentLocation struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     confidence *int32;
+    // 
     evidences []SensitiveContentEvidence;
+    // 
     idMatch *string;
+    // 
     length *int32;
+    // 
     offset *int32;
 }
+// Instantiates a new sensitiveContentLocation and sets the default values.
 func NewSensitiveContentLocation()(*SensitiveContentLocation) {
     m := &SensitiveContentLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentLocation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -25,6 +34,7 @@ func (m *SensitiveContentLocation) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the confidence property value. 
 func (m *SensitiveContentLocation) GetConfidence()(*int32) {
     if m == nil {
         return nil
@@ -32,6 +42,7 @@ func (m *SensitiveContentLocation) GetConfidence()(*int32) {
         return m.confidence
     }
 }
+// Gets the evidences property value. 
 func (m *SensitiveContentLocation) GetEvidences()([]SensitiveContentEvidence) {
     if m == nil {
         return nil
@@ -39,6 +50,7 @@ func (m *SensitiveContentLocation) GetEvidences()([]SensitiveContentEvidence) {
         return m.evidences
     }
 }
+// Gets the idMatch property value. 
 func (m *SensitiveContentLocation) GetIdMatch()(*string) {
     if m == nil {
         return nil
@@ -46,6 +58,7 @@ func (m *SensitiveContentLocation) GetIdMatch()(*string) {
         return m.idMatch
     }
 }
+// Gets the length property value. 
 func (m *SensitiveContentLocation) GetLength()(*int32) {
     if m == nil {
         return nil
@@ -53,6 +66,7 @@ func (m *SensitiveContentLocation) GetLength()(*int32) {
         return m.length
     }
 }
+// Gets the offset property value. 
 func (m *SensitiveContentLocation) GetOffset()(*int32) {
     if m == nil {
         return nil
@@ -60,6 +74,7 @@ func (m *SensitiveContentLocation) GetOffset()(*int32) {
         return m.offset
     }
 }
+// The deserialization information for the current model
 func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["confidence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,6 +126,9 @@ func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(inter
 func (m *SensitiveContentLocation) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SensitiveContentLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("confidence", m.GetConfidence())
@@ -155,21 +173,39 @@ func (m *SensitiveContentLocation) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *SensitiveContentLocation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the confidence property value. 
+// Parameters:
+//  - value : Value to set for the confidence property.
 func (m *SensitiveContentLocation) SetConfidence(value *int32)() {
     m.confidence = value
 }
+// Sets the evidences property value. 
+// Parameters:
+//  - value : Value to set for the evidences property.
 func (m *SensitiveContentLocation) SetEvidences(value []SensitiveContentEvidence)() {
     m.evidences = value
 }
+// Sets the idMatch property value. 
+// Parameters:
+//  - value : Value to set for the idMatch property.
 func (m *SensitiveContentLocation) SetIdMatch(value *string)() {
     m.idMatch = value
 }
+// Sets the length property value. 
+// Parameters:
+//  - value : Value to set for the length property.
 func (m *SensitiveContentLocation) SetLength(value *int32)() {
     m.length = value
 }
+// Sets the offset property value. 
+// Parameters:
+//  - value : Value to set for the offset property.
 func (m *SensitiveContentLocation) SetOffset(value *int32)() {
     m.offset = value
 }

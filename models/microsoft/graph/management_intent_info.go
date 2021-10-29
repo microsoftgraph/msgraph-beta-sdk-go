@@ -4,18 +4,25 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ManagementIntentInfo struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // The display name for the management intent. Optional. Read-only.
     managementIntentDisplayName *string;
+    // The identifier for the management intent. Required. Read-only.
     managementIntentId *string;
+    // The collection of management template information associated with the management intent. Optional. Read-only.
     managementTemplates []ManagementTemplateDetailedInfo;
 }
+// Instantiates a new managementIntentInfo and sets the default values.
 func NewManagementIntentInfo()(*ManagementIntentInfo) {
     m := &ManagementIntentInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementIntentInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +30,7 @@ func (m *ManagementIntentInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the managementIntentDisplayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntentInfo) GetManagementIntentDisplayName()(*string) {
     if m == nil {
         return nil
@@ -30,6 +38,7 @@ func (m *ManagementIntentInfo) GetManagementIntentDisplayName()(*string) {
         return m.managementIntentDisplayName
     }
 }
+// Gets the managementIntentId property value. The identifier for the management intent. Required. Read-only.
 func (m *ManagementIntentInfo) GetManagementIntentId()(*string) {
     if m == nil {
         return nil
@@ -37,6 +46,7 @@ func (m *ManagementIntentInfo) GetManagementIntentId()(*string) {
         return m.managementIntentId
     }
 }
+// Gets the managementTemplates property value. The collection of management template information associated with the management intent. Optional. Read-only.
 func (m *ManagementIntentInfo) GetManagementTemplates()([]ManagementTemplateDetailedInfo) {
     if m == nil {
         return nil
@@ -44,6 +54,7 @@ func (m *ManagementIntentInfo) GetManagementTemplates()([]ManagementTemplateDeta
         return m.managementTemplates
     }
 }
+// The deserialization information for the current model
 func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["managementIntentDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,6 +90,9 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(interface
 func (m *ManagementIntentInfo) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ManagementIntentInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("managementIntentDisplayName", m.GetManagementIntentDisplayName())
@@ -111,15 +125,27 @@ func (m *ManagementIntentInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *ManagementIntentInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the managementIntentDisplayName property value. The display name for the management intent. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the managementIntentDisplayName property.
 func (m *ManagementIntentInfo) SetManagementIntentDisplayName(value *string)() {
     m.managementIntentDisplayName = value
 }
+// Sets the managementIntentId property value. The identifier for the management intent. Required. Read-only.
+// Parameters:
+//  - value : Value to set for the managementIntentId property.
 func (m *ManagementIntentInfo) SetManagementIntentId(value *string)() {
     m.managementIntentId = value
 }
+// Sets the managementTemplates property value. The collection of management template information associated with the management intent. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the managementTemplates property.
 func (m *ManagementIntentInfo) SetManagementTemplates(value []ManagementTemplateDetailedInfo)() {
     m.managementTemplates = value
 }

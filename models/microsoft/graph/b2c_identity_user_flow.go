@@ -4,22 +4,32 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type B2cIdentityUserFlow struct {
     IdentityUserFlow
+    // Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
     apiConnectorConfiguration *UserFlowApiConnectorConfiguration;
+    // Indicates the default language of the b2cIdentityUserFlow that is used when no ui_locale tag is specified in the request. This field is RFC 5646 compliant.
     defaultLanguageTag *string;
+    // 
     identityProviders []IdentityProvider;
+    // The property that determines whether language customization is enabled within the B2C user flow. Language customization is not enabled by default for B2C user flows.
     isLanguageCustomizationEnabled *bool;
+    // The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
     languages []UserFlowLanguageConfiguration;
+    // The user attribute assignments included in the user flow.
     userAttributeAssignments []IdentityUserFlowAttributeAssignment;
+    // 
     userFlowIdentityProviders []IdentityProviderBase;
 }
+// Instantiates a new b2cIdentityUserFlow and sets the default values.
 func NewB2cIdentityUserFlow()(*B2cIdentityUserFlow) {
     m := &B2cIdentityUserFlow{
         IdentityUserFlow: *NewIdentityUserFlow(),
     }
     return m
 }
+// Gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2cIdentityUserFlow) GetApiConnectorConfiguration()(*UserFlowApiConnectorConfiguration) {
     if m == nil {
         return nil
@@ -27,6 +37,7 @@ func (m *B2cIdentityUserFlow) GetApiConnectorConfiguration()(*UserFlowApiConnect
         return m.apiConnectorConfiguration
     }
 }
+// Gets the defaultLanguageTag property value. Indicates the default language of the b2cIdentityUserFlow that is used when no ui_locale tag is specified in the request. This field is RFC 5646 compliant.
 func (m *B2cIdentityUserFlow) GetDefaultLanguageTag()(*string) {
     if m == nil {
         return nil
@@ -34,6 +45,7 @@ func (m *B2cIdentityUserFlow) GetDefaultLanguageTag()(*string) {
         return m.defaultLanguageTag
     }
 }
+// Gets the identityProviders property value. 
 func (m *B2cIdentityUserFlow) GetIdentityProviders()([]IdentityProvider) {
     if m == nil {
         return nil
@@ -41,6 +53,7 @@ func (m *B2cIdentityUserFlow) GetIdentityProviders()([]IdentityProvider) {
         return m.identityProviders
     }
 }
+// Gets the isLanguageCustomizationEnabled property value. The property that determines whether language customization is enabled within the B2C user flow. Language customization is not enabled by default for B2C user flows.
 func (m *B2cIdentityUserFlow) GetIsLanguageCustomizationEnabled()(*bool) {
     if m == nil {
         return nil
@@ -48,6 +61,7 @@ func (m *B2cIdentityUserFlow) GetIsLanguageCustomizationEnabled()(*bool) {
         return m.isLanguageCustomizationEnabled
     }
 }
+// Gets the languages property value. The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 func (m *B2cIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfiguration) {
     if m == nil {
         return nil
@@ -55,6 +69,7 @@ func (m *B2cIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfiguration) {
         return m.languages
     }
 }
+// Gets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
 func (m *B2cIdentityUserFlow) GetUserAttributeAssignments()([]IdentityUserFlowAttributeAssignment) {
     if m == nil {
         return nil
@@ -62,6 +77,7 @@ func (m *B2cIdentityUserFlow) GetUserAttributeAssignments()([]IdentityUserFlowAt
         return m.userAttributeAssignments
     }
 }
+// Gets the userFlowIdentityProviders property value. 
 func (m *B2cIdentityUserFlow) GetUserFlowIdentityProviders()([]IdentityProviderBase) {
     if m == nil {
         return nil
@@ -69,6 +85,7 @@ func (m *B2cIdentityUserFlow) GetUserFlowIdentityProviders()([]IdentityProviderB
         return m.userFlowIdentityProviders
     }
 }
+// The deserialization information for the current model
 func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.IdentityUserFlow.GetFieldDeserializers()
     res["apiConnectorConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,6 +165,9 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
 func (m *B2cIdentityUserFlow) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *B2cIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.IdentityUserFlow.Serialize(writer)
     if err != nil {
@@ -217,24 +237,45 @@ func (m *B2cIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
+// Sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+// Parameters:
+//  - value : Value to set for the apiConnectorConfiguration property.
 func (m *B2cIdentityUserFlow) SetApiConnectorConfiguration(value *UserFlowApiConnectorConfiguration)() {
     m.apiConnectorConfiguration = value
 }
+// Sets the defaultLanguageTag property value. Indicates the default language of the b2cIdentityUserFlow that is used when no ui_locale tag is specified in the request. This field is RFC 5646 compliant.
+// Parameters:
+//  - value : Value to set for the defaultLanguageTag property.
 func (m *B2cIdentityUserFlow) SetDefaultLanguageTag(value *string)() {
     m.defaultLanguageTag = value
 }
+// Sets the identityProviders property value. 
+// Parameters:
+//  - value : Value to set for the identityProviders property.
 func (m *B2cIdentityUserFlow) SetIdentityProviders(value []IdentityProvider)() {
     m.identityProviders = value
 }
+// Sets the isLanguageCustomizationEnabled property value. The property that determines whether language customization is enabled within the B2C user flow. Language customization is not enabled by default for B2C user flows.
+// Parameters:
+//  - value : Value to set for the isLanguageCustomizationEnabled property.
 func (m *B2cIdentityUserFlow) SetIsLanguageCustomizationEnabled(value *bool)() {
     m.isLanguageCustomizationEnabled = value
 }
+// Sets the languages property value. The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
+// Parameters:
+//  - value : Value to set for the languages property.
 func (m *B2cIdentityUserFlow) SetLanguages(value []UserFlowLanguageConfiguration)() {
     m.languages = value
 }
+// Sets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
+// Parameters:
+//  - value : Value to set for the userAttributeAssignments property.
 func (m *B2cIdentityUserFlow) SetUserAttributeAssignments(value []IdentityUserFlowAttributeAssignment)() {
     m.userAttributeAssignments = value
 }
+// Sets the userFlowIdentityProviders property value. 
+// Parameters:
+//  - value : Value to set for the userFlowIdentityProviders property.
 func (m *B2cIdentityUserFlow) SetUserFlowIdentityProviders(value []IdentityProviderBase)() {
     m.userFlowIdentityProviders = value
 }

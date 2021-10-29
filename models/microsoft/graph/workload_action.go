@@ -5,21 +5,31 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
+// 
 type WorkloadAction struct {
+    // The unique identifier for the workload action. Required. Read-only.
     actionId *string;
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
     category *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionCategory;
+    // The description for the workload action. Optional. Read-only.
     description *string;
+    // The display name for the workload action. Optional. Read-only.
     displayName *string;
+    // The service associated with workload action. Optional. Read-only.
     service *string;
+    // The collection of settings associated with the workload action. Optional. Read-only.
     settings []Setting;
 }
+// Instantiates a new workloadAction and sets the default values.
 func NewWorkloadAction()(*WorkloadAction) {
     m := &WorkloadAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadAction) GetActionId()(*string) {
     if m == nil {
         return nil
@@ -27,6 +37,7 @@ func (m *WorkloadAction) GetActionId()(*string) {
         return m.actionId
     }
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadAction) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,6 +45,7 @@ func (m *WorkloadAction) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
 func (m *WorkloadAction) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionCategory) {
     if m == nil {
         return nil
@@ -41,6 +53,7 @@ func (m *WorkloadAction) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a
         return m.category
     }
 }
+// Gets the description property value. The description for the workload action. Optional. Read-only.
 func (m *WorkloadAction) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -48,6 +61,7 @@ func (m *WorkloadAction) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. The display name for the workload action. Optional. Read-only.
 func (m *WorkloadAction) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -55,6 +69,7 @@ func (m *WorkloadAction) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the service property value. The service associated with workload action. Optional. Read-only.
 func (m *WorkloadAction) GetService()(*string) {
     if m == nil {
         return nil
@@ -62,6 +77,7 @@ func (m *WorkloadAction) GetService()(*string) {
         return m.service
     }
 }
+// Gets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
 func (m *WorkloadAction) GetSettings()([]Setting) {
     if m == nil {
         return nil
@@ -69,6 +85,7 @@ func (m *WorkloadAction) GetSettings()([]Setting) {
         return m.settings
     }
 }
+// The deserialization information for the current model
 func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["actionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,6 +146,9 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *WorkloadAction) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *WorkloadAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("actionId", m.GetActionId())
@@ -180,24 +200,45 @@ func (m *WorkloadAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
+// Sets the actionId property value. The unique identifier for the workload action. Required. Read-only.
+// Parameters:
+//  - value : Value to set for the actionId property.
 func (m *WorkloadAction) SetActionId(value *string)() {
     m.actionId = value
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *WorkloadAction) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the category property.
 func (m *WorkloadAction) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionCategory)() {
     m.category = value
 }
+// Sets the description property value. The description for the workload action. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *WorkloadAction) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. The display name for the workload action. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *WorkloadAction) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the service property value. The service associated with workload action. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the service property.
 func (m *WorkloadAction) SetService(value *string)() {
     m.service = value
 }
+// Sets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the settings property.
 func (m *WorkloadAction) SetSettings(value []Setting)() {
     m.settings = value
 }

@@ -5,31 +5,50 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetEmailAppUsageUserDetailWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     deletedDate *string;
+    // 
     displayName *string;
+    // 
     imap4App []string;
+    // 
     isDeleted *bool;
+    // 
     lastActivityDate *string;
+    // 
     mailForMac []string;
+    // 
     otherForMobile []string;
+    // 
     outlookForMac []string;
+    // 
     outlookForMobile []string;
+    // 
     outlookForWeb []string;
+    // 
     outlookForWindows []string;
+    // 
     pop3App []string;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
+    // 
     smtpApp []string;
+    // 
     userPrincipalName *string;
 }
+// Instantiates a new getEmailAppUsageUserDetailWithPeriod and sets the default values.
 func NewGetEmailAppUsageUserDetailWithPeriod()(*GetEmailAppUsageUserDetailWithPeriod) {
     m := &GetEmailAppUsageUserDetailWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the deletedDate property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetDeletedDate()(*string) {
     if m == nil {
         return nil
@@ -37,6 +56,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetDeletedDate()(*string) {
         return m.deletedDate
     }
 }
+// Gets the displayName property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -44,6 +64,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the imap4App property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetImap4App()([]string) {
     if m == nil {
         return nil
@@ -51,6 +72,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetImap4App()([]string) {
         return m.imap4App
     }
 }
+// Gets the isDeleted property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetIsDeleted()(*bool) {
     if m == nil {
         return nil
@@ -58,6 +80,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetIsDeleted()(*bool) {
         return m.isDeleted
     }
 }
+// Gets the lastActivityDate property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -65,6 +88,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetLastActivityDate()(*string) {
         return m.lastActivityDate
     }
 }
+// Gets the mailForMac property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetMailForMac()([]string) {
     if m == nil {
         return nil
@@ -72,6 +96,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetMailForMac()([]string) {
         return m.mailForMac
     }
 }
+// Gets the otherForMobile property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetOtherForMobile()([]string) {
     if m == nil {
         return nil
@@ -79,6 +104,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetOtherForMobile()([]string) {
         return m.otherForMobile
     }
 }
+// Gets the outlookForMac property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetOutlookForMac()([]string) {
     if m == nil {
         return nil
@@ -86,6 +112,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetOutlookForMac()([]string) {
         return m.outlookForMac
     }
 }
+// Gets the outlookForMobile property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetOutlookForMobile()([]string) {
     if m == nil {
         return nil
@@ -93,6 +120,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetOutlookForMobile()([]string) {
         return m.outlookForMobile
     }
 }
+// Gets the outlookForWeb property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetOutlookForWeb()([]string) {
     if m == nil {
         return nil
@@ -100,6 +128,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetOutlookForWeb()([]string) {
         return m.outlookForWeb
     }
 }
+// Gets the outlookForWindows property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetOutlookForWindows()([]string) {
     if m == nil {
         return nil
@@ -107,6 +136,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetOutlookForWindows()([]string) 
         return m.outlookForWindows
     }
 }
+// Gets the pop3App property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetPop3App()([]string) {
     if m == nil {
         return nil
@@ -114,6 +144,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetPop3App()([]string) {
         return m.pop3App
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -121,6 +152,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetReportPeriod()(*string) {
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -128,6 +160,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetReportRefreshDate()(*string) {
         return m.reportRefreshDate
     }
 }
+// Gets the smtpApp property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetSmtpApp()([]string) {
     if m == nil {
         return nil
@@ -135,6 +168,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetSmtpApp()([]string) {
         return m.smtpApp
     }
 }
+// Gets the userPrincipalName property value. 
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -142,6 +176,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
+// The deserialization information for the current model
 func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deletedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -313,6 +348,9 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
 func (m *GetEmailAppUsageUserDetailWithPeriod) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetEmailAppUsageUserDetailWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -416,51 +454,99 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) Serialize(writer i04eb5309aeaafad
     }
     return nil
 }
+// Sets the deletedDate property value. 
+// Parameters:
+//  - value : Value to set for the deletedDate property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetDeletedDate(value *string)() {
     m.deletedDate = value
 }
+// Sets the displayName property value. 
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the imap4App property value. 
+// Parameters:
+//  - value : Value to set for the imap4App property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetImap4App(value []string)() {
     m.imap4App = value
 }
+// Sets the isDeleted property value. 
+// Parameters:
+//  - value : Value to set for the isDeleted property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetIsDeleted(value *bool)() {
     m.isDeleted = value
 }
+// Sets the lastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the lastActivityDate property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetLastActivityDate(value *string)() {
     m.lastActivityDate = value
 }
+// Sets the mailForMac property value. 
+// Parameters:
+//  - value : Value to set for the mailForMac property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetMailForMac(value []string)() {
     m.mailForMac = value
 }
+// Sets the otherForMobile property value. 
+// Parameters:
+//  - value : Value to set for the otherForMobile property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetOtherForMobile(value []string)() {
     m.otherForMobile = value
 }
+// Sets the outlookForMac property value. 
+// Parameters:
+//  - value : Value to set for the outlookForMac property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetOutlookForMac(value []string)() {
     m.outlookForMac = value
 }
+// Sets the outlookForMobile property value. 
+// Parameters:
+//  - value : Value to set for the outlookForMobile property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetOutlookForMobile(value []string)() {
     m.outlookForMobile = value
 }
+// Sets the outlookForWeb property value. 
+// Parameters:
+//  - value : Value to set for the outlookForWeb property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetOutlookForWeb(value []string)() {
     m.outlookForWeb = value
 }
+// Sets the outlookForWindows property value. 
+// Parameters:
+//  - value : Value to set for the outlookForWindows property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetOutlookForWindows(value []string)() {
     m.outlookForWindows = value
 }
+// Sets the pop3App property value. 
+// Parameters:
+//  - value : Value to set for the pop3App property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetPop3App(value []string)() {
     m.pop3App = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
+// Sets the smtpApp property value. 
+// Parameters:
+//  - value : Value to set for the smtpApp property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetSmtpApp(value []string)() {
     m.smtpApp = value
 }
+// Sets the userPrincipalName property value. 
+// Parameters:
+//  - value : Value to set for the userPrincipalName property.
 func (m *GetEmailAppUsageUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

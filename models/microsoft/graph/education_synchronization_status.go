@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type EducationSynchronizationStatus int
 
 const (
@@ -13,10 +14,12 @@ const (
     VALIDATIONERROR_EDUCATIONSYNCHRONIZATIONSTATUS
     QUARANTINED_EDUCATIONSYNCHRONIZATIONSTATUS
     UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONSTATUS
+    EXTRACTING_EDUCATIONSYNCHRONIZATIONSTATUS
+    VALIDATING_EDUCATIONSYNCHRONIZATIONSTATUS
 )
 
 func (i EducationSynchronizationStatus) String() string {
-    return []string{"PAUSED", "INPROGRESS", "SUCCESS", "ERROR", "VALIDATIONERROR", "QUARANTINED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"PAUSED", "INPROGRESS", "SUCCESS", "ERROR", "VALIDATIONERROR", "QUARANTINED", "UNKNOWNFUTUREVALUE", "EXTRACTING", "VALIDATING"}[i]
 }
 func ParseEducationSynchronizationStatus(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -34,6 +37,10 @@ func ParseEducationSynchronizationStatus(v string) (interface{}, error) {
             return QUARANTINED_EDUCATIONSYNCHRONIZATIONSTATUS, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+        case "EXTRACTING":
+            return EXTRACTING_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+        case "VALIDATING":
+            return VALIDATING_EDUCATIONSYNCHRONIZATIONSTATUS, nil
     }
     return 0, errors.New("Unknown EducationSynchronizationStatus value: " + v)
 }

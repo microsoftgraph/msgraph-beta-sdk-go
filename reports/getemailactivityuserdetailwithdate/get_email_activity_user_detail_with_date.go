@@ -5,26 +5,40 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetEmailActivityUserDetailWithDate struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     assignedProducts []string;
+    // 
     deletedDate *string;
+    // 
     displayName *string;
+    // 
     isDeleted *bool;
+    // 
     lastActivityDate *string;
+    // 
     readCount *int64;
+    // 
     receiveCount *int64;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
+    // 
     sendCount *int64;
+    // 
     userPrincipalName *string;
 }
+// Instantiates a new getEmailActivityUserDetailWithDate and sets the default values.
 func NewGetEmailActivityUserDetailWithDate()(*GetEmailActivityUserDetailWithDate) {
     m := &GetEmailActivityUserDetailWithDate{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the assignedProducts property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetAssignedProducts()([]string) {
     if m == nil {
         return nil
@@ -32,6 +46,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetAssignedProducts()([]string) {
         return m.assignedProducts
     }
 }
+// Gets the deletedDate property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetDeletedDate()(*string) {
     if m == nil {
         return nil
@@ -39,6 +54,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetDeletedDate()(*string) {
         return m.deletedDate
     }
 }
+// Gets the displayName property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -46,6 +62,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the isDeleted property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetIsDeleted()(*bool) {
     if m == nil {
         return nil
@@ -53,6 +70,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetIsDeleted()(*bool) {
         return m.isDeleted
     }
 }
+// Gets the lastActivityDate property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -60,6 +78,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetLastActivityDate()(*string) {
         return m.lastActivityDate
     }
 }
+// Gets the readCount property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetReadCount()(*int64) {
     if m == nil {
         return nil
@@ -67,6 +86,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetReadCount()(*int64) {
         return m.readCount
     }
 }
+// Gets the receiveCount property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetReceiveCount()(*int64) {
     if m == nil {
         return nil
@@ -74,6 +94,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetReceiveCount()(*int64) {
         return m.receiveCount
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -81,6 +102,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetReportPeriod()(*string) {
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -88,6 +110,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetReportRefreshDate()(*string) {
         return m.reportRefreshDate
     }
 }
+// Gets the sendCount property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetSendCount()(*int64) {
     if m == nil {
         return nil
@@ -95,6 +118,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetSendCount()(*int64) {
         return m.sendCount
     }
 }
+// Gets the userPrincipalName property value. 
 func (m *GetEmailActivityUserDetailWithDate) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -102,6 +126,7 @@ func (m *GetEmailActivityUserDetailWithDate) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
+// The deserialization information for the current model
 func (m *GetEmailActivityUserDetailWithDate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedProducts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,6 +226,9 @@ func (m *GetEmailActivityUserDetailWithDate) GetFieldDeserializers()(map[string]
 func (m *GetEmailActivityUserDetailWithDate) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetEmailActivityUserDetailWithDate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -274,36 +302,69 @@ func (m *GetEmailActivityUserDetailWithDate) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
+// Sets the assignedProducts property value. 
+// Parameters:
+//  - value : Value to set for the assignedProducts property.
 func (m *GetEmailActivityUserDetailWithDate) SetAssignedProducts(value []string)() {
     m.assignedProducts = value
 }
+// Sets the deletedDate property value. 
+// Parameters:
+//  - value : Value to set for the deletedDate property.
 func (m *GetEmailActivityUserDetailWithDate) SetDeletedDate(value *string)() {
     m.deletedDate = value
 }
+// Sets the displayName property value. 
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *GetEmailActivityUserDetailWithDate) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the isDeleted property value. 
+// Parameters:
+//  - value : Value to set for the isDeleted property.
 func (m *GetEmailActivityUserDetailWithDate) SetIsDeleted(value *bool)() {
     m.isDeleted = value
 }
+// Sets the lastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the lastActivityDate property.
 func (m *GetEmailActivityUserDetailWithDate) SetLastActivityDate(value *string)() {
     m.lastActivityDate = value
 }
+// Sets the readCount property value. 
+// Parameters:
+//  - value : Value to set for the readCount property.
 func (m *GetEmailActivityUserDetailWithDate) SetReadCount(value *int64)() {
     m.readCount = value
 }
+// Sets the receiveCount property value. 
+// Parameters:
+//  - value : Value to set for the receiveCount property.
 func (m *GetEmailActivityUserDetailWithDate) SetReceiveCount(value *int64)() {
     m.receiveCount = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetEmailActivityUserDetailWithDate) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetEmailActivityUserDetailWithDate) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
+// Sets the sendCount property value. 
+// Parameters:
+//  - value : Value to set for the sendCount property.
 func (m *GetEmailActivityUserDetailWithDate) SetSendCount(value *int64)() {
     m.sendCount = value
 }
+// Sets the userPrincipalName property value. 
+// Parameters:
+//  - value : Value to set for the userPrincipalName property.
 func (m *GetEmailActivityUserDetailWithDate) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

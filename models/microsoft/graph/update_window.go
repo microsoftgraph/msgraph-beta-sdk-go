@@ -4,17 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type UpdateWindow struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // End of a time window during which agents can receive updates
     updateWindowEndTime *string;
+    // Start of a time window during which agents can receive updates
     updateWindowStartTime *string;
 }
+// Instantiates a new updateWindow and sets the default values.
 func NewUpdateWindow()(*UpdateWindow) {
     m := &UpdateWindow{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindow) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -22,6 +28,7 @@ func (m *UpdateWindow) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the updateWindowEndTime property value. End of a time window during which agents can receive updates
 func (m *UpdateWindow) GetUpdateWindowEndTime()(*string) {
     if m == nil {
         return nil
@@ -29,6 +36,7 @@ func (m *UpdateWindow) GetUpdateWindowEndTime()(*string) {
         return m.updateWindowEndTime
     }
 }
+// Gets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
 func (m *UpdateWindow) GetUpdateWindowStartTime()(*string) {
     if m == nil {
         return nil
@@ -36,6 +44,7 @@ func (m *UpdateWindow) GetUpdateWindowStartTime()(*string) {
         return m.updateWindowStartTime
     }
 }
+// The deserialization information for the current model
 func (m *UpdateWindow) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["updateWindowEndTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -59,6 +68,9 @@ func (m *UpdateWindow) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *UpdateWindow) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UpdateWindow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("updateWindowEndTime", m.GetUpdateWindowEndTime())
@@ -80,12 +92,21 @@ func (m *UpdateWindow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *UpdateWindow) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the updateWindowEndTime property value. End of a time window during which agents can receive updates
+// Parameters:
+//  - value : Value to set for the updateWindowEndTime property.
 func (m *UpdateWindow) SetUpdateWindowEndTime(value *string)() {
     m.updateWindowEndTime = value
 }
+// Sets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
+// Parameters:
+//  - value : Value to set for the updateWindowStartTime property.
 func (m *UpdateWindow) SetUpdateWindowStartTime(value *string)() {
     m.updateWindowStartTime = value
 }

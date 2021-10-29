@@ -5,21 +5,30 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetYammerActivityCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     liked *int64;
+    // 
     posted *int64;
+    // 
     read *int64;
+    // 
     reportDate *string;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
 }
+// Instantiates a new getYammerActivityCountsWithPeriod and sets the default values.
 func NewGetYammerActivityCountsWithPeriod()(*GetYammerActivityCountsWithPeriod) {
     m := &GetYammerActivityCountsWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the liked property value. 
 func (m *GetYammerActivityCountsWithPeriod) GetLiked()(*int64) {
     if m == nil {
         return nil
@@ -27,6 +36,7 @@ func (m *GetYammerActivityCountsWithPeriod) GetLiked()(*int64) {
         return m.liked
     }
 }
+// Gets the posted property value. 
 func (m *GetYammerActivityCountsWithPeriod) GetPosted()(*int64) {
     if m == nil {
         return nil
@@ -34,6 +44,7 @@ func (m *GetYammerActivityCountsWithPeriod) GetPosted()(*int64) {
         return m.posted
     }
 }
+// Gets the read property value. 
 func (m *GetYammerActivityCountsWithPeriod) GetRead()(*int64) {
     if m == nil {
         return nil
@@ -41,6 +52,7 @@ func (m *GetYammerActivityCountsWithPeriod) GetRead()(*int64) {
         return m.read
     }
 }
+// Gets the reportDate property value. 
 func (m *GetYammerActivityCountsWithPeriod) GetReportDate()(*string) {
     if m == nil {
         return nil
@@ -48,6 +60,7 @@ func (m *GetYammerActivityCountsWithPeriod) GetReportDate()(*string) {
         return m.reportDate
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetYammerActivityCountsWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -55,6 +68,7 @@ func (m *GetYammerActivityCountsWithPeriod) GetReportPeriod()(*string) {
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetYammerActivityCountsWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -62,6 +76,7 @@ func (m *GetYammerActivityCountsWithPeriod) GetReportRefreshDate()(*string) {
         return m.reportRefreshDate
     }
 }
+// The deserialization information for the current model
 func (m *GetYammerActivityCountsWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["liked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,6 +132,9 @@ func (m *GetYammerActivityCountsWithPeriod) GetFieldDeserializers()(map[string]f
 func (m *GetYammerActivityCountsWithPeriod) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetYammerActivityCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -160,21 +178,39 @@ func (m *GetYammerActivityCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
+// Sets the liked property value. 
+// Parameters:
+//  - value : Value to set for the liked property.
 func (m *GetYammerActivityCountsWithPeriod) SetLiked(value *int64)() {
     m.liked = value
 }
+// Sets the posted property value. 
+// Parameters:
+//  - value : Value to set for the posted property.
 func (m *GetYammerActivityCountsWithPeriod) SetPosted(value *int64)() {
     m.posted = value
 }
+// Sets the read property value. 
+// Parameters:
+//  - value : Value to set for the read property.
 func (m *GetYammerActivityCountsWithPeriod) SetRead(value *int64)() {
     m.read = value
 }
+// Sets the reportDate property value. 
+// Parameters:
+//  - value : Value to set for the reportDate property.
 func (m *GetYammerActivityCountsWithPeriod) SetReportDate(value *string)() {
     m.reportDate = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetYammerActivityCountsWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetYammerActivityCountsWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }

@@ -4,17 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DeviceAndAppManagementAssignmentTarget struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // The Id of the filter for the target assignment.
     deviceAndAppManagementAssignmentFilterId *string;
+    // The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.
     deviceAndAppManagementAssignmentFilterType *DeviceAndAppManagementAssignmentFilterType;
 }
+// Instantiates a new deviceAndAppManagementAssignmentTarget and sets the default values.
 func NewDeviceAndAppManagementAssignmentTarget()(*DeviceAndAppManagementAssignmentTarget) {
     m := &DeviceAndAppManagementAssignmentTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceAndAppManagementAssignmentTarget) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -22,6 +28,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetAdditionalData()(map[string]
         return m.additionalData
     }
 }
+// Gets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.
 func (m *DeviceAndAppManagementAssignmentTarget) GetDeviceAndAppManagementAssignmentFilterId()(*string) {
     if m == nil {
         return nil
@@ -29,6 +36,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetDeviceAndAppManagementAssign
         return m.deviceAndAppManagementAssignmentFilterId
     }
 }
+// Gets the deviceAndAppManagementAssignmentFilterType property value. The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.
 func (m *DeviceAndAppManagementAssignmentTarget) GetDeviceAndAppManagementAssignmentFilterType()(*DeviceAndAppManagementAssignmentFilterType) {
     if m == nil {
         return nil
@@ -36,6 +44,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetDeviceAndAppManagementAssign
         return m.deviceAndAppManagementAssignmentFilterType
     }
 }
+// The deserialization information for the current model
 func (m *DeviceAndAppManagementAssignmentTarget) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceAndAppManagementAssignmentFilterId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,6 +69,9 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetFieldDeserializers()(map[str
 func (m *DeviceAndAppManagementAssignmentTarget) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DeviceAndAppManagementAssignmentTarget) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("deviceAndAppManagementAssignmentFilterId", m.GetDeviceAndAppManagementAssignmentFilterId())
@@ -82,12 +94,21 @@ func (m *DeviceAndAppManagementAssignmentTarget) Serialize(writer i04eb5309aeaaf
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *DeviceAndAppManagementAssignmentTarget) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.
+// Parameters:
+//  - value : Value to set for the deviceAndAppManagementAssignmentFilterId property.
 func (m *DeviceAndAppManagementAssignmentTarget) SetDeviceAndAppManagementAssignmentFilterId(value *string)() {
     m.deviceAndAppManagementAssignmentFilterId = value
 }
+// Sets the deviceAndAppManagementAssignmentFilterType property value. The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.
+// Parameters:
+//  - value : Value to set for the deviceAndAppManagementAssignmentFilterType property.
 func (m *DeviceAndAppManagementAssignmentTarget) SetDeviceAndAppManagementAssignmentFilterType(value *DeviceAndAppManagementAssignmentFilterType)() {
     m.deviceAndAppManagementAssignmentFilterType = value
 }

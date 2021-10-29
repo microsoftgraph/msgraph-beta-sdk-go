@@ -5,17 +5,23 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type UpdatePasswordSingleSignOnCredentialsRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     credentials []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Credential;
+    // 
     id *string;
 }
+// Instantiates a new updatePasswordSingleSignOnCredentialsRequestBody and sets the default values.
 func NewUpdatePasswordSingleSignOnCredentialsRequestBody()(*UpdatePasswordSingleSignOnCredentialsRequestBody) {
     m := &UpdatePasswordSingleSignOnCredentialsRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) GetAdditionalData()(m
         return m.additionalData
     }
 }
+// Gets the credentials property value. 
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) GetCredentials()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Credential) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) GetCredentials()([]i5
         return m.credentials
     }
 }
+// Gets the id property value. 
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) GetId()(*string) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) GetId()(*string) {
         return m.id
     }
 }
+// The deserialization information for the current model
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["credentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,6 +73,9 @@ func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) GetFieldDeserializers
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCredentials()))
@@ -90,12 +102,21 @@ func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) Serialize(writer i04e
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the credentials property value. 
+// Parameters:
+//  - value : Value to set for the credentials property.
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) SetCredentials(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Credential)() {
     m.credentials = value
 }
+// Sets the id property value. 
+// Parameters:
+//  - value : Value to set for the id property.
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBody) SetId(value *string)() {
     m.id = value
 }

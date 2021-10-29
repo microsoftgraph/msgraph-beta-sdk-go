@@ -4,24 +4,36 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type BusinessFlow struct {
     Entity
+    // 
     customData *string;
+    // 
     deDuplicationId *string;
+    // 
     description *string;
+    // 
     displayName *string;
+    // 
     policy *GovernancePolicy;
+    // 
     policyTemplateId *string;
+    // 
     recordVersion *string;
+    // 
     schemaId *string;
+    // 
     settings *BusinessFlowSettings;
 }
+// Instantiates a new businessFlow and sets the default values.
 func NewBusinessFlow()(*BusinessFlow) {
     m := &BusinessFlow{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the customData property value. 
 func (m *BusinessFlow) GetCustomData()(*string) {
     if m == nil {
         return nil
@@ -29,6 +41,7 @@ func (m *BusinessFlow) GetCustomData()(*string) {
         return m.customData
     }
 }
+// Gets the deDuplicationId property value. 
 func (m *BusinessFlow) GetDeDuplicationId()(*string) {
     if m == nil {
         return nil
@@ -36,6 +49,7 @@ func (m *BusinessFlow) GetDeDuplicationId()(*string) {
         return m.deDuplicationId
     }
 }
+// Gets the description property value. 
 func (m *BusinessFlow) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -43,6 +57,7 @@ func (m *BusinessFlow) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. 
 func (m *BusinessFlow) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -50,6 +65,7 @@ func (m *BusinessFlow) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the policy property value. 
 func (m *BusinessFlow) GetPolicy()(*GovernancePolicy) {
     if m == nil {
         return nil
@@ -57,6 +73,7 @@ func (m *BusinessFlow) GetPolicy()(*GovernancePolicy) {
         return m.policy
     }
 }
+// Gets the policyTemplateId property value. 
 func (m *BusinessFlow) GetPolicyTemplateId()(*string) {
     if m == nil {
         return nil
@@ -64,6 +81,7 @@ func (m *BusinessFlow) GetPolicyTemplateId()(*string) {
         return m.policyTemplateId
     }
 }
+// Gets the recordVersion property value. 
 func (m *BusinessFlow) GetRecordVersion()(*string) {
     if m == nil {
         return nil
@@ -71,6 +89,7 @@ func (m *BusinessFlow) GetRecordVersion()(*string) {
         return m.recordVersion
     }
 }
+// Gets the schemaId property value. 
 func (m *BusinessFlow) GetSchemaId()(*string) {
     if m == nil {
         return nil
@@ -78,6 +97,7 @@ func (m *BusinessFlow) GetSchemaId()(*string) {
         return m.schemaId
     }
 }
+// Gets the settings property value. 
 func (m *BusinessFlow) GetSettings()(*BusinessFlowSettings) {
     if m == nil {
         return nil
@@ -85,6 +105,7 @@ func (m *BusinessFlow) GetSettings()(*BusinessFlowSettings) {
         return m.settings
     }
 }
+// The deserialization information for the current model
 func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["customData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,6 +185,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *BusinessFlow) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *BusinessFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -225,30 +249,57 @@ func (m *BusinessFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
+// Sets the customData property value. 
+// Parameters:
+//  - value : Value to set for the customData property.
 func (m *BusinessFlow) SetCustomData(value *string)() {
     m.customData = value
 }
+// Sets the deDuplicationId property value. 
+// Parameters:
+//  - value : Value to set for the deDuplicationId property.
 func (m *BusinessFlow) SetDeDuplicationId(value *string)() {
     m.deDuplicationId = value
 }
+// Sets the description property value. 
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *BusinessFlow) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. 
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *BusinessFlow) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the policy property value. 
+// Parameters:
+//  - value : Value to set for the policy property.
 func (m *BusinessFlow) SetPolicy(value *GovernancePolicy)() {
     m.policy = value
 }
+// Sets the policyTemplateId property value. 
+// Parameters:
+//  - value : Value to set for the policyTemplateId property.
 func (m *BusinessFlow) SetPolicyTemplateId(value *string)() {
     m.policyTemplateId = value
 }
+// Sets the recordVersion property value. 
+// Parameters:
+//  - value : Value to set for the recordVersion property.
 func (m *BusinessFlow) SetRecordVersion(value *string)() {
     m.recordVersion = value
 }
+// Sets the schemaId property value. 
+// Parameters:
+//  - value : Value to set for the schemaId property.
 func (m *BusinessFlow) SetSchemaId(value *string)() {
     m.schemaId = value
 }
+// Sets the settings property value. 
+// Parameters:
+//  - value : Value to set for the settings property.
 func (m *BusinessFlow) SetSettings(value *BusinessFlowSettings)() {
     m.settings = value
 }

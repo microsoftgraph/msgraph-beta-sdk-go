@@ -5,18 +5,25 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type Binom_InvRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     alpha *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     probabilityS *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     trials *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new binom_InvRequestBody and sets the default values.
 func NewBinom_InvRequestBody()(*Binom_InvRequestBody) {
     m := &Binom_InvRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Binom_InvRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *Binom_InvRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the alpha property value. 
 func (m *Binom_InvRequestBody) GetAlpha()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *Binom_InvRequestBody) GetAlpha()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.alpha
     }
 }
+// Gets the probabilityS property value. 
 func (m *Binom_InvRequestBody) GetProbabilityS()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *Binom_InvRequestBody) GetProbabilityS()(*i535684e11b5500196ecb4b5c6634e
         return m.probabilityS
     }
 }
+// Gets the trials property value. 
 func (m *Binom_InvRequestBody) GetTrials()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *Binom_InvRequestBody) GetTrials()(*i535684e11b5500196ecb4b5c6634e0651fe
         return m.trials
     }
 }
+// The deserialization information for the current model
 func (m *Binom_InvRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["alpha"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *Binom_InvRequestBody) GetFieldDeserializers()(map[string]func(interface
 func (m *Binom_InvRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Binom_InvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("alpha", m.GetAlpha())
@@ -103,15 +117,27 @@ func (m *Binom_InvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *Binom_InvRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the alpha property value. 
+// Parameters:
+//  - value : Value to set for the alpha property.
 func (m *Binom_InvRequestBody) SetAlpha(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.alpha = value
 }
+// Sets the probabilityS property value. 
+// Parameters:
+//  - value : Value to set for the probabilityS property.
 func (m *Binom_InvRequestBody) SetProbabilityS(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.probabilityS = value
 }
+// Sets the trials property value. 
+// Parameters:
+//  - value : Value to set for the trials property.
 func (m *Binom_InvRequestBody) SetTrials(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.trials = value
 }

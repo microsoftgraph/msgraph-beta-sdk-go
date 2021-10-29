@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type AssignmentFilterEvaluationStatusDetails struct {
     Entity
+    // PayloadId on which filter has been applied.
     payloadId *string;
 }
+// Instantiates a new assignmentFilterEvaluationStatusDetails and sets the default values.
 func NewAssignmentFilterEvaluationStatusDetails()(*AssignmentFilterEvaluationStatusDetails) {
     m := &AssignmentFilterEvaluationStatusDetails{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the payloadId property value. PayloadId on which filter has been applied.
 func (m *AssignmentFilterEvaluationStatusDetails) GetPayloadId()(*string) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *AssignmentFilterEvaluationStatusDetails) GetPayloadId()(*string) {
         return m.payloadId
     }
 }
+// The deserialization information for the current model
 func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["payloadId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -36,6 +41,9 @@ func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[st
 func (m *AssignmentFilterEvaluationStatusDetails) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *AssignmentFilterEvaluationStatusDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -49,6 +57,9 @@ func (m *AssignmentFilterEvaluationStatusDetails) Serialize(writer i04eb5309aeaa
     }
     return nil
 }
+// Sets the payloadId property value. PayloadId on which filter has been applied.
+// Parameters:
+//  - value : Value to set for the payloadId property.
 func (m *AssignmentFilterEvaluationStatusDetails) SetPayloadId(value *string)() {
     m.payloadId = value
 }

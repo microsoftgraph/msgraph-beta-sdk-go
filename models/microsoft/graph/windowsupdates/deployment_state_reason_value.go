@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type DeploymentStateReasonValue int
 
 const (
@@ -11,10 +12,11 @@ const (
     PAUSEDBYREQUEST_DEPLOYMENTSTATEREASONVALUE
     PAUSEDBYMONITORING_DEPLOYMENTSTATEREASONVALUE
     UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEREASONVALUE
+    FAULTEDBYCONTENTOUTDATED_DEPLOYMENTSTATEREASONVALUE
 )
 
 func (i DeploymentStateReasonValue) String() string {
-    return []string{"SCHEDULEDBYOFFERWINDOW", "OFFERINGBYREQUEST", "PAUSEDBYREQUEST", "PAUSEDBYMONITORING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"SCHEDULEDBYOFFERWINDOW", "OFFERINGBYREQUEST", "PAUSEDBYREQUEST", "PAUSEDBYMONITORING", "UNKNOWNFUTUREVALUE", "FAULTEDBYCONTENTOUTDATED"}[i]
 }
 func ParseDeploymentStateReasonValue(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -28,6 +30,8 @@ func ParseDeploymentStateReasonValue(v string) (interface{}, error) {
             return PAUSEDBYMONITORING_DEPLOYMENTSTATEREASONVALUE, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEREASONVALUE, nil
+        case "FAULTEDBYCONTENTOUTDATED":
+            return FAULTEDBYCONTENTOUTDATED_DEPLOYMENTSTATEREASONVALUE, nil
     }
     return 0, errors.New("Unknown DeploymentStateReasonValue value: " + v)
 }

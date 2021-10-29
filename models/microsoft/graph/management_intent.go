@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ManagementIntent struct {
     Entity
+    // The display name for the management intent. Optional. Read-only.
     displayName *string;
+    // A flag indicating whether the management intent is global. Required. Read-only.
     isGlobal *bool;
+    // The collection of management templates associated with the management intent. Optional. Read-only.
     managementTemplates []ManagementTemplateDetailedInfo;
 }
+// Instantiates a new managementIntent and sets the default values.
 func NewManagementIntent()(*ManagementIntent) {
     m := &ManagementIntent{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the displayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntent) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *ManagementIntent) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
 func (m *ManagementIntent) GetIsGlobal()(*bool) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *ManagementIntent) GetIsGlobal()(*bool) {
         return m.isGlobal
     }
 }
+// Gets the managementTemplates property value. The collection of management templates associated with the management intent. Optional. Read-only.
 func (m *ManagementIntent) GetManagementTemplates()([]ManagementTemplateDetailedInfo) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *ManagementIntent) GetManagementTemplates()([]ManagementTemplateDetailed
         return m.managementTemplates
     }
 }
+// The deserialization information for the current model
 func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,6 +81,9 @@ func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *ManagementIntent) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -102,12 +114,21 @@ func (m *ManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
+// Sets the displayName property value. The display name for the management intent. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *ManagementIntent) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
+// Parameters:
+//  - value : Value to set for the isGlobal property.
 func (m *ManagementIntent) SetIsGlobal(value *bool)() {
     m.isGlobal = value
 }
+// Sets the managementTemplates property value. The collection of management templates associated with the management intent. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the managementTemplates property.
 func (m *ManagementIntent) SetManagementTemplates(value []ManagementTemplateDetailedInfo)() {
     m.managementTemplates = value
 }

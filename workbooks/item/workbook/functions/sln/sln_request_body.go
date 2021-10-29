@@ -5,18 +5,25 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type SlnRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     cost *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     life *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    // 
     salvage *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
+// Instantiates a new slnRequestBody and sets the default values.
 func NewSlnRequestBody()(*SlnRequestBody) {
     m := &SlnRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SlnRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *SlnRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the cost property value. 
 func (m *SlnRequestBody) GetCost()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *SlnRequestBody) GetCost()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.cost
     }
 }
+// Gets the life property value. 
 func (m *SlnRequestBody) GetLife()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *SlnRequestBody) GetLife()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.life
     }
 }
+// Gets the salvage property value. 
 func (m *SlnRequestBody) GetSalvage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *SlnRequestBody) GetSalvage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f7
         return m.salvage
     }
 }
+// The deserialization information for the current model
 func (m *SlnRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cost"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *SlnRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *SlnRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SlnRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("cost", m.GetCost())
@@ -103,15 +117,27 @@ func (m *SlnRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *SlnRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the cost property value. 
+// Parameters:
+//  - value : Value to set for the cost property.
 func (m *SlnRequestBody) SetCost(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.cost = value
 }
+// Sets the life property value. 
+// Parameters:
+//  - value : Value to set for the life property.
 func (m *SlnRequestBody) SetLife(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.life = value
 }
+// Sets the salvage property value. 
+// Parameters:
+//  - value : Value to set for the salvage property.
 func (m *SlnRequestBody) SetSalvage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.salvage = value
 }

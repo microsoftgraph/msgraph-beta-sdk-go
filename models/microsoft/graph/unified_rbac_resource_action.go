@@ -4,20 +4,28 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type UnifiedRbacResourceAction struct {
     Entity
+    // 
     actionVerb *string;
+    // 
     description *string;
+    // 
     name *string;
+    // 
     resourceScope *UnifiedRbacResourceScope;
+    // 
     resourceScopeId *string;
 }
+// Instantiates a new unifiedRbacResourceAction and sets the default values.
 func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {
     m := &UnifiedRbacResourceAction{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the actionVerb property value. 
 func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
     if m == nil {
         return nil
@@ -25,6 +33,7 @@ func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
         return m.actionVerb
     }
 }
+// Gets the description property value. 
 func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -32,6 +41,7 @@ func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the name property value. 
 func (m *UnifiedRbacResourceAction) GetName()(*string) {
     if m == nil {
         return nil
@@ -39,6 +49,7 @@ func (m *UnifiedRbacResourceAction) GetName()(*string) {
         return m.name
     }
 }
+// Gets the resourceScope property value. 
 func (m *UnifiedRbacResourceAction) GetResourceScope()(*UnifiedRbacResourceScope) {
     if m == nil {
         return nil
@@ -46,6 +57,7 @@ func (m *UnifiedRbacResourceAction) GetResourceScope()(*UnifiedRbacResourceScope
         return m.resourceScope
     }
 }
+// Gets the resourceScopeId property value. 
 func (m *UnifiedRbacResourceAction) GetResourceScopeId()(*string) {
     if m == nil {
         return nil
@@ -53,6 +65,7 @@ func (m *UnifiedRbacResourceAction) GetResourceScopeId()(*string) {
         return m.resourceScopeId
     }
 }
+// The deserialization information for the current model
 func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionVerb"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,6 +113,9 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
 func (m *UnifiedRbacResourceAction) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UnifiedRbacResourceAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -137,18 +153,33 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
+// Sets the actionVerb property value. 
+// Parameters:
+//  - value : Value to set for the actionVerb property.
 func (m *UnifiedRbacResourceAction) SetActionVerb(value *string)() {
     m.actionVerb = value
 }
+// Sets the description property value. 
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *UnifiedRbacResourceAction) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the name property value. 
+// Parameters:
+//  - value : Value to set for the name property.
 func (m *UnifiedRbacResourceAction) SetName(value *string)() {
     m.name = value
 }
+// Sets the resourceScope property value. 
+// Parameters:
+//  - value : Value to set for the resourceScope property.
 func (m *UnifiedRbacResourceAction) SetResourceScope(value *UnifiedRbacResourceScope)() {
     m.resourceScope = value
 }
+// Sets the resourceScopeId property value. 
+// Parameters:
+//  - value : Value to set for the resourceScopeId property.
 func (m *UnifiedRbacResourceAction) SetResourceScopeId(value *string)() {
     m.resourceScopeId = value
 }

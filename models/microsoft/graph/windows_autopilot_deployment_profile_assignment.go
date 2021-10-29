@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type WindowsAutopilotDeploymentProfileAssignment struct {
     Entity
+    // Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
     source *DeviceAndAppManagementAssignmentSource;
+    // Identifier for resource used for deployment to a group
     sourceId *string;
+    // The assignment target for the Windows Autopilot deployment profile.
     target *DeviceAndAppManagementAssignmentTarget;
 }
+// Instantiates a new windowsAutopilotDeploymentProfileAssignment and sets the default values.
 func NewWindowsAutopilotDeploymentProfileAssignment()(*WindowsAutopilotDeploymentProfileAssignment) {
     m := &WindowsAutopilotDeploymentProfileAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetSource()(*DeviceAndAppM
         return m.source
     }
 }
+// Gets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetSourceId()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetSourceId()(*string) {
         return m.sourceId
     }
 }
+// Gets the target property value. The assignment target for the Windows Autopilot deployment profile.
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetTarget()(*DeviceAndAppM
         return m.target
     }
 }
+// The deserialization information for the current model
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,6 +78,9 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetFieldDeserializers()(ma
 func (m *WindowsAutopilotDeploymentProfileAssignment) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *WindowsAutopilotDeploymentProfileAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -95,12 +107,21 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) Serialize(writer i04eb5309
     }
     return nil
 }
+// Sets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
+// Parameters:
+//  - value : Value to set for the source property.
 func (m *WindowsAutopilotDeploymentProfileAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     m.source = value
 }
+// Sets the sourceId property value. Identifier for resource used for deployment to a group
+// Parameters:
+//  - value : Value to set for the sourceId property.
 func (m *WindowsAutopilotDeploymentProfileAssignment) SetSourceId(value *string)() {
     m.sourceId = value
 }
+// Sets the target property value. The assignment target for the Windows Autopilot deployment profile.
+// Parameters:
+//  - value : Value to set for the target property.
 func (m *WindowsAutopilotDeploymentProfileAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
     m.target = value
 }

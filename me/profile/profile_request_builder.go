@@ -44,19 +44,60 @@ import (
     ifa892d3191635eb436fe2e0ead51770cb25545dd430d2739450e3a0ab2fcff3a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/profile/notes/item"
 )
 
+// Builds and executes requests for operations under \me\profile
 type ProfileRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Options for Delete
+type ProfileRequestBuilderDeleteOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// Options for Get
+type ProfileRequestBuilderGetOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Request query parameters
+    Q *ProfileRequestBuilderGetQueryParameters;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// Represents properties that are descriptive of a user in a tenant.
 type ProfileRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
+    // Select properties to be returned
     Select_escaped []string;
+}
+// Options for Patch
+type ProfileRequestBuilderPatchOptions struct {
+    // 
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profile;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 func (m *ProfileRequestBuilder) Account()(*ibdb9324e3601482a2267b1d9c0949c7d55a8080f5a4519f50c9653dc218292c0.AccountRequestBuilder) {
     return ibdb9324e3601482a2267b1d9c0949c7d55a8080f5a4519f50c9653dc218292c0.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.account.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) AccountById(id string)(*i4833578e352a59b2b789284b4629d725d6ab0b3e30e29b40d1cb5c47837338b1.UserAccountInformationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -70,6 +111,9 @@ func (m *ProfileRequestBuilder) AccountById(id string)(*i4833578e352a59b2b789284
 func (m *ProfileRequestBuilder) Addresses()(*ie9dcb8d043e17128686c43a95d98248fba5483cacc977feb238c5d674e1c89b4.AddressesRequestBuilder) {
     return ie9dcb8d043e17128686c43a95d98248fba5483cacc977feb238c5d674e1c89b4.NewAddressesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.addresses.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) AddressesById(id string)(*i275a2397cc537d02a6de5d369b78e7f403c669152aed225ff04fe014e548e2bb.ItemAddressRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -83,6 +127,9 @@ func (m *ProfileRequestBuilder) AddressesById(id string)(*i275a2397cc537d02a6de5
 func (m *ProfileRequestBuilder) Anniversaries()(*i56d5cd06e8002d9e89308b824b11d54f00236639eaa954149f137eff70aab691.AnniversariesRequestBuilder) {
     return i56d5cd06e8002d9e89308b824b11d54f00236639eaa954149f137eff70aab691.NewAnniversariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.anniversaries.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) AnniversariesById(id string)(*i2d0d6da11cb59700ac3ab9dd6b295e2ff497574052fdc8dc8cb99cfc50b629df.PersonAnnualEventRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -96,6 +143,9 @@ func (m *ProfileRequestBuilder) AnniversariesById(id string)(*i2d0d6da11cb59700a
 func (m *ProfileRequestBuilder) Awards()(*ic849b639cf0ed78d9c66d6ef19cccba41d1930bd2c2121ed950c74bc47bf74e5.AwardsRequestBuilder) {
     return ic849b639cf0ed78d9c66d6ef19cccba41d1930bd2c2121ed950c74bc47bf74e5.NewAwardsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.awards.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) AwardsById(id string)(*i277bbd8b071a4d604a140752a228f28f247bd56c8d6ae617cd3a07f842cb6bf9.PersonAwardRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -109,6 +159,9 @@ func (m *ProfileRequestBuilder) AwardsById(id string)(*i277bbd8b071a4d604a140752
 func (m *ProfileRequestBuilder) Certifications()(*i0ca2cf05aa0ab8d575b29715dcde49cfad85816e7bd0dd6be6d8f28c5a57e0cc.CertificationsRequestBuilder) {
     return i0ca2cf05aa0ab8d575b29715dcde49cfad85816e7bd0dd6be6d8f28c5a57e0cc.NewCertificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.certifications.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) CertificationsById(id string)(*i5052f9ec51b905e901e62b11f8a759a974f0cc7ab06fa1608d9d0c8d5fe5405b.PersonCertificationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -119,6 +172,10 @@ func (m *ProfileRequestBuilder) CertificationsById(id string)(*i5052f9ec51b905e9
     }
     return i5052f9ec51b905e901e62b11f8a759a974f0cc7ab06fa1608d9d0c8d5fe5405b.NewPersonCertificationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Instantiates a new ProfileRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProfileRequestBuilder) {
     m := &ProfileRequestBuilder{
     }
@@ -131,86 +188,88 @@ func NewProfileRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new ProfileRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-func (m *ProfileRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// Represents properties that are descriptive of a user in a tenant.
+// Parameters:
+//  - options : Options for the request
+func (m *ProfileRequestBuilder) CreateDeleteRequestInformation(options *ProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ProfileRequestBuilder) CreateGetRequestInformation(q func (value *ProfileRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// Represents properties that are descriptive of a user in a tenant.
+// Parameters:
+//  - options : Options for the request
+func (m *ProfileRequestBuilder) CreateGetRequestInformation(options *ProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if q != nil {
-        qParams := new(ProfileRequestBuilderGetQueryParameters)
-        err := q(qParams)
-        if err != nil {
-            return nil, err
-        }
-        err = qParams.AddQueryParameters(requestInfo.QueryParameters)
+    if options != nil && options.Q != nil {
+        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
         if err != nil {
             return nil, err
         }
     }
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ProfileRequestBuilder) CreatePatchRequestInformation(body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profile, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// Represents properties that are descriptive of a user in a tenant.
+// Parameters:
+//  - options : Options for the request
+func (m *ProfileRequestBuilder) CreatePatchRequestInformation(options *ProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ProfileRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformation(h, o);
+// Represents properties that are descriptive of a user in a tenant.
+// Parameters:
+//  - options : Options for the request
+func (m *ProfileRequestBuilder) Delete(options *ProfileRequestBuilderDeleteOptions)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
     if err != nil {
         return err
     }
@@ -219,6 +278,9 @@ func (m *ProfileRequestBuilder) Delete(h func (value map[string]string) (err err
 func (m *ProfileRequestBuilder) EducationalActivities()(*idcb1d0f8bedd7256bb0cc1971e06d710738eda2e86753fc975ef06dbabd0dc98.EducationalActivitiesRequestBuilder) {
     return idcb1d0f8bedd7256bb0cc1971e06d710738eda2e86753fc975ef06dbabd0dc98.NewEducationalActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.educationalActivities.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) EducationalActivitiesById(id string)(*i37b1fa517414e7c68dfd4a974844cbe1bf639c58cc2428815d70a432874a7634.EducationalActivityRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -232,6 +294,9 @@ func (m *ProfileRequestBuilder) EducationalActivitiesById(id string)(*i37b1fa517
 func (m *ProfileRequestBuilder) Emails()(*i2d051d9e5b7dd4aa7e3df2ef2eef981e643ad151808b56ed2b5d7541b92e13a1.EmailsRequestBuilder) {
     return i2d051d9e5b7dd4aa7e3df2ef2eef981e643ad151808b56ed2b5d7541b92e13a1.NewEmailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.emails.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) EmailsById(id string)(*i31cef5d667451b5423d5636714b09b3604e36345dba29f9ef24b76262d978aa5.ItemEmailRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -242,12 +307,15 @@ func (m *ProfileRequestBuilder) EmailsById(id string)(*i31cef5d667451b5423d56367
     }
     return i31cef5d667451b5423d5636714b09b3604e36345dba29f9ef24b76262d978aa5.NewItemEmailRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-func (m *ProfileRequestBuilder) Get(q func (value *ProfileRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profile, error) {
-    requestInfo, err := m.CreateGetRequestInformation(q, h, o);
+// Represents properties that are descriptive of a user in a tenant.
+// Parameters:
+//  - options : Options for the request
+func (m *ProfileRequestBuilder) Get(options *ProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profile, error) {
+    requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewProfile() }, responseHandler)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewProfile() }, nil)
     if err != nil {
         return nil, err
     }
@@ -256,6 +324,9 @@ func (m *ProfileRequestBuilder) Get(q func (value *ProfileRequestBuilderGetQuery
 func (m *ProfileRequestBuilder) Interests()(*i7898d9baa7e9e2d6a7d32a761e8091d644c5366604eb46532fb8589fb563f424.InterestsRequestBuilder) {
     return i7898d9baa7e9e2d6a7d32a761e8091d644c5366604eb46532fb8589fb563f424.NewInterestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.interests.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) InterestsById(id string)(*i6a6a22b5e119da36bfd8b745f8ed59696bcbb84cbfc7c4b034075d1c1251b1f0.PersonInterestRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -269,6 +340,9 @@ func (m *ProfileRequestBuilder) InterestsById(id string)(*i6a6a22b5e119da36bfd8b
 func (m *ProfileRequestBuilder) Languages()(*i1ee4d65d3257fb4603ee33eeff42b441404e6e3132f8c1c4158b20f867e38ba1.LanguagesRequestBuilder) {
     return i1ee4d65d3257fb4603ee33eeff42b441404e6e3132f8c1c4158b20f867e38ba1.NewLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.languages.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) LanguagesById(id string)(*i9ff4662c3294ee098e0632304f1ef015fe0a686ef176fe16350508a3f9841068.LanguageProficiencyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -282,6 +356,9 @@ func (m *ProfileRequestBuilder) LanguagesById(id string)(*i9ff4662c3294ee098e063
 func (m *ProfileRequestBuilder) Names()(*i922a0397b3daba132d5755f51b216f39966edb1f0630f18a65831cbbf7ee6232.NamesRequestBuilder) {
     return i922a0397b3daba132d5755f51b216f39966edb1f0630f18a65831cbbf7ee6232.NewNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.names.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) NamesById(id string)(*i89842cc8c04e65e1b1e88f5b767cc55ce09a0f30cc2e56c4f131d32c16de1159.PersonNameRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -295,6 +372,9 @@ func (m *ProfileRequestBuilder) NamesById(id string)(*i89842cc8c04e65e1b1e88f5b7
 func (m *ProfileRequestBuilder) Notes()(*i5fac82f5724c79260d3690b79cac6213e87abd5d5b4732fc04b7ba6502202051.NotesRequestBuilder) {
     return i5fac82f5724c79260d3690b79cac6213e87abd5d5b4732fc04b7ba6502202051.NewNotesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.notes.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) NotesById(id string)(*ifa892d3191635eb436fe2e0ead51770cb25545dd430d2739450e3a0ab2fcff3a.PersonAnnotationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -305,12 +385,15 @@ func (m *ProfileRequestBuilder) NotesById(id string)(*ifa892d3191635eb436fe2e0ea
     }
     return ifa892d3191635eb436fe2e0ead51770cb25545dd430d2739450e3a0ab2fcff3a.NewPersonAnnotationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-func (m *ProfileRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profile, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
-    requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
+// Represents properties that are descriptive of a user in a tenant.
+// Parameters:
+//  - options : Options for the request
+func (m *ProfileRequestBuilder) Patch(options *ProfileRequestBuilderPatchOptions)(error) {
+    requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
     if err != nil {
         return err
     }
@@ -319,6 +402,9 @@ func (m *ProfileRequestBuilder) Patch(body *i535684e11b5500196ecb4b5c6634e0651fe
 func (m *ProfileRequestBuilder) Patents()(*i2669dd5ed2aedac6dfd0c6508f784eed419fc338e30b07f910bb466760259fd1.PatentsRequestBuilder) {
     return i2669dd5ed2aedac6dfd0c6508f784eed419fc338e30b07f910bb466760259fd1.NewPatentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.patents.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) PatentsById(id string)(*i6bbd51d2e2c2915bc291e644b1546ce4e0decac456826169fb0b87161ca8409e.ItemPatentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -332,6 +418,9 @@ func (m *ProfileRequestBuilder) PatentsById(id string)(*i6bbd51d2e2c2915bc291e64
 func (m *ProfileRequestBuilder) Phones()(*idcfa0e287194c044fbfe4f5ea53c45e3e9260f37e9b15f0dcb0364f06774b230.PhonesRequestBuilder) {
     return idcfa0e287194c044fbfe4f5ea53c45e3e9260f37e9b15f0dcb0364f06774b230.NewPhonesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.phones.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) PhonesById(id string)(*ia79fb7e80b53cbbeaf958a755dd5660915548586799859d56f03c9b38f615a9d.ItemPhoneRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -345,6 +434,9 @@ func (m *ProfileRequestBuilder) PhonesById(id string)(*ia79fb7e80b53cbbeaf958a75
 func (m *ProfileRequestBuilder) Positions()(*ief55708ca4039096496623eb43c04c4cab978519cc01987773642856bea25f15.PositionsRequestBuilder) {
     return ief55708ca4039096496623eb43c04c4cab978519cc01987773642856bea25f15.NewPositionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.positions.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) PositionsById(id string)(*i59e9bd57c2f134047fa9d3ccde515ff620af19f86e8137229ea2935f1d483683.WorkPositionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -358,6 +450,9 @@ func (m *ProfileRequestBuilder) PositionsById(id string)(*i59e9bd57c2f134047fa9d
 func (m *ProfileRequestBuilder) Projects()(*i71cc69ae1f1790552d0d1f7b97f8fea4bcc00e0e41a5f5e400f8922a081f91d6.ProjectsRequestBuilder) {
     return i71cc69ae1f1790552d0d1f7b97f8fea4bcc00e0e41a5f5e400f8922a081f91d6.NewProjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.projects.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) ProjectsById(id string)(*ib1d4f89ea65a822d70151ba9c171cd4c59a63443f8b798ab2f57a88825b43c6b.ProjectParticipationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -371,6 +466,9 @@ func (m *ProfileRequestBuilder) ProjectsById(id string)(*ib1d4f89ea65a822d70151b
 func (m *ProfileRequestBuilder) Publications()(*i17eb4344c5a0ad3def19ab63c562d6a940af904120cf3ba8cc2e5f247c5766f4.PublicationsRequestBuilder) {
     return i17eb4344c5a0ad3def19ab63c562d6a940af904120cf3ba8cc2e5f247c5766f4.NewPublicationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.publications.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) PublicationsById(id string)(*i69ec9c16bbd15d4073a76419fab5dc22c3bddfcd0d392900a5ce53a55c061e2f.ItemPublicationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -384,6 +482,9 @@ func (m *ProfileRequestBuilder) PublicationsById(id string)(*i69ec9c16bbd15d4073
 func (m *ProfileRequestBuilder) Skills()(*i66da464502bfa2f3d7040895c2dabd17e6fb785bd3beb256e7fc2924d2f8c581.SkillsRequestBuilder) {
     return i66da464502bfa2f3d7040895c2dabd17e6fb785bd3beb256e7fc2924d2f8c581.NewSkillsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.skills.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) SkillsById(id string)(*ib252e438900aca60fecae4f455e0915c86da07bd52b6015206b1a2debaf6ed36.SkillProficiencyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -397,6 +498,9 @@ func (m *ProfileRequestBuilder) SkillsById(id string)(*ib252e438900aca60fecae4f4
 func (m *ProfileRequestBuilder) WebAccounts()(*ic78d01b72199f27822bf3cf257e4574c3a9f57c17b0caaf0199ca0ab34c5051d.WebAccountsRequestBuilder) {
     return ic78d01b72199f27822bf3cf257e4574c3a9f57c17b0caaf0199ca0ab34c5051d.NewWebAccountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.webAccounts.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) WebAccountsById(id string)(*i7058e34b903fc8140673df6d1d8a644b427bfd66ffd15315f8c31382480ed4f6.WebAccountRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -410,6 +514,9 @@ func (m *ProfileRequestBuilder) WebAccountsById(id string)(*i7058e34b903fc814067
 func (m *ProfileRequestBuilder) Websites()(*i51f3dc08dba3b9e52299dbf08214cce0f1ef2e7b1e7a2e495a3674b40711a3a9.WebsitesRequestBuilder) {
     return i51f3dc08dba3b9e52299dbf08214cce0f1ef2e7b1e7a2e495a3674b40711a3a9.NewWebsitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.profile.websites.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ProfileRequestBuilder) WebsitesById(id string)(*i5aa75bab3c02d7858a6bebecc29f8be43656cd44abcb0c3034d29e7461821067.PersonWebsiteRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

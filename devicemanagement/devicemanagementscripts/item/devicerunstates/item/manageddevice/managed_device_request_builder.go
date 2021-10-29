@@ -11,6 +11,7 @@ import (
     i295788bf4a102f78f3c216f64170a22e460ba7e23a8041d6526640a26b0738f0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/recoverpasscode"
     i2c446b375b2fd48b5eb5d4b370a970ffe6c57a0acdbfe0e28e8094475db38b82 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/getfilevaultkey"
     i2fdf5debc613c834402a1c5cb13c9b671471ef951677072fc939c53091966aac "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/windowsdefenderupdatesignatures"
+    i3374e8447c02551ee2536075a785741a5e35ffe6b39d46bee586a40ebdde92fd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/reenable"
     i34c9119fc415f067cfe3dc38398331b8c2eb9abb8b17597ee3f89316b1a05f2a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/playlostmodesound"
     i3649ef3901d2e347fcadf2f76814f9c8d60ec93688c1bbdc97444e13806de185 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/rotatebitlockerkeys"
     i4c1588ef782b785d9417fd290904a65cb77139848496db9afcc06e3814f42845 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/updatewindowsdeviceaccount"
@@ -19,6 +20,7 @@ import (
     i500b20bd7e2735a749bbc4006c139aa4bd48d59beb885ab46c11c96fb3c0fc2b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/deleteuserfromsharedappledevice"
     i517450f6e427b6ca5d73623bf73d81c28199cb35ccde33df9a5d88ae19ffa8cf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/retire"
     i5797da546fe57ad4df31fe8a2b6f987573f3d6589723ad8662823d6c3770612e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/rebootnow"
+    i5b4e1dd744c7393a2040ed414d84fe31f73999cf9023725687cbd7951cd22a93 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/deprovision"
     i5c328c2f039bfe4f71420dac168aac22c152ed72ee261f4f681036292ae71565 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/rotatefilevaultkey"
     i63a60c66200dc227be5ca2d5b63a465840df9eb4645ddcb19a2d1ea1a87389e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/activatedeviceesim"
     i710cdaa7adc294a42b9510684243ddf0d96fe328352f8be6599a5484966b9851 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/resizecloudpc"
@@ -28,6 +30,7 @@ import (
     i90c924c51cccf9a7df3c8c92a8bb29b79e878b9b8aa5b97490ca2003a4eef1aa "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/cleanwindowsdevice"
     i98ffe717d2e5a6124f0902bee09dcd3cd721c8eb1b271550d6323b00e6881a93 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/overridecompliancestate"
     i9b0faeb5632998affc585543c944b6e0da86fbd5df8b7b3609cb93a92476cd9d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/revokeapplevpplicenses"
+    i9e2c8c998231ca71595887e6a6762c5a478a80c31cd7c1d1e1cf0183be91e0da "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/disable"
     ia5abac056477bc9e56c3c443a224e7210e173907269c130743f2790e0c48bf56 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/getnoncompliantsettings"
     ia5d18fd3154dd7d32e5284edc2bb091979644691965d2f205095fb145d40b56e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/wipe"
     ia6d2866a6d4ed56c9cfe03f0687e9d0aed10c3867684d934f0c3c65550ca7914 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/reprovisioncloudpc"
@@ -41,14 +44,32 @@ import (
     ie2655436ba44f850677e4b87f0f60605cc435a5c9710ebdc822de7d4f871ffcb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/shutdown"
 )
 
+// Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice
 type ManagedDeviceRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Options for Get
+type ManagedDeviceRequestBuilderGetOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Request query parameters
+    Q *ManagedDeviceRequestBuilderGetQueryParameters;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// The managed devices that executes the device management script.
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
+    // Select properties to be returned
     Select_escaped []string;
 }
 func (m *ManagedDeviceRequestBuilder) ActivateDeviceEsim()(*i63a60c66200dc227be5ca2d5b63a465840df9eb4645ddcb19a2d1ea1a87389e1.ActivateDeviceEsimRequestBuilder) {
@@ -60,6 +81,10 @@ func (m *ManagedDeviceRequestBuilder) BypassActivationLock()(*ib5eb03fe4e2262fc2
 func (m *ManagedDeviceRequestBuilder) CleanWindowsDevice()(*i90c924c51cccf9a7df3c8c92a8bb29b79e878b9b8aa5b97490ca2003a4eef1aa.CleanWindowsDeviceRequestBuilder) {
     return i90c924c51cccf9a7df3c8c92a8bb29b79e878b9b8aa5b97490ca2003a4eef1aa.NewCleanWindowsDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Instantiates a new ManagedDeviceRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewManagedDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceRequestBuilder) {
     m := &ManagedDeviceRequestBuilder{
     }
@@ -72,6 +97,10 @@ func NewManagedDeviceRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new ManagedDeviceRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewManagedDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -80,30 +109,25 @@ func NewManagedDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
 func (m *ManagedDeviceRequestBuilder) CreateDeviceLogCollectionRequest()(*i0e79d1aff370896ba720fb518bf46a08ebe6591ef9f3a5e9383504e5db833878.CreateDeviceLogCollectionRequestRequestBuilder) {
     return i0e79d1aff370896ba720fb518bf46a08ebe6591ef9f3a5e9383504e5db833878.NewCreateDeviceLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *ManagedDeviceRequestBuilder) CreateGetRequestInformation(q func (value *ManagedDeviceRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// The managed devices that executes the device management script.
+// Parameters:
+//  - options : Options for the request
+func (m *ManagedDeviceRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if q != nil {
-        qParams := new(ManagedDeviceRequestBuilderGetQueryParameters)
-        err := q(qParams)
-        if err != nil {
-            return nil, err
-        }
-        err = qParams.AddQueryParameters(requestInfo.QueryParameters)
+    if options != nil && options.Q != nil {
+        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
         if err != nil {
             return nil, err
         }
     }
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
@@ -113,29 +137,41 @@ func (m *ManagedDeviceRequestBuilder) CreateGetRequestInformation(q func (value 
 func (m *ManagedDeviceRequestBuilder) DeleteUserFromSharedAppleDevice()(*i500b20bd7e2735a749bbc4006c139aa4bd48d59beb885ab46c11c96fb3c0fc2b.DeleteUserFromSharedAppleDeviceRequestBuilder) {
     return i500b20bd7e2735a749bbc4006c139aa4bd48d59beb885ab46c11c96fb3c0fc2b.NewDeleteUserFromSharedAppleDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+func (m *ManagedDeviceRequestBuilder) Deprovision()(*i5b4e1dd744c7393a2040ed414d84fe31f73999cf9023725687cbd7951cd22a93.DeprovisionRequestBuilder) {
+    return i5b4e1dd744c7393a2040ed414d84fe31f73999cf9023725687cbd7951cd22a93.NewDeprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ManagedDeviceRequestBuilder) Disable()(*i9e2c8c998231ca71595887e6a6762c5a478a80c31cd7c1d1e1cf0183be91e0da.DisableRequestBuilder) {
+    return i9e2c8c998231ca71595887e6a6762c5a478a80c31cd7c1d1e1cf0183be91e0da.NewDisableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 func (m *ManagedDeviceRequestBuilder) DisableLostMode()(*i86a4110f1196e12494eb88d958b16fbbe5d9ea4da5db422cb4afa3fd12e095dd.DisableLostModeRequestBuilder) {
     return i86a4110f1196e12494eb88d958b16fbbe5d9ea4da5db422cb4afa3fd12e095dd.NewDisableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ManagedDeviceRequestBuilder) EnableLostMode()(*i8472707729f0a6774c2dd878ad69978368ef302ab88e38ce6c283ecf1da8f3a1.EnableLostModeRequestBuilder) {
     return i8472707729f0a6774c2dd878ad69978368ef302ab88e38ce6c283ecf1da8f3a1.NewEnableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *ManagedDeviceRequestBuilder) Get(q func (value *ManagedDeviceRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDevice, error) {
-    requestInfo, err := m.CreateGetRequestInformation(q, h, o);
+// The managed devices that executes the device management script.
+// Parameters:
+//  - options : Options for the request
+func (m *ManagedDeviceRequestBuilder) Get(options *ManagedDeviceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDevice, error) {
+    requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagedDevice() }, responseHandler)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagedDevice() }, nil)
     if err != nil {
         return nil, err
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDevice), nil
 }
+// Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getCloudPcRemoteActionResults()
 func (m *ManagedDeviceRequestBuilder) GetCloudPcRemoteActionResults()(*ic9d1b67ed87b1196c8ff46b5a5223ed24d71f8b3ad69c2485a2d0bb87b6f6914.GetCloudPcRemoteActionResultsRequestBuilder) {
     return ic9d1b67ed87b1196c8ff46b5a5223ed24d71f8b3ad69c2485a2d0bb87b6f6914.NewGetCloudPcRemoteActionResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getFileVaultKey()
 func (m *ManagedDeviceRequestBuilder) GetFileVaultKey()(*i2c446b375b2fd48b5eb5d4b370a970ffe6c57a0acdbfe0e28e8094475db38b82.GetFileVaultKeyRequestBuilder) {
     return i2c446b375b2fd48b5eb5d4b370a970ffe6c57a0acdbfe0e28e8094475db38b82.NewGetFileVaultKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getNonCompliantSettings()
 func (m *ManagedDeviceRequestBuilder) GetNonCompliantSettings()(*ia5abac056477bc9e56c3c443a224e7210e173907269c130743f2790e0c48bf56.GetNonCompliantSettingsRequestBuilder) {
     return ia5abac056477bc9e56c3c443a224e7210e173907269c130743f2790e0c48bf56.NewGetNonCompliantSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -156,6 +192,9 @@ func (m *ManagedDeviceRequestBuilder) RebootNow()(*i5797da546fe57ad4df31fe8a2b6f
 }
 func (m *ManagedDeviceRequestBuilder) RecoverPasscode()(*i295788bf4a102f78f3c216f64170a22e460ba7e23a8041d6526640a26b0738f0.RecoverPasscodeRequestBuilder) {
     return i295788bf4a102f78f3c216f64170a22e460ba7e23a8041d6526640a26b0738f0.NewRecoverPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ManagedDeviceRequestBuilder) Reenable()(*i3374e8447c02551ee2536075a785741a5e35ffe6b39d46bee586a40ebdde92fd.ReenableRequestBuilder) {
+    return i3374e8447c02551ee2536075a785741a5e35ffe6b39d46bee586a40ebdde92fd.NewReenableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ManagedDeviceRequestBuilder) Ref()(*i1514490d3ba4a568c72dd8130489159e5fcb3ba47bbfffb6c24e69f20541b627.RefRequestBuilder) {
     return i1514490d3ba4a568c72dd8130489159e5fcb3ba47bbfffb6c24e69f20541b627.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -5,18 +5,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DataSource struct {
     Entity
+    // The user who created the dataSource.
     createdBy *IdentitySet;
+    // The date and time the dataSource was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // The display name of the dataSource. This will be the name of the SharePoint site.
     displayName *string;
 }
+// Instantiates a new dataSource and sets the default values.
 func NewDataSource()(*DataSource) {
     m := &DataSource{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the createdBy property value. The user who created the dataSource.
 func (m *DataSource) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -24,6 +30,7 @@ func (m *DataSource) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
+// Gets the createdDateTime property value. The date and time the dataSource was created.
 func (m *DataSource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -31,6 +38,7 @@ func (m *DataSource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
         return m.createdDateTime
     }
 }
+// Gets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
 func (m *DataSource) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -38,6 +46,7 @@ func (m *DataSource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// The deserialization information for the current model
 func (m *DataSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,6 +78,9 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *DataSource) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DataSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,12 +106,21 @@ func (m *DataSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
+// Sets the createdBy property value. The user who created the dataSource.
+// Parameters:
+//  - value : Value to set for the createdBy property.
 func (m *DataSource) SetCreatedBy(value *IdentitySet)() {
     m.createdBy = value
 }
+// Sets the createdDateTime property value. The date and time the dataSource was created.
+// Parameters:
+//  - value : Value to set for the createdDateTime property.
 func (m *DataSource) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
+// Sets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *DataSource) SetDisplayName(value *string)() {
     m.displayName = value
 }

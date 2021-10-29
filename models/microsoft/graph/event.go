@@ -5,60 +5,108 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Event struct {
     OutlookItem
+    // true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
     allowNewTimeProposals *bool;
+    // The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
     attachments []Attachment;
+    // The collection of attendees for the event.
     attendees []Attendee;
+    // The body of the message associated with the event. It can be in HTML or text format.
     body *ItemBody;
+    // The preview of the message associated with the event. It is in text format.
     bodyPreview *string;
+    // The calendar that contains the event. Navigation property. Read-only.
     calendar *Calendar;
+    // Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
     cancelledOccurrences []string;
+    // The date, time, and time zone that the event ends. By default, the end time is in UTC.
     end *DateTimeTimeZone;
+    // 
     exceptionOccurrences []Event;
+    // The collection of open extensions defined for the event. Nullable.
     extensions []Extension;
+    // Set to true if the event has attachments.
     hasAttachments *bool;
+    // When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
     hideAttendees *bool;
+    // 
     importance *Importance;
+    // The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
     instances []Event;
+    // 
     isAllDay *bool;
+    // 
     isCancelled *bool;
+    // 
     isDraft *bool;
+    // 
     isOnlineMeeting *bool;
+    // 
     isOrganizer *bool;
+    // 
     isReminderOn *bool;
+    // 
     location *Location;
+    // 
     locations []Location;
+    // The collection of multi-value extended properties defined for the event. Read-only. Nullable.
     multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    // 
     occurrenceId *string;
+    // 
     onlineMeeting *OnlineMeetingInfo;
+    // 
     onlineMeetingProvider *OnlineMeetingProviderType;
+    // 
     onlineMeetingUrl *string;
+    // 
     organizer *Recipient;
+    // 
     originalEndTimeZone *string;
+    // 
     originalStart *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     originalStartTimeZone *string;
+    // 
     recurrence *PatternedRecurrence;
+    // 
     reminderMinutesBeforeStart *int32;
+    // 
     responseRequested *bool;
+    // 
     responseStatus *ResponseStatus;
+    // 
     sensitivity *Sensitivity;
+    // 
     seriesMasterId *string;
+    // 
     showAs *FreeBusyStatus;
+    // The collection of single-value extended properties defined for the event. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    // 
     start *DateTimeTimeZone;
+    // 
     subject *string;
+    // 
     transactionId *string;
+    // 
     type_escaped *EventType;
+    // 
     uid *string;
+    // 
     webLink *string;
 }
+// Instantiates a new event and sets the default values.
 func NewEvent()(*Event) {
     m := &Event{
         OutlookItem: *NewOutlookItem(),
     }
     return m
 }
+// Gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
 func (m *Event) GetAllowNewTimeProposals()(*bool) {
     if m == nil {
         return nil
@@ -66,6 +114,7 @@ func (m *Event) GetAllowNewTimeProposals()(*bool) {
         return m.allowNewTimeProposals
     }
 }
+// Gets the attachments property value. The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
 func (m *Event) GetAttachments()([]Attachment) {
     if m == nil {
         return nil
@@ -73,6 +122,7 @@ func (m *Event) GetAttachments()([]Attachment) {
         return m.attachments
     }
 }
+// Gets the attendees property value. The collection of attendees for the event.
 func (m *Event) GetAttendees()([]Attendee) {
     if m == nil {
         return nil
@@ -80,6 +130,7 @@ func (m *Event) GetAttendees()([]Attendee) {
         return m.attendees
     }
 }
+// Gets the body property value. The body of the message associated with the event. It can be in HTML or text format.
 func (m *Event) GetBody()(*ItemBody) {
     if m == nil {
         return nil
@@ -87,6 +138,7 @@ func (m *Event) GetBody()(*ItemBody) {
         return m.body
     }
 }
+// Gets the bodyPreview property value. The preview of the message associated with the event. It is in text format.
 func (m *Event) GetBodyPreview()(*string) {
     if m == nil {
         return nil
@@ -94,6 +146,7 @@ func (m *Event) GetBodyPreview()(*string) {
         return m.bodyPreview
     }
 }
+// Gets the calendar property value. The calendar that contains the event. Navigation property. Read-only.
 func (m *Event) GetCalendar()(*Calendar) {
     if m == nil {
         return nil
@@ -101,6 +154,7 @@ func (m *Event) GetCalendar()(*Calendar) {
         return m.calendar
     }
 }
+// Gets the cancelledOccurrences property value. Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
 func (m *Event) GetCancelledOccurrences()([]string) {
     if m == nil {
         return nil
@@ -108,6 +162,7 @@ func (m *Event) GetCancelledOccurrences()([]string) {
         return m.cancelledOccurrences
     }
 }
+// Gets the end property value. The date, time, and time zone that the event ends. By default, the end time is in UTC.
 func (m *Event) GetEnd()(*DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -115,6 +170,7 @@ func (m *Event) GetEnd()(*DateTimeTimeZone) {
         return m.end
     }
 }
+// Gets the exceptionOccurrences property value. 
 func (m *Event) GetExceptionOccurrences()([]Event) {
     if m == nil {
         return nil
@@ -122,6 +178,7 @@ func (m *Event) GetExceptionOccurrences()([]Event) {
         return m.exceptionOccurrences
     }
 }
+// Gets the extensions property value. The collection of open extensions defined for the event. Nullable.
 func (m *Event) GetExtensions()([]Extension) {
     if m == nil {
         return nil
@@ -129,6 +186,7 @@ func (m *Event) GetExtensions()([]Extension) {
         return m.extensions
     }
 }
+// Gets the hasAttachments property value. Set to true if the event has attachments.
 func (m *Event) GetHasAttachments()(*bool) {
     if m == nil {
         return nil
@@ -136,6 +194,7 @@ func (m *Event) GetHasAttachments()(*bool) {
         return m.hasAttachments
     }
 }
+// Gets the hideAttendees property value. When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
 func (m *Event) GetHideAttendees()(*bool) {
     if m == nil {
         return nil
@@ -143,6 +202,7 @@ func (m *Event) GetHideAttendees()(*bool) {
         return m.hideAttendees
     }
 }
+// Gets the importance property value. 
 func (m *Event) GetImportance()(*Importance) {
     if m == nil {
         return nil
@@ -150,6 +210,7 @@ func (m *Event) GetImportance()(*Importance) {
         return m.importance
     }
 }
+// Gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 func (m *Event) GetInstances()([]Event) {
     if m == nil {
         return nil
@@ -157,6 +218,7 @@ func (m *Event) GetInstances()([]Event) {
         return m.instances
     }
 }
+// Gets the isAllDay property value. 
 func (m *Event) GetIsAllDay()(*bool) {
     if m == nil {
         return nil
@@ -164,6 +226,7 @@ func (m *Event) GetIsAllDay()(*bool) {
         return m.isAllDay
     }
 }
+// Gets the isCancelled property value. 
 func (m *Event) GetIsCancelled()(*bool) {
     if m == nil {
         return nil
@@ -171,6 +234,7 @@ func (m *Event) GetIsCancelled()(*bool) {
         return m.isCancelled
     }
 }
+// Gets the isDraft property value. 
 func (m *Event) GetIsDraft()(*bool) {
     if m == nil {
         return nil
@@ -178,6 +242,7 @@ func (m *Event) GetIsDraft()(*bool) {
         return m.isDraft
     }
 }
+// Gets the isOnlineMeeting property value. 
 func (m *Event) GetIsOnlineMeeting()(*bool) {
     if m == nil {
         return nil
@@ -185,6 +250,7 @@ func (m *Event) GetIsOnlineMeeting()(*bool) {
         return m.isOnlineMeeting
     }
 }
+// Gets the isOrganizer property value. 
 func (m *Event) GetIsOrganizer()(*bool) {
     if m == nil {
         return nil
@@ -192,6 +258,7 @@ func (m *Event) GetIsOrganizer()(*bool) {
         return m.isOrganizer
     }
 }
+// Gets the isReminderOn property value. 
 func (m *Event) GetIsReminderOn()(*bool) {
     if m == nil {
         return nil
@@ -199,6 +266,7 @@ func (m *Event) GetIsReminderOn()(*bool) {
         return m.isReminderOn
     }
 }
+// Gets the location property value. 
 func (m *Event) GetLocation()(*Location) {
     if m == nil {
         return nil
@@ -206,6 +274,7 @@ func (m *Event) GetLocation()(*Location) {
         return m.location
     }
 }
+// Gets the locations property value. 
 func (m *Event) GetLocations()([]Location) {
     if m == nil {
         return nil
@@ -213,6 +282,7 @@ func (m *Event) GetLocations()([]Location) {
         return m.locations
     }
 }
+// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the event. Read-only. Nullable.
 func (m *Event) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -220,6 +290,7 @@ func (m *Event) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProp
         return m.multiValueExtendedProperties
     }
 }
+// Gets the occurrenceId property value. 
 func (m *Event) GetOccurrenceId()(*string) {
     if m == nil {
         return nil
@@ -227,6 +298,7 @@ func (m *Event) GetOccurrenceId()(*string) {
         return m.occurrenceId
     }
 }
+// Gets the onlineMeeting property value. 
 func (m *Event) GetOnlineMeeting()(*OnlineMeetingInfo) {
     if m == nil {
         return nil
@@ -234,6 +306,7 @@ func (m *Event) GetOnlineMeeting()(*OnlineMeetingInfo) {
         return m.onlineMeeting
     }
 }
+// Gets the onlineMeetingProvider property value. 
 func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
     if m == nil {
         return nil
@@ -241,6 +314,7 @@ func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
         return m.onlineMeetingProvider
     }
 }
+// Gets the onlineMeetingUrl property value. 
 func (m *Event) GetOnlineMeetingUrl()(*string) {
     if m == nil {
         return nil
@@ -248,6 +322,7 @@ func (m *Event) GetOnlineMeetingUrl()(*string) {
         return m.onlineMeetingUrl
     }
 }
+// Gets the organizer property value. 
 func (m *Event) GetOrganizer()(*Recipient) {
     if m == nil {
         return nil
@@ -255,6 +330,7 @@ func (m *Event) GetOrganizer()(*Recipient) {
         return m.organizer
     }
 }
+// Gets the originalEndTimeZone property value. 
 func (m *Event) GetOriginalEndTimeZone()(*string) {
     if m == nil {
         return nil
@@ -262,6 +338,7 @@ func (m *Event) GetOriginalEndTimeZone()(*string) {
         return m.originalEndTimeZone
     }
 }
+// Gets the originalStart property value. 
 func (m *Event) GetOriginalStart()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -269,6 +346,7 @@ func (m *Event) GetOriginalStart()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
         return m.originalStart
     }
 }
+// Gets the originalStartTimeZone property value. 
 func (m *Event) GetOriginalStartTimeZone()(*string) {
     if m == nil {
         return nil
@@ -276,6 +354,7 @@ func (m *Event) GetOriginalStartTimeZone()(*string) {
         return m.originalStartTimeZone
     }
 }
+// Gets the recurrence property value. 
 func (m *Event) GetRecurrence()(*PatternedRecurrence) {
     if m == nil {
         return nil
@@ -283,6 +362,7 @@ func (m *Event) GetRecurrence()(*PatternedRecurrence) {
         return m.recurrence
     }
 }
+// Gets the reminderMinutesBeforeStart property value. 
 func (m *Event) GetReminderMinutesBeforeStart()(*int32) {
     if m == nil {
         return nil
@@ -290,6 +370,7 @@ func (m *Event) GetReminderMinutesBeforeStart()(*int32) {
         return m.reminderMinutesBeforeStart
     }
 }
+// Gets the responseRequested property value. 
 func (m *Event) GetResponseRequested()(*bool) {
     if m == nil {
         return nil
@@ -297,6 +378,7 @@ func (m *Event) GetResponseRequested()(*bool) {
         return m.responseRequested
     }
 }
+// Gets the responseStatus property value. 
 func (m *Event) GetResponseStatus()(*ResponseStatus) {
     if m == nil {
         return nil
@@ -304,6 +386,7 @@ func (m *Event) GetResponseStatus()(*ResponseStatus) {
         return m.responseStatus
     }
 }
+// Gets the sensitivity property value. 
 func (m *Event) GetSensitivity()(*Sensitivity) {
     if m == nil {
         return nil
@@ -311,6 +394,7 @@ func (m *Event) GetSensitivity()(*Sensitivity) {
         return m.sensitivity
     }
 }
+// Gets the seriesMasterId property value. 
 func (m *Event) GetSeriesMasterId()(*string) {
     if m == nil {
         return nil
@@ -318,6 +402,7 @@ func (m *Event) GetSeriesMasterId()(*string) {
         return m.seriesMasterId
     }
 }
+// Gets the showAs property value. 
 func (m *Event) GetShowAs()(*FreeBusyStatus) {
     if m == nil {
         return nil
@@ -325,6 +410,7 @@ func (m *Event) GetShowAs()(*FreeBusyStatus) {
         return m.showAs
     }
 }
+// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the event. Read-only. Nullable.
 func (m *Event) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -332,6 +418,7 @@ func (m *Event) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPr
         return m.singleValueExtendedProperties
     }
 }
+// Gets the start property value. 
 func (m *Event) GetStart()(*DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -339,6 +426,7 @@ func (m *Event) GetStart()(*DateTimeTimeZone) {
         return m.start
     }
 }
+// Gets the subject property value. 
 func (m *Event) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -346,6 +434,7 @@ func (m *Event) GetSubject()(*string) {
         return m.subject
     }
 }
+// Gets the transactionId property value. 
 func (m *Event) GetTransactionId()(*string) {
     if m == nil {
         return nil
@@ -353,6 +442,7 @@ func (m *Event) GetTransactionId()(*string) {
         return m.transactionId
     }
 }
+// Gets the type_escaped property value. 
 func (m *Event) GetType_escaped()(*EventType) {
     if m == nil {
         return nil
@@ -360,6 +450,7 @@ func (m *Event) GetType_escaped()(*EventType) {
         return m.type_escaped
     }
 }
+// Gets the uid property value. 
 func (m *Event) GetUid()(*string) {
     if m == nil {
         return nil
@@ -367,6 +458,7 @@ func (m *Event) GetUid()(*string) {
         return m.uid
     }
 }
+// Gets the webLink property value. 
 func (m *Event) GetWebLink()(*string) {
     if m == nil {
         return nil
@@ -374,6 +466,7 @@ func (m *Event) GetWebLink()(*string) {
         return m.webLink
     }
 }
+// The deserialization information for the current model
 func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["allowNewTimeProposals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -782,6 +875,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Event) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.OutlookItem.Serialize(writer)
     if err != nil {
@@ -1104,138 +1200,273 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
+// Sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
+// Parameters:
+//  - value : Value to set for the allowNewTimeProposals property.
 func (m *Event) SetAllowNewTimeProposals(value *bool)() {
     m.allowNewTimeProposals = value
 }
+// Sets the attachments property value. The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the attachments property.
 func (m *Event) SetAttachments(value []Attachment)() {
     m.attachments = value
 }
+// Sets the attendees property value. The collection of attendees for the event.
+// Parameters:
+//  - value : Value to set for the attendees property.
 func (m *Event) SetAttendees(value []Attendee)() {
     m.attendees = value
 }
+// Sets the body property value. The body of the message associated with the event. It can be in HTML or text format.
+// Parameters:
+//  - value : Value to set for the body property.
 func (m *Event) SetBody(value *ItemBody)() {
     m.body = value
 }
+// Sets the bodyPreview property value. The preview of the message associated with the event. It is in text format.
+// Parameters:
+//  - value : Value to set for the bodyPreview property.
 func (m *Event) SetBodyPreview(value *string)() {
     m.bodyPreview = value
 }
+// Sets the calendar property value. The calendar that contains the event. Navigation property. Read-only.
+// Parameters:
+//  - value : Value to set for the calendar property.
 func (m *Event) SetCalendar(value *Calendar)() {
     m.calendar = value
 }
+// Sets the cancelledOccurrences property value. Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+// Parameters:
+//  - value : Value to set for the cancelledOccurrences property.
 func (m *Event) SetCancelledOccurrences(value []string)() {
     m.cancelledOccurrences = value
 }
+// Sets the end property value. The date, time, and time zone that the event ends. By default, the end time is in UTC.
+// Parameters:
+//  - value : Value to set for the end property.
 func (m *Event) SetEnd(value *DateTimeTimeZone)() {
     m.end = value
 }
+// Sets the exceptionOccurrences property value. 
+// Parameters:
+//  - value : Value to set for the exceptionOccurrences property.
 func (m *Event) SetExceptionOccurrences(value []Event)() {
     m.exceptionOccurrences = value
 }
+// Sets the extensions property value. The collection of open extensions defined for the event. Nullable.
+// Parameters:
+//  - value : Value to set for the extensions property.
 func (m *Event) SetExtensions(value []Extension)() {
     m.extensions = value
 }
+// Sets the hasAttachments property value. Set to true if the event has attachments.
+// Parameters:
+//  - value : Value to set for the hasAttachments property.
 func (m *Event) SetHasAttachments(value *bool)() {
     m.hasAttachments = value
 }
+// Sets the hideAttendees property value. When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
+// Parameters:
+//  - value : Value to set for the hideAttendees property.
 func (m *Event) SetHideAttendees(value *bool)() {
     m.hideAttendees = value
 }
+// Sets the importance property value. 
+// Parameters:
+//  - value : Value to set for the importance property.
 func (m *Event) SetImportance(value *Importance)() {
     m.importance = value
 }
+// Sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the instances property.
 func (m *Event) SetInstances(value []Event)() {
     m.instances = value
 }
+// Sets the isAllDay property value. 
+// Parameters:
+//  - value : Value to set for the isAllDay property.
 func (m *Event) SetIsAllDay(value *bool)() {
     m.isAllDay = value
 }
+// Sets the isCancelled property value. 
+// Parameters:
+//  - value : Value to set for the isCancelled property.
 func (m *Event) SetIsCancelled(value *bool)() {
     m.isCancelled = value
 }
+// Sets the isDraft property value. 
+// Parameters:
+//  - value : Value to set for the isDraft property.
 func (m *Event) SetIsDraft(value *bool)() {
     m.isDraft = value
 }
+// Sets the isOnlineMeeting property value. 
+// Parameters:
+//  - value : Value to set for the isOnlineMeeting property.
 func (m *Event) SetIsOnlineMeeting(value *bool)() {
     m.isOnlineMeeting = value
 }
+// Sets the isOrganizer property value. 
+// Parameters:
+//  - value : Value to set for the isOrganizer property.
 func (m *Event) SetIsOrganizer(value *bool)() {
     m.isOrganizer = value
 }
+// Sets the isReminderOn property value. 
+// Parameters:
+//  - value : Value to set for the isReminderOn property.
 func (m *Event) SetIsReminderOn(value *bool)() {
     m.isReminderOn = value
 }
+// Sets the location property value. 
+// Parameters:
+//  - value : Value to set for the location property.
 func (m *Event) SetLocation(value *Location)() {
     m.location = value
 }
+// Sets the locations property value. 
+// Parameters:
+//  - value : Value to set for the locations property.
 func (m *Event) SetLocations(value []Location)() {
     m.locations = value
 }
+// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the event. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the multiValueExtendedProperties property.
 func (m *Event) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
+// Sets the occurrenceId property value. 
+// Parameters:
+//  - value : Value to set for the occurrenceId property.
 func (m *Event) SetOccurrenceId(value *string)() {
     m.occurrenceId = value
 }
+// Sets the onlineMeeting property value. 
+// Parameters:
+//  - value : Value to set for the onlineMeeting property.
 func (m *Event) SetOnlineMeeting(value *OnlineMeetingInfo)() {
     m.onlineMeeting = value
 }
+// Sets the onlineMeetingProvider property value. 
+// Parameters:
+//  - value : Value to set for the onlineMeetingProvider property.
 func (m *Event) SetOnlineMeetingProvider(value *OnlineMeetingProviderType)() {
     m.onlineMeetingProvider = value
 }
+// Sets the onlineMeetingUrl property value. 
+// Parameters:
+//  - value : Value to set for the onlineMeetingUrl property.
 func (m *Event) SetOnlineMeetingUrl(value *string)() {
     m.onlineMeetingUrl = value
 }
+// Sets the organizer property value. 
+// Parameters:
+//  - value : Value to set for the organizer property.
 func (m *Event) SetOrganizer(value *Recipient)() {
     m.organizer = value
 }
+// Sets the originalEndTimeZone property value. 
+// Parameters:
+//  - value : Value to set for the originalEndTimeZone property.
 func (m *Event) SetOriginalEndTimeZone(value *string)() {
     m.originalEndTimeZone = value
 }
+// Sets the originalStart property value. 
+// Parameters:
+//  - value : Value to set for the originalStart property.
 func (m *Event) SetOriginalStart(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.originalStart = value
 }
+// Sets the originalStartTimeZone property value. 
+// Parameters:
+//  - value : Value to set for the originalStartTimeZone property.
 func (m *Event) SetOriginalStartTimeZone(value *string)() {
     m.originalStartTimeZone = value
 }
+// Sets the recurrence property value. 
+// Parameters:
+//  - value : Value to set for the recurrence property.
 func (m *Event) SetRecurrence(value *PatternedRecurrence)() {
     m.recurrence = value
 }
+// Sets the reminderMinutesBeforeStart property value. 
+// Parameters:
+//  - value : Value to set for the reminderMinutesBeforeStart property.
 func (m *Event) SetReminderMinutesBeforeStart(value *int32)() {
     m.reminderMinutesBeforeStart = value
 }
+// Sets the responseRequested property value. 
+// Parameters:
+//  - value : Value to set for the responseRequested property.
 func (m *Event) SetResponseRequested(value *bool)() {
     m.responseRequested = value
 }
+// Sets the responseStatus property value. 
+// Parameters:
+//  - value : Value to set for the responseStatus property.
 func (m *Event) SetResponseStatus(value *ResponseStatus)() {
     m.responseStatus = value
 }
+// Sets the sensitivity property value. 
+// Parameters:
+//  - value : Value to set for the sensitivity property.
 func (m *Event) SetSensitivity(value *Sensitivity)() {
     m.sensitivity = value
 }
+// Sets the seriesMasterId property value. 
+// Parameters:
+//  - value : Value to set for the seriesMasterId property.
 func (m *Event) SetSeriesMasterId(value *string)() {
     m.seriesMasterId = value
 }
+// Sets the showAs property value. 
+// Parameters:
+//  - value : Value to set for the showAs property.
 func (m *Event) SetShowAs(value *FreeBusyStatus)() {
     m.showAs = value
 }
+// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the event. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the singleValueExtendedProperties property.
 func (m *Event) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }
+// Sets the start property value. 
+// Parameters:
+//  - value : Value to set for the start property.
 func (m *Event) SetStart(value *DateTimeTimeZone)() {
     m.start = value
 }
+// Sets the subject property value. 
+// Parameters:
+//  - value : Value to set for the subject property.
 func (m *Event) SetSubject(value *string)() {
     m.subject = value
 }
+// Sets the transactionId property value. 
+// Parameters:
+//  - value : Value to set for the transactionId property.
 func (m *Event) SetTransactionId(value *string)() {
     m.transactionId = value
 }
+// Sets the type_escaped property value. 
+// Parameters:
+//  - value : Value to set for the type_escaped property.
 func (m *Event) SetType_escaped(value *EventType)() {
     m.type_escaped = value
 }
+// Sets the uid property value. 
+// Parameters:
+//  - value : Value to set for the uid property.
 func (m *Event) SetUid(value *string)() {
     m.uid = value
 }
+// Sets the webLink property value. 
+// Parameters:
+//  - value : Value to set for the webLink property.
 func (m *Event) SetWebLink(value *string)() {
     m.webLink = value
 }

@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type EvaluateLabelJobResponse struct {
     JobResponseBase
+    // 
     result *EvaluateLabelJobResultGroup;
 }
+// Instantiates a new evaluateLabelJobResponse and sets the default values.
 func NewEvaluateLabelJobResponse()(*EvaluateLabelJobResponse) {
     m := &EvaluateLabelJobResponse{
         JobResponseBase: *NewJobResponseBase(),
     }
     return m
 }
+// Gets the result property value. 
 func (m *EvaluateLabelJobResponse) GetResult()(*EvaluateLabelJobResultGroup) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *EvaluateLabelJobResponse) GetResult()(*EvaluateLabelJobResultGroup) {
         return m.result
     }
 }
+// The deserialization information for the current model
 func (m *EvaluateLabelJobResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.JobResponseBase.GetFieldDeserializers()
     res["result"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -36,6 +41,9 @@ func (m *EvaluateLabelJobResponse) GetFieldDeserializers()(map[string]func(inter
 func (m *EvaluateLabelJobResponse) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *EvaluateLabelJobResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.JobResponseBase.Serialize(writer)
     if err != nil {
@@ -49,6 +57,9 @@ func (m *EvaluateLabelJobResponse) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
+// Sets the result property value. 
+// Parameters:
+//  - value : Value to set for the result property.
 func (m *EvaluateLabelJobResponse) SetResult(value *EvaluateLabelJobResultGroup)() {
     m.result = value
 }

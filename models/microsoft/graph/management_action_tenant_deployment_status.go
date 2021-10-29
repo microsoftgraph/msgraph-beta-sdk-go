@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ManagementActionTenantDeploymentStatus struct {
     Entity
+    // The collection of deployment status for each instance of a management action. Optional.
     statuses []ManagementActionDeploymentStatus;
+    // The identifier for the tenant group that is associated with the management action. Required. Read-only.
     tenantGroupId *string;
+    // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
     tenantId *string;
 }
+// Instantiates a new managementActionTenantDeploymentStatus and sets the default values.
 func NewManagementActionTenantDeploymentStatus()(*ManagementActionTenantDeploymentStatus) {
     m := &ManagementActionTenantDeploymentStatus{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
 func (m *ManagementActionTenantDeploymentStatus) GetStatuses()([]ManagementActionDeploymentStatus) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *ManagementActionTenantDeploymentStatus) GetStatuses()([]ManagementActio
         return m.statuses
     }
 }
+// Gets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId()(*string) {
         return m.tenantGroupId
     }
 }
+// Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *ManagementActionTenantDeploymentStatus) GetTenantId()(*string) {
         return m.tenantId
     }
 }
+// The deserialization information for the current model
 func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["statuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,6 +81,9 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
 func (m *ManagementActionTenantDeploymentStatus) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -102,12 +114,21 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i04eb5309aeaaf
     }
     return nil
 }
+// Sets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
+// Parameters:
+//  - value : Value to set for the statuses property.
 func (m *ManagementActionTenantDeploymentStatus) SetStatuses(value []ManagementActionDeploymentStatus)() {
     m.statuses = value
 }
+// Sets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
+// Parameters:
+//  - value : Value to set for the tenantGroupId property.
 func (m *ManagementActionTenantDeploymentStatus) SetTenantGroupId(value *string)() {
     m.tenantGroupId = value
 }
+// Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+// Parameters:
+//  - value : Value to set for the tenantId property.
 func (m *ManagementActionTenantDeploymentStatus) SetTenantId(value *string)() {
     m.tenantId = value
 }

@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type Windows10EditionType int
 
 const (

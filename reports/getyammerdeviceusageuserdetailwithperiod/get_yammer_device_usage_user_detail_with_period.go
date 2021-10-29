@@ -5,28 +5,44 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetYammerDeviceUsageUserDetailWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     displayName *string;
+    // 
     lastActivityDate *string;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
+    // 
     stateChangeDate *string;
+    // 
     usedAndroidPhone *bool;
+    // 
     usediPad *bool;
+    // 
     usediPhone *bool;
+    // 
     usedOthers *bool;
+    // 
     usedWeb *bool;
+    // 
     usedWindowsPhone *bool;
+    // 
     userPrincipalName *string;
+    // 
     userState *string;
 }
+// Instantiates a new getYammerDeviceUsageUserDetailWithPeriod and sets the default values.
 func NewGetYammerDeviceUsageUserDetailWithPeriod()(*GetYammerDeviceUsageUserDetailWithPeriod) {
     m := &GetYammerDeviceUsageUserDetailWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the displayName property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -34,6 +50,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the lastActivityDate property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -41,6 +58,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetLastActivityDate()(*string
         return m.lastActivityDate
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -48,6 +66,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetReportPeriod()(*string) {
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -55,6 +74,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetReportRefreshDate()(*strin
         return m.reportRefreshDate
     }
 }
+// Gets the stateChangeDate property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetStateChangeDate()(*string) {
     if m == nil {
         return nil
@@ -62,6 +82,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetStateChangeDate()(*string)
         return m.stateChangeDate
     }
 }
+// Gets the usedAndroidPhone property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsedAndroidPhone()(*bool) {
     if m == nil {
         return nil
@@ -69,6 +90,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsedAndroidPhone()(*bool) 
         return m.usedAndroidPhone
     }
 }
+// Gets the usediPad property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsediPad()(*bool) {
     if m == nil {
         return nil
@@ -76,6 +98,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsediPad()(*bool) {
         return m.usediPad
     }
 }
+// Gets the usediPhone property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsediPhone()(*bool) {
     if m == nil {
         return nil
@@ -83,6 +106,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsediPhone()(*bool) {
         return m.usediPhone
     }
 }
+// Gets the usedOthers property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsedOthers()(*bool) {
     if m == nil {
         return nil
@@ -90,6 +114,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsedOthers()(*bool) {
         return m.usedOthers
     }
 }
+// Gets the usedWeb property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsedWeb()(*bool) {
     if m == nil {
         return nil
@@ -97,6 +122,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsedWeb()(*bool) {
         return m.usedWeb
     }
 }
+// Gets the usedWindowsPhone property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsedWindowsPhone()(*bool) {
     if m == nil {
         return nil
@@ -104,6 +130,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUsedWindowsPhone()(*bool) 
         return m.usedWindowsPhone
     }
 }
+// Gets the userPrincipalName property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -111,6 +138,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUserPrincipalName()(*strin
         return m.userPrincipalName
     }
 }
+// Gets the userState property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUserState()(*string) {
     if m == nil {
         return nil
@@ -118,6 +146,7 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetUserState()(*string) {
         return m.userState
     }
 }
+// The deserialization information for the current model
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,6 +258,9 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[s
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -314,42 +346,81 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) Serialize(writer i04eb5309aea
     }
     return nil
 }
+// Sets the displayName property value. 
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the lastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the lastActivityDate property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetLastActivityDate(value *string)() {
     m.lastActivityDate = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
+// Sets the stateChangeDate property value. 
+// Parameters:
+//  - value : Value to set for the stateChangeDate property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetStateChangeDate(value *string)() {
     m.stateChangeDate = value
 }
+// Sets the usedAndroidPhone property value. 
+// Parameters:
+//  - value : Value to set for the usedAndroidPhone property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsedAndroidPhone(value *bool)() {
     m.usedAndroidPhone = value
 }
+// Sets the usediPad property value. 
+// Parameters:
+//  - value : Value to set for the usediPad property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsediPad(value *bool)() {
     m.usediPad = value
 }
+// Sets the usediPhone property value. 
+// Parameters:
+//  - value : Value to set for the usediPhone property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsediPhone(value *bool)() {
     m.usediPhone = value
 }
+// Sets the usedOthers property value. 
+// Parameters:
+//  - value : Value to set for the usedOthers property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsedOthers(value *bool)() {
     m.usedOthers = value
 }
+// Sets the usedWeb property value. 
+// Parameters:
+//  - value : Value to set for the usedWeb property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsedWeb(value *bool)() {
     m.usedWeb = value
 }
+// Sets the usedWindowsPhone property value. 
+// Parameters:
+//  - value : Value to set for the usedWindowsPhone property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsedWindowsPhone(value *bool)() {
     m.usedWindowsPhone = value
 }
+// Sets the userPrincipalName property value. 
+// Parameters:
+//  - value : Value to set for the userPrincipalName property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }
+// Sets the userState property value. 
+// Parameters:
+//  - value : Value to set for the userState property.
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUserState(value *string)() {
     m.userState = value
 }

@@ -4,21 +4,30 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type TenantSetupInfo struct {
     Entity
+    // 
     defaultRolesSettings *PrivilegedRoleSettings;
+    // 
     firstTimeSetup *bool;
+    // 
     relevantRolesSettings []string;
+    // 
     setupStatus *SetupStatus;
+    // 
     skipSetup *bool;
+    // 
     userRolesActions *string;
 }
+// Instantiates a new tenantSetupInfo and sets the default values.
 func NewTenantSetupInfo()(*TenantSetupInfo) {
     m := &TenantSetupInfo{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the defaultRolesSettings property value. 
 func (m *TenantSetupInfo) GetDefaultRolesSettings()(*PrivilegedRoleSettings) {
     if m == nil {
         return nil
@@ -26,6 +35,7 @@ func (m *TenantSetupInfo) GetDefaultRolesSettings()(*PrivilegedRoleSettings) {
         return m.defaultRolesSettings
     }
 }
+// Gets the firstTimeSetup property value. 
 func (m *TenantSetupInfo) GetFirstTimeSetup()(*bool) {
     if m == nil {
         return nil
@@ -33,6 +43,7 @@ func (m *TenantSetupInfo) GetFirstTimeSetup()(*bool) {
         return m.firstTimeSetup
     }
 }
+// Gets the relevantRolesSettings property value. 
 func (m *TenantSetupInfo) GetRelevantRolesSettings()([]string) {
     if m == nil {
         return nil
@@ -40,6 +51,7 @@ func (m *TenantSetupInfo) GetRelevantRolesSettings()([]string) {
         return m.relevantRolesSettings
     }
 }
+// Gets the setupStatus property value. 
 func (m *TenantSetupInfo) GetSetupStatus()(*SetupStatus) {
     if m == nil {
         return nil
@@ -47,6 +59,7 @@ func (m *TenantSetupInfo) GetSetupStatus()(*SetupStatus) {
         return m.setupStatus
     }
 }
+// Gets the skipSetup property value. 
 func (m *TenantSetupInfo) GetSkipSetup()(*bool) {
     if m == nil {
         return nil
@@ -54,6 +67,7 @@ func (m *TenantSetupInfo) GetSkipSetup()(*bool) {
         return m.skipSetup
     }
 }
+// Gets the userRolesActions property value. 
 func (m *TenantSetupInfo) GetUserRolesActions()(*string) {
     if m == nil {
         return nil
@@ -61,6 +75,7 @@ func (m *TenantSetupInfo) GetUserRolesActions()(*string) {
         return m.userRolesActions
     }
 }
+// The deserialization information for the current model
 func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["defaultRolesSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,6 +136,9 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *TenantSetupInfo) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *TenantSetupInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -165,21 +183,39 @@ func (m *TenantSetupInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
+// Sets the defaultRolesSettings property value. 
+// Parameters:
+//  - value : Value to set for the defaultRolesSettings property.
 func (m *TenantSetupInfo) SetDefaultRolesSettings(value *PrivilegedRoleSettings)() {
     m.defaultRolesSettings = value
 }
+// Sets the firstTimeSetup property value. 
+// Parameters:
+//  - value : Value to set for the firstTimeSetup property.
 func (m *TenantSetupInfo) SetFirstTimeSetup(value *bool)() {
     m.firstTimeSetup = value
 }
+// Sets the relevantRolesSettings property value. 
+// Parameters:
+//  - value : Value to set for the relevantRolesSettings property.
 func (m *TenantSetupInfo) SetRelevantRolesSettings(value []string)() {
     m.relevantRolesSettings = value
 }
+// Sets the setupStatus property value. 
+// Parameters:
+//  - value : Value to set for the setupStatus property.
 func (m *TenantSetupInfo) SetSetupStatus(value *SetupStatus)() {
     m.setupStatus = value
 }
+// Sets the skipSetup property value. 
+// Parameters:
+//  - value : Value to set for the skipSetup property.
 func (m *TenantSetupInfo) SetSkipSetup(value *bool)() {
     m.skipSetup = value
 }
+// Sets the userRolesActions property value. 
+// Parameters:
+//  - value : Value to set for the userRolesActions property.
 func (m *TenantSetupInfo) SetUserRolesActions(value *string)() {
     m.userRolesActions = value
 }

@@ -5,22 +5,32 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type Delta struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // The collection of child folders in the folder. Navigation property. Read-only. Nullable.
     childFolders []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContactFolder;
+    // The contacts in the folder. Navigation property. Read-only. Nullable.
     contacts []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contact;
+    // The folder's display name.
     displayName *string;
+    // The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
     multiValueExtendedProperties []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MultiValueLegacyExtendedProperty;
+    // The ID of the folder's parent folder.
     parentFolderId *string;
+    // The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     singleValueExtendedProperties []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SingleValueLegacyExtendedProperty;
+    // The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
     wellKnownName *string;
 }
+// Instantiates a new delta and sets the default values.
 func NewDelta()(*Delta) {
     m := &Delta{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *Delta) GetChildFolders()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContactFolder) {
     if m == nil {
         return nil
@@ -28,6 +38,7 @@ func (m *Delta) GetChildFolders()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.childFolders
     }
 }
+// Gets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
 func (m *Delta) GetContacts()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contact) {
     if m == nil {
         return nil
@@ -35,6 +46,7 @@ func (m *Delta) GetContacts()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0f
         return m.contacts
     }
 }
+// Gets the displayName property value. The folder's display name.
 func (m *Delta) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -42,6 +54,7 @@ func (m *Delta) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *Delta) GetMultiValueExtendedProperties()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -49,6 +62,7 @@ func (m *Delta) GetMultiValueExtendedProperties()([]i535684e11b5500196ecb4b5c663
         return m.multiValueExtendedProperties
     }
 }
+// Gets the parentFolderId property value. The ID of the folder's parent folder.
 func (m *Delta) GetParentFolderId()(*string) {
     if m == nil {
         return nil
@@ -56,6 +70,7 @@ func (m *Delta) GetParentFolderId()(*string) {
         return m.parentFolderId
     }
 }
+// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *Delta) GetSingleValueExtendedProperties()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -63,6 +78,7 @@ func (m *Delta) GetSingleValueExtendedProperties()([]i535684e11b5500196ecb4b5c66
         return m.singleValueExtendedProperties
     }
 }
+// Gets the wellKnownName property value. The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
 func (m *Delta) GetWellKnownName()(*string) {
     if m == nil {
         return nil
@@ -70,6 +86,7 @@ func (m *Delta) GetWellKnownName()(*string) {
         return m.wellKnownName
     }
 }
+// The deserialization information for the current model
 func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,6 +166,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Delta) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -218,24 +238,45 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
+// Sets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the childFolders property.
 func (m *Delta) SetChildFolders(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContactFolder)() {
     m.childFolders = value
 }
+// Sets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the contacts property.
 func (m *Delta) SetContacts(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contact)() {
     m.contacts = value
 }
+// Sets the displayName property value. The folder's display name.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *Delta) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the multiValueExtendedProperties property.
 func (m *Delta) SetMultiValueExtendedProperties(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
+// Sets the parentFolderId property value. The ID of the folder's parent folder.
+// Parameters:
+//  - value : Value to set for the parentFolderId property.
 func (m *Delta) SetParentFolderId(value *string)() {
     m.parentFolderId = value
 }
+// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the singleValueExtendedProperties property.
 func (m *Delta) SetSingleValueExtendedProperties(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }
+// Sets the wellKnownName property value. The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
+// Parameters:
+//  - value : Value to set for the wellKnownName property.
 func (m *Delta) SetWellKnownName(value *string)() {
     m.wellKnownName = value
 }

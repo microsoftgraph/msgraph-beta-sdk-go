@@ -4,18 +4,25 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ReputationCategory struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     description *string;
+    // 
     name *string;
+    // 
     vendor_escaped *string;
 }
+// Instantiates a new reputationCategory and sets the default values.
 func NewReputationCategory()(*ReputationCategory) {
     m := &ReputationCategory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReputationCategory) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +30,7 @@ func (m *ReputationCategory) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the description property value. 
 func (m *ReputationCategory) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -30,6 +38,7 @@ func (m *ReputationCategory) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the name property value. 
 func (m *ReputationCategory) GetName()(*string) {
     if m == nil {
         return nil
@@ -37,6 +46,7 @@ func (m *ReputationCategory) GetName()(*string) {
         return m.name
     }
 }
+// Gets the vendor_escaped property value. 
 func (m *ReputationCategory) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
@@ -44,6 +54,7 @@ func (m *ReputationCategory) GetVendor_escaped()(*string) {
         return m.vendor_escaped
     }
 }
+// The deserialization information for the current model
 func (m *ReputationCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,6 +86,9 @@ func (m *ReputationCategory) GetFieldDeserializers()(map[string]func(interface{}
 func (m *ReputationCategory) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ReputationCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("description", m.GetDescription())
@@ -102,15 +116,27 @@ func (m *ReputationCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *ReputationCategory) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the description property value. 
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *ReputationCategory) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the name property value. 
+// Parameters:
+//  - value : Value to set for the name property.
 func (m *ReputationCategory) SetName(value *string)() {
     m.name = value
 }
+// Sets the vendor_escaped property value. 
+// Parameters:
+//  - value : Value to set for the vendor_escaped property.
 func (m *ReputationCategory) SetVendor_escaped(value *string)() {
     m.vendor_escaped = value
 }

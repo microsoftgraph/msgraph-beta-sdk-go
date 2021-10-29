@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Program struct {
     Entity
+    // Controls associated with the program.
     controls []ProgramControl;
+    // The description of the program.
     description *string;
+    // The name of the program.  Required on create.
     displayName *string;
 }
+// Instantiates a new program and sets the default values.
 func NewProgram()(*Program) {
     m := &Program{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the controls property value. Controls associated with the program.
 func (m *Program) GetControls()([]ProgramControl) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *Program) GetControls()([]ProgramControl) {
         return m.controls
     }
 }
+// Gets the description property value. The description of the program.
 func (m *Program) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *Program) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. The name of the program.  Required on create.
 func (m *Program) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *Program) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// The deserialization information for the current model
 func (m *Program) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["controls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,6 +81,9 @@ func (m *Program) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
 func (m *Program) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Program) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -102,12 +114,21 @@ func (m *Program) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     return nil
 }
+// Sets the controls property value. Controls associated with the program.
+// Parameters:
+//  - value : Value to set for the controls property.
 func (m *Program) SetControls(value []ProgramControl)() {
     m.controls = value
 }
+// Sets the description property value. The description of the program.
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *Program) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. The name of the program.  Required on create.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *Program) SetDisplayName(value *string)() {
     m.displayName = value
 }

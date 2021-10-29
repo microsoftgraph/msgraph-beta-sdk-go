@@ -6,11 +6,19 @@ import (
     ibd6910a46bd92304bd98f3581e14d46160c5def88b743996b87f376e41604cac "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/windowsupdateforbusinessconfiguration/extendqualityupdatespause"
 )
 
+// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\microsoft.graph.windowsUpdateForBusinessConfiguration
 type WindowsUpdateForBusinessConfigurationRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Instantiates a new WindowsUpdateForBusinessConfigurationRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewWindowsUpdateForBusinessConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsUpdateForBusinessConfigurationRequestBuilder) {
     m := &WindowsUpdateForBusinessConfigurationRequestBuilder{
     }
@@ -23,6 +31,10 @@ func NewWindowsUpdateForBusinessConfigurationRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new WindowsUpdateForBusinessConfigurationRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewWindowsUpdateForBusinessConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsUpdateForBusinessConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type MobileAppIntentAndState struct {
     Entity
+    // Device identifier created or collected by Intune.
     managedDeviceIdentifier *string;
+    // The list of payload intents and states for the tenant.
     mobileAppList []MobileAppIntentAndStateDetail;
+    // Identifier for the user that tried to enroll the device.
     userId *string;
 }
+// Instantiates a new mobileAppIntentAndState and sets the default values.
 func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
     m := &MobileAppIntentAndState{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppIntentAndState) GetManagedDeviceIdentifier()(*string) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *MobileAppIntentAndState) GetManagedDeviceIdentifier()(*string) {
         return m.managedDeviceIdentifier
     }
 }
+// Gets the mobileAppList property value. The list of payload intents and states for the tenant.
 func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDetail) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDe
         return m.mobileAppList
     }
 }
+// Gets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppIntentAndState) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *MobileAppIntentAndState) GetUserId()(*string) {
         return m.userId
     }
 }
+// The deserialization information for the current model
 func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["managedDeviceIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,6 +81,9 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interf
 func (m *MobileAppIntentAndState) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *MobileAppIntentAndState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -102,12 +114,21 @@ func (m *MobileAppIntentAndState) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
+// Sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
+// Parameters:
+//  - value : Value to set for the managedDeviceIdentifier property.
 func (m *MobileAppIntentAndState) SetManagedDeviceIdentifier(value *string)() {
     m.managedDeviceIdentifier = value
 }
+// Sets the mobileAppList property value. The list of payload intents and states for the tenant.
+// Parameters:
+//  - value : Value to set for the mobileAppList property.
 func (m *MobileAppIntentAndState) SetMobileAppList(value []MobileAppIntentAndStateDetail)() {
     m.mobileAppList = value
 }
+// Sets the userId property value. Identifier for the user that tried to enroll the device.
+// Parameters:
+//  - value : Value to set for the userId property.
 func (m *MobileAppIntentAndState) SetUserId(value *string)() {
     m.userId = value
 }

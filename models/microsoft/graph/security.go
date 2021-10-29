@@ -4,28 +4,48 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Security struct {
     Entity
+    // Read-only. Nullable.
     alerts []Alert;
+    // Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+    attackSimulation *AttackSimulationRoot;
+    // 
     cloudAppSecurityProfiles []CloudAppSecurityProfile;
+    // 
     domainSecurityProfiles []DomainSecurityProfile;
+    // 
     fileSecurityProfiles []FileSecurityProfile;
+    // 
     hostSecurityProfiles []HostSecurityProfile;
+    // 
+    incidents []Incident;
+    // 
     ipSecurityProfiles []IpSecurityProfile;
+    // 
     providerStatus []SecurityProviderStatus;
+    // 
     providerTenantSettings []ProviderTenantSetting;
+    // 
     secureScoreControlProfiles []SecureScoreControlProfile;
+    // 
     secureScores []SecureScore;
+    // 
     securityActions []SecurityAction;
+    // 
     tiIndicators []TiIndicator;
+    // 
     userSecurityProfiles []UserSecurityProfile;
 }
+// Instantiates a new security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the alerts property value. Read-only. Nullable.
 func (m *Security) GetAlerts()([]Alert) {
     if m == nil {
         return nil
@@ -33,6 +53,15 @@ func (m *Security) GetAlerts()([]Alert) {
         return m.alerts
     }
 }
+// Gets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+func (m *Security) GetAttackSimulation()(*AttackSimulationRoot) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attackSimulation
+    }
+}
+// Gets the cloudAppSecurityProfiles property value. 
 func (m *Security) GetCloudAppSecurityProfiles()([]CloudAppSecurityProfile) {
     if m == nil {
         return nil
@@ -40,6 +69,7 @@ func (m *Security) GetCloudAppSecurityProfiles()([]CloudAppSecurityProfile) {
         return m.cloudAppSecurityProfiles
     }
 }
+// Gets the domainSecurityProfiles property value. 
 func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfile) {
     if m == nil {
         return nil
@@ -47,6 +77,7 @@ func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfile) {
         return m.domainSecurityProfiles
     }
 }
+// Gets the fileSecurityProfiles property value. 
 func (m *Security) GetFileSecurityProfiles()([]FileSecurityProfile) {
     if m == nil {
         return nil
@@ -54,6 +85,7 @@ func (m *Security) GetFileSecurityProfiles()([]FileSecurityProfile) {
         return m.fileSecurityProfiles
     }
 }
+// Gets the hostSecurityProfiles property value. 
 func (m *Security) GetHostSecurityProfiles()([]HostSecurityProfile) {
     if m == nil {
         return nil
@@ -61,6 +93,15 @@ func (m *Security) GetHostSecurityProfiles()([]HostSecurityProfile) {
         return m.hostSecurityProfiles
     }
 }
+// Gets the incidents property value. 
+func (m *Security) GetIncidents()([]Incident) {
+    if m == nil {
+        return nil
+    } else {
+        return m.incidents
+    }
+}
+// Gets the ipSecurityProfiles property value. 
 func (m *Security) GetIpSecurityProfiles()([]IpSecurityProfile) {
     if m == nil {
         return nil
@@ -68,6 +109,7 @@ func (m *Security) GetIpSecurityProfiles()([]IpSecurityProfile) {
         return m.ipSecurityProfiles
     }
 }
+// Gets the providerStatus property value. 
 func (m *Security) GetProviderStatus()([]SecurityProviderStatus) {
     if m == nil {
         return nil
@@ -75,6 +117,7 @@ func (m *Security) GetProviderStatus()([]SecurityProviderStatus) {
         return m.providerStatus
     }
 }
+// Gets the providerTenantSettings property value. 
 func (m *Security) GetProviderTenantSettings()([]ProviderTenantSetting) {
     if m == nil {
         return nil
@@ -82,6 +125,7 @@ func (m *Security) GetProviderTenantSettings()([]ProviderTenantSetting) {
         return m.providerTenantSettings
     }
 }
+// Gets the secureScoreControlProfiles property value. 
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfile) {
     if m == nil {
         return nil
@@ -89,6 +133,7 @@ func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfile) 
         return m.secureScoreControlProfiles
     }
 }
+// Gets the secureScores property value. 
 func (m *Security) GetSecureScores()([]SecureScore) {
     if m == nil {
         return nil
@@ -96,6 +141,7 @@ func (m *Security) GetSecureScores()([]SecureScore) {
         return m.secureScores
     }
 }
+// Gets the securityActions property value. 
 func (m *Security) GetSecurityActions()([]SecurityAction) {
     if m == nil {
         return nil
@@ -103,6 +149,7 @@ func (m *Security) GetSecurityActions()([]SecurityAction) {
         return m.securityActions
     }
 }
+// Gets the tiIndicators property value. 
 func (m *Security) GetTiIndicators()([]TiIndicator) {
     if m == nil {
         return nil
@@ -110,6 +157,7 @@ func (m *Security) GetTiIndicators()([]TiIndicator) {
         return m.tiIndicators
     }
 }
+// Gets the userSecurityProfiles property value. 
 func (m *Security) GetUserSecurityProfiles()([]UserSecurityProfile) {
     if m == nil {
         return nil
@@ -117,6 +165,7 @@ func (m *Security) GetUserSecurityProfiles()([]UserSecurityProfile) {
         return m.userSecurityProfiles
     }
 }
+// The deserialization information for the current model
 func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alerts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,6 +178,14 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             res[i] = *(v.(*Alert))
         }
         m.SetAlerts(res)
+        return nil
+    }
+    res["attackSimulation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttackSimulationRoot() })
+        if err != nil {
+            return err
+        }
+        m.SetAttackSimulation(val.(*AttackSimulationRoot))
         return nil
     }
     res["cloudAppSecurityProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,6 +234,18 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             res[i] = *(v.(*HostSecurityProfile))
         }
         m.SetHostSecurityProfiles(res)
+        return nil
+    }
+    res["incidents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIncident() })
+        if err != nil {
+            return err
+        }
+        res := make([]Incident, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*Incident))
+        }
+        m.SetIncidents(res)
         return nil
     }
     res["ipSecurityProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -280,6 +349,9 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *Security) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -292,6 +364,12 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
         }
         err = writer.WriteCollectionOfObjectValues("alerts", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("attackSimulation", m.GetAttackSimulation())
         if err != nil {
             return err
         }
@@ -336,6 +414,17 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
         }
         err = writer.WriteCollectionOfObjectValues("hostSecurityProfiles", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncidents()))
+        for i, v := range m.GetIncidents() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("incidents", cast)
         if err != nil {
             return err
         }
@@ -430,42 +519,93 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
+// Sets the alerts property value. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the alerts property.
 func (m *Security) SetAlerts(value []Alert)() {
     m.alerts = value
 }
+// Sets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+// Parameters:
+//  - value : Value to set for the attackSimulation property.
+func (m *Security) SetAttackSimulation(value *AttackSimulationRoot)() {
+    m.attackSimulation = value
+}
+// Sets the cloudAppSecurityProfiles property value. 
+// Parameters:
+//  - value : Value to set for the cloudAppSecurityProfiles property.
 func (m *Security) SetCloudAppSecurityProfiles(value []CloudAppSecurityProfile)() {
     m.cloudAppSecurityProfiles = value
 }
+// Sets the domainSecurityProfiles property value. 
+// Parameters:
+//  - value : Value to set for the domainSecurityProfiles property.
 func (m *Security) SetDomainSecurityProfiles(value []DomainSecurityProfile)() {
     m.domainSecurityProfiles = value
 }
+// Sets the fileSecurityProfiles property value. 
+// Parameters:
+//  - value : Value to set for the fileSecurityProfiles property.
 func (m *Security) SetFileSecurityProfiles(value []FileSecurityProfile)() {
     m.fileSecurityProfiles = value
 }
+// Sets the hostSecurityProfiles property value. 
+// Parameters:
+//  - value : Value to set for the hostSecurityProfiles property.
 func (m *Security) SetHostSecurityProfiles(value []HostSecurityProfile)() {
     m.hostSecurityProfiles = value
 }
+// Sets the incidents property value. 
+// Parameters:
+//  - value : Value to set for the incidents property.
+func (m *Security) SetIncidents(value []Incident)() {
+    m.incidents = value
+}
+// Sets the ipSecurityProfiles property value. 
+// Parameters:
+//  - value : Value to set for the ipSecurityProfiles property.
 func (m *Security) SetIpSecurityProfiles(value []IpSecurityProfile)() {
     m.ipSecurityProfiles = value
 }
+// Sets the providerStatus property value. 
+// Parameters:
+//  - value : Value to set for the providerStatus property.
 func (m *Security) SetProviderStatus(value []SecurityProviderStatus)() {
     m.providerStatus = value
 }
+// Sets the providerTenantSettings property value. 
+// Parameters:
+//  - value : Value to set for the providerTenantSettings property.
 func (m *Security) SetProviderTenantSettings(value []ProviderTenantSetting)() {
     m.providerTenantSettings = value
 }
+// Sets the secureScoreControlProfiles property value. 
+// Parameters:
+//  - value : Value to set for the secureScoreControlProfiles property.
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfile)() {
     m.secureScoreControlProfiles = value
 }
+// Sets the secureScores property value. 
+// Parameters:
+//  - value : Value to set for the secureScores property.
 func (m *Security) SetSecureScores(value []SecureScore)() {
     m.secureScores = value
 }
+// Sets the securityActions property value. 
+// Parameters:
+//  - value : Value to set for the securityActions property.
 func (m *Security) SetSecurityActions(value []SecurityAction)() {
     m.securityActions = value
 }
+// Sets the tiIndicators property value. 
+// Parameters:
+//  - value : Value to set for the tiIndicators property.
 func (m *Security) SetTiIndicators(value []TiIndicator)() {
     m.tiIndicators = value
 }
+// Sets the userSecurityProfiles property value. 
+// Parameters:
+//  - value : Value to set for the userSecurityProfiles property.
 func (m *Security) SetUserSecurityProfiles(value []UserSecurityProfile)() {
     m.userSecurityProfiles = value
 }

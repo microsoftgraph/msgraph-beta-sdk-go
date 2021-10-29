@@ -5,29 +5,46 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ManagedDeviceCompliance struct {
     Entity
+    // Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
     complianceStatus *string;
+    // Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
     deviceType *string;
+    // The date and time when the grace period will expire. Optional. Read-only.
     inGracePeriodUntilDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
     lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // The date and time that the device last completed a successful sync with Microsoft Endpoint Manager. Optional. Read-only.
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // The identifier for the managed device in Microsoft Endpoint Manager. Optional. Read-only.
     managedDeviceId *string;
+    // The display name for the managed device. Optional. Read-only.
     managedDeviceName *string;
+    // The manufacture for the device. Optional. Read-only.
     manufacturer *string;
+    // The model for the device. Optional. Read-only.
     model *string;
+    // The description of the operating system for the managed device. Optional. Read-only.
     osDescription *string;
+    // The version of the operating system for the managed device. Optional. Read-only.
     osVersion *string;
+    // The type of owner for the managed device. Optional. Read-only.
     ownerType *string;
+    // The display name for the managed tenant. Optional. Read-only.
     tenantDisplayName *string;
+    // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
     tenantId *string;
 }
+// Instantiates a new managedDeviceCompliance and sets the default values.
 func NewManagedDeviceCompliance()(*ManagedDeviceCompliance) {
     m := &ManagedDeviceCompliance{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the complianceStatus property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetComplianceStatus()(*string) {
     if m == nil {
         return nil
@@ -35,6 +52,7 @@ func (m *ManagedDeviceCompliance) GetComplianceStatus()(*string) {
         return m.complianceStatus
     }
 }
+// Gets the deviceType property value. Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetDeviceType()(*string) {
     if m == nil {
         return nil
@@ -42,6 +60,7 @@ func (m *ManagedDeviceCompliance) GetDeviceType()(*string) {
         return m.deviceType
     }
 }
+// Gets the inGracePeriodUntilDateTime property value. The date and time when the grace period will expire. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetInGracePeriodUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -49,6 +68,7 @@ func (m *ManagedDeviceCompliance) GetInGracePeriodUntilDateTime()(*i336074805fc8
         return m.inGracePeriodUntilDateTime
     }
 }
+// Gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -56,6 +76,7 @@ func (m *ManagedDeviceCompliance) GetLastRefreshedDateTime()(*i336074805fc853987
         return m.lastRefreshedDateTime
     }
 }
+// Gets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Microsoft Endpoint Manager. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -63,6 +84,7 @@ func (m *ManagedDeviceCompliance) GetLastSyncDateTime()(*i336074805fc853987abe6f
         return m.lastSyncDateTime
     }
 }
+// Gets the managedDeviceId property value. The identifier for the managed device in Microsoft Endpoint Manager. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetManagedDeviceId()(*string) {
     if m == nil {
         return nil
@@ -70,6 +92,7 @@ func (m *ManagedDeviceCompliance) GetManagedDeviceId()(*string) {
         return m.managedDeviceId
     }
 }
+// Gets the managedDeviceName property value. The display name for the managed device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetManagedDeviceName()(*string) {
     if m == nil {
         return nil
@@ -77,6 +100,7 @@ func (m *ManagedDeviceCompliance) GetManagedDeviceName()(*string) {
         return m.managedDeviceName
     }
 }
+// Gets the manufacturer property value. The manufacture for the device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetManufacturer()(*string) {
     if m == nil {
         return nil
@@ -84,6 +108,7 @@ func (m *ManagedDeviceCompliance) GetManufacturer()(*string) {
         return m.manufacturer
     }
 }
+// Gets the model property value. The model for the device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetModel()(*string) {
     if m == nil {
         return nil
@@ -91,6 +116,7 @@ func (m *ManagedDeviceCompliance) GetModel()(*string) {
         return m.model
     }
 }
+// Gets the osDescription property value. The description of the operating system for the managed device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetOsDescription()(*string) {
     if m == nil {
         return nil
@@ -98,6 +124,7 @@ func (m *ManagedDeviceCompliance) GetOsDescription()(*string) {
         return m.osDescription
     }
 }
+// Gets the osVersion property value. The version of the operating system for the managed device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetOsVersion()(*string) {
     if m == nil {
         return nil
@@ -105,6 +132,7 @@ func (m *ManagedDeviceCompliance) GetOsVersion()(*string) {
         return m.osVersion
     }
 }
+// Gets the ownerType property value. The type of owner for the managed device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetOwnerType()(*string) {
     if m == nil {
         return nil
@@ -112,6 +140,7 @@ func (m *ManagedDeviceCompliance) GetOwnerType()(*string) {
         return m.ownerType
     }
 }
+// Gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetTenantDisplayName()(*string) {
     if m == nil {
         return nil
@@ -119,6 +148,7 @@ func (m *ManagedDeviceCompliance) GetTenantDisplayName()(*string) {
         return m.tenantDisplayName
     }
 }
+// Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceCompliance) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -126,6 +156,7 @@ func (m *ManagedDeviceCompliance) GetTenantId()(*string) {
         return m.tenantId
     }
 }
+// The deserialization information for the current model
 func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["complianceStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,6 +276,9 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
 func (m *ManagedDeviceCompliance) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ManagedDeviceCompliance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -336,45 +370,87 @@ func (m *ManagedDeviceCompliance) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
+// Sets the complianceStatus property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the complianceStatus property.
 func (m *ManagedDeviceCompliance) SetComplianceStatus(value *string)() {
     m.complianceStatus = value
 }
+// Sets the deviceType property value. Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the deviceType property.
 func (m *ManagedDeviceCompliance) SetDeviceType(value *string)() {
     m.deviceType = value
 }
+// Sets the inGracePeriodUntilDateTime property value. The date and time when the grace period will expire. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the inGracePeriodUntilDateTime property.
 func (m *ManagedDeviceCompliance) SetInGracePeriodUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.inGracePeriodUntilDateTime = value
 }
+// Sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the lastRefreshedDateTime property.
 func (m *ManagedDeviceCompliance) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastRefreshedDateTime = value
 }
+// Sets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Microsoft Endpoint Manager. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the lastSyncDateTime property.
 func (m *ManagedDeviceCompliance) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastSyncDateTime = value
 }
+// Sets the managedDeviceId property value. The identifier for the managed device in Microsoft Endpoint Manager. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the managedDeviceId property.
 func (m *ManagedDeviceCompliance) SetManagedDeviceId(value *string)() {
     m.managedDeviceId = value
 }
+// Sets the managedDeviceName property value. The display name for the managed device. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the managedDeviceName property.
 func (m *ManagedDeviceCompliance) SetManagedDeviceName(value *string)() {
     m.managedDeviceName = value
 }
+// Sets the manufacturer property value. The manufacture for the device. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the manufacturer property.
 func (m *ManagedDeviceCompliance) SetManufacturer(value *string)() {
     m.manufacturer = value
 }
+// Sets the model property value. The model for the device. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the model property.
 func (m *ManagedDeviceCompliance) SetModel(value *string)() {
     m.model = value
 }
+// Sets the osDescription property value. The description of the operating system for the managed device. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the osDescription property.
 func (m *ManagedDeviceCompliance) SetOsDescription(value *string)() {
     m.osDescription = value
 }
+// Sets the osVersion property value. The version of the operating system for the managed device. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the osVersion property.
 func (m *ManagedDeviceCompliance) SetOsVersion(value *string)() {
     m.osVersion = value
 }
+// Sets the ownerType property value. The type of owner for the managed device. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the ownerType property.
 func (m *ManagedDeviceCompliance) SetOwnerType(value *string)() {
     m.ownerType = value
 }
+// Sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the tenantDisplayName property.
 func (m *ManagedDeviceCompliance) SetTenantDisplayName(value *string)() {
     m.tenantDisplayName = value
 }
+// Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// Parameters:
+//  - value : Value to set for the tenantId property.
 func (m *ManagedDeviceCompliance) SetTenantId(value *string)() {
     m.tenantId = value
 }

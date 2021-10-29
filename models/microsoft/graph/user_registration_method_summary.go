@@ -4,19 +4,27 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type UserRegistrationMethodSummary struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Total number of users in the tenant.
     totalUserCount *int64;
+    // Number of users registered for each authentication method.
     userRegistrationMethodCounts []UserRegistrationMethodCount;
+    // User role type. Possible values are: all, privilegedAdmin, admin, user.
     userRoles *IncludedUserRoles;
+    // User type. Possible values are: all, member, guest.
     userTypes *IncludedUserTypes;
 }
+// Instantiates a new UserRegistrationMethodSummary and sets the default values.
 func NewUserRegistrationMethodSummary()(*UserRegistrationMethodSummary) {
     m := &UserRegistrationMethodSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationMethodSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +32,7 @@ func (m *UserRegistrationMethodSummary) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
+// Gets the totalUserCount property value. Total number of users in the tenant.
 func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int64) {
     if m == nil {
         return nil
@@ -31,6 +40,7 @@ func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int64) {
         return m.totalUserCount
     }
 }
+// Gets the userRegistrationMethodCounts property value. Number of users registered for each authentication method.
 func (m *UserRegistrationMethodSummary) GetUserRegistrationMethodCounts()([]UserRegistrationMethodCount) {
     if m == nil {
         return nil
@@ -38,6 +48,7 @@ func (m *UserRegistrationMethodSummary) GetUserRegistrationMethodCounts()([]User
         return m.userRegistrationMethodCounts
     }
 }
+// Gets the userRoles property value. User role type. Possible values are: all, privilegedAdmin, admin, user.
 func (m *UserRegistrationMethodSummary) GetUserRoles()(*IncludedUserRoles) {
     if m == nil {
         return nil
@@ -45,6 +56,7 @@ func (m *UserRegistrationMethodSummary) GetUserRoles()(*IncludedUserRoles) {
         return m.userRoles
     }
 }
+// Gets the userTypes property value. User type. Possible values are: all, member, guest.
 func (m *UserRegistrationMethodSummary) GetUserTypes()(*IncludedUserTypes) {
     if m == nil {
         return nil
@@ -52,6 +64,7 @@ func (m *UserRegistrationMethodSummary) GetUserTypes()(*IncludedUserTypes) {
         return m.userTypes
     }
 }
+// The deserialization information for the current model
 func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["totalUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,6 +110,9 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
 func (m *UserRegistrationMethodSummary) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UserRegistrationMethodSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt64Value("totalUserCount", m.GetTotalUserCount())
@@ -137,18 +153,33 @@ func (m *UserRegistrationMethodSummary) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *UserRegistrationMethodSummary) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the totalUserCount property value. Total number of users in the tenant.
+// Parameters:
+//  - value : Value to set for the totalUserCount property.
 func (m *UserRegistrationMethodSummary) SetTotalUserCount(value *int64)() {
     m.totalUserCount = value
 }
+// Sets the userRegistrationMethodCounts property value. Number of users registered for each authentication method.
+// Parameters:
+//  - value : Value to set for the userRegistrationMethodCounts property.
 func (m *UserRegistrationMethodSummary) SetUserRegistrationMethodCounts(value []UserRegistrationMethodCount)() {
     m.userRegistrationMethodCounts = value
 }
+// Sets the userRoles property value. User role type. Possible values are: all, privilegedAdmin, admin, user.
+// Parameters:
+//  - value : Value to set for the userRoles property.
 func (m *UserRegistrationMethodSummary) SetUserRoles(value *IncludedUserRoles)() {
     m.userRoles = value
 }
+// Sets the userTypes property value. User type. Possible values are: all, member, guest.
+// Parameters:
+//  - value : Value to set for the userTypes property.
 func (m *UserRegistrationMethodSummary) SetUserTypes(value *IncludedUserTypes)() {
     m.userTypes = value
 }

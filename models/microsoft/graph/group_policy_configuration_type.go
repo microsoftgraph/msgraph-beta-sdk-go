@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type GroupPolicyConfigurationType int
 
 const (

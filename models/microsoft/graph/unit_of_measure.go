@@ -5,19 +5,26 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type UnitOfMeasure struct {
     Entity
+    // 
     code *string;
+    // 
     displayName *string;
+    // 
     internationalStandardCode *string;
+    // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
+// Instantiates a new unitOfMeasure and sets the default values.
 func NewUnitOfMeasure()(*UnitOfMeasure) {
     m := &UnitOfMeasure{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the code property value. 
 func (m *UnitOfMeasure) GetCode()(*string) {
     if m == nil {
         return nil
@@ -25,6 +32,7 @@ func (m *UnitOfMeasure) GetCode()(*string) {
         return m.code
     }
 }
+// Gets the displayName property value. 
 func (m *UnitOfMeasure) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -32,6 +40,7 @@ func (m *UnitOfMeasure) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the internationalStandardCode property value. 
 func (m *UnitOfMeasure) GetInternationalStandardCode()(*string) {
     if m == nil {
         return nil
@@ -39,6 +48,7 @@ func (m *UnitOfMeasure) GetInternationalStandardCode()(*string) {
         return m.internationalStandardCode
     }
 }
+// Gets the lastModifiedDateTime property value. 
 func (m *UnitOfMeasure) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -46,6 +56,7 @@ func (m *UnitOfMeasure) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.lastModifiedDateTime
     }
 }
+// The deserialization information for the current model
 func (m *UnitOfMeasure) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["code"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,6 +96,9 @@ func (m *UnitOfMeasure) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *UnitOfMeasure) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UnitOfMeasure) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -116,15 +130,27 @@ func (m *UnitOfMeasure) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
+// Sets the code property value. 
+// Parameters:
+//  - value : Value to set for the code property.
 func (m *UnitOfMeasure) SetCode(value *string)() {
     m.code = value
 }
+// Sets the displayName property value. 
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *UnitOfMeasure) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the internationalStandardCode property value. 
+// Parameters:
+//  - value : Value to set for the internationalStandardCode property.
 func (m *UnitOfMeasure) SetInternationalStandardCode(value *string)() {
     m.internationalStandardCode = value
 }
+// Sets the lastModifiedDateTime property value. 
+// Parameters:
+//  - value : Value to set for the lastModifiedDateTime property.
 func (m *UnitOfMeasure) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }

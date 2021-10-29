@@ -4,23 +4,35 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DeviceDetail struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Indicates the browser information of the used for signing in.
     browser *string;
+    // 
     browserId *string;
+    // Refers to the UniqueID of the device used for signing in.
     deviceId *string;
+    // Refers to the name of the device used for signing in.
     displayName *string;
+    // Indicates whether the device is compliant.
     isCompliant *bool;
+    // Indicates whether the device is managed.
     isManaged *bool;
+    // Indicates the operating system name and version used for signing in.
     operatingSystem *string;
+    // Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
     trustType *string;
 }
+// Instantiates a new deviceDetail and sets the default values.
 func NewDeviceDetail()(*DeviceDetail) {
     m := &DeviceDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,6 +40,7 @@ func (m *DeviceDetail) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the browser property value. Indicates the browser information of the used for signing in.
 func (m *DeviceDetail) GetBrowser()(*string) {
     if m == nil {
         return nil
@@ -35,6 +48,7 @@ func (m *DeviceDetail) GetBrowser()(*string) {
         return m.browser
     }
 }
+// Gets the browserId property value. 
 func (m *DeviceDetail) GetBrowserId()(*string) {
     if m == nil {
         return nil
@@ -42,6 +56,7 @@ func (m *DeviceDetail) GetBrowserId()(*string) {
         return m.browserId
     }
 }
+// Gets the deviceId property value. Refers to the UniqueID of the device used for signing in.
 func (m *DeviceDetail) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -49,6 +64,7 @@ func (m *DeviceDetail) GetDeviceId()(*string) {
         return m.deviceId
     }
 }
+// Gets the displayName property value. Refers to the name of the device used for signing in.
 func (m *DeviceDetail) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -56,6 +72,7 @@ func (m *DeviceDetail) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the isCompliant property value. Indicates whether the device is compliant.
 func (m *DeviceDetail) GetIsCompliant()(*bool) {
     if m == nil {
         return nil
@@ -63,6 +80,7 @@ func (m *DeviceDetail) GetIsCompliant()(*bool) {
         return m.isCompliant
     }
 }
+// Gets the isManaged property value. Indicates whether the device is managed.
 func (m *DeviceDetail) GetIsManaged()(*bool) {
     if m == nil {
         return nil
@@ -70,6 +88,7 @@ func (m *DeviceDetail) GetIsManaged()(*bool) {
         return m.isManaged
     }
 }
+// Gets the operatingSystem property value. Indicates the operating system name and version used for signing in.
 func (m *DeviceDetail) GetOperatingSystem()(*string) {
     if m == nil {
         return nil
@@ -77,6 +96,7 @@ func (m *DeviceDetail) GetOperatingSystem()(*string) {
         return m.operatingSystem
     }
 }
+// Gets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
 func (m *DeviceDetail) GetTrustType()(*string) {
     if m == nil {
         return nil
@@ -84,6 +104,7 @@ func (m *DeviceDetail) GetTrustType()(*string) {
         return m.trustType
     }
 }
+// The deserialization information for the current model
 func (m *DeviceDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["browser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,6 +176,9 @@ func (m *DeviceDetail) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *DeviceDetail) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DeviceDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("browser", m.GetBrowser())
@@ -212,30 +236,57 @@ func (m *DeviceDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *DeviceDetail) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the browser property value. Indicates the browser information of the used for signing in.
+// Parameters:
+//  - value : Value to set for the browser property.
 func (m *DeviceDetail) SetBrowser(value *string)() {
     m.browser = value
 }
+// Sets the browserId property value. 
+// Parameters:
+//  - value : Value to set for the browserId property.
 func (m *DeviceDetail) SetBrowserId(value *string)() {
     m.browserId = value
 }
+// Sets the deviceId property value. Refers to the UniqueID of the device used for signing in.
+// Parameters:
+//  - value : Value to set for the deviceId property.
 func (m *DeviceDetail) SetDeviceId(value *string)() {
     m.deviceId = value
 }
+// Sets the displayName property value. Refers to the name of the device used for signing in.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *DeviceDetail) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the isCompliant property value. Indicates whether the device is compliant.
+// Parameters:
+//  - value : Value to set for the isCompliant property.
 func (m *DeviceDetail) SetIsCompliant(value *bool)() {
     m.isCompliant = value
 }
+// Sets the isManaged property value. Indicates whether the device is managed.
+// Parameters:
+//  - value : Value to set for the isManaged property.
 func (m *DeviceDetail) SetIsManaged(value *bool)() {
     m.isManaged = value
 }
+// Sets the operatingSystem property value. Indicates the operating system name and version used for signing in.
+// Parameters:
+//  - value : Value to set for the operatingSystem property.
 func (m *DeviceDetail) SetOperatingSystem(value *string)() {
     m.operatingSystem = value
 }
+// Sets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
+// Parameters:
+//  - value : Value to set for the trustType property.
 func (m *DeviceDetail) SetTrustType(value *string)() {
     m.trustType = value
 }

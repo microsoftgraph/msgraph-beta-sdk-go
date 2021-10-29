@@ -4,18 +4,25 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type SendCustomNotificationToCompanyPortalRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     groupsToNotify []string;
+    // 
     notificationBody *string;
+    // 
     notificationTitle *string;
 }
+// Instantiates a new sendCustomNotificationToCompanyPortalRequestBody and sets the default values.
 func NewSendCustomNotificationToCompanyPortalRequestBody()(*SendCustomNotificationToCompanyPortalRequestBody) {
     m := &SendCustomNotificationToCompanyPortalRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendCustomNotificationToCompanyPortalRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +30,7 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetAdditionalData()(m
         return m.additionalData
     }
 }
+// Gets the groupsToNotify property value. 
 func (m *SendCustomNotificationToCompanyPortalRequestBody) GetGroupsToNotify()([]string) {
     if m == nil {
         return nil
@@ -30,6 +38,7 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetGroupsToNotify()([
         return m.groupsToNotify
     }
 }
+// Gets the notificationBody property value. 
 func (m *SendCustomNotificationToCompanyPortalRequestBody) GetNotificationBody()(*string) {
     if m == nil {
         return nil
@@ -37,6 +46,7 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetNotificationBody()
         return m.notificationBody
     }
 }
+// Gets the notificationTitle property value. 
 func (m *SendCustomNotificationToCompanyPortalRequestBody) GetNotificationTitle()(*string) {
     if m == nil {
         return nil
@@ -44,6 +54,7 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetNotificationTitle(
         return m.notificationTitle
     }
 }
+// The deserialization information for the current model
 func (m *SendCustomNotificationToCompanyPortalRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["groupsToNotify"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,6 +90,9 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetFieldDeserializers
 func (m *SendCustomNotificationToCompanyPortalRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SendCustomNotificationToCompanyPortalRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("groupsToNotify", m.GetGroupsToNotify())
@@ -106,15 +120,27 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) Serialize(writer i04e
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the groupsToNotify property value. 
+// Parameters:
+//  - value : Value to set for the groupsToNotify property.
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetGroupsToNotify(value []string)() {
     m.groupsToNotify = value
 }
+// Sets the notificationBody property value. 
+// Parameters:
+//  - value : Value to set for the notificationBody property.
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetNotificationBody(value *string)() {
     m.notificationBody = value
 }
+// Sets the notificationTitle property value. 
+// Parameters:
+//  - value : Value to set for the notificationTitle property.
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetNotificationTitle(value *string)() {
     m.notificationTitle = value
 }

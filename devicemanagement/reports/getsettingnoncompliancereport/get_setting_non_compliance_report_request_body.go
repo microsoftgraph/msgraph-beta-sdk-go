@@ -4,24 +4,37 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type GetSettingNonComplianceReportRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     filter *string;
+    // 
     groupBy []string;
+    // 
     name *string;
+    // 
     orderBy []string;
+    // 
     search *string;
+    // 
     select_escaped []string;
+    // 
     sessionId *string;
+    // 
     skip *int32;
+    // 
     top *int32;
 }
+// Instantiates a new getSettingNonComplianceReportRequestBody and sets the default values.
 func NewGetSettingNonComplianceReportRequestBody()(*GetSettingNonComplianceReportRequestBody) {
     m := &GetSettingNonComplianceReportRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetSettingNonComplianceReportRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,6 +42,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetAdditionalData()(map[strin
         return m.additionalData
     }
 }
+// Gets the filter property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetFilter()(*string) {
     if m == nil {
         return nil
@@ -36,6 +50,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetFilter()(*string) {
         return m.filter
     }
 }
+// Gets the groupBy property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetGroupBy()([]string) {
     if m == nil {
         return nil
@@ -43,6 +58,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetGroupBy()([]string) {
         return m.groupBy
     }
 }
+// Gets the name property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetName()(*string) {
     if m == nil {
         return nil
@@ -50,6 +66,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetName()(*string) {
         return m.name
     }
 }
+// Gets the orderBy property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetOrderBy()([]string) {
     if m == nil {
         return nil
@@ -57,6 +74,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetOrderBy()([]string) {
         return m.orderBy
     }
 }
+// Gets the search property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetSearch()(*string) {
     if m == nil {
         return nil
@@ -64,6 +82,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
+// Gets the select_escaped property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
@@ -71,6 +90,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetSelect_escaped()([]string)
         return m.select_escaped
     }
 }
+// Gets the sessionId property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetSessionId()(*string) {
     if m == nil {
         return nil
@@ -78,6 +98,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetSessionId()(*string) {
         return m.sessionId
     }
 }
+// Gets the skip property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetSkip()(*int32) {
     if m == nil {
         return nil
@@ -85,6 +106,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetSkip()(*int32) {
         return m.skip
     }
 }
+// Gets the top property value. 
 func (m *GetSettingNonComplianceReportRequestBody) GetTop()(*int32) {
     if m == nil {
         return nil
@@ -92,6 +114,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetTop()(*int32) {
         return m.top
     }
 }
+// The deserialization information for the current model
 func (m *GetSettingNonComplianceReportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["filter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,6 +206,9 @@ func (m *GetSettingNonComplianceReportRequestBody) GetFieldDeserializers()(map[s
 func (m *GetSettingNonComplianceReportRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetSettingNonComplianceReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("filter", m.GetFilter())
@@ -246,33 +272,63 @@ func (m *GetSettingNonComplianceReportRequestBody) Serialize(writer i04eb5309aea
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *GetSettingNonComplianceReportRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the filter property value. 
+// Parameters:
+//  - value : Value to set for the filter property.
 func (m *GetSettingNonComplianceReportRequestBody) SetFilter(value *string)() {
     m.filter = value
 }
+// Sets the groupBy property value. 
+// Parameters:
+//  - value : Value to set for the groupBy property.
 func (m *GetSettingNonComplianceReportRequestBody) SetGroupBy(value []string)() {
     m.groupBy = value
 }
+// Sets the name property value. 
+// Parameters:
+//  - value : Value to set for the name property.
 func (m *GetSettingNonComplianceReportRequestBody) SetName(value *string)() {
     m.name = value
 }
+// Sets the orderBy property value. 
+// Parameters:
+//  - value : Value to set for the orderBy property.
 func (m *GetSettingNonComplianceReportRequestBody) SetOrderBy(value []string)() {
     m.orderBy = value
 }
+// Sets the search property value. 
+// Parameters:
+//  - value : Value to set for the search property.
 func (m *GetSettingNonComplianceReportRequestBody) SetSearch(value *string)() {
     m.search = value
 }
+// Sets the select_escaped property value. 
+// Parameters:
+//  - value : Value to set for the select_escaped property.
 func (m *GetSettingNonComplianceReportRequestBody) SetSelect_escaped(value []string)() {
     m.select_escaped = value
 }
+// Sets the sessionId property value. 
+// Parameters:
+//  - value : Value to set for the sessionId property.
 func (m *GetSettingNonComplianceReportRequestBody) SetSessionId(value *string)() {
     m.sessionId = value
 }
+// Sets the skip property value. 
+// Parameters:
+//  - value : Value to set for the skip property.
 func (m *GetSettingNonComplianceReportRequestBody) SetSkip(value *int32)() {
     m.skip = value
 }
+// Sets the top property value. 
+// Parameters:
+//  - value : Value to set for the top property.
 func (m *GetSettingNonComplianceReportRequestBody) SetTop(value *int32)() {
     m.top = value
 }

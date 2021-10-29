@@ -5,24 +5,36 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type PlannerPlan struct {
     PlannerDelta
+    // Read-only. Nullable. Collection of buckets in the plan.
     buckets []PlannerBucket;
+    // Identifies the container of the plan. After it is set, this property can’t be updated. Required.
     container *PlannerPlanContainer;
+    // Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
     contexts *PlannerPlanContextCollection;
+    // Read-only. The user who created the plan.
     createdBy *IdentitySet;
+    // Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // Read-only. Nullable. Additional details about the plan.
     details *PlannerPlanDetails;
+    // ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
     owner *string;
+    // Read-only. Nullable. Collection of tasks in the plan.
     tasks []PlannerTask;
+    // Required. Title of the plan.
     title *string;
 }
+// Instantiates a new plannerPlan and sets the default values.
 func NewPlannerPlan()(*PlannerPlan) {
     m := &PlannerPlan{
         PlannerDelta: *NewPlannerDelta(),
     }
     return m
 }
+// Gets the buckets property value. Read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerPlan) GetBuckets()([]PlannerBucket) {
     if m == nil {
         return nil
@@ -30,6 +42,7 @@ func (m *PlannerPlan) GetBuckets()([]PlannerBucket) {
         return m.buckets
     }
 }
+// Gets the container property value. Identifies the container of the plan. After it is set, this property can’t be updated. Required.
 func (m *PlannerPlan) GetContainer()(*PlannerPlanContainer) {
     if m == nil {
         return nil
@@ -37,6 +50,7 @@ func (m *PlannerPlan) GetContainer()(*PlannerPlanContainer) {
         return m.container
     }
 }
+// Gets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
 func (m *PlannerPlan) GetContexts()(*PlannerPlanContextCollection) {
     if m == nil {
         return nil
@@ -44,6 +58,7 @@ func (m *PlannerPlan) GetContexts()(*PlannerPlanContextCollection) {
         return m.contexts
     }
 }
+// Gets the createdBy property value. Read-only. The user who created the plan.
 func (m *PlannerPlan) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -51,6 +66,7 @@ func (m *PlannerPlan) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
+// Gets the createdDateTime property value. Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,6 +74,7 @@ func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.createdDateTime
     }
 }
+// Gets the details property value. Read-only. Nullable. Additional details about the plan.
 func (m *PlannerPlan) GetDetails()(*PlannerPlanDetails) {
     if m == nil {
         return nil
@@ -65,6 +82,7 @@ func (m *PlannerPlan) GetDetails()(*PlannerPlanDetails) {
         return m.details
     }
 }
+// Gets the owner property value. ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
 func (m *PlannerPlan) GetOwner()(*string) {
     if m == nil {
         return nil
@@ -72,6 +90,7 @@ func (m *PlannerPlan) GetOwner()(*string) {
         return m.owner
     }
 }
+// Gets the tasks property value. Read-only. Nullable. Collection of tasks in the plan.
 func (m *PlannerPlan) GetTasks()([]PlannerTask) {
     if m == nil {
         return nil
@@ -79,6 +98,7 @@ func (m *PlannerPlan) GetTasks()([]PlannerTask) {
         return m.tasks
     }
 }
+// Gets the title property value. Required. Title of the plan.
 func (m *PlannerPlan) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -86,6 +106,7 @@ func (m *PlannerPlan) GetTitle()(*string) {
         return m.title
     }
 }
+// The deserialization information for the current model
 func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
     res["buckets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,6 +194,9 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *PlannerPlan) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *PlannerPlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.PlannerDelta.Serialize(writer)
     if err != nil {
@@ -244,30 +268,57 @@ func (m *PlannerPlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
+// Sets the buckets property value. Read-only. Nullable. Collection of buckets in the plan.
+// Parameters:
+//  - value : Value to set for the buckets property.
 func (m *PlannerPlan) SetBuckets(value []PlannerBucket)() {
     m.buckets = value
 }
+// Sets the container property value. Identifies the container of the plan. After it is set, this property can’t be updated. Required.
+// Parameters:
+//  - value : Value to set for the container property.
 func (m *PlannerPlan) SetContainer(value *PlannerPlanContainer)() {
     m.container = value
 }
+// Sets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+// Parameters:
+//  - value : Value to set for the contexts property.
 func (m *PlannerPlan) SetContexts(value *PlannerPlanContextCollection)() {
     m.contexts = value
 }
+// Sets the createdBy property value. Read-only. The user who created the plan.
+// Parameters:
+//  - value : Value to set for the createdBy property.
 func (m *PlannerPlan) SetCreatedBy(value *IdentitySet)() {
     m.createdBy = value
 }
+// Sets the createdDateTime property value. Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// Parameters:
+//  - value : Value to set for the createdDateTime property.
 func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
+// Sets the details property value. Read-only. Nullable. Additional details about the plan.
+// Parameters:
+//  - value : Value to set for the details property.
 func (m *PlannerPlan) SetDetails(value *PlannerPlanDetails)() {
     m.details = value
 }
+// Sets the owner property value. ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
+// Parameters:
+//  - value : Value to set for the owner property.
 func (m *PlannerPlan) SetOwner(value *string)() {
     m.owner = value
 }
+// Sets the tasks property value. Read-only. Nullable. Collection of tasks in the plan.
+// Parameters:
+//  - value : Value to set for the tasks property.
 func (m *PlannerPlan) SetTasks(value []PlannerTask)() {
     m.tasks = value
 }
+// Sets the title property value. Required. Title of the plan.
+// Parameters:
+//  - value : Value to set for the title property.
 func (m *PlannerPlan) SetTitle(value *string)() {
     m.title = value
 }

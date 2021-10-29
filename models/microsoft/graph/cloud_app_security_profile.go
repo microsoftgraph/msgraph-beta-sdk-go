@@ -5,32 +5,52 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type CloudAppSecurityProfile struct {
     Entity
+    // 
     azureSubscriptionId *string;
+    // 
     azureTenantId *string;
+    // 
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     deploymentPackageUrl *string;
+    // 
     destinationServiceName *string;
+    // 
     isSigned *bool;
+    // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     manifest *string;
+    // 
     name *string;
+    // 
     permissionsRequired *ApplicationPermissionsRequired;
+    // 
     platform *string;
+    // 
     policyName *string;
+    // 
     publisher *string;
+    // 
     riskScore *string;
+    // 
     tags []string;
+    // 
     type_escaped *string;
+    // 
     vendorInformation *SecurityVendorInformation;
 }
+// Instantiates a new cloudAppSecurityProfile and sets the default values.
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
     m := &CloudAppSecurityProfile{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the azureSubscriptionId property value. 
 func (m *CloudAppSecurityProfile) GetAzureSubscriptionId()(*string) {
     if m == nil {
         return nil
@@ -38,6 +58,7 @@ func (m *CloudAppSecurityProfile) GetAzureSubscriptionId()(*string) {
         return m.azureSubscriptionId
     }
 }
+// Gets the azureTenantId property value. 
 func (m *CloudAppSecurityProfile) GetAzureTenantId()(*string) {
     if m == nil {
         return nil
@@ -45,6 +66,7 @@ func (m *CloudAppSecurityProfile) GetAzureTenantId()(*string) {
         return m.azureTenantId
     }
 }
+// Gets the createdDateTime property value. 
 func (m *CloudAppSecurityProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -52,6 +74,7 @@ func (m *CloudAppSecurityProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7
         return m.createdDateTime
     }
 }
+// Gets the deploymentPackageUrl property value. 
 func (m *CloudAppSecurityProfile) GetDeploymentPackageUrl()(*string) {
     if m == nil {
         return nil
@@ -59,6 +82,7 @@ func (m *CloudAppSecurityProfile) GetDeploymentPackageUrl()(*string) {
         return m.deploymentPackageUrl
     }
 }
+// Gets the destinationServiceName property value. 
 func (m *CloudAppSecurityProfile) GetDestinationServiceName()(*string) {
     if m == nil {
         return nil
@@ -66,6 +90,7 @@ func (m *CloudAppSecurityProfile) GetDestinationServiceName()(*string) {
         return m.destinationServiceName
     }
 }
+// Gets the isSigned property value. 
 func (m *CloudAppSecurityProfile) GetIsSigned()(*bool) {
     if m == nil {
         return nil
@@ -73,6 +98,7 @@ func (m *CloudAppSecurityProfile) GetIsSigned()(*bool) {
         return m.isSigned
     }
 }
+// Gets the lastModifiedDateTime property value. 
 func (m *CloudAppSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -80,6 +106,7 @@ func (m *CloudAppSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987a
         return m.lastModifiedDateTime
     }
 }
+// Gets the manifest property value. 
 func (m *CloudAppSecurityProfile) GetManifest()(*string) {
     if m == nil {
         return nil
@@ -87,6 +114,7 @@ func (m *CloudAppSecurityProfile) GetManifest()(*string) {
         return m.manifest
     }
 }
+// Gets the name property value. 
 func (m *CloudAppSecurityProfile) GetName()(*string) {
     if m == nil {
         return nil
@@ -94,6 +122,7 @@ func (m *CloudAppSecurityProfile) GetName()(*string) {
         return m.name
     }
 }
+// Gets the permissionsRequired property value. 
 func (m *CloudAppSecurityProfile) GetPermissionsRequired()(*ApplicationPermissionsRequired) {
     if m == nil {
         return nil
@@ -101,6 +130,7 @@ func (m *CloudAppSecurityProfile) GetPermissionsRequired()(*ApplicationPermissio
         return m.permissionsRequired
     }
 }
+// Gets the platform property value. 
 func (m *CloudAppSecurityProfile) GetPlatform()(*string) {
     if m == nil {
         return nil
@@ -108,6 +138,7 @@ func (m *CloudAppSecurityProfile) GetPlatform()(*string) {
         return m.platform
     }
 }
+// Gets the policyName property value. 
 func (m *CloudAppSecurityProfile) GetPolicyName()(*string) {
     if m == nil {
         return nil
@@ -115,6 +146,7 @@ func (m *CloudAppSecurityProfile) GetPolicyName()(*string) {
         return m.policyName
     }
 }
+// Gets the publisher property value. 
 func (m *CloudAppSecurityProfile) GetPublisher()(*string) {
     if m == nil {
         return nil
@@ -122,6 +154,7 @@ func (m *CloudAppSecurityProfile) GetPublisher()(*string) {
         return m.publisher
     }
 }
+// Gets the riskScore property value. 
 func (m *CloudAppSecurityProfile) GetRiskScore()(*string) {
     if m == nil {
         return nil
@@ -129,6 +162,7 @@ func (m *CloudAppSecurityProfile) GetRiskScore()(*string) {
         return m.riskScore
     }
 }
+// Gets the tags property value. 
 func (m *CloudAppSecurityProfile) GetTags()([]string) {
     if m == nil {
         return nil
@@ -136,6 +170,7 @@ func (m *CloudAppSecurityProfile) GetTags()([]string) {
         return m.tags
     }
 }
+// Gets the type_escaped property value. 
 func (m *CloudAppSecurityProfile) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -143,6 +178,7 @@ func (m *CloudAppSecurityProfile) GetType_escaped()(*string) {
         return m.type_escaped
     }
 }
+// Gets the vendorInformation property value. 
 func (m *CloudAppSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
     if m == nil {
         return nil
@@ -150,6 +186,7 @@ func (m *CloudAppSecurityProfile) GetVendorInformation()(*SecurityVendorInformat
         return m.vendorInformation
     }
 }
+// The deserialization information for the current model
 func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureSubscriptionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,6 +335,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
 func (m *CloudAppSecurityProfile) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *CloudAppSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -408,54 +448,105 @@ func (m *CloudAppSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
+// Sets the azureSubscriptionId property value. 
+// Parameters:
+//  - value : Value to set for the azureSubscriptionId property.
 func (m *CloudAppSecurityProfile) SetAzureSubscriptionId(value *string)() {
     m.azureSubscriptionId = value
 }
+// Sets the azureTenantId property value. 
+// Parameters:
+//  - value : Value to set for the azureTenantId property.
 func (m *CloudAppSecurityProfile) SetAzureTenantId(value *string)() {
     m.azureTenantId = value
 }
+// Sets the createdDateTime property value. 
+// Parameters:
+//  - value : Value to set for the createdDateTime property.
 func (m *CloudAppSecurityProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
+// Sets the deploymentPackageUrl property value. 
+// Parameters:
+//  - value : Value to set for the deploymentPackageUrl property.
 func (m *CloudAppSecurityProfile) SetDeploymentPackageUrl(value *string)() {
     m.deploymentPackageUrl = value
 }
+// Sets the destinationServiceName property value. 
+// Parameters:
+//  - value : Value to set for the destinationServiceName property.
 func (m *CloudAppSecurityProfile) SetDestinationServiceName(value *string)() {
     m.destinationServiceName = value
 }
+// Sets the isSigned property value. 
+// Parameters:
+//  - value : Value to set for the isSigned property.
 func (m *CloudAppSecurityProfile) SetIsSigned(value *bool)() {
     m.isSigned = value
 }
+// Sets the lastModifiedDateTime property value. 
+// Parameters:
+//  - value : Value to set for the lastModifiedDateTime property.
 func (m *CloudAppSecurityProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
+// Sets the manifest property value. 
+// Parameters:
+//  - value : Value to set for the manifest property.
 func (m *CloudAppSecurityProfile) SetManifest(value *string)() {
     m.manifest = value
 }
+// Sets the name property value. 
+// Parameters:
+//  - value : Value to set for the name property.
 func (m *CloudAppSecurityProfile) SetName(value *string)() {
     m.name = value
 }
+// Sets the permissionsRequired property value. 
+// Parameters:
+//  - value : Value to set for the permissionsRequired property.
 func (m *CloudAppSecurityProfile) SetPermissionsRequired(value *ApplicationPermissionsRequired)() {
     m.permissionsRequired = value
 }
+// Sets the platform property value. 
+// Parameters:
+//  - value : Value to set for the platform property.
 func (m *CloudAppSecurityProfile) SetPlatform(value *string)() {
     m.platform = value
 }
+// Sets the policyName property value. 
+// Parameters:
+//  - value : Value to set for the policyName property.
 func (m *CloudAppSecurityProfile) SetPolicyName(value *string)() {
     m.policyName = value
 }
+// Sets the publisher property value. 
+// Parameters:
+//  - value : Value to set for the publisher property.
 func (m *CloudAppSecurityProfile) SetPublisher(value *string)() {
     m.publisher = value
 }
+// Sets the riskScore property value. 
+// Parameters:
+//  - value : Value to set for the riskScore property.
 func (m *CloudAppSecurityProfile) SetRiskScore(value *string)() {
     m.riskScore = value
 }
+// Sets the tags property value. 
+// Parameters:
+//  - value : Value to set for the tags property.
 func (m *CloudAppSecurityProfile) SetTags(value []string)() {
     m.tags = value
 }
+// Sets the type_escaped property value. 
+// Parameters:
+//  - value : Value to set for the type_escaped property.
 func (m *CloudAppSecurityProfile) SetType_escaped(value *string)() {
     m.type_escaped = value
 }
+// Sets the vendorInformation property value. 
+// Parameters:
+//  - value : Value to set for the vendorInformation property.
 func (m *CloudAppSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
     m.vendorInformation = value
 }

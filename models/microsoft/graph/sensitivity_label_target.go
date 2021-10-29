@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type SensitivityLabelTarget int
 
 const (
@@ -10,10 +11,11 @@ const (
     SITE_SENSITIVITYLABELTARGET
     UNIFIEDGROUP_SENSITIVITYLABELTARGET
     UNKNOWNFUTUREVALUE_SENSITIVITYLABELTARGET
+    TEAMWORK_SENSITIVITYLABELTARGET
 )
 
 func (i SensitivityLabelTarget) String() string {
-    return []string{"EMAIL", "SITE", "UNIFIEDGROUP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"EMAIL", "SITE", "UNIFIEDGROUP", "UNKNOWNFUTUREVALUE", "TEAMWORK"}[i]
 }
 func ParseSensitivityLabelTarget(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -25,6 +27,8 @@ func ParseSensitivityLabelTarget(v string) (interface{}, error) {
             return UNIFIEDGROUP_SENSITIVITYLABELTARGET, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_SENSITIVITYLABELTARGET, nil
+        case "TEAMWORK":
+            return TEAMWORK_SENSITIVITYLABELTARGET, nil
     }
     return 0, errors.New("Unknown SensitivityLabelTarget value: " + v)
 }

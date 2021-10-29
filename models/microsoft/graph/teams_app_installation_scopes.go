@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type TeamsAppInstallationScopes int
 
 const (

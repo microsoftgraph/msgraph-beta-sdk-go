@@ -5,21 +5,31 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
+// 
 type ExportRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     azureBlobContainer *string;
+    // 
     azureBlobToken *string;
+    // 
     description *string;
+    // 
     exportOptions *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions;
+    // 
     exportStructure *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure;
+    // 
     outputName *string;
 }
+// Instantiates a new exportRequestBody and sets the default values.
 func NewExportRequestBody()(*ExportRequestBody) {
     m := &ExportRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,6 +37,7 @@ func (m *ExportRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the azureBlobContainer property value. 
 func (m *ExportRequestBody) GetAzureBlobContainer()(*string) {
     if m == nil {
         return nil
@@ -34,6 +45,7 @@ func (m *ExportRequestBody) GetAzureBlobContainer()(*string) {
         return m.azureBlobContainer
     }
 }
+// Gets the azureBlobToken property value. 
 func (m *ExportRequestBody) GetAzureBlobToken()(*string) {
     if m == nil {
         return nil
@@ -41,6 +53,7 @@ func (m *ExportRequestBody) GetAzureBlobToken()(*string) {
         return m.azureBlobToken
     }
 }
+// Gets the description property value. 
 func (m *ExportRequestBody) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -48,6 +61,7 @@ func (m *ExportRequestBody) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the exportOptions property value. 
 func (m *ExportRequestBody) GetExportOptions()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions) {
     if m == nil {
         return nil
@@ -55,6 +69,7 @@ func (m *ExportRequestBody) GetExportOptions()(*i2756dc8c91c60abdde0aa43bf23ca1c
         return m.exportOptions
     }
 }
+// Gets the exportStructure property value. 
 func (m *ExportRequestBody) GetExportStructure()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure) {
     if m == nil {
         return nil
@@ -62,6 +77,7 @@ func (m *ExportRequestBody) GetExportStructure()(*i2756dc8c91c60abdde0aa43bf23ca
         return m.exportStructure
     }
 }
+// Gets the outputName property value. 
 func (m *ExportRequestBody) GetOutputName()(*string) {
     if m == nil {
         return nil
@@ -69,6 +85,7 @@ func (m *ExportRequestBody) GetOutputName()(*string) {
         return m.outputName
     }
 }
+// The deserialization information for the current model
 func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["azureBlobContainer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,6 +143,9 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
 func (m *ExportRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ExportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("azureBlobContainer", m.GetAzureBlobContainer())
@@ -173,24 +193,45 @@ func (m *ExportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *ExportRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the azureBlobContainer property value. 
+// Parameters:
+//  - value : Value to set for the azureBlobContainer property.
 func (m *ExportRequestBody) SetAzureBlobContainer(value *string)() {
     m.azureBlobContainer = value
 }
+// Sets the azureBlobToken property value. 
+// Parameters:
+//  - value : Value to set for the azureBlobToken property.
 func (m *ExportRequestBody) SetAzureBlobToken(value *string)() {
     m.azureBlobToken = value
 }
+// Sets the description property value. 
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *ExportRequestBody) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the exportOptions property value. 
+// Parameters:
+//  - value : Value to set for the exportOptions property.
 func (m *ExportRequestBody) SetExportOptions(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions)() {
     m.exportOptions = value
 }
+// Sets the exportStructure property value. 
+// Parameters:
+//  - value : Value to set for the exportStructure property.
 func (m *ExportRequestBody) SetExportStructure(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure)() {
     m.exportStructure = value
 }
+// Sets the outputName property value. 
+// Parameters:
+//  - value : Value to set for the outputName property.
 func (m *ExportRequestBody) SetOutputName(value *string)() {
     m.outputName = value
 }

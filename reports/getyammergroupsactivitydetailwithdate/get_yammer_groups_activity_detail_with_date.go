@@ -5,28 +5,44 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
+// 
 type GetYammerGroupsActivityDetailWithDate struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
+    // 
     groupDisplayName *string;
+    // 
     groupType *string;
+    // 
     isDeleted *bool;
+    // 
     lastActivityDate *string;
+    // 
     likedCount *int64;
+    // 
     memberCount *int64;
+    // 
     networkDisplayName *string;
+    // 
     office365Connected *bool;
+    // 
     ownerPrincipalName *string;
+    // 
     postedCount *int64;
+    // 
     readCount *int64;
+    // 
     reportPeriod *string;
+    // 
     reportRefreshDate *string;
 }
+// Instantiates a new getYammerGroupsActivityDetailWithDate and sets the default values.
 func NewGetYammerGroupsActivityDetailWithDate()(*GetYammerGroupsActivityDetailWithDate) {
     m := &GetYammerGroupsActivityDetailWithDate{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
+// Gets the groupDisplayName property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetGroupDisplayName()(*string) {
     if m == nil {
         return nil
@@ -34,6 +50,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetGroupDisplayName()(*string) {
         return m.groupDisplayName
     }
 }
+// Gets the groupType property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetGroupType()(*string) {
     if m == nil {
         return nil
@@ -41,6 +58,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetGroupType()(*string) {
         return m.groupType
     }
 }
+// Gets the isDeleted property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetIsDeleted()(*bool) {
     if m == nil {
         return nil
@@ -48,6 +66,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetIsDeleted()(*bool) {
         return m.isDeleted
     }
 }
+// Gets the lastActivityDate property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -55,6 +74,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetLastActivityDate()(*string) {
         return m.lastActivityDate
     }
 }
+// Gets the likedCount property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetLikedCount()(*int64) {
     if m == nil {
         return nil
@@ -62,6 +82,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetLikedCount()(*int64) {
         return m.likedCount
     }
 }
+// Gets the memberCount property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetMemberCount()(*int64) {
     if m == nil {
         return nil
@@ -69,6 +90,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetMemberCount()(*int64) {
         return m.memberCount
     }
 }
+// Gets the networkDisplayName property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetNetworkDisplayName()(*string) {
     if m == nil {
         return nil
@@ -76,6 +98,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetNetworkDisplayName()(*string)
         return m.networkDisplayName
     }
 }
+// Gets the office365Connected property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetOffice365Connected()(*bool) {
     if m == nil {
         return nil
@@ -83,6 +106,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetOffice365Connected()(*bool) {
         return m.office365Connected
     }
 }
+// Gets the ownerPrincipalName property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetOwnerPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -90,6 +114,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetOwnerPrincipalName()(*string)
         return m.ownerPrincipalName
     }
 }
+// Gets the postedCount property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetPostedCount()(*int64) {
     if m == nil {
         return nil
@@ -97,6 +122,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetPostedCount()(*int64) {
         return m.postedCount
     }
 }
+// Gets the readCount property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetReadCount()(*int64) {
     if m == nil {
         return nil
@@ -104,6 +130,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetReadCount()(*int64) {
         return m.readCount
     }
 }
+// Gets the reportPeriod property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -111,6 +138,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetReportPeriod()(*string) {
         return m.reportPeriod
     }
 }
+// Gets the reportRefreshDate property value. 
 func (m *GetYammerGroupsActivityDetailWithDate) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -118,6 +146,7 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetReportRefreshDate()(*string) 
         return m.reportRefreshDate
     }
 }
+// The deserialization information for the current model
 func (m *GetYammerGroupsActivityDetailWithDate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["groupDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,6 +258,9 @@ func (m *GetYammerGroupsActivityDetailWithDate) GetFieldDeserializers()(map[stri
 func (m *GetYammerGroupsActivityDetailWithDate) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetYammerGroupsActivityDetailWithDate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -314,42 +346,81 @@ func (m *GetYammerGroupsActivityDetailWithDate) Serialize(writer i04eb5309aeaafa
     }
     return nil
 }
+// Sets the groupDisplayName property value. 
+// Parameters:
+//  - value : Value to set for the groupDisplayName property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetGroupDisplayName(value *string)() {
     m.groupDisplayName = value
 }
+// Sets the groupType property value. 
+// Parameters:
+//  - value : Value to set for the groupType property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetGroupType(value *string)() {
     m.groupType = value
 }
+// Sets the isDeleted property value. 
+// Parameters:
+//  - value : Value to set for the isDeleted property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetIsDeleted(value *bool)() {
     m.isDeleted = value
 }
+// Sets the lastActivityDate property value. 
+// Parameters:
+//  - value : Value to set for the lastActivityDate property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetLastActivityDate(value *string)() {
     m.lastActivityDate = value
 }
+// Sets the likedCount property value. 
+// Parameters:
+//  - value : Value to set for the likedCount property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetLikedCount(value *int64)() {
     m.likedCount = value
 }
+// Sets the memberCount property value. 
+// Parameters:
+//  - value : Value to set for the memberCount property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetMemberCount(value *int64)() {
     m.memberCount = value
 }
+// Sets the networkDisplayName property value. 
+// Parameters:
+//  - value : Value to set for the networkDisplayName property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetNetworkDisplayName(value *string)() {
     m.networkDisplayName = value
 }
+// Sets the office365Connected property value. 
+// Parameters:
+//  - value : Value to set for the office365Connected property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetOffice365Connected(value *bool)() {
     m.office365Connected = value
 }
+// Sets the ownerPrincipalName property value. 
+// Parameters:
+//  - value : Value to set for the ownerPrincipalName property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetOwnerPrincipalName(value *string)() {
     m.ownerPrincipalName = value
 }
+// Sets the postedCount property value. 
+// Parameters:
+//  - value : Value to set for the postedCount property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetPostedCount(value *int64)() {
     m.postedCount = value
 }
+// Sets the readCount property value. 
+// Parameters:
+//  - value : Value to set for the readCount property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetReadCount(value *int64)() {
     m.readCount = value
 }
+// Sets the reportPeriod property value. 
+// Parameters:
+//  - value : Value to set for the reportPeriod property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
+// Sets the reportRefreshDate property value. 
+// Parameters:
+//  - value : Value to set for the reportRefreshDate property.
 func (m *GetYammerGroupsActivityDetailWithDate) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
