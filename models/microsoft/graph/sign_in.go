@@ -606,7 +606,7 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAuthenticationMethodsUsed(res)
         return nil
@@ -867,7 +867,7 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRiskEventTypes_v2(res)
         return nil
@@ -938,7 +938,7 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSignInEventTypes(res)
         return nil

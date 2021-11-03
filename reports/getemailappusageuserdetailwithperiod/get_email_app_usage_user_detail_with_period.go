@@ -202,7 +202,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetImap4App(res)
         return nil
@@ -230,7 +230,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetMailForMac(res)
         return nil
@@ -242,7 +242,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOtherForMobile(res)
         return nil
@@ -254,7 +254,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOutlookForMac(res)
         return nil
@@ -266,7 +266,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOutlookForMobile(res)
         return nil
@@ -278,7 +278,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOutlookForWeb(res)
         return nil
@@ -290,7 +290,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOutlookForWindows(res)
         return nil
@@ -302,7 +302,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetPop3App(res)
         return nil
@@ -330,7 +330,7 @@ func (m *GetEmailAppUsageUserDetailWithPeriod) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSmtpApp(res)
         return nil

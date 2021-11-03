@@ -64,7 +64,7 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetKeywords(res)
         return nil
@@ -84,7 +84,7 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetReservedKeywords(res)
         return nil

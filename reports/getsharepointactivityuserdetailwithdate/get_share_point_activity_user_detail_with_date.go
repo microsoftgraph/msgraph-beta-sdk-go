@@ -146,7 +146,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetFieldDeserializers()(map[st
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAssignedProducts(res)
         return nil

@@ -96,7 +96,7 @@ func (m *CartToClassAssociation) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetClassroomIds(res)
         return nil
@@ -124,7 +124,7 @@ func (m *CartToClassAssociation) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetDeviceCartIds(res)
         return nil

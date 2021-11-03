@@ -1508,7 +1508,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetBusinessPhones(res)
         return nil
@@ -1884,7 +1884,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetImAddresses(res)
         return nil
@@ -1904,7 +1904,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetInfoCatalogs(res)
         return nil
@@ -1932,7 +1932,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetInterests(res)
         return nil
@@ -2292,7 +2292,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOtherMails(res)
         return nil
@@ -2352,7 +2352,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetPastProjects(res)
         return nil
@@ -2476,7 +2476,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetProxyAddresses(res)
         return nil
@@ -2508,7 +2508,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetResponsibilities(res)
         return nil
@@ -2520,7 +2520,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSchools(res)
         return nil
@@ -2576,7 +2576,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSkills(res)
         return nil

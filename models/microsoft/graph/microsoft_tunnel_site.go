@@ -197,7 +197,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRoleScopeTagIds(res)
         return nil

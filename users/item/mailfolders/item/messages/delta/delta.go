@@ -657,7 +657,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetUnsubscribeData(res)
         return nil

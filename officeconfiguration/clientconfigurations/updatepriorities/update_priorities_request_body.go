@@ -54,7 +54,7 @@ func (m *UpdatePrioritiesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOfficeConfigurationPolicyIds(res)
         return nil
@@ -66,7 +66,7 @@ func (m *UpdatePrioritiesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         res := make([]int32, len(val))
         for i, v := range val {
-            res[i] = v.(int32)
+            res[i] = *(v.(*int32))
         }
         m.SetOfficeConfigurationPriorities(res)
         return nil

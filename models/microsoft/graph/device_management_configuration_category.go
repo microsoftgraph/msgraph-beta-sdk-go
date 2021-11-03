@@ -125,7 +125,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetChildCategoryIds(res)
         return nil

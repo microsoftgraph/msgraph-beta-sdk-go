@@ -74,7 +74,7 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(inte
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIgnoredDelimiters(res)
         return nil

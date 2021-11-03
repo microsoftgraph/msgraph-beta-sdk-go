@@ -92,7 +92,7 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(interface{}, i04e
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetValues(res)
         return nil

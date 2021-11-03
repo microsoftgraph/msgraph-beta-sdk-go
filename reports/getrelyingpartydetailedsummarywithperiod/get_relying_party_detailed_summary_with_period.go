@@ -181,7 +181,7 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetReplyUrls(res)
         return nil

@@ -54,7 +54,7 @@ func (m *ConditionalAccessClientApplications) GetFieldDeserializers()(map[string
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetExcludeServicePrincipals(res)
         return nil
@@ -66,7 +66,7 @@ func (m *ConditionalAccessClientApplications) GetFieldDeserializers()(map[string
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIncludeServicePrincipals(res)
         return nil

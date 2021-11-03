@@ -184,7 +184,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRoleScopeTagIds(res)
         return nil

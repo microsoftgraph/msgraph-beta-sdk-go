@@ -137,7 +137,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRoleScopeTags(res)
         return nil

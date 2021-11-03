@@ -576,7 +576,7 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetHostnames(res)
         return nil
@@ -696,7 +696,7 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetPhysicalIds(res)
         return nil
@@ -764,7 +764,7 @@ func (m *Device) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSystemLabels(res)
         return nil

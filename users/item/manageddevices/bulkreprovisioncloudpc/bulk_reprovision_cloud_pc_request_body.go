@@ -44,7 +44,7 @@ func (m *BulkReprovisionCloudPcRequestBody) GetFieldDeserializers()(map[string]f
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetManagedDeviceIds(res)
         return nil

@@ -269,7 +269,7 @@ func (m *DeviceCustomAttributeShellScript) GetFieldDeserializers()(map[string]fu
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRoleScopeTagIds(res)
         return nil
