@@ -326,7 +326,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetBusinessPhones(res)
         return nil
@@ -426,7 +426,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetMarketingNotificationEmails(res)
         return nil
@@ -499,7 +499,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSecurityComplianceNotificationMails(res)
         return nil
@@ -511,7 +511,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSecurityComplianceNotificationPhones(res)
         return nil
@@ -547,7 +547,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetTechnicalNotificationMails(res)
         return nil

@@ -80,7 +80,7 @@ func (m *GetAuditCategoriesRequestBuilder) Get(options *GetAuditCategoriesReques
     }
     val := make([]string, len(res))
     for i, v := range res {
-        val[i] = v.(string)
+        val[i] = *(v.(*string))
     }
     return val, nil
 }

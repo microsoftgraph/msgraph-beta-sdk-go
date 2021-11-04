@@ -186,7 +186,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetEnabledPreviewFeatures(res)
         return nil
@@ -206,7 +206,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetPermissionGrantPolicyIdsAssignedToDefaultUserRole(res)
         return nil

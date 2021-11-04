@@ -154,7 +154,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAggregationFilters(res)
         return nil
@@ -178,7 +178,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetContentSources(res)
         return nil
@@ -210,7 +210,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetFields(res)
         return nil
@@ -266,7 +266,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetStored_fields(res)
         return nil

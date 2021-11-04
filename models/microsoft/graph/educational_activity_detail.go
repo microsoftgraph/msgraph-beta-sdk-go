@@ -132,7 +132,7 @@ func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(inte
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetActivities(res)
         return nil
@@ -144,7 +144,7 @@ func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(inte
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAwards(res)
         return nil
@@ -172,7 +172,7 @@ func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(inte
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetFieldsOfStudy(res)
         return nil

@@ -186,7 +186,7 @@ func (m *UserSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetTags(res)
         return nil

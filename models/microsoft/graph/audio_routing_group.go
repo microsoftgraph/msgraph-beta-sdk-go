@@ -55,7 +55,7 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(interface{},
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetReceivers(res)
         return nil
@@ -76,7 +76,7 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(interface{},
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSources(res)
         return nil

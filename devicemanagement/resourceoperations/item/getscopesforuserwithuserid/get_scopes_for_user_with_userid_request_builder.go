@@ -84,7 +84,7 @@ func (m *GetScopesForUserWithUseridRequestBuilder) Get(options *GetScopesForUser
     }
     val := make([]string, len(res))
     for i, v := range res {
-        val[i] = v.(string)
+        val[i] = *(v.(*string))
     }
     return val, nil
 }

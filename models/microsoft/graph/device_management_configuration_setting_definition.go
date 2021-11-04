@@ -262,7 +262,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetInfoUrls(res)
         return nil
@@ -274,7 +274,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetKeywords(res)
         return nil

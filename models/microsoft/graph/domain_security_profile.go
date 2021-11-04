@@ -166,7 +166,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetActivityGroupNames(res)
         return nil
@@ -270,7 +270,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetTags(res)
         return nil

@@ -33,13 +33,15 @@ For an example of how to get an authentication provider, see [choose a Microsoft
 import (
     azidentity "https://github.com/Azure/azure-sdk-for-go/sdk/azidentity"
     a          "https://github.com/microsoft/kiota/authentication/go/azure"
+    "context"
 )
 
 cred, err := azidentity.NewDeviceCodeCredential(&azidentity.DeviceCodeCredentialOptions{
     TenantID: "<the tenant id from your app registration>",
     ClientID: "<the client id from your app registration>",
-    UserPrompt: func(message azidentity.DeviceCodeMessage) {
+    UserPrompt: func(ctx context.Context, message azidentity.DeviceCodeMessage) error {
         fmt.Println(message.Message)
+        return nil
     },
 })
 

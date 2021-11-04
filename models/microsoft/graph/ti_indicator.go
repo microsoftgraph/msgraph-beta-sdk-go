@@ -615,7 +615,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetActivityGroupNames(res)
         return nil
@@ -861,7 +861,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetKillChain(res)
         return nil
@@ -889,7 +889,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetMalwareFamilyNames(res)
         return nil
@@ -1037,7 +1037,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetTags(res)
         return nil

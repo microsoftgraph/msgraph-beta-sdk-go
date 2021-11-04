@@ -153,7 +153,7 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetCategories(res)
         return nil
@@ -165,7 +165,7 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetGroupIds(res)
         return nil
@@ -193,7 +193,7 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetLanguageTags(res)
         return nil
@@ -217,7 +217,7 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetPowerAppIds(res)
         return nil

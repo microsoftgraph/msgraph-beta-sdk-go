@@ -65,7 +65,7 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetApplicationIds(res)
         return nil
@@ -77,7 +77,7 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetApplicationPublisherIds(res)
         return nil
@@ -97,7 +97,7 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetApplicationTenantIds(res)
         return nil

@@ -85,7 +85,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetCategories(res)
         return nil
@@ -97,7 +97,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetCollaborationTags(res)
         return nil

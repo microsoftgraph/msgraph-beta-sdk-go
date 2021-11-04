@@ -64,7 +64,7 @@ func (m *BulkDriverActionResult) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetFailedDriverIds(res)
         return nil
@@ -76,7 +76,7 @@ func (m *BulkDriverActionResult) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetNotFoundDriverIds(res)
         return nil
@@ -88,7 +88,7 @@ func (m *BulkDriverActionResult) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSuccessfulDriverIds(res)
         return nil

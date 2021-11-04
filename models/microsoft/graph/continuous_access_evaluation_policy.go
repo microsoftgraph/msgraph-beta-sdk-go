@@ -101,7 +101,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetGroups(res)
         return nil
@@ -129,7 +129,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetUsers(res)
         return nil

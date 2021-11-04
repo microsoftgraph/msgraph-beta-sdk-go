@@ -84,7 +84,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAddExclusions(res)
         return nil
@@ -96,7 +96,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAddMembers(res)
         return nil
@@ -116,7 +116,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRemoveExclusions(res)
         return nil
@@ -128,7 +128,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRemoveMembers(res)
         return nil

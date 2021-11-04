@@ -54,7 +54,7 @@ func (m *ConditionalAccessDeviceStates) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetExcludeStates(res)
         return nil
@@ -66,7 +66,7 @@ func (m *ConditionalAccessDeviceStates) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIncludeStates(res)
         return nil

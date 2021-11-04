@@ -135,7 +135,7 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAppScopeIds(res)
         return nil
@@ -175,7 +175,7 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetDirectoryScopeIds(res)
         return nil
@@ -207,7 +207,7 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetPrincipalIds(res)
         return nil

@@ -74,7 +74,7 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetCustomLogFolders(res)
         return nil

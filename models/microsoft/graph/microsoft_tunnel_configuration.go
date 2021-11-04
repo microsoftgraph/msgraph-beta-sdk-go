@@ -182,7 +182,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetDnsServers(res)
         return nil
@@ -218,7 +218,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRoleScopeTagIds(res)
         return nil
@@ -230,7 +230,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRoutesExclude(res)
         return nil
@@ -242,7 +242,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRoutesInclude(res)
         return nil
@@ -254,7 +254,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSplitDNS(res)
         return nil

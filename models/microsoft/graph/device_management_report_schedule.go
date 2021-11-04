@@ -146,7 +146,7 @@ func (m *DeviceManagementReportSchedule) GetFieldDeserializers()(map[string]func
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetEmails(res)
         return nil
@@ -183,7 +183,7 @@ func (m *DeviceManagementReportSchedule) GetFieldDeserializers()(map[string]func
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOrderBy(res)
         return nil
@@ -220,7 +220,7 @@ func (m *DeviceManagementReportSchedule) GetFieldDeserializers()(map[string]func
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSelect_escaped(res)
         return nil

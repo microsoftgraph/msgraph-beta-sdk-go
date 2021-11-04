@@ -169,7 +169,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetFieldDeserializers()(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetDefaultStringArrayValue(res)
         return nil

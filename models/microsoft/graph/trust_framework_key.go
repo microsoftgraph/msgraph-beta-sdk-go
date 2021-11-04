@@ -306,7 +306,7 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetX5c(res)
         return nil

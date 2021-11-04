@@ -74,7 +74,7 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetFailedDeviceIds(res)
         return nil
@@ -86,7 +86,7 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetNotFoundDeviceIds(res)
         return nil
@@ -98,7 +98,7 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetNotSupportedDeviceIds(res)
         return nil
@@ -110,7 +110,7 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSuccessfulDeviceIds(res)
         return nil
