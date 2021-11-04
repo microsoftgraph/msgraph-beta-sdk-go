@@ -1,4 +1,4 @@
-# Microsoft Graph SDK for Java
+# Microsoft Graph SDK for Go
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/microsoftgraph/msgraph-beta-sdk-go/)](https://pkg.go.dev/github.com/microsoftgraph/msgraph-beta-sdk-go/)
 
@@ -31,8 +31,8 @@ For an example of how to get an authentication provider, see [choose a Microsoft
 
 ```Golang
 import (
-    azidentity "https://github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-    a          "https://github.com/microsoft/kiota/authentication/go/azure"
+    azidentity "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+    a          "github.com/microsoft/kiota/authentication/go/azure"
     "context"
 )
 
@@ -61,7 +61,7 @@ if err != nil {
 You must get a **GraphRequestAdapter** object to make requests against the service.
 
 ```Golang
-import msgraphsdk "https://github.com/microsoftgraph/msgraph-beta-sdk-go"
+import msgraphsdk "github.com/microsoftgraph/msgraph-beta-sdk-go"
 
 adapter, err := msgraphsdk.NewGraphRequestAdapter(auth)
 if err != nil {
