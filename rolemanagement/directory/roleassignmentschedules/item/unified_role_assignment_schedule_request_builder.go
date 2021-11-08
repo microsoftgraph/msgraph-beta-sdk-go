@@ -65,7 +65,7 @@ func (m *UnifiedRoleAssignmentScheduleRequestBuilder) ActivatedUsing()(*if41c45f
 func NewUnifiedRoleAssignmentScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleAssignmentScheduleRequestBuilder) {
     m := &UnifiedRoleAssignmentScheduleRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

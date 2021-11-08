@@ -30,7 +30,7 @@ type MyRequestsRequestBuilderGetOptions struct {
 func NewMyRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MyRequestsRequestBuilder) {
     m := &MyRequestsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/privilegedApproval/microsoft.graph.myRequests()";
+    m.urlTemplate = "{+baseurl}/privilegedApproval/microsoft.graph.myRequests()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -31,7 +31,7 @@ type HideForUserRequestBuilderPostOptions struct {
 func NewHideForUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HideForUserRequestBuilder) {
     m := &HideForUserRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/chats/{chat_id}/microsoft.graph.hideForUser";
+    m.urlTemplate = "{+baseurl}/chats/{chat_id}/microsoft.graph.hideForUser";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

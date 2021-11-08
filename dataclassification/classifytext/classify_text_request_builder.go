@@ -109,7 +109,7 @@ func (m *ClassifyTextResponse) SetClassificationJobResponse(value *i535684e11b55
 func NewClassifyTextRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClassifyTextRequestBuilder) {
     m := &ClassifyTextRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/dataClassification/microsoft.graph.classifyText";
+    m.urlTemplate = "{+baseurl}/dataClassification/microsoft.graph.classifyText";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

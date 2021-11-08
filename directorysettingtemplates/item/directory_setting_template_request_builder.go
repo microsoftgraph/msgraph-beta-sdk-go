@@ -72,7 +72,7 @@ func (m *DirectorySettingTemplateRequestBuilder) CheckMemberObjects()(*i9aa94a0c
 func NewDirectorySettingTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectorySettingTemplateRequestBuilder) {
     m := &DirectorySettingTemplateRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/directorySettingTemplates/{directorySettingTemplate_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/directorySettingTemplates/{directorySettingTemplate_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

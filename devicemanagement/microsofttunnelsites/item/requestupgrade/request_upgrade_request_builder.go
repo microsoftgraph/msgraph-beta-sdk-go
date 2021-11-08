@@ -29,7 +29,7 @@ type RequestUpgradeRequestBuilderPostOptions struct {
 func NewRequestUpgradeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RequestUpgradeRequestBuilder) {
     m := &RequestUpgradeRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite_id}/microsoft.graph.requestUpgrade";
+    m.urlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite_id}/microsoft.graph.requestUpgrade";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

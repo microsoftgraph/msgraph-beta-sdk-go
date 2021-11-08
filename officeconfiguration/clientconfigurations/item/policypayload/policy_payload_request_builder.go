@@ -40,7 +40,7 @@ type PolicyPayloadRequestBuilderPutOptions struct {
 func NewPolicyPayloadRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyPayloadRequestBuilder) {
     m := &PolicyPayloadRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/officeConfiguration/clientConfigurations/{officeClientConfiguration_id}/policyPayload";
+    m.urlTemplate = "{+baseurl}/officeConfiguration/clientConfigurations/{officeClientConfiguration_id}/policyPayload";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -109,7 +109,7 @@ func (m *ParseExpressionResponse) SetParseExpressionResponse(value *i535684e11b5
 func NewParseExpressionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParseExpressionRequestBuilder) {
     m := &ParseExpressionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/servicePrincipals/{servicePrincipal_id}/synchronization/templates/{synchronizationTemplate_id}/schema/microsoft.graph.parseExpression";
+    m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal_id}/synchronization/templates/{synchronizationTemplate_id}/schema/microsoft.graph.parseExpression";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -42,7 +42,7 @@ type TeamRequestBuilderGetQueryParameters struct {
 func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamRequestBuilder) {
     m := &TeamRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/privacy/subjectRightsRequests/{subjectRightsRequest_id}/team{?select,expand}";
+    m.urlTemplate = "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest_id}/team{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

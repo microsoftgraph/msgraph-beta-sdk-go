@@ -32,7 +32,7 @@ type GetM365AppPlatformUserCountsWithPeriodRequestBuilderGetOptions struct {
 func NewGetM365AppPlatformUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetM365AppPlatformUserCountsWithPeriodRequestBuilder) {
     m := &GetM365AppPlatformUserCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/reports/microsoft.graph.getM365AppPlatformUserCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getM365AppPlatformUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

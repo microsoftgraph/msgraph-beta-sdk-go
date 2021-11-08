@@ -107,7 +107,7 @@ func (m *UsedRangeResponse) SetWorkbookRange(value *i535684e11b5500196ecb4b5c663
 func NewUsedRangeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsedRangeRequestBuilder) {
     m := &UsedRangeRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/names/{workbookNamedItem_id}/worksheet/microsoft.graph.usedRange()";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/names/{workbookNamedItem_id}/worksheet/microsoft.graph.usedRange()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

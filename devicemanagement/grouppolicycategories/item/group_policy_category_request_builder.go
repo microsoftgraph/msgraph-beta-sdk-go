@@ -68,7 +68,7 @@ func (m *GroupPolicyCategoryRequestBuilder) Children()(*id2be9225a42cb4e206ea5df
 func NewGroupPolicyCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyCategoryRequestBuilder) {
     m := &GroupPolicyCategoryRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/groupPolicyCategories/{groupPolicyCategory_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

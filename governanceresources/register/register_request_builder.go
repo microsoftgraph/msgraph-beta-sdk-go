@@ -31,7 +31,7 @@ type RegisterRequestBuilderPostOptions struct {
 func NewRegisterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RegisterRequestBuilder) {
     m := &RegisterRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/governanceResources/microsoft.graph.register";
+    m.urlTemplate = "{+baseurl}/governanceResources/microsoft.graph.register";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

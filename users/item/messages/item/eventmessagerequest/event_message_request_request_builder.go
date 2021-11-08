@@ -26,7 +26,7 @@ func (m *EventMessageRequestRequestBuilder) Accept()(*if72a00e0c7ee025d9ed69cf11
 func NewEventMessageRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventMessageRequestRequestBuilder) {
     m := &EventMessageRequestRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/messages/{message_id}/microsoft.graph.eventMessageRequest";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/messages/{message_id}/microsoft.graph.eventMessageRequest";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

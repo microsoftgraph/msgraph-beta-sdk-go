@@ -109,7 +109,7 @@ func (m *MoveResponse) SetMailFolder(value *i535684e11b5500196ecb4b5c6634e0651fe
 func NewMoveRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MoveRequestBuilder) {
     m := &MoveRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/mailFolders/{mailFolder_id}/microsoft.graph.move";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/mailFolders/{mailFolder_id}/microsoft.graph.move";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

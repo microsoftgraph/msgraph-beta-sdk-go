@@ -65,7 +65,7 @@ func (m *GeneralLedgerEntryRequestBuilder) Account()(*ibac8eb5e8bb42c7e8c92e7024
 func NewGeneralLedgerEntryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GeneralLedgerEntryRequestBuilder) {
     m := &GeneralLedgerEntryRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/generalLedgerEntries/{generalLedgerEntry_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/financials/companies/{company_id}/generalLedgerEntries/{generalLedgerEntry_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

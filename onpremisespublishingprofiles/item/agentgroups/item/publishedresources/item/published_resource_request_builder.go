@@ -79,7 +79,7 @@ func (m *PublishedResourceRequestBuilder) AgentGroupsById(id string)(*i53c004c7e
 func NewPublishedResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PublishedResourceRequestBuilder) {
     m := &PublishedResourceRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/agentGroups/{onPremisesAgentGroup_id}/publishedResources/{publishedResource_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/agentGroups/{onPremisesAgentGroup_id}/publishedResources/{publishedResource_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

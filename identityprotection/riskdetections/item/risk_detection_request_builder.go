@@ -61,7 +61,7 @@ type RiskDetectionRequestBuilderPatchOptions struct {
 func NewRiskDetectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskDetectionRequestBuilder) {
     m := &RiskDetectionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/identityProtection/riskDetections/{riskDetection_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityProtection/riskDetections/{riskDetection_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

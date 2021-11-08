@@ -31,7 +31,7 @@ type MoveDevicesToOURequestBuilderPostOptions struct {
 func NewMoveDevicesToOURequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MoveDevicesToOURequestBuilder) {
     m := &MoveDevicesToOURequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/managedDevices/microsoft.graph.moveDevicesToOU";
+    m.urlTemplate = "{+baseurl}/deviceManagement/managedDevices/microsoft.graph.moveDevicesToOU";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -66,7 +66,7 @@ func (m *SalesCreditMemoLineRequestBuilder) Account()(*id2c5ff2b49eab78f2b34cad6
 func NewSalesCreditMemoLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesCreditMemoLineRequestBuilder) {
     m := &SalesCreditMemoLineRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/salesCreditMemoLines/{salesCreditMemoLine_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/financials/companies/{company_id}/salesCreditMemoLines/{salesCreditMemoLine_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

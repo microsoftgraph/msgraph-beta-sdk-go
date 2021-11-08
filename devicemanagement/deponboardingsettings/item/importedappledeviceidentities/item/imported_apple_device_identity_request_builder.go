@@ -61,7 +61,7 @@ type ImportedAppleDeviceIdentityRequestBuilderPatchOptions struct {
 func NewImportedAppleDeviceIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportedAppleDeviceIdentityRequestBuilder) {
     m := &ImportedAppleDeviceIdentityRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/depOnboardingSettings/{depOnboardingSetting_id}/importedAppleDeviceIdentities/{importedAppleDeviceIdentity_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting_id}/importedAppleDeviceIdentities/{importedAppleDeviceIdentity_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

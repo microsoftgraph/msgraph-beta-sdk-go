@@ -63,7 +63,7 @@ type ApprovalRequestBuilderPatchOptions struct {
 func NewApprovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalRequestBuilder) {
     m := &ApprovalRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/appConsentRequestsForApproval/{appConsentRequest_id}/userConsentRequests/{userConsentRequest_id}/approval{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/appConsentRequestsForApproval/{appConsentRequest_id}/userConsentRequests/{userConsentRequest_id}/approval{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

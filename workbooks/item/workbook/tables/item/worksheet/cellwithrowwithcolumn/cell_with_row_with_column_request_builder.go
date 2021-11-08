@@ -110,7 +110,7 @@ func (m *CellWithRowWithColumnResponse) SetWorkbookRange(value *i535684e11b55001
 func NewCellWithRowWithColumnRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, row *int32, column *int32)(*CellWithRowWithColumnRequestBuilder) {
     m := &CellWithRowWithColumnRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/microsoft.graph.cell(row={row},column={column})";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/microsoft.graph.cell(row={row},column={column})";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

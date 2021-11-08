@@ -30,7 +30,7 @@ type FunctionsRequestBuilderGetOptions struct {
 func NewFunctionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FunctionsRequestBuilder) {
     m := &FunctionsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/applications/{application_id}/synchronization/templates/{synchronizationTemplate_id}/schema/microsoft.graph.functions()";
+    m.urlTemplate = "{+baseurl}/applications/{application_id}/synchronization/templates/{synchronizationTemplate_id}/schema/microsoft.graph.functions()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

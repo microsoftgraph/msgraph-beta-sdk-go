@@ -65,7 +65,7 @@ func (m *JournalLineRequestBuilder) Account()(*i790e45982e30e4b38a213bd1d3ce9b7f
 func NewJournalLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalLineRequestBuilder) {
     m := &JournalLineRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/financials/companies/{company_id}/journals/{journal_id}/journalLines/{journalLine_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/financials/companies/{company_id}/journals/{journal_id}/journalLines/{journalLine_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

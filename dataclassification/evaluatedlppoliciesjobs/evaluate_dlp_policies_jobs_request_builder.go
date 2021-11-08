@@ -64,7 +64,7 @@ type EvaluateDlpPoliciesJobsRequestBuilderPostOptions struct {
 func NewEvaluateDlpPoliciesJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateDlpPoliciesJobsRequestBuilder) {
     m := &EvaluateDlpPoliciesJobsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/dataClassification/evaluateDlpPoliciesJobs{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/dataClassification/evaluateDlpPoliciesJobs{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

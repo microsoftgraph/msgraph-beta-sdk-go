@@ -31,7 +31,7 @@ type RevokeAllLicensesRequestBuilderPostOptions struct {
 func NewRevokeAllLicensesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RevokeAllLicensesRequestBuilder) {
     m := &RevokeAllLicensesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/mobileApps/{mobileApp_id}/microsoft.graph.iosVppApp/microsoft.graph.revokeAllLicenses";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp_id}/microsoft.graph.iosVppApp/microsoft.graph.revokeAllLicenses";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

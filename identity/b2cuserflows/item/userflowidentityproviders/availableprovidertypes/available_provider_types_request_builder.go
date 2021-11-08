@@ -29,7 +29,7 @@ type AvailableProviderTypesRequestBuilderGetOptions struct {
 func NewAvailableProviderTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AvailableProviderTypesRequestBuilder) {
     m := &AvailableProviderTypesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/identity/b2cUserFlows/{b2cIdentityUserFlow_id}/userFlowIdentityProviders/microsoft.graph.availableProviderTypes()";
+    m.urlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow_id}/userFlowIdentityProviders/microsoft.graph.availableProviderTypes()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

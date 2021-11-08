@@ -30,7 +30,7 @@ type StartRequestBuilderPostOptions struct {
 func NewStartRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StartRequestBuilder) {
     m := &StartRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/education/synchronizationProfiles/{educationSynchronizationProfile_id}/microsoft.graph.start";
+    m.urlTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile_id}/microsoft.graph.start";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -68,7 +68,7 @@ func (m *ReviewSetRequestBuilder) AddToReviewSet()(*i08b6f0b5a320f941f6b9e04f436
 func NewReviewSetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReviewSetRequestBuilder) {
     m := &ReviewSetRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/reviewSets/{reviewSet_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}/reviewSets/{reviewSet_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

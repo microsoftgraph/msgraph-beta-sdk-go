@@ -64,7 +64,7 @@ type PrivilegedOperationEventsRequestBuilderPostOptions struct {
 func NewPrivilegedOperationEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedOperationEventsRequestBuilder) {
     m := &PrivilegedOperationEventsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/privilegedOperationEvents{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/privilegedOperationEvents{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

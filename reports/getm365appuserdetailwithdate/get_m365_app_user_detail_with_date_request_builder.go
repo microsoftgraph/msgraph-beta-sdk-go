@@ -32,7 +32,7 @@ type GetM365AppUserDetailWithDateRequestBuilderGetOptions struct {
 func NewGetM365AppUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetM365AppUserDetailWithDateRequestBuilder) {
     m := &GetM365AppUserDetailWithDateRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/reports/microsoft.graph.getM365AppUserDetail(date={date})";
+    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getM365AppUserDetail(date={date})";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

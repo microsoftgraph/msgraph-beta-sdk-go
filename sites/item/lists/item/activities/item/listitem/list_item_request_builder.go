@@ -89,7 +89,7 @@ func (m *ListItemRequestBuilder) Analytics()(*i0d7f387a0091b172eb2422701cd6963fa
 func NewListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemRequestBuilder) {
     m := &ListItemRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/sites/{site_id}/lists/{list_id}/activities/{itemActivityOLD_id}/listItem{?select,expand}";
+    m.urlTemplate = "{+baseurl}/sites/{site_id}/lists/{list_id}/activities/{itemActivityOLD_id}/listItem{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

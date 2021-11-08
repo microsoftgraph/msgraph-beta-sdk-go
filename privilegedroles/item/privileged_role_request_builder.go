@@ -69,7 +69,7 @@ func (m *PrivilegedRoleRequestBuilder) Assignments()(*i30870af67a7c7e750abaa30f5
 func NewPrivilegedRoleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleRequestBuilder) {
     m := &PrivilegedRoleRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/privilegedRoles/{privilegedRole_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/privilegedRoles/{privilegedRole_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -45,7 +45,7 @@ type PrinterRequestBuilderGetQueryParameters struct {
 func NewPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrinterRequestBuilder) {
     m := &PrinterRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/print/printerShares/{printerShare_id}/printer{?select,expand}";
+    m.urlTemplate = "{+baseurl}/print/printerShares/{printerShare_id}/printer{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

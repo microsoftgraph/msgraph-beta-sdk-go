@@ -31,7 +31,7 @@ type ValidateCredentialsRequestBuilderPostOptions struct {
 func NewValidateCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ValidateCredentialsRequestBuilder) {
     m := &ValidateCredentialsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/applications/{application_id}/synchronization/jobs/{synchronizationJob_id}/microsoft.graph.validateCredentials";
+    m.urlTemplate = "{+baseurl}/applications/{application_id}/synchronization/jobs/{synchronizationJob_id}/microsoft.graph.validateCredentials";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

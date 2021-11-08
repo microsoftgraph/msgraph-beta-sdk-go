@@ -70,7 +70,7 @@ func (m *EducationSchoolRequestBuilder) Classes()(*i29849b7bdbfecd87e4bbd3df4a5e
 func NewEducationSchoolRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSchoolRequestBuilder) {
     m := &EducationSchoolRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/education/schools/{educationSchool_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/education/schools/{educationSchool_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

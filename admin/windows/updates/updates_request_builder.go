@@ -69,7 +69,7 @@ func (m *UpdatesRequestBuilder) Catalog()(*i0475d54fef399e8dd6955c2d001134c125fb
 func NewUpdatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatesRequestBuilder) {
     m := &UpdatesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/admin/windows/updates{?select,expand}";
+    m.urlTemplate = "{+baseurl}/admin/windows/updates{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -31,7 +31,7 @@ type WipeManagedAppRegistrationByDeviceTagRequestBuilderPostOptions struct {
 func NewWipeManagedAppRegistrationByDeviceTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WipeManagedAppRegistrationByDeviceTagRequestBuilder) {
     m := &WipeManagedAppRegistrationByDeviceTagRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/me/microsoft.graph.wipeManagedAppRegistrationByDeviceTag";
+    m.urlTemplate = "{+baseurl}/me/microsoft.graph.wipeManagedAppRegistrationByDeviceTag";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

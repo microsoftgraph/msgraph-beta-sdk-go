@@ -29,7 +29,7 @@ type ReleaseRequestBuilderPostOptions struct {
 func NewReleaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReleaseRequestBuilder) {
     m := &ReleaseRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/noncustodialDataSources/{noncustodialDataSource_id}/microsoft.graph.ediscovery.release";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}/noncustodialDataSources/{noncustodialDataSource_id}/microsoft.graph.ediscovery.release";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

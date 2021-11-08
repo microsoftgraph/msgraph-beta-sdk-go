@@ -109,7 +109,7 @@ func (m *ClockOutResponse) SetTimeCard(value *i535684e11b5500196ecb4b5c6634e0651
 func NewClockOutRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClockOutRequestBuilder) {
     m := &ClockOutRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/teams/{team_id}/schedule/timeCards/{timeCard_id}/microsoft.graph.clockOut";
+    m.urlTemplate = "{+baseurl}/teams/{team_id}/schedule/timeCards/{timeCard_id}/microsoft.graph.clockOut";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

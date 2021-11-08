@@ -109,7 +109,7 @@ func (m *CopyResponse) SetMessage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2
 func NewCopyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CopyRequestBuilder) {
     m := &CopyRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/me/messages/{message_id}/microsoft.graph.copy";
+    m.urlTemplate = "{+baseurl}/me/messages/{message_id}/microsoft.graph.copy";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -88,7 +88,7 @@ func (m *MeRequestBuilder) Classes()(*ia9901f126435d74fc86b3bf99ec52d925f16943c9
 func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeRequestBuilder) {
     m := &MeRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/education/me{?select,expand}";
+    m.urlTemplate = "{+baseurl}/education/me{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

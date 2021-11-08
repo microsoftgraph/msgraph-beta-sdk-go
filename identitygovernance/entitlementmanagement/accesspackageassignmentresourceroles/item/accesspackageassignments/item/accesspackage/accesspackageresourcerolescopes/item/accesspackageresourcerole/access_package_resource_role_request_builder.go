@@ -65,7 +65,7 @@ func (m *AccessPackageResourceRoleRequestBuilder) AccessPackageResource()(*id9a6
 func NewAccessPackageResourceRoleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceRoleRequestBuilder) {
     m := &AccessPackageResourceRoleRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole_id}/accessPackageAssignments/{accessPackageAssignment_id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope_id}/accessPackageResourceRole{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole_id}/accessPackageAssignments/{accessPackageAssignment_id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope_id}/accessPackageResourceRole{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

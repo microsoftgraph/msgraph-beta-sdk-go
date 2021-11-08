@@ -68,7 +68,7 @@ func (m *UnifiedRoleAssignmentRequestBuilder) AppScope()(*i3474a2e38b281f4e77974
 func NewUnifiedRoleAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleAssignmentRequestBuilder) {
     m := &UnifiedRoleAssignmentRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/{unifiedRoleAssignment_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/directory/roleAssignments/{unifiedRoleAssignment_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

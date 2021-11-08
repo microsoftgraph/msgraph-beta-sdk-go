@@ -31,7 +31,7 @@ type UpdateAudienceByIdRequestBuilderPostOptions struct {
 func NewUpdateAudienceByIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateAudienceByIdRequestBuilder) {
     m := &UpdateAudienceByIdRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/admin/windows/updates/deployments/{deployment_id}/audience/microsoft.graph.windowsUpdates.updateAudienceById";
+    m.urlTemplate = "{+baseurl}/admin/windows/updates/deployments/{deployment_id}/audience/microsoft.graph.windowsUpdates.updateAudienceById";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

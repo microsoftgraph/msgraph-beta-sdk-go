@@ -66,7 +66,7 @@ func (m *PresenceRequestBuilder) ClearPresence()(*i3783ecca2e180950ea8455123aaec
 func NewPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresenceRequestBuilder) {
     m := &PresenceRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/communications/presences/{presence_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/communications/presences/{presence_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

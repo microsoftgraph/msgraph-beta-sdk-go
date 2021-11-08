@@ -64,7 +64,7 @@ type SettingStatesRequestBuilderPostOptions struct {
 func NewSettingStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingStatesRequestBuilder) {
     m := &SettingStatesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/me/managedDevices/{managedDevice_id}/securityBaselineStates/{securityBaselineState_id}/settingStates{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/me/managedDevices/{managedDevice_id}/securityBaselineStates/{securityBaselineState_id}/settingStates{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

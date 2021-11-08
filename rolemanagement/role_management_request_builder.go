@@ -59,7 +59,7 @@ func (m *RoleManagementRequestBuilder) CloudPC()(*ie179728a78650b7ea21a75747c7c0
 func NewRoleManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleManagementRequestBuilder) {
     m := &RoleManagementRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement{?select,expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

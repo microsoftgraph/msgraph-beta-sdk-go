@@ -64,7 +64,7 @@ type UserStatesRequestBuilderPostOptions struct {
 func NewUserStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserStatesRequestBuilder) {
     m := &UserStatesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/intents/{deviceManagementIntent_id}/userStates{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent_id}/userStates{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

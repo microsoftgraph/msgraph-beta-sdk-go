@@ -65,7 +65,7 @@ func (m *ManagementActionRequestBuilder) Apply()(*i02a0acf8de02ec6d8ae4b62929ab4
 func NewManagementActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementActionRequestBuilder) {
     m := &ManagementActionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/tenantRelationships/managedTenants/managementActions/{managementAction_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActions/{managementAction_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

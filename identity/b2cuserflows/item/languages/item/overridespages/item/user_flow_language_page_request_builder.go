@@ -62,7 +62,7 @@ type UserFlowLanguagePageRequestBuilderPatchOptions struct {
 func NewUserFlowLanguagePageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowLanguagePageRequestBuilder) {
     m := &UserFlowLanguagePageRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/identity/b2cUserFlows/{b2cIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/overridesPages/{userFlowLanguagePage_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow_id}/languages/{userFlowLanguageConfiguration_id}/overridesPages/{userFlowLanguagePage_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -66,7 +66,7 @@ func (m *TagRequestBuilder) ChildTags()(*ifd0bc700953e86731dc6b8f4d24856110197f3
 func NewTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TagRequestBuilder) {
     m := &TagRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/tags/{tag_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}/tags/{tag_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

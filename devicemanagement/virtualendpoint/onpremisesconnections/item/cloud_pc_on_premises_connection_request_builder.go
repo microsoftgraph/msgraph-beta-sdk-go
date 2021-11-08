@@ -63,7 +63,7 @@ type CloudPcOnPremisesConnectionRequestBuilderPatchOptions struct {
 func NewCloudPcOnPremisesConnectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcOnPremisesConnectionRequestBuilder) {
     m := &CloudPcOnPremisesConnectionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

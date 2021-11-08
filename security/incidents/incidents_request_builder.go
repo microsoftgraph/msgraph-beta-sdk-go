@@ -64,7 +64,7 @@ type IncidentsRequestBuilderPostOptions struct {
 func NewIncidentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncidentsRequestBuilder) {
     m := &IncidentsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/security/incidents{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/security/incidents{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
