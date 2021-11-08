@@ -31,7 +31,7 @@ type ConfirmCompromisedRequestBuilderPostOptions struct {
 func NewConfirmCompromisedRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfirmCompromisedRequestBuilder) {
     m := &ConfirmCompromisedRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/riskyUsers/microsoft.graph.confirmCompromised";
+    m.urlTemplate = "{+baseurl}/riskyUsers/microsoft.graph.confirmCompromised";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

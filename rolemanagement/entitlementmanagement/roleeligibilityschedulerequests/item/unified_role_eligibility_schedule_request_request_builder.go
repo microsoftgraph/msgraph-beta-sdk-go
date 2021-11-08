@@ -73,7 +73,7 @@ func (m *UnifiedRoleEligibilityScheduleRequestRequestBuilder) Cancel()(*i8625b98
 func NewUnifiedRoleEligibilityScheduleRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleEligibilityScheduleRequestRequestBuilder) {
     m := &UnifiedRoleEligibilityScheduleRequestRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

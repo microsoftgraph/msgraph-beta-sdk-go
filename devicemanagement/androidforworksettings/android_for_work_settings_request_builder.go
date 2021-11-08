@@ -68,7 +68,7 @@ func (m *AndroidForWorkSettingsRequestBuilder) CompleteSignup()(*i280e19d80d7a52
 func NewAndroidForWorkSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidForWorkSettingsRequestBuilder) {
     m := &AndroidForWorkSettingsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/androidForWorkSettings{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/androidForWorkSettings{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

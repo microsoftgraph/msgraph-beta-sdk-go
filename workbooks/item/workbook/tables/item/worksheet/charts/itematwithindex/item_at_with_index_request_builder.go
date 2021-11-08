@@ -109,7 +109,7 @@ func (m *ItemAtWithIndexResponse) SetWorkbookChart(value *i535684e11b5500196ecb4
 func NewItemAtWithIndexRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, index *int32)(*ItemAtWithIndexRequestBuilder) {
     m := &ItemAtWithIndexRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/microsoft.graph.itemAt(index={index})";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/microsoft.graph.itemAt(index={index})";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

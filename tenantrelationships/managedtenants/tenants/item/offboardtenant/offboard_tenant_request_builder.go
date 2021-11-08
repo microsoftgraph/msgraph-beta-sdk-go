@@ -107,7 +107,7 @@ func (m *OffboardTenantResponse) SetTenant(value *i535684e11b5500196ecb4b5c6634e
 func NewOffboardTenantRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OffboardTenantRequestBuilder) {
     m := &OffboardTenantRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/tenantRelationships/managedTenants/tenants/{tenant_id}/microsoft.graph.managedTenants.offboardTenant";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants/{tenant_id}/microsoft.graph.managedTenants.offboardTenant";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

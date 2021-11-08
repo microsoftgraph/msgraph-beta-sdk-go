@@ -67,7 +67,7 @@ func (m *AxesRequestBuilder) CategoryAxis()(*ieb51a913c30bd6e3a9419fd5803b77bcb4
 func NewAxesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AxesRequestBuilder) {
     m := &AxesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/worksheets/{workbookWorksheet_id}/charts/{workbookChart_id}/axes{?select,expand}";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/worksheets/{workbookWorksheet_id}/charts/{workbookChart_id}/axes{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

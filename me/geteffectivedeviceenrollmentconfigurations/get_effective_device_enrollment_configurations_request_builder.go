@@ -30,7 +30,7 @@ type GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetOptions struct {
 func NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) {
     m := &GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/me/microsoft.graph.getEffectiveDeviceEnrollmentConfigurations()";
+    m.urlTemplate = "{+baseurl}/me/microsoft.graph.getEffectiveDeviceEnrollmentConfigurations()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

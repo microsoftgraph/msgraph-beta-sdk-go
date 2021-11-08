@@ -109,7 +109,7 @@ func (m *AscResponse) SetWorkbookFunctionResult(value *i535684e11b5500196ecb4b5c
 func NewAscRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AscRequestBuilder) {
     m := &AscRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.asc";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.asc";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

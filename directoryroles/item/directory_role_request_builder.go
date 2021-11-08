@@ -75,7 +75,7 @@ func (m *DirectoryRoleRequestBuilder) CheckMemberObjects()(*if07c44821ea10029e12
 func NewDirectoryRoleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleRequestBuilder) {
     m := &DirectoryRoleRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/directoryRoles/{directoryRole_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/directoryRoles/{directoryRole_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

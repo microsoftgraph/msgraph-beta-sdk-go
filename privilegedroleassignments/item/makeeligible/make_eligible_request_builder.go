@@ -107,7 +107,7 @@ func (m *MakeEligibleResponse) SetPrivilegedRoleAssignment(value *i535684e11b550
 func NewMakeEligibleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MakeEligibleRequestBuilder) {
     m := &MakeEligibleRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/privilegedRoleAssignments/{privilegedRoleAssignment_id}/microsoft.graph.makeEligible";
+    m.urlTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment_id}/microsoft.graph.makeEligible";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

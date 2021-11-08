@@ -67,7 +67,7 @@ func (m *UserAppInstallStatusRequestBuilder) App()(*ic490bfa15729cb25d9948b8e388
 func NewUserAppInstallStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserAppInstallStatusRequestBuilder) {
     m := &UserAppInstallStatusRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/mobileApps/{mobileApp_id}/userStatuses/{userAppInstallStatus_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp_id}/userStatuses/{userAppInstallStatus_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -66,7 +66,7 @@ func (m *FillRequestBuilder) Clear()(*i492337bcf41d57fce39eb364af2d4d9c659582693
 func NewFillRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FillRequestBuilder) {
     m := &FillRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/{workbookChart_id}/series/{workbookChartSeries_id}/points/{workbookChartPoint_id}/format/fill{?select,expand}";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/{workbookChart_id}/series/{workbookChartSeries_id}/points/{workbookChartPoint_id}/format/fill{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

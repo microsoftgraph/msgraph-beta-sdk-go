@@ -65,7 +65,7 @@ func (m *RequestorRequestBuilder) ConnectedOrganization()(*ib4572f83e4b523a735dd
 func NewRequestorRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RequestorRequestBuilder) {
     m := &RequestorRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment_id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest_id}/requestor{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment_id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest_id}/requestor{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

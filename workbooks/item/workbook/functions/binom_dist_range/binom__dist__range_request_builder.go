@@ -109,7 +109,7 @@ func (m *Binom_Dist_RangeResponse) SetWorkbookFunctionResult(value *i535684e11b5
 func NewBinom_Dist_RangeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*Binom_Dist_RangeRequestBuilder) {
     m := &Binom_Dist_RangeRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.binom_Dist_Range";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.binom_Dist_Range";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

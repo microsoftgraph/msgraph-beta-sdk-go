@@ -77,7 +77,7 @@ func (m *EducationRequestBuilder) ClassesById(id string)(*ic55376c4e180e6c30db51
 func NewEducationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationRequestBuilder) {
     m := &EducationRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/education{?select,expand}";
+    m.urlTemplate = "{+baseurl}/education{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

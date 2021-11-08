@@ -31,7 +31,7 @@ type UpdateRequestBuilderPostOptions struct {
 func NewUpdateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateRequestBuilder) {
     m := &UpdateRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/policySets/{policySet_id}/microsoft.graph.update";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/policySets/{policySet_id}/microsoft.graph.update";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

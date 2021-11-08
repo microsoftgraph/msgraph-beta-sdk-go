@@ -31,7 +31,7 @@ type UpdatePrioritiesRequestBuilderPostOptions struct {
 func NewUpdatePrioritiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatePrioritiesRequestBuilder) {
     m := &UpdatePrioritiesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/officeConfiguration/clientConfigurations/microsoft.graph.updatePriorities";
+    m.urlTemplate = "{+baseurl}/officeConfiguration/clientConfigurations/microsoft.graph.updatePriorities";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

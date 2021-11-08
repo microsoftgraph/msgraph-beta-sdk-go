@@ -74,7 +74,7 @@ func (m *ChannelRequestBuilder) CompleteMigration()(*ibf8343010639ecf1c854bc7d9a
 func NewChannelRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChannelRequestBuilder) {
     m := &ChannelRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/teams/{team_id}/channels/{channel_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/teams/{team_id}/channels/{channel_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

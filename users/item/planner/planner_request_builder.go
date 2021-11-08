@@ -86,7 +86,7 @@ func (m *PlannerRequestBuilder) AllById(id string)(*iea71824a70bb4972dcddc0b0569
 func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerRequestBuilder) {
     m := &PlannerRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/planner{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/planner{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

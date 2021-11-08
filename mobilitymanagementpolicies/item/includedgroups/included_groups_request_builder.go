@@ -53,7 +53,7 @@ type IncludedGroupsRequestBuilderGetQueryParameters struct {
 func NewIncludedGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncludedGroupsRequestBuilder) {
     m := &IncludedGroupsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/mobilityManagementPolicies/{mobilityManagementPolicy_id}/includedGroups{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/mobilityManagementPolicies/{mobilityManagementPolicy_id}/includedGroups{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

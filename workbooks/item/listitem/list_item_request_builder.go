@@ -89,7 +89,7 @@ func (m *ListItemRequestBuilder) Analytics()(*i8c553aa1c8c4c2b81c0062f66e2868ab7
 func NewListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemRequestBuilder) {
     m := &ListItemRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/listItem{?select,expand}";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/listItem{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

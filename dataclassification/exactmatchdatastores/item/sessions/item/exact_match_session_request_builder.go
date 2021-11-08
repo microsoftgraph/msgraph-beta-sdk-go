@@ -71,7 +71,7 @@ func (m *ExactMatchSessionRequestBuilder) Commit()(*ie50d1404accfd9f1f2d095ca342
 func NewExactMatchSessionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchSessionRequestBuilder) {
     m := &ExactMatchSessionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/dataClassification/exactMatchDataStores/{exactMatchDataStore_id}/sessions/{exactMatchSession_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore_id}/sessions/{exactMatchSession_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

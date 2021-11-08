@@ -32,7 +32,7 @@ type EvaluateRemovalRequestBuilderPostOptions struct {
 func NewEvaluateRemovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateRemovalRequestBuilder) {
     m := &EvaluateRemovalRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/informationProtection/policy/labels/microsoft.graph.evaluateRemoval";
+    m.urlTemplate = "{+baseurl}/informationProtection/policy/labels/microsoft.graph.evaluateRemoval";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -65,7 +65,7 @@ func (m *LineRequestBuilder) Clear()(*ic06c7fe80a9760195f3c718c5bca5aebb52e54c0d
 func NewLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LineRequestBuilder) {
     m := &LineRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/{workbookChart_id}/axes/categoryAxis/minorGridlines/format/line{?select,expand}";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/{workbookChart_id}/axes/categoryAxis/minorGridlines/format/line{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

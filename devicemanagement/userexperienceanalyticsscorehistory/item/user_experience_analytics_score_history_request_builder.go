@@ -61,7 +61,7 @@ type UserExperienceAnalyticsScoreHistoryRequestBuilderPatchOptions struct {
 func NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsScoreHistoryRequestBuilder) {
     m := &UserExperienceAnalyticsScoreHistoryRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/userExperienceAnalyticsScoreHistory/{userExperienceAnalyticsScoreHistory_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsScoreHistory/{userExperienceAnalyticsScoreHistory_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

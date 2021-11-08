@@ -61,7 +61,7 @@ type SharedEmailDomainRequestBuilderPatchOptions struct {
 func NewSharedEmailDomainRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SharedEmailDomainRequestBuilder) {
     m := &SharedEmailDomainRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/directory/sharedEmailDomains/{sharedEmailDomain_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/directory/sharedEmailDomains/{sharedEmailDomain_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

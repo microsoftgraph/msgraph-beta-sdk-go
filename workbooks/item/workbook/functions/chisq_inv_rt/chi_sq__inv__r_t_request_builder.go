@@ -109,7 +109,7 @@ func (m *ChiSq_Inv_RTResponse) SetWorkbookFunctionResult(value *i535684e11b55001
 func NewChiSq_Inv_RTRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChiSq_Inv_RTRequestBuilder) {
     m := &ChiSq_Inv_RTRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.chiSq_Inv_RT";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.chiSq_Inv_RT";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -32,7 +32,7 @@ type GetHealthMetricTimeSeriesRequestBuilderPostOptions struct {
 func NewGetHealthMetricTimeSeriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetHealthMetricTimeSeriesRequestBuilder) {
     m := &GetHealthMetricTimeSeriesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite_id}/microsoftTunnelServers/{microsoftTunnelServer_id}/microsoft.graph.getHealthMetricTimeSeries";
+    m.urlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite_id}/microsoftTunnelServers/{microsoftTunnelServer_id}/microsoft.graph.getHealthMetricTimeSeries";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -42,7 +42,7 @@ type RunSummaryRequestBuilderGetQueryParameters struct {
 func NewRunSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RunSummaryRequestBuilder) {
     m := &RunSummaryRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/deviceShellScripts/{deviceShellScript_id}/runSummary{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript_id}/runSummary{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

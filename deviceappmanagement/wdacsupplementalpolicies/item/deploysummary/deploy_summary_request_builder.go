@@ -61,7 +61,7 @@ type DeploySummaryRequestBuilderPatchOptions struct {
 func NewDeploySummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeploySummaryRequestBuilder) {
     m := &DeploySummaryRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy_id}/deploySummary{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy_id}/deploySummary{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

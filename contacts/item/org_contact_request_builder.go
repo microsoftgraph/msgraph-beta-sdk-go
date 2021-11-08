@@ -77,7 +77,7 @@ func (m *OrgContactRequestBuilder) CheckMemberObjects()(*iaaabcbb8c60e122516c587
 func NewOrgContactRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OrgContactRequestBuilder) {
     m := &OrgContactRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/contacts/{orgContact_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/contacts/{orgContact_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

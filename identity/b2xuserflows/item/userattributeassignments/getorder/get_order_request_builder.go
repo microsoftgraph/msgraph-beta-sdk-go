@@ -107,7 +107,7 @@ func (m *GetOrderResponse) SetAssignmentOrder(value *i535684e11b5500196ecb4b5c66
 func NewGetOrderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOrderRequestBuilder) {
     m := &GetOrderRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments/microsoft.graph.getOrder()";
+    m.urlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow_id}/userAttributeAssignments/microsoft.graph.getOrder()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

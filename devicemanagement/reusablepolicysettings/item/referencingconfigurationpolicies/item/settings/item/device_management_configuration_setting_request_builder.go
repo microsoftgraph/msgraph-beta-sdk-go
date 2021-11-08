@@ -62,7 +62,7 @@ type DeviceManagementConfigurationSettingRequestBuilderPatchOptions struct {
 func NewDeviceManagementConfigurationSettingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationSettingRequestBuilder) {
     m := &DeviceManagementConfigurationSettingRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting_id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy_id}/settings/{deviceManagementConfigurationSetting_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting_id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy_id}/settings/{deviceManagementConfigurationSetting_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

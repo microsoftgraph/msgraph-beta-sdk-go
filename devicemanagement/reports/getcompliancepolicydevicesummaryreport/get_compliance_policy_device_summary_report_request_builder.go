@@ -31,7 +31,7 @@ type GetCompliancePolicyDeviceSummaryReportRequestBuilderPostOptions struct {
 func NewGetCompliancePolicyDeviceSummaryReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCompliancePolicyDeviceSummaryReportRequestBuilder) {
     m := &GetCompliancePolicyDeviceSummaryReportRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/reports/microsoft.graph.getCompliancePolicyDeviceSummaryReport";
+    m.urlTemplate = "{+baseurl}/deviceManagement/reports/microsoft.graph.getCompliancePolicyDeviceSummaryReport";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

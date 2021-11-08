@@ -71,7 +71,7 @@ func (m *UpdatableAssetRequestBuilder) AddMembersById()(*if5b9e1eb167428c60d8d89
 func NewUpdatableAssetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatableAssetRequestBuilder) {
     m := &UpdatableAssetRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/admin/windows/updates/deployments/{deployment_id}/audience/members/{updatableAsset_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/admin/windows/updates/deployments/{deployment_id}/audience/members/{updatableAsset_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

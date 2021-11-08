@@ -61,7 +61,7 @@ type ProgramControlTypeRequestBuilderPatchOptions struct {
 func NewProgramControlTypeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgramControlTypeRequestBuilder) {
     m := &ProgramControlTypeRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/programControlTypes/{programControlType_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/programControlTypes/{programControlType_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

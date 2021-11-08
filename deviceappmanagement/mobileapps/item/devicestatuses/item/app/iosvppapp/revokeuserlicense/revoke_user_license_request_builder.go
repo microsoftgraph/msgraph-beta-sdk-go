@@ -31,7 +31,7 @@ type RevokeUserLicenseRequestBuilderPostOptions struct {
 func NewRevokeUserLicenseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RevokeUserLicenseRequestBuilder) {
     m := &RevokeUserLicenseRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/mobileApps/{mobileApp_id}/deviceStatuses/{mobileAppInstallStatus_id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeUserLicense";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp_id}/deviceStatuses/{mobileAppInstallStatus_id}/app/microsoft.graph.iosVppApp/microsoft.graph.revokeUserLicense";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

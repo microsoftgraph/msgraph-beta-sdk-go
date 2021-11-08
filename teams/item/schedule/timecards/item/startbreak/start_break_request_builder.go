@@ -109,7 +109,7 @@ func (m *StartBreakResponse) SetTimeCard(value *i535684e11b5500196ecb4b5c6634e06
 func NewStartBreakRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StartBreakRequestBuilder) {
     m := &StartBreakRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/teams/{team_id}/schedule/timeCards/{timeCard_id}/microsoft.graph.startBreak";
+    m.urlTemplate = "{+baseurl}/teams/{team_id}/schedule/timeCards/{timeCard_id}/microsoft.graph.startBreak";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

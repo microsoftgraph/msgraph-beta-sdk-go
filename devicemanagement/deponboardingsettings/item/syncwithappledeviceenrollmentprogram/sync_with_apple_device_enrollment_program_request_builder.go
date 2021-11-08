@@ -29,7 +29,7 @@ type SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostOptions struct {
 func NewSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SyncWithAppleDeviceEnrollmentProgramRequestBuilder) {
     m := &SyncWithAppleDeviceEnrollmentProgramRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/depOnboardingSettings/{depOnboardingSetting_id}/microsoft.graph.syncWithAppleDeviceEnrollmentProgram";
+    m.urlTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting_id}/microsoft.graph.syncWithAppleDeviceEnrollmentProgram";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

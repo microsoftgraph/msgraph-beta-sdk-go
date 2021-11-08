@@ -71,7 +71,7 @@ func (m *TimeCardRequestBuilder) Confirm()(*i68e4a9fcef652132c7bebba9ebe08cb4fd8
 func NewTimeCardRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeCardRequestBuilder) {
     m := &TimeCardRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/teams/{team_id}/schedule/timeCards/{timeCard_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/teams/{team_id}/schedule/timeCards/{timeCard_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

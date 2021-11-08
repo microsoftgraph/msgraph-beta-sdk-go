@@ -103,7 +103,7 @@ func (m *MessageRequestBuilder) CalendarSharingMessage()(*i0fccf38aca2f46144aa03
 func NewMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRequestBuilder) {
     m := &MessageRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/me/mailFolders/{mailFolder_id}/messages/{message_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder_id}/messages/{message_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

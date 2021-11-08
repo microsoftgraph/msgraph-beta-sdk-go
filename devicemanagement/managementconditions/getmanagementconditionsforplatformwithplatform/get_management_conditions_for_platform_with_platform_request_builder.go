@@ -31,7 +31,7 @@ type GetManagementConditionsForPlatformWithPlatformRequestBuilderGetOptions stru
 func NewGetManagementConditionsForPlatformWithPlatformRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, platform *string)(*GetManagementConditionsForPlatformWithPlatformRequestBuilder) {
     m := &GetManagementConditionsForPlatformWithPlatformRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/managementConditions/microsoft.graph.getManagementConditionsForPlatform(platform={platform})";
+    m.urlTemplate = "{+baseurl}/deviceManagement/managementConditions/microsoft.graph.getManagementConditionsForPlatform(platform={platform})";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -109,7 +109,7 @@ func (m *CalendarRequestBuilder) CalendarViewById(id string)(*i32007971daba2b6bf
 func NewCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarRequestBuilder) {
     m := &CalendarRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/me/calendar{?select}";
+    m.urlTemplate = "{+baseurl}/me/calendar{?select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

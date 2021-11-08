@@ -81,7 +81,7 @@ func (m *CaseRequestBuilder) Close()(*icbe808dca9f215e46a201507bb9fd3d6682ffd22c
 func NewCaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CaseRequestBuilder) {
     m := &CaseRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

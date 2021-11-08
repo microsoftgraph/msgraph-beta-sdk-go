@@ -109,7 +109,7 @@ func (m *DecryptBufferResponse) SetBufferDecryptionResult(value *i535684e11b5500
 func NewDecryptBufferRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DecryptBufferRequestBuilder) {
     m := &DecryptBufferRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/informationProtection/microsoft.graph.decryptBuffer";
+    m.urlTemplate = "{+baseurl}/informationProtection/microsoft.graph.decryptBuffer";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

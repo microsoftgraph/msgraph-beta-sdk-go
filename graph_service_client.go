@@ -538,10 +538,11 @@ func NewGraphServiceClient(requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c
     m := &GraphServiceClient{
     }
     m.pathParameters = make(map[string]string);
-    m.urlTemplate = "https://graph.microsoft.com/beta";
+    m.urlTemplate = "{+baseurl}";
     m.requestAdapter = requestAdapter;
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RegisterDefaultSerializer(func() i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriterFactory { return id1ae20a9e00c372d14381acc2299aa946a25894316974139983388e4b11bb84b.NewJsonSerializationWriterFactory() })
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RegisterDefaultDeserializer(func() i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNodeFactory { return id1ae20a9e00c372d14381acc2299aa946a25894316974139983388e4b11bb84b.NewJsonParseNodeFactory() })
+    m.requestAdapter.SetBaseUrl("https://graph.microsoft.com/beta")
     return m
 }
 func (m *GraphServiceClient) Contacts()(*i716e3204a4c47d24737c05f3b4c2ef2462fa5a1df29b57365f338e8f68ee16ef.ContactsRequestBuilder) {

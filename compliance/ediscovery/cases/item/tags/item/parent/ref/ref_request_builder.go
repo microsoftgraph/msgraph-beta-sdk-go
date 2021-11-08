@@ -49,7 +49,7 @@ type RefRequestBuilderPutOptions struct {
 func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RefRequestBuilder) {
     m := &RefRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/compliance/ediscovery/cases/{case_id}/tags/{tag_id}/parent/$ref";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}/tags/{tag_id}/parent/$ref";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

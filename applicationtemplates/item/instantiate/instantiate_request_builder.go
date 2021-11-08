@@ -109,7 +109,7 @@ func (m *InstantiateResponse) SetApplicationServicePrincipal(value *i535684e11b5
 func NewInstantiateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InstantiateRequestBuilder) {
     m := &InstantiateRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/applicationTemplates/{applicationTemplate_id}/microsoft.graph.instantiate";
+    m.urlTemplate = "{+baseurl}/applicationTemplates/{applicationTemplate_id}/microsoft.graph.instantiate";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

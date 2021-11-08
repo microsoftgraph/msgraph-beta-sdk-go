@@ -109,7 +109,7 @@ func (m *EncryptBufferResponse) SetBufferEncryptionResult(value *i535684e11b5500
 func NewEncryptBufferRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EncryptBufferRequestBuilder) {
     m := &EncryptBufferRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/informationProtection/microsoft.graph.encryptBuffer";
+    m.urlTemplate = "{+baseurl}/informationProtection/microsoft.graph.encryptBuffer";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

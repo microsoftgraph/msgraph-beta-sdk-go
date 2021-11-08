@@ -107,7 +107,7 @@ func (m *ReturnResponse) SetEducationSubmission(value *i535684e11b5500196ecb4b5c
 func NewReturnRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReturnRequestBuilder) {
     m := &ReturnRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/education/classes/{educationClass_id}/assignments/{educationAssignment_id}/submissions/{educationSubmission_id}/microsoft.graph.return";
+    m.urlTemplate = "{+baseurl}/education/classes/{educationClass_id}/assignments/{educationAssignment_id}/submissions/{educationSubmission_id}/microsoft.graph.return";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -66,7 +66,7 @@ func (m *TenantTagRequestBuilder) AssignTag()(*i533bf20e862e0cfd002ac11184843402
 func NewTenantTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantTagRequestBuilder) {
     m := &TenantTagRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/tenantRelationships/managedTenants/tenantTags/{tenantTag_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantTags/{tenantTag_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

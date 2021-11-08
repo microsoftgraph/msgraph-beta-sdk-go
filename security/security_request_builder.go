@@ -115,7 +115,7 @@ func (m *SecurityRequestBuilder) CloudAppSecurityProfilesById(id string)(*ie02fc
 func NewSecurityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityRequestBuilder) {
     m := &SecurityRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/security{?select,expand}";
+    m.urlTemplate = "{+baseurl}/security{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

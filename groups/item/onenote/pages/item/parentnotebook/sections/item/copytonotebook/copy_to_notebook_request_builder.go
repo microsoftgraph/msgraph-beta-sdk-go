@@ -109,7 +109,7 @@ func (m *CopyToNotebookResponse) SetOnenoteOperation(value *i535684e11b5500196ec
 func NewCopyToNotebookRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CopyToNotebookRequestBuilder) {
     m := &CopyToNotebookRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/groups/{group_id}/onenote/pages/{onenotePage_id}/parentNotebook/sections/{onenoteSection_id}/microsoft.graph.copyToNotebook";
+    m.urlTemplate = "{+baseurl}/groups/{group_id}/onenote/pages/{onenotePage_id}/parentNotebook/sections/{onenoteSection_id}/microsoft.graph.copyToNotebook";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -30,7 +30,7 @@ type GetScopesForUserWithUseridRequestBuilderGetOptions struct {
 func NewGetScopesForUserWithUseridRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, userid *string)(*GetScopesForUserWithUseridRequestBuilder) {
     m := &GetScopesForUserWithUseridRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/resourceOperations/{resourceOperation_id}/microsoft.graph.getScopesForUser(userid='{userid}')";
+    m.urlTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation_id}/microsoft.graph.getScopesForUser(userid='{userid}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

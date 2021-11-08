@@ -109,7 +109,7 @@ func (m *CopyResponse) SetDriveItem(value *i535684e11b5500196ecb4b5c6634e0651fe2
 func NewCopyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CopyRequestBuilder) {
     m := &CopyRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/microsoft.graph.copy";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/microsoft.graph.copy";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

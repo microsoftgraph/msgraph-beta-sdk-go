@@ -65,7 +65,7 @@ func (m *UserConsentRequestRequestBuilder) Approval()(*i502703131533e78256a6b993
 func NewUserConsentRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserConsentRequestRequestBuilder) {
     m := &UserConsentRequestRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/identityGovernance/appConsent/appConsentRequests/{appConsentRequest_id}/userConsentRequests/{userConsentRequest_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest_id}/userConsentRequests/{userConsentRequest_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

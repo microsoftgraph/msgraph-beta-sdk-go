@@ -33,7 +33,7 @@ type GetTopMobileAppsWithStatusWithCountRequestBuilderGetOptions struct {
 func NewGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, status *string, count *int64)(*GetTopMobileAppsWithStatusWithCountRequestBuilder) {
     m := &GetTopMobileAppsWithStatusWithCountRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceAppManagement/mobileApps/microsoft.graph.getTopMobileApps(status='{status}',count={count})";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/microsoft.graph.getTopMobileApps(status='{status}',count={count})";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

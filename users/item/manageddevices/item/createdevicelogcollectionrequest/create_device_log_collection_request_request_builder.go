@@ -109,7 +109,7 @@ func (m *CreateDeviceLogCollectionRequestResponse) SetDeviceLogCollectionRespons
 func NewCreateDeviceLogCollectionRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateDeviceLogCollectionRequestRequestBuilder) {
     m := &CreateDeviceLogCollectionRequestRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/managedDevices/{managedDevice_id}/microsoft.graph.createDeviceLogCollectionRequest";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/managedDevices/{managedDevice_id}/microsoft.graph.createDeviceLogCollectionRequest";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

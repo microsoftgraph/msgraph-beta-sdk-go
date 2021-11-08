@@ -109,7 +109,7 @@ func (m *Poisson_DistResponse) SetWorkbookFunctionResult(value *i535684e11b55001
 func NewPoisson_DistRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*Poisson_DistRequestBuilder) {
     m := &Poisson_DistRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.poisson_Dist";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.poisson_Dist";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

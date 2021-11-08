@@ -67,7 +67,7 @@ func (m *ConnectorGroupRequestBuilder) Applications()(*i65f60af5b24192c2cf36c30b
 func NewConnectorGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectorGroupRequestBuilder) {
     m := &ConnectorGroupRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/connectorGroups/{connectorGroup_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/connectorGroups/{connectorGroup_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

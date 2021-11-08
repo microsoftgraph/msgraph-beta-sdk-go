@@ -82,7 +82,7 @@ func (m *TermRequestBuilder) ChildrenById(id string)(*i8725ca95c2031f0753cea01c7
 func NewTermRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermRequestBuilder) {
     m := &TermRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/termStore/groups/{group_id}/sets/{set_id}/terms/{term_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/termStore/groups/{group_id}/sets/{set_id}/terms/{term_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

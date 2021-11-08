@@ -65,7 +65,7 @@ type PrivilegedRoleAssignmentsRequestBuilderPostOptions struct {
 func NewPrivilegedRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleAssignmentsRequestBuilder) {
     m := &PrivilegedRoleAssignmentsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/privilegedRoleAssignments{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/privilegedRoleAssignments{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

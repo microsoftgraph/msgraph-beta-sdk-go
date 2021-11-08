@@ -85,7 +85,7 @@ func (m *OutlookTaskRequestBuilder) Complete()(*iccd03e13b1d81f87d437c5c29b5a0db
 func NewOutlookTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookTaskRequestBuilder) {
     m := &OutlookTaskRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/me/outlook/taskFolders/{outlookTaskFolder_id}/tasks/{outlookTask_id}{?select}";
+    m.urlTemplate = "{+baseurl}/me/outlook/taskFolders/{outlookTaskFolder_id}/tasks/{outlookTask_id}{?select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -29,7 +29,7 @@ type UploadUrlRequestBuilderGetOptions struct {
 func NewUploadUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UploadUrlRequestBuilder) {
     m := &UploadUrlRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/education/synchronizationProfiles/{educationSynchronizationProfile_id}/microsoft.graph.uploadUrl()";
+    m.urlTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile_id}/microsoft.graph.uploadUrl()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

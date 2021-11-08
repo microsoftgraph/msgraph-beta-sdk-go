@@ -57,7 +57,7 @@ func (m *BaseTypesRequestBuilder) AddCopy()(*i42462c7bfc418a1df15dc35cdf6deca2e3
 func NewBaseTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseTypesRequestBuilder) {
     m := &BaseTypesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/drives/{drive_id}/list/contentTypes/{contentType_id}/baseTypes{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/drives/{drive_id}/list/contentTypes/{contentType_id}/baseTypes{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

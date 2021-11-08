@@ -61,7 +61,7 @@ type UserExperienceAnalyticsWorkFromAnywhereDeviceRequestBuilderPatchOptions str
 func NewUserExperienceAnalyticsWorkFromAnywhereDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsWorkFromAnywhereDeviceRequestBuilder) {
     m := &UserExperienceAnalyticsWorkFromAnywhereDeviceRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/{userExperienceAnalyticsWorkFromAnywhereMetric_id}/metricDevices/{userExperienceAnalyticsWorkFromAnywhereDevice_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/{userExperienceAnalyticsWorkFromAnywhereMetric_id}/metricDevices/{userExperienceAnalyticsWorkFromAnywhereDevice_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -29,7 +29,7 @@ type DisableRequestBuilderPostOptions struct {
 func NewDisableRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DisableRequestBuilder) {
     m := &DisableRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/users/{user_id}/managedDevices/{managedDevice_id}/microsoft.graph.disable";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/managedDevices/{managedDevice_id}/microsoft.graph.disable";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

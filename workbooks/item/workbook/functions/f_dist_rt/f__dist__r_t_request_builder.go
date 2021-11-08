@@ -109,7 +109,7 @@ func (m *F_Dist_RTResponse) SetWorkbookFunctionResult(value *i535684e11b5500196e
 func NewF_Dist_RTRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*F_Dist_RTRequestBuilder) {
     m := &F_Dist_RTRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.f_Dist_RT";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.f_Dist_RT";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

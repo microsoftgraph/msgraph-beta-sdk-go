@@ -208,7 +208,7 @@ func (m *ReportsRequestBuilder) AuthenticationMethods()(*ib278d65ffeb85ab37242d8
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportsRequestBuilder) {
     m := &ReportsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/reports{?select,expand}";
+    m.urlTemplate = "{+baseurl}/reports{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

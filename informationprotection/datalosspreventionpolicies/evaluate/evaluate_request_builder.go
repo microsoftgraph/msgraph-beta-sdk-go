@@ -109,7 +109,7 @@ func (m *EvaluateResponse) SetDlpEvaluatePoliciesJobResponse(value *i535684e11b5
 func NewEvaluateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateRequestBuilder) {
     m := &EvaluateRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/beta/informationProtection/dataLossPreventionPolicies/microsoft.graph.evaluate";
+    m.urlTemplate = "{+baseurl}/informationProtection/dataLossPreventionPolicies/microsoft.graph.evaluate";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
