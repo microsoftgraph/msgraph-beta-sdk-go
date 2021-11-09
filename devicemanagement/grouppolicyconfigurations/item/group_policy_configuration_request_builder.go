@@ -66,7 +66,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) Assign()(*if10892f25c880cff6f35
 func (m *GroupPolicyConfigurationRequestBuilder) Assignments()(*ib82d0e0e2e13d1b253232a5b5c89e5d5704adda9d4f7e9e1e53d75f5f967101d.AssignmentsRequestBuilder) {
     return ib82d0e0e2e13d1b253232a5b5c89e5d5704adda9d4f7e9e1e53d75f5f967101d.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.groupPolicyConfigurations.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyConfigurations.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *GroupPolicyConfigurationRequestBuilder) AssignmentsById(id string)(*i0cb6dc720cdfefbc227fbe58a3f3d6fae0bd97db3acd773de3b5dc3e12dd5792.GroupPolicyConfigurationAssignmentRequestBuilder) {
@@ -171,7 +171,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) CreatePatchRequestInformation(o
 func (m *GroupPolicyConfigurationRequestBuilder) DefinitionValues()(*i2573cd7f18c0bef6763b0cd5d5daf2b302474f359820e0e9a5b01b4456663a1b.DefinitionValuesRequestBuilder) {
     return i2573cd7f18c0bef6763b0cd5d5daf2b302474f359820e0e9a5b01b4456663a1b.NewDefinitionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.groupPolicyConfigurations.item.definitionValues.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyConfigurations.item.definitionValues.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *GroupPolicyConfigurationRequestBuilder) DefinitionValuesById(id string)(*id5d6fab6089b28b24032ceb492d4726a5f5b3dd8719e632a9f878e2fd9a9c9e8.GroupPolicyDefinitionValueRequestBuilder) {

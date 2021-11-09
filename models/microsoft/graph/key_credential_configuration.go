@@ -11,9 +11,9 @@ type KeyCredentialConfiguration struct {
     additionalData map[string]interface{};
     // 
     maxLifetime *string;
-    // 
+    // Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
     restrictForAppsCreatedAfterDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
     restrictionType *AppKeyCredentialRestrictionType;
 }
 // Instantiates a new keyCredentialConfiguration and sets the default values.
@@ -39,7 +39,7 @@ func (m *KeyCredentialConfiguration) GetMaxLifetime()(*string) {
         return m.maxLifetime
     }
 }
-// Gets the restrictForAppsCreatedAfterDateTime property value. 
+// Gets the restrictForAppsCreatedAfterDateTime property value. Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
 func (m *KeyCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *KeyCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i
         return m.restrictForAppsCreatedAfterDateTime
     }
 }
-// Gets the restrictionType property value. 
+// Gets the restrictionType property value. The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
 func (m *KeyCredentialConfiguration) GetRestrictionType()(*AppKeyCredentialRestrictionType) {
     if m == nil {
         return nil
@@ -131,13 +131,13 @@ func (m *KeyCredentialConfiguration) SetAdditionalData(value map[string]interfac
 func (m *KeyCredentialConfiguration) SetMaxLifetime(value *string)() {
     m.maxLifetime = value
 }
-// Sets the restrictForAppsCreatedAfterDateTime property value. 
+// Sets the restrictForAppsCreatedAfterDateTime property value. Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
 // Parameters:
 //  - value : Value to set for the restrictForAppsCreatedAfterDateTime property.
 func (m *KeyCredentialConfiguration) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.restrictForAppsCreatedAfterDateTime = value
 }
-// Sets the restrictionType property value. 
+// Sets the restrictionType property value. The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
 // Parameters:
 //  - value : Value to set for the restrictionType property.
 func (m *KeyCredentialConfiguration) SetRestrictionType(value *AppKeyCredentialRestrictionType)() {

@@ -203,7 +203,7 @@ func (m *CustodianRequestBuilder) Release()(*i14f9dc63baa397b6a46050a0f68c7e4a42
 func (m *CustodianRequestBuilder) SiteSources()(*i9bee0e67d457d7d6c8a2286c0457976300c78a2d3966969af798572abae284f8.SiteSourcesRequestBuilder) {
     return i9bee0e67d457d7d6c8a2286c0457976300c78a2d3966969af798572abae284f8.NewSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.custodians.item.siteSources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.siteSources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CustodianRequestBuilder) SiteSourcesById(id string)(*i4309a7704e69fe42095a6b193ab7c02498b7ed9dfb94dfb719874f17dc467566.SiteSourceRequestBuilder) {
@@ -219,7 +219,7 @@ func (m *CustodianRequestBuilder) SiteSourcesById(id string)(*i4309a7704e69fe420
 func (m *CustodianRequestBuilder) UnifiedGroupSources()(*i348ede983f3040232d895a34f25da659cbb68085d4a805c56b3b6dae93774ef7.UnifiedGroupSourcesRequestBuilder) {
     return i348ede983f3040232d895a34f25da659cbb68085d4a805c56b3b6dae93774ef7.NewUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.custodians.item.unifiedGroupSources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.unifiedGroupSources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CustodianRequestBuilder) UnifiedGroupSourcesById(id string)(*ifbc6f713aeb7024d6becb409b398d0478ce75f7c0d32d275eaf841964c28cf58.UnifiedGroupSourceRequestBuilder) {
@@ -238,7 +238,7 @@ func (m *CustodianRequestBuilder) UpdateIndex()(*ifa7d68dc98816b5bddb9c96d857975
 func (m *CustodianRequestBuilder) UserSources()(*i1575e522b5917d1f899addb4e5d37cb3091f2a22fdfd73e5c469c667c9a1c9f3.UserSourcesRequestBuilder) {
     return i1575e522b5917d1f899addb4e5d37cb3091f2a22fdfd73e5c469c667c9a1c9f3.NewUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.custodians.item.userSources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.userSources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CustodianRequestBuilder) UserSourcesById(id string)(*i6668e488b256395a9fba0e7acad7a6ccc9d7c63da93011905dfe0a8b2ccc5ff9.UserSourceRequestBuilder) {

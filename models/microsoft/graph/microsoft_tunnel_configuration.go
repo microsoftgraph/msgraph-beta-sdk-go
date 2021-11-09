@@ -14,6 +14,8 @@ type MicrosoftTunnelConfiguration struct {
     defaultDomainSuffix *string;
     // The MicrosoftTunnelConfiguration's description
     description *string;
+    // When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+    disableUDPConnections *bool;
     // The MicrosoftTunnelConfiguration's display name
     displayName *string;
     // The DNS servers that will be used by the clients
@@ -62,6 +64,14 @@ func (m *MicrosoftTunnelConfiguration) GetDescription()(*string) {
         return nil
     } else {
         return m.description
+    }
+}
+// Gets the disableUDPConnections property value. When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+func (m *MicrosoftTunnelConfiguration) GetDisableUDPConnections()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.disableUDPConnections
     }
 }
 // Gets the displayName property value. The MicrosoftTunnelConfiguration's display name
@@ -165,6 +175,14 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
             return err
         }
         m.SetDescription(val)
+        return nil
+    }
+    res["disableUDPConnections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        m.SetDisableUDPConnections(val)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,6 +314,12 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     {
+        err = writer.WriteBoolValue("disableUDPConnections", m.GetDisableUDPConnections())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -368,6 +392,12 @@ func (m *MicrosoftTunnelConfiguration) SetDefaultDomainSuffix(value *string)() {
 //  - value : Value to set for the description property.
 func (m *MicrosoftTunnelConfiguration) SetDescription(value *string)() {
     m.description = value
+}
+// Sets the disableUDPConnections property value. When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+// Parameters:
+//  - value : Value to set for the disableUDPConnections property.
+func (m *MicrosoftTunnelConfiguration) SetDisableUDPConnections(value *bool)() {
+    m.disableUDPConnections = value
 }
 // Sets the displayName property value. The MicrosoftTunnelConfiguration's display name
 // Parameters:

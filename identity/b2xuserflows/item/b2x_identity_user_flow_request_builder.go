@@ -183,7 +183,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) IdentityProviders()(*i961eb1bb9c95ad
 func (m *B2xIdentityUserFlowRequestBuilder) Languages()(*i7dcf98ba71a64ad6e1a7f1d9cbe306c7616a2b4fbec2dbc655c658192d35a36b.LanguagesRequestBuilder) {
     return i7dcf98ba71a64ad6e1a7f1d9cbe306c7616a2b4fbec2dbc655c658192d35a36b.NewLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.b2xUserFlows.item.languages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.languages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *B2xIdentityUserFlowRequestBuilder) LanguagesById(id string)(*i45862c76d997425b3529626dabb7258b739baf239b9d5edccd7c60df97c16804.UserFlowLanguageConfigurationRequestBuilder) {
@@ -213,7 +213,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) Patch(options *B2xIdentityUserFlowRe
 func (m *B2xIdentityUserFlowRequestBuilder) UserAttributeAssignments()(*i574815dbbb1e9c51a965e25539eed078ec9ab55919033c1c32dc721a519d9f21.UserAttributeAssignmentsRequestBuilder) {
     return i574815dbbb1e9c51a965e25539eed078ec9ab55919033c1c32dc721a519d9f21.NewUserAttributeAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.b2xUserFlows.item.userAttributeAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.userAttributeAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *B2xIdentityUserFlowRequestBuilder) UserAttributeAssignmentsById(id string)(*i8706143552eeb09a05c35bc53efe01f6fe2a821a3d0568b7c706289ea9919d1d.IdentityUserFlowAttributeAssignmentRequestBuilder) {

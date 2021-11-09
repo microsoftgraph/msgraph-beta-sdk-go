@@ -65,7 +65,7 @@ type EducationUserRequestBuilderPatchOptions struct {
 func (m *EducationUserRequestBuilder) Assignments()(*i15f37890fd55ac82b8528efa2c29ff81a969a940b9bc9fb7d06dd2685cdac5e3.AssignmentsRequestBuilder) {
     return i15f37890fd55ac82b8528efa2c29ff81a969a940b9bc9fb7d06dd2685cdac5e3.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.education.users.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationUserRequestBuilder) AssignmentsById(id string)(*i6bc86d513ec01bc025e0973f496b3d684d0b9855eb8f39c0a2cedefc89f6ae63.EducationAssignmentRequestBuilder) {
@@ -215,7 +215,7 @@ func (m *EducationUserRequestBuilder) Patch(options *EducationUserRequestBuilder
 func (m *EducationUserRequestBuilder) Rubrics()(*i5f1177027388a1108a3f7b3004b1c6991c2cb44b7ef2b62a156ff94dc12f20a7.RubricsRequestBuilder) {
     return i5f1177027388a1108a3f7b3004b1c6991c2cb44b7ef2b62a156ff94dc12f20a7.NewRubricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.education.users.item.rubrics.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item.rubrics.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationUserRequestBuilder) RubricsById(id string)(*i0f11e129cc0a86c04aeab4bef7a1bec96ec8dc4595bbcd883507aeaf4f1aaeda.EducationRubricRequestBuilder) {

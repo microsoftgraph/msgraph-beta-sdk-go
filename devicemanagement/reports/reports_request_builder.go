@@ -26,6 +26,7 @@ import (
     i71062c76ab59540ed61b75db2e8378ccdfa322ba04cfe5afa641522cd26d9367 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getdeviceconfigurationpolicysettingssummaryreport"
     i711aceb383b63eb4ad8db059fe173d8b78d6bb1bdcfaf386735b20a8e54c2748 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancesettingnoncompliancereport"
     i71903f4f495c2ba2d1bec9d9d52c924a6bd43444cea991fb60e1874f824ed54e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getfailedmobileappssummaryreport"
+    i729c6211b1234e1904eb6e668f5a3a56598a9ecedbc4f360676e24e43bfaffdb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getdeviceconfigurationpolicystatussummary"
     i75076cf3e3d6371cc0bb5d2810006d6e49e086cb781c7867b1093cfc1cf69827 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getappsinstallsummaryreport"
     i7611b2ea51c277728d8bca812a4642adb44f343f51f28de5c5e087ec400d0645 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getdevicemanagementintentsettingsreport"
     i788f436053d26e542373ad7c025d3a1a70768b96972d545d5aec67d0881993fb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getquiettimepolicyusersummaryreport"
@@ -114,7 +115,7 @@ type ReportsRequestBuilderPatchOptions struct {
 func (m *ReportsRequestBuilder) CachedReportConfigurations()(*i2a7e95d28bcab38f85f05fe3f131357d5c408f5fbd47fb213b7aac8dbd71328a.CachedReportConfigurationsRequestBuilder) {
     return i2a7e95d28bcab38f85f05fe3f131357d5c408f5fbd47fb213b7aac8dbd71328a.NewCachedReportConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.reports.cachedReportConfigurations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.cachedReportConfigurations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*i2bf9ce7fb7bd0fa9fc75119c61d3de5e2e31a446f3ebba40eaf7f289544d9943.DeviceManagementCachedReportConfigurationRequestBuilder) {
@@ -233,7 +234,7 @@ func (m *ReportsRequestBuilder) Delete(options *ReportsRequestBuilderDeleteOptio
 func (m *ReportsRequestBuilder) ExportJobs()(*if7d41ece7783a25f185dc8071dfbd2363227c4fb6d8e08d2a9412f206c7279a9.ExportJobsRequestBuilder) {
     return if7d41ece7783a25f185dc8071dfbd2363227c4fb6d8e08d2a9412f206c7279a9.NewExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.reports.exportJobs.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.exportJobs.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) ExportJobsById(id string)(*if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02.DeviceManagementExportJobRequestBuilder) {
@@ -331,6 +332,9 @@ func (m *ReportsRequestBuilder) GetConfigurationSettingsReport()(*i2abf29284e813
 }
 func (m *ReportsRequestBuilder) GetDeviceConfigurationPolicySettingsSummaryReport()(*i71062c76ab59540ed61b75db2e8378ccdfa322ba04cfe5afa641522cd26d9367.GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) {
     return i71062c76ab59540ed61b75db2e8378ccdfa322ba04cfe5afa641522cd26d9367.NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetDeviceConfigurationPolicyStatusSummary()(*i729c6211b1234e1904eb6e668f5a3a56598a9ecedbc4f360676e24e43bfaffdb.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) {
+    return i729c6211b1234e1904eb6e668f5a3a56598a9ecedbc4f360676e24e43bfaffdb.NewGetDeviceConfigurationPolicyStatusSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) GetDeviceInstallStatusReport()(*ia7100ea2edcc786fe9054729a54d7600f750ebcc9be73a96446bf4b9bc605356.GetDeviceInstallStatusReportRequestBuilder) {
     return ia7100ea2edcc786fe9054729a54d7600f750ebcc9be73a96446bf4b9bc605356.NewGetDeviceInstallStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -430,7 +434,7 @@ func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions
 func (m *ReportsRequestBuilder) ReportSchedules()(*iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc.ReportSchedulesRequestBuilder) {
     return iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc.NewReportSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.reports.reportSchedules.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.reportSchedules.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) ReportSchedulesById(id string)(*id6b331ae2f0cb2af60ba8b44c9282d7a2ff2e031c38004db15739c1402e76714.DeviceManagementReportScheduleRequestBuilder) {

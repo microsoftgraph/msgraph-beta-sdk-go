@@ -65,7 +65,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Assign()(*i1a8c6326f7b7449
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Assignments()(*i14f99bca7a957a331b5e7cb13fd8a56e803d7b84d2e6c38be90eb5551714c94e.AssignmentsRequestBuilder) {
     return i14f99bca7a957a331b5e7cb13fd8a56e803d7b84d2e6c38be90eb5551714c94e.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.embeddedSIMActivationCodePools.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.embeddedSIMActivationCodePools.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) AssignmentsById(id string)(*i4a0e4526cd89dcbf6b464d731ad1079beb451ea477a00769d03119affe5e8e45.EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) {
@@ -184,7 +184,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Delete(options *EmbeddedSI
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) DeviceStates()(*ic4dac275164f8d53c7fa85048cdeb7907d2f7d42ec422190e6843e16ab03bfd3.DeviceStatesRequestBuilder) {
     return ic4dac275164f8d53c7fa85048cdeb7907d2f7d42ec422190e6843e16ab03bfd3.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.embeddedSIMActivationCodePools.item.deviceStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.embeddedSIMActivationCodePools.item.deviceStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) DeviceStatesById(id string)(*if044a617b4d30ce4a26c463e72b94403997b338b8aeafd10eb8d535111e4cc01.EmbeddedSIMDeviceStateRequestBuilder) {

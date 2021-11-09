@@ -65,7 +65,7 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceEnvironment()
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRoles()(*i011fe238fe6988c095b9a7a19ee7fa50f3ff89b11b6eed7e38bf927f749aae8f.AccessPackageResourceRolesRequestBuilder) {
     return i011fe238fe6988c095b9a7a19ee7fa50f3ff89b11b6eed7e38bf927f749aae8f.NewAccessPackageResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.item.accessPackageCatalog.accessPackageResources.item.accessPackageResourceRoles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.item.accessPackageCatalog.accessPackageResources.item.accessPackageResourceRoles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id string)(*i56617f57d182fc250ebd8f7e6420e3f41ca6f3992e2d1ac28b5ca4fd054329f0.AccessPackageResourceRoleRequestBuilder) {
@@ -81,7 +81,7 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id 
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopes()(*i9066168e22ba1353d8692cb3b1b65a075e8358ebcbe1afe34ec6714dd4c98c35.AccessPackageResourceScopesRequestBuilder) {
     return i9066168e22ba1353d8692cb3b1b65a075e8358ebcbe1afe34ec6714dd4c98c35.NewAccessPackageResourceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.item.accessPackageCatalog.accessPackageResources.item.accessPackageResourceScopes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.item.accessPackageCatalog.accessPackageResources.item.accessPackageResourceScopes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopesById(id string)(*iebf919d9f9a71f35f7b2bd272777346cdb4ba75948c7f83461042ec950556979.AccessPackageResourceScopeRequestBuilder) {

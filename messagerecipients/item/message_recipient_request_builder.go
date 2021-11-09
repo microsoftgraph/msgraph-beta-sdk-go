@@ -162,7 +162,7 @@ func (m *MessageRecipientRequestBuilder) Delete(options *MessageRecipientRequest
 func (m *MessageRecipientRequestBuilder) Events()(*i763db342488d93b06499e840923a524b416bfbf32aecb8bb444b83d1e431f4fa.EventsRequestBuilder) {
     return i763db342488d93b06499e840923a524b416bfbf32aecb8bb444b83d1e431f4fa.NewEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.messageRecipients.item.events.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.messageRecipients.item.events.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRecipientRequestBuilder) EventsById(id string)(*i743383fc382e5378ae11e0a3af80773199e61bc9a09df96b661701162acd2b84.MessageEventRequestBuilder) {

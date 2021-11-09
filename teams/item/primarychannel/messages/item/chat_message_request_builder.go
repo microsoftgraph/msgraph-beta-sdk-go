@@ -178,7 +178,7 @@ func (m *ChatMessageRequestBuilder) Get(options *ChatMessageRequestBuilderGetOpt
 func (m *ChatMessageRequestBuilder) HostedContents()(*i58f2982db5184e602b87372e05e45b924a186cb16c2823dc58e2e0d4aefc9433.HostedContentsRequestBuilder) {
     return i58f2982db5184e602b87372e05e45b924a186cb16c2823dc58e2e0d4aefc9433.NewHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.teams.item.primaryChannel.messages.item.hostedContents.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.primaryChannel.messages.item.hostedContents.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatMessageRequestBuilder) HostedContentsById(id string)(*i3bf93b00c9d8a64f21168607b55a5b671b8629d16d677ef881f8c67fc3d08c86.ChatMessageHostedContentRequestBuilder) {
@@ -208,7 +208,7 @@ func (m *ChatMessageRequestBuilder) Patch(options *ChatMessageRequestBuilderPatc
 func (m *ChatMessageRequestBuilder) Replies()(*i2c260db421138b4b9d16bc781872e9b2bcc7212fcb3df78fccc27b29fa3afdd0.RepliesRequestBuilder) {
     return i2c260db421138b4b9d16bc781872e9b2bcc7212fcb3df78fccc27b29fa3afdd0.NewRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.teams.item.primaryChannel.messages.item.replies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.primaryChannel.messages.item.replies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatMessageRequestBuilder) RepliesById(id string)(*i5b233e37d8baee4d7a51632cc955aa8905e1db9922a952b63423775c3a43570a.ChatMessageRequestBuilder) {

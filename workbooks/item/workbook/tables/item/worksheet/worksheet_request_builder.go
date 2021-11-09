@@ -78,7 +78,7 @@ func (m *WorksheetRequestBuilder) CellWithRowWithColumn(row *int32, column *int3
 func (m *WorksheetRequestBuilder) Charts()(*ide4ba23235f326614c8805813356139727b8263a14f3a4d923bb40121a7ba365.ChartsRequestBuilder) {
     return ide4ba23235f326614c8805813356139727b8263a14f3a4d923bb40121a7ba365.NewChartsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.workbook.tables.item.worksheet.charts.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.charts.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorksheetRequestBuilder) ChartsById(id string)(*ia1cc623eddd9df9f17c0b9701a2a3539b2f5442517a879409721736eb8a27048.WorkbookChartRequestBuilder) {
@@ -211,7 +211,7 @@ func (m *WorksheetRequestBuilder) Get(options *WorksheetRequestBuilderGetOptions
 func (m *WorksheetRequestBuilder) Names()(*iee6c370a85cb6bb0fefbc8dc3939ea618f9c1c5957db5c49369a7a35b0d095a7.NamesRequestBuilder) {
     return iee6c370a85cb6bb0fefbc8dc3939ea618f9c1c5957db5c49369a7a35b0d095a7.NewNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.workbook.tables.item.worksheet.names.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.names.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorksheetRequestBuilder) NamesById(id string)(*i53303b45d7d648df95cc91c6507cc59b5af02e940b75e6a563d137849b1f393d.WorkbookNamedItemRequestBuilder) {
@@ -241,7 +241,7 @@ func (m *WorksheetRequestBuilder) Patch(options *WorksheetRequestBuilderPatchOpt
 func (m *WorksheetRequestBuilder) PivotTables()(*i3ddcdce4491c9d04c88133619f912a234e6c29f49882574f3899a635b9c598c2.PivotTablesRequestBuilder) {
     return i3ddcdce4491c9d04c88133619f912a234e6c29f49882574f3899a635b9c598c2.NewPivotTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.workbook.tables.item.worksheet.pivotTables.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.pivotTables.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorksheetRequestBuilder) PivotTablesById(id string)(*if823d55338eadd2201e55a09008562794fbe17cc448d5a324b81519ccff4008a.WorkbookPivotTableRequestBuilder) {
@@ -270,7 +270,7 @@ func (m *WorksheetRequestBuilder) RangeWithAddress(address *string)(*ic89adfad75
 func (m *WorksheetRequestBuilder) Tables()(*ia276ceb85fd09a2117364dbbb767b09b3c5479169f5e4f85a8f8f9bab3a80f6b.TablesRequestBuilder) {
     return ia276ceb85fd09a2117364dbbb767b09b3c5479169f5e4f85a8f8f9bab3a80f6b.NewTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.workbook.tables.item.worksheet.tables.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.tables.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorksheetRequestBuilder) TablesById(id string)(*iec90b216a18e128f226f8a1291a9f75dd1d3bed00c0efd71469331f485a8cb0a.WorkbookTableRequestBuilder) {

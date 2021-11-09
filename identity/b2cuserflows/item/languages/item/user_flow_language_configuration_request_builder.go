@@ -150,7 +150,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) CreatePatchRequestInformat
 func (m *UserFlowLanguageConfigurationRequestBuilder) DefaultPages()(*ic56e48b961e57de85d10390f870dd3e57722e4a44a0964781543b92374e68259.DefaultPagesRequestBuilder) {
     return ic56e48b961e57de85d10390f870dd3e57722e4a44a0964781543b92374e68259.NewDefaultPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.b2cUserFlows.item.languages.item.defaultPages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.languages.item.defaultPages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserFlowLanguageConfigurationRequestBuilder) DefaultPagesById(id string)(*i2fb4388026c86a21e8b8d1776d2c5f2b64cc93696f3f4d055161caa5dff7e785.UserFlowLanguagePageRequestBuilder) {
@@ -194,7 +194,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) Get(options *UserFlowLangu
 func (m *UserFlowLanguageConfigurationRequestBuilder) OverridesPages()(*iecf50a78d9d6bd3f01a4f78210ea956d05c66f139964a7db9869f81ca435eaca.OverridesPagesRequestBuilder) {
     return iecf50a78d9d6bd3f01a4f78210ea956d05c66f139964a7db9869f81ca435eaca.NewOverridesPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.b2cUserFlows.item.languages.item.overridesPages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.languages.item.overridesPages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserFlowLanguageConfigurationRequestBuilder) OverridesPagesById(id string)(*ia8cb0ef728fb55863ea7e003c3f99fbd388a2e1017ae424b5f63e5e4b1660d67.UserFlowLanguagePageRequestBuilder) {

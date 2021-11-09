@@ -66,7 +66,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Assi
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Assignments()(*idc699f5102959b816736faa2d215afc9e66f562ab6af43c03f0699e6ef2fa7f4.AssignmentsRequestBuilder) {
     return idc699f5102959b816736faa2d215afc9e66f562ab6af43c03f0699e6ef2fa7f4.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceAppManagement.wdacSupplementalPolicies.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.wdacSupplementalPolicies.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) AssignmentsById(id string)(*ibf0406f487f23a25d59623f151d2327c977ef4cb5bf52e23fcd9992cbf752eb2.WindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilder) {
@@ -188,7 +188,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Depl
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) DeviceStatuses()(*i13775af57c3f03fa03a53f3283beac6df287db3f25fa4e4ee1a441cd3996dd0b.DeviceStatusesRequestBuilder) {
     return i13775af57c3f03fa03a53f3283beac6df287db3f25fa4e4ee1a441cd3996dd0b.NewDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceAppManagement.wdacSupplementalPolicies.item.deviceStatuses.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.wdacSupplementalPolicies.item.deviceStatuses.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) DeviceStatusesById(id string)(*if7f30d88a5e2c08a355aab945ead20a738d45d9716825973a8471d163909ac9b.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) {

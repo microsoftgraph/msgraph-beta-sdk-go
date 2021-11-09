@@ -162,7 +162,7 @@ func (m *DeviceManagementScriptUserStateRequestBuilder) Delete(options *DeviceMa
 func (m *DeviceManagementScriptUserStateRequestBuilder) DeviceRunStates()(*i040856651382b919c67ba14f31cf08deb262661b504bce9cf2fbd916552a61dd.DeviceRunStatesRequestBuilder) {
     return i040856651382b919c67ba14f31cf08deb262661b504bce9cf2fbd916552a61dd.NewDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.deviceCustomAttributeShellScripts.item.userRunStates.item.deviceRunStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.userRunStates.item.deviceRunStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceManagementScriptUserStateRequestBuilder) DeviceRunStatesById(id string)(*i69ac4d6dd0ea7a1fd9ad31fc82abecc3940a480dea2ebf94b01aac89ae2d135d.DeviceManagementScriptDeviceStateRequestBuilder) {

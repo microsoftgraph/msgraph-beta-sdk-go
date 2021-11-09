@@ -190,7 +190,7 @@ func (m *ApprovalRequestBuilder) Patch(options *ApprovalRequestBuilderPatchOptio
 func (m *ApprovalRequestBuilder) Steps()(*i17d75c7d4ad9ca1f9959b890424e79473cf6b5fcd534935e27791fade4f79a5a.StepsRequestBuilder) {
     return i17d75c7d4ad9ca1f9959b890424e79473cf6b5fcd534935e27791fade4f79a5a.NewStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.approvals.item.steps.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.approvals.item.steps.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ApprovalRequestBuilder) StepsById(id string)(*i93431a3f2d0dfd9863bd0fe671a64f433ee5cc0694c9898ce9b20c463f6f8f58.ApprovalStepRequestBuilder) {

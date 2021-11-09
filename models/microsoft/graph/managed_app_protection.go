@@ -39,6 +39,8 @@ type ManagedAppProtection struct {
     disableAppPinIfDevicePinIsSet *bool;
     // Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
     fingerprintBlocked *bool;
+    // A grace period before blocking app access during off clock hours.
+    gracePeriodToBlockAppsDuringOffClockHours *string;
     // Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
     managedBrowser *ManagedBrowserType;
     // Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
@@ -229,6 +231,14 @@ func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
         return nil
     } else {
         return m.fingerprintBlocked
+    }
+}
+// Gets the gracePeriodToBlockAppsDuringOffClockHours property value. A grace period before blocking app access during off clock hours.
+func (m *ManagedAppProtection) GetGracePeriodToBlockAppsDuringOffClockHours()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.gracePeriodToBlockAppsDuringOffClockHours
     }
 }
 // Gets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
@@ -601,6 +611,14 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         m.SetFingerprintBlocked(val)
         return nil
     }
+    res["gracePeriodToBlockAppsDuringOffClockHours"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        m.SetGracePeriodToBlockAppsDuringOffClockHours(val)
+        return nil
+    }
     res["managedBrowser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedBrowserType)
         if err != nil {
@@ -946,6 +964,12 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("gracePeriodToBlockAppsDuringOffClockHours", m.GetGracePeriodToBlockAppsDuringOffClockHours())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetManagedBrowser() != nil {
         cast := m.GetManagedBrowser().String()
         err = writer.WriteStringValue("managedBrowser", &cast)
@@ -1216,6 +1240,12 @@ func (m *ManagedAppProtection) SetDisableAppPinIfDevicePinIsSet(value *bool)() {
 //  - value : Value to set for the fingerprintBlocked property.
 func (m *ManagedAppProtection) SetFingerprintBlocked(value *bool)() {
     m.fingerprintBlocked = value
+}
+// Sets the gracePeriodToBlockAppsDuringOffClockHours property value. A grace period before blocking app access during off clock hours.
+// Parameters:
+//  - value : Value to set for the gracePeriodToBlockAppsDuringOffClockHours property.
+func (m *ManagedAppProtection) SetGracePeriodToBlockAppsDuringOffClockHours(value *string)() {
+    m.gracePeriodToBlockAppsDuringOffClockHours = value
 }
 // Sets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
 // Parameters:

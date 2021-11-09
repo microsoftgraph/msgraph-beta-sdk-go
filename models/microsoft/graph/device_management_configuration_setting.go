@@ -7,7 +7,7 @@ import (
 // 
 type DeviceManagementConfigurationSetting struct {
     Entity
-    // List of related Setting Definitions
+    // List of related Setting Definitions. This property is read-only.
     settingDefinitions []DeviceManagementConfigurationSettingDefinition;
     // Setting instance within policy
     settingInstance *DeviceManagementConfigurationSettingInstance;
@@ -19,7 +19,7 @@ func NewDeviceManagementConfigurationSetting()(*DeviceManagementConfigurationSet
     }
     return m
 }
-// Gets the settingDefinitions property value. List of related Setting Definitions
+// Gets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 func (m *DeviceManagementConfigurationSetting) GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinition) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *DeviceManagementConfigurationSetting) Serialize(writer i04eb5309aeaafad
     }
     return nil
 }
-// Sets the settingDefinitions property value. List of related Setting Definitions
+// Sets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 // Parameters:
 //  - value : Value to set for the settingDefinitions property.
 func (m *DeviceManagementConfigurationSetting) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinition)() {

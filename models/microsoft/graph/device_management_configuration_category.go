@@ -7,6 +7,8 @@ import (
 // 
 type DeviceManagementConfigurationCategory struct {
     Entity
+    // Description of the category header
+    categoryDescription *string;
     // List of child ids of the category.
     childCategoryIds []string;
     // Description of the item
@@ -23,7 +25,7 @@ type DeviceManagementConfigurationCategory struct {
     platforms *DeviceManagementConfigurationPlatforms;
     // Root id of the category.
     rootCategoryId *string;
-    // Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration.
+    // Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
     settingUsage *DeviceManagementConfigurationSettingUsage;
     // Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
     technologies *DeviceManagementConfigurationTechnologies;
@@ -34,6 +36,14 @@ func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCa
         Entity: *NewEntity(),
     }
     return m
+}
+// Gets the categoryDescription property value. Description of the category header
+func (m *DeviceManagementConfigurationCategory) GetCategoryDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.categoryDescription
+    }
 }
 // Gets the childCategoryIds property value. List of child ids of the category.
 func (m *DeviceManagementConfigurationCategory) GetChildCategoryIds()([]string) {
@@ -99,7 +109,7 @@ func (m *DeviceManagementConfigurationCategory) GetRootCategoryId()(*string) {
         return m.rootCategoryId
     }
 }
-// Gets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration.
+// Gets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
 func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
     if m == nil {
         return nil
@@ -118,6 +128,14 @@ func (m *DeviceManagementConfigurationCategory) GetTechnologies()(*DeviceManagem
 // The deserialization information for the current model
 func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["categoryDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        m.SetCategoryDescription(val)
+        return nil
+    }
     res["childCategoryIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -219,6 +237,12 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i04eb5309aeaafa
         return err
     }
     {
+        err = writer.WriteStringValue("categoryDescription", m.GetCategoryDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteCollectionOfStringValues("childCategoryIds", m.GetChildCategoryIds())
         if err != nil {
             return err
@@ -283,6 +307,12 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i04eb5309aeaafa
     }
     return nil
 }
+// Sets the categoryDescription property value. Description of the category header
+// Parameters:
+//  - value : Value to set for the categoryDescription property.
+func (m *DeviceManagementConfigurationCategory) SetCategoryDescription(value *string)() {
+    m.categoryDescription = value
+}
 // Sets the childCategoryIds property value. List of child ids of the category.
 // Parameters:
 //  - value : Value to set for the childCategoryIds property.
@@ -331,7 +361,7 @@ func (m *DeviceManagementConfigurationCategory) SetPlatforms(value *DeviceManage
 func (m *DeviceManagementConfigurationCategory) SetRootCategoryId(value *string)() {
     m.rootCategoryId = value
 }
-// Sets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration.
+// Sets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
 // Parameters:
 //  - value : Value to set for the settingUsage property.
 func (m *DeviceManagementConfigurationCategory) SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)() {

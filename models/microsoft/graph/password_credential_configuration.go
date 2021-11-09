@@ -13,7 +13,7 @@ type PasswordCredentialConfiguration struct {
     maxLifetime *string;
     // Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
     restrictForAppsCreatedAfterDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The type of restriction being applied. Possible values are passwordAddition or passwordLifetime. Each value of restrictionType can be used only once per policy.
+    // The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
     restrictionType *AppCredentialRestrictionType;
 }
 // Instantiates a new passwordCredentialConfiguration and sets the default values.
@@ -47,7 +47,7 @@ func (m *PasswordCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime
         return m.restrictForAppsCreatedAfterDateTime
     }
 }
-// Gets the restrictionType property value. The type of restriction being applied. Possible values are passwordAddition or passwordLifetime. Each value of restrictionType can be used only once per policy.
+// Gets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
 func (m *PasswordCredentialConfiguration) GetRestrictionType()(*AppCredentialRestrictionType) {
     if m == nil {
         return nil
@@ -137,7 +137,7 @@ func (m *PasswordCredentialConfiguration) SetMaxLifetime(value *string)() {
 func (m *PasswordCredentialConfiguration) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.restrictForAppsCreatedAfterDateTime = value
 }
-// Sets the restrictionType property value. The type of restriction being applied. Possible values are passwordAddition or passwordLifetime. Each value of restrictionType can be used only once per policy.
+// Sets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
 // Parameters:
 //  - value : Value to set for the restrictionType property.
 func (m *PasswordCredentialConfiguration) SetRestrictionType(value *AppCredentialRestrictionType)() {

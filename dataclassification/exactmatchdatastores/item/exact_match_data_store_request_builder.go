@@ -194,7 +194,7 @@ func (m *ExactMatchDataStoreRequestBuilder) Patch(options *ExactMatchDataStoreRe
 func (m *ExactMatchDataStoreRequestBuilder) Sessions()(*i2c50a6af5b17b681669f493c4dd54cac6a789f62e7a1e7e75c246aa3738d6530.SessionsRequestBuilder) {
     return i2c50a6af5b17b681669f493c4dd54cac6a789f62e7a1e7e75c246aa3738d6530.NewSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.dataClassification.exactMatchDataStores.item.sessions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.dataClassification.exactMatchDataStores.item.sessions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ExactMatchDataStoreRequestBuilder) SessionsById(id string)(*i1dcb0390b62e6994f2eedf162f9337be1ed916a12c0cd74064045e244b407892.ExactMatchSessionRequestBuilder) {

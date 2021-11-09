@@ -50,7 +50,7 @@ type FinancialsRequestBuilderPatchOptions struct {
 func (m *FinancialsRequestBuilder) Companies()(*id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.CompaniesRequestBuilder) {
     return id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.NewCompaniesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.financials.companies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *FinancialsRequestBuilder) CompaniesById(id string)(*ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.CompanyRequestBuilder) {

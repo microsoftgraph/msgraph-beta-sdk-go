@@ -57,7 +57,7 @@ type EducationRequestBuilderPatchOptions struct {
 func (m *EducationRequestBuilder) Classes()(*ib66e30f6b3aeaf350ed09763c0deac43e2a8c5ebd97258eecafd38240fa58d1b.ClassesRequestBuilder) {
     return ib66e30f6b3aeaf350ed09763c0deac43e2a8c5ebd97258eecafd38240fa58d1b.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.education.classes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.classes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationRequestBuilder) ClassesById(id string)(*ic55376c4e180e6c30db51b0da6b21653e2bd1c223954aa398f7f85ee7f1ab1fd.EducationClassRequestBuilder) {
@@ -174,7 +174,7 @@ func (m *EducationRequestBuilder) Patch(options *EducationRequestBuilderPatchOpt
 func (m *EducationRequestBuilder) Schools()(*i53e096f34b515b4400cb74425f756b37c554f0dd01122ccbdc851e302a54df1c.SchoolsRequestBuilder) {
     return i53e096f34b515b4400cb74425f756b37c554f0dd01122ccbdc851e302a54df1c.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.education.schools.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.schools.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationRequestBuilder) SchoolsById(id string)(*i55d158864f05addf1ddf88c8f6aff3854a29b88e36bc404eb7167a1c13495a9a.EducationSchoolRequestBuilder) {
@@ -190,7 +190,7 @@ func (m *EducationRequestBuilder) SchoolsById(id string)(*i55d158864f05addf1ddf8
 func (m *EducationRequestBuilder) SynchronizationProfiles()(*i58108e2d82e0462b534008f2f016e3d633c124bc780e0445f5b9d139fd18cf22.SynchronizationProfilesRequestBuilder) {
     return i58108e2d82e0462b534008f2f016e3d633c124bc780e0445f5b9d139fd18cf22.NewSynchronizationProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.education.synchronizationProfiles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.synchronizationProfiles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationRequestBuilder) SynchronizationProfilesById(id string)(*ia9a70568b8d421a38915cdf33eea35c2df3432111abdad0bb7d5169fb8c9e26b.EducationSynchronizationProfileRequestBuilder) {
@@ -206,7 +206,7 @@ func (m *EducationRequestBuilder) SynchronizationProfilesById(id string)(*ia9a70
 func (m *EducationRequestBuilder) Users()(*i8c83ac2fb480533d8c9e30080c936573aac55d73adc5a8f1617aed89f50165d0.UsersRequestBuilder) {
     return i8c83ac2fb480533d8c9e30080c936573aac55d73adc5a8f1617aed89f50165d0.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.education.users.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationRequestBuilder) UsersById(id string)(*i7bc4bfb8dac45e0b487266018aebf5c4f0660e8547d69a5d9bccd64de3f76c6e.EducationUserRequestBuilder) {

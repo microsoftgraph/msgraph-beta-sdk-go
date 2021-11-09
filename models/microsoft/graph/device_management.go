@@ -50,8 +50,14 @@ type DeviceManagement struct {
     comanagedDevices []ManagedDevice;
     // The list of co-management eligible devices report
     comanagementEligibleDevices []ComanagementEligibleDevice;
+    // List of all compliance categories
+    complianceCategories []DeviceManagementConfigurationCategory;
     // The list of Compliance Management Partners configured by the tenant.
     complianceManagementPartners []ComplianceManagementPartner;
+    // List of all compliance policies
+    compliancePolicies []DeviceManagementCompliancePolicy;
+    // List of all ComplianceSettings
+    complianceSettings []DeviceManagementConfigurationSettingDefinition;
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
     conditionalAccessSettings *OnPremisesConditionalAccessSettings;
     // A list of ConfigManagerCollection
@@ -250,6 +256,22 @@ type DeviceManagement struct {
     userExperienceAnalyticsAppHealthOverview *UserExperienceAnalyticsCategory;
     // User experience analytics baselines
     userExperienceAnalyticsBaselines []UserExperienceAnalyticsBaseline;
+    // User Experience Analytics Battery Health App Impact
+    userExperienceAnalyticsBatteryHealthAppImpact []UserExperienceAnalyticsBatteryHealthAppImpact;
+    // User Experience Analytics Battery Health Capacity Details
+    userExperienceAnalyticsBatteryHealthCapacityDetails *UserExperienceAnalyticsBatteryHealthCapacityDetails;
+    // User Experience Analytics Battery Health Device App Impact
+    userExperienceAnalyticsBatteryHealthDeviceAppImpact []UserExperienceAnalyticsBatteryHealthDeviceAppImpact;
+    // User Experience Analytics Battery Health Device Performance
+    userExperienceAnalyticsBatteryHealthDevicePerformance []UserExperienceAnalyticsBatteryHealthDevicePerformance;
+    // User Experience Analytics Battery Health Device Runtime History
+    userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory []UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory;
+    // User Experience Analytics Battery Health Model Performance
+    userExperienceAnalyticsBatteryHealthModelPerformance []UserExperienceAnalyticsBatteryHealthModelPerformance;
+    // User Experience Analytics Battery Health Os Performance
+    userExperienceAnalyticsBatteryHealthOsPerformance []UserExperienceAnalyticsBatteryHealthOsPerformance;
+    // User Experience Analytics Battery Health Runtime Details
+    userExperienceAnalyticsBatteryHealthRuntimeDetails *UserExperienceAnalyticsBatteryHealthRuntimeDetails;
     // User experience analytics categories
     userExperienceAnalyticsCategories []UserExperienceAnalyticsCategory;
     // User experience analytics device metric history
@@ -492,12 +514,36 @@ func (m *DeviceManagement) GetComanagementEligibleDevices()([]ComanagementEligib
         return m.comanagementEligibleDevices
     }
 }
+// Gets the complianceCategories property value. List of all compliance categories
+func (m *DeviceManagement) GetComplianceCategories()([]DeviceManagementConfigurationCategory) {
+    if m == nil {
+        return nil
+    } else {
+        return m.complianceCategories
+    }
+}
 // Gets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
 func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagementPartner) {
     if m == nil {
         return nil
     } else {
         return m.complianceManagementPartners
+    }
+}
+// Gets the compliancePolicies property value. List of all compliance policies
+func (m *DeviceManagement) GetCompliancePolicies()([]DeviceManagementCompliancePolicy) {
+    if m == nil {
+        return nil
+    } else {
+        return m.compliancePolicies
+    }
+}
+// Gets the complianceSettings property value. List of all ComplianceSettings
+func (m *DeviceManagement) GetComplianceSettings()([]DeviceManagementConfigurationSettingDefinition) {
+    if m == nil {
+        return nil
+    } else {
+        return m.complianceSettings
     }
 }
 // Gets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
@@ -1292,6 +1338,70 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBaselines()([]UserExperienc
         return m.userExperienceAnalyticsBaselines
     }
 }
+// Gets the userExperienceAnalyticsBatteryHealthAppImpact property value. User Experience Analytics Battery Health App Impact
+func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthAppImpact()([]UserExperienceAnalyticsBatteryHealthAppImpact) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsBatteryHealthAppImpact
+    }
+}
+// Gets the userExperienceAnalyticsBatteryHealthCapacityDetails property value. User Experience Analytics Battery Health Capacity Details
+func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAnalyticsBatteryHealthCapacityDetails) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsBatteryHealthCapacityDetails
+    }
+}
+// Gets the userExperienceAnalyticsBatteryHealthDeviceAppImpact property value. User Experience Analytics Battery Health Device App Impact
+func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDeviceAppImpact()([]UserExperienceAnalyticsBatteryHealthDeviceAppImpact) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsBatteryHealthDeviceAppImpact
+    }
+}
+// Gets the userExperienceAnalyticsBatteryHealthDevicePerformance property value. User Experience Analytics Battery Health Device Performance
+func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDevicePerformance()([]UserExperienceAnalyticsBatteryHealthDevicePerformance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsBatteryHealthDevicePerformance
+    }
+}
+// Gets the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property value. User Experience Analytics Battery Health Device Runtime History
+func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()([]UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
+    }
+}
+// Gets the userExperienceAnalyticsBatteryHealthModelPerformance property value. User Experience Analytics Battery Health Model Performance
+func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthModelPerformance()([]UserExperienceAnalyticsBatteryHealthModelPerformance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsBatteryHealthModelPerformance
+    }
+}
+// Gets the userExperienceAnalyticsBatteryHealthOsPerformance property value. User Experience Analytics Battery Health Os Performance
+func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthOsPerformance()([]UserExperienceAnalyticsBatteryHealthOsPerformance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsBatteryHealthOsPerformance
+    }
+}
+// Gets the userExperienceAnalyticsBatteryHealthRuntimeDetails property value. User Experience Analytics Battery Health Runtime Details
+func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthRuntimeDetails()(*UserExperienceAnalyticsBatteryHealthRuntimeDetails) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsBatteryHealthRuntimeDetails
+    }
+}
 // Gets the userExperienceAnalyticsCategories property value. User experience analytics categories
 func (m *DeviceManagement) GetUserExperienceAnalyticsCategories()([]UserExperienceAnalyticsCategory) {
     if m == nil {
@@ -1787,6 +1897,18 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         m.SetComanagementEligibleDevices(res)
         return nil
     }
+    res["complianceCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementConfigurationCategory() })
+        if err != nil {
+            return err
+        }
+        res := make([]DeviceManagementConfigurationCategory, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*DeviceManagementConfigurationCategory))
+        }
+        m.SetComplianceCategories(res)
+        return nil
+    }
     res["complianceManagementPartners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewComplianceManagementPartner() })
         if err != nil {
@@ -1797,6 +1919,30 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
             res[i] = *(v.(*ComplianceManagementPartner))
         }
         m.SetComplianceManagementPartners(res)
+        return nil
+    }
+    res["compliancePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementCompliancePolicy() })
+        if err != nil {
+            return err
+        }
+        res := make([]DeviceManagementCompliancePolicy, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*DeviceManagementCompliancePolicy))
+        }
+        m.SetCompliancePolicies(res)
+        return nil
+    }
+    res["complianceSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementConfigurationSettingDefinition() })
+        if err != nil {
+            return err
+        }
+        res := make([]DeviceManagementConfigurationSettingDefinition, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*DeviceManagementConfigurationSettingDefinition))
+        }
+        m.SetComplianceSettings(res)
         return nil
     }
     res["conditionalAccessSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -2901,6 +3047,94 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         m.SetUserExperienceAnalyticsBaselines(res)
         return nil
     }
+    res["userExperienceAnalyticsBatteryHealthAppImpact"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthAppImpact() })
+        if err != nil {
+            return err
+        }
+        res := make([]UserExperienceAnalyticsBatteryHealthAppImpact, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*UserExperienceAnalyticsBatteryHealthAppImpact))
+        }
+        m.SetUserExperienceAnalyticsBatteryHealthAppImpact(res)
+        return nil
+    }
+    res["userExperienceAnalyticsBatteryHealthCapacityDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthCapacityDetails() })
+        if err != nil {
+            return err
+        }
+        m.SetUserExperienceAnalyticsBatteryHealthCapacityDetails(val.(*UserExperienceAnalyticsBatteryHealthCapacityDetails))
+        return nil
+    }
+    res["userExperienceAnalyticsBatteryHealthDeviceAppImpact"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact() })
+        if err != nil {
+            return err
+        }
+        res := make([]UserExperienceAnalyticsBatteryHealthDeviceAppImpact, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*UserExperienceAnalyticsBatteryHealthDeviceAppImpact))
+        }
+        m.SetUserExperienceAnalyticsBatteryHealthDeviceAppImpact(res)
+        return nil
+    }
+    res["userExperienceAnalyticsBatteryHealthDevicePerformance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthDevicePerformance() })
+        if err != nil {
+            return err
+        }
+        res := make([]UserExperienceAnalyticsBatteryHealthDevicePerformance, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*UserExperienceAnalyticsBatteryHealthDevicePerformance))
+        }
+        m.SetUserExperienceAnalyticsBatteryHealthDevicePerformance(res)
+        return nil
+    }
+    res["userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory() })
+        if err != nil {
+            return err
+        }
+        res := make([]UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory))
+        }
+        m.SetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory(res)
+        return nil
+    }
+    res["userExperienceAnalyticsBatteryHealthModelPerformance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthModelPerformance() })
+        if err != nil {
+            return err
+        }
+        res := make([]UserExperienceAnalyticsBatteryHealthModelPerformance, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*UserExperienceAnalyticsBatteryHealthModelPerformance))
+        }
+        m.SetUserExperienceAnalyticsBatteryHealthModelPerformance(res)
+        return nil
+    }
+    res["userExperienceAnalyticsBatteryHealthOsPerformance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthOsPerformance() })
+        if err != nil {
+            return err
+        }
+        res := make([]UserExperienceAnalyticsBatteryHealthOsPerformance, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*UserExperienceAnalyticsBatteryHealthOsPerformance))
+        }
+        m.SetUserExperienceAnalyticsBatteryHealthOsPerformance(res)
+        return nil
+    }
+    res["userExperienceAnalyticsBatteryHealthRuntimeDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthRuntimeDetails() })
+        if err != nil {
+            return err
+        }
+        m.SetUserExperienceAnalyticsBatteryHealthRuntimeDetails(val.(*UserExperienceAnalyticsBatteryHealthRuntimeDetails))
+        return nil
+    }
     res["userExperienceAnalyticsCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
         if err != nil {
@@ -3484,12 +3718,45 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetComplianceCategories()))
+        for i, v := range m.GetComplianceCategories() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("complianceCategories", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetComplianceManagementPartners()))
         for i, v := range m.GetComplianceManagementPartners() {
             temp := v
             cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
         }
         err = writer.WriteCollectionOfObjectValues("complianceManagementPartners", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCompliancePolicies()))
+        for i, v := range m.GetCompliancePolicies() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("compliancePolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetComplianceSettings()))
+        for i, v := range m.GetComplianceSettings() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("complianceSettings", cast)
         if err != nil {
             return err
         }
@@ -4476,6 +4743,84 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserExperienceAnalyticsBatteryHealthAppImpact()))
+        for i, v := range m.GetUserExperienceAnalyticsBatteryHealthAppImpact() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsBatteryHealthAppImpact", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("userExperienceAnalyticsBatteryHealthCapacityDetails", m.GetUserExperienceAnalyticsBatteryHealthCapacityDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserExperienceAnalyticsBatteryHealthDeviceAppImpact()))
+        for i, v := range m.GetUserExperienceAnalyticsBatteryHealthDeviceAppImpact() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsBatteryHealthDeviceAppImpact", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserExperienceAnalyticsBatteryHealthDevicePerformance()))
+        for i, v := range m.GetUserExperienceAnalyticsBatteryHealthDevicePerformance() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsBatteryHealthDevicePerformance", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()))
+        for i, v := range m.GetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserExperienceAnalyticsBatteryHealthModelPerformance()))
+        for i, v := range m.GetUserExperienceAnalyticsBatteryHealthModelPerformance() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsBatteryHealthModelPerformance", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserExperienceAnalyticsBatteryHealthOsPerformance()))
+        for i, v := range m.GetUserExperienceAnalyticsBatteryHealthOsPerformance() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsBatteryHealthOsPerformance", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("userExperienceAnalyticsBatteryHealthRuntimeDetails", m.GetUserExperienceAnalyticsBatteryHealthRuntimeDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserExperienceAnalyticsCategories()))
         for i, v := range m.GetUserExperienceAnalyticsCategories() {
             temp := v
@@ -4931,11 +5276,29 @@ func (m *DeviceManagement) SetComanagedDevices(value []ManagedDevice)() {
 func (m *DeviceManagement) SetComanagementEligibleDevices(value []ComanagementEligibleDevice)() {
     m.comanagementEligibleDevices = value
 }
+// Sets the complianceCategories property value. List of all compliance categories
+// Parameters:
+//  - value : Value to set for the complianceCategories property.
+func (m *DeviceManagement) SetComplianceCategories(value []DeviceManagementConfigurationCategory)() {
+    m.complianceCategories = value
+}
 // Sets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
 // Parameters:
 //  - value : Value to set for the complianceManagementPartners property.
 func (m *DeviceManagement) SetComplianceManagementPartners(value []ComplianceManagementPartner)() {
     m.complianceManagementPartners = value
+}
+// Sets the compliancePolicies property value. List of all compliance policies
+// Parameters:
+//  - value : Value to set for the compliancePolicies property.
+func (m *DeviceManagement) SetCompliancePolicies(value []DeviceManagementCompliancePolicy)() {
+    m.compliancePolicies = value
+}
+// Sets the complianceSettings property value. List of all ComplianceSettings
+// Parameters:
+//  - value : Value to set for the complianceSettings property.
+func (m *DeviceManagement) SetComplianceSettings(value []DeviceManagementConfigurationSettingDefinition)() {
+    m.complianceSettings = value
 }
 // Sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 // Parameters:
@@ -5530,6 +5893,54 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthOverview(value *Us
 //  - value : Value to set for the userExperienceAnalyticsBaselines property.
 func (m *DeviceManagement) SetUserExperienceAnalyticsBaselines(value []UserExperienceAnalyticsBaseline)() {
     m.userExperienceAnalyticsBaselines = value
+}
+// Sets the userExperienceAnalyticsBatteryHealthAppImpact property value. User Experience Analytics Battery Health App Impact
+// Parameters:
+//  - value : Value to set for the userExperienceAnalyticsBatteryHealthAppImpact property.
+func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthAppImpact(value []UserExperienceAnalyticsBatteryHealthAppImpact)() {
+    m.userExperienceAnalyticsBatteryHealthAppImpact = value
+}
+// Sets the userExperienceAnalyticsBatteryHealthCapacityDetails property value. User Experience Analytics Battery Health Capacity Details
+// Parameters:
+//  - value : Value to set for the userExperienceAnalyticsBatteryHealthCapacityDetails property.
+func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthCapacityDetails(value *UserExperienceAnalyticsBatteryHealthCapacityDetails)() {
+    m.userExperienceAnalyticsBatteryHealthCapacityDetails = value
+}
+// Sets the userExperienceAnalyticsBatteryHealthDeviceAppImpact property value. User Experience Analytics Battery Health Device App Impact
+// Parameters:
+//  - value : Value to set for the userExperienceAnalyticsBatteryHealthDeviceAppImpact property.
+func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthDeviceAppImpact(value []UserExperienceAnalyticsBatteryHealthDeviceAppImpact)() {
+    m.userExperienceAnalyticsBatteryHealthDeviceAppImpact = value
+}
+// Sets the userExperienceAnalyticsBatteryHealthDevicePerformance property value. User Experience Analytics Battery Health Device Performance
+// Parameters:
+//  - value : Value to set for the userExperienceAnalyticsBatteryHealthDevicePerformance property.
+func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthDevicePerformance(value []UserExperienceAnalyticsBatteryHealthDevicePerformance)() {
+    m.userExperienceAnalyticsBatteryHealthDevicePerformance = value
+}
+// Sets the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property value. User Experience Analytics Battery Health Device Runtime History
+// Parameters:
+//  - value : Value to set for the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property.
+func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory(value []UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory)() {
+    m.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory = value
+}
+// Sets the userExperienceAnalyticsBatteryHealthModelPerformance property value. User Experience Analytics Battery Health Model Performance
+// Parameters:
+//  - value : Value to set for the userExperienceAnalyticsBatteryHealthModelPerformance property.
+func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthModelPerformance(value []UserExperienceAnalyticsBatteryHealthModelPerformance)() {
+    m.userExperienceAnalyticsBatteryHealthModelPerformance = value
+}
+// Sets the userExperienceAnalyticsBatteryHealthOsPerformance property value. User Experience Analytics Battery Health Os Performance
+// Parameters:
+//  - value : Value to set for the userExperienceAnalyticsBatteryHealthOsPerformance property.
+func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthOsPerformance(value []UserExperienceAnalyticsBatteryHealthOsPerformance)() {
+    m.userExperienceAnalyticsBatteryHealthOsPerformance = value
+}
+// Sets the userExperienceAnalyticsBatteryHealthRuntimeDetails property value. User Experience Analytics Battery Health Runtime Details
+// Parameters:
+//  - value : Value to set for the userExperienceAnalyticsBatteryHealthRuntimeDetails property.
+func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthRuntimeDetails(value *UserExperienceAnalyticsBatteryHealthRuntimeDetails)() {
+    m.userExperienceAnalyticsBatteryHealthRuntimeDetails = value
 }
 // Sets the userExperienceAnalyticsCategories property value. User experience analytics categories
 // Parameters:

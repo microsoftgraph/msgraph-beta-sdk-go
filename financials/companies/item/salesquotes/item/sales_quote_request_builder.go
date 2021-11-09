@@ -208,7 +208,7 @@ func (m *SalesQuoteRequestBuilder) PaymentTerm()(*i72ac360010a42d020b08044ba3e52
 func (m *SalesQuoteRequestBuilder) SalesQuoteLines()(*iff3796c5efae8359f95151c24f08603c4e641c88c6f20e5cee406c319745af8a.SalesQuoteLinesRequestBuilder) {
     return iff3796c5efae8359f95151c24f08603c4e641c88c6f20e5cee406c319745af8a.NewSalesQuoteLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.financials.companies.item.salesQuotes.item.salesQuoteLines.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuotes.item.salesQuoteLines.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SalesQuoteRequestBuilder) SalesQuoteLinesById(id string)(*id3852f54376c295ec4d02955c83253b69237fa6ba86eb2cdb39dbbf4b1afc4ce.SalesQuoteLineRequestBuilder) {

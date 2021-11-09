@@ -59,7 +59,7 @@ type MobileAppTroubleshootingEventRequestBuilderPatchOptions struct {
 func (m *MobileAppTroubleshootingEventRequestBuilder) AppLogCollectionRequests()(*i186343598b74b4f0042120f46cbd907b7e4c2196c2f23c1e8179ef22220cbe81.AppLogCollectionRequestsRequestBuilder) {
     return i186343598b74b4f0042120f46cbd907b7e4c2196c2f23c1e8179ef22220cbe81.NewAppLogCollectionRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.mobileAppTroubleshootingEvents.item.appLogCollectionRequests.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.mobileAppTroubleshootingEvents.item.appLogCollectionRequests.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MobileAppTroubleshootingEventRequestBuilder) AppLogCollectionRequestsById(id string)(*i218964fcc9466955dadf71cd5fce1c5388a1e7158b35708e1ae331a3990fa362.AppLogCollectionRequestRequestBuilder) {

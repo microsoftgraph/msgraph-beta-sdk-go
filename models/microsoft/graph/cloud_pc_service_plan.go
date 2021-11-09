@@ -7,17 +7,17 @@ import (
 // 
 type CloudPcServicePlan struct {
     Entity
-    // 
+    // The name for the service plan. Read-only.
     displayName *string;
-    // 
+    // The size of the RAM in GB. Read-only.
     ramInGB *int32;
-    // 
+    // The size of the OS Disk in GB. Read-only.
     storageInGB *int32;
-    // 
+    // The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
     type_escaped *CloudPcServicePlanType;
-    // 
+    // The size of the user profile disk in GB. Read-only.
     userProfileInGB *int32;
-    // 
+    // The number of vCPUs. Read-only.
     vCpuCount *int32;
 }
 // Instantiates a new cloudPcServicePlan and sets the default values.
@@ -27,7 +27,7 @@ func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     }
     return m
 }
-// Gets the displayName property value. 
+// Gets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *CloudPcServicePlan) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the ramInGB property value. 
+// Gets the ramInGB property value. The size of the RAM in GB. Read-only.
 func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
         return m.ramInGB
     }
 }
-// Gets the storageInGB property value. 
+// Gets the storageInGB property value. The size of the OS Disk in GB. Read-only.
 func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
         return m.storageInGB
     }
 }
-// Gets the type_escaped property value. 
+// Gets the type_escaped property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) GetType_escaped()(*CloudPcServicePlanType) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *CloudPcServicePlan) GetType_escaped()(*CloudPcServicePlanType) {
         return m.type_escaped
     }
 }
-// Gets the userProfileInGB property value. 
+// Gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
         return m.userProfileInGB
     }
 }
-// Gets the vCpuCount property value. 
+// Gets the vCpuCount property value. The number of vCPUs. Read-only.
 func (m *CloudPcServicePlan) GetVCpuCount()(*int32) {
     if m == nil {
         return nil
@@ -179,37 +179,37 @@ func (m *CloudPcServicePlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the displayName property value. 
+// Sets the displayName property value. The name for the service plan. Read-only.
 // Parameters:
 //  - value : Value to set for the displayName property.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the ramInGB property value. 
+// Sets the ramInGB property value. The size of the RAM in GB. Read-only.
 // Parameters:
 //  - value : Value to set for the ramInGB property.
 func (m *CloudPcServicePlan) SetRamInGB(value *int32)() {
     m.ramInGB = value
 }
-// Sets the storageInGB property value. 
+// Sets the storageInGB property value. The size of the OS Disk in GB. Read-only.
 // Parameters:
 //  - value : Value to set for the storageInGB property.
 func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
     m.storageInGB = value
 }
-// Sets the type_escaped property value. 
+// Sets the type_escaped property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 // Parameters:
 //  - value : Value to set for the type_escaped property.
 func (m *CloudPcServicePlan) SetType_escaped(value *CloudPcServicePlanType)() {
     m.type_escaped = value
 }
-// Sets the userProfileInGB property value. 
+// Sets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 // Parameters:
 //  - value : Value to set for the userProfileInGB property.
 func (m *CloudPcServicePlan) SetUserProfileInGB(value *int32)() {
     m.userProfileInGB = value
 }
-// Sets the vCpuCount property value. 
+// Sets the vCpuCount property value. The number of vCPUs. Read-only.
 // Parameters:
 //  - value : Value to set for the vCpuCount property.
 func (m *CloudPcServicePlan) SetVCpuCount(value *int32)() {

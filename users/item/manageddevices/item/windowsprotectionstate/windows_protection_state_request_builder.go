@@ -162,7 +162,7 @@ func (m *WindowsProtectionStateRequestBuilder) Delete(options *WindowsProtection
 func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareState()(*i7d799ec9df3d5c404eec113574d92a36c40d1176d5ba37bb9bbf6115c32cfd4a.DetectedMalwareStateRequestBuilder) {
     return i7d799ec9df3d5c404eec113574d92a36c40d1176d5ba37bb9bbf6115c32cfd4a.NewDetectedMalwareStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.users.item.managedDevices.item.windowsProtectionState.detectedMalwareState.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.managedDevices.item.windowsProtectionState.detectedMalwareState.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id string)(*i7c28f247d1352ac8e9e8461bd9fb2ffbf0472cfcabfbfd3171c743b4b6ce4e64.WindowsDeviceMalwareStateRequestBuilder) {

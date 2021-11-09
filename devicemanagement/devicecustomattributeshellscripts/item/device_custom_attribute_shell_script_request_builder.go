@@ -70,7 +70,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) Assign()(*i5860a2467c98
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) Assignments()(*i9caa21903d914933c04aab2668b67aaf07ff8c88530bbc0f796266bff7b47bb2.AssignmentsRequestBuilder) {
     return i9caa21903d914933c04aab2668b67aaf07ff8c88530bbc0f796266bff7b47bb2.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.deviceCustomAttributeShellScripts.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) AssignmentsById(id string)(*ife64bae8f85f9d9ffa4f9b0e1f47986455765630e26bfebb51ad049410aab2c6.DeviceManagementScriptAssignmentRequestBuilder) {
@@ -189,7 +189,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) Delete(options *DeviceC
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) DeviceRunStates()(*ib4c60324ec4c204995c1740d3c32783fe43242863d0216859b5414b0a63bd4a6.DeviceRunStatesRequestBuilder) {
     return ib4c60324ec4c204995c1740d3c32783fe43242863d0216859b5414b0a63bd4a6.NewDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.deviceCustomAttributeShellScripts.item.deviceRunStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.deviceRunStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) DeviceRunStatesById(id string)(*i868d4ff15f075e109c23674f69f3c9fe368b53fdc85733d5cad6217558ffb536.DeviceManagementScriptDeviceStateRequestBuilder) {
@@ -219,7 +219,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) Get(options *DeviceCust
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) GroupAssignments()(*i494c760a2f26845bb6a83e1609802c363f94efb574cc06272e4db09ffdd5950e.GroupAssignmentsRequestBuilder) {
     return i494c760a2f26845bb6a83e1609802c363f94efb574cc06272e4db09ffdd5950e.NewGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.deviceCustomAttributeShellScripts.item.groupAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.groupAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) GroupAssignmentsById(id string)(*i076188fa8b5444fe1eee63d44522c5efaa3b78288e012e2ab0e0bf58bc49a392.DeviceManagementScriptGroupAssignmentRequestBuilder) {
@@ -252,7 +252,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) RunSummary()(*i367a45f0
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) UserRunStates()(*ia6cd2ea0f3d71e372a080d28d01095fd6857f4d1b6250e215940436d6784cbba.UserRunStatesRequestBuilder) {
     return ia6cd2ea0f3d71e372a080d28d01095fd6857f4d1b6250e215940436d6784cbba.NewUserRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.deviceCustomAttributeShellScripts.item.userRunStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.userRunStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) UserRunStatesById(id string)(*i2d5a54257a3a154494e70602191b25e474f0eba5ac59afc7bbe7d9947af31558.DeviceManagementScriptUserStateRequestBuilder) {

@@ -62,7 +62,7 @@ type UnifiedRoleAssignmentMultipleRequestBuilderPatchOptions struct {
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) AppScopes()(*i9fbcca2aad84715b68bcf5e9b22ee6957d1813ee30a1a07b635e14deecf7a4c8.AppScopesRequestBuilder) {
     return i9fbcca2aad84715b68bcf5e9b22ee6957d1813ee30a1a07b635e14deecf7a4c8.NewAppScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.deviceManagement.roleAssignments.item.appScopes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.deviceManagement.roleAssignments.item.appScopes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) AppScopesById(id string)(*i4c3467330b742e9b38808f445f2b83de61398d9e7eb0c4191bdd72e252c98629.AppScopeRequestBuilder) {

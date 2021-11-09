@@ -78,7 +78,7 @@ type MessageRequestBuilderPatchOptions struct {
 func (m *MessageRequestBuilder) Attachments()(*ic7f35c75b6e62e54c20816e6b842b525069091b3705f0eda5abb2f06698b2e46.AttachmentsRequestBuilder) {
     return ic7f35c75b6e62e54c20816e6b842b525069091b3705f0eda5abb2f06698b2e46.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.messages.item.attachments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.messages.item.attachments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) AttachmentsById(id string)(*i9dfb9baf1034d4d76f7676658c28a48bb59e8a78be7fe78076e5c63c401df6ee.AttachmentRequestBuilder) {
@@ -218,7 +218,7 @@ func (m *MessageRequestBuilder) EventMessageRequest()(*iafe3c53978f020c73991af93
 func (m *MessageRequestBuilder) Extensions()(*ia02e177b92e83647b153fece558ac26faee0de4a3cf44fb885497858dc7ab92a.ExtensionsRequestBuilder) {
     return ia02e177b92e83647b153fece558ac26faee0de4a3cf44fb885497858dc7ab92a.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.messages.item.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.messages.item.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) ExtensionsById(id string)(*i492cbc6c0049fb5261ffb6826b11ec61ae24e4935436c10ef66e6d3adf6d07ed.ExtensionRequestBuilder) {
@@ -251,7 +251,7 @@ func (m *MessageRequestBuilder) Get(options *MessageRequestBuilderGetOptions)(*i
 func (m *MessageRequestBuilder) Mentions()(*i25d6ea23f29436bc3a139a769323a75062479cfc6f4911effd52f88f00991149.MentionsRequestBuilder) {
     return i25d6ea23f29436bc3a139a769323a75062479cfc6f4911effd52f88f00991149.NewMentionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.messages.item.mentions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.messages.item.mentions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) MentionsById(id string)(*i340f83e62384fa8614f95e359ba5bc4e913d7996b1fea9840ca4fbb8ab177ec8.MentionRequestBuilder) {
@@ -270,7 +270,7 @@ func (m *MessageRequestBuilder) Move()(*i3ffb0826c99fc33b6dcbba6441448cbc6a4ecc2
 func (m *MessageRequestBuilder) MultiValueExtendedProperties()(*iae74de854139dabd76aa9dccb352cc3ca74352ebd7b498cb514e46847b2a6d8c.MultiValueExtendedPropertiesRequestBuilder) {
     return iae74de854139dabd76aa9dccb352cc3ca74352ebd7b498cb514e46847b2a6d8c.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.messages.item.multiValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.messages.item.multiValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i5114ea7bc7e0bddf25a0022c76f1aa4ea041eb41634ed63956fb24a1c7417d21.MultiValueLegacyExtendedPropertyRequestBuilder) {
@@ -309,7 +309,7 @@ func (m *MessageRequestBuilder) Send()(*id409f9b5c6726c0f1e4f275d9c3ccf1d7a84bf2
 func (m *MessageRequestBuilder) SingleValueExtendedProperties()(*ia5ef716c57bbcc97067064429a1b0cabc40577038c19d17ec373d9d9d3acb49b.SingleValueExtendedPropertiesRequestBuilder) {
     return ia5ef716c57bbcc97067064429a1b0cabc40577038c19d17ec373d9d9d3acb49b.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.messages.item.singleValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.messages.item.singleValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i71a573e50c8dcf20dad2d6f95ff5ba431744934140f7d3c80ab47bf4e765775a.SingleValueLegacyExtendedPropertyRequestBuilder) {

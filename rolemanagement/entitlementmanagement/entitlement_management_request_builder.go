@@ -210,7 +210,7 @@ func (m *EntitlementManagementRequestBuilder) Patch(options *EntitlementManageme
 func (m *EntitlementManagementRequestBuilder) ResourceNamespaces()(*i75ab2bc44492a09208082e3507fb5b1add85563cc4e6f15226038f431107cc36.ResourceNamespacesRequestBuilder) {
     return i75ab2bc44492a09208082e3507fb5b1add85563cc4e6f15226038f431107cc36.NewResourceNamespacesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.resourceNamespaces.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.resourceNamespaces.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) ResourceNamespacesById(id string)(*ie58dbe4c0951e87ffefa6af6faabb1e4ad0651b2ea404363bfd8a2d38cc97a53.UnifiedRbacResourceNamespaceRequestBuilder) {
@@ -226,7 +226,7 @@ func (m *EntitlementManagementRequestBuilder) ResourceNamespacesById(id string)(
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentApprovals()(*idaef4275a9c6a8af3da51ed597b3772552b76155312fa2174e893913ec186b9e.RoleAssignmentApprovalsRequestBuilder) {
     return idaef4275a9c6a8af3da51ed597b3772552b76155312fa2174e893913ec186b9e.NewRoleAssignmentApprovalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleAssignmentApprovals.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleAssignmentApprovals.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentApprovalsById(id string)(*i94f6c4184f5f2637cb72ccacd72d05ca460673ced94157d6b941e79b19f921e8.ApprovalRequestBuilder) {
@@ -242,7 +242,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentApprovalsById(id str
 func (m *EntitlementManagementRequestBuilder) RoleAssignments()(*if94439b0eb19f66d0fe98bc2e50b7664597fad69cfac1e1132b6b13d328ae667.RoleAssignmentsRequestBuilder) {
     return if94439b0eb19f66d0fe98bc2e50b7664597fad69cfac1e1132b6b13d328ae667.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i2e767808e39342c5e075a8c93310b2c0591c0c806546f5b58190d82a94993717.UnifiedRoleAssignmentRequestBuilder) {
@@ -258,7 +258,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i2
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstances()(*ie577e072e7edde2d3f423e1ceb296400868e7f5e7bddbe2ee934c71bd8d1d637.RoleAssignmentScheduleInstancesRequestBuilder) {
     return ie577e072e7edde2d3f423e1ceb296400868e7f5e7bddbe2ee934c71bd8d1d637.NewRoleAssignmentScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleAssignmentScheduleInstances.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleAssignmentScheduleInstances.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstancesById(id string)(*i6f70cfe1f611776ca2d5cdc9b36b624ba1b69dda981099ccaaf42d45453807a7.UnifiedRoleAssignmentScheduleInstanceRequestBuilder) {
@@ -274,7 +274,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstancesByI
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequests()(*i8efb8a53874fa360f1b73def8f68e4e407323fb5958457abad962b8900d25355.RoleAssignmentScheduleRequestsRequestBuilder) {
     return i8efb8a53874fa360f1b73def8f68e4e407323fb5958457abad962b8900d25355.NewRoleAssignmentScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleAssignmentScheduleRequests.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleAssignmentScheduleRequests.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequestsById(id string)(*i1094763ed645fa459b11fe2fd0dbbb4cd5b4e5abf8fb494633f130f88a198ab7.UnifiedRoleAssignmentScheduleRequestRequestBuilder) {
@@ -290,7 +290,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequestsById
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedules()(*i1baa975bee8bc1fcf62ee7c7d05b837d65d8d022e7556de9e284932ea41c5624.RoleAssignmentSchedulesRequestBuilder) {
     return i1baa975bee8bc1fcf62ee7c7d05b837d65d8d022e7556de9e284932ea41c5624.NewRoleAssignmentSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleAssignmentSchedules.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleAssignmentSchedules.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedulesById(id string)(*ib97806c66498b497946ee83f7bb51d300c1952475468eabbe9d487576ab31775.UnifiedRoleAssignmentScheduleRequestBuilder) {
@@ -306,7 +306,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedulesById(id str
 func (m *EntitlementManagementRequestBuilder) RoleDefinitions()(*icfcbd750b986c89f05029c8a1c38ed5d1e850b098c1de07332c9c8f4dba9e621.RoleDefinitionsRequestBuilder) {
     return icfcbd750b986c89f05029c8a1c38ed5d1e850b098c1de07332c9c8f4dba9e621.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleDefinitions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleDefinitions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*ib2c51c75dd96d44353372f4ec3d1bd31e89c02a24c89600c2d3fb288758d1bf3.UnifiedRoleDefinitionRequestBuilder) {
@@ -322,7 +322,7 @@ func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*ib
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstances()(*ic74edb001b0ce5f97639bc39b485bc37fc8d4b308c0e093fb317822e211e74ab.RoleEligibilityScheduleInstancesRequestBuilder) {
     return ic74edb001b0ce5f97639bc39b485bc37fc8d4b308c0e093fb317822e211e74ab.NewRoleEligibilityScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleEligibilityScheduleInstances.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleEligibilityScheduleInstances.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstancesById(id string)(*icf1ccc36301949ddd8b0254d07f44b375f6f95d7adb58a22b17ccfc55ae25abc.UnifiedRoleEligibilityScheduleInstanceRequestBuilder) {
@@ -338,7 +338,7 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstancesBy
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequests()(*i5e09c2b6a4bc955be405d7fbb453204f96818f8aae7508864d080577c5491cd0.RoleEligibilityScheduleRequestsRequestBuilder) {
     return i5e09c2b6a4bc955be405d7fbb453204f96818f8aae7508864d080577c5491cd0.NewRoleEligibilityScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleEligibilityScheduleRequests.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleEligibilityScheduleRequests.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequestsById(id string)(*i1f3fe61534b224c6fac2a1c5c69508f0db3518d4530ee88be6548eae659bb75a.UnifiedRoleEligibilityScheduleRequestRequestBuilder) {
@@ -354,7 +354,7 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequestsByI
 func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedules()(*ia143a4210940ae95c6f24da8e1def30da0952553539019a9c5e037acaae6d536.RoleEligibilitySchedulesRequestBuilder) {
     return ia143a4210940ae95c6f24da8e1def30da0952553539019a9c5e037acaae6d536.NewRoleEligibilitySchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleEligibilitySchedules.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleEligibilitySchedules.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedulesById(id string)(*id9a0f06cc5af154fe717e7b85c2d5db50242eb2a5eb5b84cd9b6f2bfff25c1f4.UnifiedRoleEligibilityScheduleRequestBuilder) {

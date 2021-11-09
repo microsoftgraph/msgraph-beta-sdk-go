@@ -63,7 +63,7 @@ func (m *RoleScopeTagRequestBuilder) Assign()(*i75b21611d6b6b96c1c95e37193e653d7
 func (m *RoleScopeTagRequestBuilder) Assignments()(*iab305975e356746fe6505f00637e9813ac95de45da8b925112b990b92d6b0f57.AssignmentsRequestBuilder) {
     return iab305975e356746fe6505f00637e9813ac95de45da8b925112b990b92d6b0f57.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.roleScopeTags.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.roleScopeTags.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *RoleScopeTagRequestBuilder) AssignmentsById(id string)(*ic12c5ef80a8671db45da105570fcb6fe91462ab2daa7529a50e81a4c171aa147.RoleScopeTagAutoAssignmentRequestBuilder) {

@@ -62,7 +62,7 @@ type AccessPackageAssignmentResourceRoleRequestBuilderPatchOptions struct {
 func (m *AccessPackageAssignmentResourceRoleRequestBuilder) AccessPackageAssignments()(*i26c07098821d2428d56776da26513cdca68734e447b311019064d80b6adf9e22.AccessPackageAssignmentsRequestBuilder) {
     return i26c07098821d2428d56776da26513cdca68734e447b311019064d80b6adf9e22.NewAccessPackageAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageAssignmentResourceRoleRequestBuilder) AccessPackageAssignmentsById(id string)(*i25328578dde53176c3115ade96b65db1ca7756ff3daf0d9fa0d54589134a8b1f.AccessPackageAssignmentRequestBuilder) {

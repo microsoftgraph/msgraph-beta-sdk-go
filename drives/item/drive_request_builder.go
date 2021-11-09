@@ -72,7 +72,7 @@ type DriveRequestBuilderPatchOptions struct {
 func (m *DriveRequestBuilder) Activities()(*i57502ad1c70adde13f4f4191c9621344f90ed303c506bcfac62cc6e0f211be2f.ActivitiesRequestBuilder) {
     return i57502ad1c70adde13f4f4191c9621344f90ed303c506bcfac62cc6e0f211be2f.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.activities.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.activities.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) ActivitiesById(id string)(*ib301dcbbaf0fbf1ec225026dfd49aed454924f5c763fba68c72d04e8b817701e.ItemActivityOLDRequestBuilder) {
@@ -88,7 +88,7 @@ func (m *DriveRequestBuilder) ActivitiesById(id string)(*ib301dcbbaf0fbf1ec22502
 func (m *DriveRequestBuilder) Bundles()(*ie5ad7fd3da5b255316aa44176c2ac2f76115483b551789e79d599fe1a09af718.BundlesRequestBuilder) {
     return ie5ad7fd3da5b255316aa44176c2ac2f76115483b551789e79d599fe1a09af718.NewBundlesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.bundles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.bundles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) BundlesById(id string)(*ifcd10669d080989622673b9afdc2d4fc13b76538e8a7179f0887b9fb078584da.DriveItemRequestBuilder) {
@@ -207,7 +207,7 @@ func (m *DriveRequestBuilder) Delete(options *DriveRequestBuilderDeleteOptions)(
 func (m *DriveRequestBuilder) Following()(*i766cace85617fc30182532069c7098a07d81041ac72cd410a073786ca7d45111.FollowingRequestBuilder) {
     return i766cace85617fc30182532069c7098a07d81041ac72cd410a073786ca7d45111.NewFollowingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.following.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.following.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) FollowingById(id string)(*i2ad598655381501616b067740dbd6e99ee1ac52e664f55c88fbd4f908cb5ad17.DriveItemRequestBuilder) {
@@ -237,7 +237,7 @@ func (m *DriveRequestBuilder) Get(options *DriveRequestBuilderGetOptions)(*i5356
 func (m *DriveRequestBuilder) Items()(*ia54161ca01b96b4ea12e25e22325b7cb0b3cdd9294192cfbb560f72ea0db851c.ItemsRequestBuilder) {
     return ia54161ca01b96b4ea12e25e22325b7cb0b3cdd9294192cfbb560f72ea0db851c.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.items.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.items.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) ItemsById(id string)(*i8f091105e59b53a3e7170d648bf47128b9c71e68ca777e009b742a1fec950621.DriveItemRequestBuilder) {
@@ -287,7 +287,7 @@ func (m *DriveRequestBuilder) SharedWithMe()(*i1edeb1c46833b3c99f53e69de7b4d5594
 func (m *DriveRequestBuilder) Special()(*i80ad3ea091c56b67759525855e8ed8174db7bd7b55988fb87998e2088ca25d80.SpecialRequestBuilder) {
     return i80ad3ea091c56b67759525855e8ed8174db7bd7b55988fb87998e2088ca25d80.NewSpecialRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.special.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.special.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) SpecialById(id string)(*i30b8e702569d51cb08732e656d751cb44abd73ef6cd97f739a42e0e3b1c6e4c4.DriveItemRequestBuilder) {

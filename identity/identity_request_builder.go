@@ -62,7 +62,7 @@ type IdentityRequestBuilderPatchOptions struct {
 func (m *IdentityRequestBuilder) ApiConnectors()(*i11f22886c33eed99dd85e4d242bbf0976ec471e9e441cfa6a58b5864040bd094.ApiConnectorsRequestBuilder) {
     return i11f22886c33eed99dd85e4d242bbf0976ec471e9e441cfa6a58b5864040bd094.NewApiConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.apiConnectors.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.apiConnectors.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*id9b7138b09b41c1638c96829912584afe356128a86a38484a5041a342124094b.IdentityApiConnectorRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*id9b7138b09b41c16
 func (m *IdentityRequestBuilder) B2cUserFlows()(*i6635ff8f2aa1c074739a0c7312e2c31642186b9aadaa7290a91096bd632e192d.B2cUserFlowsRequestBuilder) {
     return i6635ff8f2aa1c074739a0c7312e2c31642186b9aadaa7290a91096bd632e192d.NewB2cUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.b2cUserFlows.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *IdentityRequestBuilder) B2cUserFlowsById(id string)(*i66a685596e55f332f9dea7615db3653de9c5945d4f7b70187e76b70ed8344761.B2cIdentityUserFlowRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *IdentityRequestBuilder) B2cUserFlowsById(id string)(*i66a685596e55f332f
 func (m *IdentityRequestBuilder) B2xUserFlows()(*ie614621c7e356610a3cda4707ec623ea542f5d84eaede8bc6ac868a655447bc5.B2xUserFlowsRequestBuilder) {
     return ie614621c7e356610a3cda4707ec623ea542f5d84eaede8bc6ac868a655447bc5.NewB2xUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.b2xUserFlows.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*i056de954ae8d2bd3c37cd62ab74e2a653c76cc631e79df2abe7d5423b433ad7f.B2xIdentityUserFlowRequestBuilder) {
@@ -200,7 +200,7 @@ func (m *IdentityRequestBuilder) Get(options *IdentityRequestBuilderGetOptions)(
 func (m *IdentityRequestBuilder) IdentityProviders()(*if8e62443e000757279f6963237e640c3a2f6bf54d567fb126a582ea7bac48a91.IdentityProvidersRequestBuilder) {
     return if8e62443e000757279f6963237e640c3a2f6bf54d567fb126a582ea7bac48a91.NewIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.identityProviders.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.identityProviders.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*i4064b0ed26ff7ac321cce776d8d90a08dbeca0d51fec9f75ba0ee4621fd09ffa.IdentityProviderBaseRequestBuilder) {
@@ -230,7 +230,7 @@ func (m *IdentityRequestBuilder) Patch(options *IdentityRequestBuilderPatchOptio
 func (m *IdentityRequestBuilder) UserFlowAttributes()(*iaa68fab70e5038f618ea9044bb8a9fbc651b67c06a35357c7b18c20d63880c85.UserFlowAttributesRequestBuilder) {
     return iaa68fab70e5038f618ea9044bb8a9fbc651b67c06a35357c7b18c20d63880c85.NewUserFlowAttributesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.userFlowAttributes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.userFlowAttributes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*i96fbb19ece75424f3a1291715def826b0b7091a7b004df122cb970e740300385.IdentityUserFlowAttributeRequestBuilder) {
@@ -246,7 +246,7 @@ func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*i96fbb19ece7
 func (m *IdentityRequestBuilder) UserFlows()(*i96c0428619bb9ada314a888efda4bc4c3bb5c55513e2cfaa28f956e608f98c45.UserFlowsRequestBuilder) {
     return i96c0428619bb9ada314a888efda4bc4c3bb5c55513e2cfaa28f956e608f98c45.NewUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identity.userFlows.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.userFlows.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *IdentityRequestBuilder) UserFlowsById(id string)(*i80b7576b721756e8211e557cb66927cff088fae6e30a6b5990e694f8c8938b4d.IdentityUserFlowRequestBuilder) {

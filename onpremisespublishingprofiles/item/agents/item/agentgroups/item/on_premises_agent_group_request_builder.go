@@ -61,7 +61,7 @@ type OnPremisesAgentGroupRequestBuilderPatchOptions struct {
 func (m *OnPremisesAgentGroupRequestBuilder) Agents()(*ia1f378fe0766dfc5dfea6349a05cfa28f3e62a895660c36f63e44f99148d8843.AgentsRequestBuilder) {
     return ia1f378fe0766dfc5dfea6349a05cfa28f3e62a895660c36f63e44f99148d8843.NewAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.agents.item.agentGroups.item.agents.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item.agentGroups.item.agents.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnPremisesAgentGroupRequestBuilder) AgentsById(id string)(*i7e840fa7b37fef7aff16c31565cd806fb2481b9e74e26cb7fc98957b305799d2.OnPremisesAgentRequestBuilder) {
@@ -208,7 +208,7 @@ func (m *OnPremisesAgentGroupRequestBuilder) Patch(options *OnPremisesAgentGroup
 func (m *OnPremisesAgentGroupRequestBuilder) PublishedResources()(*i367fc7ef9476d66e888e14fa6e12431f82d47aa2a5ba37259681d082c71d1533.PublishedResourcesRequestBuilder) {
     return i367fc7ef9476d66e888e14fa6e12431f82d47aa2a5ba37259681d082c71d1533.NewPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.agents.item.agentGroups.item.publishedResources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item.agentGroups.item.publishedResources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnPremisesAgentGroupRequestBuilder) PublishedResourcesById(id string)(*ifae56f8c6511fee3e2bb5415d36058ab3f529b5629909455a1b4b59c293a0479.PublishedResourceRequestBuilder) {

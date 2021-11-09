@@ -30,6 +30,8 @@ type DirectoryAudit struct {
     resultReason *string;
     // Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
     targetResources []TargetResource;
+    // 
+    userAgent *string;
 }
 // Instantiates a new directoryAudit and sets the default values.
 func NewDirectoryAudit()(*DirectoryAudit) {
@@ -124,6 +126,14 @@ func (m *DirectoryAudit) GetTargetResources()([]TargetResource) {
         return nil
     } else {
         return m.targetResources
+    }
+}
+// Gets the userAgent property value. 
+func (m *DirectoryAudit) GetUserAgent()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userAgent
     }
 }
 // The deserialization information for the current model
@@ -226,6 +236,14 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         m.SetTargetResources(res)
         return nil
     }
+    res["userAgent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        m.SetUserAgent(val)
+        return nil
+    }
     return res
 }
 func (m *DirectoryAudit) IsNil()(bool) {
@@ -316,6 +334,12 @@ func (m *DirectoryAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("userAgent", m.GetUserAgent())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // Sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -383,4 +407,10 @@ func (m *DirectoryAudit) SetResultReason(value *string)() {
 //  - value : Value to set for the targetResources property.
 func (m *DirectoryAudit) SetTargetResources(value []TargetResource)() {
     m.targetResources = value
+}
+// Sets the userAgent property value. 
+// Parameters:
+//  - value : Value to set for the userAgent property.
+func (m *DirectoryAudit) SetUserAgent(value *string)() {
+    m.userAgent = value
 }

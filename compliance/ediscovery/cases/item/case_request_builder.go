@@ -166,7 +166,7 @@ func (m *CaseRequestBuilder) CreatePatchRequestInformation(options *CaseRequestB
 func (m *CaseRequestBuilder) Custodians()(*i7ee9cd47ece1636db5f23d48461a1f54657a90bc6e0ee26ce62b3d5e84e35d9a.CustodiansRequestBuilder) {
     return i7ee9cd47ece1636db5f23d48461a1f54657a90bc6e0ee26ce62b3d5e84e35d9a.NewCustodiansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.custodians.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CaseRequestBuilder) CustodiansById(id string)(*i6f12c740d8ad4a07e1c35e99570b5c006a24cd6710fc2378825d45f2cebe46e6.CustodianRequestBuilder) {
@@ -210,7 +210,7 @@ func (m *CaseRequestBuilder) Get(options *CaseRequestBuilderGetOptions)(*i535684
 func (m *CaseRequestBuilder) LegalHolds()(*i7e8c62f91304400acff09ffefec4fe5fc66f1640b9a230f33487eb271fea144f.LegalHoldsRequestBuilder) {
     return i7e8c62f91304400acff09ffefec4fe5fc66f1640b9a230f33487eb271fea144f.NewLegalHoldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.legalHolds.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.legalHolds.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CaseRequestBuilder) LegalHoldsById(id string)(*ia8b23b6ab36c2b10209f024c3f8396df9a37f4b7c7dbf0cdcc02383064607d36.LegalHoldRequestBuilder) {
@@ -226,7 +226,7 @@ func (m *CaseRequestBuilder) LegalHoldsById(id string)(*ia8b23b6ab36c2b10209f024
 func (m *CaseRequestBuilder) NoncustodialDataSources()(*ibce968213312dcf70b6cebf357574ebaff57289bb8d2d5537d0fd2e4c8f604ea.NoncustodialDataSourcesRequestBuilder) {
     return ibce968213312dcf70b6cebf357574ebaff57289bb8d2d5537d0fd2e4c8f604ea.NewNoncustodialDataSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.noncustodialDataSources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.noncustodialDataSources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CaseRequestBuilder) NoncustodialDataSourcesById(id string)(*i2d904c4ba0f64303f7ec694166a350f070305a6d3282664966c3c7ee03bee849.NoncustodialDataSourceRequestBuilder) {
@@ -242,7 +242,7 @@ func (m *CaseRequestBuilder) NoncustodialDataSourcesById(id string)(*i2d904c4ba0
 func (m *CaseRequestBuilder) Operations()(*i2ba9e3b5dde4370f9d4ee21032c5d1cf837c8172fdd1c29a522a55e73f42e955.OperationsRequestBuilder) {
     return i2ba9e3b5dde4370f9d4ee21032c5d1cf837c8172fdd1c29a522a55e73f42e955.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CaseRequestBuilder) OperationsById(id string)(*i85cba7b9ace1e93810a0e9c5210f57fed67ca0ac127d57c09a74eadcbfe393df.CaseOperationRequestBuilder) {
@@ -275,7 +275,7 @@ func (m *CaseRequestBuilder) Reopen()(*i01f2133292f0b08e5c7ad62ad1a919908e250568
 func (m *CaseRequestBuilder) ReviewSets()(*ie37f7b6846339f3be72955eebac7b1a5f9a9b0e6768d7276f5894199b0fc4e64.ReviewSetsRequestBuilder) {
     return ie37f7b6846339f3be72955eebac7b1a5f9a9b0e6768d7276f5894199b0fc4e64.NewReviewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.reviewSets.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.reviewSets.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CaseRequestBuilder) ReviewSetsById(id string)(*i6c4f9c432182d1a8383e210ea7282204df1fd76b96287e8d3e0ac99ac798c705.ReviewSetRequestBuilder) {
@@ -294,7 +294,7 @@ func (m *CaseRequestBuilder) Settings()(*ib38135aba802e63a95783cb40679431dfd8b0b
 func (m *CaseRequestBuilder) SourceCollections()(*i5a4461258b51ae222704978e5dc6e8b0f90af958cbbfe0291aa23989e511468b.SourceCollectionsRequestBuilder) {
     return i5a4461258b51ae222704978e5dc6e8b0f90af958cbbfe0291aa23989e511468b.NewSourceCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.sourceCollections.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.sourceCollections.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CaseRequestBuilder) SourceCollectionsById(id string)(*i700c8523a708bdda9b2320cf511ec749704101f5da23584bcca53db2919ad351.SourceCollectionRequestBuilder) {
@@ -310,7 +310,7 @@ func (m *CaseRequestBuilder) SourceCollectionsById(id string)(*i700c8523a708bdda
 func (m *CaseRequestBuilder) Tags()(*ibf27493a3efa3e33589ec8953bae196df0f5b31cd7f0010efe7b3550bdd8d64b.TagsRequestBuilder) {
     return ibf27493a3efa3e33589ec8953bae196df0f5b31cd7f0010efe7b3550bdd8d64b.NewTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.tags.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.tags.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CaseRequestBuilder) TagsById(id string)(*i71c6b856224a9a329639e731310314e9aaa3c89985c5bf77e3adab5540d605e7.TagRequestBuilder) {

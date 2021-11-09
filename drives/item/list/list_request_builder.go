@@ -68,7 +68,7 @@ type ListRequestBuilderPatchOptions struct {
 func (m *ListRequestBuilder) Activities()(*ic7ac1062584b45359ea2ca21560d1896ce081d0787c5ad76e8810dd7d12f47a6.ActivitiesRequestBuilder) {
     return ic7ac1062584b45359ea2ca21560d1896ce081d0787c5ad76e8810dd7d12f47a6.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.list.activities.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.list.activities.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ActivitiesById(id string)(*ic6aa6f1d9d4cfd6e95be88447503f291b59998d7a6197a071f773049847458a8.ItemActivityOLDRequestBuilder) {
@@ -84,7 +84,7 @@ func (m *ListRequestBuilder) ActivitiesById(id string)(*ic6aa6f1d9d4cfd6e95be884
 func (m *ListRequestBuilder) Columns()(*ic2ffaaa4c45cb050337e17bffa8e9e570c425d2bdbc32ffa3f4f20174d8584f4.ColumnsRequestBuilder) {
     return ic2ffaaa4c45cb050337e17bffa8e9e570c425d2bdbc32ffa3f4f20174d8584f4.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.list.columns.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.list.columns.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ColumnsById(id string)(*i19e80f4d1e56025acb195480cb0d830d9d2555bbd4658dd0c0f6d4debb627d6c.ColumnDefinitionRequestBuilder) {
@@ -125,7 +125,7 @@ func NewListRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
 func (m *ListRequestBuilder) ContentTypes()(*i43d48455d4a3f90f42f7efb37baeed2ed81beefe0ecd17a3198b2e7e74cb37e9.ContentTypesRequestBuilder) {
     return i43d48455d4a3f90f42f7efb37baeed2ed81beefe0ecd17a3198b2e7e74cb37e9.NewContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.list.contentTypes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.list.contentTypes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ContentTypesById(id string)(*i8848c51df74f0989f6c22e145c2ee13b413f255dbd7be95258420ca5d687fd44.ContentTypeRequestBuilder) {
@@ -236,7 +236,7 @@ func (m *ListRequestBuilder) Get(options *ListRequestBuilderGetOptions)(*i535684
 func (m *ListRequestBuilder) Items()(*ie4c04524750ad89f45c079100aec7678e2c748e6ebaa485ab81bc9fbac539aa7.ItemsRequestBuilder) {
     return ie4c04524750ad89f45c079100aec7678e2c748e6ebaa485ab81bc9fbac539aa7.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.list.items.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.list.items.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ItemsById(id string)(*i6d9fa267ba65ffc69588b5404ba4f8366dc0856106861fc7605e3228178bafa8.ListItemRequestBuilder) {
@@ -266,7 +266,7 @@ func (m *ListRequestBuilder) Patch(options *ListRequestBuilderPatchOptions)(erro
 func (m *ListRequestBuilder) Subscriptions()(*i616acf5322905d44724a74277658e2fbb29de886ec41936610c9749a797d2c1e.SubscriptionsRequestBuilder) {
     return i616acf5322905d44724a74277658e2fbb29de886ec41936610c9749a797d2c1e.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.drives.item.list.subscriptions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.list.subscriptions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) SubscriptionsById(id string)(*ia59fbfe37a44fd2bc2fa238f5b2ad8db05da0c21b1f29efe1fb2808d1a63369e.SubscriptionRequestBuilder) {

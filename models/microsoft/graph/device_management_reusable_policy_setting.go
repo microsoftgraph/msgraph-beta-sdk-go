@@ -16,7 +16,7 @@ type DeviceManagementReusablePolicySetting struct {
     displayName *string;
     // date and time when reusable setting was last modified. This property is read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // configuration policies referencing the current reusable setting
+    // configuration policies referencing the current reusable setting. This property is read-only.
     referencingConfigurationPolicies []DeviceManagementConfigurationPolicy;
     // count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
     referencingConfigurationPolicyCount *int32;
@@ -66,7 +66,7 @@ func (m *DeviceManagementReusablePolicySetting) GetLastModifiedDateTime()(*i3360
         return m.lastModifiedDateTime
     }
 }
-// Gets the referencingConfigurationPolicies property value. configuration policies referencing the current reusable setting
+// Gets the referencingConfigurationPolicies property value. configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementReusablePolicySetting) GetReferencingConfigurationPolicies()([]DeviceManagementConfigurationPolicy) {
     if m == nil {
         return nil
@@ -283,7 +283,7 @@ func (m *DeviceManagementReusablePolicySetting) SetDisplayName(value *string)() 
 func (m *DeviceManagementReusablePolicySetting) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the referencingConfigurationPolicies property value. configuration policies referencing the current reusable setting
+// Sets the referencingConfigurationPolicies property value. configuration policies referencing the current reusable setting. This property is read-only.
 // Parameters:
 //  - value : Value to set for the referencingConfigurationPolicies property.
 func (m *DeviceManagementReusablePolicySetting) SetReferencingConfigurationPolicies(value []DeviceManagementConfigurationPolicy)() {

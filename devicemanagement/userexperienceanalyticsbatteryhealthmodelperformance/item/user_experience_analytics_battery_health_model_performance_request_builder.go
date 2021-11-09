@@ -6,8 +6,8 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\riskyUsers\{riskyUser-id}
-type RiskyUserRequestBuilder struct {
+// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthModelPerformance\{userExperienceAnalyticsBatteryHealthModelPerformance-id}
+type UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
@@ -16,7 +16,7 @@ type RiskyUserRequestBuilder struct {
     urlTemplate string;
 }
 // Options for Delete
-type RiskyUserRequestBuilderDeleteOptions struct {
+type UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
     // Request options
@@ -25,18 +25,18 @@ type RiskyUserRequestBuilderDeleteOptions struct {
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // Options for Get
-type RiskyUserRequestBuilderGetOptions struct {
+type UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
     // Request options
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Request query parameters
-    Q *RiskyUserRequestBuilderGetQueryParameters;
+    Q *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of users flagged for risk across managed tenants.
-type RiskyUserRequestBuilderGetQueryParameters struct {
+// User Experience Analytics Battery Health Model Performance
+type UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Expand related entities
     Expand []string;
@@ -44,9 +44,9 @@ type RiskyUserRequestBuilderGetQueryParameters struct {
     Select_escaped []string;
 }
 // Options for Patch
-type RiskyUserRequestBuilderPatchOptions struct {
+type UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser;
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformance;
     // Request headers
     H map[string]string;
     // Request options
@@ -54,14 +54,14 @@ type RiskyUserRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RiskyUserRequestBuilder and sets the default values.
+// Instantiates a new UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder and sets the default values.
 // Parameters:
 //  - pathParameters : Path parameters for the request
 //  - requestAdapter : The request adapter to use to execute the requests.
-func NewRiskyUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUserRequestBuilder) {
-    m := &RiskyUserRequestBuilder{
+func NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) {
+    m := &UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/riskyUsers/{riskyUser_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthModelPerformance/{userExperienceAnalyticsBatteryHealthModelPerformance_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -70,19 +70,19 @@ func NewRiskyUserRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RiskyUserRequestBuilder and sets the default values.
+// Instantiates a new UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder and sets the default values.
 // Parameters:
 //  - rawUrl : The raw URL to use for the request builder.
 //  - requestAdapter : The request adapter to use to execute the requests.
-func NewRiskyUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUserRequestBuilder) {
+func NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRiskyUserRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of users flagged for risk across managed tenants.
+// User Experience Analytics Battery Health Model Performance
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUserRequestBuilder) CreateDeleteRequestInformation(options *RiskyUserRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -98,10 +98,10 @@ func (m *RiskyUserRequestBuilder) CreateDeleteRequestInformation(options *RiskyU
     }
     return requestInfo, nil
 }
-// The collection of users flagged for risk across managed tenants.
+// User Experience Analytics Battery Health Model Performance
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUserRequestBuilder) CreateGetRequestInformation(options *RiskyUserRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -123,10 +123,10 @@ func (m *RiskyUserRequestBuilder) CreateGetRequestInformation(options *RiskyUser
     }
     return requestInfo, nil
 }
-// The collection of users flagged for risk across managed tenants.
+// User Experience Analytics Battery Health Model Performance
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUserRequestBuilder) CreatePatchRequestInformation(options *RiskyUserRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -143,10 +143,10 @@ func (m *RiskyUserRequestBuilder) CreatePatchRequestInformation(options *RiskyUs
     }
     return requestInfo, nil
 }
-// The collection of users flagged for risk across managed tenants.
+// User Experience Analytics Battery Health Model Performance
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUserRequestBuilder) Delete(options *RiskyUserRequestBuilderDeleteOptions)(error) {
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Delete(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
@@ -157,24 +157,24 @@ func (m *RiskyUserRequestBuilder) Delete(options *RiskyUserRequestBuilderDeleteO
     }
     return nil
 }
-// The collection of users flagged for risk across managed tenants.
+// User Experience Analytics Battery Health Model Performance
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUserRequestBuilder) Get(options *RiskyUserRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser, error) {
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewRiskyUser() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsBatteryHealthModelPerformance() }, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser), nil
+    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformance), nil
 }
-// The collection of users flagged for risk across managed tenants.
+// User Experience Analytics Battery Health Model Performance
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUserRequestBuilder) Patch(options *RiskyUserRequestBuilderPatchOptions)(error) {
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Patch(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err

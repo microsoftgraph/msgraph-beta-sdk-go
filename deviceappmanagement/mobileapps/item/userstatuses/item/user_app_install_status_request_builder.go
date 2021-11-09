@@ -166,7 +166,7 @@ func (m *UserAppInstallStatusRequestBuilder) Delete(options *UserAppInstallStatu
 func (m *UserAppInstallStatusRequestBuilder) DeviceStatuses()(*i70fe0c8c492862237342af1645c6716e74e8d1fc6bd0dcea8a7c03a1aae69df5.DeviceStatusesRequestBuilder) {
     return i70fe0c8c492862237342af1645c6716e74e8d1fc6bd0dcea8a7c03a1aae69df5.NewDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceAppManagement.mobileApps.item.userStatuses.item.deviceStatuses.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.mobileApps.item.userStatuses.item.deviceStatuses.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserAppInstallStatusRequestBuilder) DeviceStatusesById(id string)(*i52b737a53d0c03e6a268168d1f82ff2bdff242cee05a2ee607462da8e246d8ba.MobileAppInstallStatusRequestBuilder) {

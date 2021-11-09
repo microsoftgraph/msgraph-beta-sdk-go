@@ -80,7 +80,7 @@ func (m *CallRequestBuilder) Answer()(*i7b15e8c80b7aa50a0151a753f97ef7289d177919
 func (m *CallRequestBuilder) AudioRoutingGroups()(*ic54ac4adcd492f82a003801c0ce35301e9f04c5676f80853066311daf9c569da.AudioRoutingGroupsRequestBuilder) {
     return ic54ac4adcd492f82a003801c0ce35301e9f04c5676f80853066311daf9c569da.NewAudioRoutingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.communications.calls.item.audioRoutingGroups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.calls.item.audioRoutingGroups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CallRequestBuilder) AudioRoutingGroupsById(id string)(*i151a479d1626e685450cad3f10b2ae807a5841c52441c261bfec932663c91e9f.AudioRoutingGroupRequestBuilder) {
@@ -225,7 +225,7 @@ func (m *CallRequestBuilder) Mute()(*i2ad07b1a9d626a23f6fb4c6980016bdfa914275068
 func (m *CallRequestBuilder) Operations()(*i8659ea4008fd7459c7570b3b977a99568235e5600beaac36764abf7a09a1c6a2.OperationsRequestBuilder) {
     return i8659ea4008fd7459c7570b3b977a99568235e5600beaac36764abf7a09a1c6a2.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.communications.calls.item.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.calls.item.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CallRequestBuilder) OperationsById(id string)(*ifc54b1625a5ef155b182402b189053da9800796fb7507ed629f84919426791d1.CommsOperationRequestBuilder) {
@@ -241,7 +241,7 @@ func (m *CallRequestBuilder) OperationsById(id string)(*ifc54b1625a5ef155b182402
 func (m *CallRequestBuilder) Participants()(*if78246d1256eb5bc7db2b2c1dcd3d9daaa6de508f121f6f0bb97fcc022fe09f5.ParticipantsRequestBuilder) {
     return if78246d1256eb5bc7db2b2c1dcd3d9daaa6de508f121f6f0bb97fcc022fe09f5.NewParticipantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.communications.calls.item.participants.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.calls.item.participants.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CallRequestBuilder) ParticipantsById(id string)(*ie3ddf2285119a257859e618e7d13130592dc1f6e886e271f46d05000453bffd2.ParticipantRequestBuilder) {

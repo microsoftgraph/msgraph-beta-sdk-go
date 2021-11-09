@@ -67,7 +67,7 @@ type OnPremisesPublishingProfileRequestBuilderPatchOptions struct {
 func (m *OnPremisesPublishingProfileRequestBuilder) AgentGroups()(*i4f4a2aad6de6e818a6b03ab06593dcd209fd37f696b126badf1ccf2cbb487d98.AgentGroupsRequestBuilder) {
     return i4f4a2aad6de6e818a6b03ab06593dcd209fd37f696b126badf1ccf2cbb487d98.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.agentGroups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnPremisesPublishingProfileRequestBuilder) AgentGroupsById(id string)(*i7be5eb505c9819935bb7ecd0914ce542aff26ebb696b731e5bb2ef462b429317.OnPremisesAgentGroupRequestBuilder) {
@@ -83,7 +83,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) AgentGroupsById(id string)(*
 func (m *OnPremisesPublishingProfileRequestBuilder) Agents()(*i4c54046d8ca87c2d4d86246e027b33b58926116766af2be55ea00fe765476f06.AgentsRequestBuilder) {
     return i4c54046d8ca87c2d4d86246e027b33b58926116766af2be55ea00fe765476f06.NewAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.agents.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnPremisesPublishingProfileRequestBuilder) AgentsById(id string)(*i50192dbecdd2d205018f1c9f0d43e5faa1231c597c1e3d9879fb3bfcceb8f7bf.OnPremisesAgentRequestBuilder) {
@@ -99,7 +99,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) AgentsById(id string)(*i5019
 func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorGroups()(*i015798be98f5354e44d25cd3fc8c761a04c2de377021e2334f9f574c0b9d9d50.ConnectorGroupsRequestBuilder) {
     return i015798be98f5354e44d25cd3fc8c761a04c2de377021e2334f9f574c0b9d9d50.NewConnectorGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.connectorGroups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorGroupsById(id string)(*i4e613208e03a8604c73cff8fea0c650341897927012dab6031821bf1b1ae2305.ConnectorGroupRequestBuilder) {
@@ -115,7 +115,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorGroupsById(id strin
 func (m *OnPremisesPublishingProfileRequestBuilder) Connectors()(*i86c4967a04a253d001f5fd0f5c1dd90bb7ff7141cd43dab8638d3f8ddaff0d58.ConnectorsRequestBuilder) {
     return i86c4967a04a253d001f5fd0f5c1dd90bb7ff7141cd43dab8638d3f8ddaff0d58.NewConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.connectors.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectors.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorsById(id string)(*ia6c25f4c749e8beb990221d7c4363a8d4383190388b2db9197c94a520cdfffde.ConnectorRequestBuilder) {
@@ -262,7 +262,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) Patch(options *OnPremisesPub
 func (m *OnPremisesPublishingProfileRequestBuilder) PublishedResources()(*if08fda1a25bbc0d180dcba2e00721696a53ac148a9d4209b397df9ba1382eb6f.PublishedResourcesRequestBuilder) {
     return if08fda1a25bbc0d180dcba2e00721696a53ac148a9d4209b397df9ba1382eb6f.NewPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.publishedResources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.publishedResources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnPremisesPublishingProfileRequestBuilder) PublishedResourcesById(id string)(*i04768df19176575e14a7cad44b0f47526794459b68db53ab71668e3192948132.PublishedResourceRequestBuilder) {

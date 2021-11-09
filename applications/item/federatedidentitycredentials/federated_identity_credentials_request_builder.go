@@ -1,4 +1,4 @@
-package riskyusers
+package federatedidentitycredentials
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
@@ -6,8 +6,8 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\riskyUsers
-type RiskyUsersRequestBuilder struct {
+// Builds and executes requests for operations under \applications\{application-id}\federatedIdentityCredentials
+type FederatedIdentityCredentialsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
@@ -16,18 +16,18 @@ type RiskyUsersRequestBuilder struct {
     urlTemplate string;
 }
 // Options for Get
-type RiskyUsersRequestBuilderGetOptions struct {
+type FederatedIdentityCredentialsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
     // Request options
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Request query parameters
-    Q *RiskyUsersRequestBuilderGetQueryParameters;
+    Q *FederatedIdentityCredentialsRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of users flagged for risk across managed tenants.
-type RiskyUsersRequestBuilderGetQueryParameters struct {
+// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+type FederatedIdentityCredentialsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Include count of items
     Count *bool;
@@ -47,9 +47,9 @@ type RiskyUsersRequestBuilderGetQueryParameters struct {
     Top *int32;
 }
 // Options for Post
-type RiskyUsersRequestBuilderPostOptions struct {
+type FederatedIdentityCredentialsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser;
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FederatedIdentityCredential;
     // Request headers
     H map[string]string;
     // Request options
@@ -57,14 +57,14 @@ type RiskyUsersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RiskyUsersRequestBuilder and sets the default values.
+// Instantiates a new FederatedIdentityCredentialsRequestBuilder and sets the default values.
 // Parameters:
 //  - pathParameters : Path parameters for the request
 //  - requestAdapter : The request adapter to use to execute the requests.
-func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUsersRequestBuilder) {
-    m := &RiskyUsersRequestBuilder{
+func NewFederatedIdentityCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FederatedIdentityCredentialsRequestBuilder) {
+    m := &FederatedIdentityCredentialsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/riskyUsers{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/applications/{application_id}/federatedIdentityCredentials{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -73,19 +73,19 @@ func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RiskyUsersRequestBuilder and sets the default values.
+// Instantiates a new FederatedIdentityCredentialsRequestBuilder and sets the default values.
 // Parameters:
 //  - rawUrl : The raw URL to use for the request builder.
 //  - requestAdapter : The request adapter to use to execute the requests.
-func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUsersRequestBuilder) {
+func NewFederatedIdentityCredentialsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FederatedIdentityCredentialsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRiskyUsersRequestBuilderInternal(urlParams, requestAdapter)
+    return NewFederatedIdentityCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of users flagged for risk across managed tenants.
+// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation(options *RiskyUsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+func (m *FederatedIdentityCredentialsRequestBuilder) CreateGetRequestInformation(options *FederatedIdentityCredentialsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -107,10 +107,10 @@ func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation(options *RiskyUse
     }
     return requestInfo, nil
 }
-// The collection of users flagged for risk across managed tenants.
+// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(options *RiskyUsersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+func (m *FederatedIdentityCredentialsRequestBuilder) CreatePostRequestInformation(options *FederatedIdentityCredentialsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -127,31 +127,31 @@ func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(options *RiskyUs
     }
     return requestInfo, nil
 }
-// The collection of users flagged for risk across managed tenants.
+// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUsersRequestBuilder) Get(options *RiskyUsersRequestBuilderGetOptions)(*RiskyUsersResponse, error) {
+func (m *FederatedIdentityCredentialsRequestBuilder) Get(options *FederatedIdentityCredentialsRequestBuilderGetOptions)(*FederatedIdentityCredentialsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRiskyUsersResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFederatedIdentityCredentialsResponse() }, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*RiskyUsersResponse), nil
+    return res.(*FederatedIdentityCredentialsResponse), nil
 }
-// The collection of users flagged for risk across managed tenants.
+// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 // Parameters:
 //  - options : Options for the request
-func (m *RiskyUsersRequestBuilder) Post(options *RiskyUsersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser, error) {
+func (m *FederatedIdentityCredentialsRequestBuilder) Post(options *FederatedIdentityCredentialsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FederatedIdentityCredential, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewRiskyUser() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewFederatedIdentityCredential() }, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser), nil
+    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FederatedIdentityCredential), nil
 }

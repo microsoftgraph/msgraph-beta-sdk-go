@@ -23,7 +23,7 @@ type BookingService struct {
     description *string;
     // True means this service is not available to customers for booking.
     isHiddenFromCustomers *bool;
-    // 
+    // True indicates that the appointments for the service will be held online. Default value is false.
     isLocationOnline *bool;
     // Additional information about this service.
     notes *string;
@@ -33,11 +33,11 @@ type BookingService struct {
     preBuffer *string;
     // The set of policies that determine how appointments for this type of service should be created and managed.
     schedulingPolicy *BookingSchedulingPolicy;
-    // 
+    // True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
     smsNotificationsEnabled *bool;
     // Represents those staff members who provide this service.
     staffMemberIds []string;
-    // The URL of the booking service.
+    // The URL a customer uses to access the service.
     webUrl *string;
 }
 // Instantiates a new bookingService and sets the default values.
@@ -111,7 +111,7 @@ func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
         return m.isHiddenFromCustomers
     }
 }
-// Gets the isLocationOnline property value. 
+// Gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
 func (m *BookingService) GetIsLocationOnline()(*bool) {
     if m == nil {
         return nil
@@ -151,7 +151,7 @@ func (m *BookingService) GetSchedulingPolicy()(*BookingSchedulingPolicy) {
         return m.schedulingPolicy
     }
 }
-// Gets the smsNotificationsEnabled property value. 
+// Gets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
 func (m *BookingService) GetSmsNotificationsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -167,7 +167,7 @@ func (m *BookingService) GetStaffMemberIds()([]string) {
         return m.staffMemberIds
     }
 }
-// Gets the webUrl property value. The URL of the booking service.
+// Gets the webUrl property value. The URL a customer uses to access the service.
 func (m *BookingService) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -480,7 +480,7 @@ func (m *BookingService) SetDescription(value *string)() {
 func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
     m.isHiddenFromCustomers = value
 }
-// Sets the isLocationOnline property value. 
+// Sets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
 // Parameters:
 //  - value : Value to set for the isLocationOnline property.
 func (m *BookingService) SetIsLocationOnline(value *bool)() {
@@ -510,7 +510,7 @@ func (m *BookingService) SetPreBuffer(value *string)() {
 func (m *BookingService) SetSchedulingPolicy(value *BookingSchedulingPolicy)() {
     m.schedulingPolicy = value
 }
-// Sets the smsNotificationsEnabled property value. 
+// Sets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
 // Parameters:
 //  - value : Value to set for the smsNotificationsEnabled property.
 func (m *BookingService) SetSmsNotificationsEnabled(value *bool)() {
@@ -522,7 +522,7 @@ func (m *BookingService) SetSmsNotificationsEnabled(value *bool)() {
 func (m *BookingService) SetStaffMemberIds(value []string)() {
     m.staffMemberIds = value
 }
-// Sets the webUrl property value. The URL of the booking service.
+// Sets the webUrl property value. The URL a customer uses to access the service.
 // Parameters:
 //  - value : Value to set for the webUrl property.
 func (m *BookingService) SetWebUrl(value *string)() {

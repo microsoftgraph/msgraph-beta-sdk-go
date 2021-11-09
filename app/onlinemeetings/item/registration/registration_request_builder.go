@@ -150,7 +150,7 @@ func (m *RegistrationRequestBuilder) CreatePatchRequestInformation(options *Regi
 func (m *RegistrationRequestBuilder) CustomQuestions()(*i319d65f6c34b3fc2ed3543b9da4ffd50724671e1d8c1448e35dab886365ee566.CustomQuestionsRequestBuilder) {
     return i319d65f6c34b3fc2ed3543b9da4ffd50724671e1d8c1448e35dab886365ee566.NewCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.app.onlineMeetings.item.registration.customQuestions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.onlineMeetings.item.registration.customQuestions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*i1e3e5e104931ac0fdec551f3570e723ef72d8298672e117c6541fc33bb340f2e.MeetingRegistrationQuestionRequestBuilder) {
@@ -208,7 +208,7 @@ func (m *RegistrationRequestBuilder) Patch(options *RegistrationRequestBuilderPa
 func (m *RegistrationRequestBuilder) Registrants()(*id6cc9fa5871bc7bc0f0cdb14eefb4c23aab98b3f48d589f2b88c26747ddac518.RegistrantsRequestBuilder) {
     return id6cc9fa5871bc7bc0f0cdb14eefb4c23aab98b3f48d589f2b88c26747ddac518.NewRegistrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.app.onlineMeetings.item.registration.registrants.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.onlineMeetings.item.registration.registrants.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *RegistrationRequestBuilder) RegistrantsById(id string)(*i30c315dc061d49533ccaa40d62807a1351e7a46bd7fc3e004240034ba112b51d.MeetingRegistrantRequestBuilder) {

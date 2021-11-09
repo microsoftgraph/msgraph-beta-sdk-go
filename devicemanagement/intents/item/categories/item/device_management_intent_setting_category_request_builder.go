@@ -190,7 +190,7 @@ func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Patch(options *Dev
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Settings()(*i6f5ecbb50b3a23bb965dcb095c581105f1656c71fe958419afb828d4dd8faa3c.SettingsRequestBuilder) {
     return i6f5ecbb50b3a23bb965dcb095c581105f1656c71fe958419afb828d4dd8faa3c.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.intents.item.categories.item.settings.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.categories.item.settings.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) SettingsById(id string)(*ic0badc0b4b04a1bb99499349c8b314c126d2c085987633b9819ac2a473383b48.DeviceManagementSettingInstanceRequestBuilder) {

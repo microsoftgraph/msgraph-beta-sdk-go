@@ -63,7 +63,7 @@ func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Assign()(*iaac
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Assignments()(*i1aa4fb44cf4940a0794e33de635a58953960c975237235af78452d02bffe2854.AssignmentsRequestBuilder) {
     return i1aa4fb44cf4940a0794e33de635a58953960c975237235af78452d02bffe2854.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.resourceAccessProfiles.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.resourceAccessProfiles.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) AssignmentsById(id string)(*i4c6649ed921058137d23369f25fb530c052e741c6026b182c9c66a0903b527cd.DeviceManagementResourceAccessProfileAssignmentRequestBuilder) {

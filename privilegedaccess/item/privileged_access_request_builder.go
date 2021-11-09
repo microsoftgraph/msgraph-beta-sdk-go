@@ -198,7 +198,7 @@ func (m *PrivilegedAccessRequestBuilder) Patch(options *PrivilegedAccessRequestB
 func (m *PrivilegedAccessRequestBuilder) Resources()(*i9a0b2cd1cee2ff8b6db6a31960b35b297ea8a82ac1c9d7147b11db2225e14166.ResourcesRequestBuilder) {
     return i9a0b2cd1cee2ff8b6db6a31960b35b297ea8a82ac1c9d7147b11db2225e14166.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.privilegedAccess.item.resources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.resources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrivilegedAccessRequestBuilder) ResourcesById(id string)(*ifef34655781055c0461c93a60eb94832b88d5e7127511a01d91517b0dbb2056f.GovernanceResourceRequestBuilder) {
@@ -214,7 +214,7 @@ func (m *PrivilegedAccessRequestBuilder) ResourcesById(id string)(*ifef346557810
 func (m *PrivilegedAccessRequestBuilder) RoleAssignmentRequests()(*i13776d5c18dfe5cb7926395f0d7b87e53ddf81ba000513408fbd99e65db8c5fb.RoleAssignmentRequestsRequestBuilder) {
     return i13776d5c18dfe5cb7926395f0d7b87e53ddf81ba000513408fbd99e65db8c5fb.NewRoleAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.privilegedAccess.item.roleAssignmentRequests.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.roleAssignmentRequests.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrivilegedAccessRequestBuilder) RoleAssignmentRequestsById(id string)(*i055f2c9d21e7d744d266e629aae4492646c4497616eefa08e3bdc13deae816bc.GovernanceRoleAssignmentRequestRequestBuilder) {
@@ -230,7 +230,7 @@ func (m *PrivilegedAccessRequestBuilder) RoleAssignmentRequestsById(id string)(*
 func (m *PrivilegedAccessRequestBuilder) RoleAssignments()(*i6517906c52d298f87f2e9d9ac7e9044b06b89fb46f521c3da9b9d1f087671c44.RoleAssignmentsRequestBuilder) {
     return i6517906c52d298f87f2e9d9ac7e9044b06b89fb46f521c3da9b9d1f087671c44.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.privilegedAccess.item.roleAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.roleAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrivilegedAccessRequestBuilder) RoleAssignmentsById(id string)(*i669c13d28c7fa4ec2373a44ba75602285da1019797e39c430f2ede5ee0850356.GovernanceRoleAssignmentRequestBuilder) {
@@ -246,7 +246,7 @@ func (m *PrivilegedAccessRequestBuilder) RoleAssignmentsById(id string)(*i669c13
 func (m *PrivilegedAccessRequestBuilder) RoleDefinitions()(*ie0282f7e2e54b40fe4176464d126008c5f839e06d60480f482df4629ee34909c.RoleDefinitionsRequestBuilder) {
     return ie0282f7e2e54b40fe4176464d126008c5f839e06d60480f482df4629ee34909c.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.privilegedAccess.item.roleDefinitions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.roleDefinitions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrivilegedAccessRequestBuilder) RoleDefinitionsById(id string)(*i93a22192c0fdf52ece01982a56d4c7f6efcce6d81281c6a74a3a9d90200baf9d.GovernanceRoleDefinitionRequestBuilder) {
@@ -262,7 +262,7 @@ func (m *PrivilegedAccessRequestBuilder) RoleDefinitionsById(id string)(*i93a221
 func (m *PrivilegedAccessRequestBuilder) RoleSettings()(*i83aba682e003297032480b3ecf836e1584c1518b5430625638ccefc15ac6bc8b.RoleSettingsRequestBuilder) {
     return i83aba682e003297032480b3ecf836e1584c1518b5430625638ccefc15ac6bc8b.NewRoleSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.privilegedAccess.item.roleSettings.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.roleSettings.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrivilegedAccessRequestBuilder) RoleSettingsById(id string)(*id87892c36f8f2494356ab0b890f05c975ca897b7061b4af81b617506bdd996cf.GovernanceRoleSettingRequestBuilder) {

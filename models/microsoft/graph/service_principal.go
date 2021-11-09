@@ -38,6 +38,8 @@ type ServicePrincipal struct {
     claimsMappingPolicies []ClaimsMappingPolicy;
     // Directory objects created by this service principal. Read-only. Nullable.
     createdObjects []DirectoryObject;
+    // 
+    customSecurityAttributes *CustomSecurityAttributeValue;
     // The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
     delegatedPermissionClassifications []DelegatedPermissionClassification;
     // Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
@@ -50,6 +52,8 @@ type ServicePrincipal struct {
     endpoints []Endpoint;
     // Deprecated. Don't use.
     errorUrl *string;
+    // 
+    federatedIdentityCredentials []FederatedIdentityCredential;
     // Home page or landing page of the application.
     homepage *string;
     // The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
@@ -242,6 +246,14 @@ func (m *ServicePrincipal) GetCreatedObjects()([]DirectoryObject) {
         return m.createdObjects
     }
 }
+// Gets the customSecurityAttributes property value. 
+func (m *ServicePrincipal) GetCustomSecurityAttributes()(*CustomSecurityAttributeValue) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customSecurityAttributes
+    }
+}
 // Gets the delegatedPermissionClassifications property value. The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 func (m *ServicePrincipal) GetDelegatedPermissionClassifications()([]DelegatedPermissionClassification) {
     if m == nil {
@@ -288,6 +300,14 @@ func (m *ServicePrincipal) GetErrorUrl()(*string) {
         return nil
     } else {
         return m.errorUrl
+    }
+}
+// Gets the federatedIdentityCredentials property value. 
+func (m *ServicePrincipal) GetFederatedIdentityCredentials()([]FederatedIdentityCredential) {
+    if m == nil {
+        return nil
+    } else {
+        return m.federatedIdentityCredentials
     }
 }
 // Gets the homepage property value. Home page or landing page of the application.
@@ -701,6 +721,14 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         m.SetCreatedObjects(res)
         return nil
     }
+    res["customSecurityAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomSecurityAttributeValue() })
+        if err != nil {
+            return err
+        }
+        m.SetCustomSecurityAttributes(val.(*CustomSecurityAttributeValue))
+        return nil
+    }
     res["delegatedPermissionClassifications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedPermissionClassification() })
         if err != nil {
@@ -755,6 +783,18 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         m.SetErrorUrl(val)
+        return nil
+    }
+    res["federatedIdentityCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFederatedIdentityCredential() })
+        if err != nil {
+            return err
+        }
+        res := make([]FederatedIdentityCredential, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*FederatedIdentityCredential))
+        }
+        m.SetFederatedIdentityCredentials(res)
         return nil
     }
     res["homepage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -1216,6 +1256,12 @@ func (m *ServicePrincipal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
+        err = writer.WriteObjectValue("customSecurityAttributes", m.GetCustomSecurityAttributes())
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDelegatedPermissionClassifications()))
         for i, v := range m.GetDelegatedPermissionClassifications() {
             temp := v
@@ -1257,6 +1303,17 @@ func (m *ServicePrincipal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     {
         err = writer.WriteStringValue("errorUrl", m.GetErrorUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFederatedIdentityCredentials()))
+        for i, v := range m.GetFederatedIdentityCredentials() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("federatedIdentityCredentials", cast)
         if err != nil {
             return err
         }
@@ -1605,6 +1662,12 @@ func (m *ServicePrincipal) SetClaimsMappingPolicies(value []ClaimsMappingPolicy)
 func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObject)() {
     m.createdObjects = value
 }
+// Sets the customSecurityAttributes property value. 
+// Parameters:
+//  - value : Value to set for the customSecurityAttributes property.
+func (m *ServicePrincipal) SetCustomSecurityAttributes(value *CustomSecurityAttributeValue)() {
+    m.customSecurityAttributes = value
+}
 // Sets the delegatedPermissionClassifications property value. The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 // Parameters:
 //  - value : Value to set for the delegatedPermissionClassifications property.
@@ -1640,6 +1703,12 @@ func (m *ServicePrincipal) SetEndpoints(value []Endpoint)() {
 //  - value : Value to set for the errorUrl property.
 func (m *ServicePrincipal) SetErrorUrl(value *string)() {
     m.errorUrl = value
+}
+// Sets the federatedIdentityCredentials property value. 
+// Parameters:
+//  - value : Value to set for the federatedIdentityCredentials property.
+func (m *ServicePrincipal) SetFederatedIdentityCredentials(value []FederatedIdentityCredential)() {
+    m.federatedIdentityCredentials = value
 }
 // Sets the homepage property value. Home page or landing page of the application.
 // Parameters:

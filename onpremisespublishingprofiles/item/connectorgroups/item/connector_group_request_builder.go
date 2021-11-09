@@ -180,7 +180,7 @@ func (m *ConnectorGroupRequestBuilder) Get(options *ConnectorGroupRequestBuilder
 func (m *ConnectorGroupRequestBuilder) Members()(*i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9.MembersRequestBuilder) {
     return i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.connectorGroups.item.members.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.members.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ConnectorGroupRequestBuilder) MembersById(id string)(*i753cfff90925bea726b5ebc5e71149db3f766477cada75985f673e10929c55ae.ConnectorRequestBuilder) {

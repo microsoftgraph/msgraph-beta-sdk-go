@@ -60,7 +60,7 @@ type AppleUserInitiatedEnrollmentProfileRequestBuilderPatchOptions struct {
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) Assignments()(*i8f74274c95f6e543171df682273240e35174a6d9718f8eb24972864f87ab1031.AssignmentsRequestBuilder) {
     return i8f74274c95f6e543171df682273240e35174a6d9718f8eb24972864f87ab1031.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.appleUserInitiatedEnrollmentProfiles.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.appleUserInitiatedEnrollmentProfiles.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) AssignmentsById(id string)(*i3f2b91af36c1c85a91b2090f64ecc402fe3be3e6030dc816276efb34d3538a56.AppleEnrollmentProfileAssignmentRequestBuilder) {

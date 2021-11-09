@@ -76,7 +76,7 @@ type VirtualEndpointRequestBuilderPatchOptions struct {
 func (m *VirtualEndpointRequestBuilder) AuditEvents()(*i5b2233e79dc3147871fe57df3812d50c932074cfced41065bb12f77e2edec21e.AuditEventsRequestBuilder) {
     return i5b2233e79dc3147871fe57df3812d50c932074cfced41065bb12f77e2edec21e.NewAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.auditEvents.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.auditEvents.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) AuditEventsById(id string)(*i57a7497f8ee90067ee6f4aa2a9b6074c547470907dd198f9de96f123682ddda0.CloudPcAuditEventRequestBuilder) {
@@ -92,7 +92,7 @@ func (m *VirtualEndpointRequestBuilder) AuditEventsById(id string)(*i57a7497f8ee
 func (m *VirtualEndpointRequestBuilder) CloudPCs()(*i1529c4b52ff4b5b9e3d21861baf5f70ff01e22c7ce170e59bf3ce66277506553.CloudPCsRequestBuilder) {
     return i1529c4b52ff4b5b9e3d21861baf5f70ff01e22c7ce170e59bf3ce66277506553.NewCloudPCsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.cloudPCs.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.cloudPCs.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) CloudPCsById(id string)(*ic14d63ed61f1b60b506fcd81a146444ab96691619c2ac32f274b0793b622f23f.CloudPCRequestBuilder) {
@@ -211,7 +211,7 @@ func (m *VirtualEndpointRequestBuilder) Delete(options *VirtualEndpointRequestBu
 func (m *VirtualEndpointRequestBuilder) DeviceImages()(*i1696d9b0fb89b84debc07dd2077aff8e4f8ff2b028c14e5a9b3d5139c682a3f3.DeviceImagesRequestBuilder) {
     return i1696d9b0fb89b84debc07dd2077aff8e4f8ff2b028c14e5a9b3d5139c682a3f3.NewDeviceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.deviceImages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.deviceImages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) DeviceImagesById(id string)(*ia3bcb5abfa0df15f63e2a6fa1f06bcbd43b05fc488a36754660b8c694246fe0b.CloudPcDeviceImageRequestBuilder) {
@@ -227,7 +227,7 @@ func (m *VirtualEndpointRequestBuilder) DeviceImagesById(id string)(*ia3bcb5abfa
 func (m *VirtualEndpointRequestBuilder) GalleryImages()(*i13cfcdf74101f5bb07fbf44e4337504d9adaa93a962b4588144742689f3e6c49.GalleryImagesRequestBuilder) {
     return i13cfcdf74101f5bb07fbf44e4337504d9adaa93a962b4588144742689f3e6c49.NewGalleryImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.galleryImages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.galleryImages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) GalleryImagesById(id string)(*ia7d6e357762433a03086487f037283652587e5519e4f5513185ee9e97e7426e9.CloudPcGalleryImageRequestBuilder) {
@@ -261,7 +261,7 @@ func (m *VirtualEndpointRequestBuilder) GetEffectivePermissions()(*i641f590b75b1
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnections()(*ic615011cfc05f9e79dc505191df45c19871dc563dfe317f14f5eb7e21000fc23.OnPremisesConnectionsRequestBuilder) {
     return ic615011cfc05f9e79dc505191df45c19871dc563dfe317f14f5eb7e21000fc23.NewOnPremisesConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.onPremisesConnections.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.onPremisesConnections.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnectionsById(id string)(*i471da8905b96f5687f46d1c5dc0de1420e0c35b35374f400b7618e2937b4bf34.CloudPcOnPremisesConnectionRequestBuilder) {
@@ -291,7 +291,7 @@ func (m *VirtualEndpointRequestBuilder) Patch(options *VirtualEndpointRequestBui
 func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*if4100d044fd5ea8af7d00890548b33d7f96329a5a6d63f806c3f7705cafc3c7b.ProvisioningPoliciesRequestBuilder) {
     return if4100d044fd5ea8af7d00890548b33d7f96329a5a6d63f806c3f7705cafc3c7b.NewProvisioningPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.provisioningPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.provisioningPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) ProvisioningPoliciesById(id string)(*i6c86691f21aa3210591c58f278b27fee3b5fb3a866b020940f913e3f9a20a060.CloudPcProvisioningPolicyRequestBuilder) {
@@ -307,7 +307,7 @@ func (m *VirtualEndpointRequestBuilder) ProvisioningPoliciesById(id string)(*i6c
 func (m *VirtualEndpointRequestBuilder) ServicePlans()(*i037f17d0e70c36a0446de251c289230e77400d9881a7f0256320f00dfe653b5f.ServicePlansRequestBuilder) {
     return i037f17d0e70c36a0446de251c289230e77400d9881a7f0256320f00dfe653b5f.NewServicePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.servicePlans.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.servicePlans.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) ServicePlansById(id string)(*i41c3478ec8e1cf11d4aa0d810af05da1184e70e2f0c4b1acd5144a495b556b79.CloudPcServicePlanRequestBuilder) {
@@ -323,7 +323,7 @@ func (m *VirtualEndpointRequestBuilder) ServicePlansById(id string)(*i41c3478ec8
 func (m *VirtualEndpointRequestBuilder) SupportedRegions()(*idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079.SupportedRegionsRequestBuilder) {
     return idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079.NewSupportedRegionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.supportedRegions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.supportedRegions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) SupportedRegionsById(id string)(*i91bd1ab7316bb059e22edb6c7fdf042441efd0af722f5ea856fc4be260402497.CloudPcSupportedRegionRequestBuilder) {
@@ -339,7 +339,7 @@ func (m *VirtualEndpointRequestBuilder) SupportedRegionsById(id string)(*i91bd1a
 func (m *VirtualEndpointRequestBuilder) UserSettings()(*i23a63a02c83d28d72ce351404f7169106e8b8114b7d9d0ca4052db2a624e6273.UserSettingsRequestBuilder) {
     return i23a63a02c83d28d72ce351404f7169106e8b8114b7d9d0ca4052db2a624e6273.NewUserSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.virtualEndpoint.userSettings.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.userSettings.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *VirtualEndpointRequestBuilder) UserSettingsById(id string)(*i940a1af81d34e1d5a5cfef93acb216fcbeba9c4d02700ce3000fd8f0588fd162.CloudPcUserSettingRequestBuilder) {

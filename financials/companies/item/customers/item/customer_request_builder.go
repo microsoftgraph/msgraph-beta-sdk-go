@@ -202,7 +202,7 @@ func (m *CustomerRequestBuilder) PaymentTerm()(*i173cb04239565eb79ec2ce13140615c
 func (m *CustomerRequestBuilder) Picture()(*i2fe5ce21826b9c98f2c62e7016604584f4b4baf0a38d60738456107a6a7a626f.PictureRequestBuilder) {
     return i2fe5ce21826b9c98f2c62e7016604584f4b4baf0a38d60738456107a6a7a626f.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.financials.companies.item.customers.item.picture.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.customers.item.picture.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CustomerRequestBuilder) PictureById(id string)(*i2fe5ce21826b9c98f2c62e7016604584f4b4baf0a38d60738456107a6a7a626f.PictureRequestBuilder) {

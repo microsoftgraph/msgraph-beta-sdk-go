@@ -190,7 +190,7 @@ func (m *PlannerBucketRequestBuilder) Patch(options *PlannerBucketRequestBuilder
 func (m *PlannerBucketRequestBuilder) Tasks()(*i8a173ffaa050529fb6af609bd91741e47eac9ede69631b18a784488646ecd36e.TasksRequestBuilder) {
     return i8a173ffaa050529fb6af609bd91741e47eac9ede69631b18a784488646ecd36e.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.users.item.planner.plans.item.buckets.item.tasks.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.plans.item.buckets.item.tasks.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PlannerBucketRequestBuilder) TasksById(id string)(*ic3d291688e570dddc6ba2e6dc40e30feda7b7566e457b2c1eefd10fc7f16d334.PlannerTaskRequestBuilder) {

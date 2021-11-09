@@ -59,7 +59,7 @@ type MacOSSoftwareUpdateAccountSummaryRequestBuilderPatchOptions struct {
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CategorySummaries()(*i67355dbc94c107ed697494362f24074fe629475baf93f5f5554922e54a4817d7.CategorySummariesRequestBuilder) {
     return i67355dbc94c107ed697494362f24074fe629475baf93f5f5554922e54a4817d7.NewCategorySummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CategorySummariesById(id string)(*i407f40cbdcd6e0a8c0a6957a52e770bb996c3efb0c3933a6259c21531a23bf20.MacOSSoftwareUpdateCategorySummaryRequestBuilder) {

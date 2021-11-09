@@ -176,7 +176,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) Get(options *UnifiedRoleDefinition
 func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFrom()(*i631f1fd9eaf542ee8c31bc4cdfff78787e55952a733f003aaf86b8dc2a984366.InheritsPermissionsFromRequestBuilder) {
     return i631f1fd9eaf542ee8c31bc4cdfff78787e55952a733f003aaf86b8dc2a984366.NewInheritsPermissionsFromRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.deviceManagement.roleDefinitions.item.inheritsPermissionsFrom.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.deviceManagement.roleDefinitions.item.inheritsPermissionsFrom.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFromById(id string)(*i7615b2a6211571aa5566cce820cea4bd5edda575f8f25065ea1d5b880ed635f2.UnifiedRoleDefinitionRequestBuilder) {

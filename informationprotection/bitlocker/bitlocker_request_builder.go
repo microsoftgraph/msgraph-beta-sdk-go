@@ -190,7 +190,7 @@ func (m *BitlockerRequestBuilder) Patch(options *BitlockerRequestBuilderPatchOpt
 func (m *BitlockerRequestBuilder) RecoveryKeys()(*i3aff3a656fbbde11cf121aa411c961df9053d91b2360949922f9c52f0a45d2c5.RecoveryKeysRequestBuilder) {
     return i3aff3a656fbbde11cf121aa411c961df9053d91b2360949922f9c52f0a45d2c5.NewRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.informationProtection.bitlocker.recoveryKeys.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.bitlocker.recoveryKeys.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*if2ebcd3e1f6994611d75fef91c6a8af89427d1b5902b51756526761c63ff4f79.BitlockerRecoveryKeyRequestBuilder) {

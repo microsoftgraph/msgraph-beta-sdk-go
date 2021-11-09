@@ -22,7 +22,7 @@ type AccessReviewScheduleSettings struct {
     justificationRequiredOnApproval *bool;
     // Indicates whether emails are enabled or disabled. Default value is false.
     mailNotificationsEnabled *bool;
-    // Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. If not specified, the duration is 30 days.
+    // Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
     recommendationLookBackDuration *string;
     // Indicates whether decision recommendations are enabled or disabled.
     recommendationsEnabled *bool;
@@ -102,7 +102,7 @@ func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
         return m.mailNotificationsEnabled
     }
 }
-// Gets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. If not specified, the duration is 30 days.
+// Gets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
 func (m *AccessReviewScheduleSettings) GetRecommendationLookBackDuration()(*string) {
     if m == nil {
         return nil
@@ -365,7 +365,7 @@ func (m *AccessReviewScheduleSettings) SetJustificationRequiredOnApproval(value 
 func (m *AccessReviewScheduleSettings) SetMailNotificationsEnabled(value *bool)() {
     m.mailNotificationsEnabled = value
 }
-// Sets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. If not specified, the duration is 30 days.
+// Sets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
 // Parameters:
 //  - value : Value to set for the recommendationLookBackDuration property.
 func (m *AccessReviewScheduleSettings) SetRecommendationLookBackDuration(value *string)() {

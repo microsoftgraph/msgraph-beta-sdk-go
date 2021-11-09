@@ -71,7 +71,7 @@ func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentPolicy()(
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentRequests()(*idc493656467acca9133b4eddf84e365cb5f571cc845ea45f382d2545ece9e5cc.AccessPackageAssignmentRequestsRequestBuilder) {
     return idc493656467acca9133b4eddf84e365cb5f571cc845ea45f382d2545ece9e5cc.NewAccessPackageAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackageAssignmentRequests.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackageAssignmentRequests.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentRequestsById(id string)(*i48399c4b2202ca662aaa0213380e828fbb875b4ba9647a0e692b5ac58ed4deed.AccessPackageAssignmentRequestRequestBuilder) {
@@ -87,7 +87,7 @@ func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentRequestsB
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentResourceRoles()(*i3d5a23907f9b30748283783ab5dea1f4376f78845d0e79f6c02d90dc7a01afb1.AccessPackageAssignmentResourceRolesRequestBuilder) {
     return i3d5a23907f9b30748283783ab5dea1f4376f78845d0e79f6c02d90dc7a01afb1.NewAccessPackageAssignmentResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackageAssignmentResourceRoles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackageAssignmentResourceRoles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentResourceRolesById(id string)(*i27994df1d0f4c91ae8ca583362cd3504a5e0201c5d06854f136e8de282fbae2a.AccessPackageAssignmentResourceRoleRequestBuilder) {

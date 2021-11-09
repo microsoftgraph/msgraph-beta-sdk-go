@@ -64,7 +64,7 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) Assign()(*icaa99ae9f710187
 func (m *DeviceEnrollmentConfigurationRequestBuilder) Assignments()(*ic1d9737fc1c0a18008b6fd41b32eaa54f6eda77bc7590be0af2005ec52282707.AssignmentsRequestBuilder) {
     return ic1d9737fc1c0a18008b6fd41b32eaa54f6eda77bc7590be0af2005ec52282707.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.users.item.deviceEnrollmentConfigurations.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.deviceEnrollmentConfigurations.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceEnrollmentConfigurationRequestBuilder) AssignmentsById(id string)(*i2743b28ceb0dd313f262858ca8786962b9d8aea0a4285b4dd4cb11ca6ed541da.EnrollmentConfigurationAssignmentRequestBuilder) {

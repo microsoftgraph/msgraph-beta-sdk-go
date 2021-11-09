@@ -188,7 +188,7 @@ func (m *OutlookTaskGroupRequestBuilder) Patch(options *OutlookTaskGroupRequestB
 func (m *OutlookTaskGroupRequestBuilder) TaskFolders()(*i84e5204b6057266524dd3c5f1d89cc5397e3be53b9b6b2ff8da6fb9bcfc89145.TaskFoldersRequestBuilder) {
     return i84e5204b6057266524dd3c5f1d89cc5397e3be53b9b6b2ff8da6fb9bcfc89145.NewTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.users.item.outlook.taskGroups.item.taskFolders.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item.taskFolders.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OutlookTaskGroupRequestBuilder) TaskFoldersById(id string)(*i9ff51a09dafb0317480e93c5051c0dab6aba16d2dd4fc769ca0378dfb685a890.OutlookTaskFolderRequestBuilder) {

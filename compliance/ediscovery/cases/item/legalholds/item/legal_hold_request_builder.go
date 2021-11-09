@@ -194,7 +194,7 @@ func (m *LegalHoldRequestBuilder) Patch(options *LegalHoldRequestBuilderPatchOpt
 func (m *LegalHoldRequestBuilder) SiteSources()(*i64f0e5258633a3c0c8d5bfc297b4e0736de72c5e3150a38d2fcd17dfb59e046b.SiteSourcesRequestBuilder) {
     return i64f0e5258633a3c0c8d5bfc297b4e0736de72c5e3150a38d2fcd17dfb59e046b.NewSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.legalHolds.item.siteSources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.legalHolds.item.siteSources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *LegalHoldRequestBuilder) SiteSourcesById(id string)(*ib34df5322945e42aea8a01751883e193d59745ac0c447872f1671eb484a06936.SiteSourceRequestBuilder) {
@@ -210,7 +210,7 @@ func (m *LegalHoldRequestBuilder) SiteSourcesById(id string)(*ib34df5322945e42ae
 func (m *LegalHoldRequestBuilder) UnifiedGroupSources()(*iac7d03a0b596e8feddf3b195648c1f8d07225fc5a621d2181a8d3e15d43673a8.UnifiedGroupSourcesRequestBuilder) {
     return iac7d03a0b596e8feddf3b195648c1f8d07225fc5a621d2181a8d3e15d43673a8.NewUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.legalHolds.item.unifiedGroupSources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.legalHolds.item.unifiedGroupSources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *LegalHoldRequestBuilder) UnifiedGroupSourcesById(id string)(*ifaf28029d98f7bf2244cb8a85e111bec3c46d219a6d9069d26a26ee3797ad760.UnifiedGroupSourceRequestBuilder) {
@@ -226,7 +226,7 @@ func (m *LegalHoldRequestBuilder) UnifiedGroupSourcesById(id string)(*ifaf28029d
 func (m *LegalHoldRequestBuilder) UserSources()(*i06b275b20ff5a31845bd4dd9892fec2b1653544d3b2bd2a68090be24b2058315.UserSourcesRequestBuilder) {
     return i06b275b20ff5a31845bd4dd9892fec2b1653544d3b2bd2a68090be24b2058315.NewUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item.legalHolds.item.userSources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.legalHolds.item.userSources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *LegalHoldRequestBuilder) UserSourcesById(id string)(*i6b88ba94cf868f1ba6788ff7bfac0991479b8eebedef91a91c1b16be7ca6d060.UserSourceRequestBuilder) {

@@ -59,7 +59,7 @@ type OnPremisesAgentRequestBuilderPatchOptions struct {
 func (m *OnPremisesAgentRequestBuilder) AgentGroups()(*i6e204390efdfe5e76f4ea3d658b79bafaefc043024e165e7fdeea92dbed996ff.AgentGroupsRequestBuilder) {
     return i6e204390efdfe5e76f4ea3d658b79bafaefc043024e165e7fdeea92dbed996ff.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.agents.item.agentGroups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item.agentGroups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnPremisesAgentRequestBuilder) AgentGroupsById(id string)(*i174e9d732a2799ba6c7a42e6b5b225122dfc950a98d835fb05d0daa449ef2a06.OnPremisesAgentGroupRequestBuilder) {

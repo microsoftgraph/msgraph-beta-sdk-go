@@ -148,7 +148,7 @@ func (m *PrivacyRequestBuilder) Patch(options *PrivacyRequestBuilderPatchOptions
 func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*icb791f7dacf66d187578026d8cc60bfe25737a0e233f5caf67de78118abf146c.SubjectRightsRequestsRequestBuilder) {
     return icb791f7dacf66d187578026d8cc60bfe25737a0e233f5caf67de78118abf146c.NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.privacy.subjectRightsRequests.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privacy.subjectRightsRequests.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*i29498a02989e66bf84ed34441760ac009bf8f0224e1b8f1b6028c01c0f207059.SubjectRightsRequestRequestBuilder) {

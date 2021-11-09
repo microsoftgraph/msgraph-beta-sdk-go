@@ -164,7 +164,7 @@ func (m *ConnectedOrganizationRequestBuilder) Delete(options *ConnectedOrganizat
 func (m *ConnectedOrganizationRequestBuilder) ExternalSponsors()(*i82b6968db7b15686cbc987e9af89e40d6258324a85852e48f8f9c19a6729f0f0.ExternalSponsorsRequestBuilder) {
     return i82b6968db7b15686cbc987e9af89e40d6258324a85852e48f8f9c19a6729f0f0.NewExternalSponsorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.connectedOrganizations.item.externalSponsors.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.connectedOrganizations.item.externalSponsors.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ConnectedOrganizationRequestBuilder) ExternalSponsorsById(id string)(*i0dc4c794f51a132efa630bcc7fe954fbd3f2af62e62f7c1557759f789dc562fc.DirectoryObjectRequestBuilder) {
@@ -194,7 +194,7 @@ func (m *ConnectedOrganizationRequestBuilder) Get(options *ConnectedOrganization
 func (m *ConnectedOrganizationRequestBuilder) InternalSponsors()(*iff0b6eadf2514d5b5b3edd06d302b534eec4f14682b130a9eb1d95c1c6ef4489.InternalSponsorsRequestBuilder) {
     return iff0b6eadf2514d5b5b3edd06d302b534eec4f14682b130a9eb1d95c1c6ef4489.NewInternalSponsorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.connectedOrganizations.item.internalSponsors.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.connectedOrganizations.item.internalSponsors.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ConnectedOrganizationRequestBuilder) InternalSponsorsById(id string)(*iff3bb963dff2078fab9881a67d7525c7d4a7f645e97c901f5515f1e0a89e28b6.DirectoryObjectRequestBuilder) {

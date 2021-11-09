@@ -190,7 +190,7 @@ func (m *AgreementFileLocalizationRequestBuilder) Patch(options *AgreementFileLo
 func (m *AgreementFileLocalizationRequestBuilder) Versions()(*ia7b715fb32f14fa95ebc5549fb578ed8b02bac253cba8b09dcbe2a087e4695c5.VersionsRequestBuilder) {
     return ia7b715fb32f14fa95ebc5549fb578ed8b02bac253cba8b09dcbe2a087e4695c5.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.agreements.item.files.item.versions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.agreements.item.files.item.versions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AgreementFileLocalizationRequestBuilder) VersionsById(id string)(*i4ab0991b8310e68a4df1f4915492df9dabd263770e6a6f601ea2019a94417bc0.AgreementFileVersionRequestBuilder) {
