@@ -162,7 +162,7 @@ func (m *DimensionRequestBuilder) Delete(options *DimensionRequestBuilderDeleteO
 func (m *DimensionRequestBuilder) DimensionValues()(*i234f9ceec46f67f5e601f3edb10d34513a18ecd109769d4b121a078d1b5a44d3.DimensionValuesRequestBuilder) {
     return i234f9ceec46f67f5e601f3edb10d34513a18ecd109769d4b121a078d1b5a44d3.NewDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.financials.companies.item.dimensions.item.dimensionValues.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.dimensions.item.dimensionValues.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DimensionRequestBuilder) DimensionValuesById(id string)(*i8ed42469cc87a553b3cd8749bdd04e937f267d96ef2528e79e78a8822e6f6112.DimensionValueRequestBuilder) {

@@ -26,6 +26,8 @@ type WindowsFeatureUpdateProfile struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // List of Scope Tags for this Feature Update entity.
     roleScopeTagIds []string;
+    // The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
+    rolloutSettings *WindowsUpdateRolloutSettings;
 }
 // Instantiates a new windowsFeatureUpdateProfile and sets the default values.
 func NewWindowsFeatureUpdateProfile()(*WindowsFeatureUpdateProfile) {
@@ -104,6 +106,14 @@ func (m *WindowsFeatureUpdateProfile) GetRoleScopeTagIds()([]string) {
         return nil
     } else {
         return m.roleScopeTagIds
+    }
+}
+// Gets the rolloutSettings property value. The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
+func (m *WindowsFeatureUpdateProfile) GetRolloutSettings()(*WindowsUpdateRolloutSettings) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rolloutSettings
     }
 }
 // The deserialization information for the current model
@@ -189,6 +199,14 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         m.SetRoleScopeTagIds(res)
         return nil
     }
+    res["rolloutSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsUpdateRolloutSettings() })
+        if err != nil {
+            return err
+        }
+        m.SetRolloutSettings(val.(*WindowsUpdateRolloutSettings))
+        return nil
+    }
     return res
 }
 func (m *WindowsFeatureUpdateProfile) IsNil()(bool) {
@@ -261,6 +279,12 @@ func (m *WindowsFeatureUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("rolloutSettings", m.GetRolloutSettings())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // Sets the assignments property value. The list of group assignments of the profile.
@@ -316,4 +340,10 @@ func (m *WindowsFeatureUpdateProfile) SetLastModifiedDateTime(value *i336074805f
 //  - value : Value to set for the roleScopeTagIds property.
 func (m *WindowsFeatureUpdateProfile) SetRoleScopeTagIds(value []string)() {
     m.roleScopeTagIds = value
+}
+// Sets the rolloutSettings property value. The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
+// Parameters:
+//  - value : Value to set for the rolloutSettings property.
+func (m *WindowsFeatureUpdateProfile) SetRolloutSettings(value *WindowsUpdateRolloutSettings)() {
+    m.rolloutSettings = value
 }

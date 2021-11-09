@@ -190,7 +190,7 @@ func (m *AppConsentRequestRequestBuilder) Patch(options *AppConsentRequestReques
 func (m *AppConsentRequestRequestBuilder) UserConsentRequests()(*iaa2b94b4783f29ff037b8a922a4f2e75c21199968cc04134e98fe332e3973138.UserConsentRequestsRequestBuilder) {
     return iaa2b94b4783f29ff037b8a922a4f2e75c21199968cc04134e98fe332e3973138.NewUserConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.appConsentRequestsForApproval.item.userConsentRequests.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.appConsentRequestsForApproval.item.userConsentRequests.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AppConsentRequestRequestBuilder) UserConsentRequestsById(id string)(*i59aaa94e5743d367726b4eb389bdab6ca31cac8f8190d348a87506de9b143195.UserConsentRequestRequestBuilder) {

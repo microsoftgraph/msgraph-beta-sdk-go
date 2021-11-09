@@ -66,7 +66,7 @@ type ListItemRequestBuilderPatchOptions struct {
 func (m *ListItemRequestBuilder) Activities()(*i379ea2863762eee877ab46370c46b080c4a48588a229303d134a3921152e41db.ActivitiesRequestBuilder) {
     return i379ea2863762eee877ab46370c46b080c4a48588a229303d134a3921152e41db.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.sites.item.lists.item.activities.item.listItem.activities.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.sites.item.lists.item.activities.item.listItem.activities.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListItemRequestBuilder) ActivitiesById(id string)(*i60926d3835f9a98f47052035c075913a9c9073f1489d335f12324cd004d64dda.ItemActivityOLDRequestBuilder) {
@@ -233,7 +233,7 @@ func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptio
 func (m *ListItemRequestBuilder) Versions()(*iad938253dd15bf1ad93d1333b01566a5bb673e6d21b1bc572d9fbb4237a5c28f.VersionsRequestBuilder) {
     return iad938253dd15bf1ad93d1333b01566a5bb673e6d21b1bc572d9fbb4237a5c28f.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.sites.item.lists.item.activities.item.listItem.versions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.sites.item.lists.item.activities.item.listItem.versions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListItemRequestBuilder) VersionsById(id string)(*i0c4a10f20b2a807a30807663746302f83008d86c56901414353878e74f1c4d3d.ListItemVersionRequestBuilder) {

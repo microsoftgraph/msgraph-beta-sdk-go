@@ -63,7 +63,7 @@ type ApprovalWorkflowProviderRequestBuilderPatchOptions struct {
 func (m *ApprovalWorkflowProviderRequestBuilder) BusinessFlows()(*i00b6268726a46fcf8e15e0ca3c5f8889dfdd53aaf48fe4ce2411243820496cf2.BusinessFlowsRequestBuilder) {
     return i00b6268726a46fcf8e15e0ca3c5f8889dfdd53aaf48fe4ce2411243820496cf2.NewBusinessFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.approvalWorkflowProviders.item.businessFlows.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.approvalWorkflowProviders.item.businessFlows.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ApprovalWorkflowProviderRequestBuilder) BusinessFlowsById(id string)(*icdd8feb64f3d3f11cf1c42a81a0ec83a900ebf29181eae132e78625db81a1fa7.BusinessFlowRequestBuilder) {
@@ -79,7 +79,7 @@ func (m *ApprovalWorkflowProviderRequestBuilder) BusinessFlowsById(id string)(*i
 func (m *ApprovalWorkflowProviderRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecision()(*i30206120795d8fda84ba9e547a109b67da276500cec13099585adedbf956e532.BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) {
     return i30206120795d8fda84ba9e547a109b67da276500cec13099585adedbf956e532.NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.approvalWorkflowProviders.item.businessFlowsWithRequestsAwaitingMyDecision.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.approvalWorkflowProviders.item.businessFlowsWithRequestsAwaitingMyDecision.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ApprovalWorkflowProviderRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecisionById(id string)(*id3e3e89c17dc1203ba2dba0acce89454c2eacc6063d8b15b83854c381c75fc28.BusinessFlowRequestBuilder) {
@@ -226,7 +226,7 @@ func (m *ApprovalWorkflowProviderRequestBuilder) Patch(options *ApprovalWorkflow
 func (m *ApprovalWorkflowProviderRequestBuilder) PolicyTemplates()(*i31436781316332b768fad45035d32f5befd814379c0ccbd0c58fb23e0e08e107.PolicyTemplatesRequestBuilder) {
     return i31436781316332b768fad45035d32f5befd814379c0ccbd0c58fb23e0e08e107.NewPolicyTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.approvalWorkflowProviders.item.policyTemplates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.approvalWorkflowProviders.item.policyTemplates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ApprovalWorkflowProviderRequestBuilder) PolicyTemplatesById(id string)(*iad8cec4aa318577e66fff21478bdf279aabc1597d98a1031afe46ae7262c9daa.GovernancePolicyTemplateRequestBuilder) {

@@ -190,7 +190,7 @@ func (m *ChannelRequestBuilder) Get(options *ChannelRequestBuilderGetOptions)(*i
 func (m *ChannelRequestBuilder) Members()(*i283c83b4db244dc7addb2109863ff2121bafc34f89ee6520035ae988c40fb61c.MembersRequestBuilder) {
     return i283c83b4db244dc7addb2109863ff2121bafc34f89ee6520035ae988c40fb61c.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.teams.item.channels.item.members.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.channels.item.members.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChannelRequestBuilder) MembersById(id string)(*i07457da9b011f4b8114261d34ff0b729122cabd296529aef5ede38f0d0315e79.ConversationMemberRequestBuilder) {
@@ -206,7 +206,7 @@ func (m *ChannelRequestBuilder) MembersById(id string)(*i07457da9b011f4b8114261d
 func (m *ChannelRequestBuilder) Messages()(*i300d5e508c18b0ed5f72f56f6891156b94d9d7bf57dd4cc9236e99e0001c9d5c.MessagesRequestBuilder) {
     return i300d5e508c18b0ed5f72f56f6891156b94d9d7bf57dd4cc9236e99e0001c9d5c.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.teams.item.channels.item.messages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.channels.item.messages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChannelRequestBuilder) MessagesById(id string)(*i1bd9944ba343d9424b1062a0ad9b76c2b12d0a87d3e6d3102a162e6d77945133.ChatMessageRequestBuilder) {
@@ -242,7 +242,7 @@ func (m *ChannelRequestBuilder) RemoveEmail()(*ieb3d065db28b358f95647ad7d763fd50
 func (m *ChannelRequestBuilder) Tabs()(*i4a0b032148812dd7a6c626731fabeed49b27af755d0f64099a2dad2fe6c463aa.TabsRequestBuilder) {
     return i4a0b032148812dd7a6c626731fabeed49b27af755d0f64099a2dad2fe6c463aa.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.teams.item.channels.item.tabs.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.channels.item.tabs.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChannelRequestBuilder) TabsById(id string)(*i668b6c7964e71a13c9358c7e270fbce278a1629d6b040a230ff54a0593a3353a.TeamsTabRequestBuilder) {

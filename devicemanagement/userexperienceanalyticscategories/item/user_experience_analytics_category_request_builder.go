@@ -176,7 +176,7 @@ func (m *UserExperienceAnalyticsCategoryRequestBuilder) Get(options *UserExperie
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) MetricValues()(*ia7cafd794b20eca3ff11b37b8e1eefd547ec1e595639eda0f03245a3f4253fb1.MetricValuesRequestBuilder) {
     return ia7cafd794b20eca3ff11b37b8e1eefd547ec1e595639eda0f03245a3f4253fb1.NewMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.userExperienceAnalyticsCategories.item.metricValues.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsCategories.item.metricValues.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) MetricValuesById(id string)(*i723c6e2ab05e2e91dea99207a63fe4f6ad55551bd1e2ce27c2f6a08a95d00d42.UserExperienceAnalyticsMetricRequestBuilder) {

@@ -178,7 +178,7 @@ func (m *DepOnboardingSettingRequestBuilder) Delete(options *DepOnboardingSettin
 func (m *DepOnboardingSettingRequestBuilder) EnrollmentProfiles()(*i176618c3c34968adb403c4d65ed7688ded2af2f955513bc66fab436b03d406aa.EnrollmentProfilesRequestBuilder) {
     return i176618c3c34968adb403c4d65ed7688ded2af2f955513bc66fab436b03d406aa.NewEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.depOnboardingSettings.item.enrollmentProfiles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.depOnboardingSettings.item.enrollmentProfiles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DepOnboardingSettingRequestBuilder) EnrollmentProfilesById(id string)(*ia63cbab7405477c100c61aae973c313555d3f6ecfa0f50ec772d43ee157d7a9d.EnrollmentProfileRequestBuilder) {
@@ -215,7 +215,7 @@ func (m *DepOnboardingSettingRequestBuilder) GetEncryptionPublicKey()(*i0a6e758c
 func (m *DepOnboardingSettingRequestBuilder) ImportedAppleDeviceIdentities()(*i21c452abb08aebef53cfef108f20776c8c80e1b61fade3bc7b23262c36f6790e.ImportedAppleDeviceIdentitiesRequestBuilder) {
     return i21c452abb08aebef53cfef108f20776c8c80e1b61fade3bc7b23262c36f6790e.NewImportedAppleDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.depOnboardingSettings.item.importedAppleDeviceIdentities.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.depOnboardingSettings.item.importedAppleDeviceIdentities.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DepOnboardingSettingRequestBuilder) ImportedAppleDeviceIdentitiesById(id string)(*ia6717b64f1af972b7242219bd4db44a401fd79458567d783585ee41f0fd2c0b6.ImportedAppleDeviceIdentityRequestBuilder) {

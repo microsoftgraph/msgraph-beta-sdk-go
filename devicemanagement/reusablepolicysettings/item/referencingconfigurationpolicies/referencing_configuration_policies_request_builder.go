@@ -26,7 +26,7 @@ type ReferencingConfigurationPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// configuration policies referencing the current reusable setting
+// configuration policies referencing the current reusable setting. This property is read-only.
 type ReferencingConfigurationPoliciesRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Include count of items
@@ -82,7 +82,7 @@ func NewReferencingConfigurationPoliciesRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewReferencingConfigurationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// configuration policies referencing the current reusable setting
+// configuration policies referencing the current reusable setting. This property is read-only.
 // Parameters:
 //  - options : Options for the request
 func (m *ReferencingConfigurationPoliciesRequestBuilder) CreateGetRequestInformation(options *ReferencingConfigurationPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -107,7 +107,7 @@ func (m *ReferencingConfigurationPoliciesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// configuration policies referencing the current reusable setting
+// configuration policies referencing the current reusable setting. This property is read-only.
 // Parameters:
 //  - options : Options for the request
 func (m *ReferencingConfigurationPoliciesRequestBuilder) CreatePostRequestInformation(options *ReferencingConfigurationPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -127,7 +127,7 @@ func (m *ReferencingConfigurationPoliciesRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// configuration policies referencing the current reusable setting
+// configuration policies referencing the current reusable setting. This property is read-only.
 // Parameters:
 //  - options : Options for the request
 func (m *ReferencingConfigurationPoliciesRequestBuilder) Get(options *ReferencingConfigurationPoliciesRequestBuilderGetOptions)(*ReferencingConfigurationPoliciesResponse, error) {
@@ -141,7 +141,7 @@ func (m *ReferencingConfigurationPoliciesRequestBuilder) Get(options *Referencin
     }
     return res.(*ReferencingConfigurationPoliciesResponse), nil
 }
-// configuration policies referencing the current reusable setting
+// configuration policies referencing the current reusable setting. This property is read-only.
 // Parameters:
 //  - options : Options for the request
 func (m *ReferencingConfigurationPoliciesRequestBuilder) Post(options *ReferencingConfigurationPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy, error) {

@@ -214,7 +214,7 @@ func (m *DirectoryRoleRequestBuilder) Restore()(*ibe15d8c336cbfe09bcf7d7a61546d4
 func (m *DirectoryRoleRequestBuilder) ScopedMembers()(*i5485bb9c491434e8f03f3f928d1e9aae35354496db691be6f7158b8c396ccd9b.ScopedMembersRequestBuilder) {
     return i5485bb9c491434e8f03f3f928d1e9aae35354496db691be6f7158b8c396ccd9b.NewScopedMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.directoryRoles.item.scopedMembers.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directoryRoles.item.scopedMembers.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DirectoryRoleRequestBuilder) ScopedMembersById(id string)(*ia2a3af813d19ede6948e6cd8a4fdc1da146bb512d7519e6200eb556b45d1b28e.ScopedRoleMembershipRequestBuilder) {

@@ -84,7 +84,7 @@ func NewProgramRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
 func (m *ProgramRequestBuilder) Controls()(*id08bfa3312ffcc704be5c1e51bdc101fc4e8ad11ce9dd1aedb0711cbe59e309d.ControlsRequestBuilder) {
     return id08bfa3312ffcc704be5c1e51bdc101fc4e8ad11ce9dd1aedb0711cbe59e309d.NewControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.programs.item.controls.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.programs.item.controls.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ProgramRequestBuilder) ControlsById(id string)(*i4389f3cba37530932c950ae7ea34269add1bb806749a0c4e1d0778b3b03f64cd.ProgramControlRequestBuilder) {

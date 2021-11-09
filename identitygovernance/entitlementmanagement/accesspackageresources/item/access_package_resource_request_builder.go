@@ -65,7 +65,7 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceEnvironment()
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRoles()(*i387fe96c7d96fcb8613570b9322185d08fc785b11085836ec36d6c5b2995c7dd.AccessPackageResourceRolesRequestBuilder) {
     return i387fe96c7d96fcb8613570b9322185d08fc785b11085836ec36d6c5b2995c7dd.NewAccessPackageResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackageResources.item.accessPackageResourceRoles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageResources.item.accessPackageResourceRoles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id string)(*id4e464e5928895f8007864f311a44cf0a17d078df1fd85477aa8a89b4982d3a5.AccessPackageResourceRoleRequestBuilder) {
@@ -81,7 +81,7 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id 
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopes()(*i62985a1c8685af456ee76558f9b1f934adb62015f17f6211f96c5aeae4a498fa.AccessPackageResourceScopesRequestBuilder) {
     return i62985a1c8685af456ee76558f9b1f934adb62015f17f6211f96c5aeae4a498fa.NewAccessPackageResourceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackageResources.item.accessPackageResourceScopes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageResources.item.accessPackageResourceScopes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopesById(id string)(*i1781f468d4b78f1cdf416e6bb87cd4d58004a003d38f2c564b28e09ecb238c33.AccessPackageResourceScopeRequestBuilder) {

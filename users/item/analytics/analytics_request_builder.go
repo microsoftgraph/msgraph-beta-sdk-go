@@ -58,7 +58,7 @@ type AnalyticsRequestBuilderPatchOptions struct {
 func (m *AnalyticsRequestBuilder) ActivityStatistics()(*i1e115a2335fb5f8e1a3c2d7951ef09c80693c57808f289e045697fac9b94114c.ActivityStatisticsRequestBuilder) {
     return i1e115a2335fb5f8e1a3c2d7951ef09c80693c57808f289e045697fac9b94114c.NewActivityStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.users.item.analytics.activityStatistics.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.analytics.activityStatistics.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AnalyticsRequestBuilder) ActivityStatisticsById(id string)(*i1e115a2335fb5f8e1a3c2d7951ef09c80693c57808f289e045697fac9b94114c.ActivityStatisticsRequestBuilder) {

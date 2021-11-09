@@ -8,9 +8,9 @@ import (
 type AppManagementConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Collection of keyCredential restrictions settings to be applied to an application or service principal.
     keyCredentials []KeyCredentialConfiguration;
-    // Collection of password restrictions settings to be applied to an application or service principal
+    // Collection of password restrictions settings to be applied to an application or service principal.
     passwordCredentials []PasswordCredentialConfiguration;
 }
 // Instantiates a new appManagementConfiguration and sets the default values.
@@ -28,7 +28,7 @@ func (m *AppManagementConfiguration) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// Gets the keyCredentials property value. 
+// Gets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
 func (m *AppManagementConfiguration) GetKeyCredentials()([]KeyCredentialConfiguration) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AppManagementConfiguration) GetKeyCredentials()([]KeyCredentialConfigur
         return m.keyCredentials
     }
 }
-// Gets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal
+// Gets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
 func (m *AppManagementConfiguration) GetPasswordCredentials()([]PasswordCredentialConfiguration) {
     if m == nil {
         return nil
@@ -116,13 +116,13 @@ func (m *AppManagementConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c
 func (m *AppManagementConfiguration) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the keyCredentials property value. 
+// Sets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
 // Parameters:
 //  - value : Value to set for the keyCredentials property.
 func (m *AppManagementConfiguration) SetKeyCredentials(value []KeyCredentialConfiguration)() {
     m.keyCredentials = value
 }
-// Sets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal
+// Sets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
 // Parameters:
 //  - value : Value to set for the passwordCredentials property.
 func (m *AppManagementConfiguration) SetPasswordCredentials(value []PasswordCredentialConfiguration)() {

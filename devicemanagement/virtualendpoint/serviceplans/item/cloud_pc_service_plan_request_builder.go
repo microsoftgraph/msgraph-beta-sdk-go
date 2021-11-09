@@ -35,7 +35,7 @@ type CloudPcServicePlanRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get servicePlans from deviceManagement
+// Cloud PC service plans.
 type CloudPcServicePlanRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Expand related entities
@@ -79,7 +79,7 @@ func NewCloudPcServicePlanRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcServicePlanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property servicePlans for deviceManagement
+// Cloud PC service plans.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcServicePlanRequestBuilder) CreateDeleteRequestInformation(options *CloudPcServicePlanRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -98,7 +98,7 @@ func (m *CloudPcServicePlanRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get servicePlans from deviceManagement
+// Cloud PC service plans.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcServicePlanRequestBuilder) CreateGetRequestInformation(options *CloudPcServicePlanRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -123,7 +123,7 @@ func (m *CloudPcServicePlanRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update the navigation property servicePlans in deviceManagement
+// Cloud PC service plans.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcServicePlanRequestBuilder) CreatePatchRequestInformation(options *CloudPcServicePlanRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -143,7 +143,7 @@ func (m *CloudPcServicePlanRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete navigation property servicePlans for deviceManagement
+// Cloud PC service plans.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcServicePlanRequestBuilder) Delete(options *CloudPcServicePlanRequestBuilderDeleteOptions)(error) {
@@ -157,7 +157,7 @@ func (m *CloudPcServicePlanRequestBuilder) Delete(options *CloudPcServicePlanReq
     }
     return nil
 }
-// Get servicePlans from deviceManagement
+// Cloud PC service plans.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcServicePlanRequestBuilder) Get(options *CloudPcServicePlanRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcServicePlan, error) {
@@ -171,7 +171,7 @@ func (m *CloudPcServicePlanRequestBuilder) Get(options *CloudPcServicePlanReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcServicePlan), nil
 }
-// Update the navigation property servicePlans in deviceManagement
+// Cloud PC service plans.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcServicePlanRequestBuilder) Patch(options *CloudPcServicePlanRequestBuilderPatchOptions)(error) {

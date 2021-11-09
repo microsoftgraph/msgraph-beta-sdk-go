@@ -60,7 +60,7 @@ type AgreementRequestBuilderPatchOptions struct {
 func (m *AgreementRequestBuilder) Acceptances()(*i327fcd640227f503f8954e6b42ff3020c935058951cc9cd59e3d13ef561d4a35.AcceptancesRequestBuilder) {
     return i327fcd640227f503f8954e6b42ff3020c935058951cc9cd59e3d13ef561d4a35.NewAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.agreements.item.acceptances.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.agreements.item.acceptances.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AgreementRequestBuilder) AcceptancesById(id string)(*i3bee643e3932996f745cbce66aa7b1cb97137f56a746664bf5147711700962e8.AgreementAcceptanceRequestBuilder) {
@@ -182,7 +182,7 @@ func (m *AgreementRequestBuilder) File()(*ieb15810f180e10f80c2cdb1c4fd1740becd78
 func (m *AgreementRequestBuilder) Files()(*i7c390e1de4aa07a80ae54615ecee39712acdc4aa46152235bc7e5a120d0c2b3e.FilesRequestBuilder) {
     return i7c390e1de4aa07a80ae54615ecee39712acdc4aa46152235bc7e5a120d0c2b3e.NewFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.agreements.item.files.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.agreements.item.files.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AgreementRequestBuilder) FilesById(id string)(*id2a53a68b053462b5a0a928c19838a8d68e478bd5246d11c35fbb140518f97d5.AgreementFileLocalizationRequestBuilder) {

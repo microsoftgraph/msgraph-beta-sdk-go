@@ -65,7 +65,7 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceEnvironment()
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRoles()(*i843e68b5bc73e22fcd16c78aa50e01806024130f407f1efccf37a1e5c32f4bf5.AccessPackageResourceRolesRequestBuilder) {
     return i843e68b5bc73e22fcd16c78aa50e01806024130f407f1efccf37a1e5c32f4bf5.NewAccessPackageResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackages.item.accessPackageAssignmentPolicies.item.accessPackageCatalog.accessPackageResourceScopes.item.accessPackageResource.accessPackageResourceRoles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.accessPackageAssignmentPolicies.item.accessPackageCatalog.accessPackageResourceScopes.item.accessPackageResource.accessPackageResourceRoles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id string)(*i11fc5bf0559f871035a29be2ff1eb124e9c1ae3a496a1e76207e8d51cbfe5d24.AccessPackageResourceRoleRequestBuilder) {
@@ -81,7 +81,7 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id 
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopes()(*i89ed0aeb7cc4e0dd7b2bfbee7e6fbcbdf06b998de517e73fa5f436fc49b4d90a.AccessPackageResourceScopesRequestBuilder) {
     return i89ed0aeb7cc4e0dd7b2bfbee7e6fbcbdf06b998de517e73fa5f436fc49b4d90a.NewAccessPackageResourceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.entitlementManagement.accessPackages.item.accessPackageAssignmentPolicies.item.accessPackageCatalog.accessPackageResourceScopes.item.accessPackageResource.accessPackageResourceScopes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.accessPackageAssignmentPolicies.item.accessPackageCatalog.accessPackageResourceScopes.item.accessPackageResource.accessPackageResourceScopes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopesById(id string)(*ib128f28b199dfbdfe5d5ae03376b80f3665d532d8a11d5f5010c1ddb3e9bf355.AccessPackageResourceScopeRequestBuilder) {

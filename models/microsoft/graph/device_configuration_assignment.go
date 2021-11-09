@@ -7,6 +7,8 @@ import (
 // 
 type DeviceConfigurationAssignment struct {
     Entity
+    // The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
+    intent *DeviceConfigAssignmentIntent;
     // The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
     source *DeviceAndAppManagementAssignmentSource;
     // The identifier of the source of the assignment. This property is read-only.
@@ -20,6 +22,14 @@ func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
         Entity: *NewEntity(),
     }
     return m
+}
+// Gets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
+func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentIntent) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intent
+    }
 }
 // Gets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
 func (m *DeviceConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
@@ -48,6 +58,15 @@ func (m *DeviceConfigurationAssignment) GetTarget()(*DeviceAndAppManagementAssig
 // The deserialization information for the current model
 func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["intent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceConfigAssignmentIntent)
+        if err != nil {
+            return err
+        }
+        cast := val.(DeviceConfigAssignmentIntent)
+        m.SetIntent(&cast)
+        return nil
+    }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceAndAppManagementAssignmentSource)
         if err != nil {
@@ -86,6 +105,13 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d
     if err != nil {
         return err
     }
+    if m.GetIntent() != nil {
+        cast := m.GetIntent().String()
+        err = writer.WriteStringValue("intent", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSource() != nil {
         cast := m.GetSource().String()
         err = writer.WriteStringValue("source", &cast)
@@ -106,6 +132,12 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     return nil
+}
+// Sets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
+// Parameters:
+//  - value : Value to set for the intent property.
+func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentIntent)() {
+    m.intent = value
 }
 // Sets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
 // Parameters:

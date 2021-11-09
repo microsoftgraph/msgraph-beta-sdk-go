@@ -190,7 +190,7 @@ func (m *ApprovalRequestBuilder) Patch(options *ApprovalRequestBuilderPatchOptio
 func (m *ApprovalRequestBuilder) Steps()(*i8dd71458c88d7d4aaa37475c42e4d9836b143a8ff6cec63445d51edde225251c.StepsRequestBuilder) {
     return i8dd71458c88d7d4aaa37475c42e4d9836b143a8ff6cec63445d51edde225251c.NewStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.entitlementManagement.roleAssignmentApprovals.item.steps.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.entitlementManagement.roleAssignmentApprovals.item.steps.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ApprovalRequestBuilder) StepsById(id string)(*i205b8ec0cfa1cc329c6ee2dea699ac1b4a920eb84807e1496c980b9b9632bff0.ApprovalStepRequestBuilder) {

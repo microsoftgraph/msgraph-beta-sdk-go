@@ -176,7 +176,7 @@ func (m *TeamworkTagRequestBuilder) Get(options *TeamworkTagRequestBuilderGetOpt
 func (m *TeamworkTagRequestBuilder) Members()(*i7ef667304f23dd1e4eca59b31ef36d3fb529b89a04d196af4a4475d4d763e826.MembersRequestBuilder) {
     return i7ef667304f23dd1e4eca59b31ef36d3fb529b89a04d196af4a4475d4d763e826.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.teams.item.tags.item.members.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.tags.item.members.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TeamworkTagRequestBuilder) MembersById(id string)(*i25c803795748ee2ba5ab98a3433bc351e872e8d852e28b0bcec4e5382139b2b5.TeamworkTagMemberRequestBuilder) {

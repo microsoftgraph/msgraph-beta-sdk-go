@@ -186,7 +186,7 @@ func (m *OnenoteSectionRequestBuilder) Get(options *OnenoteSectionRequestBuilder
 func (m *OnenoteSectionRequestBuilder) Pages()(*i831e951f021650047486357e0157e986bdd533f4e283e3872afbedf33c4c5796.PagesRequestBuilder) {
     return i831e951f021650047486357e0157e986bdd533f4e283e3872afbedf33c4c5796.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.onenote.sectionGroups.item.sections.item.pages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.onenote.sectionGroups.item.sections.item.pages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnenoteSectionRequestBuilder) PagesById(id string)(*icba7dff5a2736299dc6d950d8b9176c1c700f2241d3478e85002cddf9b042f79.OnenotePageRequestBuilder) {

@@ -88,7 +88,7 @@ func (m *PoliciesRequestBuilder) AccessReviewPolicy()(*i8ab23dd53a7ba192025fbd1c
 func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPolicies()(*ib06edf2243c232ea0ac4674c243fe1a2abb0ee0eed56c1a59ce081927673770e.ActivityBasedTimeoutPoliciesRequestBuilder) {
     return ib06edf2243c232ea0ac4674c243fe1a2abb0ee0eed56c1a59ce081927673770e.NewActivityBasedTimeoutPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.activityBasedTimeoutPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.activityBasedTimeoutPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPoliciesById(id string)(*ie2aa8a198ac4cb5a2a1216675a0ebc84eb1ccb50965ba209e1e87acfa29f6a87.ActivityBasedTimeoutPolicyRequestBuilder) {
@@ -107,7 +107,7 @@ func (m *PoliciesRequestBuilder) AdminConsentRequestPolicy()(*i3baef4935efa79b1e
 func (m *PoliciesRequestBuilder) AppManagementPolicies()(*icb9925789218a9f15cfe348750b0959961d5079e5d10f9ce6723285bcf81edfe.AppManagementPoliciesRequestBuilder) {
     return icb9925789218a9f15cfe348750b0959961d5079e5d10f9ce6723285bcf81edfe.NewAppManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.appManagementPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.appManagementPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) AppManagementPoliciesById(id string)(*iadb7d5b1d89c4738d0e9ddc6026962b7c676342a12ca09eb194e68257d3c7eae.AppManagementPolicyRequestBuilder) {
@@ -129,7 +129,7 @@ func (m *PoliciesRequestBuilder) AuthenticationMethodsPolicy()(*i37b836bda4608f9
 func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*idf9e8b9f9da041893e6b6cb24dd45425a8696e3da093aef925b748ba4b81e936.AuthorizationPolicyRequestBuilder) {
     return idf9e8b9f9da041893e6b6cb24dd45425a8696e3da093aef925b748ba4b81e936.NewAuthorizationPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.authorizationPolicy.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.authorizationPolicy.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) AuthorizationPolicyById(id string)(*idf9e8b9f9da041893e6b6cb24dd45425a8696e3da093aef925b748ba4b81e936.AuthorizationPolicyRequestBuilder) {
@@ -148,7 +148,7 @@ func (m *PoliciesRequestBuilder) B2cAuthenticationMethodsPolicy()(*i0ea4dbcf4951
 func (m *PoliciesRequestBuilder) ClaimsMappingPolicies()(*i82a0672e3a16707a14cf887f3b2b473d9e08df769ebfa56b019ad2205ea8732d.ClaimsMappingPoliciesRequestBuilder) {
     return i82a0672e3a16707a14cf887f3b2b473d9e08df769ebfa56b019ad2205ea8732d.NewClaimsMappingPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.claimsMappingPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.claimsMappingPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*i3d72a8d05a1bc29e49b08e440b0f124e60a0a17cca39da307f0fc359f9ba8100.ClaimsMappingPolicyRequestBuilder) {
@@ -164,7 +164,7 @@ func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*i3d72a8d0
 func (m *PoliciesRequestBuilder) ConditionalAccessPolicies()(*ia589aeb346820886345aeb5931d4c55613a827996ee7bc74d7b23ee8114c4fb2.ConditionalAccessPoliciesRequestBuilder) {
     return ia589aeb346820886345aeb5931d4c55613a827996ee7bc74d7b23ee8114c4fb2.NewConditionalAccessPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.conditionalAccessPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.conditionalAccessPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*if5c99775547db21eee7a16da27e1a94c2a2912f7796bc11e4a67761a02798bdb.ConditionalAccessPolicyRequestBuilder) {
@@ -256,7 +256,7 @@ func (m *PoliciesRequestBuilder) DirectoryRoleAccessReviewPolicy()(*i9b0ad1e2bc6
 func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*i089acabe34d65ca8bb4a87f0ec051d51355817922b4d3ae2c686f574d377a384.FeatureRolloutPoliciesRequestBuilder) {
     return i089acabe34d65ca8bb4a87f0ec051d51355817922b4d3ae2c686f574d377a384.NewFeatureRolloutPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.featureRolloutPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.featureRolloutPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*i5632bf91798252c9bca8fa6eadd95db82f90a142d927c3c26e684ab6f2d90a28.FeatureRolloutPolicyRequestBuilder) {
@@ -286,7 +286,7 @@ func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(
 func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPolicies()(*iea55f9833b3f70a27d04fdb2fbb1fdc5b35798960f8ea227ae35055ce1b36486.HomeRealmDiscoveryPoliciesRequestBuilder) {
     return iea55f9833b3f70a27d04fdb2fbb1fdc5b35798960f8ea227ae35055ce1b36486.NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.homeRealmDiscoveryPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.homeRealmDiscoveryPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*ic2c067f4697fa94bc77e049a3cf157ed99ce46ed86b0a4e4b688d09062795945.HomeRealmDiscoveryPolicyRequestBuilder) {
@@ -305,7 +305,7 @@ func (m *PoliciesRequestBuilder) IdentitySecurityDefaultsEnforcementPolicy()(*i1
 func (m *PoliciesRequestBuilder) MobileAppManagementPolicies()(*ife15f5c3e6b78fb8bf35531d4fa132e7caa227e970656877474d6ac270ea6da2.MobileAppManagementPoliciesRequestBuilder) {
     return ife15f5c3e6b78fb8bf35531d4fa132e7caa227e970656877474d6ac270ea6da2.NewMobileAppManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.mobileAppManagementPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.mobileAppManagementPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) MobileAppManagementPoliciesById(id string)(*ic80fa25ff11a44e63435e8a7ab079ccac6e26dd9dc32f6b7a64be90be2f58011.MobilityManagementPolicyRequestBuilder) {
@@ -321,7 +321,7 @@ func (m *PoliciesRequestBuilder) MobileAppManagementPoliciesById(id string)(*ic8
 func (m *PoliciesRequestBuilder) MobileDeviceManagementPolicies()(*ia91d9fa5e7c39ffd42d68d1e1b891366a26470bb743dc20e271a38370621a692.MobileDeviceManagementPoliciesRequestBuilder) {
     return ia91d9fa5e7c39ffd42d68d1e1b891366a26470bb743dc20e271a38370621a692.NewMobileDeviceManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.mobileDeviceManagementPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.mobileDeviceManagementPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) MobileDeviceManagementPoliciesById(id string)(*i987e92fec12c74acd600441b6cc0e2c18b324562d146333edb4272ddc51cc302.MobilityManagementPolicyRequestBuilder) {
@@ -351,7 +351,7 @@ func (m *PoliciesRequestBuilder) Patch(options *PoliciesRequestBuilderPatchOptio
 func (m *PoliciesRequestBuilder) PermissionGrantPolicies()(*i4235b128855e4ef4e736e93e75306be2329042607217b14308bae073614f6b91.PermissionGrantPoliciesRequestBuilder) {
     return i4235b128855e4ef4e736e93e75306be2329042607217b14308bae073614f6b91.NewPermissionGrantPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.permissionGrantPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.permissionGrantPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*i2e9acaa79a19f61068a524155872974e6a98a1692e31a3056613d7fadf7058aa.PermissionGrantPolicyRequestBuilder) {
@@ -367,7 +367,7 @@ func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*i2e9aca
 func (m *PoliciesRequestBuilder) RoleManagementPolicies()(*i50186836a679beade2d866abd3fcf49adbbaf1d6161193ee717820c04941b95f.RoleManagementPoliciesRequestBuilder) {
     return i50186836a679beade2d866abd3fcf49adbbaf1d6161193ee717820c04941b95f.NewRoleManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.roleManagementPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.roleManagementPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) RoleManagementPoliciesById(id string)(*if796ee537abe837147e4bdf42134467182183733786146dccb3e3c9dd5e93b54.UnifiedRoleManagementPolicyRequestBuilder) {
@@ -383,7 +383,7 @@ func (m *PoliciesRequestBuilder) RoleManagementPoliciesById(id string)(*if796ee5
 func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignments()(*i23c105ad486b858fd7cc919b7625b7a6fc44a23cada9df239ade7ecbded23663.RoleManagementPolicyAssignmentsRequestBuilder) {
     return i23c105ad486b858fd7cc919b7625b7a6fc44a23cada9df239ade7ecbded23663.NewRoleManagementPolicyAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.roleManagementPolicyAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.roleManagementPolicyAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignmentsById(id string)(*i3718ba1ac7c6b6b07b29bbaa42dc50cc122da4f510e54af905f2c63f5fba5585.UnifiedRoleManagementPolicyAssignmentRequestBuilder) {
@@ -399,7 +399,7 @@ func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignmentsById(id string)(
 func (m *PoliciesRequestBuilder) ServicePrincipalCreationPolicies()(*i63cc74da591a22ec8c6bde2e4173c23db89b2ae47fef9d9e7c5634f87419136f.ServicePrincipalCreationPoliciesRequestBuilder) {
     return i63cc74da591a22ec8c6bde2e4173c23db89b2ae47fef9d9e7c5634f87419136f.NewServicePrincipalCreationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.servicePrincipalCreationPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.servicePrincipalCreationPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) ServicePrincipalCreationPoliciesById(id string)(*ib3f60717aa9a4ac09e9bb8a247a048202cb7a0c0e5abad3e0036a87c95f673ae.ServicePrincipalCreationPolicyRequestBuilder) {
@@ -415,7 +415,7 @@ func (m *PoliciesRequestBuilder) ServicePrincipalCreationPoliciesById(id string)
 func (m *PoliciesRequestBuilder) TokenIssuancePolicies()(*i8da786288f6b1e12f48f41a28df1f6b81f287a5228f3978a4411dc247e79361d.TokenIssuancePoliciesRequestBuilder) {
     return i8da786288f6b1e12f48f41a28df1f6b81f287a5228f3978a4411dc247e79361d.NewTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.tokenIssuancePolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.tokenIssuancePolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*i45b1afd0d7bc9158e4c62ccf7aeb399e7aef62431980207f6b6df372b62073b9.TokenIssuancePolicyRequestBuilder) {
@@ -431,7 +431,7 @@ func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*i45b1afd0
 func (m *PoliciesRequestBuilder) TokenLifetimePolicies()(*ib78e441cfc724e7ca2b7aa878fef387840fdd51d15409c2c4abf683297e6d1a0.TokenLifetimePoliciesRequestBuilder) {
     return ib78e441cfc724e7ca2b7aa878fef387840fdd51d15409c2c4abf683297e6d1a0.NewTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.tokenLifetimePolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.tokenLifetimePolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PoliciesRequestBuilder) TokenLifetimePoliciesById(id string)(*i1e97552013b3bffa16b2d23c422d3b88e120ef118f30ef817760eb98fdf1c32e.TokenLifetimePolicyRequestBuilder) {

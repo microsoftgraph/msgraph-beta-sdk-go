@@ -73,7 +73,7 @@ func (m *WorkbookTableRequestBuilder) ClearFilters()(*ief003cdeca5162b5e32434942
 func (m *WorkbookTableRequestBuilder) Columns()(*i8bc422b58ac52eb24ebefaba090e07fad1c12191d8aac96f2aa3073497974f74.ColumnsRequestBuilder) {
     return i8bc422b58ac52eb24ebefaba090e07fad1c12191d8aac96f2aa3073497974f74.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.workbook.tables.item.columns.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.columns.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookTableRequestBuilder) ColumnsById(id string)(*i86a6a19eac431ddcf501212e02e852ddcc92d1eec422d0b5e4c97df9673e9207.WorkbookTableColumnRequestBuilder) {
@@ -238,7 +238,7 @@ func (m *WorkbookTableRequestBuilder) ReapplyFilters()(*i8fb64ec9a3bd0ae69eadf0d
 func (m *WorkbookTableRequestBuilder) Rows()(*iefb4255a7d9d563de3e077b3be82fafefa3007ff27d26cd15affb3f81ca7bdd5.RowsRequestBuilder) {
     return iefb4255a7d9d563de3e077b3be82fafefa3007ff27d26cd15affb3f81ca7bdd5.NewRowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.workbook.tables.item.rows.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.rows.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookTableRequestBuilder) RowsById(id string)(*i2ff7d61355f35acfab76bec2082848fec1887425cd85200de3f6ddae8cda2847.WorkbookTableRowRequestBuilder) {

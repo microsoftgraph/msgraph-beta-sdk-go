@@ -27,10 +27,14 @@ type IosManagedAppProtection struct {
     disableProtectionOfManagedOutboundOpenInData *bool;
     // Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
     exemptedAppProtocols []KeyValuePair;
+    // A list of custom urls that are allowed to invocate an unmanaged app
+    exemptedUniversalLinks []string;
     // Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
     faceIdBlocked *bool;
     // Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
     filterOpenInToOnlyManagedApps *bool;
+    // A list of custom urls that are allowed to invocate a managed app
+    managedUniversalLinks []string;
     // Versions less than the specified version will block the managed app from accessing company data.
     minimumRequiredSdkVersion *string;
     // Versions less than the specified version will block the managed app from accessing company data.
@@ -127,6 +131,14 @@ func (m *IosManagedAppProtection) GetExemptedAppProtocols()([]KeyValuePair) {
         return m.exemptedAppProtocols
     }
 }
+// Gets the exemptedUniversalLinks property value. A list of custom urls that are allowed to invocate an unmanaged app
+func (m *IosManagedAppProtection) GetExemptedUniversalLinks()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.exemptedUniversalLinks
+    }
+}
 // Gets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
 func (m *IosManagedAppProtection) GetFaceIdBlocked()(*bool) {
     if m == nil {
@@ -141,6 +153,14 @@ func (m *IosManagedAppProtection) GetFilterOpenInToOnlyManagedApps()(*bool) {
         return nil
     } else {
         return m.filterOpenInToOnlyManagedApps
+    }
+}
+// Gets the managedUniversalLinks property value. A list of custom urls that are allowed to invocate a managed app
+func (m *IosManagedAppProtection) GetManagedUniversalLinks()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedUniversalLinks
     }
 }
 // Gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
@@ -268,6 +288,18 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         m.SetExemptedAppProtocols(res)
         return nil
     }
+    res["exemptedUniversalLinks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        res := make([]string, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*string))
+        }
+        m.SetExemptedUniversalLinks(res)
+        return nil
+    }
     res["faceIdBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -282,6 +314,18 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         m.SetFilterOpenInToOnlyManagedApps(val)
+        return nil
+    }
+    res["managedUniversalLinks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        res := make([]string, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*string))
+        }
+        m.SetManagedUniversalLinks(res)
         return nil
     }
     res["minimumRequiredSdkVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -402,6 +446,12 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
+        err = writer.WriteCollectionOfStringValues("exemptedUniversalLinks", m.GetExemptedUniversalLinks())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("faceIdBlocked", m.GetFaceIdBlocked())
         if err != nil {
             return err
@@ -409,6 +459,12 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     {
         err = writer.WriteBoolValue("filterOpenInToOnlyManagedApps", m.GetFilterOpenInToOnlyManagedApps())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteCollectionOfStringValues("managedUniversalLinks", m.GetManagedUniversalLinks())
         if err != nil {
             return err
         }
@@ -499,6 +555,12 @@ func (m *IosManagedAppProtection) SetDisableProtectionOfManagedOutboundOpenInDat
 func (m *IosManagedAppProtection) SetExemptedAppProtocols(value []KeyValuePair)() {
     m.exemptedAppProtocols = value
 }
+// Sets the exemptedUniversalLinks property value. A list of custom urls that are allowed to invocate an unmanaged app
+// Parameters:
+//  - value : Value to set for the exemptedUniversalLinks property.
+func (m *IosManagedAppProtection) SetExemptedUniversalLinks(value []string)() {
+    m.exemptedUniversalLinks = value
+}
 // Sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
 // Parameters:
 //  - value : Value to set for the faceIdBlocked property.
@@ -510,6 +572,12 @@ func (m *IosManagedAppProtection) SetFaceIdBlocked(value *bool)() {
 //  - value : Value to set for the filterOpenInToOnlyManagedApps property.
 func (m *IosManagedAppProtection) SetFilterOpenInToOnlyManagedApps(value *bool)() {
     m.filterOpenInToOnlyManagedApps = value
+}
+// Sets the managedUniversalLinks property value. A list of custom urls that are allowed to invocate a managed app
+// Parameters:
+//  - value : Value to set for the managedUniversalLinks property.
+func (m *IosManagedAppProtection) SetManagedUniversalLinks(value []string)() {
+    m.managedUniversalLinks = value
 }
 // Sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 // Parameters:

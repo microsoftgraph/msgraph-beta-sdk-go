@@ -59,7 +59,7 @@ type FeatureRolloutPolicyRequestBuilderPatchOptions struct {
 func (m *FeatureRolloutPolicyRequestBuilder) AppliesTo()(*if14b8a57f122d6d1ffeaa97dd10814e0c5978ae31d20c889a9ca740cf1e0679c.AppliesToRequestBuilder) {
     return if14b8a57f122d6d1ffeaa97dd10814e0c5978ae31d20c889a9ca740cf1e0679c.NewAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.featureRolloutPolicies.item.appliesTo.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.featureRolloutPolicies.item.appliesTo.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *FeatureRolloutPolicyRequestBuilder) AppliesToById(id string)(*i2dc3aa009c18f5c05efa3500757064318f19e2843ed4d370a25664f6c711f118.DirectoryObjectRequestBuilder) {

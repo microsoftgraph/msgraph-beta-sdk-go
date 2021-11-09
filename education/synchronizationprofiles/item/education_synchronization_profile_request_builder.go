@@ -168,7 +168,7 @@ func (m *EducationSynchronizationProfileRequestBuilder) Delete(options *Educatio
 func (m *EducationSynchronizationProfileRequestBuilder) Errors()(*i9915f3a66e2de398bdfae23c9b58bdf2c4a7c373437f422e62cc19ab1b37c01d.ErrorsRequestBuilder) {
     return i9915f3a66e2de398bdfae23c9b58bdf2c4a7c373437f422e62cc19ab1b37c01d.NewErrorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.education.synchronizationProfiles.item.errors.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.synchronizationProfiles.item.errors.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationSynchronizationProfileRequestBuilder) ErrorsById(id string)(*i88e077efbe7af1476bbdd89a3d093be25e50e57c1d6a1e16d2b9f2406ba01c90.EducationSynchronizationErrorRequestBuilder) {

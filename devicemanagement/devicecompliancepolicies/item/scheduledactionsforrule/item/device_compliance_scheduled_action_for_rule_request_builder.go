@@ -190,7 +190,7 @@ func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) Patch(options *De
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) ScheduledActionConfigurations()(*ibf107fd196437aaede650d26155860f2bbbbd3d7235c31cb4f80608cefdeddd9.ScheduledActionConfigurationsRequestBuilder) {
     return ibf107fd196437aaede650d26155860f2bbbbd3d7235c31cb4f80608cefdeddd9.NewScheduledActionConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item.scheduledActionConfigurations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item.scheduledActionConfigurations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) ScheduledActionConfigurationsById(id string)(*i30c81441182809790d7deb6c0da1307530c3dbb5567c662d63e456dddcb16f5a.DeviceComplianceActionItemRequestBuilder) {

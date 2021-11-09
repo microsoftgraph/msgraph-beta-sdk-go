@@ -63,7 +63,7 @@ func (m *IntuneBrandingProfileRequestBuilder) Assign()(*iabf54a6528230cc6fd8becb
 func (m *IntuneBrandingProfileRequestBuilder) Assignments()(*id933fdbaba7880973435cc8cf621ae774d7ea0758e1ed6de778e48418e22e695.AssignmentsRequestBuilder) {
     return id933fdbaba7880973435cc8cf621ae774d7ea0758e1ed6de778e48418e22e695.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.intuneBrandingProfiles.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intuneBrandingProfiles.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *IntuneBrandingProfileRequestBuilder) AssignmentsById(id string)(*i43e2d15146d44703f2826df7d20b0717eda3da488c1e8099cae91884e38e54c4.IntuneBrandingProfileAssignmentRequestBuilder) {

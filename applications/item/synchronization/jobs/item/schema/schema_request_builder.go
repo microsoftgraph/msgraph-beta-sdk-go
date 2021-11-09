@@ -165,7 +165,7 @@ func (m *SchemaRequestBuilder) Delete(options *SchemaRequestBuilderDeleteOptions
 func (m *SchemaRequestBuilder) Directories()(*i6ee51d7b052a2996a1de210399bcba9e55077a4899e05774012e607edda2f344.DirectoriesRequestBuilder) {
     return i6ee51d7b052a2996a1de210399bcba9e55077a4899e05774012e607edda2f344.NewDirectoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.applications.item.synchronization.jobs.item.schema.directories.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.synchronization.jobs.item.schema.directories.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SchemaRequestBuilder) DirectoriesById(id string)(*ief99c576a2437c90f6668478d921f23511414ad3967ae9fa00350a32c4507ad7.DirectoryDefinitionRequestBuilder) {

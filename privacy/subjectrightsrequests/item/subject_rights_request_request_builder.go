@@ -187,7 +187,7 @@ func (m *SubjectRightsRequestRequestBuilder) GetFinalReport()(*i958489264196dd08
 func (m *SubjectRightsRequestRequestBuilder) Notes()(*i06e33bb086cbb5f9333cc1c8bb09529f00623800d8f148e19c13fab399be0e21.NotesRequestBuilder) {
     return i06e33bb086cbb5f9333cc1c8bb09529f00623800d8f148e19c13fab399be0e21.NewNotesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.privacy.subjectRightsRequests.item.notes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privacy.subjectRightsRequests.item.notes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SubjectRightsRequestRequestBuilder) NotesById(id string)(*ibe7a5a69eee3e39fd9fd52c318c683abd357fbe438629376f053fbf8dafee6d9.AuthoredNoteRequestBuilder) {

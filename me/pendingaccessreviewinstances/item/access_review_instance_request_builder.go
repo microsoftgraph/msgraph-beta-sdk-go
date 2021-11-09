@@ -102,7 +102,7 @@ func NewAccessReviewInstanceRequestBuilder(rawUrl string, requestAdapter ida96af
 func (m *AccessReviewInstanceRequestBuilder) ContactedReviewers()(*i28cbfe53788555c1e8fb2bcbb1f7b5ee3a25273656373f13f5ff7b954d036e04.ContactedReviewersRequestBuilder) {
     return i28cbfe53788555c1e8fb2bcbb1f7b5ee3a25273656373f13f5ff7b954d036e04.NewContactedReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.pendingAccessReviewInstances.item.contactedReviewers.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.contactedReviewers.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessReviewInstanceRequestBuilder) ContactedReviewersById(id string)(*ia273f0c967440d14bb94006b177f70e6b83152c6fcad8ccbf86dc8739482bc95.AccessReviewReviewerRequestBuilder) {
@@ -182,7 +182,7 @@ func (m *AccessReviewInstanceRequestBuilder) CreatePatchRequestInformation(optio
 func (m *AccessReviewInstanceRequestBuilder) Decisions()(*i857369f7b2494f5fc984108c41f95436f6b0349231c74000340f9f1547e30300.DecisionsRequestBuilder) {
     return i857369f7b2494f5fc984108c41f95436f6b0349231c74000340f9f1547e30300.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.pendingAccessReviewInstances.item.decisions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.decisions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessReviewInstanceRequestBuilder) DecisionsById(id string)(*i92a83f24221d12aedaef668e1fbb993200a107c50dd873c65f56c93ab8abaa7e.AccessReviewInstanceDecisionItemRequestBuilder) {

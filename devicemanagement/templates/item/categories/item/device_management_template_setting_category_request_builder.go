@@ -190,7 +190,7 @@ func (m *DeviceManagementTemplateSettingCategoryRequestBuilder) Patch(options *D
 func (m *DeviceManagementTemplateSettingCategoryRequestBuilder) RecommendedSettings()(*ic425ce86de24a034e6f015478562056e313cd3283aeee6815e39b42a068dd2e1.RecommendedSettingsRequestBuilder) {
     return ic425ce86de24a034e6f015478562056e313cd3283aeee6815e39b42a068dd2e1.NewRecommendedSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.templates.item.categories.item.recommendedSettings.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templates.item.categories.item.recommendedSettings.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceManagementTemplateSettingCategoryRequestBuilder) RecommendedSettingsById(id string)(*i8cca88b6428aa5e0aef1f88b2eea712467f69b4bcd843cf74b8d35246b3c0873.DeviceManagementSettingInstanceRequestBuilder) {

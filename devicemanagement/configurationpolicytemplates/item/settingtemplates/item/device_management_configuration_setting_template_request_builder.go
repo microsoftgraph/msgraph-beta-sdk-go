@@ -190,7 +190,7 @@ func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) Patch(optio
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) SettingDefinitions()(*i4ef26cac8f2c79ce988999738305c17f201665e71cef01186dae6f9c2b7ccbb7.SettingDefinitionsRequestBuilder) {
     return i4ef26cac8f2c79ce988999738305c17f201665e71cef01186dae6f9c2b7ccbb7.NewSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.configurationPolicyTemplates.item.settingTemplates.item.settingDefinitions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicyTemplates.item.settingTemplates.item.settingDefinitions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) SettingDefinitionsById(id string)(*i17e29a57a5f9a404c2017596b5ae58278006f69df8d598ba8b023689b417d3b1.DeviceManagementConfigurationSettingDefinitionRequestBuilder) {

@@ -194,7 +194,7 @@ func (m *WorkbookChartSeriesRequestBuilder) Patch(options *WorkbookChartSeriesRe
 func (m *WorkbookChartSeriesRequestBuilder) Points()(*i67c1fe7dc83f235455070efaa3ef6fe1f8777cc3077d2ed6ea2310725e2b2a66.PointsRequestBuilder) {
     return i67c1fe7dc83f235455070efaa3ef6fe1f8777cc3077d2ed6ea2310725e2b2a66.NewPointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.workbook.worksheets.item.charts.item.series.item.points.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.worksheets.item.charts.item.series.item.points.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookChartSeriesRequestBuilder) PointsById(id string)(*i436a265ec364831ffb984916332cfc673542f792106e63e39e1aa14defdd4701.WorkbookChartPointRequestBuilder) {

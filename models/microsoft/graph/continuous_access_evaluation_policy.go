@@ -11,13 +11,13 @@ type ContinuousAccessEvaluationPolicy struct {
     description *string;
     // The value is always Continuous Access Evaluation. Read-only.
     displayName *string;
-    // The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty.
+    // The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
     groups []string;
-    // true to indicate whether continuous access evaluation should be performed; otherwise false.
+    // true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
     isEnabled *bool;
-    // 
+    // true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
     migrate *bool;
-    // The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty.
+    // The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
     users []string;
 }
 // Instantiates a new continuousAccessEvaluationPolicy and sets the default values.
@@ -43,7 +43,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the groups property value. The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty.
+// Gets the groups property value. The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) GetGroups()([]string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetGroups()([]string) {
         return m.groups
     }
 }
-// Gets the isEnabled property value. true to indicate whether continuous access evaluation should be performed; otherwise false.
+// Gets the isEnabled property value. true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// Gets the migrate property value. 
+// Gets the migrate property value. true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
 func (m *ContinuousAccessEvaluationPolicy) GetMigrate()(*bool) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetMigrate()(*bool) {
         return m.migrate
     }
 }
-// Gets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty.
+// Gets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) GetUsers()([]string) {
     if m == nil {
         return nil
@@ -197,25 +197,25 @@ func (m *ContinuousAccessEvaluationPolicy) SetDescription(value *string)() {
 func (m *ContinuousAccessEvaluationPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the groups property value. The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty.
+// Sets the groups property value. The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
 // Parameters:
 //  - value : Value to set for the groups property.
 func (m *ContinuousAccessEvaluationPolicy) SetGroups(value []string)() {
     m.groups = value
 }
-// Sets the isEnabled property value. true to indicate whether continuous access evaluation should be performed; otherwise false.
+// Sets the isEnabled property value. true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
 // Parameters:
 //  - value : Value to set for the isEnabled property.
 func (m *ContinuousAccessEvaluationPolicy) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// Sets the migrate property value. 
+// Sets the migrate property value. true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
 // Parameters:
 //  - value : Value to set for the migrate property.
 func (m *ContinuousAccessEvaluationPolicy) SetMigrate(value *bool)() {
     m.migrate = value
 }
-// Sets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty.
+// Sets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
 // Parameters:
 //  - value : Value to set for the users property.
 func (m *ContinuousAccessEvaluationPolicy) SetUsers(value []string)() {

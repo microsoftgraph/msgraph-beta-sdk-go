@@ -177,7 +177,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) Get(options *AccessReview
 func (m *AccessReviewScheduleDefinitionRequestBuilder) Instances()(*i5591bb267508ecb75034e78615aaee45cc17284223ea50adf429b06c79b258f9.InstancesRequestBuilder) {
     return i5591bb267508ecb75034e78615aaee45cc17284223ea50adf429b06c79b258f9.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.accessReviews.definitions.item.instances.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessReviewScheduleDefinitionRequestBuilder) InstancesById(id string)(*idac0b3111695ecd4dc16b6628acb0b3c5ae374573f87c852ffc058f95d7abdab.AccessReviewInstanceRequestBuilder) {

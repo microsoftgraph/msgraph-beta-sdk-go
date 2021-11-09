@@ -26,7 +26,7 @@ type SettingDefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of related Setting Definitions
+// List of related Setting Definitions. This property is read-only.
 type SettingDefinitionsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Include count of items
@@ -71,7 +71,7 @@ func NewSettingDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams["request-raw-url"] = rawUrl
     return NewSettingDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of related Setting Definitions
+// List of related Setting Definitions. This property is read-only.
 // Parameters:
 //  - options : Options for the request
 func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation(options *SettingDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +96,7 @@ func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// List of related Setting Definitions
+// List of related Setting Definitions. This property is read-only.
 // Parameters:
 //  - options : Options for the request
 func (m *SettingDefinitionsRequestBuilder) Get(options *SettingDefinitionsRequestBuilderGetOptions)(*SettingDefinitionsResponse, error) {

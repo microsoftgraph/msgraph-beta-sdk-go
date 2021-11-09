@@ -35,7 +35,7 @@ type DeviceManagementConfigurationSettingDefinition struct {
     referredSettingInformationList []DeviceManagementConfigurationReferredSettingInformation;
     // Root setting definition if the setting is a child setting.
     rootDefinitionId *string;
-    // Setting type, for example, configuration and compliance. Possible values are: none, configuration.
+    // Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
     settingUsage *DeviceManagementConfigurationSettingUsage;
     // Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
     uxBehavior *DeviceManagementConfigurationControlType;
@@ -163,7 +163,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetRootDefinitionId()(*
         return m.rootDefinitionId
     }
 }
-// Gets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration.
+// Gets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
 func (m *DeviceManagementConfigurationSettingDefinition) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
     if m == nil {
         return nil
@@ -574,7 +574,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetReferredSettingInfor
 func (m *DeviceManagementConfigurationSettingDefinition) SetRootDefinitionId(value *string)() {
     m.rootDefinitionId = value
 }
-// Sets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration.
+// Sets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
 // Parameters:
 //  - value : Value to set for the settingUsage property.
 func (m *DeviceManagementConfigurationSettingDefinition) SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)() {

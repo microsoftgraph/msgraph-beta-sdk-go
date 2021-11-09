@@ -164,7 +164,7 @@ func (m *ServicePrincipalCreationPolicyRequestBuilder) Delete(options *ServicePr
 func (m *ServicePrincipalCreationPolicyRequestBuilder) Excludes()(*i458957d039676a87049f925f9a0ac58100c522d4c5494921661924e3d7de9536.ExcludesRequestBuilder) {
     return i458957d039676a87049f925f9a0ac58100c522d4c5494921661924e3d7de9536.NewExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.servicePrincipalCreationPolicies.item.excludes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.servicePrincipalCreationPolicies.item.excludes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ServicePrincipalCreationPolicyRequestBuilder) ExcludesById(id string)(*if3d69c085cc31553bffa6238747fd2f166e883710ce3cb7738b69051017fde73.ServicePrincipalCreationConditionSetRequestBuilder) {
@@ -194,7 +194,7 @@ func (m *ServicePrincipalCreationPolicyRequestBuilder) Get(options *ServicePrinc
 func (m *ServicePrincipalCreationPolicyRequestBuilder) Includes()(*ibb33c8122164f9a21b54efbd3817c55a46e13f7c672ae3565862893e0225a426.IncludesRequestBuilder) {
     return ibb33c8122164f9a21b54efbd3817c55a46e13f7c672ae3565862893e0225a426.NewIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.servicePrincipalCreationPolicies.item.includes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.servicePrincipalCreationPolicies.item.includes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ServicePrincipalCreationPolicyRequestBuilder) IncludesById(id string)(*i8b8ea18691791149f6486e79113d56f56a6921846e0823954a25159321c50bdc.ServicePrincipalCreationConditionSetRequestBuilder) {

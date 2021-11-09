@@ -29,6 +29,8 @@ type ExecuteActionRequestBody struct {
     notificationTitle *string;
     // 
     organizationalUnitPath *string;
+    // 
+    persistEsimDataPlan *bool;
 }
 // Instantiates a new executeActionRequestBody and sets the default values.
 func NewExecuteActionRequestBody()(*ExecuteActionRequestBody) {
@@ -125,6 +127,14 @@ func (m *ExecuteActionRequestBody) GetOrganizationalUnitPath()(*string) {
         return m.organizationalUnitPath
     }
 }
+// Gets the persistEsimDataPlan property value. 
+func (m *ExecuteActionRequestBody) GetPersistEsimDataPlan()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.persistEsimDataPlan
+    }
+}
 // The deserialization information for the current model
 func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -213,6 +223,14 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         m.SetOrganizationalUnitPath(val)
         return nil
     }
+    res["persistEsimDataPlan"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        m.SetPersistEsimDataPlan(val)
+        return nil
+    }
     return res
 }
 func (m *ExecuteActionRequestBody) IsNil()(bool) {
@@ -279,6 +297,12 @@ func (m *ExecuteActionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     {
         err := writer.WriteStringValue("organizationalUnitPath", m.GetOrganizationalUnitPath())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("persistEsimDataPlan", m.GetPersistEsimDataPlan())
         if err != nil {
             return err
         }
@@ -356,4 +380,10 @@ func (m *ExecuteActionRequestBody) SetNotificationTitle(value *string)() {
 //  - value : Value to set for the organizationalUnitPath property.
 func (m *ExecuteActionRequestBody) SetOrganizationalUnitPath(value *string)() {
     m.organizationalUnitPath = value
+}
+// Sets the persistEsimDataPlan property value. 
+// Parameters:
+//  - value : Value to set for the persistEsimDataPlan property.
+func (m *ExecuteActionRequestBody) SetPersistEsimDataPlan(value *bool)() {
+    m.persistEsimDataPlan = value
 }

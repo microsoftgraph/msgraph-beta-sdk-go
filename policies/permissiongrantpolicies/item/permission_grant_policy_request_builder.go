@@ -164,7 +164,7 @@ func (m *PermissionGrantPolicyRequestBuilder) Delete(options *PermissionGrantPol
 func (m *PermissionGrantPolicyRequestBuilder) Excludes()(*i81b08bf532ee9f74501f837d03893fe0b7ffe4476c1dcacfe6302490da5d3694.ExcludesRequestBuilder) {
     return i81b08bf532ee9f74501f837d03893fe0b7ffe4476c1dcacfe6302490da5d3694.NewExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.permissionGrantPolicies.item.excludes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.permissionGrantPolicies.item.excludes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PermissionGrantPolicyRequestBuilder) ExcludesById(id string)(*i307e2d11be62be54ec59a357c2601ceddc5616fa089cdfe3e037cd77aafd1e1e.PermissionGrantConditionSetRequestBuilder) {
@@ -194,7 +194,7 @@ func (m *PermissionGrantPolicyRequestBuilder) Get(options *PermissionGrantPolicy
 func (m *PermissionGrantPolicyRequestBuilder) Includes()(*i251a0310ac8ccd28324dd89dabf36e69621defd9d81620901f2d26bb5273ecec.IncludesRequestBuilder) {
     return i251a0310ac8ccd28324dd89dabf36e69621defd9d81620901f2d26bb5273ecec.NewIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.permissionGrantPolicies.item.includes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.permissionGrantPolicies.item.includes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PermissionGrantPolicyRequestBuilder) IncludesById(id string)(*i5735f7ded85e85c94dfa2afa819e51282b06351a5a8baed9d71d2b45147a5aef.PermissionGrantConditionSetRequestBuilder) {

@@ -6,6 +6,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i164dc366bcd5e26e795ff75a2fa13960d83e6396ec05782e6b76eb1f80c4b69b "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/removekey"
     i1a3a50fea4c09450bbaa46b5464d3f259d9942bd44610be4837c29a55cf268fa "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/addpassword"
+    i2d2f49a5bb637ea5dd10ccf0e7c3776123a84e80ed6d9150c2fd2cc8ca9ed2f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/federatedidentitycredentials"
     i3d2f054c80bc83cd28a63a163f92036324daa39ab1bb99fd847444eaf48da698 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/connectorgroup"
     i40412afdaf06940a98614d093b1dd2f1ea12967583d8386057ef7f46b9fd39d9 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/restore"
     i421a4b8df71a68823647e3232383b123a09acda44ae135311cc12368c00e7d41 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/homerealmdiscoverypolicies"
@@ -26,6 +27,7 @@ import (
     if7e9fe038cbc04c53e872ff5b374767b949c817ade18929784991f358eb803b0 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/unsetverifiedpublisher"
     ifd565415dad3a3abe5d2ac4a2be4b6c96c9ed1844b485ab5fbf1591e4d856097 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/removepassword"
     i17d74174c0c203a9690a594729795841599510ec1474d89665b17043a9e520da "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/extensionproperties/item"
+    icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/federatedidentitycredentials/item"
 )
 
 // Builds and executes requests for operations under \applications\{application-id}
@@ -203,7 +205,7 @@ func (m *ApplicationRequestBuilder) Delete(options *ApplicationRequestBuilderDel
 func (m *ApplicationRequestBuilder) ExtensionProperties()(*i584715a25bcd7d9dc447f3cc78f525df77e5558f3196410f39f1a78f7b92ab5b.ExtensionPropertiesRequestBuilder) {
     return i584715a25bcd7d9dc447f3cc78f525df77e5558f3196410f39f1a78f7b92ab5b.NewExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.applications.item.extensionProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.extensionProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ApplicationRequestBuilder) ExtensionPropertiesById(id string)(*i17d74174c0c203a9690a594729795841599510ec1474d89665b17043a9e520da.ExtensionPropertyRequestBuilder) {
@@ -215,6 +217,22 @@ func (m *ApplicationRequestBuilder) ExtensionPropertiesById(id string)(*i17d7417
         urlTplParams["extensionProperty_id"] = id
     }
     return i17d74174c0c203a9690a594729795841599510ec1474d89665b17043a9e520da.NewExtensionPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *ApplicationRequestBuilder) FederatedIdentityCredentials()(*i2d2f49a5bb637ea5dd10ccf0e7c3776123a84e80ed6d9150c2fd2cc8ca9ed2f9.FederatedIdentityCredentialsRequestBuilder) {
+    return i2d2f49a5bb637ea5dd10ccf0e7c3776123a84e80ed6d9150c2fd2cc8ca9ed2f9.NewFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.federatedIdentityCredentials.item collection
+// Parameters:
+//  - id : Unique identifier of the item
+func (m *ApplicationRequestBuilder) FederatedIdentityCredentialsById(id string)(*icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2.FederatedIdentityCredentialRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["federatedIdentityCredential_id"] = id
+    }
+    return icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2.NewFederatedIdentityCredentialRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get entity from applications by key
 // Parameters:

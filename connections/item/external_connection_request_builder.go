@@ -181,7 +181,7 @@ func (m *ExternalConnectionRequestBuilder) Get(options *ExternalConnectionReques
 func (m *ExternalConnectionRequestBuilder) Groups()(*ic4ecba2a36e9429147361e0927b616e9b14c0047f0c81f4d383857826bf622b0.GroupsRequestBuilder) {
     return ic4ecba2a36e9429147361e0927b616e9b14c0047f0c81f4d383857826bf622b0.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.connections.item.groups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.connections.item.groups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ExternalConnectionRequestBuilder) GroupsById(id string)(*i20ab49c75285e4cd8a2b4e4645b09f58717fe4efdaf039c7973589d395d6d3a7.ExternalGroupRequestBuilder) {
@@ -197,7 +197,7 @@ func (m *ExternalConnectionRequestBuilder) GroupsById(id string)(*i20ab49c75285e
 func (m *ExternalConnectionRequestBuilder) Items()(*ieb276fe54a3917eca6ba7222449ff2e6a5642f1c6bebeaabc0427903311a92df.ItemsRequestBuilder) {
     return ieb276fe54a3917eca6ba7222449ff2e6a5642f1c6bebeaabc0427903311a92df.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.connections.item.items.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.connections.item.items.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ExternalConnectionRequestBuilder) ItemsById(id string)(*ifb639436ebf63dc6cfd09347d97c3adc1ba4e054cb845ef13d79cea6a7aece70.ExternalItemRequestBuilder) {
@@ -213,7 +213,7 @@ func (m *ExternalConnectionRequestBuilder) ItemsById(id string)(*ifb639436ebf63d
 func (m *ExternalConnectionRequestBuilder) Operations()(*i16aec0d979679a78de026ea357af647676e9bd2f7c8534da4da2643e5d6f81b1.OperationsRequestBuilder) {
     return i16aec0d979679a78de026ea357af647676e9bd2f7c8534da4da2643e5d6f81b1.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.connections.item.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.connections.item.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ExternalConnectionRequestBuilder) OperationsById(id string)(*i38a4dbb9e776d366f238688a9031f7f382abfd310dedd2207973525e4859aebd.ConnectionOperationRequestBuilder) {

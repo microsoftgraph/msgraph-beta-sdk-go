@@ -190,7 +190,7 @@ func (m *SensitivityLabelRequestBuilder) Patch(options *SensitivityLabelRequestB
 func (m *SensitivityLabelRequestBuilder) Sublabels()(*ia1d9343949e7cf42b9fae414680ded2b9b049aafed3dfd4b85130d2827ab7026.SublabelsRequestBuilder) {
     return ia1d9343949e7cf42b9fae414680ded2b9b049aafed3dfd4b85130d2827ab7026.NewSublabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.informationProtection.sensitivityLabels.item.sublabels.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.sensitivityLabels.item.sublabels.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SensitivityLabelRequestBuilder) SublabelsById(id string)(*iff26d7fa0f2645011499c6d75d66adab5f1394fad3e196f91e70e2b33c74128c.SensitivityLabelRequestBuilder) {

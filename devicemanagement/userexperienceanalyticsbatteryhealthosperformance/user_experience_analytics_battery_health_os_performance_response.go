@@ -1,4 +1,4 @@
-package riskyusers
+package userexperienceanalyticsbatteryhealthosperformance
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
@@ -6,23 +6,23 @@ import (
 )
 
 // 
-type RiskyUsersResponse struct {
+type UserExperienceAnalyticsBatteryHealthOsPerformanceResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     nextLink *string;
     // 
-    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser;
+    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthOsPerformance;
 }
-// Instantiates a new riskyUsersResponse and sets the default values.
-func NewRiskyUsersResponse()(*RiskyUsersResponse) {
-    m := &RiskyUsersResponse{
+// Instantiates a new userExperienceAnalyticsBatteryHealthOsPerformanceResponse and sets the default values.
+func NewUserExperienceAnalyticsBatteryHealthOsPerformanceResponse()(*UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) {
+    m := &UserExperienceAnalyticsBatteryHealthOsPerformanceResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RiskyUsersResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
@@ -30,7 +30,7 @@ func (m *RiskyUsersResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // Gets the nextLink property value. 
-func (m *RiskyUsersResponse) GetNextLink()(*string) {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -38,7 +38,7 @@ func (m *RiskyUsersResponse) GetNextLink()(*string) {
     }
 }
 // Gets the value property value. 
-func (m *RiskyUsersResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser) {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthOsPerformance) {
     if m == nil {
         return nil
     } else {
@@ -46,7 +46,7 @@ func (m *RiskyUsersResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c
     }
 }
 // The deserialization information for the current model
-func (m *RiskyUsersResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["@odata.nextLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
@@ -57,26 +57,26 @@ func (m *RiskyUsersResponse) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewRiskyUser() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsBatteryHealthOsPerformance() })
         if err != nil {
             return err
         }
-        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser, len(val))
+        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthOsPerformance, len(val))
         for i, v := range val {
-            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser))
+            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthOsPerformance))
         }
         m.SetValue(res)
         return nil
     }
     return res
 }
-func (m *RiskyUsersResponse) IsNil()(bool) {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) IsNil()(bool) {
     return m == nil
 }
 // Serializes information the current object
 // Parameters:
 //  - writer : Serialization writer to use to serialize this model
-func (m *RiskyUsersResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
         if err != nil {
@@ -105,18 +105,18 @@ func (m *RiskyUsersResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 // Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // Parameters:
 //  - value : Value to set for the AdditionalData property.
-func (m *RiskyUsersResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
 // Sets the nextLink property value. 
 // Parameters:
 //  - value : Value to set for the nextLink property.
-func (m *RiskyUsersResponse) SetNextLink(value *string)() {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) SetNextLink(value *string)() {
     m.nextLink = value
 }
 // Sets the value property value. 
 // Parameters:
 //  - value : Value to set for the value property.
-func (m *RiskyUsersResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser)() {
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthOsPerformance)() {
     m.value = value
 }

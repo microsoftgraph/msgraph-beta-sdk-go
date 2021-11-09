@@ -162,7 +162,7 @@ func (m *PrintServiceRequestBuilder) Delete(options *PrintServiceRequestBuilderD
 func (m *PrintServiceRequestBuilder) Endpoints()(*i5156d63463fd84dabf998d1b720e37782785f03d3b54eed7ca4e6066737d94b8.EndpointsRequestBuilder) {
     return i5156d63463fd84dabf998d1b720e37782785f03d3b54eed7ca4e6066737d94b8.NewEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.print.services.item.endpoints.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.services.item.endpoints.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrintServiceRequestBuilder) EndpointsById(id string)(*i556b3043d8dcb4e4f5bcc1d4092ed9b7dc4973097ec58cda9e66e1e069e31b42.PrintServiceEndpointRequestBuilder) {

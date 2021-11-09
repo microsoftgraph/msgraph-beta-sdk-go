@@ -59,7 +59,7 @@ type EdiscoveryRequestBuilderPatchOptions struct {
 func (m *EdiscoveryRequestBuilder) Cases()(*i11d895b13fb719aa1efc1375b26199040ecaddfd8d2c7a3988be9eb44cb349f9.CasesRequestBuilder) {
     return i11d895b13fb719aa1efc1375b26199040ecaddfd8d2c7a3988be9eb44cb349f9.NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.compliance.ediscovery.cases.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EdiscoveryRequestBuilder) CasesById(id string)(*i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1.CaseRequestBuilder) {

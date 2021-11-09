@@ -38,7 +38,7 @@ type TenantRelationshipsRequestBuilderGetQueryParameters struct {
 // Options for Patch
 type TenantRelationshipsRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantRelationships;
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantRelationship;
     // Request headers
     H map[string]string;
     // Request options

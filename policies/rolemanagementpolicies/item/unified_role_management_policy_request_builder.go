@@ -164,7 +164,7 @@ func (m *UnifiedRoleManagementPolicyRequestBuilder) Delete(options *UnifiedRoleM
 func (m *UnifiedRoleManagementPolicyRequestBuilder) EffectiveRules()(*if0d35103551c602f5b2331b0ffa6028b98d7b4171e7c4db47010b54171dc2dcb.EffectiveRulesRequestBuilder) {
     return if0d35103551c602f5b2331b0ffa6028b98d7b4171e7c4db47010b54171dc2dcb.NewEffectiveRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.roleManagementPolicies.item.effectiveRules.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.roleManagementPolicies.item.effectiveRules.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UnifiedRoleManagementPolicyRequestBuilder) EffectiveRulesById(id string)(*i811ba195cae1e905ab5d23c338b5965c64cfa723b2a7cbaf79f558bcd492389e.UnifiedRoleManagementPolicyRuleRequestBuilder) {
@@ -208,7 +208,7 @@ func (m *UnifiedRoleManagementPolicyRequestBuilder) Patch(options *UnifiedRoleMa
 func (m *UnifiedRoleManagementPolicyRequestBuilder) Rules()(*ifc39611d357a9b76d0ccfc15869a511b0e0c8f820d08446dd30dd89890511649.RulesRequestBuilder) {
     return ifc39611d357a9b76d0ccfc15869a511b0e0c8f820d08446dd30dd89890511649.NewRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.policies.roleManagementPolicies.item.rules.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.roleManagementPolicies.item.rules.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UnifiedRoleManagementPolicyRequestBuilder) RulesById(id string)(*ie226ae78525b483a512018ed5f5bf2023846009012cd463b4e7b22c6a6585ac7.UnifiedRoleManagementPolicyRuleRequestBuilder) {

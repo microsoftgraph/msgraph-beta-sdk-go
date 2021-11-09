@@ -10,6 +10,8 @@ type UserExperienceAnalyticsBaseline struct {
     Entity
     // The user experience analytics app health metrics.
     appHealthMetrics *UserExperienceAnalyticsCategory;
+    // The user experience analytics battery health metrics.
+    batteryHealthMetrics *UserExperienceAnalyticsCategory;
     // The user experience analytics best practices metrics.
     bestPracticesMetrics *UserExperienceAnalyticsCategory;
     // The date the custom baseline was created.
@@ -40,6 +42,14 @@ func (m *UserExperienceAnalyticsBaseline) GetAppHealthMetrics()(*UserExperienceA
         return nil
     } else {
         return m.appHealthMetrics
+    }
+}
+// Gets the batteryHealthMetrics property value. The user experience analytics battery health metrics.
+func (m *UserExperienceAnalyticsBaseline) GetBatteryHealthMetrics()(*UserExperienceAnalyticsCategory) {
+    if m == nil {
+        return nil
+    } else {
+        return m.batteryHealthMetrics
     }
 }
 // Gets the bestPracticesMetrics property value. The user experience analytics best practices metrics.
@@ -115,6 +125,14 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
             return err
         }
         m.SetAppHealthMetrics(val.(*UserExperienceAnalyticsCategory))
+        return nil
+    }
+    res["batteryHealthMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
+        if err != nil {
+            return err
+        }
+        m.SetBatteryHealthMetrics(val.(*UserExperienceAnalyticsCategory))
         return nil
     }
     res["bestPracticesMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,6 +219,12 @@ func (m *UserExperienceAnalyticsBaseline) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     {
+        err = writer.WriteObjectValue("batteryHealthMetrics", m.GetBatteryHealthMetrics())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("bestPracticesMetrics", m.GetBestPracticesMetrics())
         if err != nil {
             return err
@@ -255,6 +279,12 @@ func (m *UserExperienceAnalyticsBaseline) Serialize(writer i04eb5309aeaafadd2837
 //  - value : Value to set for the appHealthMetrics property.
 func (m *UserExperienceAnalyticsBaseline) SetAppHealthMetrics(value *UserExperienceAnalyticsCategory)() {
     m.appHealthMetrics = value
+}
+// Sets the batteryHealthMetrics property value. The user experience analytics battery health metrics.
+// Parameters:
+//  - value : Value to set for the batteryHealthMetrics property.
+func (m *UserExperienceAnalyticsBaseline) SetBatteryHealthMetrics(value *UserExperienceAnalyticsCategory)() {
+    m.batteryHealthMetrics = value
 }
 // Sets the bestPracticesMetrics property value. The user experience analytics best practices metrics.
 // Parameters:

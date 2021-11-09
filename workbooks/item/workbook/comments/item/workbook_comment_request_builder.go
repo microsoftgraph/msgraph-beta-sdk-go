@@ -190,7 +190,7 @@ func (m *WorkbookCommentRequestBuilder) Patch(options *WorkbookCommentRequestBui
 func (m *WorkbookCommentRequestBuilder) Replies()(*ibf192a870e338e40cb05c3c9fd941eb645cf3c0c89ac2524c69123282b392bb4.RepliesRequestBuilder) {
     return ibf192a870e338e40cb05c3c9fd941eb645cf3c0c89ac2524c69123282b392bb4.NewRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.workbook.comments.item.replies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.comments.item.replies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookCommentRequestBuilder) RepliesById(id string)(*i5a11dae76e3869fe0e24891bffef9c15d413fb3bbebb67973c7da7128c810e10.WorkbookCommentReplyRequestBuilder) {

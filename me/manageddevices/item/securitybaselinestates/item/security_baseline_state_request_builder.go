@@ -190,7 +190,7 @@ func (m *SecurityBaselineStateRequestBuilder) Patch(options *SecurityBaselineSta
 func (m *SecurityBaselineStateRequestBuilder) SettingStates()(*i2bd42e636e83769c0990da4a3b749527f51d572043f52ac85ad6baef36522ca7.SettingStatesRequestBuilder) {
     return i2bd42e636e83769c0990da4a3b749527f51d572043f52ac85ad6baef36522ca7.NewSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.me.managedDevices.item.securityBaselineStates.item.settingStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.managedDevices.item.securityBaselineStates.item.settingStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SecurityBaselineStateRequestBuilder) SettingStatesById(id string)(*i62acb51610a9d7331253267e6171626c9bf8b167157bceb4da07ac69ac5540ee.SecurityBaselineSettingStateRequestBuilder) {

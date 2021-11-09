@@ -195,7 +195,7 @@ func (m *ChatRequestBuilder) HideForUser()(*ice45878899bc758c6f22c47f7c7a49091bd
 func (m *ChatRequestBuilder) InstalledApps()(*ia1c4e944487866ec7cc165c592a0c533e7de01646fc63da1a218b9e5193eed39.InstalledAppsRequestBuilder) {
     return ia1c4e944487866ec7cc165c592a0c533e7de01646fc63da1a218b9e5193eed39.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.chats.item.installedApps.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.chats.item.installedApps.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) InstalledAppsById(id string)(*ie61dfb73c398f7dead8cc5dd9db4a47ecb07aade0608fc8c54a8403b80033d16.TeamsAppInstallationRequestBuilder) {
@@ -220,7 +220,7 @@ func (m *ChatRequestBuilder) MarkChatUnreadForUser()(*i5c9a73c476a5addf7da2bf806
 func (m *ChatRequestBuilder) Members()(*i23589f3f748b89f7a29ae1df54df4f7df1caa88dd2c8baf068f6007161c231c0.MembersRequestBuilder) {
     return i23589f3f748b89f7a29ae1df54df4f7df1caa88dd2c8baf068f6007161c231c0.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.chats.item.members.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.chats.item.members.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) MembersById(id string)(*ie0ebf374d51813131d325ba2e354a6f6ad5ee1d5255e9f99cae418db4e0bece9.ConversationMemberRequestBuilder) {
@@ -236,7 +236,7 @@ func (m *ChatRequestBuilder) MembersById(id string)(*ie0ebf374d51813131d325ba2e3
 func (m *ChatRequestBuilder) Messages()(*i5f9832a2ccbfad05d4a38c197ccbad6908c541610b76ee98871142a004a67381.MessagesRequestBuilder) {
     return i5f9832a2ccbfad05d4a38c197ccbad6908c541610b76ee98871142a004a67381.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.chats.item.messages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.chats.item.messages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) MessagesById(id string)(*i6df2ce3633ff2cfd4dfa5779c3abecf4c08acad5103f1c0967265043d3f020b9.ChatMessageRequestBuilder) {
@@ -252,7 +252,7 @@ func (m *ChatRequestBuilder) MessagesById(id string)(*i6df2ce3633ff2cfd4dfa5779c
 func (m *ChatRequestBuilder) Operations()(*ia8541a5f81434dfc5a41205ab203298be0f48ebea3f8e26bf486b07a9e94c53a.OperationsRequestBuilder) {
     return ia8541a5f81434dfc5a41205ab203298be0f48ebea3f8e26bf486b07a9e94c53a.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.chats.item.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.chats.item.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) OperationsById(id string)(*id4f1ff0b95f623eb5dd88b3faaa90d8a8d15dc658762e14d6f20f043f7a41bd6.TeamsAsyncOperationRequestBuilder) {
@@ -282,7 +282,7 @@ func (m *ChatRequestBuilder) Patch(options *ChatRequestBuilderPatchOptions)(erro
 func (m *ChatRequestBuilder) PermissionGrants()(*i4bec072883218972d9ecf2d62b7b914fff709b6026c787b10def2ac654def45f.PermissionGrantsRequestBuilder) {
     return i4bec072883218972d9ecf2d62b7b914fff709b6026c787b10def2ac654def45f.NewPermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.chats.item.permissionGrants.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.chats.item.permissionGrants.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) PermissionGrantsById(id string)(*id9d0b7bf8dee04396567860b43345e6dbc5dcecbe79ddf717e30dd368560da73.ResourceSpecificPermissionGrantRequestBuilder) {
@@ -301,7 +301,7 @@ func (m *ChatRequestBuilder) SendActivityNotification()(*ib8fd861a1697792849ae90
 func (m *ChatRequestBuilder) Tabs()(*i48acda2de821dcf6abda941549a7467829c8e46e9e93090c8a580c73cf41fd2c.TabsRequestBuilder) {
     return i48acda2de821dcf6abda941549a7467829c8e46e9e93090c8a580c73cf41fd2c.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.chats.item.tabs.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.chats.item.tabs.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) TabsById(id string)(*i77b0138be5c0e0924bfa917dfb3aaa7ceeb0f4b1a36c37a0e5a330c8386fded0.TeamsTabRequestBuilder) {

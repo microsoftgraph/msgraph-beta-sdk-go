@@ -62,7 +62,7 @@ type OutlookTaskRequestBuilderPatchOptions struct {
 func (m *OutlookTaskRequestBuilder) Attachments()(*i30d7001f23621738f5c0ebf4de402aa0940898dabde9c286e7bde7c8fe3a247a.AttachmentsRequestBuilder) {
     return i30d7001f23621738f5c0ebf4de402aa0940898dabde9c286e7bde7c8fe3a247a.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.users.item.outlook.taskFolders.item.tasks.item.attachments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskFolders.item.tasks.item.attachments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OutlookTaskRequestBuilder) AttachmentsById(id string)(*ic6491e7b1ea237fd1a5fc05790050c780572b7f37e967ddffd4225e1dc62ce51.AttachmentRequestBuilder) {
@@ -198,7 +198,7 @@ func (m *OutlookTaskRequestBuilder) Get(options *OutlookTaskRequestBuilderGetOpt
 func (m *OutlookTaskRequestBuilder) MultiValueExtendedProperties()(*ibeff8c7ce77c8ec152f96297bac9743c951b7257a49b9309cd240df9aa287826.MultiValueExtendedPropertiesRequestBuilder) {
     return ibeff8c7ce77c8ec152f96297bac9743c951b7257a49b9309cd240df9aa287826.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.users.item.outlook.taskFolders.item.tasks.item.multiValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskFolders.item.tasks.item.multiValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OutlookTaskRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i8c19f39e583cd9a1b9f36e6c8fe3732bbb945cb45363ddd749683c9976564002.MultiValueLegacyExtendedPropertyRequestBuilder) {
@@ -228,7 +228,7 @@ func (m *OutlookTaskRequestBuilder) Patch(options *OutlookTaskRequestBuilderPatc
 func (m *OutlookTaskRequestBuilder) SingleValueExtendedProperties()(*i07134841e1432d33390c1388213ee45e6595d43d6e0eb485c3d75c5572f84b26.SingleValueExtendedPropertiesRequestBuilder) {
     return i07134841e1432d33390c1388213ee45e6595d43d6e0eb485c3d75c5572f84b26.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.users.item.outlook.taskFolders.item.tasks.item.singleValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskFolders.item.tasks.item.singleValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OutlookTaskRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i42d4fa154ff58194c41d7a068d2ef0ea649f669575467c50bac921280cece148.SingleValueLegacyExtendedPropertyRequestBuilder) {

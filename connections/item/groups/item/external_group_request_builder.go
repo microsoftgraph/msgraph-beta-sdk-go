@@ -176,7 +176,7 @@ func (m *ExternalGroupRequestBuilder) Get(options *ExternalGroupRequestBuilderGe
 func (m *ExternalGroupRequestBuilder) Members()(*i0076de30666e5a2bbac488b5589060c505c936d20bd513b4af52ba9d47ae03ce.MembersRequestBuilder) {
     return i0076de30666e5a2bbac488b5589060c505c936d20bd513b4af52ba9d47ae03ce.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.connections.item.groups.item.members.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.connections.item.groups.item.members.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ExternalGroupRequestBuilder) MembersById(id string)(*i6bcc0207423f237bfcb4579df45dd5e5b9ff58acfaec84876442aecc9aa12072.ExternalGroupMemberRequestBuilder) {

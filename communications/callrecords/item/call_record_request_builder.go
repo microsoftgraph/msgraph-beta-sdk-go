@@ -190,7 +190,7 @@ func (m *CallRecordRequestBuilder) Patch(options *CallRecordRequestBuilderPatchO
 func (m *CallRecordRequestBuilder) Sessions()(*i8da91d80f834afa257263f71267b10122fb002ee361fdcad0ffef83b9e5cf724.SessionsRequestBuilder) {
     return i8da91d80f834afa257263f71267b10122fb002ee361fdcad0ffef83b9e5cf724.NewSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.communications.callRecords.item.sessions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.callRecords.item.sessions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CallRecordRequestBuilder) SessionsById(id string)(*ic5dfb8f4b7db4be39da7edb542b78c201cb5a192410b1ee4562017341bf3fda3.SessionRequestBuilder) {

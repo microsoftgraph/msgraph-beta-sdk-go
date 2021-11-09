@@ -193,7 +193,7 @@ func (m *ItemRequestBuilder) Patch(options *ItemRequestBuilderPatchOptions)(erro
 func (m *ItemRequestBuilder) Picture()(*i65418a9b1fedd6bd039ed3c16ad18814b547d95bc908d547d2e3d5ba6648a83d.PictureRequestBuilder) {
     return i65418a9b1fedd6bd039ed3c16ad18814b547d95bc908d547d2e3d5ba6648a83d.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.financials.companies.item.salesOrders.item.salesOrderLines.item.item.picture.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesOrders.item.salesOrderLines.item.item.picture.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ItemRequestBuilder) PictureById(id string)(*i65418a9b1fedd6bd039ed3c16ad18814b547d95bc908d547d2e3d5ba6648a83d.PictureRequestBuilder) {

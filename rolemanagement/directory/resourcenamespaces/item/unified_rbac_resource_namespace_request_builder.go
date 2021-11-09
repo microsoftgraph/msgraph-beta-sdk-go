@@ -194,7 +194,7 @@ func (m *UnifiedRbacResourceNamespaceRequestBuilder) Patch(options *UnifiedRbacR
 func (m *UnifiedRbacResourceNamespaceRequestBuilder) ResourceActions()(*i23eeb299d8c7655a5b8f9d91dcc2657946c4c182d94ebf89a3ccfe073344b511.ResourceActionsRequestBuilder) {
     return i23eeb299d8c7655a5b8f9d91dcc2657946c4c182d94ebf89a3ccfe073344b511.NewResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.roleManagement.directory.resourceNamespaces.item.resourceActions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.resourceNamespaces.item.resourceActions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UnifiedRbacResourceNamespaceRequestBuilder) ResourceActionsById(id string)(*i0ba042109e088f641da71389cf2ee1d6834428aef79b7f6483d9fafa2f43ab7a.UnifiedRbacResourceActionRequestBuilder) {

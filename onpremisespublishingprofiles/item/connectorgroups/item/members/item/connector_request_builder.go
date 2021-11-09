@@ -176,7 +176,7 @@ func (m *ConnectorRequestBuilder) Get(options *ConnectorRequestBuilderGetOptions
 func (m *ConnectorRequestBuilder) MemberOf()(*i5d9967eebbdcd0ac2f8e84b7b0841d9743b4c885d4b8cd40eb3e1d8b50ae840b.MemberOfRequestBuilder) {
     return i5d9967eebbdcd0ac2f8e84b7b0841d9743b4c885d4b8cd40eb3e1d8b50ae840b.NewMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.onPremisesPublishingProfiles.item.connectorGroups.item.members.item.memberOf.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.members.item.memberOf.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ConnectorRequestBuilder) MemberOfById(id string)(*i71fced2f45f8399bd9b9be9ade93f2528d1edbf19908bf9fd3d3fd521341fefd.ConnectorGroupRequestBuilder) {

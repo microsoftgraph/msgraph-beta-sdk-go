@@ -55,7 +55,7 @@ type SearchRequestBuilderPatchOptions struct {
 func (m *SearchRequestBuilder) Acronyms()(*ib721af151194f36463bd473df1277a52673500924a4562283e137a3f7ed94072.AcronymsRequestBuilder) {
     return ib721af151194f36463bd473df1277a52673500924a4562283e137a3f7ed94072.NewAcronymsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.search.acronyms.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.acronyms.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SearchRequestBuilder) AcronymsById(id string)(*i74358e4db7f904e8f49fdcb30f91642f6639093ec5390b7ca96d2a396083031d.AcronymRequestBuilder) {
@@ -71,7 +71,7 @@ func (m *SearchRequestBuilder) AcronymsById(id string)(*i74358e4db7f904e8f49fdcb
 func (m *SearchRequestBuilder) Bookmarks()(*i98acee39b1010d46fe63cc02c3afafb76788d106b29f8cbe8718dc6507b1faa8.BookmarksRequestBuilder) {
     return i98acee39b1010d46fe63cc02c3afafb76788d106b29f8cbe8718dc6507b1faa8.NewBookmarksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.search.bookmarks.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.bookmarks.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SearchRequestBuilder) BookmarksById(id string)(*i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192.BookmarkRequestBuilder) {
@@ -185,7 +185,7 @@ func (m *SearchRequestBuilder) Patch(options *SearchRequestBuilderPatchOptions)(
 func (m *SearchRequestBuilder) Qnas()(*ia2bf4f3fe5831ab1e67fee5e544f828bb45264fc9a4823e780f848a593eed31e.QnasRequestBuilder) {
     return ia2bf4f3fe5831ab1e67fee5e544f828bb45264fc9a4823e780f848a593eed31e.NewQnasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.search.qnas.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.qnas.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SearchRequestBuilder) QnasById(id string)(*i5a7b1d161e5927fae4776d21687bd98261ca983357fb199581c959d3642cfc0c.QnaRequestBuilder) {

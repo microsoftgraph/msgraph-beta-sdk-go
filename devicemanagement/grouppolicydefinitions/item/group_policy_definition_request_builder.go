@@ -203,7 +203,7 @@ func (m *GroupPolicyDefinitionRequestBuilder) Patch(options *GroupPolicyDefiniti
 func (m *GroupPolicyDefinitionRequestBuilder) Presentations()(*ia5547c0682358c94012164a326f029053ec5f1ddfbb91573107909f094b955bc.PresentationsRequestBuilder) {
     return ia5547c0682358c94012164a326f029053ec5f1ddfbb91573107909f094b955bc.NewPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.groupPolicyDefinitions.item.presentations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyDefinitions.item.presentations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *GroupPolicyDefinitionRequestBuilder) PresentationsById(id string)(*i755dd99b2492e3a413ac1208e4de2ede29dfb284de02d498fb55c3247fe139f0.GroupPolicyPresentationRequestBuilder) {

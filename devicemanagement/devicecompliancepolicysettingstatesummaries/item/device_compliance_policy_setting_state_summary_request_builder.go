@@ -162,7 +162,7 @@ func (m *DeviceCompliancePolicySettingStateSummaryRequestBuilder) Delete(options
 func (m *DeviceCompliancePolicySettingStateSummaryRequestBuilder) DeviceComplianceSettingStates()(*i37ad49c0bc6d68e963fdf65f7323a0821e118797dfc71b7300af4b5c7388c030.DeviceComplianceSettingStatesRequestBuilder) {
     return i37ad49c0bc6d68e963fdf65f7323a0821e118797dfc71b7300af4b5c7388c030.NewDeviceComplianceSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.deviceManagement.deviceCompliancePolicySettingStateSummaries.item.deviceComplianceSettingStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicySettingStateSummaries.item.deviceComplianceSettingStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCompliancePolicySettingStateSummaryRequestBuilder) DeviceComplianceSettingStatesById(id string)(*i623eaf2a0acafba67f551c159b5f0c09a5a15743477194b11a435ff9831edaa1.DeviceComplianceSettingStateRequestBuilder) {

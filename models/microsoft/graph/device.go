@@ -36,7 +36,7 @@ type Device struct {
     enrollmentProfileName *string;
     // Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
     enrollmentType *string;
-    // 
+    // Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, NOT, startsWith).
     extensionAttributes *OnPremisesExtensionAttributes;
     // The collection of open extensions defined for the device. Read-only. Nullable.
     extensions []Extension;
@@ -210,7 +210,7 @@ func (m *Device) GetEnrollmentType()(*string) {
         return m.enrollmentType
     }
 }
-// Gets the extensionAttributes property value. 
+// Gets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, NOT, startsWith).
 func (m *Device) GetExtensionAttributes()(*OnPremisesExtensionAttributes) {
     if m == nil {
         return nil
@@ -1186,7 +1186,7 @@ func (m *Device) SetEnrollmentProfileName(value *string)() {
 func (m *Device) SetEnrollmentType(value *string)() {
     m.enrollmentType = value
 }
-// Sets the extensionAttributes property value. 
+// Sets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, NOT, startsWith).
 // Parameters:
 //  - value : Value to set for the extensionAttributes property.
 func (m *Device) SetExtensionAttributes(value *OnPremisesExtensionAttributes)() {

@@ -88,7 +88,7 @@ type DriveItemRequestBuilderPatchOptions struct {
 func (m *DriveItemRequestBuilder) Activities()(*i68453248b6adc2e0a123184b9f0397803b74547d93a538bca62fb45840ec7c39.ActivitiesRequestBuilder) {
     return i68453248b6adc2e0a123184b9f0397803b74547d93a538bca62fb45840ec7c39.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.activities.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.activities.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveItemRequestBuilder) ActivitiesById(id string)(*ib3b0b0b8db03e078a58d5fd2c684b9c2f06f5e77dde80b3c46359e8e3f0480ba.ItemActivityOLDRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *DriveItemRequestBuilder) Checkout()(*ib109f1365e8ac7f6b077a01adab1935b4
 func (m *DriveItemRequestBuilder) Children()(*i0146b9e31c3cc4f2ab496bd8b7648bd7422072075b9c3fdb0b6223600352be8a.ChildrenRequestBuilder) {
     return i0146b9e31c3cc4f2ab496bd8b7648bd7422072075b9c3fdb0b6223600352be8a.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.children.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.children.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveItemRequestBuilder) ChildrenById(id string)(*i07d08684839c1c52e4e2f97c0ac854b38d29ec3cfe7f59122208e108260cbb4d.DriveItemRequestBuilder) {
@@ -299,7 +299,7 @@ func (m *DriveItemRequestBuilder) Patch(options *DriveItemRequestBuilderPatchOpt
 func (m *DriveItemRequestBuilder) Permissions()(*ia10d6bc417675919b129deccbb4a8ff6d0e423f7280ed162a4c41f59cc0e8de4.PermissionsRequestBuilder) {
     return ia10d6bc417675919b129deccbb4a8ff6d0e423f7280ed162a4c41f59cc0e8de4.NewPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.permissions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.permissions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveItemRequestBuilder) PermissionsById(id string)(*i8af00cb19bae1d8d547aa285fc2e34cbe5c5c5096ff8de885009b1dcd3611d71.PermissionRequestBuilder) {
@@ -327,7 +327,7 @@ func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*i7ecb3bb901e726c93053e
 func (m *DriveItemRequestBuilder) Subscriptions()(*i1ffc874dc11bc59b8f43e08f999b16d5537ed76c0d32ceacaf84e9d01a9a0a54.SubscriptionsRequestBuilder) {
     return i1ffc874dc11bc59b8f43e08f999b16d5537ed76c0d32ceacaf84e9d01a9a0a54.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.subscriptions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.subscriptions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveItemRequestBuilder) SubscriptionsById(id string)(*ic2204a9b8bb31b272b46aa5d8e8e1802c6b262a7377a2425b7aeb9b634548a33.SubscriptionRequestBuilder) {
@@ -343,7 +343,7 @@ func (m *DriveItemRequestBuilder) SubscriptionsById(id string)(*ic2204a9b8bb31b2
 func (m *DriveItemRequestBuilder) Thumbnails()(*i4403a8b36ffdd31c6449e834ff7354472d5bcaf819a2c59390ccca08a944e4e0.ThumbnailsRequestBuilder) {
     return i4403a8b36ffdd31c6449e834ff7354472d5bcaf819a2c59390ccca08a944e4e0.NewThumbnailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.thumbnails.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.thumbnails.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveItemRequestBuilder) ThumbnailsById(id string)(*if9d9f1bd841c39df4ae58bdaf1c987671d7244b7fbc793a0e55c2c3bcb60d75b.ThumbnailSetRequestBuilder) {
@@ -365,7 +365,7 @@ func (m *DriveItemRequestBuilder) ValidatePermission()(*i8236d13341080e5a3a7f286
 func (m *DriveItemRequestBuilder) Versions()(*iea15fd2e4983cd4bc7f77c56f9e7d10b714e2d4c76c191417ae77f325254d1fd.VersionsRequestBuilder) {
     return iea15fd2e4983cd4bc7f77c56f9e7d10b714e2d4c76c191417ae77f325254d1fd.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.workbooks.item.versions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.versions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveItemRequestBuilder) VersionsById(id string)(*i23745af441bc7e806a6ea374d93773d7f5b4d51f0b23dbfc2e289f9ed360c56f.DriveItemVersionRequestBuilder) {

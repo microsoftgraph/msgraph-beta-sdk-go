@@ -194,7 +194,7 @@ func (m *SettingsRequestBuilder) Patch(options *SettingsRequestBuilderPatchOptio
 func (m *SettingsRequestBuilder) ProfileCardProperties()(*i604f8b04e00513fe80f3d85b5361d4a35dbdefc791356fd0e5d7cb3820a457bf.ProfileCardPropertiesRequestBuilder) {
     return i604f8b04e00513fe80f3d85b5361d4a35dbdefc791356fd0e5d7cb3820a457bf.NewProfileCardPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.organization.item.settings.profileCardProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.organization.item.settings.profileCardProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SettingsRequestBuilder) ProfileCardPropertiesById(id string)(*i164665736586dec4189f70a600626997bf7f7b32e1d5debbea1adff37d4860df.ProfileCardPropertyRequestBuilder) {

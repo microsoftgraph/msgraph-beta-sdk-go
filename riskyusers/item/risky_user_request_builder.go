@@ -176,7 +176,7 @@ func (m *RiskyUserRequestBuilder) Get(options *RiskyUserRequestBuilderGetOptions
 func (m *RiskyUserRequestBuilder) History()(*i814e52de0212eaf7e0b74a145db2f49f68a8270e12b3bd0f91d2a298462b1674.HistoryRequestBuilder) {
     return i814e52de0212eaf7e0b74a145db2f49f68a8270e12b3bd0f91d2a298462b1674.NewHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.riskyUsers.item.history.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.riskyUsers.item.history.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *RiskyUserRequestBuilder) HistoryById(id string)(*i6a16a7a28a55308dcb96ec1b969c37a3e03428984c4b8e41b74db966fd5f9974.RiskyUserHistoryItemRequestBuilder) {

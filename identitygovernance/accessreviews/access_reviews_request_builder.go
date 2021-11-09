@@ -151,7 +151,7 @@ func (m *AccessReviewsRequestBuilder) CreatePatchRequestInformation(options *Acc
 func (m *AccessReviewsRequestBuilder) Definitions()(*icdcfab65b3cad0ae0ef323407563924f12617f5594e6a9fb131fba25fa3c0e64.DefinitionsRequestBuilder) {
     return icdcfab65b3cad0ae0ef323407563924f12617f5594e6a9fb131fba25fa3c0e64.NewDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.accessReviews.definitions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.definitions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*i6da4aa0125ca0757188f525aa6935aefda281d0627445ec063c253a0bd2fccb2.AccessReviewScheduleDefinitionRequestBuilder) {
@@ -195,7 +195,7 @@ func (m *AccessReviewsRequestBuilder) Get(options *AccessReviewsRequestBuilderGe
 func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*ia26090068384411e4f1397570769f217531481e6b5d7843821ed1ba88d0bf3f0.HistoryDefinitionsRequestBuilder) {
     return ia26090068384411e4f1397570769f217531481e6b5d7843821ed1ba88d0bf3f0.NewHistoryDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.identityGovernance.accessReviews.historyDefinitions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.historyDefinitions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*i560e03bc7fd4ff380362907aa5dfe4f5629fc0c3ceb16dcb98159089dfc550b7.AccessReviewHistoryDefinitionRequestBuilder) {

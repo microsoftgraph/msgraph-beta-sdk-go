@@ -185,7 +185,7 @@ type ReportsRequestBuilderPatchOptions struct {
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.ApplicationSignInDetailedSummaryRequestBuilder) {
     return i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.NewApplicationSignInDetailedSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.applicationSignInDetailedSummary.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.applicationSignInDetailedSummary.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(*i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.ApplicationSignInDetailedSummaryRequestBuilder) {
@@ -274,7 +274,7 @@ func (m *ReportsRequestBuilder) CreatePatchRequestInformation(options *ReportsRe
 func (m *ReportsRequestBuilder) CredentialUserRegistrationDetails()(*i4b201efc99cccf9ab4d4acd90fb2df1aee6c33be6c22339b8c5424063e857dc2.CredentialUserRegistrationDetailsRequestBuilder) {
     return i4b201efc99cccf9ab4d4acd90fb2df1aee6c33be6c22339b8c5424063e857dc2.NewCredentialUserRegistrationDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.credentialUserRegistrationDetails.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.credentialUserRegistrationDetails.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)(*i4b201efc99cccf9ab4d4acd90fb2df1aee6c33be6c22339b8c5424063e857dc2.CredentialUserRegistrationDetailsRequestBuilder) {
@@ -290,7 +290,7 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*i3c5eb35d4514961f4cbfafd47ac65dc5ed997312a3e247f4b53d8004051d0194.DailyPrintUsageByPrinterRequestBuilder) {
     return i3c5eb35d4514961f4cbfafd47ac65dc5ed997312a3e247f4b53d8004051d0194.NewDailyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.dailyPrintUsageByPrinter.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsageByPrinter.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*id64618d3ddc94c3dc7162d9da67abd3172a3d1bf99f56c9991906d6421e665be.PrintUsageByPrinterRequestBuilder) {
@@ -306,7 +306,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*id64618
 func (m *ReportsRequestBuilder) DailyPrintUsageByUser()(*i2993fd51754851864ba7c1a8dfc4c807b19f8200be6ce2e4964d2b687966d694.DailyPrintUsageByUserRequestBuilder) {
     return i2993fd51754851864ba7c1a8dfc4c807b19f8200be6ce2e4964d2b687966d694.NewDailyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.dailyPrintUsageByUser.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsageByUser.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i6325a2796f62004e900be3097636ac3cdb4b5f89fff67309d7747a1f3c033bf5.PrintUsageByUserRequestBuilder) {
@@ -322,7 +322,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i6325a2796
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinter()(*i51d8f12ca8bef3b5a605ad76c9d75dc8e73de7c0bb0b203ff61c881d868d0391.DailyPrintUsageSummariesByPrinterRequestBuilder) {
     return i51d8f12ca8bef3b5a605ad76c9d75dc8e73de7c0bb0b203ff61c881d868d0391.NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.dailyPrintUsageSummariesByPrinter.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsageSummariesByPrinter.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)(*i81f53b8b26ae53be90ad15f1e85f74bb88ada9cad7e6d8f0b3cb9ce23e2e0f46.PrintUsageByPrinterRequestBuilder) {
@@ -338,7 +338,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUser()(*i6858d47e90b1334353133cd0114055d1772fbe2294c3c8b1f87448025955a7f9.DailyPrintUsageSummariesByUserRequestBuilder) {
     return i6858d47e90b1334353133cd0114055d1772fbe2294c3c8b1f87448025955a7f9.NewDailyPrintUsageSummariesByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.dailyPrintUsageSummariesByUser.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsageSummariesByUser.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUserById(id string)(*if50f0dbd8a90dfcd7816cc16a43a257b56afed52876190fb217ae57a9d4679e0.PrintUsageByUserRequestBuilder) {
@@ -1053,7 +1053,7 @@ func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailuresWithPeriod(per
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*i37eb861166f6d0555df75cb64e973d22d9bb9c2a8c03ca2f6c29444c37e3649f.MonthlyPrintUsageByPrinterRequestBuilder) {
     return i37eb861166f6d0555df75cb64e973d22d9bb9c2a8c03ca2f6c29444c37e3649f.NewMonthlyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.monthlyPrintUsageByPrinter.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.monthlyPrintUsageByPrinter.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i9d3332b918775296ebe9eb5ed2e432af9b61c784aceacaca03a043c49a0ff6db.PrintUsageByPrinterRequestBuilder) {
@@ -1069,7 +1069,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i9d33
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUser()(*ifbd8842a6664ec96c7d893455943698937b1af3fe05558ca8e628721e162064b.MonthlyPrintUsageByUserRequestBuilder) {
     return ifbd8842a6664ec96c7d893455943698937b1af3fe05558ca8e628721e162064b.NewMonthlyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.monthlyPrintUsageByUser.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.monthlyPrintUsageByUser.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*i5983a969121cc458289b2e9bf5b347bab6120a3ecd4adca075e2189cc9460c6f.PrintUsageByUserRequestBuilder) {
@@ -1085,7 +1085,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*i5983a96
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinter()(*i59460f776b2ba7ec0487cd235a89ad5d26f27c3ec165f0790954cfc2a01b9637.MonthlyPrintUsageSummariesByPrinterRequestBuilder) {
     return i59460f776b2ba7ec0487cd235a89ad5d26f27c3ec165f0790954cfc2a01b9637.NewMonthlyPrintUsageSummariesByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.monthlyPrintUsageSummariesByPrinter.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.monthlyPrintUsageSummariesByPrinter.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id string)(*i9e0e6696a72655a2583635eb551d9445661402ca5fa5c8f22f82920d3cbae9a3.PrintUsageByPrinterRequestBuilder) {
@@ -1101,7 +1101,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id strin
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUser()(*i700648709215c245e3f56a9bb592458abcaa4d198b5956df2836a08af3f74be4.MonthlyPrintUsageSummariesByUserRequestBuilder) {
     return i700648709215c245e3f56a9bb592458abcaa4d198b5956df2836a08af3f74be4.NewMonthlyPrintUsageSummariesByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.monthlyPrintUsageSummariesByUser.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.monthlyPrintUsageSummariesByUser.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUserById(id string)(*ie40751cac1559213f1bbd658ede6043abd8ffd3463aa7abc8847eea9e36a36f8.PrintUsageByUserRequestBuilder) {
@@ -1131,7 +1131,7 @@ func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions
 func (m *ReportsRequestBuilder) UserCredentialUsageDetails()(*ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.UserCredentialUsageDetailsRequestBuilder) {
     return ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.NewUserCredentialUsageDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.reports.userCredentialUsageDetails.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.userCredentialUsageDetails.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) UserCredentialUsageDetailsById(id string)(*ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.UserCredentialUsageDetailsRequestBuilder) {

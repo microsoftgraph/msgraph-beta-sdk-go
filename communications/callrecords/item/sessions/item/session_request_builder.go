@@ -190,7 +190,7 @@ func (m *SessionRequestBuilder) Patch(options *SessionRequestBuilderPatchOptions
 func (m *SessionRequestBuilder) Segments()(*iabbe40f0f6d1f3fb8ac0a23aa219ff44bda95d73c465c1d1a899652d73196770.SegmentsRequestBuilder) {
     return iabbe40f0f6d1f3fb8ac0a23aa219ff44bda95d73c465c1d1a899652d73196770.NewSegmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.communications.callRecords.item.sessions.item.segments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.callRecords.item.sessions.item.segments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SessionRequestBuilder) SegmentsById(id string)(*i6564fedf9e6c15797aeb0a83489cd5028189f0ab73355330d7375e2974ef0318.SegmentRequestBuilder) {

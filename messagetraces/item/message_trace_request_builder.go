@@ -190,7 +190,7 @@ func (m *MessageTraceRequestBuilder) Patch(options *MessageTraceRequestBuilderPa
 func (m *MessageTraceRequestBuilder) Recipients()(*i3ab3304bdff2112b7f44c4e3735f9f4f803cca87448b4d30efc2916bc2663f09.RecipientsRequestBuilder) {
     return i3ab3304bdff2112b7f44c4e3735f9f4f803cca87448b4d30efc2916bc2663f09.NewRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go.messageTraces.item.recipients.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.messageTraces.item.recipients.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageTraceRequestBuilder) RecipientsById(id string)(*i784f8f4585fbe63e879909a57ff455aab4735d6d36dfefcca7b001c7d766c074.MessageRecipientRequestBuilder) {
