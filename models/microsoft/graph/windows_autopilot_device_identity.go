@@ -244,7 +244,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAddressableUserName(val)
+        if val != nil {
+            m.SetAddressableUserName(val)
+        }
         return nil
     }
     res["azureActiveDirectoryDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +254,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAzureActiveDirectoryDeviceId(val)
+        if val != nil {
+            m.SetAzureActiveDirectoryDeviceId(val)
+        }
         return nil
     }
     res["azureAdDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,7 +264,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAzureAdDeviceId(val)
+        if val != nil {
+            m.SetAzureAdDeviceId(val)
+        }
         return nil
     }
     res["deploymentProfile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,7 +274,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDeploymentProfile(val.(*WindowsAutopilotDeploymentProfile))
+        if val != nil {
+            m.SetDeploymentProfile(val.(*WindowsAutopilotDeploymentProfile))
+        }
         return nil
     }
     res["deploymentProfileAssignedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -276,7 +284,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDeploymentProfileAssignedDateTime(val)
+        if val != nil {
+            m.SetDeploymentProfileAssignedDateTime(val)
+        }
         return nil
     }
     res["deploymentProfileAssignmentDetailedStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -284,8 +294,10 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(WindowsAutopilotProfileAssignmentDetailedStatus)
-        m.SetDeploymentProfileAssignmentDetailedStatus(&cast)
+        if val != nil {
+            cast := val.(WindowsAutopilotProfileAssignmentDetailedStatus)
+            m.SetDeploymentProfileAssignmentDetailedStatus(&cast)
+        }
         return nil
     }
     res["deploymentProfileAssignmentStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,8 +305,10 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(WindowsAutopilotProfileAssignmentStatus)
-        m.SetDeploymentProfileAssignmentStatus(&cast)
+        if val != nil {
+            cast := val.(WindowsAutopilotProfileAssignmentStatus)
+            m.SetDeploymentProfileAssignmentStatus(&cast)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,7 +316,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enrollmentState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -310,8 +326,10 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(EnrollmentState)
-        m.SetEnrollmentState(&cast)
+        if val != nil {
+            cast := val.(EnrollmentState)
+            m.SetEnrollmentState(&cast)
+        }
         return nil
     }
     res["groupTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -319,7 +337,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetGroupTag(val)
+        if val != nil {
+            m.SetGroupTag(val)
+        }
         return nil
     }
     res["intendedDeploymentProfile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -327,7 +347,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetIntendedDeploymentProfile(val.(*WindowsAutopilotDeploymentProfile))
+        if val != nil {
+            m.SetIntendedDeploymentProfile(val.(*WindowsAutopilotDeploymentProfile))
+        }
         return nil
     }
     res["lastContactedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -335,7 +357,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetLastContactedDateTime(val)
+        if val != nil {
+            m.SetLastContactedDateTime(val)
+        }
         return nil
     }
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -343,7 +367,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["manufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -351,7 +377,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetManufacturer(val)
+        if val != nil {
+            m.SetManufacturer(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -359,7 +387,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     res["productKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -367,7 +397,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetProductKey(val)
+        if val != nil {
+            m.SetProductKey(val)
+        }
         return nil
     }
     res["purchaseOrderIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -375,7 +407,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetPurchaseOrderIdentifier(val)
+        if val != nil {
+            m.SetPurchaseOrderIdentifier(val)
+        }
         return nil
     }
     res["resourceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -383,7 +417,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetResourceName(val)
+        if val != nil {
+            m.SetResourceName(val)
+        }
         return nil
     }
     res["serialNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -391,7 +427,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSerialNumber(val)
+        if val != nil {
+            m.SetSerialNumber(val)
+        }
         return nil
     }
     res["skuNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -399,7 +437,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSkuNumber(val)
+        if val != nil {
+            m.SetSkuNumber(val)
+        }
         return nil
     }
     res["systemFamily"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -407,7 +447,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSystemFamily(val)
+        if val != nil {
+            m.SetSystemFamily(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -415,7 +457,9 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

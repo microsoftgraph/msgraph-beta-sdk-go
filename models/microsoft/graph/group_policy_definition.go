@@ -194,7 +194,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCategory(val.(*GroupPolicyCategory))
+        if val != nil {
+            m.SetCategory(val.(*GroupPolicyCategory))
+        }
         return nil
     }
     res["categoryPath"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +204,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCategoryPath(val)
+        if val != nil {
+            m.SetCategoryPath(val)
+        }
         return nil
     }
     res["classType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,8 +214,10 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicyDefinitionClassType)
-        m.SetClassType(&cast)
+        if val != nil {
+            cast := val.(GroupPolicyDefinitionClassType)
+            m.SetClassType(&cast)
+        }
         return nil
     }
     res["definitionFile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -219,7 +225,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDefinitionFile(val.(*GroupPolicyDefinitionFile))
+        if val != nil {
+            m.SetDefinitionFile(val.(*GroupPolicyDefinitionFile))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,7 +235,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["explainText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,7 +245,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetExplainText(val)
+        if val != nil {
+            m.SetExplainText(val)
+        }
         return nil
     }
     res["groupPolicyCategoryId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,7 +255,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetGroupPolicyCategoryId(val)
+        if val != nil {
+            m.SetGroupPolicyCategoryId(val)
+        }
         return nil
     }
     res["hasRelatedDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -251,7 +265,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetHasRelatedDefinitions(val)
+        if val != nil {
+            m.SetHasRelatedDefinitions(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -259,7 +275,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["minDeviceCspVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -267,7 +285,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMinDeviceCspVersion(val)
+        if val != nil {
+            m.SetMinDeviceCspVersion(val)
+        }
         return nil
     }
     res["minUserCspVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -275,7 +295,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMinUserCspVersion(val)
+        if val != nil {
+            m.SetMinUserCspVersion(val)
+        }
         return nil
     }
     res["nextVersionDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -283,7 +305,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetNextVersionDefinition(val.(*GroupPolicyDefinition))
+        if val != nil {
+            m.SetNextVersionDefinition(val.(*GroupPolicyDefinition))
+        }
         return nil
     }
     res["policyType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -291,8 +315,10 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicyType)
-        m.SetPolicyType(&cast)
+        if val != nil {
+            cast := val.(GroupPolicyType)
+            m.SetPolicyType(&cast)
+        }
         return nil
     }
     res["presentations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -300,11 +326,13 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]GroupPolicyPresentation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GroupPolicyPresentation))
+        if val != nil {
+            res := make([]GroupPolicyPresentation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GroupPolicyPresentation))
+            }
+            m.SetPresentations(res)
         }
-        m.SetPresentations(res)
         return nil
     }
     res["previousVersionDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -312,7 +340,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPreviousVersionDefinition(val.(*GroupPolicyDefinition))
+        if val != nil {
+            m.SetPreviousVersionDefinition(val.(*GroupPolicyDefinition))
+        }
         return nil
     }
     res["supportedOn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -320,7 +350,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSupportedOn(val)
+        if val != nil {
+            m.SetSupportedOn(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -328,7 +360,9 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

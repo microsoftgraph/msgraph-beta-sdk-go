@@ -83,7 +83,9 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,11 +93,13 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]GovernanceResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GovernanceResource))
+        if val != nil {
+            res := make([]GovernanceResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GovernanceResource))
+            }
+            m.SetResources(res)
         }
-        m.SetResources(res)
         return nil
     }
     res["roleAssignmentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -103,11 +107,13 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]GovernanceRoleAssignmentRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GovernanceRoleAssignmentRequest))
+        if val != nil {
+            res := make([]GovernanceRoleAssignmentRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GovernanceRoleAssignmentRequest))
+            }
+            m.SetRoleAssignmentRequests(res)
         }
-        m.SetRoleAssignmentRequests(res)
         return nil
     }
     res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,11 +121,13 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]GovernanceRoleAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GovernanceRoleAssignment))
+        if val != nil {
+            res := make([]GovernanceRoleAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GovernanceRoleAssignment))
+            }
+            m.SetRoleAssignments(res)
         }
-        m.SetRoleAssignments(res)
         return nil
     }
     res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,11 +135,13 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]GovernanceRoleDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GovernanceRoleDefinition))
+        if val != nil {
+            res := make([]GovernanceRoleDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GovernanceRoleDefinition))
+            }
+            m.SetRoleDefinitions(res)
         }
-        m.SetRoleDefinitions(res)
         return nil
     }
     res["roleSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,11 +149,13 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]GovernanceRoleSetting, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GovernanceRoleSetting))
+        if val != nil {
+            res := make([]GovernanceRoleSetting, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GovernanceRoleSetting))
+            }
+            m.SetRoleSettings(res)
         }
-        m.SetRoleSettings(res)
         return nil
     }
     return res

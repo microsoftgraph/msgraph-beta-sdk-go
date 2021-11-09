@@ -114,7 +114,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +134,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["usedAndroidPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +144,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetUsedAndroidPhone(val)
+        if val != nil {
+            m.SetUsedAndroidPhone(val)
+        }
         return nil
     }
     res["usediPad"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +154,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetUsediPad(val)
+        if val != nil {
+            m.SetUsediPad(val)
+        }
         return nil
     }
     res["usediPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +164,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetUsediPhone(val)
+        if val != nil {
+            m.SetUsediPhone(val)
+        }
         return nil
     }
     res["usedWindows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +174,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetUsedWindows(val)
+        if val != nil {
+            m.SetUsedWindows(val)
+        }
         return nil
     }
     res["usedWindowsPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +184,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetUsedWindowsPhone(val)
+        if val != nil {
+            m.SetUsedWindowsPhone(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +194,9 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithDate) GetFieldDeserializers
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

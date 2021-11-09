@@ -63,7 +63,9 @@ func (m *ItemAtWithIndexResponse) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWorkbookChartPoint(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChartPoint))
+        if val != nil {
+            m.SetWorkbookChartPoint(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChartPoint))
+        }
         return nil
     }
     return res

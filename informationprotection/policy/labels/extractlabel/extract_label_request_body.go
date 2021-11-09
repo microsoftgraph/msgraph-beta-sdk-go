@@ -43,7 +43,9 @@ func (m *ExtractLabelRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetContentInfo(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo))
+        if val != nil {
+            m.SetContentInfo(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo))
+        }
         return nil
     }
     return res

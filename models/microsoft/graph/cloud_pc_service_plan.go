@@ -83,7 +83,9 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["ramInGB"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetRamInGB(val)
+        if val != nil {
+            m.SetRamInGB(val)
+        }
         return nil
     }
     res["storageInGB"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetStorageInGB(val)
+        if val != nil {
+            m.SetStorageInGB(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,8 +113,10 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(CloudPcServicePlanType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(CloudPcServicePlanType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     res["userProfileInGB"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetUserProfileInGB(val)
+        if val != nil {
+            m.SetUserProfileInGB(val)
+        }
         return nil
     }
     res["vCpuCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetVCpuCount(val)
+        if val != nil {
+            m.SetVCpuCount(val)
+        }
         return nil
     }
     return res

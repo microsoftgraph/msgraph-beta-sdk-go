@@ -72,7 +72,9 @@ func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["layout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLayout(val.(*Json))
+        if val != nil {
+            m.SetLayout(val.(*Json))
+        }
         return nil
     }
     res["priority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPriority(val)
+        if val != nil {
+            m.SetPriority(val)
+        }
         return nil
     }
     res["rules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,11 +102,13 @@ func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]PropertyRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PropertyRule))
+        if val != nil {
+            res := make([]PropertyRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PropertyRule))
+            }
+            m.SetRules(res)
         }
-        m.SetRules(res)
         return nil
     }
     return res

@@ -113,7 +113,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCompliantDeviceCount(val)
+        if val != nil {
+            m.SetCompliantDeviceCount(val)
+        }
         return nil
     }
     res["configManagerDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetConfigManagerDeviceCount(val)
+        if val != nil {
+            m.SetConfigManagerDeviceCount(val)
+        }
         return nil
     }
     res["countDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +133,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountDateTime(val)
+        if val != nil {
+            m.SetCountDateTime(val)
+        }
         return nil
     }
     res["errorDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +143,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetErrorDeviceCount(val)
+        if val != nil {
+            m.SetErrorDeviceCount(val)
+        }
         return nil
     }
     res["inGracePeriodDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +153,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetInGracePeriodDeviceCount(val)
+        if val != nil {
+            m.SetInGracePeriodDeviceCount(val)
+        }
         return nil
     }
     res["noncompliantDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +163,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetNoncompliantDeviceCount(val)
+        if val != nil {
+            m.SetNoncompliantDeviceCount(val)
+        }
         return nil
     }
     res["tenantDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +173,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTenantDisplayName(val)
+        if val != nil {
+            m.SetTenantDisplayName(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +183,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["unknownDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +193,9 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetUnknownDeviceCount(val)
+        if val != nil {
+            m.SetUnknownDeviceCount(val)
+        }
         return nil
     }
     return res

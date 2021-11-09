@@ -94,11 +94,13 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]CustomQuestionAnswer, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CustomQuestionAnswer))
+        if val != nil {
+            res := make([]CustomQuestionAnswer, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CustomQuestionAnswer))
+            }
+            m.SetCustomQuestionAnswers(res)
         }
-        m.SetCustomQuestionAnswers(res)
         return nil
     }
     res["email"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +108,9 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     res["firstName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +118,9 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetFirstName(val)
+        if val != nil {
+            m.SetFirstName(val)
+        }
         return nil
     }
     res["joinWebUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +128,9 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetJoinWebUrl(val)
+        if val != nil {
+            m.SetJoinWebUrl(val)
+        }
         return nil
     }
     res["lastName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +138,9 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetLastName(val)
+        if val != nil {
+            m.SetLastName(val)
+        }
         return nil
     }
     res["registrationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +148,9 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRegistrationDateTime(val)
+        if val != nil {
+            m.SetRegistrationDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,8 +158,10 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(MeetingRegistrantStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(MeetingRegistrantStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

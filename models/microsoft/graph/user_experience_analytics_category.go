@@ -43,11 +43,13 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]UserExperienceAnalyticsInsight, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserExperienceAnalyticsInsight))
+        if val != nil {
+            res := make([]UserExperienceAnalyticsInsight, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserExperienceAnalyticsInsight))
+            }
+            m.SetInsights(res)
         }
-        m.SetInsights(res)
         return nil
     }
     res["metricValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -55,11 +57,13 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]UserExperienceAnalyticsMetric, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserExperienceAnalyticsMetric))
+        if val != nil {
+            res := make([]UserExperienceAnalyticsMetric, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserExperienceAnalyticsMetric))
+            }
+            m.SetMetricValues(res)
         }
-        m.SetMetricValues(res)
         return nil
     }
     return res

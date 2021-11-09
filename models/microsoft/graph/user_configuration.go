@@ -33,7 +33,9 @@ func (m *UserConfiguration) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetBinaryData(val)
+        if val != nil {
+            m.SetBinaryData(val)
+        }
         return nil
     }
     return res

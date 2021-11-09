@@ -113,11 +113,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]JobResponseBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*JobResponseBase))
+        if val != nil {
+            res := make([]JobResponseBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*JobResponseBase))
+            }
+            m.SetClassifyFileJobs(res)
         }
-        m.SetClassifyFileJobs(res)
         return nil
     }
     res["classifyTextJobs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,11 +127,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]JobResponseBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*JobResponseBase))
+        if val != nil {
+            res := make([]JobResponseBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*JobResponseBase))
+            }
+            m.SetClassifyTextJobs(res)
         }
-        m.SetClassifyTextJobs(res)
         return nil
     }
     res["evaluateDlpPoliciesJobs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,11 +141,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]JobResponseBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*JobResponseBase))
+        if val != nil {
+            res := make([]JobResponseBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*JobResponseBase))
+            }
+            m.SetEvaluateDlpPoliciesJobs(res)
         }
-        m.SetEvaluateDlpPoliciesJobs(res)
         return nil
     }
     res["evaluateLabelJobs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,11 +155,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]JobResponseBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*JobResponseBase))
+        if val != nil {
+            res := make([]JobResponseBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*JobResponseBase))
+            }
+            m.SetEvaluateLabelJobs(res)
         }
-        m.SetEvaluateLabelJobs(res)
         return nil
     }
     res["exactMatchDataStores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,11 +169,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]ExactMatchDataStore, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExactMatchDataStore))
+        if val != nil {
+            res := make([]ExactMatchDataStore, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExactMatchDataStore))
+            }
+            m.SetExactMatchDataStores(res)
         }
-        m.SetExactMatchDataStores(res)
         return nil
     }
     res["exactMatchUploadAgents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,11 +183,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]ExactMatchUploadAgent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExactMatchUploadAgent))
+        if val != nil {
+            res := make([]ExactMatchUploadAgent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExactMatchUploadAgent))
+            }
+            m.SetExactMatchUploadAgents(res)
         }
-        m.SetExactMatchUploadAgents(res)
         return nil
     }
     res["jobs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,11 +197,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]JobResponseBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*JobResponseBase))
+        if val != nil {
+            res := make([]JobResponseBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*JobResponseBase))
+            }
+            m.SetJobs(res)
         }
-        m.SetJobs(res)
         return nil
     }
     res["sensitiveTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,11 +211,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]SensitiveType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SensitiveType))
+        if val != nil {
+            res := make([]SensitiveType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SensitiveType))
+            }
+            m.SetSensitiveTypes(res)
         }
-        m.SetSensitiveTypes(res)
         return nil
     }
     res["sensitivityLabels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,11 +225,13 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]SensitivityLabel, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SensitivityLabel))
+        if val != nil {
+            res := make([]SensitivityLabel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SensitivityLabel))
+            }
+            m.SetSensitivityLabels(res)
         }
-        m.SetSensitivityLabels(res)
         return nil
     }
     return res

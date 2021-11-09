@@ -64,7 +64,9 @@ func (m *GetUserOwnedObjectsResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDirectoryObject(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject))
+        if val != nil {
+            m.SetDirectoryObject(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject))
+        }
         return nil
     }
     return res

@@ -74,7 +74,9 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetDetectionScriptErrorDeviceCount(val)
+        if val != nil {
+            m.SetDetectionScriptErrorDeviceCount(val)
+        }
         return nil
     }
     res["detectionScriptPendingDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetDetectionScriptPendingDeviceCount(val)
+        if val != nil {
+            m.SetDetectionScriptPendingDeviceCount(val)
+        }
         return nil
     }
     res["issueDetectedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetIssueDetectedDeviceCount(val)
+        if val != nil {
+            m.SetIssueDetectedDeviceCount(val)
+        }
         return nil
     }
     res["lastScriptRunDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetLastScriptRunDateTime(val)
+        if val != nil {
+            m.SetLastScriptRunDateTime(val)
+        }
         return nil
     }
     res["noIssueDetectedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetNoIssueDetectedDeviceCount(val)
+        if val != nil {
+            m.SetNoIssueDetectedDeviceCount(val)
+        }
         return nil
     }
     return res

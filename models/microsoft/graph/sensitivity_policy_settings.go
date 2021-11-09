@@ -63,8 +63,10 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(SensitivityLabelTarget)
-        m.SetApplicableTo(&cast)
+        if val != nil {
+            cast := val.(SensitivityLabelTarget)
+            m.SetApplicableTo(&cast)
+        }
         return nil
     }
     res["downgradeSensitivityRequiresJustification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDowngradeSensitivityRequiresJustification(val)
+        if val != nil {
+            m.SetDowngradeSensitivityRequiresJustification(val)
+        }
         return nil
     }
     res["helpWebUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetHelpWebUrl(val)
+        if val != nil {
+            m.SetHelpWebUrl(val)
+        }
         return nil
     }
     res["isMandatory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIsMandatory(val)
+        if val != nil {
+            m.SetIsMandatory(val)
+        }
         return nil
     }
     return res

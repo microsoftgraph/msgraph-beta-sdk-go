@@ -63,7 +63,9 @@ func (m *AttendanceInterval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDurationInSeconds(val)
+        if val != nil {
+            m.SetDurationInSeconds(val)
+        }
         return nil
     }
     res["joinDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *AttendanceInterval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetJoinDateTime(val)
+        if val != nil {
+            m.SetJoinDateTime(val)
+        }
         return nil
     }
     res["leaveDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *AttendanceInterval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLeaveDateTime(val)
+        if val != nil {
+            m.SetLeaveDateTime(val)
+        }
         return nil
     }
     return res

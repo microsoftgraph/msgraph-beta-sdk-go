@@ -42,11 +42,13 @@ func (m *PersonDataSources) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetType_escaped(res)
         }
-        m.SetType_escaped(res)
         return nil
     }
     return res

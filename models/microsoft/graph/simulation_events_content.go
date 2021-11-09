@@ -52,7 +52,9 @@ func (m *SimulationEventsContent) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCompromisedRate(val)
+        if val != nil {
+            m.SetCompromisedRate(val)
+        }
         return nil
     }
     res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,11 +62,13 @@ func (m *SimulationEventsContent) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]SimulationEvent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SimulationEvent))
+        if val != nil {
+            res := make([]SimulationEvent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SimulationEvent))
+            }
+            m.SetEvents(res)
         }
-        m.SetEvents(res)
         return nil
     }
     return res

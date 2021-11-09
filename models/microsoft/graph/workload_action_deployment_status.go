@@ -84,7 +84,9 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetActionId(val)
+        if val != nil {
+            m.SetActionId(val)
+        }
         return nil
     }
     res["deployedPolicyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDeployedPolicyId(val)
+        if val != nil {
+            m.SetDeployedPolicyId(val)
+        }
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetError(val.(*GenericError))
+        if val != nil {
+            m.SetError(val.(*GenericError))
+        }
         return nil
     }
     res["lastDeploymentDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetLastDeploymentDateTime(val)
+        if val != nil {
+            m.SetLastDeploymentDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,8 +124,10 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

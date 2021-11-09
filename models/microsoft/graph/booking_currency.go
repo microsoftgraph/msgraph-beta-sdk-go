@@ -33,7 +33,9 @@ func (m *BookingCurrency) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetSymbol(val)
+        if val != nil {
+            m.SetSymbol(val)
+        }
         return nil
     }
     return res

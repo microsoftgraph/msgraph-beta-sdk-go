@@ -43,7 +43,9 @@ func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetItemInsights(val.(*ItemInsightsSettings))
+        if val != nil {
+            m.SetItemInsights(val.(*ItemInsightsSettings))
+        }
         return nil
     }
     res["profileCardProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,11 +53,13 @@ func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]ProfileCardProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ProfileCardProperty))
+        if val != nil {
+            res := make([]ProfileCardProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ProfileCardProperty))
+            }
+            m.SetProfileCardProperties(res)
         }
-        m.SetProfileCardProperties(res)
         return nil
     }
     return res

@@ -33,7 +33,9 @@ func (m *Windows) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetUpdates(val.(*Updates))
+        if val != nil {
+            m.SetUpdates(val.(*Updates))
+        }
         return nil
     }
     return res

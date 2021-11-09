@@ -33,7 +33,9 @@ func (m *SharedEmailDomain) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetProvisioningStatus(val)
+        if val != nil {
+            m.SetProvisioningStatus(val)
+        }
         return nil
     }
     return res

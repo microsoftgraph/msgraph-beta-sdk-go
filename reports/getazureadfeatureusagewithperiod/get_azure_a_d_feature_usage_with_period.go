@@ -55,7 +55,9 @@ func (m *GetAzureADFeatureUsageWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetFeatureName(val)
+        if val != nil {
+            m.SetFeatureName(val)
+        }
         return nil
     }
     res["snapshotDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,7 +65,9 @@ func (m *GetAzureADFeatureUsageWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSnapshotDateTime(val)
+        if val != nil {
+            m.SetSnapshotDateTime(val)
+        }
         return nil
     }
     res["usage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +75,9 @@ func (m *GetAzureADFeatureUsageWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetUsage(val)
+        if val != nil {
+            m.SetUsage(val)
+        }
         return nil
     }
     return res

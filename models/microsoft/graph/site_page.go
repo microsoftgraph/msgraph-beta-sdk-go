@@ -73,7 +73,9 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetContentType(val.(*ContentTypeInfo))
+        if val != nil {
+            m.SetContentType(val.(*ContentTypeInfo))
+        }
         return nil
     }
     res["pageLayoutType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetPageLayoutType(val)
+        if val != nil {
+            m.SetPageLayoutType(val)
+        }
         return nil
     }
     res["publishingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetPublishingState(val.(*PublicationFacet))
+        if val != nil {
+            m.SetPublishingState(val.(*PublicationFacet))
+        }
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetTitle(val)
+        if val != nil {
+            m.SetTitle(val)
+        }
         return nil
     }
     res["webParts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,11 +113,13 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]WebPart, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WebPart))
+        if val != nil {
+            res := make([]WebPart, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WebPart))
+            }
+            m.SetWebParts(res)
         }
-        m.SetWebParts(res)
         return nil
     }
     return res

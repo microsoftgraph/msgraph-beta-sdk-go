@@ -183,7 +183,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetAction(val)
+        if val != nil {
+            m.SetAction(val)
+        }
         return nil
     }
     res["activatedUsing"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +193,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetActivatedUsing(val.(*UnifiedRoleEligibilitySchedule))
+        if val != nil {
+            m.SetActivatedUsing(val.(*UnifiedRoleEligibilitySchedule))
+        }
         return nil
     }
     res["appScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +203,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetAppScope(val.(*AppScope))
+        if val != nil {
+            m.SetAppScope(val.(*AppScope))
+        }
         return nil
     }
     res["appScopeId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +213,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetAppScopeId(val)
+        if val != nil {
+            m.SetAppScopeId(val)
+        }
         return nil
     }
     res["directoryScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +223,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetDirectoryScope(val.(*DirectoryObject))
+        if val != nil {
+            m.SetDirectoryScope(val.(*DirectoryObject))
+        }
         return nil
     }
     res["directoryScopeId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -223,7 +233,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetDirectoryScopeId(val)
+        if val != nil {
+            m.SetDirectoryScopeId(val)
+        }
         return nil
     }
     res["isValidationOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,7 +243,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetIsValidationOnly(val)
+        if val != nil {
+            m.SetIsValidationOnly(val)
+        }
         return nil
     }
     res["justification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +253,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetJustification(val)
+        if val != nil {
+            m.SetJustification(val)
+        }
         return nil
     }
     res["principal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,7 +263,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetPrincipal(val.(*DirectoryObject))
+        if val != nil {
+            m.SetPrincipal(val.(*DirectoryObject))
+        }
         return nil
     }
     res["principalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -255,7 +273,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetPrincipalId(val)
+        if val != nil {
+            m.SetPrincipalId(val)
+        }
         return nil
     }
     res["roleDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +283,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetRoleDefinition(val.(*UnifiedRoleDefinition))
+        if val != nil {
+            m.SetRoleDefinition(val.(*UnifiedRoleDefinition))
+        }
         return nil
     }
     res["roleDefinitionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,7 +293,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetRoleDefinitionId(val)
+        if val != nil {
+            m.SetRoleDefinitionId(val)
+        }
         return nil
     }
     res["scheduleInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +303,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetScheduleInfo(val.(*RequestSchedule))
+        if val != nil {
+            m.SetScheduleInfo(val.(*RequestSchedule))
+        }
         return nil
     }
     res["targetSchedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,7 +313,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetTargetSchedule(val.(*UnifiedRoleAssignmentSchedule))
+        if val != nil {
+            m.SetTargetSchedule(val.(*UnifiedRoleAssignmentSchedule))
+        }
         return nil
     }
     res["targetScheduleId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,7 +323,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetTargetScheduleId(val)
+        if val != nil {
+            m.SetTargetScheduleId(val)
+        }
         return nil
     }
     res["ticketInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -303,7 +333,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetTicketInfo(val.(*TicketInfo))
+        if val != nil {
+            m.SetTicketInfo(val.(*TicketInfo))
+        }
         return nil
     }
     return res

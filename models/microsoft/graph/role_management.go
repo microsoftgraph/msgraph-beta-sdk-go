@@ -72,7 +72,9 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetCloudPC(val.(*RbacApplicationMultiple))
+        if val != nil {
+            m.SetCloudPC(val.(*RbacApplicationMultiple))
+        }
         return nil
     }
     res["deviceManagement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDeviceManagement(val.(*RbacApplicationMultiple))
+        if val != nil {
+            m.SetDeviceManagement(val.(*RbacApplicationMultiple))
+        }
         return nil
     }
     res["directory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDirectory(val.(*RbacApplication))
+        if val != nil {
+            m.SetDirectory(val.(*RbacApplication))
+        }
         return nil
     }
     res["entitlementManagement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetEntitlementManagement(val.(*RbacApplication))
+        if val != nil {
+            m.SetEntitlementManagement(val.(*RbacApplication))
+        }
         return nil
     }
     return res

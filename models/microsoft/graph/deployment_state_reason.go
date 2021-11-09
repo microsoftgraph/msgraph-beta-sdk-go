@@ -43,8 +43,10 @@ func (m *DeploymentStateReason) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateReasonValue)
-        m.SetValue(&cast)
+        if val != nil {
+            cast := val.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateReasonValue)
+            m.SetValue(&cast)
+        }
         return nil
     }
     return res

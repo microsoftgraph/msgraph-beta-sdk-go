@@ -43,8 +43,10 @@ func (m *ChangeScreenSharingRoleRequestBody) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScreenSharingRole)
-        m.SetRole(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScreenSharingRole)
+            m.SetRole(&cast)
+        }
         return nil
     }
     return res

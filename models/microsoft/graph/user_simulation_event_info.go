@@ -83,7 +83,9 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetBrowser(val)
+        if val != nil {
+            m.SetBrowser(val)
+        }
         return nil
     }
     res["eventDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetEventDateTime(val)
+        if val != nil {
+            m.SetEventDateTime(val)
+        }
         return nil
     }
     res["eventName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetEventName(val)
+        if val != nil {
+            m.SetEventName(val)
+        }
         return nil
     }
     res["ipAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetIpAddress(val)
+        if val != nil {
+            m.SetIpAddress(val)
+        }
         return nil
     }
     res["osPlatformDeviceDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOsPlatformDeviceDetails(val)
+        if val != nil {
+            m.SetOsPlatformDeviceDetails(val)
+        }
         return nil
     }
     return res

@@ -83,7 +83,9 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetActiveDeviceCount(val)
+        if val != nil {
+            m.SetActiveDeviceCount(val)
+        }
         return nil
     }
     res["meanTimeToFailureInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetMeanTimeToFailureInMinutes(val)
+        if val != nil {
+            m.SetMeanTimeToFailureInMinutes(val)
+        }
         return nil
     }
     res["osBuildNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetOsBuildNumber(val)
+        if val != nil {
+            m.SetOsBuildNumber(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["osVersionAppHealthScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetOsVersionAppHealthScore(val)
+        if val != nil {
+            m.SetOsVersionAppHealthScore(val)
+        }
         return nil
     }
     res["osVersionAppHealthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +133,9 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetOsVersionAppHealthStatus(val)
+        if val != nil {
+            m.SetOsVersionAppHealthStatus(val)
+        }
         return nil
     }
     return res

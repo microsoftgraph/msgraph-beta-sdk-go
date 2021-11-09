@@ -144,11 +144,13 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssignmentFilterIds(res)
         }
-        m.SetAssignmentFilterIds(res)
         return nil
     }
     res["detectionState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,8 +158,10 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(RunState)
-        m.SetDetectionState(&cast)
+        if val != nil {
+            cast := val.(RunState)
+            m.SetDetectionState(&cast)
+        }
         return nil
     }
     res["expectedStateUpdateDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +169,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetExpectedStateUpdateDateTime(val)
+        if val != nil {
+            m.SetExpectedStateUpdateDateTime(val)
+        }
         return nil
     }
     res["lastStateUpdateDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +179,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetLastStateUpdateDateTime(val)
+        if val != nil {
+            m.SetLastStateUpdateDateTime(val)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +189,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["managedDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,7 +199,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetManagedDevice(val.(*ManagedDevice))
+        if val != nil {
+            m.SetManagedDevice(val.(*ManagedDevice))
+        }
         return nil
     }
     res["postRemediationDetectionScriptError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,7 +209,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetPostRemediationDetectionScriptError(val)
+        if val != nil {
+            m.SetPostRemediationDetectionScriptError(val)
+        }
         return nil
     }
     res["postRemediationDetectionScriptOutput"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -205,7 +219,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetPostRemediationDetectionScriptOutput(val)
+        if val != nil {
+            m.SetPostRemediationDetectionScriptOutput(val)
+        }
         return nil
     }
     res["preRemediationDetectionScriptError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,7 +229,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetPreRemediationDetectionScriptError(val)
+        if val != nil {
+            m.SetPreRemediationDetectionScriptError(val)
+        }
         return nil
     }
     res["preRemediationDetectionScriptOutput"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -221,7 +239,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetPreRemediationDetectionScriptOutput(val)
+        if val != nil {
+            m.SetPreRemediationDetectionScriptOutput(val)
+        }
         return nil
     }
     res["remediationScriptError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,7 +249,9 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetRemediationScriptError(val)
+        if val != nil {
+            m.SetRemediationScriptError(val)
+        }
         return nil
     }
     res["remediationState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -237,8 +259,10 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(RemediationState)
-        m.SetRemediationState(&cast)
+        if val != nil {
+            cast := val.(RemediationState)
+            m.SetRemediationState(&cast)
+        }
         return nil
     }
     return res

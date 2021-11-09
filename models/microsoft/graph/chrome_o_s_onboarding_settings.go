@@ -64,7 +64,9 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetLastDirectorySyncDateTime(val)
+        if val != nil {
+            m.SetLastDirectorySyncDateTime(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["onboardingStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,8 +84,10 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(OnboardingStatus)
-        m.SetOnboardingStatus(&cast)
+        if val != nil {
+            cast := val.(OnboardingStatus)
+            m.SetOnboardingStatus(&cast)
+        }
         return nil
     }
     res["ownerUserPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +95,9 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetOwnerUserPrincipalName(val)
+        if val != nil {
+            m.SetOwnerUserPrincipalName(val)
+        }
         return nil
     }
     return res

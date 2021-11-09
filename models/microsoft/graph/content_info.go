@@ -72,8 +72,10 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(ContentFormat)
-        m.SetFormat(&cast)
+        if val != nil {
+            cast := val.(ContentFormat)
+            m.SetFormat(&cast)
+        }
         return nil
     }
     res["identifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetIdentifier(val)
+        if val != nil {
+            m.SetIdentifier(val)
+        }
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,11 +93,13 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetMetadata(res)
         }
-        m.SetMetadata(res)
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,8 +107,10 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(ContentState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(ContentState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

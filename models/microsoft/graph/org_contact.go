@@ -214,11 +214,13 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]PhysicalOfficeAddress, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PhysicalOfficeAddress))
+        if val != nil {
+            res := make([]PhysicalOfficeAddress, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PhysicalOfficeAddress))
+            }
+            m.SetAddresses(res)
         }
-        m.SetAddresses(res)
         return nil
     }
     res["companyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +228,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCompanyName(val)
+        if val != nil {
+            m.SetCompanyName(val)
+        }
         return nil
     }
     res["department"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +238,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDepartment(val)
+        if val != nil {
+            m.SetDepartment(val)
+        }
         return nil
     }
     res["directReports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,11 +248,13 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetDirectReports(res)
         }
-        m.SetDirectReports(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,7 +262,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["givenName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -262,7 +272,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetGivenName(val)
+        if val != nil {
+            m.SetGivenName(val)
+        }
         return nil
     }
     res["jobTitle"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +282,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetJobTitle(val)
+        if val != nil {
+            m.SetJobTitle(val)
+        }
         return nil
     }
     res["mail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +292,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetMail(val)
+        if val != nil {
+            m.SetMail(val)
+        }
         return nil
     }
     res["mailNickname"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +302,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetMailNickname(val)
+        if val != nil {
+            m.SetMailNickname(val)
+        }
         return nil
     }
     res["manager"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -294,7 +312,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetManager(val.(*DirectoryObject))
+        if val != nil {
+            m.SetManager(val.(*DirectoryObject))
+        }
         return nil
     }
     res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,11 +322,13 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetMemberOf(res)
         }
-        m.SetMemberOf(res)
         return nil
     }
     res["onPremisesLastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +336,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetOnPremisesLastSyncDateTime(val)
+        if val != nil {
+            m.SetOnPremisesLastSyncDateTime(val)
+        }
         return nil
     }
     res["onPremisesProvisioningErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,11 +346,13 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]OnPremisesProvisioningError, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnPremisesProvisioningError))
+        if val != nil {
+            res := make([]OnPremisesProvisioningError, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnPremisesProvisioningError))
+            }
+            m.SetOnPremisesProvisioningErrors(res)
         }
-        m.SetOnPremisesProvisioningErrors(res)
         return nil
     }
     res["onPremisesSyncEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -334,7 +360,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetOnPremisesSyncEnabled(val)
+        if val != nil {
+            m.SetOnPremisesSyncEnabled(val)
+        }
         return nil
     }
     res["phones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -342,11 +370,13 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]Phone, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Phone))
+        if val != nil {
+            res := make([]Phone, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Phone))
+            }
+            m.SetPhones(res)
         }
-        m.SetPhones(res)
         return nil
     }
     res["proxyAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -354,11 +384,13 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetProxyAddresses(res)
         }
-        m.SetProxyAddresses(res)
         return nil
     }
     res["surname"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -366,7 +398,9 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSurname(val)
+        if val != nil {
+            m.SetSurname(val)
+        }
         return nil
     }
     res["transitiveMemberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -374,11 +408,13 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetTransitiveMemberOf(res)
         }
-        m.SetTransitiveMemberOf(res)
         return nil
     }
     res["transitiveReports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -386,11 +422,13 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetTransitiveReports(res)
         }
-        m.SetTransitiveReports(res)
         return nil
     }
     return res

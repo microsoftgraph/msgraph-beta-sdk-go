@@ -83,7 +83,9 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFileExtension(val)
+        if val != nil {
+            m.SetFileExtension(val)
+        }
         return nil
     }
     res["matchTolerancesToInclude"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,8 +93,10 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance)
-        m.SetMatchTolerancesToInclude(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance)
+            m.SetMatchTolerancesToInclude(&cast)
+        }
         return nil
     }
     res["scopesToRun"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,8 +104,10 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope)
-        m.SetScopesToRun(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope)
+            m.SetScopesToRun(&cast)
+        }
         return nil
     }
     res["sensitiveTypeIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,11 +115,13 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSensitiveTypeIds(res)
         }
-        m.SetSensitiveTypeIds(res)
         return nil
     }
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +129,9 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetText(val)
+        if val != nil {
+            m.SetText(val)
+        }
         return nil
     }
     return res

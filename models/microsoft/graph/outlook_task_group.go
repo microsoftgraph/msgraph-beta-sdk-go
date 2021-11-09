@@ -73,7 +73,9 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetChangeKey(val)
+        if val != nil {
+            m.SetChangeKey(val)
+        }
         return nil
     }
     res["groupKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetGroupKey(val)
+        if val != nil {
+            m.SetGroupKey(val)
+        }
         return nil
     }
     res["isDefaultGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsDefaultGroup(val)
+        if val != nil {
+            m.SetIsDefaultGroup(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["taskFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,11 +113,13 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]OutlookTaskFolder, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OutlookTaskFolder))
+        if val != nil {
+            res := make([]OutlookTaskFolder, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OutlookTaskFolder))
+            }
+            m.SetTaskFolders(res)
         }
-        m.SetTaskFolders(res)
         return nil
     }
     return res

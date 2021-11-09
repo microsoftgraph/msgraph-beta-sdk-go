@@ -52,8 +52,10 @@ func (m *ConditionalAccessRuleSatisfied) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(ConditionalAccessConditions)
-        m.SetConditionalAccessCondition(&cast)
+        if val != nil {
+            cast := val.(ConditionalAccessConditions)
+            m.SetConditionalAccessCondition(&cast)
+        }
         return nil
     }
     res["ruleSatisfied"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,8 +63,10 @@ func (m *ConditionalAccessRuleSatisfied) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(ConditionalAccessRule)
-        m.SetRuleSatisfied(&cast)
+        if val != nil {
+            cast := val.(ConditionalAccessRule)
+            m.SetRuleSatisfied(&cast)
+        }
         return nil
     }
     return res

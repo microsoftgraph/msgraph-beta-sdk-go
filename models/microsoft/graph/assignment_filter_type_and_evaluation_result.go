@@ -52,8 +52,10 @@ func (m *AssignmentFilterTypeAndEvaluationResult) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        cast := val.(DeviceAndAppManagementAssignmentFilterType)
-        m.SetAssignmentFilterType(&cast)
+        if val != nil {
+            cast := val.(DeviceAndAppManagementAssignmentFilterType)
+            m.SetAssignmentFilterType(&cast)
+        }
         return nil
     }
     res["evaluationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,8 +63,10 @@ func (m *AssignmentFilterTypeAndEvaluationResult) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        cast := val.(AssignmentFilterEvaluationResult)
-        m.SetEvaluationResult(&cast)
+        if val != nil {
+            cast := val.(AssignmentFilterEvaluationResult)
+            m.SetEvaluationResult(&cast)
+        }
         return nil
     }
     return res

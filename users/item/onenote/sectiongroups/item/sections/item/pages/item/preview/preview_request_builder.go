@@ -62,7 +62,9 @@ func (m *PreviewResponse) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetOnenotePagePreview(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreview))
+        if val != nil {
+            m.SetOnenotePagePreview(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreview))
+        }
         return nil
     }
     return res

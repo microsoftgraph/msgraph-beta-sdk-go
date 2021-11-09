@@ -52,8 +52,10 @@ func (m *AdminConsent) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(AdminConsentState)
-        m.SetShareAPNSData(&cast)
+        if val != nil {
+            cast := val.(AdminConsentState)
+            m.SetShareAPNSData(&cast)
+        }
         return nil
     }
     res["shareUserExperienceAnalyticsData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,8 +63,10 @@ func (m *AdminConsent) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(AdminConsentState)
-        m.SetShareUserExperienceAnalyticsData(&cast)
+        if val != nil {
+            cast := val.(AdminConsentState)
+            m.SetShareUserExperienceAnalyticsData(&cast)
+        }
         return nil
     }
     return res

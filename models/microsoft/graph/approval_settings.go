@@ -82,7 +82,9 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetApprovalMode(val)
+        if val != nil {
+            m.SetApprovalMode(val)
+        }
         return nil
     }
     res["approvalStages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,11 +92,13 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]ApprovalStage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ApprovalStage))
+        if val != nil {
+            res := make([]ApprovalStage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ApprovalStage))
+            }
+            m.SetApprovalStages(res)
         }
-        m.SetApprovalStages(res)
         return nil
     }
     res["isApprovalRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +106,9 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsApprovalRequired(val)
+        if val != nil {
+            m.SetIsApprovalRequired(val)
+        }
         return nil
     }
     res["isApprovalRequiredForExtension"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +116,9 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsApprovalRequiredForExtension(val)
+        if val != nil {
+            m.SetIsApprovalRequiredForExtension(val)
+        }
         return nil
     }
     res["isRequestorJustificationRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +126,9 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsRequestorJustificationRequired(val)
+        if val != nil {
+            m.SetIsRequestorJustificationRequired(val)
+        }
         return nil
     }
     return res

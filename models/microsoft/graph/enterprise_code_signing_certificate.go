@@ -104,7 +104,9 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetContent(val)
+        if val != nil {
+            m.SetContent(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["issuer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetIssuer(val)
+        if val != nil {
+            m.SetIssuer(val)
+        }
         return nil
     }
     res["issuerName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetIssuerName(val)
+        if val != nil {
+            m.SetIssuerName(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,8 +144,10 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        cast := val.(CertificateStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(CertificateStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +155,9 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSubject(val)
+        if val != nil {
+            m.SetSubject(val)
+        }
         return nil
     }
     res["subjectName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +165,9 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSubjectName(val)
+        if val != nil {
+            m.SetSubjectName(val)
+        }
         return nil
     }
     res["uploadDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +175,9 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetUploadDateTime(val)
+        if val != nil {
+            m.SetUploadDateTime(val)
+        }
         return nil
     }
     return res

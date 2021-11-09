@@ -62,11 +62,13 @@ func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]TimeCardBreak, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TimeCardBreak))
+        if val != nil {
+            res := make([]TimeCardBreak, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TimeCardBreak))
+            }
+            m.SetBreaks(res)
         }
-        m.SetBreaks(res)
         return nil
     }
     res["clockInEvent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,7 +76,9 @@ func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetClockInEvent(val.(*TimeCardEvent))
+        if val != nil {
+            m.SetClockInEvent(val.(*TimeCardEvent))
+        }
         return nil
     }
     res["clockOutEvent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +86,9 @@ func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetClockOutEvent(val.(*TimeCardEvent))
+        if val != nil {
+            m.SetClockOutEvent(val.(*TimeCardEvent))
+        }
         return nil
     }
     return res

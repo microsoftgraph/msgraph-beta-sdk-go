@@ -43,11 +43,13 @@ func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ActivityStatistics, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ActivityStatistics))
+        if val != nil {
+            res := make([]ActivityStatistics, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ActivityStatistics))
+            }
+            m.SetActivityStatistics(res)
         }
-        m.SetActivityStatistics(res)
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -55,7 +57,9 @@ func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSettings(val.(*Settings))
+        if val != nil {
+            m.SetSettings(val.(*Settings))
+        }
         return nil
     }
     return res

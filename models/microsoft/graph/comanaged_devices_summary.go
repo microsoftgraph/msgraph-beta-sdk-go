@@ -122,7 +122,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCompliancePolicyCount(val)
+        if val != nil {
+            m.SetCompliancePolicyCount(val)
+        }
         return nil
     }
     res["configurationSettingsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +132,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetConfigurationSettingsCount(val)
+        if val != nil {
+            m.SetConfigurationSettingsCount(val)
+        }
         return nil
     }
     res["endpointProtectionCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +142,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetEndpointProtectionCount(val)
+        if val != nil {
+            m.SetEndpointProtectionCount(val)
+        }
         return nil
     }
     res["inventoryCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +152,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetInventoryCount(val)
+        if val != nil {
+            m.SetInventoryCount(val)
+        }
         return nil
     }
     res["modernAppsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +162,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetModernAppsCount(val)
+        if val != nil {
+            m.SetModernAppsCount(val)
+        }
         return nil
     }
     res["officeAppsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +172,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOfficeAppsCount(val)
+        if val != nil {
+            m.SetOfficeAppsCount(val)
+        }
         return nil
     }
     res["resourceAccessCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +182,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetResourceAccessCount(val)
+        if val != nil {
+            m.SetResourceAccessCount(val)
+        }
         return nil
     }
     res["totalComanagedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +192,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetTotalComanagedCount(val)
+        if val != nil {
+            m.SetTotalComanagedCount(val)
+        }
         return nil
     }
     res["windowsUpdateForBusinessCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +202,9 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWindowsUpdateForBusinessCount(val)
+        if val != nil {
+            m.SetWindowsUpdateForBusinessCount(val)
+        }
         return nil
     }
     return res

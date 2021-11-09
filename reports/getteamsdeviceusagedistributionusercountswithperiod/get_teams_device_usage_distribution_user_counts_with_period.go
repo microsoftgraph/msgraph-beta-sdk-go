@@ -124,7 +124,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetAndroidPhone(val)
+        if val != nil {
+            m.SetAndroidPhone(val)
+        }
         return nil
     }
     res["chromeOS"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetChromeOS(val)
+        if val != nil {
+            m.SetChromeOS(val)
+        }
         return nil
     }
     res["ios"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +144,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetIos(val)
+        if val != nil {
+            m.SetIos(val)
+        }
         return nil
     }
     res["linux"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +154,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetLinux(val)
+        if val != nil {
+            m.SetLinux(val)
+        }
         return nil
     }
     res["mac"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetMac(val)
+        if val != nil {
+            m.SetMac(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +174,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +184,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["web"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +194,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetWeb(val)
+        if val != nil {
+            m.SetWeb(val)
+        }
         return nil
     }
     res["windows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +204,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetWindows(val)
+        if val != nil {
+            m.SetWindows(val)
+        }
         return nil
     }
     res["windowsPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +214,9 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetWindowsPhone(val)
+        if val != nil {
+            m.SetWindowsPhone(val)
+        }
         return nil
     }
     return res

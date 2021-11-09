@@ -63,11 +63,13 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]RoleScopeTagAutoAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RoleScopeTagAutoAssignment))
+        if val != nil {
+            res := make([]RoleScopeTagAutoAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RoleScopeTagAutoAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,7 +77,9 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,7 +87,9 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isBuiltIn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +97,9 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetIsBuiltIn(val)
+        if val != nil {
+            m.SetIsBuiltIn(val)
+        }
         return nil
     }
     return res

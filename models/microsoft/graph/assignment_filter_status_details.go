@@ -82,11 +82,13 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetDeviceProperties(res)
         }
-        m.SetDeviceProperties(res)
         return nil
     }
     res["evalutionSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,11 +96,13 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]AssignmentFilterEvaluationSummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AssignmentFilterEvaluationSummary))
+        if val != nil {
+            res := make([]AssignmentFilterEvaluationSummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AssignmentFilterEvaluationSummary))
+            }
+            m.SetEvalutionSummaries(res)
         }
-        m.SetEvalutionSummaries(res)
         return nil
     }
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +110,9 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["payloadId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +120,9 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetPayloadId(val)
+        if val != nil {
+            m.SetPayloadId(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +130,9 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

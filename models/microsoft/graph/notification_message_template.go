@@ -84,8 +84,10 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(NotificationTemplateBrandingOptions)
-        m.SetBrandingOptions(&cast)
+        if val != nil {
+            cast := val.(NotificationTemplateBrandingOptions)
+            m.SetBrandingOptions(&cast)
+        }
         return nil
     }
     res["defaultLocale"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,7 +95,9 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDefaultLocale(val)
+        if val != nil {
+            m.SetDefaultLocale(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +105,9 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +115,9 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["localizedNotificationMessages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,11 +125,13 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]LocalizedNotificationMessage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LocalizedNotificationMessage))
+        if val != nil {
+            res := make([]LocalizedNotificationMessage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LocalizedNotificationMessage))
+            }
+            m.SetLocalizedNotificationMessages(res)
         }
-        m.SetLocalizedNotificationMessages(res)
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,11 +139,13 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     return res

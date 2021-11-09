@@ -114,11 +114,13 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]AppleEnrollmentProfileAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AppleEnrollmentProfileAssignment))
+        if val != nil {
+            res := make([]AppleEnrollmentProfileAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppleEnrollmentProfileAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["availableEnrollmentTypeOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,11 +128,13 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]AppleOwnerTypeEnrollmentType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AppleOwnerTypeEnrollmentType))
+        if val != nil {
+            res := make([]AppleOwnerTypeEnrollmentType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppleOwnerTypeEnrollmentType))
+            }
+            m.SetAvailableEnrollmentTypeOptions(res)
         }
-        m.SetAvailableEnrollmentTypeOptions(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +142,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["defaultEnrollmentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,8 +152,10 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(AppleUserInitiatedEnrollmentType)
-        m.SetDefaultEnrollmentType(&cast)
+        if val != nil {
+            cast := val.(AppleUserInitiatedEnrollmentType)
+            m.SetDefaultEnrollmentType(&cast)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +183,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["platform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,8 +193,10 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(DevicePlatformType)
-        m.SetPlatform(&cast)
+        if val != nil {
+            cast := val.(DevicePlatformType)
+            m.SetPlatform(&cast)
+        }
         return nil
     }
     res["priority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +204,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetPriority(val)
+        if val != nil {
+            m.SetPriority(val)
+        }
         return nil
     }
     return res

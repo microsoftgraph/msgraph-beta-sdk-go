@@ -72,7 +72,9 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,8 +82,10 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementConfigurationDeviceMode)
-        m.SetDeviceMode(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementConfigurationDeviceMode)
+            m.SetDeviceMode(&cast)
+        }
         return nil
     }
     res["platform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,8 +93,10 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementConfigurationPlatforms)
-        m.SetPlatform(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementConfigurationPlatforms)
+            m.SetPlatform(&cast)
+        }
         return nil
     }
     res["technologies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,8 +104,10 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementConfigurationTechnologies)
-        m.SetTechnologies(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementConfigurationTechnologies)
+            m.SetTechnologies(&cast)
+        }
         return nil
     }
     return res

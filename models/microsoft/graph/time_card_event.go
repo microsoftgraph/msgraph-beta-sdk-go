@@ -63,7 +63,9 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetAtApprovedLocation(val)
+        if val != nil {
+            m.SetAtApprovedLocation(val)
+        }
         return nil
     }
     res["dateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDateTime(val)
+        if val != nil {
+            m.SetDateTime(val)
+        }
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetNotes(val.(*ItemBody))
+        if val != nil {
+            m.SetNotes(val.(*ItemBody))
+        }
         return nil
     }
     return res

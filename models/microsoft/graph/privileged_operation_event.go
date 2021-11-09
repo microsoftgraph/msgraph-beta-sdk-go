@@ -164,7 +164,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetAdditionalInformation(val)
+        if val != nil {
+            m.SetAdditionalInformation(val)
+        }
         return nil
     }
     res["creationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +174,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetCreationDateTime(val)
+        if val != nil {
+            m.SetCreationDateTime(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +184,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["referenceKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +194,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetReferenceKey(val)
+        if val != nil {
+            m.SetReferenceKey(val)
+        }
         return nil
     }
     res["referenceSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +204,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetReferenceSystem(val)
+        if val != nil {
+            m.SetReferenceSystem(val)
+        }
         return nil
     }
     res["requestorId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +214,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRequestorId(val)
+        if val != nil {
+            m.SetRequestorId(val)
+        }
         return nil
     }
     res["requestorName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +224,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRequestorName(val)
+        if val != nil {
+            m.SetRequestorName(val)
+        }
         return nil
     }
     res["requestType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +234,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRequestType(val)
+        if val != nil {
+            m.SetRequestType(val)
+        }
         return nil
     }
     res["roleId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +244,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRoleId(val)
+        if val != nil {
+            m.SetRoleId(val)
+        }
         return nil
     }
     res["roleName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +254,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRoleName(val)
+        if val != nil {
+            m.SetRoleName(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +264,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +274,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userMail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,7 +284,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetUserMail(val)
+        if val != nil {
+            m.SetUserMail(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,7 +294,9 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     return res

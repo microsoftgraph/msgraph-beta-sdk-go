@@ -82,7 +82,9 @@ func (m *NetworkInterface) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["ipV4Address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *NetworkInterface) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIpV4Address(val)
+        if val != nil {
+            m.SetIpV4Address(val)
+        }
         return nil
     }
     res["ipV6Address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *NetworkInterface) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIpV6Address(val)
+        if val != nil {
+            m.SetIpV6Address(val)
+        }
         return nil
     }
     res["localIpV6Address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *NetworkInterface) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetLocalIpV6Address(val)
+        if val != nil {
+            m.SetLocalIpV6Address(val)
+        }
         return nil
     }
     res["macAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *NetworkInterface) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetMacAddress(val)
+        if val != nil {
+            m.SetMacAddress(val)
+        }
         return nil
     }
     return res

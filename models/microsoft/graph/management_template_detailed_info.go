@@ -63,8 +63,10 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)
-        m.SetCategory(&cast)
+        if val != nil {
+            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)
+            m.SetCategory(&cast)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["managementTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetManagementTemplateId(val)
+        if val != nil {
+            m.SetManagementTemplateId(val)
+        }
         return nil
     }
     return res

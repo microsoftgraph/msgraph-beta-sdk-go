@@ -134,7 +134,9 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["groupsRequiringPartnerEnrollment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,11 +144,13 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementPartnerAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementPartnerAssignment))
+        if val != nil {
+            res := make([]DeviceManagementPartnerAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementPartnerAssignment))
+            }
+            m.SetGroupsRequiringPartnerEnrollment(res)
         }
-        m.SetGroupsRequiringPartnerEnrollment(res)
         return nil
     }
     res["isConfigured"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +158,9 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetIsConfigured(val)
+        if val != nil {
+            m.SetIsConfigured(val)
+        }
         return nil
     }
     res["lastHeartbeatDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +168,9 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLastHeartbeatDateTime(val)
+        if val != nil {
+            m.SetLastHeartbeatDateTime(val)
+        }
         return nil
     }
     res["partnerAppType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,8 +178,10 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementPartnerAppType)
-        m.SetPartnerAppType(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementPartnerAppType)
+            m.SetPartnerAppType(&cast)
+        }
         return nil
     }
     res["partnerState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,8 +189,10 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementPartnerTenantState)
-        m.SetPartnerState(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementPartnerTenantState)
+            m.SetPartnerState(&cast)
+        }
         return nil
     }
     res["singleTenantAppId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +200,9 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetSingleTenantAppId(val)
+        if val != nil {
+            m.SetSingleTenantAppId(val)
+        }
         return nil
     }
     res["whenPartnerDevicesWillBeMarkedAsNonCompliant"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +210,9 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliant(val)
+        if val != nil {
+            m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliant(val)
+        }
         return nil
     }
     res["whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +220,9 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime(val)
+        if val != nil {
+            m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime(val)
+        }
         return nil
     }
     res["whenPartnerDevicesWillBeRemoved"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +230,9 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWhenPartnerDevicesWillBeRemoved(val)
+        if val != nil {
+            m.SetWhenPartnerDevicesWillBeRemoved(val)
+        }
         return nil
     }
     res["whenPartnerDevicesWillBeRemovedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +240,9 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWhenPartnerDevicesWillBeRemovedDateTime(val)
+        if val != nil {
+            m.SetWhenPartnerDevicesWillBeRemovedDateTime(val)
+        }
         return nil
     }
     return res

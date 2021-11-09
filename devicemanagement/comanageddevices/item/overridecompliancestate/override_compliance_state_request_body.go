@@ -53,8 +53,10 @@ func (m *OverrideComplianceStateRequestBody) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministratorConfiguredDeviceComplianceState)
-        m.SetComplianceState(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministratorConfiguredDeviceComplianceState)
+            m.SetComplianceState(&cast)
+        }
         return nil
     }
     res["remediationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,7 +64,9 @@ func (m *OverrideComplianceStateRequestBody) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetRemediationUrl(val)
+        if val != nil {
+            m.SetRemediationUrl(val)
+        }
         return nil
     }
     return res

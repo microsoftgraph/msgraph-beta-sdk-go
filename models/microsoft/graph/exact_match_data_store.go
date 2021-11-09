@@ -33,11 +33,13 @@ func (m *ExactMatchDataStore) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ExactMatchSession, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExactMatchSession))
+        if val != nil {
+            res := make([]ExactMatchSession, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExactMatchSession))
+            }
+            m.SetSessions(res)
         }
-        m.SetSessions(res)
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *RegistrationEnforcement) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAuthenticationMethodsRegistrationCampaign(val.(*AuthenticationMethodsRegistrationCampaign))
+        if val != nil {
+            m.SetAuthenticationMethodsRegistrationCampaign(val.(*AuthenticationMethodsRegistrationCampaign))
+        }
         return nil
     }
     return res

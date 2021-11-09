@@ -63,8 +63,10 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(DeviceConfigAssignmentIntent)
-        m.SetIntent(&cast)
+        if val != nil {
+            cast := val.(DeviceConfigAssignmentIntent)
+            m.SetIntent(&cast)
+        }
         return nil
     }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,8 +74,10 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(DeviceAndAppManagementAssignmentSource)
-        m.SetSource(&cast)
+        if val != nil {
+            cast := val.(DeviceAndAppManagementAssignmentSource)
+            m.SetSource(&cast)
+        }
         return nil
     }
     res["sourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +85,9 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetSourceId(val)
+        if val != nil {
+            m.SetSourceId(val)
+        }
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +95,9 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+        if val != nil {
+            m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+        }
         return nil
     }
     return res

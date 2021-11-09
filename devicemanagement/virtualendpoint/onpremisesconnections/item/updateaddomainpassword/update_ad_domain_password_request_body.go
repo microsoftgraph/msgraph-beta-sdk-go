@@ -42,7 +42,9 @@ func (m *UpdateAdDomainPasswordRequestBody) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetAdDomainPassword(val)
+        if val != nil {
+            m.SetAdDomainPassword(val)
+        }
         return nil
     }
     return res

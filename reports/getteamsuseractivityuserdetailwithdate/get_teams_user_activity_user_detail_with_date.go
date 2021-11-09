@@ -264,7 +264,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetAdHocMeetingsAttendedCount(val)
+        if val != nil {
+            m.SetAdHocMeetingsAttendedCount(val)
+        }
         return nil
     }
     res["adHocMeetingsOrganizedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,7 +274,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetAdHocMeetingsOrganizedCount(val)
+        if val != nil {
+            m.SetAdHocMeetingsOrganizedCount(val)
+        }
         return nil
     }
     res["assignedProducts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -280,11 +284,13 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssignedProducts(res)
         }
-        m.SetAssignedProducts(res)
         return nil
     }
     res["audioDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -292,7 +298,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetAudioDuration(val)
+        if val != nil {
+            m.SetAudioDuration(val)
+        }
         return nil
     }
     res["callCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -300,7 +308,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetCallCount(val)
+        if val != nil {
+            m.SetCallCount(val)
+        }
         return nil
     }
     res["deletedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -308,7 +318,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetDeletedDate(val)
+        if val != nil {
+            m.SetDeletedDate(val)
+        }
         return nil
     }
     res["hasOtherAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +328,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetHasOtherAction(val)
+        if val != nil {
+            m.SetHasOtherAction(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -324,7 +338,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["isLicensed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,7 +348,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetIsLicensed(val)
+        if val != nil {
+            m.SetIsLicensed(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -340,7 +358,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["meetingCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -348,7 +368,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetMeetingCount(val)
+        if val != nil {
+            m.SetMeetingCount(val)
+        }
         return nil
     }
     res["meetingsAttendedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,7 +378,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetMeetingsAttendedCount(val)
+        if val != nil {
+            m.SetMeetingsAttendedCount(val)
+        }
         return nil
     }
     res["meetingsOrganizedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -364,7 +388,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetMeetingsOrganizedCount(val)
+        if val != nil {
+            m.SetMeetingsOrganizedCount(val)
+        }
         return nil
     }
     res["privateChatMessageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -372,7 +398,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetPrivateChatMessageCount(val)
+        if val != nil {
+            m.SetPrivateChatMessageCount(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -380,7 +408,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -388,7 +418,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["scheduledOneTimeMeetingsAttendedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -396,7 +428,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetScheduledOneTimeMeetingsAttendedCount(val)
+        if val != nil {
+            m.SetScheduledOneTimeMeetingsAttendedCount(val)
+        }
         return nil
     }
     res["scheduledOneTimeMeetingsOrganizedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -404,7 +438,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetScheduledOneTimeMeetingsOrganizedCount(val)
+        if val != nil {
+            m.SetScheduledOneTimeMeetingsOrganizedCount(val)
+        }
         return nil
     }
     res["scheduledRecurringMeetingsAttendedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -412,7 +448,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetScheduledRecurringMeetingsAttendedCount(val)
+        if val != nil {
+            m.SetScheduledRecurringMeetingsAttendedCount(val)
+        }
         return nil
     }
     res["scheduledRecurringMeetingsOrganizedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -420,7 +458,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetScheduledRecurringMeetingsOrganizedCount(val)
+        if val != nil {
+            m.SetScheduledRecurringMeetingsOrganizedCount(val)
+        }
         return nil
     }
     res["screenShareDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -428,7 +468,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetScreenShareDuration(val)
+        if val != nil {
+            m.SetScreenShareDuration(val)
+        }
         return nil
     }
     res["teamChatMessageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -436,7 +478,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTeamChatMessageCount(val)
+        if val != nil {
+            m.SetTeamChatMessageCount(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -444,7 +488,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     res["videoDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -452,7 +498,9 @@ func (m *GetTeamsUserActivityUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetVideoDuration(val)
+        if val != nil {
+            m.SetVideoDuration(val)
+        }
         return nil
     }
     return res

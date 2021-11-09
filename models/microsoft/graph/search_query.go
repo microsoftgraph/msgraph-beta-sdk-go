@@ -52,7 +52,9 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetQuery_string(val.(*SearchQueryString))
+        if val != nil {
+            m.SetQuery_string(val.(*SearchQueryString))
+        }
         return nil
     }
     res["queryString"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetQueryString(val)
+        if val != nil {
+            m.SetQueryString(val)
+        }
         return nil
     }
     return res

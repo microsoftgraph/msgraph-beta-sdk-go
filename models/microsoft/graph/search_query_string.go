@@ -42,7 +42,9 @@ func (m *SearchQueryString) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetQuery(val)
+        if val != nil {
+            m.SetQuery(val)
+        }
         return nil
     }
     return res

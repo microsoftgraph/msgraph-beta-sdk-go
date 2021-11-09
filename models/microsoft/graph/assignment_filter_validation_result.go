@@ -42,7 +42,9 @@ func (m *AssignmentFilterValidationResult) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetIsValidRule(val)
+        if val != nil {
+            m.SetIsValidRule(val)
+        }
         return nil
     }
     return res

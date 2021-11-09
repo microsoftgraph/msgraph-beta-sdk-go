@@ -52,11 +52,13 @@ func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]KeyCredentialConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyCredentialConfiguration))
+        if val != nil {
+            res := make([]KeyCredentialConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyCredentialConfiguration))
+            }
+            m.SetKeyCredentials(res)
         }
-        m.SetKeyCredentials(res)
         return nil
     }
     res["passwordCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,11 +66,13 @@ func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]PasswordCredentialConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PasswordCredentialConfiguration))
+        if val != nil {
+            res := make([]PasswordCredentialConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PasswordCredentialConfiguration))
+            }
+            m.SetPasswordCredentials(res)
         }
-        m.SetPasswordCredentials(res)
         return nil
     }
     return res

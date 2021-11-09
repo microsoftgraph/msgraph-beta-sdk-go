@@ -132,7 +132,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetApplications(val.(*ConditionalAccessApplications))
+        if val != nil {
+            m.SetApplications(val.(*ConditionalAccessApplications))
+        }
         return nil
     }
     res["clientApplications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +142,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetClientApplications(val.(*ConditionalAccessClientApplications))
+        if val != nil {
+            m.SetClientApplications(val.(*ConditionalAccessClientApplications))
+        }
         return nil
     }
     res["clientAppTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,11 +152,13 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]ConditionalAccessClientApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConditionalAccessClientApp))
+        if val != nil {
+            res := make([]ConditionalAccessClientApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessClientApp))
+            }
+            m.SetClientAppTypes(res)
         }
-        m.SetClientAppTypes(res)
         return nil
     }
     res["devices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +166,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDevices(val.(*ConditionalAccessDevices))
+        if val != nil {
+            m.SetDevices(val.(*ConditionalAccessDevices))
+        }
         return nil
     }
     res["deviceStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +176,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDeviceStates(val.(*ConditionalAccessDeviceStates))
+        if val != nil {
+            m.SetDeviceStates(val.(*ConditionalAccessDeviceStates))
+        }
         return nil
     }
     res["locations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +186,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetLocations(val.(*ConditionalAccessLocations))
+        if val != nil {
+            m.SetLocations(val.(*ConditionalAccessLocations))
+        }
         return nil
     }
     res["platforms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +196,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetPlatforms(val.(*ConditionalAccessPlatforms))
+        if val != nil {
+            m.SetPlatforms(val.(*ConditionalAccessPlatforms))
+        }
         return nil
     }
     res["signInRiskLevels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,11 +206,13 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]RiskLevel, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RiskLevel))
+        if val != nil {
+            res := make([]RiskLevel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RiskLevel))
+            }
+            m.SetSignInRiskLevels(res)
         }
-        m.SetSignInRiskLevels(res)
         return nil
     }
     res["userRiskLevels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,11 +220,13 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]RiskLevel, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RiskLevel))
+        if val != nil {
+            res := make([]RiskLevel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RiskLevel))
+            }
+            m.SetUserRiskLevels(res)
         }
-        m.SetUserRiskLevels(res)
         return nil
     }
     res["users"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +234,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetUsers(val.(*ConditionalAccessUsers))
+        if val != nil {
+            m.SetUsers(val.(*ConditionalAccessUsers))
+        }
         return nil
     }
     return res

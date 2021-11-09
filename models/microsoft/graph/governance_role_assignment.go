@@ -164,7 +164,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetAssignmentState(val)
+        if val != nil {
+            m.SetAssignmentState(val)
+        }
         return nil
     }
     res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +174,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetEndDateTime(val)
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
         return nil
     }
     res["externalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +184,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetExternalId(val)
+        if val != nil {
+            m.SetExternalId(val)
+        }
         return nil
     }
     res["linkedEligibleRoleAssignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +194,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetLinkedEligibleRoleAssignment(val.(*GovernanceRoleAssignment))
+        if val != nil {
+            m.SetLinkedEligibleRoleAssignment(val.(*GovernanceRoleAssignment))
+        }
         return nil
     }
     res["linkedEligibleRoleAssignmentId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +204,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetLinkedEligibleRoleAssignmentId(val)
+        if val != nil {
+            m.SetLinkedEligibleRoleAssignmentId(val)
+        }
         return nil
     }
     res["memberType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +214,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetMemberType(val)
+        if val != nil {
+            m.SetMemberType(val)
+        }
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +224,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetResource(val.(*GovernanceResource))
+        if val != nil {
+            m.SetResource(val.(*GovernanceResource))
+        }
         return nil
     }
     res["resourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +234,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetResourceId(val)
+        if val != nil {
+            m.SetResourceId(val)
+        }
         return nil
     }
     res["roleDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +244,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRoleDefinition(val.(*GovernanceRoleDefinition))
+        if val != nil {
+            m.SetRoleDefinition(val.(*GovernanceRoleDefinition))
+        }
         return nil
     }
     res["roleDefinitionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +254,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRoleDefinitionId(val)
+        if val != nil {
+            m.SetRoleDefinitionId(val)
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +264,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +274,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,7 +284,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSubject(val.(*GovernanceSubject))
+        if val != nil {
+            m.SetSubject(val.(*GovernanceSubject))
+        }
         return nil
     }
     res["subjectId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,7 +294,9 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSubjectId(val)
+        if val != nil {
+            m.SetSubjectId(val)
+        }
         return nil
     }
     return res

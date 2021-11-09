@@ -52,11 +52,13 @@ func (m *ExactMatchClassificationResult) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]ExactMatchDetectedSensitiveContent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExactMatchDetectedSensitiveContent))
+        if val != nil {
+            res := make([]ExactMatchDetectedSensitiveContent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExactMatchDetectedSensitiveContent))
+            }
+            m.SetClassification(res)
         }
-        m.SetClassification(res)
         return nil
     }
     res["errors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,11 +66,13 @@ func (m *ExactMatchClassificationResult) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]ClassificationError, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ClassificationError))
+        if val != nil {
+            res := make([]ClassificationError, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ClassificationError))
+            }
+            m.SetErrors(res)
         }
-        m.SetErrors(res)
         return nil
     }
     return res

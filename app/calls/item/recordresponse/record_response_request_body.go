@@ -123,7 +123,9 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetBargeInAllowed(val)
+        if val != nil {
+            m.SetBargeInAllowed(val)
+        }
         return nil
     }
     res["clientContext"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +133,9 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetClientContext(val)
+        if val != nil {
+            m.SetClientContext(val)
+        }
         return nil
     }
     res["initialSilenceTimeoutInSeconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +143,9 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetInitialSilenceTimeoutInSeconds(val)
+        if val != nil {
+            m.SetInitialSilenceTimeoutInSeconds(val)
+        }
         return nil
     }
     res["maxRecordDurationInSeconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +153,9 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetMaxRecordDurationInSeconds(val)
+        if val != nil {
+            m.SetMaxRecordDurationInSeconds(val)
+        }
         return nil
     }
     res["maxSilenceTimeoutInSeconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetMaxSilenceTimeoutInSeconds(val)
+        if val != nil {
+            m.SetMaxSilenceTimeoutInSeconds(val)
+        }
         return nil
     }
     res["playBeep"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetPlayBeep(val)
+        if val != nil {
+            m.SetPlayBeep(val)
+        }
         return nil
     }
     res["prompts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,11 +183,13 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt))
+        if val != nil {
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt))
+            }
+            m.SetPrompts(res)
         }
-        m.SetPrompts(res)
         return nil
     }
     res["stopTones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,11 +197,13 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetStopTones(res)
         }
-        m.SetStopTones(res)
         return nil
     }
     res["streamWhileRecording"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -195,7 +211,9 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetStreamWhileRecording(val)
+        if val != nil {
+            m.SetStreamWhileRecording(val)
+        }
         return nil
     }
     return res

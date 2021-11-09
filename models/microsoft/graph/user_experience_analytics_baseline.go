@@ -124,7 +124,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetAppHealthMetrics(val.(*UserExperienceAnalyticsCategory))
+        if val != nil {
+            m.SetAppHealthMetrics(val.(*UserExperienceAnalyticsCategory))
+        }
         return nil
     }
     res["batteryHealthMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetBatteryHealthMetrics(val.(*UserExperienceAnalyticsCategory))
+        if val != nil {
+            m.SetBatteryHealthMetrics(val.(*UserExperienceAnalyticsCategory))
+        }
         return nil
     }
     res["bestPracticesMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +144,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetBestPracticesMetrics(val.(*UserExperienceAnalyticsCategory))
+        if val != nil {
+            m.SetBestPracticesMetrics(val.(*UserExperienceAnalyticsCategory))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +154,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["deviceBootPerformanceMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeviceBootPerformanceMetrics(val.(*UserExperienceAnalyticsCategory))
+        if val != nil {
+            m.SetDeviceBootPerformanceMetrics(val.(*UserExperienceAnalyticsCategory))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +174,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isBuiltIn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +184,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetIsBuiltIn(val)
+        if val != nil {
+            m.SetIsBuiltIn(val)
+        }
         return nil
     }
     res["rebootAnalyticsMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +194,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetRebootAnalyticsMetrics(val.(*UserExperienceAnalyticsCategory))
+        if val != nil {
+            m.SetRebootAnalyticsMetrics(val.(*UserExperienceAnalyticsCategory))
+        }
         return nil
     }
     res["resourcePerformanceMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +204,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetResourcePerformanceMetrics(val.(*UserExperienceAnalyticsCategory))
+        if val != nil {
+            m.SetResourcePerformanceMetrics(val.(*UserExperienceAnalyticsCategory))
+        }
         return nil
     }
     res["workFromAnywhereMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +214,9 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetWorkFromAnywhereMetrics(val.(*UserExperienceAnalyticsCategory))
+        if val != nil {
+            m.SetWorkFromAnywhereMetrics(val.(*UserExperienceAnalyticsCategory))
+        }
         return nil
     }
     return res

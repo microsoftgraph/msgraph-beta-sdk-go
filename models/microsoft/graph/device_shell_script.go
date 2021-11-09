@@ -184,11 +184,13 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementScriptAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementScriptAssignment))
+        if val != nil {
+            res := make([]DeviceManagementScriptAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementScriptAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["blockExecutionNotifications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +198,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetBlockExecutionNotifications(val)
+        if val != nil {
+            m.SetBlockExecutionNotifications(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +208,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +218,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceRunStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,11 +228,13 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementScriptDeviceState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementScriptDeviceState))
+        if val != nil {
+            res := make([]DeviceManagementScriptDeviceState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementScriptDeviceState))
+            }
+            m.SetDeviceRunStates(res)
         }
-        m.SetDeviceRunStates(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,7 +242,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["executionFrequency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -240,7 +252,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetExecutionFrequency(val)
+        if val != nil {
+            m.SetExecutionFrequency(val)
+        }
         return nil
     }
     res["fileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,7 +262,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetFileName(val)
+        if val != nil {
+            m.SetFileName(val)
+        }
         return nil
     }
     res["groupAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,11 +272,13 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementScriptGroupAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementScriptGroupAssignment))
+        if val != nil {
+            res := make([]DeviceManagementScriptGroupAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementScriptGroupAssignment))
+            }
+            m.SetGroupAssignments(res)
         }
-        m.SetGroupAssignments(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,7 +286,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["retryCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -276,7 +296,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRetryCount(val)
+        if val != nil {
+            m.SetRetryCount(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -284,11 +306,13 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["runAsAccount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,8 +320,10 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(RunAsAccountType)
-        m.SetRunAsAccount(&cast)
+        if val != nil {
+            cast := val.(RunAsAccountType)
+            m.SetRunAsAccount(&cast)
+        }
         return nil
     }
     res["runSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,7 +331,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRunSummary(val.(*DeviceManagementScriptRunSummary))
+        if val != nil {
+            m.SetRunSummary(val.(*DeviceManagementScriptRunSummary))
+        }
         return nil
     }
     res["scriptContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -313,7 +341,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetScriptContent(val)
+        if val != nil {
+            m.SetScriptContent(val)
+        }
         return nil
     }
     res["userRunStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -321,11 +351,13 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementScriptUserState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementScriptUserState))
+        if val != nil {
+            res := make([]DeviceManagementScriptUserState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementScriptUserState))
+            }
+            m.SetUserRunStates(res)
         }
-        m.SetUserRunStates(res)
         return nil
     }
     return res

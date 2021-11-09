@@ -93,7 +93,9 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCertExpiryTime(val)
+        if val != nil {
+            m.SetCertExpiryTime(val)
+        }
         return nil
     }
     res["connectorVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetConnectorVersion(val)
+        if val != nil {
+            m.SetConnectorVersion(val)
+        }
         return nil
     }
     res["enrollmentError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetEnrollmentError(val)
+        if val != nil {
+            m.SetEnrollmentError(val)
+        }
         return nil
     }
     res["lastConnectorConnectionTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastConnectorConnectionTime(val)
+        if val != nil {
+            m.SetLastConnectorConnectionTime(val)
+        }
         return nil
     }
     res["lastUploadVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastUploadVersion(val)
+        if val != nil {
+            m.SetLastUploadVersion(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +143,9 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     return res

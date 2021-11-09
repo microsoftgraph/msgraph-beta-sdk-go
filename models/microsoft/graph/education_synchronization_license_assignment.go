@@ -52,8 +52,10 @@ func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        cast := val.(EducationUserRole)
-        m.SetAppliesTo(&cast)
+        if val != nil {
+            cast := val.(EducationUserRole)
+            m.SetAppliesTo(&cast)
+        }
         return nil
     }
     res["skuIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,11 +63,13 @@ func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSkuIds(res)
         }
-        m.SetSkuIds(res)
         return nil
     }
     return res

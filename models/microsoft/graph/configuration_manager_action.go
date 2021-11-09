@@ -42,8 +42,10 @@ func (m *ConfigurationManagerAction) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(ConfigurationManagerActionType)
-        m.SetAction(&cast)
+        if val != nil {
+            cast := val.(ConfigurationManagerActionType)
+            m.SetAction(&cast)
+        }
         return nil
     }
     return res

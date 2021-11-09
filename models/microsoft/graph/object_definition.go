@@ -72,11 +72,13 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]AttributeDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AttributeDefinition))
+        if val != nil {
+            res := make([]AttributeDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AttributeDefinition))
+            }
+            m.SetAttributes(res)
         }
-        m.SetAttributes(res)
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,11 +86,13 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]MetadataEntry, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MetadataEntry))
+        if val != nil {
+            res := make([]MetadataEntry, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MetadataEntry))
+            }
+            m.SetMetadata(res)
         }
-        m.SetMetadata(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +100,9 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["supportedApis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,11 +110,13 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSupportedApis(res)
         }
-        m.SetSupportedApis(res)
         return nil
     }
     return res

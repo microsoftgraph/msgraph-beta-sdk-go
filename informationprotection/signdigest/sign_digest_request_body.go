@@ -42,7 +42,9 @@ func (m *SignDigestRequestBody) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDigest(val)
+        if val != nil {
+            m.SetDigest(val)
+        }
         return nil
     }
     return res

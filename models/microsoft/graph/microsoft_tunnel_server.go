@@ -74,7 +74,9 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAgentImageDigest(val)
+        if val != nil {
+            m.SetAgentImageDigest(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastCheckinDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetLastCheckinDateTime(val)
+        if val != nil {
+            m.SetLastCheckinDateTime(val)
+        }
         return nil
     }
     res["serverImageDigest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetServerImageDigest(val)
+        if val != nil {
+            m.SetServerImageDigest(val)
+        }
         return nil
     }
     res["tunnelServerHealthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,8 +114,10 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(MicrosoftTunnelServerHealthStatus)
-        m.SetTunnelServerHealthStatus(&cast)
+        if val != nil {
+            cast := val.(MicrosoftTunnelServerHealthStatus)
+            m.SetTunnelServerHealthStatus(&cast)
+        }
         return nil
     }
     return res

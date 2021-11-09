@@ -123,7 +123,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetAgedAsOfDate(val)
+        if val != nil {
+            m.SetAgedAsOfDate(val)
+        }
         return nil
     }
     res["balanceDue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +133,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetBalanceDue(val)
+        if val != nil {
+            m.SetBalanceDue(val)
+        }
         return nil
     }
     res["currencyCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +143,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCurrencyCode(val)
+        if val != nil {
+            m.SetCurrencyCode(val)
+        }
         return nil
     }
     res["currentAmount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +153,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCurrentAmount(val)
+        if val != nil {
+            m.SetCurrentAmount(val)
+        }
         return nil
     }
     res["customerNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCustomerNumber(val)
+        if val != nil {
+            m.SetCustomerNumber(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["period1Amount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +183,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetPeriod1Amount(val)
+        if val != nil {
+            m.SetPeriod1Amount(val)
+        }
         return nil
     }
     res["period2Amount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +193,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetPeriod2Amount(val)
+        if val != nil {
+            m.SetPeriod2Amount(val)
+        }
         return nil
     }
     res["period3Amount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,7 +203,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetPeriod3Amount(val)
+        if val != nil {
+            m.SetPeriod3Amount(val)
+        }
         return nil
     }
     res["periodLengthFilter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -195,7 +213,9 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetPeriodLengthFilter(val)
+        if val != nil {
+            m.SetPeriodLengthFilter(val)
+        }
         return nil
     }
     return res

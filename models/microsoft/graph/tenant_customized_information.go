@@ -63,11 +63,13 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]TenantContactInformation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TenantContactInformation))
+        if val != nil {
+            res := make([]TenantContactInformation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TenantContactInformation))
+            }
+            m.SetContacts(res)
         }
-        m.SetContacts(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,7 +77,9 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,7 +87,9 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["website"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +97,9 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetWebsite(val)
+        if val != nil {
+            m.SetWebsite(val)
+        }
         return nil
     }
     return res

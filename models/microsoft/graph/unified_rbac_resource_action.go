@@ -73,7 +73,9 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetActionVerb(val)
+        if val != nil {
+            m.SetActionVerb(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["resourceScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetResourceScope(val.(*UnifiedRbacResourceScope))
+        if val != nil {
+            m.SetResourceScope(val.(*UnifiedRbacResourceScope))
+        }
         return nil
     }
     res["resourceScopeId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetResourceScopeId(val)
+        if val != nil {
+            m.SetResourceScopeId(val)
+        }
         return nil
     }
     return res

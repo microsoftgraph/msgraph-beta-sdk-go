@@ -72,7 +72,9 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDurationInDays(val)
+        if val != nil {
+            m.SetDurationInDays(val)
+        }
         return nil
     }
     res["recurrenceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetRecurrenceCount(val)
+        if val != nil {
+            m.SetRecurrenceCount(val)
+        }
         return nil
     }
     res["recurrenceEndType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetRecurrenceEndType(val)
+        if val != nil {
+            m.SetRecurrenceEndType(val)
+        }
         return nil
     }
     res["recurrenceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetRecurrenceType(val)
+        if val != nil {
+            m.SetRecurrenceType(val)
+        }
         return nil
     }
     return res

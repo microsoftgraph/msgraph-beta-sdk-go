@@ -62,7 +62,9 @@ func (m *GetOrderResponse) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAssignmentOrder(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrder))
+        if val != nil {
+            m.SetAssignmentOrder(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrder))
+        }
         return nil
     }
     return res

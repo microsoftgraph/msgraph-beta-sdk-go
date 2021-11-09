@@ -63,11 +63,13 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]PlannerBucket, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PlannerBucket))
+        if val != nil {
+            res := make([]PlannerBucket, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PlannerBucket))
+            }
+            m.SetBuckets(res)
         }
-        m.SetBuckets(res)
         return nil
     }
     res["plans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,11 +77,13 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]PlannerPlan, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PlannerPlan))
+        if val != nil {
+            res := make([]PlannerPlan, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PlannerPlan))
+            }
+            m.SetPlans(res)
         }
-        m.SetPlans(res)
         return nil
     }
     res["rosters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,11 +91,13 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]PlannerRoster, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PlannerRoster))
+        if val != nil {
+            res := make([]PlannerRoster, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PlannerRoster))
+            }
+            m.SetRosters(res)
         }
-        m.SetRosters(res)
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +105,13 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]PlannerTask, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PlannerTask))
+        if val != nil {
+            res := make([]PlannerTask, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PlannerTask))
+            }
+            m.SetTasks(res)
         }
-        m.SetTasks(res)
         return nil
     }
     return res

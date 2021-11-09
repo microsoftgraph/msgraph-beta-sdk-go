@@ -113,11 +113,13 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]CloudPcProvisioningPolicyAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcProvisioningPolicyAssignment))
+        if val != nil {
+            res := make([]CloudPcProvisioningPolicyAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcProvisioningPolicyAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +127,9 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +137,9 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["domainJoinConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +147,9 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDomainJoinConfiguration(val.(*CloudPcDomainJoinConfiguration))
+        if val != nil {
+            m.SetDomainJoinConfiguration(val.(*CloudPcDomainJoinConfiguration))
+        }
         return nil
     }
     res["imageDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +157,9 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetImageDisplayName(val)
+        if val != nil {
+            m.SetImageDisplayName(val)
+        }
         return nil
     }
     res["imageId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +167,9 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetImageId(val)
+        if val != nil {
+            m.SetImageId(val)
+        }
         return nil
     }
     res["imageType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,8 +177,10 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(CloudPcProvisioningPolicyImageType)
-        m.SetImageType(&cast)
+        if val != nil {
+            cast := val.(CloudPcProvisioningPolicyImageType)
+            m.SetImageType(&cast)
+        }
         return nil
     }
     res["microsoftManagedDesktop"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +188,9 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetMicrosoftManagedDesktop(val.(*MicrosoftManagedDesktop))
+        if val != nil {
+            m.SetMicrosoftManagedDesktop(val.(*MicrosoftManagedDesktop))
+        }
         return nil
     }
     res["onPremisesConnectionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +198,9 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetOnPremisesConnectionId(val)
+        if val != nil {
+            m.SetOnPremisesConnectionId(val)
+        }
         return nil
     }
     return res

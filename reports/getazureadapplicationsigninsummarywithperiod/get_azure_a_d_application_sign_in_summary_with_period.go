@@ -64,7 +64,9 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["failedSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetFailedSignInCount(val)
+        if val != nil {
+            m.SetFailedSignInCount(val)
+        }
         return nil
     }
     res["successfulSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetSuccessfulSignInCount(val)
+        if val != nil {
+            m.SetSuccessfulSignInCount(val)
+        }
         return nil
     }
     res["successPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetSuccessPercentage(val)
+        if val != nil {
+            m.SetSuccessPercentage(val)
+        }
         return nil
     }
     return res

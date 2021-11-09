@@ -43,7 +43,9 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["resourceActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,11 +53,13 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRbacResourceAction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRbacResourceAction))
+        if val != nil {
+            res := make([]UnifiedRbacResourceAction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRbacResourceAction))
+            }
+            m.SetResourceActions(res)
         }
-        m.SetResourceActions(res)
         return nil
     }
     return res

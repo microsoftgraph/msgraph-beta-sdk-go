@@ -52,11 +52,13 @@ func (m *ManagedDeviceModelsAndManufacturers) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDeviceManufacturers(res)
         }
-        m.SetDeviceManufacturers(res)
         return nil
     }
     res["deviceModels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,11 +66,13 @@ func (m *ManagedDeviceModelsAndManufacturers) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDeviceModels(res)
         }
-        m.SetDeviceModels(res)
         return nil
     }
     return res

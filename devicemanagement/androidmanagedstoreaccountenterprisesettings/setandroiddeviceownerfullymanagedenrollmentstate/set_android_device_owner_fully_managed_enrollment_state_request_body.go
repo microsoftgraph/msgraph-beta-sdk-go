@@ -42,7 +42,9 @@ func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBody) GetFieldDe
         if err != nil {
             return err
         }
-        m.SetEnabled(val)
+        if val != nil {
+            m.SetEnabled(val)
+        }
         return nil
     }
     return res

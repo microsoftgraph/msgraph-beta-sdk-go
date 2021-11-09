@@ -53,8 +53,10 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ScopeOperatorType)
-        m.SetArity(&cast)
+        if val != nil {
+            cast := val.(ScopeOperatorType)
+            m.SetArity(&cast)
+        }
         return nil
     }
     res["multivaluedComparisonType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,8 +64,10 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ScopeOperatorMultiValuedComparisonType)
-        m.SetMultivaluedComparisonType(&cast)
+        if val != nil {
+            cast := val.(ScopeOperatorMultiValuedComparisonType)
+            m.SetMultivaluedComparisonType(&cast)
+        }
         return nil
     }
     res["supportedAttributeTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,11 +75,13 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]AttributeType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AttributeType))
+        if val != nil {
+            res := make([]AttributeType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AttributeType))
+            }
+            m.SetSupportedAttributeTypes(res)
         }
-        m.SetSupportedAttributeTypes(res)
         return nil
     }
     return res

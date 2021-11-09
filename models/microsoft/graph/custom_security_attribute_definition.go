@@ -113,11 +113,13 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]AllowedValue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AllowedValue))
+        if val != nil {
+            res := make([]AllowedValue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AllowedValue))
+            }
+            m.SetAllowedValues(res)
         }
-        m.SetAllowedValues(res)
         return nil
     }
     res["attributeSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +127,9 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetAttributeSet(val)
+        if val != nil {
+            m.SetAttributeSet(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +137,9 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["isCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +147,9 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetIsCollection(val)
+        if val != nil {
+            m.SetIsCollection(val)
+        }
         return nil
     }
     res["isSearchable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +157,9 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetIsSearchable(val)
+        if val != nil {
+            m.SetIsSearchable(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +167,9 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +177,9 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +187,9 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetType_escaped(val)
+        if val != nil {
+            m.SetType_escaped(val)
+        }
         return nil
     }
     res["usePreDefinedValuesOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +197,9 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetUsePreDefinedValuesOnly(val)
+        if val != nil {
+            m.SetUsePreDefinedValuesOnly(val)
+        }
         return nil
     }
     return res

@@ -154,7 +154,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAccessPackageResourceEnvironment(val.(*AccessPackageResourceEnvironment))
+        if val != nil {
+            m.SetAccessPackageResourceEnvironment(val.(*AccessPackageResourceEnvironment))
+        }
         return nil
     }
     res["accessPackageResourceRoles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,11 +164,13 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]AccessPackageResourceRole, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessPackageResourceRole))
+        if val != nil {
+            res := make([]AccessPackageResourceRole, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessPackageResourceRole))
+            }
+            m.SetAccessPackageResourceRoles(res)
         }
-        m.SetAccessPackageResourceRoles(res)
         return nil
     }
     res["accessPackageResourceScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,11 +178,13 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]AccessPackageResourceScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessPackageResourceScope))
+        if val != nil {
+            res := make([]AccessPackageResourceScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessPackageResourceScope))
+            }
+            m.SetAccessPackageResourceScopes(res)
         }
-        m.SetAccessPackageResourceScopes(res)
         return nil
     }
     res["addedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +192,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAddedBy(val)
+        if val != nil {
+            m.SetAddedBy(val)
+        }
         return nil
     }
     res["addedOn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +202,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAddedOn(val)
+        if val != nil {
+            m.SetAddedOn(val)
+        }
         return nil
     }
     res["attributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,11 +212,13 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]AccessPackageResourceAttribute, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessPackageResourceAttribute))
+        if val != nil {
+            res := make([]AccessPackageResourceAttribute, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessPackageResourceAttribute))
+            }
+            m.SetAttributes(res)
         }
-        m.SetAttributes(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +226,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +236,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isPendingOnboarding"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +246,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsPendingOnboarding(val)
+        if val != nil {
+            m.SetIsPendingOnboarding(val)
+        }
         return nil
     }
     res["originId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,7 +256,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetOriginId(val)
+        if val != nil {
+            m.SetOriginId(val)
+        }
         return nil
     }
     res["originSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,7 +266,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetOriginSystem(val)
+        if val != nil {
+            m.SetOriginSystem(val)
+        }
         return nil
     }
     res["resourceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,7 +276,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetResourceType(val)
+        if val != nil {
+            m.SetResourceType(val)
+        }
         return nil
     }
     res["url"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -262,7 +286,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetUrl(val)
+        if val != nil {
+            m.SetUrl(val)
+        }
         return nil
     }
     return res

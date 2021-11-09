@@ -74,7 +74,9 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAzureTenantId(val)
+        if val != nil {
+            m.SetAzureTenantId(val)
+        }
         return nil
     }
     res["enabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetEnabled(val)
+        if val != nil {
+            m.SetEnabled(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["provider"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetProvider(val)
+        if val != nil {
+            m.SetProvider(val)
+        }
         return nil
     }
     res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetVendor_escaped(val)
+        if val != nil {
+            m.SetVendor_escaped(val)
+        }
         return nil
     }
     return res

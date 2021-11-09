@@ -173,7 +173,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetAddress(val.(*PhysicalAddress))
+        if val != nil {
+            m.SetAddress(val.(*PhysicalAddress))
+        }
         return nil
     }
     res["appointments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,11 +183,13 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]BookingAppointment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BookingAppointment))
+        if val != nil {
+            res := make([]BookingAppointment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingAppointment))
+            }
+            m.SetAppointments(res)
         }
-        m.SetAppointments(res)
         return nil
     }
     res["businessHours"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,11 +197,13 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]BookingWorkHours, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BookingWorkHours))
+        if val != nil {
+            res := make([]BookingWorkHours, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingWorkHours))
+            }
+            m.SetBusinessHours(res)
         }
-        m.SetBusinessHours(res)
         return nil
     }
     res["businessType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -205,7 +211,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetBusinessType(val)
+        if val != nil {
+            m.SetBusinessType(val)
+        }
         return nil
     }
     res["calendarView"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,11 +221,13 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]BookingAppointment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BookingAppointment))
+        if val != nil {
+            res := make([]BookingAppointment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingAppointment))
+            }
+            m.SetCalendarView(res)
         }
-        m.SetCalendarView(res)
         return nil
     }
     res["customers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,11 +235,13 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]BookingCustomer, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BookingCustomer))
+        if val != nil {
+            res := make([]BookingCustomer, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingCustomer))
+            }
+            m.SetCustomers(res)
         }
-        m.SetCustomers(res)
         return nil
     }
     res["defaultCurrencyIso"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -237,7 +249,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDefaultCurrencyIso(val)
+        if val != nil {
+            m.SetDefaultCurrencyIso(val)
+        }
         return nil
     }
     res["email"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +259,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     res["isPublished"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,7 +269,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetIsPublished(val)
+        if val != nil {
+            m.SetIsPublished(val)
+        }
         return nil
     }
     res["phone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,7 +279,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPhone(val)
+        if val != nil {
+            m.SetPhone(val)
+        }
         return nil
     }
     res["publicUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,7 +289,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPublicUrl(val)
+        if val != nil {
+            m.SetPublicUrl(val)
+        }
         return nil
     }
     res["schedulingPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,7 +299,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetSchedulingPolicy(val.(*BookingSchedulingPolicy))
+        if val != nil {
+            m.SetSchedulingPolicy(val.(*BookingSchedulingPolicy))
+        }
         return nil
     }
     res["services"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,11 +309,13 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]BookingService, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BookingService))
+        if val != nil {
+            res := make([]BookingService, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingService))
+            }
+            m.SetServices(res)
         }
-        m.SetServices(res)
         return nil
     }
     res["staffMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -297,11 +323,13 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]BookingStaffMember, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BookingStaffMember))
+        if val != nil {
+            res := make([]BookingStaffMember, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingStaffMember))
+            }
+            m.SetStaffMembers(res)
         }
-        m.SetStaffMembers(res)
         return nil
     }
     res["webSiteUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -309,7 +337,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetWebSiteUrl(val)
+        if val != nil {
+            m.SetWebSiteUrl(val)
+        }
         return nil
     }
     return res

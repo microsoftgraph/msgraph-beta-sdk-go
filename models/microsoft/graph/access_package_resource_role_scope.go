@@ -84,7 +84,9 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAccessPackageResourceRole(val.(*AccessPackageResourceRole))
+        if val != nil {
+            m.SetAccessPackageResourceRole(val.(*AccessPackageResourceRole))
+        }
         return nil
     }
     res["accessPackageResourceScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAccessPackageResourceScope(val.(*AccessPackageResourceScope))
+        if val != nil {
+            m.SetAccessPackageResourceScope(val.(*AccessPackageResourceScope))
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val)
+        if val != nil {
+            m.SetCreatedBy(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["modifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetModifiedBy(val)
+        if val != nil {
+            m.SetModifiedBy(val)
+        }
         return nil
     }
     res["modifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetModifiedDateTime(val)
+        if val != nil {
+            m.SetModifiedDateTime(val)
+        }
         return nil
     }
     return res

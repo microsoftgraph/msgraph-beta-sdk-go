@@ -63,7 +63,9 @@ func (m *UnifiedRoleAssignmentSchedule) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetActivatedUsing(val.(*UnifiedRoleEligibilitySchedule))
+        if val != nil {
+            m.SetActivatedUsing(val.(*UnifiedRoleEligibilitySchedule))
+        }
         return nil
     }
     res["assignmentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *UnifiedRoleAssignmentSchedule) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetAssignmentType(val)
+        if val != nil {
+            m.SetAssignmentType(val)
+        }
         return nil
     }
     res["memberType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *UnifiedRoleAssignmentSchedule) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetMemberType(val)
+        if val != nil {
+            m.SetMemberType(val)
+        }
         return nil
     }
     res["scheduleInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *UnifiedRoleAssignmentSchedule) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetScheduleInfo(val.(*RequestSchedule))
+        if val != nil {
+            m.SetScheduleInfo(val.(*RequestSchedule))
+        }
         return nil
     }
     return res

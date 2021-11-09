@@ -42,7 +42,9 @@ func (m *DlpNotification) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetAuthor(val)
+        if val != nil {
+            m.SetAuthor(val)
+        }
         return nil
     }
     return res

@@ -53,11 +53,13 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]UnifiedRbacResourceNamespace, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRbacResourceNamespace))
+        if val != nil {
+            res := make([]UnifiedRbacResourceNamespace, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRbacResourceNamespace))
+            }
+            m.SetResourceNamespaces(res)
         }
-        m.SetResourceNamespaces(res)
         return nil
     }
     res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleAssignmentMultiple, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleAssignmentMultiple))
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentMultiple, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleAssignmentMultiple))
+            }
+            m.SetRoleAssignments(res)
         }
-        m.SetRoleAssignments(res)
         return nil
     }
     res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,11 +81,13 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleDefinition))
+        if val != nil {
+            res := make([]UnifiedRoleDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleDefinition))
+            }
+            m.SetRoleDefinitions(res)
         }
-        m.SetRoleDefinitions(res)
         return nil
     }
     return res

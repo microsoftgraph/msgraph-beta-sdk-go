@@ -183,7 +183,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAdditionalInformation(val)
+        if val != nil {
+            m.SetAdditionalInformation(val)
+        }
         return nil
     }
     res["defaultDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +193,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDefaultDuration(val)
+        if val != nil {
+            m.SetDefaultDuration(val)
+        }
         return nil
     }
     res["defaultLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +203,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDefaultLocation(val.(*Location))
+        if val != nil {
+            m.SetDefaultLocation(val.(*Location))
+        }
         return nil
     }
     res["defaultPrice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +213,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDefaultPrice(val)
+        if val != nil {
+            m.SetDefaultPrice(val)
+        }
         return nil
     }
     res["defaultPriceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,8 +223,10 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        cast := val.(BookingPriceType)
-        m.SetDefaultPriceType(&cast)
+        if val != nil {
+            cast := val.(BookingPriceType)
+            m.SetDefaultPriceType(&cast)
+        }
         return nil
     }
     res["defaultReminders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,11 +234,13 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]BookingReminder, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BookingReminder))
+        if val != nil {
+            res := make([]BookingReminder, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingReminder))
+            }
+            m.SetDefaultReminders(res)
         }
-        m.SetDefaultReminders(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +248,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["isHiddenFromCustomers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +258,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIsHiddenFromCustomers(val)
+        if val != nil {
+            m.SetIsHiddenFromCustomers(val)
+        }
         return nil
     }
     res["isLocationOnline"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +268,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIsLocationOnline(val)
+        if val != nil {
+            m.SetIsLocationOnline(val)
+        }
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,7 +278,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetNotes(val)
+        if val != nil {
+            m.SetNotes(val)
+        }
         return nil
     }
     res["postBuffer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,7 +288,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetPostBuffer(val)
+        if val != nil {
+            m.SetPostBuffer(val)
+        }
         return nil
     }
     res["preBuffer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -276,7 +298,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetPreBuffer(val)
+        if val != nil {
+            m.SetPreBuffer(val)
+        }
         return nil
     }
     res["schedulingPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -284,7 +308,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetSchedulingPolicy(val.(*BookingSchedulingPolicy))
+        if val != nil {
+            m.SetSchedulingPolicy(val.(*BookingSchedulingPolicy))
+        }
         return nil
     }
     res["smsNotificationsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -292,7 +318,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetSmsNotificationsEnabled(val)
+        if val != nil {
+            m.SetSmsNotificationsEnabled(val)
+        }
         return nil
     }
     res["staffMemberIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -300,11 +328,13 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetStaffMemberIds(res)
         }
-        m.SetStaffMemberIds(res)
         return nil
     }
     res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -312,7 +342,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

@@ -62,7 +62,9 @@ func (m *CommentAction) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetIsReply(val)
+        if val != nil {
+            m.SetIsReply(val)
+        }
         return nil
     }
     res["parentAuthor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *CommentAction) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetParentAuthor(val.(*IdentitySet))
+        if val != nil {
+            m.SetParentAuthor(val.(*IdentitySet))
+        }
         return nil
     }
     res["participants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,11 +82,13 @@ func (m *CommentAction) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]IdentitySet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentitySet))
+        if val != nil {
+            res := make([]IdentitySet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentitySet))
+            }
+            m.SetParticipants(res)
         }
-        m.SetParticipants(res)
         return nil
     }
     return res

@@ -52,7 +52,9 @@ func (m *ApproveAppsRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetApproveAllPermissions(val)
+        if val != nil {
+            m.SetApproveAllPermissions(val)
+        }
         return nil
     }
     res["packageIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,11 +62,13 @@ func (m *ApproveAppsRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetPackageIds(res)
         }
-        m.SetPackageIds(res)
         return nil
     }
     return res

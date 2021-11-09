@@ -223,7 +223,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetAdmxSettingDefinitionId(val)
+        if val != nil {
+            m.SetAdmxSettingDefinitionId(val)
+        }
         return nil
     }
     res["childIdList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,11 +233,13 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetChildIdList(res)
         }
-        m.SetChildIdList(res)
         return nil
     }
     res["intuneSettingDefinitionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,7 +247,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIntuneSettingDefinitionId(val)
+        if val != nil {
+            m.SetIntuneSettingDefinitionId(val)
+        }
         return nil
     }
     res["intuneSettingUriList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -251,11 +257,13 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIntuneSettingUriList(res)
         }
-        m.SetIntuneSettingUriList(res)
         return nil
     }
     res["isMdmSupported"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +271,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIsMdmSupported(val)
+        if val != nil {
+            m.SetIsMdmSupported(val)
+        }
         return nil
     }
     res["mdmCspName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,7 +281,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetMdmCspName(val)
+        if val != nil {
+            m.SetMdmCspName(val)
+        }
         return nil
     }
     res["mdmMinimumOSVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +291,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetMdmMinimumOSVersion(val)
+        if val != nil {
+            m.SetMdmMinimumOSVersion(val)
+        }
         return nil
     }
     res["mdmSettingUri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,7 +301,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetMdmSettingUri(val)
+        if val != nil {
+            m.SetMdmSettingUri(val)
+        }
         return nil
     }
     res["mdmSupportedState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,8 +311,10 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(MdmSupportedState)
-        m.SetMdmSupportedState(&cast)
+        if val != nil {
+            cast := val.(MdmSupportedState)
+            m.SetMdmSupportedState(&cast)
+        }
         return nil
     }
     res["parentId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -304,7 +322,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetParentId(val)
+        if val != nil {
+            m.SetParentId(val)
+        }
         return nil
     }
     res["settingCategory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -312,7 +332,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSettingCategory(val)
+        if val != nil {
+            m.SetSettingCategory(val)
+        }
         return nil
     }
     res["settingDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -320,7 +342,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSettingDisplayName(val)
+        if val != nil {
+            m.SetSettingDisplayName(val)
+        }
         return nil
     }
     res["settingDisplayValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -328,7 +352,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSettingDisplayValue(val)
+        if val != nil {
+            m.SetSettingDisplayValue(val)
+        }
         return nil
     }
     res["settingDisplayValueType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -336,7 +362,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSettingDisplayValueType(val)
+        if val != nil {
+            m.SetSettingDisplayValueType(val)
+        }
         return nil
     }
     res["settingName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -344,7 +372,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSettingName(val)
+        if val != nil {
+            m.SetSettingName(val)
+        }
         return nil
     }
     res["settingScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -352,8 +382,10 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicySettingScope)
-        m.SetSettingScope(&cast)
+        if val != nil {
+            cast := val.(GroupPolicySettingScope)
+            m.SetSettingScope(&cast)
+        }
         return nil
     }
     res["settingType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -361,8 +393,10 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicySettingType)
-        m.SetSettingType(&cast)
+        if val != nil {
+            cast := val.(GroupPolicySettingType)
+            m.SetSettingType(&cast)
+        }
         return nil
     }
     res["settingValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -370,7 +404,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSettingValue(val)
+        if val != nil {
+            m.SetSettingValue(val)
+        }
         return nil
     }
     res["settingValueDisplayUnits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -378,7 +414,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSettingValueDisplayUnits(val)
+        if val != nil {
+            m.SetSettingValueDisplayUnits(val)
+        }
         return nil
     }
     res["settingValueType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -386,7 +424,9 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSettingValueType(val)
+        if val != nil {
+            m.SetSettingValueType(val)
+        }
         return nil
     }
     return res

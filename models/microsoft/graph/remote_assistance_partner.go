@@ -74,7 +74,9 @@ func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastConnectionDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLastConnectionDateTime(val)
+        if val != nil {
+            m.SetLastConnectionDateTime(val)
+        }
         return nil
     }
     res["onboardingRequestExpiryDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOnboardingRequestExpiryDateTime(val)
+        if val != nil {
+            m.SetOnboardingRequestExpiryDateTime(val)
+        }
         return nil
     }
     res["onboardingStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,8 +104,10 @@ func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(RemoteAssistanceOnboardingStatus)
-        m.SetOnboardingStatus(&cast)
+        if val != nil {
+            cast := val.(RemoteAssistanceOnboardingStatus)
+            m.SetOnboardingStatus(&cast)
+        }
         return nil
     }
     res["onboardingUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +115,9 @@ func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOnboardingUrl(val)
+        if val != nil {
+            m.SetOnboardingUrl(val)
+        }
         return nil
     }
     return res

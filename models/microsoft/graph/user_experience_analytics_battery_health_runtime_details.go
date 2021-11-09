@@ -63,7 +63,9 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetFieldDeserialize
         if err != nil {
             return err
         }
-        m.SetActiveDevices(val)
+        if val != nil {
+            m.SetActiveDevices(val)
+        }
         return nil
     }
     res["batteryRuntimeFair"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetFieldDeserialize
         if err != nil {
             return err
         }
-        m.SetBatteryRuntimeFair(val)
+        if val != nil {
+            m.SetBatteryRuntimeFair(val)
+        }
         return nil
     }
     res["batteryRuntimeGood"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetFieldDeserialize
         if err != nil {
             return err
         }
-        m.SetBatteryRuntimeGood(val)
+        if val != nil {
+            m.SetBatteryRuntimeGood(val)
+        }
         return nil
     }
     res["batteryRuntimePoor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetFieldDeserialize
         if err != nil {
             return err
         }
-        m.SetBatteryRuntimePoor(val)
+        if val != nil {
+            m.SetBatteryRuntimePoor(val)
+        }
         return nil
     }
     return res

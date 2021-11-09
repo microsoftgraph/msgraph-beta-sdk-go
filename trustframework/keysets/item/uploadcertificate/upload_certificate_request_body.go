@@ -42,7 +42,9 @@ func (m *UploadCertificateRequestBody) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetKey(val)
+        if val != nil {
+            m.SetKey(val)
+        }
         return nil
     }
     return res

@@ -92,8 +92,10 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(DataType)
-        m.SetDataType(&cast)
+        if val != nil {
+            cast := val.(DataType)
+            m.SetDataType(&cast)
+        }
         return nil
     }
     res["deviceComplianceScriptRuleDataType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,8 +103,10 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(DeviceComplianceScriptRuleDataType)
-        m.SetDeviceComplianceScriptRuleDataType(&cast)
+        if val != nil {
+            cast := val.(DeviceComplianceScriptRuleDataType)
+            m.SetDeviceComplianceScriptRuleDataType(&cast)
+        }
         return nil
     }
     res["deviceComplianceScriptRulOperator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,8 +114,10 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(DeviceComplianceScriptRulOperator)
-        m.SetDeviceComplianceScriptRulOperator(&cast)
+        if val != nil {
+            cast := val.(DeviceComplianceScriptRulOperator)
+            m.SetDeviceComplianceScriptRulOperator(&cast)
+        }
         return nil
     }
     res["operand"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +125,9 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetOperand(val)
+        if val != nil {
+            m.SetOperand(val)
+        }
         return nil
     }
     res["operator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,8 +135,10 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(Operator)
-        m.SetOperator(&cast)
+        if val != nil {
+            cast := val.(Operator)
+            m.SetOperator(&cast)
+        }
         return nil
     }
     res["settingName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +146,9 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetSettingName(val)
+        if val != nil {
+            m.SetSettingName(val)
+        }
         return nil
     }
     return res

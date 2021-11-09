@@ -103,7 +103,9 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["platformType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,8 +113,10 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(PolicyPlatformType)
-        m.SetPlatformType(&cast)
+        if val != nil {
+            cast := val.(PolicyPlatformType)
+            m.SetPlatformType(&cast)
+        }
         return nil
     }
     res["settingCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSettingCount(val)
+        if val != nil {
+            m.SetSettingCount(val)
+        }
         return nil
     }
     res["settingStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,11 +134,13 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]DeviceConfigurationSettingState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceConfigurationSettingState))
+        if val != nil {
+            res := make([]DeviceConfigurationSettingState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceConfigurationSettingState))
+            }
+            m.SetSettingStates(res)
         }
-        m.SetSettingStates(res)
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,8 +148,10 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(ComplianceStatus)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(ComplianceStatus)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +159,9 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +169,9 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +179,9 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

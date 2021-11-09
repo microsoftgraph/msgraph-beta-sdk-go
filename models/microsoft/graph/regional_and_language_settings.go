@@ -93,11 +93,13 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]LocaleInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LocaleInfo))
+        if val != nil {
+            res := make([]LocaleInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LocaleInfo))
+            }
+            m.SetAuthoringLanguages(res)
         }
-        m.SetAuthoringLanguages(res)
         return nil
     }
     res["defaultDisplayLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +107,9 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDefaultDisplayLanguage(val.(*LocaleInfo))
+        if val != nil {
+            m.SetDefaultDisplayLanguage(val.(*LocaleInfo))
+        }
         return nil
     }
     res["defaultRegionalFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +117,9 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDefaultRegionalFormat(val.(*LocaleInfo))
+        if val != nil {
+            m.SetDefaultRegionalFormat(val.(*LocaleInfo))
+        }
         return nil
     }
     res["defaultSpeechInputLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +127,9 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDefaultSpeechInputLanguage(val.(*LocaleInfo))
+        if val != nil {
+            m.SetDefaultSpeechInputLanguage(val.(*LocaleInfo))
+        }
         return nil
     }
     res["defaultTranslationLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +137,9 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDefaultTranslationLanguage(val.(*LocaleInfo))
+        if val != nil {
+            m.SetDefaultTranslationLanguage(val.(*LocaleInfo))
+        }
         return nil
     }
     res["regionalFormatOverrides"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +147,9 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetRegionalFormatOverrides(val.(*RegionalFormatOverrides))
+        if val != nil {
+            m.SetRegionalFormatOverrides(val.(*RegionalFormatOverrides))
+        }
         return nil
     }
     res["translationPreferences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +157,9 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetTranslationPreferences(val.(*TranslationPreferences))
+        if val != nil {
+            m.SetTranslationPreferences(val.(*TranslationPreferences))
+        }
         return nil
     }
     return res

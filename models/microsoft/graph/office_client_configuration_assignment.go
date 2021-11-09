@@ -33,7 +33,9 @@ func (m *OfficeClientConfigurationAssignment) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetTarget(val.(*OfficeConfigurationAssignmentTarget))
+        if val != nil {
+            m.SetTarget(val.(*OfficeConfigurationAssignmentTarget))
+        }
         return nil
     }
     return res

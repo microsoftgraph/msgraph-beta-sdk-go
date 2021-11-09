@@ -83,7 +83,9 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetActiveDeviceCount(val)
+        if val != nil {
+            m.SetActiveDeviceCount(val)
+        }
         return nil
     }
     res["deviceManufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetDeviceManufacturer(val)
+        if val != nil {
+            m.SetDeviceManufacturer(val)
+        }
         return nil
     }
     res["deviceModel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetDeviceModel(val)
+        if val != nil {
+            m.SetDeviceModel(val)
+        }
         return nil
     }
     res["meanTimeToFailureInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetMeanTimeToFailureInMinutes(val)
+        if val != nil {
+            m.SetMeanTimeToFailureInMinutes(val)
+        }
         return nil
     }
     res["modelAppHealthScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetModelAppHealthScore(val)
+        if val != nil {
+            m.SetModelAppHealthScore(val)
+        }
         return nil
     }
     res["modelAppHealthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +133,9 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetModelAppHealthStatus(val)
+        if val != nil {
+            m.SetModelAppHealthStatus(val)
+        }
         return nil
     }
     return res

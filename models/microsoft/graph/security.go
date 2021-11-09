@@ -173,11 +173,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]Alert, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Alert))
+        if val != nil {
+            res := make([]Alert, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Alert))
+            }
+            m.SetAlerts(res)
         }
-        m.SetAlerts(res)
         return nil
     }
     res["attackSimulation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,7 +187,9 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAttackSimulation(val.(*AttackSimulationRoot))
+        if val != nil {
+            m.SetAttackSimulation(val.(*AttackSimulationRoot))
+        }
         return nil
     }
     res["cloudAppSecurityProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,11 +197,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]CloudAppSecurityProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudAppSecurityProfile))
+        if val != nil {
+            res := make([]CloudAppSecurityProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudAppSecurityProfile))
+            }
+            m.SetCloudAppSecurityProfiles(res)
         }
-        m.SetCloudAppSecurityProfiles(res)
         return nil
     }
     res["domainSecurityProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -205,11 +211,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]DomainSecurityProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DomainSecurityProfile))
+        if val != nil {
+            res := make([]DomainSecurityProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DomainSecurityProfile))
+            }
+            m.SetDomainSecurityProfiles(res)
         }
-        m.SetDomainSecurityProfiles(res)
         return nil
     }
     res["fileSecurityProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,11 +225,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]FileSecurityProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*FileSecurityProfile))
+        if val != nil {
+            res := make([]FileSecurityProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*FileSecurityProfile))
+            }
+            m.SetFileSecurityProfiles(res)
         }
-        m.SetFileSecurityProfiles(res)
         return nil
     }
     res["hostSecurityProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,11 +239,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]HostSecurityProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*HostSecurityProfile))
+        if val != nil {
+            res := make([]HostSecurityProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*HostSecurityProfile))
+            }
+            m.SetHostSecurityProfiles(res)
         }
-        m.SetHostSecurityProfiles(res)
         return nil
     }
     res["incidents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,11 +253,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]Incident, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Incident))
+        if val != nil {
+            res := make([]Incident, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Incident))
+            }
+            m.SetIncidents(res)
         }
-        m.SetIncidents(res)
         return nil
     }
     res["ipSecurityProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,11 +267,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]IpSecurityProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IpSecurityProfile))
+        if val != nil {
+            res := make([]IpSecurityProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IpSecurityProfile))
+            }
+            m.SetIpSecurityProfiles(res)
         }
-        m.SetIpSecurityProfiles(res)
         return nil
     }
     res["providerStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,11 +281,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SecurityProviderStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SecurityProviderStatus))
+        if val != nil {
+            res := make([]SecurityProviderStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SecurityProviderStatus))
+            }
+            m.SetProviderStatus(res)
         }
-        m.SetProviderStatus(res)
         return nil
     }
     res["providerTenantSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,11 +295,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]ProviderTenantSetting, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ProviderTenantSetting))
+        if val != nil {
+            res := make([]ProviderTenantSetting, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ProviderTenantSetting))
+            }
+            m.SetProviderTenantSettings(res)
         }
-        m.SetProviderTenantSettings(res)
         return nil
     }
     res["secureScoreControlProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -289,11 +309,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SecureScoreControlProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SecureScoreControlProfile))
+        if val != nil {
+            res := make([]SecureScoreControlProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SecureScoreControlProfile))
+            }
+            m.SetSecureScoreControlProfiles(res)
         }
-        m.SetSecureScoreControlProfiles(res)
         return nil
     }
     res["secureScores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -301,11 +323,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SecureScore, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SecureScore))
+        if val != nil {
+            res := make([]SecureScore, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SecureScore))
+            }
+            m.SetSecureScores(res)
         }
-        m.SetSecureScores(res)
         return nil
     }
     res["securityActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -313,11 +337,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SecurityAction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SecurityAction))
+        if val != nil {
+            res := make([]SecurityAction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SecurityAction))
+            }
+            m.SetSecurityActions(res)
         }
-        m.SetSecurityActions(res)
         return nil
     }
     res["tiIndicators"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -325,11 +351,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]TiIndicator, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TiIndicator))
+        if val != nil {
+            res := make([]TiIndicator, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TiIndicator))
+            }
+            m.SetTiIndicators(res)
         }
-        m.SetTiIndicators(res)
         return nil
     }
     res["userSecurityProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -337,11 +365,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]UserSecurityProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserSecurityProfile))
+        if val != nil {
+            res := make([]UserSecurityProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserSecurityProfile))
+            }
+            m.SetUserSecurityProfiles(res)
         }
-        m.SetUserSecurityProfiles(res)
         return nil
     }
     return res

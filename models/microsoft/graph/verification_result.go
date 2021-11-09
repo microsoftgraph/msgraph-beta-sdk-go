@@ -42,7 +42,9 @@ func (m *VerificationResult) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetSignatureValid(val)
+        if val != nil {
+            m.SetSignatureValid(val)
+        }
         return nil
     }
     return res

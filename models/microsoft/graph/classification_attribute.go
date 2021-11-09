@@ -52,7 +52,9 @@ func (m *ClassificationAttribute) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetConfidence(val)
+        if val != nil {
+            m.SetConfidence(val)
+        }
         return nil
     }
     res["count"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *ClassificationAttribute) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCount(val)
+        if val != nil {
+            m.SetCount(val)
+        }
         return nil
     }
     return res

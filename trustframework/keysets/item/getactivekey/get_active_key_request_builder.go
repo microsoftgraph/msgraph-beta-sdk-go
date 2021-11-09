@@ -62,7 +62,9 @@ func (m *GetActiveKeyResponse) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetTrustFrameworkKey(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey))
+        if val != nil {
+            m.SetTrustFrameworkKey(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey))
+        }
         return nil
     }
     return res

@@ -72,11 +72,13 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetFailedDeviceIds(res)
         }
-        m.SetFailedDeviceIds(res)
         return nil
     }
     res["notFoundDeviceIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,11 +86,13 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetNotFoundDeviceIds(res)
         }
-        m.SetNotFoundDeviceIds(res)
         return nil
     }
     res["notSupportedDeviceIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,11 +100,13 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetNotSupportedDeviceIds(res)
         }
-        m.SetNotSupportedDeviceIds(res)
         return nil
     }
     res["successfulDeviceIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,11 +114,13 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSuccessfulDeviceIds(res)
         }
-        m.SetSuccessfulDeviceIds(res)
         return nil
     }
     return res

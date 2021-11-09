@@ -52,7 +52,9 @@ func (m *UserRegistrationCount) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetRegistrationCount(val)
+        if val != nil {
+            m.SetRegistrationCount(val)
+        }
         return nil
     }
     res["registrationStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,8 +62,10 @@ func (m *UserRegistrationCount) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(RegistrationStatusType)
-        m.SetRegistrationStatus(&cast)
+        if val != nil {
+            cast := val.(RegistrationStatusType)
+            m.SetRegistrationStatus(&cast)
+        }
         return nil
     }
     return res

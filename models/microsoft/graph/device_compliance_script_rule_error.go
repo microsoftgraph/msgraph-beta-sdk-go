@@ -33,7 +33,9 @@ func (m *DeviceComplianceScriptRuleError) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetSettingName(val)
+        if val != nil {
+            m.SetSettingName(val)
+        }
         return nil
     }
     return res

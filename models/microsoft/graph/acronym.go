@@ -44,7 +44,9 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetStandsFor(val)
+        if val != nil {
+            m.SetStandsFor(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,8 +54,10 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        cast := val.(id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

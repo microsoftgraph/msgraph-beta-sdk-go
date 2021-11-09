@@ -83,7 +83,9 @@ func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetActivityType(val)
+        if val != nil {
+            m.SetActivityType(val)
+        }
         return nil
     }
     res["chainId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetChainId(val)
+        if val != nil {
+            m.SetChainId(val)
+        }
         return nil
     }
     res["previewText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetPreviewText(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody))
+        if val != nil {
+            m.SetPreviewText(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody))
+        }
         return nil
     }
     res["templateParameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,11 +113,13 @@ func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair))
+        if val != nil {
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair))
+            }
+            m.SetTemplateParameters(res)
         }
-        m.SetTemplateParameters(res)
         return nil
     }
     res["topic"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +127,9 @@ func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetTopic(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopic))
+        if val != nil {
+            m.SetTopic(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopic))
+        }
         return nil
     }
     return res

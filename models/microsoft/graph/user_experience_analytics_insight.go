@@ -72,7 +72,9 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetInsightId(val)
+        if val != nil {
+            m.SetInsightId(val)
+        }
         return nil
     }
     res["severity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,8 +82,10 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(UserExperienceAnalyticsInsightSeverity)
-        m.SetSeverity(&cast)
+        if val != nil {
+            cast := val.(UserExperienceAnalyticsInsightSeverity)
+            m.SetSeverity(&cast)
+        }
         return nil
     }
     res["userExperienceAnalyticsMetricId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetUserExperienceAnalyticsMetricId(val)
+        if val != nil {
+            m.SetUserExperienceAnalyticsMetricId(val)
+        }
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,11 +103,13 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]UserExperienceAnalyticsInsightValue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserExperienceAnalyticsInsightValue))
+        if val != nil {
+            res := make([]UserExperienceAnalyticsInsightValue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserExperienceAnalyticsInsightValue))
+            }
+            m.SetValues(res)
         }
-        m.SetValues(res)
         return nil
     }
     return res

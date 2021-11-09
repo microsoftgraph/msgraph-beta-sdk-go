@@ -42,7 +42,9 @@ func (m *ManagedDeviceReportedApp) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetAppId(val)
+        if val != nil {
+            m.SetAppId(val)
+        }
         return nil
     }
     return res

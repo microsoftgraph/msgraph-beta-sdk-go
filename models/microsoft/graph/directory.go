@@ -93,11 +93,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]AdministrativeUnit, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AdministrativeUnit))
+        if val != nil {
+            res := make([]AdministrativeUnit, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AdministrativeUnit))
+            }
+            m.SetAdministrativeUnits(res)
         }
-        m.SetAdministrativeUnits(res)
         return nil
     }
     res["attributeSets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,11 +107,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]AttributeSet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AttributeSet))
+        if val != nil {
+            res := make([]AttributeSet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AttributeSet))
+            }
+            m.SetAttributeSets(res)
         }
-        m.SetAttributeSets(res)
         return nil
     }
     res["customSecurityAttributeDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,11 +121,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]CustomSecurityAttributeDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CustomSecurityAttributeDefinition))
+        if val != nil {
+            res := make([]CustomSecurityAttributeDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CustomSecurityAttributeDefinition))
+            }
+            m.SetCustomSecurityAttributeDefinitions(res)
         }
-        m.SetCustomSecurityAttributeDefinitions(res)
         return nil
     }
     res["deletedItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,11 +135,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetDeletedItems(res)
         }
-        m.SetDeletedItems(res)
         return nil
     }
     res["featureRolloutPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,11 +149,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]FeatureRolloutPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*FeatureRolloutPolicy))
+        if val != nil {
+            res := make([]FeatureRolloutPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*FeatureRolloutPolicy))
+            }
+            m.SetFeatureRolloutPolicies(res)
         }
-        m.SetFeatureRolloutPolicies(res)
         return nil
     }
     res["federationConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,11 +163,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]IdentityProviderBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentityProviderBase))
+        if val != nil {
+            res := make([]IdentityProviderBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentityProviderBase))
+            }
+            m.SetFederationConfigurations(res)
         }
-        m.SetFederationConfigurations(res)
         return nil
     }
     res["sharedEmailDomains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,11 +177,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]SharedEmailDomain, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SharedEmailDomain))
+        if val != nil {
+            res := make([]SharedEmailDomain, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SharedEmailDomain))
+            }
+            m.SetSharedEmailDomains(res)
         }
-        m.SetSharedEmailDomains(res)
         return nil
     }
     return res

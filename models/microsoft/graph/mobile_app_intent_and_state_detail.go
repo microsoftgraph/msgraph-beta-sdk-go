@@ -92,7 +92,9 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetApplicationId(val)
+        if val != nil {
+            m.SetApplicationId(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["displayVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDisplayVersion(val)
+        if val != nil {
+            m.SetDisplayVersion(val)
+        }
         return nil
     }
     res["installState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,8 +122,10 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(ResultantAppState)
-        m.SetInstallState(&cast)
+        if val != nil {
+            cast := val.(ResultantAppState)
+            m.SetInstallState(&cast)
+        }
         return nil
     }
     res["mobileAppIntent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,8 +133,10 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(MobileAppIntent)
-        m.SetMobileAppIntent(&cast)
+        if val != nil {
+            cast := val.(MobileAppIntent)
+            m.SetMobileAppIntent(&cast)
+        }
         return nil
     }
     res["supportedDeviceTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,11 +144,13 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]MobileAppSupportedDeviceType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileAppSupportedDeviceType))
+        if val != nil {
+            res := make([]MobileAppSupportedDeviceType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileAppSupportedDeviceType))
+            }
+            m.SetSupportedDeviceTypes(res)
         }
-        m.SetSupportedDeviceTypes(res)
         return nil
     }
     return res

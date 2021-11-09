@@ -62,8 +62,10 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(AccessScope)
-        m.SetAccessScope(&cast)
+        if val != nil {
+            cast := val.(AccessScope)
+            m.SetAccessScope(&cast)
+        }
         return nil
     }
     res["currentLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetCurrentLabel(val.(*CurrentLabel))
+        if val != nil {
+            m.SetCurrentLabel(val.(*CurrentLabel))
+        }
         return nil
     }
     res["discoveredSensitiveTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,11 +83,13 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]DiscoveredSensitiveType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DiscoveredSensitiveType))
+        if val != nil {
+            res := make([]DiscoveredSensitiveType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DiscoveredSensitiveType))
+            }
+            m.SetDiscoveredSensitiveTypes(res)
         }
-        m.SetDiscoveredSensitiveTypes(res)
         return nil
     }
     return res

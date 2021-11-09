@@ -123,11 +123,13 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAppliedPolicies(res)
         }
-        m.SetAppliedPolicies(res)
         return nil
     }
     res["checkinDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +137,9 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCheckinDateTime(val)
+        if val != nil {
+            m.SetCheckinDateTime(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +147,9 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["devicePlatform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +157,9 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDevicePlatform(val)
+        if val != nil {
+            m.SetDevicePlatform(val)
+        }
         return nil
     }
     res["devicePlatformVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +167,9 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDevicePlatformVersion(val)
+        if val != nil {
+            m.SetDevicePlatformVersion(val)
+        }
         return nil
     }
     res["errorMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +177,9 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetErrorMessage(val)
+        if val != nil {
+            m.SetErrorMessage(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +187,9 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +197,9 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     res["wasSuccessful"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +207,9 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetWasSuccessful(val)
+        if val != nil {
+            m.SetWasSuccessful(val)
+        }
         return nil
     }
     return res

@@ -284,7 +284,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetActiveChecklistItemCount(val)
+        if val != nil {
+            m.SetActiveChecklistItemCount(val)
+        }
         return nil
     }
     res["appliedCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -292,7 +294,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetAppliedCategories(val.(*PlannerAppliedCategories))
+        if val != nil {
+            m.SetAppliedCategories(val.(*PlannerAppliedCategories))
+        }
         return nil
     }
     res["assignedToTaskBoardFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -300,7 +304,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetAssignedToTaskBoardFormat(val.(*PlannerAssignedToTaskBoardTaskFormat))
+        if val != nil {
+            m.SetAssignedToTaskBoardFormat(val.(*PlannerAssignedToTaskBoardTaskFormat))
+        }
         return nil
     }
     res["assigneePriority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -308,7 +314,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetAssigneePriority(val)
+        if val != nil {
+            m.SetAssigneePriority(val)
+        }
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +324,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetAssignments(val.(*PlannerAssignments))
+        if val != nil {
+            m.SetAssignments(val.(*PlannerAssignments))
+        }
         return nil
     }
     res["bucketId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -324,7 +334,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetBucketId(val)
+        if val != nil {
+            m.SetBucketId(val)
+        }
         return nil
     }
     res["bucketTaskBoardFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,7 +344,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetBucketTaskBoardFormat(val.(*PlannerBucketTaskBoardTaskFormat))
+        if val != nil {
+            m.SetBucketTaskBoardFormat(val.(*PlannerBucketTaskBoardTaskFormat))
+        }
         return nil
     }
     res["checklistItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -340,7 +354,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetChecklistItemCount(val)
+        if val != nil {
+            m.SetChecklistItemCount(val)
+        }
         return nil
     }
     res["completedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -348,7 +364,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCompletedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCompletedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["completedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,7 +374,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCompletedDateTime(val)
+        if val != nil {
+            m.SetCompletedDateTime(val)
+        }
         return nil
     }
     res["conversationThreadId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -364,7 +384,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetConversationThreadId(val)
+        if val != nil {
+            m.SetConversationThreadId(val)
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -372,7 +394,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -380,7 +404,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["creationSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -388,7 +414,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCreationSource(val.(*PlannerTaskCreation))
+        if val != nil {
+            m.SetCreationSource(val.(*PlannerTaskCreation))
+        }
         return nil
     }
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -396,7 +424,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDetails(val.(*PlannerTaskDetails))
+        if val != nil {
+            m.SetDetails(val.(*PlannerTaskDetails))
+        }
         return nil
     }
     res["dueDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -404,7 +434,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDueDateTime(val)
+        if val != nil {
+            m.SetDueDateTime(val)
+        }
         return nil
     }
     res["hasDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -412,7 +444,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetHasDescription(val)
+        if val != nil {
+            m.SetHasDescription(val)
+        }
         return nil
     }
     res["orderHint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -420,7 +454,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetOrderHint(val)
+        if val != nil {
+            m.SetOrderHint(val)
+        }
         return nil
     }
     res["percentComplete"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -428,7 +464,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetPercentComplete(val)
+        if val != nil {
+            m.SetPercentComplete(val)
+        }
         return nil
     }
     res["planId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -436,7 +474,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetPlanId(val)
+        if val != nil {
+            m.SetPlanId(val)
+        }
         return nil
     }
     res["previewType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -444,8 +484,10 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(PlannerPreviewType)
-        m.SetPreviewType(&cast)
+        if val != nil {
+            cast := val.(PlannerPreviewType)
+            m.SetPreviewType(&cast)
+        }
         return nil
     }
     res["priority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -453,7 +495,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetPriority(val)
+        if val != nil {
+            m.SetPriority(val)
+        }
         return nil
     }
     res["progressTaskBoardFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -461,7 +505,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetProgressTaskBoardFormat(val.(*PlannerProgressTaskBoardTaskFormat))
+        if val != nil {
+            m.SetProgressTaskBoardFormat(val.(*PlannerProgressTaskBoardTaskFormat))
+        }
         return nil
     }
     res["referenceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -469,7 +515,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetReferenceCount(val)
+        if val != nil {
+            m.SetReferenceCount(val)
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -477,7 +525,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -485,7 +535,9 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetTitle(val)
+        if val != nil {
+            m.SetTitle(val)
+        }
         return nil
     }
     return res

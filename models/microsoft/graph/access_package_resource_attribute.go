@@ -92,7 +92,9 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAttributeDestination(val.(*AccessPackageResourceAttributeDestination))
+        if val != nil {
+            m.SetAttributeDestination(val.(*AccessPackageResourceAttributeDestination))
+        }
         return nil
     }
     res["attributeName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAttributeName(val)
+        if val != nil {
+            m.SetAttributeName(val)
+        }
         return nil
     }
     res["attributeSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAttributeSource(val.(*AccessPackageResourceAttributeSource))
+        if val != nil {
+            m.SetAttributeSource(val.(*AccessPackageResourceAttributeSource))
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["isEditable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetIsEditable(val)
+        if val != nil {
+            m.SetIsEditable(val)
+        }
         return nil
     }
     res["isPersistedOnAssignmentRemoval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +142,9 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetIsPersistedOnAssignmentRemoval(val)
+        if val != nil {
+            m.SetIsPersistedOnAssignmentRemoval(val)
+        }
         return nil
     }
     return res

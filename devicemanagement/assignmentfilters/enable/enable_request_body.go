@@ -42,7 +42,9 @@ func (m *EnableRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetEnable(val)
+        if val != nil {
+            m.SetEnable(val)
+        }
         return nil
     }
     return res

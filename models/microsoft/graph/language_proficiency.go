@@ -93,7 +93,9 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["proficiency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,8 +103,10 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(LanguageProficiencyLevel)
-        m.SetProficiency(&cast)
+        if val != nil {
+            cast := val.(LanguageProficiencyLevel)
+            m.SetProficiency(&cast)
+        }
         return nil
     }
     res["reading"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,8 +114,10 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(LanguageProficiencyLevel)
-        m.SetReading(&cast)
+        if val != nil {
+            cast := val.(LanguageProficiencyLevel)
+            m.SetReading(&cast)
+        }
         return nil
     }
     res["spoken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,8 +125,10 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(LanguageProficiencyLevel)
-        m.SetSpoken(&cast)
+        if val != nil {
+            cast := val.(LanguageProficiencyLevel)
+            m.SetSpoken(&cast)
+        }
         return nil
     }
     res["tag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +136,9 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetTag(val)
+        if val != nil {
+            m.SetTag(val)
+        }
         return nil
     }
     res["thumbnailUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +146,9 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetThumbnailUrl(val)
+        if val != nil {
+            m.SetThumbnailUrl(val)
+        }
         return nil
     }
     res["written"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,8 +156,10 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(LanguageProficiencyLevel)
-        m.SetWritten(&cast)
+        if val != nil {
+            cast := val.(LanguageProficiencyLevel)
+            m.SetWritten(&cast)
+        }
         return nil
     }
     return res

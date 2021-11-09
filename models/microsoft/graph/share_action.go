@@ -42,11 +42,13 @@ func (m *ShareAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]IdentitySet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentitySet))
+        if val != nil {
+            res := make([]IdentitySet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentitySet))
+            }
+            m.SetRecipients(res)
         }
-        m.SetRecipients(res)
         return nil
     }
     return res

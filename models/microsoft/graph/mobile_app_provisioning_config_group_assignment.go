@@ -33,7 +33,9 @@ func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetTargetGroupId(val)
+        if val != nil {
+            m.SetTargetGroupId(val)
+        }
         return nil
     }
     return res

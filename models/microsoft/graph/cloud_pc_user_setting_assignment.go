@@ -44,7 +44,9 @@ func (m *CloudPcUserSettingAssignment) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,7 +54,9 @@ func (m *CloudPcUserSettingAssignment) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTarget(val.(*CloudPcManagementAssignmentTarget))
+        if val != nil {
+            m.SetTarget(val.(*CloudPcManagementAssignmentTarget))
+        }
         return nil
     }
     return res

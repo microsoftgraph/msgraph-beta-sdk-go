@@ -33,11 +33,13 @@ func (m *Approval) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]ApprovalStep, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ApprovalStep))
+        if val != nil {
+            res := make([]ApprovalStep, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ApprovalStep))
+            }
+            m.SetSteps(res)
         }
-        m.SetSteps(res)
         return nil
     }
     return res

@@ -93,11 +93,13 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]AccessPackageAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessPackageAssignment))
+        if val != nil {
+            res := make([]AccessPackageAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessPackageAssignment))
+            }
+            m.SetAccessPackageAssignments(res)
         }
-        m.SetAccessPackageAssignments(res)
         return nil
     }
     res["accessPackageResourceRole"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +107,9 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetAccessPackageResourceRole(val.(*AccessPackageResourceRole))
+        if val != nil {
+            m.SetAccessPackageResourceRole(val.(*AccessPackageResourceRole))
+        }
         return nil
     }
     res["accessPackageResourceScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +117,9 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetAccessPackageResourceScope(val.(*AccessPackageResourceScope))
+        if val != nil {
+            m.SetAccessPackageResourceScope(val.(*AccessPackageResourceScope))
+        }
         return nil
     }
     res["accessPackageSubject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +127,9 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetAccessPackageSubject(val.(*AccessPackageSubject))
+        if val != nil {
+            m.SetAccessPackageSubject(val.(*AccessPackageSubject))
+        }
         return nil
     }
     res["originId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +137,9 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetOriginId(val)
+        if val != nil {
+            m.SetOriginId(val)
+        }
         return nil
     }
     res["originSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +147,9 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetOriginSystem(val)
+        if val != nil {
+            m.SetOriginSystem(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +157,9 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     return res

@@ -82,11 +82,13 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]AttendanceInterval, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AttendanceInterval))
+        if val != nil {
+            res := make([]AttendanceInterval, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AttendanceInterval))
+            }
+            m.SetAttendanceIntervals(res)
         }
-        m.SetAttendanceIntervals(res)
         return nil
     }
     res["emailAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,7 +96,9 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetEmailAddress(val)
+        if val != nil {
+            m.SetEmailAddress(val)
+        }
         return nil
     }
     res["identity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +106,9 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIdentity(val.(*Identity))
+        if val != nil {
+            m.SetIdentity(val.(*Identity))
+        }
         return nil
     }
     res["role"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +116,9 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetRole(val)
+        if val != nil {
+            m.SetRole(val)
+        }
         return nil
     }
     res["totalAttendanceInSeconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +126,9 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetTotalAttendanceInSeconds(val)
+        if val != nil {
+            m.SetTotalAttendanceInSeconds(val)
+        }
         return nil
     }
     return res

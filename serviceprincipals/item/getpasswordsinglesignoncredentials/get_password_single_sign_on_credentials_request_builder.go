@@ -64,7 +64,9 @@ func (m *GetPasswordSingleSignOnCredentialsResponse) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetPasswordSingleSignOnCredentialSet(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSet))
+        if val != nil {
+            m.SetPasswordSingleSignOnCredentialSet(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSet))
+        }
         return nil
     }
     return res

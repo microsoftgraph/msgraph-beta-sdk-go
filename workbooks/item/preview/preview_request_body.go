@@ -82,7 +82,9 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAllowEdit(val)
+        if val != nil {
+            m.SetAllowEdit(val)
+        }
         return nil
     }
     res["chromeless"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetChromeless(val)
+        if val != nil {
+            m.SetChromeless(val)
+        }
         return nil
     }
     res["page"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetPage(val)
+        if val != nil {
+            m.SetPage(val)
+        }
         return nil
     }
     res["viewer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetViewer(val)
+        if val != nil {
+            m.SetViewer(val)
+        }
         return nil
     }
     res["zoom"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetZoom(val)
+        if val != nil {
+            m.SetZoom(val)
+        }
         return nil
     }
     return res

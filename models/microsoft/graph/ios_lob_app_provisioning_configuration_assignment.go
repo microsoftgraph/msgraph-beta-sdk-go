@@ -33,7 +33,9 @@ func (m *IosLobAppProvisioningConfigurationAssignment) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+        if val != nil {
+            m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *ResizeCloudPcRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTargetServicePlanId(val)
+        if val != nil {
+            m.SetTargetServicePlanId(val)
+        }
         return nil
     }
     return res

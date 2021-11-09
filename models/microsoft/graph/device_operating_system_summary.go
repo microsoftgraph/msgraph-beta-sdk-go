@@ -192,7 +192,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidCorporateWorkProfileCount(val)
+        if val != nil {
+            m.SetAndroidCorporateWorkProfileCount(val)
+        }
         return nil
     }
     res["androidCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +202,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidCount(val)
+        if val != nil {
+            m.SetAndroidCount(val)
+        }
         return nil
     }
     res["androidDedicatedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +212,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidDedicatedCount(val)
+        if val != nil {
+            m.SetAndroidDedicatedCount(val)
+        }
         return nil
     }
     res["androidDeviceAdminCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +222,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidDeviceAdminCount(val)
+        if val != nil {
+            m.SetAndroidDeviceAdminCount(val)
+        }
         return nil
     }
     res["androidFullyManagedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,7 +232,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidFullyManagedCount(val)
+        if val != nil {
+            m.SetAndroidFullyManagedCount(val)
+        }
         return nil
     }
     res["androidWorkProfileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,7 +242,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidWorkProfileCount(val)
+        if val != nil {
+            m.SetAndroidWorkProfileCount(val)
+        }
         return nil
     }
     res["aospUserAssociatedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -240,7 +252,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAospUserAssociatedCount(val)
+        if val != nil {
+            m.SetAospUserAssociatedCount(val)
+        }
         return nil
     }
     res["aospUserlessCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,7 +262,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAospUserlessCount(val)
+        if val != nil {
+            m.SetAospUserlessCount(val)
+        }
         return nil
     }
     res["chromeOSCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,7 +272,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetChromeOSCount(val)
+        if val != nil {
+            m.SetChromeOSCount(val)
+        }
         return nil
     }
     res["configMgrDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,7 +282,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetConfigMgrDeviceCount(val)
+        if val != nil {
+            m.SetConfigMgrDeviceCount(val)
+        }
         return nil
     }
     res["iosCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,7 +292,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIosCount(val)
+        if val != nil {
+            m.SetIosCount(val)
+        }
         return nil
     }
     res["linuxCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -280,7 +302,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetLinuxCount(val)
+        if val != nil {
+            m.SetLinuxCount(val)
+        }
         return nil
     }
     res["macOSCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -288,7 +312,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetMacOSCount(val)
+        if val != nil {
+            m.SetMacOSCount(val)
+        }
         return nil
     }
     res["unknownCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,7 +322,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetUnknownCount(val)
+        if val != nil {
+            m.SetUnknownCount(val)
+        }
         return nil
     }
     res["windowsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -304,7 +332,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetWindowsCount(val)
+        if val != nil {
+            m.SetWindowsCount(val)
+        }
         return nil
     }
     res["windowsMobileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -312,7 +342,9 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetWindowsMobileCount(val)
+        if val != nil {
+            m.SetWindowsMobileCount(val)
+        }
         return nil
     }
     return res

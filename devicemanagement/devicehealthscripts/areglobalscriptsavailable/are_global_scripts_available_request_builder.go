@@ -62,8 +62,10 @@ func (m *AreGlobalScriptsAvailableResponse) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState)
-        m.SetGlobalDeviceHealthScriptState(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState)
+            m.SetGlobalDeviceHealthScriptState(&cast)
+        }
         return nil
     }
     return res

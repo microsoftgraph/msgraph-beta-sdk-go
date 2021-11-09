@@ -84,7 +84,9 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCollectionIdentifier(val)
+        if val != nil {
+            m.SetCollectionIdentifier(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["hierarchyIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetHierarchyIdentifier(val)
+        if val != nil {
+            m.SetHierarchyIdentifier(val)
+        }
         return nil
     }
     res["hierarchyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetHierarchyName(val)
+        if val != nil {
+            m.SetHierarchyName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     return res

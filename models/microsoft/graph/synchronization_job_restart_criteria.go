@@ -42,8 +42,10 @@ func (m *SynchronizationJobRestartCriteria) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(SynchronizationJobRestartScope)
-        m.SetResetScope(&cast)
+        if val != nil {
+            cast := val.(SynchronizationJobRestartScope)
+            m.SetResetScope(&cast)
+        }
         return nil
     }
     return res

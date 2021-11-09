@@ -144,7 +144,9 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetAndroidDeviceOwnerFullyManagedEnrollmentEnabled(val)
+        if val != nil {
+            m.SetAndroidDeviceOwnerFullyManagedEnrollmentEnabled(val)
+        }
         return nil
     }
     res["bindStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,8 +154,10 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        cast := val.(AndroidManagedStoreAccountBindStatus)
-        m.SetBindStatus(&cast)
+        if val != nil {
+            cast := val.(AndroidManagedStoreAccountBindStatus)
+            m.SetBindStatus(&cast)
+        }
         return nil
     }
     res["companyCodes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,11 +165,13 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        res := make([]AndroidEnrollmentCompanyCode, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AndroidEnrollmentCompanyCode))
+        if val != nil {
+            res := make([]AndroidEnrollmentCompanyCode, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AndroidEnrollmentCompanyCode))
+            }
+            m.SetCompanyCodes(res)
         }
-        m.SetCompanyCodes(res)
         return nil
     }
     res["deviceOwnerManagementEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +179,9 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetDeviceOwnerManagementEnabled(val)
+        if val != nil {
+            m.SetDeviceOwnerManagementEnabled(val)
+        }
         return nil
     }
     res["enrollmentTarget"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,8 +189,10 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        cast := val.(AndroidManagedStoreAccountEnrollmentTarget)
-        m.SetEnrollmentTarget(&cast)
+        if val != nil {
+            cast := val.(AndroidManagedStoreAccountEnrollmentTarget)
+            m.SetEnrollmentTarget(&cast)
+        }
         return nil
     }
     res["lastAppSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +200,9 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetLastAppSyncDateTime(val)
+        if val != nil {
+            m.SetLastAppSyncDateTime(val)
+        }
         return nil
     }
     res["lastAppSyncStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,8 +210,10 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        cast := val.(AndroidManagedStoreAccountAppSyncStatus)
-        m.SetLastAppSyncStatus(&cast)
+        if val != nil {
+            cast := val.(AndroidManagedStoreAccountAppSyncStatus)
+            m.SetLastAppSyncStatus(&cast)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +221,9 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["managedGooglePlayInitialScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,11 +231,13 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetManagedGooglePlayInitialScopeTagIds(res)
         }
-        m.SetManagedGooglePlayInitialScopeTagIds(res)
         return nil
     }
     res["ownerOrganizationName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,7 +245,9 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetOwnerOrganizationName(val)
+        if val != nil {
+            m.SetOwnerOrganizationName(val)
+        }
         return nil
     }
     res["ownerUserPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,7 +255,9 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetOwnerUserPrincipalName(val)
+        if val != nil {
+            m.SetOwnerUserPrincipalName(val)
+        }
         return nil
     }
     res["targetGroupIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,11 +265,13 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTargetGroupIds(res)
         }
-        m.SetTargetGroupIds(res)
         return nil
     }
     return res

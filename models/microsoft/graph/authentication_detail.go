@@ -93,7 +93,9 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAuthenticationMethod(val)
+        if val != nil {
+            m.SetAuthenticationMethod(val)
+        }
         return nil
     }
     res["authenticationMethodDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAuthenticationMethodDetail(val)
+        if val != nil {
+            m.SetAuthenticationMethodDetail(val)
+        }
         return nil
     }
     res["authenticationStepDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAuthenticationStepDateTime(val)
+        if val != nil {
+            m.SetAuthenticationStepDateTime(val)
+        }
         return nil
     }
     res["authenticationStepRequirement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAuthenticationStepRequirement(val)
+        if val != nil {
+            m.SetAuthenticationStepRequirement(val)
+        }
         return nil
     }
     res["authenticationStepResultDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAuthenticationStepResultDetail(val)
+        if val != nil {
+            m.SetAuthenticationStepResultDetail(val)
+        }
         return nil
     }
     res["succeeded"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +143,9 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetSucceeded(val)
+        if val != nil {
+            m.SetSucceeded(val)
+        }
         return nil
     }
     return res

@@ -194,7 +194,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAzureSubscriptionId(val)
+        if val != nil {
+            m.SetAzureSubscriptionId(val)
+        }
         return nil
     }
     res["azureTenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +204,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAzureTenantId(val)
+        if val != nil {
+            m.SetAzureTenantId(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +214,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["deploymentPackageUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +224,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDeploymentPackageUrl(val)
+        if val != nil {
+            m.SetDeploymentPackageUrl(val)
+        }
         return nil
     }
     res["destinationServiceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +234,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDestinationServiceName(val)
+        if val != nil {
+            m.SetDestinationServiceName(val)
+        }
         return nil
     }
     res["isSigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +244,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetIsSigned(val)
+        if val != nil {
+            m.SetIsSigned(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,7 +254,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["manifest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +264,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetManifest(val)
+        if val != nil {
+            m.SetManifest(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,7 +274,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["permissionsRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,8 +284,10 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ApplicationPermissionsRequired)
-        m.SetPermissionsRequired(&cast)
+        if val != nil {
+            cast := val.(ApplicationPermissionsRequired)
+            m.SetPermissionsRequired(&cast)
+        }
         return nil
     }
     res["platform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -275,7 +295,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPlatform(val)
+        if val != nil {
+            m.SetPlatform(val)
+        }
         return nil
     }
     res["policyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -283,7 +305,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPolicyName(val)
+        if val != nil {
+            m.SetPolicyName(val)
+        }
         return nil
     }
     res["publisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -291,7 +315,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPublisher(val)
+        if val != nil {
+            m.SetPublisher(val)
+        }
         return nil
     }
     res["riskScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -299,7 +325,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetRiskScore(val)
+        if val != nil {
+            m.SetRiskScore(val)
+        }
         return nil
     }
     res["tags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -307,11 +335,13 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTags(res)
         }
-        m.SetTags(res)
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -319,7 +349,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetType_escaped(val)
+        if val != nil {
+            m.SetType_escaped(val)
+        }
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -327,7 +359,9 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetVendorInformation(val.(*SecurityVendorInformation))
+        if val != nil {
+            m.SetVendorInformation(val.(*SecurityVendorInformation))
+        }
         return nil
     }
     return res

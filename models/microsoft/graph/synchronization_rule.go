@@ -112,7 +112,9 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetEditable(val)
+        if val != nil {
+            m.SetEditable(val)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +122,9 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,11 +132,13 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]StringKeyStringValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*StringKeyStringValuePair))
+        if val != nil {
+            res := make([]StringKeyStringValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*StringKeyStringValuePair))
+            }
+            m.SetMetadata(res)
         }
-        m.SetMetadata(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +146,9 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["objectMappings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,11 +156,13 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ObjectMapping, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ObjectMapping))
+        if val != nil {
+            res := make([]ObjectMapping, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ObjectMapping))
+            }
+            m.SetObjectMappings(res)
         }
-        m.SetObjectMappings(res)
         return nil
     }
     res["priority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +170,9 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetPriority(val)
+        if val != nil {
+            m.SetPriority(val)
+        }
         return nil
     }
     res["sourceDirectoryName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +180,9 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSourceDirectoryName(val)
+        if val != nil {
+            m.SetSourceDirectoryName(val)
+        }
         return nil
     }
     res["targetDirectoryName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +190,9 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetTargetDirectoryName(val)
+        if val != nil {
+            m.SetTargetDirectoryName(val)
+        }
         return nil
     }
     return res

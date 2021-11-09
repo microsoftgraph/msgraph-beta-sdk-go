@@ -52,7 +52,9 @@ func (m *PayloadTypes) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetRawContent(val)
+        if val != nil {
+            m.SetRawContent(val)
+        }
         return nil
     }
     res["visualContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *PayloadTypes) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetVisualContent(val.(*VisualProperties))
+        if val != nil {
+            m.SetVisualContent(val.(*VisualProperties))
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *ActivateDeviceEsimRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetCarrierUrl(val)
+        if val != nil {
+            m.SetCarrierUrl(val)
+        }
         return nil
     }
     return res

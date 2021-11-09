@@ -174,8 +174,10 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        cast := val.(ChatType)
-        m.SetChatType(&cast)
+        if val != nil {
+            cast := val.(ChatType)
+            m.SetChatType(&cast)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +185,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["installedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,11 +195,13 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]TeamsAppInstallation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TeamsAppInstallation))
+        if val != nil {
+            res := make([]TeamsAppInstallation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeamsAppInstallation))
+            }
+            m.SetInstalledApps(res)
         }
-        m.SetInstalledApps(res)
         return nil
     }
     res["lastMessagePreview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -203,7 +209,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetLastMessagePreview(val.(*ChatMessageInfo))
+        if val != nil {
+            m.SetLastMessagePreview(val.(*ChatMessageInfo))
+        }
         return nil
     }
     res["lastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -211,7 +219,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetLastUpdatedDateTime(val)
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -219,11 +229,13 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]ConversationMember, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConversationMember))
+        if val != nil {
+            res := make([]ConversationMember, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConversationMember))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     res["messages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,11 +243,13 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]ChatMessage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ChatMessage))
+        if val != nil {
+            res := make([]ChatMessage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ChatMessage))
+            }
+            m.SetMessages(res)
         }
-        m.SetMessages(res)
         return nil
     }
     res["onlineMeetingInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,7 +257,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetOnlineMeetingInfo(val.(*TeamworkOnlineMeetingInfo))
+        if val != nil {
+            m.SetOnlineMeetingInfo(val.(*TeamworkOnlineMeetingInfo))
+        }
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -251,11 +267,13 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]TeamsAsyncOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TeamsAsyncOperation))
+        if val != nil {
+            res := make([]TeamsAsyncOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeamsAsyncOperation))
+            }
+            m.SetOperations(res)
         }
-        m.SetOperations(res)
         return nil
     }
     res["permissionGrants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,11 +281,13 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]ResourceSpecificPermissionGrant, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ResourceSpecificPermissionGrant))
+        if val != nil {
+            res := make([]ResourceSpecificPermissionGrant, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ResourceSpecificPermissionGrant))
+            }
+            m.SetPermissionGrants(res)
         }
-        m.SetPermissionGrants(res)
         return nil
     }
     res["tabs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -275,11 +295,13 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]TeamsTab, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TeamsTab))
+        if val != nil {
+            res := make([]TeamsTab, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeamsTab))
+            }
+            m.SetTabs(res)
         }
-        m.SetTabs(res)
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,7 +309,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["topic"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,7 +319,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetTopic(val)
+        if val != nil {
+            m.SetTopic(val)
+        }
         return nil
     }
     res["viewpoint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -303,7 +329,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetViewpoint(val.(*ChatViewpoint))
+        if val != nil {
+            m.SetViewpoint(val.(*ChatViewpoint))
+        }
         return nil
     }
     res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -311,7 +339,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

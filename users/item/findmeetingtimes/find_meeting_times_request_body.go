@@ -113,11 +113,13 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBase))
+        if val != nil {
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBase))
+            }
+            m.SetAttendees(res)
         }
-        m.SetAttendees(res)
         return nil
     }
     res["isOrganizerOptional"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +127,9 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIsOrganizerOptional(val)
+        if val != nil {
+            m.SetIsOrganizerOptional(val)
+        }
         return nil
     }
     res["locationConstraint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +137,9 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLocationConstraint(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LocationConstraint))
+        if val != nil {
+            m.SetLocationConstraint(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LocationConstraint))
+        }
         return nil
     }
     res["maxCandidates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +147,9 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMaxCandidates(val)
+        if val != nil {
+            m.SetMaxCandidates(val)
+        }
         return nil
     }
     res["meetingDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +157,9 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMeetingDuration(val)
+        if val != nil {
+            m.SetMeetingDuration(val)
+        }
         return nil
     }
     res["minimumAttendeePercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +167,9 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMinimumAttendeePercentage(val)
+        if val != nil {
+            m.SetMinimumAttendeePercentage(val)
+        }
         return nil
     }
     res["returnSuggestionReasons"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +177,9 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetReturnSuggestionReasons(val)
+        if val != nil {
+            m.SetReturnSuggestionReasons(val)
+        }
         return nil
     }
     res["timeConstraint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +187,9 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetTimeConstraint(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeConstraint))
+        if val != nil {
+            m.SetTimeConstraint(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeConstraint))
+        }
         return nil
     }
     return res

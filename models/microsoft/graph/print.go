@@ -122,11 +122,13 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]PrintConnector, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintConnector))
+        if val != nil {
+            res := make([]PrintConnector, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintConnector))
+            }
+            m.SetConnectors(res)
         }
-        m.SetConnectors(res)
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,11 +136,13 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]PrintOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintOperation))
+        if val != nil {
+            res := make([]PrintOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintOperation))
+            }
+            m.SetOperations(res)
         }
-        m.SetOperations(res)
         return nil
     }
     res["printers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,11 +150,13 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Printer, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Printer))
+        if val != nil {
+            res := make([]Printer, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Printer))
+            }
+            m.SetPrinters(res)
         }
-        m.SetPrinters(res)
         return nil
     }
     res["printerShares"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,11 +164,13 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]PrinterShare, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrinterShare))
+        if val != nil {
+            res := make([]PrinterShare, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrinterShare))
+            }
+            m.SetPrinterShares(res)
         }
-        m.SetPrinterShares(res)
         return nil
     }
     res["reports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +178,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetReports(val.(*ReportRoot))
+        if val != nil {
+            m.SetReports(val.(*ReportRoot))
+        }
         return nil
     }
     res["services"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,11 +188,13 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]PrintService, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintService))
+        if val != nil {
+            res := make([]PrintService, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintService))
+            }
+            m.SetServices(res)
         }
-        m.SetServices(res)
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +202,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetSettings(val.(*PrintSettings))
+        if val != nil {
+            m.SetSettings(val.(*PrintSettings))
+        }
         return nil
     }
     res["shares"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,11 +212,13 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]PrinterShare, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrinterShare))
+        if val != nil {
+            res := make([]PrinterShare, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrinterShare))
+            }
+            m.SetShares(res)
         }
-        m.SetShares(res)
         return nil
     }
     res["taskDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,11 +226,13 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]PrintTaskDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintTaskDefinition))
+        if val != nil {
+            res := make([]PrintTaskDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintTaskDefinition))
+            }
+            m.SetTaskDefinitions(res)
         }
-        m.SetTaskDefinitions(res)
         return nil
     }
     return res

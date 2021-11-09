@@ -93,11 +93,13 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]ItemActivityOLD, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ItemActivityOLD))
+        if val != nil {
+            res := make([]ItemActivityOLD, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ItemActivityOLD))
+            }
+            m.SetActivities(res)
         }
-        m.SetActivities(res)
         return nil
     }
     res["analytics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +107,9 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAnalytics(val.(*ItemAnalytics))
+        if val != nil {
+            m.SetAnalytics(val.(*ItemAnalytics))
+        }
         return nil
     }
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +117,9 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetContentType(val.(*ContentTypeInfo))
+        if val != nil {
+            m.SetContentType(val.(*ContentTypeInfo))
+        }
         return nil
     }
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +127,9 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDriveItem(val.(*DriveItem))
+        if val != nil {
+            m.SetDriveItem(val.(*DriveItem))
+        }
         return nil
     }
     res["fields"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +137,9 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetFields(val.(*FieldValueSet))
+        if val != nil {
+            m.SetFields(val.(*FieldValueSet))
+        }
         return nil
     }
     res["sharepointIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +147,9 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetSharepointIds(val.(*SharepointIds))
+        if val != nil {
+            m.SetSharepointIds(val.(*SharepointIds))
+        }
         return nil
     }
     res["versions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,11 +157,13 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]ListItemVersion, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ListItemVersion))
+        if val != nil {
+            res := make([]ListItemVersion, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ListItemVersion))
+            }
+            m.SetVersions(res)
         }
-        m.SetVersions(res)
         return nil
     }
     return res

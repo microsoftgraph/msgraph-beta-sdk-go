@@ -62,7 +62,9 @@ func (m *BookingReminder) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetMessage(val)
+        if val != nil {
+            m.SetMessage(val)
+        }
         return nil
     }
     res["offset"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *BookingReminder) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetOffset(val)
+        if val != nil {
+            m.SetOffset(val)
+        }
         return nil
     }
     res["recipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,8 +82,10 @@ func (m *BookingReminder) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(BookingReminderRecipients)
-        m.SetRecipients(&cast)
+        if val != nil {
+            cast := val.(BookingReminderRecipients)
+            m.SetRecipients(&cast)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *ConnectionInfo) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetUrl(val)
+        if val != nil {
+            m.SetUrl(val)
+        }
         return nil
     }
     return res

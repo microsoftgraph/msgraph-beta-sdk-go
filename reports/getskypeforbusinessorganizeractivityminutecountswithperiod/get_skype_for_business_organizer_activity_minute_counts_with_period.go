@@ -84,7 +84,9 @@ func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) GetFieldDes
         if err != nil {
             return err
         }
-        m.SetAudioVideo(val)
+        if val != nil {
+            m.SetAudioVideo(val)
+        }
         return nil
     }
     res["dialInMicrosoft"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) GetFieldDes
         if err != nil {
             return err
         }
-        m.SetDialInMicrosoft(val)
+        if val != nil {
+            m.SetDialInMicrosoft(val)
+        }
         return nil
     }
     res["dialOutMicrosoft"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) GetFieldDes
         if err != nil {
             return err
         }
-        m.SetDialOutMicrosoft(val)
+        if val != nil {
+            m.SetDialOutMicrosoft(val)
+        }
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) GetFieldDes
         if err != nil {
             return err
         }
-        m.SetReportDate(val)
+        if val != nil {
+            m.SetReportDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) GetFieldDes
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) GetFieldDes
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     return res

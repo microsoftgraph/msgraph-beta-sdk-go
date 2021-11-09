@@ -34,7 +34,9 @@ func (m *UserExperienceAnalyticsScoreHistory) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetStartupDateTime(val)
+        if val != nil {
+            m.SetStartupDateTime(val)
+        }
         return nil
     }
     return res

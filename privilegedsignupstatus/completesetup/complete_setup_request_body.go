@@ -43,7 +43,9 @@ func (m *CompleteSetupRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTenantSetupInfo(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantSetupInfo))
+        if val != nil {
+            m.SetTenantSetupInfo(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantSetupInfo))
+        }
         return nil
     }
     return res

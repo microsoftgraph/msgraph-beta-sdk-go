@@ -113,7 +113,9 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDeviceConfigurationId(val)
+        if val != nil {
+            m.SetDeviceConfigurationId(val)
+        }
         return nil
     }
     res["deviceConfigurationName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDeviceConfigurationName(val)
+        if val != nil {
+            m.SetDeviceConfigurationName(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +133,9 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +143,9 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["platformType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,8 +153,10 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(PolicyPlatformType)
-        m.SetPlatformType(&cast)
+        if val != nil {
+            cast := val.(PolicyPlatformType)
+            m.SetPlatformType(&cast)
+        }
         return nil
     }
     res["restrictedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,11 +164,13 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]ManagedDeviceReportedApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedDeviceReportedApp))
+        if val != nil {
+            res := make([]ManagedDeviceReportedApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedDeviceReportedApp))
+            }
+            m.SetRestrictedApps(res)
         }
-        m.SetRestrictedApps(res)
         return nil
     }
     res["restrictedAppsState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,8 +178,10 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(RestrictedAppsState)
-        m.SetRestrictedAppsState(&cast)
+        if val != nil {
+            cast := val.(RestrictedAppsState)
+            m.SetRestrictedAppsState(&cast)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +189,9 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +199,9 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     return res

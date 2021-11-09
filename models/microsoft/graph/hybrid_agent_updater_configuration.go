@@ -63,7 +63,9 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetAllowUpdateConfigurationOverride(val)
+        if val != nil {
+            m.SetAllowUpdateConfigurationOverride(val)
+        }
         return nil
     }
     res["deferUpdateDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeferUpdateDateTime(val)
+        if val != nil {
+            m.SetDeferUpdateDateTime(val)
+        }
         return nil
     }
     res["updateWindow"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetUpdateWindow(val.(*UpdateWindow))
+        if val != nil {
+            m.SetUpdateWindow(val.(*UpdateWindow))
+        }
         return nil
     }
     return res

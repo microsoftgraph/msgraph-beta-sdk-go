@@ -63,7 +63,9 @@ func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetMaxLifetime(val)
+        if val != nil {
+            m.SetMaxLifetime(val)
+        }
         return nil
     }
     res["restrictForAppsCreatedAfterDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetRestrictForAppsCreatedAfterDateTime(val)
+        if val != nil {
+            m.SetRestrictForAppsCreatedAfterDateTime(val)
+        }
         return nil
     }
     res["restrictionType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,8 +83,10 @@ func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(AppKeyCredentialRestrictionType)
-        m.SetRestrictionType(&cast)
+        if val != nil {
+            cast := val.(AppKeyCredentialRestrictionType)
+            m.SetRestrictionType(&cast)
+        }
         return nil
     }
     return res

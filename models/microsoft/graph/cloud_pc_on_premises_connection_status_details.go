@@ -63,7 +63,9 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetEndDateTime(val)
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
         return nil
     }
     res["healthChecks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,11 +73,13 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        res := make([]CloudPcOnPremisesConnectionHealthCheck, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcOnPremisesConnectionHealthCheck))
+        if val != nil {
+            res := make([]CloudPcOnPremisesConnectionHealthCheck, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcOnPremisesConnectionHealthCheck))
+            }
+            m.SetHealthChecks(res)
         }
-        m.SetHealthChecks(res)
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,7 +87,9 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     return res

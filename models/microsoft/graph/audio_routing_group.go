@@ -53,11 +53,13 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetReceivers(res)
         }
-        m.SetReceivers(res)
         return nil
     }
     res["routingMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,8 +67,10 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(RoutingMode)
-        m.SetRoutingMode(&cast)
+        if val != nil {
+            cast := val.(RoutingMode)
+            m.SetRoutingMode(&cast)
+        }
         return nil
     }
     res["sources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,11 +78,13 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSources(res)
         }
-        m.SetSources(res)
         return nil
     }
     return res

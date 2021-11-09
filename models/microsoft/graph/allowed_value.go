@@ -33,7 +33,9 @@ func (m *AllowedValue) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetIsActive(val)
+        if val != nil {
+            m.SetIsActive(val)
+        }
         return nil
     }
     return res

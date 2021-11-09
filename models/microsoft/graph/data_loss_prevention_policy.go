@@ -33,7 +33,9 @@ func (m *DataLossPreventionPolicy) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     return res

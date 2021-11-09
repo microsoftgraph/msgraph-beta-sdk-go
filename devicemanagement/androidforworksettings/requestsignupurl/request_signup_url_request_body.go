@@ -42,7 +42,9 @@ func (m *RequestSignupUrlRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetHostName(val)
+        if val != nil {
+            m.SetHostName(val)
+        }
         return nil
     }
     return res

@@ -174,7 +174,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetDeletedDate(val)
+        if val != nil {
+            m.SetDeletedDate(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +184,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["isLicensed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +194,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetIsLicensed(val)
+        if val != nil {
+            m.SetIsLicensed(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +204,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +214,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +224,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["usedAndroidPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +234,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUsedAndroidPhone(val)
+        if val != nil {
+            m.SetUsedAndroidPhone(val)
+        }
         return nil
     }
     res["usedChromeOS"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +244,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUsedChromeOS(val)
+        if val != nil {
+            m.SetUsedChromeOS(val)
+        }
         return nil
     }
     res["usediOS"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,7 +254,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUsediOS(val)
+        if val != nil {
+            m.SetUsediOS(val)
+        }
         return nil
     }
     res["usedLinux"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,7 +264,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUsedLinux(val)
+        if val != nil {
+            m.SetUsedLinux(val)
+        }
         return nil
     }
     res["usedMac"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,7 +274,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUsedMac(val)
+        if val != nil {
+            m.SetUsedMac(val)
+        }
         return nil
     }
     res["usedWeb"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -262,7 +284,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUsedWeb(val)
+        if val != nil {
+            m.SetUsedWeb(val)
+        }
         return nil
     }
     res["usedWindows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +294,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUsedWindows(val)
+        if val != nil {
+            m.SetUsedWindows(val)
+        }
         return nil
     }
     res["usedWindowsPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +304,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUsedWindowsPhone(val)
+        if val != nil {
+            m.SetUsedWindowsPhone(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +314,9 @@ func (m *GetTeamsDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

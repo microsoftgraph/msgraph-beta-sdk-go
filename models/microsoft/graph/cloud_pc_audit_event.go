@@ -134,7 +134,9 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetActivity(val)
+        if val != nil {
+            m.SetActivity(val)
+        }
         return nil
     }
     res["activityDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetActivityDateTime(val)
+        if val != nil {
+            m.SetActivityDateTime(val)
+        }
         return nil
     }
     res["activityOperationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,8 +154,10 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(CloudPcAuditActivityOperationType)
-        m.SetActivityOperationType(&cast)
+        if val != nil {
+            cast := val.(CloudPcAuditActivityOperationType)
+            m.SetActivityOperationType(&cast)
+        }
         return nil
     }
     res["activityResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,8 +165,10 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(CloudPcAuditActivityResult)
-        m.SetActivityResult(&cast)
+        if val != nil {
+            cast := val.(CloudPcAuditActivityResult)
+            m.SetActivityResult(&cast)
+        }
         return nil
     }
     res["activityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +176,9 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetActivityType(val)
+        if val != nil {
+            m.SetActivityType(val)
+        }
         return nil
     }
     res["actor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +186,9 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetActor(val.(*CloudPcAuditActor))
+        if val != nil {
+            m.SetActor(val.(*CloudPcAuditActor))
+        }
         return nil
     }
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,8 +196,10 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(CloudPcAuditCategory)
-        m.SetCategory(&cast)
+        if val != nil {
+            cast := val.(CloudPcAuditCategory)
+            m.SetCategory(&cast)
+        }
         return nil
     }
     res["componentName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,7 +207,9 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetComponentName(val)
+        if val != nil {
+            m.SetComponentName(val)
+        }
         return nil
     }
     res["correlationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,7 +217,9 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCorrelationId(val)
+        if val != nil {
+            m.SetCorrelationId(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,7 +227,9 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,11 +237,13 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]CloudPcAuditResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcAuditResource))
+        if val != nil {
+            res := make([]CloudPcAuditResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcAuditResource))
+            }
+            m.SetResources(res)
         }
-        m.SetResources(res)
         return nil
     }
     return res

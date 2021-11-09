@@ -62,7 +62,9 @@ func (m *GetCapabilitiesResponse) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPrinterCapabilities(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilities))
+        if val != nil {
+            m.SetPrinterCapabilities(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilities))
+        }
         return nil
     }
     return res

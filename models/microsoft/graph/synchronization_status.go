@@ -153,8 +153,10 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(SynchronizationStatusCode)
-        m.SetCode(&cast)
+        if val != nil {
+            cast := val.(SynchronizationStatusCode)
+            m.SetCode(&cast)
+        }
         return nil
     }
     res["countSuccessiveCompleteFailures"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +164,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCountSuccessiveCompleteFailures(val)
+        if val != nil {
+            m.SetCountSuccessiveCompleteFailures(val)
+        }
         return nil
     }
     res["escrowsPruned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +174,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetEscrowsPruned(val)
+        if val != nil {
+            m.SetEscrowsPruned(val)
+        }
         return nil
     }
     res["lastExecution"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +184,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetLastExecution(val.(*SynchronizationTaskExecution))
+        if val != nil {
+            m.SetLastExecution(val.(*SynchronizationTaskExecution))
+        }
         return nil
     }
     res["lastSuccessfulExecution"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +194,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetLastSuccessfulExecution(val.(*SynchronizationTaskExecution))
+        if val != nil {
+            m.SetLastSuccessfulExecution(val.(*SynchronizationTaskExecution))
+        }
         return nil
     }
     res["lastSuccessfulExecutionWithExports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +204,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetLastSuccessfulExecutionWithExports(val.(*SynchronizationTaskExecution))
+        if val != nil {
+            m.SetLastSuccessfulExecutionWithExports(val.(*SynchronizationTaskExecution))
+        }
         return nil
     }
     res["progress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,11 +214,13 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]SynchronizationProgress, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SynchronizationProgress))
+        if val != nil {
+            res := make([]SynchronizationProgress, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SynchronizationProgress))
+            }
+            m.SetProgress(res)
         }
-        m.SetProgress(res)
         return nil
     }
     res["quarantine"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +228,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetQuarantine(val.(*SynchronizationQuarantine))
+        if val != nil {
+            m.SetQuarantine(val.(*SynchronizationQuarantine))
+        }
         return nil
     }
     res["steadyStateFirstAchievedTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +238,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSteadyStateFirstAchievedTime(val)
+        if val != nil {
+            m.SetSteadyStateFirstAchievedTime(val)
+        }
         return nil
     }
     res["steadyStateLastAchievedTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +248,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSteadyStateLastAchievedTime(val)
+        if val != nil {
+            m.SetSteadyStateLastAchievedTime(val)
+        }
         return nil
     }
     res["synchronizedEntryCountByType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,11 +258,13 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]StringKeyLongValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*StringKeyLongValuePair))
+        if val != nil {
+            res := make([]StringKeyLongValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*StringKeyLongValuePair))
+            }
+            m.SetSynchronizedEntryCountByType(res)
         }
-        m.SetSynchronizedEntryCountByType(res)
         return nil
     }
     res["troubleshootingUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +272,9 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTroubleshootingUrl(val)
+        if val != nil {
+            m.SetTroubleshootingUrl(val)
+        }
         return nil
     }
     return res

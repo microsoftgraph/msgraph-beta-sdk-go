@@ -33,7 +33,9 @@ func (m *BusinessFlowSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDurationInDays(val)
+        if val != nil {
+            m.SetDurationInDays(val)
+        }
         return nil
     }
     return res

@@ -173,7 +173,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetAuthenticationType(val)
+        if val != nil {
+            m.SetAuthenticationType(val)
+        }
         return nil
     }
     res["availabilityStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +183,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetAvailabilityStatus(val)
+        if val != nil {
+            m.SetAvailabilityStatus(val)
+        }
         return nil
     }
     res["domainNameReferences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,11 +193,13 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetDomainNameReferences(res)
         }
-        m.SetDomainNameReferences(res)
         return nil
     }
     res["isAdminManaged"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,7 +207,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetIsAdminManaged(val)
+        if val != nil {
+            m.SetIsAdminManaged(val)
+        }
         return nil
     }
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,7 +217,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["isInitial"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,7 +227,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetIsInitial(val)
+        if val != nil {
+            m.SetIsInitial(val)
+        }
         return nil
     }
     res["isRoot"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,7 +237,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetIsRoot(val)
+        if val != nil {
+            m.SetIsRoot(val)
+        }
         return nil
     }
     res["isVerified"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,7 +247,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetIsVerified(val)
+        if val != nil {
+            m.SetIsVerified(val)
+        }
         return nil
     }
     res["passwordNotificationWindowInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,7 +257,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetPasswordNotificationWindowInDays(val)
+        if val != nil {
+            m.SetPasswordNotificationWindowInDays(val)
+        }
         return nil
     }
     res["passwordValidityPeriodInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -249,7 +267,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetPasswordValidityPeriodInDays(val)
+        if val != nil {
+            m.SetPasswordValidityPeriodInDays(val)
+        }
         return nil
     }
     res["serviceConfigurationRecords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -257,11 +277,13 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]DomainDnsRecord, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DomainDnsRecord))
+        if val != nil {
+            res := make([]DomainDnsRecord, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DomainDnsRecord))
+            }
+            m.SetServiceConfigurationRecords(res)
         }
-        m.SetServiceConfigurationRecords(res)
         return nil
     }
     res["sharedEmailDomainInvitations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,11 +291,13 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]SharedEmailDomainInvitation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SharedEmailDomainInvitation))
+        if val != nil {
+            res := make([]SharedEmailDomainInvitation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SharedEmailDomainInvitation))
+            }
+            m.SetSharedEmailDomainInvitations(res)
         }
-        m.SetSharedEmailDomainInvitations(res)
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -281,7 +305,9 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetState(val.(*DomainState))
+        if val != nil {
+            m.SetState(val.(*DomainState))
+        }
         return nil
     }
     res["supportedServices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -289,11 +315,13 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSupportedServices(res)
         }
-        m.SetSupportedServices(res)
         return nil
     }
     res["verificationDnsRecords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -301,11 +329,13 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]DomainDnsRecord, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DomainDnsRecord))
+        if val != nil {
+            res := make([]DomainDnsRecord, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DomainDnsRecord))
+            }
+            m.SetVerificationDnsRecords(res)
         }
-        m.SetVerificationDnsRecords(res)
         return nil
     }
     return res

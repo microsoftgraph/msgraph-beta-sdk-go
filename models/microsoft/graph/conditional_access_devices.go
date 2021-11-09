@@ -82,7 +82,9 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeviceFilter(val.(*ConditionalAccessFilter))
+        if val != nil {
+            m.SetDeviceFilter(val.(*ConditionalAccessFilter))
+        }
         return nil
     }
     res["excludeDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,11 +92,13 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludeDevices(res)
         }
-        m.SetExcludeDevices(res)
         return nil
     }
     res["excludeDeviceStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,11 +106,13 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludeDeviceStates(res)
         }
-        m.SetExcludeDeviceStates(res)
         return nil
     }
     res["includeDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,11 +120,13 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIncludeDevices(res)
         }
-        m.SetIncludeDevices(res)
         return nil
     }
     res["includeDeviceStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,11 +134,13 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIncludeDeviceStates(res)
         }
-        m.SetIncludeDeviceStates(res)
         return nil
     }
     return res

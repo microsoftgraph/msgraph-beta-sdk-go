@@ -134,7 +134,9 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetFailedSignInCount(val)
+        if val != nil {
+            m.SetFailedSignInCount(val)
+        }
         return nil
     }
     res["migrationStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,8 +144,10 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MigrationStatus)
-        m.SetMigrationStatus(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MigrationStatus)
+            m.SetMigrationStatus(&cast)
+        }
         return nil
     }
     res["migrationValidationDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,11 +155,13 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair))
+        if val != nil {
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair))
+            }
+            m.SetMigrationValidationDetails(res)
         }
-        m.SetMigrationValidationDetails(res)
         return nil
     }
     res["relyingPartyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +169,9 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetRelyingPartyId(val)
+        if val != nil {
+            m.SetRelyingPartyId(val)
+        }
         return nil
     }
     res["relyingPartyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +179,9 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetRelyingPartyName(val)
+        if val != nil {
+            m.SetRelyingPartyName(val)
+        }
         return nil
     }
     res["replyUrls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,11 +189,13 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetReplyUrls(res)
         }
-        m.SetReplyUrls(res)
         return nil
     }
     res["serviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +203,9 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetServiceId(val)
+        if val != nil {
+            m.SetServiceId(val)
+        }
         return nil
     }
     res["signInSuccessRate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +213,9 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSignInSuccessRate(val)
+        if val != nil {
+            m.SetSignInSuccessRate(val)
+        }
         return nil
     }
     res["successfulSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +223,9 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSuccessfulSignInCount(val)
+        if val != nil {
+            m.SetSuccessfulSignInCount(val)
+        }
         return nil
     }
     res["totalSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +233,9 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetTotalSignInCount(val)
+        if val != nil {
+            m.SetTotalSignInCount(val)
+        }
         return nil
     }
     res["uniqueUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -223,7 +243,9 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetUniqueUserCount(val)
+        if val != nil {
+            m.SetUniqueUserCount(val)
+        }
         return nil
     }
     return res

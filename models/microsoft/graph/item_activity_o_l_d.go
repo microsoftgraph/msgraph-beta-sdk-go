@@ -73,7 +73,9 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetAction(val.(*ItemActionSet))
+        if val != nil {
+            m.SetAction(val.(*ItemActionSet))
+        }
         return nil
     }
     res["actor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetActor(val.(*IdentitySet))
+        if val != nil {
+            m.SetActor(val.(*IdentitySet))
+        }
         return nil
     }
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDriveItem(val.(*DriveItem))
+        if val != nil {
+            m.SetDriveItem(val.(*DriveItem))
+        }
         return nil
     }
     res["listItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetListItem(val.(*ListItem))
+        if val != nil {
+            m.SetListItem(val.(*ListItem))
+        }
         return nil
     }
     res["times"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTimes(val.(*ItemActivityTimeSet))
+        if val != nil {
+            m.SetTimes(val.(*ItemActivityTimeSet))
+        }
         return nil
     }
     return res

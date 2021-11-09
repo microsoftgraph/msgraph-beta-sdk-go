@@ -33,7 +33,9 @@ func (m *DlpEvaluatePoliciesJobResponse) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetResult(val.(*DlpPoliciesJobResult))
+        if val != nil {
+            m.SetResult(val.(*DlpPoliciesJobResult))
+        }
         return nil
     }
     return res

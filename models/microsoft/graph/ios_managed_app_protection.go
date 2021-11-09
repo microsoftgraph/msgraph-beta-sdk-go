@@ -203,7 +203,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAllowedIosDeviceModels(val)
+        if val != nil {
+            m.SetAllowedIosDeviceModels(val)
+        }
         return nil
     }
     res["appActionIfIosDeviceModelNotAllowed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -211,8 +213,10 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ManagedAppRemediationAction)
-        m.SetAppActionIfIosDeviceModelNotAllowed(&cast)
+        if val != nil {
+            cast := val.(ManagedAppRemediationAction)
+            m.SetAppActionIfIosDeviceModelNotAllowed(&cast)
+        }
         return nil
     }
     res["appDataEncryptionType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,8 +224,10 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ManagedAppDataEncryptionType)
-        m.SetAppDataEncryptionType(&cast)
+        if val != nil {
+            cast := val.(ManagedAppDataEncryptionType)
+            m.SetAppDataEncryptionType(&cast)
+        }
         return nil
     }
     res["apps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,11 +235,13 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]ManagedMobileApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedMobileApp))
+        if val != nil {
+            res := make([]ManagedMobileApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedMobileApp))
+            }
+            m.SetApps(res)
         }
-        m.SetApps(res)
         return nil
     }
     res["customBrowserProtocol"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,7 +249,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCustomBrowserProtocol(val)
+        if val != nil {
+            m.SetCustomBrowserProtocol(val)
+        }
         return nil
     }
     res["customDialerAppProtocol"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -249,7 +259,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCustomDialerAppProtocol(val)
+        if val != nil {
+            m.SetCustomDialerAppProtocol(val)
+        }
         return nil
     }
     res["deployedAppCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -257,7 +269,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDeployedAppCount(val)
+        if val != nil {
+            m.SetDeployedAppCount(val)
+        }
         return nil
     }
     res["deploymentSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,7 +279,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+        if val != nil {
+            m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+        }
         return nil
     }
     res["disableProtectionOfManagedOutboundOpenInData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -273,7 +289,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDisableProtectionOfManagedOutboundOpenInData(val)
+        if val != nil {
+            m.SetDisableProtectionOfManagedOutboundOpenInData(val)
+        }
         return nil
     }
     res["exemptedAppProtocols"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -281,11 +299,13 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetExemptedAppProtocols(res)
         }
-        m.SetExemptedAppProtocols(res)
         return nil
     }
     res["exemptedUniversalLinks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,11 +313,13 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExemptedUniversalLinks(res)
         }
-        m.SetExemptedUniversalLinks(res)
         return nil
     }
     res["faceIdBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,7 +327,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFaceIdBlocked(val)
+        if val != nil {
+            m.SetFaceIdBlocked(val)
+        }
         return nil
     }
     res["filterOpenInToOnlyManagedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -313,7 +337,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFilterOpenInToOnlyManagedApps(val)
+        if val != nil {
+            m.SetFilterOpenInToOnlyManagedApps(val)
+        }
         return nil
     }
     res["managedUniversalLinks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -321,11 +347,13 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetManagedUniversalLinks(res)
         }
-        m.SetManagedUniversalLinks(res)
         return nil
     }
     res["minimumRequiredSdkVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -333,7 +361,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetMinimumRequiredSdkVersion(val)
+        if val != nil {
+            m.SetMinimumRequiredSdkVersion(val)
+        }
         return nil
     }
     res["minimumWipeSdkVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -341,7 +371,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetMinimumWipeSdkVersion(val)
+        if val != nil {
+            m.SetMinimumWipeSdkVersion(val)
+        }
         return nil
     }
     res["protectInboundDataFromUnknownSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -349,7 +381,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetProtectInboundDataFromUnknownSources(val)
+        if val != nil {
+            m.SetProtectInboundDataFromUnknownSources(val)
+        }
         return nil
     }
     res["thirdPartyKeyboardsBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -357,7 +391,9 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetThirdPartyKeyboardsBlocked(val)
+        if val != nil {
+            m.SetThirdPartyKeyboardsBlocked(val)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetFieldDeserialize
         if err != nil {
             return err
         }
-        m.SetDeviceWithoutCloudIdentityCount(val)
+        if val != nil {
+            m.SetDeviceWithoutCloudIdentityCount(val)
+        }
         return nil
     }
     return res

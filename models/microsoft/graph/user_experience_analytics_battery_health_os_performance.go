@@ -83,7 +83,9 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetActiveDevices(val)
+        if val != nil {
+            m.SetActiveDevices(val)
+        }
         return nil
     }
     res["averageBatteryAgeInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetAverageBatteryAgeInDays(val)
+        if val != nil {
+            m.SetAverageBatteryAgeInDays(val)
+        }
         return nil
     }
     res["averageEstimatedRuntimeInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetAverageEstimatedRuntimeInMinutes(val)
+        if val != nil {
+            m.SetAverageEstimatedRuntimeInMinutes(val)
+        }
         return nil
     }
     res["averageMaxCapacityPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetAverageMaxCapacityPercentage(val)
+        if val != nil {
+            m.SetAverageMaxCapacityPercentage(val)
+        }
         return nil
     }
     res["osBuildNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetOsBuildNumber(val)
+        if val != nil {
+            m.SetOsBuildNumber(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +133,9 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     return res

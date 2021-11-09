@@ -33,11 +33,13 @@ func (m *AttributeMappingFunctionSchema) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]AttributeMappingParameterSchema, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AttributeMappingParameterSchema))
+        if val != nil {
+            res := make([]AttributeMappingParameterSchema, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AttributeMappingParameterSchema))
+            }
+            m.SetParameters(res)
         }
-        m.SetParameters(res)
         return nil
     }
     return res

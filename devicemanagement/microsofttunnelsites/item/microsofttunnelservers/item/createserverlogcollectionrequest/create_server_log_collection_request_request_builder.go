@@ -64,7 +64,9 @@ func (m *CreateServerLogCollectionRequestResponse) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetMicrosoftTunnelServerLogCollectionResponse(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse))
+        if val != nil {
+            m.SetMicrosoftTunnelServerLogCollectionResponse(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse))
+        }
         return nil
     }
     return res

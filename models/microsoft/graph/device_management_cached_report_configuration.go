@@ -104,7 +104,9 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["filter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetFilter(val)
+        if val != nil {
+            m.SetFilter(val)
+        }
         return nil
     }
     res["lastRefreshDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetLastRefreshDateTime(val)
+        if val != nil {
+            m.SetLastRefreshDateTime(val)
+        }
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetMetadata(val)
+        if val != nil {
+            m.SetMetadata(val)
+        }
         return nil
     }
     res["orderBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,11 +144,13 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetOrderBy(res)
         }
-        m.SetOrderBy(res)
         return nil
     }
     res["reportName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +158,9 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetReportName(val)
+        if val != nil {
+            m.SetReportName(val)
+        }
         return nil
     }
     res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,11 +168,13 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSelect_escaped(res)
         }
-        m.SetSelect_escaped(res)
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,8 +182,10 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementReportStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementReportStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

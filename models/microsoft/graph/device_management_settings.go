@@ -132,7 +132,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetAndroidDeviceAdministratorEnrollmentEnabled(val)
+        if val != nil {
+            m.SetAndroidDeviceAdministratorEnrollmentEnabled(val)
+        }
         return nil
     }
     res["derivedCredentialProvider"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,8 +142,10 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(DerivedCredentialProviderType)
-        m.SetDerivedCredentialProvider(&cast)
+        if val != nil {
+            cast := val.(DerivedCredentialProviderType)
+            m.SetDerivedCredentialProvider(&cast)
+        }
         return nil
     }
     res["derivedCredentialUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +153,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDerivedCredentialUrl(val)
+        if val != nil {
+            m.SetDerivedCredentialUrl(val)
+        }
         return nil
     }
     res["deviceComplianceCheckinThresholdDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +163,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeviceComplianceCheckinThresholdDays(val)
+        if val != nil {
+            m.SetDeviceComplianceCheckinThresholdDays(val)
+        }
         return nil
     }
     res["deviceInactivityBeforeRetirementInDay"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +173,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeviceInactivityBeforeRetirementInDay(val)
+        if val != nil {
+            m.SetDeviceInactivityBeforeRetirementInDay(val)
+        }
         return nil
     }
     res["enableLogCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +183,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetEnableLogCollection(val)
+        if val != nil {
+            m.SetEnableLogCollection(val)
+        }
         return nil
     }
     res["enhancedJailBreak"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +193,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetEnhancedJailBreak(val)
+        if val != nil {
+            m.SetEnhancedJailBreak(val)
+        }
         return nil
     }
     res["ignoreDevicesForUnsupportedSettingsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,7 +203,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIgnoreDevicesForUnsupportedSettingsEnabled(val)
+        if val != nil {
+            m.SetIgnoreDevicesForUnsupportedSettingsEnabled(val)
+        }
         return nil
     }
     res["isScheduledActionEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,7 +213,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsScheduledActionEnabled(val)
+        if val != nil {
+            m.SetIsScheduledActionEnabled(val)
+        }
         return nil
     }
     res["secureByDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -205,7 +223,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSecureByDefault(val)
+        if val != nil {
+            m.SetSecureByDefault(val)
+        }
         return nil
     }
     return res

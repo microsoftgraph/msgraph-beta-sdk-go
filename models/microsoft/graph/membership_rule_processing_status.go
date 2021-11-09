@@ -63,7 +63,9 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetErrorMessage(val)
+        if val != nil {
+            m.SetErrorMessage(val)
+        }
         return nil
     }
     res["lastMembershipUpdated"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetLastMembershipUpdated(val)
+        if val != nil {
+            m.SetLastMembershipUpdated(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,8 +83,10 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(MembershipRuleProcessingStatusDetails)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(MembershipRuleProcessingStatusDetails)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

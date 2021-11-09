@@ -42,7 +42,9 @@ func (m *TenantSearchRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     return res

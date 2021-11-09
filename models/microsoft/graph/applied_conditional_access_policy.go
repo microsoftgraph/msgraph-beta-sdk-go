@@ -132,7 +132,9 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAuthenticationStrength(val.(*AuthenticationStrength))
+        if val != nil {
+            m.SetAuthenticationStrength(val.(*AuthenticationStrength))
+        }
         return nil
     }
     res["conditionsNotSatisfied"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,8 +142,10 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(ConditionalAccessConditions)
-        m.SetConditionsNotSatisfied(&cast)
+        if val != nil {
+            cast := val.(ConditionalAccessConditions)
+            m.SetConditionsNotSatisfied(&cast)
+        }
         return nil
     }
     res["conditionsSatisfied"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,8 +153,10 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(ConditionalAccessConditions)
-        m.SetConditionsSatisfied(&cast)
+        if val != nil {
+            cast := val.(ConditionalAccessConditions)
+            m.SetConditionsSatisfied(&cast)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +164,9 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enforcedGrantControls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,11 +174,13 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEnforcedGrantControls(res)
         }
-        m.SetEnforcedGrantControls(res)
         return nil
     }
     res["enforcedSessionControls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,11 +188,13 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEnforcedSessionControls(res)
         }
-        m.SetEnforcedSessionControls(res)
         return nil
     }
     res["excludeRulesSatisfied"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,11 +202,13 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]ConditionalAccessRuleSatisfied, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConditionalAccessRuleSatisfied))
+        if val != nil {
+            res := make([]ConditionalAccessRuleSatisfied, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessRuleSatisfied))
+            }
+            m.SetExcludeRulesSatisfied(res)
         }
-        m.SetExcludeRulesSatisfied(res)
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +216,9 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["includeRulesSatisfied"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,11 +226,13 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]ConditionalAccessRuleSatisfied, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConditionalAccessRuleSatisfied))
+        if val != nil {
+            res := make([]ConditionalAccessRuleSatisfied, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessRuleSatisfied))
+            }
+            m.SetIncludeRulesSatisfied(res)
         }
-        m.SetIncludeRulesSatisfied(res)
         return nil
     }
     res["result"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,8 +240,10 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(AppliedConditionalAccessPolicyResult)
-        m.SetResult(&cast)
+        if val != nil {
+            cast := val.(AppliedConditionalAccessPolicyResult)
+            m.SetResult(&cast)
+        }
         return nil
     }
     return res

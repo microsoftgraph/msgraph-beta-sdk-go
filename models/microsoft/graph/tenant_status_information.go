@@ -114,8 +114,10 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.DelegatedPrivilegeStatus)
-        m.SetDelegatedPrivilegeStatus(&cast)
+        if val != nil {
+            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.DelegatedPrivilegeStatus)
+            m.SetDelegatedPrivilegeStatus(&cast)
+        }
         return nil
     }
     res["lastDelegatedPrivilegeRefreshDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +125,9 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLastDelegatedPrivilegeRefreshDateTime(val)
+        if val != nil {
+            m.SetLastDelegatedPrivilegeRefreshDateTime(val)
+        }
         return nil
     }
     res["offboardedByUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +135,9 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOffboardedByUserId(val)
+        if val != nil {
+            m.SetOffboardedByUserId(val)
+        }
         return nil
     }
     res["offboardedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +145,9 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOffboardedDateTime(val)
+        if val != nil {
+            m.SetOffboardedDateTime(val)
+        }
         return nil
     }
     res["onboardedByUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +155,9 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOnboardedByUserId(val)
+        if val != nil {
+            m.SetOnboardedByUserId(val)
+        }
         return nil
     }
     res["onboardedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +165,9 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOnboardedDateTime(val)
+        if val != nil {
+            m.SetOnboardedDateTime(val)
+        }
         return nil
     }
     res["onboardingStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,8 +175,10 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus)
-        m.SetOnboardingStatus(&cast)
+        if val != nil {
+            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus)
+            m.SetOnboardingStatus(&cast)
+        }
         return nil
     }
     res["workloadStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,11 +186,13 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]WorkloadStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkloadStatus))
+        if val != nil {
+            res := make([]WorkloadStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkloadStatus))
+            }
+            m.SetWorkloadStatuses(res)
         }
-        m.SetWorkloadStatuses(res)
         return nil
     }
     return res

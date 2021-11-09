@@ -43,7 +43,9 @@ func (m *CreateDeviceLogCollectionRequestRequestBody) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetTemplateType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequest))
+        if val != nil {
+            m.SetTemplateType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequest))
+        }
         return nil
     }
     return res

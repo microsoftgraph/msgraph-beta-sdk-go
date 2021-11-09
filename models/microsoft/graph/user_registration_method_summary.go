@@ -72,7 +72,9 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetTotalUserCount(val)
+        if val != nil {
+            m.SetTotalUserCount(val)
+        }
         return nil
     }
     res["userRegistrationMethodCounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,11 +82,13 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]UserRegistrationMethodCount, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserRegistrationMethodCount))
+        if val != nil {
+            res := make([]UserRegistrationMethodCount, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserRegistrationMethodCount))
+            }
+            m.SetUserRegistrationMethodCounts(res)
         }
-        m.SetUserRegistrationMethodCounts(res)
         return nil
     }
     res["userRoles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,8 +96,10 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(IncludedUserRoles)
-        m.SetUserRoles(&cast)
+        if val != nil {
+            cast := val.(IncludedUserRoles)
+            m.SetUserRoles(&cast)
+        }
         return nil
     }
     res["userTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,8 +107,10 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(IncludedUserTypes)
-        m.SetUserTypes(&cast)
+        if val != nil {
+            cast := val.(IncludedUserTypes)
+            m.SetUserTypes(&cast)
+        }
         return nil
     }
     return res

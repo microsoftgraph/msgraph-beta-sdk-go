@@ -304,11 +304,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]AssignedPlan, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AssignedPlan))
+        if val != nil {
+            res := make([]AssignedPlan, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AssignedPlan))
+            }
+            m.SetAssignedPlans(res)
         }
-        m.SetAssignedPlans(res)
         return nil
     }
     res["branding"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +318,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetBranding(val.(*OrganizationalBranding))
+        if val != nil {
+            m.SetBranding(val.(*OrganizationalBranding))
+        }
         return nil
     }
     res["businessPhones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -324,11 +328,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetBusinessPhones(res)
         }
-        m.SetBusinessPhones(res)
         return nil
     }
     res["certificateBasedAuthConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -336,11 +342,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]CertificateBasedAuthConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CertificateBasedAuthConfiguration))
+        if val != nil {
+            res := make([]CertificateBasedAuthConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CertificateBasedAuthConfiguration))
+            }
+            m.SetCertificateBasedAuthConfiguration(res)
         }
-        m.SetCertificateBasedAuthConfiguration(res)
         return nil
     }
     res["certificateConnectorSetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -348,7 +356,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCertificateConnectorSetting(val.(*CertificateConnectorSetting))
+        if val != nil {
+            m.SetCertificateConnectorSetting(val.(*CertificateConnectorSetting))
+        }
         return nil
     }
     res["city"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,7 +366,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCity(val)
+        if val != nil {
+            m.SetCity(val)
+        }
         return nil
     }
     res["country"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -364,7 +376,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCountry(val)
+        if val != nil {
+            m.SetCountry(val)
+        }
         return nil
     }
     res["countryLetterCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -372,7 +386,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCountryLetterCode(val)
+        if val != nil {
+            m.SetCountryLetterCode(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -380,7 +396,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["directorySizeQuota"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -388,7 +406,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDirectorySizeQuota(val.(*DirectorySizeQuota))
+        if val != nil {
+            m.SetDirectorySizeQuota(val.(*DirectorySizeQuota))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -396,7 +416,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -404,11 +426,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]Extension, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Extension))
+        if val != nil {
+            res := make([]Extension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Extension))
+            }
+            m.SetExtensions(res)
         }
-        m.SetExtensions(res)
         return nil
     }
     res["isMultipleDataLocationsForServicesEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -416,7 +440,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetIsMultipleDataLocationsForServicesEnabled(val)
+        if val != nil {
+            m.SetIsMultipleDataLocationsForServicesEnabled(val)
+        }
         return nil
     }
     res["marketingNotificationEmails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -424,11 +450,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetMarketingNotificationEmails(res)
         }
-        m.SetMarketingNotificationEmails(res)
         return nil
     }
     res["mobileDeviceManagementAuthority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -436,8 +464,10 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(MdmAuthority)
-        m.SetMobileDeviceManagementAuthority(&cast)
+        if val != nil {
+            cast := val.(MdmAuthority)
+            m.SetMobileDeviceManagementAuthority(&cast)
+        }
         return nil
     }
     res["onPremisesLastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -445,7 +475,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetOnPremisesLastSyncDateTime(val)
+        if val != nil {
+            m.SetOnPremisesLastSyncDateTime(val)
+        }
         return nil
     }
     res["onPremisesSyncEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -453,7 +485,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetOnPremisesSyncEnabled(val)
+        if val != nil {
+            m.SetOnPremisesSyncEnabled(val)
+        }
         return nil
     }
     res["postalCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -461,7 +495,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPostalCode(val)
+        if val != nil {
+            m.SetPostalCode(val)
+        }
         return nil
     }
     res["preferredLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -469,7 +505,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPreferredLanguage(val)
+        if val != nil {
+            m.SetPreferredLanguage(val)
+        }
         return nil
     }
     res["privacyProfile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -477,7 +515,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPrivacyProfile(val.(*PrivacyProfile))
+        if val != nil {
+            m.SetPrivacyProfile(val.(*PrivacyProfile))
+        }
         return nil
     }
     res["provisionedPlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -485,11 +525,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]ProvisionedPlan, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ProvisionedPlan))
+        if val != nil {
+            res := make([]ProvisionedPlan, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ProvisionedPlan))
+            }
+            m.SetProvisionedPlans(res)
         }
-        m.SetProvisionedPlans(res)
         return nil
     }
     res["securityComplianceNotificationMails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -497,11 +539,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSecurityComplianceNotificationMails(res)
         }
-        m.SetSecurityComplianceNotificationMails(res)
         return nil
     }
     res["securityComplianceNotificationPhones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -509,11 +553,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSecurityComplianceNotificationPhones(res)
         }
-        m.SetSecurityComplianceNotificationPhones(res)
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -521,7 +567,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSettings(val.(*OrganizationSettings))
+        if val != nil {
+            m.SetSettings(val.(*OrganizationSettings))
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -529,7 +577,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetState(val)
+        if val != nil {
+            m.SetState(val)
+        }
         return nil
     }
     res["street"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -537,7 +587,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetStreet(val)
+        if val != nil {
+            m.SetStreet(val)
+        }
         return nil
     }
     res["technicalNotificationMails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -545,11 +597,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTechnicalNotificationMails(res)
         }
-        m.SetTechnicalNotificationMails(res)
         return nil
     }
     res["verifiedDomains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -557,11 +611,13 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]VerifiedDomain, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*VerifiedDomain))
+        if val != nil {
+            res := make([]VerifiedDomain, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*VerifiedDomain))
+            }
+            m.SetVerifiedDomains(res)
         }
-        m.SetVerifiedDomains(res)
         return nil
     }
     return res

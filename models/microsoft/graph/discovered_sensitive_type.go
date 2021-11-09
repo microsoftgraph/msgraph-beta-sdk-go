@@ -72,11 +72,13 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]ClassificationAttribute, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ClassificationAttribute))
+        if val != nil {
+            res := make([]ClassificationAttribute, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ClassificationAttribute))
+            }
+            m.SetClassificationAttributes(res)
         }
-        m.SetClassificationAttributes(res)
         return nil
     }
     res["confidence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,7 +86,9 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetConfidence(val)
+        if val != nil {
+            m.SetConfidence(val)
+        }
         return nil
     }
     res["count"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +96,9 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCount(val)
+        if val != nil {
+            m.SetCount(val)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +106,9 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     return res

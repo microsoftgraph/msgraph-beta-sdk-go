@@ -74,7 +74,9 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["deviceOSVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeviceOSVersion(val)
+        if val != nil {
+            m.SetDeviceOSVersion(val)
+        }
         return nil
     }
     res["healthState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,8 +94,10 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(HealthState)
-        m.SetHealthState(&cast)
+        if val != nil {
+            cast := val.(HealthState)
+            m.SetHealthState(&cast)
+        }
         return nil
     }
     res["installedVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +105,9 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetInstalledVersion(val)
+        if val != nil {
+            m.SetInstalledVersion(val)
+        }
         return nil
     }
     res["lastCheckInDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +115,9 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetLastCheckInDateTime(val)
+        if val != nil {
+            m.SetLastCheckInDateTime(val)
+        }
         return nil
     }
     return res

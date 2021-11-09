@@ -62,7 +62,9 @@ func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetService(val)
+        if val != nil {
+            m.SetService(val)
+        }
         return nil
     }
     res["servicePlanId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetServicePlanId(val)
+        if val != nil {
+            m.SetServicePlanId(val)
+        }
         return nil
     }
     res["skuId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetSkuId(val)
+        if val != nil {
+            m.SetSkuId(val)
+        }
         return nil
     }
     return res

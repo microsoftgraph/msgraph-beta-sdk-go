@@ -63,11 +63,13 @@ func (m *UnenrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIds(res)
         }
-        m.SetIds(res)
         return nil
     }
     res["memberEntityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,7 +77,9 @@ func (m *UnenrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetMemberEntityType(val)
+        if val != nil {
+            m.SetMemberEntityType(val)
+        }
         return nil
     }
     res["updateCategory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,8 +87,10 @@ func (m *UnenrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory)
-        m.SetUpdateCategory(&cast)
+        if val != nil {
+            cast := val.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory)
+            m.SetUpdateCategory(&cast)
+        }
         return nil
     }
     return res

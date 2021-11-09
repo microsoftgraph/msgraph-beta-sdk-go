@@ -123,7 +123,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFailedDeviceCount(val)
+        if val != nil {
+            m.SetFailedDeviceCount(val)
+        }
         return nil
     }
     res["failedUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +133,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFailedUserCount(val)
+        if val != nil {
+            m.SetFailedUserCount(val)
+        }
         return nil
     }
     res["installedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +143,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetInstalledDeviceCount(val)
+        if val != nil {
+            m.SetInstalledDeviceCount(val)
+        }
         return nil
     }
     res["installedUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +153,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetInstalledUserCount(val)
+        if val != nil {
+            m.SetInstalledUserCount(val)
+        }
         return nil
     }
     res["notApplicableDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetNotApplicableDeviceCount(val)
+        if val != nil {
+            m.SetNotApplicableDeviceCount(val)
+        }
         return nil
     }
     res["notApplicableUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetNotApplicableUserCount(val)
+        if val != nil {
+            m.SetNotApplicableUserCount(val)
+        }
         return nil
     }
     res["notInstalledDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +183,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetNotInstalledDeviceCount(val)
+        if val != nil {
+            m.SetNotInstalledDeviceCount(val)
+        }
         return nil
     }
     res["notInstalledUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +193,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetNotInstalledUserCount(val)
+        if val != nil {
+            m.SetNotInstalledUserCount(val)
+        }
         return nil
     }
     res["pendingInstallDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,7 +203,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPendingInstallDeviceCount(val)
+        if val != nil {
+            m.SetPendingInstallDeviceCount(val)
+        }
         return nil
     }
     res["pendingInstallUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -195,7 +213,9 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPendingInstallUserCount(val)
+        if val != nil {
+            m.SetPendingInstallUserCount(val)
+        }
         return nil
     }
     return res

@@ -53,7 +53,9 @@ func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,11 +73,13 @@ func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ExternalGroupMember, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExternalGroupMember))
+        if val != nil {
+            res := make([]ExternalGroupMember, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExternalGroupMember))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     return res

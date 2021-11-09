@@ -62,7 +62,9 @@ func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIntegratedCircuitCardIdentifier(val)
+        if val != nil {
+            m.SetIntegratedCircuitCardIdentifier(val)
+        }
         return nil
     }
     res["matchingIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetMatchingIdentifier(val)
+        if val != nil {
+            m.SetMatchingIdentifier(val)
+        }
         return nil
     }
     res["smdpPlusServerAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSmdpPlusServerAddress(val)
+        if val != nil {
+            m.SetSmdpPlusServerAddress(val)
+        }
         return nil
     }
     return res

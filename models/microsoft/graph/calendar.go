@@ -233,11 +233,13 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]OnlineMeetingProviderType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnlineMeetingProviderType))
+        if val != nil {
+            res := make([]OnlineMeetingProviderType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnlineMeetingProviderType))
+            }
+            m.SetAllowedOnlineMeetingProviders(res)
         }
-        m.SetAllowedOnlineMeetingProviders(res)
         return nil
     }
     res["calendarGroupId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +247,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCalendarGroupId(val)
+        if val != nil {
+            m.SetCalendarGroupId(val)
+        }
         return nil
     }
     res["calendarPermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,11 +257,13 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]CalendarPermission, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CalendarPermission))
+        if val != nil {
+            res := make([]CalendarPermission, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CalendarPermission))
+            }
+            m.SetCalendarPermissions(res)
         }
-        m.SetCalendarPermissions(res)
         return nil
     }
     res["calendarView"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,11 +271,13 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]Event, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Event))
+        if val != nil {
+            res := make([]Event, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Event))
+            }
+            m.SetCalendarView(res)
         }
-        m.SetCalendarView(res)
         return nil
     }
     res["canEdit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,7 +285,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCanEdit(val)
+        if val != nil {
+            m.SetCanEdit(val)
+        }
         return nil
     }
     res["canShare"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,7 +295,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCanShare(val)
+        if val != nil {
+            m.SetCanShare(val)
+        }
         return nil
     }
     res["canViewPrivateItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,7 +305,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCanViewPrivateItems(val)
+        if val != nil {
+            m.SetCanViewPrivateItems(val)
+        }
         return nil
     }
     res["changeKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -301,7 +315,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetChangeKey(val)
+        if val != nil {
+            m.SetChangeKey(val)
+        }
         return nil
     }
     res["color"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -309,8 +325,10 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(CalendarColor)
-        m.SetColor(&cast)
+        if val != nil {
+            cast := val.(CalendarColor)
+            m.SetColor(&cast)
+        }
         return nil
     }
     res["defaultOnlineMeetingProvider"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -318,8 +336,10 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(OnlineMeetingProviderType)
-        m.SetDefaultOnlineMeetingProvider(&cast)
+        if val != nil {
+            cast := val.(OnlineMeetingProviderType)
+            m.SetDefaultOnlineMeetingProvider(&cast)
+        }
         return nil
     }
     res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -327,11 +347,13 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]Event, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Event))
+        if val != nil {
+            res := make([]Event, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Event))
+            }
+            m.SetEvents(res)
         }
-        m.SetEvents(res)
         return nil
     }
     res["hexColor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -339,7 +361,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetHexColor(val)
+        if val != nil {
+            m.SetHexColor(val)
+        }
         return nil
     }
     res["isDefaultCalendar"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -347,7 +371,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsDefaultCalendar(val)
+        if val != nil {
+            m.SetIsDefaultCalendar(val)
+        }
         return nil
     }
     res["isRemovable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -355,7 +381,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsRemovable(val)
+        if val != nil {
+            m.SetIsRemovable(val)
+        }
         return nil
     }
     res["isShared"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -363,7 +391,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsShared(val)
+        if val != nil {
+            m.SetIsShared(val)
+        }
         return nil
     }
     res["isSharedWithMe"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -371,7 +401,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsSharedWithMe(val)
+        if val != nil {
+            m.SetIsSharedWithMe(val)
+        }
         return nil
     }
     res["isTallyingResponses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -379,7 +411,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsTallyingResponses(val)
+        if val != nil {
+            m.SetIsTallyingResponses(val)
+        }
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -387,11 +421,13 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]MultiValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+            }
+            m.SetMultiValueExtendedProperties(res)
         }
-        m.SetMultiValueExtendedProperties(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -399,7 +435,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["owner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -407,7 +445,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetOwner(val.(*EmailAddress))
+        if val != nil {
+            m.SetOwner(val.(*EmailAddress))
+        }
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -415,11 +455,13 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SingleValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+            }
+            m.SetSingleValueExtendedProperties(res)
         }
-        m.SetSingleValueExtendedProperties(res)
         return nil
     }
     return res

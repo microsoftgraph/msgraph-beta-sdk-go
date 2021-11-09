@@ -93,7 +93,9 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetApiConnectorConfiguration(val.(*UserFlowApiConnectorConfiguration))
+        if val != nil {
+            m.SetApiConnectorConfiguration(val.(*UserFlowApiConnectorConfiguration))
+        }
         return nil
     }
     res["defaultLanguageTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDefaultLanguageTag(val)
+        if val != nil {
+            m.SetDefaultLanguageTag(val)
+        }
         return nil
     }
     res["identityProviders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,11 +113,13 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]IdentityProvider, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentityProvider))
+        if val != nil {
+            res := make([]IdentityProvider, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentityProvider))
+            }
+            m.SetIdentityProviders(res)
         }
-        m.SetIdentityProviders(res)
         return nil
     }
     res["isLanguageCustomizationEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +127,9 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIsLanguageCustomizationEnabled(val)
+        if val != nil {
+            m.SetIsLanguageCustomizationEnabled(val)
+        }
         return nil
     }
     res["languages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,11 +137,13 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]UserFlowLanguageConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserFlowLanguageConfiguration))
+        if val != nil {
+            res := make([]UserFlowLanguageConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserFlowLanguageConfiguration))
+            }
+            m.SetLanguages(res)
         }
-        m.SetLanguages(res)
         return nil
     }
     res["userAttributeAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,11 +151,13 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]IdentityUserFlowAttributeAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentityUserFlowAttributeAssignment))
+        if val != nil {
+            res := make([]IdentityUserFlowAttributeAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentityUserFlowAttributeAssignment))
+            }
+            m.SetUserAttributeAssignments(res)
         }
-        m.SetUserAttributeAssignments(res)
         return nil
     }
     res["userFlowIdentityProviders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,11 +165,13 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]IdentityProviderBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentityProviderBase))
+        if val != nil {
+            res := make([]IdentityProviderBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentityProviderBase))
+            }
+            m.SetUserFlowIdentityProviders(res)
         }
-        m.SetUserFlowIdentityProviders(res)
         return nil
     }
     return res

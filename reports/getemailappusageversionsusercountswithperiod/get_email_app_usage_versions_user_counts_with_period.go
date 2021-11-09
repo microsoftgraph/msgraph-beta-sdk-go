@@ -114,7 +114,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetOutlook2007(val)
+        if val != nil {
+            m.SetOutlook2007(val)
+        }
         return nil
     }
     res["outlook2010"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetOutlook2010(val)
+        if val != nil {
+            m.SetOutlook2010(val)
+        }
         return nil
     }
     res["outlook2013"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +134,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetOutlook2013(val)
+        if val != nil {
+            m.SetOutlook2013(val)
+        }
         return nil
     }
     res["outlook2016"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +144,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetOutlook2016(val)
+        if val != nil {
+            m.SetOutlook2016(val)
+        }
         return nil
     }
     res["outlook2019"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +154,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetOutlook2019(val)
+        if val != nil {
+            m.SetOutlook2019(val)
+        }
         return nil
     }
     res["outlookM365"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +164,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetOutlookM365(val)
+        if val != nil {
+            m.SetOutlookM365(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +174,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +184,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["undetermined"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +194,9 @@ func (m *GetEmailAppUsageVersionsUserCountsWithPeriod) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetUndetermined(val)
+        if val != nil {
+            m.SetUndetermined(val)
+        }
         return nil
     }
     return res

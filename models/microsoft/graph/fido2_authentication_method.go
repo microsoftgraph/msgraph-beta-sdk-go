@@ -94,7 +94,9 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetAaGuid(val)
+        if val != nil {
+            m.SetAaGuid(val)
+        }
         return nil
     }
     res["attestationCertificates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,11 +104,13 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAttestationCertificates(res)
         }
-        m.SetAttestationCertificates(res)
         return nil
     }
     res["attestationLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,8 +118,10 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(AttestationLevel)
-        m.SetAttestationLevel(&cast)
+        if val != nil {
+            cast := val.(AttestationLevel)
+            m.SetAttestationLevel(&cast)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +129,9 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["creationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +139,9 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCreationDateTime(val)
+        if val != nil {
+            m.SetCreationDateTime(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +149,9 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +159,9 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     return res

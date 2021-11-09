@@ -64,7 +64,9 @@ func (m *ValidateFilterResponse) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetAssignmentFilterValidationResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult))
+        if val != nil {
+            m.SetAssignmentFilterValidationResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult))
+        }
         return nil
     }
     return res

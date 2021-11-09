@@ -63,11 +63,13 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]BusinessFlow, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BusinessFlow))
+        if val != nil {
+            res := make([]BusinessFlow, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BusinessFlow))
+            }
+            m.SetBusinessFlows(res)
         }
-        m.SetBusinessFlows(res)
         return nil
     }
     res["businessFlowsWithRequestsAwaitingMyDecision"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,11 +77,13 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]BusinessFlow, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BusinessFlow))
+        if val != nil {
+            res := make([]BusinessFlow, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BusinessFlow))
+            }
+            m.SetBusinessFlowsWithRequestsAwaitingMyDecision(res)
         }
-        m.SetBusinessFlowsWithRequestsAwaitingMyDecision(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +91,9 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["policyTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,11 +101,13 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]GovernancePolicyTemplate, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GovernancePolicyTemplate))
+        if val != nil {
+            res := make([]GovernancePolicyTemplate, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GovernancePolicyTemplate))
+            }
+            m.SetPolicyTemplates(res)
         }
-        m.SetPolicyTemplates(res)
         return nil
     }
     return res

@@ -52,7 +52,9 @@ func (m *PropertyToEvaluate) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetPropertyName(val)
+        if val != nil {
+            m.SetPropertyName(val)
+        }
         return nil
     }
     res["propertyValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *PropertyToEvaluate) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetPropertyValue(val)
+        if val != nil {
+            m.SetPropertyValue(val)
+        }
         return nil
     }
     return res

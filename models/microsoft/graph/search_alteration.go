@@ -62,7 +62,9 @@ func (m *SearchAlteration) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAlteredHighlightedQueryString(val)
+        if val != nil {
+            m.SetAlteredHighlightedQueryString(val)
+        }
         return nil
     }
     res["alteredQueryString"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *SearchAlteration) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAlteredQueryString(val)
+        if val != nil {
+            m.SetAlteredQueryString(val)
+        }
         return nil
     }
     res["alteredQueryTokens"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,11 +82,13 @@ func (m *SearchAlteration) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]AlteredQueryToken, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AlteredQueryToken))
+        if val != nil {
+            res := make([]AlteredQueryToken, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AlteredQueryToken))
+            }
+            m.SetAlteredQueryTokens(res)
         }
-        m.SetAlteredQueryTokens(res)
         return nil
     }
     return res

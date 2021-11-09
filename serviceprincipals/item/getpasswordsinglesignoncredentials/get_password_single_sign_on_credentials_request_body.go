@@ -42,7 +42,9 @@ func (m *GetPasswordSingleSignOnCredentialsRequestBody) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     return res

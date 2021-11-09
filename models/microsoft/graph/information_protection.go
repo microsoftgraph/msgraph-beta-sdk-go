@@ -83,7 +83,9 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetBitlocker(val.(*Bitlocker))
+        if val != nil {
+            m.SetBitlocker(val.(*Bitlocker))
+        }
         return nil
     }
     res["dataLossPreventionPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,11 +93,13 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]DataLossPreventionPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DataLossPreventionPolicy))
+        if val != nil {
+            res := make([]DataLossPreventionPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DataLossPreventionPolicy))
+            }
+            m.SetDataLossPreventionPolicies(res)
         }
-        m.SetDataLossPreventionPolicies(res)
         return nil
     }
     res["policy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -103,7 +107,9 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPolicy(val.(*InformationProtectionPolicy))
+        if val != nil {
+            m.SetPolicy(val.(*InformationProtectionPolicy))
+        }
         return nil
     }
     res["sensitivityLabels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,11 +117,13 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]SensitivityLabel, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SensitivityLabel))
+        if val != nil {
+            res := make([]SensitivityLabel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SensitivityLabel))
+            }
+            m.SetSensitivityLabels(res)
         }
-        m.SetSensitivityLabels(res)
         return nil
     }
     res["sensitivityPolicySettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +131,9 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSensitivityPolicySettings(val.(*SensitivityPolicySettings))
+        if val != nil {
+            m.SetSensitivityPolicySettings(val.(*SensitivityPolicySettings))
+        }
         return nil
     }
     res["threatAssessmentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,11 +141,13 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]ThreatAssessmentRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ThreatAssessmentRequest))
+        if val != nil {
+            res := make([]ThreatAssessmentRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ThreatAssessmentRequest))
+            }
+            m.SetThreatAssessmentRequests(res)
         }
-        m.SetThreatAssessmentRequests(res)
         return nil
     }
     return res

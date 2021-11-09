@@ -253,7 +253,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBackgroundColor(val)
+        if val != nil {
+            m.SetBackgroundColor(val)
+        }
         return nil
     }
     res["backgroundImage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,7 +263,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBackgroundImage(val)
+        if val != nil {
+            m.SetBackgroundImage(val)
+        }
         return nil
     }
     res["backgroundImageRelativeUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,7 +273,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBackgroundImageRelativeUrl(val)
+        if val != nil {
+            m.SetBackgroundImageRelativeUrl(val)
+        }
         return nil
     }
     res["bannerLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,7 +283,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBannerLogo(val)
+        if val != nil {
+            m.SetBannerLogo(val)
+        }
         return nil
     }
     res["bannerLogoRelativeUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,7 +293,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBannerLogoRelativeUrl(val)
+        if val != nil {
+            m.SetBannerLogoRelativeUrl(val)
+        }
         return nil
     }
     res["cdnList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,11 +303,13 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCdnList(res)
         }
-        m.SetCdnList(res)
         return nil
     }
     res["customAccountResetCredentialsUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,7 +317,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomAccountResetCredentialsUrl(val)
+        if val != nil {
+            m.SetCustomAccountResetCredentialsUrl(val)
+        }
         return nil
     }
     res["customCannotAccessYourAccountText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -313,7 +327,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomCannotAccessYourAccountText(val)
+        if val != nil {
+            m.SetCustomCannotAccessYourAccountText(val)
+        }
         return nil
     }
     res["customCannotAccessYourAccountUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -321,7 +337,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomCannotAccessYourAccountUrl(val)
+        if val != nil {
+            m.SetCustomCannotAccessYourAccountUrl(val)
+        }
         return nil
     }
     res["customForgotMyPasswordText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -329,7 +347,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomForgotMyPasswordText(val)
+        if val != nil {
+            m.SetCustomForgotMyPasswordText(val)
+        }
         return nil
     }
     res["customPrivacyAndCookiesText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -337,7 +357,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomPrivacyAndCookiesText(val)
+        if val != nil {
+            m.SetCustomPrivacyAndCookiesText(val)
+        }
         return nil
     }
     res["customPrivacyAndCookiesUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -345,7 +367,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomPrivacyAndCookiesUrl(val)
+        if val != nil {
+            m.SetCustomPrivacyAndCookiesUrl(val)
+        }
         return nil
     }
     res["customResetItNowText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -353,7 +377,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomResetItNowText(val)
+        if val != nil {
+            m.SetCustomResetItNowText(val)
+        }
         return nil
     }
     res["customTermsOfUseText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -361,7 +387,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomTermsOfUseText(val)
+        if val != nil {
+            m.SetCustomTermsOfUseText(val)
+        }
         return nil
     }
     res["customTermsOfUseUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -369,7 +397,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCustomTermsOfUseUrl(val)
+        if val != nil {
+            m.SetCustomTermsOfUseUrl(val)
+        }
         return nil
     }
     res["favicon"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -377,7 +407,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetFavicon(val)
+        if val != nil {
+            m.SetFavicon(val)
+        }
         return nil
     }
     res["faviconRelativeUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -385,7 +417,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetFaviconRelativeUrl(val)
+        if val != nil {
+            m.SetFaviconRelativeUrl(val)
+        }
         return nil
     }
     res["headerBackgroundColor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -393,7 +427,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetHeaderBackgroundColor(val)
+        if val != nil {
+            m.SetHeaderBackgroundColor(val)
+        }
         return nil
     }
     res["loginPageTextVisibilitySettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -401,7 +437,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetLoginPageTextVisibilitySettings(val.(*LoginPageTextVisibilitySettings))
+        if val != nil {
+            m.SetLoginPageTextVisibilitySettings(val.(*LoginPageTextVisibilitySettings))
+        }
         return nil
     }
     res["signInPageText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -409,7 +447,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSignInPageText(val)
+        if val != nil {
+            m.SetSignInPageText(val)
+        }
         return nil
     }
     res["squareLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -417,7 +457,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSquareLogo(val)
+        if val != nil {
+            m.SetSquareLogo(val)
+        }
         return nil
     }
     res["squareLogoRelativeUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -425,7 +467,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSquareLogoRelativeUrl(val)
+        if val != nil {
+            m.SetSquareLogoRelativeUrl(val)
+        }
         return nil
     }
     res["usernameHintText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -433,7 +477,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetUsernameHintText(val)
+        if val != nil {
+            m.SetUsernameHintText(val)
+        }
         return nil
     }
     return res

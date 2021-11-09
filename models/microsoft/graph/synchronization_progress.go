@@ -73,7 +73,9 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCompletedUnits(val)
+        if val != nil {
+            m.SetCompletedUnits(val)
+        }
         return nil
     }
     res["progressObservationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetProgressObservationDateTime(val)
+        if val != nil {
+            m.SetProgressObservationDateTime(val)
+        }
         return nil
     }
     res["totalUnits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetTotalUnits(val)
+        if val != nil {
+            m.SetTotalUnits(val)
+        }
         return nil
     }
     res["units"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetUnits(val)
+        if val != nil {
+            m.SetUnits(val)
+        }
         return nil
     }
     return res

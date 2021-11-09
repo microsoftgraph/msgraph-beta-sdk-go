@@ -42,11 +42,13 @@ func (m *HasPayloadLinksRequestBody) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetPayloadIds(res)
         }
-        m.SetPayloadIds(res)
         return nil
     }
     return res

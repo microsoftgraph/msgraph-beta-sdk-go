@@ -64,7 +64,9 @@ func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["definitionValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDefinitionValue(val.(*GroupPolicyDefinitionValue))
+        if val != nil {
+            m.SetDefinitionValue(val.(*GroupPolicyDefinitionValue))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["presentation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetPresentation(val.(*GroupPolicyPresentation))
+        if val != nil {
+            m.SetPresentation(val.(*GroupPolicyPresentation))
+        }
         return nil
     }
     return res

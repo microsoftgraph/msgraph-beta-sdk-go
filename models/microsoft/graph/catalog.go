@@ -33,11 +33,13 @@ func (m *Catalog) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]CatalogEntry, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CatalogEntry))
+        if val != nil {
+            res := make([]CatalogEntry, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CatalogEntry))
+            }
+            m.SetEntries(res)
         }
-        m.SetEntries(res)
         return nil
     }
     return res

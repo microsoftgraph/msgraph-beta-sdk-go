@@ -42,7 +42,9 @@ func (m *AssignmentFilterState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetEnabled(val)
+        if val != nil {
+            m.SetEnabled(val)
+        }
         return nil
     }
     return res

@@ -134,11 +134,13 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]MacOSSoftwareUpdateCategorySummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MacOSSoftwareUpdateCategorySummary))
+        if val != nil {
+            res := make([]MacOSSoftwareUpdateCategorySummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MacOSSoftwareUpdateCategorySummary))
+            }
+            m.SetCategorySummaries(res)
         }
-        m.SetCategorySummaries(res)
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +148,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +158,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +168,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["failedUpdateCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +178,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetFailedUpdateCount(val)
+        if val != nil {
+            m.SetFailedUpdateCount(val)
+        }
         return nil
     }
     res["lastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +188,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetLastUpdatedDateTime(val)
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +198,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["successfulUpdateCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +208,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetSuccessfulUpdateCount(val)
+        if val != nil {
+            m.SetSuccessfulUpdateCount(val)
+        }
         return nil
     }
     res["totalUpdateCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +218,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetTotalUpdateCount(val)
+        if val != nil {
+            m.SetTotalUpdateCount(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +228,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +238,9 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

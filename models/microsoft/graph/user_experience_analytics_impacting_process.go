@@ -83,7 +83,9 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetCategory(val)
+        if val != nil {
+            m.SetCategory(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["impactValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetImpactValue(val)
+        if val != nil {
+            m.SetImpactValue(val)
+        }
         return nil
     }
     res["processName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetProcessName(val)
+        if val != nil {
+            m.SetProcessName(val)
+        }
         return nil
     }
     res["publisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +133,9 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetPublisher(val)
+        if val != nil {
+            m.SetPublisher(val)
+        }
         return nil
     }
     return res

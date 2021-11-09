@@ -52,7 +52,9 @@ func (m *EvaluateLabelJobResultGroup) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetAutomatic(val.(*EvaluateLabelJobResult))
+        if val != nil {
+            m.SetAutomatic(val.(*EvaluateLabelJobResult))
+        }
         return nil
     }
     res["recommended"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *EvaluateLabelJobResultGroup) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetRecommended(val.(*EvaluateLabelJobResult))
+        if val != nil {
+            m.SetRecommended(val.(*EvaluateLabelJobResult))
+        }
         return nil
     }
     return res

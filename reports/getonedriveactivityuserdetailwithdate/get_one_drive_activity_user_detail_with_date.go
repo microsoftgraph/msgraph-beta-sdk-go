@@ -134,11 +134,13 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssignedProducts(res)
         }
-        m.SetAssignedProducts(res)
         return nil
     }
     res["deletedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +148,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetDeletedDate(val)
+        if val != nil {
+            m.SetDeletedDate(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +158,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +168,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +178,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +188,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["sharedExternallyFileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +198,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetSharedExternallyFileCount(val)
+        if val != nil {
+            m.SetSharedExternallyFileCount(val)
+        }
         return nil
     }
     res["sharedInternallyFileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +208,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetSharedInternallyFileCount(val)
+        if val != nil {
+            m.SetSharedInternallyFileCount(val)
+        }
         return nil
     }
     res["syncedFileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +218,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetSyncedFileCount(val)
+        if val != nil {
+            m.SetSyncedFileCount(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +228,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     res["viewedOrEditedFileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +238,9 @@ func (m *GetOneDriveActivityUserDetailWithDate) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetViewedOrEditedFileCount(val)
+        if val != nil {
+            m.SetViewedOrEditedFileCount(val)
+        }
         return nil
     }
     return res

@@ -43,7 +43,9 @@ func (m *CreateUploadSessionRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetItem(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemUploadableProperties))
+        if val != nil {
+            m.SetItem(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemUploadableProperties))
+        }
         return nil
     }
     return res

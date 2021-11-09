@@ -73,7 +73,9 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCompletionMonthYear(val)
+        if val != nil {
+            m.SetCompletionMonthYear(val)
+        }
         return nil
     }
     res["endMonthYear"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetEndMonthYear(val)
+        if val != nil {
+            m.SetEndMonthYear(val)
+        }
         return nil
     }
     res["institution"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetInstitution(val.(*InstitutionData))
+        if val != nil {
+            m.SetInstitution(val.(*InstitutionData))
+        }
         return nil
     }
     res["program"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetProgram(val.(*EducationalActivityDetail))
+        if val != nil {
+            m.SetProgram(val.(*EducationalActivityDetail))
+        }
         return nil
     }
     res["startMonthYear"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetStartMonthYear(val)
+        if val != nil {
+            m.SetStartMonthYear(val)
+        }
         return nil
     }
     return res

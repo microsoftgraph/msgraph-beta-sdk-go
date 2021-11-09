@@ -124,7 +124,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetLastRefreshedDateTime(val)
+        if val != nil {
+            m.SetLastRefreshedDateTime(val)
+        }
         return nil
     }
     res["mfaAndSsprCapableUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetMfaAndSsprCapableUserCount(val)
+        if val != nil {
+            m.SetMfaAndSsprCapableUserCount(val)
+        }
         return nil
     }
     res["mfaConditionalAccessPolicyState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +144,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetMfaConditionalAccessPolicyState(val)
+        if val != nil {
+            m.SetMfaConditionalAccessPolicyState(val)
+        }
         return nil
     }
     res["mfaRegisteredUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +154,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetMfaRegisteredUserCount(val)
+        if val != nil {
+            m.SetMfaRegisteredUserCount(val)
+        }
         return nil
     }
     res["securityDefaultsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetSecurityDefaultsEnabled(val)
+        if val != nil {
+            m.SetSecurityDefaultsEnabled(val)
+        }
         return nil
     }
     res["ssprEnabledUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +174,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetSsprEnabledUserCount(val)
+        if val != nil {
+            m.SetSsprEnabledUserCount(val)
+        }
         return nil
     }
     res["ssprRegisteredUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +184,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetSsprRegisteredUserCount(val)
+        if val != nil {
+            m.SetSsprRegisteredUserCount(val)
+        }
         return nil
     }
     res["tenantDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +194,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetTenantDisplayName(val)
+        if val != nil {
+            m.SetTenantDisplayName(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +204,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["totalUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +214,9 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetTotalUserCount(val)
+        if val != nil {
+            m.SetTotalUserCount(val)
+        }
         return nil
     }
     return res

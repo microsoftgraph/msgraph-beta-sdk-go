@@ -42,11 +42,13 @@ func (m *DetectedSensitiveContentWrapper) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]DetectedSensitiveContent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DetectedSensitiveContent))
+        if val != nil {
+            res := make([]DetectedSensitiveContent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DetectedSensitiveContent))
+            }
+            m.SetClassification(res)
         }
-        m.SetClassification(res)
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *VersionAction) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetNewVersion(val)
+        if val != nil {
+            m.SetNewVersion(val)
+        }
         return nil
     }
     return res

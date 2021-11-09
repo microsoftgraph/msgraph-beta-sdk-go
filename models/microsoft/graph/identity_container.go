@@ -112,11 +112,13 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]IdentityApiConnector, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentityApiConnector))
+        if val != nil {
+            res := make([]IdentityApiConnector, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentityApiConnector))
+            }
+            m.SetApiConnectors(res)
         }
-        m.SetApiConnectors(res)
         return nil
     }
     res["b2cUserFlows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,11 +126,13 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]B2cIdentityUserFlow, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*B2cIdentityUserFlow))
+        if val != nil {
+            res := make([]B2cIdentityUserFlow, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*B2cIdentityUserFlow))
+            }
+            m.SetB2cUserFlows(res)
         }
-        m.SetB2cUserFlows(res)
         return nil
     }
     res["b2xUserFlows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,11 +140,13 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]B2xIdentityUserFlow, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*B2xIdentityUserFlow))
+        if val != nil {
+            res := make([]B2xIdentityUserFlow, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*B2xIdentityUserFlow))
+            }
+            m.SetB2xUserFlows(res)
         }
-        m.SetB2xUserFlows(res)
         return nil
     }
     res["conditionalAccess"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +154,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetConditionalAccess(val.(*ConditionalAccessRoot))
+        if val != nil {
+            m.SetConditionalAccess(val.(*ConditionalAccessRoot))
+        }
         return nil
     }
     res["continuousAccessEvaluationPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetContinuousAccessEvaluationPolicy(val.(*ContinuousAccessEvaluationPolicy))
+        if val != nil {
+            m.SetContinuousAccessEvaluationPolicy(val.(*ContinuousAccessEvaluationPolicy))
+        }
         return nil
     }
     res["identityProviders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,11 +174,13 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]IdentityProviderBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentityProviderBase))
+        if val != nil {
+            res := make([]IdentityProviderBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentityProviderBase))
+            }
+            m.SetIdentityProviders(res)
         }
-        m.SetIdentityProviders(res)
         return nil
     }
     res["userFlowAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,11 +188,13 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]IdentityUserFlowAttribute, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentityUserFlowAttribute))
+        if val != nil {
+            res := make([]IdentityUserFlowAttribute, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentityUserFlowAttribute))
+            }
+            m.SetUserFlowAttributes(res)
         }
-        m.SetUserFlowAttributes(res)
         return nil
     }
     res["userFlows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,11 +202,13 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]IdentityUserFlow, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentityUserFlow))
+        if val != nil {
+            res := make([]IdentityUserFlow, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentityUserFlow))
+            }
+            m.SetUserFlows(res)
         }
-        m.SetUserFlows(res)
         return nil
     }
     return res

@@ -114,7 +114,9 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["effectiveRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,11 +134,13 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleManagementPolicyRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleManagementPolicyRule))
+        if val != nil {
+            res := make([]UnifiedRoleManagementPolicyRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleManagementPolicyRule))
+            }
+            m.SetEffectiveRules(res)
         }
-        m.SetEffectiveRules(res)
         return nil
     }
     res["isOrganizationDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +148,9 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIsOrganizationDefault(val)
+        if val != nil {
+            m.SetIsOrganizationDefault(val)
+        }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +158,9 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastModifiedBy(val.(*Identity))
+        if val != nil {
+            m.SetLastModifiedBy(val.(*Identity))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +168,9 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["rules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,11 +178,13 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleManagementPolicyRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleManagementPolicyRule))
+        if val != nil {
+            res := make([]UnifiedRoleManagementPolicyRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleManagementPolicyRule))
+            }
+            m.SetRules(res)
         }
-        m.SetRules(res)
         return nil
     }
     res["scopeId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +192,9 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetScopeId(val)
+        if val != nil {
+            m.SetScopeId(val)
+        }
         return nil
     }
     res["scopeType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +202,9 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetScopeType(val)
+        if val != nil {
+            m.SetScopeType(val)
+        }
         return nil
     }
     return res

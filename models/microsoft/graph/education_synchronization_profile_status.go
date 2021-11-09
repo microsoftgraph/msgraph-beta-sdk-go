@@ -74,7 +74,9 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetErrorCount(val)
+        if val != nil {
+            m.SetErrorCount(val)
+        }
         return nil
     }
     res["lastActivityDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetLastActivityDateTime(val)
+        if val != nil {
+            m.SetLastActivityDateTime(val)
+        }
         return nil
     }
     res["lastSynchronizationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetLastSynchronizationDateTime(val)
+        if val != nil {
+            m.SetLastSynchronizationDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,8 +104,10 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        cast := val.(EducationSynchronizationStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(EducationSynchronizationStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["statusMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +115,9 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetStatusMessage(val)
+        if val != nil {
+            m.SetStatusMessage(val)
+        }
         return nil
     }
     return res

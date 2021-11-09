@@ -53,11 +53,13 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]DirectoryDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryDefinition))
+        if val != nil {
+            res := make([]DirectoryDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryDefinition))
+            }
+            m.SetDirectories(res)
         }
-        m.SetDirectories(res)
         return nil
     }
     res["synchronizationRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]SynchronizationRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SynchronizationRule))
+        if val != nil {
+            res := make([]SynchronizationRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SynchronizationRule))
+            }
+            m.SetSynchronizationRules(res)
         }
-        m.SetSynchronizationRules(res)
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,7 +81,9 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

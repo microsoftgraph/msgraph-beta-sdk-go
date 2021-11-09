@@ -134,7 +134,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetAppCrashCount(val)
+        if val != nil {
+            m.SetAppCrashCount(val)
+        }
         return nil
     }
     res["appHangCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetAppHangCount(val)
+        if val != nil {
+            m.SetAppHangCount(val)
+        }
         return nil
     }
     res["crashedAppCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +154,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetCrashedAppCount(val)
+        if val != nil {
+            m.SetCrashedAppCount(val)
+        }
         return nil
     }
     res["deviceAppHealthScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +164,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetDeviceAppHealthScore(val)
+        if val != nil {
+            m.SetDeviceAppHealthScore(val)
+        }
         return nil
     }
     res["deviceAppHealthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +174,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetDeviceAppHealthStatus(val)
+        if val != nil {
+            m.SetDeviceAppHealthStatus(val)
+        }
         return nil
     }
     res["deviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +184,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetDeviceDisplayName(val)
+        if val != nil {
+            m.SetDeviceDisplayName(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +194,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceManufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +204,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetDeviceManufacturer(val)
+        if val != nil {
+            m.SetDeviceManufacturer(val)
+        }
         return nil
     }
     res["deviceModel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +214,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetDeviceModel(val)
+        if val != nil {
+            m.SetDeviceModel(val)
+        }
         return nil
     }
     res["meanTimeToFailureInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +224,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetMeanTimeToFailureInMinutes(val)
+        if val != nil {
+            m.SetMeanTimeToFailureInMinutes(val)
+        }
         return nil
     }
     res["processedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +234,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetProcessedDateTime(val)
+        if val != nil {
+            m.SetProcessedDateTime(val)
+        }
         return nil
     }
     return res

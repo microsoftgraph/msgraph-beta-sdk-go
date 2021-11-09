@@ -244,8 +244,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(SimulationAttackTechnique)
-        m.SetAttackTechnique(&cast)
+        if val != nil {
+            cast := val.(SimulationAttackTechnique)
+            m.SetAttackTechnique(&cast)
+        }
         return nil
     }
     res["attackType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,8 +255,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(SimulationAttackType)
-        m.SetAttackType(&cast)
+        if val != nil {
+            cast := val.(SimulationAttackType)
+            m.SetAttackType(&cast)
+        }
         return nil
     }
     res["cleanupArtifacts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -262,7 +266,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCleanupArtifacts(val)
+        if val != nil {
+            m.SetCleanupArtifacts(val)
+        }
         return nil
     }
     res["completionDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +276,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCompletionDateTime(val)
+        if val != nil {
+            m.SetCompletionDateTime(val)
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +286,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*EmailIdentity))
+        if val != nil {
+            m.SetCreatedBy(val.(*EmailIdentity))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +296,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -294,7 +306,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,7 +316,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enableRegionTimezoneDelivery"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -310,7 +326,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetEnableRegionTimezoneDelivery(val)
+        if val != nil {
+            m.SetEnableRegionTimezoneDelivery(val)
+        }
         return nil
     }
     res["includeAllAccountTargets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -318,7 +336,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetIncludeAllAccountTargets(val)
+        if val != nil {
+            m.SetIncludeAllAccountTargets(val)
+        }
         return nil
     }
     res["isAutomated"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -326,7 +346,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetIsAutomated(val)
+        if val != nil {
+            m.SetIsAutomated(val)
+        }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -334,7 +356,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLastModifiedBy(val.(*EmailIdentity))
+        if val != nil {
+            m.SetLastModifiedBy(val.(*EmailIdentity))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -342,7 +366,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["launchDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -350,7 +376,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLaunchDateTime(val)
+        if val != nil {
+            m.SetLaunchDateTime(val)
+        }
         return nil
     }
     res["mode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -358,8 +386,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(SimulationMode)
-        m.SetMode(&cast)
+        if val != nil {
+            cast := val.(SimulationMode)
+            m.SetMode(&cast)
+        }
         return nil
     }
     res["payloadDeliveryPlatform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -367,8 +397,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(PayloadDeliveryPlatform)
-        m.SetPayloadDeliveryPlatform(&cast)
+        if val != nil {
+            cast := val.(PayloadDeliveryPlatform)
+            m.SetPayloadDeliveryPlatform(&cast)
+        }
         return nil
     }
     res["payloadSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -376,8 +408,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(PayloadSource)
-        m.SetPayloadSource(&cast)
+        if val != nil {
+            cast := val.(PayloadSource)
+            m.SetPayloadSource(&cast)
+        }
         return nil
     }
     res["report"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -385,7 +419,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetReport(val.(*SimulationReport))
+        if val != nil {
+            m.SetReport(val.(*SimulationReport))
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -393,8 +429,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(SimulationStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(SimulationStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["trainingAssignmentPreference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -402,8 +440,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(TrainingAssignmentPreference)
-        m.SetTrainingAssignmentPreference(&cast)
+        if val != nil {
+            cast := val.(TrainingAssignmentPreference)
+            m.SetTrainingAssignmentPreference(&cast)
+        }
         return nil
     }
     res["trainingContentPreference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -411,8 +451,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(TrainingContentPreference)
-        m.SetTrainingContentPreference(&cast)
+        if val != nil {
+            cast := val.(TrainingContentPreference)
+            m.SetTrainingContentPreference(&cast)
+        }
         return nil
     }
     res["trainingDueDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -420,7 +462,9 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetTrainingDueDateTime(val)
+        if val != nil {
+            m.SetTrainingDueDateTime(val)
+        }
         return nil
     }
     return res

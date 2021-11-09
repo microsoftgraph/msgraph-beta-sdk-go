@@ -73,7 +73,9 @@ func (m *ClassificationInnerError) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetActivityId(val)
+        if val != nil {
+            m.SetActivityId(val)
+        }
         return nil
     }
     res["clientRequestId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *ClassificationInnerError) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetClientRequestId(val)
+        if val != nil {
+            m.SetClientRequestId(val)
+        }
         return nil
     }
     res["code"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *ClassificationInnerError) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetCode(val)
+        if val != nil {
+            m.SetCode(val)
+        }
         return nil
     }
     res["errorDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *ClassificationInnerError) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetErrorDateTime(val)
+        if val != nil {
+            m.SetErrorDateTime(val)
+        }
         return nil
     }
     return res

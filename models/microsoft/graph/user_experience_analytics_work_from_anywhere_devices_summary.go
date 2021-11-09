@@ -172,7 +172,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetAutopilotDevicesSummary(val.(*UserExperienceAnalyticsAutopilotDevicesSummary))
+        if val != nil {
+            m.SetAutopilotDevicesSummary(val.(*UserExperienceAnalyticsAutopilotDevicesSummary))
+        }
         return nil
     }
     res["cloudIdentityDevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +182,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetCloudIdentityDevicesSummary(val.(*UserExperienceAnalyticsCloudIdentityDevicesSummary))
+        if val != nil {
+            m.SetCloudIdentityDevicesSummary(val.(*UserExperienceAnalyticsCloudIdentityDevicesSummary))
+        }
         return nil
     }
     res["cloudManagementDevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +192,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetCloudManagementDevicesSummary(val.(*UserExperienceAnalyticsCloudManagementDevicesSummary))
+        if val != nil {
+            m.SetCloudManagementDevicesSummary(val.(*UserExperienceAnalyticsCloudManagementDevicesSummary))
+        }
         return nil
     }
     res["coManagedDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +202,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetCoManagedDevices(val)
+        if val != nil {
+            m.SetCoManagedDevices(val)
+        }
         return nil
     }
     res["devicesNotAutopilotRegistered"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +212,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetDevicesNotAutopilotRegistered(val)
+        if val != nil {
+            m.SetDevicesNotAutopilotRegistered(val)
+        }
         return nil
     }
     res["devicesWithoutAutopilotProfileAssigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +222,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetDevicesWithoutAutopilotProfileAssigned(val)
+        if val != nil {
+            m.SetDevicesWithoutAutopilotProfileAssigned(val)
+        }
         return nil
     }
     res["devicesWithoutCloudIdentity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +232,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetDevicesWithoutCloudIdentity(val)
+        if val != nil {
+            m.SetDevicesWithoutCloudIdentity(val)
+        }
         return nil
     }
     res["intuneDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +242,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetIntuneDevices(val)
+        if val != nil {
+            m.SetIntuneDevices(val)
+        }
         return nil
     }
     res["tenantAttachDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +252,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetTenantAttachDevices(val)
+        if val != nil {
+            m.SetTenantAttachDevices(val)
+        }
         return nil
     }
     res["totalDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +262,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetTotalDevices(val)
+        if val != nil {
+            m.SetTotalDevices(val)
+        }
         return nil
     }
     res["unsupportedOSversionDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +272,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetUnsupportedOSversionDevices(val)
+        if val != nil {
+            m.SetUnsupportedOSversionDevices(val)
+        }
         return nil
     }
     res["windows10Devices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,7 +282,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetWindows10Devices(val)
+        if val != nil {
+            m.SetWindows10Devices(val)
+        }
         return nil
     }
     res["windows10DevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,7 +292,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetWindows10DevicesSummary(val.(*UserExperienceAnalyticsWindows10DevicesSummary))
+        if val != nil {
+            m.SetWindows10DevicesSummary(val.(*UserExperienceAnalyticsWindows10DevicesSummary))
+        }
         return nil
     }
     res["windows10DevicesWithoutTenantAttach"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -276,7 +302,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetWindows10DevicesWithoutTenantAttach(val)
+        if val != nil {
+            m.SetWindows10DevicesWithoutTenantAttach(val)
+        }
         return nil
     }
     return res

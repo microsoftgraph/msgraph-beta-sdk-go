@@ -53,7 +53,9 @@ func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetDeviceConfiguration(val.(*DeviceConfiguration))
+        if val != nil {
+            m.SetDeviceConfiguration(val.(*DeviceConfiguration))
+        }
         return nil
     }
     res["excludeGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetExcludeGroup(val)
+        if val != nil {
+            m.SetExcludeGroup(val)
+        }
         return nil
     }
     res["targetGroupId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetTargetGroupId(val)
+        if val != nil {
+            m.SetTargetGroupId(val)
+        }
         return nil
     }
     return res

@@ -62,7 +62,9 @@ func (m *AlteredQueryToken) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetLength(val)
+        if val != nil {
+            m.SetLength(val)
+        }
         return nil
     }
     res["offset"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *AlteredQueryToken) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetOffset(val)
+        if val != nil {
+            m.SetOffset(val)
+        }
         return nil
     }
     res["suggestion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *AlteredQueryToken) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSuggestion(val)
+        if val != nil {
+            m.SetSuggestion(val)
+        }
         return nil
     }
     return res

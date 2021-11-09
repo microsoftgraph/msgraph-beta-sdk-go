@@ -302,11 +302,13 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]CompanyPortalBlockedAction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CompanyPortalBlockedAction))
+        if val != nil {
+            res := make([]CompanyPortalBlockedAction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CompanyPortalBlockedAction))
+            }
+            m.SetCompanyPortalBlockedActions(res)
         }
-        m.SetCompanyPortalBlockedActions(res)
         return nil
     }
     res["contactITEmailAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +316,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetContactITEmailAddress(val)
+        if val != nil {
+            m.SetContactITEmailAddress(val)
+        }
         return nil
     }
     res["contactITName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,7 +326,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetContactITName(val)
+        if val != nil {
+            m.SetContactITName(val)
+        }
         return nil
     }
     res["contactITNotes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,7 +336,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetContactITNotes(val)
+        if val != nil {
+            m.SetContactITNotes(val)
+        }
         return nil
     }
     res["contactITPhoneNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -338,7 +346,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetContactITPhoneNumber(val)
+        if val != nil {
+            m.SetContactITPhoneNumber(val)
+        }
         return nil
     }
     res["customCanSeePrivacyMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -346,7 +356,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCustomCanSeePrivacyMessage(val)
+        if val != nil {
+            m.SetCustomCanSeePrivacyMessage(val)
+        }
         return nil
     }
     res["customCantSeePrivacyMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -354,7 +366,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCustomCantSeePrivacyMessage(val)
+        if val != nil {
+            m.SetCustomCantSeePrivacyMessage(val)
+        }
         return nil
     }
     res["customPrivacyMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -362,7 +376,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCustomPrivacyMessage(val)
+        if val != nil {
+            m.SetCustomPrivacyMessage(val)
+        }
         return nil
     }
     res["darkBackgroundLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -370,7 +386,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDarkBackgroundLogo(val.(*MimeContent))
+        if val != nil {
+            m.SetDarkBackgroundLogo(val.(*MimeContent))
+        }
         return nil
     }
     res["disableClientTelemetry"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -378,7 +396,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDisableClientTelemetry(val)
+        if val != nil {
+            m.SetDisableClientTelemetry(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -386,7 +406,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enrollmentAvailability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -394,8 +416,10 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(EnrollmentAvailabilityOptions)
-        m.SetEnrollmentAvailability(&cast)
+        if val != nil {
+            cast := val.(EnrollmentAvailabilityOptions)
+            m.SetEnrollmentAvailability(&cast)
+        }
         return nil
     }
     res["isFactoryResetDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -403,7 +427,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetIsFactoryResetDisabled(val)
+        if val != nil {
+            m.SetIsFactoryResetDisabled(val)
+        }
         return nil
     }
     res["isRemoveDeviceDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -411,7 +437,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetIsRemoveDeviceDisabled(val)
+        if val != nil {
+            m.SetIsRemoveDeviceDisabled(val)
+        }
         return nil
     }
     res["landingPageCustomizedImage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -419,7 +447,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLandingPageCustomizedImage(val.(*MimeContent))
+        if val != nil {
+            m.SetLandingPageCustomizedImage(val.(*MimeContent))
+        }
         return nil
     }
     res["lightBackgroundLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -427,7 +457,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLightBackgroundLogo(val.(*MimeContent))
+        if val != nil {
+            m.SetLightBackgroundLogo(val.(*MimeContent))
+        }
         return nil
     }
     res["onlineSupportSiteName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -435,7 +467,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetOnlineSupportSiteName(val)
+        if val != nil {
+            m.SetOnlineSupportSiteName(val)
+        }
         return nil
     }
     res["onlineSupportSiteUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -443,7 +477,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetOnlineSupportSiteUrl(val)
+        if val != nil {
+            m.SetOnlineSupportSiteUrl(val)
+        }
         return nil
     }
     res["privacyUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -451,7 +487,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetPrivacyUrl(val)
+        if val != nil {
+            m.SetPrivacyUrl(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -459,11 +497,13 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["sendDeviceOwnershipChangePushNotification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -471,7 +511,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetSendDeviceOwnershipChangePushNotification(val)
+        if val != nil {
+            m.SetSendDeviceOwnershipChangePushNotification(val)
+        }
         return nil
     }
     res["showAzureADEnterpriseApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -479,7 +521,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetShowAzureADEnterpriseApps(val)
+        if val != nil {
+            m.SetShowAzureADEnterpriseApps(val)
+        }
         return nil
     }
     res["showDisplayNameNextToLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -487,7 +531,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetShowDisplayNameNextToLogo(val)
+        if val != nil {
+            m.SetShowDisplayNameNextToLogo(val)
+        }
         return nil
     }
     res["showLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -495,7 +541,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetShowLogo(val)
+        if val != nil {
+            m.SetShowLogo(val)
+        }
         return nil
     }
     res["showNameNextToLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -503,7 +551,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetShowNameNextToLogo(val)
+        if val != nil {
+            m.SetShowNameNextToLogo(val)
+        }
         return nil
     }
     res["showOfficeWebApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -511,7 +561,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetShowOfficeWebApps(val)
+        if val != nil {
+            m.SetShowOfficeWebApps(val)
+        }
         return nil
     }
     res["themeColor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -519,7 +571,9 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetThemeColor(val.(*RgbColor))
+        if val != nil {
+            m.SetThemeColor(val.(*RgbColor))
+        }
         return nil
     }
     return res

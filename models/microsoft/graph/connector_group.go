@@ -83,11 +83,13 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]Application, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Application))
+        if val != nil {
+            res := make([]Application, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Application))
+            }
+            m.SetApplications(res)
         }
-        m.SetApplications(res)
         return nil
     }
     res["connectorGroupType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,8 +97,10 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        cast := val.(ConnectorGroupType)
-        m.SetConnectorGroupType(&cast)
+        if val != nil {
+            cast := val.(ConnectorGroupType)
+            m.SetConnectorGroupType(&cast)
+        }
         return nil
     }
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,7 +108,9 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,11 +118,13 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]Connector, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Connector))
+        if val != nil {
+            res := make([]Connector, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Connector))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["region"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,8 +142,10 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        cast := val.(ConnectorGroupRegion)
-        m.SetRegion(&cast)
+        if val != nil {
+            cast := val.(ConnectorGroupRegion)
+            m.SetRegion(&cast)
+        }
         return nil
     }
     return res

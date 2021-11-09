@@ -64,7 +64,9 @@ func (m *AddResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWorkbookTable(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTable))
+        if val != nil {
+            m.SetWorkbookTable(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTable))
+        }
         return nil
     }
     return res

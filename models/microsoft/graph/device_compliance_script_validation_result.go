@@ -62,11 +62,13 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        res := make([]DeviceComplianceScriptRuleError, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceComplianceScriptRuleError))
+        if val != nil {
+            res := make([]DeviceComplianceScriptRuleError, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceComplianceScriptRuleError))
+            }
+            m.SetRuleErrors(res)
         }
-        m.SetRuleErrors(res)
         return nil
     }
     res["rules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,11 +76,13 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        res := make([]DeviceComplianceScriptRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceComplianceScriptRule))
+        if val != nil {
+            res := make([]DeviceComplianceScriptRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceComplianceScriptRule))
+            }
+            m.SetRules(res)
         }
-        m.SetRules(res)
         return nil
     }
     res["scriptErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -86,11 +90,13 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        res := make([]DeviceComplianceScriptError, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceComplianceScriptError))
+        if val != nil {
+            res := make([]DeviceComplianceScriptError, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceComplianceScriptError))
+            }
+            m.SetScriptErrors(res)
         }
-        m.SetScriptErrors(res)
         return nil
     }
     return res

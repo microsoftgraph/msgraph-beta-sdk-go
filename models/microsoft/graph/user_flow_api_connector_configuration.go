@@ -62,7 +62,9 @@ func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetPostAttributeCollection(val.(*IdentityApiConnector))
+        if val != nil {
+            m.SetPostAttributeCollection(val.(*IdentityApiConnector))
+        }
         return nil
     }
     res["postFederationSignup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetPostFederationSignup(val.(*IdentityApiConnector))
+        if val != nil {
+            m.SetPostFederationSignup(val.(*IdentityApiConnector))
+        }
         return nil
     }
     res["preTokenIssuance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetPreTokenIssuance(val.(*IdentityApiConnector))
+        if val != nil {
+            m.SetPreTokenIssuance(val.(*IdentityApiConnector))
+        }
         return nil
     }
     return res

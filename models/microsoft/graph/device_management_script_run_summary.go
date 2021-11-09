@@ -63,7 +63,9 @@ func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetErrorDeviceCount(val)
+        if val != nil {
+            m.SetErrorDeviceCount(val)
+        }
         return nil
     }
     res["errorUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetErrorUserCount(val)
+        if val != nil {
+            m.SetErrorUserCount(val)
+        }
         return nil
     }
     res["successDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSuccessDeviceCount(val)
+        if val != nil {
+            m.SetSuccessDeviceCount(val)
+        }
         return nil
     }
     res["successUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSuccessUserCount(val)
+        if val != nil {
+            m.SetSuccessUserCount(val)
+        }
         return nil
     }
     return res

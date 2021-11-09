@@ -42,7 +42,9 @@ func (m *DeviceManagementConfigurationReferredSettingInformation) GetFieldDeseri
         if err != nil {
             return err
         }
-        m.SetSettingDefinitionId(val)
+        if val != nil {
+            m.SetSettingDefinitionId(val)
+        }
         return nil
     }
     return res

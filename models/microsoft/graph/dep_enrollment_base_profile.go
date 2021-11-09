@@ -213,7 +213,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetAppleIdDisabled(val)
+        if val != nil {
+            m.SetAppleIdDisabled(val)
+        }
         return nil
     }
     res["applePayDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -221,7 +223,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetApplePayDisabled(val)
+        if val != nil {
+            m.SetApplePayDisabled(val)
+        }
         return nil
     }
     res["configurationWebUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,7 +233,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetConfigurationWebUrl(val)
+        if val != nil {
+            m.SetConfigurationWebUrl(val)
+        }
         return nil
     }
     res["deviceNameTemplate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -237,7 +243,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeviceNameTemplate(val)
+        if val != nil {
+            m.SetDeviceNameTemplate(val)
+        }
         return nil
     }
     res["diagnosticsDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +253,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDiagnosticsDisabled(val)
+        if val != nil {
+            m.SetDiagnosticsDisabled(val)
+        }
         return nil
     }
     res["displayToneSetupDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,7 +263,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDisplayToneSetupDisabled(val)
+        if val != nil {
+            m.SetDisplayToneSetupDisabled(val)
+        }
         return nil
     }
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,7 +273,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["isMandatory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,7 +283,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsMandatory(val)
+        if val != nil {
+            m.SetIsMandatory(val)
+        }
         return nil
     }
     res["locationDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,7 +293,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetLocationDisabled(val)
+        if val != nil {
+            m.SetLocationDisabled(val)
+        }
         return nil
     }
     res["privacyPaneDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,7 +303,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPrivacyPaneDisabled(val)
+        if val != nil {
+            m.SetPrivacyPaneDisabled(val)
+        }
         return nil
     }
     res["profileRemovalDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,7 +313,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetProfileRemovalDisabled(val)
+        if val != nil {
+            m.SetProfileRemovalDisabled(val)
+        }
         return nil
     }
     res["restoreBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -301,7 +323,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRestoreBlocked(val)
+        if val != nil {
+            m.SetRestoreBlocked(val)
+        }
         return nil
     }
     res["screenTimeScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -309,7 +333,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetScreenTimeScreenDisabled(val)
+        if val != nil {
+            m.SetScreenTimeScreenDisabled(val)
+        }
         return nil
     }
     res["siriDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -317,7 +343,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSiriDisabled(val)
+        if val != nil {
+            m.SetSiriDisabled(val)
+        }
         return nil
     }
     res["supervisedModeEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -325,7 +353,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSupervisedModeEnabled(val)
+        if val != nil {
+            m.SetSupervisedModeEnabled(val)
+        }
         return nil
     }
     res["supportDepartment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -333,7 +363,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSupportDepartment(val)
+        if val != nil {
+            m.SetSupportDepartment(val)
+        }
         return nil
     }
     res["supportPhoneNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -341,7 +373,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSupportPhoneNumber(val)
+        if val != nil {
+            m.SetSupportPhoneNumber(val)
+        }
         return nil
     }
     res["termsAndConditionsDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -349,7 +383,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTermsAndConditionsDisabled(val)
+        if val != nil {
+            m.SetTermsAndConditionsDisabled(val)
+        }
         return nil
     }
     res["touchIdDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -357,7 +393,9 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTouchIdDisabled(val)
+        if val != nil {
+            m.SetTouchIdDisabled(val)
+        }
         return nil
     }
     return res

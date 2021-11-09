@@ -92,7 +92,9 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetCompliantDeviceCount(val)
+        if val != nil {
+            m.SetCompliantDeviceCount(val)
+        }
         return nil
     }
     res["enforcedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetEnforcedDeviceCount(val)
+        if val != nil {
+            m.SetEnforcedDeviceCount(val)
+        }
         return nil
     }
     res["failedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetFailedDeviceCount(val)
+        if val != nil {
+            m.SetFailedDeviceCount(val)
+        }
         return nil
     }
     res["nonCompliantDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetNonCompliantDeviceCount(val)
+        if val != nil {
+            m.SetNonCompliantDeviceCount(val)
+        }
         return nil
     }
     res["pendingDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetPendingDeviceCount(val)
+        if val != nil {
+            m.SetPendingDeviceCount(val)
+        }
         return nil
     }
     res["targetedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +142,9 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetTargetedDeviceCount(val)
+        if val != nil {
+            m.SetTargetedDeviceCount(val)
+        }
         return nil
     }
     return res

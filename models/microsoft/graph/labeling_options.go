@@ -72,8 +72,10 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(AssignmentMethod)
-        m.SetAssignmentMethod(&cast)
+        if val != nil {
+            cast := val.(AssignmentMethod)
+            m.SetAssignmentMethod(&cast)
+        }
         return nil
     }
     res["downgradeJustification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDowngradeJustification(val.(*DowngradeJustification))
+        if val != nil {
+            m.SetDowngradeJustification(val.(*DowngradeJustification))
+        }
         return nil
     }
     res["extendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,11 +93,13 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetExtendedProperties(res)
         }
-        m.SetExtendedProperties(res)
         return nil
     }
     res["labelId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +107,9 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLabelId(val)
+        if val != nil {
+            m.SetLabelId(val)
+        }
         return nil
     }
     return res

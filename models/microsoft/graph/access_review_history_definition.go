@@ -124,7 +124,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*UserIdentity))
+        if val != nil {
+            m.SetCreatedBy(val.(*UserIdentity))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["decisions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,11 +144,13 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]AccessReviewHistoryDecisionFilter, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewHistoryDecisionFilter))
+        if val != nil {
+            res := make([]AccessReviewHistoryDecisionFilter, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewHistoryDecisionFilter))
+            }
+            m.SetDecisions(res)
         }
-        m.SetDecisions(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +158,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["downloadUri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +168,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDownloadUri(val)
+        if val != nil {
+            m.SetDownloadUri(val)
+        }
         return nil
     }
     res["fulfilledDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +178,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetFulfilledDateTime(val)
+        if val != nil {
+            m.SetFulfilledDateTime(val)
+        }
         return nil
     }
     res["reviewHistoryPeriodEndDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +188,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetReviewHistoryPeriodEndDateTime(val)
+        if val != nil {
+            m.SetReviewHistoryPeriodEndDateTime(val)
+        }
         return nil
     }
     res["reviewHistoryPeriodStartDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +198,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetReviewHistoryPeriodStartDateTime(val)
+        if val != nil {
+            m.SetReviewHistoryPeriodStartDateTime(val)
+        }
         return nil
     }
     res["scopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,11 +208,13 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]AccessReviewScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewScope))
+        if val != nil {
+            res := make([]AccessReviewScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewScope))
+            }
+            m.SetScopes(res)
         }
-        m.SetScopes(res)
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,8 +222,10 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        cast := val.(AccessReviewHistoryStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(AccessReviewHistoryStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

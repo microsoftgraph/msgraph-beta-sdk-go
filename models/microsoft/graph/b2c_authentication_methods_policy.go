@@ -53,7 +53,9 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetIsEmailPasswordAuthenticationEnabled(val)
+        if val != nil {
+            m.SetIsEmailPasswordAuthenticationEnabled(val)
+        }
         return nil
     }
     res["isPhoneOneTimePasswordAuthenticationEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetIsPhoneOneTimePasswordAuthenticationEnabled(val)
+        if val != nil {
+            m.SetIsPhoneOneTimePasswordAuthenticationEnabled(val)
+        }
         return nil
     }
     res["isUserNameAuthenticationEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetIsUserNameAuthenticationEnabled(val)
+        if val != nil {
+            m.SetIsUserNameAuthenticationEnabled(val)
+        }
         return nil
     }
     return res

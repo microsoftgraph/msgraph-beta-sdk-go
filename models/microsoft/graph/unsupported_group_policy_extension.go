@@ -63,7 +63,9 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetExtensionType(val)
+        if val != nil {
+            m.SetExtensionType(val)
+        }
         return nil
     }
     res["namespaceUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetNamespaceUrl(val)
+        if val != nil {
+            m.SetNamespaceUrl(val)
+        }
         return nil
     }
     res["nodeName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetNodeName(val)
+        if val != nil {
+            m.SetNodeName(val)
+        }
         return nil
     }
     res["settingScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,8 +93,10 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicySettingScope)
-        m.SetSettingScope(&cast)
+        if val != nil {
+            cast := val.(GroupPolicySettingScope)
+            m.SetSettingScope(&cast)
+        }
         return nil
     }
     return res

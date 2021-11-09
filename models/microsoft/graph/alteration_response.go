@@ -62,7 +62,9 @@ func (m *AlterationResponse) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetOriginalQueryString(val)
+        if val != nil {
+            m.SetOriginalQueryString(val)
+        }
         return nil
     }
     res["queryAlteration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *AlterationResponse) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetQueryAlteration(val.(*SearchAlteration))
+        if val != nil {
+            m.SetQueryAlteration(val.(*SearchAlteration))
+        }
         return nil
     }
     res["queryAlterationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,8 +82,10 @@ func (m *AlterationResponse) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(SearchAlterationType)
-        m.SetQueryAlterationType(&cast)
+        if val != nil {
+            cast := val.(SearchAlterationType)
+            m.SetQueryAlterationType(&cast)
+        }
         return nil
     }
     return res

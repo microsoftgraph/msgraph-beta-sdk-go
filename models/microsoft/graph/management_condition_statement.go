@@ -104,11 +104,13 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]DevicePlatformType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DevicePlatformType))
+        if val != nil {
+            res := make([]DevicePlatformType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DevicePlatformType))
+            }
+            m.SetApplicablePlatforms(res)
         }
-        m.SetApplicablePlatforms(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +118,9 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +128,9 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +138,9 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["eTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +148,9 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetETag(val)
+        if val != nil {
+            m.SetETag(val)
+        }
         return nil
     }
     res["expression"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +158,9 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetExpression(val.(*ManagementConditionExpression))
+        if val != nil {
+            m.SetExpression(val.(*ManagementConditionExpression))
+        }
         return nil
     }
     res["managementConditions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,11 +168,13 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]ManagementCondition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementCondition))
+        if val != nil {
+            res := make([]ManagementCondition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementCondition))
+            }
+            m.SetManagementConditions(res)
         }
-        m.SetManagementConditions(res)
         return nil
     }
     res["modifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +182,9 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetModifiedDateTime(val)
+        if val != nil {
+            m.SetModifiedDateTime(val)
+        }
         return nil
     }
     return res

@@ -33,11 +33,13 @@ func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]InformationProtectionLabel, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*InformationProtectionLabel))
+        if val != nil {
+            res := make([]InformationProtectionLabel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*InformationProtectionLabel))
+            }
+            m.SetLabels(res)
         }
-        m.SetLabels(res)
         return nil
     }
     return res

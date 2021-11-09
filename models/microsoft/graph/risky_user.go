@@ -114,11 +114,13 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]RiskyUserHistoryItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RiskyUserHistoryItem))
+        if val != nil {
+            res := make([]RiskyUserHistoryItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RiskyUserHistoryItem))
+            }
+            m.SetHistory(res)
         }
-        m.SetHistory(res)
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +128,9 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["isProcessing"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +138,9 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetIsProcessing(val)
+        if val != nil {
+            m.SetIsProcessing(val)
+        }
         return nil
     }
     res["riskDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,8 +148,10 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        cast := val.(RiskDetail)
-        m.SetRiskDetail(&cast)
+        if val != nil {
+            cast := val.(RiskDetail)
+            m.SetRiskDetail(&cast)
+        }
         return nil
     }
     res["riskLastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +159,9 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetRiskLastUpdatedDateTime(val)
+        if val != nil {
+            m.SetRiskLastUpdatedDateTime(val)
+        }
         return nil
     }
     res["riskLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,8 +169,10 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        cast := val.(RiskLevel)
-        m.SetRiskLevel(&cast)
+        if val != nil {
+            cast := val.(RiskLevel)
+            m.SetRiskLevel(&cast)
+        }
         return nil
     }
     res["riskState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,8 +180,10 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        cast := val.(RiskState)
-        m.SetRiskState(&cast)
+        if val != nil {
+            cast := val.(RiskState)
+            m.SetRiskState(&cast)
+        }
         return nil
     }
     res["userDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +191,9 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetUserDisplayName(val)
+        if val != nil {
+            m.SetUserDisplayName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,7 +201,9 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

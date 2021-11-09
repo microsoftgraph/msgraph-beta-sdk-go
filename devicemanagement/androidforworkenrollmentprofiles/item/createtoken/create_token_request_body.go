@@ -42,7 +42,9 @@ func (m *CreateTokenRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetTokenValidityInSeconds(val)
+        if val != nil {
+            m.SetTokenValidityInSeconds(val)
+        }
         return nil
     }
     return res

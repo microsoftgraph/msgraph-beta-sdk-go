@@ -64,7 +64,9 @@ func (m *ClassifyExactMatchesResponse) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetExactMatchClassificationResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResult))
+        if val != nil {
+            m.SetExactMatchClassificationResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResult))
+        }
         return nil
     }
     return res

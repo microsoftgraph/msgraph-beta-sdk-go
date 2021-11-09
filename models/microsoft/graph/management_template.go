@@ -74,8 +74,10 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)
-        m.SetCategory(&cast)
+        if val != nil {
+            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)
+            m.SetCategory(&cast)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,7 +85,9 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +95,9 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["parameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +105,13 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]TemplateParameter, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TemplateParameter))
+        if val != nil {
+            res := make([]TemplateParameter, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TemplateParameter))
+            }
+            m.SetParameters(res)
         }
-        m.SetParameters(res)
         return nil
     }
     res["workloadActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,11 +119,13 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]WorkloadAction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkloadAction))
+        if val != nil {
+            res := make([]WorkloadAction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkloadAction))
+            }
+            m.SetWorkloadActions(res)
         }
-        m.SetWorkloadActions(res)
         return nil
     }
     return res

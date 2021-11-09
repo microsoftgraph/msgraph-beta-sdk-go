@@ -124,7 +124,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetExchange(val)
+        if val != nil {
+            m.SetExchange(val)
+        }
         return nil
     }
     res["office365"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetOffice365(val)
+        if val != nil {
+            m.SetOffice365(val)
+        }
         return nil
     }
     res["oneDrive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +144,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetOneDrive(val)
+        if val != nil {
+            m.SetOneDrive(val)
+        }
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +154,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetReportDate(val)
+        if val != nil {
+            m.SetReportDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +174,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["sharePoint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +184,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetSharePoint(val)
+        if val != nil {
+            m.SetSharePoint(val)
+        }
         return nil
     }
     res["skypeForBusiness"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +194,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetSkypeForBusiness(val)
+        if val != nil {
+            m.SetSkypeForBusiness(val)
+        }
         return nil
     }
     res["teams"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +204,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTeams(val)
+        if val != nil {
+            m.SetTeams(val)
+        }
         return nil
     }
     res["yammer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +214,9 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetYammer(val)
+        if val != nil {
+            m.SetYammer(val)
+        }
         return nil
     }
     return res

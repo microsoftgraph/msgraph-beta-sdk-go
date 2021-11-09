@@ -63,11 +63,13 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]OutlookCategory, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OutlookCategory))
+        if val != nil {
+            res := make([]OutlookCategory, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OutlookCategory))
+            }
+            m.SetMasterCategories(res)
         }
-        m.SetMasterCategories(res)
         return nil
     }
     res["taskFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,11 +77,13 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]OutlookTaskFolder, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OutlookTaskFolder))
+        if val != nil {
+            res := make([]OutlookTaskFolder, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OutlookTaskFolder))
+            }
+            m.SetTaskFolders(res)
         }
-        m.SetTaskFolders(res)
         return nil
     }
     res["taskGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,11 +91,13 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]OutlookTaskGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OutlookTaskGroup))
+        if val != nil {
+            res := make([]OutlookTaskGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OutlookTaskGroup))
+            }
+            m.SetTaskGroups(res)
         }
-        m.SetTaskGroups(res)
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +105,13 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]OutlookTask, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OutlookTask))
+        if val != nil {
+            res := make([]OutlookTask, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OutlookTask))
+            }
+            m.SetTasks(res)
         }
-        m.SetTasks(res)
         return nil
     }
     return res

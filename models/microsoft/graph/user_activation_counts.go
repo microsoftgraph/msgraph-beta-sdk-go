@@ -112,7 +112,9 @@ func (m *UserActivationCounts) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetActivatedOnSharedComputer(val)
+        if val != nil {
+            m.SetActivatedOnSharedComputer(val)
+        }
         return nil
     }
     res["android"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +122,9 @@ func (m *UserActivationCounts) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAndroid(val)
+        if val != nil {
+            m.SetAndroid(val)
+        }
         return nil
     }
     res["ios"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +132,9 @@ func (m *UserActivationCounts) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIos(val)
+        if val != nil {
+            m.SetIos(val)
+        }
         return nil
     }
     res["lastActivatedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +142,9 @@ func (m *UserActivationCounts) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetLastActivatedDate(val)
+        if val != nil {
+            m.SetLastActivatedDate(val)
+        }
         return nil
     }
     res["mac"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +152,9 @@ func (m *UserActivationCounts) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMac(val)
+        if val != nil {
+            m.SetMac(val)
+        }
         return nil
     }
     res["productType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +162,9 @@ func (m *UserActivationCounts) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetProductType(val)
+        if val != nil {
+            m.SetProductType(val)
+        }
         return nil
     }
     res["windows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +172,9 @@ func (m *UserActivationCounts) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetWindows(val)
+        if val != nil {
+            m.SetWindows(val)
+        }
         return nil
     }
     res["windows10Mobile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +182,9 @@ func (m *UserActivationCounts) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetWindows10Mobile(val)
+        if val != nil {
+            m.SetWindows10Mobile(val)
+        }
         return nil
     }
     return res

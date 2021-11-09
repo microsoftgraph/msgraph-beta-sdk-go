@@ -73,7 +73,9 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetAccessPackageResource(val.(*AccessPackageResource))
+        if val != nil {
+            m.SetAccessPackageResource(val.(*AccessPackageResource))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["originId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetOriginId(val)
+        if val != nil {
+            m.SetOriginId(val)
+        }
         return nil
     }
     res["originSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetOriginSystem(val)
+        if val != nil {
+            m.SetOriginSystem(val)
+        }
         return nil
     }
     return res

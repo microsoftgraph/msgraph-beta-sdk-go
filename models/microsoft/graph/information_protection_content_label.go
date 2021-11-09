@@ -63,8 +63,10 @@ func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(AssignmentMethod)
-        m.SetAssignmentMethod(&cast)
+        if val != nil {
+            cast := val.(AssignmentMethod)
+            m.SetAssignmentMethod(&cast)
+        }
         return nil
     }
     res["creationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetCreationDateTime(val)
+        if val != nil {
+            m.SetCreationDateTime(val)
+        }
         return nil
     }
     res["label"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetLabel(val.(*LabelDetails))
+        if val != nil {
+            m.SetLabel(val.(*LabelDetails))
+        }
         return nil
     }
     return res

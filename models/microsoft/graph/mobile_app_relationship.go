@@ -73,7 +73,9 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTargetDisplayName(val)
+        if val != nil {
+            m.SetTargetDisplayName(val)
+        }
         return nil
     }
     res["targetDisplayVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTargetDisplayVersion(val)
+        if val != nil {
+            m.SetTargetDisplayVersion(val)
+        }
         return nil
     }
     res["targetId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTargetId(val)
+        if val != nil {
+            m.SetTargetId(val)
+        }
         return nil
     }
     res["targetPublisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTargetPublisher(val)
+        if val != nil {
+            m.SetTargetPublisher(val)
+        }
         return nil
     }
     res["targetType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,8 +113,10 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(MobileAppRelationshipType)
-        m.SetTargetType(&cast)
+        if val != nil {
+            cast := val.(MobileAppRelationshipType)
+            m.SetTargetType(&cast)
+        }
         return nil
     }
     return res

@@ -84,7 +84,9 @@ func (m *GetEmailActivityCountsWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetRead(val)
+        if val != nil {
+            m.SetRead(val)
+        }
         return nil
     }
     res["receive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *GetEmailActivityCountsWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetReceive(val)
+        if val != nil {
+            m.SetReceive(val)
+        }
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *GetEmailActivityCountsWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetReportDate(val)
+        if val != nil {
+            m.SetReportDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *GetEmailActivityCountsWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *GetEmailActivityCountsWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["send"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *GetEmailActivityCountsWithPeriod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSend(val)
+        if val != nil {
+            m.SetSend(val)
+        }
         return nil
     }
     return res

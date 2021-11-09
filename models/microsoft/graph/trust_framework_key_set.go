@@ -33,11 +33,13 @@ func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]TrustFrameworkKey, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TrustFrameworkKey))
+        if val != nil {
+            res := make([]TrustFrameworkKey, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TrustFrameworkKey))
+            }
+            m.SetKeys(res)
         }
-        m.SetKeys(res)
         return nil
     }
     return res

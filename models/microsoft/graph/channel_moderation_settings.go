@@ -72,7 +72,9 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetAllowNewMessageFromBots(val)
+        if val != nil {
+            m.SetAllowNewMessageFromBots(val)
+        }
         return nil
     }
     res["allowNewMessageFromConnectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetAllowNewMessageFromConnectors(val)
+        if val != nil {
+            m.SetAllowNewMessageFromConnectors(val)
+        }
         return nil
     }
     res["replyRestriction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,8 +92,10 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(ReplyRestriction)
-        m.SetReplyRestriction(&cast)
+        if val != nil {
+            cast := val.(ReplyRestriction)
+            m.SetReplyRestriction(&cast)
+        }
         return nil
     }
     res["userNewMessageRestriction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,8 +103,10 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(UserNewMessageRestriction)
-        m.SetUserNewMessageRestriction(&cast)
+        if val != nil {
+            cast := val.(UserNewMessageRestriction)
+            m.SetUserNewMessageRestriction(&cast)
+        }
         return nil
     }
     return res

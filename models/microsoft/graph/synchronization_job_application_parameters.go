@@ -52,7 +52,9 @@ func (m *SynchronizationJobApplicationParameters) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetRuleId(val)
+        if val != nil {
+            m.SetRuleId(val)
+        }
         return nil
     }
     res["subjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,11 +62,13 @@ func (m *SynchronizationJobApplicationParameters) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        res := make([]SynchronizationJobSubject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SynchronizationJobSubject))
+        if val != nil {
+            res := make([]SynchronizationJobSubject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SynchronizationJobSubject))
+            }
+            m.SetSubjects(res)
         }
-        m.SetSubjects(res)
         return nil
     }
     return res

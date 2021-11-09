@@ -243,7 +243,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAccount(val.(*Account))
+        if val != nil {
+            m.SetAccount(val.(*Account))
+        }
         return nil
     }
     res["accountId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -251,7 +253,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAccountId(val)
+        if val != nil {
+            m.SetAccountId(val)
+        }
         return nil
     }
     res["amountExcludingTax"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -259,7 +263,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAmountExcludingTax(val)
+        if val != nil {
+            m.SetAmountExcludingTax(val)
+        }
         return nil
     }
     res["amountIncludingTax"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -267,7 +273,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAmountIncludingTax(val)
+        if val != nil {
+            m.SetAmountIncludingTax(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -275,7 +283,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["discountAmount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -283,7 +293,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDiscountAmount(val)
+        if val != nil {
+            m.SetDiscountAmount(val)
+        }
         return nil
     }
     res["discountAppliedBeforeTax"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -291,7 +303,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDiscountAppliedBeforeTax(val)
+        if val != nil {
+            m.SetDiscountAppliedBeforeTax(val)
+        }
         return nil
     }
     res["discountPercent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -299,7 +313,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDiscountPercent(val)
+        if val != nil {
+            m.SetDiscountPercent(val)
+        }
         return nil
     }
     res["documentId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -307,7 +323,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDocumentId(val)
+        if val != nil {
+            m.SetDocumentId(val)
+        }
         return nil
     }
     res["item"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -315,7 +333,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetItem(val.(*Item))
+        if val != nil {
+            m.SetItem(val.(*Item))
+        }
         return nil
     }
     res["itemId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -323,7 +343,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetItemId(val)
+        if val != nil {
+            m.SetItemId(val)
+        }
         return nil
     }
     res["lineType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -331,7 +353,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetLineType(val)
+        if val != nil {
+            m.SetLineType(val)
+        }
         return nil
     }
     res["netAmount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -339,7 +363,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetNetAmount(val)
+        if val != nil {
+            m.SetNetAmount(val)
+        }
         return nil
     }
     res["netAmountIncludingTax"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -347,7 +373,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetNetAmountIncludingTax(val)
+        if val != nil {
+            m.SetNetAmountIncludingTax(val)
+        }
         return nil
     }
     res["netTaxAmount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -355,7 +383,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetNetTaxAmount(val)
+        if val != nil {
+            m.SetNetTaxAmount(val)
+        }
         return nil
     }
     res["quantity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -363,7 +393,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetQuantity(val)
+        if val != nil {
+            m.SetQuantity(val)
+        }
         return nil
     }
     res["sequence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -371,7 +403,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetSequence(val)
+        if val != nil {
+            m.SetSequence(val)
+        }
         return nil
     }
     res["taxCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -379,7 +413,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetTaxCode(val)
+        if val != nil {
+            m.SetTaxCode(val)
+        }
         return nil
     }
     res["taxPercent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -387,7 +423,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetTaxPercent(val)
+        if val != nil {
+            m.SetTaxPercent(val)
+        }
         return nil
     }
     res["totalTaxAmount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -395,7 +433,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetTotalTaxAmount(val)
+        if val != nil {
+            m.SetTotalTaxAmount(val)
+        }
         return nil
     }
     res["unitOfMeasureId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -403,7 +443,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetUnitOfMeasureId(val)
+        if val != nil {
+            m.SetUnitOfMeasureId(val)
+        }
         return nil
     }
     res["unitPrice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -411,7 +453,9 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetUnitPrice(val)
+        if val != nil {
+            m.SetUnitPrice(val)
+        }
         return nil
     }
     return res

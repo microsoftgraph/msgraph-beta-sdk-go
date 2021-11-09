@@ -102,7 +102,9 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCalendar(val)
+        if val != nil {
+            m.SetCalendar(val)
+        }
         return nil
     }
     res["firstDayOfWeek"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +112,9 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFirstDayOfWeek(val)
+        if val != nil {
+            m.SetFirstDayOfWeek(val)
+        }
         return nil
     }
     res["longDateFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +122,9 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLongDateFormat(val)
+        if val != nil {
+            m.SetLongDateFormat(val)
+        }
         return nil
     }
     res["longTimeFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +132,9 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLongTimeFormat(val)
+        if val != nil {
+            m.SetLongTimeFormat(val)
+        }
         return nil
     }
     res["shortDateFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +142,9 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetShortDateFormat(val)
+        if val != nil {
+            m.SetShortDateFormat(val)
+        }
         return nil
     }
     res["shortTimeFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +152,9 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetShortTimeFormat(val)
+        if val != nil {
+            m.SetShortTimeFormat(val)
+        }
         return nil
     }
     res["timeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +162,9 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetTimeZone(val)
+        if val != nil {
+            m.SetTimeZone(val)
+        }
         return nil
     }
     return res

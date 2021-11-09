@@ -83,7 +83,9 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["externalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetExternalId(val)
+        if val != nil {
+            m.SetExternalId(val)
+        }
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetResource(val.(*GovernanceResource))
+        if val != nil {
+            m.SetResource(val.(*GovernanceResource))
+        }
         return nil
     }
     res["resourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetResourceId(val)
+        if val != nil {
+            m.SetResourceId(val)
+        }
         return nil
     }
     res["roleSetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRoleSetting(val.(*GovernanceRoleSetting))
+        if val != nil {
+            m.SetRoleSetting(val.(*GovernanceRoleSetting))
+        }
         return nil
     }
     res["templateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +133,9 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTemplateId(val)
+        if val != nil {
+            m.SetTemplateId(val)
+        }
         return nil
     }
     return res

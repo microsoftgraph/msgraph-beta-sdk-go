@@ -104,7 +104,9 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetAppSharing(val)
+        if val != nil {
+            m.SetAppSharing(val)
+        }
         return nil
     }
     res["audio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetAudio(val)
+        if val != nil {
+            m.SetAudio(val)
+        }
         return nil
     }
     res["fileTransfer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetFileTransfer(val)
+        if val != nil {
+            m.SetFileTransfer(val)
+        }
         return nil
     }
     res["im"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetIm(val)
+        if val != nil {
+            m.SetIm(val)
+        }
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +144,9 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetReportDate(val)
+        if val != nil {
+            m.SetReportDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +154,9 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +164,9 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["video"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +174,9 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetVideo(val)
+        if val != nil {
+            m.SetVideo(val)
+        }
         return nil
     }
     return res

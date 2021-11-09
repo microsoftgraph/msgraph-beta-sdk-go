@@ -83,7 +83,9 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetExpiryDate(val)
+        if val != nil {
+            m.SetExpiryDate(val)
+        }
         return nil
     }
     res["issueDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetIssueDate(val)
+        if val != nil {
+            m.SetIssueDate(val)
+        }
         return nil
     }
     res["issuerName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetIssuerName(val)
+        if val != nil {
+            m.SetIssuerName(val)
+        }
         return nil
     }
     res["subjectName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSubjectName(val)
+        if val != nil {
+            m.SetSubjectName(val)
+        }
         return nil
     }
     res["thumbprint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetThumbprint(val)
+        if val != nil {
+            m.SetThumbprint(val)
+        }
         return nil
     }
     return res

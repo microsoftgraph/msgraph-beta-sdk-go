@@ -42,7 +42,9 @@ func (m *RevokeAllLicensesRequestBody) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetNotifyManagedDevices(val)
+        if val != nil {
+            m.SetNotifyManagedDevices(val)
+        }
         return nil
     }
     return res

@@ -62,7 +62,9 @@ func (m *ClassificationResult) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetConfidenceLevel(val)
+        if val != nil {
+            m.SetConfidenceLevel(val)
+        }
         return nil
     }
     res["count"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ClassificationResult) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetCount(val)
+        if val != nil {
+            m.SetCount(val)
+        }
         return nil
     }
     res["sensitiveTypeId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ClassificationResult) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetSensitiveTypeId(val)
+        if val != nil {
+            m.SetSensitiveTypeId(val)
+        }
         return nil
     }
     return res

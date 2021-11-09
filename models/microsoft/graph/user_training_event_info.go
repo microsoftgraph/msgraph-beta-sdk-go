@@ -82,7 +82,9 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["latestTrainingStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,8 +92,10 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(TrainingStatus)
-        m.SetLatestTrainingStatus(&cast)
+        if val != nil {
+            cast := val.(TrainingStatus)
+            m.SetLatestTrainingStatus(&cast)
+        }
         return nil
     }
     res["trainingAssignedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTrainingAssignedProperties(val.(*UserTrainingContentEventInfo))
+        if val != nil {
+            m.SetTrainingAssignedProperties(val.(*UserTrainingContentEventInfo))
+        }
         return nil
     }
     res["trainingCompletedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTrainingCompletedProperties(val.(*UserTrainingContentEventInfo))
+        if val != nil {
+            m.SetTrainingCompletedProperties(val.(*UserTrainingContentEventInfo))
+        }
         return nil
     }
     res["trainingUpdatedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTrainingUpdatedProperties(val.(*UserTrainingContentEventInfo))
+        if val != nil {
+            m.SetTrainingUpdatedProperties(val.(*UserTrainingContentEventInfo))
+        }
         return nil
     }
     return res

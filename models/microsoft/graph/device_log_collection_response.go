@@ -104,7 +104,9 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetErrorCode(val)
+        if val != nil {
+            m.SetErrorCode(val)
+        }
         return nil
     }
     res["expirationDateTimeUTC"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetExpirationDateTimeUTC(val)
+        if val != nil {
+            m.SetExpirationDateTimeUTC(val)
+        }
         return nil
     }
     res["initiatedByUserPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetInitiatedByUserPrincipalName(val)
+        if val != nil {
+            m.SetInitiatedByUserPrincipalName(val)
+        }
         return nil
     }
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["receivedDateTimeUTC"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +144,9 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetReceivedDateTimeUTC(val)
+        if val != nil {
+            m.SetReceivedDateTimeUTC(val)
+        }
         return nil
     }
     res["requestedDateTimeUTC"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +154,9 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetRequestedDateTimeUTC(val)
+        if val != nil {
+            m.SetRequestedDateTimeUTC(val)
+        }
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +164,9 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSize(val)
+        if val != nil {
+            m.SetSize(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +174,9 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     return res

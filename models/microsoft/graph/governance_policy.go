@@ -52,11 +52,13 @@ func (m *GovernancePolicy) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]GovernanceCriteria, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GovernanceCriteria))
+        if val != nil {
+            res := make([]GovernanceCriteria, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GovernanceCriteria))
+            }
+            m.SetDecisionMakerCriteria(res)
         }
-        m.SetDecisionMakerCriteria(res)
         return nil
     }
     res["notificationPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,7 +66,9 @@ func (m *GovernancePolicy) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetNotificationPolicy(val.(*GovernanceNotificationPolicy))
+        if val != nil {
+            m.SetNotificationPolicy(val.(*GovernanceNotificationPolicy))
+        }
         return nil
     }
     return res

@@ -122,7 +122,9 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetArchiveFolder(val)
+        if val != nil {
+            m.SetArchiveFolder(val)
+        }
         return nil
     }
     res["automaticRepliesSetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +132,9 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetAutomaticRepliesSetting(val.(*AutomaticRepliesSetting))
+        if val != nil {
+            m.SetAutomaticRepliesSetting(val.(*AutomaticRepliesSetting))
+        }
         return nil
     }
     res["dateFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +142,9 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDateFormat(val)
+        if val != nil {
+            m.SetDateFormat(val)
+        }
         return nil
     }
     res["delegateMeetingMessageDeliveryOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,8 +152,10 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(DelegateMeetingMessageDeliveryOptions)
-        m.SetDelegateMeetingMessageDeliveryOptions(&cast)
+        if val != nil {
+            cast := val.(DelegateMeetingMessageDeliveryOptions)
+            m.SetDelegateMeetingMessageDeliveryOptions(&cast)
+        }
         return nil
     }
     res["language"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLanguage(val.(*LocaleInfo))
+        if val != nil {
+            m.SetLanguage(val.(*LocaleInfo))
+        }
         return nil
     }
     res["timeFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTimeFormat(val)
+        if val != nil {
+            m.SetTimeFormat(val)
+        }
         return nil
     }
     res["timeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +183,9 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTimeZone(val)
+        if val != nil {
+            m.SetTimeZone(val)
+        }
         return nil
     }
     res["userPurposeV2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,8 +193,10 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(MailboxRecipientType)
-        m.SetUserPurposeV2(&cast)
+        if val != nil {
+            cast := val.(MailboxRecipientType)
+            m.SetUserPurposeV2(&cast)
+        }
         return nil
     }
     res["workingHours"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +204,9 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetWorkingHours(val.(*WorkingHours))
+        if val != nil {
+            m.SetWorkingHours(val.(*WorkingHours))
+        }
         return nil
     }
     return res

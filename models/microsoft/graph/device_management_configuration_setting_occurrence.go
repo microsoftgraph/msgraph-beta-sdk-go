@@ -52,7 +52,9 @@ func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetMaxDeviceOccurrence(val)
+        if val != nil {
+            m.SetMaxDeviceOccurrence(val)
+        }
         return nil
     }
     res["minDeviceOccurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetMinDeviceOccurrence(val)
+        if val != nil {
+            m.SetMinDeviceOccurrence(val)
+        }
         return nil
     }
     return res

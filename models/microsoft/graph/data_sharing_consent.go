@@ -84,7 +84,9 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetGrantDateTime(val)
+        if val != nil {
+            m.SetGrantDateTime(val)
+        }
         return nil
     }
     res["granted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetGranted(val)
+        if val != nil {
+            m.SetGranted(val)
+        }
         return nil
     }
     res["grantedByUpn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetGrantedByUpn(val)
+        if val != nil {
+            m.SetGrantedByUpn(val)
+        }
         return nil
     }
     res["grantedByUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetGrantedByUserId(val)
+        if val != nil {
+            m.SetGrantedByUserId(val)
+        }
         return nil
     }
     res["serviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetServiceDisplayName(val)
+        if val != nil {
+            m.SetServiceDisplayName(val)
+        }
         return nil
     }
     res["termsUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetTermsUrl(val)
+        if val != nil {
+            m.SetTermsUrl(val)
+        }
         return nil
     }
     return res

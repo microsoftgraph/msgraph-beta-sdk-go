@@ -53,11 +53,13 @@ func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementCachedReportConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementCachedReportConfiguration))
+        if val != nil {
+            res := make([]DeviceManagementCachedReportConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementCachedReportConfiguration))
+            }
+            m.SetCachedReportConfigurations(res)
         }
-        m.SetCachedReportConfigurations(res)
         return nil
     }
     res["exportJobs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementExportJob, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementExportJob))
+        if val != nil {
+            res := make([]DeviceManagementExportJob, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementExportJob))
+            }
+            m.SetExportJobs(res)
         }
-        m.SetExportJobs(res)
         return nil
     }
     res["reportSchedules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,11 +81,13 @@ func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementReportSchedule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementReportSchedule))
+        if val != nil {
+            res := make([]DeviceManagementReportSchedule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementReportSchedule))
+            }
+            m.SetReportSchedules(res)
         }
-        m.SetReportSchedules(res)
         return nil
     }
     return res

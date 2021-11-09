@@ -63,7 +63,9 @@ func (m *ItemActivityTimeSet) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLastRecordedDateTime(val)
+        if val != nil {
+            m.SetLastRecordedDateTime(val)
+        }
         return nil
     }
     res["observedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *ItemActivityTimeSet) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetObservedDateTime(val)
+        if val != nil {
+            m.SetObservedDateTime(val)
+        }
         return nil
     }
     res["recordedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *ItemActivityTimeSet) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRecordedDateTime(val)
+        if val != nil {
+            m.SetRecordedDateTime(val)
+        }
         return nil
     }
     return res

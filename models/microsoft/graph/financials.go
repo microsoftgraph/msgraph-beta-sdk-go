@@ -42,11 +42,13 @@ func (m *Financials) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]Company, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Company))
+        if val != nil {
+            res := make([]Company, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Company))
+            }
+            m.SetCompanies(res)
         }
-        m.SetCompanies(res)
         return nil
     }
     return res

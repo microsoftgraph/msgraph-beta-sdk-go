@@ -112,11 +112,13 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]DlpActionInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DlpActionInfo))
+        if val != nil {
+            res := make([]DlpActionInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DlpActionInfo))
+            }
+            m.SetActions(res)
         }
-        m.SetActions(res)
         return nil
     }
     res["isMostRestrictive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +126,9 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetIsMostRestrictive(val)
+        if val != nil {
+            m.SetIsMostRestrictive(val)
+        }
         return nil
     }
     res["policyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +136,9 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPolicyId(val)
+        if val != nil {
+            m.SetPolicyId(val)
+        }
         return nil
     }
     res["policyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +146,9 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPolicyName(val)
+        if val != nil {
+            m.SetPolicyName(val)
+        }
         return nil
     }
     res["priority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +156,9 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPriority(val)
+        if val != nil {
+            m.SetPriority(val)
+        }
         return nil
     }
     res["ruleId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +166,9 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRuleId(val)
+        if val != nil {
+            m.SetRuleId(val)
+        }
         return nil
     }
     res["ruleMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,8 +176,10 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(RuleMode)
-        m.SetRuleMode(&cast)
+        if val != nil {
+            cast := val.(RuleMode)
+            m.SetRuleMode(&cast)
+        }
         return nil
     }
     res["ruleName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +187,9 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRuleName(val)
+        if val != nil {
+            m.SetRuleName(val)
+        }
         return nil
     }
     return res

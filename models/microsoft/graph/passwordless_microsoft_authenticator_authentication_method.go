@@ -64,7 +64,9 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["creationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetCreationDateTime(val)
+        if val != nil {
+            m.SetCreationDateTime(val)
+        }
         return nil
     }
     res["device"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetDevice(val.(*Device))
+        if val != nil {
+            m.SetDevice(val.(*Device))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     return res

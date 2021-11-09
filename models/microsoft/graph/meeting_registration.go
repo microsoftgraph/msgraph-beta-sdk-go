@@ -124,8 +124,10 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(MeetingAudience)
-        m.SetAllowedRegistrant(&cast)
+        if val != nil {
+            cast := val.(MeetingAudience)
+            m.SetAllowedRegistrant(&cast)
+        }
         return nil
     }
     res["customQuestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,11 +135,13 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MeetingRegistrationQuestion, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MeetingRegistrationQuestion))
+        if val != nil {
+            res := make([]MeetingRegistrationQuestion, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MeetingRegistrationQuestion))
+            }
+            m.SetCustomQuestions(res)
         }
-        m.SetCustomQuestions(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +149,9 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +159,9 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetEndDateTime(val)
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
         return nil
     }
     res["registrants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,11 +169,13 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MeetingRegistrant, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MeetingRegistrant))
+        if val != nil {
+            res := make([]MeetingRegistrant, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MeetingRegistrant))
+            }
+            m.SetRegistrants(res)
         }
-        m.SetRegistrants(res)
         return nil
     }
     res["registrationPageViewCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +183,9 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRegistrationPageViewCount(val)
+        if val != nil {
+            m.SetRegistrationPageViewCount(val)
+        }
         return nil
     }
     res["registrationPageWebUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +193,9 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRegistrationPageWebUrl(val)
+        if val != nil {
+            m.SetRegistrationPageWebUrl(val)
+        }
         return nil
     }
     res["speakers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,11 +203,13 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MeetingSpeaker, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MeetingSpeaker))
+        if val != nil {
+            res := make([]MeetingSpeaker, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MeetingSpeaker))
+            }
+            m.SetSpeakers(res)
         }
-        m.SetSpeakers(res)
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,7 +217,9 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,7 +227,9 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSubject(val)
+        if val != nil {
+            m.SetSubject(val)
+        }
         return nil
     }
     return res

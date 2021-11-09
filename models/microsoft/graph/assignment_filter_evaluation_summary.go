@@ -113,7 +113,9 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetAssignmentFilterDisplayName(val)
+        if val != nil {
+            m.SetAssignmentFilterDisplayName(val)
+        }
         return nil
     }
     res["assignmentFilterId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetAssignmentFilterId(val)
+        if val != nil {
+            m.SetAssignmentFilterId(val)
+        }
         return nil
     }
     res["assignmentFilterLastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +133,9 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetAssignmentFilterLastModifiedDateTime(val)
+        if val != nil {
+            m.SetAssignmentFilterLastModifiedDateTime(val)
+        }
         return nil
     }
     res["assignmentFilterPlatform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,8 +143,10 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(DevicePlatformType)
-        m.SetAssignmentFilterPlatform(&cast)
+        if val != nil {
+            cast := val.(DevicePlatformType)
+            m.SetAssignmentFilterPlatform(&cast)
+        }
         return nil
     }
     res["assignmentFilterType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,8 +154,10 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(DeviceAndAppManagementAssignmentFilterType)
-        m.SetAssignmentFilterType(&cast)
+        if val != nil {
+            cast := val.(DeviceAndAppManagementAssignmentFilterType)
+            m.SetAssignmentFilterType(&cast)
+        }
         return nil
     }
     res["assignmentFilterTypeAndEvaluationResults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,11 +165,13 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]AssignmentFilterTypeAndEvaluationResult, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AssignmentFilterTypeAndEvaluationResult))
+        if val != nil {
+            res := make([]AssignmentFilterTypeAndEvaluationResult, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AssignmentFilterTypeAndEvaluationResult))
+            }
+            m.SetAssignmentFilterTypeAndEvaluationResults(res)
         }
-        m.SetAssignmentFilterTypeAndEvaluationResults(res)
         return nil
     }
     res["evaluationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +179,9 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetEvaluationDateTime(val)
+        if val != nil {
+            m.SetEvaluationDateTime(val)
+        }
         return nil
     }
     res["evaluationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,8 +189,10 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(AssignmentFilterEvaluationResult)
-        m.SetEvaluationResult(&cast)
+        if val != nil {
+            cast := val.(AssignmentFilterEvaluationResult)
+            m.SetEvaluationResult(&cast)
+        }
         return nil
     }
     return res

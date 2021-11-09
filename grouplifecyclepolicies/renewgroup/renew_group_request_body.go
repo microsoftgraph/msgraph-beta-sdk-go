@@ -42,7 +42,9 @@ func (m *RenewGroupRequestBody) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetGroupId(val)
+        if val != nil {
+            m.SetGroupId(val)
+        }
         return nil
     }
     return res

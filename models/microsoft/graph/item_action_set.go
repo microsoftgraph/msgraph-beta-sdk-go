@@ -132,7 +132,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetComment(val.(*CommentAction))
+        if val != nil {
+            m.SetComment(val.(*CommentAction))
+        }
         return nil
     }
     res["create"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +142,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetCreate(val.(*CreateAction))
+        if val != nil {
+            m.SetCreate(val.(*CreateAction))
+        }
         return nil
     }
     res["delete"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +152,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDelete(val.(*DeleteAction))
+        if val != nil {
+            m.SetDelete(val.(*DeleteAction))
+        }
         return nil
     }
     res["edit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +162,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetEdit(val.(*EditAction))
+        if val != nil {
+            m.SetEdit(val.(*EditAction))
+        }
         return nil
     }
     res["mention"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +172,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetMention(val.(*MentionAction))
+        if val != nil {
+            m.SetMention(val.(*MentionAction))
+        }
         return nil
     }
     res["move"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +182,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetMove(val.(*MoveAction))
+        if val != nil {
+            m.SetMove(val.(*MoveAction))
+        }
         return nil
     }
     res["rename"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +192,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetRename(val.(*RenameAction))
+        if val != nil {
+            m.SetRename(val.(*RenameAction))
+        }
         return nil
     }
     res["restore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +202,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetRestore(val.(*RestoreAction))
+        if val != nil {
+            m.SetRestore(val.(*RestoreAction))
+        }
         return nil
     }
     res["share"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +212,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetShare(val.(*ShareAction))
+        if val != nil {
+            m.SetShare(val.(*ShareAction))
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +222,9 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetVersion(val.(*VersionAction))
+        if val != nil {
+            m.SetVersion(val.(*VersionAction))
+        }
         return nil
     }
     return res

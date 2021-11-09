@@ -82,7 +82,9 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["first"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetFirst(val)
+        if val != nil {
+            m.SetFirst(val)
+        }
         return nil
     }
     res["last"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetLast(val)
+        if val != nil {
+            m.SetLast(val)
+        }
         return nil
     }
     res["maiden"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetMaiden(val)
+        if val != nil {
+            m.SetMaiden(val)
+        }
         return nil
     }
     res["middle"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetMiddle(val)
+        if val != nil {
+            m.SetMiddle(val)
+        }
         return nil
     }
     return res

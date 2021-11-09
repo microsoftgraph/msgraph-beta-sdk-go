@@ -114,8 +114,10 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(AndroidForWorkBindStatus)
-        m.SetBindStatus(&cast)
+        if val != nil {
+            cast := val.(AndroidForWorkBindStatus)
+            m.SetBindStatus(&cast)
+        }
         return nil
     }
     res["deviceOwnerManagementEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +125,9 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceOwnerManagementEnabled(val)
+        if val != nil {
+            m.SetDeviceOwnerManagementEnabled(val)
+        }
         return nil
     }
     res["enrollmentTarget"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,8 +135,10 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(AndroidForWorkEnrollmentTarget)
-        m.SetEnrollmentTarget(&cast)
+        if val != nil {
+            cast := val.(AndroidForWorkEnrollmentTarget)
+            m.SetEnrollmentTarget(&cast)
+        }
         return nil
     }
     res["lastAppSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +146,9 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastAppSyncDateTime(val)
+        if val != nil {
+            m.SetLastAppSyncDateTime(val)
+        }
         return nil
     }
     res["lastAppSyncStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,8 +156,10 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(AndroidForWorkSyncStatus)
-        m.SetLastAppSyncStatus(&cast)
+        if val != nil {
+            cast := val.(AndroidForWorkSyncStatus)
+            m.SetLastAppSyncStatus(&cast)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +167,9 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["ownerOrganizationName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +177,9 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetOwnerOrganizationName(val)
+        if val != nil {
+            m.SetOwnerOrganizationName(val)
+        }
         return nil
     }
     res["ownerUserPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +187,9 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetOwnerUserPrincipalName(val)
+        if val != nil {
+            m.SetOwnerUserPrincipalName(val)
+        }
         return nil
     }
     res["targetGroupIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,11 +197,13 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTargetGroupIds(res)
         }
-        m.SetTargetGroupIds(res)
         return nil
     }
     return res

@@ -112,11 +112,13 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]AttributeMapping, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AttributeMapping))
+        if val != nil {
+            res := make([]AttributeMapping, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AttributeMapping))
+            }
+            m.SetAttributeMappings(res)
         }
-        m.SetAttributeMappings(res)
         return nil
     }
     res["enabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +126,9 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetEnabled(val)
+        if val != nil {
+            m.SetEnabled(val)
+        }
         return nil
     }
     res["flowTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,8 +136,10 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(ObjectFlowTypes)
-        m.SetFlowTypes(&cast)
+        if val != nil {
+            cast := val.(ObjectFlowTypes)
+            m.SetFlowTypes(&cast)
+        }
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,11 +147,13 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]MetadataEntry, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MetadataEntry))
+        if val != nil {
+            res := make([]MetadataEntry, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MetadataEntry))
+            }
+            m.SetMetadata(res)
         }
-        m.SetMetadata(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +161,9 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["scope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +171,9 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetScope(val.(*Filter))
+        if val != nil {
+            m.SetScope(val.(*Filter))
+        }
         return nil
     }
     res["sourceObjectName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +181,9 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSourceObjectName(val)
+        if val != nil {
+            m.SetSourceObjectName(val)
+        }
         return nil
     }
     res["targetObjectName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +191,9 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetTargetObjectName(val)
+        if val != nil {
+            m.SetTargetObjectName(val)
+        }
         return nil
     }
     return res

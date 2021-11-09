@@ -164,7 +164,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +174,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["groupPolicyCreatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +184,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetGroupPolicyCreatedDateTime(val)
+        if val != nil {
+            m.SetGroupPolicyCreatedDateTime(val)
+        }
         return nil
     }
     res["groupPolicyLastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +194,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetGroupPolicyLastModifiedDateTime(val)
+        if val != nil {
+            m.SetGroupPolicyLastModifiedDateTime(val)
+        }
         return nil
     }
     res["groupPolicyObjectId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +204,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetGroupPolicyObjectId(val)
+        if val != nil {
+            m.SetGroupPolicyObjectId(val)
+        }
         return nil
     }
     res["groupPolicySettingMappings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,11 +214,13 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]GroupPolicySettingMapping, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GroupPolicySettingMapping))
+        if val != nil {
+            res := make([]GroupPolicySettingMapping, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GroupPolicySettingMapping))
+            }
+            m.SetGroupPolicySettingMappings(res)
         }
-        m.SetGroupPolicySettingMappings(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +228,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["migrationReadiness"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,8 +238,10 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicyMigrationReadiness)
-        m.SetMigrationReadiness(&cast)
+        if val != nil {
+            cast := val.(GroupPolicyMigrationReadiness)
+            m.SetMigrationReadiness(&cast)
+        }
         return nil
     }
     res["ouDistinguishedName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,7 +249,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetOuDistinguishedName(val)
+        if val != nil {
+            m.SetOuDistinguishedName(val)
+        }
         return nil
     }
     res["supportedSettingsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,7 +259,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetSupportedSettingsCount(val)
+        if val != nil {
+            m.SetSupportedSettingsCount(val)
+        }
         return nil
     }
     res["supportedSettingsPercent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -249,7 +269,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetSupportedSettingsPercent(val)
+        if val != nil {
+            m.SetSupportedSettingsPercent(val)
+        }
         return nil
     }
     res["targetedInActiveDirectory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -257,7 +279,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetTargetedInActiveDirectory(val)
+        if val != nil {
+            m.SetTargetedInActiveDirectory(val)
+        }
         return nil
     }
     res["totalSettingsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,7 +289,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetTotalSettingsCount(val)
+        if val != nil {
+            m.SetTotalSettingsCount(val)
+        }
         return nil
     }
     res["unsupportedGroupPolicyExtensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -273,11 +299,13 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]UnsupportedGroupPolicyExtension, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnsupportedGroupPolicyExtension))
+        if val != nil {
+            res := make([]UnsupportedGroupPolicyExtension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnsupportedGroupPolicyExtension))
+            }
+            m.SetUnsupportedGroupPolicyExtensions(res)
         }
-        m.SetUnsupportedGroupPolicyExtensions(res)
         return nil
     }
     return res
