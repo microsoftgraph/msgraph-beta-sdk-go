@@ -62,11 +62,13 @@ func (m *SearchResultSet) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]SearchHitsContainer, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SearchHitsContainer))
+        if val != nil {
+            res := make([]SearchHitsContainer, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SearchHitsContainer))
+            }
+            m.SetHitsContainers(res)
         }
-        m.SetHitsContainers(res)
         return nil
     }
     res["resultTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,7 +76,9 @@ func (m *SearchResultSet) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetResultTemplates(val.(*ResultTemplateDictionary))
+        if val != nil {
+            m.SetResultTemplates(val.(*ResultTemplateDictionary))
+        }
         return nil
     }
     res["searchTerms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,11 +86,13 @@ func (m *SearchResultSet) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSearchTerms(res)
         }
-        m.SetSearchTerms(res)
         return nil
     }
     return res

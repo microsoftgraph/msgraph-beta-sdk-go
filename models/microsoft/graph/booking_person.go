@@ -33,7 +33,9 @@ func (m *BookingPerson) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetEmailAddress(val)
+        if val != nil {
+            m.SetEmailAddress(val)
+        }
         return nil
     }
     return res

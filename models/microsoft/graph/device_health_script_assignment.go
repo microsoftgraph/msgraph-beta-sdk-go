@@ -53,7 +53,9 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRunRemediationScript(val)
+        if val != nil {
+            m.SetRunRemediationScript(val)
+        }
         return nil
     }
     res["runSchedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRunSchedule(val.(*DeviceHealthScriptRunSchedule))
+        if val != nil {
+            m.SetRunSchedule(val.(*DeviceHealthScriptRunSchedule))
+        }
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+        if val != nil {
+            m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+        }
         return nil
     }
     return res

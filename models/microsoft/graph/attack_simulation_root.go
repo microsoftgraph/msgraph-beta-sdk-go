@@ -33,11 +33,13 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]Simulation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Simulation))
+        if val != nil {
+            res := make([]Simulation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Simulation))
+            }
+            m.SetSimulations(res)
         }
-        m.SetSimulations(res)
         return nil
     }
     return res

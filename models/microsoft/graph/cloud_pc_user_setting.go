@@ -84,11 +84,13 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]CloudPcUserSettingAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcUserSettingAssignment))
+        if val != nil {
+            res := make([]CloudPcUserSettingAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcUserSettingAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +98,9 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,7 +108,9 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +118,9 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["localAdminEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +128,9 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLocalAdminEnabled(val)
+        if val != nil {
+            m.SetLocalAdminEnabled(val)
+        }
         return nil
     }
     res["selfServiceEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +138,9 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetSelfServiceEnabled(val)
+        if val != nil {
+            m.SetSelfServiceEnabled(val)
+        }
         return nil
     }
     return res

@@ -43,7 +43,9 @@ func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["rolePermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,11 +53,13 @@ func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]UnifiedRolePermission, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRolePermission))
+        if val != nil {
+            res := make([]UnifiedRolePermission, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRolePermission))
+            }
+            m.SetRolePermissions(res)
         }
-        m.SetRolePermissions(res)
         return nil
     }
     return res

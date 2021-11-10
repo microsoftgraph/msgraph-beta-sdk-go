@@ -72,7 +72,9 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetTemplateDisplayName(val)
+        if val != nil {
+            m.SetTemplateDisplayName(val)
+        }
         return nil
     }
     res["templateDisplayVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetTemplateDisplayVersion(val)
+        if val != nil {
+            m.SetTemplateDisplayVersion(val)
+        }
         return nil
     }
     res["templateFamily"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,8 +92,10 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeseriali
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementConfigurationTemplateFamily)
-        m.SetTemplateFamily(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementConfigurationTemplateFamily)
+            m.SetTemplateFamily(&cast)
+        }
         return nil
     }
     res["templateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetTemplateId(val)
+        if val != nil {
+            m.SetTemplateId(val)
+        }
         return nil
     }
     return res

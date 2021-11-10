@@ -64,7 +64,9 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetConditionalAccessPolicyState(val)
+        if val != nil {
+            m.SetConditionalAccessPolicyState(val)
+        }
         return nil
     }
     res["latestPolicyModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetLatestPolicyModifiedDateTime(val)
+        if val != nil {
+            m.SetLatestPolicyModifiedDateTime(val)
+        }
         return nil
     }
     res["requiresDeviceCompliance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetRequiresDeviceCompliance(val)
+        if val != nil {
+            m.SetRequiresDeviceCompliance(val)
+        }
         return nil
     }
     res["tenantDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetTenantDisplayName(val)
+        if val != nil {
+            m.SetTenantDisplayName(val)
+        }
         return nil
     }
     return res

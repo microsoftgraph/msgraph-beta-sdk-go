@@ -52,11 +52,13 @@ func (m *TrustFramework) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]TrustFrameworkKeySet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TrustFrameworkKeySet))
+        if val != nil {
+            res := make([]TrustFrameworkKeySet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TrustFrameworkKeySet))
+            }
+            m.SetKeySets(res)
         }
-        m.SetKeySets(res)
         return nil
     }
     res["policies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,11 +66,13 @@ func (m *TrustFramework) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]TrustFrameworkPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TrustFrameworkPolicy))
+        if val != nil {
+            res := make([]TrustFrameworkPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TrustFrameworkPolicy))
+            }
+            m.SetPolicies(res)
         }
-        m.SetPolicies(res)
         return nil
     }
     return res

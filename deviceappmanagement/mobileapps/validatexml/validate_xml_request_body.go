@@ -42,7 +42,9 @@ func (m *ValidateXmlRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetOfficeConfigurationXml(val)
+        if val != nil {
+            m.SetOfficeConfigurationXml(val)
+        }
         return nil
     }
     return res

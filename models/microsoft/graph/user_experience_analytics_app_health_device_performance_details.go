@@ -94,7 +94,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["appPublisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetAppPublisher(val)
+        if val != nil {
+            m.SetAppPublisher(val)
+        }
         return nil
     }
     res["appVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetAppVersion(val)
+        if val != nil {
+            m.SetAppVersion(val)
+        }
         return nil
     }
     res["deviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetDeviceDisplayName(val)
+        if val != nil {
+            m.SetDeviceDisplayName(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["eventDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetEventDateTime(val)
+        if val != nil {
+            m.SetEventDateTime(val)
+        }
         return nil
     }
     res["eventType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +154,9 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetEventType(val)
+        if val != nil {
+            m.SetEventType(val)
+        }
         return nil
     }
     return res

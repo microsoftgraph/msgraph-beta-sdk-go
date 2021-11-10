@@ -42,7 +42,9 @@ func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetUnsupportedOSversionDeviceCount(val)
+        if val != nil {
+            m.SetUnsupportedOSversionDeviceCount(val)
+        }
         return nil
     }
     return res

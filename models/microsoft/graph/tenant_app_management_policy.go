@@ -53,7 +53,9 @@ func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetApplicationRestrictions(val.(*AppManagementConfiguration))
+        if val != nil {
+            m.SetApplicationRestrictions(val.(*AppManagementConfiguration))
+        }
         return nil
     }
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     res["servicePrincipalRestrictions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetServicePrincipalRestrictions(val.(*AppManagementConfiguration))
+        if val != nil {
+            m.SetServicePrincipalRestrictions(val.(*AppManagementConfiguration))
+        }
         return nil
     }
     return res

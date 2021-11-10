@@ -42,11 +42,13 @@ func (m *SafeguardSettings) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]SafeguardProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SafeguardProfile))
+        if val != nil {
+            res := make([]SafeguardProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SafeguardProfile))
+            }
+            m.SetDisabledSafeguardProfiles(res)
         }
-        m.SetDisabledSafeguardProfiles(res)
         return nil
     }
     return res

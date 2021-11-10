@@ -63,8 +63,10 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(WindowsPrivacyDataAccessLevel)
-        m.SetAccessLevel(&cast)
+        if val != nil {
+            cast := val.(WindowsPrivacyDataAccessLevel)
+            m.SetAccessLevel(&cast)
+        }
         return nil
     }
     res["appDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["appPackageFamilyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetAppPackageFamilyName(val)
+        if val != nil {
+            m.SetAppPackageFamilyName(val)
+        }
         return nil
     }
     res["dataCategory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,8 +94,10 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(WindowsPrivacyDataCategory)
-        m.SetDataCategory(&cast)
+        if val != nil {
+            cast := val.(WindowsPrivacyDataCategory)
+            m.SetDataCategory(&cast)
+        }
         return nil
     }
     return res

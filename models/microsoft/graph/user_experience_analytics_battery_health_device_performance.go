@@ -103,7 +103,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetBatteryAgeInDays(val)
+        if val != nil {
+            m.SetBatteryAgeInDays(val)
+        }
         return nil
     }
     res["deviceBatteryHealthScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +113,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetDeviceBatteryHealthScore(val)
+        if val != nil {
+            m.SetDeviceBatteryHealthScore(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +123,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +133,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["estimatedRuntimeInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +143,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetEstimatedRuntimeInMinutes(val)
+        if val != nil {
+            m.SetEstimatedRuntimeInMinutes(val)
+        }
         return nil
     }
     res["healthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +153,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetHealthStatus(val)
+        if val != nil {
+            m.SetHealthStatus(val)
+        }
         return nil
     }
     res["maxCapacityPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +163,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetMaxCapacityPercentage(val)
+        if val != nil {
+            m.SetMaxCapacityPercentage(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +173,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     return res

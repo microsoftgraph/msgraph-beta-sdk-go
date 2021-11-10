@@ -144,11 +144,13 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementTemplateSettingCategory, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementTemplateSettingCategory))
+        if val != nil {
+            res := make([]DeviceManagementTemplateSettingCategory, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementTemplateSettingCategory))
+            }
+            m.SetCategories(res)
         }
-        m.SetCategories(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +158,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +168,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["intentCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +178,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIntentCount(val)
+        if val != nil {
+            m.SetIntentCount(val)
+        }
         return nil
     }
     res["isDeprecated"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +188,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsDeprecated(val)
+        if val != nil {
+            m.SetIsDeprecated(val)
+        }
         return nil
     }
     res["migratableTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,11 +198,13 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementTemplate, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementTemplate))
+        if val != nil {
+            res := make([]DeviceManagementTemplate, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementTemplate))
+            }
+            m.SetMigratableTo(res)
         }
-        m.SetMigratableTo(res)
         return nil
     }
     res["platformType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,8 +212,10 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(PolicyPlatformType)
-        m.SetPlatformType(&cast)
+        if val != nil {
+            cast := val.(PolicyPlatformType)
+            m.SetPlatformType(&cast)
+        }
         return nil
     }
     res["publishedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,7 +223,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPublishedDateTime(val)
+        if val != nil {
+            m.SetPublishedDateTime(val)
+        }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,11 +233,13 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementSettingInstance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementSettingInstance))
+        if val != nil {
+            res := make([]DeviceManagementSettingInstance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementSettingInstance))
+            }
+            m.SetSettings(res)
         }
-        m.SetSettings(res)
         return nil
     }
     res["templateSubtype"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,8 +247,10 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementTemplateSubtype)
-        m.SetTemplateSubtype(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementTemplateSubtype)
+            m.SetTemplateSubtype(&cast)
+        }
         return nil
     }
     res["templateType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,8 +258,10 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementTemplateType)
-        m.SetTemplateType(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementTemplateType)
+            m.SetTemplateType(&cast)
+        }
         return nil
     }
     res["versionInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,7 +269,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetVersionInfo(val)
+        if val != nil {
+            m.SetVersionInfo(val)
+        }
         return nil
     }
     return res

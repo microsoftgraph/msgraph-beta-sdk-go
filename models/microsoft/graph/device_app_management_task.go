@@ -124,7 +124,9 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAssignedTo(val)
+        if val != nil {
+            m.SetAssignedTo(val)
+        }
         return nil
     }
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,8 +134,10 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(DeviceAppManagementTaskCategory)
-        m.SetCategory(&cast)
+        if val != nil {
+            cast := val.(DeviceAppManagementTaskCategory)
+            m.SetCategory(&cast)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +145,9 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["creator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +155,9 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCreator(val)
+        if val != nil {
+            m.SetCreator(val)
+        }
         return nil
     }
     res["creatorNotes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +165,9 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCreatorNotes(val)
+        if val != nil {
+            m.SetCreatorNotes(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +175,9 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +185,9 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["dueDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +195,9 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDueDateTime(val)
+        if val != nil {
+            m.SetDueDateTime(val)
+        }
         return nil
     }
     res["priority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,8 +205,10 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(DeviceAppManagementTaskPriority)
-        m.SetPriority(&cast)
+        if val != nil {
+            cast := val.(DeviceAppManagementTaskPriority)
+            m.SetPriority(&cast)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,8 +216,10 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(DeviceAppManagementTaskStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(DeviceAppManagementTaskStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

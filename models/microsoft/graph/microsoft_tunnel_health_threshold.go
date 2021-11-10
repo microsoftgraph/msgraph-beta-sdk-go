@@ -63,7 +63,9 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDefaultHealthyThreshold(val)
+        if val != nil {
+            m.SetDefaultHealthyThreshold(val)
+        }
         return nil
     }
     res["defaultUnhealthyThreshold"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDefaultUnhealthyThreshold(val)
+        if val != nil {
+            m.SetDefaultUnhealthyThreshold(val)
+        }
         return nil
     }
     res["healthyThreshold"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetHealthyThreshold(val)
+        if val != nil {
+            m.SetHealthyThreshold(val)
+        }
         return nil
     }
     res["unhealthyThreshold"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetUnhealthyThreshold(val)
+        if val != nil {
+            m.SetUnhealthyThreshold(val)
+        }
         return nil
     }
     return res

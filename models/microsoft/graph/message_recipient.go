@@ -53,8 +53,10 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(MessageStatus)
-        m.SetDeliveryStatus(&cast)
+        if val != nil {
+            cast := val.(MessageStatus)
+            m.SetDeliveryStatus(&cast)
+        }
         return nil
     }
     res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,11 +64,13 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]MessageEvent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MessageEvent))
+        if val != nil {
+            res := make([]MessageEvent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MessageEvent))
+            }
+            m.SetEvents(res)
         }
-        m.SetEvents(res)
         return nil
     }
     res["recipientEmail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,7 +78,9 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetRecipientEmail(val)
+        if val != nil {
+            m.SetRecipientEmail(val)
+        }
         return nil
     }
     return res

@@ -72,7 +72,9 @@ func (m *GenerateKeyRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetExp(val)
+        if val != nil {
+            m.SetExp(val)
+        }
         return nil
     }
     res["kty"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *GenerateKeyRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetKty(val)
+        if val != nil {
+            m.SetKty(val)
+        }
         return nil
     }
     res["nbf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *GenerateKeyRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetNbf(val)
+        if val != nil {
+            m.SetNbf(val)
+        }
         return nil
     }
     res["use"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *GenerateKeyRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUse(val)
+        if val != nil {
+            m.SetUse(val)
+        }
         return nil
     }
     return res

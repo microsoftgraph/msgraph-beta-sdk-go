@@ -224,8 +224,10 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(ActivityType)
-        m.SetActivity(&cast)
+        if val != nil {
+            cast := val.(ActivityType)
+            m.SetActivity(&cast)
+        }
         return nil
     }
     res["activityDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,7 +235,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetActivityDateTime(val)
+        if val != nil {
+            m.SetActivityDateTime(val)
+        }
         return nil
     }
     res["additionalInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,7 +245,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetAdditionalInfo(val)
+        if val != nil {
+            m.SetAdditionalInfo(val)
+        }
         return nil
     }
     res["correlationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -249,7 +255,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetCorrelationId(val)
+        if val != nil {
+            m.SetCorrelationId(val)
+        }
         return nil
     }
     res["detectedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -257,7 +265,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDetectedDateTime(val)
+        if val != nil {
+            m.SetDetectedDateTime(val)
+        }
         return nil
     }
     res["detectionTimingType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,8 +275,10 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(RiskDetectionTimingType)
-        m.SetDetectionTimingType(&cast)
+        if val != nil {
+            cast := val.(RiskDetectionTimingType)
+            m.SetDetectionTimingType(&cast)
+        }
         return nil
     }
     res["ipAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -274,7 +286,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetIpAddress(val)
+        if val != nil {
+            m.SetIpAddress(val)
+        }
         return nil
     }
     res["lastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -282,7 +296,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetLastUpdatedDateTime(val)
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -290,7 +306,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetLocation(val.(*SignInLocation))
+        if val != nil {
+            m.SetLocation(val.(*SignInLocation))
+        }
         return nil
     }
     res["requestId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,7 +316,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetRequestId(val)
+        if val != nil {
+            m.SetRequestId(val)
+        }
         return nil
     }
     res["riskDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -306,8 +326,10 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(RiskDetail)
-        m.SetRiskDetail(&cast)
+        if val != nil {
+            cast := val.(RiskDetail)
+            m.SetRiskDetail(&cast)
+        }
         return nil
     }
     res["riskEventType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -315,7 +337,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetRiskEventType(val)
+        if val != nil {
+            m.SetRiskEventType(val)
+        }
         return nil
     }
     res["riskLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -323,8 +347,10 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(RiskLevel)
-        m.SetRiskLevel(&cast)
+        if val != nil {
+            cast := val.(RiskLevel)
+            m.SetRiskLevel(&cast)
+        }
         return nil
     }
     res["riskState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,8 +358,10 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(RiskState)
-        m.SetRiskState(&cast)
+        if val != nil {
+            cast := val.(RiskState)
+            m.SetRiskState(&cast)
+        }
         return nil
     }
     res["riskType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -341,8 +369,10 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(RiskEventType)
-        m.SetRiskType(&cast)
+        if val != nil {
+            cast := val.(RiskEventType)
+            m.SetRiskType(&cast)
+        }
         return nil
     }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -350,7 +380,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSource(val)
+        if val != nil {
+            m.SetSource(val)
+        }
         return nil
     }
     res["tokenIssuerType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -358,8 +390,10 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(TokenIssuerType)
-        m.SetTokenIssuerType(&cast)
+        if val != nil {
+            cast := val.(TokenIssuerType)
+            m.SetTokenIssuerType(&cast)
+        }
         return nil
     }
     res["userDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -367,7 +401,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetUserDisplayName(val)
+        if val != nil {
+            m.SetUserDisplayName(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -375,7 +411,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -383,7 +421,9 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

@@ -63,8 +63,10 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(EducationAddedStudentAction)
-        m.SetAddedStudentAction(&cast)
+        if val != nil {
+            cast := val.(EducationAddedStudentAction)
+            m.SetAddedStudentAction(&cast)
+        }
         return nil
     }
     res["addToCalendarAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,8 +74,10 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(EducationAddToCalendarOptions)
-        m.SetAddToCalendarAction(&cast)
+        if val != nil {
+            cast := val.(EducationAddToCalendarOptions)
+            m.SetAddToCalendarAction(&cast)
+        }
         return nil
     }
     res["dueTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +85,9 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDueTime(val)
+        if val != nil {
+            m.SetDueTime(val)
+        }
         return nil
     }
     res["notificationChannelUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +95,9 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetNotificationChannelUrl(val)
+        if val != nil {
+            m.SetNotificationChannelUrl(val)
+        }
         return nil
     }
     return res

@@ -62,7 +62,9 @@ func (m *FilterClause) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetOperatorName(val)
+        if val != nil {
+            m.SetOperatorName(val)
+        }
         return nil
     }
     res["sourceOperandName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *FilterClause) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSourceOperandName(val)
+        if val != nil {
+            m.SetSourceOperandName(val)
+        }
         return nil
     }
     res["targetOperand"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *FilterClause) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetTargetOperand(val.(*FilterOperand))
+        if val != nil {
+            m.SetTargetOperand(val.(*FilterOperand))
+        }
         return nil
     }
     return res

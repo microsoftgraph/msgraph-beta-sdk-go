@@ -82,7 +82,9 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAllowStaffSelection(val)
+        if val != nil {
+            m.SetAllowStaffSelection(val)
+        }
         return nil
     }
     res["maximumAdvance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetMaximumAdvance(val)
+        if val != nil {
+            m.SetMaximumAdvance(val)
+        }
         return nil
     }
     res["minimumLeadTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetMinimumLeadTime(val)
+        if val != nil {
+            m.SetMinimumLeadTime(val)
+        }
         return nil
     }
     res["sendConfirmationsToOwner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetSendConfirmationsToOwner(val)
+        if val != nil {
+            m.SetSendConfirmationsToOwner(val)
+        }
         return nil
     }
     res["timeSlotInterval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetTimeSlotInterval(val)
+        if val != nil {
+            m.SetTimeSlotInterval(val)
+        }
         return nil
     }
     return res

@@ -82,7 +82,9 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["isAnswerEditable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsAnswerEditable(val)
+        if val != nil {
+            m.SetIsAnswerEditable(val)
+        }
         return nil
     }
     res["isRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsRequired(val)
+        if val != nil {
+            m.SetIsRequired(val)
+        }
         return nil
     }
     res["sequence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSequence(val)
+        if val != nil {
+            m.SetSequence(val)
+        }
         return nil
     }
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetText(val.(*AccessPackageLocalizedContent))
+        if val != nil {
+            m.SetText(val.(*AccessPackageLocalizedContent))
+        }
         return nil
     }
     return res

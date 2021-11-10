@@ -104,7 +104,9 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDataStoreId(val)
+        if val != nil {
+            m.SetDataStoreId(val)
+        }
         return nil
     }
     res["processingCompletionDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetProcessingCompletionDateTime(val)
+        if val != nil {
+            m.SetProcessingCompletionDateTime(val)
+        }
         return nil
     }
     res["remainingBlockCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetRemainingBlockCount(val)
+        if val != nil {
+            m.SetRemainingBlockCount(val)
+        }
         return nil
     }
     res["remainingJobCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetRemainingJobCount(val)
+        if val != nil {
+            m.SetRemainingJobCount(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +144,9 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetState(val)
+        if val != nil {
+            m.SetState(val)
+        }
         return nil
     }
     res["totalBlockCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +154,9 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTotalBlockCount(val)
+        if val != nil {
+            m.SetTotalBlockCount(val)
+        }
         return nil
     }
     res["totalJobCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +164,9 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTotalJobCount(val)
+        if val != nil {
+            m.SetTotalJobCount(val)
+        }
         return nil
     }
     res["uploadCompletionDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +174,9 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetUploadCompletionDateTime(val)
+        if val != nil {
+            m.SetUploadCompletionDateTime(val)
+        }
         return nil
     }
     return res

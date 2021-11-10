@@ -143,7 +143,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +153,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["internalNetworkProbeUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +163,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetInternalNetworkProbeUrl(val)
+        if val != nil {
+            m.SetInternalNetworkProbeUrl(val)
+        }
         return nil
     }
     res["microsoftTunnelConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +173,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetMicrosoftTunnelConfiguration(val.(*MicrosoftTunnelConfiguration))
+        if val != nil {
+            m.SetMicrosoftTunnelConfiguration(val.(*MicrosoftTunnelConfiguration))
+        }
         return nil
     }
     res["microsoftTunnelServers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,11 +183,13 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MicrosoftTunnelServer, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MicrosoftTunnelServer))
+        if val != nil {
+            res := make([]MicrosoftTunnelServer, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MicrosoftTunnelServer))
+            }
+            m.SetMicrosoftTunnelServers(res)
         }
-        m.SetMicrosoftTunnelServers(res)
         return nil
     }
     res["publicAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,7 +197,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetPublicAddress(val)
+        if val != nil {
+            m.SetPublicAddress(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -195,11 +207,13 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["upgradeAutomatically"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +221,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUpgradeAutomatically(val)
+        if val != nil {
+            m.SetUpgradeAutomatically(val)
+        }
         return nil
     }
     res["upgradeAvailable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +231,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUpgradeAvailable(val)
+        if val != nil {
+            m.SetUpgradeAvailable(val)
+        }
         return nil
     }
     res["upgradeWindowEndTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -223,7 +241,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUpgradeWindowEndTime(val)
+        if val != nil {
+            m.SetUpgradeWindowEndTime(val)
+        }
         return nil
     }
     res["upgradeWindowStartTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,7 +251,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUpgradeWindowStartTime(val)
+        if val != nil {
+            m.SetUpgradeWindowStartTime(val)
+        }
         return nil
     }
     res["upgradeWindowUtcOffsetInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +261,9 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUpgradeWindowUtcOffsetInMinutes(val)
+        if val != nil {
+            m.SetUpgradeWindowUtcOffsetInMinutes(val)
+        }
         return nil
     }
     return res

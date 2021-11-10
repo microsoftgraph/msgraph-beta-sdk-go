@@ -104,7 +104,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
         if err != nil {
             return err
         }
-        m.SetAppCrashCount(val)
+        if val != nil {
+            m.SetAppCrashCount(val)
+        }
         return nil
     }
     res["appDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["appName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
         if err != nil {
             return err
         }
-        m.SetAppName(val)
+        if val != nil {
+            m.SetAppName(val)
+        }
         return nil
     }
     res["appPublisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
         if err != nil {
             return err
         }
-        m.SetAppPublisher(val)
+        if val != nil {
+            m.SetAppPublisher(val)
+        }
         return nil
     }
     res["appVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +144,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
         if err != nil {
             return err
         }
-        m.SetAppVersion(val)
+        if val != nil {
+            m.SetAppVersion(val)
+        }
         return nil
     }
     res["deviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +154,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
         if err != nil {
             return err
         }
-        m.SetDeviceDisplayName(val)
+        if val != nil {
+            m.SetDeviceDisplayName(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +164,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["processedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +174,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
         if err != nil {
             return err
         }
-        m.SetProcessedDateTime(val)
+        if val != nil {
+            m.SetProcessedDateTime(val)
+        }
         return nil
     }
     return res

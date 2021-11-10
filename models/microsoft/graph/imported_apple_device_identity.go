@@ -134,7 +134,9 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["discoverySource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,8 +154,10 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(DiscoverySource)
-        m.SetDiscoverySource(&cast)
+        if val != nil {
+            cast := val.(DiscoverySource)
+            m.SetDiscoverySource(&cast)
+        }
         return nil
     }
     res["enrollmentState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,8 +165,10 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(EnrollmentState)
-        m.SetEnrollmentState(&cast)
+        if val != nil {
+            cast := val.(EnrollmentState)
+            m.SetEnrollmentState(&cast)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +176,9 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["isSupervised"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +186,9 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIsSupervised(val)
+        if val != nil {
+            m.SetIsSupervised(val)
+        }
         return nil
     }
     res["lastContactedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +196,9 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastContactedDateTime(val)
+        if val != nil {
+            m.SetLastContactedDateTime(val)
+        }
         return nil
     }
     res["platform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,8 +206,10 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(Platform)
-        m.SetPlatform(&cast)
+        if val != nil {
+            cast := val.(Platform)
+            m.SetPlatform(&cast)
+        }
         return nil
     }
     res["requestedEnrollmentProfileAssignmentDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,7 +217,9 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetRequestedEnrollmentProfileAssignmentDateTime(val)
+        if val != nil {
+            m.SetRequestedEnrollmentProfileAssignmentDateTime(val)
+        }
         return nil
     }
     res["requestedEnrollmentProfileId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,7 +227,9 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetRequestedEnrollmentProfileId(val)
+        if val != nil {
+            m.SetRequestedEnrollmentProfileId(val)
+        }
         return nil
     }
     res["serialNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,7 +237,9 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSerialNumber(val)
+        if val != nil {
+            m.SetSerialNumber(val)
+        }
         return nil
     }
     return res

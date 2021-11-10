@@ -62,11 +62,13 @@ func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]OfficeClientConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OfficeClientConfiguration))
+        if val != nil {
+            res := make([]OfficeClientConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OfficeClientConfiguration))
+            }
+            m.SetClientConfigurations(res)
         }
-        m.SetClientConfigurations(res)
         return nil
     }
     res["tenantCheckinStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,11 +76,13 @@ func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]OfficeClientCheckinStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OfficeClientCheckinStatus))
+        if val != nil {
+            res := make([]OfficeClientCheckinStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OfficeClientCheckinStatus))
+            }
+            m.SetTenantCheckinStatuses(res)
         }
-        m.SetTenantCheckinStatuses(res)
         return nil
     }
     res["tenantUserCheckinSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -86,7 +90,9 @@ func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetTenantUserCheckinSummary(val.(*OfficeUserCheckinSummary))
+        if val != nil {
+            m.SetTenantUserCheckinSummary(val.(*OfficeUserCheckinSummary))
+        }
         return nil
     }
     return res

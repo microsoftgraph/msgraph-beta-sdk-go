@@ -62,7 +62,9 @@ func (m *ReprocessLicenseAssignmentResponse) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetUser(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.User))
+        if val != nil {
+            m.SetUser(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.User))
+        }
         return nil
     }
     return res

@@ -113,7 +113,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCustomData(val)
+        if val != nil {
+            m.SetCustomData(val)
+        }
         return nil
     }
     res["deDuplicationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDeDuplicationId(val)
+        if val != nil {
+            m.SetDeDuplicationId(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +133,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +143,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["policy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +153,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPolicy(val.(*GovernancePolicy))
+        if val != nil {
+            m.SetPolicy(val.(*GovernancePolicy))
+        }
         return nil
     }
     res["policyTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +163,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPolicyTemplateId(val)
+        if val != nil {
+            m.SetPolicyTemplateId(val)
+        }
         return nil
     }
     res["recordVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +173,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetRecordVersion(val)
+        if val != nil {
+            m.SetRecordVersion(val)
+        }
         return nil
     }
     res["schemaId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +183,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSchemaId(val)
+        if val != nil {
+            m.SetSchemaId(val)
+        }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +193,9 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSettings(val.(*BusinessFlowSettings))
+        if val != nil {
+            m.SetSettings(val.(*BusinessFlowSettings))
+        }
         return nil
     }
     return res

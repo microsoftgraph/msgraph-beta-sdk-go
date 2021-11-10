@@ -212,7 +212,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAlternateUrl(val)
+        if val != nil {
+            m.SetAlternateUrl(val)
+        }
         return nil
     }
     res["applicationServerTimeout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +222,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetApplicationServerTimeout(val)
+        if val != nil {
+            m.SetApplicationServerTimeout(val)
+        }
         return nil
     }
     res["applicationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +232,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetApplicationType(val)
+        if val != nil {
+            m.SetApplicationType(val)
+        }
         return nil
     }
     res["externalAuthenticationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,8 +242,10 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ExternalAuthenticationType)
-        m.SetExternalAuthenticationType(&cast)
+        if val != nil {
+            cast := val.(ExternalAuthenticationType)
+            m.SetExternalAuthenticationType(&cast)
+        }
         return nil
     }
     res["externalUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +253,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetExternalUrl(val)
+        if val != nil {
+            m.SetExternalUrl(val)
+        }
         return nil
     }
     res["internalUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,7 +263,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetInternalUrl(val)
+        if val != nil {
+            m.SetInternalUrl(val)
+        }
         return nil
     }
     res["isBackendCertificateValidationEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,7 +273,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsBackendCertificateValidationEnabled(val)
+        if val != nil {
+            m.SetIsBackendCertificateValidationEnabled(val)
+        }
         return nil
     }
     res["isHttpOnlyCookieEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,7 +283,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsHttpOnlyCookieEnabled(val)
+        if val != nil {
+            m.SetIsHttpOnlyCookieEnabled(val)
+        }
         return nil
     }
     res["isOnPremPublishingEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,7 +293,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsOnPremPublishingEnabled(val)
+        if val != nil {
+            m.SetIsOnPremPublishingEnabled(val)
+        }
         return nil
     }
     res["isPersistentCookieEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,7 +303,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsPersistentCookieEnabled(val)
+        if val != nil {
+            m.SetIsPersistentCookieEnabled(val)
+        }
         return nil
     }
     res["isSecureCookieEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,7 +313,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsSecureCookieEnabled(val)
+        if val != nil {
+            m.SetIsSecureCookieEnabled(val)
+        }
         return nil
     }
     res["isTranslateHostHeaderEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -301,7 +323,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsTranslateHostHeaderEnabled(val)
+        if val != nil {
+            m.SetIsTranslateHostHeaderEnabled(val)
+        }
         return nil
     }
     res["isTranslateLinksInBodyEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -309,7 +333,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsTranslateLinksInBodyEnabled(val)
+        if val != nil {
+            m.SetIsTranslateLinksInBodyEnabled(val)
+        }
         return nil
     }
     res["singleSignOnSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -317,7 +343,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetSingleSignOnSettings(val.(*OnPremisesPublishingSingleSignOn))
+        if val != nil {
+            m.SetSingleSignOnSettings(val.(*OnPremisesPublishingSingleSignOn))
+        }
         return nil
     }
     res["useAlternateUrlForTranslationAndRedirect"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -325,7 +353,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetUseAlternateUrlForTranslationAndRedirect(val)
+        if val != nil {
+            m.SetUseAlternateUrlForTranslationAndRedirect(val)
+        }
         return nil
     }
     res["verifiedCustomDomainCertificatesMetadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -333,7 +363,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetVerifiedCustomDomainCertificatesMetadata(val.(*VerifiedCustomDomainCertificatesMetadata))
+        if val != nil {
+            m.SetVerifiedCustomDomainCertificatesMetadata(val.(*VerifiedCustomDomainCertificatesMetadata))
+        }
         return nil
     }
     res["verifiedCustomDomainKeyCredential"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -341,7 +373,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetVerifiedCustomDomainKeyCredential(val.(*KeyCredential))
+        if val != nil {
+            m.SetVerifiedCustomDomainKeyCredential(val.(*KeyCredential))
+        }
         return nil
     }
     res["verifiedCustomDomainPasswordCredential"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -349,7 +383,9 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetVerifiedCustomDomainPasswordCredential(val.(*PasswordCredential))
+        if val != nil {
+            m.SetVerifiedCustomDomainPasswordCredential(val.(*PasswordCredential))
+        }
         return nil
     }
     return res

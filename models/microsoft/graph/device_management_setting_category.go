@@ -53,7 +53,9 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["hasRequiredSetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetHasRequiredSetting(val)
+        if val != nil {
+            m.SetHasRequiredSetting(val)
+        }
         return nil
     }
     res["settingDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,11 +73,13 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementSettingDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementSettingDefinition))
+        if val != nil {
+            res := make([]DeviceManagementSettingDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementSettingDefinition))
+            }
+            m.SetSettingDefinitions(res)
         }
-        m.SetSettingDefinitions(res)
         return nil
     }
     return res

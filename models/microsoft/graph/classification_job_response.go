@@ -33,7 +33,9 @@ func (m *ClassificationJobResponse) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetResult(val.(*DetectedSensitiveContentWrapper))
+        if val != nil {
+            m.SetResult(val.(*DetectedSensitiveContentWrapper))
+        }
         return nil
     }
     return res

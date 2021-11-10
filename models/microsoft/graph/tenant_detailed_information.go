@@ -123,7 +123,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCity(val)
+        if val != nil {
+            m.SetCity(val)
+        }
         return nil
     }
     res["countryCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +133,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCountryCode(val)
+        if val != nil {
+            m.SetCountryCode(val)
+        }
         return nil
     }
     res["countryName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +143,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCountryName(val)
+        if val != nil {
+            m.SetCountryName(val)
+        }
         return nil
     }
     res["defaultDomainName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +153,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDefaultDomainName(val)
+        if val != nil {
+            m.SetDefaultDomainName(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["industryName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIndustryName(val)
+        if val != nil {
+            m.SetIndustryName(val)
+        }
         return nil
     }
     res["region"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +183,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetRegion(val)
+        if val != nil {
+            m.SetRegion(val)
+        }
         return nil
     }
     res["segmentName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +193,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSegmentName(val)
+        if val != nil {
+            m.SetSegmentName(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,7 +203,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["verticalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -195,7 +213,9 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetVerticalName(val)
+        if val != nil {
+            m.SetVerticalName(val)
+        }
         return nil
     }
     return res

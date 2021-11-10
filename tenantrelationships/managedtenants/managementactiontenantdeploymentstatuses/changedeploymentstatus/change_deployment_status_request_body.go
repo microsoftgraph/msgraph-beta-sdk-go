@@ -82,7 +82,9 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetManagementActionId(val)
+        if val != nil {
+            m.SetManagementActionId(val)
+        }
         return nil
     }
     res["managementTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetManagementTemplateId(val)
+        if val != nil {
+            m.SetManagementTemplateId(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     res["tenantGroupId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetTenantGroupId(val)
+        if val != nil {
+            m.SetTenantGroupId(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     return res

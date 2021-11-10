@@ -73,11 +73,13 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]ClassificationAttribute, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ClassificationAttribute))
+        if val != nil {
+            res := make([]ClassificationAttribute, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ClassificationAttribute))
+            }
+            m.SetClassificationAttributes(res)
         }
-        m.SetClassificationAttributes(res)
         return nil
     }
     res["classificationMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,8 +87,10 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(ClassificationMethod)
-        m.SetClassificationMethod(&cast)
+        if val != nil {
+            cast := val.(ClassificationMethod)
+            m.SetClassificationMethod(&cast)
+        }
         return nil
     }
     res["matches"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,11 +98,13 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]SensitiveContentLocation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SensitiveContentLocation))
+        if val != nil {
+            res := make([]SensitiveContentLocation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SensitiveContentLocation))
+            }
+            m.SetMatches(res)
         }
-        m.SetMatches(res)
         return nil
     }
     res["scope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,8 +112,10 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(SensitiveTypeScope)
-        m.SetScope(&cast)
+        if val != nil {
+            cast := val.(SensitiveTypeScope)
+            m.SetScope(&cast)
+        }
         return nil
     }
     res["sensitiveTypeSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,8 +123,10 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(SensitiveTypeSource)
-        m.SetSensitiveTypeSource(&cast)
+        if val != nil {
+            cast := val.(SensitiveTypeSource)
+            m.SetSensitiveTypeSource(&cast)
+        }
         return nil
     }
     return res

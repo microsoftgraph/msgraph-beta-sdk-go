@@ -94,7 +94,9 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetAccount(val.(*Account))
+        if val != nil {
+            m.SetAccount(val.(*Account))
+        }
         return nil
     }
     res["balancingAccountId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetBalancingAccountId(val)
+        if val != nil {
+            m.SetBalancingAccountId(val)
+        }
         return nil
     }
     res["balancingAccountNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetBalancingAccountNumber(val)
+        if val != nil {
+            m.SetBalancingAccountNumber(val)
+        }
         return nil
     }
     res["code"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCode(val)
+        if val != nil {
+            m.SetCode(val)
+        }
         return nil
     }
     res["customerPayments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,11 +134,13 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]CustomerPayment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CustomerPayment))
+        if val != nil {
+            res := make([]CustomerPayment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CustomerPayment))
+            }
+            m.SetCustomerPayments(res)
         }
-        m.SetCustomerPayments(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +148,9 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +158,9 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     return res

@@ -133,11 +133,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]EmailAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EmailAuthenticationMethod))
+        if val != nil {
+            res := make([]EmailAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EmailAuthenticationMethod))
+            }
+            m.SetEmailMethods(res)
         }
-        m.SetEmailMethods(res)
         return nil
     }
     res["fido2Methods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,11 +147,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]Fido2AuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Fido2AuthenticationMethod))
+        if val != nil {
+            res := make([]Fido2AuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Fido2AuthenticationMethod))
+            }
+            m.SetFido2Methods(res)
         }
-        m.SetFido2Methods(res)
         return nil
     }
     res["methods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,11 +161,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]AuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AuthenticationMethod))
+        if val != nil {
+            res := make([]AuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AuthenticationMethod))
+            }
+            m.SetMethods(res)
         }
-        m.SetMethods(res)
         return nil
     }
     res["microsoftAuthenticatorMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,11 +175,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]MicrosoftAuthenticatorAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MicrosoftAuthenticatorAuthenticationMethod))
+        if val != nil {
+            res := make([]MicrosoftAuthenticatorAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MicrosoftAuthenticatorAuthenticationMethod))
+            }
+            m.SetMicrosoftAuthenticatorMethods(res)
         }
-        m.SetMicrosoftAuthenticatorMethods(res)
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,11 +189,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]LongRunningOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LongRunningOperation))
+        if val != nil {
+            res := make([]LongRunningOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LongRunningOperation))
+            }
+            m.SetOperations(res)
         }
-        m.SetOperations(res)
         return nil
     }
     res["passwordlessMicrosoftAuthenticatorMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,11 +203,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]PasswordlessMicrosoftAuthenticatorAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PasswordlessMicrosoftAuthenticatorAuthenticationMethod))
+        if val != nil {
+            res := make([]PasswordlessMicrosoftAuthenticatorAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PasswordlessMicrosoftAuthenticatorAuthenticationMethod))
+            }
+            m.SetPasswordlessMicrosoftAuthenticatorMethods(res)
         }
-        m.SetPasswordlessMicrosoftAuthenticatorMethods(res)
         return nil
     }
     res["passwordMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -205,11 +217,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]PasswordAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PasswordAuthenticationMethod))
+        if val != nil {
+            res := make([]PasswordAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PasswordAuthenticationMethod))
+            }
+            m.SetPasswordMethods(res)
         }
-        m.SetPasswordMethods(res)
         return nil
     }
     res["phoneMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,11 +231,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]PhoneAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PhoneAuthenticationMethod))
+        if val != nil {
+            res := make([]PhoneAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PhoneAuthenticationMethod))
+            }
+            m.SetPhoneMethods(res)
         }
-        m.SetPhoneMethods(res)
         return nil
     }
     res["softwareOathMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,11 +245,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]SoftwareOathAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SoftwareOathAuthenticationMethod))
+        if val != nil {
+            res := make([]SoftwareOathAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SoftwareOathAuthenticationMethod))
+            }
+            m.SetSoftwareOathMethods(res)
         }
-        m.SetSoftwareOathMethods(res)
         return nil
     }
     res["temporaryAccessPassMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,11 +259,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]TemporaryAccessPassAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TemporaryAccessPassAuthenticationMethod))
+        if val != nil {
+            res := make([]TemporaryAccessPassAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TemporaryAccessPassAuthenticationMethod))
+            }
+            m.SetTemporaryAccessPassMethods(res)
         }
-        m.SetTemporaryAccessPassMethods(res)
         return nil
     }
     res["windowsHelloForBusinessMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,11 +273,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]WindowsHelloForBusinessAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsHelloForBusinessAuthenticationMethod))
+        if val != nil {
+            res := make([]WindowsHelloForBusinessAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsHelloForBusinessAuthenticationMethod))
+            }
+            m.SetWindowsHelloForBusinessMethods(res)
         }
-        m.SetWindowsHelloForBusinessMethods(res)
         return nil
     }
     return res

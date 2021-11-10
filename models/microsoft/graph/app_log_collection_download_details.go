@@ -62,8 +62,10 @@ func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(AppLogDecryptionAlgorithm)
-        m.SetAppLogDecryptionAlgorithm(&cast)
+        if val != nil {
+            cast := val.(AppLogDecryptionAlgorithm)
+            m.SetAppLogDecryptionAlgorithm(&cast)
+        }
         return nil
     }
     res["decryptionKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDecryptionKey(val)
+        if val != nil {
+            m.SetDecryptionKey(val)
+        }
         return nil
     }
     res["downloadUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDownloadUrl(val)
+        if val != nil {
+            m.SetDownloadUrl(val)
+        }
         return nil
     }
     return res

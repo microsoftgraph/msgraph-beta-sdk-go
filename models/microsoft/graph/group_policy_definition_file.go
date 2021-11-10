@@ -114,11 +114,13 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]GroupPolicyDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GroupPolicyDefinition))
+        if val != nil {
+            res := make([]GroupPolicyDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GroupPolicyDefinition))
+            }
+            m.SetDefinitions(res)
         }
-        m.SetDefinitions(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +128,9 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +138,9 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["languageCodes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,11 +148,13 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetLanguageCodes(res)
         }
-        m.SetLanguageCodes(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +162,9 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["policyType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,8 +172,10 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicyType)
-        m.SetPolicyType(&cast)
+        if val != nil {
+            cast := val.(GroupPolicyType)
+            m.SetPolicyType(&cast)
+        }
         return nil
     }
     res["revision"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +183,9 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetRevision(val)
+        if val != nil {
+            m.SetRevision(val)
+        }
         return nil
     }
     res["targetNamespace"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +193,9 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetTargetNamespace(val)
+        if val != nil {
+            m.SetTargetNamespace(val)
+        }
         return nil
     }
     res["targetPrefix"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,7 +203,9 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetTargetPrefix(val)
+        if val != nil {
+            m.SetTargetPrefix(val)
+        }
         return nil
     }
     return res

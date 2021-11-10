@@ -43,7 +43,9 @@ func (m *TriggerConfigurationManagerActionRequestBody) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetConfigurationManagerAction(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigurationManagerAction))
+        if val != nil {
+            m.SetConfigurationManagerAction(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigurationManagerAction))
+        }
         return nil
     }
     return res

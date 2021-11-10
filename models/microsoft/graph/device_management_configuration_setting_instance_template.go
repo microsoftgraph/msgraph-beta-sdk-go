@@ -62,7 +62,9 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetIsRequired(val)
+        if val != nil {
+            m.SetIsRequired(val)
+        }
         return nil
     }
     res["settingDefinitionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetSettingDefinitionId(val)
+        if val != nil {
+            m.SetSettingDefinitionId(val)
+        }
         return nil
     }
     res["settingInstanceTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetSettingInstanceTemplateId(val)
+        if val != nil {
+            m.SetSettingInstanceTemplateId(val)
+        }
         return nil
     }
     return res

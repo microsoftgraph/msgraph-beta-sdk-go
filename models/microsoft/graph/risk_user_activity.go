@@ -62,8 +62,10 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(RiskDetail)
-        m.SetDetail(&cast)
+        if val != nil {
+            cast := val.(RiskDetail)
+            m.SetDetail(&cast)
+        }
         return nil
     }
     res["eventTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,11 +73,13 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]RiskEventType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RiskEventType))
+        if val != nil {
+            res := make([]RiskEventType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RiskEventType))
+            }
+            m.SetEventTypes(res)
         }
-        m.SetEventTypes(res)
         return nil
     }
     res["riskEventTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,11 +87,13 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRiskEventTypes(res)
         }
-        m.SetRiskEventTypes(res)
         return nil
     }
     return res

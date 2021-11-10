@@ -42,7 +42,9 @@ func (m *DeprovisionRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeprovisionReason(val)
+        if val != nil {
+            m.SetDeprovisionReason(val)
+        }
         return nil
     }
     return res

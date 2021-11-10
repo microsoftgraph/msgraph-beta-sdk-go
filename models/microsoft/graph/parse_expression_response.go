@@ -82,7 +82,9 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetError(val.(*PublicError))
+        if val != nil {
+            m.SetError(val.(*PublicError))
+        }
         return nil
     }
     res["evaluationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,11 +92,13 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEvaluationResult(res)
         }
-        m.SetEvaluationResult(res)
         return nil
     }
     res["evaluationSucceeded"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +106,9 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetEvaluationSucceeded(val)
+        if val != nil {
+            m.SetEvaluationSucceeded(val)
+        }
         return nil
     }
     res["parsedExpression"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +116,9 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetParsedExpression(val.(*AttributeMappingSource))
+        if val != nil {
+            m.SetParsedExpression(val.(*AttributeMappingSource))
+        }
         return nil
     }
     res["parsingSucceeded"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +126,9 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetParsingSucceeded(val)
+        if val != nil {
+            m.SetParsingSucceeded(val)
+        }
         return nil
     }
     return res

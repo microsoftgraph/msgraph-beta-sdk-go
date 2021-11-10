@@ -134,11 +134,13 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        res := make([]WindowsDefenderApplicationControlSupplementalPolicyAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsDefenderApplicationControlSupplementalPolicyAssignment))
+        if val != nil {
+            res := make([]WindowsDefenderApplicationControlSupplementalPolicyAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsDefenderApplicationControlSupplementalPolicyAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +148,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetContent(val)
+        if val != nil {
+            m.SetContent(val)
+        }
         return nil
     }
     res["contentFileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +158,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetContentFileName(val)
+        if val != nil {
+            m.SetContentFileName(val)
+        }
         return nil
     }
     res["creationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +168,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetCreationDateTime(val)
+        if val != nil {
+            m.SetCreationDateTime(val)
+        }
         return nil
     }
     res["deploySummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +178,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetDeploySummary(val.(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary))
+        if val != nil {
+            m.SetDeploySummary(val.(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +188,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,11 +198,13 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        res := make([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus))
+        if val != nil {
+            res := make([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus))
+            }
+            m.SetDeviceStatuses(res)
         }
-        m.SetDeviceStatuses(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +212,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +222,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,11 +232,13 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +246,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

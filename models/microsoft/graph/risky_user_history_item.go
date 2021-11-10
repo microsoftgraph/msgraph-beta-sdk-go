@@ -53,7 +53,9 @@ func (m *RiskyUserHistoryItem) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetActivity(val.(*RiskUserActivity))
+        if val != nil {
+            m.SetActivity(val.(*RiskUserActivity))
+        }
         return nil
     }
     res["initiatedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *RiskyUserHistoryItem) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetInitiatedBy(val)
+        if val != nil {
+            m.SetInitiatedBy(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *RiskyUserHistoryItem) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

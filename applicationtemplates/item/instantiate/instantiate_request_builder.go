@@ -64,7 +64,9 @@ func (m *InstantiateResponse) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetApplicationServicePrincipal(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationServicePrincipal))
+        if val != nil {
+            m.SetApplicationServicePrincipal(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationServicePrincipal))
+        }
         return nil
     }
     return res

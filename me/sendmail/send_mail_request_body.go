@@ -53,7 +53,9 @@ func (m *SendMailRequestBody) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetMessage(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message))
+        if val != nil {
+            m.SetMessage(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message))
+        }
         return nil
     }
     res["saveToSentItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *SendMailRequestBody) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSaveToSentItems(val)
+        if val != nil {
+            m.SetSaveToSentItems(val)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *MeetingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetAllowConversationWithoutHost(val)
+        if val != nil {
+            m.SetAllowConversationWithoutHost(val)
+        }
         return nil
     }
     return res

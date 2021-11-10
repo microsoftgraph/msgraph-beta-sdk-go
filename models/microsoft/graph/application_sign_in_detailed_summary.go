@@ -74,7 +74,9 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAggregatedEventDateTime(val)
+        if val != nil {
+            m.SetAggregatedEventDateTime(val)
+        }
         return nil
     }
     res["appDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["appId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAppId(val)
+        if val != nil {
+            m.SetAppId(val)
+        }
         return nil
     }
     res["signInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSignInCount(val)
+        if val != nil {
+            m.SetSignInCount(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetStatus(val.(*SignInStatus))
+        if val != nil {
+            m.SetStatus(val.(*SignInStatus))
+        }
         return nil
     }
     return res

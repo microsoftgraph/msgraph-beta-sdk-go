@@ -43,7 +43,9 @@ func (m *EvaluateAssignmentFilterRequestBody) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetData(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluateRequest))
+        if val != nil {
+            m.SetData(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluateRequest))
+        }
         return nil
     }
     return res

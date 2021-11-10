@@ -73,7 +73,9 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetApplicationId(val)
+        if val != nil {
+            m.SetApplicationId(val)
+        }
         return nil
     }
     res["appLogCollectionRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,11 +83,13 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]AppLogCollectionRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AppLogCollectionRequest))
+        if val != nil {
+            res := make([]AppLogCollectionRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppLogCollectionRequest))
+            }
+            m.SetAppLogCollectionRequests(res)
         }
-        m.SetAppLogCollectionRequests(res)
         return nil
     }
     res["history"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,11 +97,13 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]MobileAppTroubleshootingHistoryItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileAppTroubleshootingHistoryItem))
+        if val != nil {
+            res := make([]MobileAppTroubleshootingHistoryItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileAppTroubleshootingHistoryItem))
+            }
+            m.SetHistory(res)
         }
-        m.SetHistory(res)
         return nil
     }
     res["managedDeviceIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +111,9 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetManagedDeviceIdentifier(val)
+        if val != nil {
+            m.SetManagedDeviceIdentifier(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +121,9 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

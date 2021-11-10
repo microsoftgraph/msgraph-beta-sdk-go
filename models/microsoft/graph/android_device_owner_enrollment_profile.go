@@ -214,7 +214,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetAccountId(val)
+        if val != nil {
+            m.SetAccountId(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +224,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +234,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,7 +244,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enrolledDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,7 +254,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetEnrolledDeviceCount(val)
+        if val != nil {
+            m.SetEnrolledDeviceCount(val)
+        }
         return nil
     }
     res["enrollmentMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,8 +264,10 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(AndroidDeviceOwnerEnrollmentMode)
-        m.SetEnrollmentMode(&cast)
+        if val != nil {
+            cast := val.(AndroidDeviceOwnerEnrollmentMode)
+            m.SetEnrollmentMode(&cast)
+        }
         return nil
     }
     res["enrollmentTokenType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,8 +275,10 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(AndroidDeviceOwnerEnrollmentTokenType)
-        m.SetEnrollmentTokenType(&cast)
+        if val != nil {
+            cast := val.(AndroidDeviceOwnerEnrollmentTokenType)
+            m.SetEnrollmentTokenType(&cast)
+        }
         return nil
     }
     res["enrollmentTokenUsageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,7 +286,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetEnrollmentTokenUsageCount(val)
+        if val != nil {
+            m.SetEnrollmentTokenUsageCount(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -280,7 +296,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["qrCodeContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -288,7 +306,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetQrCodeContent(val)
+        if val != nil {
+            m.SetQrCodeContent(val)
+        }
         return nil
     }
     res["qrCodeImage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,7 +316,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetQrCodeImage(val.(*MimeContent))
+        if val != nil {
+            m.SetQrCodeImage(val.(*MimeContent))
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -304,11 +326,13 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["tokenCreationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +340,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetTokenCreationDateTime(val)
+        if val != nil {
+            m.SetTokenCreationDateTime(val)
+        }
         return nil
     }
     res["tokenExpirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -324,7 +350,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetTokenExpirationDateTime(val)
+        if val != nil {
+            m.SetTokenExpirationDateTime(val)
+        }
         return nil
     }
     res["tokenValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,7 +360,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetTokenValue(val)
+        if val != nil {
+            m.SetTokenValue(val)
+        }
         return nil
     }
     res["wifiHidden"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -340,7 +370,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetWifiHidden(val)
+        if val != nil {
+            m.SetWifiHidden(val)
+        }
         return nil
     }
     res["wifiPassword"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -348,7 +380,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetWifiPassword(val)
+        if val != nil {
+            m.SetWifiPassword(val)
+        }
         return nil
     }
     res["wifiSecurityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,8 +390,10 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(AospWifiSecurityType)
-        m.SetWifiSecurityType(&cast)
+        if val != nil {
+            cast := val.(AospWifiSecurityType)
+            m.SetWifiSecurityType(&cast)
+        }
         return nil
     }
     res["wifiSsid"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -365,7 +401,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetWifiSsid(val)
+        if val != nil {
+            m.SetWifiSsid(val)
+        }
         return nil
     }
     return res

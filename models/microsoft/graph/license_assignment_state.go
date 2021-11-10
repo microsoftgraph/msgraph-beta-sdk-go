@@ -93,7 +93,9 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetAssignedByGroup(val)
+        if val != nil {
+            m.SetAssignedByGroup(val)
+        }
         return nil
     }
     res["disabledPlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,11 +103,13 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDisabledPlans(res)
         }
-        m.SetDisabledPlans(res)
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +117,9 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetError(val)
+        if val != nil {
+            m.SetError(val)
+        }
         return nil
     }
     res["lastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +127,9 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastUpdatedDateTime(val)
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
         return nil
     }
     res["skuId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +137,9 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetSkuId(val)
+        if val != nil {
+            m.SetSkuId(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +147,9 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetState(val)
+        if val != nil {
+            m.SetState(val)
+        }
         return nil
     }
     return res

@@ -72,7 +72,9 @@ func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetBreakId(val)
+        if val != nil {
+            m.SetBreakId(val)
+        }
         return nil
     }
     res["end"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetEnd(val.(*TimeCardEvent))
+        if val != nil {
+            m.SetEnd(val.(*TimeCardEvent))
+        }
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetNotes(val.(*ItemBody))
+        if val != nil {
+            m.SetNotes(val.(*ItemBody))
+        }
         return nil
     }
     res["start"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetStart(val.(*TimeCardEvent))
+        if val != nil {
+            m.SetStart(val.(*TimeCardEvent))
+        }
         return nil
     }
     return res

@@ -53,7 +53,9 @@ func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetOccurrenceDateTime(val)
+        if val != nil {
+            m.SetOccurrenceDateTime(val)
+        }
         return nil
     }
     res["troubleshootingErrorDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetTroubleshootingErrorDetails(val.(*DeviceManagementTroubleshootingErrorDetails))
+        if val != nil {
+            m.SetTroubleshootingErrorDetails(val.(*DeviceManagementTroubleshootingErrorDetails))
+        }
         return nil
     }
     return res

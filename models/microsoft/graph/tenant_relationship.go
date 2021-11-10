@@ -33,7 +33,9 @@ func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetManagedTenants(val.(*ManagedTenant))
+        if val != nil {
+            m.SetManagedTenants(val.(*ManagedTenant))
+        }
         return nil
     }
     return res

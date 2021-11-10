@@ -144,7 +144,9 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +154,9 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +164,9 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["email"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +174,9 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     res["filesFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +184,9 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetFilesFolder(val.(*DriveItem))
+        if val != nil {
+            m.SetFilesFolder(val.(*DriveItem))
+        }
         return nil
     }
     res["isFavoriteByDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +194,9 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetIsFavoriteByDefault(val)
+        if val != nil {
+            m.SetIsFavoriteByDefault(val)
+        }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,11 +204,13 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]ConversationMember, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConversationMember))
+        if val != nil {
+            res := make([]ConversationMember, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConversationMember))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     res["membershipType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,8 +218,10 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        cast := val.(ChannelMembershipType)
-        m.SetMembershipType(&cast)
+        if val != nil {
+            cast := val.(ChannelMembershipType)
+            m.SetMembershipType(&cast)
+        }
         return nil
     }
     res["messages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,11 +229,13 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]ChatMessage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ChatMessage))
+        if val != nil {
+            res := make([]ChatMessage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ChatMessage))
+            }
+            m.SetMessages(res)
         }
-        m.SetMessages(res)
         return nil
     }
     res["moderationSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,7 +243,9 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetModerationSettings(val.(*ChannelModerationSettings))
+        if val != nil {
+            m.SetModerationSettings(val.(*ChannelModerationSettings))
+        }
         return nil
     }
     res["tabs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,11 +253,13 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]TeamsTab, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TeamsTab))
+        if val != nil {
+            res := make([]TeamsTab, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeamsTab))
+            }
+            m.SetTabs(res)
         }
-        m.SetTabs(res)
         return nil
     }
     res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +267,9 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

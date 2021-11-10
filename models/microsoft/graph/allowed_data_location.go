@@ -63,7 +63,9 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAppId(val)
+        if val != nil {
+            m.SetAppId(val)
+        }
         return nil
     }
     res["domain"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDomain(val)
+        if val != nil {
+            m.SetDomain(val)
+        }
         return nil
     }
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLocation(val)
+        if val != nil {
+            m.SetLocation(val)
+        }
         return nil
     }
     return res

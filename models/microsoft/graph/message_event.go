@@ -54,7 +54,9 @@ func (m *MessageEvent) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDateTime(val)
+        if val != nil {
+            m.SetDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,7 +64,9 @@ func (m *MessageEvent) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["eventType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,8 +74,10 @@ func (m *MessageEvent) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(MessageEventType)
-        m.SetEventType(&cast)
+        if val != nil {
+            cast := val.(MessageEventType)
+            m.SetEventType(&cast)
+        }
         return nil
     }
     return res

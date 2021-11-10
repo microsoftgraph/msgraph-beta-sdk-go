@@ -42,7 +42,9 @@ func (m *ManagedDeviceCleanupSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDeviceInactivityBeforeRetirementInDays(val)
+        if val != nil {
+            m.SetDeviceInactivityBeforeRetirementInDays(val)
+        }
         return nil
     }
     return res

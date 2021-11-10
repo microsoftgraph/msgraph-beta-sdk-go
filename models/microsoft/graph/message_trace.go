@@ -104,7 +104,9 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDestinationIPAddress(val)
+        if val != nil {
+            m.SetDestinationIPAddress(val)
+        }
         return nil
     }
     res["messageId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetMessageId(val)
+        if val != nil {
+            m.SetMessageId(val)
+        }
         return nil
     }
     res["receivedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetReceivedDateTime(val)
+        if val != nil {
+            m.SetReceivedDateTime(val)
+        }
         return nil
     }
     res["recipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,11 +134,13 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]MessageRecipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MessageRecipient))
+        if val != nil {
+            res := make([]MessageRecipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MessageRecipient))
+            }
+            m.SetRecipients(res)
         }
-        m.SetRecipients(res)
         return nil
     }
     res["senderEmail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +148,9 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSenderEmail(val)
+        if val != nil {
+            m.SetSenderEmail(val)
+        }
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +158,9 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSize(val)
+        if val != nil {
+            m.SetSize(val)
+        }
         return nil
     }
     res["sourceIPAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +168,9 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSourceIPAddress(val)
+        if val != nil {
+            m.SetSourceIPAddress(val)
+        }
         return nil
     }
     res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +178,9 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSubject(val)
+        if val != nil {
+            m.SetSubject(val)
+        }
         return nil
     }
     return res

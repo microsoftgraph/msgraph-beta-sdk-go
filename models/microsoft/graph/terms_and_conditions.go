@@ -154,7 +154,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAcceptanceStatement(val)
+        if val != nil {
+            m.SetAcceptanceStatement(val)
+        }
         return nil
     }
     res["acceptanceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,11 +164,13 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]TermsAndConditionsAcceptanceStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TermsAndConditionsAcceptanceStatus))
+        if val != nil {
+            res := make([]TermsAndConditionsAcceptanceStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TermsAndConditionsAcceptanceStatus))
+            }
+            m.SetAcceptanceStatuses(res)
         }
-        m.SetAcceptanceStatuses(res)
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,11 +178,13 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]TermsAndConditionsAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TermsAndConditionsAssignment))
+        if val != nil {
+            res := make([]TermsAndConditionsAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TermsAndConditionsAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["bodyText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +192,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetBodyText(val)
+        if val != nil {
+            m.SetBodyText(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +202,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +212,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +222,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["groupAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,11 +232,13 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]TermsAndConditionsGroupAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TermsAndConditionsGroupAssignment))
+        if val != nil {
+            res := make([]TermsAndConditionsGroupAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TermsAndConditionsGroupAssignment))
+            }
+            m.SetGroupAssignments(res)
         }
-        m.SetGroupAssignments(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +246,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["modifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,7 +256,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetModifiedDateTime(val)
+        if val != nil {
+            m.SetModifiedDateTime(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,11 +266,13 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,7 +280,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetTitle(val)
+        if val != nil {
+            m.SetTitle(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,7 +290,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

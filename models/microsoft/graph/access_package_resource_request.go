@@ -124,7 +124,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAccessPackageResource(val.(*AccessPackageResource))
+        if val != nil {
+            m.SetAccessPackageResource(val.(*AccessPackageResource))
+        }
         return nil
     }
     res["catalogId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCatalogId(val)
+        if val != nil {
+            m.SetCatalogId(val)
+        }
         return nil
     }
     res["executeImmediately"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +144,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetExecuteImmediately(val)
+        if val != nil {
+            m.SetExecuteImmediately(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +154,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["isValidationOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIsValidationOnly(val)
+        if val != nil {
+            m.SetIsValidationOnly(val)
+        }
         return nil
     }
     res["justification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +174,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetJustification(val)
+        if val != nil {
+            m.SetJustification(val)
+        }
         return nil
     }
     res["requestor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +184,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRequestor(val.(*AccessPackageSubject))
+        if val != nil {
+            m.SetRequestor(val.(*AccessPackageSubject))
+        }
         return nil
     }
     res["requestState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +194,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRequestState(val)
+        if val != nil {
+            m.SetRequestState(val)
+        }
         return nil
     }
     res["requestStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +204,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRequestStatus(val)
+        if val != nil {
+            m.SetRequestStatus(val)
+        }
         return nil
     }
     res["requestType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +214,9 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRequestType(val)
+        if val != nil {
+            m.SetRequestType(val)
+        }
         return nil
     }
     return res

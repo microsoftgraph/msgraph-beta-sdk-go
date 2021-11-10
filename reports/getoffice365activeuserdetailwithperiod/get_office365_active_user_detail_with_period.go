@@ -264,11 +264,13 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssignedProducts(res)
         }
-        m.SetAssignedProducts(res)
         return nil
     }
     res["deletedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -276,7 +278,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetDeletedDate(val)
+        if val != nil {
+            m.SetDeletedDate(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -284,7 +288,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["exchangeLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -292,7 +298,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetExchangeLastActivityDate(val)
+        if val != nil {
+            m.SetExchangeLastActivityDate(val)
+        }
         return nil
     }
     res["exchangeLicenseAssignDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -300,7 +308,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetExchangeLicenseAssignDate(val)
+        if val != nil {
+            m.SetExchangeLicenseAssignDate(val)
+        }
         return nil
     }
     res["hasExchangeLicense"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -308,7 +318,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetHasExchangeLicense(val)
+        if val != nil {
+            m.SetHasExchangeLicense(val)
+        }
         return nil
     }
     res["hasOneDriveLicense"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +328,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetHasOneDriveLicense(val)
+        if val != nil {
+            m.SetHasOneDriveLicense(val)
+        }
         return nil
     }
     res["hasSharePointLicense"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -324,7 +338,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetHasSharePointLicense(val)
+        if val != nil {
+            m.SetHasSharePointLicense(val)
+        }
         return nil
     }
     res["hasSkypeForBusinessLicense"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,7 +348,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetHasSkypeForBusinessLicense(val)
+        if val != nil {
+            m.SetHasSkypeForBusinessLicense(val)
+        }
         return nil
     }
     res["hasTeamsLicense"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -340,7 +358,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetHasTeamsLicense(val)
+        if val != nil {
+            m.SetHasTeamsLicense(val)
+        }
         return nil
     }
     res["hasYammerLicense"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -348,7 +368,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetHasYammerLicense(val)
+        if val != nil {
+            m.SetHasYammerLicense(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,7 +378,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["oneDriveLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -364,7 +388,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetOneDriveLastActivityDate(val)
+        if val != nil {
+            m.SetOneDriveLastActivityDate(val)
+        }
         return nil
     }
     res["oneDriveLicenseAssignDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -372,7 +398,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetOneDriveLicenseAssignDate(val)
+        if val != nil {
+            m.SetOneDriveLicenseAssignDate(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -380,7 +408,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["sharePointLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -388,7 +418,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetSharePointLastActivityDate(val)
+        if val != nil {
+            m.SetSharePointLastActivityDate(val)
+        }
         return nil
     }
     res["sharePointLicenseAssignDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -396,7 +428,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetSharePointLicenseAssignDate(val)
+        if val != nil {
+            m.SetSharePointLicenseAssignDate(val)
+        }
         return nil
     }
     res["skypeForBusinessLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -404,7 +438,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetSkypeForBusinessLastActivityDate(val)
+        if val != nil {
+            m.SetSkypeForBusinessLastActivityDate(val)
+        }
         return nil
     }
     res["skypeForBusinessLicenseAssignDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -412,7 +448,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetSkypeForBusinessLicenseAssignDate(val)
+        if val != nil {
+            m.SetSkypeForBusinessLicenseAssignDate(val)
+        }
         return nil
     }
     res["teamsLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -420,7 +458,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTeamsLastActivityDate(val)
+        if val != nil {
+            m.SetTeamsLastActivityDate(val)
+        }
         return nil
     }
     res["teamsLicenseAssignDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -428,7 +468,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTeamsLicenseAssignDate(val)
+        if val != nil {
+            m.SetTeamsLicenseAssignDate(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -436,7 +478,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     res["yammerLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -444,7 +488,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetYammerLastActivityDate(val)
+        if val != nil {
+            m.SetYammerLastActivityDate(val)
+        }
         return nil
     }
     res["yammerLicenseAssignDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -452,7 +498,9 @@ func (m *GetOffice365ActiveUserDetailWithPeriod) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetYammerLicenseAssignDate(val)
+        if val != nil {
+            m.SetYammerLicenseAssignDate(val)
+        }
         return nil
     }
     return res

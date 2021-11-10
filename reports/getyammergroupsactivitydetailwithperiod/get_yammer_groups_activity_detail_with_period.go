@@ -154,7 +154,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetGroupDisplayName(val)
+        if val != nil {
+            m.SetGroupDisplayName(val)
+        }
         return nil
     }
     res["groupType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +164,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetGroupType(val)
+        if val != nil {
+            m.SetGroupType(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +174,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +184,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["likedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +194,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetLikedCount(val)
+        if val != nil {
+            m.SetLikedCount(val)
+        }
         return nil
     }
     res["memberCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +204,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetMemberCount(val)
+        if val != nil {
+            m.SetMemberCount(val)
+        }
         return nil
     }
     res["networkDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +214,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetNetworkDisplayName(val)
+        if val != nil {
+            m.SetNetworkDisplayName(val)
+        }
         return nil
     }
     res["office365Connected"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +224,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetOffice365Connected(val)
+        if val != nil {
+            m.SetOffice365Connected(val)
+        }
         return nil
     }
     res["ownerPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +234,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetOwnerPrincipalName(val)
+        if val != nil {
+            m.SetOwnerPrincipalName(val)
+        }
         return nil
     }
     res["postedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +244,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetPostedCount(val)
+        if val != nil {
+            m.SetPostedCount(val)
+        }
         return nil
     }
     res["readCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +254,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetReadCount(val)
+        if val != nil {
+            m.SetReadCount(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,7 +264,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +274,9 @@ func (m *GetYammerGroupsActivityDetailWithPeriod) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     return res

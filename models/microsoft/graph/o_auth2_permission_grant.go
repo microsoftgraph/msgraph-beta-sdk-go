@@ -94,7 +94,9 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetClientId(val)
+        if val != nil {
+            m.SetClientId(val)
+        }
         return nil
     }
     res["consentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetConsentType(val)
+        if val != nil {
+            m.SetConsentType(val)
+        }
         return nil
     }
     res["expiryTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetExpiryTime(val)
+        if val != nil {
+            m.SetExpiryTime(val)
+        }
         return nil
     }
     res["principalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPrincipalId(val)
+        if val != nil {
+            m.SetPrincipalId(val)
+        }
         return nil
     }
     res["resourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetResourceId(val)
+        if val != nil {
+            m.SetResourceId(val)
+        }
         return nil
     }
     res["scope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetScope(val)
+        if val != nil {
+            m.SetScope(val)
+        }
         return nil
     }
     res["startTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +154,9 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetStartTime(val)
+        if val != nil {
+            m.SetStartTime(val)
+        }
         return nil
     }
     return res

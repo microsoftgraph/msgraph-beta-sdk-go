@@ -93,11 +93,13 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]RegistrationAuthMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RegistrationAuthMethod))
+        if val != nil {
+            res := make([]RegistrationAuthMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RegistrationAuthMethod))
+            }
+            m.SetAuthMethods(res)
         }
-        m.SetAuthMethods(res)
         return nil
     }
     res["isCapable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +107,9 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetIsCapable(val)
+        if val != nil {
+            m.SetIsCapable(val)
+        }
         return nil
     }
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +117,9 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     res["isMfaRegistered"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +127,9 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetIsMfaRegistered(val)
+        if val != nil {
+            m.SetIsMfaRegistered(val)
+        }
         return nil
     }
     res["isRegistered"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +137,9 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetIsRegistered(val)
+        if val != nil {
+            m.SetIsRegistered(val)
+        }
         return nil
     }
     res["userDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +147,9 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetUserDisplayName(val)
+        if val != nil {
+            m.SetUserDisplayName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +157,9 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

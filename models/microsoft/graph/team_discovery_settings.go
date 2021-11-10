@@ -42,7 +42,9 @@ func (m *TeamDiscoverySettings) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetShowInTeamsSearchAndSuggestions(val)
+        if val != nil {
+            m.SetShowInTeamsSearchAndSuggestions(val)
+        }
         return nil
     }
     return res

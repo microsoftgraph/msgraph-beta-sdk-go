@@ -43,8 +43,10 @@ func (m *QueryByPlatformTypeRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicyPlatformType)
-        m.SetPlatformType(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicyPlatformType)
+            m.SetPlatformType(&cast)
+        }
         return nil
     }
     return res

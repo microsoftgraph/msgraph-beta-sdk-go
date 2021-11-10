@@ -62,7 +62,9 @@ func (m *GetByPathWithPathResponse) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSite(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Site))
+        if val != nil {
+            m.SetSite(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Site))
+        }
         return nil
     }
     return res

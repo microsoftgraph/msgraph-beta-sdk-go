@@ -94,8 +94,10 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(RunState)
-        m.SetDetectionState(&cast)
+        if val != nil {
+            cast := val.(RunState)
+            m.SetDetectionState(&cast)
+        }
         return nil
     }
     res["expectedStateUpdateDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -103,7 +105,9 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetExpectedStateUpdateDateTime(val)
+        if val != nil {
+            m.SetExpectedStateUpdateDateTime(val)
+        }
         return nil
     }
     res["lastStateUpdateDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +115,9 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetLastStateUpdateDateTime(val)
+        if val != nil {
+            m.SetLastStateUpdateDateTime(val)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +125,9 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["managedDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +135,9 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetManagedDevice(val.(*ManagedDevice))
+        if val != nil {
+            m.SetManagedDevice(val.(*ManagedDevice))
+        }
         return nil
     }
     res["scriptError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +145,9 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetScriptError(val)
+        if val != nil {
+            m.SetScriptError(val)
+        }
         return nil
     }
     res["scriptOutput"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +155,9 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetScriptOutput(val)
+        if val != nil {
+            m.SetScriptOutput(val)
+        }
         return nil
     }
     return res

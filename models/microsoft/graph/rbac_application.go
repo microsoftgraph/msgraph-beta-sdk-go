@@ -123,11 +123,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRbacResourceNamespace, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRbacResourceNamespace))
+        if val != nil {
+            res := make([]UnifiedRbacResourceNamespace, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRbacResourceNamespace))
+            }
+            m.SetResourceNamespaces(res)
         }
-        m.SetResourceNamespaces(res)
         return nil
     }
     res["roleAssignmentApprovals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,11 +137,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]Approval, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Approval))
+        if val != nil {
+            res := make([]Approval, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Approval))
+            }
+            m.SetRoleAssignmentApprovals(res)
         }
-        m.SetRoleAssignmentApprovals(res)
         return nil
     }
     res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,11 +151,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleAssignment))
+        if val != nil {
+            res := make([]UnifiedRoleAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleAssignment))
+            }
+            m.SetRoleAssignments(res)
         }
-        m.SetRoleAssignments(res)
         return nil
     }
     res["roleAssignmentScheduleInstances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,11 +165,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleAssignmentScheduleInstance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleAssignmentScheduleInstance))
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentScheduleInstance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleAssignmentScheduleInstance))
+            }
+            m.SetRoleAssignmentScheduleInstances(res)
         }
-        m.SetRoleAssignmentScheduleInstances(res)
         return nil
     }
     res["roleAssignmentScheduleRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,11 +179,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleAssignmentScheduleRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleAssignmentScheduleRequest))
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentScheduleRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleAssignmentScheduleRequest))
+            }
+            m.SetRoleAssignmentScheduleRequests(res)
         }
-        m.SetRoleAssignmentScheduleRequests(res)
         return nil
     }
     res["roleAssignmentSchedules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,11 +193,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleAssignmentSchedule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleAssignmentSchedule))
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentSchedule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleAssignmentSchedule))
+            }
+            m.SetRoleAssignmentSchedules(res)
         }
-        m.SetRoleAssignmentSchedules(res)
         return nil
     }
     res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -195,11 +207,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleDefinition))
+        if val != nil {
+            res := make([]UnifiedRoleDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleDefinition))
+            }
+            m.SetRoleDefinitions(res)
         }
-        m.SetRoleDefinitions(res)
         return nil
     }
     res["roleEligibilityScheduleInstances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,11 +221,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleEligibilityScheduleInstance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleEligibilityScheduleInstance))
+        if val != nil {
+            res := make([]UnifiedRoleEligibilityScheduleInstance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleEligibilityScheduleInstance))
+            }
+            m.SetRoleEligibilityScheduleInstances(res)
         }
-        m.SetRoleEligibilityScheduleInstances(res)
         return nil
     }
     res["roleEligibilityScheduleRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -219,11 +235,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleEligibilityScheduleRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleEligibilityScheduleRequest))
+        if val != nil {
+            res := make([]UnifiedRoleEligibilityScheduleRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleEligibilityScheduleRequest))
+            }
+            m.SetRoleEligibilityScheduleRequests(res)
         }
-        m.SetRoleEligibilityScheduleRequests(res)
         return nil
     }
     res["roleEligibilitySchedules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,11 +249,13 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleEligibilitySchedule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleEligibilitySchedule))
+        if val != nil {
+            res := make([]UnifiedRoleEligibilitySchedule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleEligibilitySchedule))
+            }
+            m.SetRoleEligibilitySchedules(res)
         }
-        m.SetRoleEligibilitySchedules(res)
         return nil
     }
     return res

@@ -33,7 +33,9 @@ func (m *EvaluateLabelJobResponse) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetResult(val.(*EvaluateLabelJobResultGroup))
+        if val != nil {
+            m.SetResult(val.(*EvaluateLabelJobResultGroup))
+        }
         return nil
     }
     return res

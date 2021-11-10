@@ -154,7 +154,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +164,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +174,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +184,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["stateChangeDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +194,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetStateChangeDate(val)
+        if val != nil {
+            m.SetStateChangeDate(val)
+        }
         return nil
     }
     res["usedAndroidPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +204,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUsedAndroidPhone(val)
+        if val != nil {
+            m.SetUsedAndroidPhone(val)
+        }
         return nil
     }
     res["usediPad"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +214,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUsediPad(val)
+        if val != nil {
+            m.SetUsediPad(val)
+        }
         return nil
     }
     res["usediPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +224,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUsediPhone(val)
+        if val != nil {
+            m.SetUsediPhone(val)
+        }
         return nil
     }
     res["usedOthers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +234,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUsedOthers(val)
+        if val != nil {
+            m.SetUsedOthers(val)
+        }
         return nil
     }
     res["usedWeb"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +244,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUsedWeb(val)
+        if val != nil {
+            m.SetUsedWeb(val)
+        }
         return nil
     }
     res["usedWindowsPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +254,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUsedWindowsPhone(val)
+        if val != nil {
+            m.SetUsedWindowsPhone(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,7 +264,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     res["userState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +274,9 @@ func (m *GetYammerDeviceUsageUserDetailWithDate) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetUserState(val)
+        if val != nil {
+            m.SetUserState(val)
+        }
         return nil
     }
     return res

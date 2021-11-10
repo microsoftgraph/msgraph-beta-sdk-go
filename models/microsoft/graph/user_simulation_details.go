@@ -123,7 +123,9 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAssignedTrainingsCount(val)
+        if val != nil {
+            m.SetAssignedTrainingsCount(val)
+        }
         return nil
     }
     res["completedTrainingsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +133,9 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCompletedTrainingsCount(val)
+        if val != nil {
+            m.SetCompletedTrainingsCount(val)
+        }
         return nil
     }
     res["compromisedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +143,9 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCompromisedDateTime(val)
+        if val != nil {
+            m.SetCompromisedDateTime(val)
+        }
         return nil
     }
     res["inProgressTrainingsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +153,9 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetInProgressTrainingsCount(val)
+        if val != nil {
+            m.SetInProgressTrainingsCount(val)
+        }
         return nil
     }
     res["isCompromised"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsCompromised(val)
+        if val != nil {
+            m.SetIsCompromised(val)
+        }
         return nil
     }
     res["reportedPhishDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetReportedPhishDateTime(val)
+        if val != nil {
+            m.SetReportedPhishDateTime(val)
+        }
         return nil
     }
     res["simulationEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,11 +183,13 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]UserSimulationEventInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserSimulationEventInfo))
+        if val != nil {
+            res := make([]UserSimulationEventInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserSimulationEventInfo))
+            }
+            m.SetSimulationEvents(res)
         }
-        m.SetSimulationEvents(res)
         return nil
     }
     res["simulationUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +197,9 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSimulationUser(val.(*AttackSimulationUser))
+        if val != nil {
+            m.SetSimulationUser(val.(*AttackSimulationUser))
+        }
         return nil
     }
     res["trainingEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,11 +207,13 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]UserTrainingEventInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserTrainingEventInfo))
+        if val != nil {
+            res := make([]UserTrainingEventInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserTrainingEventInfo))
+            }
+            m.SetTrainingEvents(res)
         }
-        m.SetTrainingEvents(res)
         return nil
     }
     return res

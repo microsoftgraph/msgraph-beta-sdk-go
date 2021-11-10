@@ -124,7 +124,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAccount(val.(*Account))
+        if val != nil {
+            m.SetAccount(val.(*Account))
+        }
         return nil
     }
     res["accountId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAccountId(val)
+        if val != nil {
+            m.SetAccountId(val)
+        }
         return nil
     }
     res["accountNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +144,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAccountNumber(val)
+        if val != nil {
+            m.SetAccountNumber(val)
+        }
         return nil
     }
     res["creditAmount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +154,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetCreditAmount(val)
+        if val != nil {
+            m.SetCreditAmount(val)
+        }
         return nil
     }
     res["debitAmount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDebitAmount(val)
+        if val != nil {
+            m.SetDebitAmount(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +174,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["documentNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +184,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDocumentNumber(val)
+        if val != nil {
+            m.SetDocumentNumber(val)
+        }
         return nil
     }
     res["documentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +194,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDocumentType(val)
+        if val != nil {
+            m.SetDocumentType(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +204,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["postingDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +214,9 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetPostingDate(val)
+        if val != nil {
+            m.SetPostingDate(val)
+        }
         return nil
     }
     return res

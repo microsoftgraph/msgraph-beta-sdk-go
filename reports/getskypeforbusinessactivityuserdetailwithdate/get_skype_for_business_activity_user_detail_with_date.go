@@ -374,11 +374,13 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssignedProducts(res)
         }
-        m.SetAssignedProducts(res)
         return nil
     }
     res["deletedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -386,7 +388,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetDeletedDate(val)
+        if val != nil {
+            m.SetDeletedDate(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -394,7 +398,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -402,7 +408,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["organizedConferenceAppSharingCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -410,7 +418,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceAppSharingCount(val)
+        if val != nil {
+            m.SetOrganizedConferenceAppSharingCount(val)
+        }
         return nil
     }
     res["organizedConferenceAudioVideoCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -418,7 +428,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceAudioVideoCount(val)
+        if val != nil {
+            m.SetOrganizedConferenceAudioVideoCount(val)
+        }
         return nil
     }
     res["organizedConferenceAudioVideoMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -426,7 +438,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceAudioVideoMinutes(val)
+        if val != nil {
+            m.SetOrganizedConferenceAudioVideoMinutes(val)
+        }
         return nil
     }
     res["organizedConferenceCloudDialInMicrosoftMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -434,7 +448,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceCloudDialInMicrosoftMinutes(val)
+        if val != nil {
+            m.SetOrganizedConferenceCloudDialInMicrosoftMinutes(val)
+        }
         return nil
     }
     res["organizedConferenceCloudDialInOutMicrosoftCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -442,7 +458,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceCloudDialInOutMicrosoftCount(val)
+        if val != nil {
+            m.SetOrganizedConferenceCloudDialInOutMicrosoftCount(val)
+        }
         return nil
     }
     res["organizedConferenceCloudDialOutMicrosoftMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -450,7 +468,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceCloudDialOutMicrosoftMinutes(val)
+        if val != nil {
+            m.SetOrganizedConferenceCloudDialOutMicrosoftMinutes(val)
+        }
         return nil
     }
     res["organizedConferenceDialInOut3rdPartyCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -458,7 +478,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceDialInOut3rdPartyCount(val)
+        if val != nil {
+            m.SetOrganizedConferenceDialInOut3rdPartyCount(val)
+        }
         return nil
     }
     res["organizedConferenceIMCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -466,7 +488,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceIMCount(val)
+        if val != nil {
+            m.SetOrganizedConferenceIMCount(val)
+        }
         return nil
     }
     res["organizedConferenceLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -474,7 +498,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceLastActivityDate(val)
+        if val != nil {
+            m.SetOrganizedConferenceLastActivityDate(val)
+        }
         return nil
     }
     res["organizedConferenceWebCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -482,7 +508,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOrganizedConferenceWebCount(val)
+        if val != nil {
+            m.SetOrganizedConferenceWebCount(val)
+        }
         return nil
     }
     res["participatedConferenceAppSharingCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -490,7 +518,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetParticipatedConferenceAppSharingCount(val)
+        if val != nil {
+            m.SetParticipatedConferenceAppSharingCount(val)
+        }
         return nil
     }
     res["participatedConferenceAudioVideoCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -498,7 +528,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetParticipatedConferenceAudioVideoCount(val)
+        if val != nil {
+            m.SetParticipatedConferenceAudioVideoCount(val)
+        }
         return nil
     }
     res["participatedConferenceAudioVideoMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -506,7 +538,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetParticipatedConferenceAudioVideoMinutes(val)
+        if val != nil {
+            m.SetParticipatedConferenceAudioVideoMinutes(val)
+        }
         return nil
     }
     res["participatedConferenceDialInOut3rdPartyCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -514,7 +548,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetParticipatedConferenceDialInOut3rdPartyCount(val)
+        if val != nil {
+            m.SetParticipatedConferenceDialInOut3rdPartyCount(val)
+        }
         return nil
     }
     res["participatedConferenceIMCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -522,7 +558,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetParticipatedConferenceIMCount(val)
+        if val != nil {
+            m.SetParticipatedConferenceIMCount(val)
+        }
         return nil
     }
     res["participatedConferenceLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -530,7 +568,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetParticipatedConferenceLastActivityDate(val)
+        if val != nil {
+            m.SetParticipatedConferenceLastActivityDate(val)
+        }
         return nil
     }
     res["participatedConferenceWebCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -538,7 +578,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetParticipatedConferenceWebCount(val)
+        if val != nil {
+            m.SetParticipatedConferenceWebCount(val)
+        }
         return nil
     }
     res["peerToPeerAppSharingCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -546,7 +588,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetPeerToPeerAppSharingCount(val)
+        if val != nil {
+            m.SetPeerToPeerAppSharingCount(val)
+        }
         return nil
     }
     res["peerToPeerAudioCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -554,7 +598,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetPeerToPeerAudioCount(val)
+        if val != nil {
+            m.SetPeerToPeerAudioCount(val)
+        }
         return nil
     }
     res["peerToPeerAudioMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -562,7 +608,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetPeerToPeerAudioMinutes(val)
+        if val != nil {
+            m.SetPeerToPeerAudioMinutes(val)
+        }
         return nil
     }
     res["peerToPeerFileTransferCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -570,7 +618,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetPeerToPeerFileTransferCount(val)
+        if val != nil {
+            m.SetPeerToPeerFileTransferCount(val)
+        }
         return nil
     }
     res["peerToPeerIMCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -578,7 +628,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetPeerToPeerIMCount(val)
+        if val != nil {
+            m.SetPeerToPeerIMCount(val)
+        }
         return nil
     }
     res["peerToPeerLastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -586,7 +638,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetPeerToPeerLastActivityDate(val)
+        if val != nil {
+            m.SetPeerToPeerLastActivityDate(val)
+        }
         return nil
     }
     res["peerToPeerVideoCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -594,7 +648,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetPeerToPeerVideoCount(val)
+        if val != nil {
+            m.SetPeerToPeerVideoCount(val)
+        }
         return nil
     }
     res["peerToPeerVideoMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -602,7 +658,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetPeerToPeerVideoMinutes(val)
+        if val != nil {
+            m.SetPeerToPeerVideoMinutes(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -610,7 +668,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -618,7 +678,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["totalOrganizedConferenceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -626,7 +688,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetTotalOrganizedConferenceCount(val)
+        if val != nil {
+            m.SetTotalOrganizedConferenceCount(val)
+        }
         return nil
     }
     res["totalParticipatedConferenceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -634,7 +698,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetTotalParticipatedConferenceCount(val)
+        if val != nil {
+            m.SetTotalParticipatedConferenceCount(val)
+        }
         return nil
     }
     res["totalPeerToPeerSessionCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -642,7 +708,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetTotalPeerToPeerSessionCount(val)
+        if val != nil {
+            m.SetTotalPeerToPeerSessionCount(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -650,7 +718,9 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDate) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

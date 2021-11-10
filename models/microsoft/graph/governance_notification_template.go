@@ -82,7 +82,9 @@ func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetCulture(val)
+        if val != nil {
+            m.SetCulture(val)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSource(val)
+        if val != nil {
+            m.SetSource(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetType_escaped(val)
+        if val != nil {
+            m.SetType_escaped(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

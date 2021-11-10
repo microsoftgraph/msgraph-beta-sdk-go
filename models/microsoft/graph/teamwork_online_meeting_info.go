@@ -62,7 +62,9 @@ func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCalendarEventId(val)
+        if val != nil {
+            m.SetCalendarEventId(val)
+        }
         return nil
     }
     res["joinWebUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetJoinWebUrl(val)
+        if val != nil {
+            m.SetJoinWebUrl(val)
+        }
         return nil
     }
     res["organizer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetOrganizer(val.(*TeamworkUserIdentity))
+        if val != nil {
+            m.SetOrganizer(val.(*TeamworkUserIdentity))
+        }
         return nil
     }
     return res

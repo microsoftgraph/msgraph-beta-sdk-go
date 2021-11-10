@@ -93,11 +93,13 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ContactFolder, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ContactFolder))
+        if val != nil {
+            res := make([]ContactFolder, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ContactFolder))
+            }
+            m.SetChildFolders(res)
         }
-        m.SetChildFolders(res)
         return nil
     }
     res["contacts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,11 +107,13 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]Contact, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Contact))
+        if val != nil {
+            res := make([]Contact, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Contact))
+            }
+            m.SetContacts(res)
         }
-        m.SetContacts(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +121,9 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,11 +131,13 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]MultiValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+            }
+            m.SetMultiValueExtendedProperties(res)
         }
-        m.SetMultiValueExtendedProperties(res)
         return nil
     }
     res["parentFolderId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +145,9 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetParentFolderId(val)
+        if val != nil {
+            m.SetParentFolderId(val)
+        }
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,11 +155,13 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]SingleValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+            }
+            m.SetSingleValueExtendedProperties(res)
         }
-        m.SetSingleValueExtendedProperties(res)
         return nil
     }
     res["wellKnownName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +169,9 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetWellKnownName(val)
+        if val != nil {
+            m.SetWellKnownName(val)
+        }
         return nil
     }
     return res

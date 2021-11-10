@@ -42,7 +42,9 @@ func (m *EvaluateDynamicMembershipRequestBody) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetMemberId(val)
+        if val != nil {
+            m.SetMemberId(val)
+        }
         return nil
     }
     return res

@@ -53,7 +53,9 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetPhoneNumber(val)
+        if val != nil {
+            m.SetPhoneNumber(val)
+        }
         return nil
     }
     res["phoneType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,8 +63,10 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(AuthenticationPhoneType)
-        m.SetPhoneType(&cast)
+        if val != nil {
+            cast := val.(AuthenticationPhoneType)
+            m.SetPhoneType(&cast)
+        }
         return nil
     }
     res["smsSignInState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,8 +74,10 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(AuthenticationMethodSignInState)
-        m.SetSmsSignInState(&cast)
+        if val != nil {
+            cast := val.(AuthenticationMethodSignInState)
+            m.SetSmsSignInState(&cast)
+        }
         return nil
     }
     return res

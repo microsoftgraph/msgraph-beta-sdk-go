@@ -254,7 +254,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetActiveFileCount(val)
+        if val != nil {
+            m.SetActiveFileCount(val)
+        }
         return nil
     }
     res["anonymousLinkCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -262,7 +264,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetAnonymousLinkCount(val)
+        if val != nil {
+            m.SetAnonymousLinkCount(val)
+        }
         return nil
     }
     res["companyLinkCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +274,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetCompanyLinkCount(val)
+        if val != nil {
+            m.SetCompanyLinkCount(val)
+        }
         return nil
     }
     res["externalSharing"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +284,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetExternalSharing(val)
+        if val != nil {
+            m.SetExternalSharing(val)
+        }
         return nil
     }
     res["fileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +294,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetFileCount(val)
+        if val != nil {
+            m.SetFileCount(val)
+        }
         return nil
     }
     res["geolocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -294,7 +304,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetGeolocation(val)
+        if val != nil {
+            m.SetGeolocation(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,7 +314,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -310,7 +324,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["ownerDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -318,7 +334,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetOwnerDisplayName(val)
+        if val != nil {
+            m.SetOwnerDisplayName(val)
+        }
         return nil
     }
     res["ownerPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -326,7 +344,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetOwnerPrincipalName(val)
+        if val != nil {
+            m.SetOwnerPrincipalName(val)
+        }
         return nil
     }
     res["pageViewCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -334,7 +354,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetPageViewCount(val)
+        if val != nil {
+            m.SetPageViewCount(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -342,7 +364,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -350,7 +374,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["rootWebTemplate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -358,7 +384,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetRootWebTemplate(val)
+        if val != nil {
+            m.SetRootWebTemplate(val)
+        }
         return nil
     }
     res["secureLinkForGuestCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -366,7 +394,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetSecureLinkForGuestCount(val)
+        if val != nil {
+            m.SetSecureLinkForGuestCount(val)
+        }
         return nil
     }
     res["secureLinkForMemberCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -374,7 +404,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetSecureLinkForMemberCount(val)
+        if val != nil {
+            m.SetSecureLinkForMemberCount(val)
+        }
         return nil
     }
     res["siteId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -382,7 +414,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetSiteId(val)
+        if val != nil {
+            m.SetSiteId(val)
+        }
         return nil
     }
     res["siteSensitivityLabelId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -390,7 +424,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetSiteSensitivityLabelId(val)
+        if val != nil {
+            m.SetSiteSensitivityLabelId(val)
+        }
         return nil
     }
     res["siteUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -398,7 +434,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetSiteUrl(val)
+        if val != nil {
+            m.SetSiteUrl(val)
+        }
         return nil
     }
     res["storageAllocatedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -406,7 +444,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetStorageAllocatedInBytes(val)
+        if val != nil {
+            m.SetStorageAllocatedInBytes(val)
+        }
         return nil
     }
     res["storageUsedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -414,7 +454,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetStorageUsedInBytes(val)
+        if val != nil {
+            m.SetStorageUsedInBytes(val)
+        }
         return nil
     }
     res["unmanagedDevicePolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -422,7 +464,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetUnmanagedDevicePolicy(val)
+        if val != nil {
+            m.SetUnmanagedDevicePolicy(val)
+        }
         return nil
     }
     res["visitedPageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -430,7 +474,9 @@ func (m *GetSharePointSiteUsageDetailWithDate) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetVisitedPageCount(val)
+        if val != nil {
+            m.SetVisitedPageCount(val)
+        }
         return nil
     }
     return res

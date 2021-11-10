@@ -114,8 +114,10 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(RemoteAction)
-        m.SetAction(&cast)
+        if val != nil {
+            cast := val.(RemoteAction)
+            m.SetAction(&cast)
+        }
         return nil
     }
     res["actionState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,8 +125,10 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(ActionState)
-        m.SetActionState(&cast)
+        if val != nil {
+            cast := val.(ActionState)
+            m.SetActionState(&cast)
+        }
         return nil
     }
     res["deviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +136,9 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDeviceDisplayName(val)
+        if val != nil {
+            m.SetDeviceDisplayName(val)
+        }
         return nil
     }
     res["deviceIMEI"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +146,9 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDeviceIMEI(val)
+        if val != nil {
+            m.SetDeviceIMEI(val)
+        }
         return nil
     }
     res["deviceOwnerUserPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +156,9 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDeviceOwnerUserPrincipalName(val)
+        if val != nil {
+            m.SetDeviceOwnerUserPrincipalName(val)
+        }
         return nil
     }
     res["initiatedByUserPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +166,9 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetInitiatedByUserPrincipalName(val)
+        if val != nil {
+            m.SetInitiatedByUserPrincipalName(val)
+        }
         return nil
     }
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +176,9 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["requestDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +186,9 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRequestDateTime(val)
+        if val != nil {
+            m.SetRequestDateTime(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +196,9 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     return res

@@ -43,11 +43,13 @@ func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementConfigurationSettingDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementConfigurationSettingDefinition))
+        if val != nil {
+            res := make([]DeviceManagementConfigurationSettingDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementConfigurationSettingDefinition))
+            }
+            m.SetSettingDefinitions(res)
         }
-        m.SetSettingDefinitions(res)
         return nil
     }
     res["settingInstanceTemplate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -55,7 +57,9 @@ func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetSettingInstanceTemplate(val.(*DeviceManagementConfigurationSettingInstanceTemplate))
+        if val != nil {
+            m.SetSettingInstanceTemplate(val.(*DeviceManagementConfigurationSettingInstanceTemplate))
+        }
         return nil
     }
     return res

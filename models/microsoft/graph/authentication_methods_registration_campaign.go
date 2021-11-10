@@ -72,11 +72,13 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        res := make([]ExcludeTarget, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExcludeTarget))
+        if val != nil {
+            res := make([]ExcludeTarget, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExcludeTarget))
+            }
+            m.SetExcludeTargets(res)
         }
-        m.SetExcludeTargets(res)
         return nil
     }
     res["includeTargets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,11 +86,13 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        res := make([]AuthenticationMethodsRegistrationCampaignIncludeTarget, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AuthenticationMethodsRegistrationCampaignIncludeTarget))
+        if val != nil {
+            res := make([]AuthenticationMethodsRegistrationCampaignIncludeTarget, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AuthenticationMethodsRegistrationCampaignIncludeTarget))
+            }
+            m.SetIncludeTargets(res)
         }
-        m.SetIncludeTargets(res)
         return nil
     }
     res["snoozeDurationInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +100,9 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetSnoozeDurationInDays(val)
+        if val != nil {
+            m.SetSnoozeDurationInDays(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,8 +110,10 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        cast := val.(AdvancedConfigState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(AdvancedConfigState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

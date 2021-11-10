@@ -62,7 +62,9 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetDevicesNotAutopilotRegistered(val)
+        if val != nil {
+            m.SetDevicesNotAutopilotRegistered(val)
+        }
         return nil
     }
     res["devicesWithoutAutopilotProfileAssigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetDevicesWithoutAutopilotProfileAssigned(val)
+        if val != nil {
+            m.SetDevicesWithoutAutopilotProfileAssigned(val)
+        }
         return nil
     }
     res["totalWindows10DevicesWithoutTenantAttached"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetTotalWindows10DevicesWithoutTenantAttached(val)
+        if val != nil {
+            m.SetTotalWindows10DevicesWithoutTenantAttached(val)
+        }
         return nil
     }
     return res

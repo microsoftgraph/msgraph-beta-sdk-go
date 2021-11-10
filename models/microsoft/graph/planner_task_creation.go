@@ -42,7 +42,9 @@ func (m *PlannerTaskCreation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetTeamsPublicationInfo(val.(*PlannerTeamsPublicationInfo))
+        if val != nil {
+            m.SetTeamsPublicationInfo(val.(*PlannerTeamsPublicationInfo))
+        }
         return nil
     }
     return res

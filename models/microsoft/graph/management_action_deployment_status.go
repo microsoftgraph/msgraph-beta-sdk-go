@@ -73,7 +73,9 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetManagementActionId(val)
+        if val != nil {
+            m.SetManagementActionId(val)
+        }
         return nil
     }
     res["managementTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetManagementTemplateId(val)
+        if val != nil {
+            m.SetManagementTemplateId(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,8 +93,10 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["workloadActionDeploymentStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,11 +104,13 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        res := make([]WorkloadActionDeploymentStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkloadActionDeploymentStatus))
+        if val != nil {
+            res := make([]WorkloadActionDeploymentStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkloadActionDeploymentStatus))
+            }
+            m.SetWorkloadActionDeploymentStatuses(res)
         }
-        m.SetWorkloadActionDeploymentStatuses(res)
         return nil
     }
     return res

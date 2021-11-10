@@ -73,7 +73,9 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetApplicationIdentifier(val)
+        if val != nil {
+            m.SetApplicationIdentifier(val)
+        }
         return nil
     }
     res["credentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,11 +83,13 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair))
+        if val != nil {
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair))
+            }
+            m.SetCredentials(res)
         }
-        m.SetCredentials(res)
         return nil
     }
     res["templateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,7 +97,9 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetTemplateId(val)
+        if val != nil {
+            m.SetTemplateId(val)
+        }
         return nil
     }
     res["useSavedCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +107,9 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetUseSavedCredentials(val)
+        if val != nil {
+            m.SetUseSavedCredentials(val)
+        }
         return nil
     }
     return res

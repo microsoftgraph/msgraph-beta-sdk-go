@@ -73,11 +73,13 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]DirectoryAudit, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryAudit))
+        if val != nil {
+            res := make([]DirectoryAudit, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryAudit))
+            }
+            m.SetDirectoryAudits(res)
         }
-        m.SetDirectoryAudits(res)
         return nil
     }
     res["directoryProvisioning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,11 +87,13 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]ProvisioningObjectSummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ProvisioningObjectSummary))
+        if val != nil {
+            res := make([]ProvisioningObjectSummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ProvisioningObjectSummary))
+            }
+            m.SetDirectoryProvisioning(res)
         }
-        m.SetDirectoryProvisioning(res)
         return nil
     }
     res["provisioning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,11 +101,13 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]ProvisioningObjectSummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ProvisioningObjectSummary))
+        if val != nil {
+            res := make([]ProvisioningObjectSummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ProvisioningObjectSummary))
+            }
+            m.SetProvisioning(res)
         }
-        m.SetProvisioning(res)
         return nil
     }
     res["restrictedSignIns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,11 +115,13 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]RestrictedSignIn, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RestrictedSignIn))
+        if val != nil {
+            res := make([]RestrictedSignIn, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RestrictedSignIn))
+            }
+            m.SetRestrictedSignIns(res)
         }
-        m.SetRestrictedSignIns(res)
         return nil
     }
     res["signIns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,11 +129,13 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]SignIn, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SignIn))
+        if val != nil {
+            res := make([]SignIn, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SignIn))
+            }
+            m.SetSignIns(res)
         }
-        m.SetSignIns(res)
         return nil
     }
     return res

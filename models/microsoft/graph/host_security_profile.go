@@ -204,7 +204,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAzureSubscriptionId(val)
+        if val != nil {
+            m.SetAzureSubscriptionId(val)
+        }
         return nil
     }
     res["azureTenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +214,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAzureTenantId(val)
+        if val != nil {
+            m.SetAzureTenantId(val)
+        }
         return nil
     }
     res["firstSeenDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +224,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetFirstSeenDateTime(val)
+        if val != nil {
+            m.SetFirstSeenDateTime(val)
+        }
         return nil
     }
     res["fqdn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +234,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetFqdn(val)
+        if val != nil {
+            m.SetFqdn(val)
+        }
         return nil
     }
     res["isAzureAdJoined"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +244,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIsAzureAdJoined(val)
+        if val != nil {
+            m.SetIsAzureAdJoined(val)
+        }
         return nil
     }
     res["isAzureAdRegistered"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +254,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIsAzureAdRegistered(val)
+        if val != nil {
+            m.SetIsAzureAdRegistered(val)
+        }
         return nil
     }
     res["isHybridAzureDomainJoined"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +264,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIsHybridAzureDomainJoined(val)
+        if val != nil {
+            m.SetIsHybridAzureDomainJoined(val)
+        }
         return nil
     }
     res["lastSeenDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,7 +274,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLastSeenDateTime(val)
+        if val != nil {
+            m.SetLastSeenDateTime(val)
+        }
         return nil
     }
     res["logonUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,11 +284,13 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]LogonUser, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LogonUser))
+        if val != nil {
+            res := make([]LogonUser, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LogonUser))
+            }
+            m.SetLogonUsers(res)
         }
-        m.SetLogonUsers(res)
         return nil
     }
     res["netBiosName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -280,7 +298,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetNetBiosName(val)
+        if val != nil {
+            m.SetNetBiosName(val)
+        }
         return nil
     }
     res["networkInterfaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -288,11 +308,13 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]NetworkInterface, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*NetworkInterface))
+        if val != nil {
+            res := make([]NetworkInterface, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*NetworkInterface))
+            }
+            m.SetNetworkInterfaces(res)
         }
-        m.SetNetworkInterfaces(res)
         return nil
     }
     res["os"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -300,7 +322,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetOs(val)
+        if val != nil {
+            m.SetOs(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -308,7 +332,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["parentHost"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +342,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetParentHost(val)
+        if val != nil {
+            m.SetParentHost(val)
+        }
         return nil
     }
     res["relatedHostIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -324,11 +352,13 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRelatedHostIds(res)
         }
-        m.SetRelatedHostIds(res)
         return nil
     }
     res["riskScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -336,7 +366,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRiskScore(val)
+        if val != nil {
+            m.SetRiskScore(val)
+        }
         return nil
     }
     res["tags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -344,11 +376,13 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTags(res)
         }
-        m.SetTags(res)
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,7 +390,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetVendorInformation(val.(*SecurityVendorInformation))
+        if val != nil {
+            m.SetVendorInformation(val.(*SecurityVendorInformation))
+        }
         return nil
     }
     return res

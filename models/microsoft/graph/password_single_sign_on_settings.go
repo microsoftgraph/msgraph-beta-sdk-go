@@ -42,11 +42,13 @@ func (m *PasswordSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]PasswordSingleSignOnField, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PasswordSingleSignOnField))
+        if val != nil {
+            res := make([]PasswordSingleSignOnField, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PasswordSingleSignOnField))
+            }
+            m.SetFields(res)
         }
-        m.SetFields(res)
         return nil
     }
     return res

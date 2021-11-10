@@ -52,7 +52,9 @@ func (m *OfficeUserCheckinSummary) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetFailedUserCount(val)
+        if val != nil {
+            m.SetFailedUserCount(val)
+        }
         return nil
     }
     res["succeededUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *OfficeUserCheckinSummary) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSucceededUserCount(val)
+        if val != nil {
+            m.SetSucceededUserCount(val)
+        }
         return nil
     }
     return res

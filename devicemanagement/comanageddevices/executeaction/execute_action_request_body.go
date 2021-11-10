@@ -143,8 +143,10 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction)
-        m.SetActionName(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction)
+            m.SetActionName(&cast)
+        }
         return nil
     }
     res["carrierUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +154,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetCarrierUrl(val)
+        if val != nil {
+            m.SetCarrierUrl(val)
+        }
         return nil
     }
     res["deprovisionReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +164,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeprovisionReason(val)
+        if val != nil {
+            m.SetDeprovisionReason(val)
+        }
         return nil
     }
     res["deviceIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,11 +174,13 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDeviceIds(res)
         }
-        m.SetDeviceIds(res)
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +188,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["keepEnrollmentData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +198,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetKeepEnrollmentData(val)
+        if val != nil {
+            m.SetKeepEnrollmentData(val)
+        }
         return nil
     }
     res["keepUserData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +208,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetKeepUserData(val)
+        if val != nil {
+            m.SetKeepUserData(val)
+        }
         return nil
     }
     res["notificationBody"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +218,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetNotificationBody(val)
+        if val != nil {
+            m.SetNotificationBody(val)
+        }
         return nil
     }
     res["notificationTitle"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +228,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetNotificationTitle(val)
+        if val != nil {
+            m.SetNotificationTitle(val)
+        }
         return nil
     }
     res["organizationalUnitPath"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +238,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetOrganizationalUnitPath(val)
+        if val != nil {
+            m.SetOrganizationalUnitPath(val)
+        }
         return nil
     }
     res["persistEsimDataPlan"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +248,9 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPersistEsimDataPlan(val)
+        if val != nil {
+            m.SetPersistEsimDataPlan(val)
+        }
         return nil
     }
     return res

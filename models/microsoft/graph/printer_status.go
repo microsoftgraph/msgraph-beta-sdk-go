@@ -92,7 +92,9 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,11 +102,13 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]PrinterProcessingStateDetail, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrinterProcessingStateDetail))
+        if val != nil {
+            res := make([]PrinterProcessingStateDetail, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrinterProcessingStateDetail))
+            }
+            m.SetDetails(res)
         }
-        m.SetDetails(res)
         return nil
     }
     res["processingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,8 +116,10 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(PrinterProcessingState)
-        m.SetProcessingState(&cast)
+        if val != nil {
+            cast := val.(PrinterProcessingState)
+            m.SetProcessingState(&cast)
+        }
         return nil
     }
     res["processingStateDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +127,9 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetProcessingStateDescription(val)
+        if val != nil {
+            m.SetProcessingStateDescription(val)
+        }
         return nil
     }
     res["processingStateReasons"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,11 +137,13 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]PrinterProcessingStateReason, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrinterProcessingStateReason))
+        if val != nil {
+            res := make([]PrinterProcessingStateReason, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrinterProcessingStateReason))
+            }
+            m.SetProcessingStateReasons(res)
         }
-        m.SetProcessingStateReasons(res)
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,8 +151,10 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(PrinterProcessingState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(PrinterProcessingState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

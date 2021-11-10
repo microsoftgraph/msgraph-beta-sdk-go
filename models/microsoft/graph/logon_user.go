@@ -103,7 +103,9 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetAccountDomain(val)
+        if val != nil {
+            m.SetAccountDomain(val)
+        }
         return nil
     }
     res["accountName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +113,9 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetAccountName(val)
+        if val != nil {
+            m.SetAccountName(val)
+        }
         return nil
     }
     res["accountType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,8 +123,10 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        cast := val.(UserAccountSecurityType)
-        m.SetAccountType(&cast)
+        if val != nil {
+            cast := val.(UserAccountSecurityType)
+            m.SetAccountType(&cast)
+        }
         return nil
     }
     res["firstSeenDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetFirstSeenDateTime(val)
+        if val != nil {
+            m.SetFirstSeenDateTime(val)
+        }
         return nil
     }
     res["lastSeenDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +144,9 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetLastSeenDateTime(val)
+        if val != nil {
+            m.SetLastSeenDateTime(val)
+        }
         return nil
     }
     res["logonId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +154,9 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetLogonId(val)
+        if val != nil {
+            m.SetLogonId(val)
+        }
         return nil
     }
     res["logonTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,11 +164,13 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]LogonType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LogonType))
+        if val != nil {
+            res := make([]LogonType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LogonType))
+            }
+            m.SetLogonTypes(res)
         }
-        m.SetLogonTypes(res)
         return nil
     }
     return res

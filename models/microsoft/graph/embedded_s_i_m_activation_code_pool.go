@@ -94,7 +94,9 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetActivationCodeCount(val)
+        if val != nil {
+            m.SetActivationCodeCount(val)
+        }
         return nil
     }
     res["activationCodes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,11 +104,13 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]EmbeddedSIMActivationCode, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EmbeddedSIMActivationCode))
+        if val != nil {
+            res := make([]EmbeddedSIMActivationCode, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EmbeddedSIMActivationCode))
+            }
+            m.SetActivationCodes(res)
         }
-        m.SetActivationCodes(res)
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,11 +118,13 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]EmbeddedSIMActivationCodePoolAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EmbeddedSIMActivationCodePoolAssignment))
+        if val != nil {
+            res := make([]EmbeddedSIMActivationCodePoolAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EmbeddedSIMActivationCodePoolAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +132,9 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["deviceStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,11 +142,13 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]EmbeddedSIMDeviceState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EmbeddedSIMDeviceState))
+        if val != nil {
+            res := make([]EmbeddedSIMDeviceState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EmbeddedSIMDeviceState))
+            }
+            m.SetDeviceStates(res)
         }
-        m.SetDeviceStates(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +156,9 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["modifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +166,9 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetModifiedDateTime(val)
+        if val != nil {
+            m.SetModifiedDateTime(val)
+        }
         return nil
     }
     return res

@@ -103,11 +103,13 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]SecurityBaselineContributingPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SecurityBaselineContributingPolicy))
+        if val != nil {
+            res := make([]SecurityBaselineContributingPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SecurityBaselineContributingPolicy))
+            }
+            m.SetContributingPolicies(res)
         }
-        m.SetContributingPolicies(res)
         return nil
     }
     res["errorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +117,9 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetErrorCode(val)
+        if val != nil {
+            m.SetErrorCode(val)
+        }
         return nil
     }
     res["settingCategoryId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +127,9 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSettingCategoryId(val)
+        if val != nil {
+            m.SetSettingCategoryId(val)
+        }
         return nil
     }
     res["settingCategoryName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +137,9 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSettingCategoryName(val)
+        if val != nil {
+            m.SetSettingCategoryName(val)
+        }
         return nil
     }
     res["settingId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +147,9 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSettingId(val)
+        if val != nil {
+            m.SetSettingId(val)
+        }
         return nil
     }
     res["settingName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +157,9 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSettingName(val)
+        if val != nil {
+            m.SetSettingName(val)
+        }
         return nil
     }
     res["sourcePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,11 +167,13 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]SettingSource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SettingSource))
+        if val != nil {
+            res := make([]SettingSource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SettingSource))
+            }
+            m.SetSourcePolicies(res)
         }
-        m.SetSourcePolicies(res)
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,8 +181,10 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(SecurityBaselineComplianceState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(SecurityBaselineComplianceState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

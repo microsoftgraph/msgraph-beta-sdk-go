@@ -134,11 +134,13 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssignedProducts(res)
         }
-        m.SetAssignedProducts(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +148,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +158,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["likedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +168,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetLikedCount(val)
+        if val != nil {
+            m.SetLikedCount(val)
+        }
         return nil
     }
     res["postedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +178,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetPostedCount(val)
+        if val != nil {
+            m.SetPostedCount(val)
+        }
         return nil
     }
     res["readCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +188,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetReadCount(val)
+        if val != nil {
+            m.SetReadCount(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +198,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +208,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["stateChangeDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +218,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetStateChangeDate(val)
+        if val != nil {
+            m.SetStateChangeDate(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +228,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     res["userState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +238,9 @@ func (m *GetYammerActivityUserDetailWithPeriod) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetUserState(val)
+        if val != nil {
+            m.SetUserState(val)
+        }
         return nil
     }
     return res

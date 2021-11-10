@@ -62,8 +62,10 @@ func (m *DeviceComplianceScriptError) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(Code)
-        m.SetCode(&cast)
+        if val != nil {
+            cast := val.(Code)
+            m.SetCode(&cast)
+        }
         return nil
     }
     res["deviceComplianceScriptRulesValidationError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,8 +73,10 @@ func (m *DeviceComplianceScriptError) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(DeviceComplianceScriptRulesValidationError)
-        m.SetDeviceComplianceScriptRulesValidationError(&cast)
+        if val != nil {
+            cast := val.(DeviceComplianceScriptRulesValidationError)
+            m.SetDeviceComplianceScriptRulesValidationError(&cast)
+        }
         return nil
     }
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *DeviceComplianceScriptError) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMessage(val)
+        if val != nil {
+            m.SetMessage(val)
+        }
         return nil
     }
     return res

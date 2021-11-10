@@ -142,7 +142,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetCleanDeviceCount(val)
+        if val != nil {
+            m.SetCleanDeviceCount(val)
+        }
         return nil
     }
     res["criticalFailuresDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +152,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetCriticalFailuresDeviceCount(val)
+        if val != nil {
+            m.SetCriticalFailuresDeviceCount(val)
+        }
         return nil
     }
     res["inactiveThreatAgentDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +162,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetInactiveThreatAgentDeviceCount(val)
+        if val != nil {
+            m.SetInactiveThreatAgentDeviceCount(val)
+        }
         return nil
     }
     res["pendingFullScanDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +172,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPendingFullScanDeviceCount(val)
+        if val != nil {
+            m.SetPendingFullScanDeviceCount(val)
+        }
         return nil
     }
     res["pendingManualStepsDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +182,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPendingManualStepsDeviceCount(val)
+        if val != nil {
+            m.SetPendingManualStepsDeviceCount(val)
+        }
         return nil
     }
     res["pendingOfflineScanDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +192,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPendingOfflineScanDeviceCount(val)
+        if val != nil {
+            m.SetPendingOfflineScanDeviceCount(val)
+        }
         return nil
     }
     res["pendingQuickScanDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +202,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPendingQuickScanDeviceCount(val)
+        if val != nil {
+            m.SetPendingQuickScanDeviceCount(val)
+        }
         return nil
     }
     res["pendingRestartDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +212,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPendingRestartDeviceCount(val)
+        if val != nil {
+            m.SetPendingRestartDeviceCount(val)
+        }
         return nil
     }
     res["pendingSignatureUpdateDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +222,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPendingSignatureUpdateDeviceCount(val)
+        if val != nil {
+            m.SetPendingSignatureUpdateDeviceCount(val)
+        }
         return nil
     }
     res["totalReportedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +232,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTotalReportedDeviceCount(val)
+        if val != nil {
+            m.SetTotalReportedDeviceCount(val)
+        }
         return nil
     }
     res["unknownStateThreatAgentDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +242,9 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetUnknownStateThreatAgentDeviceCount(val)
+        if val != nil {
+            m.SetUnknownStateThreatAgentDeviceCount(val)
+        }
         return nil
     }
     return res

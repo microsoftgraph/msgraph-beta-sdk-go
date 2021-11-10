@@ -174,7 +174,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetApplicationId(val)
+        if val != nil {
+            m.SetApplicationId(val)
+        }
         return nil
     }
     res["changeType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +184,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetChangeType(val)
+        if val != nil {
+            m.SetChangeType(val)
+        }
         return nil
     }
     res["clientState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +194,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetClientState(val)
+        if val != nil {
+            m.SetClientState(val)
+        }
         return nil
     }
     res["creatorId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +204,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCreatorId(val)
+        if val != nil {
+            m.SetCreatorId(val)
+        }
         return nil
     }
     res["encryptionCertificate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +214,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetEncryptionCertificate(val)
+        if val != nil {
+            m.SetEncryptionCertificate(val)
+        }
         return nil
     }
     res["encryptionCertificateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +224,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetEncryptionCertificateId(val)
+        if val != nil {
+            m.SetEncryptionCertificateId(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +234,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["includeResourceData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +244,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetIncludeResourceData(val)
+        if val != nil {
+            m.SetIncludeResourceData(val)
+        }
         return nil
     }
     res["latestSupportedTlsVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,7 +254,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetLatestSupportedTlsVersion(val)
+        if val != nil {
+            m.SetLatestSupportedTlsVersion(val)
+        }
         return nil
     }
     res["lifecycleNotificationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,7 +264,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetLifecycleNotificationUrl(val)
+        if val != nil {
+            m.SetLifecycleNotificationUrl(val)
+        }
         return nil
     }
     res["notificationContentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,7 +274,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetNotificationContentType(val)
+        if val != nil {
+            m.SetNotificationContentType(val)
+        }
         return nil
     }
     res["notificationQueryOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -262,7 +284,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetNotificationQueryOptions(val)
+        if val != nil {
+            m.SetNotificationQueryOptions(val)
+        }
         return nil
     }
     res["notificationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +294,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetNotificationUrl(val)
+        if val != nil {
+            m.SetNotificationUrl(val)
+        }
         return nil
     }
     res["notificationUrlAppId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +304,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetNotificationUrlAppId(val)
+        if val != nil {
+            m.SetNotificationUrlAppId(val)
+        }
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +314,9 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetResource(val)
+        if val != nil {
+            m.SetResource(val)
+        }
         return nil
     }
     return res

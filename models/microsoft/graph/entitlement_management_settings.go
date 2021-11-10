@@ -43,7 +43,9 @@ func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDaysUntilExternalUserDeletedAfterBlocked(val)
+        if val != nil {
+            m.SetDaysUntilExternalUserDeletedAfterBlocked(val)
+        }
         return nil
     }
     res["externalUserLifecycleAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetExternalUserLifecycleAction(val)
+        if val != nil {
+            m.SetExternalUserLifecycleAction(val)
+        }
         return nil
     }
     return res

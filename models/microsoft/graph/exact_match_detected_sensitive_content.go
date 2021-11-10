@@ -33,11 +33,13 @@ func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        res := make([]SensitiveContentLocation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SensitiveContentLocation))
+        if val != nil {
+            res := make([]SensitiveContentLocation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SensitiveContentLocation))
+            }
+            m.SetMatches(res)
         }
-        m.SetMatches(res)
         return nil
     }
     return res

@@ -83,7 +83,9 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDefaultRolesSettings(val.(*PrivilegedRoleSettings))
+        if val != nil {
+            m.SetDefaultRolesSettings(val.(*PrivilegedRoleSettings))
+        }
         return nil
     }
     res["firstTimeSetup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetFirstTimeSetup(val)
+        if val != nil {
+            m.SetFirstTimeSetup(val)
+        }
         return nil
     }
     res["relevantRolesSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +103,13 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRelevantRolesSettings(res)
         }
-        m.SetRelevantRolesSettings(res)
         return nil
     }
     res["setupStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,8 +117,10 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(SetupStatus)
-        m.SetSetupStatus(&cast)
+        if val != nil {
+            cast := val.(SetupStatus)
+            m.SetSetupStatus(&cast)
+        }
         return nil
     }
     res["skipSetup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +128,9 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetSkipSetup(val)
+        if val != nil {
+            m.SetSkipSetup(val)
+        }
         return nil
     }
     res["userRolesActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +138,9 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetUserRolesActions(val)
+        if val != nil {
+            m.SetUserRolesActions(val)
+        }
         return nil
     }
     return res

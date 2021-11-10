@@ -102,7 +102,9 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDefaultValue(val)
+        if val != nil {
+            m.SetDefaultValue(val)
+        }
         return nil
     }
     res["exportMissingReferences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +112,9 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetExportMissingReferences(val)
+        if val != nil {
+            m.SetExportMissingReferences(val)
+        }
         return nil
     }
     res["flowBehavior"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,8 +122,10 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(AttributeFlowBehavior)
-        m.SetFlowBehavior(&cast)
+        if val != nil {
+            cast := val.(AttributeFlowBehavior)
+            m.SetFlowBehavior(&cast)
+        }
         return nil
     }
     res["flowType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,8 +133,10 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(AttributeFlowType)
-        m.SetFlowType(&cast)
+        if val != nil {
+            cast := val.(AttributeFlowType)
+            m.SetFlowType(&cast)
+        }
         return nil
     }
     res["matchingPriority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +144,9 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetMatchingPriority(val)
+        if val != nil {
+            m.SetMatchingPriority(val)
+        }
         return nil
     }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +154,9 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetSource(val.(*AttributeMappingSource))
+        if val != nil {
+            m.SetSource(val.(*AttributeMappingSource))
+        }
         return nil
     }
     res["targetAttributeName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +164,9 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetTargetAttributeName(val)
+        if val != nil {
+            m.SetTargetAttributeName(val)
+        }
         return nil
     }
     return res

@@ -52,11 +52,13 @@ func (m *HuntingQueryResults) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]HuntingRowResult, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*HuntingRowResult))
+        if val != nil {
+            res := make([]HuntingRowResult, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*HuntingRowResult))
+            }
+            m.SetResults(res)
         }
-        m.SetResults(res)
         return nil
     }
     res["schema"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,11 +66,13 @@ func (m *HuntingQueryResults) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]SinglePropertySchema, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SinglePropertySchema))
+        if val != nil {
+            res := make([]SinglePropertySchema, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SinglePropertySchema))
+            }
+            m.SetSchema(res)
         }
-        m.SetSchema(res)
         return nil
     }
     return res

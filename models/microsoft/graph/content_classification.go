@@ -72,7 +72,9 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetConfidence(val)
+        if val != nil {
+            m.SetConfidence(val)
+        }
         return nil
     }
     res["matches"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,11 +82,13 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]MatchLocation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MatchLocation))
+        if val != nil {
+            res := make([]MatchLocation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MatchLocation))
+            }
+            m.SetMatches(res)
         }
-        m.SetMatches(res)
         return nil
     }
     res["sensitiveTypeId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +96,9 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSensitiveTypeId(val)
+        if val != nil {
+            m.SetSensitiveTypeId(val)
+        }
         return nil
     }
     res["uniqueCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +106,9 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetUniqueCount(val)
+        if val != nil {
+            m.SetUniqueCount(val)
+        }
         return nil
     }
     return res

@@ -53,11 +53,13 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]SynchronizationJob, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SynchronizationJob))
+        if val != nil {
+            res := make([]SynchronizationJob, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SynchronizationJob))
+            }
+            m.SetJobs(res)
         }
-        m.SetJobs(res)
         return nil
     }
     res["secrets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]SynchronizationSecretKeyStringValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SynchronizationSecretKeyStringValuePair))
+        if val != nil {
+            res := make([]SynchronizationSecretKeyStringValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SynchronizationSecretKeyStringValuePair))
+            }
+            m.SetSecrets(res)
         }
-        m.SetSecrets(res)
         return nil
     }
     res["templates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,11 +81,13 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]SynchronizationTemplate, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SynchronizationTemplate))
+        if val != nil {
+            res := make([]SynchronizationTemplate, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SynchronizationTemplate))
+            }
+            m.SetTemplates(res)
         }
-        m.SetTemplates(res)
         return nil
     }
     return res

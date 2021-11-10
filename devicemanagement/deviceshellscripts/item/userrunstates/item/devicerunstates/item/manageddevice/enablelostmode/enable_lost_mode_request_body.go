@@ -62,7 +62,9 @@ func (m *EnableLostModeRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetFooter(val)
+        if val != nil {
+            m.SetFooter(val)
+        }
         return nil
     }
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *EnableLostModeRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetMessage(val)
+        if val != nil {
+            m.SetMessage(val)
+        }
         return nil
     }
     res["phoneNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *EnableLostModeRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetPhoneNumber(val)
+        if val != nil {
+            m.SetPhoneNumber(val)
+        }
         return nil
     }
     return res

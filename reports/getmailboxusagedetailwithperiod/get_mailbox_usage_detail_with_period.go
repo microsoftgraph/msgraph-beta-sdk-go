@@ -174,7 +174,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetCreatedDate(val)
+        if val != nil {
+            m.SetCreatedDate(val)
+        }
         return nil
     }
     res["deletedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +184,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeletedDate(val)
+        if val != nil {
+            m.SetDeletedDate(val)
+        }
         return nil
     }
     res["deletedItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +194,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeletedItemCount(val)
+        if val != nil {
+            m.SetDeletedItemCount(val)
+        }
         return nil
     }
     res["deletedItemSizeInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +204,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeletedItemSizeInBytes(val)
+        if val != nil {
+            m.SetDeletedItemSizeInBytes(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +214,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +224,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["issueWarningQuotaInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +234,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetIssueWarningQuotaInBytes(val)
+        if val != nil {
+            m.SetIssueWarningQuotaInBytes(val)
+        }
         return nil
     }
     res["itemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +244,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetItemCount(val)
+        if val != nil {
+            m.SetItemCount(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,7 +254,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["prohibitSendQuotaInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,7 +264,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetProhibitSendQuotaInBytes(val)
+        if val != nil {
+            m.SetProhibitSendQuotaInBytes(val)
+        }
         return nil
     }
     res["prohibitSendReceiveQuotaInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,7 +274,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetProhibitSendReceiveQuotaInBytes(val)
+        if val != nil {
+            m.SetProhibitSendReceiveQuotaInBytes(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -262,7 +284,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +294,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["storageUsedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +304,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetStorageUsedInBytes(val)
+        if val != nil {
+            m.SetStorageUsedInBytes(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +314,9 @@ func (m *GetMailboxUsageDetailWithPeriod) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

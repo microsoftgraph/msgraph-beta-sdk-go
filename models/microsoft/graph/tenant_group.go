@@ -73,7 +73,9 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetAllTenantsIncluded(val)
+        if val != nil {
+            m.SetAllTenantsIncluded(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["managementActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,11 +93,13 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ManagementActionInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementActionInfo))
+        if val != nil {
+            res := make([]ManagementActionInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementActionInfo))
+            }
+            m.SetManagementActions(res)
         }
-        m.SetManagementActions(res)
         return nil
     }
     res["managementIntents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,11 +107,13 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ManagementIntentInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementIntentInfo))
+        if val != nil {
+            res := make([]ManagementIntentInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementIntentInfo))
+            }
+            m.SetManagementIntents(res)
         }
-        m.SetManagementIntents(res)
         return nil
     }
     res["tenantIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,11 +121,13 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTenantIds(res)
         }
-        m.SetTenantIds(res)
         return nil
     }
     return res

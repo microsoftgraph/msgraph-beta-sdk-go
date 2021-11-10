@@ -52,8 +52,10 @@ func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(DayOfWeek)
-        m.SetDay(&cast)
+        if val != nil {
+            cast := val.(DayOfWeek)
+            m.SetDay(&cast)
+        }
         return nil
     }
     res["timeSlots"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,11 +63,13 @@ func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]BookingWorkTimeSlot, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BookingWorkTimeSlot))
+        if val != nil {
+            res := make([]BookingWorkTimeSlot, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingWorkTimeSlot))
+            }
+            m.SetTimeSlots(res)
         }
-        m.SetTimeSlots(res)
         return nil
     }
     return res

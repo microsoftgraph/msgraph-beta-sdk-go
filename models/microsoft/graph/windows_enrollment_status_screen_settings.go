@@ -102,7 +102,9 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetAllowDeviceUseBeforeProfileAndAppInstallComplete(val)
+        if val != nil {
+            m.SetAllowDeviceUseBeforeProfileAndAppInstallComplete(val)
+        }
         return nil
     }
     res["allowDeviceUseOnInstallFailure"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +112,9 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetAllowDeviceUseOnInstallFailure(val)
+        if val != nil {
+            m.SetAllowDeviceUseOnInstallFailure(val)
+        }
         return nil
     }
     res["allowLogCollectionOnInstallFailure"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +122,9 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetAllowLogCollectionOnInstallFailure(val)
+        if val != nil {
+            m.SetAllowLogCollectionOnInstallFailure(val)
+        }
         return nil
     }
     res["blockDeviceSetupRetryByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +132,9 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetBlockDeviceSetupRetryByUser(val)
+        if val != nil {
+            m.SetBlockDeviceSetupRetryByUser(val)
+        }
         return nil
     }
     res["customErrorMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +142,9 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetCustomErrorMessage(val)
+        if val != nil {
+            m.SetCustomErrorMessage(val)
+        }
         return nil
     }
     res["hideInstallationProgress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +152,9 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetHideInstallationProgress(val)
+        if val != nil {
+            m.SetHideInstallationProgress(val)
+        }
         return nil
     }
     res["installProgressTimeoutInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +162,9 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        m.SetInstallProgressTimeoutInMinutes(val)
+        if val != nil {
+            m.SetInstallProgressTimeoutInMinutes(val)
+        }
         return nil
     }
     return res

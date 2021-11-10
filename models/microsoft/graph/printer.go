@@ -114,7 +114,9 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetAcceptingJobs(val)
+        if val != nil {
+            m.SetAcceptingJobs(val)
+        }
         return nil
     }
     res["connectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,11 +124,13 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]PrintConnector, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintConnector))
+        if val != nil {
+            res := make([]PrintConnector, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintConnector))
+            }
+            m.SetConnectors(res)
         }
-        m.SetConnectors(res)
         return nil
     }
     res["hasPhysicalDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +138,9 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetHasPhysicalDevice(val)
+        if val != nil {
+            m.SetHasPhysicalDevice(val)
+        }
         return nil
     }
     res["isShared"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +148,9 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetIsShared(val)
+        if val != nil {
+            m.SetIsShared(val)
+        }
         return nil
     }
     res["lastSeenDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +158,9 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetLastSeenDateTime(val)
+        if val != nil {
+            m.SetLastSeenDateTime(val)
+        }
         return nil
     }
     res["registeredDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +168,9 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetRegisteredDateTime(val)
+        if val != nil {
+            m.SetRegisteredDateTime(val)
+        }
         return nil
     }
     res["share"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +178,9 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetShare(val.(*PrinterShare))
+        if val != nil {
+            m.SetShare(val.(*PrinterShare))
+        }
         return nil
     }
     res["shares"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,11 +188,13 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]PrinterShare, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrinterShare))
+        if val != nil {
+            res := make([]PrinterShare, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrinterShare))
+            }
+            m.SetShares(res)
         }
-        m.SetShares(res)
         return nil
     }
     res["taskTriggers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,11 +202,13 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]PrintTaskTrigger, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintTaskTrigger))
+        if val != nil {
+            res := make([]PrintTaskTrigger, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintTaskTrigger))
+            }
+            m.SetTaskTriggers(res)
         }
-        m.SetTaskTriggers(res)
         return nil
     }
     return res

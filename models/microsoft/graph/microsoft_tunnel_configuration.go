@@ -154,11 +154,13 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetAdvancedSettings(res)
         }
-        m.SetAdvancedSettings(res)
         return nil
     }
     res["defaultDomainSuffix"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +168,9 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDefaultDomainSuffix(val)
+        if val != nil {
+            m.SetDefaultDomainSuffix(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +178,9 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["disableUDPConnections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +188,9 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDisableUDPConnections(val)
+        if val != nil {
+            m.SetDisableUDPConnections(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +198,9 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["dnsServers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,11 +208,13 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDnsServers(res)
         }
-        m.SetDnsServers(res)
         return nil
     }
     res["lastUpdateDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +222,9 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetLastUpdateDateTime(val)
+        if val != nil {
+            m.SetLastUpdateDateTime(val)
+        }
         return nil
     }
     res["listenPort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +232,9 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetListenPort(val)
+        if val != nil {
+            m.SetListenPort(val)
+        }
         return nil
     }
     res["network"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +242,9 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetNetwork(val)
+        if val != nil {
+            m.SetNetwork(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,11 +252,13 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["routesExclude"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,11 +266,13 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoutesExclude(res)
         }
-        m.SetRoutesExclude(res)
         return nil
     }
     res["routesInclude"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,11 +280,13 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoutesInclude(res)
         }
-        m.SetRoutesInclude(res)
         return nil
     }
     res["splitDNS"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,11 +294,13 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSplitDNS(res)
         }
-        m.SetSplitDNS(res)
         return nil
     }
     return res

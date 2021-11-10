@@ -42,11 +42,13 @@ func (m *DlpPoliciesJobResult) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]MatchingDlpRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MatchingDlpRule))
+        if val != nil {
+            res := make([]MatchingDlpRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MatchingDlpRule))
+            }
+            m.SetMatchingRules(res)
         }
-        m.SetMatchingRules(res)
         return nil
     }
     return res

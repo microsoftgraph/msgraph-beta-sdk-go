@@ -42,7 +42,9 @@ func (m *SuggestedEnrollmentLimit) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSuggestedDailyLimit(val)
+        if val != nil {
+            m.SetSuggestedDailyLimit(val)
+        }
         return nil
     }
     return res

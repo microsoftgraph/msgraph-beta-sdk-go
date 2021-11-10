@@ -62,7 +62,9 @@ func (m *GetStateResponse) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAssignmentFilterState(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState))
+        if val != nil {
+            m.SetAssignmentFilterState(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState))
+        }
         return nil
     }
     return res

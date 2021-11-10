@@ -53,7 +53,9 @@ func (m *EvaluateRemovalRequestBody) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetContentInfo(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo))
+        if val != nil {
+            m.SetContentInfo(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo))
+        }
         return nil
     }
     res["downgradeJustification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *EvaluateRemovalRequestBody) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetDowngradeJustification(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustification))
+        if val != nil {
+            m.SetDowngradeJustification(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustification))
+        }
         return nil
     }
     return res

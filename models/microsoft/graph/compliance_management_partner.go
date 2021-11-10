@@ -134,11 +134,13 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]ComplianceManagementPartnerAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+        if val != nil {
+            res := make([]ComplianceManagementPartnerAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+            }
+            m.SetAndroidEnrollmentAssignments(res)
         }
-        m.SetAndroidEnrollmentAssignments(res)
         return nil
     }
     res["androidOnboarded"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +148,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetAndroidOnboarded(val)
+        if val != nil {
+            m.SetAndroidOnboarded(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +158,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["iosEnrollmentAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,11 +168,13 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]ComplianceManagementPartnerAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+        if val != nil {
+            res := make([]ComplianceManagementPartnerAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+            }
+            m.SetIosEnrollmentAssignments(res)
         }
-        m.SetIosEnrollmentAssignments(res)
         return nil
     }
     res["iosOnboarded"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +182,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIosOnboarded(val)
+        if val != nil {
+            m.SetIosOnboarded(val)
+        }
         return nil
     }
     res["lastHeartbeatDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +192,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastHeartbeatDateTime(val)
+        if val != nil {
+            m.SetLastHeartbeatDateTime(val)
+        }
         return nil
     }
     res["macOsEnrollmentAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,11 +202,13 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]ComplianceManagementPartnerAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+        if val != nil {
+            res := make([]ComplianceManagementPartnerAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+            }
+            m.SetMacOsEnrollmentAssignments(res)
         }
-        m.SetMacOsEnrollmentAssignments(res)
         return nil
     }
     res["macOsOnboarded"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +216,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMacOsOnboarded(val)
+        if val != nil {
+            m.SetMacOsOnboarded(val)
+        }
         return nil
     }
     res["partnerState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,8 +226,10 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementPartnerTenantState)
-        m.SetPartnerState(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementPartnerTenantState)
+            m.SetPartnerState(&cast)
+        }
         return nil
     }
     res["windowsEnrollmentAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -219,11 +237,13 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]ComplianceManagementPartnerAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+        if val != nil {
+            res := make([]ComplianceManagementPartnerAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ComplianceManagementPartnerAssignment))
+            }
+            m.SetWindowsEnrollmentAssignments(res)
         }
-        m.SetWindowsEnrollmentAssignments(res)
         return nil
     }
     res["windowsOnboarded"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,7 +251,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetWindowsOnboarded(val)
+        if val != nil {
+            m.SetWindowsOnboarded(val)
+        }
         return nil
     }
     return res

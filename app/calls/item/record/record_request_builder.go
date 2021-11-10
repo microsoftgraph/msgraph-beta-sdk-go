@@ -64,7 +64,9 @@ func (m *RecordResponse) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetRecordOperation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecordOperation))
+        if val != nil {
+            m.SetRecordOperation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecordOperation))
+        }
         return nil
     }
     return res

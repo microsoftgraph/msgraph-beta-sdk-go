@@ -153,7 +153,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetAverageSpikeTimeScore(val)
+        if val != nil {
+            m.SetAverageSpikeTimeScore(val)
+        }
         return nil
     }
     res["cpuSpikeTimePercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +163,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetCpuSpikeTimePercentage(val)
+        if val != nil {
+            m.SetCpuSpikeTimePercentage(val)
+        }
         return nil
     }
     res["cpuSpikeTimePercentageThreshold"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +173,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetCpuSpikeTimePercentageThreshold(val)
+        if val != nil {
+            m.SetCpuSpikeTimePercentageThreshold(val)
+        }
         return nil
     }
     res["cpuSpikeTimeScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +183,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetCpuSpikeTimeScore(val)
+        if val != nil {
+            m.SetCpuSpikeTimeScore(val)
+        }
         return nil
     }
     res["deviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,7 +193,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetDeviceCount(val)
+        if val != nil {
+            m.SetDeviceCount(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,7 +203,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,7 +213,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["deviceResourcePerformanceScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,7 +223,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetDeviceResourcePerformanceScore(val)
+        if val != nil {
+            m.SetDeviceResourcePerformanceScore(val)
+        }
         return nil
     }
     res["manufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,7 +233,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetManufacturer(val)
+        if val != nil {
+            m.SetManufacturer(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,7 +243,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     res["ramSpikeTimePercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,7 +253,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetRamSpikeTimePercentage(val)
+        if val != nil {
+            m.SetRamSpikeTimePercentage(val)
+        }
         return nil
     }
     res["ramSpikeTimePercentageThreshold"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,7 +263,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetRamSpikeTimePercentageThreshold(val)
+        if val != nil {
+            m.SetRamSpikeTimePercentageThreshold(val)
+        }
         return nil
     }
     res["ramSpikeTimeScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -249,7 +273,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetRamSpikeTimeScore(val)
+        if val != nil {
+            m.SetRamSpikeTimeScore(val)
+        }
         return nil
     }
     return res

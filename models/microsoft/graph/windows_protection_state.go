@@ -234,7 +234,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetAntiMalwareVersion(val)
+        if val != nil {
+            m.SetAntiMalwareVersion(val)
+        }
         return nil
     }
     res["detectedMalwareState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,11 +244,13 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]WindowsDeviceMalwareState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsDeviceMalwareState))
+        if val != nil {
+            res := make([]WindowsDeviceMalwareState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsDeviceMalwareState))
+            }
+            m.SetDetectedMalwareState(res)
         }
-        m.SetDetectedMalwareState(res)
         return nil
     }
     res["deviceState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,8 +258,10 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(WindowsDeviceHealthState)
-        m.SetDeviceState(&cast)
+        if val != nil {
+            cast := val.(WindowsDeviceHealthState)
+            m.SetDeviceState(&cast)
+        }
         return nil
     }
     res["engineVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +269,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetEngineVersion(val)
+        if val != nil {
+            m.SetEngineVersion(val)
+        }
         return nil
     }
     res["fullScanOverdue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,7 +279,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetFullScanOverdue(val)
+        if val != nil {
+            m.SetFullScanOverdue(val)
+        }
         return nil
     }
     res["fullScanRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +289,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetFullScanRequired(val)
+        if val != nil {
+            m.SetFullScanRequired(val)
+        }
         return nil
     }
     res["isVirtualMachine"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,7 +299,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetIsVirtualMachine(val)
+        if val != nil {
+            m.SetIsVirtualMachine(val)
+        }
         return nil
     }
     res["lastFullScanDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,7 +309,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastFullScanDateTime(val)
+        if val != nil {
+            m.SetLastFullScanDateTime(val)
+        }
         return nil
     }
     res["lastFullScanSignatureVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -303,7 +319,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastFullScanSignatureVersion(val)
+        if val != nil {
+            m.SetLastFullScanSignatureVersion(val)
+        }
         return nil
     }
     res["lastQuickScanDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -311,7 +329,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastQuickScanDateTime(val)
+        if val != nil {
+            m.SetLastQuickScanDateTime(val)
+        }
         return nil
     }
     res["lastQuickScanSignatureVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -319,7 +339,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastQuickScanSignatureVersion(val)
+        if val != nil {
+            m.SetLastQuickScanSignatureVersion(val)
+        }
         return nil
     }
     res["lastReportedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -327,7 +349,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastReportedDateTime(val)
+        if val != nil {
+            m.SetLastReportedDateTime(val)
+        }
         return nil
     }
     res["malwareProtectionEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -335,7 +359,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetMalwareProtectionEnabled(val)
+        if val != nil {
+            m.SetMalwareProtectionEnabled(val)
+        }
         return nil
     }
     res["networkInspectionSystemEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -343,7 +369,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetNetworkInspectionSystemEnabled(val)
+        if val != nil {
+            m.SetNetworkInspectionSystemEnabled(val)
+        }
         return nil
     }
     res["productStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -351,8 +379,10 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(WindowsDefenderProductStatus)
-        m.SetProductStatus(&cast)
+        if val != nil {
+            cast := val.(WindowsDefenderProductStatus)
+            m.SetProductStatus(&cast)
+        }
         return nil
     }
     res["quickScanOverdue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -360,7 +390,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetQuickScanOverdue(val)
+        if val != nil {
+            m.SetQuickScanOverdue(val)
+        }
         return nil
     }
     res["realTimeProtectionEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -368,7 +400,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetRealTimeProtectionEnabled(val)
+        if val != nil {
+            m.SetRealTimeProtectionEnabled(val)
+        }
         return nil
     }
     res["rebootRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -376,7 +410,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetRebootRequired(val)
+        if val != nil {
+            m.SetRebootRequired(val)
+        }
         return nil
     }
     res["signatureUpdateOverdue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -384,7 +420,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetSignatureUpdateOverdue(val)
+        if val != nil {
+            m.SetSignatureUpdateOverdue(val)
+        }
         return nil
     }
     res["signatureVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -392,7 +430,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetSignatureVersion(val)
+        if val != nil {
+            m.SetSignatureVersion(val)
+        }
         return nil
     }
     res["tamperProtectionEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -400,7 +440,9 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetTamperProtectionEnabled(val)
+        if val != nil {
+            m.SetTamperProtectionEnabled(val)
+        }
         return nil
     }
     return res

@@ -104,7 +104,9 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriod) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetIndeterminate(val)
+        if val != nil {
+            m.SetIndeterminate(val)
+        }
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriod) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetReportDate(val)
+        if val != nil {
+            m.SetReportDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriod) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriod) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["sendProhibited"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +144,9 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriod) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetSendProhibited(val)
+        if val != nil {
+            m.SetSendProhibited(val)
+        }
         return nil
     }
     res["sendReceiveProhibited"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +154,9 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriod) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetSendReceiveProhibited(val)
+        if val != nil {
+            m.SetSendReceiveProhibited(val)
+        }
         return nil
     }
     res["underLimit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +164,9 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriod) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetUnderLimit(val)
+        if val != nil {
+            m.SetUnderLimit(val)
+        }
         return nil
     }
     res["warningIssued"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +174,9 @@ func (m *GetMailboxUsageQuotaStatusMailboxCountsWithPeriod) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetWarningIssued(val)
+        if val != nil {
+            m.SetWarningIssued(val)
+        }
         return nil
     }
     return res

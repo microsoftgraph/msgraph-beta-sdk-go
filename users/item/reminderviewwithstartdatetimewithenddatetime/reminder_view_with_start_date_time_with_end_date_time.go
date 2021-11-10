@@ -113,7 +113,9 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetChangeKey(val)
+        if val != nil {
+            m.SetChangeKey(val)
+        }
         return nil
     }
     res["eventEndTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetEventEndTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone))
+        if val != nil {
+            m.SetEventEndTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone))
+        }
         return nil
     }
     res["eventId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +133,9 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetEventId(val)
+        if val != nil {
+            m.SetEventId(val)
+        }
         return nil
     }
     res["eventLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +143,9 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetEventLocation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Location))
+        if val != nil {
+            m.SetEventLocation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Location))
+        }
         return nil
     }
     res["eventStartTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +153,9 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetEventStartTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone))
+        if val != nil {
+            m.SetEventStartTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone))
+        }
         return nil
     }
     res["eventSubject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +163,9 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetEventSubject(val)
+        if val != nil {
+            m.SetEventSubject(val)
+        }
         return nil
     }
     res["eventWebLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +173,9 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetEventWebLink(val)
+        if val != nil {
+            m.SetEventWebLink(val)
+        }
         return nil
     }
     res["reminderFireTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +183,9 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetReminderFireTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone))
+        if val != nil {
+            m.SetReminderFireTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone))
+        }
         return nil
     }
     return res

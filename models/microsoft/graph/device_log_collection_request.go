@@ -52,7 +52,9 @@ func (m *DeviceLogCollectionRequest) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["templateType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,8 +62,10 @@ func (m *DeviceLogCollectionRequest) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(DeviceLogCollectionTemplateType)
-        m.SetTemplateType(&cast)
+        if val != nil {
+            cast := val.(DeviceLogCollectionTemplateType)
+            m.SetTemplateType(&cast)
+        }
         return nil
     }
     return res

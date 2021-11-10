@@ -82,7 +82,9 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetComanagedCount(val)
+        if val != nil {
+            m.SetComanagedCount(val)
+        }
         return nil
     }
     res["eligibleButNotAzureAdJoinedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetEligibleButNotAzureAdJoinedCount(val)
+        if val != nil {
+            m.SetEligibleButNotAzureAdJoinedCount(val)
+        }
         return nil
     }
     res["eligibleCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetEligibleCount(val)
+        if val != nil {
+            m.SetEligibleCount(val)
+        }
         return nil
     }
     res["ineligibleCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetIneligibleCount(val)
+        if val != nil {
+            m.SetIneligibleCount(val)
+        }
         return nil
     }
     res["needsOsUpdateCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetNeedsOsUpdateCount(val)
+        if val != nil {
+            m.SetNeedsOsUpdateCount(val)
+        }
         return nil
     }
     return res

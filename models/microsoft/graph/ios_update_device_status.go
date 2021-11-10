@@ -144,7 +144,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetComplianceGracePeriodExpirationDateTime(val)
+        if val != nil {
+            m.SetComplianceGracePeriodExpirationDateTime(val)
+        }
         return nil
     }
     res["deviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +154,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDeviceDisplayName(val)
+        if val != nil {
+            m.SetDeviceDisplayName(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +164,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceModel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +174,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDeviceModel(val)
+        if val != nil {
+            m.SetDeviceModel(val)
+        }
         return nil
     }
     res["installStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,8 +184,10 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(IosUpdatesInstallStatus)
-        m.SetInstallStatus(&cast)
+        if val != nil {
+            cast := val.(IosUpdatesInstallStatus)
+            m.SetInstallStatus(&cast)
+        }
         return nil
     }
     res["lastReportedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,7 +195,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetLastReportedDateTime(val)
+        if val != nil {
+            m.SetLastReportedDateTime(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,7 +205,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["platform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,7 +215,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPlatform(val)
+        if val != nil {
+            m.SetPlatform(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,8 +225,10 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(ComplianceStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ComplianceStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +236,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +246,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +256,9 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

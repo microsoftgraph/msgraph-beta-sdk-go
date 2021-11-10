@@ -52,8 +52,10 @@ func (m *CurrentLabel) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(ApplicationMode)
-        m.SetApplicationMode(&cast)
+        if val != nil {
+            cast := val.(ApplicationMode)
+            m.SetApplicationMode(&cast)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *CurrentLabel) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     return res

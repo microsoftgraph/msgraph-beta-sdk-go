@@ -84,7 +84,9 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetDeviceMacAddress(val)
+        if val != nil {
+            m.SetDeviceMacAddress(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["deviceRegistrationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetDeviceRegistrationId(val)
+        if val != nil {
+            m.SetDeviceRegistrationId(val)
+        }
         return nil
     }
     res["deviceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetDeviceType(val)
+        if val != nil {
+            m.SetDeviceType(val)
+        }
         return nil
     }
     res["lastCheckInDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetLastCheckInDateTime(val)
+        if val != nil {
+            m.SetLastCheckInDateTime(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

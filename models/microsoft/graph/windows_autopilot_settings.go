@@ -54,7 +54,9 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetLastManualSyncTriggerDateTime(val)
+        if val != nil {
+            m.SetLastManualSyncTriggerDateTime(val)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,7 +64,9 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["syncStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,8 +74,10 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(WindowsAutopilotSyncStatus)
-        m.SetSyncStatus(&cast)
+        if val != nil {
+            cast := val.(WindowsAutopilotSyncStatus)
+            m.SetSyncStatus(&cast)
+        }
         return nil
     }
     return res

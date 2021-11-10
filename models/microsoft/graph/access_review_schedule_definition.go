@@ -174,11 +174,13 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]AccessReviewNotificationRecipientItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewNotificationRecipientItem))
+        if val != nil {
+            res := make([]AccessReviewNotificationRecipientItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewNotificationRecipientItem))
+            }
+            m.SetAdditionalNotificationRecipients(res)
         }
-        m.SetAdditionalNotificationRecipients(res)
         return nil
     }
     res["backupReviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,11 +188,13 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]AccessReviewReviewerScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewReviewerScope))
+        if val != nil {
+            res := make([]AccessReviewReviewerScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewReviewerScope))
+            }
+            m.SetBackupReviewers(res)
         }
-        m.SetBackupReviewers(res)
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +202,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*UserIdentity))
+        if val != nil {
+            m.SetCreatedBy(val.(*UserIdentity))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +212,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["descriptionForAdmins"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +222,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDescriptionForAdmins(val)
+        if val != nil {
+            m.SetDescriptionForAdmins(val)
+        }
         return nil
     }
     res["descriptionForReviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +232,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDescriptionForReviewers(val)
+        if val != nil {
+            m.SetDescriptionForReviewers(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +242,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["fallbackReviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,11 +252,13 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]AccessReviewReviewerScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewReviewerScope))
+        if val != nil {
+            res := make([]AccessReviewReviewerScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewReviewerScope))
+            }
+            m.SetFallbackReviewers(res)
         }
-        m.SetFallbackReviewers(res)
         return nil
     }
     res["instanceEnumerationScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +266,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetInstanceEnumerationScope(val.(*AccessReviewScope))
+        if val != nil {
+            m.SetInstanceEnumerationScope(val.(*AccessReviewScope))
+        }
         return nil
     }
     res["instances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,11 +276,13 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]AccessReviewInstance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewInstance))
+        if val != nil {
+            res := make([]AccessReviewInstance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewInstance))
+            }
+            m.SetInstances(res)
         }
-        m.SetInstances(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +290,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["reviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,11 +300,13 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]AccessReviewReviewerScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewReviewerScope))
+        if val != nil {
+            res := make([]AccessReviewReviewerScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewReviewerScope))
+            }
+            m.SetReviewers(res)
         }
-        m.SetReviewers(res)
         return nil
     }
     res["scope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -290,7 +314,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetScope(val.(*AccessReviewScope))
+        if val != nil {
+            m.SetScope(val.(*AccessReviewScope))
+        }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,7 +324,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSettings(val.(*AccessReviewScheduleSettings))
+        if val != nil {
+            m.SetSettings(val.(*AccessReviewScheduleSettings))
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -306,7 +334,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     return res

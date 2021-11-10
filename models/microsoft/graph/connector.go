@@ -63,7 +63,9 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetExternalIp(val)
+        if val != nil {
+            m.SetExternalIp(val)
+        }
         return nil
     }
     res["machineName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetMachineName(val)
+        if val != nil {
+            m.SetMachineName(val)
+        }
         return nil
     }
     res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,11 +83,13 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]ConnectorGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConnectorGroup))
+        if val != nil {
+            res := make([]ConnectorGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConnectorGroup))
+            }
+            m.SetMemberOf(res)
         }
-        m.SetMemberOf(res)
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,8 +97,10 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        cast := val.(ConnectorStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ConnectorStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

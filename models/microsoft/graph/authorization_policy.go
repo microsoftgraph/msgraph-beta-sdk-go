@@ -123,7 +123,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAllowedToSignUpEmailBasedSubscriptions(val)
+        if val != nil {
+            m.SetAllowedToSignUpEmailBasedSubscriptions(val)
+        }
         return nil
     }
     res["allowedToUseSSPR"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +133,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAllowedToUseSSPR(val)
+        if val != nil {
+            m.SetAllowedToUseSSPR(val)
+        }
         return nil
     }
     res["allowEmailVerifiedUsersToJoinOrganization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +143,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAllowEmailVerifiedUsersToJoinOrganization(val)
+        if val != nil {
+            m.SetAllowEmailVerifiedUsersToJoinOrganization(val)
+        }
         return nil
     }
     res["allowInvitesFrom"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,8 +153,10 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(AllowInvitesFrom)
-        m.SetAllowInvitesFrom(&cast)
+        if val != nil {
+            cast := val.(AllowInvitesFrom)
+            m.SetAllowInvitesFrom(&cast)
+        }
         return nil
     }
     res["blockMsolPowerShell"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetBlockMsolPowerShell(val)
+        if val != nil {
+            m.SetBlockMsolPowerShell(val)
+        }
         return nil
     }
     res["defaultUserRoleOverrides"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,11 +174,13 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]DefaultUserRoleOverride, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DefaultUserRoleOverride))
+        if val != nil {
+            res := make([]DefaultUserRoleOverride, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DefaultUserRoleOverride))
+            }
+            m.SetDefaultUserRoleOverrides(res)
         }
-        m.SetDefaultUserRoleOverrides(res)
         return nil
     }
     res["defaultUserRolePermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +188,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDefaultUserRolePermissions(val.(*DefaultUserRolePermissions))
+        if val != nil {
+            m.SetDefaultUserRolePermissions(val.(*DefaultUserRolePermissions))
+        }
         return nil
     }
     res["enabledPreviewFeatures"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,11 +198,13 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEnabledPreviewFeatures(res)
         }
-        m.SetEnabledPreviewFeatures(res)
         return nil
     }
     res["guestUserRoleId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +212,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetGuestUserRoleId(val)
+        if val != nil {
+            m.SetGuestUserRoleId(val)
+        }
         return nil
     }
     res["permissionGrantPolicyIdsAssignedToDefaultUserRole"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,11 +222,13 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetPermissionGrantPolicyIdsAssignedToDefaultUserRole(res)
         }
-        m.SetPermissionGrantPolicyIdsAssignedToDefaultUserRole(res)
         return nil
     }
     return res

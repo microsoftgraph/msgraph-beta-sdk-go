@@ -42,7 +42,9 @@ func (m *BufferDecryptionResult) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDecryptedBuffer(val)
+        if val != nil {
+            m.SetDecryptedBuffer(val)
+        }
         return nil
     }
     return res

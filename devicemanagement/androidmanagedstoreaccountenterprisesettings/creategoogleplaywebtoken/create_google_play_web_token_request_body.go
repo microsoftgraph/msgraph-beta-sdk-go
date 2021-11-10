@@ -42,7 +42,9 @@ func (m *CreateGooglePlayWebTokenRequestBody) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetParentUri(val)
+        if val != nil {
+            m.SetParentUri(val)
+        }
         return nil
     }
     return res

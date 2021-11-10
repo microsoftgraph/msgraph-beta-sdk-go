@@ -164,11 +164,13 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementIntentAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementIntentAssignment))
+        if val != nil {
+            res := make([]DeviceManagementIntentAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementIntentAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,11 +178,13 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementIntentSettingCategory, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementIntentSettingCategory))
+        if val != nil {
+            res := make([]DeviceManagementIntentSettingCategory, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementIntentSettingCategory))
+            }
+            m.SetCategories(res)
         }
-        m.SetCategories(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +192,9 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceSettingStateSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,11 +202,13 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementIntentDeviceSettingStateSummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementIntentDeviceSettingStateSummary))
+        if val != nil {
+            res := make([]DeviceManagementIntentDeviceSettingStateSummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementIntentDeviceSettingStateSummary))
+            }
+            m.SetDeviceSettingStateSummaries(res)
         }
-        m.SetDeviceSettingStateSummaries(res)
         return nil
     }
     res["deviceStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,11 +216,13 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementIntentDeviceState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementIntentDeviceState))
+        if val != nil {
+            res := make([]DeviceManagementIntentDeviceState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementIntentDeviceState))
+            }
+            m.SetDeviceStates(res)
         }
-        m.SetDeviceStates(res)
         return nil
     }
     res["deviceStateSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +230,9 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceStateSummary(val.(*DeviceManagementIntentDeviceStateSummary))
+        if val != nil {
+            m.SetDeviceStateSummary(val.(*DeviceManagementIntentDeviceStateSummary))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +240,9 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isAssigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +250,9 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetIsAssigned(val)
+        if val != nil {
+            m.SetIsAssigned(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +260,9 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,11 +270,13 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,11 +284,13 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementSettingInstance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementSettingInstance))
+        if val != nil {
+            res := make([]DeviceManagementSettingInstance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementSettingInstance))
+            }
+            m.SetSettings(res)
         }
-        m.SetSettings(res)
         return nil
     }
     res["templateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -276,7 +298,9 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetTemplateId(val)
+        if val != nil {
+            m.SetTemplateId(val)
+        }
         return nil
     }
     res["userStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -284,11 +308,13 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementIntentUserState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementIntentUserState))
+        if val != nil {
+            res := make([]DeviceManagementIntentUserState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementIntentUserState))
+            }
+            m.SetUserStates(res)
         }
-        m.SetUserStates(res)
         return nil
     }
     res["userStateSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,7 +322,9 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUserStateSummary(val.(*DeviceManagementIntentUserStateSummary))
+        if val != nil {
+            m.SetUserStateSummary(val.(*DeviceManagementIntentUserStateSummary))
+        }
         return nil
     }
     return res

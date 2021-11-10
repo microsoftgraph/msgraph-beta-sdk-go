@@ -154,7 +154,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetApp(val.(*MobileApp))
+        if val != nil {
+            m.SetApp(val.(*MobileApp))
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +164,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +174,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["displayVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +184,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDisplayVersion(val)
+        if val != nil {
+            m.SetDisplayVersion(val)
+        }
         return nil
     }
     res["errorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +194,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetErrorCode(val)
+        if val != nil {
+            m.SetErrorCode(val)
+        }
         return nil
     }
     res["installState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,8 +204,10 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(ResultantAppState)
-        m.SetInstallState(&cast)
+        if val != nil {
+            cast := val.(ResultantAppState)
+            m.SetInstallState(&cast)
+        }
         return nil
     }
     res["installStateDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -203,8 +215,10 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(ResultantAppStateDetail)
-        m.SetInstallStateDetail(&cast)
+        if val != nil {
+            cast := val.(ResultantAppStateDetail)
+            m.SetInstallStateDetail(&cast)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +226,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["mobileAppInstallStatusValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,8 +236,10 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(ResultantAppState)
-        m.SetMobileAppInstallStatusValue(&cast)
+        if val != nil {
+            cast := val.(ResultantAppState)
+            m.SetMobileAppInstallStatusValue(&cast)
+        }
         return nil
     }
     res["osDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,7 +247,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetOsDescription(val)
+        if val != nil {
+            m.SetOsDescription(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -237,7 +257,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +267,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,7 +277,9 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

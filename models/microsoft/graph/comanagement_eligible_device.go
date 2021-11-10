@@ -213,8 +213,10 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(DeviceRegistrationState)
-        m.SetClientRegistrationStatus(&cast)
+        if val != nil {
+            cast := val.(DeviceRegistrationState)
+            m.SetClientRegistrationStatus(&cast)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +224,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["deviceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,8 +234,10 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(DeviceType)
-        m.SetDeviceType(&cast)
+        if val != nil {
+            cast := val.(DeviceType)
+            m.SetDeviceType(&cast)
+        }
         return nil
     }
     res["entitySource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +245,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetEntitySource(val)
+        if val != nil {
+            m.SetEntitySource(val)
+        }
         return nil
     }
     res["managementAgents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,8 +255,10 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(ManagementAgentType)
-        m.SetManagementAgents(&cast)
+        if val != nil {
+            cast := val.(ManagementAgentType)
+            m.SetManagementAgents(&cast)
+        }
         return nil
     }
     res["managementState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,8 +266,10 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(ManagementState)
-        m.SetManagementState(&cast)
+        if val != nil {
+            cast := val.(ManagementState)
+            m.SetManagementState(&cast)
+        }
         return nil
     }
     res["manufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,7 +277,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetManufacturer(val)
+        if val != nil {
+            m.SetManufacturer(val)
+        }
         return nil
     }
     res["mdmStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -273,7 +287,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetMdmStatus(val)
+        if val != nil {
+            m.SetMdmStatus(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -281,7 +297,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     res["osDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -289,7 +307,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetOsDescription(val)
+        if val != nil {
+            m.SetOsDescription(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -297,7 +317,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["ownerType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,8 +327,10 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(OwnerType)
-        m.SetOwnerType(&cast)
+        if val != nil {
+            cast := val.(OwnerType)
+            m.SetOwnerType(&cast)
+        }
         return nil
     }
     res["referenceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +338,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetReferenceId(val)
+        if val != nil {
+            m.SetReferenceId(val)
+        }
         return nil
     }
     res["serialNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,7 +348,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetSerialNumber(val)
+        if val != nil {
+            m.SetSerialNumber(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,8 +358,10 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(ComanagementEligibleType)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ComanagementEligibleType)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["upn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -339,7 +369,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetUpn(val)
+        if val != nil {
+            m.SetUpn(val)
+        }
         return nil
     }
     res["userEmail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -347,7 +379,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetUserEmail(val)
+        if val != nil {
+            m.SetUserEmail(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -355,7 +389,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -363,7 +399,9 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     return res

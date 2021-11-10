@@ -94,8 +94,10 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(UsageAuthMethod)
-        m.SetAuthMethod(&cast)
+        if val != nil {
+            cast := val.(UsageAuthMethod)
+            m.SetAuthMethod(&cast)
+        }
         return nil
     }
     res["eventDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -103,7 +105,9 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetEventDateTime(val)
+        if val != nil {
+            m.SetEventDateTime(val)
+        }
         return nil
     }
     res["failureReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +115,9 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetFailureReason(val)
+        if val != nil {
+            m.SetFailureReason(val)
+        }
         return nil
     }
     res["feature"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,8 +125,10 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(FeatureType)
-        m.SetFeature(&cast)
+        if val != nil {
+            cast := val.(FeatureType)
+            m.SetFeature(&cast)
+        }
         return nil
     }
     res["isSuccess"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +136,9 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetIsSuccess(val)
+        if val != nil {
+            m.SetIsSuccess(val)
+        }
         return nil
     }
     res["userDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +146,9 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetUserDisplayName(val)
+        if val != nil {
+            m.SetUserDisplayName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +156,9 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

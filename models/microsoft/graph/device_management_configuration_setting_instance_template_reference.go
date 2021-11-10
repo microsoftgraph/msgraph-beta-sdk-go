@@ -42,7 +42,9 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetField
         if err != nil {
             return err
         }
-        m.SetSettingInstanceTemplateId(val)
+        if val != nil {
+            m.SetSettingInstanceTemplateId(val)
+        }
         return nil
     }
     return res

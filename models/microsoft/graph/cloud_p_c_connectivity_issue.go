@@ -84,7 +84,9 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["errorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetErrorCode(val)
+        if val != nil {
+            m.SetErrorCode(val)
+        }
         return nil
     }
     res["errorDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetErrorDateTime(val)
+        if val != nil {
+            m.SetErrorDateTime(val)
+        }
         return nil
     }
     res["errorDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetErrorDescription(val)
+        if val != nil {
+            m.SetErrorDescription(val)
+        }
         return nil
     }
     res["recommendedAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRecommendedAction(val)
+        if val != nil {
+            m.SetRecommendedAction(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

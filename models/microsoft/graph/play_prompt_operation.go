@@ -33,8 +33,10 @@ func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(PlayPromptCompletionReason)
-        m.SetCompletionReason(&cast)
+        if val != nil {
+            cast := val.(PlayPromptCompletionReason)
+            m.SetCompletionReason(&cast)
+        }
         return nil
     }
     return res

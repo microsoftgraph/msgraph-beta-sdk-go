@@ -64,7 +64,9 @@ func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetConnectorName(val)
+        if val != nil {
+            m.SetConnectorName(val)
+        }
         return nil
     }
     res["enrollmentDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetEnrollmentDateTime(val)
+        if val != nil {
+            m.SetEnrollmentDateTime(val)
+        }
         return nil
     }
     res["lastCheckinDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastCheckinDateTime(val)
+        if val != nil {
+            m.SetLastCheckinDateTime(val)
+        }
         return nil
     }
     res["machineName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMachineName(val)
+        if val != nil {
+            m.SetMachineName(val)
+        }
         return nil
     }
     return res

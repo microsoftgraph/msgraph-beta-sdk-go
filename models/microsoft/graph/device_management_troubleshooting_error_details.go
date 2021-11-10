@@ -82,7 +82,9 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetContext(val)
+        if val != nil {
+            m.SetContext(val)
+        }
         return nil
     }
     res["failure"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetFailure(val)
+        if val != nil {
+            m.SetFailure(val)
+        }
         return nil
     }
     res["failureDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetFailureDetails(val)
+        if val != nil {
+            m.SetFailureDetails(val)
+        }
         return nil
     }
     res["remediation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetRemediation(val)
+        if val != nil {
+            m.SetRemediation(val)
+        }
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,11 +122,13 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementTroubleshootingErrorResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementTroubleshootingErrorResource))
+        if val != nil {
+            res := make([]DeviceManagementTroubleshootingErrorResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementTroubleshootingErrorResource))
+            }
+            m.SetResources(res)
         }
-        m.SetResources(res)
         return nil
     }
     return res

@@ -93,7 +93,9 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCurrentBegan(val)
+        if val != nil {
+            m.SetCurrentBegan(val)
+        }
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetError(val.(*SynchronizationError))
+        if val != nil {
+            m.SetError(val.(*SynchronizationError))
+        }
         return nil
     }
     res["nextAttempt"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetNextAttempt(val)
+        if val != nil {
+            m.SetNextAttempt(val)
+        }
         return nil
     }
     res["reason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,8 +123,10 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(QuarantineReason)
-        m.SetReason(&cast)
+        if val != nil {
+            cast := val.(QuarantineReason)
+            m.SetReason(&cast)
+        }
         return nil
     }
     res["seriesBegan"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSeriesBegan(val)
+        if val != nil {
+            m.SetSeriesBegan(val)
+        }
         return nil
     }
     res["seriesCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSeriesCount(val)
+        if val != nil {
+            m.SetSeriesCount(val)
+        }
         return nil
     }
     return res

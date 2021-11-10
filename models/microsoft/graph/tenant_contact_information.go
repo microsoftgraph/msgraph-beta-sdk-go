@@ -82,7 +82,9 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetNotes(val)
+        if val != nil {
+            m.SetNotes(val)
+        }
         return nil
     }
     res["phone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPhone(val)
+        if val != nil {
+            m.SetPhone(val)
+        }
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTitle(val)
+        if val != nil {
+            m.SetTitle(val)
+        }
         return nil
     }
     return res

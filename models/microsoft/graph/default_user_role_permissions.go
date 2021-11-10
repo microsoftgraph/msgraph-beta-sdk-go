@@ -62,7 +62,9 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetAllowedToCreateApps(val)
+        if val != nil {
+            m.SetAllowedToCreateApps(val)
+        }
         return nil
     }
     res["allowedToCreateSecurityGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetAllowedToCreateSecurityGroups(val)
+        if val != nil {
+            m.SetAllowedToCreateSecurityGroups(val)
+        }
         return nil
     }
     res["allowedToReadOtherUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetAllowedToReadOtherUsers(val)
+        if val != nil {
+            m.SetAllowedToReadOtherUsers(val)
+        }
         return nil
     }
     return res

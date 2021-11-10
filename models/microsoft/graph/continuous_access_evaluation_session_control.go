@@ -42,8 +42,10 @@ func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        cast := val.(ContinuousAccessEvaluationMode)
-        m.SetMode(&cast)
+        if val != nil {
+            cast := val.(ContinuousAccessEvaluationMode)
+            m.SetMode(&cast)
+        }
         return nil
     }
     return res

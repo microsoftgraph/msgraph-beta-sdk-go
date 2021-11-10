@@ -53,11 +53,13 @@ func (m *DeviceHealthScriptRemediationHistory) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        res := make([]DeviceHealthScriptRemediationHistoryData, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceHealthScriptRemediationHistoryData))
+        if val != nil {
+            res := make([]DeviceHealthScriptRemediationHistoryData, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceHealthScriptRemediationHistoryData))
+            }
+            m.SetHistoryData(res)
         }
-        m.SetHistoryData(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,7 +67,9 @@ func (m *DeviceHealthScriptRemediationHistory) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     return res

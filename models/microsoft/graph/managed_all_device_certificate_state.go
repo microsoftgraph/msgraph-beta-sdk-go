@@ -144,7 +144,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateExpirationDateTime(val)
+        if val != nil {
+            m.SetCertificateExpirationDateTime(val)
+        }
         return nil
     }
     res["certificateExtendedKeyUsages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +154,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateExtendedKeyUsages(val)
+        if val != nil {
+            m.SetCertificateExtendedKeyUsages(val)
+        }
         return nil
     }
     res["certificateIssuanceDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +164,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateIssuanceDateTime(val)
+        if val != nil {
+            m.SetCertificateIssuanceDateTime(val)
+        }
         return nil
     }
     res["certificateIssuerName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +174,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateIssuerName(val)
+        if val != nil {
+            m.SetCertificateIssuerName(val)
+        }
         return nil
     }
     res["certificateKeyUsages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +184,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateKeyUsages(val)
+        if val != nil {
+            m.SetCertificateKeyUsages(val)
+        }
         return nil
     }
     res["certificateRevokeStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,8 +194,10 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        cast := val.(CertificateRevocationStatus)
-        m.SetCertificateRevokeStatus(&cast)
+        if val != nil {
+            cast := val.(CertificateRevocationStatus)
+            m.SetCertificateRevokeStatus(&cast)
+        }
         return nil
     }
     res["certificateRevokeStatusLastChangeDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,7 +205,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateRevokeStatusLastChangeDateTime(val)
+        if val != nil {
+            m.SetCertificateRevokeStatusLastChangeDateTime(val)
+        }
         return nil
     }
     res["certificateSerialNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,7 +215,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateSerialNumber(val)
+        if val != nil {
+            m.SetCertificateSerialNumber(val)
+        }
         return nil
     }
     res["certificateSubjectName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,7 +225,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateSubjectName(val)
+        if val != nil {
+            m.SetCertificateSubjectName(val)
+        }
         return nil
     }
     res["certificateThumbprint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,7 +235,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCertificateThumbprint(val)
+        if val != nil {
+            m.SetCertificateThumbprint(val)
+        }
         return nil
     }
     res["managedDeviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,7 +245,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetManagedDeviceDisplayName(val)
+        if val != nil {
+            m.SetManagedDeviceDisplayName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,7 +255,9 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

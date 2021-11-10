@@ -52,7 +52,9 @@ func (m *PasswordValidationInformation) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetIsValid(val)
+        if val != nil {
+            m.SetIsValid(val)
+        }
         return nil
     }
     res["validationResults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,11 +62,13 @@ func (m *PasswordValidationInformation) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]ValidationResult, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ValidationResult))
+        if val != nil {
+            res := make([]ValidationResult, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ValidationResult))
+            }
+            m.SetValidationResults(res)
         }
-        m.SetValidationResults(res)
         return nil
     }
     return res

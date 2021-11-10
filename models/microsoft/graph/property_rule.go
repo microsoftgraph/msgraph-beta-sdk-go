@@ -73,8 +73,10 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.RuleOperation)
-        m.SetOperation(&cast)
+        if val != nil {
+            cast := val.(i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.RuleOperation)
+            m.SetOperation(&cast)
+        }
         return nil
     }
     res["property"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetProperty(val)
+        if val != nil {
+            m.SetProperty(val)
+        }
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,11 +94,13 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetValues(res)
         }
-        m.SetValues(res)
         return nil
     }
     res["valuesJoinedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,8 +108,10 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(BinaryOperator)
-        m.SetValuesJoinedBy(&cast)
+        if val != nil {
+            cast := val.(BinaryOperator)
+            m.SetValuesJoinedBy(&cast)
+        }
         return nil
     }
     return res

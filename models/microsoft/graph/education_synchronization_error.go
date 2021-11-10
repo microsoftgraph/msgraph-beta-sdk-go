@@ -84,7 +84,9 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetEntryType(val)
+        if val != nil {
+            m.SetEntryType(val)
+        }
         return nil
     }
     res["errorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetErrorCode(val)
+        if val != nil {
+            m.SetErrorCode(val)
+        }
         return nil
     }
     res["errorMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetErrorMessage(val)
+        if val != nil {
+            m.SetErrorMessage(val)
+        }
         return nil
     }
     res["joiningValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetJoiningValue(val)
+        if val != nil {
+            m.SetJoiningValue(val)
+        }
         return nil
     }
     res["recordedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetRecordedDateTime(val)
+        if val != nil {
+            m.SetRecordedDateTime(val)
+        }
         return nil
     }
     res["reportableIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetReportableIdentifier(val)
+        if val != nil {
+            m.SetReportableIdentifier(val)
+        }
         return nil
     }
     return res

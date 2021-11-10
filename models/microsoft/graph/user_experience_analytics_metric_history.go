@@ -64,7 +64,9 @@ func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["metricDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetMetricDateTime(val)
+        if val != nil {
+            m.SetMetricDateTime(val)
+        }
         return nil
     }
     res["metricType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetMetricType(val)
+        if val != nil {
+            m.SetMetricType(val)
+        }
         return nil
     }
     res["userExperienceAnalyticsMetric"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetUserExperienceAnalyticsMetric(val.(*UserExperienceAnalyticsMetric))
+        if val != nil {
+            m.SetUserExperienceAnalyticsMetric(val.(*UserExperienceAnalyticsMetric))
+        }
         return nil
     }
     return res

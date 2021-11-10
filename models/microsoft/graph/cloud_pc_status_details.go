@@ -62,11 +62,13 @@ func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetAdditionalInformation(res)
         }
-        m.SetAdditionalInformation(res)
         return nil
     }
     res["code"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,7 +76,9 @@ func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetCode(val)
+        if val != nil {
+            m.SetCode(val)
+        }
         return nil
     }
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +86,9 @@ func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMessage(val)
+        if val != nil {
+            m.SetMessage(val)
+        }
         return nil
     }
     return res

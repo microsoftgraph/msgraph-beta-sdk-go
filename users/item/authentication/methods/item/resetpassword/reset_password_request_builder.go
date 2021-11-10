@@ -64,7 +64,9 @@ func (m *ResetPasswordResponse) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPasswordResetResponse(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponse))
+        if val != nil {
+            m.SetPasswordResetResponse(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponse))
+        }
         return nil
     }
     return res

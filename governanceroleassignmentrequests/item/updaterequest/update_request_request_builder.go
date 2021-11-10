@@ -64,7 +64,9 @@ func (m *UpdateRequestResponse) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetGovernanceRoleAssignmentRequest(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest))
+        if val != nil {
+            m.SetGovernanceRoleAssignmentRequest(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest))
+        }
         return nil
     }
     return res

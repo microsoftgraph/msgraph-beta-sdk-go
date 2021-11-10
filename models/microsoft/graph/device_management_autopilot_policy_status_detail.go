@@ -84,8 +84,10 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementAutopilotPolicyComplianceStatus)
-        m.SetComplianceStatus(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementAutopilotPolicyComplianceStatus)
+            m.SetComplianceStatus(&cast)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,7 +95,9 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["errorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +105,9 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetErrorCode(val)
+        if val != nil {
+            m.SetErrorCode(val)
+        }
         return nil
     }
     res["lastReportedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +115,9 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetLastReportedDateTime(val)
+        if val != nil {
+            m.SetLastReportedDateTime(val)
+        }
         return nil
     }
     res["policyType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,8 +125,10 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementAutopilotPolicyType)
-        m.SetPolicyType(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementAutopilotPolicyType)
+            m.SetPolicyType(&cast)
+        }
         return nil
     }
     res["trackedOnEnrollmentStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +136,9 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetTrackedOnEnrollmentStatus(val)
+        if val != nil {
+            m.SetTrackedOnEnrollmentStatus(val)
+        }
         return nil
     }
     return res

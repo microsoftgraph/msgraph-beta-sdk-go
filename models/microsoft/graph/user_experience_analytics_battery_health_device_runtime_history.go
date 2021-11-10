@@ -53,7 +53,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["estimatedRuntimeInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetEstimatedRuntimeInMinutes(val)
+        if val != nil {
+            m.SetEstimatedRuntimeInMinutes(val)
+        }
         return nil
     }
     res["runtimeDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetFieldDeser
         if err != nil {
             return err
         }
-        m.SetRuntimeDateTime(val)
+        if val != nil {
+            m.SetRuntimeDateTime(val)
+        }
         return nil
     }
     return res

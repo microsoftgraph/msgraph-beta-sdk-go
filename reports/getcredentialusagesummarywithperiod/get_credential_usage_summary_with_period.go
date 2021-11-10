@@ -64,8 +64,10 @@ func (m *GetCredentialUsageSummaryWithPeriod) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageAuthMethod)
-        m.SetAuthMethod(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageAuthMethod)
+            m.SetAuthMethod(&cast)
+        }
         return nil
     }
     res["failureActivityCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,7 +75,9 @@ func (m *GetCredentialUsageSummaryWithPeriod) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetFailureActivityCount(val)
+        if val != nil {
+            m.SetFailureActivityCount(val)
+        }
         return nil
     }
     res["feature"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,8 +85,10 @@ func (m *GetCredentialUsageSummaryWithPeriod) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FeatureType)
-        m.SetFeature(&cast)
+        if val != nil {
+            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FeatureType)
+            m.SetFeature(&cast)
+        }
         return nil
     }
     res["successfulActivityCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +96,9 @@ func (m *GetCredentialUsageSummaryWithPeriod) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetSuccessfulActivityCount(val)
+        if val != nil {
+            m.SetSuccessfulActivityCount(val)
+        }
         return nil
     }
     return res

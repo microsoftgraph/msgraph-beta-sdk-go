@@ -42,7 +42,9 @@ func (m *DeviceHealthScriptRunSchedule) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetInterval(val)
+        if val != nil {
+            m.SetInterval(val)
+        }
         return nil
     }
     return res

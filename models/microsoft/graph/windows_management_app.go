@@ -63,7 +63,9 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAvailableVersion(val)
+        if val != nil {
+            m.SetAvailableVersion(val)
+        }
         return nil
     }
     res["healthStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,11 +73,13 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]WindowsManagementAppHealthState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsManagementAppHealthState))
+        if val != nil {
+            res := make([]WindowsManagementAppHealthState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsManagementAppHealthState))
+            }
+            m.SetHealthStates(res)
         }
-        m.SetHealthStates(res)
         return nil
     }
     res["managedInstaller"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,8 +87,10 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ManagedInstallerStatus)
-        m.SetManagedInstaller(&cast)
+        if val != nil {
+            cast := val.(ManagedInstallerStatus)
+            m.SetManagedInstaller(&cast)
+        }
         return nil
     }
     res["managedInstallerConfiguredDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +98,9 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetManagedInstallerConfiguredDateTime(val)
+        if val != nil {
+            m.SetManagedInstallerConfiguredDateTime(val)
+        }
         return nil
     }
     return res

@@ -43,11 +43,13 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]PhysicalAddress, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PhysicalAddress))
+        if val != nil {
+            res := make([]PhysicalAddress, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PhysicalAddress))
+            }
+            m.SetAddresses(res)
         }
-        m.SetAddresses(res)
         return nil
     }
     res["phones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -55,11 +57,13 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]Phone, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Phone))
+        if val != nil {
+            res := make([]Phone, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Phone))
+            }
+            m.SetPhones(res)
         }
-        m.SetPhones(res)
         return nil
     }
     return res

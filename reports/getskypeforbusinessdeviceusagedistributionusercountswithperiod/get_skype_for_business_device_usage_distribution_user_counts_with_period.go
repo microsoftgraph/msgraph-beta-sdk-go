@@ -94,7 +94,9 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFiel
         if err != nil {
             return err
         }
-        m.SetAndroidPhone(val)
+        if val != nil {
+            m.SetAndroidPhone(val)
+        }
         return nil
     }
     res["iPad"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFiel
         if err != nil {
             return err
         }
-        m.SetIPad(val)
+        if val != nil {
+            m.SetIPad(val)
+        }
         return nil
     }
     res["iPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFiel
         if err != nil {
             return err
         }
-        m.SetIPhone(val)
+        if val != nil {
+            m.SetIPhone(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFiel
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFiel
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["windows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFiel
         if err != nil {
             return err
         }
-        m.SetWindows(val)
+        if val != nil {
+            m.SetWindows(val)
+        }
         return nil
     }
     res["windowsPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +154,9 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFiel
         if err != nil {
             return err
         }
-        m.SetWindowsPhone(val)
+        if val != nil {
+            m.SetWindowsPhone(val)
+        }
         return nil
     }
     return res

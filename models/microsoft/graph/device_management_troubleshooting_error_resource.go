@@ -52,7 +52,9 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetLink(val)
+        if val != nil {
+            m.SetLink(val)
+        }
         return nil
     }
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetText(val)
+        if val != nil {
+            m.SetText(val)
+        }
         return nil
     }
     return res

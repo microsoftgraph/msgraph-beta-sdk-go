@@ -152,7 +152,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAnchor(val)
+        if val != nil {
+            m.SetAnchor(val)
+        }
         return nil
     }
     res["apiExpressions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,11 +162,13 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]StringKeyStringValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*StringKeyStringValuePair))
+        if val != nil {
+            res := make([]StringKeyStringValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*StringKeyStringValuePair))
+            }
+            m.SetApiExpressions(res)
         }
-        m.SetApiExpressions(res)
         return nil
     }
     res["caseExact"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +176,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCaseExact(val)
+        if val != nil {
+            m.SetCaseExact(val)
+        }
         return nil
     }
     res["defaultValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +186,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDefaultValue(val)
+        if val != nil {
+            m.SetDefaultValue(val)
+        }
         return nil
     }
     res["flowNullValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +196,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetFlowNullValues(val)
+        if val != nil {
+            m.SetFlowNullValues(val)
+        }
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,11 +206,13 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MetadataEntry, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MetadataEntry))
+        if val != nil {
+            res := make([]MetadataEntry, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MetadataEntry))
+            }
+            m.SetMetadata(res)
         }
-        m.SetMetadata(res)
         return nil
     }
     res["multivalued"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +220,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetMultivalued(val)
+        if val != nil {
+            m.SetMultivalued(val)
+        }
         return nil
     }
     res["mutability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,8 +230,10 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(Mutability)
-        m.SetMutability(&cast)
+        if val != nil {
+            cast := val.(Mutability)
+            m.SetMutability(&cast)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,7 +241,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["referencedObjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,11 +251,13 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ReferencedObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ReferencedObject))
+        if val != nil {
+            res := make([]ReferencedObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ReferencedObject))
+            }
+            m.SetReferencedObjects(res)
         }
-        m.SetReferencedObjects(res)
         return nil
     }
     res["required"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +265,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRequired(val)
+        if val != nil {
+            m.SetRequired(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,8 +275,10 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(AttributeType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(AttributeType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     return res

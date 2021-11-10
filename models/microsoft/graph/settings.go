@@ -62,7 +62,9 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetHasGraphMailbox(val)
+        if val != nil {
+            m.SetHasGraphMailbox(val)
+        }
         return nil
     }
     res["hasLicense"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetHasLicense(val)
+        if val != nil {
+            m.SetHasLicense(val)
+        }
         return nil
     }
     res["hasOptedOut"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetHasOptedOut(val)
+        if val != nil {
+            m.SetHasOptedOut(val)
+        }
         return nil
     }
     return res

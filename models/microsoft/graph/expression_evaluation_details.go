@@ -72,7 +72,9 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetExpression(val)
+        if val != nil {
+            m.SetExpression(val)
+        }
         return nil
     }
     res["expressionEvaluationDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,11 +82,13 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]ExpressionEvaluationDetails, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExpressionEvaluationDetails))
+        if val != nil {
+            res := make([]ExpressionEvaluationDetails, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExpressionEvaluationDetails))
+            }
+            m.SetExpressionEvaluationDetails(res)
         }
-        m.SetExpressionEvaluationDetails(res)
         return nil
     }
     res["expressionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +96,9 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetExpressionResult(val)
+        if val != nil {
+            m.SetExpressionResult(val)
+        }
         return nil
     }
     res["propertyToEvaluate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +106,9 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetPropertyToEvaluate(val.(*PropertyToEvaluate))
+        if val != nil {
+            m.SetPropertyToEvaluate(val.(*PropertyToEvaluate))
+        }
         return nil
     }
     return res

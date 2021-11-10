@@ -123,7 +123,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetApprovalOnElevation(val)
+        if val != nil {
+            m.SetApprovalOnElevation(val)
+        }
         return nil
     }
     res["approverIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,11 +133,13 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetApproverIds(res)
         }
-        m.SetApproverIds(res)
         return nil
     }
     res["elevationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +147,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetElevationDuration(val)
+        if val != nil {
+            m.SetElevationDuration(val)
+        }
         return nil
     }
     res["isMfaOnElevationConfigurable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +157,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetIsMfaOnElevationConfigurable(val)
+        if val != nil {
+            m.SetIsMfaOnElevationConfigurable(val)
+        }
         return nil
     }
     res["lastGlobalAdmin"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +167,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastGlobalAdmin(val)
+        if val != nil {
+            m.SetLastGlobalAdmin(val)
+        }
         return nil
     }
     res["maxElavationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +177,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetMaxElavationDuration(val)
+        if val != nil {
+            m.SetMaxElavationDuration(val)
+        }
         return nil
     }
     res["mfaOnElevation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +187,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetMfaOnElevation(val)
+        if val != nil {
+            m.SetMfaOnElevation(val)
+        }
         return nil
     }
     res["minElevationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +197,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetMinElevationDuration(val)
+        if val != nil {
+            m.SetMinElevationDuration(val)
+        }
         return nil
     }
     res["notificationToUserOnElevation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +207,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetNotificationToUserOnElevation(val)
+        if val != nil {
+            m.SetNotificationToUserOnElevation(val)
+        }
         return nil
     }
     res["ticketingInfoOnElevation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +217,9 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetTicketingInfoOnElevation(val)
+        if val != nil {
+            m.SetTicketingInfoOnElevation(val)
+        }
         return nil
     }
     return res

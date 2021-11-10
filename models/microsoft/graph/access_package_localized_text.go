@@ -52,7 +52,9 @@ func (m *AccessPackageLocalizedText) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetLanguageCode(val)
+        if val != nil {
+            m.SetLanguageCode(val)
+        }
         return nil
     }
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *AccessPackageLocalizedText) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetText(val)
+        if val != nil {
+            m.SetText(val)
+        }
         return nil
     }
     return res

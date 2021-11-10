@@ -43,11 +43,13 @@ func (m *ProfileCardProperty) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ProfileCardAnnotation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ProfileCardAnnotation))
+        if val != nil {
+            res := make([]ProfileCardAnnotation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ProfileCardAnnotation))
+            }
+            m.SetAnnotations(res)
         }
-        m.SetAnnotations(res)
         return nil
     }
     res["directoryPropertyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -55,7 +57,9 @@ func (m *ProfileCardProperty) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDirectoryPropertyName(val)
+        if val != nil {
+            m.SetDirectoryPropertyName(val)
+        }
         return nil
     }
     return res

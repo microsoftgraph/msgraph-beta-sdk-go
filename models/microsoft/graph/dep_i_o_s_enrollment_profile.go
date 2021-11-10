@@ -303,7 +303,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAppearanceScreenDisabled(val)
+        if val != nil {
+            m.SetAppearanceScreenDisabled(val)
+        }
         return nil
     }
     res["awaitDeviceConfiguredConfirmation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -311,7 +313,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAwaitDeviceConfiguredConfirmation(val)
+        if val != nil {
+            m.SetAwaitDeviceConfiguredConfirmation(val)
+        }
         return nil
     }
     res["carrierActivationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -319,7 +323,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCarrierActivationUrl(val)
+        if val != nil {
+            m.SetCarrierActivationUrl(val)
+        }
         return nil
     }
     res["companyPortalVppTokenId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -327,7 +333,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCompanyPortalVppTokenId(val)
+        if val != nil {
+            m.SetCompanyPortalVppTokenId(val)
+        }
         return nil
     }
     res["deviceToDeviceMigrationDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -335,7 +343,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDeviceToDeviceMigrationDisabled(val)
+        if val != nil {
+            m.SetDeviceToDeviceMigrationDisabled(val)
+        }
         return nil
     }
     res["enableSharedIPad"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -343,7 +353,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetEnableSharedIPad(val)
+        if val != nil {
+            m.SetEnableSharedIPad(val)
+        }
         return nil
     }
     res["enableSingleAppEnrollmentMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -351,7 +363,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetEnableSingleAppEnrollmentMode(val)
+        if val != nil {
+            m.SetEnableSingleAppEnrollmentMode(val)
+        }
         return nil
     }
     res["expressLanguageScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -359,7 +373,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetExpressLanguageScreenDisabled(val)
+        if val != nil {
+            m.SetExpressLanguageScreenDisabled(val)
+        }
         return nil
     }
     res["forceTemporarySession"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -367,7 +383,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetForceTemporarySession(val)
+        if val != nil {
+            m.SetForceTemporarySession(val)
+        }
         return nil
     }
     res["homeButtonScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -375,7 +393,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetHomeButtonScreenDisabled(val)
+        if val != nil {
+            m.SetHomeButtonScreenDisabled(val)
+        }
         return nil
     }
     res["iMessageAndFaceTimeScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -383,7 +403,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetIMessageAndFaceTimeScreenDisabled(val)
+        if val != nil {
+            m.SetIMessageAndFaceTimeScreenDisabled(val)
+        }
         return nil
     }
     res["iTunesPairingMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -391,8 +413,10 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ITunesPairingMode)
-        m.SetITunesPairingMode(&cast)
+        if val != nil {
+            cast := val.(ITunesPairingMode)
+            m.SetITunesPairingMode(&cast)
+        }
         return nil
     }
     res["managementCertificates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -400,11 +424,13 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]ManagementCertificateWithThumbprint, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementCertificateWithThumbprint))
+        if val != nil {
+            res := make([]ManagementCertificateWithThumbprint, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementCertificateWithThumbprint))
+            }
+            m.SetManagementCertificates(res)
         }
-        m.SetManagementCertificates(res)
         return nil
     }
     res["onBoardingScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -412,7 +438,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetOnBoardingScreenDisabled(val)
+        if val != nil {
+            m.SetOnBoardingScreenDisabled(val)
+        }
         return nil
     }
     res["passCodeDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -420,7 +448,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPassCodeDisabled(val)
+        if val != nil {
+            m.SetPassCodeDisabled(val)
+        }
         return nil
     }
     res["passcodeLockGracePeriodInSeconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -428,7 +458,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPasscodeLockGracePeriodInSeconds(val)
+        if val != nil {
+            m.SetPasscodeLockGracePeriodInSeconds(val)
+        }
         return nil
     }
     res["preferredLanguageScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -436,7 +468,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPreferredLanguageScreenDisabled(val)
+        if val != nil {
+            m.SetPreferredLanguageScreenDisabled(val)
+        }
         return nil
     }
     res["restoreCompletedScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -444,7 +478,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetRestoreCompletedScreenDisabled(val)
+        if val != nil {
+            m.SetRestoreCompletedScreenDisabled(val)
+        }
         return nil
     }
     res["restoreFromAndroidDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -452,7 +488,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetRestoreFromAndroidDisabled(val)
+        if val != nil {
+            m.SetRestoreFromAndroidDisabled(val)
+        }
         return nil
     }
     res["sharedIPadMaximumUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -460,7 +498,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetSharedIPadMaximumUserCount(val)
+        if val != nil {
+            m.SetSharedIPadMaximumUserCount(val)
+        }
         return nil
     }
     res["simSetupScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -468,7 +508,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetSimSetupScreenDisabled(val)
+        if val != nil {
+            m.SetSimSetupScreenDisabled(val)
+        }
         return nil
     }
     res["softwareUpdateScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -476,7 +518,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetSoftwareUpdateScreenDisabled(val)
+        if val != nil {
+            m.SetSoftwareUpdateScreenDisabled(val)
+        }
         return nil
     }
     res["temporarySessionTimeoutInSeconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -484,7 +528,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetTemporarySessionTimeoutInSeconds(val)
+        if val != nil {
+            m.SetTemporarySessionTimeoutInSeconds(val)
+        }
         return nil
     }
     res["updateCompleteScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -492,7 +538,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetUpdateCompleteScreenDisabled(val)
+        if val != nil {
+            m.SetUpdateCompleteScreenDisabled(val)
+        }
         return nil
     }
     res["userSessionTimeoutInSeconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -500,7 +548,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetUserSessionTimeoutInSeconds(val)
+        if val != nil {
+            m.SetUserSessionTimeoutInSeconds(val)
+        }
         return nil
     }
     res["watchMigrationScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -508,7 +558,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWatchMigrationScreenDisabled(val)
+        if val != nil {
+            m.SetWatchMigrationScreenDisabled(val)
+        }
         return nil
     }
     res["welcomeScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -516,7 +568,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWelcomeScreenDisabled(val)
+        if val != nil {
+            m.SetWelcomeScreenDisabled(val)
+        }
         return nil
     }
     res["zoomDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -524,7 +578,9 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetZoomDisabled(val)
+        if val != nil {
+            m.SetZoomDisabled(val)
+        }
         return nil
     }
     return res

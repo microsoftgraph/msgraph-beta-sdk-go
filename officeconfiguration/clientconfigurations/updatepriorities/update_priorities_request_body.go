@@ -52,11 +52,13 @@ func (m *UpdatePrioritiesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetOfficeConfigurationPolicyIds(res)
         }
-        m.SetOfficeConfigurationPolicyIds(res)
         return nil
     }
     res["officeConfigurationPriorities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,11 +66,13 @@ func (m *UpdatePrioritiesRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]int32, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*int32))
+        if val != nil {
+            res := make([]int32, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*int32))
+            }
+            m.SetOfficeConfigurationPriorities(res)
         }
-        m.SetOfficeConfigurationPriorities(res)
         return nil
     }
     return res

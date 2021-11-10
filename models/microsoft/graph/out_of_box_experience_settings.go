@@ -92,8 +92,10 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(WindowsDeviceUsageType)
-        m.SetDeviceUsageType(&cast)
+        if val != nil {
+            cast := val.(WindowsDeviceUsageType)
+            m.SetDeviceUsageType(&cast)
+        }
         return nil
     }
     res["hideEscapeLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetHideEscapeLink(val)
+        if val != nil {
+            m.SetHideEscapeLink(val)
+        }
         return nil
     }
     res["hideEULA"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetHideEULA(val)
+        if val != nil {
+            m.SetHideEULA(val)
+        }
         return nil
     }
     res["hidePrivacySettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetHidePrivacySettings(val)
+        if val != nil {
+            m.SetHidePrivacySettings(val)
+        }
         return nil
     }
     res["skipKeyboardSelectionPage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetSkipKeyboardSelectionPage(val)
+        if val != nil {
+            m.SetSkipKeyboardSelectionPage(val)
+        }
         return nil
     }
     res["userType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,8 +143,10 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(WindowsUserType)
-        m.SetUserType(&cast)
+        if val != nil {
+            cast := val.(WindowsUserType)
+            m.SetUserType(&cast)
+        }
         return nil
     }
     return res

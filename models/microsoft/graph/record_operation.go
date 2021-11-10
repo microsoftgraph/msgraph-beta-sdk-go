@@ -53,8 +53,10 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(RecordCompletionReason)
-        m.SetCompletionReason(&cast)
+        if val != nil {
+            cast := val.(RecordCompletionReason)
+            m.SetCompletionReason(&cast)
+        }
         return nil
     }
     res["recordingAccessToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,7 +64,9 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRecordingAccessToken(val)
+        if val != nil {
+            m.SetRecordingAccessToken(val)
+        }
         return nil
     }
     res["recordingLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +74,9 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRecordingLocation(val)
+        if val != nil {
+            m.SetRecordingLocation(val)
+        }
         return nil
     }
     return res

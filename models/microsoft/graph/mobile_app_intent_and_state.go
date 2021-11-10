@@ -53,7 +53,9 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetManagedDeviceIdentifier(val)
+        if val != nil {
+            m.SetManagedDeviceIdentifier(val)
+        }
         return nil
     }
     res["mobileAppList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,11 +63,13 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]MobileAppIntentAndStateDetail, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileAppIntentAndStateDetail))
+        if val != nil {
+            res := make([]MobileAppIntentAndStateDetail, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileAppIntentAndStateDetail))
+            }
+            m.SetMobileAppList(res)
         }
-        m.SetMobileAppList(res)
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,7 +77,9 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

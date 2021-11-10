@@ -233,7 +233,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetEnabled(val)
+        if val != nil {
+            m.SetEnabled(val)
+        }
         return nil
     }
     res["offerShiftRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,11 +243,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]OfferShiftRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OfferShiftRequest))
+        if val != nil {
+            res := make([]OfferShiftRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OfferShiftRequest))
+            }
+            m.SetOfferShiftRequests(res)
         }
-        m.SetOfferShiftRequests(res)
         return nil
     }
     res["offerShiftRequestsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,7 +257,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetOfferShiftRequestsEnabled(val)
+        if val != nil {
+            m.SetOfferShiftRequestsEnabled(val)
+        }
         return nil
     }
     res["openShiftChangeRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,11 +267,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]OpenShiftChangeRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OpenShiftChangeRequest))
+        if val != nil {
+            res := make([]OpenShiftChangeRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OpenShiftChangeRequest))
+            }
+            m.SetOpenShiftChangeRequests(res)
         }
-        m.SetOpenShiftChangeRequests(res)
         return nil
     }
     res["openShifts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -273,11 +281,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]OpenShift, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OpenShift))
+        if val != nil {
+            res := make([]OpenShift, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OpenShift))
+            }
+            m.SetOpenShifts(res)
         }
-        m.SetOpenShifts(res)
         return nil
     }
     res["openShiftsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,7 +295,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetOpenShiftsEnabled(val)
+        if val != nil {
+            m.SetOpenShiftsEnabled(val)
+        }
         return nil
     }
     res["provisionStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,8 +305,10 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(OperationStatus)
-        m.SetProvisionStatus(&cast)
+        if val != nil {
+            cast := val.(OperationStatus)
+            m.SetProvisionStatus(&cast)
+        }
         return nil
     }
     res["provisionStatusCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,7 +316,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetProvisionStatusCode(val)
+        if val != nil {
+            m.SetProvisionStatusCode(val)
+        }
         return nil
     }
     res["schedulingGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -310,11 +326,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SchedulingGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SchedulingGroup))
+        if val != nil {
+            res := make([]SchedulingGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SchedulingGroup))
+            }
+            m.SetSchedulingGroups(res)
         }
-        m.SetSchedulingGroups(res)
         return nil
     }
     res["shifts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,11 +340,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]Shift, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Shift))
+        if val != nil {
+            res := make([]Shift, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Shift))
+            }
+            m.SetShifts(res)
         }
-        m.SetShifts(res)
         return nil
     }
     res["swapShiftsChangeRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -334,11 +354,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SwapShiftsChangeRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SwapShiftsChangeRequest))
+        if val != nil {
+            res := make([]SwapShiftsChangeRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SwapShiftsChangeRequest))
+            }
+            m.SetSwapShiftsChangeRequests(res)
         }
-        m.SetSwapShiftsChangeRequests(res)
         return nil
     }
     res["swapShiftsRequestsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -346,7 +368,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetSwapShiftsRequestsEnabled(val)
+        if val != nil {
+            m.SetSwapShiftsRequestsEnabled(val)
+        }
         return nil
     }
     res["timeCards"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -354,11 +378,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]TimeCard, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TimeCard))
+        if val != nil {
+            res := make([]TimeCard, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TimeCard))
+            }
+            m.SetTimeCards(res)
         }
-        m.SetTimeCards(res)
         return nil
     }
     res["timeClockEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -366,7 +392,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetTimeClockEnabled(val)
+        if val != nil {
+            m.SetTimeClockEnabled(val)
+        }
         return nil
     }
     res["timeClockSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -374,7 +402,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetTimeClockSettings(val.(*TimeClockSettings))
+        if val != nil {
+            m.SetTimeClockSettings(val.(*TimeClockSettings))
+        }
         return nil
     }
     res["timeOffReasons"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -382,11 +412,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]TimeOffReason, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TimeOffReason))
+        if val != nil {
+            res := make([]TimeOffReason, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TimeOffReason))
+            }
+            m.SetTimeOffReasons(res)
         }
-        m.SetTimeOffReasons(res)
         return nil
     }
     res["timeOffRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -394,11 +426,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]TimeOffRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TimeOffRequest))
+        if val != nil {
+            res := make([]TimeOffRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TimeOffRequest))
+            }
+            m.SetTimeOffRequests(res)
         }
-        m.SetTimeOffRequests(res)
         return nil
     }
     res["timeOffRequestsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -406,7 +440,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetTimeOffRequestsEnabled(val)
+        if val != nil {
+            m.SetTimeOffRequestsEnabled(val)
+        }
         return nil
     }
     res["timesOff"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -414,11 +450,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]TimeOff, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TimeOff))
+        if val != nil {
+            res := make([]TimeOff, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TimeOff))
+            }
+            m.SetTimesOff(res)
         }
-        m.SetTimesOff(res)
         return nil
     }
     res["timeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -426,7 +464,9 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetTimeZone(val)
+        if val != nil {
+            m.SetTimeZone(val)
+        }
         return nil
     }
     res["workforceIntegrationIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -434,11 +474,13 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetWorkforceIntegrationIds(res)
         }
-        m.SetWorkforceIntegrationIds(res)
         return nil
     }
     return res

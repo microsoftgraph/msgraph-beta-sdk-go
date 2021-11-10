@@ -94,7 +94,9 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetContent(val)
+        if val != nil {
+            m.SetContent(val)
+        }
         return nil
     }
     res["defaultLanguageCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDefaultLanguageCode(val)
+        if val != nil {
+            m.SetDefaultLanguageCode(val)
+        }
         return nil
     }
     res["fileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetFileName(val)
+        if val != nil {
+            m.SetFileName(val)
+        }
         return nil
     }
     res["groupPolicyOperations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,11 +124,13 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]GroupPolicyOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GroupPolicyOperation))
+        if val != nil {
+            res := make([]GroupPolicyOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GroupPolicyOperation))
+            }
+            m.SetGroupPolicyOperations(res)
         }
-        m.SetGroupPolicyOperations(res)
         return nil
     }
     res["groupPolicyUploadedLanguageFiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,11 +138,13 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]GroupPolicyUploadedLanguageFile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*GroupPolicyUploadedLanguageFile))
+        if val != nil {
+            res := make([]GroupPolicyUploadedLanguageFile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GroupPolicyUploadedLanguageFile))
+            }
+            m.SetGroupPolicyUploadedLanguageFiles(res)
         }
-        m.SetGroupPolicyUploadedLanguageFiles(res)
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,8 +152,10 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicyUploadedDefinitionFileStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(GroupPolicyUploadedDefinitionFileStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["uploadDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +163,9 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetUploadDateTime(val)
+        if val != nil {
+            m.SetUploadDateTime(val)
+        }
         return nil
     }
     return res

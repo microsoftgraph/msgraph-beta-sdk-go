@@ -122,7 +122,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAccessRecommendationsEnabled(val)
+        if val != nil {
+            m.SetAccessRecommendationsEnabled(val)
+        }
         return nil
     }
     res["activityDurationInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +132,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetActivityDurationInDays(val)
+        if val != nil {
+            m.SetActivityDurationInDays(val)
+        }
         return nil
     }
     res["autoApplyReviewResultsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +142,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAutoApplyReviewResultsEnabled(val)
+        if val != nil {
+            m.SetAutoApplyReviewResultsEnabled(val)
+        }
         return nil
     }
     res["autoReviewEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +152,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAutoReviewEnabled(val)
+        if val != nil {
+            m.SetAutoReviewEnabled(val)
+        }
         return nil
     }
     res["autoReviewSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +162,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAutoReviewSettings(val.(*AutoReviewSettings))
+        if val != nil {
+            m.SetAutoReviewSettings(val.(*AutoReviewSettings))
+        }
         return nil
     }
     res["justificationRequiredOnApproval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +172,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetJustificationRequiredOnApproval(val)
+        if val != nil {
+            m.SetJustificationRequiredOnApproval(val)
+        }
         return nil
     }
     res["mailNotificationsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +182,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMailNotificationsEnabled(val)
+        if val != nil {
+            m.SetMailNotificationsEnabled(val)
+        }
         return nil
     }
     res["recurrenceSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +192,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetRecurrenceSettings(val.(*AccessReviewRecurrenceSettings))
+        if val != nil {
+            m.SetRecurrenceSettings(val.(*AccessReviewRecurrenceSettings))
+        }
         return nil
     }
     res["remindersEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +202,9 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetRemindersEnabled(val)
+        if val != nil {
+            m.SetRemindersEnabled(val)
+        }
         return nil
     }
     return res

@@ -72,8 +72,10 @@ func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(DevicePlatformType)
-        m.SetPlatform(&cast)
+        if val != nil {
+            cast := val.(DevicePlatformType)
+            m.SetPlatform(&cast)
+        }
         return nil
     }
     res["rule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetRule(val)
+        if val != nil {
+            m.SetRule(val)
+        }
         return nil
     }
     res["skip"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetSkip(val)
+        if val != nil {
+            m.SetSkip(val)
+        }
         return nil
     }
     res["top"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetTop(val)
+        if val != nil {
+            m.SetTop(val)
+        }
         return nil
     }
     return res

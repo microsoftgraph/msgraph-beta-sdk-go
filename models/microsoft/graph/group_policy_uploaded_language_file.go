@@ -83,7 +83,9 @@ func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetContent(val)
+        if val != nil {
+            m.SetContent(val)
+        }
         return nil
     }
     res["fileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetFileName(val)
+        if val != nil {
+            m.SetFileName(val)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["languageCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetLanguageCode(val)
+        if val != nil {
+            m.SetLanguageCode(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     return res

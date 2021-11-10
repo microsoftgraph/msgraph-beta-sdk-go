@@ -62,7 +62,9 @@ func (m *ExportDeviceAndAppManagementDataResponse) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetDeviceAndAppManagementData(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementData))
+        if val != nil {
+            m.SetDeviceAndAppManagementData(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementData))
+        }
         return nil
     }
     return res

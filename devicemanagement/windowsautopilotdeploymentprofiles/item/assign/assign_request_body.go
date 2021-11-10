@@ -42,11 +42,13 @@ func (m *AssignRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDeviceIds(res)
         }
-        m.SetDeviceIds(res)
         return nil
     }
     return res

@@ -103,7 +103,9 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetChecksum(val)
+        if val != nil {
+            m.SetChecksum(val)
+        }
         return nil
     }
     res["dataUploadURI"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +113,9 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDataUploadURI(val)
+        if val != nil {
+            m.SetDataUploadURI(val)
+        }
         return nil
     }
     res["fields"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,11 +123,13 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetFields(res)
         }
-        m.SetFields(res)
         return nil
     }
     res["fileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +137,9 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetFileName(val)
+        if val != nil {
+            m.SetFileName(val)
+        }
         return nil
     }
     res["rowsPerBlock"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +147,9 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRowsPerBlock(val)
+        if val != nil {
+            m.SetRowsPerBlock(val)
+        }
         return nil
     }
     res["salt"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +157,9 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSalt(val)
+        if val != nil {
+            m.SetSalt(val)
+        }
         return nil
     }
     res["uploadAgent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +167,9 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetUploadAgent(val.(*ExactMatchUploadAgent))
+        if val != nil {
+            m.SetUploadAgent(val.(*ExactMatchUploadAgent))
+        }
         return nil
     }
     res["uploadAgentId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +177,9 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetUploadAgentId(val)
+        if val != nil {
+            m.SetUploadAgentId(val)
+        }
         return nil
     }
     return res

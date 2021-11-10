@@ -74,7 +74,9 @@ func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeviceCount(val)
+        if val != nil {
+            m.SetDeviceCount(val)
+        }
         return nil
     }
     res["lastReportedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetLastReportedDateTime(val)
+        if val != nil {
+            m.SetLastReportedDateTime(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,8 +94,10 @@ func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(ComplianceStatus)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(ComplianceStatus)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +105,9 @@ func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +115,9 @@ func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

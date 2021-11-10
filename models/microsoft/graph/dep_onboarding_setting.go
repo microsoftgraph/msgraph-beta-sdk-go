@@ -184,7 +184,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAppleIdentifier(val)
+        if val != nil {
+            m.SetAppleIdentifier(val)
+        }
         return nil
     }
     res["dataSharingConsentGranted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +194,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDataSharingConsentGranted(val)
+        if val != nil {
+            m.SetDataSharingConsentGranted(val)
+        }
         return nil
     }
     res["defaultIosEnrollmentProfile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +204,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDefaultIosEnrollmentProfile(val.(*DepIOSEnrollmentProfile))
+        if val != nil {
+            m.SetDefaultIosEnrollmentProfile(val.(*DepIOSEnrollmentProfile))
+        }
         return nil
     }
     res["defaultMacOsEnrollmentProfile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +214,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDefaultMacOsEnrollmentProfile(val.(*DepMacOSEnrollmentProfile))
+        if val != nil {
+            m.SetDefaultMacOsEnrollmentProfile(val.(*DepMacOSEnrollmentProfile))
+        }
         return nil
     }
     res["enrollmentProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,11 +224,13 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]EnrollmentProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EnrollmentProfile))
+        if val != nil {
+            res := make([]EnrollmentProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EnrollmentProfile))
+            }
+            m.SetEnrollmentProfiles(res)
         }
-        m.SetEnrollmentProfiles(res)
         return nil
     }
     res["importedAppleDeviceIdentities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,11 +238,13 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]ImportedAppleDeviceIdentity, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ImportedAppleDeviceIdentity))
+        if val != nil {
+            res := make([]ImportedAppleDeviceIdentity, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ImportedAppleDeviceIdentity))
+            }
+            m.SetImportedAppleDeviceIdentities(res)
         }
-        m.SetImportedAppleDeviceIdentities(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -240,7 +252,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["lastSuccessfulSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,7 +262,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetLastSuccessfulSyncDateTime(val)
+        if val != nil {
+            m.SetLastSuccessfulSyncDateTime(val)
+        }
         return nil
     }
     res["lastSyncErrorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,7 +272,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetLastSyncErrorCode(val)
+        if val != nil {
+            m.SetLastSyncErrorCode(val)
+        }
         return nil
     }
     res["lastSyncTriggeredDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,7 +282,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetLastSyncTriggeredDateTime(val)
+        if val != nil {
+            m.SetLastSyncTriggeredDateTime(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,11 +292,13 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["shareTokenWithSchoolDataSyncService"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -284,7 +306,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetShareTokenWithSchoolDataSyncService(val)
+        if val != nil {
+            m.SetShareTokenWithSchoolDataSyncService(val)
+        }
         return nil
     }
     res["syncedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -292,7 +316,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetSyncedDeviceCount(val)
+        if val != nil {
+            m.SetSyncedDeviceCount(val)
+        }
         return nil
     }
     res["tokenExpirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -300,7 +326,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetTokenExpirationDateTime(val)
+        if val != nil {
+            m.SetTokenExpirationDateTime(val)
+        }
         return nil
     }
     res["tokenName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -308,7 +336,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetTokenName(val)
+        if val != nil {
+            m.SetTokenName(val)
+        }
         return nil
     }
     res["tokenType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,8 +346,10 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(DepTokenType)
-        m.SetTokenType(&cast)
+        if val != nil {
+            cast := val.(DepTokenType)
+            m.SetTokenType(&cast)
+        }
         return nil
     }
     return res

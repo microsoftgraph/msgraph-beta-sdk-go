@@ -74,7 +74,9 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["lastActionDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetLastActionDateTime(val)
+        if val != nil {
+            m.SetLastActionDateTime(val)
+        }
         return nil
     }
     res["resourceLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetResourceLocation(val)
+        if val != nil {
+            m.SetResourceLocation(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,8 +104,10 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(LongRunningOperationStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(LongRunningOperationStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["statusDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +115,9 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetStatusDetail(val)
+        if val != nil {
+            m.SetStatusDetail(val)
+        }
         return nil
     }
     return res

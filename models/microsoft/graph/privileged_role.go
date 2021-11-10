@@ -63,11 +63,13 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]PrivilegedRoleAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrivilegedRoleAssignment))
+        if val != nil {
+            res := make([]PrivilegedRoleAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrivilegedRoleAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,7 +77,9 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,7 +87,9 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetSettings(val.(*PrivilegedRoleSettings))
+        if val != nil {
+            m.SetSettings(val.(*PrivilegedRoleSettings))
+        }
         return nil
     }
     res["summary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +97,9 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetSummary(val.(*PrivilegedRoleSummary))
+        if val != nil {
+            m.SetSummary(val.(*PrivilegedRoleSummary))
+        }
         return nil
     }
     return res

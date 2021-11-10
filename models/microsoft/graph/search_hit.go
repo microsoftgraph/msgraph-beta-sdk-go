@@ -132,7 +132,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.Set_id(val)
+        if val != nil {
+            m.Set_id(val)
+        }
         return nil
     }
     res["_score"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +142,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.Set_score(val)
+        if val != nil {
+            m.Set_score(val)
+        }
         return nil
     }
     res["_source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +152,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.Set_source(val.(*Entity))
+        if val != nil {
+            m.Set_source(val.(*Entity))
+        }
         return nil
     }
     res["_summary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +162,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.Set_summary(val)
+        if val != nil {
+            m.Set_summary(val)
+        }
         return nil
     }
     res["contentSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +172,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetContentSource(val)
+        if val != nil {
+            m.SetContentSource(val)
+        }
         return nil
     }
     res["hitId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +182,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetHitId(val)
+        if val != nil {
+            m.SetHitId(val)
+        }
         return nil
     }
     res["rank"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +192,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetRank(val)
+        if val != nil {
+            m.SetRank(val)
+        }
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +202,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetResource(val.(*Entity))
+        if val != nil {
+            m.SetResource(val.(*Entity))
+        }
         return nil
     }
     res["resultTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +212,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetResultTemplateId(val)
+        if val != nil {
+            m.SetResultTemplateId(val)
+        }
         return nil
     }
     res["summary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +222,9 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetSummary(val)
+        if val != nil {
+            m.SetSummary(val)
+        }
         return nil
     }
     return res

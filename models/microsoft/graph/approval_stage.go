@@ -92,7 +92,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetApprovalStageTimeOutInDays(val)
+        if val != nil {
+            m.SetApprovalStageTimeOutInDays(val)
+        }
         return nil
     }
     res["escalationApprovers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,11 +102,13 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]UserSet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserSet))
+        if val != nil {
+            res := make([]UserSet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserSet))
+            }
+            m.SetEscalationApprovers(res)
         }
-        m.SetEscalationApprovers(res)
         return nil
     }
     res["escalationTimeInMinutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +116,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetEscalationTimeInMinutes(val)
+        if val != nil {
+            m.SetEscalationTimeInMinutes(val)
+        }
         return nil
     }
     res["isApproverJustificationRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +126,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetIsApproverJustificationRequired(val)
+        if val != nil {
+            m.SetIsApproverJustificationRequired(val)
+        }
         return nil
     }
     res["isEscalationEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +136,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetIsEscalationEnabled(val)
+        if val != nil {
+            m.SetIsEscalationEnabled(val)
+        }
         return nil
     }
     res["primaryApprovers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,11 +146,13 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]UserSet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserSet))
+        if val != nil {
+            res := make([]UserSet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserSet))
+            }
+            m.SetPrimaryApprovers(res)
         }
-        m.SetPrimaryApprovers(res)
         return nil
     }
     return res

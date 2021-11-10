@@ -92,11 +92,13 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssignmentFilterIds(res)
         }
-        m.SetAssignmentFilterIds(res)
         return nil
     }
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,7 +106,9 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["payloadId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +116,9 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetPayloadId(val)
+        if val != nil {
+            m.SetPayloadId(val)
+        }
         return nil
     }
     res["skip"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +126,9 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetSkip(val)
+        if val != nil {
+            m.SetSkip(val)
+        }
         return nil
     }
     res["top"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +136,9 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetTop(val)
+        if val != nil {
+            m.SetTop(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +146,9 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetFieldDeserializers()(m
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

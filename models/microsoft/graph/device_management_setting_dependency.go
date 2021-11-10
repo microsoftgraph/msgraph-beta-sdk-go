@@ -52,11 +52,13 @@ func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementConstraint, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementConstraint))
+        if val != nil {
+            res := make([]DeviceManagementConstraint, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementConstraint))
+            }
+            m.SetConstraints(res)
         }
-        m.SetConstraints(res)
         return nil
     }
     res["definitionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,7 +66,9 @@ func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDefinitionId(val)
+        if val != nil {
+            m.SetDefinitionId(val)
+        }
         return nil
     }
     return res

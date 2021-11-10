@@ -33,11 +33,13 @@ func (m *UserExperienceAnalyticsOverview) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]UserExperienceAnalyticsInsight, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserExperienceAnalyticsInsight))
+        if val != nil {
+            res := make([]UserExperienceAnalyticsInsight, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserExperienceAnalyticsInsight))
+            }
+            m.SetInsights(res)
         }
-        m.SetInsights(res)
         return nil
     }
     return res

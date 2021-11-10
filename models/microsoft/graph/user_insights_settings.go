@@ -33,7 +33,9 @@ func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     return res

@@ -174,11 +174,13 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]Attachment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Attachment))
+        if val != nil {
+            res := make([]Attachment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Attachment))
+            }
+            m.SetAttachments(res)
         }
-        m.SetAttachments(res)
         return nil
     }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +188,9 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetBody(val.(*ItemBody))
+        if val != nil {
+            m.SetBody(val.(*ItemBody))
+        }
         return nil
     }
     res["conversationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +198,9 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetConversationId(val)
+        if val != nil {
+            m.SetConversationId(val)
+        }
         return nil
     }
     res["conversationThreadId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +208,9 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetConversationThreadId(val)
+        if val != nil {
+            m.SetConversationThreadId(val)
+        }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,11 +218,13 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]Extension, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Extension))
+        if val != nil {
+            res := make([]Extension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Extension))
+            }
+            m.SetExtensions(res)
         }
-        m.SetExtensions(res)
         return nil
     }
     res["from"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +232,9 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetFrom(val.(*Recipient))
+        if val != nil {
+            m.SetFrom(val.(*Recipient))
+        }
         return nil
     }
     res["hasAttachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +242,9 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetHasAttachments(val)
+        if val != nil {
+            m.SetHasAttachments(val)
+        }
         return nil
     }
     res["importance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,8 +252,10 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        cast := val.(Importance)
-        m.SetImportance(&cast)
+        if val != nil {
+            cast := val.(Importance)
+            m.SetImportance(&cast)
+        }
         return nil
     }
     res["inReplyTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,7 +263,9 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetInReplyTo(val.(*Post))
+        if val != nil {
+            m.SetInReplyTo(val.(*Post))
+        }
         return nil
     }
     res["mentions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -255,11 +273,13 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]Mention, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Mention))
+        if val != nil {
+            res := make([]Mention, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Mention))
+            }
+            m.SetMentions(res)
         }
-        m.SetMentions(res)
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -267,11 +287,13 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]MultiValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+            }
+            m.SetMultiValueExtendedProperties(res)
         }
-        m.SetMultiValueExtendedProperties(res)
         return nil
     }
     res["newParticipants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,11 +301,13 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetNewParticipants(res)
         }
-        m.SetNewParticipants(res)
         return nil
     }
     res["receivedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -291,7 +315,9 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetReceivedDateTime(val)
+        if val != nil {
+            m.SetReceivedDateTime(val)
+        }
         return nil
     }
     res["sender"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -299,7 +325,9 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetSender(val.(*Recipient))
+        if val != nil {
+            m.SetSender(val.(*Recipient))
+        }
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -307,11 +335,13 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]SingleValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+            }
+            m.SetSingleValueExtendedProperties(res)
         }
-        m.SetSingleValueExtendedProperties(res)
         return nil
     }
     return res

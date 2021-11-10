@@ -164,7 +164,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["gracePeriodEndDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +174,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetGracePeriodEndDateTime(val)
+        if val != nil {
+            m.SetGracePeriodEndDateTime(val)
+        }
         return nil
     }
     res["imageDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +184,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetImageDisplayName(val)
+        if val != nil {
+            m.SetImageDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +194,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +204,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["managedDeviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +214,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetManagedDeviceName(val)
+        if val != nil {
+            m.SetManagedDeviceName(val)
+        }
         return nil
     }
     res["onPremisesConnectionName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +224,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetOnPremisesConnectionName(val)
+        if val != nil {
+            m.SetOnPremisesConnectionName(val)
+        }
         return nil
     }
     res["provisioningPolicyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +234,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetProvisioningPolicyId(val)
+        if val != nil {
+            m.SetProvisioningPolicyId(val)
+        }
         return nil
     }
     res["provisioningPolicyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +244,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetProvisioningPolicyName(val)
+        if val != nil {
+            m.SetProvisioningPolicyName(val)
+        }
         return nil
     }
     res["servicePlanId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +254,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetServicePlanId(val)
+        if val != nil {
+            m.SetServicePlanId(val)
+        }
         return nil
     }
     res["servicePlanName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +264,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetServicePlanName(val)
+        if val != nil {
+            m.SetServicePlanName(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,8 +274,10 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        cast := val.(CloudPcStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(CloudPcStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["statusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,7 +285,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetStatusDetails(val.(*CloudPcStatusDetails))
+        if val != nil {
+            m.SetStatusDetails(val.(*CloudPcStatusDetails))
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,7 +295,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

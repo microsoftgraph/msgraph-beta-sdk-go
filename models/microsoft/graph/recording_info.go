@@ -62,7 +62,9 @@ func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetInitiatedBy(val.(*ParticipantInfo))
+        if val != nil {
+            m.SetInitiatedBy(val.(*ParticipantInfo))
+        }
         return nil
     }
     res["initiator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetInitiator(val.(*IdentitySet))
+        if val != nil {
+            m.SetInitiator(val.(*IdentitySet))
+        }
         return nil
     }
     res["recordingStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,8 +82,10 @@ func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(RecordingStatus)
-        m.SetRecordingStatus(&cast)
+        if val != nil {
+            cast := val.(RecordingStatus)
+            m.SetRecordingStatus(&cast)
+        }
         return nil
     }
     return res

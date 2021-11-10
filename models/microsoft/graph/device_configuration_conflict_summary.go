@@ -53,11 +53,13 @@ func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        res := make([]SettingSource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SettingSource))
+        if val != nil {
+            res := make([]SettingSource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SettingSource))
+            }
+            m.SetConflictingDeviceConfigurations(res)
         }
-        m.SetConflictingDeviceConfigurations(res)
         return nil
     }
     res["contributingSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetContributingSettings(res)
         }
-        m.SetContributingSettings(res)
         return nil
     }
     res["deviceCheckinsImpacted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,7 +81,9 @@ func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetDeviceCheckinsImpacted(val)
+        if val != nil {
+            m.SetDeviceCheckinsImpacted(val)
+        }
         return nil
     }
     return res

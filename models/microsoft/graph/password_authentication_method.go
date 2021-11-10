@@ -54,7 +54,9 @@ func (m *PasswordAuthenticationMethod) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["creationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,7 +64,9 @@ func (m *PasswordAuthenticationMethod) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCreationDateTime(val)
+        if val != nil {
+            m.SetCreationDateTime(val)
+        }
         return nil
     }
     res["password"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +74,9 @@ func (m *PasswordAuthenticationMethod) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetPassword(val)
+        if val != nil {
+            m.SetPassword(val)
+        }
         return nil
     }
     return res

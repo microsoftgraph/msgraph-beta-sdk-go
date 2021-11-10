@@ -42,11 +42,13 @@ func (m *MonitoringSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]MonitoringRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MonitoringRule))
+        if val != nil {
+            res := make([]MonitoringRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MonitoringRule))
+            }
+            m.SetMonitoringRules(res)
         }
-        m.SetMonitoringRules(res)
         return nil
     }
     return res

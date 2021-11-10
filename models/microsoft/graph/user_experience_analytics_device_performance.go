@@ -223,7 +223,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetAverageBlueScreens(val)
+        if val != nil {
+            m.SetAverageBlueScreens(val)
+        }
         return nil
     }
     res["averageRestarts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,7 +233,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetAverageRestarts(val)
+        if val != nil {
+            m.SetAverageRestarts(val)
+        }
         return nil
     }
     res["blueScreenCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +243,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetBlueScreenCount(val)
+        if val != nil {
+            m.SetBlueScreenCount(val)
+        }
         return nil
     }
     res["bootScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,7 +253,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetBootScore(val)
+        if val != nil {
+            m.SetBootScore(val)
+        }
         return nil
     }
     res["coreBootTimeInMs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -255,7 +263,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetCoreBootTimeInMs(val)
+        if val != nil {
+            m.SetCoreBootTimeInMs(val)
+        }
         return nil
     }
     res["coreLoginTimeInMs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +273,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetCoreLoginTimeInMs(val)
+        if val != nil {
+            m.SetCoreLoginTimeInMs(val)
+        }
         return nil
     }
     res["deviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,7 +283,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetDeviceCount(val)
+        if val != nil {
+            m.SetDeviceCount(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +293,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["diskType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,8 +303,10 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        cast := val.(DiskType)
-        m.SetDiskType(&cast)
+        if val != nil {
+            cast := val.(DiskType)
+            m.SetDiskType(&cast)
+        }
         return nil
     }
     res["groupPolicyBootTimeInMs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,7 +314,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetGroupPolicyBootTimeInMs(val)
+        if val != nil {
+            m.SetGroupPolicyBootTimeInMs(val)
+        }
         return nil
     }
     res["groupPolicyLoginTimeInMs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -304,7 +324,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetGroupPolicyLoginTimeInMs(val)
+        if val != nil {
+            m.SetGroupPolicyLoginTimeInMs(val)
+        }
         return nil
     }
     res["healthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -312,8 +334,10 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        cast := val.(UserExperienceAnalyticsHealthState)
-        m.SetHealthStatus(&cast)
+        if val != nil {
+            cast := val.(UserExperienceAnalyticsHealthState)
+            m.SetHealthStatus(&cast)
+        }
         return nil
     }
     res["loginScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -321,7 +345,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetLoginScore(val)
+        if val != nil {
+            m.SetLoginScore(val)
+        }
         return nil
     }
     res["manufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -329,7 +355,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetManufacturer(val)
+        if val != nil {
+            m.SetManufacturer(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -337,7 +365,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     res["modelStartupPerformanceScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -345,7 +375,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetModelStartupPerformanceScore(val)
+        if val != nil {
+            m.SetModelStartupPerformanceScore(val)
+        }
         return nil
     }
     res["operatingSystemVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -353,7 +385,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetOperatingSystemVersion(val)
+        if val != nil {
+            m.SetOperatingSystemVersion(val)
+        }
         return nil
     }
     res["responsiveDesktopTimeInMs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -361,7 +395,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetResponsiveDesktopTimeInMs(val)
+        if val != nil {
+            m.SetResponsiveDesktopTimeInMs(val)
+        }
         return nil
     }
     res["restartCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -369,7 +405,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetRestartCount(val)
+        if val != nil {
+            m.SetRestartCount(val)
+        }
         return nil
     }
     res["startupPerformanceScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -377,7 +415,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetStartupPerformanceScore(val)
+        if val != nil {
+            m.SetStartupPerformanceScore(val)
+        }
         return nil
     }
     return res

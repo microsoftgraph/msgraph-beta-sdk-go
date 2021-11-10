@@ -214,7 +214,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetExchangeMailboxStorageUsedInBytes(val)
+        if val != nil {
+            m.SetExchangeMailboxStorageUsedInBytes(val)
+        }
         return nil
     }
     res["exchangeMailboxTotalItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +224,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetExchangeMailboxTotalItemCount(val)
+        if val != nil {
+            m.SetExchangeMailboxTotalItemCount(val)
+        }
         return nil
     }
     res["exchangeReceivedEmailCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +234,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetExchangeReceivedEmailCount(val)
+        if val != nil {
+            m.SetExchangeReceivedEmailCount(val)
+        }
         return nil
     }
     res["externalMemberCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,7 +244,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetExternalMemberCount(val)
+        if val != nil {
+            m.SetExternalMemberCount(val)
+        }
         return nil
     }
     res["groupDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,7 +254,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetGroupDisplayName(val)
+        if val != nil {
+            m.SetGroupDisplayName(val)
+        }
         return nil
     }
     res["groupId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,7 +264,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetGroupId(val)
+        if val != nil {
+            m.SetGroupId(val)
+        }
         return nil
     }
     res["groupType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -262,7 +274,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetGroupType(val)
+        if val != nil {
+            m.SetGroupType(val)
+        }
         return nil
     }
     res["isDeleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +284,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetIsDeleted(val)
+        if val != nil {
+            m.SetIsDeleted(val)
+        }
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +294,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetLastActivityDate(val)
+        if val != nil {
+            m.SetLastActivityDate(val)
+        }
         return nil
     }
     res["memberCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +304,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetMemberCount(val)
+        if val != nil {
+            m.SetMemberCount(val)
+        }
         return nil
     }
     res["ownerPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -294,7 +314,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetOwnerPrincipalName(val)
+        if val != nil {
+            m.SetOwnerPrincipalName(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,7 +324,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -310,7 +334,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["sharePointActiveFileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -318,7 +344,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSharePointActiveFileCount(val)
+        if val != nil {
+            m.SetSharePointActiveFileCount(val)
+        }
         return nil
     }
     res["sharePointSiteStorageUsedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -326,7 +354,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSharePointSiteStorageUsedInBytes(val)
+        if val != nil {
+            m.SetSharePointSiteStorageUsedInBytes(val)
+        }
         return nil
     }
     res["sharePointTotalFileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -334,7 +364,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSharePointTotalFileCount(val)
+        if val != nil {
+            m.SetSharePointTotalFileCount(val)
+        }
         return nil
     }
     res["yammerLikedMessageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -342,7 +374,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetYammerLikedMessageCount(val)
+        if val != nil {
+            m.SetYammerLikedMessageCount(val)
+        }
         return nil
     }
     res["yammerPostedMessageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -350,7 +384,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetYammerPostedMessageCount(val)
+        if val != nil {
+            m.SetYammerPostedMessageCount(val)
+        }
         return nil
     }
     res["yammerReadMessageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -358,7 +394,9 @@ func (m *GetOffice365GroupsActivityDetailWithDate) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetYammerReadMessageCount(val)
+        if val != nil {
+            m.SetYammerReadMessageCount(val)
+        }
         return nil
     }
     return res

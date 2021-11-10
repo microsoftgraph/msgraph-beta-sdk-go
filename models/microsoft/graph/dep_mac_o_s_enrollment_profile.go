@@ -103,7 +103,9 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetAccessibilityScreenDisabled(val)
+        if val != nil {
+            m.SetAccessibilityScreenDisabled(val)
+        }
         return nil
     }
     res["chooseYourLockScreenDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +113,9 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetChooseYourLockScreenDisabled(val)
+        if val != nil {
+            m.SetChooseYourLockScreenDisabled(val)
+        }
         return nil
     }
     res["fileVaultDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +123,9 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetFileVaultDisabled(val)
+        if val != nil {
+            m.SetFileVaultDisabled(val)
+        }
         return nil
     }
     res["iCloudDiagnosticsDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +133,9 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetICloudDiagnosticsDisabled(val)
+        if val != nil {
+            m.SetICloudDiagnosticsDisabled(val)
+        }
         return nil
     }
     res["iCloudStorageDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +143,9 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetICloudStorageDisabled(val)
+        if val != nil {
+            m.SetICloudStorageDisabled(val)
+        }
         return nil
     }
     res["passCodeDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +153,9 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetPassCodeDisabled(val)
+        if val != nil {
+            m.SetPassCodeDisabled(val)
+        }
         return nil
     }
     res["registrationDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +163,9 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetRegistrationDisabled(val)
+        if val != nil {
+            m.SetRegistrationDisabled(val)
+        }
         return nil
     }
     res["zoomDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +173,9 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetZoomDisabled(val)
+        if val != nil {
+            m.SetZoomDisabled(val)
+        }
         return nil
     }
     return res

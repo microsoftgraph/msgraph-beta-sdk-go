@@ -62,7 +62,9 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetManagementIntentDisplayName(val)
+        if val != nil {
+            m.SetManagementIntentDisplayName(val)
+        }
         return nil
     }
     res["managementIntentId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetManagementIntentId(val)
+        if val != nil {
+            m.SetManagementIntentId(val)
+        }
         return nil
     }
     res["managementTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,11 +82,13 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]ManagementTemplateDetailedInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementTemplateDetailedInfo))
+        if val != nil {
+            res := make([]ManagementTemplateDetailedInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementTemplateDetailedInfo))
+            }
+            m.SetManagementTemplates(res)
         }
-        m.SetManagementTemplates(res)
         return nil
     }
     return res

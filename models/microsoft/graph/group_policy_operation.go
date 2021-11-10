@@ -64,7 +64,9 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["operationStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,8 +74,10 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicyOperationStatus)
-        m.SetOperationStatus(&cast)
+        if val != nil {
+            cast := val.(GroupPolicyOperationStatus)
+            m.SetOperationStatus(&cast)
+        }
         return nil
     }
     res["operationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,8 +85,10 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(GroupPolicyOperationType)
-        m.SetOperationType(&cast)
+        if val != nil {
+            cast := val.(GroupPolicyOperationType)
+            m.SetOperationType(&cast)
+        }
         return nil
     }
     res["statusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +96,9 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetStatusDetails(val)
+        if val != nil {
+            m.SetStatusDetails(val)
+        }
         return nil
     }
     return res

@@ -42,11 +42,13 @@ func (m *ConfirmCompromisedRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetUserIds(res)
         }
-        m.SetUserIds(res)
         return nil
     }
     return res

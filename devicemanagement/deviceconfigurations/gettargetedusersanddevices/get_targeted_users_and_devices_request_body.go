@@ -42,11 +42,13 @@ func (m *GetTargetedUsersAndDevicesRequestBody) GetFieldDeserializers()(map[stri
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDeviceConfigurationIds(res)
         }
-        m.SetDeviceConfigurationIds(res)
         return nil
     }
     return res

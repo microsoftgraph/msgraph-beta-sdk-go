@@ -133,8 +133,10 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(AdvancedBitLockerState)
-        m.SetAdvancedBitLockerStates(&cast)
+        if val != nil {
+            cast := val.(AdvancedBitLockerState)
+            m.SetAdvancedBitLockerStates(&cast)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["deviceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,8 +154,10 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(DeviceTypes)
-        m.SetDeviceType(&cast)
+        if val != nil {
+            cast := val.(DeviceTypes)
+            m.SetDeviceType(&cast)
+        }
         return nil
     }
     res["encryptionPolicySettingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,8 +165,10 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(ComplianceStatus)
-        m.SetEncryptionPolicySettingState(&cast)
+        if val != nil {
+            cast := val.(ComplianceStatus)
+            m.SetEncryptionPolicySettingState(&cast)
+        }
         return nil
     }
     res["encryptionReadinessState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,8 +176,10 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(EncryptionReadinessState)
-        m.SetEncryptionReadinessState(&cast)
+        if val != nil {
+            cast := val.(EncryptionReadinessState)
+            m.SetEncryptionReadinessState(&cast)
+        }
         return nil
     }
     res["encryptionState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,8 +187,10 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(EncryptionState)
-        m.SetEncryptionState(&cast)
+        if val != nil {
+            cast := val.(EncryptionState)
+            m.SetEncryptionState(&cast)
+        }
         return nil
     }
     res["fileVaultStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,8 +198,10 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(FileVaultState)
-        m.SetFileVaultStates(&cast)
+        if val != nil {
+            cast := val.(FileVaultState)
+            m.SetFileVaultStates(&cast)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -195,7 +209,9 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["policyDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -203,11 +219,13 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]EncryptionReportPolicyDetails, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EncryptionReportPolicyDetails))
+        if val != nil {
+            res := make([]EncryptionReportPolicyDetails, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EncryptionReportPolicyDetails))
+            }
+            m.SetPolicyDetails(res)
         }
-        m.SetPolicyDetails(res)
         return nil
     }
     res["tpmSpecificationVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +233,9 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTpmSpecificationVersion(val)
+        if val != nil {
+            m.SetTpmSpecificationVersion(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -223,7 +243,9 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

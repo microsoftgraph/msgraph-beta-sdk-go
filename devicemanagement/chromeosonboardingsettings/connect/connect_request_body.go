@@ -52,7 +52,9 @@ func (m *ConnectRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetOwnerUserPrincipalName(val)
+        if val != nil {
+            m.SetOwnerUserPrincipalName(val)
+        }
         return nil
     }
     res["serviceAccountCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *ConnectRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetServiceAccountCredentials(val)
+        if val != nil {
+            m.SetServiceAccountCredentials(val)
+        }
         return nil
     }
     return res

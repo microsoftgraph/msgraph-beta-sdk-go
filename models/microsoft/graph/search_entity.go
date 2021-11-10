@@ -53,11 +53,13 @@ func (m *SearchEntity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]Acronym, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Acronym))
+        if val != nil {
+            res := make([]Acronym, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Acronym))
+            }
+            m.SetAcronyms(res)
         }
-        m.SetAcronyms(res)
         return nil
     }
     res["bookmarks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *SearchEntity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]Bookmark, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Bookmark))
+        if val != nil {
+            res := make([]Bookmark, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Bookmark))
+            }
+            m.SetBookmarks(res)
         }
-        m.SetBookmarks(res)
         return nil
     }
     res["qnas"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,11 +81,13 @@ func (m *SearchEntity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]Qna, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Qna))
+        if val != nil {
+            res := make([]Qna, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Qna))
+            }
+            m.SetQnas(res)
         }
-        m.SetQnas(res)
         return nil
     }
     return res

@@ -192,7 +192,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetD(val)
+        if val != nil {
+            m.SetD(val)
+        }
         return nil
     }
     res["dp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +202,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDp(val)
+        if val != nil {
+            m.SetDp(val)
+        }
         return nil
     }
     res["dq"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +212,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDq(val)
+        if val != nil {
+            m.SetDq(val)
+        }
         return nil
     }
     res["e"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +222,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetE(val)
+        if val != nil {
+            m.SetE(val)
+        }
         return nil
     }
     res["exp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,7 +232,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetExp(val)
+        if val != nil {
+            m.SetExp(val)
+        }
         return nil
     }
     res["k"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,7 +242,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetK(val)
+        if val != nil {
+            m.SetK(val)
+        }
         return nil
     }
     res["kid"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -240,7 +252,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetKid(val)
+        if val != nil {
+            m.SetKid(val)
+        }
         return nil
     }
     res["kty"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,7 +262,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetKty(val)
+        if val != nil {
+            m.SetKty(val)
+        }
         return nil
     }
     res["n"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,7 +272,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetN(val)
+        if val != nil {
+            m.SetN(val)
+        }
         return nil
     }
     res["nbf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,7 +282,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetNbf(val)
+        if val != nil {
+            m.SetNbf(val)
+        }
         return nil
     }
     res["p"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,7 +292,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetP(val)
+        if val != nil {
+            m.SetP(val)
+        }
         return nil
     }
     res["q"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -280,7 +302,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetQ(val)
+        if val != nil {
+            m.SetQ(val)
+        }
         return nil
     }
     res["qi"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -288,7 +312,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetQi(val)
+        if val != nil {
+            m.SetQi(val)
+        }
         return nil
     }
     res["use"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,7 +322,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetUse(val)
+        if val != nil {
+            m.SetUse(val)
+        }
         return nil
     }
     res["x5c"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -304,11 +332,13 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetX5c(res)
         }
-        m.SetX5c(res)
         return nil
     }
     res["x5t"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +346,9 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetX5t(val)
+        if val != nil {
+            m.SetX5t(val)
+        }
         return nil
     }
     return res

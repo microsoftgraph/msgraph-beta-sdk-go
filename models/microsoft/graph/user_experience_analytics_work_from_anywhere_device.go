@@ -363,7 +363,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetAutoPilotProfileAssigned(val)
+        if val != nil {
+            m.SetAutoPilotProfileAssigned(val)
+        }
         return nil
     }
     res["autoPilotRegistered"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -371,7 +373,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetAutoPilotRegistered(val)
+        if val != nil {
+            m.SetAutoPilotRegistered(val)
+        }
         return nil
     }
     res["azureAdDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -379,7 +383,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetAzureAdDeviceId(val)
+        if val != nil {
+            m.SetAzureAdDeviceId(val)
+        }
         return nil
     }
     res["azureAdJoinType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -387,7 +393,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetAzureAdJoinType(val)
+        if val != nil {
+            m.SetAzureAdJoinType(val)
+        }
         return nil
     }
     res["azureAdRegistered"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -395,7 +403,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetAzureAdRegistered(val)
+        if val != nil {
+            m.SetAzureAdRegistered(val)
+        }
         return nil
     }
     res["cloudIdentityScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -403,7 +413,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetCloudIdentityScore(val)
+        if val != nil {
+            m.SetCloudIdentityScore(val)
+        }
         return nil
     }
     res["cloudManagementScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -411,7 +423,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetCloudManagementScore(val)
+        if val != nil {
+            m.SetCloudManagementScore(val)
+        }
         return nil
     }
     res["cloudProvisioningScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -419,7 +433,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetCloudProvisioningScore(val)
+        if val != nil {
+            m.SetCloudProvisioningScore(val)
+        }
         return nil
     }
     res["compliancePolicySetToIntune"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -427,7 +443,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetCompliancePolicySetToIntune(val)
+        if val != nil {
+            m.SetCompliancePolicySetToIntune(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -435,7 +453,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -443,7 +463,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["healthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -451,8 +473,10 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        cast := val.(UserExperienceAnalyticsHealthState)
-        m.SetHealthStatus(&cast)
+        if val != nil {
+            cast := val.(UserExperienceAnalyticsHealthState)
+            m.SetHealthStatus(&cast)
+        }
         return nil
     }
     res["isCloudManagedGatewayEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -460,7 +484,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetIsCloudManagedGatewayEnabled(val)
+        if val != nil {
+            m.SetIsCloudManagedGatewayEnabled(val)
+        }
         return nil
     }
     res["managedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -468,7 +494,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetManagedBy(val)
+        if val != nil {
+            m.SetManagedBy(val)
+        }
         return nil
     }
     res["manufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -476,7 +504,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetManufacturer(val)
+        if val != nil {
+            m.SetManufacturer(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -484,7 +514,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     res["osCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -492,7 +524,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOsCheckFailed(val)
+        if val != nil {
+            m.SetOsCheckFailed(val)
+        }
         return nil
     }
     res["osDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -500,7 +534,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOsDescription(val)
+        if val != nil {
+            m.SetOsDescription(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -508,7 +544,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["otherWorkloadsSetToIntune"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -516,7 +554,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOtherWorkloadsSetToIntune(val)
+        if val != nil {
+            m.SetOtherWorkloadsSetToIntune(val)
+        }
         return nil
     }
     res["ownership"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -524,7 +564,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetOwnership(val)
+        if val != nil {
+            m.SetOwnership(val)
+        }
         return nil
     }
     res["processor64BitCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -532,7 +574,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetProcessor64BitCheckFailed(val)
+        if val != nil {
+            m.SetProcessor64BitCheckFailed(val)
+        }
         return nil
     }
     res["processorCoreCountCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -540,7 +584,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetProcessorCoreCountCheckFailed(val)
+        if val != nil {
+            m.SetProcessorCoreCountCheckFailed(val)
+        }
         return nil
     }
     res["processorFamilyCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -548,7 +594,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetProcessorFamilyCheckFailed(val)
+        if val != nil {
+            m.SetProcessorFamilyCheckFailed(val)
+        }
         return nil
     }
     res["processorSpeedCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -556,7 +604,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetProcessorSpeedCheckFailed(val)
+        if val != nil {
+            m.SetProcessorSpeedCheckFailed(val)
+        }
         return nil
     }
     res["ramCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -564,7 +614,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetRamCheckFailed(val)
+        if val != nil {
+            m.SetRamCheckFailed(val)
+        }
         return nil
     }
     res["secureBootCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -572,7 +624,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetSecureBootCheckFailed(val)
+        if val != nil {
+            m.SetSecureBootCheckFailed(val)
+        }
         return nil
     }
     res["serialNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -580,7 +634,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetSerialNumber(val)
+        if val != nil {
+            m.SetSerialNumber(val)
+        }
         return nil
     }
     res["storageCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -588,7 +644,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetStorageCheckFailed(val)
+        if val != nil {
+            m.SetStorageCheckFailed(val)
+        }
         return nil
     }
     res["tenantAttached"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -596,7 +654,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetTenantAttached(val)
+        if val != nil {
+            m.SetTenantAttached(val)
+        }
         return nil
     }
     res["tpmCheckFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -604,7 +664,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetTpmCheckFailed(val)
+        if val != nil {
+            m.SetTpmCheckFailed(val)
+        }
         return nil
     }
     res["upgradeEligibility"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -612,8 +674,10 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        cast := val.(OperatingSystemUpgradeEligibility)
-        m.SetUpgradeEligibility(&cast)
+        if val != nil {
+            cast := val.(OperatingSystemUpgradeEligibility)
+            m.SetUpgradeEligibility(&cast)
+        }
         return nil
     }
     res["windowsScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -621,7 +685,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetWindowsScore(val)
+        if val != nil {
+            m.SetWindowsScore(val)
+        }
         return nil
     }
     res["workFromAnywhereScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -629,7 +695,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetWorkFromAnywhereScore(val)
+        if val != nil {
+            m.SetWorkFromAnywhereScore(val)
+        }
         return nil
     }
     return res

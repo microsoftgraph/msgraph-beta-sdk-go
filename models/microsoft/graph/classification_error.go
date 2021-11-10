@@ -33,11 +33,13 @@ func (m *ClassificationError) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ClassifcationErrorBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ClassifcationErrorBase))
+        if val != nil {
+            res := make([]ClassifcationErrorBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ClassifcationErrorBase))
+            }
+            m.SetDetails(res)
         }
-        m.SetDetails(res)
         return nil
     }
     return res

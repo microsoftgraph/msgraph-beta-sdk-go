@@ -43,7 +43,9 @@ func (m *DeviceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetLastConnectionTime(val)
+        if val != nil {
+            m.SetLastConnectionTime(val)
+        }
         return nil
     }
     return res

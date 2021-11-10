@@ -52,8 +52,10 @@ func (m *AppleOwnerTypeEnrollmentType) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(AppleUserInitiatedEnrollmentType)
-        m.SetEnrollmentType(&cast)
+        if val != nil {
+            cast := val.(AppleUserInitiatedEnrollmentType)
+            m.SetEnrollmentType(&cast)
+        }
         return nil
     }
     res["ownerType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,8 +63,10 @@ func (m *AppleOwnerTypeEnrollmentType) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(ManagedDeviceOwnerType)
-        m.SetOwnerType(&cast)
+        if val != nil {
+            cast := val.(ManagedDeviceOwnerType)
+            m.SetOwnerType(&cast)
+        }
         return nil
     }
     return res

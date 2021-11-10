@@ -62,8 +62,10 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(EndpointType)
-        m.SetEndpointType(&cast)
+        if val != nil {
+            cast := val.(EndpointType)
+            m.SetEndpointType(&cast)
+        }
         return nil
     }
     res["identity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIdentity(val.(*IdentitySet))
+        if val != nil {
+            m.SetIdentity(val.(*IdentitySet))
+        }
         return nil
     }
     res["replacesCallId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetReplacesCallId(val)
+        if val != nil {
+            m.SetReplacesCallId(val)
+        }
         return nil
     }
     return res

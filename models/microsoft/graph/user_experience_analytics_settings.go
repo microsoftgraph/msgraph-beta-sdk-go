@@ -42,7 +42,9 @@ func (m *UserExperienceAnalyticsSettings) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetConfigurationManagerDataConnectorConfigured(val)
+        if val != nil {
+            m.SetConfigurationManagerDataConnectorConfigured(val)
+        }
         return nil
     }
     return res

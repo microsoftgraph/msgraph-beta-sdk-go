@@ -143,7 +143,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["endDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +153,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetEndDate(val)
+        if val != nil {
+            m.SetEndDate(val)
+        }
         return nil
     }
     res["expirationDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +163,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetExpirationDate(val)
+        if val != nil {
+            m.SetExpirationDate(val)
+        }
         return nil
     }
     res["offer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +173,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetOffer(val)
+        if val != nil {
+            m.SetOffer(val)
+        }
         return nil
     }
     res["offerDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +183,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetOfferDisplayName(val)
+        if val != nil {
+            m.SetOfferDisplayName(val)
+        }
         return nil
     }
     res["publisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +193,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetPublisher(val)
+        if val != nil {
+            m.SetPublisher(val)
+        }
         return nil
     }
     res["recommendedSku"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +203,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRecommendedSku(val)
+        if val != nil {
+            m.SetRecommendedSku(val)
+        }
         return nil
     }
     res["sizeInGB"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +213,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSizeInGB(val)
+        if val != nil {
+            m.SetSizeInGB(val)
+        }
         return nil
     }
     res["sku"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +223,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSku(val)
+        if val != nil {
+            m.SetSku(val)
+        }
         return nil
     }
     res["skuDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +233,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSkuDisplayName(val)
+        if val != nil {
+            m.SetSkuDisplayName(val)
+        }
         return nil
     }
     res["startDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -223,7 +243,9 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetStartDate(val)
+        if val != nil {
+            m.SetStartDate(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,8 +253,10 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(CloudPcGalleryImageStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(CloudPcGalleryImageStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

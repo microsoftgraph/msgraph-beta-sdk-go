@@ -124,8 +124,10 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        cast := val.(WindowsDefenderApplicationControlSupplementalPolicyStatuses)
-        m.SetDeploymentStatus(&cast)
+        if val != nil {
+            cast := val.(WindowsDefenderApplicationControlSupplementalPolicyStatuses)
+            m.SetDeploymentStatus(&cast)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +135,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +145,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +155,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["osDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +165,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetOsDescription(val)
+        if val != nil {
+            m.SetOsDescription(val)
+        }
         return nil
     }
     res["osVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +175,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetOsVersion(val)
+        if val != nil {
+            m.SetOsVersion(val)
+        }
         return nil
     }
     res["policy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +185,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetPolicy(val.(*WindowsDefenderApplicationControlSupplementalPolicy))
+        if val != nil {
+            m.SetPolicy(val.(*WindowsDefenderApplicationControlSupplementalPolicy))
+        }
         return nil
     }
     res["policyVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +195,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetPolicyVersion(val)
+        if val != nil {
+            m.SetPolicyVersion(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,7 +205,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,7 +215,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

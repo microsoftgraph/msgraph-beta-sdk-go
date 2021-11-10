@@ -154,7 +154,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAccessPackage(val.(*AccessPackage))
+        if val != nil {
+            m.SetAccessPackage(val.(*AccessPackage))
+        }
         return nil
     }
     res["accessPackageAssignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +164,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetAccessPackageAssignment(val.(*AccessPackageAssignment))
+        if val != nil {
+            m.SetAccessPackageAssignment(val.(*AccessPackageAssignment))
+        }
         return nil
     }
     res["answers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,11 +174,13 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]AccessPackageAnswer, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessPackageAnswer))
+        if val != nil {
+            res := make([]AccessPackageAnswer, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessPackageAnswer))
+            }
+            m.SetAnswers(res)
         }
-        m.SetAnswers(res)
         return nil
     }
     res["completedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +188,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetCompletedDate(val)
+        if val != nil {
+            m.SetCompletedDate(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +198,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +208,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["isValidationOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +218,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetIsValidationOnly(val)
+        if val != nil {
+            m.SetIsValidationOnly(val)
+        }
         return nil
     }
     res["justification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +228,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetJustification(val)
+        if val != nil {
+            m.SetJustification(val)
+        }
         return nil
     }
     res["requestor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +238,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetRequestor(val.(*AccessPackageSubject))
+        if val != nil {
+            m.SetRequestor(val.(*AccessPackageSubject))
+        }
         return nil
     }
     res["requestState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,7 +248,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetRequestState(val)
+        if val != nil {
+            m.SetRequestState(val)
+        }
         return nil
     }
     res["requestStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -238,7 +258,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetRequestStatus(val)
+        if val != nil {
+            m.SetRequestStatus(val)
+        }
         return nil
     }
     res["requestType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,7 +268,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetRequestType(val)
+        if val != nil {
+            m.SetRequestType(val)
+        }
         return nil
     }
     res["schedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,7 +278,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSchedule(val.(*RequestSchedule))
+        if val != nil {
+            m.SetSchedule(val.(*RequestSchedule))
+        }
         return nil
     }
     return res

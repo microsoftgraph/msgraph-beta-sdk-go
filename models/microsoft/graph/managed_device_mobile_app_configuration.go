@@ -144,11 +144,13 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]ManagedDeviceMobileAppConfigurationAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedDeviceMobileAppConfigurationAssignment))
+        if val != nil {
+            res := make([]ManagedDeviceMobileAppConfigurationAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedDeviceMobileAppConfigurationAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +158,9 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +168,9 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,11 +178,13 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]ManagedDeviceMobileAppConfigurationDeviceStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedDeviceMobileAppConfigurationDeviceStatus))
+        if val != nil {
+            res := make([]ManagedDeviceMobileAppConfigurationDeviceStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedDeviceMobileAppConfigurationDeviceStatus))
+            }
+            m.SetDeviceStatuses(res)
         }
-        m.SetDeviceStatuses(res)
         return nil
     }
     res["deviceStatusSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +192,9 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetDeviceStatusSummary(val.(*ManagedDeviceMobileAppConfigurationDeviceSummary))
+        if val != nil {
+            m.SetDeviceStatusSummary(val.(*ManagedDeviceMobileAppConfigurationDeviceSummary))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +202,9 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +212,9 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,11 +222,13 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["targetedMobileApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,11 +236,13 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTargetedMobileApps(res)
         }
-        m.SetTargetedMobileApps(res)
         return nil
     }
     res["userStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,11 +250,13 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]ManagedDeviceMobileAppConfigurationUserStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedDeviceMobileAppConfigurationUserStatus))
+        if val != nil {
+            res := make([]ManagedDeviceMobileAppConfigurationUserStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedDeviceMobileAppConfigurationUserStatus))
+            }
+            m.SetUserStatuses(res)
         }
-        m.SetUserStatuses(res)
         return nil
     }
     res["userStatusSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +264,9 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetUserStatusSummary(val.(*ManagedDeviceMobileAppConfigurationUserSummary))
+        if val != nil {
+            m.SetUserStatusSummary(val.(*ManagedDeviceMobileAppConfigurationUserSummary))
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +274,9 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

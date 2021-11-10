@@ -134,7 +134,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDetectionScriptErrorDeviceCount(val)
+        if val != nil {
+            m.SetDetectionScriptErrorDeviceCount(val)
+        }
         return nil
     }
     res["detectionScriptNotApplicableDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDetectionScriptNotApplicableDeviceCount(val)
+        if val != nil {
+            m.SetDetectionScriptNotApplicableDeviceCount(val)
+        }
         return nil
     }
     res["detectionScriptPendingDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +154,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDetectionScriptPendingDeviceCount(val)
+        if val != nil {
+            m.SetDetectionScriptPendingDeviceCount(val)
+        }
         return nil
     }
     res["issueDetectedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +164,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIssueDetectedDeviceCount(val)
+        if val != nil {
+            m.SetIssueDetectedDeviceCount(val)
+        }
         return nil
     }
     res["issueRemediatedCumulativeDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +174,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIssueRemediatedCumulativeDeviceCount(val)
+        if val != nil {
+            m.SetIssueRemediatedCumulativeDeviceCount(val)
+        }
         return nil
     }
     res["issueRemediatedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +184,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIssueRemediatedDeviceCount(val)
+        if val != nil {
+            m.SetIssueRemediatedDeviceCount(val)
+        }
         return nil
     }
     res["issueReoccurredDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +194,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIssueReoccurredDeviceCount(val)
+        if val != nil {
+            m.SetIssueReoccurredDeviceCount(val)
+        }
         return nil
     }
     res["lastScriptRunDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +204,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetLastScriptRunDateTime(val)
+        if val != nil {
+            m.SetLastScriptRunDateTime(val)
+        }
         return nil
     }
     res["noIssueDetectedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +214,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetNoIssueDetectedDeviceCount(val)
+        if val != nil {
+            m.SetNoIssueDetectedDeviceCount(val)
+        }
         return nil
     }
     res["remediationScriptErrorDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +224,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRemediationScriptErrorDeviceCount(val)
+        if val != nil {
+            m.SetRemediationScriptErrorDeviceCount(val)
+        }
         return nil
     }
     res["remediationSkippedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +234,9 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRemediationSkippedDeviceCount(val)
+        if val != nil {
+            m.SetRemediationSkippedDeviceCount(val)
+        }
         return nil
     }
     return res

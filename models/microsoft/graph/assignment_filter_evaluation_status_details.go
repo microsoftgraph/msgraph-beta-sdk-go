@@ -33,7 +33,9 @@ func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        m.SetPayloadId(val)
+        if val != nil {
+            m.SetPayloadId(val)
+        }
         return nil
     }
     return res

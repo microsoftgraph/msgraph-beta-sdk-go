@@ -33,7 +33,9 @@ func (m *DirectoryRoleAccessReviewPolicy) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetSettings(val.(*AccessReviewScheduleSettings))
+        if val != nil {
+            m.SetSettings(val.(*AccessReviewScheduleSettings))
+        }
         return nil
     }
     return res

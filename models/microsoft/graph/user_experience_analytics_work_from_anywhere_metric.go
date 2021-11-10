@@ -33,11 +33,13 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        res := make([]UserExperienceAnalyticsWorkFromAnywhereDevice, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserExperienceAnalyticsWorkFromAnywhereDevice))
+        if val != nil {
+            res := make([]UserExperienceAnalyticsWorkFromAnywhereDevice, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserExperienceAnalyticsWorkFromAnywhereDevice))
+            }
+            m.SetMetricDevices(res)
         }
-        m.SetMetricDevices(res)
         return nil
     }
     return res

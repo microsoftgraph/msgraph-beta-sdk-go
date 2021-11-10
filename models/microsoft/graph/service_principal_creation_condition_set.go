@@ -63,11 +63,13 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetApplicationIds(res)
         }
-        m.SetApplicationIds(res)
         return nil
     }
     res["applicationPublisherIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,11 +77,13 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetApplicationPublisherIds(res)
         }
-        m.SetApplicationPublisherIds(res)
         return nil
     }
     res["applicationsFromVerifiedPublisherOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +91,9 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetApplicationsFromVerifiedPublisherOnly(val)
+        if val != nil {
+            m.SetApplicationsFromVerifiedPublisherOnly(val)
+        }
         return nil
     }
     res["applicationTenantIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,11 +101,13 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetApplicationTenantIds(res)
         }
-        m.SetApplicationTenantIds(res)
         return nil
     }
     return res

@@ -82,11 +82,13 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]EducationClass, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationClass))
+        if val != nil {
+            res := make([]EducationClass, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationClass))
+            }
+            m.SetClasses(res)
         }
-        m.SetClasses(res)
         return nil
     }
     res["me"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,7 +96,9 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetMe(val.(*EducationUser))
+        if val != nil {
+            m.SetMe(val.(*EducationUser))
+        }
         return nil
     }
     res["schools"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,11 +106,13 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]EducationSchool, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationSchool))
+        if val != nil {
+            res := make([]EducationSchool, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationSchool))
+            }
+            m.SetSchools(res)
         }
-        m.SetSchools(res)
         return nil
     }
     res["synchronizationProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,11 +120,13 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]EducationSynchronizationProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationSynchronizationProfile))
+        if val != nil {
+            res := make([]EducationSynchronizationProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationSynchronizationProfile))
+            }
+            m.SetSynchronizationProfiles(res)
         }
-        m.SetSynchronizationProfiles(res)
         return nil
     }
     res["users"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,11 +134,13 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]EducationUser, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationUser))
+        if val != nil {
+            res := make([]EducationUser, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationUser))
+            }
+            m.SetUsers(res)
         }
-        m.SetUsers(res)
         return nil
     }
     return res

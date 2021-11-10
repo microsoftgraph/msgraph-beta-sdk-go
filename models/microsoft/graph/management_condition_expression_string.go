@@ -33,7 +33,9 @@ func (m *ManagementConditionExpressionString) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetValue(val)
+        if val != nil {
+            m.SetValue(val)
+        }
         return nil
     }
     return res

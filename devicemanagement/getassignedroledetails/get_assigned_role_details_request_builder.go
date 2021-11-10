@@ -62,7 +62,9 @@ func (m *GetAssignedRoleDetailsResponse) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDeviceAndAppManagementAssignedRoleDetails(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetails))
+        if val != nil {
+            m.SetDeviceAndAppManagementAssignedRoleDetails(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetails))
+        }
         return nil
     }
     return res

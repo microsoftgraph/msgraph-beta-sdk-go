@@ -83,11 +83,13 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAppUserModelIds(res)
         }
-        m.SetAppUserModelIds(res)
         return nil
     }
     res["desktopAppPaths"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,11 +97,13 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDesktopAppPaths(res)
         }
-        m.SetDesktopAppPaths(res)
         return nil
     }
     res["profileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +111,9 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetProfileName(val)
+        if val != nil {
+            m.SetProfileName(val)
+        }
         return nil
     }
     res["showTaskBar"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +121,9 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetShowTaskBar(val)
+        if val != nil {
+            m.SetShowTaskBar(val)
+        }
         return nil
     }
     res["startMenuLayoutXml"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +131,9 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetStartMenuLayoutXml(val)
+        if val != nil {
+            m.SetStartMenuLayoutXml(val)
+        }
         return nil
     }
     res["userAccounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,11 +141,13 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetUserAccounts(res)
         }
-        m.SetUserAccounts(res)
         return nil
     }
     return res

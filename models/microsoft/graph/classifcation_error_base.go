@@ -72,7 +72,9 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCode(val)
+        if val != nil {
+            m.SetCode(val)
+        }
         return nil
     }
     res["innerError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetInnerError(val.(*ClassificationInnerError))
+        if val != nil {
+            m.SetInnerError(val.(*ClassificationInnerError))
+        }
         return nil
     }
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetMessage(val)
+        if val != nil {
+            m.SetMessage(val)
+        }
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetTarget(val)
+        if val != nil {
+            m.SetTarget(val)
+        }
         return nil
     }
     return res

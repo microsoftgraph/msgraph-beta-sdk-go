@@ -184,7 +184,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetExchangeActive(val)
+        if val != nil {
+            m.SetExchangeActive(val)
+        }
         return nil
     }
     res["exchangeInactive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +194,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetExchangeInactive(val)
+        if val != nil {
+            m.SetExchangeInactive(val)
+        }
         return nil
     }
     res["office365Active"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +204,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetOffice365Active(val)
+        if val != nil {
+            m.SetOffice365Active(val)
+        }
         return nil
     }
     res["office365Inactive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +214,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetOffice365Inactive(val)
+        if val != nil {
+            m.SetOffice365Inactive(val)
+        }
         return nil
     }
     res["oneDriveActive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +224,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetOneDriveActive(val)
+        if val != nil {
+            m.SetOneDriveActive(val)
+        }
         return nil
     }
     res["oneDriveInactive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,7 +234,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetOneDriveInactive(val)
+        if val != nil {
+            m.SetOneDriveInactive(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,7 +244,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -240,7 +254,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["sharePointActive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,7 +264,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSharePointActive(val)
+        if val != nil {
+            m.SetSharePointActive(val)
+        }
         return nil
     }
     res["sharePointInactive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,7 +274,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSharePointInactive(val)
+        if val != nil {
+            m.SetSharePointInactive(val)
+        }
         return nil
     }
     res["skypeForBusinessActive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,7 +284,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSkypeForBusinessActive(val)
+        if val != nil {
+            m.SetSkypeForBusinessActive(val)
+        }
         return nil
     }
     res["skypeForBusinessInactive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,7 +294,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetSkypeForBusinessInactive(val)
+        if val != nil {
+            m.SetSkypeForBusinessInactive(val)
+        }
         return nil
     }
     res["teamsActive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -280,7 +304,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetTeamsActive(val)
+        if val != nil {
+            m.SetTeamsActive(val)
+        }
         return nil
     }
     res["teamsInactive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -288,7 +314,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetTeamsInactive(val)
+        if val != nil {
+            m.SetTeamsInactive(val)
+        }
         return nil
     }
     res["yammerActive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,7 +324,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetYammerActive(val)
+        if val != nil {
+            m.SetYammerActive(val)
+        }
         return nil
     }
     res["yammerInactive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -304,7 +334,9 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetYammerInactive(val)
+        if val != nil {
+            m.SetYammerInactive(val)
+        }
         return nil
     }
     return res

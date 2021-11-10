@@ -123,8 +123,10 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(AccessReviewTimeoutBehavior)
-        m.SetAccessReviewTimeoutBehavior(&cast)
+        if val != nil {
+            cast := val.(AccessReviewTimeoutBehavior)
+            m.SetAccessReviewTimeoutBehavior(&cast)
+        }
         return nil
     }
     res["durationInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDurationInDays(val)
+        if val != nil {
+            m.SetDurationInDays(val)
+        }
         return nil
     }
     res["isAccessRecommendationEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +144,9 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsAccessRecommendationEnabled(val)
+        if val != nil {
+            m.SetIsAccessRecommendationEnabled(val)
+        }
         return nil
     }
     res["isApprovalJustificationRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +154,9 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsApprovalJustificationRequired(val)
+        if val != nil {
+            m.SetIsApprovalJustificationRequired(val)
+        }
         return nil
     }
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +164,9 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     res["recurrenceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +174,9 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRecurrenceType(val)
+        if val != nil {
+            m.SetRecurrenceType(val)
+        }
         return nil
     }
     res["reviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,11 +184,13 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]UserSet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserSet))
+        if val != nil {
+            res := make([]UserSet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserSet))
+            }
+            m.SetReviewers(res)
         }
-        m.SetReviewers(res)
         return nil
     }
     res["reviewerType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +198,9 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetReviewerType(val)
+        if val != nil {
+            m.SetReviewerType(val)
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +208,9 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     return res

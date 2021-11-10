@@ -42,11 +42,13 @@ func (m *SearchSettings) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]DisplayTemplate, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DisplayTemplate))
+        if val != nil {
+            res := make([]DisplayTemplate, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DisplayTemplate))
+            }
+            m.SetSearchResultTemplates(res)
         }
-        m.SetSearchResultTemplates(res)
         return nil
     }
     return res

@@ -84,7 +84,9 @@ func (m *GetTeamsUserActivityDistributionUserCountsWithPeriod) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetCalls(val)
+        if val != nil {
+            m.SetCalls(val)
+        }
         return nil
     }
     res["meetings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *GetTeamsUserActivityDistributionUserCountsWithPeriod) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetMeetings(val)
+        if val != nil {
+            m.SetMeetings(val)
+        }
         return nil
     }
     res["privateChatMessages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *GetTeamsUserActivityDistributionUserCountsWithPeriod) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetPrivateChatMessages(val)
+        if val != nil {
+            m.SetPrivateChatMessages(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *GetTeamsUserActivityDistributionUserCountsWithPeriod) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *GetTeamsUserActivityDistributionUserCountsWithPeriod) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["teamChatMessages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *GetTeamsUserActivityDistributionUserCountsWithPeriod) GetFieldDeseriali
         if err != nil {
             return err
         }
-        m.SetTeamChatMessages(val)
+        if val != nil {
+            m.SetTeamChatMessages(val)
+        }
         return nil
     }
     return res

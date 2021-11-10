@@ -53,7 +53,9 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetExampleJson(val)
+        if val != nil {
+            m.SetExampleJson(val)
+        }
         return nil
     }
     res["nestedSchemaItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,11 +63,13 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        res := make([]AndroidManagedStoreAppConfigurationSchemaItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AndroidManagedStoreAppConfigurationSchemaItem))
+        if val != nil {
+            res := make([]AndroidManagedStoreAppConfigurationSchemaItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AndroidManagedStoreAppConfigurationSchemaItem))
+            }
+            m.SetNestedSchemaItems(res)
         }
-        m.SetNestedSchemaItems(res)
         return nil
     }
     res["schemaItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,11 +77,13 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        res := make([]AndroidManagedStoreAppConfigurationSchemaItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AndroidManagedStoreAppConfigurationSchemaItem))
+        if val != nil {
+            res := make([]AndroidManagedStoreAppConfigurationSchemaItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AndroidManagedStoreAppConfigurationSchemaItem))
+            }
+            m.SetSchemaItems(res)
         }
-        m.SetSchemaItems(res)
         return nil
     }
     return res

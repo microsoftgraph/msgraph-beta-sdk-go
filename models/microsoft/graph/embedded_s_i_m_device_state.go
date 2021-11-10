@@ -104,7 +104,9 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["modifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetModifiedDateTime(val)
+        if val != nil {
+            m.SetModifiedDateTime(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,8 +144,10 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(EmbeddedSIMDeviceStateValue)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(EmbeddedSIMDeviceStateValue)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["stateDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +155,9 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetStateDetails(val)
+        if val != nil {
+            m.SetStateDetails(val)
+        }
         return nil
     }
     res["universalIntegratedCircuitCardIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +165,9 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUniversalIntegratedCircuitCardIdentifier(val)
+        if val != nil {
+            m.SetUniversalIntegratedCircuitCardIdentifier(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +175,9 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     return res

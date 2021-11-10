@@ -43,11 +43,13 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     res["roleScopeTags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -55,11 +57,13 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        res := make([]RoleScopeTag, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RoleScopeTag))
+        if val != nil {
+            res := make([]RoleScopeTag, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RoleScopeTag))
+            }
+            m.SetRoleScopeTags(res)
         }
-        m.SetRoleScopeTags(res)
         return nil
     }
     return res

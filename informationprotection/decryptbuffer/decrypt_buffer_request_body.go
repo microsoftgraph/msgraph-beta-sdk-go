@@ -52,7 +52,9 @@ func (m *DecryptBufferRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetEncryptedBuffer(val)
+        if val != nil {
+            m.SetEncryptedBuffer(val)
+        }
         return nil
     }
     res["publishingLicense"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *DecryptBufferRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPublishingLicense(val)
+        if val != nil {
+            m.SetPublishingLicense(val)
+        }
         return nil
     }
     return res

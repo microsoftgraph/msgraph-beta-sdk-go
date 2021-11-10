@@ -53,7 +53,9 @@ func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["policy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPolicy(val.(*GovernancePolicy))
+        if val != nil {
+            m.SetPolicy(val.(*GovernancePolicy))
+        }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSettings(val.(*BusinessFlowSettings))
+        if val != nil {
+            m.SetSettings(val.(*BusinessFlowSettings))
+        }
         return nil
     }
     return res

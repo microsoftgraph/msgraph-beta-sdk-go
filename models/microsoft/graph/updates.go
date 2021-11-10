@@ -53,7 +53,9 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCatalog(val.(*Catalog))
+        if val != nil {
+            m.SetCatalog(val.(*Catalog))
+        }
         return nil
     }
     res["deployments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,11 +63,13 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]Deployment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Deployment))
+        if val != nil {
+            res := make([]Deployment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Deployment))
+            }
+            m.SetDeployments(res)
         }
-        m.SetDeployments(res)
         return nil
     }
     res["updatableAssets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,11 +77,13 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]UpdatableAsset, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UpdatableAsset))
+        if val != nil {
+            res := make([]UpdatableAsset, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UpdatableAsset))
+            }
+            m.SetUpdatableAssets(res)
         }
-        m.SetUpdatableAssets(res)
         return nil
     }
     return res

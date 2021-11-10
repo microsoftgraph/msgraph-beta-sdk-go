@@ -92,7 +92,9 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetHomePageUrl(val)
+        if val != nil {
+            m.SetHomePageUrl(val)
+        }
         return nil
     }
     res["implicitGrantSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetImplicitGrantSettings(val.(*ImplicitGrantSettings))
+        if val != nil {
+            m.SetImplicitGrantSettings(val.(*ImplicitGrantSettings))
+        }
         return nil
     }
     res["logoutUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetLogoutUrl(val)
+        if val != nil {
+            m.SetLogoutUrl(val)
+        }
         return nil
     }
     res["oauth2AllowImplicitFlow"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetOauth2AllowImplicitFlow(val)
+        if val != nil {
+            m.SetOauth2AllowImplicitFlow(val)
+        }
         return nil
     }
     res["redirectUris"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,11 +132,13 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRedirectUris(res)
         }
-        m.SetRedirectUris(res)
         return nil
     }
     res["redirectUriSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,11 +146,13 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]RedirectUriSettings, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RedirectUriSettings))
+        if val != nil {
+            res := make([]RedirectUriSettings, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RedirectUriSettings))
+            }
+            m.SetRedirectUriSettings(res)
         }
-        m.SetRedirectUriSettings(res)
         return nil
     }
     return res

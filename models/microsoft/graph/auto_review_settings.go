@@ -42,7 +42,9 @@ func (m *AutoReviewSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetNotReviewedResult(val)
+        if val != nil {
+            m.SetNotReviewedResult(val)
+        }
         return nil
     }
     return res

@@ -52,8 +52,10 @@ func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(AuthenticationMethodFeature)
-        m.SetFeature(&cast)
+        if val != nil {
+            cast := val.(AuthenticationMethodFeature)
+            m.SetFeature(&cast)
+        }
         return nil
     }
     res["userCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetUserCount(val)
+        if val != nil {
+            m.SetUserCount(val)
+        }
         return nil
     }
     return res

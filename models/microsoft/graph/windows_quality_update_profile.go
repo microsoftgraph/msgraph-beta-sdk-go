@@ -114,11 +114,13 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]WindowsQualityUpdateProfileAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsQualityUpdateProfileAssignment))
+        if val != nil {
+            res := make([]WindowsQualityUpdateProfileAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsQualityUpdateProfileAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +128,9 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["deployableContentDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +138,9 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDeployableContentDisplayName(val)
+        if val != nil {
+            m.SetDeployableContentDisplayName(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +148,9 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +158,9 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["expeditedUpdateSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +168,9 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetExpeditedUpdateSettings(val.(*ExpeditedWindowsQualityUpdateSettings))
+        if val != nil {
+            m.SetExpeditedUpdateSettings(val.(*ExpeditedWindowsQualityUpdateSettings))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +178,9 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["releaseDateDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +188,9 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetReleaseDateDisplayName(val)
+        if val != nil {
+            m.SetReleaseDateDisplayName(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,11 +198,13 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     return res

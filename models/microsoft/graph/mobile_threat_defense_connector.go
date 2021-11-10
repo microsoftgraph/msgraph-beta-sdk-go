@@ -184,7 +184,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAllowPartnerToCollectIOSApplicationMetadata(val)
+        if val != nil {
+            m.SetAllowPartnerToCollectIOSApplicationMetadata(val)
+        }
         return nil
     }
     res["androidDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +194,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidDeviceBlockedOnMissingPartnerData(val)
+        if val != nil {
+            m.SetAndroidDeviceBlockedOnMissingPartnerData(val)
+        }
         return nil
     }
     res["androidEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +204,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidEnabled(val)
+        if val != nil {
+            m.SetAndroidEnabled(val)
+        }
         return nil
     }
     res["androidMobileApplicationManagementEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +214,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAndroidMobileApplicationManagementEnabled(val)
+        if val != nil {
+            m.SetAndroidMobileApplicationManagementEnabled(val)
+        }
         return nil
     }
     res["iosDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +224,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIosDeviceBlockedOnMissingPartnerData(val)
+        if val != nil {
+            m.SetIosDeviceBlockedOnMissingPartnerData(val)
+        }
         return nil
     }
     res["iosEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,7 +234,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIosEnabled(val)
+        if val != nil {
+            m.SetIosEnabled(val)
+        }
         return nil
     }
     res["iosMobileApplicationManagementEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,7 +244,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIosMobileApplicationManagementEnabled(val)
+        if val != nil {
+            m.SetIosMobileApplicationManagementEnabled(val)
+        }
         return nil
     }
     res["lastHeartbeatDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -240,7 +254,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetLastHeartbeatDateTime(val)
+        if val != nil {
+            m.SetLastHeartbeatDateTime(val)
+        }
         return nil
     }
     res["macDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,7 +264,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetMacDeviceBlockedOnMissingPartnerData(val)
+        if val != nil {
+            m.SetMacDeviceBlockedOnMissingPartnerData(val)
+        }
         return nil
     }
     res["macEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,7 +274,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetMacEnabled(val)
+        if val != nil {
+            m.SetMacEnabled(val)
+        }
         return nil
     }
     res["microsoftDefenderForEndpointAttachEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,7 +284,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetMicrosoftDefenderForEndpointAttachEnabled(val)
+        if val != nil {
+            m.SetMicrosoftDefenderForEndpointAttachEnabled(val)
+        }
         return nil
     }
     res["partnerState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,8 +294,10 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(MobileThreatPartnerTenantState)
-        m.SetPartnerState(&cast)
+        if val != nil {
+            cast := val.(MobileThreatPartnerTenantState)
+            m.SetPartnerState(&cast)
+        }
         return nil
     }
     res["partnerUnresponsivenessThresholdInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -281,7 +305,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetPartnerUnresponsivenessThresholdInDays(val)
+        if val != nil {
+            m.SetPartnerUnresponsivenessThresholdInDays(val)
+        }
         return nil
     }
     res["partnerUnsupportedOsVersionBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -289,7 +315,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetPartnerUnsupportedOsVersionBlocked(val)
+        if val != nil {
+            m.SetPartnerUnsupportedOsVersionBlocked(val)
+        }
         return nil
     }
     res["windowsDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -297,7 +325,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetWindowsDeviceBlockedOnMissingPartnerData(val)
+        if val != nil {
+            m.SetWindowsDeviceBlockedOnMissingPartnerData(val)
+        }
         return nil
     }
     res["windowsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,7 +335,9 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetWindowsEnabled(val)
+        if val != nil {
+            m.SetWindowsEnabled(val)
+        }
         return nil
     }
     return res

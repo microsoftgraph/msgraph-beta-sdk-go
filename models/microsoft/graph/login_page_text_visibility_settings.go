@@ -82,7 +82,9 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetHideCannotAccessYourAccount(val)
+        if val != nil {
+            m.SetHideCannotAccessYourAccount(val)
+        }
         return nil
     }
     res["hideForgotMyPassword"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetHideForgotMyPassword(val)
+        if val != nil {
+            m.SetHideForgotMyPassword(val)
+        }
         return nil
     }
     res["hidePrivacyAndCookies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetHidePrivacyAndCookies(val)
+        if val != nil {
+            m.SetHidePrivacyAndCookies(val)
+        }
         return nil
     }
     res["hideResetItNow"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetHideResetItNow(val)
+        if val != nil {
+            m.SetHideResetItNow(val)
+        }
         return nil
     }
     res["hideTermsOfUse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetHideTermsOfUse(val)
+        if val != nil {
+            m.SetHideTermsOfUse(val)
+        }
         return nil
     }
     return res

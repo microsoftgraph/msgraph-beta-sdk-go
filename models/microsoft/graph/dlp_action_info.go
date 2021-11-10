@@ -42,8 +42,10 @@ func (m *DlpActionInfo) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(DlpAction)
-        m.SetAction(&cast)
+        if val != nil {
+            cast := val.(DlpAction)
+            m.SetAction(&cast)
+        }
         return nil
     }
     return res

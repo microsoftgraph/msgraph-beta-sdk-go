@@ -93,7 +93,9 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetApplicationId(val)
+        if val != nil {
+            m.SetApplicationId(val)
+        }
         return nil
     }
     res["default_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDefault_escaped(val)
+        if val != nil {
+            m.SetDefault_escaped(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["discoverable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDiscoverable(val)
+        if val != nil {
+            m.SetDiscoverable(val)
+        }
         return nil
     }
     res["factoryTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFactoryTag(val)
+        if val != nil {
+            m.SetFactoryTag(val)
+        }
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,11 +143,13 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]MetadataEntry, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MetadataEntry))
+        if val != nil {
+            res := make([]MetadataEntry, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MetadataEntry))
+            }
+            m.SetMetadata(res)
         }
-        m.SetMetadata(res)
         return nil
     }
     res["schema"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +157,9 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetSchema(val.(*SynchronizationSchema))
+        if val != nil {
+            m.SetSchema(val.(*SynchronizationSchema))
+        }
         return nil
     }
     return res

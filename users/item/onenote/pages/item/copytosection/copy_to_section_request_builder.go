@@ -64,7 +64,9 @@ func (m *CopyToSectionResponse) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetOnenoteOperation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperation))
+        if val != nil {
+            m.SetOnenoteOperation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperation))
+        }
         return nil
     }
     return res

@@ -113,11 +113,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPcAuditEvent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcAuditEvent))
+        if val != nil {
+            res := make([]CloudPcAuditEvent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcAuditEvent))
+            }
+            m.SetAuditEvents(res)
         }
-        m.SetAuditEvents(res)
         return nil
     }
     res["cloudPCs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,11 +127,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPC, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPC))
+        if val != nil {
+            res := make([]CloudPC, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPC))
+            }
+            m.SetCloudPCs(res)
         }
-        m.SetCloudPCs(res)
         return nil
     }
     res["deviceImages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,11 +141,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPcDeviceImage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcDeviceImage))
+        if val != nil {
+            res := make([]CloudPcDeviceImage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcDeviceImage))
+            }
+            m.SetDeviceImages(res)
         }
-        m.SetDeviceImages(res)
         return nil
     }
     res["galleryImages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,11 +155,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPcGalleryImage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcGalleryImage))
+        if val != nil {
+            res := make([]CloudPcGalleryImage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcGalleryImage))
+            }
+            m.SetGalleryImages(res)
         }
-        m.SetGalleryImages(res)
         return nil
     }
     res["onPremisesConnections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,11 +169,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPcOnPremisesConnection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcOnPremisesConnection))
+        if val != nil {
+            res := make([]CloudPcOnPremisesConnection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcOnPremisesConnection))
+            }
+            m.SetOnPremisesConnections(res)
         }
-        m.SetOnPremisesConnections(res)
         return nil
     }
     res["provisioningPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,11 +183,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPcProvisioningPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcProvisioningPolicy))
+        if val != nil {
+            res := make([]CloudPcProvisioningPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcProvisioningPolicy))
+            }
+            m.SetProvisioningPolicies(res)
         }
-        m.SetProvisioningPolicies(res)
         return nil
     }
     res["servicePlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,11 +197,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPcServicePlan, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcServicePlan))
+        if val != nil {
+            res := make([]CloudPcServicePlan, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcServicePlan))
+            }
+            m.SetServicePlans(res)
         }
-        m.SetServicePlans(res)
         return nil
     }
     res["supportedRegions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,11 +211,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPcSupportedRegion, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcSupportedRegion))
+        if val != nil {
+            res := make([]CloudPcSupportedRegion, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcSupportedRegion))
+            }
+            m.SetSupportedRegions(res)
         }
-        m.SetSupportedRegions(res)
         return nil
     }
     res["userSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,11 +225,13 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]CloudPcUserSetting, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcUserSetting))
+        if val != nil {
+            res := make([]CloudPcUserSetting, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcUserSetting))
+            }
+            m.SetUserSettings(res)
         }
-        m.SetUserSettings(res)
         return nil
     }
     return res

@@ -72,11 +72,13 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIgnoredDelimiters(res)
         }
-        m.SetIgnoredDelimiters(res)
         return nil
     }
     res["isCaseInsensitive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,7 +86,9 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIsCaseInsensitive(val)
+        if val != nil {
+            m.SetIsCaseInsensitive(val)
+        }
         return nil
     }
     res["isSearchable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +96,9 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIsSearchable(val)
+        if val != nil {
+            m.SetIsSearchable(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +106,9 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     return res

@@ -204,7 +204,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLastRefreshedDateTime(val)
+        if val != nil {
+            m.SetLastRefreshedDateTime(val)
+        }
         return nil
     }
     res["numberOfCloudPcConnectionStatusFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +214,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcConnectionStatusFailed(val)
+        if val != nil {
+            m.SetNumberOfCloudPcConnectionStatusFailed(val)
+        }
         return nil
     }
     res["numberOfCloudPcConnectionStatusPassed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +224,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcConnectionStatusPassed(val)
+        if val != nil {
+            m.SetNumberOfCloudPcConnectionStatusPassed(val)
+        }
         return nil
     }
     res["numberOfCloudPcConnectionStatusPending"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +234,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcConnectionStatusPending(val)
+        if val != nil {
+            m.SetNumberOfCloudPcConnectionStatusPending(val)
+        }
         return nil
     }
     res["numberOfCloudPcConnectionStatusRunning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +244,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcConnectionStatusRunning(val)
+        if val != nil {
+            m.SetNumberOfCloudPcConnectionStatusRunning(val)
+        }
         return nil
     }
     res["numberOfCloudPcConnectionStatusUnkownFutureValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +254,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcConnectionStatusUnkownFutureValue(val)
+        if val != nil {
+            m.SetNumberOfCloudPcConnectionStatusUnkownFutureValue(val)
+        }
         return nil
     }
     res["numberOfCloudPcStatusDeprovisioning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +264,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcStatusDeprovisioning(val)
+        if val != nil {
+            m.SetNumberOfCloudPcStatusDeprovisioning(val)
+        }
         return nil
     }
     res["numberOfCloudPcStatusFailed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,7 +274,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcStatusFailed(val)
+        if val != nil {
+            m.SetNumberOfCloudPcStatusFailed(val)
+        }
         return nil
     }
     res["numberOfCloudPcStatusInGracePeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,7 +284,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcStatusInGracePeriod(val)
+        if val != nil {
+            m.SetNumberOfCloudPcStatusInGracePeriod(val)
+        }
         return nil
     }
     res["numberOfCloudPcStatusNotProvisioned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -276,7 +294,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcStatusNotProvisioned(val)
+        if val != nil {
+            m.SetNumberOfCloudPcStatusNotProvisioned(val)
+        }
         return nil
     }
     res["numberOfCloudPcStatusProvisioned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -284,7 +304,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcStatusProvisioned(val)
+        if val != nil {
+            m.SetNumberOfCloudPcStatusProvisioned(val)
+        }
         return nil
     }
     res["numberOfCloudPcStatusProvisioning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -292,7 +314,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcStatusProvisioning(val)
+        if val != nil {
+            m.SetNumberOfCloudPcStatusProvisioning(val)
+        }
         return nil
     }
     res["numberOfCloudPcStatusUnknown"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -300,7 +324,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcStatusUnknown(val)
+        if val != nil {
+            m.SetNumberOfCloudPcStatusUnknown(val)
+        }
         return nil
     }
     res["numberOfCloudPcStatusUpgrading"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -308,7 +334,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfCloudPcStatusUpgrading(val)
+        if val != nil {
+            m.SetNumberOfCloudPcStatusUpgrading(val)
+        }
         return nil
     }
     res["tenantDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +344,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTenantDisplayName(val)
+        if val != nil {
+            m.SetTenantDisplayName(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -324,7 +354,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["totalCloudPcConnectionStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,7 +364,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTotalCloudPcConnectionStatus(val)
+        if val != nil {
+            m.SetTotalCloudPcConnectionStatus(val)
+        }
         return nil
     }
     res["totalCloudPcStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -340,7 +374,9 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTotalCloudPcStatus(val)
+        if val != nil {
+            m.SetTotalCloudPcStatus(val)
+        }
         return nil
     }
     return res

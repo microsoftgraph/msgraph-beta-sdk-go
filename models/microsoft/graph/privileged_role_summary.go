@@ -73,7 +73,9 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetElevatedCount(val)
+        if val != nil {
+            m.SetElevatedCount(val)
+        }
         return nil
     }
     res["managedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetManagedCount(val)
+        if val != nil {
+            m.SetManagedCount(val)
+        }
         return nil
     }
     res["mfaEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMfaEnabled(val)
+        if val != nil {
+            m.SetMfaEnabled(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,8 +103,10 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(RoleSummaryStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(RoleSummaryStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["usersCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetUsersCount(val)
+        if val != nil {
+            m.SetUsersCount(val)
+        }
         return nil
     }
     return res

@@ -54,7 +54,9 @@ func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetExpiryTime(val)
+        if val != nil {
+            m.SetExpiryTime(val)
+        }
         return nil
     }
     res["invitationDomain"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,7 +64,9 @@ func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetInvitationDomain(val)
+        if val != nil {
+            m.SetInvitationDomain(val)
+        }
         return nil
     }
     res["invitationStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +74,9 @@ func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetInvitationStatus(val)
+        if val != nil {
+            m.SetInvitationStatus(val)
+        }
         return nil
     }
     return res

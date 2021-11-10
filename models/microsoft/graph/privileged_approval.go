@@ -134,7 +134,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetApprovalDuration(val)
+        if val != nil {
+            m.SetApprovalDuration(val)
+        }
         return nil
     }
     res["approvalState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,8 +144,10 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(ApprovalState)
-        m.SetApprovalState(&cast)
+        if val != nil {
+            cast := val.(ApprovalState)
+            m.SetApprovalState(&cast)
+        }
         return nil
     }
     res["approvalType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +155,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetApprovalType(val)
+        if val != nil {
+            m.SetApprovalType(val)
+        }
         return nil
     }
     res["approverReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +165,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetApproverReason(val)
+        if val != nil {
+            m.SetApproverReason(val)
+        }
         return nil
     }
     res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +175,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetEndDateTime(val)
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
         return nil
     }
     res["request"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +185,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetRequest(val.(*PrivilegedRoleAssignmentRequest))
+        if val != nil {
+            m.SetRequest(val.(*PrivilegedRoleAssignmentRequest))
+        }
         return nil
     }
     res["requestorReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +195,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetRequestorReason(val)
+        if val != nil {
+            m.SetRequestorReason(val)
+        }
         return nil
     }
     res["roleId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +205,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetRoleId(val)
+        if val != nil {
+            m.SetRoleId(val)
+        }
         return nil
     }
     res["roleInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +215,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetRoleInfo(val.(*PrivilegedRole))
+        if val != nil {
+            m.SetRoleInfo(val.(*PrivilegedRole))
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +225,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +235,9 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

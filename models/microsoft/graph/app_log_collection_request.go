@@ -64,7 +64,9 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCompletedDateTime(val)
+        if val != nil {
+            m.SetCompletedDateTime(val)
+        }
         return nil
     }
     res["customLogFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,11 +74,13 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCustomLogFolders(res)
         }
-        m.SetCustomLogFolders(res)
         return nil
     }
     res["errorMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,7 +88,9 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetErrorMessage(val)
+        if val != nil {
+            m.SetErrorMessage(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,8 +98,10 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(AppLogUploadState)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(AppLogUploadState)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

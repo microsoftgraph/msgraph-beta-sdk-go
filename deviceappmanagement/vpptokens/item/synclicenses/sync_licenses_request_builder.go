@@ -62,7 +62,9 @@ func (m *SyncLicensesResponse) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetVppToken(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VppToken))
+        if val != nil {
+            m.SetVppToken(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VppToken))
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *MentionsPreview) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetIsMentioned(val)
+        if val != nil {
+            m.SetIsMentioned(val)
+        }
         return nil
     }
     return res

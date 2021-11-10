@@ -62,11 +62,13 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetKeywords(res)
         }
-        m.SetKeywords(res)
         return nil
     }
     res["matchSimilarKeywords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,7 +76,9 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetMatchSimilarKeywords(val)
+        if val != nil {
+            m.SetMatchSimilarKeywords(val)
+        }
         return nil
     }
     res["reservedKeywords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,11 +86,13 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetReservedKeywords(res)
         }
-        m.SetReservedKeywords(res)
         return nil
     }
     return res

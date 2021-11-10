@@ -93,11 +93,13 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]OnPremisesAgentGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnPremisesAgentGroup))
+        if val != nil {
+            res := make([]OnPremisesAgentGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnPremisesAgentGroup))
+            }
+            m.SetAgentGroups(res)
         }
-        m.SetAgentGroups(res)
         return nil
     }
     res["agents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,11 +107,13 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]OnPremisesAgent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnPremisesAgent))
+        if val != nil {
+            res := make([]OnPremisesAgent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnPremisesAgent))
+            }
+            m.SetAgents(res)
         }
-        m.SetAgents(res)
         return nil
     }
     res["connectorGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,11 +121,13 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]ConnectorGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConnectorGroup))
+        if val != nil {
+            res := make([]ConnectorGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConnectorGroup))
+            }
+            m.SetConnectorGroups(res)
         }
-        m.SetConnectorGroups(res)
         return nil
     }
     res["connectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,11 +135,13 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]Connector, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Connector))
+        if val != nil {
+            res := make([]Connector, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Connector))
+            }
+            m.SetConnectors(res)
         }
-        m.SetConnectors(res)
         return nil
     }
     res["hybridAgentUpdaterConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +149,9 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetHybridAgentUpdaterConfiguration(val.(*HybridAgentUpdaterConfiguration))
+        if val != nil {
+            m.SetHybridAgentUpdaterConfiguration(val.(*HybridAgentUpdaterConfiguration))
+        }
         return nil
     }
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +159,9 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     res["publishedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,11 +169,13 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]PublishedResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PublishedResource))
+        if val != nil {
+            res := make([]PublishedResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PublishedResource))
+            }
+            m.SetPublishedResources(res)
         }
-        m.SetPublishedResources(res)
         return nil
     }
     return res

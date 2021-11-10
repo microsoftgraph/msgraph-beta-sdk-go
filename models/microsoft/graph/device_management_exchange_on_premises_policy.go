@@ -73,11 +73,13 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementExchangeAccessRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementExchangeAccessRule))
+        if val != nil {
+            res := make([]DeviceManagementExchangeAccessRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementExchangeAccessRule))
+            }
+            m.SetAccessRules(res)
         }
-        m.SetAccessRules(res)
         return nil
     }
     res["conditionalAccessSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,7 +87,9 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetConditionalAccessSettings(val.(*OnPremisesConditionalAccessSettings))
+        if val != nil {
+            m.SetConditionalAccessSettings(val.(*OnPremisesConditionalAccessSettings))
+        }
         return nil
     }
     res["defaultAccessLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,8 +97,10 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementExchangeAccessLevel)
-        m.SetDefaultAccessLevel(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementExchangeAccessLevel)
+            m.SetDefaultAccessLevel(&cast)
+        }
         return nil
     }
     res["knownDeviceClasses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,11 +108,13 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementExchangeDeviceClass, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementExchangeDeviceClass))
+        if val != nil {
+            res := make([]DeviceManagementExchangeDeviceClass, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementExchangeDeviceClass))
+            }
+            m.SetKnownDeviceClasses(res)
         }
-        m.SetKnownDeviceClasses(res)
         return nil
     }
     res["notificationContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         if err != nil {
             return err
         }
-        m.SetNotificationContent(val)
+        if val != nil {
+            m.SetNotificationContent(val)
+        }
         return nil
     }
     return res

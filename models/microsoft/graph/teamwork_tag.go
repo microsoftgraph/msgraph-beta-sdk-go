@@ -83,7 +83,9 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["memberCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetMemberCount(val)
+        if val != nil {
+            m.SetMemberCount(val)
+        }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,11 +113,13 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]TeamworkTagMember, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TeamworkTagMember))
+        if val != nil {
+            res := make([]TeamworkTagMember, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeamworkTagMember))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     res["tagType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,8 +127,10 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(TeamworkTagType)
-        m.SetTagType(&cast)
+        if val != nil {
+            cast := val.(TeamworkTagType)
+            m.SetTagType(&cast)
+        }
         return nil
     }
     res["teamId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +138,9 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetTeamId(val)
+        if val != nil {
+            m.SetTeamId(val)
+        }
         return nil
     }
     return res

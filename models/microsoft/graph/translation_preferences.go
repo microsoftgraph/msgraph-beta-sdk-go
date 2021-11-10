@@ -62,11 +62,13 @@ func (m *TranslationPreferences) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]TranslationLanguageOverride, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TranslationLanguageOverride))
+        if val != nil {
+            res := make([]TranslationLanguageOverride, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TranslationLanguageOverride))
+            }
+            m.SetLanguageOverrides(res)
         }
-        m.SetLanguageOverrides(res)
         return nil
     }
     res["translationBehavior"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,8 +76,10 @@ func (m *TranslationPreferences) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(TranslationBehavior)
-        m.SetTranslationBehavior(&cast)
+        if val != nil {
+            cast := val.(TranslationBehavior)
+            m.SetTranslationBehavior(&cast)
+        }
         return nil
     }
     res["untranslatedLanguages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,11 +87,13 @@ func (m *TranslationPreferences) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetUntranslatedLanguages(res)
         }
-        m.SetUntranslatedLanguages(res)
         return nil
     }
     return res

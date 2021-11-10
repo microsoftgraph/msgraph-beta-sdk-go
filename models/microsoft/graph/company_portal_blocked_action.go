@@ -62,8 +62,10 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(CompanyPortalAction)
-        m.SetAction(&cast)
+        if val != nil {
+            cast := val.(CompanyPortalAction)
+            m.SetAction(&cast)
+        }
         return nil
     }
     res["ownerType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,8 +73,10 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(OwnerType)
-        m.SetOwnerType(&cast)
+        if val != nil {
+            cast := val.(OwnerType)
+            m.SetOwnerType(&cast)
+        }
         return nil
     }
     res["platform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,8 +84,10 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(DevicePlatformType)
-        m.SetPlatform(&cast)
+        if val != nil {
+            cast := val.(DevicePlatformType)
+            m.SetPlatform(&cast)
+        }
         return nil
     }
     return res

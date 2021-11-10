@@ -43,7 +43,9 @@ func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetConversation(val.(*TeamworkConversationIdentity))
+        if val != nil {
+            m.SetConversation(val.(*TeamworkConversationIdentity))
+        }
         return nil
     }
     res["tag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetTag(val.(*TeamworkTagIdentity))
+        if val != nil {
+            m.SetTag(val.(*TeamworkTagIdentity))
+        }
         return nil
     }
     return res

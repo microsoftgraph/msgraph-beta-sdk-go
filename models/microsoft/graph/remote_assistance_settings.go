@@ -43,7 +43,9 @@ func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetAllowSessionsToUnenrolledDevices(val)
+        if val != nil {
+            m.SetAllowSessionsToUnenrolledDevices(val)
+        }
         return nil
     }
     res["remoteAssistanceState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,8 +53,10 @@ func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(RemoteAssistanceState)
-        m.SetRemoteAssistanceState(&cast)
+        if val != nil {
+            cast := val.(RemoteAssistanceState)
+            m.SetRemoteAssistanceState(&cast)
+        }
         return nil
     }
     return res

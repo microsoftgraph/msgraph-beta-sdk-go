@@ -33,11 +33,13 @@ func (m *DeviceManagementTemplateSettingCategory) GetFieldDeserializers()(map[st
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementSettingInstance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementSettingInstance))
+        if val != nil {
+            res := make([]DeviceManagementSettingInstance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementSettingInstance))
+            }
+            m.SetRecommendedSettings(res)
         }
-        m.SetRecommendedSettings(res)
         return nil
     }
     return res

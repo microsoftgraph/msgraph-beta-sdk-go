@@ -84,7 +84,9 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetLastUpdatedDateTime(val)
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
         return nil
     }
     res["productKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetProductKey(val)
+        if val != nil {
+            m.SetProductKey(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,8 +114,10 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(MacOSSoftwareUpdateState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(MacOSSoftwareUpdateState)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["updateCategory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,8 +125,10 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(MacOSSoftwareUpdateCategory)
-        m.SetUpdateCategory(&cast)
+        if val != nil {
+            cast := val.(MacOSSoftwareUpdateCategory)
+            m.SetUpdateCategory(&cast)
+        }
         return nil
     }
     res["updateVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +136,9 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetUpdateVersion(val)
+        if val != nil {
+            m.SetUpdateVersion(val)
+        }
         return nil
     }
     return res

@@ -42,8 +42,10 @@ func (m *StatusBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        cast := val.(ProvisioningResult)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ProvisioningResult)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

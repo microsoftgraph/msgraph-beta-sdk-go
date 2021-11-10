@@ -62,7 +62,9 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["targetedAuthenticationMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
         if err != nil {
             return err
         }
-        m.SetTargetedAuthenticationMethod(val)
+        if val != nil {
+            m.SetTargetedAuthenticationMethod(val)
+        }
         return nil
     }
     res["targetType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,8 +82,10 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
         if err != nil {
             return err
         }
-        cast := val.(AuthenticationMethodTargetType)
-        m.SetTargetType(&cast)
+        if val != nil {
+            cast := val.(AuthenticationMethodTargetType)
+            m.SetTargetType(&cast)
+        }
         return nil
     }
     return res

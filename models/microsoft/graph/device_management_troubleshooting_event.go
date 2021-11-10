@@ -74,11 +74,13 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetAdditionalInformation(res)
         }
-        m.SetAdditionalInformation(res)
         return nil
     }
     res["correlationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -86,7 +88,9 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetCorrelationId(val)
+        if val != nil {
+            m.SetCorrelationId(val)
+        }
         return nil
     }
     res["eventDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,7 +98,9 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetEventDateTime(val)
+        if val != nil {
+            m.SetEventDateTime(val)
+        }
         return nil
     }
     res["eventName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +108,9 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetEventName(val)
+        if val != nil {
+            m.SetEventName(val)
+        }
         return nil
     }
     res["troubleshootingErrorDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +118,9 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetTroubleshootingErrorDetails(val.(*DeviceManagementTroubleshootingErrorDetails))
+        if val != nil {
+            m.SetTroubleshootingErrorDetails(val.(*DeviceManagementTroubleshootingErrorDetails))
+        }
         return nil
     }
     return res

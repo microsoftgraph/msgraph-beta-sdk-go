@@ -42,7 +42,9 @@ func (m *UserSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetIsBackup(val)
+        if val != nil {
+            m.SetIsBackup(val)
+        }
         return nil
     }
     return res

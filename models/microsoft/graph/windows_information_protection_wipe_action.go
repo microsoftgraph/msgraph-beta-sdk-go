@@ -84,7 +84,9 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetLastCheckInDateTime(val)
+        if val != nil {
+            m.SetLastCheckInDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,8 +94,10 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        cast := val.(ActionState)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ActionState)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["targetedDeviceMacAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +105,9 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTargetedDeviceMacAddress(val)
+        if val != nil {
+            m.SetTargetedDeviceMacAddress(val)
+        }
         return nil
     }
     res["targetedDeviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +115,9 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTargetedDeviceName(val)
+        if val != nil {
+            m.SetTargetedDeviceName(val)
+        }
         return nil
     }
     res["targetedDeviceRegistrationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +125,9 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTargetedDeviceRegistrationId(val)
+        if val != nil {
+            m.SetTargetedDeviceRegistrationId(val)
+        }
         return nil
     }
     res["targetedUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +135,9 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTargetedUserId(val)
+        if val != nil {
+            m.SetTargetedUserId(val)
+        }
         return nil
     }
     return res

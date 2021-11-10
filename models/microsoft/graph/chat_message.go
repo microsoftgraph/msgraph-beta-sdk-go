@@ -254,11 +254,13 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ChatMessageAttachment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ChatMessageAttachment))
+        if val != nil {
+            res := make([]ChatMessageAttachment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ChatMessageAttachment))
+            }
+            m.SetAttachments(res)
         }
-        m.SetAttachments(res)
         return nil
     }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,7 +268,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetBody(val.(*ItemBody))
+        if val != nil {
+            m.SetBody(val.(*ItemBody))
+        }
         return nil
     }
     res["channelIdentity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -274,7 +278,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetChannelIdentity(val.(*ChannelIdentity))
+        if val != nil {
+            m.SetChannelIdentity(val.(*ChannelIdentity))
+        }
         return nil
     }
     res["chatId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -282,7 +288,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetChatId(val)
+        if val != nil {
+            m.SetChatId(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -290,7 +298,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["deletedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,7 +308,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDeletedDateTime(val)
+        if val != nil {
+            m.SetDeletedDateTime(val)
+        }
         return nil
     }
     res["etag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -306,7 +318,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetEtag(val)
+        if val != nil {
+            m.SetEtag(val)
+        }
         return nil
     }
     res["eventDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +328,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetEventDetail(val.(*EventMessageDetail))
+        if val != nil {
+            m.SetEventDetail(val.(*EventMessageDetail))
+        }
         return nil
     }
     res["from"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,7 +338,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetFrom(val.(*ChatMessageFromIdentitySet))
+        if val != nil {
+            m.SetFrom(val.(*ChatMessageFromIdentitySet))
+        }
         return nil
     }
     res["hostedContents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,11 +348,13 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ChatMessageHostedContent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ChatMessageHostedContent))
+        if val != nil {
+            res := make([]ChatMessageHostedContent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ChatMessageHostedContent))
+            }
+            m.SetHostedContents(res)
         }
-        m.SetHostedContents(res)
         return nil
     }
     res["importance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -342,8 +362,10 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(ChatMessageImportance)
-        m.SetImportance(&cast)
+        if val != nil {
+            cast := val.(ChatMessageImportance)
+            m.SetImportance(&cast)
+        }
         return nil
     }
     res["lastEditedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -351,7 +373,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLastEditedDateTime(val)
+        if val != nil {
+            m.SetLastEditedDateTime(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -359,7 +383,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["locale"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -367,7 +393,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLocale(val)
+        if val != nil {
+            m.SetLocale(val)
+        }
         return nil
     }
     res["mentions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -375,11 +403,13 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ChatMessageMention, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ChatMessageMention))
+        if val != nil {
+            res := make([]ChatMessageMention, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ChatMessageMention))
+            }
+            m.SetMentions(res)
         }
-        m.SetMentions(res)
         return nil
     }
     res["messageType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -387,8 +417,10 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(ChatMessageType)
-        m.SetMessageType(&cast)
+        if val != nil {
+            cast := val.(ChatMessageType)
+            m.SetMessageType(&cast)
+        }
         return nil
     }
     res["policyViolation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -396,7 +428,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetPolicyViolation(val.(*ChatMessagePolicyViolation))
+        if val != nil {
+            m.SetPolicyViolation(val.(*ChatMessagePolicyViolation))
+        }
         return nil
     }
     res["reactions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -404,11 +438,13 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ChatMessageReaction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ChatMessageReaction))
+        if val != nil {
+            res := make([]ChatMessageReaction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ChatMessageReaction))
+            }
+            m.SetReactions(res)
         }
-        m.SetReactions(res)
         return nil
     }
     res["replies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -416,11 +452,13 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ChatMessage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ChatMessage))
+        if val != nil {
+            res := make([]ChatMessage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ChatMessage))
+            }
+            m.SetReplies(res)
         }
-        m.SetReplies(res)
         return nil
     }
     res["replyToId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -428,7 +466,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetReplyToId(val)
+        if val != nil {
+            m.SetReplyToId(val)
+        }
         return nil
     }
     res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -436,7 +476,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetSubject(val)
+        if val != nil {
+            m.SetSubject(val)
+        }
         return nil
     }
     res["summary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -444,7 +486,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetSummary(val)
+        if val != nil {
+            m.SetSummary(val)
+        }
         return nil
     }
     res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -452,7 +496,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

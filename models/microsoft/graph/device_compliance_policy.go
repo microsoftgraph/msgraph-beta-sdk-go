@@ -154,11 +154,13 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceCompliancePolicyAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceCompliancePolicyAssignment))
+        if val != nil {
+            res := make([]DeviceCompliancePolicyAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceCompliancePolicyAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +168,9 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +178,9 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceSettingStateSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,11 +188,13 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]SettingStateDeviceSummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SettingStateDeviceSummary))
+        if val != nil {
+            res := make([]SettingStateDeviceSummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SettingStateDeviceSummary))
+            }
+            m.SetDeviceSettingStateSummaries(res)
         }
-        m.SetDeviceSettingStateSummaries(res)
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,11 +202,13 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceComplianceDeviceStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceComplianceDeviceStatus))
+        if val != nil {
+            res := make([]DeviceComplianceDeviceStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceComplianceDeviceStatus))
+            }
+            m.SetDeviceStatuses(res)
         }
-        m.SetDeviceStatuses(res)
         return nil
     }
     res["deviceStatusOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +216,9 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceStatusOverview(val.(*DeviceComplianceDeviceOverview))
+        if val != nil {
+            m.SetDeviceStatusOverview(val.(*DeviceComplianceDeviceOverview))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +226,9 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +236,9 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,11 +246,13 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["scheduledActionsForRule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,11 +260,13 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceComplianceScheduledActionForRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceComplianceScheduledActionForRule))
+        if val != nil {
+            res := make([]DeviceComplianceScheduledActionForRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceComplianceScheduledActionForRule))
+            }
+            m.SetScheduledActionsForRule(res)
         }
-        m.SetScheduledActionsForRule(res)
         return nil
     }
     res["userStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -254,11 +274,13 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]DeviceComplianceUserStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceComplianceUserStatus))
+        if val != nil {
+            res := make([]DeviceComplianceUserStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceComplianceUserStatus))
+            }
+            m.SetUserStatuses(res)
         }
-        m.SetUserStatuses(res)
         return nil
     }
     res["userStatusOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,7 +288,9 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUserStatusOverview(val.(*DeviceComplianceUserOverview))
+        if val != nil {
+            m.SetUserStatusOverview(val.(*DeviceComplianceUserOverview))
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -274,7 +298,9 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

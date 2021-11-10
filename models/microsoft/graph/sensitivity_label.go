@@ -153,8 +153,10 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(SensitivityLabelTarget)
-        m.SetApplicableTo(&cast)
+        if val != nil {
+            cast := val.(SensitivityLabelTarget)
+            m.SetApplicableTo(&cast)
+        }
         return nil
     }
     res["applicationMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,8 +164,10 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(ApplicationMode)
-        m.SetApplicationMode(&cast)
+        if val != nil {
+            cast := val.(ApplicationMode)
+            m.SetApplicationMode(&cast)
+        }
         return nil
     }
     res["assignedPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,11 +175,13 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]LabelPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LabelPolicy))
+        if val != nil {
+            res := make([]LabelPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LabelPolicy))
+            }
+            m.SetAssignedPolicies(res)
         }
-        m.SetAssignedPolicies(res)
         return nil
     }
     res["autoLabeling"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +189,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAutoLabeling(val.(*AutoLabeling))
+        if val != nil {
+            m.SetAutoLabeling(val.(*AutoLabeling))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +199,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +209,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +219,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["isEndpointProtectionEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +229,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsEndpointProtectionEnabled(val)
+        if val != nil {
+            m.SetIsEndpointProtectionEnabled(val)
+        }
         return nil
     }
     res["labelActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -223,11 +239,13 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]LabelActionBase, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LabelActionBase))
+        if val != nil {
+            res := make([]LabelActionBase, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LabelActionBase))
+            }
+            m.SetLabelActions(res)
         }
-        m.SetLabelActions(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,7 +253,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["priority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,7 +263,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetPriority(val)
+        if val != nil {
+            m.SetPriority(val)
+        }
         return nil
     }
     res["sublabels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -251,11 +273,13 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]SensitivityLabel, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SensitivityLabel))
+        if val != nil {
+            res := make([]SensitivityLabel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SensitivityLabel))
+            }
+            m.SetSublabels(res)
         }
-        m.SetSublabels(res)
         return nil
     }
     res["toolTip"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +287,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetToolTip(val)
+        if val != nil {
+            m.SetToolTip(val)
+        }
         return nil
     }
     return res

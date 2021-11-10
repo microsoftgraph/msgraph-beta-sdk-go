@@ -33,7 +33,9 @@ func (m *SoftwareOathAuthenticationMethod) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSecretKey(val)
+        if val != nil {
+            m.SetSecretKey(val)
+        }
         return nil
     }
     return res

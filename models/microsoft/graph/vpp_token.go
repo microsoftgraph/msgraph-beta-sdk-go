@@ -194,7 +194,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAppleId(val)
+        if val != nil {
+            m.SetAppleId(val)
+        }
         return nil
     }
     res["automaticallyUpdateApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +204,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAutomaticallyUpdateApps(val)
+        if val != nil {
+            m.SetAutomaticallyUpdateApps(val)
+        }
         return nil
     }
     res["claimTokenManagementFromExternalMdm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +214,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetClaimTokenManagementFromExternalMdm(val)
+        if val != nil {
+            m.SetClaimTokenManagementFromExternalMdm(val)
+        }
         return nil
     }
     res["countryOrRegion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +224,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCountryOrRegion(val)
+        if val != nil {
+            m.SetCountryOrRegion(val)
+        }
         return nil
     }
     res["dataSharingConsentGranted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +234,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDataSharingConsentGranted(val)
+        if val != nil {
+            m.SetDataSharingConsentGranted(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +244,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,7 +254,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +264,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,7 +274,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["lastSyncStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,8 +284,10 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(VppTokenSyncStatus)
-        m.SetLastSyncStatus(&cast)
+        if val != nil {
+            cast := val.(VppTokenSyncStatus)
+            m.SetLastSyncStatus(&cast)
+        }
         return nil
     }
     res["locationName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -275,7 +295,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLocationName(val)
+        if val != nil {
+            m.SetLocationName(val)
+        }
         return nil
     }
     res["organizationName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -283,7 +305,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetOrganizationName(val)
+        if val != nil {
+            m.SetOrganizationName(val)
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -291,11 +315,13 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -303,8 +329,10 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(VppTokenState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(VppTokenState)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["token"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -312,7 +340,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetToken(val)
+        if val != nil {
+            m.SetToken(val)
+        }
         return nil
     }
     res["tokenActionResults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -320,11 +350,13 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]VppTokenActionResult, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*VppTokenActionResult))
+        if val != nil {
+            res := make([]VppTokenActionResult, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*VppTokenActionResult))
+            }
+            m.SetTokenActionResults(res)
         }
-        m.SetTokenActionResults(res)
         return nil
     }
     res["vppTokenAccountType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,8 +364,10 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(VppTokenAccountType)
-        m.SetVppTokenAccountType(&cast)
+        if val != nil {
+            cast := val.(VppTokenAccountType)
+            m.SetVppTokenAccountType(&cast)
+        }
         return nil
     }
     return res

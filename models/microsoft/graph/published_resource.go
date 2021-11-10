@@ -63,11 +63,13 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]OnPremisesAgentGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnPremisesAgentGroup))
+        if val != nil {
+            res := make([]OnPremisesAgentGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnPremisesAgentGroup))
+            }
+            m.SetAgentGroups(res)
         }
-        m.SetAgentGroups(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,7 +77,9 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["publishingType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,8 +87,10 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(OnPremisesPublishingType)
-        m.SetPublishingType(&cast)
+        if val != nil {
+            cast := val.(OnPremisesPublishingType)
+            m.SetPublishingType(&cast)
+        }
         return nil
     }
     res["resourceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +98,9 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetResourceName(val)
+        if val != nil {
+            m.SetResourceName(val)
+        }
         return nil
     }
     return res

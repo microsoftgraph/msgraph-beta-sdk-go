@@ -474,7 +474,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetAllowNewTimeProposals(val)
+        if val != nil {
+            m.SetAllowNewTimeProposals(val)
+        }
         return nil
     }
     res["attachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -482,11 +484,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Attachment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Attachment))
+        if val != nil {
+            res := make([]Attachment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Attachment))
+            }
+            m.SetAttachments(res)
         }
-        m.SetAttachments(res)
         return nil
     }
     res["attendees"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -494,11 +498,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Attendee, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Attendee))
+        if val != nil {
+            res := make([]Attendee, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Attendee))
+            }
+            m.SetAttendees(res)
         }
-        m.SetAttendees(res)
         return nil
     }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -506,7 +512,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetBody(val.(*ItemBody))
+        if val != nil {
+            m.SetBody(val.(*ItemBody))
+        }
         return nil
     }
     res["bodyPreview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -514,7 +522,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetBodyPreview(val)
+        if val != nil {
+            m.SetBodyPreview(val)
+        }
         return nil
     }
     res["calendar"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -522,7 +532,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCalendar(val.(*Calendar))
+        if val != nil {
+            m.SetCalendar(val.(*Calendar))
+        }
         return nil
     }
     res["cancelledOccurrences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -530,11 +542,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCancelledOccurrences(res)
         }
-        m.SetCancelledOccurrences(res)
         return nil
     }
     res["end"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -542,7 +556,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetEnd(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetEnd(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["exceptionOccurrences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -550,11 +566,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Event, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Event))
+        if val != nil {
+            res := make([]Event, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Event))
+            }
+            m.SetExceptionOccurrences(res)
         }
-        m.SetExceptionOccurrences(res)
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -562,11 +580,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Extension, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Extension))
+        if val != nil {
+            res := make([]Extension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Extension))
+            }
+            m.SetExtensions(res)
         }
-        m.SetExtensions(res)
         return nil
     }
     res["hasAttachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -574,7 +594,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetHasAttachments(val)
+        if val != nil {
+            m.SetHasAttachments(val)
+        }
         return nil
     }
     res["hideAttendees"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -582,7 +604,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetHideAttendees(val)
+        if val != nil {
+            m.SetHideAttendees(val)
+        }
         return nil
     }
     res["importance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -590,8 +614,10 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        cast := val.(Importance)
-        m.SetImportance(&cast)
+        if val != nil {
+            cast := val.(Importance)
+            m.SetImportance(&cast)
+        }
         return nil
     }
     res["instances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -599,11 +625,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Event, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Event))
+        if val != nil {
+            res := make([]Event, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Event))
+            }
+            m.SetInstances(res)
         }
-        m.SetInstances(res)
         return nil
     }
     res["isAllDay"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -611,7 +639,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsAllDay(val)
+        if val != nil {
+            m.SetIsAllDay(val)
+        }
         return nil
     }
     res["isCancelled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -619,7 +649,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsCancelled(val)
+        if val != nil {
+            m.SetIsCancelled(val)
+        }
         return nil
     }
     res["isDraft"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -627,7 +659,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsDraft(val)
+        if val != nil {
+            m.SetIsDraft(val)
+        }
         return nil
     }
     res["isOnlineMeeting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -635,7 +669,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsOnlineMeeting(val)
+        if val != nil {
+            m.SetIsOnlineMeeting(val)
+        }
         return nil
     }
     res["isOrganizer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -643,7 +679,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsOrganizer(val)
+        if val != nil {
+            m.SetIsOrganizer(val)
+        }
         return nil
     }
     res["isReminderOn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -651,7 +689,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsReminderOn(val)
+        if val != nil {
+            m.SetIsReminderOn(val)
+        }
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -659,7 +699,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetLocation(val.(*Location))
+        if val != nil {
+            m.SetLocation(val.(*Location))
+        }
         return nil
     }
     res["locations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -667,11 +709,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Location, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Location))
+        if val != nil {
+            res := make([]Location, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Location))
+            }
+            m.SetLocations(res)
         }
-        m.SetLocations(res)
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -679,11 +723,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]MultiValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+            }
+            m.SetMultiValueExtendedProperties(res)
         }
-        m.SetMultiValueExtendedProperties(res)
         return nil
     }
     res["occurrenceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -691,7 +737,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetOccurrenceId(val)
+        if val != nil {
+            m.SetOccurrenceId(val)
+        }
         return nil
     }
     res["onlineMeeting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -699,7 +747,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetOnlineMeeting(val.(*OnlineMeetingInfo))
+        if val != nil {
+            m.SetOnlineMeeting(val.(*OnlineMeetingInfo))
+        }
         return nil
     }
     res["onlineMeetingProvider"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -707,8 +757,10 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        cast := val.(OnlineMeetingProviderType)
-        m.SetOnlineMeetingProvider(&cast)
+        if val != nil {
+            cast := val.(OnlineMeetingProviderType)
+            m.SetOnlineMeetingProvider(&cast)
+        }
         return nil
     }
     res["onlineMeetingUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -716,7 +768,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetOnlineMeetingUrl(val)
+        if val != nil {
+            m.SetOnlineMeetingUrl(val)
+        }
         return nil
     }
     res["organizer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -724,7 +778,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetOrganizer(val.(*Recipient))
+        if val != nil {
+            m.SetOrganizer(val.(*Recipient))
+        }
         return nil
     }
     res["originalEndTimeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -732,7 +788,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetOriginalEndTimeZone(val)
+        if val != nil {
+            m.SetOriginalEndTimeZone(val)
+        }
         return nil
     }
     res["originalStart"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -740,7 +798,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetOriginalStart(val)
+        if val != nil {
+            m.SetOriginalStart(val)
+        }
         return nil
     }
     res["originalStartTimeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -748,7 +808,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetOriginalStartTimeZone(val)
+        if val != nil {
+            m.SetOriginalStartTimeZone(val)
+        }
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -756,7 +818,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetRecurrence(val.(*PatternedRecurrence))
+        if val != nil {
+            m.SetRecurrence(val.(*PatternedRecurrence))
+        }
         return nil
     }
     res["reminderMinutesBeforeStart"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -764,7 +828,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetReminderMinutesBeforeStart(val)
+        if val != nil {
+            m.SetReminderMinutesBeforeStart(val)
+        }
         return nil
     }
     res["responseRequested"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -772,7 +838,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetResponseRequested(val)
+        if val != nil {
+            m.SetResponseRequested(val)
+        }
         return nil
     }
     res["responseStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -780,7 +848,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetResponseStatus(val.(*ResponseStatus))
+        if val != nil {
+            m.SetResponseStatus(val.(*ResponseStatus))
+        }
         return nil
     }
     res["sensitivity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -788,8 +858,10 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        cast := val.(Sensitivity)
-        m.SetSensitivity(&cast)
+        if val != nil {
+            cast := val.(Sensitivity)
+            m.SetSensitivity(&cast)
+        }
         return nil
     }
     res["seriesMasterId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -797,7 +869,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetSeriesMasterId(val)
+        if val != nil {
+            m.SetSeriesMasterId(val)
+        }
         return nil
     }
     res["showAs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -805,8 +879,10 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        cast := val.(FreeBusyStatus)
-        m.SetShowAs(&cast)
+        if val != nil {
+            cast := val.(FreeBusyStatus)
+            m.SetShowAs(&cast)
+        }
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -814,11 +890,13 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]SingleValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+            }
+            m.SetSingleValueExtendedProperties(res)
         }
-        m.SetSingleValueExtendedProperties(res)
         return nil
     }
     res["start"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -826,7 +904,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetStart(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetStart(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -834,7 +914,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetSubject(val)
+        if val != nil {
+            m.SetSubject(val)
+        }
         return nil
     }
     res["transactionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -842,7 +924,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetTransactionId(val)
+        if val != nil {
+            m.SetTransactionId(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -850,8 +934,10 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        cast := val.(EventType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(EventType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     res["uid"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -859,7 +945,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetUid(val)
+        if val != nil {
+            m.SetUid(val)
+        }
         return nil
     }
     res["webLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -867,7 +955,9 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetWebLink(val)
+        if val != nil {
+            m.SetWebLink(val)
+        }
         return nil
     }
     return res

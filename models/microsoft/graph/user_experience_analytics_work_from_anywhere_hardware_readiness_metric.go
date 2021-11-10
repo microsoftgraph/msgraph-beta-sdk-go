@@ -133,7 +133,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetOsCheckFailedPercentage(val)
+        if val != nil {
+            m.SetOsCheckFailedPercentage(val)
+        }
         return nil
     }
     res["processor64BitCheckFailedPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +143,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetProcessor64BitCheckFailedPercentage(val)
+        if val != nil {
+            m.SetProcessor64BitCheckFailedPercentage(val)
+        }
         return nil
     }
     res["processorCoreCountCheckFailedPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +153,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetProcessorCoreCountCheckFailedPercentage(val)
+        if val != nil {
+            m.SetProcessorCoreCountCheckFailedPercentage(val)
+        }
         return nil
     }
     res["processorFamilyCheckFailedPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +163,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetProcessorFamilyCheckFailedPercentage(val)
+        if val != nil {
+            m.SetProcessorFamilyCheckFailedPercentage(val)
+        }
         return nil
     }
     res["processorSpeedCheckFailedPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +173,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetProcessorSpeedCheckFailedPercentage(val)
+        if val != nil {
+            m.SetProcessorSpeedCheckFailedPercentage(val)
+        }
         return nil
     }
     res["ramCheckFailedPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +183,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetRamCheckFailedPercentage(val)
+        if val != nil {
+            m.SetRamCheckFailedPercentage(val)
+        }
         return nil
     }
     res["secureBootCheckFailedPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +193,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetSecureBootCheckFailedPercentage(val)
+        if val != nil {
+            m.SetSecureBootCheckFailedPercentage(val)
+        }
         return nil
     }
     res["storageCheckFailedPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,7 +203,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetStorageCheckFailedPercentage(val)
+        if val != nil {
+            m.SetStorageCheckFailedPercentage(val)
+        }
         return nil
     }
     res["totalDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,7 +213,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetTotalDeviceCount(val)
+        if val != nil {
+            m.SetTotalDeviceCount(val)
+        }
         return nil
     }
     res["tpmCheckFailedPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -205,7 +223,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetTpmCheckFailedPercentage(val)
+        if val != nil {
+            m.SetTpmCheckFailedPercentage(val)
+        }
         return nil
     }
     res["upgradeEligibleDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,7 +233,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         if err != nil {
             return err
         }
-        m.SetUpgradeEligibleDeviceCount(val)
+        if val != nil {
+            m.SetUpgradeEligibleDeviceCount(val)
+        }
         return nil
     }
     return res

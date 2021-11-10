@@ -72,11 +72,13 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        res := make([]RecommendedAction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RecommendedAction))
+        if val != nil {
+            res := make([]RecommendedAction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RecommendedAction))
+            }
+            m.SetRecommendedActions(res)
         }
-        m.SetRecommendedActions(res)
         return nil
     }
     res["resolvedTargetsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,7 +86,9 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetResolvedTargetsCount(val)
+        if val != nil {
+            m.SetResolvedTargetsCount(val)
+        }
         return nil
     }
     res["simulationEventsContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +96,9 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSimulationEventsContent(val.(*SimulationEventsContent))
+        if val != nil {
+            m.SetSimulationEventsContent(val.(*SimulationEventsContent))
+        }
         return nil
     }
     res["trainingEventsContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +106,9 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetTrainingEventsContent(val.(*TrainingEventsContent))
+        if val != nil {
+            m.SetTrainingEventsContent(val.(*TrainingEventsContent))
+        }
         return nil
     }
     return res

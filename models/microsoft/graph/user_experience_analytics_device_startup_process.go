@@ -73,7 +73,9 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["processName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetProcessName(val)
+        if val != nil {
+            m.SetProcessName(val)
+        }
         return nil
     }
     res["productName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetProductName(val)
+        if val != nil {
+            m.SetProductName(val)
+        }
         return nil
     }
     res["publisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetPublisher(val)
+        if val != nil {
+            m.SetPublisher(val)
+        }
         return nil
     }
     res["startupImpactInMs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetStartupImpactInMs(val)
+        if val != nil {
+            m.SetStartupImpactInMs(val)
+        }
         return nil
     }
     return res

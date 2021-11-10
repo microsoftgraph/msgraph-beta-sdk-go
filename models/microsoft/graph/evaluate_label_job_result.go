@@ -62,7 +62,9 @@ func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetResponsiblePolicy(val.(*ResponsiblePolicy))
+        if val != nil {
+            m.SetResponsiblePolicy(val.(*ResponsiblePolicy))
+        }
         return nil
     }
     res["responsibleSensitiveTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,11 +72,13 @@ func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]ResponsibleSensitiveType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ResponsibleSensitiveType))
+        if val != nil {
+            res := make([]ResponsibleSensitiveType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ResponsibleSensitiveType))
+            }
+            m.SetResponsibleSensitiveTypes(res)
         }
-        m.SetResponsibleSensitiveTypes(res)
         return nil
     }
     res["sensitivityLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +86,9 @@ func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetSensitivityLabel(val.(*MatchingLabel))
+        if val != nil {
+            m.SetSensitivityLabel(val.(*MatchingLabel))
+        }
         return nil
     }
     return res

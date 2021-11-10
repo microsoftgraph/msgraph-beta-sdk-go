@@ -33,7 +33,9 @@ func (m *UnifiedRoleManagementPolicyRule) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetTarget(val.(*UnifiedRoleManagementPolicyRuleTarget))
+        if val != nil {
+            m.SetTarget(val.(*UnifiedRoleManagementPolicyRuleTarget))
+        }
         return nil
     }
     return res

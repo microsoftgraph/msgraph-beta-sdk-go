@@ -274,11 +274,13 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]MobileAppAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileAppAssignment))
+        if val != nil {
+            res := make([]MobileAppAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileAppAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,11 +288,13 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]MobileAppCategory, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileAppCategory))
+        if val != nil {
+            res := make([]MobileAppCategory, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileAppCategory))
+            }
+            m.SetCategories(res)
         }
-        m.SetCategories(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,7 +302,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["dependentAppCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -306,7 +312,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetDependentAppCount(val)
+        if val != nil {
+            m.SetDependentAppCount(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +322,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["developer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,7 +332,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetDeveloper(val)
+        if val != nil {
+            m.SetDeveloper(val)
+        }
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,11 +342,13 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]MobileAppInstallStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileAppInstallStatus))
+        if val != nil {
+            res := make([]MobileAppInstallStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileAppInstallStatus))
+            }
+            m.SetDeviceStatuses(res)
         }
-        m.SetDeviceStatuses(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -342,7 +356,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["informationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -350,7 +366,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetInformationUrl(val)
+        if val != nil {
+            m.SetInformationUrl(val)
+        }
         return nil
     }
     res["installSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -358,7 +376,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetInstallSummary(val.(*MobileAppInstallSummary))
+        if val != nil {
+            m.SetInstallSummary(val.(*MobileAppInstallSummary))
+        }
         return nil
     }
     res["isAssigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -366,7 +386,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetIsAssigned(val)
+        if val != nil {
+            m.SetIsAssigned(val)
+        }
         return nil
     }
     res["isFeatured"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -374,7 +396,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetIsFeatured(val)
+        if val != nil {
+            m.SetIsFeatured(val)
+        }
         return nil
     }
     res["largeIcon"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -382,7 +406,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetLargeIcon(val.(*MimeContent))
+        if val != nil {
+            m.SetLargeIcon(val.(*MimeContent))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -390,7 +416,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -398,7 +426,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetNotes(val)
+        if val != nil {
+            m.SetNotes(val)
+        }
         return nil
     }
     res["owner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -406,7 +436,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetOwner(val)
+        if val != nil {
+            m.SetOwner(val)
+        }
         return nil
     }
     res["privacyInformationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -414,7 +446,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetPrivacyInformationUrl(val)
+        if val != nil {
+            m.SetPrivacyInformationUrl(val)
+        }
         return nil
     }
     res["publisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -422,7 +456,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetPublisher(val)
+        if val != nil {
+            m.SetPublisher(val)
+        }
         return nil
     }
     res["publishingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -430,8 +466,10 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        cast := val.(MobileAppPublishingState)
-        m.SetPublishingState(&cast)
+        if val != nil {
+            cast := val.(MobileAppPublishingState)
+            m.SetPublishingState(&cast)
+        }
         return nil
     }
     res["relationships"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -439,11 +477,13 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]MobileAppRelationship, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileAppRelationship))
+        if val != nil {
+            res := make([]MobileAppRelationship, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileAppRelationship))
+            }
+            m.SetRelationships(res)
         }
-        m.SetRelationships(res)
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -451,11 +491,13 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     res["supersededAppCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -463,7 +505,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetSupersededAppCount(val)
+        if val != nil {
+            m.SetSupersededAppCount(val)
+        }
         return nil
     }
     res["supersedingAppCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -471,7 +515,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetSupersedingAppCount(val)
+        if val != nil {
+            m.SetSupersedingAppCount(val)
+        }
         return nil
     }
     res["uploadState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -479,7 +525,9 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetUploadState(val)
+        if val != nil {
+            m.SetUploadState(val)
+        }
         return nil
     }
     res["userStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -487,11 +535,13 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]UserAppInstallStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserAppInstallStatus))
+        if val != nil {
+            res := make([]UserAppInstallStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserAppInstallStatus))
+            }
+            m.SetUserStatuses(res)
         }
-        m.SetUserStatuses(res)
         return nil
     }
     return res

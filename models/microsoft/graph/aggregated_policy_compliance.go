@@ -134,7 +134,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetCompliancePolicyId(val)
+        if val != nil {
+            m.SetCompliancePolicyId(val)
+        }
         return nil
     }
     res["compliancePolicyName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetCompliancePolicyName(val)
+        if val != nil {
+            m.SetCompliancePolicyName(val)
+        }
         return nil
     }
     res["compliancePolicyPlatform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +154,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetCompliancePolicyPlatform(val)
+        if val != nil {
+            m.SetCompliancePolicyPlatform(val)
+        }
         return nil
     }
     res["compliancePolicyType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +164,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetCompliancePolicyType(val)
+        if val != nil {
+            m.SetCompliancePolicyType(val)
+        }
         return nil
     }
     res["lastRefreshedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +174,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetLastRefreshedDateTime(val)
+        if val != nil {
+            m.SetLastRefreshedDateTime(val)
+        }
         return nil
     }
     res["numberOfCompliantDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +184,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetNumberOfCompliantDevices(val)
+        if val != nil {
+            m.SetNumberOfCompliantDevices(val)
+        }
         return nil
     }
     res["numberOfErrorDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +194,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetNumberOfErrorDevices(val)
+        if val != nil {
+            m.SetNumberOfErrorDevices(val)
+        }
         return nil
     }
     res["numberOfNonCompliantDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +204,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetNumberOfNonCompliantDevices(val)
+        if val != nil {
+            m.SetNumberOfNonCompliantDevices(val)
+        }
         return nil
     }
     res["policyModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +214,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetPolicyModifiedDateTime(val)
+        if val != nil {
+            m.SetPolicyModifiedDateTime(val)
+        }
         return nil
     }
     res["tenantDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +224,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetTenantDisplayName(val)
+        if val != nil {
+            m.SetTenantDisplayName(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +234,9 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     return res

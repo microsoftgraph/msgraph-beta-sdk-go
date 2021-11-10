@@ -74,7 +74,9 @@ func (m *GetOffice365ActivationsUserCounts) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetActivated(val)
+        if val != nil {
+            m.SetActivated(val)
+        }
         return nil
     }
     res["assigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *GetOffice365ActivationsUserCounts) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetAssigned(val)
+        if val != nil {
+            m.SetAssigned(val)
+        }
         return nil
     }
     res["productType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *GetOffice365ActivationsUserCounts) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetProductType(val)
+        if val != nil {
+            m.SetProductType(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *GetOffice365ActivationsUserCounts) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["sharedComputerActivation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *GetOffice365ActivationsUserCounts) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetSharedComputerActivation(val)
+        if val != nil {
+            m.SetSharedComputerActivation(val)
+        }
         return nil
     }
     return res

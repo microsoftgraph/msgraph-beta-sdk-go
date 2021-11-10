@@ -103,11 +103,13 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCategories(res)
         }
-        m.SetCategories(res)
         return nil
     }
     res["client"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +117,9 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetClient(val.(*CompanyDetail))
+        if val != nil {
+            m.SetClient(val.(*CompanyDetail))
+        }
         return nil
     }
     res["collaborationTags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,11 +127,13 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCollaborationTags(res)
         }
-        m.SetCollaborationTags(res)
         return nil
     }
     res["colleagues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,11 +141,13 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]RelatedPerson, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RelatedPerson))
+        if val != nil {
+            res := make([]RelatedPerson, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RelatedPerson))
+            }
+            m.SetColleagues(res)
         }
-        m.SetColleagues(res)
         return nil
     }
     res["detail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +155,9 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDetail(val.(*PositionDetail))
+        if val != nil {
+            m.SetDetail(val.(*PositionDetail))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +165,9 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["sponsors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,11 +175,13 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]RelatedPerson, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RelatedPerson))
+        if val != nil {
+            res := make([]RelatedPerson, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RelatedPerson))
+            }
+            m.SetSponsors(res)
         }
-        m.SetSponsors(res)
         return nil
     }
     res["thumbnailUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +189,9 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetThumbnailUrl(val)
+        if val != nil {
+            m.SetThumbnailUrl(val)
+        }
         return nil
     }
     return res

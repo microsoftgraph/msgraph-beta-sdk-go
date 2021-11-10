@@ -42,7 +42,9 @@ func (m *ResultTemplateOption) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetEnableResultTemplate(val)
+        if val != nil {
+            m.SetEnableResultTemplate(val)
+        }
         return nil
     }
     return res

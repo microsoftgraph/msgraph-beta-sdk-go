@@ -42,11 +42,13 @@ func (m *GetHealthMetricsRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetMetricNames(res)
         }
-        m.SetMetricNames(res)
         return nil
     }
     return res

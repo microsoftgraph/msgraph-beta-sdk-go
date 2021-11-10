@@ -135,7 +135,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAvailabilityEndDateTime(val)
+        if val != nil {
+            m.SetAvailabilityEndDateTime(val)
+        }
         return nil
     }
     res["availabilityStartDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +145,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAvailabilityStartDateTime(val)
+        if val != nil {
+            m.SetAvailabilityStartDateTime(val)
+        }
         return nil
     }
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,11 +155,13 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCategories(res)
         }
-        m.SetCategories(res)
         return nil
     }
     res["groupIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,11 +169,13 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetGroupIds(res)
         }
-        m.SetGroupIds(res)
         return nil
     }
     res["isSuggested"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +183,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsSuggested(val)
+        if val != nil {
+            m.SetIsSuggested(val)
+        }
         return nil
     }
     res["keywords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +193,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetKeywords(val.(*AnswerKeyword))
+        if val != nil {
+            m.SetKeywords(val.(*AnswerKeyword))
+        }
         return nil
     }
     res["languageTags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,11 +203,13 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetLanguageTags(res)
         }
-        m.SetLanguageTags(res)
         return nil
     }
     res["platforms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -203,11 +217,13 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]DevicePlatformType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DevicePlatformType))
+        if val != nil {
+            res := make([]DevicePlatformType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DevicePlatformType))
+            }
+            m.SetPlatforms(res)
         }
-        m.SetPlatforms(res)
         return nil
     }
     res["powerAppIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,11 +231,13 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetPowerAppIds(res)
         }
-        m.SetPowerAppIds(res)
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,8 +245,10 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["targetedVariations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,11 +256,13 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]AnswerVariant, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AnswerVariant))
+        if val != nil {
+            res := make([]AnswerVariant, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AnswerVariant))
+            }
+            m.SetTargetedVariations(res)
         }
-        m.SetTargetedVariations(res)
         return nil
     }
     return res

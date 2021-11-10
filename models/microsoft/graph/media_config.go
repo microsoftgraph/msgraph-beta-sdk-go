@@ -42,7 +42,9 @@ func (m *MediaConfig) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetRemoveFromDefaultAudioGroup(val)
+        if val != nil {
+            m.SetRemoveFromDefaultAudioGroup(val)
+        }
         return nil
     }
     return res

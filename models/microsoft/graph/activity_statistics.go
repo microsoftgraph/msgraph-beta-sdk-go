@@ -73,8 +73,10 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(AnalyticsActivityType)
-        m.SetActivity(&cast)
+        if val != nil {
+            cast := val.(AnalyticsActivityType)
+            m.SetActivity(&cast)
+        }
         return nil
     }
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDuration(val)
+        if val != nil {
+            m.SetDuration(val)
+        }
         return nil
     }
     res["endDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetEndDate(val)
+        if val != nil {
+            m.SetEndDate(val)
+        }
         return nil
     }
     res["startDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetStartDate(val)
+        if val != nil {
+            m.SetStartDate(val)
+        }
         return nil
     }
     res["timeZoneUsed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetTimeZoneUsed(val)
+        if val != nil {
+            m.SetTimeZoneUsed(val)
+        }
         return nil
     }
     return res

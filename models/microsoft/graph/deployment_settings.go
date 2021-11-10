@@ -62,7 +62,9 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetMonitoring(val.(*MonitoringSettings))
+        if val != nil {
+            m.SetMonitoring(val.(*MonitoringSettings))
+        }
         return nil
     }
     res["rollout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetRollout(val.(*RolloutSettings))
+        if val != nil {
+            m.SetRollout(val.(*RolloutSettings))
+        }
         return nil
     }
     res["safeguard"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetSafeguard(val.(*SafeguardSettings))
+        if val != nil {
+            m.SetSafeguard(val.(*SafeguardSettings))
+        }
         return nil
     }
     return res

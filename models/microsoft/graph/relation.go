@@ -64,7 +64,9 @@ func (m *Relation) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetFromTerm(val.(*Term))
+        if val != nil {
+            m.SetFromTerm(val.(*Term))
+        }
         return nil
     }
     res["relationship"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,8 +74,10 @@ func (m *Relation) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(i11bbafbd56c37d7251e6346f4524f5f88f83f0c6ce462b8a4d27e4a6d969d4c3.RelationType)
-        m.SetRelationship(&cast)
+        if val != nil {
+            cast := val.(i11bbafbd56c37d7251e6346f4524f5f88f83f0c6ce462b8a4d27e4a6d969d4c3.RelationType)
+            m.SetRelationship(&cast)
+        }
         return nil
     }
     res["set"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +85,9 @@ func (m *Relation) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetSet(val.(*Set))
+        if val != nil {
+            m.SetSet(val.(*Set))
+        }
         return nil
     }
     res["toTerm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +95,9 @@ func (m *Relation) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetToTerm(val.(*Term))
+        if val != nil {
+            m.SetToTerm(val.(*Term))
+        }
         return nil
     }
     return res

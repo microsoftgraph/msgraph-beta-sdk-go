@@ -53,11 +53,13 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]AccessReviewScheduleDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewScheduleDefinition))
+        if val != nil {
+            res := make([]AccessReviewScheduleDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewScheduleDefinition))
+            }
+            m.SetDefinitions(res)
         }
-        m.SetDefinitions(res)
         return nil
     }
     res["historyDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]AccessReviewHistoryDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewHistoryDefinition))
+        if val != nil {
+            res := make([]AccessReviewHistoryDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewHistoryDefinition))
+            }
+            m.SetHistoryDefinitions(res)
         }
-        m.SetHistoryDefinitions(res)
         return nil
     }
     res["policy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,7 +81,9 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPolicy(val.(*AccessReviewPolicy))
+        if val != nil {
+            m.SetPolicy(val.(*AccessReviewPolicy))
+        }
         return nil
     }
     return res

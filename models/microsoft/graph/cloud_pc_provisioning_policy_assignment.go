@@ -33,7 +33,9 @@ func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetTarget(val.(*CloudPcManagementAssignmentTarget))
+        if val != nil {
+            m.SetTarget(val.(*CloudPcManagementAssignmentTarget))
+        }
         return nil
     }
     return res

@@ -103,7 +103,9 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetActionName(val)
+        if val != nil {
+            m.SetActionName(val)
+        }
         return nil
     }
     res["actionState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,8 +113,10 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(ActionState)
-        m.SetActionState(&cast)
+        if val != nil {
+            cast := val.(ActionState)
+            m.SetActionState(&cast)
+        }
         return nil
     }
     res["cloudPcId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCloudPcId(val)
+        if val != nil {
+            m.SetCloudPcId(val)
+        }
         return nil
     }
     res["lastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetLastUpdatedDateTime(val)
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
         return nil
     }
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +144,9 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetManagedDeviceId(val)
+        if val != nil {
+            m.SetManagedDeviceId(val)
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +154,9 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     res["statusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +164,9 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetStatusDetails(val.(*CloudPcStatusDetails))
+        if val != nil {
+            m.SetStatusDetails(val.(*CloudPcStatusDetails))
+        }
         return nil
     }
     return res

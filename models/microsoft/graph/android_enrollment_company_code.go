@@ -62,7 +62,9 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetEnrollmentToken(val)
+        if val != nil {
+            m.SetEnrollmentToken(val)
+        }
         return nil
     }
     res["qrCodeContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetQrCodeContent(val)
+        if val != nil {
+            m.SetQrCodeContent(val)
+        }
         return nil
     }
     res["qrCodeImage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetQrCodeImage(val.(*MimeContent))
+        if val != nil {
+            m.SetQrCodeImage(val.(*MimeContent))
+        }
         return nil
     }
     return res

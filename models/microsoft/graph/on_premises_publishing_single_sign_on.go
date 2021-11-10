@@ -52,7 +52,9 @@ func (m *OnPremisesPublishingSingleSignOn) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetKerberosSignOnSettings(val.(*KerberosSignOnSettings))
+        if val != nil {
+            m.SetKerberosSignOnSettings(val.(*KerberosSignOnSettings))
+        }
         return nil
     }
     res["singleSignOnMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,8 +62,10 @@ func (m *OnPremisesPublishingSingleSignOn) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        cast := val.(SingleSignOnMode)
-        m.SetSingleSignOnMode(&cast)
+        if val != nil {
+            cast := val.(SingleSignOnMode)
+            m.SetSingleSignOnMode(&cast)
+        }
         return nil
     }
     return res

@@ -53,11 +53,13 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        res := make([]ManagementActionDeploymentStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementActionDeploymentStatus))
+        if val != nil {
+            res := make([]ManagementActionDeploymentStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementActionDeploymentStatus))
+            }
+            m.SetStatuses(res)
         }
-        m.SetStatuses(res)
         return nil
     }
     res["tenantGroupId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,7 +67,9 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTenantGroupId(val)
+        if val != nil {
+            m.SetTenantGroupId(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,7 +77,9 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     return res

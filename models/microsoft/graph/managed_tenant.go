@@ -223,11 +223,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]AggregatedPolicyCompliance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AggregatedPolicyCompliance))
+        if val != nil {
+            res := make([]AggregatedPolicyCompliance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AggregatedPolicyCompliance))
+            }
+            m.SetAggregatedPolicyCompliances(res)
         }
-        m.SetAggregatedPolicyCompliances(res)
         return nil
     }
     res["cloudPcConnections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,11 +237,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]CloudPcConnection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcConnection))
+        if val != nil {
+            res := make([]CloudPcConnection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcConnection))
+            }
+            m.SetCloudPcConnections(res)
         }
-        m.SetCloudPcConnections(res)
         return nil
     }
     res["cloudPcDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,11 +251,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]CloudPcDevice, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcDevice))
+        if val != nil {
+            res := make([]CloudPcDevice, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcDevice))
+            }
+            m.SetCloudPcDevices(res)
         }
-        m.SetCloudPcDevices(res)
         return nil
     }
     res["cloudPcsOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -259,11 +265,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]CloudPcOverview, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CloudPcOverview))
+        if val != nil {
+            res := make([]CloudPcOverview, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcOverview))
+            }
+            m.SetCloudPcsOverview(res)
         }
-        m.SetCloudPcsOverview(res)
         return nil
     }
     res["conditionalAccessPolicyCoverages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,11 +279,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ConditionalAccessPolicyCoverage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConditionalAccessPolicyCoverage))
+        if val != nil {
+            res := make([]ConditionalAccessPolicyCoverage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessPolicyCoverage))
+            }
+            m.SetConditionalAccessPolicyCoverages(res)
         }
-        m.SetConditionalAccessPolicyCoverages(res)
         return nil
     }
     res["credentialUserRegistrationsSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -283,11 +293,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]CredentialUserRegistrationsSummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CredentialUserRegistrationsSummary))
+        if val != nil {
+            res := make([]CredentialUserRegistrationsSummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CredentialUserRegistrationsSummary))
+            }
+            m.SetCredentialUserRegistrationsSummaries(res)
         }
-        m.SetCredentialUserRegistrationsSummaries(res)
         return nil
     }
     res["deviceCompliancePolicySettingStateSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,11 +307,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]DeviceCompliancePolicySettingStateSummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceCompliancePolicySettingStateSummary))
+        if val != nil {
+            res := make([]DeviceCompliancePolicySettingStateSummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceCompliancePolicySettingStateSummary))
+            }
+            m.SetDeviceCompliancePolicySettingStateSummaries(res)
         }
-        m.SetDeviceCompliancePolicySettingStateSummaries(res)
         return nil
     }
     res["managedDeviceCompliances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -307,11 +321,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ManagedDeviceCompliance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedDeviceCompliance))
+        if val != nil {
+            res := make([]ManagedDeviceCompliance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedDeviceCompliance))
+            }
+            m.SetManagedDeviceCompliances(res)
         }
-        m.SetManagedDeviceCompliances(res)
         return nil
     }
     res["managedDeviceComplianceTrends"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -319,11 +335,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ManagedDeviceComplianceTrend, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedDeviceComplianceTrend))
+        if val != nil {
+            res := make([]ManagedDeviceComplianceTrend, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedDeviceComplianceTrend))
+            }
+            m.SetManagedDeviceComplianceTrends(res)
         }
-        m.SetManagedDeviceComplianceTrends(res)
         return nil
     }
     res["managementActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -331,11 +349,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ManagementAction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementAction))
+        if val != nil {
+            res := make([]ManagementAction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementAction))
+            }
+            m.SetManagementActions(res)
         }
-        m.SetManagementActions(res)
         return nil
     }
     res["managementActionTenantDeploymentStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -343,11 +363,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ManagementActionTenantDeploymentStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementActionTenantDeploymentStatus))
+        if val != nil {
+            res := make([]ManagementActionTenantDeploymentStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementActionTenantDeploymentStatus))
+            }
+            m.SetManagementActionTenantDeploymentStatuses(res)
         }
-        m.SetManagementActionTenantDeploymentStatuses(res)
         return nil
     }
     res["managementIntents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -355,11 +377,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ManagementIntent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementIntent))
+        if val != nil {
+            res := make([]ManagementIntent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementIntent))
+            }
+            m.SetManagementIntents(res)
         }
-        m.SetManagementIntents(res)
         return nil
     }
     res["managementTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -367,11 +391,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ManagementTemplate, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagementTemplate))
+        if val != nil {
+            res := make([]ManagementTemplate, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementTemplate))
+            }
+            m.SetManagementTemplates(res)
         }
-        m.SetManagementTemplates(res)
         return nil
     }
     res["tenantGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -379,11 +405,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]TenantGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TenantGroup))
+        if val != nil {
+            res := make([]TenantGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TenantGroup))
+            }
+            m.SetTenantGroups(res)
         }
-        m.SetTenantGroups(res)
         return nil
     }
     res["tenants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -391,11 +419,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]Tenant, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Tenant))
+        if val != nil {
+            res := make([]Tenant, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Tenant))
+            }
+            m.SetTenants(res)
         }
-        m.SetTenants(res)
         return nil
     }
     res["tenantsCustomizedInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -403,11 +433,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]TenantCustomizedInformation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TenantCustomizedInformation))
+        if val != nil {
+            res := make([]TenantCustomizedInformation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TenantCustomizedInformation))
+            }
+            m.SetTenantsCustomizedInformation(res)
         }
-        m.SetTenantsCustomizedInformation(res)
         return nil
     }
     res["tenantsDetailedInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -415,11 +447,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]TenantDetailedInformation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TenantDetailedInformation))
+        if val != nil {
+            res := make([]TenantDetailedInformation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TenantDetailedInformation))
+            }
+            m.SetTenantsDetailedInformation(res)
         }
-        m.SetTenantsDetailedInformation(res)
         return nil
     }
     res["tenantTags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -427,11 +461,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]TenantTag, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TenantTag))
+        if val != nil {
+            res := make([]TenantTag, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TenantTag))
+            }
+            m.SetTenantTags(res)
         }
-        m.SetTenantTags(res)
         return nil
     }
     res["windowsDeviceMalwareStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -439,11 +475,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]WindowsDeviceMalwareState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsDeviceMalwareState))
+        if val != nil {
+            res := make([]WindowsDeviceMalwareState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsDeviceMalwareState))
+            }
+            m.SetWindowsDeviceMalwareStates(res)
         }
-        m.SetWindowsDeviceMalwareStates(res)
         return nil
     }
     res["windowsProtectionStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -451,11 +489,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]WindowsProtectionState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsProtectionState))
+        if val != nil {
+            res := make([]WindowsProtectionState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsProtectionState))
+            }
+            m.SetWindowsProtectionStates(res)
         }
-        m.SetWindowsProtectionStates(res)
         return nil
     }
     return res

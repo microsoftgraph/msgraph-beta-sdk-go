@@ -173,7 +173,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetActivityIdentifier(val)
+        if val != nil {
+            m.SetActivityIdentifier(val)
+        }
         return nil
     }
     res["countEntitled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +183,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountEntitled(val)
+        if val != nil {
+            m.SetCountEntitled(val)
+        }
         return nil
     }
     res["countEntitledForProvisioning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,7 +193,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountEntitledForProvisioning(val)
+        if val != nil {
+            m.SetCountEntitledForProvisioning(val)
+        }
         return nil
     }
     res["countEscrowed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,7 +203,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountEscrowed(val)
+        if val != nil {
+            m.SetCountEscrowed(val)
+        }
         return nil
     }
     res["countEscrowedRaw"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -205,7 +213,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountEscrowedRaw(val)
+        if val != nil {
+            m.SetCountEscrowedRaw(val)
+        }
         return nil
     }
     res["countExported"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,7 +223,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountExported(val)
+        if val != nil {
+            m.SetCountExported(val)
+        }
         return nil
     }
     res["countExports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -221,7 +233,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountExports(val)
+        if val != nil {
+            m.SetCountExports(val)
+        }
         return nil
     }
     res["countImported"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -229,7 +243,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountImported(val)
+        if val != nil {
+            m.SetCountImported(val)
+        }
         return nil
     }
     res["countImportedDeltas"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -237,7 +253,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountImportedDeltas(val)
+        if val != nil {
+            m.SetCountImportedDeltas(val)
+        }
         return nil
     }
     res["countImportedReferenceDeltas"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +263,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCountImportedReferenceDeltas(val)
+        if val != nil {
+            m.SetCountImportedReferenceDeltas(val)
+        }
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,7 +273,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetError(val.(*SynchronizationError))
+        if val != nil {
+            m.SetError(val.(*SynchronizationError))
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,8 +283,10 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(SynchronizationTaskExecutionResult)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(SynchronizationTaskExecutionResult)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["timeBegan"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,7 +294,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTimeBegan(val)
+        if val != nil {
+            m.SetTimeBegan(val)
+        }
         return nil
     }
     res["timeEnded"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +304,9 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTimeEnded(val)
+        if val != nil {
+            m.SetTimeEnded(val)
+        }
         return nil
     }
     return res

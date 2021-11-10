@@ -93,7 +93,9 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAppReliabilityScore(val)
+        if val != nil {
+            m.SetAppReliabilityScore(val)
+        }
         return nil
     }
     res["endpointAnalyticsScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetEndpointAnalyticsScore(val)
+        if val != nil {
+            m.SetEndpointAnalyticsScore(val)
+        }
         return nil
     }
     res["healthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,8 +113,10 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        cast := val.(UserExperienceAnalyticsHealthState)
-        m.SetHealthStatus(&cast)
+        if val != nil {
+            cast := val.(UserExperienceAnalyticsHealthState)
+            m.SetHealthStatus(&cast)
+        }
         return nil
     }
     res["manufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetManufacturer(val)
+        if val != nil {
+            m.SetManufacturer(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     res["modelDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetModelDeviceCount(val)
+        if val != nil {
+            m.SetModelDeviceCount(val)
+        }
         return nil
     }
     res["startupPerformanceScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +154,9 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetStartupPerformanceScore(val)
+        if val != nil {
+            m.SetStartupPerformanceScore(val)
+        }
         return nil
     }
     return res

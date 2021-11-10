@@ -42,11 +42,13 @@ func (m *MentionAction) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]IdentitySet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentitySet))
+        if val != nil {
+            res := make([]IdentitySet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentitySet))
+            }
+            m.SetMentionees(res)
         }
-        m.SetMentionees(res)
         return nil
     }
     return res

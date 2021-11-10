@@ -64,7 +64,9 @@ func (m *GetSharePointActivityPagesWithPeriod) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetReportDate(val)
+        if val != nil {
+            m.SetReportDate(val)
+        }
         return nil
     }
     res["reportPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *GetSharePointActivityPagesWithPeriod) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetReportPeriod(val)
+        if val != nil {
+            m.SetReportPeriod(val)
+        }
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *GetSharePointActivityPagesWithPeriod) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetReportRefreshDate(val)
+        if val != nil {
+            m.SetReportRefreshDate(val)
+        }
         return nil
     }
     res["visitedPageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *GetSharePointActivityPagesWithPeriod) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetVisitedPageCount(val)
+        if val != nil {
+            m.SetVisitedPageCount(val)
+        }
         return nil
     }
     return res

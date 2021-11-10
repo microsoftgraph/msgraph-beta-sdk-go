@@ -174,11 +174,13 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]WindowsAutopilotDeviceIdentity, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsAutopilotDeviceIdentity))
+        if val != nil {
+            res := make([]WindowsAutopilotDeviceIdentity, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsAutopilotDeviceIdentity))
+            }
+            m.SetAssignedDevices(res)
         }
-        m.SetAssignedDevices(res)
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,11 +188,13 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]WindowsAutopilotDeploymentProfileAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsAutopilotDeploymentProfileAssignment))
+        if val != nil {
+            res := make([]WindowsAutopilotDeploymentProfileAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsAutopilotDeploymentProfileAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +202,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +212,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceNameTemplate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +222,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDeviceNameTemplate(val)
+        if val != nil {
+            m.SetDeviceNameTemplate(val)
+        }
         return nil
     }
     res["deviceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,8 +232,10 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(WindowsAutopilotDeviceType)
-        m.SetDeviceType(&cast)
+        if val != nil {
+            cast := val.(WindowsAutopilotDeviceType)
+            m.SetDeviceType(&cast)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,7 +243,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enableWhiteGlove"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +253,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetEnableWhiteGlove(val)
+        if val != nil {
+            m.SetEnableWhiteGlove(val)
+        }
         return nil
     }
     res["enrollmentStatusScreenSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,7 +263,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetEnrollmentStatusScreenSettings(val.(*WindowsEnrollmentStatusScreenSettings))
+        if val != nil {
+            m.SetEnrollmentStatusScreenSettings(val.(*WindowsEnrollmentStatusScreenSettings))
+        }
         return nil
     }
     res["extractHardwareHash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -255,7 +273,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetExtractHardwareHash(val)
+        if val != nil {
+            m.SetExtractHardwareHash(val)
+        }
         return nil
     }
     res["language"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +283,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetLanguage(val)
+        if val != nil {
+            m.SetLanguage(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,7 +293,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["managementServiceAppId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +303,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetManagementServiceAppId(val)
+        if val != nil {
+            m.SetManagementServiceAppId(val)
+        }
         return nil
     }
     res["outOfBoxExperienceSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,7 +313,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetOutOfBoxExperienceSettings(val.(*OutOfBoxExperienceSettings))
+        if val != nil {
+            m.SetOutOfBoxExperienceSettings(val.(*OutOfBoxExperienceSettings))
+        }
         return nil
     }
     res["roleScopeTagIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,11 +323,13 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
         }
-        m.SetRoleScopeTagIds(res)
         return nil
     }
     return res

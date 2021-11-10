@@ -83,7 +83,9 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetConfigurationEndpointUrl(val)
+        if val != nil {
+            m.SetConfigurationEndpointUrl(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enableAuthenticationViaCompanyPortal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetEnableAuthenticationViaCompanyPortal(val)
+        if val != nil {
+            m.SetEnableAuthenticationViaCompanyPortal(val)
+        }
         return nil
     }
     res["requireCompanyPortalOnSetupAssistantEnrolledDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRequireCompanyPortalOnSetupAssistantEnrolledDevices(val)
+        if val != nil {
+            m.SetRequireCompanyPortalOnSetupAssistantEnrolledDevices(val)
+        }
         return nil
     }
     res["requiresUserAuthentication"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +133,9 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRequiresUserAuthentication(val)
+        if val != nil {
+            m.SetRequiresUserAuthentication(val)
+        }
         return nil
     }
     return res

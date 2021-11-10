@@ -104,7 +104,9 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["enrollmentState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,8 +124,10 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(EnrollmentState)
-        m.SetEnrollmentState(&cast)
+        if val != nil {
+            cast := val.(EnrollmentState)
+            m.SetEnrollmentState(&cast)
+        }
         return nil
     }
     res["importedDeviceIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +135,9 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetImportedDeviceIdentifier(val)
+        if val != nil {
+            m.SetImportedDeviceIdentifier(val)
+        }
         return nil
     }
     res["importedDeviceIdentityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,8 +145,10 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(ImportedDeviceIdentityType)
-        m.SetImportedDeviceIdentityType(&cast)
+        if val != nil {
+            cast := val.(ImportedDeviceIdentityType)
+            m.SetImportedDeviceIdentityType(&cast)
+        }
         return nil
     }
     res["lastContactedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +156,9 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastContactedDateTime(val)
+        if val != nil {
+            m.SetLastContactedDateTime(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +166,9 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["platform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,8 +176,10 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(Platform)
-        m.SetPlatform(&cast)
+        if val != nil {
+            cast := val.(Platform)
+            m.SetPlatform(&cast)
+        }
         return nil
     }
     return res

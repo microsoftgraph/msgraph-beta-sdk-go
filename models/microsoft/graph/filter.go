@@ -62,11 +62,13 @@ func (m *Filter) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]FilterGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*FilterGroup))
+        if val != nil {
+            res := make([]FilterGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*FilterGroup))
+            }
+            m.SetCategoryFilterGroups(res)
         }
-        m.SetCategoryFilterGroups(res)
         return nil
     }
     res["groups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,11 +76,13 @@ func (m *Filter) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]FilterGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*FilterGroup))
+        if val != nil {
+            res := make([]FilterGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*FilterGroup))
+            }
+            m.SetGroups(res)
         }
-        m.SetGroups(res)
         return nil
     }
     res["inputFilterGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -86,11 +90,13 @@ func (m *Filter) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]FilterGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*FilterGroup))
+        if val != nil {
+            res := make([]FilterGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*FilterGroup))
+            }
+            m.SetInputFilterGroups(res)
         }
-        m.SetInputFilterGroups(res)
         return nil
     }
     return res

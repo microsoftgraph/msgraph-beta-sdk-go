@@ -163,7 +163,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetAdDomainName(val)
+        if val != nil {
+            m.SetAdDomainName(val)
+        }
         return nil
     }
     res["adDomainPassword"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +173,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetAdDomainPassword(val)
+        if val != nil {
+            m.SetAdDomainPassword(val)
+        }
         return nil
     }
     res["adDomainUsername"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +183,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetAdDomainUsername(val)
+        if val != nil {
+            m.SetAdDomainUsername(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,7 +193,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["healthCheckStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -195,8 +203,10 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(CloudPcOnPremisesConnectionStatus)
-        m.SetHealthCheckStatus(&cast)
+        if val != nil {
+            cast := val.(CloudPcOnPremisesConnectionStatus)
+            m.SetHealthCheckStatus(&cast)
+        }
         return nil
     }
     res["healthCheckStatusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +214,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetHealthCheckStatusDetails(val.(*CloudPcOnPremisesConnectionStatusDetails))
+        if val != nil {
+            m.SetHealthCheckStatusDetails(val.(*CloudPcOnPremisesConnectionStatusDetails))
+        }
         return nil
     }
     res["inUse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +224,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetInUse(val)
+        if val != nil {
+            m.SetInUse(val)
+        }
         return nil
     }
     res["organizationalUnit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +234,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetOrganizationalUnit(val)
+        if val != nil {
+            m.SetOrganizationalUnit(val)
+        }
         return nil
     }
     res["resourceGroupId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +244,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetResourceGroupId(val)
+        if val != nil {
+            m.SetResourceGroupId(val)
+        }
         return nil
     }
     res["subnetId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +254,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSubnetId(val)
+        if val != nil {
+            m.SetSubnetId(val)
+        }
         return nil
     }
     res["subscriptionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +264,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSubscriptionId(val)
+        if val != nil {
+            m.SetSubscriptionId(val)
+        }
         return nil
     }
     res["subscriptionName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +274,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSubscriptionName(val)
+        if val != nil {
+            m.SetSubscriptionName(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,8 +284,10 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(CloudPcOnPremisesConnectionType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(CloudPcOnPremisesConnectionType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     res["virtualNetworkId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,7 +295,9 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetVirtualNetworkId(val)
+        if val != nil {
+            m.SetVirtualNetworkId(val)
+        }
         return nil
     }
     return res

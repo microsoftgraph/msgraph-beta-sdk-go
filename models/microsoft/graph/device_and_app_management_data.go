@@ -42,7 +42,9 @@ func (m *DeviceAndAppManagementData) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetContent(val)
+        if val != nil {
+            m.SetContent(val)
+        }
         return nil
     }
     return res

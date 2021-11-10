@@ -53,11 +53,13 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]ServicePrincipalCreationConditionSet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ServicePrincipalCreationConditionSet))
+        if val != nil {
+            res := make([]ServicePrincipalCreationConditionSet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServicePrincipalCreationConditionSet))
+            }
+            m.SetExcludes(res)
         }
-        m.SetExcludes(res)
         return nil
     }
     res["includes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]ServicePrincipalCreationConditionSet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ServicePrincipalCreationConditionSet))
+        if val != nil {
+            res := make([]ServicePrincipalCreationConditionSet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServicePrincipalCreationConditionSet))
+            }
+            m.SetIncludes(res)
         }
-        m.SetIncludes(res)
         return nil
     }
     res["isBuiltIn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,7 +81,9 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetIsBuiltIn(val)
+        if val != nil {
+            m.SetIsBuiltIn(val)
+        }
         return nil
     }
     return res

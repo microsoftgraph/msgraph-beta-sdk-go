@@ -42,7 +42,9 @@ func (m *TimeClockSettings) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetApprovedLocation(val.(*GeoCoordinates))
+        if val != nil {
+            m.SetApprovedLocation(val.(*GeoCoordinates))
+        }
         return nil
     }
     return res

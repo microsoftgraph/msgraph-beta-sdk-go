@@ -113,7 +113,9 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDataProvider(val.(*EducationSynchronizationDataProvider))
+        if val != nil {
+            m.SetDataProvider(val.(*EducationSynchronizationDataProvider))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["errors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,11 +133,13 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]EducationSynchronizationError, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationSynchronizationError))
+        if val != nil {
+            res := make([]EducationSynchronizationError, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationSynchronizationError))
+            }
+            m.SetErrors(res)
         }
-        m.SetErrors(res)
         return nil
     }
     res["expirationDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +147,9 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetExpirationDate(val)
+        if val != nil {
+            m.SetExpirationDate(val)
+        }
         return nil
     }
     res["handleSpecialCharacterConstraint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +157,9 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetHandleSpecialCharacterConstraint(val)
+        if val != nil {
+            m.SetHandleSpecialCharacterConstraint(val)
+        }
         return nil
     }
     res["identitySynchronizationConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +167,9 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetIdentitySynchronizationConfiguration(val.(*EducationIdentitySynchronizationConfiguration))
+        if val != nil {
+            m.SetIdentitySynchronizationConfiguration(val.(*EducationIdentitySynchronizationConfiguration))
+        }
         return nil
     }
     res["licensesToAssign"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,11 +177,13 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]EducationSynchronizationLicenseAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationSynchronizationLicenseAssignment))
+        if val != nil {
+            res := make([]EducationSynchronizationLicenseAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationSynchronizationLicenseAssignment))
+            }
+            m.SetLicensesToAssign(res)
         }
-        m.SetLicensesToAssign(res)
         return nil
     }
     res["profileStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +191,9 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetProfileStatus(val.(*EducationSynchronizationProfileStatus))
+        if val != nil {
+            m.SetProfileStatus(val.(*EducationSynchronizationProfileStatus))
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,8 +201,10 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(EducationSynchronizationProfileState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(EducationSynchronizationProfileState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

@@ -63,7 +63,9 @@ func (m *WindowsUpdateRolloutSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetOfferEndDateTimeInUTC(val)
+        if val != nil {
+            m.SetOfferEndDateTimeInUTC(val)
+        }
         return nil
     }
     res["offerIntervalInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *WindowsUpdateRolloutSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetOfferIntervalInDays(val)
+        if val != nil {
+            m.SetOfferIntervalInDays(val)
+        }
         return nil
     }
     res["offerStartDateTimeInUTC"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *WindowsUpdateRolloutSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetOfferStartDateTimeInUTC(val)
+        if val != nil {
+            m.SetOfferStartDateTimeInUTC(val)
+        }
         return nil
     }
     return res

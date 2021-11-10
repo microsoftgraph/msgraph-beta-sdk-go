@@ -52,7 +52,9 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetServiceAnnouncement(val.(*ServiceAnnouncement))
+        if val != nil {
+            m.SetServiceAnnouncement(val.(*ServiceAnnouncement))
+        }
         return nil
     }
     res["windows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetWindows(val.(*Windows))
+        if val != nil {
+            m.SetWindows(val.(*Windows))
+        }
         return nil
     }
     return res

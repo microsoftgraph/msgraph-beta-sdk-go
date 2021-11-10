@@ -63,7 +63,9 @@ func (m *UserAccountInformation) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetAgeGroup(val)
+        if val != nil {
+            m.SetAgeGroup(val)
+        }
         return nil
     }
     res["countryCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *UserAccountInformation) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCountryCode(val)
+        if val != nil {
+            m.SetCountryCode(val)
+        }
         return nil
     }
     res["preferredLanguageTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *UserAccountInformation) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetPreferredLanguageTag(val.(*LocaleInfo))
+        if val != nil {
+            m.SetPreferredLanguageTag(val.(*LocaleInfo))
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *UserAccountInformation) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

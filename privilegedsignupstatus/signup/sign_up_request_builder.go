@@ -62,7 +62,9 @@ func (m *SignUpResponse) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetPrivilegedSignupStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus))
+        if val != nil {
+            m.SetPrivilegedSignupStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus))
+        }
         return nil
     }
     return res

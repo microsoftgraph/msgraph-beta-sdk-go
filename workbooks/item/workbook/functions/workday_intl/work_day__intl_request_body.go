@@ -73,7 +73,9 @@ func (m *WorkDay_IntlRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDays(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        if val != nil {
+            m.SetDays(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        }
         return nil
     }
     res["holidays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *WorkDay_IntlRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetHolidays(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        if val != nil {
+            m.SetHolidays(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        }
         return nil
     }
     res["startDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *WorkDay_IntlRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetStartDate(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        if val != nil {
+            m.SetStartDate(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        }
         return nil
     }
     res["weekend"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *WorkDay_IntlRequestBody) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetWeekend(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        if val != nil {
+            m.SetWeekend(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+        }
         return nil
     }
     return res

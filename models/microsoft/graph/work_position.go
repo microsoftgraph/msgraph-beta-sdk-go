@@ -73,11 +73,13 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCategories(res)
         }
-        m.SetCategories(res)
         return nil
     }
     res["colleagues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,11 +87,13 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]RelatedPerson, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RelatedPerson))
+        if val != nil {
+            res := make([]RelatedPerson, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RelatedPerson))
+            }
+            m.SetColleagues(res)
         }
-        m.SetColleagues(res)
         return nil
     }
     res["detail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +101,9 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDetail(val.(*PositionDetail))
+        if val != nil {
+            m.SetDetail(val.(*PositionDetail))
+        }
         return nil
     }
     res["isCurrent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +111,9 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetIsCurrent(val)
+        if val != nil {
+            m.SetIsCurrent(val)
+        }
         return nil
     }
     res["manager"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +121,9 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetManager(val.(*RelatedPerson))
+        if val != nil {
+            m.SetManager(val.(*RelatedPerson))
+        }
         return nil
     }
     return res

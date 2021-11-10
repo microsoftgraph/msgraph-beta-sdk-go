@@ -94,7 +94,9 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetEndDateTime(val)
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
         return nil
     }
     res["expiryDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetExpiryDateTime(val)
+        if val != nil {
+            m.SetExpiryDateTime(val)
+        }
         return nil
     }
     res["requestDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetRequestDateTime(val)
+        if val != nil {
+            m.SetRequestDateTime(val)
+        }
         return nil
     }
     res["serverId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetServerId(val)
+        if val != nil {
+            m.SetServerId(val)
+        }
         return nil
     }
     res["sizeInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetSizeInBytes(val)
+        if val != nil {
+            m.SetSizeInBytes(val)
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,8 +154,10 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        cast := val.(MicrosoftTunnelLogCollectionStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(MicrosoftTunnelLogCollectionStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

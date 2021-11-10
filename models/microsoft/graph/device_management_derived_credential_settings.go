@@ -63,7 +63,9 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["helpUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetHelpUrl(val)
+        if val != nil {
+            m.SetHelpUrl(val)
+        }
         return nil
     }
     res["issuer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,8 +83,10 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementDerivedCredentialIssuer)
-        m.SetIssuer(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementDerivedCredentialIssuer)
+            m.SetIssuer(&cast)
+        }
         return nil
     }
     res["notificationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,8 +94,10 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementDerivedCredentialNotificationType)
-        m.SetNotificationType(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementDerivedCredentialNotificationType)
+            m.SetNotificationType(&cast)
+        }
         return nil
     }
     return res
