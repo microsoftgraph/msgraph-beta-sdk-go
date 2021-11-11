@@ -28,7 +28,6 @@ type ActivityStatisticsRequestBuilderGetOptions struct {
 }
 // The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 type ActivityStatisticsRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Include count of items
     Count *bool;
     // Expand related entities
@@ -91,10 +90,7 @@ func (m *ActivityStatisticsRequestBuilder) CreateGetRequestInformation(options *
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

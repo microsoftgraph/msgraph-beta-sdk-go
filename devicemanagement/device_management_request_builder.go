@@ -54,6 +54,7 @@ import (
     i57d8944d5d121692c68b51d3cea46fbd31ef9f0bc139c17120d42d194ee625b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyosversion"
     i5829b09916b668f7826693dac476ee85ff6f59fd831d0581a362c02cf68ea11c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports"
     i5f58ba6045ddf9c581c89a15216e6de9c93354bea6dff2f3826b7bb2a3a51626 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyappversion"
+    i628de11007c42c4f917b0518d0cc588f34832fe3680a5f028fb6da34fba53bef "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/getrolescopetagsbyidsids=@ids"
     i669feef35963a9c2d23562bc2c60c4e6542a5845da77448eeffe024b2202b51e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/enablelegacypcmanagement"
     i66b975d6894f1203db9ffb8c9762fa16d80c6baa183597bc8820e565f9c9c96b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementpartners"
     i66c458cf61ce1962fc3b708fdff3d0e8454c4648d6d491d496c7e7757ae559f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/troubleshootingevents"
@@ -294,7 +295,6 @@ type DeviceManagementRequestBuilderGetOptions struct {
 }
 // Get deviceManagement
 type DeviceManagementRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Expand related entities
     Expand []string;
     // Select properties to be returned
@@ -744,10 +744,7 @@ func (m *DeviceManagementRequestBuilder) CreateGetRequestInformation(options *De
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
@@ -1194,6 +1191,10 @@ func (m *DeviceManagementRequestBuilder) GetEffectivePermissions()(*i9fc465b5a85
 //  - scope : Usage: scope={scope}
 func (m *DeviceManagementRequestBuilder) GetEffectivePermissionsWithScope(scope *string)(*i2ac2ce65fd2aee45de13a501baed8caeb3bf7574c7821fee17834fe715933533.GetEffectivePermissionsWithScopeRequestBuilder) {
     return i2ac2ce65fd2aee45de13a501baed8caeb3bf7574c7821fee17834fe715933533.NewGetEffectivePermissionsWithScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter, scope);
+}
+// Builds and executes requests for operations under \deviceManagement\microsoft.graph.getRoleScopeTagsByIds(ids=@ids)
+func (m *DeviceManagementRequestBuilder) GetRoleScopeTagsByIdsids=@ids()(*i628de11007c42c4f917b0518d0cc588f34832fe3680a5f028fb6da34fba53bef.GetRoleScopeTagsByIdsids=@idsRequestBuilder) {
+    return i628de11007c42c4f917b0518d0cc588f34832fe3680a5f028fb6da34fba53bef.NewGetRoleScopeTagsByIdsids=@idsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Builds and executes requests for operations under \deviceManagement\microsoft.graph.getRoleScopeTagsByResource(resource='{resource}')
 // Parameters:
