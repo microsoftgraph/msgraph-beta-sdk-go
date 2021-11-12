@@ -4,12 +4,10 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    iabb2c9c8d603422583bcb8f8258070d32341f88769a528bbf7389076f4dc84ab "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/customsecurityattributedefinitions/item/allowedvalues"
-    i1fe7ff93f58439008a626f169f7eeff4e9a77d0871cc58d3033500a4d65a4a2c "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/customsecurityattributedefinitions/item/allowedvalues/item"
 )
 
-// Builds and executes requests for operations under \directory\customSecurityAttributeDefinitions\{customSecurityAttributeDefinition-id}
-type CustomSecurityAttributeDefinitionRequestBuilder struct {
+// Builds and executes requests for operations under \tenantRelationships\managedTenants\riskyUsers\{riskyUser-id}
+type RiskyUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
@@ -18,7 +16,7 @@ type CustomSecurityAttributeDefinitionRequestBuilder struct {
     urlTemplate string;
 }
 // Options for Delete
-type CustomSecurityAttributeDefinitionRequestBuilderDeleteOptions struct {
+type RiskyUserRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
     // Request options
@@ -27,27 +25,27 @@ type CustomSecurityAttributeDefinitionRequestBuilderDeleteOptions struct {
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // Options for Get
-type CustomSecurityAttributeDefinitionRequestBuilderGetOptions struct {
+type RiskyUserRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
     // Request options
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Request query parameters
-    Q *CustomSecurityAttributeDefinitionRequestBuilderGetQueryParameters;
+    Q *RiskyUserRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get customSecurityAttributeDefinitions from directory
-type CustomSecurityAttributeDefinitionRequestBuilderGetQueryParameters struct {
+// The collection of users flagged for risk across managed tenants.
+type RiskyUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
 // Options for Patch
-type CustomSecurityAttributeDefinitionRequestBuilderPatchOptions struct {
+type RiskyUserRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomSecurityAttributeDefinition;
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser;
     // Request headers
     H map[string]string;
     // Request options
@@ -55,30 +53,14 @@ type CustomSecurityAttributeDefinitionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-func (m *CustomSecurityAttributeDefinitionRequestBuilder) AllowedValues()(*iabb2c9c8d603422583bcb8f8258070d32341f88769a528bbf7389076f4dc84ab.AllowedValuesRequestBuilder) {
-    return iabb2c9c8d603422583bcb8f8258070d32341f88769a528bbf7389076f4dc84ab.NewAllowedValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.customSecurityAttributeDefinitions.item.allowedValues.item collection
-// Parameters:
-//  - id : Unique identifier of the item
-func (m *CustomSecurityAttributeDefinitionRequestBuilder) AllowedValuesById(id string)(*i1fe7ff93f58439008a626f169f7eeff4e9a77d0871cc58d3033500a4d65a4a2c.AllowedValueRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["allowedValue_id"] = id
-    }
-    return i1fe7ff93f58439008a626f169f7eeff4e9a77d0871cc58d3033500a4d65a4a2c.NewAllowedValueRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Instantiates a new CustomSecurityAttributeDefinitionRequestBuilder and sets the default values.
+// Instantiates a new RiskyUserRequestBuilder and sets the default values.
 // Parameters:
 //  - pathParameters : Path parameters for the request
 //  - requestAdapter : The request adapter to use to execute the requests.
-func NewCustomSecurityAttributeDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomSecurityAttributeDefinitionRequestBuilder) {
-    m := &CustomSecurityAttributeDefinitionRequestBuilder{
+func NewRiskyUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUserRequestBuilder) {
+    m := &RiskyUserRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/riskyUsers/{riskyUser_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -87,19 +69,19 @@ func NewCustomSecurityAttributeDefinitionRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CustomSecurityAttributeDefinitionRequestBuilder and sets the default values.
+// Instantiates a new RiskyUserRequestBuilder and sets the default values.
 // Parameters:
 //  - rawUrl : The raw URL to use for the request builder.
 //  - requestAdapter : The request adapter to use to execute the requests.
-func NewCustomSecurityAttributeDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomSecurityAttributeDefinitionRequestBuilder) {
+func NewRiskyUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCustomSecurityAttributeDefinitionRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRiskyUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property customSecurityAttributeDefinitions for directory
+// The collection of users flagged for risk across managed tenants.
 // Parameters:
 //  - options : Options for the request
-func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreateDeleteRequestInformation(options *CustomSecurityAttributeDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+func (m *RiskyUserRequestBuilder) CreateDeleteRequestInformation(options *RiskyUserRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -115,10 +97,10 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// Get customSecurityAttributeDefinitions from directory
+// The collection of users flagged for risk across managed tenants.
 // Parameters:
 //  - options : Options for the request
-func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreateGetRequestInformation(options *CustomSecurityAttributeDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+func (m *RiskyUserRequestBuilder) CreateGetRequestInformation(options *RiskyUserRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -137,10 +119,10 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// Update the navigation property customSecurityAttributeDefinitions in directory
+// The collection of users flagged for risk across managed tenants.
 // Parameters:
 //  - options : Options for the request
-func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreatePatchRequestInformation(options *CustomSecurityAttributeDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+func (m *RiskyUserRequestBuilder) CreatePatchRequestInformation(options *RiskyUserRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -157,10 +139,10 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// Delete navigation property customSecurityAttributeDefinitions for directory
+// The collection of users flagged for risk across managed tenants.
 // Parameters:
 //  - options : Options for the request
-func (m *CustomSecurityAttributeDefinitionRequestBuilder) Delete(options *CustomSecurityAttributeDefinitionRequestBuilderDeleteOptions)(error) {
+func (m *RiskyUserRequestBuilder) Delete(options *RiskyUserRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
@@ -171,24 +153,24 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) Delete(options *Custom
     }
     return nil
 }
-// Get customSecurityAttributeDefinitions from directory
+// The collection of users flagged for risk across managed tenants.
 // Parameters:
 //  - options : Options for the request
-func (m *CustomSecurityAttributeDefinitionRequestBuilder) Get(options *CustomSecurityAttributeDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomSecurityAttributeDefinition, error) {
+func (m *RiskyUserRequestBuilder) Get(options *RiskyUserRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCustomSecurityAttributeDefinition() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewRiskyUser() }, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomSecurityAttributeDefinition), nil
+    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser), nil
 }
-// Update the navigation property customSecurityAttributeDefinitions in directory
+// The collection of users flagged for risk across managed tenants.
 // Parameters:
 //  - options : Options for the request
-func (m *CustomSecurityAttributeDefinitionRequestBuilder) Patch(options *CustomSecurityAttributeDefinitionRequestBuilderPatchOptions)(error) {
+func (m *RiskyUserRequestBuilder) Patch(options *RiskyUserRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err

@@ -7,9 +7,9 @@ import (
 // 
 type BookingCustomer struct {
     BookingPerson
-    // Addresses associated with the customer, including home, business and other addresses.
+    // 
     addresses []PhysicalAddress;
-    // Phone numbers associated with the customer, including home, business and mobile numbers.
+    // 
     phones []Phone;
 }
 // Instantiates a new bookingCustomer and sets the default values.
@@ -19,7 +19,7 @@ func NewBookingCustomer()(*BookingCustomer) {
     }
     return m
 }
-// Gets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
+// Gets the addresses property value. 
 func (m *BookingCustomer) GetAddresses()([]PhysicalAddress) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *BookingCustomer) GetAddresses()([]PhysicalAddress) {
         return m.addresses
     }
 }
-// Gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
+// Gets the phones property value. 
 func (m *BookingCustomer) GetPhones()([]Phone) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *BookingCustomer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
+// Sets the addresses property value. 
 // Parameters:
 //  - value : Value to set for the addresses property.
 func (m *BookingCustomer) SetAddresses(value []PhysicalAddress)() {
     m.addresses = value
 }
-// Sets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
+// Sets the phones property value. 
 // Parameters:
 //  - value : Value to set for the phones property.
 func (m *BookingCustomer) SetPhones(value []Phone)() {

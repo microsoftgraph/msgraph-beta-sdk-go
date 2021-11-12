@@ -5,8 +5,6 @@ import (
     i24baa95180344241e5988e88abde66879965e1161c491971c4fef299d89ecd3d "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/sharedemaildomains"
     i3cd67c30f5b1dbe46ac1a4cc4e3febcb7347d9b6590ebcbb3a7c4ed486b7a33a "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems"
     i874ed4edfcf924c8bf52b0ce3fb2cbbe5980293405fe171ac739490cbbcdaabf "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/featurerolloutpolicies"
-    iaf1d1cd519f0199547e1f554f5d9d5790e9b1bbf35a06ad1d200c0cbcf09c175 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/customsecurityattributedefinitions"
-    ib5dfa66383589c099255c501996228eba7a0bc49ce9c7f992a9607cce3a1b8b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/attributesets"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     iee88df06b6c2f88b23f7c64f0bd54b255fc8bd6e4ed8805e6adf9aa81134997a "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/federationconfigurations"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
@@ -14,10 +12,8 @@ import (
     i5552436032dc99a204b9894d3cdec8c8fd49de8267b7be85641d407446e4b6b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/featurerolloutpolicies/item"
     i596c69bb84519fa1bd095263c7f63372f6b77b2d592adcc064a8f58e4664f18a "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/sharedemaildomains/item"
     i6dbb852f4179b2099ef0d7cfea974aab29da28ff271825ed4facd1031635a55a "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item"
-    i9b5ae363d6622db0767524c36dfc4944cb635f7495736d92423ec12e1c606ff6 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/customsecurityattributedefinitions/item"
     ia0a2720db6fe1c2002158844efe537fd50cb223ed65a824c2b17bccbc76d639b "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/item"
     ic56ab875d66f866a4e02c3e21e059765fd0587edf1d7176130c0d565ab17801b "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/federationconfigurations/item"
-    ifebb2851fc7ede78464b250ca6ca9ee9431aaf2ea5e0cabbeec1de32f3d73223 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/attributesets/item"
 )
 
 // Builds and executes requests for operations under \directory
@@ -73,22 +69,6 @@ func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*i6dbb852f4
         urlTplParams["administrativeUnit_id"] = id
     }
     return i6dbb852f4179b2099ef0d7cfea974aab29da28ff271825ed4facd1031635a55a.NewAdministrativeUnitRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-func (m *DirectoryRequestBuilder) AttributeSets()(*ib5dfa66383589c099255c501996228eba7a0bc49ce9c7f992a9607cce3a1b8b1.AttributeSetsRequestBuilder) {
-    return ib5dfa66383589c099255c501996228eba7a0bc49ce9c7f992a9607cce3a1b8b1.NewAttributeSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.attributeSets.item collection
-// Parameters:
-//  - id : Unique identifier of the item
-func (m *DirectoryRequestBuilder) AttributeSetsById(id string)(*ifebb2851fc7ede78464b250ca6ca9ee9431aaf2ea5e0cabbeec1de32f3d73223.AttributeSetRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["attributeSet_id"] = id
-    }
-    return ifebb2851fc7ede78464b250ca6ca9ee9431aaf2ea5e0cabbeec1de32f3d73223.NewAttributeSetRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Instantiates a new DirectoryRequestBuilder and sets the default values.
 // Parameters:
@@ -156,22 +136,6 @@ func (m *DirectoryRequestBuilder) CreatePatchRequestInformation(options *Directo
         }
     }
     return requestInfo, nil
-}
-func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitions()(*iaf1d1cd519f0199547e1f554f5d9d5790e9b1bbf35a06ad1d200c0cbcf09c175.CustomSecurityAttributeDefinitionsRequestBuilder) {
-    return iaf1d1cd519f0199547e1f554f5d9d5790e9b1bbf35a06ad1d200c0cbcf09c175.NewCustomSecurityAttributeDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.customSecurityAttributeDefinitions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
-func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitionsById(id string)(*i9b5ae363d6622db0767524c36dfc4944cb635f7495736d92423ec12e1c606ff6.CustomSecurityAttributeDefinitionRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["customSecurityAttributeDefinition_id"] = id
-    }
-    return i9b5ae363d6622db0767524c36dfc4944cb635f7495736d92423ec12e1c606ff6.NewCustomSecurityAttributeDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DirectoryRequestBuilder) DeletedItems()(*i3cd67c30f5b1dbe46ac1a4cc4e3febcb7347d9b6590ebcbb3a7c4ed486b7a33a.DeletedItemsRequestBuilder) {
     return i3cd67c30f5b1dbe46ac1a4cc4e3febcb7347d9b6590ebcbb3a7c4ed486b7a33a.NewDeletedItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
