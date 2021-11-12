@@ -23,6 +23,7 @@ import (
     icf1f2046c60f5e428ce03f4d34ebbf94d9da108c7a89ad5560774e04115aee81 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantgroups"
     icfac7b17b942815ef506ee4f3661445d6355fd31ed1673ad9d6ef8ebe8b57487 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementintents"
     idbc8f4984d2cb262d1942923c269bd190c01b953b808d1fdb9cf4be97280aaa9 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/aggregatedpolicycompliances"
+    idd936945fe349ae55442678f4cc9336c26385c7d63fad7702cdd3ed7f48759b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/riskyusers"
     ie2be96252bd3e7e355c4cc7dbf41dd9251cda2dfdea6235dbd43916501b1bb8e "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/manageddevicecompliances"
     i186e85376ac4af3f7e13d1b03ae3ecca0403b582ff4761f086be79d2ceacdf75 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/windowsdevicemalwarestates/item"
     i1ec6b65aff2fcd462f8f45f48ce513ea76dde61b1ec3f1cf01d65b849b740b8b "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementintents/item"
@@ -33,6 +34,7 @@ import (
     i3d3e0cdf3a9fbbfd02cd0827a97a9c93f4ebb2715ac2ee966e30acaf51299aff "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/manageddevicecompliancetrends/item"
     i44e5d1aa3329234fb97b49ec0893e801904dd6a9768684f18a00bd816da70fd6 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenanttags/item"
     i52c320bc8af30828e6ec0c42efaa3e1776f96666e820434df3a8666acde77551 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/aggregatedpolicycompliances/item"
+    i69ca8f00785bb577702d827861686c081c74eb4d6cdd80b73f488dab59d3a13b "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/riskyusers/item"
     i79c491f13216abf413ae87d0ff1c465e6a8a4809a3f15a3c0d1e120851ef9a5c "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantgroups/item"
     i902764218ad5577611d10586599ccdb34a8aa22b15a8c9043e035e89db4d4c7b "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenants/item"
     ib007e276e70fb157eccc427006d3a6fdf591c84e085e79a6ae7d6a7149a17922 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactiontenantdeploymentstatuses/item"
@@ -77,7 +79,6 @@ type ManagedTenantsRequestBuilderGetOptions struct {
 }
 // The operations available to interact with the multi-tenant management platform.
 type ManagedTenantsRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Expand related entities
     Expand []string;
     // Select properties to be returned
@@ -227,10 +228,7 @@ func (m *ManagedTenantsRequestBuilder) CreateGetRequestInformation(options *Mana
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
@@ -432,6 +430,22 @@ func (m *ManagedTenantsRequestBuilder) Patch(options *ManagedTenantsRequestBuild
         return err
     }
     return nil
+}
+func (m *ManagedTenantsRequestBuilder) RiskyUsers()(*idd936945fe349ae55442678f4cc9336c26385c7d63fad7702cdd3ed7f48759b2.RiskyUsersRequestBuilder) {
+    return idd936945fe349ae55442678f4cc9336c26385c7d63fad7702cdd3ed7f48759b2.NewRiskyUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.riskyUsers.item collection
+// Parameters:
+//  - id : Unique identifier of the item
+func (m *ManagedTenantsRequestBuilder) RiskyUsersById(id string)(*i69ca8f00785bb577702d827861686c081c74eb4d6cdd80b73f488dab59d3a13b.RiskyUserRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["riskyUser_id"] = id
+    }
+    return i69ca8f00785bb577702d827861686c081c74eb4d6cdd80b73f488dab59d3a13b.NewRiskyUserRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ManagedTenantsRequestBuilder) TenantGroups()(*icf1f2046c60f5e428ce03f4d34ebbf94d9da108c7a89ad5560774e04115aee81.TenantGroupsRequestBuilder) {
     return icf1f2046c60f5e428ce03f4d34ebbf94d9da108c7a89ad5560774e04115aee81.NewTenantGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

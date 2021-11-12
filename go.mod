@@ -3,10 +3,10 @@ module github.com/microsoftgraph/msgraph-beta-sdk-go
 go 1.17
 
 require (
-	github.com/microsoft/kiota/abstractions/go v0.0.0-20211108132630-7da008c70103
+	github.com/microsoft/kiota/abstractions/go v0.0.0-20211112084539-17ac73ffdc7c
 	github.com/microsoft/kiota/authentication/go/azure v0.0.0-20211101175933-7e7ef25b396e
-	github.com/microsoft/kiota/http/go/nethttp v0.0.0-20211108143922-c77efb191939
-	github.com/microsoft/kiota/serialization/go/json v0.0.0-20211108132630-7da008c70103
+	github.com/microsoft/kiota/http/go/nethttp v0.0.0-20211112084539-17ac73ffdc7c
+	github.com/microsoft/kiota/serialization/go/json v0.0.0-20211112084539-17ac73ffdc7c
 	github.com/microsoftgraph/msgraph-sdk-go-core v0.0.2
 )
 

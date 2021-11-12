@@ -38,7 +38,6 @@ type BookingAppointmentRequestBuilderGetOptions struct {
 }
 // The set of appointments of this business in a specified date range. Read-only. Nullable.
 type BookingAppointmentRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
     End *string;
     // Expand related entities
@@ -115,10 +114,7 @@ func (m *BookingAppointmentRequestBuilder) CreateGetRequestInformation(options *
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

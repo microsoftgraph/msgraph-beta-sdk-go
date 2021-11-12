@@ -10,7 +10,7 @@ import (
 
 var clientOptions = core.GraphClientOptions{
 	GraphServiceVersion:        "beta",
-	GraphServiceLibraryVersion: "0.1.1",
+	GraphServiceLibraryVersion: "0.2.0",
 }
 
 // GraphRequestAdapter is the core service used by GraphServiceClient to make requests to Microsoft Graph.
@@ -67,3 +67,5 @@ func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndH
 
 	return result, nil
 }
+
+

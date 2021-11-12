@@ -21,7 +21,7 @@ type BookingAppointment struct {
     customerNotes *string;
     // The customer's phone number.
     customerPhone *string;
-    // The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
+    // 
     customerTimeZone *string;
     // The length of the appointment, denoted in ISO8601 format.
     duration *string;
@@ -37,9 +37,9 @@ type BookingAppointment struct {
     invoiceStatus *BookingInvoiceStatus;
     // The URL of the invoice in Microsoft Bookings.
     invoiceUrl *string;
-    // True indicates that the appointment will be held online. Default value is false.
+    // 
     isLocationOnline *bool;
-    // The URL of the online meeting for the appointment.
+    // 
     joinWebUrl *string;
     // 
     onlineMeetingUrl *string;
@@ -65,7 +65,7 @@ type BookingAppointment struct {
     serviceName *string;
     // Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
     serviceNotes *string;
-    // True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+    // 
     smsNotificationsEnabled *bool;
     // The ID of each bookingStaffMember who is scheduled in this appointment.
     staffMemberIds []string;
@@ -135,7 +135,7 @@ func (m *BookingAppointment) GetCustomerPhone()(*string) {
         return m.customerPhone
     }
 }
-// Gets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
+// Gets the customerTimeZone property value. 
 func (m *BookingAppointment) GetCustomerTimeZone()(*string) {
     if m == nil {
         return nil
@@ -199,7 +199,7 @@ func (m *BookingAppointment) GetInvoiceUrl()(*string) {
         return m.invoiceUrl
     }
 }
-// Gets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
+// Gets the isLocationOnline property value. 
 func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
     if m == nil {
         return nil
@@ -207,7 +207,7 @@ func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
         return m.isLocationOnline
     }
 }
-// Gets the joinWebUrl property value. The URL of the online meeting for the appointment.
+// Gets the joinWebUrl property value. 
 func (m *BookingAppointment) GetJoinWebUrl()(*string) {
     if m == nil {
         return nil
@@ -311,7 +311,7 @@ func (m *BookingAppointment) GetServiceNotes()(*string) {
         return m.serviceNotes
     }
 }
-// Gets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+// Gets the smsNotificationsEnabled property value. 
 func (m *BookingAppointment) GetSmsNotificationsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -924,7 +924,7 @@ func (m *BookingAppointment) SetCustomerNotes(value *string)() {
 func (m *BookingAppointment) SetCustomerPhone(value *string)() {
     m.customerPhone = value
 }
-// Sets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
+// Sets the customerTimeZone property value. 
 // Parameters:
 //  - value : Value to set for the customerTimeZone property.
 func (m *BookingAppointment) SetCustomerTimeZone(value *string)() {
@@ -972,13 +972,13 @@ func (m *BookingAppointment) SetInvoiceStatus(value *BookingInvoiceStatus)() {
 func (m *BookingAppointment) SetInvoiceUrl(value *string)() {
     m.invoiceUrl = value
 }
-// Sets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
+// Sets the isLocationOnline property value. 
 // Parameters:
 //  - value : Value to set for the isLocationOnline property.
 func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
     m.isLocationOnline = value
 }
-// Sets the joinWebUrl property value. The URL of the online meeting for the appointment.
+// Sets the joinWebUrl property value. 
 // Parameters:
 //  - value : Value to set for the joinWebUrl property.
 func (m *BookingAppointment) SetJoinWebUrl(value *string)() {
@@ -1056,7 +1056,7 @@ func (m *BookingAppointment) SetServiceName(value *string)() {
 func (m *BookingAppointment) SetServiceNotes(value *string)() {
     m.serviceNotes = value
 }
-// Sets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+// Sets the smsNotificationsEnabled property value. 
 // Parameters:
 //  - value : Value to set for the smsNotificationsEnabled property.
 func (m *BookingAppointment) SetSmsNotificationsEnabled(value *bool)() {

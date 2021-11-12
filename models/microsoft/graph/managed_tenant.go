@@ -33,6 +33,8 @@ type ManagedTenant struct {
     managementIntents []ManagementIntent;
     // The collection of baseline management templates across managed tenants.
     managementTemplates []ManagementTemplate;
+    // The collection of users flagged for risk across managed tenants.
+    riskyUsers []RiskyUser;
     // The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
     tenantGroups []TenantGroup;
     // The collection of tenants associated with the managing entity.
@@ -157,6 +159,14 @@ func (m *ManagedTenant) GetManagementTemplates()([]ManagementTemplate) {
         return nil
     } else {
         return m.managementTemplates
+    }
+}
+// Gets the riskyUsers property value. The collection of users flagged for risk across managed tenants.
+func (m *ManagedTenant) GetRiskyUsers()([]RiskyUser) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskyUsers
     }
 }
 // Gets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
@@ -397,6 +407,20 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
                 res[i] = *(v.(*ManagementTemplate))
             }
             m.SetManagementTemplates(res)
+        }
+        return nil
+    }
+    res["riskyUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRiskyUser() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RiskyUser, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RiskyUser))
+            }
+            m.SetRiskyUsers(res)
         }
         return nil
     }
@@ -655,6 +679,17 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRiskyUsers()))
+        for i, v := range m.GetRiskyUsers() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("riskyUsers", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenantGroups()))
         for i, v := range m.GetTenantGroups() {
             temp := v
@@ -810,6 +845,12 @@ func (m *ManagedTenant) SetManagementIntents(value []ManagementIntent)() {
 //  - value : Value to set for the managementTemplates property.
 func (m *ManagedTenant) SetManagementTemplates(value []ManagementTemplate)() {
     m.managementTemplates = value
+}
+// Sets the riskyUsers property value. The collection of users flagged for risk across managed tenants.
+// Parameters:
+//  - value : Value to set for the riskyUsers property.
+func (m *ManagedTenant) SetRiskyUsers(value []RiskyUser)() {
+    m.riskyUsers = value
 }
 // Sets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 // Parameters:

@@ -1,7 +1,6 @@
 package graph
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
@@ -15,8 +14,6 @@ type LicenseAssignmentState struct {
     disabledPlans []string;
     // License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.
     error *string;
-    // The timestamp when the state of the license assignment was last updated.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The unique identifier for the SKU. Read-Only.
     skuId *string;
     // Indicate the current state of this assignment. Read-Only. Possible values: Active, ActiveWithError, Disabled and Error.
@@ -59,14 +56,6 @@ func (m *LicenseAssignmentState) GetError()(*string) {
         return nil
     } else {
         return m.error
-    }
-}
-// Gets the lastUpdatedDateTime property value. The timestamp when the state of the license assignment was last updated.
-func (m *LicenseAssignmentState) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
     }
 }
 // Gets the skuId property value. The unique identifier for the SKU. Read-Only.
@@ -122,16 +111,6 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastUpdatedDateTime(val)
-        }
-        return nil
-    }
     res["skuId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -180,12 +159,6 @@ func (m *LicenseAssignmentState) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err := writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteStringValue("skuId", m.GetSkuId())
         if err != nil {
             return err
@@ -228,12 +201,6 @@ func (m *LicenseAssignmentState) SetDisabledPlans(value []string)() {
 //  - value : Value to set for the error property.
 func (m *LicenseAssignmentState) SetError(value *string)() {
     m.error = value
-}
-// Sets the lastUpdatedDateTime property value. The timestamp when the state of the license assignment was last updated.
-// Parameters:
-//  - value : Value to set for the lastUpdatedDateTime property.
-func (m *LicenseAssignmentState) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
 }
 // Sets the skuId property value. The unique identifier for the SKU. Read-Only.
 // Parameters:
