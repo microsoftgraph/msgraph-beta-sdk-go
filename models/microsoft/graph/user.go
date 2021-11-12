@@ -64,8 +64,6 @@ type User struct {
     createdObjects []DirectoryObject;
     // Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, and in).
     creationType *string;
-    // 
-    customSecurityAttributes *CustomSecurityAttributeValue;
     // The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
     department *string;
     // Get enrollment configurations targeted to the user
@@ -510,14 +508,6 @@ func (m *User) GetCreationType()(*string) {
         return nil
     } else {
         return m.creationType
-    }
-}
-// Gets the customSecurityAttributes property value. 
-func (m *User) GetCustomSecurityAttributes()(*CustomSecurityAttributeValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSecurityAttributes
     }
 }
 // Gets the department property value. The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
@@ -1716,16 +1706,6 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         if val != nil {
             m.SetCreationType(val)
-        }
-        return nil
-    }
-    res["customSecurityAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomSecurityAttributeValue() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCustomSecurityAttributes(val.(*CustomSecurityAttributeValue))
         }
         return nil
     }
@@ -3235,12 +3215,6 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     {
-        err = writer.WriteObjectValue("customSecurityAttributes", m.GetCustomSecurityAttributes())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("department", m.GetDepartment())
         if err != nil {
             return err
@@ -4236,12 +4210,6 @@ func (m *User) SetCreatedObjects(value []DirectoryObject)() {
 //  - value : Value to set for the creationType property.
 func (m *User) SetCreationType(value *string)() {
     m.creationType = value
-}
-// Sets the customSecurityAttributes property value. 
-// Parameters:
-//  - value : Value to set for the customSecurityAttributes property.
-func (m *User) SetCustomSecurityAttributes(value *CustomSecurityAttributeValue)() {
-    m.customSecurityAttributes = value
 }
 // Sets the department property value. The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
 // Parameters:

@@ -159,6 +159,7 @@ import (
     ieecc9464554ab62dc03bd18e0632d6ca6bab183f34e272de77883f92cba059ec "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/ndesconnectors"
     ief5a78b77c4318683c9519cdb963b9938f0f6fe88c93a0644b54a84a29db4709 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidforworksettings"
     iefe3cca68aed1d1ec30796fdd2d77f7d0b8bde4259781e012141d0373e31d616 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/exchangeconnectors"
+    if3725d86243c74aefb922ce3d9a0524f440a1a4a7747d2ca7eb3303e88cb032d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/getrolescopetagsbyidswithids"
     if5272bcac44fcff2621a3e47727572ede92654ccd7e61f5b25dd0d9d4006ed3d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsmalwareinformation"
     if5846307d7d49aff39a1b63a1e8c86d98714534c39b3fb728c1926d50fb78704 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurationsallmanageddevicecertificatestates"
     if8c065baddf282e16f72f4cb0dc067e98a5ad4e3790ee2a13bd13297a87ade01 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicestartupprocessperformance"
@@ -1190,6 +1191,10 @@ func (m *DeviceManagementRequestBuilder) GetEffectivePermissions()(*i9fc465b5a85
 //  - scope : Usage: scope={scope}
 func (m *DeviceManagementRequestBuilder) GetEffectivePermissionsWithScope(scope *string)(*i2ac2ce65fd2aee45de13a501baed8caeb3bf7574c7821fee17834fe715933533.GetEffectivePermissionsWithScopeRequestBuilder) {
     return i2ac2ce65fd2aee45de13a501baed8caeb3bf7574c7821fee17834fe715933533.NewGetEffectivePermissionsWithScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter, scope);
+}
+// Builds and executes requests for operations under \deviceManagement\microsoft.graph.getRoleScopeTagsByIds(ids=@ids)
+func (m *DeviceManagementRequestBuilder) GetRoleScopeTagsByIdsWithIds()(*if3725d86243c74aefb922ce3d9a0524f440a1a4a7747d2ca7eb3303e88cb032d.GetRoleScopeTagsByIdsWithIdsRequestBuilder) {
+    return if3725d86243c74aefb922ce3d9a0524f440a1a4a7747d2ca7eb3303e88cb032d.NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Builds and executes requests for operations under \deviceManagement\microsoft.graph.getRoleScopeTagsByResource(resource='{resource}')
 // Parameters:

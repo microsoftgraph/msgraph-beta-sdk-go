@@ -13,7 +13,7 @@ type BookingStaffMember struct {
     colorIndex *int32;
     // The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest. Required.
     role *BookingStaffRole;
-    // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
+    // 
     timeZone *string;
     // True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
     useBusinessHours *bool;
@@ -51,7 +51,7 @@ func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
         return m.role
     }
 }
-// Gets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
+// Gets the timeZone property value. 
 func (m *BookingStaffMember) GetTimeZone()(*string) {
     if m == nil {
         return nil
@@ -218,7 +218,7 @@ func (m *BookingStaffMember) SetColorIndex(value *int32)() {
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
     m.role = value
 }
-// Sets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
+// Sets the timeZone property value. 
 // Parameters:
 //  - value : Value to set for the timeZone property.
 func (m *BookingStaffMember) SetTimeZone(value *string)() {
