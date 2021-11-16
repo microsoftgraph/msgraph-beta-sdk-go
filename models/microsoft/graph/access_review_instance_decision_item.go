@@ -18,6 +18,8 @@ type AccessReviewInstanceDecisionItem struct {
     applyResult *string;
     // Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).
     decision *string;
+    // 
+    insights []GovernanceInsight;
     // Justification left by the reviewer when they made the decision.
     justification *string;
     // Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.
@@ -82,6 +84,14 @@ func (m *AccessReviewInstanceDecisionItem) GetDecision()(*string) {
         return nil
     } else {
         return m.decision
+    }
+}
+// Gets the insights property value. 
+func (m *AccessReviewInstanceDecisionItem) GetInsights()([]GovernanceInsight) {
+    if m == nil {
+        return nil
+    } else {
+        return m.insights
     }
 }
 // Gets the justification property value. Justification left by the reviewer when they made the decision.
@@ -206,6 +216,20 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetDecision(val)
+        }
+        return nil
+    }
+    res["insights"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceInsight() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GovernanceInsight, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*GovernanceInsight))
+            }
+            m.SetInsights(res)
         }
         return nil
     }
@@ -343,6 +367,17 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i04eb5309aeaafadd283
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInsights()))
+        for i, v := range m.GetInsights() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("insights", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("justification", m.GetJustification())
         if err != nil {
             return err
@@ -427,6 +462,12 @@ func (m *AccessReviewInstanceDecisionItem) SetApplyResult(value *string)() {
 //  - value : Value to set for the decision property.
 func (m *AccessReviewInstanceDecisionItem) SetDecision(value *string)() {
     m.decision = value
+}
+// Sets the insights property value. 
+// Parameters:
+//  - value : Value to set for the insights property.
+func (m *AccessReviewInstanceDecisionItem) SetInsights(value []GovernanceInsight)() {
+    m.insights = value
 }
 // Sets the justification property value. Justification left by the reviewer when they made the decision.
 // Parameters:

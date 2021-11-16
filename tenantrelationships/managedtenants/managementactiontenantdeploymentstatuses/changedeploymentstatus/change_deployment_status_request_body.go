@@ -13,6 +13,8 @@ type ChangeDeploymentStatusRequestBody struct {
     // 
     managementTemplateId *string;
     // 
+    managementTemplateVersion *int32;
+    // 
     status *string;
     // 
     tenantGroupId *string;
@@ -48,6 +50,14 @@ func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateId()(*string) {
         return nil
     } else {
         return m.managementTemplateId
+    }
+}
+// Gets the managementTemplateVersion property value. 
+func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateVersion
     }
 }
 // Gets the status property value. 
@@ -94,6 +104,16 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         }
         if val != nil {
             m.SetManagementTemplateId(val)
+        }
+        return nil
+    }
+    res["managementTemplateVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagementTemplateVersion(val)
         }
         return nil
     }
@@ -149,6 +169,12 @@ func (m *ChangeDeploymentStatusRequestBody) Serialize(writer i04eb5309aeaafadd28
         }
     }
     {
+        err := writer.WriteInt32Value("managementTemplateVersion", m.GetManagementTemplateVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("status", m.GetStatus())
         if err != nil {
             return err
@@ -191,6 +217,12 @@ func (m *ChangeDeploymentStatusRequestBody) SetManagementActionId(value *string)
 //  - value : Value to set for the managementTemplateId property.
 func (m *ChangeDeploymentStatusRequestBody) SetManagementTemplateId(value *string)() {
     m.managementTemplateId = value
+}
+// Sets the managementTemplateVersion property value. 
+// Parameters:
+//  - value : Value to set for the managementTemplateVersion property.
+func (m *ChangeDeploymentStatusRequestBody) SetManagementTemplateVersion(value *int32)() {
+    m.managementTemplateVersion = value
 }
 // Sets the status property value. 
 // Parameters:

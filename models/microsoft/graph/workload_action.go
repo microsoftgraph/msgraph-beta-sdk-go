@@ -17,6 +17,8 @@ type WorkloadAction struct {
     description *string;
     // The display name for the workload action. Optional. Read-only.
     displayName *string;
+    // 
+    licenses []string;
     // The service associated with workload action. Optional. Read-only.
     service *string;
     // The collection of settings associated with the workload action. Optional. Read-only.
@@ -67,6 +69,14 @@ func (m *WorkloadAction) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
+    }
+}
+// Gets the licenses property value. 
+func (m *WorkloadAction) GetLicenses()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.licenses
     }
 }
 // Gets the service property value. The service associated with workload action. Optional. Read-only.
@@ -129,6 +139,20 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         return nil
     }
+    res["licenses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetLicenses(res)
+        }
+        return nil
+    }
     res["service"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -188,6 +212,12 @@ func (m *WorkloadAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
+        err := writer.WriteCollectionOfStringValues("licenses", m.GetLicenses())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("service", m.GetService())
         if err != nil {
             return err
@@ -241,6 +271,12 @@ func (m *WorkloadAction) SetDescription(value *string)() {
 //  - value : Value to set for the displayName property.
 func (m *WorkloadAction) SetDisplayName(value *string)() {
     m.displayName = value
+}
+// Sets the licenses property value. 
+// Parameters:
+//  - value : Value to set for the licenses property.
+func (m *WorkloadAction) SetLicenses(value []string)() {
+    m.licenses = value
 }
 // Sets the service property value. The service associated with workload action. Optional. Read-only.
 // Parameters:

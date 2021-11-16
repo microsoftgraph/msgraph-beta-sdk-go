@@ -13,7 +13,7 @@ type CloudPcProvisioningPolicy struct {
     description *string;
     // The display name for the provisioning policy.
     displayName *string;
-    // 
+    // Specifies how Cloud PCs will join Azure Active Directory.
     domainJoinConfiguration *CloudPcDomainJoinConfiguration;
     // The display name for the OS image you’re provisioning.
     imageDisplayName *string;
@@ -57,7 +57,7 @@ func (m *CloudPcProvisioningPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the domainJoinConfiguration property value. 
+// Gets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
 func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(*CloudPcDomainJoinConfiguration) {
     if m == nil {
         return nil
@@ -296,7 +296,7 @@ func (m *CloudPcProvisioningPolicy) SetDescription(value *string)() {
 func (m *CloudPcProvisioningPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the domainJoinConfiguration property value. 
+// Sets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
 // Parameters:
 //  - value : Value to set for the domainJoinConfiguration property.
 func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value *CloudPcDomainJoinConfiguration)() {

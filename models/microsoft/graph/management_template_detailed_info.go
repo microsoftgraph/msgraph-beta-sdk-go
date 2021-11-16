@@ -15,6 +15,8 @@ type ManagementTemplateDetailedInfo struct {
     displayName *string;
     // The unique identifier for the management template. Required. Read-only.
     managementTemplateId *string;
+    // 
+    version *int32;
 }
 // Instantiates a new managementTemplateDetailedInfo and sets the default values.
 func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
@@ -55,6 +57,14 @@ func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
         return m.managementTemplateId
     }
 }
+// Gets the version property value. 
+func (m *ManagementTemplateDetailedInfo) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 // The deserialization information for the current model
 func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -89,6 +99,16 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVersion(val)
+        }
+        return nil
+    }
     return res
 }
 func (m *ManagementTemplateDetailedInfo) IsNil()(bool) {
@@ -113,6 +133,12 @@ func (m *ManagementTemplateDetailedInfo) Serialize(writer i04eb5309aeaafadd28374
     }
     {
         err := writer.WriteStringValue("managementTemplateId", m.GetManagementTemplateId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("version", m.GetVersion())
         if err != nil {
             return err
         }
@@ -148,4 +174,10 @@ func (m *ManagementTemplateDetailedInfo) SetDisplayName(value *string)() {
 //  - value : Value to set for the managementTemplateId property.
 func (m *ManagementTemplateDetailedInfo) SetManagementTemplateId(value *string)() {
     m.managementTemplateId = value
+}
+// Sets the version property value. 
+// Parameters:
+//  - value : Value to set for the version property.
+func (m *ManagementTemplateDetailedInfo) SetVersion(value *int32)() {
+    m.version = value
 }

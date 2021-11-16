@@ -11,10 +11,11 @@ const (
     RUNNING_LONGRUNNINGOPERATIONSTATUS
     SUCCEEDED_LONGRUNNINGOPERATIONSTATUS
     FAILED_LONGRUNNINGOPERATIONSTATUS
+    UNKNOWNFUTUREVALUE_LONGRUNNINGOPERATIONSTATUS
 )
 
 func (i LongRunningOperationStatus) String() string {
-    return []string{"NOTSTARTED", "RUNNING", "SUCCEEDED", "FAILED"}[i]
+    return []string{"NOTSTARTED", "RUNNING", "SUCCEEDED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseLongRunningOperationStatus(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -26,6 +27,8 @@ func ParseLongRunningOperationStatus(v string) (interface{}, error) {
             return SUCCEEDED_LONGRUNNINGOPERATIONSTATUS, nil
         case "FAILED":
             return FAILED_LONGRUNNINGOPERATIONSTATUS, nil
+        case "UNKNOWNFUTUREVALUE":
+            return UNKNOWNFUTUREVALUE_LONGRUNNINGOPERATIONSTATUS, nil
     }
     return 0, errors.New("Unknown LongRunningOperationStatus value: " + v)
 }

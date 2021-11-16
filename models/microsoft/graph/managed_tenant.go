@@ -31,10 +31,14 @@ type ManagedTenant struct {
     managementActionTenantDeploymentStatuses []ManagementActionTenantDeploymentStatus;
     // The collection of baseline management intents across managed tenants.
     managementIntents []ManagementIntent;
+    // 
+    managementTemplateCollections []ManagementTemplateCollection;
     // The collection of baseline management templates across managed tenants.
     managementTemplates []ManagementTemplate;
-    // The collection of users flagged for risk across managed tenants.
-    riskyUsers []RiskyUser;
+    // 
+    managementTemplateSteps []ManagementTemplateStep;
+    // 
+    managementTemplateStepVersions []ManagementTemplateStepVersion;
     // The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
     tenantGroups []TenantGroup;
     // The collection of tenants associated with the managing entity.
@@ -153,6 +157,14 @@ func (m *ManagedTenant) GetManagementIntents()([]ManagementIntent) {
         return m.managementIntents
     }
 }
+// Gets the managementTemplateCollections property value. 
+func (m *ManagedTenant) GetManagementTemplateCollections()([]ManagementTemplateCollection) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateCollections
+    }
+}
 // Gets the managementTemplates property value. The collection of baseline management templates across managed tenants.
 func (m *ManagedTenant) GetManagementTemplates()([]ManagementTemplate) {
     if m == nil {
@@ -161,12 +173,20 @@ func (m *ManagedTenant) GetManagementTemplates()([]ManagementTemplate) {
         return m.managementTemplates
     }
 }
-// Gets the riskyUsers property value. The collection of users flagged for risk across managed tenants.
-func (m *ManagedTenant) GetRiskyUsers()([]RiskyUser) {
+// Gets the managementTemplateSteps property value. 
+func (m *ManagedTenant) GetManagementTemplateSteps()([]ManagementTemplateStep) {
     if m == nil {
         return nil
     } else {
-        return m.riskyUsers
+        return m.managementTemplateSteps
+    }
+}
+// Gets the managementTemplateStepVersions property value. 
+func (m *ManagedTenant) GetManagementTemplateStepVersions()([]ManagementTemplateStepVersion) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateStepVersions
     }
 }
 // Gets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
@@ -396,6 +416,20 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         return nil
     }
+    res["managementTemplateCollections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateCollection() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ManagementTemplateCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementTemplateCollection))
+            }
+            m.SetManagementTemplateCollections(res)
+        }
+        return nil
+    }
     res["managementTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplate() })
         if err != nil {
@@ -410,17 +444,31 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         return nil
     }
-    res["riskyUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRiskyUser() })
+    res["managementTemplateSteps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStep() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RiskyUser, len(val))
+            res := make([]ManagementTemplateStep, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RiskyUser))
+                res[i] = *(v.(*ManagementTemplateStep))
             }
-            m.SetRiskyUsers(res)
+            m.SetManagementTemplateSteps(res)
+        }
+        return nil
+    }
+    res["managementTemplateStepVersions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStepVersion() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ManagementTemplateStepVersion, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementTemplateStepVersion))
+            }
+            m.SetManagementTemplateStepVersions(res)
         }
         return nil
     }
@@ -668,6 +716,17 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateCollections()))
+        for i, v := range m.GetManagementTemplateCollections() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("managementTemplateCollections", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplates()))
         for i, v := range m.GetManagementTemplates() {
             temp := v
@@ -679,12 +738,23 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRiskyUsers()))
-        for i, v := range m.GetRiskyUsers() {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateSteps()))
+        for i, v := range m.GetManagementTemplateSteps() {
             temp := v
             cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
         }
-        err = writer.WriteCollectionOfObjectValues("riskyUsers", cast)
+        err = writer.WriteCollectionOfObjectValues("managementTemplateSteps", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateStepVersions()))
+        for i, v := range m.GetManagementTemplateStepVersions() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("managementTemplateStepVersions", cast)
         if err != nil {
             return err
         }
@@ -840,17 +910,29 @@ func (m *ManagedTenant) SetManagementActionTenantDeploymentStatuses(value []Mana
 func (m *ManagedTenant) SetManagementIntents(value []ManagementIntent)() {
     m.managementIntents = value
 }
+// Sets the managementTemplateCollections property value. 
+// Parameters:
+//  - value : Value to set for the managementTemplateCollections property.
+func (m *ManagedTenant) SetManagementTemplateCollections(value []ManagementTemplateCollection)() {
+    m.managementTemplateCollections = value
+}
 // Sets the managementTemplates property value. The collection of baseline management templates across managed tenants.
 // Parameters:
 //  - value : Value to set for the managementTemplates property.
 func (m *ManagedTenant) SetManagementTemplates(value []ManagementTemplate)() {
     m.managementTemplates = value
 }
-// Sets the riskyUsers property value. The collection of users flagged for risk across managed tenants.
+// Sets the managementTemplateSteps property value. 
 // Parameters:
-//  - value : Value to set for the riskyUsers property.
-func (m *ManagedTenant) SetRiskyUsers(value []RiskyUser)() {
-    m.riskyUsers = value
+//  - value : Value to set for the managementTemplateSteps property.
+func (m *ManagedTenant) SetManagementTemplateSteps(value []ManagementTemplateStep)() {
+    m.managementTemplateSteps = value
+}
+// Sets the managementTemplateStepVersions property value. 
+// Parameters:
+//  - value : Value to set for the managementTemplateStepVersions property.
+func (m *ManagedTenant) SetManagementTemplateStepVersions(value []ManagementTemplateStepVersion)() {
+    m.managementTemplateStepVersions = value
 }
 // Sets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 // Parameters:

@@ -15,6 +15,8 @@ type Setting struct {
     jsonValue *string;
     // A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
     overwriteAllowed *bool;
+    // 
+    settingId *string;
     // The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
     valueType *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType;
 }
@@ -55,6 +57,14 @@ func (m *Setting) GetOverwriteAllowed()(*bool) {
         return nil
     } else {
         return m.overwriteAllowed
+    }
+}
+// Gets the settingId property value. 
+func (m *Setting) GetSettingId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingId
     }
 }
 // Gets the valueType property value. The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
@@ -98,6 +108,16 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         }
         return nil
     }
+    res["settingId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingId(val)
+        }
+        return nil
+    }
     res["valueType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ParseManagementParameterValueType)
         if err != nil {
@@ -132,6 +152,12 @@ func (m *Setting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     {
         err := writer.WriteBoolValue("overwriteAllowed", m.GetOverwriteAllowed())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("settingId", m.GetSettingId())
         if err != nil {
             return err
         }
@@ -174,6 +200,12 @@ func (m *Setting) SetJsonValue(value *string)() {
 //  - value : Value to set for the overwriteAllowed property.
 func (m *Setting) SetOverwriteAllowed(value *bool)() {
     m.overwriteAllowed = value
+}
+// Sets the settingId property value. 
+// Parameters:
+//  - value : Value to set for the settingId property.
+func (m *Setting) SetSettingId(value *string)() {
+    m.settingId = value
 }
 // Sets the valueType property value. The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
 // Parameters:

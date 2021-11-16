@@ -9,6 +9,12 @@ type ApplyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
+    excludeGroups []string;
+    // 
+    includeAllUsers *bool;
+    // 
+    includeGroups []string;
+    // 
     managementTemplateId *string;
     // 
     tenantGroupId *string;
@@ -28,6 +34,30 @@ func (m *ApplyRequestBody) GetAdditionalData()(map[string]interface{}) {
         return nil
     } else {
         return m.additionalData
+    }
+}
+// Gets the excludeGroups property value. 
+func (m *ApplyRequestBody) GetExcludeGroups()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.excludeGroups
+    }
+}
+// Gets the includeAllUsers property value. 
+func (m *ApplyRequestBody) GetIncludeAllUsers()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeAllUsers
+    }
+}
+// Gets the includeGroups property value. 
+func (m *ApplyRequestBody) GetIncludeGroups()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeGroups
     }
 }
 // Gets the managementTemplateId property value. 
@@ -57,6 +87,44 @@ func (m *ApplyRequestBody) GetTenantId()(*string) {
 // The deserialization information for the current model
 func (m *ApplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["excludeGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludeGroups(res)
+        }
+        return nil
+    }
+    res["includeAllUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludeAllUsers(val)
+        }
+        return nil
+    }
+    res["includeGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIncludeGroups(res)
+        }
+        return nil
+    }
     res["managementTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -97,6 +165,24 @@ func (m *ApplyRequestBody) IsNil()(bool) {
 //  - writer : Serialization writer to use to serialize this model
 func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
+        err := writer.WriteCollectionOfStringValues("excludeGroups", m.GetExcludeGroups())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("includeAllUsers", m.GetIncludeAllUsers())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteCollectionOfStringValues("includeGroups", m.GetIncludeGroups())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("managementTemplateId", m.GetManagementTemplateId())
         if err != nil {
             return err
@@ -127,6 +213,24 @@ func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 //  - value : Value to set for the AdditionalData property.
 func (m *ApplyRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
+}
+// Sets the excludeGroups property value. 
+// Parameters:
+//  - value : Value to set for the excludeGroups property.
+func (m *ApplyRequestBody) SetExcludeGroups(value []string)() {
+    m.excludeGroups = value
+}
+// Sets the includeAllUsers property value. 
+// Parameters:
+//  - value : Value to set for the includeAllUsers property.
+func (m *ApplyRequestBody) SetIncludeAllUsers(value *bool)() {
+    m.includeAllUsers = value
+}
+// Sets the includeGroups property value. 
+// Parameters:
+//  - value : Value to set for the includeGroups property.
+func (m *ApplyRequestBody) SetIncludeGroups(value []string)() {
+    m.includeGroups = value
 }
 // Sets the managementTemplateId property value. 
 // Parameters:

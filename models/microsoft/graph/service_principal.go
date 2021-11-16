@@ -38,6 +38,8 @@ type ServicePrincipal struct {
     claimsMappingPolicies []ClaimsMappingPolicy;
     // Directory objects created by this service principal. Read-only. Nullable.
     createdObjects []DirectoryObject;
+    // 
+    customSecurityAttributes *CustomSecurityAttributeValue;
     // The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
     delegatedPermissionClassifications []DelegatedPermissionClassification;
     // Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
@@ -242,6 +244,14 @@ func (m *ServicePrincipal) GetCreatedObjects()([]DirectoryObject) {
         return nil
     } else {
         return m.createdObjects
+    }
+}
+// Gets the customSecurityAttributes property value. 
+func (m *ServicePrincipal) GetCustomSecurityAttributes()(*CustomSecurityAttributeValue) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customSecurityAttributes
     }
 }
 // Gets the delegatedPermissionClassifications property value. The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
@@ -738,6 +748,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
                 res[i] = *(v.(*DirectoryObject))
             }
             m.SetCreatedObjects(res)
+        }
+        return nil
+    }
+    res["customSecurityAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomSecurityAttributeValue() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomSecurityAttributes(val.(*CustomSecurityAttributeValue))
         }
         return nil
     }
@@ -1346,6 +1366,12 @@ func (m *ServicePrincipal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
+        err = writer.WriteObjectValue("customSecurityAttributes", m.GetCustomSecurityAttributes())
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDelegatedPermissionClassifications()))
         for i, v := range m.GetDelegatedPermissionClassifications() {
             temp := v
@@ -1745,6 +1771,12 @@ func (m *ServicePrincipal) SetClaimsMappingPolicies(value []ClaimsMappingPolicy)
 //  - value : Value to set for the createdObjects property.
 func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObject)() {
     m.createdObjects = value
+}
+// Sets the customSecurityAttributes property value. 
+// Parameters:
+//  - value : Value to set for the customSecurityAttributes property.
+func (m *ServicePrincipal) SetCustomSecurityAttributes(value *CustomSecurityAttributeValue)() {
+    m.customSecurityAttributes = value
 }
 // Sets the delegatedPermissionClassifications property value. The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 // Parameters:

@@ -16,6 +16,12 @@ type WorkloadActionDeploymentStatus struct {
     deployedPolicyId *string;
     // The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
     error *GenericError;
+    // 
+    excludeGroups []string;
+    // 
+    includeAllUsers *bool;
+    // 
+    includeGroups []string;
     // The date and time the workload action was last deployed. Optional.
     lastDeploymentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The status of the workload action deployment. Possible values are: toAddress, completed, error, timeOut, inProgress, unknownFutureValue. Required. Read-only.
@@ -58,6 +64,30 @@ func (m *WorkloadActionDeploymentStatus) GetError()(*GenericError) {
         return nil
     } else {
         return m.error
+    }
+}
+// Gets the excludeGroups property value. 
+func (m *WorkloadActionDeploymentStatus) GetExcludeGroups()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.excludeGroups
+    }
+}
+// Gets the includeAllUsers property value. 
+func (m *WorkloadActionDeploymentStatus) GetIncludeAllUsers()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeAllUsers
+    }
+}
+// Gets the includeGroups property value. 
+func (m *WorkloadActionDeploymentStatus) GetIncludeGroups()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeGroups
     }
 }
 // Gets the lastDeploymentDateTime property value. The date and time the workload action was last deployed. Optional.
@@ -106,6 +136,44 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetError(val.(*GenericError))
+        }
+        return nil
+    }
+    res["excludeGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludeGroups(res)
+        }
+        return nil
+    }
+    res["includeAllUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludeAllUsers(val)
+        }
+        return nil
+    }
+    res["includeGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIncludeGroups(res)
         }
         return nil
     }
@@ -158,6 +226,24 @@ func (m *WorkloadActionDeploymentStatus) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
+        err := writer.WriteCollectionOfStringValues("excludeGroups", m.GetExcludeGroups())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("includeAllUsers", m.GetIncludeAllUsers())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteCollectionOfStringValues("includeGroups", m.GetIncludeGroups())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteTimeValue("lastDeploymentDateTime", m.GetLastDeploymentDateTime())
         if err != nil {
             return err
@@ -201,6 +287,24 @@ func (m *WorkloadActionDeploymentStatus) SetDeployedPolicyId(value *string)() {
 //  - value : Value to set for the error property.
 func (m *WorkloadActionDeploymentStatus) SetError(value *GenericError)() {
     m.error = value
+}
+// Sets the excludeGroups property value. 
+// Parameters:
+//  - value : Value to set for the excludeGroups property.
+func (m *WorkloadActionDeploymentStatus) SetExcludeGroups(value []string)() {
+    m.excludeGroups = value
+}
+// Sets the includeAllUsers property value. 
+// Parameters:
+//  - value : Value to set for the includeAllUsers property.
+func (m *WorkloadActionDeploymentStatus) SetIncludeAllUsers(value *bool)() {
+    m.includeAllUsers = value
+}
+// Sets the includeGroups property value. 
+// Parameters:
+//  - value : Value to set for the includeGroups property.
+func (m *WorkloadActionDeploymentStatus) SetIncludeGroups(value []string)() {
+    m.includeGroups = value
 }
 // Sets the lastDeploymentDateTime property value. The date and time the workload action was last deployed. Optional.
 // Parameters:

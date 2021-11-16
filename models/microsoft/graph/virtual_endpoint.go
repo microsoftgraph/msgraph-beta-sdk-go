@@ -13,7 +13,7 @@ type VirtualEndpoint struct {
     cloudPCs []CloudPC;
     // The image resource on Cloud PC.
     deviceImages []CloudPcDeviceImage;
-    // 
+    // The gallery image resource on Cloud PC.
     galleryImages []CloudPcGalleryImage;
     // A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
     onPremisesConnections []CloudPcOnPremisesConnection;
@@ -57,7 +57,7 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImage) {
         return m.deviceImages
     }
 }
-// Gets the galleryImages property value. 
+// Gets the galleryImages property value. The gallery image resource on Cloud PC.
 func (m *VirtualEndpoint) GetGalleryImages()([]CloudPcGalleryImage) {
     if m == nil {
         return nil
@@ -366,7 +366,7 @@ func (m *VirtualEndpoint) SetCloudPCs(value []CloudPC)() {
 func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImage)() {
     m.deviceImages = value
 }
-// Sets the galleryImages property value. 
+// Sets the galleryImages property value. The gallery image resource on Cloud PC.
 // Parameters:
 //  - value : Value to set for the galleryImages property.
 func (m *VirtualEndpoint) SetGalleryImages(value []CloudPcGalleryImage)() {

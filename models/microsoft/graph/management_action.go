@@ -16,6 +16,8 @@ type ManagementAction struct {
     displayName *string;
     // The reference for the management template used to generate the management action. Required. Read-only.
     referenceTemplateId *string;
+    // 
+    referenceTemplateVersion *int32;
     // The collection of workload actions associated with the management action. Required. Read-only.
     workloadActions []WorkloadAction;
 }
@@ -56,6 +58,14 @@ func (m *ManagementAction) GetReferenceTemplateId()(*string) {
         return nil
     } else {
         return m.referenceTemplateId
+    }
+}
+// Gets the referenceTemplateVersion property value. 
+func (m *ManagementAction) GetReferenceTemplateVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referenceTemplateVersion
     }
 }
 // Gets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
@@ -107,6 +117,16 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         if val != nil {
             m.SetReferenceTemplateId(val)
+        }
+        return nil
+    }
+    res["referenceTemplateVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReferenceTemplateVersion(val)
         }
         return nil
     }
@@ -163,6 +183,12 @@ func (m *ManagementAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
+        err = writer.WriteInt32Value("referenceTemplateVersion", m.GetReferenceTemplateVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkloadActions()))
         for i, v := range m.GetWorkloadActions() {
             temp := v
@@ -198,6 +224,12 @@ func (m *ManagementAction) SetDisplayName(value *string)() {
 //  - value : Value to set for the referenceTemplateId property.
 func (m *ManagementAction) SetReferenceTemplateId(value *string)() {
     m.referenceTemplateId = value
+}
+// Sets the referenceTemplateVersion property value. 
+// Parameters:
+//  - value : Value to set for the referenceTemplateVersion property.
+func (m *ManagementAction) SetReferenceTemplateVersion(value *int32)() {
+    m.referenceTemplateVersion = value
 }
 // Sets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
 // Parameters:

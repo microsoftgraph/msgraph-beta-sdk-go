@@ -13,6 +13,8 @@ type ManagementActionDeploymentStatus struct {
     managementActionId *string;
     // The management template identifier that was used to generate the management action. Required. Read-only.
     managementTemplateId *string;
+    // 
+    managementTemplateVersion *int32;
     // The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
     status *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionStatus;
     // The collection of workload action deployment statues for the given management action. Optional.
@@ -47,6 +49,14 @@ func (m *ManagementActionDeploymentStatus) GetManagementTemplateId()(*string) {
         return nil
     } else {
         return m.managementTemplateId
+    }
+}
+// Gets the managementTemplateVersion property value. 
+func (m *ManagementActionDeploymentStatus) GetManagementTemplateVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateVersion
     }
 }
 // Gets the status property value. The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
@@ -85,6 +95,16 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetManagementTemplateId(val)
+        }
+        return nil
+    }
+    res["managementTemplateVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagementTemplateVersion(val)
         }
         return nil
     }
@@ -134,6 +154,12 @@ func (m *ManagementActionDeploymentStatus) Serialize(writer i04eb5309aeaafadd283
             return err
         }
     }
+    {
+        err := writer.WriteInt32Value("managementTemplateVersion", m.GetManagementTemplateVersion())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := m.GetStatus().String()
         err := writer.WriteStringValue("status", &cast)
@@ -177,6 +203,12 @@ func (m *ManagementActionDeploymentStatus) SetManagementActionId(value *string)(
 //  - value : Value to set for the managementTemplateId property.
 func (m *ManagementActionDeploymentStatus) SetManagementTemplateId(value *string)() {
     m.managementTemplateId = value
+}
+// Sets the managementTemplateVersion property value. 
+// Parameters:
+//  - value : Value to set for the managementTemplateVersion property.
+func (m *ManagementActionDeploymentStatus) SetManagementTemplateVersion(value *int32)() {
+    m.managementTemplateVersion = value
 }
 // Sets the status property value. The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
 // Parameters:

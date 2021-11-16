@@ -13,7 +13,7 @@ type SourceCollection struct {
     additionalSources []DataSource;
     // Adds the results of the sourceCollection to the specified reviewSet.
     addToReviewSetOperation *AddToReviewSetOperation;
-    // The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery.  You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016
+    // The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
     contentQuery *string;
     // The user who created the sourceCollection.
     createdBy *IdentitySet;
@@ -21,11 +21,11 @@ type SourceCollection struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Custodian sources that are included in the sourceCollection.
     custodianSources []DataSource;
-    // When specified, the collection will span across a service for an entire workload. Possible values are: none,allTenantMailboxes,allTenantSites,allCaseCustodians,allCaseNoncustodialDataSources.
+    // When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
     dataSourceScopes *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceScopes;
-    // The description of the sourceCollection
+    // The description of the sourceCollection.
     description *string;
-    // The display name of the sourceCollection
+    // The display name of the sourceCollection.
     displayName *string;
     // The last estimate operation associated with the sourceCollection.
     lastEstimateStatisticsOperation *EstimateStatisticsOperation;
@@ -59,7 +59,7 @@ func (m *SourceCollection) GetAddToReviewSetOperation()(*AddToReviewSetOperation
         return m.addToReviewSetOperation
     }
 }
-// Gets the contentQuery property value. The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery.  You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016
+// Gets the contentQuery property value. The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
 func (m *SourceCollection) GetContentQuery()(*string) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *SourceCollection) GetCustodianSources()([]DataSource) {
         return m.custodianSources
     }
 }
-// Gets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none,allTenantMailboxes,allTenantSites,allCaseCustodians,allCaseNoncustodialDataSources.
+// Gets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
 func (m *SourceCollection) GetDataSourceScopes()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceScopes) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *SourceCollection) GetDataSourceScopes()(*i2756dc8c91c60abdde0aa43bf23ca
         return m.dataSourceScopes
     }
 }
-// Gets the description property value. The description of the sourceCollection
+// Gets the description property value. The description of the sourceCollection.
 func (m *SourceCollection) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *SourceCollection) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name of the sourceCollection
+// Gets the displayName property value. The display name of the sourceCollection.
 func (m *SourceCollection) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -414,7 +414,7 @@ func (m *SourceCollection) SetAdditionalSources(value []DataSource)() {
 func (m *SourceCollection) SetAddToReviewSetOperation(value *AddToReviewSetOperation)() {
     m.addToReviewSetOperation = value
 }
-// Sets the contentQuery property value. The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery.  You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016
+// Sets the contentQuery property value. The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
 // Parameters:
 //  - value : Value to set for the contentQuery property.
 func (m *SourceCollection) SetContentQuery(value *string)() {
@@ -438,19 +438,19 @@ func (m *SourceCollection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3
 func (m *SourceCollection) SetCustodianSources(value []DataSource)() {
     m.custodianSources = value
 }
-// Sets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none,allTenantMailboxes,allTenantSites,allCaseCustodians,allCaseNoncustodialDataSources.
+// Sets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
 // Parameters:
 //  - value : Value to set for the dataSourceScopes property.
 func (m *SourceCollection) SetDataSourceScopes(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceScopes)() {
     m.dataSourceScopes = value
 }
-// Sets the description property value. The description of the sourceCollection
+// Sets the description property value. The description of the sourceCollection.
 // Parameters:
 //  - value : Value to set for the description property.
 func (m *SourceCollection) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name of the sourceCollection
+// Sets the displayName property value. The display name of the sourceCollection.
 // Parameters:
 //  - value : Value to set for the displayName property.
 func (m *SourceCollection) SetDisplayName(value *string)() {

@@ -8,11 +8,11 @@ import (
 type ValidationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The string containing the reason for why the rule passed or not. Read-only. Not nullable.
     message *string;
-    // 
+    // The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
     ruleName *string;
-    // 
+    // Whether the password passed or failed the validation rule. Read-only. Not nullable.
     validationPassed *bool;
 }
 // Instantiates a new validationResult and sets the default values.
@@ -30,7 +30,7 @@ func (m *ValidationResult) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the message property value. 
+// Gets the message property value. The string containing the reason for why the rule passed or not. Read-only. Not nullable.
 func (m *ValidationResult) GetMessage()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *ValidationResult) GetMessage()(*string) {
         return m.message
     }
 }
-// Gets the ruleName property value. 
+// Gets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
 func (m *ValidationResult) GetRuleName()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ValidationResult) GetRuleName()(*string) {
         return m.ruleName
     }
 }
-// Gets the validationPassed property value. 
+// Gets the validationPassed property value. Whether the password passed or failed the validation rule. Read-only. Not nullable.
 func (m *ValidationResult) GetValidationPassed()(*bool) {
     if m == nil {
         return nil
@@ -128,19 +128,19 @@ func (m *ValidationResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 func (m *ValidationResult) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the message property value. 
+// Sets the message property value. The string containing the reason for why the rule passed or not. Read-only. Not nullable.
 // Parameters:
 //  - value : Value to set for the message property.
 func (m *ValidationResult) SetMessage(value *string)() {
     m.message = value
 }
-// Sets the ruleName property value. 
+// Sets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
 // Parameters:
 //  - value : Value to set for the ruleName property.
 func (m *ValidationResult) SetRuleName(value *string)() {
     m.ruleName = value
 }
-// Sets the validationPassed property value. 
+// Sets the validationPassed property value. Whether the password passed or failed the validation rule. Read-only. Not nullable.
 // Parameters:
 //  - value : Value to set for the validationPassed property.
 func (m *ValidationResult) SetValidationPassed(value *bool)() {
