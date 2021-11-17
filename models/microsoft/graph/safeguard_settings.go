@@ -8,7 +8,7 @@ import (
 type SafeguardSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // List of safeguards to ignore per device.
     disabledSafeguardProfiles []SafeguardProfile;
 }
 // Instantiates a new safeguardSettings and sets the default values.
@@ -26,7 +26,7 @@ func (m *SafeguardSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the disabledSafeguardProfiles property value. 
+// Gets the disabledSafeguardProfiles property value. List of safeguards to ignore per device.
 func (m *SafeguardSettings) GetDisabledSafeguardProfiles()([]SafeguardProfile) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *SafeguardSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 func (m *SafeguardSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the disabledSafeguardProfiles property value. 
+// Sets the disabledSafeguardProfiles property value. List of safeguards to ignore per device.
 // Parameters:
 //  - value : Value to set for the disabledSafeguardProfiles property.
 func (m *SafeguardSettings) SetDisabledSafeguardProfiles(value []SafeguardProfile)() {

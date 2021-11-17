@@ -35,7 +35,7 @@ type CloudPcGalleryImageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get galleryImages from deviceManagement
+// The gallery image resource on Cloud PC.
 type CloudPcGalleryImageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -78,7 +78,7 @@ func NewCloudPcGalleryImageRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcGalleryImageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property galleryImages for deviceManagement
+// The gallery image resource on Cloud PC.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcGalleryImageRequestBuilder) CreateDeleteRequestInformation(options *CloudPcGalleryImageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -97,7 +97,7 @@ func (m *CloudPcGalleryImageRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get galleryImages from deviceManagement
+// The gallery image resource on Cloud PC.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcGalleryImageRequestBuilder) CreateGetRequestInformation(options *CloudPcGalleryImageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -106,7 +106,7 @@ func (m *CloudPcGalleryImageRequestBuilder) CreateGetRequestInformation(options 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(options.Q)
+        requestInfo.AddQueryParameters(*(options.Q))
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
@@ -119,7 +119,7 @@ func (m *CloudPcGalleryImageRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update the navigation property galleryImages in deviceManagement
+// The gallery image resource on Cloud PC.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcGalleryImageRequestBuilder) CreatePatchRequestInformation(options *CloudPcGalleryImageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -139,7 +139,7 @@ func (m *CloudPcGalleryImageRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete navigation property galleryImages for deviceManagement
+// The gallery image resource on Cloud PC.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcGalleryImageRequestBuilder) Delete(options *CloudPcGalleryImageRequestBuilderDeleteOptions)(error) {
@@ -153,7 +153,7 @@ func (m *CloudPcGalleryImageRequestBuilder) Delete(options *CloudPcGalleryImageR
     }
     return nil
 }
-// Get galleryImages from deviceManagement
+// The gallery image resource on Cloud PC.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcGalleryImageRequestBuilder) Get(options *CloudPcGalleryImageRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcGalleryImage, error) {
@@ -167,7 +167,7 @@ func (m *CloudPcGalleryImageRequestBuilder) Get(options *CloudPcGalleryImageRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcGalleryImage), nil
 }
-// Update the navigation property galleryImages in deviceManagement
+// The gallery image resource on Cloud PC.
 // Parameters:
 //  - options : Options for the request
 func (m *CloudPcGalleryImageRequestBuilder) Patch(options *CloudPcGalleryImageRequestBuilderPatchOptions)(error) {

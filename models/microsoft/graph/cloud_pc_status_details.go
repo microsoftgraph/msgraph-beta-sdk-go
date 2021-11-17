@@ -8,9 +8,9 @@ import (
 type CloudPcStatusDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Any additional information about the cloud PC status.
+    // Any additional information about the Cloud PC status.
     additionalInformation []KeyValuePair;
-    // The code associated with the cloud PC status.
+    // The code associated with the Cloud PC status.
     code *string;
     // The status message.
     message *string;
@@ -30,7 +30,7 @@ func (m *CloudPcStatusDetails) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the additionalInformation property value. Any additional information about the cloud PC status.
+// Gets the additionalInformation property value. Any additional information about the Cloud PC status.
 func (m *CloudPcStatusDetails) GetAdditionalInformation()([]KeyValuePair) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *CloudPcStatusDetails) GetAdditionalInformation()([]KeyValuePair) {
         return m.additionalInformation
     }
 }
-// Gets the code property value. The code associated with the cloud PC status.
+// Gets the code property value. The code associated with the Cloud PC status.
 func (m *CloudPcStatusDetails) GetCode()(*string) {
     if m == nil {
         return nil
@@ -137,13 +137,13 @@ func (m *CloudPcStatusDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 func (m *CloudPcStatusDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the additionalInformation property value. Any additional information about the cloud PC status.
+// Sets the additionalInformation property value. Any additional information about the Cloud PC status.
 // Parameters:
 //  - value : Value to set for the additionalInformation property.
 func (m *CloudPcStatusDetails) SetAdditionalInformation(value []KeyValuePair)() {
     m.additionalInformation = value
 }
-// Sets the code property value. The code associated with the cloud PC status.
+// Sets the code property value. The code associated with the Cloud PC status.
 // Parameters:
 //  - value : Value to set for the code property.
 func (m *CloudPcStatusDetails) SetCode(value *string)() {

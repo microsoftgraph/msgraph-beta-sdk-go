@@ -9,7 +9,7 @@ import (
 type SafeguardProfile struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Specifies the category of safeguards. The possible values are: likelyIssues.
     category *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.SafeguardCategory;
 }
 // Instantiates a new safeguardProfile and sets the default values.
@@ -27,7 +27,7 @@ func (m *SafeguardProfile) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the category property value. 
+// Gets the category property value. Specifies the category of safeguards. The possible values are: likelyIssues.
 func (m *SafeguardProfile) GetCategory()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.SafeguardCategory) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *SafeguardProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 func (m *SafeguardProfile) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the category property value. 
+// Sets the category property value. Specifies the category of safeguards. The possible values are: likelyIssues.
 // Parameters:
 //  - value : Value to set for the category property.
 func (m *SafeguardProfile) SetCategory(value *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.SafeguardCategory)() {

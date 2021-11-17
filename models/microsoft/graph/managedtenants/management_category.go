@@ -10,11 +10,12 @@ const (
     CUSTOM_MANAGEMENTCATEGORY ManagementCategory = iota
     DEVICES_MANAGEMENTCATEGORY
     IDENTITY_MANAGEMENTCATEGORY
+    DATA_MANAGEMENTCATEGORY
     UNKNOWNFUTUREVALUE_MANAGEMENTCATEGORY
 )
 
 func (i ManagementCategory) String() string {
-    return []string{"CUSTOM", "DEVICES", "IDENTITY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"CUSTOM", "DEVICES", "IDENTITY", "DATA", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseManagementCategory(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -24,6 +25,8 @@ func ParseManagementCategory(v string) (interface{}, error) {
             return DEVICES_MANAGEMENTCATEGORY, nil
         case "IDENTITY":
             return IDENTITY_MANAGEMENTCATEGORY, nil
+        case "DATA":
+            return DATA_MANAGEMENTCATEGORY, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_MANAGEMENTCATEGORY, nil
     }

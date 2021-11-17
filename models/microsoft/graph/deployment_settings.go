@@ -12,7 +12,7 @@ type DeploymentSettings struct {
     monitoring *MonitoringSettings;
     // Settings governing how the content is rolled out.
     rollout *RolloutSettings;
-    // 
+    // Settings governing safeguard holds on offering content.
     safeguard *SafeguardSettings;
 }
 // Instantiates a new deploymentSettings and sets the default values.
@@ -46,7 +46,7 @@ func (m *DeploymentSettings) GetRollout()(*RolloutSettings) {
         return m.rollout
     }
 }
-// Gets the safeguard property value. 
+// Gets the safeguard property value. Settings governing safeguard holds on offering content.
 func (m *DeploymentSettings) GetSafeguard()(*SafeguardSettings) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *DeploymentSettings) SetMonitoring(value *MonitoringSettings)() {
 func (m *DeploymentSettings) SetRollout(value *RolloutSettings)() {
     m.rollout = value
 }
-// Sets the safeguard property value. 
+// Sets the safeguard property value. Settings governing safeguard holds on offering content.
 // Parameters:
 //  - value : Value to set for the safeguard property.
 func (m *DeploymentSettings) SetSafeguard(value *SafeguardSettings)() {

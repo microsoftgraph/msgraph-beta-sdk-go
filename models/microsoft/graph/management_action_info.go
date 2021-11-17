@@ -12,6 +12,8 @@ type ManagementActionInfo struct {
     managementActionId *string;
     // The identifier for the management template. Required. Read-only.
     managementTemplateId *string;
+    // 
+    managementTemplateVersion *int32;
 }
 // Instantiates a new managementActionInfo and sets the default values.
 func NewManagementActionInfo()(*ManagementActionInfo) {
@@ -44,6 +46,14 @@ func (m *ManagementActionInfo) GetManagementTemplateId()(*string) {
         return m.managementTemplateId
     }
 }
+// Gets the managementTemplateVersion property value. 
+func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateVersion
+    }
+}
 // The deserialization information for the current model
 func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -67,6 +77,16 @@ func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
+    res["managementTemplateVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagementTemplateVersion(val)
+        }
+        return nil
+    }
     return res
 }
 func (m *ManagementActionInfo) IsNil()(bool) {
@@ -84,6 +104,12 @@ func (m *ManagementActionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     {
         err := writer.WriteStringValue("managementTemplateId", m.GetManagementTemplateId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("managementTemplateVersion", m.GetManagementTemplateVersion())
         if err != nil {
             return err
         }
@@ -113,4 +139,10 @@ func (m *ManagementActionInfo) SetManagementActionId(value *string)() {
 //  - value : Value to set for the managementTemplateId property.
 func (m *ManagementActionInfo) SetManagementTemplateId(value *string)() {
     m.managementTemplateId = value
+}
+// Sets the managementTemplateVersion property value. 
+// Parameters:
+//  - value : Value to set for the managementTemplateVersion property.
+func (m *ManagementActionInfo) SetManagementTemplateVersion(value *int32)() {
+    m.managementTemplateVersion = value
 }

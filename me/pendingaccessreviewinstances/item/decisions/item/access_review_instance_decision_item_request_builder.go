@@ -4,6 +4,8 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i67aaa727d73c164087ea2ce778b06cfa6a2637659c79b79f9aa2a76313e2af81 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/decisions/item/insights"
+    ie44e1255b972f859503eb871261f069d2ff1e5a0b64d5c67e3a2e405706b2c36 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/decisions/item/insights/item"
 )
 
 // Builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}
@@ -106,7 +108,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateGetRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(options.Q)
+        requestInfo.AddQueryParameters(*(options.Q))
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
@@ -166,6 +168,22 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) Get(options *AccessRevi
         return nil, err
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem), nil
+}
+func (m *AccessReviewInstanceDecisionItemRequestBuilder) Insights()(*i67aaa727d73c164087ea2ce778b06cfa6a2637659c79b79f9aa2a76313e2af81.InsightsRequestBuilder) {
+    return i67aaa727d73c164087ea2ce778b06cfa6a2637659c79b79f9aa2a76313e2af81.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.decisions.item.insights.item collection
+// Parameters:
+//  - id : Unique identifier of the item
+func (m *AccessReviewInstanceDecisionItemRequestBuilder) InsightsById(id string)(*ie44e1255b972f859503eb871261f069d2ff1e5a0b64d5c67e3a2e405706b2c36.GovernanceInsightRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["governanceInsight_id"] = id
+    }
+    return ie44e1255b972f859503eb871261f069d2ff1e5a0b64d5c67e3a2e405706b2c36.NewGovernanceInsightRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 // Parameters:

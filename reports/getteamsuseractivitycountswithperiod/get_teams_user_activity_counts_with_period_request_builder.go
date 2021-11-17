@@ -2,7 +2,6 @@ package getteamsuseractivitycountswithperiod
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
 // Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityCounts(period='{period}')
@@ -74,18 +73,14 @@ func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) CreateGetRequestInf
 // Invoke function getTeamsUserActivityCounts
 // Parameters:
 //  - options : Options for the request
-func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) Get(options *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetOptions)([]GetTeamsUserActivityCountsWithPeriod, error) {
+func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) Get(options *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetTeamsUserActivityCountsWithPeriod() }, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetTeamsUserActivityCountsWithPeriod, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetTeamsUserActivityCountsWithPeriod))
-    }
-    return val, nil
+    return res.([]byte), nil
 }

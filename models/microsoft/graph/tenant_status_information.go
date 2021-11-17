@@ -24,6 +24,8 @@ type TenantStatusInformation struct {
     onboardedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
     onboardingStatus *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus;
+    // 
+    tenantOnboardingEligibilityReason *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason;
     // The collection of workload statues for the managed tenant. Optional. Read-only.
     workloadStatuses []WorkloadStatus;
 }
@@ -96,6 +98,14 @@ func (m *TenantStatusInformation) GetOnboardingStatus()(*i5c2592132064055aae4244
         return nil
     } else {
         return m.onboardingStatus
+    }
+}
+// Gets the tenantOnboardingEligibilityReason property value. 
+func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantOnboardingEligibilityReason
     }
 }
 // Gets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
@@ -181,6 +191,17 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
+    res["tenantOnboardingEligibilityReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ParseTenantOnboardingEligibilityReason)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason)
+            m.SetTenantOnboardingEligibilityReason(&cast)
+        }
+        return nil
+    }
     res["workloadStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkloadStatus() })
         if err != nil {
@@ -244,6 +265,13 @@ func (m *TenantStatusInformation) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetOnboardingStatus() != nil {
         cast := m.GetOnboardingStatus().String()
         err := writer.WriteStringValue("onboardingStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTenantOnboardingEligibilityReason() != nil {
+        cast := m.GetTenantOnboardingEligibilityReason().String()
+        err := writer.WriteStringValue("tenantOnboardingEligibilityReason", &cast)
         if err != nil {
             return err
         }
@@ -314,6 +342,12 @@ func (m *TenantStatusInformation) SetOnboardedDateTime(value *i336074805fc853987
 //  - value : Value to set for the onboardingStatus property.
 func (m *TenantStatusInformation) SetOnboardingStatus(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus)() {
     m.onboardingStatus = value
+}
+// Sets the tenantOnboardingEligibilityReason property value. 
+// Parameters:
+//  - value : Value to set for the tenantOnboardingEligibilityReason property.
+func (m *TenantStatusInformation) SetTenantOnboardingEligibilityReason(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason)() {
+    m.tenantOnboardingEligibilityReason = value
 }
 // Sets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
 // Parameters:

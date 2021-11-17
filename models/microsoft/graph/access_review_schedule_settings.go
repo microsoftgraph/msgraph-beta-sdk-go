@@ -22,6 +22,8 @@ type AccessReviewScheduleSettings struct {
     justificationRequiredOnApproval *bool;
     // Indicates whether emails are enabled or disabled. Default value is false.
     mailNotificationsEnabled *bool;
+    // 
+    recommendationInsightSettings []AccessReviewRecommendationInsightSetting;
     // Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
     recommendationLookBackDuration *string;
     // Indicates whether decision recommendations are enabled or disabled.
@@ -100,6 +102,14 @@ func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
         return nil
     } else {
         return m.mailNotificationsEnabled
+    }
+}
+// Gets the recommendationInsightSettings property value. 
+func (m *AccessReviewScheduleSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSetting) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationInsightSettings
     }
 }
 // Gets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
@@ -211,6 +221,20 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["recommendationInsightSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewRecommendationInsightSetting() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewRecommendationInsightSetting, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewRecommendationInsightSetting))
+            }
+            m.SetRecommendationInsightSettings(res)
+        }
+        return nil
+    }
     res["recommendationLookBackDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -308,6 +332,17 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecommendationInsightSettings()))
+        for i, v := range m.GetRecommendationInsightSettings() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err := writer.WriteCollectionOfObjectValues("recommendationInsightSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("recommendationLookBackDuration", m.GetRecommendationLookBackDuration())
         if err != nil {
             return err
@@ -386,6 +421,12 @@ func (m *AccessReviewScheduleSettings) SetJustificationRequiredOnApproval(value 
 //  - value : Value to set for the mailNotificationsEnabled property.
 func (m *AccessReviewScheduleSettings) SetMailNotificationsEnabled(value *bool)() {
     m.mailNotificationsEnabled = value
+}
+// Sets the recommendationInsightSettings property value. 
+// Parameters:
+//  - value : Value to set for the recommendationInsightSettings property.
+func (m *AccessReviewScheduleSettings) SetRecommendationInsightSettings(value []AccessReviewRecommendationInsightSetting)() {
+    m.recommendationInsightSettings = value
 }
 // Sets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
 // Parameters:

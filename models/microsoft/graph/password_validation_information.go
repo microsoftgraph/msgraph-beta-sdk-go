@@ -8,9 +8,9 @@ import (
 type PasswordValidationInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
     isValid *bool;
-    // 
+    // The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
     validationResults []ValidationResult;
 }
 // Instantiates a new passwordValidationInformation and sets the default values.
@@ -28,7 +28,7 @@ func (m *PasswordValidationInformation) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the isValid property value. 
+// Gets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
 func (m *PasswordValidationInformation) GetIsValid()(*bool) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *PasswordValidationInformation) GetIsValid()(*bool) {
         return m.isValid
     }
 }
-// Gets the validationResults property value. 
+// Gets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
 func (m *PasswordValidationInformation) GetValidationResults()([]ValidationResult) {
     if m == nil {
         return nil
@@ -111,13 +111,13 @@ func (m *PasswordValidationInformation) Serialize(writer i04eb5309aeaafadd28374d
 func (m *PasswordValidationInformation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isValid property value. 
+// Sets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
 // Parameters:
 //  - value : Value to set for the isValid property.
 func (m *PasswordValidationInformation) SetIsValid(value *bool)() {
     m.isValid = value
 }
-// Sets the validationResults property value. 
+// Sets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
 // Parameters:
 //  - value : Value to set for the validationResults property.
 func (m *PasswordValidationInformation) SetValidationResults(value []ValidationResult)() {

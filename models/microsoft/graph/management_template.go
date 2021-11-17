@@ -14,8 +14,14 @@ type ManagementTemplate struct {
     description *string;
     // The display name for the management template. Required. Read-only.
     displayName *string;
+    // 
+    managementTemplateCollections []ManagementTemplateCollection;
+    // 
+    managementTemplateSteps []ManagementTemplateStep;
     // The collection of parameters used by the management template. Optional. Read-only.
     parameters []TemplateParameter;
+    // 
+    version *int32;
     // The collection of workload actions associated with the management template. Optional. Read-only.
     workloadActions []WorkloadAction;
 }
@@ -50,12 +56,36 @@ func (m *ManagementTemplate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the managementTemplateCollections property value. 
+func (m *ManagementTemplate) GetManagementTemplateCollections()([]ManagementTemplateCollection) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateCollections
+    }
+}
+// Gets the managementTemplateSteps property value. 
+func (m *ManagementTemplate) GetManagementTemplateSteps()([]ManagementTemplateStep) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateSteps
+    }
+}
 // Gets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetParameters()([]TemplateParameter) {
     if m == nil {
         return nil
     } else {
         return m.parameters
+    }
+}
+// Gets the version property value. 
+func (m *ManagementTemplate) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
     }
 }
 // Gets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
@@ -100,6 +130,34 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
+    res["managementTemplateCollections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateCollection() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ManagementTemplateCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementTemplateCollection))
+            }
+            m.SetManagementTemplateCollections(res)
+        }
+        return nil
+    }
+    res["managementTemplateSteps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStep() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ManagementTemplateStep, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagementTemplateStep))
+            }
+            m.SetManagementTemplateSteps(res)
+        }
+        return nil
+    }
     res["parameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTemplateParameter() })
         if err != nil {
@@ -111,6 +169,16 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
                 res[i] = *(v.(*TemplateParameter))
             }
             m.SetParameters(res)
+        }
+        return nil
+    }
+    res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVersion(val)
         }
         return nil
     }
@@ -161,12 +229,40 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateCollections()))
+        for i, v := range m.GetManagementTemplateCollections() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("managementTemplateCollections", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateSteps()))
+        for i, v := range m.GetManagementTemplateSteps() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("managementTemplateSteps", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParameters()))
         for i, v := range m.GetParameters() {
             temp := v
             cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
         }
         err = writer.WriteCollectionOfObjectValues("parameters", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("version", m.GetVersion())
         if err != nil {
             return err
         }
@@ -202,11 +298,29 @@ func (m *ManagementTemplate) SetDescription(value *string)() {
 func (m *ManagementTemplate) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the managementTemplateCollections property value. 
+// Parameters:
+//  - value : Value to set for the managementTemplateCollections property.
+func (m *ManagementTemplate) SetManagementTemplateCollections(value []ManagementTemplateCollection)() {
+    m.managementTemplateCollections = value
+}
+// Sets the managementTemplateSteps property value. 
+// Parameters:
+//  - value : Value to set for the managementTemplateSteps property.
+func (m *ManagementTemplate) SetManagementTemplateSteps(value []ManagementTemplateStep)() {
+    m.managementTemplateSteps = value
+}
 // Sets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
 // Parameters:
 //  - value : Value to set for the parameters property.
 func (m *ManagementTemplate) SetParameters(value []TemplateParameter)() {
     m.parameters = value
+}
+// Sets the version property value. 
+// Parameters:
+//  - value : Value to set for the version property.
+func (m *ManagementTemplate) SetVersion(value *int32)() {
+    m.version = value
 }
 // Sets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
 // Parameters:
