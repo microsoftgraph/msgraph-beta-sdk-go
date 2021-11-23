@@ -7,7 +7,7 @@ import (
     id2a1798ae235595af9a431da257553ca3777ff6c2d2a287f1ea055513c0d8949 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleeligibilityschedulerequests/filterbycurrentuserwithon"
 )
 
-// roleEligibilityScheduleRequestsRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleRequests
+// RoleEligibilityScheduleRequestsRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleRequests
 type RoleEligibilityScheduleRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RoleEligibilityScheduleRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// roleEligibilityScheduleRequestsRequestBuilderGetQueryParameters get roleEligibilityScheduleRequests from roleManagement
+// RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters get roleEligibilityScheduleRequests from roleManagement
 type RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

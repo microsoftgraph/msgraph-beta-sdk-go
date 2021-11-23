@@ -6,7 +6,7 @@ import (
     i906675c7ba5aa8b4867252f606e20b495748a780f537372ccfee50eaed4ad798 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/owners/ref"
 )
 
-// ownersRequestBuilder builds and executes requests for operations under \applications\{application-id}\owners
+// OwnersRequestBuilder builds and executes requests for operations under \applications\{application-id}\owners
 type OwnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type OwnersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ownersRequestBuilderGetQueryParameters directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// OwnersRequestBuilderGetQueryParameters directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
 type OwnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

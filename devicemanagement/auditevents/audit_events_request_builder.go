@@ -8,7 +8,7 @@ import (
     ib4e5c6a7c7551cb9685aa79efe44df0077ee2b23b90f1c51ae212de08151e065 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/auditevents/getauditcategories"
 )
 
-// auditEventsRequestBuilder builds and executes requests for operations under \deviceManagement\auditEvents
+// AuditEventsRequestBuilder builds and executes requests for operations under \deviceManagement\auditEvents
 type AuditEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type AuditEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// auditEventsRequestBuilderGetQueryParameters the Audit Events
+// AuditEventsRequestBuilderGetQueryParameters the Audit Events
 type AuditEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

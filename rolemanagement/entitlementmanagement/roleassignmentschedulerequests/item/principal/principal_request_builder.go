@@ -7,7 +7,7 @@ import (
     idc93d441a9d0f17e065587052ef8559efb58b6630639a18c9b55373743bcdc7d "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentschedulerequests/item/principal/ref"
 )
 
-// principalRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}\principal
+// PrincipalRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}\principal
 type PrincipalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type PrincipalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// principalRequestBuilderGetQueryParameters property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
+// PrincipalRequestBuilderGetQueryParameters property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
 type PrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

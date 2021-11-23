@@ -7,7 +7,7 @@ import (
     i244d036bc8e01827255fd8760f1a9ec36c6f8e5862d573d9096f819c87cb4ab6 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/requestor/connectedorganization"
 )
 
-// requestorRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\requestor
+// RequestorRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\requestor
 type RequestorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type RequestorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// requestorRequestBuilderGetQueryParameters the subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
+// RequestorRequestBuilderGetQueryParameters the subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
 type RequestorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

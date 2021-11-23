@@ -17,7 +17,7 @@ import (
     ia273f0c967440d14bb94006b177f70e6b83152c6fcad8ccbf86dc8739482bc95 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/contactedreviewers/item"
 )
 
-// accessReviewInstanceRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}
+// AccessReviewInstanceRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}
 type AccessReviewInstanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type AccessReviewInstanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessReviewInstanceRequestBuilderGetQueryParameters navigation property to get list of access reviews pending approval by reviewer.
+// AccessReviewInstanceRequestBuilderGetQueryParameters navigation property to get list of access reviews pending approval by reviewer.
 type AccessReviewInstanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

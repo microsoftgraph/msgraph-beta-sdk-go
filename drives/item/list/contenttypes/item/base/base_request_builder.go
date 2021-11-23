@@ -12,7 +12,7 @@ import (
     ifaa531f1b6ae0c7bfc2907fdbd8db58a9ecf5ad87a62b85e6af848d60d955ec2 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/contenttypes/item/base/associatewithhubsites"
 )
 
-// baseRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base
+// BaseRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base
 type BaseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -32,7 +32,7 @@ type BaseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// baseRequestBuilderGetQueryParameters parent contentType from which this content type is derived.
+// BaseRequestBuilderGetQueryParameters parent contentType from which this content type is derived.
 type BaseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -6,7 +6,7 @@ import (
     ia7ac7d76266829146bfdd36c3c5ca1c83508112784505fda1e4c37fccee83e8a "github.com/microsoftgraph/msgraph-beta-sdk-go/domains/item/domainnamereferences/ref"
 )
 
-// domainNameReferencesRequestBuilder builds and executes requests for operations under \domains\{domain-id}\domainNameReferences
+// DomainNameReferencesRequestBuilder builds and executes requests for operations under \domains\{domain-id}\domainNameReferences
 type DomainNameReferencesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type DomainNameReferencesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// domainNameReferencesRequestBuilderGetQueryParameters read-only, Nullable
+// DomainNameReferencesRequestBuilderGetQueryParameters read-only, Nullable
 type DomainNameReferencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

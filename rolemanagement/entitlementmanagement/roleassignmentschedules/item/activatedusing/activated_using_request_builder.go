@@ -7,7 +7,7 @@ import (
     i277b60e5cadef6475591dc7033a1f4b47ac09ddabba5413f5d107ba69d5a135e "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentschedules/item/activatedusing/ref"
 )
 
-// activatedUsingRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentSchedules\{unifiedRoleAssignmentSchedule-id}\activatedUsing
+// ActivatedUsingRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentSchedules\{unifiedRoleAssignmentSchedule-id}\activatedUsing
 type ActivatedUsingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ActivatedUsingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// activatedUsingRequestBuilderGetQueryParameters if the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
+// ActivatedUsingRequestBuilderGetQueryParameters if the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
 type ActivatedUsingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

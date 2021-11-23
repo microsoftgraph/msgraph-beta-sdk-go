@@ -11,7 +11,7 @@ import (
     if0d993aaca17c5a3533457a2c51a2b6b255a9dede015ecadedc6434d1e962ff2 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/columns/item/headerrowrange"
 )
 
-// workbookTableColumnRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}
+// WorkbookTableColumnRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}
 type WorkbookTableColumnRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type WorkbookTableColumnRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookTableColumnRequestBuilderGetQueryParameters represents a collection of all the columns in the table. Read-only.
+// WorkbookTableColumnRequestBuilderGetQueryParameters represents a collection of all the columns in the table. Read-only.
 type WorkbookTableColumnRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

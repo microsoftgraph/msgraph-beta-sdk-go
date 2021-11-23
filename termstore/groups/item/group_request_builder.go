@@ -8,7 +8,7 @@ import (
     i34ff0def54196c2a26619dc8980b0dbec65b4a8ac07340a1ca1934211b31f4b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/groups/item/sets/item"
 )
 
-// groupRequestBuilder builds and executes requests for operations under \termStore\groups\{group-id}
+// GroupRequestBuilder builds and executes requests for operations under \termStore\groups\{group-id}
 type GroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type GroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupRequestBuilderGetQueryParameters collection of all groups available in the term store.
+// GroupRequestBuilderGetQueryParameters collection of all groups available in the term store.
 type GroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

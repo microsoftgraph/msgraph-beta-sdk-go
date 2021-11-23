@@ -7,7 +7,7 @@ import (
     ia8c4cab071c96e21125cbe53f785c45da39afa5b7fa02d3706f75bbc7425f75e "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentscheduleinstances/filterbycurrentuserwithon"
 )
 
-// roleAssignmentScheduleInstancesRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances
+// RoleAssignmentScheduleInstancesRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances
 type RoleAssignmentScheduleInstancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RoleAssignmentScheduleInstancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// roleAssignmentScheduleInstancesRequestBuilderGetQueryParameters get roleAssignmentScheduleInstances from roleManagement
+// RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters get roleAssignmentScheduleInstances from roleManagement
 type RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

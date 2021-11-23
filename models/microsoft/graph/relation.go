@@ -5,7 +5,7 @@ import (
     i11bbafbd56c37d7251e6346f4524f5f88f83f0c6ce462b8a4d27e4a6d969d4c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/termstore"
 )
 
-// relation 
+// Relation 
 type Relation struct {
     Entity
     // The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].

@@ -7,7 +7,7 @@ import (
     i22b9220ab8c30aac73189a1dc716f9e429b95c2941e3635db9c8baca725da435 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecustomattributeshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice"
 )
 
-// deviceManagementScriptDeviceStateRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}
+// DeviceManagementScriptDeviceStateRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}
 type DeviceManagementScriptDeviceStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DeviceManagementScriptDeviceStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementScriptDeviceStateRequestBuilderGetQueryParameters list of run states for this script across all devices of specific user.
+// DeviceManagementScriptDeviceStateRequestBuilderGetQueryParameters list of run states for this script across all devices of specific user.
 type DeviceManagementScriptDeviceStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

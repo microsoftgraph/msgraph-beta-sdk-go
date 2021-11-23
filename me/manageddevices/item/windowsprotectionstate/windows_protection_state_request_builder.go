@@ -8,7 +8,7 @@ import (
     i530e43a127c1c7152cc066779fb7c924add05c3b230b14bb31c96f03c4d595d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/windowsprotectionstate/detectedmalwarestate/item"
 )
 
-// windowsProtectionStateRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\windowsProtectionState
+// WindowsProtectionStateRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\windowsProtectionState
 type WindowsProtectionStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type WindowsProtectionStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsProtectionStateRequestBuilderGetQueryParameters the device protection status.
+// WindowsProtectionStateRequestBuilderGetQueryParameters the device protection status.
 type WindowsProtectionStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

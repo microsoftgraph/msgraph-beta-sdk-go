@@ -12,7 +12,7 @@ import (
     ie355c76def8c28a4b0abbe9e22a10db802a2a49b124aaf4edea9807f125627a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/groupassignments/item/deviceconfiguration/getomasettingplaintextvaluewithsecretreferencevalueid"
 )
 
-// deviceConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration
+// DeviceConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration
 type DeviceConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -32,7 +32,7 @@ type DeviceConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceConfigurationRequestBuilderGetQueryParameters the navigation link to the Device Configuration being targeted.
+// DeviceConfigurationRequestBuilderGetQueryParameters the navigation link to the Device Configuration being targeted.
 type DeviceConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     i8ed42469cc87a553b3cd8749bdd04e937f267d96ef2528e79e78a8822e6f6112 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/dimensions/item/dimensionvalues/item"
 )
 
-// dimensionRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\dimensions\{dimension-id}
+// DimensionRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\dimensions\{dimension-id}
 type DimensionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DimensionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// dimensionRequestBuilderGetQueryParameters get dimensions from financials
+// DimensionRequestBuilderGetQueryParameters get dimensions from financials
 type DimensionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

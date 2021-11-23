@@ -23,7 +23,7 @@ import (
     ia8b23b6ab36c2b10209f024c3f8396df9a37f4b7c7dbf0cdcc02383064607d36 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/legalholds/item"
 )
 
-// caseRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}
+// CaseRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}
 type CaseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +52,7 @@ type CaseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// caseRequestBuilderGetQueryParameters get cases from compliance
+// CaseRequestBuilderGetQueryParameters get cases from compliance
 type CaseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

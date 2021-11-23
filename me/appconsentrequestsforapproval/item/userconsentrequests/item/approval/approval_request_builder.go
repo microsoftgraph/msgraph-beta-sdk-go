@@ -8,7 +8,7 @@ import (
     i5d52076e1e2824e38e9ff8f8f0226ae0fdf93e7031774cec6b0d39489bff6682 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/appconsentrequestsforapproval/item/userconsentrequests/item/approval/steps/item"
 )
 
-// approvalRequestBuilder builds and executes requests for operations under \me\appConsentRequestsForApproval\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}\approval
+// ApprovalRequestBuilder builds and executes requests for operations under \me\appConsentRequestsForApproval\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}\approval
 type ApprovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ApprovalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// approvalRequestBuilderGetQueryParameters approval decisions associated with a request.
+// ApprovalRequestBuilderGetQueryParameters approval decisions associated with a request.
 type ApprovalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

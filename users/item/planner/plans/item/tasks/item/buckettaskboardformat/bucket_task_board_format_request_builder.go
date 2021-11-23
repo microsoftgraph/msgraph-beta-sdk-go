@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// bucketTaskBoardFormatRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\bucketTaskBoardFormat
+// BucketTaskBoardFormatRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\bucketTaskBoardFormat
 type BucketTaskBoardFormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type BucketTaskBoardFormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// bucketTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+// BucketTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 type BucketTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

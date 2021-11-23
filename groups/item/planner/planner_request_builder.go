@@ -8,7 +8,7 @@ import (
     i2b2a3a414a71b994fa9844041bbbfd4ab82c68beb038ee7d0441199154ef424c "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/planner/plans/item"
 )
 
-// plannerRequestBuilder builds and executes requests for operations under \groups\{group-id}\planner
+// PlannerRequestBuilder builds and executes requests for operations under \groups\{group-id}\planner
 type PlannerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PlannerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// plannerRequestBuilderGetQueryParameters entry-point to Planner resource that might exist for a Unified Group.
+// PlannerRequestBuilderGetQueryParameters entry-point to Planner resource that might exist for a Unified Group.
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

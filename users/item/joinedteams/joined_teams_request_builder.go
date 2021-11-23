@@ -6,7 +6,7 @@ import (
     i9a58c41a05aa841dd115880d295734f19a9989d1632c9cb86ca9c4135577bf51 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedteams/ref"
 )
 
-// joinedTeamsRequestBuilder builds and executes requests for operations under \users\{user-id}\joinedTeams
+// JoinedTeamsRequestBuilder builds and executes requests for operations under \users\{user-id}\joinedTeams
 type JoinedTeamsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type JoinedTeamsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// joinedTeamsRequestBuilderGetQueryParameters the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// JoinedTeamsRequestBuilderGetQueryParameters the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 type JoinedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

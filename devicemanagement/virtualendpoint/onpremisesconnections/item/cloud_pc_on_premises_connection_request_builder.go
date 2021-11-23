@@ -8,7 +8,7 @@ import (
     if44fdd10cc1f6f4d9584fbcc1424ba5392d6f3eda6f11879e38028e5a1ea53bf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/onpremisesconnections/item/updateaddomainpassword"
 )
 
-// cloudPcOnPremisesConnectionRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\onPremisesConnections\{cloudPcOnPremisesConnection-id}
+// CloudPcOnPremisesConnectionRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\onPremisesConnections\{cloudPcOnPremisesConnection-id}
 type CloudPcOnPremisesConnectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type CloudPcOnPremisesConnectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// cloudPcOnPremisesConnectionRequestBuilderGetQueryParameters a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+// CloudPcOnPremisesConnectionRequestBuilderGetQueryParameters a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 type CloudPcOnPremisesConnectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

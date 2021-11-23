@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// onPremisesAgent 
+// OnPremisesAgent 
 type OnPremisesAgent struct {
     Entity
     // List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.

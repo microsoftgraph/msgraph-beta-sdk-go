@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// call 
+// Call 
 type Call struct {
     Entity
     // The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.

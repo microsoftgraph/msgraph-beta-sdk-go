@@ -29,7 +29,7 @@ import (
     i9dfb9baf1034d4d76f7676658c28a48bb59e8a78be7fe78076e5c63c401df6ee "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/attachments/item"
 )
 
-// messageRequestBuilder builds and executes requests for operations under \me\messages\{message-id}
+// MessageRequestBuilder builds and executes requests for operations under \me\messages\{message-id}
 type MessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -58,7 +58,7 @@ type MessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// messageRequestBuilderGetQueryParameters the messages in a mailbox or folder. Read-only. Nullable.
+// MessageRequestBuilderGetQueryParameters the messages in a mailbox or folder. Read-only. Nullable.
 type MessageRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

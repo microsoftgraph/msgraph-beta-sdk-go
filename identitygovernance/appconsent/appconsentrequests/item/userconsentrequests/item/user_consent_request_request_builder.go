@@ -7,7 +7,7 @@ import (
     i502703131533e78256a6b993cd91cf4818b6d863514867db76b94ef511de7bb8 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/appconsent/appconsentrequests/item/userconsentrequests/item/approval"
 )
 
-// userConsentRequestRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}
+// UserConsentRequestRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}
 type UserConsentRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type UserConsentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userConsentRequestRequestBuilderGetQueryParameters a list of pending user consent requests.
+// UserConsentRequestRequestBuilderGetQueryParameters a list of pending user consent requests.
 type UserConsentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

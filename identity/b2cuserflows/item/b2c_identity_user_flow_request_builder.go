@@ -12,7 +12,7 @@ import (
     ib4590aff7f09f446c7ae6a4a70dfc243aac07fb4522106f724124d4539ac2888 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userattributeassignments/item"
 )
 
-// b2cIdentityUserFlowRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}
+// B2cIdentityUserFlowRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}
 type B2cIdentityUserFlowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type B2cIdentityUserFlowRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// b2cIdentityUserFlowRequestBuilderGetQueryParameters represents entry point for B2C identity userflows.
+// B2cIdentityUserFlowRequestBuilderGetQueryParameters represents entry point for B2C identity userflows.
 type B2cIdentityUserFlowRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

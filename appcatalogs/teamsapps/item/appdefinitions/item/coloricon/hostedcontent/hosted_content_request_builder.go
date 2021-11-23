@@ -7,7 +7,7 @@ import (
     ieaa9f6beec357cf167ed9fa53e0eb18037771cfcff37855e9e02f8054af914a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs/teamsapps/item/appdefinitions/item/coloricon/hostedcontent/value"
 )
 
-// hostedContentRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\colorIcon\hostedContent
+// HostedContentRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\colorIcon\hostedContent
 type HostedContentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type HostedContentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// hostedContentRequestBuilderGetQueryParameters the contents of the app icon if the icon is hosted within the Teams infrastructure.
+// HostedContentRequestBuilderGetQueryParameters the contents of the app icon if the icon is hosted within the Teams infrastructure.
 type HostedContentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

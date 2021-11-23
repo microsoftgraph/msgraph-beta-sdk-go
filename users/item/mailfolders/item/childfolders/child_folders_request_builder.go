@@ -7,7 +7,7 @@ import (
     if29039cf371cd6d763f22b3795249e81b13dceb0437e930f09a56ae5f91473b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mailfolders/item/childfolders/delta"
 )
 
-// childFoldersRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\childFolders
+// ChildFoldersRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\childFolders
 type ChildFoldersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ChildFoldersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// childFoldersRequestBuilderGetQueryParameters the collection of child folders in the mailFolder.
+// ChildFoldersRequestBuilderGetQueryParameters the collection of child folders in the mailFolder.
 type ChildFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

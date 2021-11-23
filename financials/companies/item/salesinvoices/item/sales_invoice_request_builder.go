@@ -17,7 +17,7 @@ import (
     if8797c053079d45780da07f4c01fb650fc8015394e895a3fdf2d677f2013e9ae "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoices/item/salesinvoicelines/item"
 )
 
-// salesInvoiceRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}
+// SalesInvoiceRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}
 type SalesInvoiceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type SalesInvoiceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// salesInvoiceRequestBuilderGetQueryParameters get salesInvoices from financials
+// SalesInvoiceRequestBuilderGetQueryParameters get salesInvoices from financials
 type SalesInvoiceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

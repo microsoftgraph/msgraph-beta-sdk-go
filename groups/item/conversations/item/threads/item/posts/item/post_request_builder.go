@@ -19,7 +19,7 @@ import (
     id4c8d1b625a33def3fad99066f1b541c48ec7d4d641776001d150917f5ce13d4 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/conversations/item/threads/item/posts/item/singlevalueextendedproperties/item"
 )
 
-// postRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}\posts\{post-id}
+// PostRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}\posts\{post-id}
 type PostRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type PostRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// postRequestBuilderGetQueryParameters read-only. Nullable.
+// PostRequestBuilderGetQueryParameters read-only. Nullable.
 type PostRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

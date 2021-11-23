@@ -7,7 +7,7 @@ import (
     ibc833ce467f305ca99ad401034c0e2694f9d7c6f56c66728b5b4bc72518d73b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentpolicy/accesspackagecatalog/accesspackageresourcescopes/item/accesspackageresource"
 )
 
-// accessPackageResourceScopeRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentPolicy\accessPackageCatalog\accessPackageResourceScopes\{accessPackageResourceScope-id}
+// AccessPackageResourceScopeRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentPolicy\accessPackageCatalog\accessPackageResourceScopes\{accessPackageResourceScope-id}
 type AccessPackageResourceScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AccessPackageResourceScopeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageResourceScopeRequestBuilderGetQueryParameters get accessPackageResourceScopes from identityGovernance
+// AccessPackageResourceScopeRequestBuilderGetQueryParameters get accessPackageResourceScopes from identityGovernance
 type AccessPackageResourceScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

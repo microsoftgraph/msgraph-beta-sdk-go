@@ -7,7 +7,7 @@ import (
     ie99e2dac95e812895dc09a981511e5bcfcf3d589738bbaf03993925b5ede2ada "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/chromeosonboardingsettings/connect"
 )
 
-// chromeOSOnboardingSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\chromeOSOnboardingSettings
+// ChromeOSOnboardingSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\chromeOSOnboardingSettings
 type ChromeOSOnboardingSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ChromeOSOnboardingSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// chromeOSOnboardingSettingsRequestBuilderGetQueryParameters collection of ChromeOSOnboardingSettings settings associated with account.
+// ChromeOSOnboardingSettingsRequestBuilderGetQueryParameters collection of ChromeOSOnboardingSettings settings associated with account.
 type ChromeOSOnboardingSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

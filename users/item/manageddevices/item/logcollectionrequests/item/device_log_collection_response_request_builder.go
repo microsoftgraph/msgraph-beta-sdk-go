@@ -7,7 +7,7 @@ import (
     i13f3f68be66f036d33530efc7a5d9052d9fa6837e19e2cd8a9c062d886076e77 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/logcollectionrequests/item/createdownloadurl"
 )
 
-// deviceLogCollectionResponseRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\logCollectionRequests\{deviceLogCollectionResponse-id}
+// DeviceLogCollectionResponseRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\logCollectionRequests\{deviceLogCollectionResponse-id}
 type DeviceLogCollectionResponseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DeviceLogCollectionResponseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceLogCollectionResponseRequestBuilderGetQueryParameters list of log collection requests
+// DeviceLogCollectionResponseRequestBuilderGetQueryParameters list of log collection requests
 type DeviceLogCollectionResponseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

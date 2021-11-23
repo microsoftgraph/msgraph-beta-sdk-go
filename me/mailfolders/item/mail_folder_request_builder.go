@@ -20,7 +20,7 @@ import (
     iede75dd69fcd9e5b626950014b98ed33d606c522a9728b4f3a33a890e6632856 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item"
 )
 
-// mailFolderRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}
+// MailFolderRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}
 type MailFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type MailFolderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mailFolderRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
+// MailFolderRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
 type MailFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

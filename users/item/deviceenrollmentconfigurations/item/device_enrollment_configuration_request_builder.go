@@ -10,7 +10,7 @@ import (
     i2743b28ceb0dd313f262858ca8786962b9d8aea0a4285b4dd4cb11ca6ed541da "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/deviceenrollmentconfigurations/item/assignments/item"
 )
 
-// deviceEnrollmentConfigurationRequestBuilder builds and executes requests for operations under \users\{user-id}\deviceEnrollmentConfigurations\{deviceEnrollmentConfiguration-id}
+// DeviceEnrollmentConfigurationRequestBuilder builds and executes requests for operations under \users\{user-id}\deviceEnrollmentConfigurations\{deviceEnrollmentConfiguration-id}
 type DeviceEnrollmentConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type DeviceEnrollmentConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceEnrollmentConfigurationRequestBuilderGetQueryParameters get enrollment configurations targeted to the user
+// DeviceEnrollmentConfigurationRequestBuilderGetQueryParameters get enrollment configurations targeted to the user
 type DeviceEnrollmentConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

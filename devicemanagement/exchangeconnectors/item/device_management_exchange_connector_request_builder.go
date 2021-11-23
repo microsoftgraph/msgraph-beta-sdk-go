@@ -7,7 +7,7 @@ import (
     ia460ac55c1186f52ecea17fd79222f817e81c6b715d9b29d34042565c6698ca3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/exchangeconnectors/item/sync"
 )
 
-// deviceManagementExchangeConnectorRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeConnectors\{deviceManagementExchangeConnector-id}
+// DeviceManagementExchangeConnectorRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeConnectors\{deviceManagementExchangeConnector-id}
 type DeviceManagementExchangeConnectorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DeviceManagementExchangeConnectorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementExchangeConnectorRequestBuilderGetQueryParameters the list of Exchange Connectors configured by the tenant.
+// DeviceManagementExchangeConnectorRequestBuilderGetQueryParameters the list of Exchange Connectors configured by the tenant.
 type DeviceManagementExchangeConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

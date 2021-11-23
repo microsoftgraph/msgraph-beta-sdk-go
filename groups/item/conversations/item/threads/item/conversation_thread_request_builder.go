@@ -9,7 +9,7 @@ import (
     i361aee1fc4dd709ac3972378218312bc26b0ccfaa500330cc11f98784aa0e1e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/conversations/item/threads/item/posts/item"
 )
 
-// conversationThreadRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}
+// ConversationThreadRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}
 type ConversationThreadRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type ConversationThreadRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// conversationThreadRequestBuilderGetQueryParameters a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+// ConversationThreadRequestBuilderGetQueryParameters a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
 type ConversationThreadRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

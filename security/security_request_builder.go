@@ -34,7 +34,7 @@ import (
     ie02fc175d3be34ac616ef3dda9f36f01be04b3ccf591093492385bc0ab62023a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cloudappsecurityprofiles/item"
 )
 
-// securityRequestBuilder builds and executes requests for operations under \security
+// SecurityRequestBuilder builds and executes requests for operations under \security
 type SecurityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ type SecurityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// securityRequestBuilderGetQueryParameters get security
+// SecurityRequestBuilderGetQueryParameters get security
 type SecurityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

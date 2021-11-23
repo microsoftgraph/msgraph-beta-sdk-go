@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// microsoftTunnelConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelConfiguration
+// MicrosoftTunnelConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelConfiguration
 type MicrosoftTunnelConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type MicrosoftTunnelConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// microsoftTunnelConfigurationRequestBuilderGetQueryParameters the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
+// MicrosoftTunnelConfigurationRequestBuilderGetQueryParameters the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 type MicrosoftTunnelConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

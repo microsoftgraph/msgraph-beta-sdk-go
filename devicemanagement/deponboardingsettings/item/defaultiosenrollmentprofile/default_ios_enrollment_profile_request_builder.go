@@ -7,7 +7,7 @@ import (
     idd246b53dd8b816e2149588d387d4e8dfb17d3f56a921204859f055f83125f9b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/item/defaultiosenrollmentprofile/ref"
 )
 
-// defaultIosEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\defaultIosEnrollmentProfile
+// DefaultIosEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\defaultIosEnrollmentProfile
 type DefaultIosEnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DefaultIosEnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// defaultIosEnrollmentProfileRequestBuilderGetQueryParameters default iOS Enrollment Profile
+// DefaultIosEnrollmentProfileRequestBuilderGetQueryParameters default iOS Enrollment Profile
 type DefaultIosEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

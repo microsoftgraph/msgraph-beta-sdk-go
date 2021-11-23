@@ -9,7 +9,7 @@ import (
     i753cfff90925bea726b5ebc5e71149db3f766477cada75985f673e10929c55ae "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/members/item"
 )
 
-// connectorGroupRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}
+// ConnectorGroupRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}
 type ConnectorGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type ConnectorGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// connectorGroupRequestBuilderGetQueryParameters list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+// ConnectorGroupRequestBuilderGetQueryParameters list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 type ConnectorGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

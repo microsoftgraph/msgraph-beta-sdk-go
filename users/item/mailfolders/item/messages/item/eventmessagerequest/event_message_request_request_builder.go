@@ -7,7 +7,7 @@ import (
     ic549cd957a762c9b708cf3f98e3df1f9ff42c54339a2f5975e4ece29f7338f37 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mailfolders/item/messages/item/eventmessagerequest/decline"
 )
 
-// eventMessageRequestRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.eventMessageRequest
+// EventMessageRequestRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.eventMessageRequest
 type EventMessageRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

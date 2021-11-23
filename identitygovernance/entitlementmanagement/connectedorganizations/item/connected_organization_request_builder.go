@@ -10,7 +10,7 @@ import (
     iff3bb963dff2078fab9881a67d7525c7d4a7f645e97c901f5515f1e0a89e28b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item/internalsponsors/item"
 )
 
-// connectedOrganizationRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations\{connectedOrganization-id}
+// ConnectedOrganizationRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations\{connectedOrganization-id}
 type ConnectedOrganizationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ConnectedOrganizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// connectedOrganizationRequestBuilderGetQueryParameters get connectedOrganizations from identityGovernance
+// ConnectedOrganizationRequestBuilderGetQueryParameters get connectedOrganizations from identityGovernance
 type ConnectedOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

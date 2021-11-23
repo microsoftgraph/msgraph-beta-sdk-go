@@ -7,7 +7,7 @@ import (
     i879ed929ee3656f81177700b0fb2d099ed24bae73098e32c951ba82619267b4d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mobileapptroubleshootingevents/item/applogcollectionrequests/item/createdownloadurl"
 )
 
-// appLogCollectionRequestRequestBuilder builds and executes requests for operations under \me\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests\{appLogCollectionRequest-id}
+// AppLogCollectionRequestRequestBuilder builds and executes requests for operations under \me\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests\{appLogCollectionRequest-id}
 type AppLogCollectionRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AppLogCollectionRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appLogCollectionRequestRequestBuilderGetQueryParameters the collection property of AppLogUploadRequest.
+// AppLogCollectionRequestRequestBuilderGetQueryParameters the collection property of AppLogUploadRequest.
 type AppLogCollectionRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

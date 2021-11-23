@@ -30,7 +30,7 @@ import (
     icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/federatedidentitycredentials/item"
 )
 
-// applicationRequestBuilder builds and executes requests for operations under \applications\{application-id}
+// ApplicationRequestBuilder builds and executes requests for operations under \applications\{application-id}
 type ApplicationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -59,7 +59,7 @@ type ApplicationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// applicationRequestBuilderGetQueryParameters get entity from applications by key
+// ApplicationRequestBuilderGetQueryParameters get entity from applications by key
 type ApplicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

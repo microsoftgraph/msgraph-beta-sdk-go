@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// managementAction 
+// ManagementAction 
 type ManagementAction struct {
     Entity
     // The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.

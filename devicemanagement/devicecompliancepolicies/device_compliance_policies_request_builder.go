@@ -11,7 +11,7 @@ import (
     ice8333de4faa45aa6e283d6de5cec5fb2d91ddb4641c608a190a6c8ebda92bc5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancepolicies/getdevicesscheduledtoretire"
 )
 
-// deviceCompliancePoliciesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies
+// DeviceCompliancePoliciesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies
 type DeviceCompliancePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ type DeviceCompliancePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceCompliancePoliciesRequestBuilderGetQueryParameters the device compliance policies.
+// DeviceCompliancePoliciesRequestBuilderGetQueryParameters the device compliance policies.
 type DeviceCompliancePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

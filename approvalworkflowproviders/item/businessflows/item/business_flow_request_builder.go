@@ -7,7 +7,7 @@ import (
     ie12a6915e05d6a043d359c10b68f891491e9737ababf5b26608eccbcdf3d3be8 "github.com/microsoftgraph/msgraph-beta-sdk-go/approvalworkflowproviders/item/businessflows/item/recorddecisions"
 )
 
-// businessFlowRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlows\{businessFlow-id}
+// BusinessFlowRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlows\{businessFlow-id}
 type BusinessFlowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type BusinessFlowRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// businessFlowRequestBuilderGetQueryParameters get businessFlows from approvalWorkflowProviders
+// BusinessFlowRequestBuilderGetQueryParameters get businessFlows from approvalWorkflowProviders
 type BusinessFlowRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     ia79eefc0315d10478f4f43c3fdf217297648b82f295731165b29c916d950a498 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/devicemanagement/roleassignments/item/roledefinition/ref"
 )
 
-// roleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\deviceManagement\roleAssignments\{unifiedRoleAssignmentMultiple-id}\roleDefinition
+// RoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\deviceManagement\roleAssignments\{unifiedRoleAssignmentMultiple-id}\roleDefinition
 type RoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// roleDefinitionRequestBuilderGetQueryParameters specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
+// RoleDefinitionRequestBuilderGetQueryParameters specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
 type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

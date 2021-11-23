@@ -9,7 +9,7 @@ import (
     ie810f95f442b7e5b0679893cb8cade4ba1695eaa96df7ba757075302d6fd2294 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/item/enrollmentprofiles/item/exportmobileconfig"
 )
 
-// enrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}
+// EnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}
 type EnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type EnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// enrollmentProfileRequestBuilderGetQueryParameters the enrollment profiles.
+// EnrollmentProfileRequestBuilderGetQueryParameters the enrollment profiles.
 type EnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -15,7 +15,7 @@ import (
     ia1a84f1e276568c2aeb23fcbd50f8de951fa5878159c134fa0228aec984ff3c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/ioslobappprovisioningconfigurations/item/assignments/item"
 )
 
-// iosLobAppProvisioningConfigurationRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations\{iosLobAppProvisioningConfiguration-id}
+// IosLobAppProvisioningConfigurationRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations\{iosLobAppProvisioningConfiguration-id}
 type IosLobAppProvisioningConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type IosLobAppProvisioningConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// iosLobAppProvisioningConfigurationRequestBuilderGetQueryParameters the IOS Lob App Provisioning Configurations.
+// IosLobAppProvisioningConfigurationRequestBuilderGetQueryParameters the IOS Lob App Provisioning Configurations.
 type IosLobAppProvisioningConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

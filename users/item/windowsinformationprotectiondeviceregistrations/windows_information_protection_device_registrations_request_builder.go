@@ -6,7 +6,7 @@ import (
     ife943ab193adb33d4b9ec3188b36226e05726118145f34f0c6b52f7fb29c5f4c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/windowsinformationprotectiondeviceregistrations/ref"
 )
 
-// windowsInformationProtectionDeviceRegistrationsRequestBuilder builds and executes requests for operations under \users\{user-id}\windowsInformationProtectionDeviceRegistrations
+// WindowsInformationProtectionDeviceRegistrationsRequestBuilder builds and executes requests for operations under \users\{user-id}\windowsInformationProtectionDeviceRegistrations
 type WindowsInformationProtectionDeviceRegistrationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters zero or more WIP device registrations that belong to the user.
+// WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters zero or more WIP device registrations that belong to the user.
 type WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

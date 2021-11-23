@@ -37,7 +37,7 @@ import (
     if9d9f1bd841c39df4ae58bdaf1c987671d7244b7fbc793a0e55c2c3bcb60d75b "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/thumbnails/item"
 )
 
-// driveItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}
+// DriveItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -66,7 +66,7 @@ type DriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveItemRequestBuilderGetQueryParameters get entity from workbooks by key
+// DriveItemRequestBuilderGetQueryParameters get entity from workbooks by key
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

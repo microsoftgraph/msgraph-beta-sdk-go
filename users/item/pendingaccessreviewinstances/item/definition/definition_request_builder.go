@@ -8,7 +8,7 @@ import (
     i8d64411e4b13f514c0fbbf3213f2be04ba81234a82287179dd440195bded64fe "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/definition/stop"
 )
 
-// definitionRequestBuilder builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\definition
+// DefinitionRequestBuilder builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\definition
 type DefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type DefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// definitionRequestBuilderGetQueryParameters there is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
+// DefinitionRequestBuilderGetQueryParameters there is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
 type DefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

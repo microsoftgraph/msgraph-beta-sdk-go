@@ -7,7 +7,7 @@ import (
     i742ea0c15fb1a4786773e125d954ef243952ede055128e3157f81c19fbe0265a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/rebootanalyticsmetrics/ref"
 )
 
-// rebootAnalyticsMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\rebootAnalyticsMetrics
+// RebootAnalyticsMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\rebootAnalyticsMetrics
 type RebootAnalyticsMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RebootAnalyticsMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// rebootAnalyticsMetricsRequestBuilderGetQueryParameters the user experience analytics reboot analytics metrics.
+// RebootAnalyticsMetricsRequestBuilderGetQueryParameters the user experience analytics reboot analytics metrics.
 type RebootAnalyticsMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

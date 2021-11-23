@@ -6,7 +6,7 @@ import (
     i32bb13a0096ebe13f36b06bcec6b204cfd1b137d6a7e383561311fbbed92c693 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/planner/recentplans/ref"
 )
 
-// recentPlansRequestBuilder builds and executes requests for operations under \me\planner\recentPlans
+// RecentPlansRequestBuilder builds and executes requests for operations under \me\planner\recentPlans
 type RecentPlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type RecentPlansRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// recentPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// RecentPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 type RecentPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

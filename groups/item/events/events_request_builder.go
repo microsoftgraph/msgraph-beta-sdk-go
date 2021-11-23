@@ -7,7 +7,7 @@ import (
     i266e1c1f7949bccc719dc90e1714839a9d1885f2192a21e66040e2928498c484 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/events/delta"
 )
 
-// eventsRequestBuilder builds and executes requests for operations under \groups\{group-id}\events
+// EventsRequestBuilder builds and executes requests for operations under \groups\{group-id}\events
 type EventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type EventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventsRequestBuilderGetQueryParameters the group's calendar events.
+// EventsRequestBuilderGetQueryParameters the group's calendar events.
 type EventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

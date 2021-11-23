@@ -7,7 +7,7 @@ import (
     i275b8f27f9a148b41278e98cbbad1f98f888b66bf6626e4853de78668b114e56 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/item/tasktriggers/item/definition/ref"
 )
 
-// definitionRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\taskTriggers\{printTaskTrigger-id}\definition
+// DefinitionRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\taskTriggers\{printTaskTrigger-id}\definition
 type DefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// definitionRequestBuilderGetQueryParameters an abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
+// DefinitionRequestBuilderGetQueryParameters an abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
 type DefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

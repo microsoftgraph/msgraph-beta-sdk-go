@@ -7,7 +7,7 @@ import (
     i16bbe2f98ab362bcca1baa69f73fd989d32ec9d54c038f07218f45348a52fc63 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/definitionfile/ref"
 )
 
-// definitionFileRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\definitionFile
+// DefinitionFileRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\definitionFile
 type DefinitionFileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DefinitionFileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// definitionFileRequestBuilderGetQueryParameters the group policy file associated with the definition.
+// DefinitionFileRequestBuilderGetQueryParameters the group policy file associated with the definition.
 type DefinitionFileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     idb4d7c615511d6336922a5bd420a699bed6920f3962b204ae96185fce4fbed6b "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/legalholds/item/sitesources/item/site/ref"
 )
 
-// siteRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\siteSources\{siteSource-id}\site
+// SiteRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\siteSources\{siteSource-id}\site
 type SiteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type SiteRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// siteRequestBuilderGetQueryParameters the SharePoint site associated with the siteSource.
+// SiteRequestBuilderGetQueryParameters the SharePoint site associated with the siteSource.
 type SiteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

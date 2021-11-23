@@ -13,7 +13,7 @@ import (
     ifb56eb83a662054d3af4bc800c85e7a65c5bc3df936f5213775ecdd960ce4123 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsregressionsummary/operatingsystemregression/item"
 )
 
-// userExperienceAnalyticsRegressionSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary
+// UserExperienceAnalyticsRegressionSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary
 type UserExperienceAnalyticsRegressionSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type UserExperienceAnalyticsRegressionSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userExperienceAnalyticsRegressionSummaryRequestBuilderGetQueryParameters user experience analytics regression summary
+// UserExperienceAnalyticsRegressionSummaryRequestBuilderGetQueryParameters user experience analytics regression summary
 type UserExperienceAnalyticsRegressionSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

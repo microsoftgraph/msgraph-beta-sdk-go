@@ -8,7 +8,7 @@ import (
     i3a7f0a2cf3e5cbb22ae18d4d09233b740418e3869d44c3de04c038c8644da19a "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/outboundshareduserprofiles/item/tenants/item"
 )
 
-// outboundSharedUserProfileRequestBuilder builds and executes requests for operations under \directory\outboundSharedUserProfiles\{outboundSharedUserProfile-userId}
+// OutboundSharedUserProfileRequestBuilder builds and executes requests for operations under \directory\outboundSharedUserProfiles\{outboundSharedUserProfile-userId}
 type OutboundSharedUserProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type OutboundSharedUserProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// outboundSharedUserProfileRequestBuilderGetQueryParameters get outboundSharedUserProfiles from directory
+// OutboundSharedUserProfileRequestBuilderGetQueryParameters get outboundSharedUserProfiles from directory
 type OutboundSharedUserProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

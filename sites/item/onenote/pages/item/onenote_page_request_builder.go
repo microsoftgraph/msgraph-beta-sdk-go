@@ -12,7 +12,7 @@ import (
     ie91751357e76dcdd0bd05cbf49afec3ceacc41b66c5952208992ebe537861825 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote/pages/item/copytosection"
 )
 
-// onenotePageRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\pages\{onenotePage-id}
+// OnenotePageRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\pages\{onenotePage-id}
 type OnenotePageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type OnenotePageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onenotePageRequestBuilderGetQueryParameters the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// OnenotePageRequestBuilderGetQueryParameters the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 type OnenotePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

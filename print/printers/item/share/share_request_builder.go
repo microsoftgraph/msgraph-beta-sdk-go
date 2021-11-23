@@ -7,7 +7,7 @@ import (
     i871c8472146fc38fc0c2313341d5067b59d7e3c34517ab0bba0462b9373e96ad "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/item/share/ref"
 )
 
-// shareRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\share
+// ShareRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\share
 type ShareRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ShareRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// shareRequestBuilderGetQueryParameters get share from print
+// ShareRequestBuilderGetQueryParameters get share from print
 type ShareRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

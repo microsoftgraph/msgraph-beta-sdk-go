@@ -7,7 +7,7 @@ import (
     if835b021be515ccacf7128b21d1a76f9999971c3d52b1ebbed9b5cb81d82c492 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/roledefinitions/item/roleassignments/item/roledefinition/ref"
 )
 
-// roleDefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\roleDefinitions\{roleDefinition-id}\roleAssignments\{roleAssignment-id}\roleDefinition
+// RoleDefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\roleDefinitions\{roleDefinition-id}\roleAssignments\{roleAssignment-id}\roleDefinition
 type RoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// roleDefinitionRequestBuilderGetQueryParameters role definition this assignment is part of.
+// RoleDefinitionRequestBuilderGetQueryParameters role definition this assignment is part of.
 type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -13,7 +13,7 @@ import (
     id92bca78a768b46b0a9ae7f9bb4158b0042091ffb95f227d3e6174994267a64b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/accept"
 )
 
-// eventRequestBuilder builds and executes requests for operations under \users\{user-id}\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\events\{event-id}\exceptionOccurrences\{event-id1}
+// EventRequestBuilder builds and executes requests for operations under \users\{user-id}\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\events\{event-id}\exceptionOccurrences\{event-id1}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventRequestBuilderGetQueryParameters get exceptionOccurrences from users
+// EventRequestBuilderGetQueryParameters get exceptionOccurrences from users
 type EventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

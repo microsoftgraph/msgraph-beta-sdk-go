@@ -13,7 +13,7 @@ import (
     ife2e638b4789000c032141a5d5b523ac665e0a27d645bcbc23e304da45bb8e1b "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignmentschedulerequests/item/directoryscope"
 )
 
-// unifiedRoleAssignmentScheduleRequestRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}
+// UnifiedRoleAssignmentScheduleRequestRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}
 type UnifiedRoleAssignmentScheduleRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type UnifiedRoleAssignmentScheduleRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleAssignmentScheduleRequestRequestBuilderGetQueryParameters get roleAssignmentScheduleRequests from roleManagement
+// UnifiedRoleAssignmentScheduleRequestRequestBuilderGetQueryParameters get roleAssignmentScheduleRequests from roleManagement
 type UnifiedRoleAssignmentScheduleRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

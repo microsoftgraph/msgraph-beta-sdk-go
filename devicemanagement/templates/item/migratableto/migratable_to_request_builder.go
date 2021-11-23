@@ -7,7 +7,7 @@ import (
     ib96c1cc84625c75ab39a97d4b053a58419b41e0467bd301945c30280f3035579 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/migratableto/importoffice365deviceconfigurationpolicies"
 )
 
-// migratableToRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo
+// MigratableToRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo
 type MigratableToRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type MigratableToRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// migratableToRequestBuilderGetQueryParameters collection of templates this template can migrate to
+// MigratableToRequestBuilderGetQueryParameters collection of templates this template can migrate to
 type MigratableToRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

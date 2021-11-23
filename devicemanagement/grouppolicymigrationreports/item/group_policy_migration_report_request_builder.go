@@ -10,7 +10,7 @@ import (
     i8771848a49e50ae62c54e7781ba80e77c5b2ae75c24c00f4ca58eac952cbd206 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicymigrationreports/item/unsupportedgrouppolicyextensions/item"
 )
 
-// groupPolicyMigrationReportRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}
+// GroupPolicyMigrationReportRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}
 type GroupPolicyMigrationReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type GroupPolicyMigrationReportRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupPolicyMigrationReportRequestBuilderGetQueryParameters a list of Group Policy migration reports.
+// GroupPolicyMigrationReportRequestBuilderGetQueryParameters a list of Group Policy migration reports.
 type GroupPolicyMigrationReportRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

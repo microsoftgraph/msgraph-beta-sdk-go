@@ -8,7 +8,7 @@ import (
     i5c8691165bfe683ce2cc48511c7ca17543dd1520c91c446453327d3c98491d3f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/inferenceclassification/overrides/item"
 )
 
-// inferenceClassificationRequestBuilder builds and executes requests for operations under \users\{user-id}\inferenceClassification
+// InferenceClassificationRequestBuilder builds and executes requests for operations under \users\{user-id}\inferenceClassification
 type InferenceClassificationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type InferenceClassificationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// inferenceClassificationRequestBuilderGetQueryParameters relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+// InferenceClassificationRequestBuilderGetQueryParameters relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 type InferenceClassificationRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

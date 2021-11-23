@@ -8,7 +8,7 @@ import (
     i30c81441182809790d7deb6c0da1307530c3dbb5567c662d63e456dddcb16f5a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancepolicies/item/scheduledactionsforrule/item/scheduledactionconfigurations/item"
 )
 
-// deviceComplianceScheduledActionForRuleRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\scheduledActionsForRule\{deviceComplianceScheduledActionForRule-id}
+// DeviceComplianceScheduledActionForRuleRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\scheduledActionsForRule\{deviceComplianceScheduledActionForRule-id}
 type DeviceComplianceScheduledActionForRuleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DeviceComplianceScheduledActionForRuleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceComplianceScheduledActionForRuleRequestBuilderGetQueryParameters the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// DeviceComplianceScheduledActionForRuleRequestBuilderGetQueryParameters the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 type DeviceComplianceScheduledActionForRuleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// createDownloadUrlRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses\{microsoftTunnelServerLogCollectionResponse-id}\microsoft.graph.createDownloadUrl
+// CreateDownloadUrlRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses\{microsoftTunnelServerLogCollectionResponse-id}\microsoft.graph.createDownloadUrl
 type CreateDownloadUrlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

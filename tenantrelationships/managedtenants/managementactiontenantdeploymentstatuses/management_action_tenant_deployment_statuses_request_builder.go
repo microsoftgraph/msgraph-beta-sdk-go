@@ -7,7 +7,7 @@ import (
     id50624c28ac1a98a4cd1cc6f61b4dc20c4a7524a54c2bbd7c8cbd10f86ded55f "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactiontenantdeploymentstatuses/changedeploymentstatus"
 )
 
-// managementActionTenantDeploymentStatusesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActionTenantDeploymentStatuses
+// ManagementActionTenantDeploymentStatusesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActionTenantDeploymentStatuses
 type ManagementActionTenantDeploymentStatusesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ManagementActionTenantDeploymentStatusesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters the tenant level status of management actions across managed tenants.
+// ManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters the tenant level status of management actions across managed tenants.
 type ManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

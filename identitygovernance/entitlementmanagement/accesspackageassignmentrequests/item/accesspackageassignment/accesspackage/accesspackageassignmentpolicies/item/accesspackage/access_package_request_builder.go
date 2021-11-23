@@ -8,7 +8,7 @@ import (
     i9c755dc95a9ad65e6dddac8bae18b6e73215020ab116536f176d973b2bd3f518 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackage/accesspackageassignmentpolicies/item/accesspackage/ref"
 )
 
-// accessPackageRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackage\accessPackageAssignmentPolicies\{accessPackageAssignmentPolicy-id}\accessPackage
+// AccessPackageRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackage\accessPackageAssignmentPolicies\{accessPackageAssignmentPolicy-id}\accessPackage
 type AccessPackageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type AccessPackageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageRequestBuilderGetQueryParameters the access package with this policy. Read-only. Nullable.
+// AccessPackageRequestBuilderGetQueryParameters the access package with this policy. Read-only. Nullable.
 type AccessPackageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

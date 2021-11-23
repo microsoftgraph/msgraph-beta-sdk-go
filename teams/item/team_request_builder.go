@@ -29,7 +29,7 @@ import (
     iba461bd7c348411b42a81c1813125516bec205337ca79a73172439185e9cd1c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/permissiongrants/item"
 )
 
-// teamRequestBuilder builds and executes requests for operations under \teams\{team-id}
+// TeamRequestBuilder builds and executes requests for operations under \teams\{team-id}
 type TeamRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -58,7 +58,7 @@ type TeamRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamRequestBuilderGetQueryParameters get entity from teams by key
+// TeamRequestBuilderGetQueryParameters get entity from teams by key
 type TeamRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     i849928ddbb7319b96d6504cbdd2b0d25a39da408c434faf0be53150fae9cfec1 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/taskdefinitions/item/tasks/item/trigger"
 )
 
-// printTaskRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}
+// PrintTaskRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}
 type PrintTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PrintTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// printTaskRequestBuilderGetQueryParameters a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+// PrintTaskRequestBuilderGetQueryParameters a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 type PrintTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

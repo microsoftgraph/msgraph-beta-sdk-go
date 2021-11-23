@@ -11,7 +11,7 @@ import (
     ifca84794c64896fa903eef9084649e9bd2a1411cabf42eaae1098581591a82ee "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/worksheet/range_escaped"
 )
 
-// worksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\worksheet
+// WorksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\worksheet
 type WorksheetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type WorksheetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// worksheetRequestBuilderGetQueryParameters the worksheet containing the current chart. Read-only.
+// WorksheetRequestBuilderGetQueryParameters the worksheet containing the current chart. Read-only.
 type WorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

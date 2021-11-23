@@ -13,7 +13,7 @@ import (
     i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192 "github.com/microsoftgraph/msgraph-beta-sdk-go/search/bookmarks/item"
 )
 
-// searchRequestBuilder builds and executes requests for operations under \search
+// SearchRequestBuilder builds and executes requests for operations under \search
 type SearchRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -33,7 +33,7 @@ type SearchRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// searchRequestBuilderGetQueryParameters get search
+// SearchRequestBuilderGetQueryParameters get search
 type SearchRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

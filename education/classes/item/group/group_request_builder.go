@@ -7,7 +7,7 @@ import (
     if4a5ff7c1911dd542040b9571db3f86e2691101fb514727cbce955e6532e89dd "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/item/group/ref"
 )
 
-// groupRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\group
+// GroupRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\group
 type GroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type GroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupRequestBuilderGetQueryParameters the underlying Microsoft 365 group object.
+// GroupRequestBuilderGetQueryParameters the underlying Microsoft 365 group object.
 type GroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

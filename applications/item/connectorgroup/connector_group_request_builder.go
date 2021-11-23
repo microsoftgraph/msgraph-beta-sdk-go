@@ -7,7 +7,7 @@ import (
     i078ea6e1f5b18ba78715c9e80e0de994a591985e12c627f0fa959431f324e7ee "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/connectorgroup/ref"
 )
 
-// connectorGroupRequestBuilder builds and executes requests for operations under \applications\{application-id}\connectorGroup
+// ConnectorGroupRequestBuilder builds and executes requests for operations under \applications\{application-id}\connectorGroup
 type ConnectorGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ConnectorGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// connectorGroupRequestBuilderGetQueryParameters the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+// ConnectorGroupRequestBuilderGetQueryParameters the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 type ConnectorGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

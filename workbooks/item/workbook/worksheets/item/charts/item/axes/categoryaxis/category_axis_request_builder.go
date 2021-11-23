@@ -10,7 +10,7 @@ import (
     iaf2a865905b68d71c4a3c0f4559432e9c997165c67e4249a26baaf458af7ff9d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/categoryaxis/minorgridlines"
 )
 
-// categoryAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\categoryAxis
+// CategoryAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\categoryAxis
 type CategoryAxisRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type CategoryAxisRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// categoryAxisRequestBuilderGetQueryParameters represents the category axis in a chart. Read-only.
+// CategoryAxisRequestBuilderGetQueryParameters represents the category axis in a chart. Read-only.
 type CategoryAxisRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

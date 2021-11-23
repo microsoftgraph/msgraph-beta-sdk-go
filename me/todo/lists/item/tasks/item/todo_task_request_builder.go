@@ -10,7 +10,7 @@ import (
     i6ffb4522698e1ae7e78c00250910de6f003132aa52ac20af42871bdf610bd8fa "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/linkedresources/item"
 )
 
-// todoTaskRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}
+// TodoTaskRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}
 type TodoTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type TodoTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// todoTaskRequestBuilderGetQueryParameters the tasks in this task list. Read-only. Nullable.
+// TodoTaskRequestBuilderGetQueryParameters the tasks in this task list. Read-only. Nullable.
 type TodoTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

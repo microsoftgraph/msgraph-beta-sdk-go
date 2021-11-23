@@ -7,7 +7,7 @@ import (
     i253e85adfb71f0ee6d5199fa017d73a9759a556ac4bd568490441630994c44d4 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/series/item/points/item/format/fill"
 )
 
-// formatRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}\format
+// FormatRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}\format
 type FormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type FormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// formatRequestBuilderGetQueryParameters encapsulates the format properties chart point. Read-only.
+// FormatRequestBuilderGetQueryParameters encapsulates the format properties chart point. Read-only.
 type FormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

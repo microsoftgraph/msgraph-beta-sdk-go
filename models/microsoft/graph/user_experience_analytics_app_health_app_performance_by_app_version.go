@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// userExperienceAnalyticsAppHealthAppPerformanceByAppVersion 
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion struct {
     Entity
     // The number of crashes for the app. Valid values -2147483648 to 2147483647

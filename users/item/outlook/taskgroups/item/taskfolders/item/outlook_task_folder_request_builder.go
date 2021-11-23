@@ -12,7 +12,7 @@ import (
     i8dfde376fcdc847c160e38c1bb7577866731487084a179701aa2f8b0cfc4db62 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/outlook/taskgroups/item/taskfolders/item/singlevalueextendedproperties/item"
 )
 
-// outlookTaskFolderRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\taskGroups\{outlookTaskGroup-id}\taskFolders\{outlookTaskFolder-id}
+// OutlookTaskFolderRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\taskGroups\{outlookTaskGroup-id}\taskFolders\{outlookTaskFolder-id}
 type OutlookTaskFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type OutlookTaskFolderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// outlookTaskFolderRequestBuilderGetQueryParameters the collection of task folders in the task group. Read-only. Nullable.
+// OutlookTaskFolderRequestBuilderGetQueryParameters the collection of task folders in the task group. Read-only. Nullable.
 type OutlookTaskFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

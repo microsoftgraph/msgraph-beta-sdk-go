@@ -9,7 +9,7 @@ import (
     ie1054a1b9157187681bd433f8846c01e56b7924bf3c589f1ade883924304dc7d "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/item/roleinfo"
 )
 
-// privilegedRoleAssignmentRequestBuilder builds and executes requests for operations under \privilegedRoleAssignments\{privilegedRoleAssignment-id}
+// PrivilegedRoleAssignmentRequestBuilder builds and executes requests for operations under \privilegedRoleAssignments\{privilegedRoleAssignment-id}
 type PrivilegedRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type PrivilegedRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// privilegedRoleAssignmentRequestBuilderGetQueryParameters get entity from privilegedRoleAssignments by key
+// PrivilegedRoleAssignmentRequestBuilderGetQueryParameters get entity from privilegedRoleAssignments by key
 type PrivilegedRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

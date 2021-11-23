@@ -15,7 +15,7 @@ import (
     i88afe480603ea409059f63721a157eb2e70f28e5bf25444bfb05d2baa0ea62fb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicehealthscripts/item/devicerunstates/item"
 )
 
-// deviceHealthScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}
+// DeviceHealthScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}
 type DeviceHealthScriptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type DeviceHealthScriptRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceHealthScriptRequestBuilderGetQueryParameters the list of device health scripts associated with the tenant.
+// DeviceHealthScriptRequestBuilderGetQueryParameters the list of device health scripts associated with the tenant.
 type DeviceHealthScriptRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -6,7 +6,7 @@ import (
     i0963f9c6d85d5185b4e521540e69a0f9a7846488d94ca5bf9fedd21e81fe49a4 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/certificatebasedauthconfiguration/ref"
 )
 
-// certificateBasedAuthConfigurationRequestBuilder builds and executes requests for operations under \organization\{organization-id}\certificateBasedAuthConfiguration
+// CertificateBasedAuthConfigurationRequestBuilder builds and executes requests for operations under \organization\{organization-id}\certificateBasedAuthConfiguration
 type CertificateBasedAuthConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type CertificateBasedAuthConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// certificateBasedAuthConfigurationRequestBuilderGetQueryParameters navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+// CertificateBasedAuthConfigurationRequestBuilderGetQueryParameters navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
 type CertificateBasedAuthConfigurationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

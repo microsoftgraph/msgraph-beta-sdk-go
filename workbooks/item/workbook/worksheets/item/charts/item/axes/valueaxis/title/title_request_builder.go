@@ -7,7 +7,7 @@ import (
     i71f8cc3fbf1a8b28d1e3a64f84943db850c404a30c93665104d081954ea2fe9e "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/valueaxis/title/format"
 )
 
-// titleRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\valueAxis\title
+// TitleRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\valueAxis\title
 type TitleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type TitleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// titleRequestBuilderGetQueryParameters represents the axis title. Read-only.
+// TitleRequestBuilderGetQueryParameters represents the axis title. Read-only.
 type TitleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

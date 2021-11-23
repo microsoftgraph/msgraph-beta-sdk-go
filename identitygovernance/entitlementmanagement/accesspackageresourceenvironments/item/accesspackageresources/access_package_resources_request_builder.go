@@ -6,7 +6,7 @@ import (
     i3f7642279120e0d794d7e3f12f09d33b860300b7436ef36b2cf11a810c4a1522 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourceenvironments/item/accesspackageresources/ref"
 )
 
-// accessPackageResourcesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceEnvironments\{accessPackageResourceEnvironment-id}\accessPackageResources
+// AccessPackageResourcesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceEnvironments\{accessPackageResourceEnvironment-id}\accessPackageResources
 type AccessPackageResourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type AccessPackageResourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageResourcesRequestBuilderGetQueryParameters read-only. Required.
+// AccessPackageResourcesRequestBuilderGetQueryParameters read-only. Required.
 type AccessPackageResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

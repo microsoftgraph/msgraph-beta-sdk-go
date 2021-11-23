@@ -7,7 +7,7 @@ import (
     if51f113f9b8f51d0bb7f59d550d6f72655016f1d80edcaa011d6f30f596d0379 "github.com/microsoftgraph/msgraph-beta-sdk-go/mobilitymanagementpolicies/item/includedgroups"
 )
 
-// mobilityManagementPolicyRequestBuilder builds and executes requests for operations under \mobilityManagementPolicies\{mobilityManagementPolicy-id}
+// MobilityManagementPolicyRequestBuilder builds and executes requests for operations under \mobilityManagementPolicies\{mobilityManagementPolicy-id}
 type MobilityManagementPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type MobilityManagementPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mobilityManagementPolicyRequestBuilderGetQueryParameters get entity from mobilityManagementPolicies by key
+// MobilityManagementPolicyRequestBuilderGetQueryParameters get entity from mobilityManagementPolicies by key
 type MobilityManagementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i5f42c2f44d66f0c8c4aedf1f788a41bcb8fc4dda9c400fcd569f7128301beed5 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedapproval/item/request/ref"
 )
 
-// requestRequestBuilder builds and executes requests for operations under \privilegedApproval\{privilegedApproval-id}\request
+// RequestRequestBuilder builds and executes requests for operations under \privilegedApproval\{privilegedApproval-id}\request
 type RequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// requestRequestBuilderGetQueryParameters read-only. The role assignment request for this approval object
+// RequestRequestBuilderGetQueryParameters read-only. The role assignment request for this approval object
 type RequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

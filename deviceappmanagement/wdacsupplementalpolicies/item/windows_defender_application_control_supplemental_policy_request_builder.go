@@ -12,7 +12,7 @@ import (
     if7f30d88a5e2c08a355aab945ead20a738d45d9716825973a8471d163909ac9b "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/wdacsupplementalpolicies/item/devicestatuses/item"
 )
 
-// windowsDefenderApplicationControlSupplementalPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}
+// WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}
 type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetOptions
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetQueryParameters the collection of Windows Defender Application Control Supplemental Policies.
+// WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetQueryParameters the collection of Windows Defender Application Control Supplemental Policies.
 type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

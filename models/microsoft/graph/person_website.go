@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// personWebsite 
+// PersonWebsite 
 type PersonWebsite struct {
     ItemFacet
     // Contains categories a user has associated with the website (for example, personal, recipes).

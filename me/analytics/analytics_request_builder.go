@@ -7,7 +7,7 @@ import (
     i736a478ce48d7aea8edf746ddda719717300253628d7c53d36199e9d39134cd0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/analytics/activitystatistics"
 )
 
-// analyticsRequestBuilder builds and executes requests for operations under \me\analytics
+// AnalyticsRequestBuilder builds and executes requests for operations under \me\analytics
 type AnalyticsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AnalyticsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// analyticsRequestBuilderGetQueryParameters get analytics from me
+// AnalyticsRequestBuilderGetQueryParameters get analytics from me
 type AnalyticsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

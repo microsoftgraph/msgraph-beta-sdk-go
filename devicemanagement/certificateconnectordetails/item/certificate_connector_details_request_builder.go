@@ -8,7 +8,7 @@ import (
     i7e1773f4927e9225f8c986534d86959f50bad1e76f4272d85d379daeb2d90bee "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/certificateconnectordetails/item/gethealthmetrics"
 )
 
-// certificateConnectorDetailsRequestBuilder builds and executes requests for operations under \deviceManagement\certificateConnectorDetails\{certificateConnectorDetails-id}
+// CertificateConnectorDetailsRequestBuilder builds and executes requests for operations under \deviceManagement\certificateConnectorDetails\{certificateConnectorDetails-id}
 type CertificateConnectorDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type CertificateConnectorDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// certificateConnectorDetailsRequestBuilderGetQueryParameters collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
+// CertificateConnectorDetailsRequestBuilderGetQueryParameters collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
 type CertificateConnectorDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

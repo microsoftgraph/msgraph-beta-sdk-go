@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// profileCardPropertiesRequestBuilder builds and executes requests for operations under \organization\{organization-id}\settings\profileCardProperties
+// ProfileCardPropertiesRequestBuilder builds and executes requests for operations under \organization\{organization-id}\settings\profileCardProperties
 type ProfileCardPropertiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ProfileCardPropertiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// profileCardPropertiesRequestBuilderGetQueryParameters contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+// ProfileCardPropertiesRequestBuilderGetQueryParameters contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 type ProfileCardPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

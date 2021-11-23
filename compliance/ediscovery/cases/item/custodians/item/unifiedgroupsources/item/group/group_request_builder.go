@@ -7,7 +7,7 @@ import (
     i29cc760f002db3b6d70d0813f02890cfffd5b35db82adbf1bb5f1d5592c093ea "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/custodians/item/unifiedgroupsources/item/group/ref"
 )
 
-// groupRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\unifiedGroupSources\{unifiedGroupSource-id}\group
+// GroupRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\unifiedGroupSources\{unifiedGroupSource-id}\group
 type GroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type GroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupRequestBuilderGetQueryParameters the group associated with the unifiedGroupSource.
+// GroupRequestBuilderGetQueryParameters the group associated with the unifiedGroupSource.
 type GroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

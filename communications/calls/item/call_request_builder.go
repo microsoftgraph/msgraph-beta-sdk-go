@@ -26,7 +26,7 @@ import (
     ifc54b1625a5ef155b182402b189053da9800796fb7507ed629f84919426791d1 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/operations/item"
 )
 
-// callRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}
+// CallRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}
 type CallRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -55,7 +55,7 @@ type CallRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// callRequestBuilderGetQueryParameters get calls from communications
+// CallRequestBuilderGetQueryParameters get calls from communications
 type CallRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

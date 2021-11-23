@@ -6,7 +6,7 @@ import (
     i51ab07afa75185d97ee9cec70456563295cd1a9edda1515508fe08ea98d946a5 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/claimsmappingpolicies/ref"
 )
 
-// claimsMappingPoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\claimsMappingPolicies
+// ClaimsMappingPoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\claimsMappingPolicies
 type ClaimsMappingPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ClaimsMappingPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// claimsMappingPoliciesRequestBuilderGetQueryParameters the claimsMappingPolicies assigned to this service principal. Supports $expand.
+// ClaimsMappingPoliciesRequestBuilderGetQueryParameters the claimsMappingPolicies assigned to this service principal. Supports $expand.
 type ClaimsMappingPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

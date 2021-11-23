@@ -6,7 +6,7 @@ import (
     if3ecebfdc71cec5fbad59a978fc8721ddba920b2bcca9a8c35b01dae2cf55fc9 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/owners/ref"
 )
 
-// ownersRequestBuilder builds and executes requests for operations under \teams\{team-id}\owners
+// OwnersRequestBuilder builds and executes requests for operations under \teams\{team-id}\owners
 type OwnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type OwnersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ownersRequestBuilderGetQueryParameters the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+// OwnersRequestBuilderGetQueryParameters the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
 type OwnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

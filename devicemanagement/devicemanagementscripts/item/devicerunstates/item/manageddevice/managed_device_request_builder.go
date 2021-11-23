@@ -44,7 +44,7 @@ import (
     ie2655436ba44f850677e4b87f0f60605cc435a5c9710ebdc822de7d4f871ffcb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice/shutdown"
 )
 
-// managedDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice
+// ManagedDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice
 type ManagedDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -64,7 +64,7 @@ type ManagedDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDeviceRequestBuilderGetQueryParameters the managed devices that executes the device management script.
+// ManagedDeviceRequestBuilderGetQueryParameters the managed devices that executes the device management script.
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

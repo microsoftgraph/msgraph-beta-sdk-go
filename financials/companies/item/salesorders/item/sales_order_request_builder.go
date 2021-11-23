@@ -11,7 +11,7 @@ import (
     ic21a121310c89b15c2844b5275d312e77910ddae3d153823d924b5e4b6fa242d "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesorders/item/salesorderlines/item"
 )
 
-// salesOrderRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}
+// SalesOrderRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}
 type SalesOrderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type SalesOrderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// salesOrderRequestBuilderGetQueryParameters get salesOrders from financials
+// SalesOrderRequestBuilderGetQueryParameters get salesOrders from financials
 type SalesOrderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -27,7 +27,7 @@ import (
     id639ff5c7f5dd2905bbbcf9dbcd6a7912904f3f8da7f947d8b3eec42a0d9bfd4 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/evaluatelabeljobs/item"
 )
 
-// dataClassificationRequestBuilder builds and executes requests for operations under \dataClassification
+// DataClassificationRequestBuilder builds and executes requests for operations under \dataClassification
 type DataClassificationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type DataClassificationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// dataClassificationRequestBuilderGetQueryParameters get dataClassification
+// DataClassificationRequestBuilderGetQueryParameters get dataClassification
 type DataClassificationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

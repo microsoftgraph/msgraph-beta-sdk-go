@@ -10,7 +10,7 @@ import (
     if3d69c085cc31553bffa6238747fd2f166e883710ce3cb7738b69051017fde73 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/serviceprincipalcreationpolicies/item/excludes/item"
 )
 
-// servicePrincipalCreationPolicyRequestBuilder builds and executes requests for operations under \policies\servicePrincipalCreationPolicies\{servicePrincipalCreationPolicy-id}
+// ServicePrincipalCreationPolicyRequestBuilder builds and executes requests for operations under \policies\servicePrincipalCreationPolicies\{servicePrincipalCreationPolicy-id}
 type ServicePrincipalCreationPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ServicePrincipalCreationPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// servicePrincipalCreationPolicyRequestBuilderGetQueryParameters get servicePrincipalCreationPolicies from policies
+// ServicePrincipalCreationPolicyRequestBuilderGetQueryParameters get servicePrincipalCreationPolicies from policies
 type ServicePrincipalCreationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

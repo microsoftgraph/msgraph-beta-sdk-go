@@ -8,7 +8,7 @@ import (
     ib8afe5fbae4255c53a894ebfd42b979d7f84155a870054da6771029d5b624e69 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/series/item/format/fill"
 )
 
-// formatRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\format
+// FormatRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\format
 type FormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type FormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// formatRequestBuilderGetQueryParameters represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+// FormatRequestBuilderGetQueryParameters represents the formatting of a chart series, which includes fill and line formatting. Read-only.
 type FormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

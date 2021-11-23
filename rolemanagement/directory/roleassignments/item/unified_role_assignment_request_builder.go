@@ -10,7 +10,7 @@ import (
     ife4fc797bde6a1f61ef8a96d5a81eea6e837ac644934fadf77ca8be443553675 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignments/item/roledefinition"
 )
 
-// unifiedRoleAssignmentRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignments\{unifiedRoleAssignment-id}
+// UnifiedRoleAssignmentRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignments\{unifiedRoleAssignment-id}
 type UnifiedRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type UnifiedRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleAssignmentRequestBuilderGetQueryParameters resource to grant access to users or groups.
+// UnifiedRoleAssignmentRequestBuilderGetQueryParameters resource to grant access to users or groups.
 type UnifiedRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

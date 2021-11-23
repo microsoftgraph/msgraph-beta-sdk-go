@@ -7,7 +7,7 @@ import (
     i5f5e0ee82e973b29751f5b9574328b78e518ce097d9cb8d10127f9b2c645a215 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendar/events/item/instances/delta"
 )
 
-// instancesRequestBuilder builds and executes requests for operations under \me\calendar\events\{event-id}\instances
+// InstancesRequestBuilder builds and executes requests for operations under \me\calendar\events\{event-id}\instances
 type InstancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type InstancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// instancesRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// InstancesRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 type InstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

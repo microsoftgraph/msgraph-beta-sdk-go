@@ -8,7 +8,7 @@ import (
     i6f6400ba72ba46ab3ccf588707fb62ff944d4bdd7e1db51b36f7fe34d77d6ff7 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/incompatibleaccesspackages/ref"
 )
 
-// incompatibleAccessPackagesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\incompatibleAccessPackages
+// IncompatibleAccessPackagesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\incompatibleAccessPackages
 type IncompatibleAccessPackagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type IncompatibleAccessPackagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// incompatibleAccessPackagesRequestBuilderGetQueryParameters the  access packages whose assigned users are ineligible to be assigned this access package.
+// IncompatibleAccessPackagesRequestBuilderGetQueryParameters the  access packages whose assigned users are ineligible to be assigned this access package.
 type IncompatibleAccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

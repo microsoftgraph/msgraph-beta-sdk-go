@@ -7,7 +7,7 @@ import (
     if5c7a26625cafb004ed0e764dba42822957f316d6ddc05ff25f1effaad016720 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mdmwindowsinformationprotectionpolicies/haspayloadlinks"
 )
 
-// mdmWindowsInformationProtectionPoliciesRequestBuilder builds and executes requests for operations under \deviceAppManagement\mdmWindowsInformationProtectionPolicies
+// MdmWindowsInformationProtectionPoliciesRequestBuilder builds and executes requests for operations under \deviceAppManagement\mdmWindowsInformationProtectionPolicies
 type MdmWindowsInformationProtectionPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type MdmWindowsInformationProtectionPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters windows information protection for apps running on devices which are MDM enrolled.
+// MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters windows information protection for apps running on devices which are MDM enrolled.
 type MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

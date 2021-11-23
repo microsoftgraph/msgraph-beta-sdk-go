@@ -44,7 +44,7 @@ import (
     ifa892d3191635eb436fe2e0ead51770cb25545dd430d2739450e3a0ab2fcff3a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/profile/notes/item"
 )
 
-// profileRequestBuilder builds and executes requests for operations under \me\profile
+// ProfileRequestBuilder builds and executes requests for operations under \me\profile
 type ProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -73,7 +73,7 @@ type ProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// profileRequestBuilderGetQueryParameters represents properties that are descriptive of a user in a tenant.
+// ProfileRequestBuilderGetQueryParameters represents properties that are descriptive of a user in a tenant.
 type ProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

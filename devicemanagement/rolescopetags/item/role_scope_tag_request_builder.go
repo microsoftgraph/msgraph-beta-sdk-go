@@ -9,7 +9,7 @@ import (
     ic12c5ef80a8671db45da105570fcb6fe91462ab2daa7529a50e81a4c171aa147 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/rolescopetags/item/assignments/item"
 )
 
-// roleScopeTagRequestBuilder builds and executes requests for operations under \deviceManagement\roleScopeTags\{roleScopeTag-id}
+// RoleScopeTagRequestBuilder builds and executes requests for operations under \deviceManagement\roleScopeTags\{roleScopeTag-id}
 type RoleScopeTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type RoleScopeTagRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// roleScopeTagRequestBuilderGetQueryParameters the Role Scope Tags.
+// RoleScopeTagRequestBuilderGetQueryParameters the Role Scope Tags.
 type RoleScopeTagRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

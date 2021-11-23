@@ -7,7 +7,7 @@ import (
     if2226be996ec1412235de4328758920ae9dc5a3eb3ec23b99c0b7e468f05b5f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs/teamsapps/item/appdefinitions/item/coloricon/hostedcontent"
 )
 
-// colorIconRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\colorIcon
+// ColorIconRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\colorIcon
 type ColorIconRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ColorIconRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// colorIconRequestBuilderGetQueryParameters the color version of the Teams app's icon.
+// ColorIconRequestBuilderGetQueryParameters the color version of the Teams app's icon.
 type ColorIconRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

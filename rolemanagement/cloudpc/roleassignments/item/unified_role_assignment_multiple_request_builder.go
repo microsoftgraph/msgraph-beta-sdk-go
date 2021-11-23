@@ -11,7 +11,7 @@ import (
     ib2d17989f9484a745a0618303d9de9c94a6e8769ad7a3bc73bb9c5231ff6cc36 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/cloudpc/roleassignments/item/appscopes/item"
 )
 
-// unifiedRoleAssignmentMultipleRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\roleAssignments\{unifiedRoleAssignmentMultiple-id}
+// UnifiedRoleAssignmentMultipleRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\roleAssignments\{unifiedRoleAssignmentMultiple-id}
 type UnifiedRoleAssignmentMultipleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type UnifiedRoleAssignmentMultipleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleAssignmentMultipleRequestBuilderGetQueryParameters get roleAssignments from roleManagement
+// UnifiedRoleAssignmentMultipleRequestBuilderGetQueryParameters get roleAssignments from roleManagement
 type UnifiedRoleAssignmentMultipleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

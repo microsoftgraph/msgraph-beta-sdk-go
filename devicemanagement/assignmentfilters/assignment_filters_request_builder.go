@@ -10,7 +10,7 @@ import (
     ia52abb7c9a696d072bbdd617cc112d98fa0fc464bcc7a2b2808b711dc8fd7208 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/validatefilter"
 )
 
-// assignmentFiltersRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters
+// AssignmentFiltersRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters
 type AssignmentFiltersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type AssignmentFiltersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// assignmentFiltersRequestBuilderGetQueryParameters the list of assignment filters
+// AssignmentFiltersRequestBuilderGetQueryParameters the list of assignment filters
 type AssignmentFiltersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

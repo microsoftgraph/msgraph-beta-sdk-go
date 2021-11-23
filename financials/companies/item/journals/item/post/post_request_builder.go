@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// postRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\journals\{journal-id}\microsoft.graph.post
+// PostRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\journals\{journal-id}\microsoft.graph.post
 type PostRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

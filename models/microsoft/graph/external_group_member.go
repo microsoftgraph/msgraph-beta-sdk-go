@@ -5,7 +5,7 @@ import (
     i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// externalGroupMember 
+// ExternalGroupMember 
 type ExternalGroupMember struct {
     Entity
     // The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.

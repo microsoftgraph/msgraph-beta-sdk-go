@@ -14,7 +14,7 @@ import (
     if3f442e91af227cf13d8f8602aede2bf3ce68223487cdb569bebba5512713828 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/items/item"
 )
 
-// sharedDriveItemRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}
+// SharedDriveItemRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}
 type SharedDriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +43,7 @@ type SharedDriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sharedDriveItemRequestBuilderGetQueryParameters get entity from shares by key
+// SharedDriveItemRequestBuilderGetQueryParameters get entity from shares by key
 type SharedDriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

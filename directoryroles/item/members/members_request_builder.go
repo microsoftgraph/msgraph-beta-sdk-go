@@ -6,7 +6,7 @@ import (
     i5649e937d3563442cbebc5cc78363bfeaf2cd68e060ccbd9723925e5bfb2034a "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles/item/members/ref"
 )
 
-// membersRequestBuilder builds and executes requests for operations under \directoryRoles\{directoryRole-id}\members
+// MembersRequestBuilder builds and executes requests for operations under \directoryRoles\{directoryRole-id}\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// membersRequestBuilderGetQueryParameters users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
+// MembersRequestBuilderGetQueryParameters users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

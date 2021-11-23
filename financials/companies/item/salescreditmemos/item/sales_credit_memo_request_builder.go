@@ -11,7 +11,7 @@ import (
     i45ad6020b7b06f1d1193f8182422eaf641a20591f59d12b7f6704bccd0a06045 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salescreditmemos/item/salescreditmemolines/item"
 )
 
-// salesCreditMemoRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}
+// SalesCreditMemoRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}
 type SalesCreditMemoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type SalesCreditMemoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// salesCreditMemoRequestBuilderGetQueryParameters get salesCreditMemos from financials
+// SalesCreditMemoRequestBuilderGetQueryParameters get salesCreditMemos from financials
 type SalesCreditMemoRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

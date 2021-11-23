@@ -6,7 +6,7 @@ import (
     ie9f6c5de7460d06ee8154b22ef41338f1eaec9a2908946e959ed4e207564ff0a "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/memberswithlicenseerrors/ref"
 )
 
-// membersWithLicenseErrorsRequestBuilder builds and executes requests for operations under \groups\{group-id}\membersWithLicenseErrors
+// MembersWithLicenseErrorsRequestBuilder builds and executes requests for operations under \groups\{group-id}\membersWithLicenseErrors
 type MembersWithLicenseErrorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type MembersWithLicenseErrorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// membersWithLicenseErrorsRequestBuilderGetQueryParameters a list of group members with license errors from this group-based license assignment. Read-only.
+// MembersWithLicenseErrorsRequestBuilderGetQueryParameters a list of group members with license errors from this group-based license assignment. Read-only.
 type MembersWithLicenseErrorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

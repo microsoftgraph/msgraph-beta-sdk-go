@@ -10,7 +10,7 @@ import (
     i9b7b56068ae594d878d9164fec1e047566feb9a550ec5e453c176a1f0a5f2796 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/updatableassets/unenrollassetsbyid"
 )
 
-// updatableAssetsRequestBuilder builds and executes requests for operations under \admin\windows\updates\updatableAssets
+// UpdatableAssetsRequestBuilder builds and executes requests for operations under \admin\windows\updates\updatableAssets
 type UpdatableAssetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type UpdatableAssetsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// updatableAssetsRequestBuilderGetQueryParameters assets registered with the deployment service that can receive updates. Read-only.
+// UpdatableAssetsRequestBuilderGetQueryParameters assets registered with the deployment service that can receive updates. Read-only.
 type UpdatableAssetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

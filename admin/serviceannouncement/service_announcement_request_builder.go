@@ -12,7 +12,7 @@ import (
     ifeaaa36be4c91c2207be47a8feb667e2c552fe82abae810a59e3babd3be24a98 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/healthoverviews/item"
 )
 
-// serviceAnnouncementRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement
+// ServiceAnnouncementRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement
 type ServiceAnnouncementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type ServiceAnnouncementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// serviceAnnouncementRequestBuilderGetQueryParameters a container for service communications resources. Read-only.
+// ServiceAnnouncementRequestBuilderGetQueryParameters a container for service communications resources. Read-only.
 type ServiceAnnouncementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

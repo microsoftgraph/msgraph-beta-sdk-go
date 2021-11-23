@@ -13,7 +13,7 @@ import (
     ib6cc08f1f72cc8818b894ab175eb6ff86c66eae2e5f3c77636f0920366e2e694 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/calendarview/item/calendar/calendarview/item/accept"
 )
 
-// eventRequestBuilder builds and executes requests for operations under \groups\{group-id}\calendarView\{event-id}\calendar\calendarView\{event-id1}
+// EventRequestBuilder builds and executes requests for operations under \groups\{group-id}\calendarView\{event-id}\calendar\calendarView\{event-id1}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventRequestBuilderGetQueryParameters the calendar view for the calendar. Navigation property. Read-only.
+// EventRequestBuilderGetQueryParameters the calendar view for the calendar. Navigation property. Read-only.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

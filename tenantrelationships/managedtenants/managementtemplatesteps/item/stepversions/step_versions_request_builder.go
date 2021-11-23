@@ -6,7 +6,7 @@ import (
     iff673fb08c79c236f1dc447f618c13b3bc13d45c7a2b1408fd2383407bf599d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatesteps/item/stepversions/ref"
 )
 
-// stepVersionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}\stepVersions
+// StepVersionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}\stepVersions
 type StepVersionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type StepVersionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// stepVersionsRequestBuilderGetQueryParameters get stepVersions from tenantRelationships
+// StepVersionsRequestBuilderGetQueryParameters get stepVersions from tenantRelationships
 type StepVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

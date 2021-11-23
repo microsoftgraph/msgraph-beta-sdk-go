@@ -12,7 +12,7 @@ import (
     idae59aa73e78d2aa3e7943286419e2c7b77cd5e337f001c8305c745502c3740f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/termsandconditions/item/assignments/item"
 )
 
-// termsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}
+// TermsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}
 type TermsAndConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type TermsAndConditionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// termsAndConditionsRequestBuilderGetQueryParameters the terms and conditions associated with device management of the company.
+// TermsAndConditionsRequestBuilderGetQueryParameters the terms and conditions associated with device management of the company.
 type TermsAndConditionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// extensionPropertyRequestBuilder builds and executes requests for operations under \applications\{application-id}\extensionProperties\{extensionProperty-id}
+// ExtensionPropertyRequestBuilder builds and executes requests for operations under \applications\{application-id}\extensionProperties\{extensionProperty-id}
 type ExtensionPropertyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type ExtensionPropertyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// extensionPropertyRequestBuilderGetQueryParameters read-only. Nullable.
+// ExtensionPropertyRequestBuilderGetQueryParameters read-only. Nullable.
 type ExtensionPropertyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

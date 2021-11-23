@@ -7,7 +7,7 @@ import (
     i2a4723f90dd82a909f8315ab233db802b77f4b5036091da91095c5aab68923c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/taskdefinitions/item/tasks/item/definition/ref"
 )
 
-// definitionRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}\definition
+// DefinitionRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}\definition
 type DefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// definitionRequestBuilderGetQueryParameters the printTaskDefinition that was used to create this task. Read-only.
+// DefinitionRequestBuilderGetQueryParameters the printTaskDefinition that was used to create this task. Read-only.
 type DefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

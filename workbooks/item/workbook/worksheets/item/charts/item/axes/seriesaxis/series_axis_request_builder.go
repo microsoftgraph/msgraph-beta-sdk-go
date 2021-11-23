@@ -10,7 +10,7 @@ import (
     ie96db9d3fafddbcc70dc278b14aa3bf7d8b00a320ae39fa53f91e876c3a61414 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/seriesaxis/title"
 )
 
-// seriesAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\seriesAxis
+// SeriesAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\seriesAxis
 type SeriesAxisRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type SeriesAxisRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// seriesAxisRequestBuilderGetQueryParameters represents the series axis of a 3-dimensional chart. Read-only.
+// SeriesAxisRequestBuilderGetQueryParameters represents the series axis of a 3-dimensional chart. Read-only.
 type SeriesAxisRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

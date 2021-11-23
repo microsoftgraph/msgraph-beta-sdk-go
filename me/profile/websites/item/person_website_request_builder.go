@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// personWebsiteRequestBuilder builds and executes requests for operations under \me\profile\websites\{personWebsite-id}
+// PersonWebsiteRequestBuilder builds and executes requests for operations under \me\profile\websites\{personWebsite-id}
 type PersonWebsiteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type PersonWebsiteRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// personWebsiteRequestBuilderGetQueryParameters represents detailed information about websites associated with a user in various services.
+// PersonWebsiteRequestBuilderGetQueryParameters represents detailed information about websites associated with a user in various services.
 type PersonWebsiteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

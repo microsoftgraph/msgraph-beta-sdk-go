@@ -7,7 +7,7 @@ import (
     i7e13a9f9cadef66b747d9998a6d336820d02c585e572ab050695f64e8c7291fe "github.com/microsoftgraph/msgraph-beta-sdk-go/applicationtemplates/item/instantiate"
 )
 
-// applicationTemplateRequestBuilder builds and executes requests for operations under \applicationTemplates\{applicationTemplate-id}
+// ApplicationTemplateRequestBuilder builds and executes requests for operations under \applicationTemplates\{applicationTemplate-id}
 type ApplicationTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ApplicationTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// applicationTemplateRequestBuilderGetQueryParameters get entity from applicationTemplates by key
+// ApplicationTemplateRequestBuilderGetQueryParameters get entity from applicationTemplates by key
 type ApplicationTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

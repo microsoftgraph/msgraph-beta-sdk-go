@@ -10,7 +10,7 @@ import (
     i0ba3e5fdbb0b3586ca7fde15d259d4e5860a38c09cc28ffd1bc9850dfeacf5ac "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatestepversions/item/deployments/item"
 )
 
-// managementTemplateStepVersionRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions\{managementTemplateStepVersion-id}
+// ManagementTemplateStepVersionRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions\{managementTemplateStepVersion-id}
 type ManagementTemplateStepVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ManagementTemplateStepVersionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managementTemplateStepVersionRequestBuilderGetQueryParameters get managementTemplateStepVersions from tenantRelationships
+// ManagementTemplateStepVersionRequestBuilderGetQueryParameters get managementTemplateStepVersions from tenantRelationships
 type ManagementTemplateStepVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

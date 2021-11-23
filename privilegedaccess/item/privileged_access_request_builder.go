@@ -16,7 +16,7 @@ import (
     ifef34655781055c0461c93a60eb94832b88d5e7127511a01d91517b0dbb2056f "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/resources/item"
 )
 
-// privilegedAccessRequestBuilder builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}
+// PrivilegedAccessRequestBuilder builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}
 type PrivilegedAccessRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type PrivilegedAccessRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// privilegedAccessRequestBuilderGetQueryParameters get entity from privilegedAccess by key
+// PrivilegedAccessRequestBuilderGetQueryParameters get entity from privilegedAccess by key
 type PrivilegedAccessRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

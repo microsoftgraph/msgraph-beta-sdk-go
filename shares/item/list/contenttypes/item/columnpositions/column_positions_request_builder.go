@@ -6,7 +6,7 @@ import (
     ia72facda44ce48602c0720226ff78c6d9e91ccada45c9e9c212f09f3a6a15c38 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/contenttypes/item/columnpositions/ref"
 )
 
-// columnPositionsRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes\{contentType-id}\columnPositions
+// ColumnPositionsRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes\{contentType-id}\columnPositions
 type ColumnPositionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ColumnPositionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// columnPositionsRequestBuilderGetQueryParameters column order information in a content type.
+// ColumnPositionsRequestBuilderGetQueryParameters column order information in a content type.
 type ColumnPositionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

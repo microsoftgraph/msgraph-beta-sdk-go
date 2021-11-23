@@ -6,7 +6,7 @@ import (
     icda70baff969d65f580b6dcfe649f1dadad545fa821d979bd9c0932d72779071 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroles/item/assignments/ref"
 )
 
-// assignmentsRequestBuilder builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}\assignments
+// AssignmentsRequestBuilder builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}\assignments
 type AssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type AssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// assignmentsRequestBuilderGetQueryParameters the assignments for this role. Read-only. Nullable.
+// AssignmentsRequestBuilderGetQueryParameters the assignments for this role. Read-only. Nullable.
 type AssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

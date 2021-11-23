@@ -8,7 +8,7 @@ import (
     i10eafe8b9031d51f633fe756b3250d9fb153bbbb882ee32b99c91a8d691b7fa4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/categories/item/settingdefinitions/item"
 )
 
-// deviceManagementSettingCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\categories\{deviceManagementSettingCategory-id}
+// DeviceManagementSettingCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\categories\{deviceManagementSettingCategory-id}
 type DeviceManagementSettingCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DeviceManagementSettingCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementSettingCategoryRequestBuilderGetQueryParameters the available categories
+// DeviceManagementSettingCategoryRequestBuilderGetQueryParameters the available categories
 type DeviceManagementSettingCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

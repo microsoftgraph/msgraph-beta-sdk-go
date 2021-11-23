@@ -10,7 +10,7 @@ import (
     i22450797f858de15c310b162f7fd2d8ec26e3cdc4d1257d1de65a2cc0de71163 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/journals/item/journallines/item"
 )
 
-// journalRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\journals\{journal-id}
+// JournalRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\journals\{journal-id}
 type JournalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type JournalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// journalRequestBuilderGetQueryParameters get journals from financials
+// JournalRequestBuilderGetQueryParameters get journals from financials
 type JournalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     ie0d4db58444af98e96515bff73098a4fee0c58ff99bbbc2b1d34fc1e3a6b6506 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoicelines/item/item/picture"
 )
 
-// itemRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoiceLines\{salesInvoiceLine-id}\item
+// ItemRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoiceLines\{salesInvoiceLine-id}\item
 type ItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// itemRequestBuilderGetQueryParameters get item from financials
+// ItemRequestBuilderGetQueryParameters get item from financials
 type ItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

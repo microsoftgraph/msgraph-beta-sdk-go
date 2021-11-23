@@ -13,7 +13,7 @@ import (
     ia5c047b600e80aaec8a495894dd576800c93609eea95fb0910bcad732a992e54 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidmanagedstoreaccountenterprisesettings/approveapps"
 )
 
-// androidManagedStoreAccountEnterpriseSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings
+// AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// androidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters the singleton Android managed store account enterprise settings entity.
+// AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters the singleton Android managed store account enterprise settings entity.
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

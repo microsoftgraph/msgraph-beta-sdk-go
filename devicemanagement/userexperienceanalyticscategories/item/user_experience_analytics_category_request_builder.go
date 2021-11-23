@@ -8,7 +8,7 @@ import (
     i723c6e2ab05e2e91dea99207a63fe4f6ad55551bd1e2ce27c2f6a08a95d00d42 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticscategories/item/metricvalues/item"
 )
 
-// userExperienceAnalyticsCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsCategories\{userExperienceAnalyticsCategory-id}
+// UserExperienceAnalyticsCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsCategories\{userExperienceAnalyticsCategory-id}
 type UserExperienceAnalyticsCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type UserExperienceAnalyticsCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userExperienceAnalyticsCategoryRequestBuilderGetQueryParameters user experience analytics categories
+// UserExperienceAnalyticsCategoryRequestBuilderGetQueryParameters user experience analytics categories
 type UserExperienceAnalyticsCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

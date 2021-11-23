@@ -7,7 +7,7 @@ import (
     i06655a6f486802cc51544087b72902d681e27abc1a3136a2d7d3d735067f83e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleeligibilityschedulerequests/item/roledefinition/ref"
 )
 
-// roleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}\roleDefinition
+// RoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}\roleDefinition
 type RoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// roleDefinitionRequestBuilderGetQueryParameters property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+// RoleDefinitionRequestBuilderGetQueryParameters property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
 type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

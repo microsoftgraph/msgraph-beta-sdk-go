@@ -8,7 +8,7 @@ import (
     i9267d2002d296224b1f7223f20e956b623bc0d9efea1544156a9301683c48b4f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidforworkenrollmentprofiles/item/revoketoken"
 )
 
-// androidForWorkEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkEnrollmentProfiles\{androidForWorkEnrollmentProfile-id}
+// AndroidForWorkEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkEnrollmentProfiles\{androidForWorkEnrollmentProfile-id}
 type AndroidForWorkEnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AndroidForWorkEnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// androidForWorkEnrollmentProfileRequestBuilderGetQueryParameters android for Work enrollment profile entities.
+// AndroidForWorkEnrollmentProfileRequestBuilderGetQueryParameters android for Work enrollment profile entities.
 type AndroidForWorkEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

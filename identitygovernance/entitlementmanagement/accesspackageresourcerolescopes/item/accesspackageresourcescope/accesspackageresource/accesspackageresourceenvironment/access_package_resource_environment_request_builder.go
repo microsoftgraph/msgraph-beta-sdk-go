@@ -7,7 +7,7 @@ import (
     ib1778659fc8ba279c88a17fab80d7df2259866053ea0c76b3f110e092db6a38d "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourcerolescopes/item/accesspackageresourcescope/accesspackageresource/accesspackageresourceenvironment/ref"
 )
 
-// accessPackageResourceEnvironmentRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceRoleScopes\{accessPackageResourceRoleScope-id}\accessPackageResourceScope\accessPackageResource\accessPackageResourceEnvironment
+// AccessPackageResourceEnvironmentRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceRoleScopes\{accessPackageResourceRoleScope-id}\accessPackageResourceScope\accessPackageResource\accessPackageResourceEnvironment
 type AccessPackageResourceEnvironmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AccessPackageResourceEnvironmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageResourceEnvironmentRequestBuilderGetQueryParameters contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
 type AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

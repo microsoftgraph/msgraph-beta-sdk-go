@@ -13,7 +13,7 @@ import (
     ia0bd748b4766ea2d50956a69c4675d9c4ca726af0e0f7ecb571880e7120ddf22 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/groups/item/sets/item/relations/item"
 )
 
-// setRequestBuilder builds and executes requests for operations under \termStore\groups\{group-id}\sets\{set-id}
+// SetRequestBuilder builds and executes requests for operations under \termStore\groups\{group-id}\sets\{set-id}
 type SetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type SetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// setRequestBuilderGetQueryParameters all sets under the group in a term [store].
+// SetRequestBuilderGetQueryParameters all sets under the group in a term [store].
 type SetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

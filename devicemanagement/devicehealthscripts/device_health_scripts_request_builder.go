@@ -9,7 +9,7 @@ import (
     i87802417fac8dafea49fd0889f538e357ba4f700228dd931789b2c3a9194e714 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicehealthscripts/enableglobalscripts"
 )
 
-// deviceHealthScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts
+// DeviceHealthScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts
 type DeviceHealthScriptsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type DeviceHealthScriptsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceHealthScriptsRequestBuilderGetQueryParameters the list of device health scripts associated with the tenant.
+// DeviceHealthScriptsRequestBuilderGetQueryParameters the list of device health scripts associated with the tenant.
 type DeviceHealthScriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -7,7 +7,7 @@ import (
     i0812f16609971fd2afda2ff60c9b9126c8eb7ba65101a4d80ab915ac50208db7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/item/defaultmacosenrollmentprofile/ref"
 )
 
-// defaultMacOsEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\defaultMacOsEnrollmentProfile
+// DefaultMacOsEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\defaultMacOsEnrollmentProfile
 type DefaultMacOsEnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DefaultMacOsEnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// defaultMacOsEnrollmentProfileRequestBuilderGetQueryParameters default MacOs Enrollment Profile
+// DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParameters default MacOs Enrollment Profile
 type DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

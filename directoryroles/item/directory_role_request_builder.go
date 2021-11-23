@@ -14,7 +14,7 @@ import (
     ia2a3af813d19ede6948e6cd8a4fdc1da146bb512d7519e6200eb556b45d1b28e "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles/item/scopedmembers/item"
 )
 
-// directoryRoleRequestBuilder builds and executes requests for operations under \directoryRoles\{directoryRole-id}
+// DirectoryRoleRequestBuilder builds and executes requests for operations under \directoryRoles\{directoryRole-id}
 type DirectoryRoleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +43,7 @@ type DirectoryRoleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// directoryRoleRequestBuilderGetQueryParameters get entity from directoryRoles by key
+// DirectoryRoleRequestBuilderGetQueryParameters get entity from directoryRoles by key
 type DirectoryRoleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

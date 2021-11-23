@@ -7,7 +7,7 @@ import (
     i32cead955f53e67d98acbdce32f93ac20567841eba2d26ee53b382094e05fb6b "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsinformationprotectiondeviceregistrations/item/wipe"
 )
 
-// windowsInformationProtectionDeviceRegistrationRequestBuilder builds and executes requests for operations under \deviceAppManagement\windowsInformationProtectionDeviceRegistrations\{windowsInformationProtectionDeviceRegistration-id}
+// WindowsInformationProtectionDeviceRegistrationRequestBuilder builds and executes requests for operations under \deviceAppManagement\windowsInformationProtectionDeviceRegistrations\{windowsInformationProtectionDeviceRegistration-id}
 type WindowsInformationProtectionDeviceRegistrationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type WindowsInformationProtectionDeviceRegistrationRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsInformationProtectionDeviceRegistrationRequestBuilderGetQueryParameters windows information protection device registrations that are not MDM enrolled.
+// WindowsInformationProtectionDeviceRegistrationRequestBuilderGetQueryParameters windows information protection device registrations that are not MDM enrolled.
 type WindowsInformationProtectionDeviceRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

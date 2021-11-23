@@ -8,7 +8,7 @@ import (
     i7d37170a637a7f1745828c749e8a08f346337048aeaad69d8f96aedd347a0cc6 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/axes/valueaxis/format/font"
 )
 
-// formatRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis\format
+// FormatRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis\format
 type FormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type FormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// formatRequestBuilderGetQueryParameters represents the formatting of a chart object, which includes line and font formatting. Read-only.
+// FormatRequestBuilderGetQueryParameters represents the formatting of a chart object, which includes line and font formatting. Read-only.
 type FormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

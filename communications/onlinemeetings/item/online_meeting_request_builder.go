@@ -11,7 +11,7 @@ import (
     ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/alternativerecording"
 )
 
-// onlineMeetingRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}
+// OnlineMeetingRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}
 type OnlineMeetingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type OnlineMeetingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onlineMeetingRequestBuilderGetQueryParameters get onlineMeetings from communications
+// OnlineMeetingRequestBuilderGetQueryParameters get onlineMeetings from communications
 type OnlineMeetingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

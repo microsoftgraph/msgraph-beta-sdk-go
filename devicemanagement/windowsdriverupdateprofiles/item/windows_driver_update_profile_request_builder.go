@@ -12,7 +12,7 @@ import (
     i823e1a7037c21e1cb6a062bc58c9b7f7aacc3516364a051cdbc689c661c6ff50 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsdriverupdateprofiles/item/assignments/item"
 )
 
-// windowsDriverUpdateProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}
+// WindowsDriverUpdateProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}
 type WindowsDriverUpdateProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type WindowsDriverUpdateProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsDriverUpdateProfileRequestBuilderGetQueryParameters a collection of windows driver update profiles
+// WindowsDriverUpdateProfileRequestBuilderGetQueryParameters a collection of windows driver update profiles
 type WindowsDriverUpdateProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -12,7 +12,7 @@ import (
     ifa3dab5fb247ec11de2a5930325058c34ca3959c5ac61b988f2682b273c02557 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleeligibilityschedulerequests/item/targetschedule"
 )
 
-// unifiedRoleEligibilityScheduleRequestRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}
+// UnifiedRoleEligibilityScheduleRequestRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}
 type UnifiedRoleEligibilityScheduleRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type UnifiedRoleEligibilityScheduleRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleEligibilityScheduleRequestRequestBuilderGetQueryParameters get roleEligibilityScheduleRequests from roleManagement
+// UnifiedRoleEligibilityScheduleRequestRequestBuilderGetQueryParameters get roleEligibilityScheduleRequests from roleManagement
 type UnifiedRoleEligibilityScheduleRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

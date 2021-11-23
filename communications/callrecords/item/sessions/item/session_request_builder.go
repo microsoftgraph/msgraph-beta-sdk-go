@@ -8,7 +8,7 @@ import (
     i6564fedf9e6c15797aeb0a83489cd5028189f0ab73355330d7375e2974ef0318 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/callrecords/item/sessions/item/segments/item"
 )
 
-// sessionRequestBuilder builds and executes requests for operations under \communications\callRecords\{callRecord-id}\sessions\{session-id}
+// SessionRequestBuilder builds and executes requests for operations under \communications\callRecords\{callRecord-id}\sessions\{session-id}
 type SessionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type SessionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sessionRequestBuilderGetQueryParameters list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+// SessionRequestBuilderGetQueryParameters list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
 type SessionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

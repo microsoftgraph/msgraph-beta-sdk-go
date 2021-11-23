@@ -21,7 +21,7 @@ import (
     ifcd10669d080989622673b9afdc2d4fc13b76538e8a7179f0887b9fb078584da "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/bundles/item"
 )
 
-// driveRequestBuilder builds and executes requests for operations under \drives\{drive-id}
+// DriveRequestBuilder builds and executes requests for operations under \drives\{drive-id}
 type DriveRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +50,7 @@ type DriveRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveRequestBuilderGetQueryParameters get entity from drives by key
+// DriveRequestBuilderGetQueryParameters get entity from drives by key
 type DriveRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i60ff8db2c802b54750b73fbcd370942d8a8b443f458351e2e82651fd01ea3c81 "github.com/microsoftgraph/msgraph-beta-sdk-go/invitations/item/inviteduser/ref"
 )
 
-// invitedUserRequestBuilder builds and executes requests for operations under \invitations\{invitation-id}\invitedUser
+// InvitedUserRequestBuilder builds and executes requests for operations under \invitations\{invitation-id}\invitedUser
 type InvitedUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type InvitedUserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// invitedUserRequestBuilderGetQueryParameters the user created as part of the invitation creation. Read-Only
+// InvitedUserRequestBuilderGetQueryParameters the user created as part of the invitation creation. Read-Only
 type InvitedUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

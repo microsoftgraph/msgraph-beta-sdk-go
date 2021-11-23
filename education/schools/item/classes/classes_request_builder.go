@@ -7,7 +7,7 @@ import (
     i80b3aae696c74387947d776e9440e66c848887fd9ba21e0472cd458b6bc539be "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/item/classes/delta"
 )
 
-// classesRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}\classes
+// ClassesRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}\classes
 type ClassesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ClassesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// classesRequestBuilderGetQueryParameters classes taught at the school. Nullable.
+// ClassesRequestBuilderGetQueryParameters classes taught at the school. Nullable.
 type ClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

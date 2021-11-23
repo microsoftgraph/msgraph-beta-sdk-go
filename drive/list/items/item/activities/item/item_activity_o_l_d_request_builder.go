@@ -8,7 +8,7 @@ import (
     icb2cc2ecde707ae8ccc742452570368a975f7202418ed5c0f3c1a3a0c366a0c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item/activities/item/listitem"
 )
 
-// itemActivityOLDRequestBuilder builds and executes requests for operations under \drive\list\items\{listItem-id}\activities\{itemActivityOLD-id}
+// ItemActivityOLDRequestBuilder builds and executes requests for operations under \drive\list\items\{listItem-id}\activities\{itemActivityOLD-id}
 type ItemActivityOLDRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ItemActivityOLDRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// itemActivityOLDRequestBuilderGetQueryParameters the list of recent activities that took place on this item.
+// ItemActivityOLDRequestBuilderGetQueryParameters the list of recent activities that took place on this item.
 type ItemActivityOLDRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

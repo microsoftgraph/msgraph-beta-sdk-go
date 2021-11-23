@@ -11,7 +11,7 @@ import (
     ief7b838682f12e7302c54a7ab1a115074503051cc4aa016ec8f20b998b9b193b "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/worksheet/cellwithrowwithcolumn"
 )
 
-// worksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\worksheet
+// WorksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\worksheet
 type WorksheetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type WorksheetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// worksheetRequestBuilderGetQueryParameters the worksheet containing the current chart. Read-only.
+// WorksheetRequestBuilderGetQueryParameters the worksheet containing the current chart. Read-only.
 type WorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

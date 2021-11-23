@@ -8,7 +8,7 @@ import (
     ie25857b1c79307bfbf5c4b5950130d8c2e3de3e015661d9764fb5e80c30ab216 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackage/accesspackagesincompatiblewith/ref"
 )
 
-// accessPackagesIncompatibleWithRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackage\accessPackagesIncompatibleWith
+// AccessPackagesIncompatibleWithRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackage\accessPackagesIncompatibleWith
 type AccessPackagesIncompatibleWithRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type AccessPackagesIncompatibleWithRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackagesIncompatibleWithRequestBuilderGetQueryParameters the access packages that are incompatible with this package. Read-only.
+// AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters the access packages that are incompatible with this package. Read-only.
 type AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

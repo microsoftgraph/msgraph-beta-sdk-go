@@ -7,7 +7,7 @@ import (
     ia8648f7f2bb54e0b171a917fd127de5fb2c2c98ba80ddde361af2195bfcce862 "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs/teamsapps/item/appdefinitions/item/outlineicon/hostedcontent"
 )
 
-// outlineIconRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\outlineIcon
+// OutlineIconRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\outlineIcon
 type OutlineIconRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type OutlineIconRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// outlineIconRequestBuilderGetQueryParameters the outline version of the Teams app's icon.
+// OutlineIconRequestBuilderGetQueryParameters the outline version of the Teams app's icon.
 type OutlineIconRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     iedae026d81e654559c4b06f50501126105175eb67551a905c3b597f3019af33e "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/item/filesfolder/content"
 )
 
-// filesFolderRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\filesFolder
+// FilesFolderRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\filesFolder
 type FilesFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type FilesFolderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// filesFolderRequestBuilderGetQueryParameters metadata for the location where the channel's files are stored.
+// FilesFolderRequestBuilderGetQueryParameters metadata for the location where the channel's files are stored.
 type FilesFolderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

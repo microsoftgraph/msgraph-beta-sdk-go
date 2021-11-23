@@ -7,7 +7,7 @@ import (
     ib6900e5c9ce1a58a809fbc4960d4ad9bed697ba0e958d2e60dea8213359e0b89 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignmentschedulerequests/item/targetschedule/ref"
 )
 
-// targetScheduleRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}\targetSchedule
+// TargetScheduleRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}\targetSchedule
 type TargetScheduleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TargetScheduleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// targetScheduleRequestBuilderGetQueryParameters property indicating the schedule for an eligible role assignment.
+// TargetScheduleRequestBuilderGetQueryParameters property indicating the schedule for an eligible role assignment.
 type TargetScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

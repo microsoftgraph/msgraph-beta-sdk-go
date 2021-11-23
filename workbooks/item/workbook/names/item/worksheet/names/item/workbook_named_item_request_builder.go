@@ -7,7 +7,7 @@ import (
     ice9036719e7d4f4aa44e6d56410d26512d5a129f6635b44f90718419b4f96b11 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/names/item/range_escaped"
 )
 
-// workbookNamedItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\names\{workbookNamedItem-id1}
+// WorkbookNamedItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\names\{workbookNamedItem-id1}
 type WorkbookNamedItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type WorkbookNamedItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookNamedItemRequestBuilderGetQueryParameters returns collection of names that are associated with the worksheet. Read-only.
+// WorkbookNamedItemRequestBuilderGetQueryParameters returns collection of names that are associated with the worksheet. Read-only.
 type WorkbookNamedItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -9,7 +9,7 @@ import (
     ie1dbe7768034fc9acbabff177deec668725e3e1b963712ee72a4c861c0c6347f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/haspayloadlinks"
 )
 
-// deviceConfigurationsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations
+// DeviceConfigurationsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations
 type DeviceConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type DeviceConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceConfigurationsRequestBuilderGetQueryParameters the device configurations.
+// DeviceConfigurationsRequestBuilderGetQueryParameters the device configurations.
 type DeviceConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

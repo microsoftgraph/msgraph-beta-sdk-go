@@ -7,7 +7,7 @@ import (
     i95a8c439e37c9280a9ab5786fe953a6bf828c96103b01d58a35e9254cef90495 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/groupassignments/item/deviceconfiguration"
 )
 
-// deviceConfigurationGroupAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}
+// DeviceConfigurationGroupAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}
 type DeviceConfigurationGroupAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DeviceConfigurationGroupAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceConfigurationGroupAssignmentRequestBuilderGetQueryParameters the list of group assignments for the device configuration profile.
+// DeviceConfigurationGroupAssignmentRequestBuilderGetQueryParameters the list of group assignments for the device configuration profile.
 type DeviceConfigurationGroupAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

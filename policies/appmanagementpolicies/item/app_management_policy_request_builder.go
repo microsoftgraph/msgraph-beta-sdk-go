@@ -7,7 +7,7 @@ import (
     i39246f205a7ceced8c7ecbef8cbfa15757785cd1d0f62de6ca5bd4e8c035342d "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/appmanagementpolicies/item/appliesto"
 )
 
-// appManagementPolicyRequestBuilder builds and executes requests for operations under \policies\appManagementPolicies\{appManagementPolicy-id}
+// AppManagementPolicyRequestBuilder builds and executes requests for operations under \policies\appManagementPolicies\{appManagementPolicy-id}
 type AppManagementPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AppManagementPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appManagementPolicyRequestBuilderGetQueryParameters the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// AppManagementPolicyRequestBuilderGetQueryParameters the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 type AppManagementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

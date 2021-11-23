@@ -6,7 +6,7 @@ import (
     ie62257f70fec21b9cd339074053fd870d0aec476a2e4106cdb8c727bb20e2bbf "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/tokenlifetimepolicies/ref"
 )
 
-// tokenLifetimePoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\tokenLifetimePolicies
+// TokenLifetimePoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\tokenLifetimePolicies
 type TokenLifetimePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type TokenLifetimePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tokenLifetimePoliciesRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this application. Supports $expand.
+// TokenLifetimePoliciesRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this application. Supports $expand.
 type TokenLifetimePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

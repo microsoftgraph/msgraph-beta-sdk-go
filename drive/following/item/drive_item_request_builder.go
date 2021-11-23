@@ -7,7 +7,7 @@ import (
     i809dd175543aa0a9823826d014f6b8d94f6514baa2169920a99a50c7afa23950 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/following/item/content"
 )
 
-// driveItemRequestBuilder builds and executes requests for operations under \drive\following\{driveItem-id}
+// DriveItemRequestBuilder builds and executes requests for operations under \drive\following\{driveItem-id}
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveItemRequestBuilderGetQueryParameters the list of items the user is following. Only in OneDrive for Business.
+// DriveItemRequestBuilderGetQueryParameters the list of items the user is following. Only in OneDrive for Business.
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

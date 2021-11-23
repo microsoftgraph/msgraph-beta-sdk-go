@@ -13,7 +13,7 @@ import (
     id99bf93f5256a2e6ace43ceeca6d34c8309be0d524ce8576473913eb69dc501d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/outlook/tasks/item/multivalueextendedproperties/item"
 )
 
-// outlookTaskRequestBuilder builds and executes requests for operations under \me\outlook\tasks\{outlookTask-id}
+// OutlookTaskRequestBuilder builds and executes requests for operations under \me\outlook\tasks\{outlookTask-id}
 type OutlookTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type OutlookTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// outlookTaskRequestBuilderGetQueryParameters get tasks from me
+// OutlookTaskRequestBuilderGetQueryParameters get tasks from me
 type OutlookTaskRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

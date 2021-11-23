@@ -5,7 +5,7 @@ import (
     ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/windowsupdates"
 )
 
-// monitoringRule 
+// MonitoringRule 
 type MonitoringRule struct {
     // The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
     action *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.MonitoringAction;

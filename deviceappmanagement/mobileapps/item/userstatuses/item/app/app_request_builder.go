@@ -11,7 +11,7 @@ import (
     ifa01d92abdc8ebd05b3c57289ef897db762e4230f82ec635ead0b141a0dd3516 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/userstatuses/item/app/ref"
 )
 
-// appRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app
+// AppRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app
 type AppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ type AppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appRequestBuilderGetQueryParameters the navigation link to the mobile app.
+// AppRequestBuilderGetQueryParameters the navigation link to the mobile app.
 type AppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

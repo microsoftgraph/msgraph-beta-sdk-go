@@ -11,7 +11,7 @@ import (
     i99026bae59eb41024babc35aa8e0359f7e3892bf2e64ce282f1766881b0a8dc1 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/policysets/item/items/item"
 )
 
-// policySetRequestBuilder builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}
+// PolicySetRequestBuilder builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}
 type PolicySetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type PolicySetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// policySetRequestBuilderGetQueryParameters the PolicySet of Policies and Applications
+// PolicySetRequestBuilderGetQueryParameters the PolicySet of Policies and Applications
 type PolicySetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -9,7 +9,7 @@ import (
     i1bd327838574e2c7b13b32882215f119088325a073e145691dea633100ae5eb4 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/cloudpc/resourcenamespaces/item/resourceactions/item"
 )
 
-// unifiedRbacResourceNamespaceRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\resourceNamespaces\{unifiedRbacResourceNamespace-id}
+// UnifiedRbacResourceNamespaceRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\resourceNamespaces\{unifiedRbacResourceNamespace-id}
 type UnifiedRbacResourceNamespaceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type UnifiedRbacResourceNamespaceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRbacResourceNamespaceRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
+// UnifiedRbacResourceNamespaceRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
 type UnifiedRbacResourceNamespaceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

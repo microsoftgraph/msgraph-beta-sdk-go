@@ -6,7 +6,7 @@ import (
     i44a47714785ba6f6fac24c940ef2e4dbf135b31a210d29741f4c475a8c816bd1 "github.com/microsoftgraph/msgraph-beta-sdk-go/mobilitymanagementpolicies/item/includedgroups/ref"
 )
 
-// includedGroupsRequestBuilder builds and executes requests for operations under \mobilityManagementPolicies\{mobilityManagementPolicy-id}\includedGroups
+// IncludedGroupsRequestBuilder builds and executes requests for operations under \mobilityManagementPolicies\{mobilityManagementPolicy-id}\includedGroups
 type IncludedGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type IncludedGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// includedGroupsRequestBuilderGetQueryParameters azure AD groups under the scope of the mobility management application if appliesTo is selected
+// IncludedGroupsRequestBuilderGetQueryParameters azure AD groups under the scope of the mobility management application if appliesTo is selected
 type IncludedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

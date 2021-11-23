@@ -14,7 +14,7 @@ import (
     ia1542c83c900b2622d1e688fb4b392f0b9a5aa87a65e4fd4f6b748c84899d0af "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/rosters/item"
 )
 
-// plannerRequestBuilder builds and executes requests for operations under \planner
+// PlannerRequestBuilder builds and executes requests for operations under \planner
 type PlannerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ type PlannerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// plannerRequestBuilderGetQueryParameters get planner
+// PlannerRequestBuilderGetQueryParameters get planner
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

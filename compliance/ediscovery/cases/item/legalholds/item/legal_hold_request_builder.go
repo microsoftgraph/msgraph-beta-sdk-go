@@ -12,7 +12,7 @@ import (
     ifaf28029d98f7bf2244cb8a85e111bec3c46d219a6d9069d26a26ee3797ad760 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/legalholds/item/unifiedgroupsources/item"
 )
 
-// legalHoldRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}
+// LegalHoldRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}
 type LegalHoldRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type LegalHoldRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// legalHoldRequestBuilderGetQueryParameters returns a list of case legalHold objects for this case.  Nullable.
+// LegalHoldRequestBuilderGetQueryParameters returns a list of case legalHold objects for this case.  Nullable.
 type LegalHoldRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

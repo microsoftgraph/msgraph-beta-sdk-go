@@ -14,7 +14,7 @@ import (
     i88e077efbe7af1476bbdd89a3d093be25e50e57c1d6a1e16d2b9f2406ba01c90 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/synchronizationprofiles/item/errors/item"
 )
 
-// educationSynchronizationProfileRequestBuilder builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}
+// EducationSynchronizationProfileRequestBuilder builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}
 type EducationSynchronizationProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +43,7 @@ type EducationSynchronizationProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// educationSynchronizationProfileRequestBuilderGetQueryParameters get synchronizationProfiles from education
+// EducationSynchronizationProfileRequestBuilderGetQueryParameters get synchronizationProfiles from education
 type EducationSynchronizationProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

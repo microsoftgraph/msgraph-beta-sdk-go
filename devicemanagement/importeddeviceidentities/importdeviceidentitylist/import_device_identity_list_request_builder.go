@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// importDeviceIdentityListRequestBuilder builds and executes requests for operations under \deviceManagement\importedDeviceIdentities\microsoft.graph.importDeviceIdentityList
+// ImportDeviceIdentityListRequestBuilder builds and executes requests for operations under \deviceManagement\importedDeviceIdentities\microsoft.graph.importDeviceIdentityList
 type ImportDeviceIdentityListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

@@ -10,7 +10,7 @@ import (
     ib7fa5d36d2664a833d116443ae76653fca7401343d2a5b7e2fdb3cd99736a4da "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/axes/valueaxis/minorgridlines"
 )
 
-// valueAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis
+// ValueAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis
 type ValueAxisRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ValueAxisRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// valueAxisRequestBuilderGetQueryParameters represents the value axis in an axis. Read-only.
+// ValueAxisRequestBuilderGetQueryParameters represents the value axis in an axis. Read-only.
 type ValueAxisRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

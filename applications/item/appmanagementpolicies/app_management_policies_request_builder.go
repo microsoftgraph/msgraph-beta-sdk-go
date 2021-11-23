@@ -6,7 +6,7 @@ import (
     if8d921a2197e1c2db547d5610111532d1766c5db9692b825698130064c138c12 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/appmanagementpolicies/ref"
 )
 
-// appManagementPoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\appManagementPolicies
+// AppManagementPoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\appManagementPolicies
 type AppManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type AppManagementPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appManagementPoliciesRequestBuilderGetQueryParameters the appManagementPolicy applied to this application.
+// AppManagementPoliciesRequestBuilderGetQueryParameters the appManagementPolicy applied to this application.
 type AppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

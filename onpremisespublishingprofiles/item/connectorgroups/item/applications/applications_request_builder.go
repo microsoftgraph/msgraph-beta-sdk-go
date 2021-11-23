@@ -6,7 +6,7 @@ import (
     i51136f236db8af53634b48bdfab7c30b71f2bf4930424884620db4e02363dd1f "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/applications/ref"
 )
 
-// applicationsRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}\applications
+// ApplicationsRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}\applications
 type ApplicationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ApplicationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// applicationsRequestBuilderGetQueryParameters read-only. Nullable.
+// ApplicationsRequestBuilderGetQueryParameters read-only. Nullable.
 type ApplicationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

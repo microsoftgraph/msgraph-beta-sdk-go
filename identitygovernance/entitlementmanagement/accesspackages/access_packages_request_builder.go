@@ -8,7 +8,7 @@ import (
     i681448c95ef0b6327e62ceebb48b7395e75fb748f807f1b1c8e8097b125a7c2a "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackages/filterbycurrentuserwithon"
 )
 
-// accessPackagesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages
+// AccessPackagesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages
 type AccessPackagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type AccessPackagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackagesRequestBuilderGetQueryParameters get accessPackages from identityGovernance
+// AccessPackagesRequestBuilderGetQueryParameters get accessPackages from identityGovernance
 type AccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

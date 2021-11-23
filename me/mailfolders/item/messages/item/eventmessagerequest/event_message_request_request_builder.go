@@ -7,7 +7,7 @@ import (
     i97f7c5bb3fb3d0e102fdbcc51d3c0673e7144cf63586517eaf7160cf5c7452e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/eventmessagerequest/tentativelyaccept"
 )
 
-// eventMessageRequestRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.eventMessageRequest
+// EventMessageRequestRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.eventMessageRequest
 type EventMessageRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

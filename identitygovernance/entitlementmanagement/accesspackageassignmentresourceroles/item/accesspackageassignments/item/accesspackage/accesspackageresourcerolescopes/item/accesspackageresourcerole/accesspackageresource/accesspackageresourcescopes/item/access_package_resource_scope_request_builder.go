@@ -7,7 +7,7 @@ import (
     i03db8a51cfe4cb54d2951895aca18af9d1c3e311f60286b3eecb84be38b13ffe "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageresourcerolescopes/item/accesspackageresourcerole/accesspackageresource/accesspackageresourcescopes/item/accesspackageresource"
 )
 
-// accessPackageResourceScopeRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackageResourceRoleScopes\{accessPackageResourceRoleScope-id}\accessPackageResourceRole\accessPackageResource\accessPackageResourceScopes\{accessPackageResourceScope-id}
+// AccessPackageResourceScopeRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackageResourceRoleScopes\{accessPackageResourceRoleScope-id}\accessPackageResourceRole\accessPackageResource\accessPackageResourceScopes\{accessPackageResourceScope-id}
 type AccessPackageResourceScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AccessPackageResourceScopeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageResourceScopeRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
+// AccessPackageResourceScopeRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type AccessPackageResourceScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

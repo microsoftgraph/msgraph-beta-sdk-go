@@ -7,7 +7,7 @@ import (
     icc57832764f49af80644983276c499e8e13299f121c4c788871e2cbf3cfc928e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/termsandconditions/item/groupassignments/item/termsandconditions/ref"
 )
 
-// termsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\groupAssignments\{termsAndConditionsGroupAssignment-id}\termsAndConditions
+// TermsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\groupAssignments\{termsAndConditionsGroupAssignment-id}\termsAndConditions
 type TermsAndConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TermsAndConditionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// termsAndConditionsRequestBuilderGetQueryParameters navigation link to the terms and conditions that are assigned.
+// TermsAndConditionsRequestBuilderGetQueryParameters navigation link to the terms and conditions that are assigned.
 type TermsAndConditionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

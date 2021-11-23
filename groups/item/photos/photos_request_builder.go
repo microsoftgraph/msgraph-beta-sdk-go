@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// photosRequestBuilder builds and executes requests for operations under \groups\{group-id}\photos
+// PhotosRequestBuilder builds and executes requests for operations under \groups\{group-id}\photos
 type PhotosRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type PhotosRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// photosRequestBuilderGetQueryParameters the profile photos owned by the group. Read-only. Nullable.
+// PhotosRequestBuilderGetQueryParameters the profile photos owned by the group. Read-only. Nullable.
 type PhotosRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

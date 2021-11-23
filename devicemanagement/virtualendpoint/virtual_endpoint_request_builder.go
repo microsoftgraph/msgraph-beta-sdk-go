@@ -25,7 +25,7 @@ import (
     ic14d63ed61f1b60b506fcd81a146444ab96691619c2ac32f274b0793b622f23f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item"
 )
 
-// virtualEndpointRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint
+// VirtualEndpointRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint
 type VirtualEndpointRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ type VirtualEndpointRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// virtualEndpointRequestBuilderGetQueryParameters get virtualEndpoint from deviceManagement
+// VirtualEndpointRequestBuilderGetQueryParameters get virtualEndpoint from deviceManagement
 type VirtualEndpointRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

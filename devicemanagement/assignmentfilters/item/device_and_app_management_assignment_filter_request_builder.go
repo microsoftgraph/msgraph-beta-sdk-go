@@ -7,7 +7,7 @@ import (
     i2abdeba6a2120c9e857becdb50bd4401198f13618af67e4a5a7bcffdd11f7525 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/item/getsupportedproperties"
 )
 
-// deviceAndAppManagementAssignmentFilterRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}
+// DeviceAndAppManagementAssignmentFilterRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}
 type DeviceAndAppManagementAssignmentFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DeviceAndAppManagementAssignmentFilterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceAndAppManagementAssignmentFilterRequestBuilderGetQueryParameters the list of assignment filters
+// DeviceAndAppManagementAssignmentFilterRequestBuilderGetQueryParameters the list of assignment filters
 type DeviceAndAppManagementAssignmentFilterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

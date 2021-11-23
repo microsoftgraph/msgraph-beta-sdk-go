@@ -9,7 +9,7 @@ import (
     i133b5aa14c1c7989ad2fec6712baeefe6f3323249842963eb73e49f9e71226da "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyconfigurations/item/definitionvalues/item/presentationvalues/item"
 )
 
-// groupPolicyDefinitionValueRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}
+// GroupPolicyDefinitionValueRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}
 type GroupPolicyDefinitionValueRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type GroupPolicyDefinitionValueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupPolicyDefinitionValueRequestBuilderGetQueryParameters the list of enabled or disabled group policy definition values for the configuration.
+// GroupPolicyDefinitionValueRequestBuilderGetQueryParameters the list of enabled or disabled group policy definition values for the configuration.
 type GroupPolicyDefinitionValueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

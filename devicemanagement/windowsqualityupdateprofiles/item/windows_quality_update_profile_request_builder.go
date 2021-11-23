@@ -9,7 +9,7 @@ import (
     i04d128338563166ddbb410fea932b830e3e2b8799a8d363b4dbb0797203fe43d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsqualityupdateprofiles/item/assignments/item"
 )
 
-// windowsQualityUpdateProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsQualityUpdateProfiles\{windowsQualityUpdateProfile-id}
+// WindowsQualityUpdateProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsQualityUpdateProfiles\{windowsQualityUpdateProfile-id}
 type WindowsQualityUpdateProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type WindowsQualityUpdateProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsQualityUpdateProfileRequestBuilderGetQueryParameters a collection of windows quality update profiles
+// WindowsQualityUpdateProfileRequestBuilderGetQueryParameters a collection of windows quality update profiles
 type WindowsQualityUpdateProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

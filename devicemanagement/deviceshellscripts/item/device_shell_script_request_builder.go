@@ -16,7 +16,7 @@ import (
     ib0522360ed077a6c16fe77b5b9aca7adca496e97d4d37f10bf42394220f94da8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/groupassignments/item"
 )
 
-// deviceShellScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}
+// DeviceShellScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}
 type DeviceShellScriptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type DeviceShellScriptRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceShellScriptRequestBuilderGetQueryParameters the list of device shell scripts associated with the tenant.
+// DeviceShellScriptRequestBuilderGetQueryParameters the list of device shell scripts associated with the tenant.
 type DeviceShellScriptRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

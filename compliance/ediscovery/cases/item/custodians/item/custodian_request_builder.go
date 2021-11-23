@@ -15,7 +15,7 @@ import (
     ifbc6f713aeb7024d6becb409b398d0478ce75f7c0d32d275eaf841964c28cf58 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/custodians/item/unifiedgroupsources/item"
 )
 
-// custodianRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}
+// CustodianRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}
 type CustodianRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type CustodianRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// custodianRequestBuilderGetQueryParameters returns a list of case custodian objects for this case.  Nullable.
+// CustodianRequestBuilderGetQueryParameters returns a list of case custodian objects for this case.  Nullable.
 type CustodianRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

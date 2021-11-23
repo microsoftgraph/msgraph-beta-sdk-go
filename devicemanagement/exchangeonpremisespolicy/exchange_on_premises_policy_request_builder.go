@@ -7,7 +7,7 @@ import (
     i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/exchangeonpremisespolicy/conditionalaccesssettings"
 )
 
-// exchangeOnPremisesPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeOnPremisesPolicy
+// ExchangeOnPremisesPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeOnPremisesPolicy
 type ExchangeOnPremisesPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ExchangeOnPremisesPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// exchangeOnPremisesPolicyRequestBuilderGetQueryParameters the policy which controls mobile device access to Exchange On Premises
+// ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters the policy which controls mobile device access to Exchange On Premises
 type ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

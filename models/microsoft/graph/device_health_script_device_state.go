@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// deviceHealthScriptDeviceState 
+// DeviceHealthScriptDeviceState 
 type DeviceHealthScriptDeviceState struct {
     Entity
     // A list of the assignment filter ids used for health script applicability evaluation

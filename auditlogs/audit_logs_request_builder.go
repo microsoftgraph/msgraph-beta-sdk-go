@@ -16,7 +16,7 @@ import (
     iecdf88a9efb8a7e905d5b4313dc1bc508fc1f53e48ec460b752ecce4944a19d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/auditlogs/directoryaudits/item"
 )
 
-// auditLogsRequestBuilder builds and executes requests for operations under \auditLogs
+// AuditLogsRequestBuilder builds and executes requests for operations under \auditLogs
 type AuditLogsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AuditLogsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// auditLogsRequestBuilderGetQueryParameters get auditLogs
+// AuditLogsRequestBuilderGetQueryParameters get auditLogs
 type AuditLogsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

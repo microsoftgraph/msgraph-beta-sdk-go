@@ -10,7 +10,7 @@ import (
     id2be9225a42cb4e206ea5df101d0b19a8153d5b9b239d1b508a6a626f022511d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicycategories/item/children"
 )
 
-// groupPolicyCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}
+// GroupPolicyCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}
 type GroupPolicyCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type GroupPolicyCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupPolicyCategoryRequestBuilderGetQueryParameters the available group policy categories for this account.
+// GroupPolicyCategoryRequestBuilderGetQueryParameters the available group policy categories for this account.
 type GroupPolicyCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

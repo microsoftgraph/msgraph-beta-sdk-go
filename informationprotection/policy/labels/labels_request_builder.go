@@ -10,7 +10,7 @@ import (
     ibfb726105da3710efbd5bdd0afd208c0efb3e76fca696a1e9b866eee417fbb3d "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/policy/labels/extractlabel"
 )
 
-// labelsRequestBuilder builds and executes requests for operations under \informationProtection\policy\labels
+// LabelsRequestBuilder builds and executes requests for operations under \informationProtection\policy\labels
 type LabelsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type LabelsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// labelsRequestBuilderGetQueryParameters get labels from informationProtection
+// LabelsRequestBuilderGetQueryParameters get labels from informationProtection
 type LabelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -7,7 +7,7 @@ import (
     i9aac5e38a4cee9bdbda2ee1e86547f05820201a7c7136695cc8dc3783fa4b079 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2xuserflows/item/userattributeassignments/item/userattribute/ref"
 )
 
-// userAttributeRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\{identityUserFlowAttributeAssignment-id}\userAttribute
+// UserAttributeRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\{identityUserFlowAttributeAssignment-id}\userAttribute
 type UserAttributeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type UserAttributeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userAttributeRequestBuilderGetQueryParameters the user attribute that you want to add to your user flow.
+// UserAttributeRequestBuilderGetQueryParameters the user attribute that you want to add to your user flow.
 type UserAttributeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

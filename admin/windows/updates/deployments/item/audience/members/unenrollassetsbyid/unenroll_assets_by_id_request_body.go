@@ -5,7 +5,7 @@ import (
     ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/windowsupdates"
 )
 
-// unenrollAssetsByIdRequestBody 
+// UnenrollAssetsByIdRequestBody 
 type UnenrollAssetsByIdRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};

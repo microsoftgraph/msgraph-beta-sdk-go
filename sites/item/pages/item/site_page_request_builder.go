@@ -7,7 +7,7 @@ import (
     i73050450b0928ac08bac7dd25fd4c87738c52453108844f42adbbbb3832fbb92 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/pages/item/publish"
 )
 
-// sitePageRequestBuilder builds and executes requests for operations under \sites\{site-id}\pages\{sitePage-id}
+// SitePageRequestBuilder builds and executes requests for operations under \sites\{site-id}\pages\{sitePage-id}
 type SitePageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type SitePageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sitePageRequestBuilderGetQueryParameters the collection of pages in the SitePages list in this site.
+// SitePageRequestBuilderGetQueryParameters the collection of pages in the SitePages list in this site.
 type SitePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

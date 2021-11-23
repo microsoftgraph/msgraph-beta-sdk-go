@@ -11,7 +11,7 @@ import (
     i7fa3917741c65999dc9b62767c91ce9eefb3d6af40f071ce0f23f64af751b350 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/synchronization/templates/item/schema/directories/item"
 )
 
-// schemaRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\templates\{synchronizationTemplate-id}\schema
+// SchemaRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\templates\{synchronizationTemplate-id}\schema
 type SchemaRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type SchemaRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// schemaRequestBuilderGetQueryParameters default synchronization schema for the jobs based on this template.
+// SchemaRequestBuilderGetQueryParameters default synchronization schema for the jobs based on this template.
 type SchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

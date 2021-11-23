@@ -7,7 +7,7 @@ import (
     i09ffd7877381400effa3a1360eb778bac4dfa59de2f3620f88565de8c9e50525 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleeligibilityschedulerequests/item/appscope/ref"
 )
 
-// appScopeRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}\appScope
+// AppScopeRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}\appScope
 type AppScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AppScopeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appScopeRequestBuilderGetQueryParameters read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
+// AppScopeRequestBuilderGetQueryParameters read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
 type AppScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

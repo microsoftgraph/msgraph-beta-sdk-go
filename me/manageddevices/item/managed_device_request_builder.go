@@ -58,7 +58,7 @@ import (
     ia1c10427ec26c5213d3cb81c564d2ac164554b68fb635b97827129a4960420f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/logcollectionrequests/item"
 )
 
-// managedDeviceRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}
+// ManagedDeviceRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}
 type ManagedDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -87,7 +87,7 @@ type ManagedDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDeviceRequestBuilderGetQueryParameters the managed devices associated with the user.
+// ManagedDeviceRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

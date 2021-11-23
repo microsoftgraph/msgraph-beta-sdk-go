@@ -7,7 +7,7 @@ import (
     i20b8f6f29c4f846d5d534ad55fbe200f4e7d71c85829acc2959002c31c697ecc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelserverlogcollectionresponses/item/createdownloadurl"
 )
 
-// microsoftTunnelServerLogCollectionResponseRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses\{microsoftTunnelServerLogCollectionResponse-id}
+// MicrosoftTunnelServerLogCollectionResponseRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses\{microsoftTunnelServerLogCollectionResponse-id}
 type MicrosoftTunnelServerLogCollectionResponseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type MicrosoftTunnelServerLogCollectionResponseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// microsoftTunnelServerLogCollectionResponseRequestBuilderGetQueryParameters collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+// MicrosoftTunnelServerLogCollectionResponseRequestBuilderGetQueryParameters collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 type MicrosoftTunnelServerLogCollectionResponseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

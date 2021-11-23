@@ -9,7 +9,7 @@ import (
     i8d8a434efe54b7a3fa263217b0c04ff177a4bc1c2230b98a73b80cd1d561c96d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/executeaction"
 )
 
-// managedDevicesRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices
+// ManagedDevicesRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices
 type ManagedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ManagedDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDevicesRequestBuilderGetQueryParameters the managed devices associated with the user.
+// ManagedDevicesRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ManagedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -7,7 +7,7 @@ import (
     id0cd62569739256dfab318fd1cfbe131255e009d2978a6cd4dff2b7e28b34147 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/group/ref"
 )
 
-// groupRequestBuilder builds and executes requests for operations under \teams\{team-id}\group
+// GroupRequestBuilder builds and executes requests for operations under \teams\{team-id}\group
 type GroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type GroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupRequestBuilderGetQueryParameters get group from teams
+// GroupRequestBuilderGetQueryParameters get group from teams
 type GroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

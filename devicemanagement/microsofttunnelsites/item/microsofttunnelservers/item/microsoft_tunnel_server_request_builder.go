@@ -9,7 +9,7 @@ import (
     ia9fb0847e9b7d23ecba981329a874216f6257bc66e680123b5b5de57e3c5785f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelsites/item/microsofttunnelservers/item/gethealthmetrics"
 )
 
-// microsoftTunnelServerRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelServers\{microsoftTunnelServer-id}
+// MicrosoftTunnelServerRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelServers\{microsoftTunnelServer-id}
 type MicrosoftTunnelServerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type MicrosoftTunnelServerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// microsoftTunnelServerRequestBuilderGetQueryParameters a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
+// MicrosoftTunnelServerRequestBuilderGetQueryParameters a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 type MicrosoftTunnelServerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

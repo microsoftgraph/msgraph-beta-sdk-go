@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// getOffice365GroupsActivityFileCountsWithPeriod 
+// GetOffice365GroupsActivityFileCountsWithPeriod 
 type GetOffice365GroupsActivityFileCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.

@@ -7,7 +7,7 @@ import (
     i5b05cfeb81737764b1b449f41eb8fb567b64805ba33849ab4222a56ae58eb02d "github.com/microsoftgraph/msgraph-beta-sdk-go/officeconfiguration/clientconfigurations/updatepriorities"
 )
 
-// clientConfigurationsRequestBuilder builds and executes requests for operations under \officeConfiguration\clientConfigurations
+// ClientConfigurationsRequestBuilder builds and executes requests for operations under \officeConfiguration\clientConfigurations
 type ClientConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ClientConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// clientConfigurationsRequestBuilderGetQueryParameters list of office Client configuration.
+// ClientConfigurationsRequestBuilderGetQueryParameters list of office Client configuration.
 type ClientConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

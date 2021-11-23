@@ -7,7 +7,7 @@ import (
     ia00434b9a8fa3b48b55c0935acc63a5f19c1dc22afab2c27bf7aaf0042639e0e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/eventmessagerequest/accept"
 )
 
-// eventMessageRequestRequestBuilder builds and executes requests for operations under \me\messages\{message-id}\microsoft.graph.eventMessageRequest
+// EventMessageRequestRequestBuilder builds and executes requests for operations under \me\messages\{message-id}\microsoft.graph.eventMessageRequest
 type EventMessageRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

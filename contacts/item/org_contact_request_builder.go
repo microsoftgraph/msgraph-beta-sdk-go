@@ -16,7 +16,7 @@ import (
     if78bb81960e1b033a5e4bd2fd9dc5ad58550b0ce6b418788078e981aa388315d "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/item/transitivememberof"
 )
 
-// orgContactRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}
+// OrgContactRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}
 type OrgContactRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type OrgContactRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// orgContactRequestBuilderGetQueryParameters get entity from contacts by key
+// OrgContactRequestBuilderGetQueryParameters get entity from contacts by key
 type OrgContactRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

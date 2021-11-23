@@ -16,7 +16,7 @@ import (
     if5122358f2125de5d7aac67a870d8a285d01b2414de16d1936714c8a51c64611 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackages/item/incompatiblegroups/item"
 )
 
-// accessPackageRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}
+// AccessPackageRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}
 type AccessPackageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type AccessPackageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageRequestBuilderGetQueryParameters get accessPackages from identityGovernance
+// AccessPackageRequestBuilderGetQueryParameters get accessPackages from identityGovernance
 type AccessPackageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

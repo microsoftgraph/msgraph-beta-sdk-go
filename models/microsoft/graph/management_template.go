@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// managementTemplate 
+// ManagementTemplate 
 type ManagementTemplate struct {
     Entity
     // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.

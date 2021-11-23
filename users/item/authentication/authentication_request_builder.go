@@ -28,7 +28,7 @@ import (
     ief9d84a1c52ab385faa5763ce3c89c06416ddd2ebf7f8093933c9cb404554238 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item"
 )
 
-// authenticationRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication
+// AuthenticationRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication
 type AuthenticationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -57,7 +57,7 @@ type AuthenticationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// authenticationRequestBuilderGetQueryParameters get authentication from users
+// AuthenticationRequestBuilderGetQueryParameters get authentication from users
 type AuthenticationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

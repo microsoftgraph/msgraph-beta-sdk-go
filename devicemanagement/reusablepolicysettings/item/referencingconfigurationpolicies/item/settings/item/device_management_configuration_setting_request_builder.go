@@ -7,7 +7,7 @@ import (
     ieaedf9e471aba661fdb001014c53630cc336418859ba0b2f18042a160e4f4e6b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reusablepolicysettings/item/referencingconfigurationpolicies/item/settings/item/settingdefinitions"
 )
 
-// deviceManagementConfigurationSettingRequestBuilder builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\referencingConfigurationPolicies\{deviceManagementConfigurationPolicy-id}\settings\{deviceManagementConfigurationSetting-id}
+// DeviceManagementConfigurationSettingRequestBuilder builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\referencingConfigurationPolicies\{deviceManagementConfigurationPolicy-id}\settings\{deviceManagementConfigurationSetting-id}
 type DeviceManagementConfigurationSettingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DeviceManagementConfigurationSettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementConfigurationSettingRequestBuilderGetQueryParameters policy settings
+// DeviceManagementConfigurationSettingRequestBuilderGetQueryParameters policy settings
 type DeviceManagementConfigurationSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

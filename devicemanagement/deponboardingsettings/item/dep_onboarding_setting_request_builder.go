@@ -18,7 +18,7 @@ import (
     ia6717b64f1af972b7242219bd4db44a401fd79458567d783585ee41f0fd2c0b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/item/importedappledeviceidentities/item"
 )
 
-// depOnboardingSettingRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}
+// DepOnboardingSettingRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}
 type DepOnboardingSettingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type DepOnboardingSettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// depOnboardingSettingRequestBuilderGetQueryParameters this collections of multiple DEP tokens per-tenant.
+// DepOnboardingSettingRequestBuilderGetQueryParameters this collections of multiple DEP tokens per-tenant.
 type DepOnboardingSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     if3571b6c54a5934f63248b2965f1d7e5c509f7f2c6a258efe5191e91e0b7fce4 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/permission/revokegrants"
 )
 
-// permissionRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\permission
+// PermissionRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\permission
 type PermissionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PermissionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// permissionRequestBuilderGetQueryParameters used to access the permission representing the underlying sharing link
+// PermissionRequestBuilderGetQueryParameters used to access the permission representing the underlying sharing link
 type PermissionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

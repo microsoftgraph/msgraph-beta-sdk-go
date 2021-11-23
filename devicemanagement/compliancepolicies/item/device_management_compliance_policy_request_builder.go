@@ -14,7 +14,7 @@ import (
     ie4d81e74e3624280f0e519971ef2c7635b27540efa521cec95913734fcecc59f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancepolicies/item/settings/item"
 )
 
-// deviceManagementCompliancePolicyRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}
+// DeviceManagementCompliancePolicyRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}
 type DeviceManagementCompliancePolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +43,7 @@ type DeviceManagementCompliancePolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementCompliancePolicyRequestBuilderGetQueryParameters list of all compliance policies
+// DeviceManagementCompliancePolicyRequestBuilderGetQueryParameters list of all compliance policies
 type DeviceManagementCompliancePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

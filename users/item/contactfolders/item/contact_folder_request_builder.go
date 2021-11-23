@@ -14,7 +14,7 @@ import (
     icddb3f84902cf1910a8d5c630745aff38f5a668f2ea8de5510f40532344b9f4b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/contactfolders/item/contacts/item"
 )
 
-// contactFolderRequestBuilder builds and executes requests for operations under \users\{user-id}\contactFolders\{contactFolder-id}
+// ContactFolderRequestBuilder builds and executes requests for operations under \users\{user-id}\contactFolders\{contactFolder-id}
 type ContactFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +43,7 @@ type ContactFolderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// contactFolderRequestBuilderGetQueryParameters the user's contacts folders. Read-only. Nullable.
+// ContactFolderRequestBuilderGetQueryParameters the user's contacts folders. Read-only. Nullable.
 type ContactFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

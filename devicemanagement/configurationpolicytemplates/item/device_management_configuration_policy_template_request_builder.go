@@ -8,7 +8,7 @@ import (
     ifeb77407d3839d95c54629e5156854062d7a5a2e76728f24033dce5b2d483dd1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configurationpolicytemplates/item/settingtemplates/item"
 )
 
-// deviceManagementConfigurationPolicyTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates\{deviceManagementConfigurationPolicyTemplate-id}
+// DeviceManagementConfigurationPolicyTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates\{deviceManagementConfigurationPolicyTemplate-id}
 type DeviceManagementConfigurationPolicyTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DeviceManagementConfigurationPolicyTemplateRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementConfigurationPolicyTemplateRequestBuilderGetQueryParameters list of all templates
+// DeviceManagementConfigurationPolicyTemplateRequestBuilderGetQueryParameters list of all templates
 type DeviceManagementConfigurationPolicyTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

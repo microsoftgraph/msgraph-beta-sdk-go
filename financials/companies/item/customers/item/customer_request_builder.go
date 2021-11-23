@@ -11,7 +11,7 @@ import (
     i7bf4724f04aac20b6c44073110ece9327308609c5e49ae7023a43b232ce90622 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/customers/item/shipmentmethod"
 )
 
-// customerRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\customers\{customer-id}
+// CustomerRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\customers\{customer-id}
 type CustomerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type CustomerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// customerRequestBuilderGetQueryParameters get customers from financials
+// CustomerRequestBuilderGetQueryParameters get customers from financials
 type CustomerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -12,7 +12,7 @@ import (
     ifa1c023a93cedbc885180b644196fd22db8e7768dfa64cd6a803d74884273eac "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience/exclusions/item"
 )
 
-// audienceRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience
+// AudienceRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience
 type AudienceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type AudienceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// audienceRequestBuilderGetQueryParameters specifies the audience to which content is deployed.
+// AudienceRequestBuilderGetQueryParameters specifies the audience to which content is deployed.
 type AudienceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

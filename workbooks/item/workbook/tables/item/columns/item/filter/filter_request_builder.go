@@ -18,7 +18,7 @@ import (
     if6196d732d03f2ed7af679f05c76c34f4c76c53e13f020d7aa40178a413ef3ee "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/columns/item/filter/clear"
 )
 
-// filterRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter
+// FilterRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter
 type FilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type FilterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// filterRequestBuilderGetQueryParameters retrieve the filter applied to the column. Read-only.
+// FilterRequestBuilderGetQueryParameters retrieve the filter applied to the column. Read-only.
 type FilterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

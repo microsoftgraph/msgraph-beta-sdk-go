@@ -8,7 +8,7 @@ import (
     ie44e1255b972f859503eb871261f069d2ff1e5a0b64d5c67e3a2e405706b2c36 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/decisions/item/insights/item"
 )
 
-// accessReviewInstanceDecisionItemRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}
+// AccessReviewInstanceDecisionItemRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}
 type AccessReviewInstanceDecisionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AccessReviewInstanceDecisionItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessReviewInstanceDecisionItemRequestBuilderGetQueryParameters each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+// AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 type AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

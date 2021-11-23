@@ -7,7 +7,7 @@ import (
     i9ee65617822ffec1da574f63029fd9d509867019b0beaf946410d6c582fe99c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/customerpaymentjournals/item/customerpayments/item/customer"
 )
 
-// customerPaymentRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals\{customerPaymentJournal-id}\customerPayments\{customerPayment-id}
+// CustomerPaymentRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals\{customerPaymentJournal-id}\customerPayments\{customerPayment-id}
 type CustomerPaymentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type CustomerPaymentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// customerPaymentRequestBuilderGetQueryParameters get customerPayments from financials
+// CustomerPaymentRequestBuilderGetQueryParameters get customerPayments from financials
 type CustomerPaymentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

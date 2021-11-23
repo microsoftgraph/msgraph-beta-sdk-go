@@ -7,7 +7,7 @@ import (
     i0bdef080c03ea7bfb67fcc7efb5d00b12a7df0c8ff5ca61522a948881caa2191 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/workfromanywheremetrics/ref"
 )
 
-// workFromAnywhereMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\workFromAnywhereMetrics
+// WorkFromAnywhereMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\workFromAnywhereMetrics
 type WorkFromAnywhereMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type WorkFromAnywhereMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workFromAnywhereMetricsRequestBuilderGetQueryParameters the user experience analytics work from anywhere metrics.
+// WorkFromAnywhereMetricsRequestBuilderGetQueryParameters the user experience analytics work from anywhere metrics.
 type WorkFromAnywhereMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

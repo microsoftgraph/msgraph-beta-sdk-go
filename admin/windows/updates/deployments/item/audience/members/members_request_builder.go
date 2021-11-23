@@ -10,7 +10,7 @@ import (
     ib620cf4d2dcbe5b56d595a4921e6f8f470341999bb89c2a3526a70d51d228519 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience/members/unenrollassets"
 )
 
-// membersRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\members
+// MembersRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// membersRequestBuilderGetQueryParameters specifies the assets to include in the audience.
+// MembersRequestBuilderGetQueryParameters specifies the assets to include in the audience.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

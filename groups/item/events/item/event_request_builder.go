@@ -26,7 +26,7 @@ import (
     ife7ef1d1a994cdb0804ec1d15de22eaf8f8e9bc910b45c55f19b4d13e63ecff9 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/events/item/attachments/item"
 )
 
-// eventRequestBuilder builds and executes requests for operations under \groups\{group-id}\events\{event-id}
+// EventRequestBuilder builds and executes requests for operations under \groups\{group-id}\events\{event-id}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -55,7 +55,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventRequestBuilderGetQueryParameters the group's calendar events.
+// EventRequestBuilderGetQueryParameters the group's calendar events.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

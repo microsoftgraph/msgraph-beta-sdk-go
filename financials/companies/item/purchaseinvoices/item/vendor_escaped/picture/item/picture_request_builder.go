@@ -7,7 +7,7 @@ import (
     i82f0675da191bdc99f6e21da715b3cd9176756623be0ad043ecf09fea75c4062 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/purchaseinvoices/item/vendor_escaped/picture/item/content"
 )
 
-// pictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\purchaseInvoices\{purchaseInvoice-id}\vendor\picture\{picture-id}
+// PictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\purchaseInvoices\{purchaseInvoice-id}\vendor\picture\{picture-id}
 type PictureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PictureRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// pictureRequestBuilderGetQueryParameters get picture from financials
+// PictureRequestBuilderGetQueryParameters get picture from financials
 type PictureRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

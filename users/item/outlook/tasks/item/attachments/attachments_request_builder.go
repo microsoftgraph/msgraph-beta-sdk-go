@@ -7,7 +7,7 @@ import (
     i624674f73fae74e113210a02061aa53ce1b031eb3d6a188845e6b6db2ab48f64 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/outlook/tasks/item/attachments/createuploadsession"
 )
 
-// attachmentsRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\tasks\{outlookTask-id}\attachments
+// AttachmentsRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\tasks\{outlookTask-id}\attachments
 type AttachmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AttachmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// attachmentsRequestBuilderGetQueryParameters the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// AttachmentsRequestBuilderGetQueryParameters the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

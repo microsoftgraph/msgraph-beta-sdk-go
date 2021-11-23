@@ -7,7 +7,7 @@ import (
     i3f5fa64fce6c85f80e1275e28c48dcc727e277551da9d2d8656ea64748f415ca "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/datasharingconsents/item/consenttodatasharing"
 )
 
-// dataSharingConsentRequestBuilder builds and executes requests for operations under \deviceManagement\dataSharingConsents\{dataSharingConsent-id}
+// DataSharingConsentRequestBuilder builds and executes requests for operations under \deviceManagement\dataSharingConsents\{dataSharingConsent-id}
 type DataSharingConsentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DataSharingConsentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// dataSharingConsentRequestBuilderGetQueryParameters data sharing consents.
+// DataSharingConsentRequestBuilderGetQueryParameters data sharing consents.
 type DataSharingConsentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

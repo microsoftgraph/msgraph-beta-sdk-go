@@ -7,7 +7,7 @@ import (
     i3c00bde30e634de189b51010ce60901e32c59de7534923a59442776eb666c6a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/item/manager/ref"
 )
 
-// managerRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\manager
+// ManagerRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\manager
 type ManagerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ManagerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managerRequestBuilderGetQueryParameters the user or contact that is this contact's manager. Read-only. Supports $expand.
+// ManagerRequestBuilderGetQueryParameters the user or contact that is this contact's manager. Read-only. Supports $expand.
 type ManagerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

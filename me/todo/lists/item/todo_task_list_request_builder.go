@@ -10,7 +10,7 @@ import (
     i6b6d487d9d6b2c29a8a4f8d7500f19acb13dc63261b2fed73efaa1426d376d45 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item"
 )
 
-// todoTaskListRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}
+// TodoTaskListRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}
 type TodoTaskListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type TodoTaskListRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// todoTaskListRequestBuilderGetQueryParameters the task lists in the users mailbox.
+// TodoTaskListRequestBuilderGetQueryParameters the task lists in the users mailbox.
 type TodoTaskListRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

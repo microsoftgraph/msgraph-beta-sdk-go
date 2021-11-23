@@ -7,7 +7,7 @@ import (
     ic0afdde349452f9f3f3d438ec794d7aac9b7c29973a488e962b26c5c89f0cea1 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentresourceroles/item/accesspackageassignments/filterbycurrentuserwithon"
 )
 
-// accessPackageAssignmentsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments
+// AccessPackageAssignmentsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments
 type AccessPackageAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AccessPackageAssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageAssignmentsRequestBuilderGetQueryParameters the access package assignments resulting in this role assignment. Read-only. Nullable.
+// AccessPackageAssignmentsRequestBuilderGetQueryParameters the access package assignments resulting in this role assignment. Read-only. Nullable.
 type AccessPackageAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

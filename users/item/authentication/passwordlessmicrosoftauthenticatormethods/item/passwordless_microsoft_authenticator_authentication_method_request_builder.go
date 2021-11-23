@@ -7,7 +7,7 @@ import (
     i59c2913777ceac2a52ded56e4b82e5a8a76f2723c7b2deaf830c86bc60e21796 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordlessmicrosoftauthenticatormethods/item/device"
 )
 
-// passwordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\passwordlessMicrosoftAuthenticatorMethods\{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}
+// PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\passwordlessMicrosoftAuthenticatorMethods\{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetOpti
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// passwordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters get passwordlessMicrosoftAuthenticatorMethods from users
+// PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters get passwordlessMicrosoftAuthenticatorMethods from users
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

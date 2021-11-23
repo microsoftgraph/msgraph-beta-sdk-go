@@ -7,7 +7,7 @@ import (
     i49d6a783704b8a09a5f31f34a3101493e70dd4084d5a261c4c6b9ae00943869b "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salescreditmemos/item/salescreditmemolines/item/item/picture/item/content"
 )
 
-// pictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}\salesCreditMemoLines\{salesCreditMemoLine-id}\item\picture\{picture-id}
+// PictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}\salesCreditMemoLines\{salesCreditMemoLine-id}\item\picture\{picture-id}
 type PictureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PictureRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// pictureRequestBuilderGetQueryParameters get picture from financials
+// PictureRequestBuilderGetQueryParameters get picture from financials
 type PictureRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

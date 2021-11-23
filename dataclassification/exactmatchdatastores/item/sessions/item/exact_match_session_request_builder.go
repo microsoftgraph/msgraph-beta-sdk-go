@@ -10,7 +10,7 @@ import (
     ie50d1404accfd9f1f2d095ca342c1d50a359ffc201c488ebc36605b1a52c8fe8 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/exactmatchdatastores/item/sessions/item/commit"
 )
 
-// exactMatchSessionRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}
+// ExactMatchSessionRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}
 type ExactMatchSessionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ExactMatchSessionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// exactMatchSessionRequestBuilderGetQueryParameters get sessions from dataClassification
+// ExactMatchSessionRequestBuilderGetQueryParameters get sessions from dataClassification
 type ExactMatchSessionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i7ceb5e36b506cbe8582e6122c9b79d207ae97c7a884c860b1dfb8aab6ea6b588 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/customerpaymentjournals/item/customerpayments/item/customer/picture/item/content"
 )
 
-// pictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals\{customerPaymentJournal-id}\customerPayments\{customerPayment-id}\customer\picture\{picture-id}
+// PictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals\{customerPaymentJournal-id}\customerPayments\{customerPayment-id}\customer\picture\{picture-id}
 type PictureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PictureRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// pictureRequestBuilderGetQueryParameters get picture from financials
+// PictureRequestBuilderGetQueryParameters get picture from financials
 type PictureRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

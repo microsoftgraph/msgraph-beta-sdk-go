@@ -8,7 +8,7 @@ import (
     iff4193ecc67d59ecea24f90311b1d6953f734fe79c0d8ba60c170a0fa5dd9408 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/macossoftwareupdateaccountsummaries/item/categorysummaries/item/updatestatesummaries/item"
 )
 
-// macOSSoftwareUpdateCategorySummaryRequestBuilder builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}
+// MacOSSoftwareUpdateCategorySummaryRequestBuilder builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}
 type MacOSSoftwareUpdateCategorySummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type MacOSSoftwareUpdateCategorySummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// macOSSoftwareUpdateCategorySummaryRequestBuilderGetQueryParameters summary of the updates by category.
+// MacOSSoftwareUpdateCategorySummaryRequestBuilderGetQueryParameters summary of the updates by category.
 type MacOSSoftwareUpdateCategorySummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

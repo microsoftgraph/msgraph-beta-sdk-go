@@ -10,7 +10,7 @@ import (
     ibc8cdcda9d0880d123b6a234fd0980335960dc7e2f066cbce430ed5b5bd54ef8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidforworksettings/unbind"
 )
 
-// androidForWorkSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkSettings
+// AndroidForWorkSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkSettings
 type AndroidForWorkSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type AndroidForWorkSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// androidForWorkSettingsRequestBuilderGetQueryParameters the singleton Android for Work settings entity.
+// AndroidForWorkSettingsRequestBuilderGetQueryParameters the singleton Android for Work settings entity.
 type AndroidForWorkSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

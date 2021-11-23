@@ -8,7 +8,7 @@ import (
     i1fe7ff93f58439008a626f169f7eeff4e9a77d0871cc58d3033500a4d65a4a2c "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/customsecurityattributedefinitions/item/allowedvalues/item"
 )
 
-// customSecurityAttributeDefinitionRequestBuilder builds and executes requests for operations under \directory\customSecurityAttributeDefinitions\{customSecurityAttributeDefinition-id}
+// CustomSecurityAttributeDefinitionRequestBuilder builds and executes requests for operations under \directory\customSecurityAttributeDefinitions\{customSecurityAttributeDefinition-id}
 type CustomSecurityAttributeDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type CustomSecurityAttributeDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// customSecurityAttributeDefinitionRequestBuilderGetQueryParameters get customSecurityAttributeDefinitions from directory
+// CustomSecurityAttributeDefinitionRequestBuilderGetQueryParameters get customSecurityAttributeDefinitions from directory
 type CustomSecurityAttributeDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

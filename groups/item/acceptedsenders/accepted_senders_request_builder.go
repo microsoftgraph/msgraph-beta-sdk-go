@@ -6,7 +6,7 @@ import (
     i7fce822c8eb09f82caa2bcc9e7604c37738f2edb5716893702145f6996245896 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/acceptedsenders/ref"
 )
 
-// acceptedSendersRequestBuilder builds and executes requests for operations under \groups\{group-id}\acceptedSenders
+// AcceptedSendersRequestBuilder builds and executes requests for operations under \groups\{group-id}\acceptedSenders
 type AcceptedSendersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type AcceptedSendersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// acceptedSendersRequestBuilderGetQueryParameters the list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+// AcceptedSendersRequestBuilderGetQueryParameters the list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
 type AcceptedSendersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

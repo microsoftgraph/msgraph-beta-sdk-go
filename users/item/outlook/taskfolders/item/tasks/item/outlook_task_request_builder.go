@@ -13,7 +13,7 @@ import (
     ic6491e7b1ea237fd1a5fc05790050c780572b7f37e967ddffd4225e1dc62ce51 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/outlook/taskfolders/item/tasks/item/attachments/item"
 )
 
-// outlookTaskRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\taskFolders\{outlookTaskFolder-id}\tasks\{outlookTask-id}
+// OutlookTaskRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\taskFolders\{outlookTaskFolder-id}\tasks\{outlookTask-id}
 type OutlookTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type OutlookTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// outlookTaskRequestBuilderGetQueryParameters the tasks in this task folder. Read-only. Nullable.
+// OutlookTaskRequestBuilderGetQueryParameters the tasks in this task folder. Read-only. Nullable.
 type OutlookTaskRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

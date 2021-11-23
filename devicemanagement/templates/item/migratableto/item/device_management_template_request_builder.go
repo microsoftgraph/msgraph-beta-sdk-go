@@ -8,7 +8,7 @@ import (
     ibbba9d86d4571827dce83aaa25b29b4599b3866543dcd39dc94b898809d719ef "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/migratableto/item/createinstance"
 )
 
-// deviceManagementTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}
+// DeviceManagementTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}
 type DeviceManagementTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DeviceManagementTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementTemplateRequestBuilderGetQueryParameters collection of templates this template can migrate to
+// DeviceManagementTemplateRequestBuilderGetQueryParameters collection of templates this template can migrate to
 type DeviceManagementTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

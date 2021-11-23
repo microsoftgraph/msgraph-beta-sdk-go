@@ -7,7 +7,7 @@ import (
     i4e41d9c5e297debb2be0312b1a3e41fa719aa0a75fa2b4f4457afdb7529da306 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/custodians/item/sitesources/item/site"
 )
 
-// siteSourceRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\siteSources\{siteSource-id}
+// SiteSourceRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\siteSources\{siteSource-id}
 type SiteSourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type SiteSourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// siteSourceRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the custodian.
+// SiteSourceRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the custodian.
 type SiteSourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     ibc2e70f0c5bb35eaf67fdce3a87f6acd62ee93bec43a0874b5c26854f3408528 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/appconsentrequestsforapproval/item/userconsentrequests/filterbycurrentuserwithon"
 )
 
-// userConsentRequestsRequestBuilder builds and executes requests for operations under \users\{user-id}\appConsentRequestsForApproval\{appConsentRequest-id}\userConsentRequests
+// UserConsentRequestsRequestBuilder builds and executes requests for operations under \users\{user-id}\appConsentRequestsForApproval\{appConsentRequest-id}\userConsentRequests
 type UserConsentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type UserConsentRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userConsentRequestsRequestBuilderGetQueryParameters a list of pending user consent requests.
+// UserConsentRequestsRequestBuilderGetQueryParameters a list of pending user consent requests.
 type UserConsentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

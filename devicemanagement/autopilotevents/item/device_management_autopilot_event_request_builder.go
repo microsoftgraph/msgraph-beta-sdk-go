@@ -8,7 +8,7 @@ import (
     ib32d34f50255bdea0699208e320acf08a90078315ca8ef82a9c10a80d7799d4b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/autopilotevents/item/policystatusdetails/item"
 )
 
-// deviceManagementAutopilotEventRequestBuilder builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}
+// DeviceManagementAutopilotEventRequestBuilder builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}
 type DeviceManagementAutopilotEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DeviceManagementAutopilotEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementAutopilotEventRequestBuilderGetQueryParameters the list of autopilot events for the tenant.
+// DeviceManagementAutopilotEventRequestBuilderGetQueryParameters the list of autopilot events for the tenant.
 type DeviceManagementAutopilotEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

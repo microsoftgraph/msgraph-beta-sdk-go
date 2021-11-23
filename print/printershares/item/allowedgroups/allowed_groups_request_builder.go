@@ -6,7 +6,7 @@ import (
     i6bf3bedce4dfb3db2cfb723ec8dfb1d3c88414932db65ce5cc3cb8cb3763f469 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printershares/item/allowedgroups/ref"
 )
 
-// allowedGroupsRequestBuilder builds and executes requests for operations under \print\printerShares\{printerShare-id}\allowedGroups
+// AllowedGroupsRequestBuilder builds and executes requests for operations under \print\printerShares\{printerShare-id}\allowedGroups
 type AllowedGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type AllowedGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// allowedGroupsRequestBuilderGetQueryParameters the groups whose users have access to print using the printer.
+// AllowedGroupsRequestBuilderGetQueryParameters the groups whose users have access to print using the printer.
 type AllowedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

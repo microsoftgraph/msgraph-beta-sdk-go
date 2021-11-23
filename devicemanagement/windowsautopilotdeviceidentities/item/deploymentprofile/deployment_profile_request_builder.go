@@ -8,7 +8,7 @@ import (
     i492f6b1b31cd8e9a26dcf348bfaa01652c021973c5ca8d79d380b33d544b80c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeviceidentities/item/deploymentprofile/ref"
 )
 
-// deploymentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\deploymentProfile
+// DeploymentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\deploymentProfile
 type DeploymentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type DeploymentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deploymentProfileRequestBuilderGetQueryParameters deployment profile currently assigned to the Windows autopilot device.
+// DeploymentProfileRequestBuilderGetQueryParameters deployment profile currently assigned to the Windows autopilot device.
 type DeploymentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

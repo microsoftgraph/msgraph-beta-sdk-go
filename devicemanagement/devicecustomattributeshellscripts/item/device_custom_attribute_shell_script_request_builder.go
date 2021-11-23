@@ -16,7 +16,7 @@ import (
     ife64bae8f85f9d9ffa4f9b0e1f47986455765630e26bfebb51ad049410aab2c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecustomattributeshellscripts/item/assignments/item"
 )
 
-// deviceCustomAttributeShellScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}
+// DeviceCustomAttributeShellScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}
 type DeviceCustomAttributeShellScriptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type DeviceCustomAttributeShellScriptRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceCustomAttributeShellScriptRequestBuilderGetQueryParameters the list of device custom attribute shell scripts associated with the tenant.
+// DeviceCustomAttributeShellScriptRequestBuilderGetQueryParameters the list of device custom attribute shell scripts associated with the tenant.
 type DeviceCustomAttributeShellScriptRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

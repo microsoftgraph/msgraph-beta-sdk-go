@@ -10,7 +10,7 @@ import (
     i928cffe1d44a7c917c1e83d9a4105e827fa065d83a7a505a4f7efa3c64266fdb "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/timecards/item/clockout"
 )
 
-// timeCardRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeCards\{timeCard-id}
+// TimeCardRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeCards\{timeCard-id}
 type TimeCardRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type TimeCardRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// timeCardRequestBuilderGetQueryParameters get timeCards from teams
+// TimeCardRequestBuilderGetQueryParameters get timeCards from teams
 type TimeCardRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

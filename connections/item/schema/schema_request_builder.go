@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// schemaRequestBuilder builds and executes requests for operations under \connections\{externalConnection-id}\schema
+// SchemaRequestBuilder builds and executes requests for operations under \connections\{externalConnection-id}\schema
 type SchemaRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type SchemaRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// schemaRequestBuilderGetQueryParameters read-only. Nullable.
+// SchemaRequestBuilderGetQueryParameters read-only. Nullable.
 type SchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

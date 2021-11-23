@@ -8,7 +8,7 @@ import (
     ide025db54a76a0cdbede46db65f141a8c41199580156219eda24903864d54948 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackages/filterbycurrentuserwithon"
 )
 
-// accessPackagesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackageAssignmentPolicies\{accessPackageAssignmentPolicy-id}\accessPackageCatalog\accessPackages
+// AccessPackagesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackageAssignmentPolicies\{accessPackageAssignmentPolicy-id}\accessPackageCatalog\accessPackages
 type AccessPackagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type AccessPackagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackagesRequestBuilderGetQueryParameters the access packages in this catalog. Read-only. Nullable.
+// AccessPackagesRequestBuilderGetQueryParameters the access packages in this catalog. Read-only. Nullable.
 type AccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

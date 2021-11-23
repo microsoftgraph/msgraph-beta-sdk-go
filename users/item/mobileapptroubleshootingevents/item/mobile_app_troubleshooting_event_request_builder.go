@@ -8,7 +8,7 @@ import (
     iabeafd074385c8a1a46dd1c7e7e3752dfe2f7a0e547353df410243bf28cb8721 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mobileapptroubleshootingevents/item/applogcollectionrequests/item"
 )
 
-// mobileAppTroubleshootingEventRequestBuilder builds and executes requests for operations under \users\{user-id}\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}
+// MobileAppTroubleshootingEventRequestBuilder builds and executes requests for operations under \users\{user-id}\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}
 type MobileAppTroubleshootingEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type MobileAppTroubleshootingEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mobileAppTroubleshootingEventRequestBuilderGetQueryParameters the list of mobile app troubleshooting events for this user.
+// MobileAppTroubleshootingEventRequestBuilderGetQueryParameters the list of mobile app troubleshooting events for this user.
 type MobileAppTroubleshootingEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
