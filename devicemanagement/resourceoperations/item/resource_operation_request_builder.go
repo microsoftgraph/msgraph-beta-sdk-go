@@ -7,7 +7,7 @@ import (
     i2b3f2af1c8bc472e0cb8537b228ff0d93f3f8ff8add56d5ef0a24cbb3334094e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceoperations/item/getscopesforuserwithuserid"
 )
 
-// Builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}
+// ResourceOperationRequestBuilder builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}
 type ResourceOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ResourceOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ResourceOperationRequestBuilderDeleteOptions options for Delete
 type ResourceOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ResourceOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ResourceOperationRequestBuilderGetOptions options for Get
 type ResourceOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ResourceOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Resource Operations.
+// ResourceOperationRequestBuilderGetQueryParameters the Resource Operations.
 type ResourceOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ResourceOperationRequestBuilderPatchOptions options for Patch
 type ResourceOperationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceOperation;
@@ -54,10 +54,7 @@ type ResourceOperationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ResourceOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceOperationRequestBuilderInternal instantiates a new ResourceOperationRequestBuilder and sets the default values.
 func NewResourceOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceOperationRequestBuilder) {
     m := &ResourceOperationRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewResourceOperationRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResourceOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceOperationRequestBuilder instantiates a new ResourceOperationRequestBuilder and sets the default values.
 func NewResourceOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Resource Operations.
 func (m *ResourceOperationRequestBuilder) CreateDeleteRequestInformation(options *ResourceOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *ResourceOperationRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Resource Operations.
 func (m *ResourceOperationRequestBuilder) CreateGetRequestInformation(options *ResourceOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *ResourceOperationRequestBuilder) CreateGetRequestInformation(options *R
     }
     return requestInfo, nil
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Resource Operations.
 func (m *ResourceOperationRequestBuilder) CreatePatchRequestInformation(options *ResourceOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *ResourceOperationRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// Delete the Resource Operations.
 func (m *ResourceOperationRequestBuilder) Delete(options *ResourceOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *ResourceOperationRequestBuilder) Delete(options *ResourceOperationReque
     }
     return nil
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// Get the Resource Operations.
 func (m *ResourceOperationRequestBuilder) Get(options *ResourceOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,15 +152,11 @@ func (m *ResourceOperationRequestBuilder) Get(options *ResourceOperationRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceOperation), nil
 }
-// Builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}\microsoft.graph.getScopesForUser(userid='{userid}')
-// Parameters:
-//  - userid : Usage: userid={userid}
+// GetScopesForUserWithUserid builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}\microsoft.graph.getScopesForUser(userid='{userid}')
 func (m *ResourceOperationRequestBuilder) GetScopesForUserWithUserid(userid *string)(*i2b3f2af1c8bc472e0cb8537b228ff0d93f3f8ff8add56d5ef0a24cbb3334094e.GetScopesForUserWithUseridRequestBuilder) {
     return i2b3f2af1c8bc472e0cb8537b228ff0d93f3f8ff8add56d5ef0a24cbb3334094e.NewGetScopesForUserWithUseridRequestBuilderInternal(m.pathParameters, m.requestAdapter, userid);
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// Patch the Resource Operations.
 func (m *ResourceOperationRequestBuilder) Patch(options *ResourceOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

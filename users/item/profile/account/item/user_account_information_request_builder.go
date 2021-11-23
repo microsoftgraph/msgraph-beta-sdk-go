@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\account\{userAccountInformation-id}
+// UserAccountInformationRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\account\{userAccountInformation-id}
 type UserAccountInformationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserAccountInformationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserAccountInformationRequestBuilderDeleteOptions options for Delete
 type UserAccountInformationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserAccountInformationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserAccountInformationRequestBuilderGetOptions options for Get
 type UserAccountInformationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserAccountInformationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get account from users
+// UserAccountInformationRequestBuilderGetQueryParameters get account from users
 type UserAccountInformationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserAccountInformationRequestBuilderPatchOptions options for Patch
 type UserAccountInformationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserAccountInformation;
@@ -53,10 +53,7 @@ type UserAccountInformationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserAccountInformationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserAccountInformationRequestBuilderInternal instantiates a new UserAccountInformationRequestBuilder and sets the default values.
 func NewUserAccountInformationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserAccountInformationRequestBuilder) {
     m := &UserAccountInformationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserAccountInformationRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserAccountInformationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserAccountInformationRequestBuilder instantiates a new UserAccountInformationRequestBuilder and sets the default values.
 func NewUserAccountInformationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserAccountInformationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserAccountInformationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property account for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property account for users
 func (m *UserAccountInformationRequestBuilder) CreateDeleteRequestInformation(options *UserAccountInformationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserAccountInformationRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// Get account from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get account from users
 func (m *UserAccountInformationRequestBuilder) CreateGetRequestInformation(options *UserAccountInformationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserAccountInformationRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Update the navigation property account in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property account in users
 func (m *UserAccountInformationRequestBuilder) CreatePatchRequestInformation(options *UserAccountInformationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserAccountInformationRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Delete navigation property account for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property account for users
 func (m *UserAccountInformationRequestBuilder) Delete(options *UserAccountInformationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserAccountInformationRequestBuilder) Delete(options *UserAccountInform
     }
     return nil
 }
-// Get account from users
-// Parameters:
-//  - options : Options for the request
+// Get get account from users
 func (m *UserAccountInformationRequestBuilder) Get(options *UserAccountInformationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserAccountInformation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserAccountInformationRequestBuilder) Get(options *UserAccountInformati
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserAccountInformation), nil
 }
-// Update the navigation property account in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property account in users
 func (m *UserAccountInformationRequestBuilder) Patch(options *UserAccountInformationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

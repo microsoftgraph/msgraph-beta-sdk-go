@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceAppManagementTask 
 type DeviceAppManagementTask struct {
     Entity
     // The name or email of the admin this task is assigned to.
@@ -29,14 +29,14 @@ type DeviceAppManagementTask struct {
     // The status. Possible values are: unknown, pending, active, completed, rejected.
     status *DeviceAppManagementTaskStatus;
 }
-// Instantiates a new deviceAppManagementTask and sets the default values.
+// NewDeviceAppManagementTask instantiates a new deviceAppManagementTask and sets the default values.
 func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
     m := &DeviceAppManagementTask{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the assignedTo property value. The name or email of the admin this task is assigned to.
+// GetAssignedTo gets the assignedTo property value. The name or email of the admin this task is assigned to.
 func (m *DeviceAppManagementTask) GetAssignedTo()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *DeviceAppManagementTask) GetAssignedTo()(*string) {
         return m.assignedTo
     }
 }
-// Gets the category property value. The category. Possible values are: unknown, advancedThreatProtection.
+// GetCategory gets the category property value. The category. Possible values are: unknown, advancedThreatProtection.
 func (m *DeviceAppManagementTask) GetCategory()(*DeviceAppManagementTaskCategory) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *DeviceAppManagementTask) GetCategory()(*DeviceAppManagementTaskCategory
         return m.category
     }
 }
-// Gets the createdDateTime property value. The created date.
+// GetCreatedDateTime gets the createdDateTime property value. The created date.
 func (m *DeviceAppManagementTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *DeviceAppManagementTask) GetCreatedDateTime()(*i336074805fc853987abe6f7
         return m.createdDateTime
     }
 }
-// Gets the creator property value. The email address of the creator.
+// GetCreator gets the creator property value. The email address of the creator.
 func (m *DeviceAppManagementTask) GetCreator()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *DeviceAppManagementTask) GetCreator()(*string) {
         return m.creator
     }
 }
-// Gets the creatorNotes property value. Notes from the creator.
+// GetCreatorNotes gets the creatorNotes property value. Notes from the creator.
 func (m *DeviceAppManagementTask) GetCreatorNotes()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *DeviceAppManagementTask) GetCreatorNotes()(*string) {
         return m.creatorNotes
     }
 }
-// Gets the description property value. The description.
+// GetDescription gets the description property value. The description.
 func (m *DeviceAppManagementTask) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *DeviceAppManagementTask) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The name.
+// GetDisplayName gets the displayName property value. The name.
 func (m *DeviceAppManagementTask) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *DeviceAppManagementTask) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the dueDateTime property value. The due date.
+// GetDueDateTime gets the dueDateTime property value. The due date.
 func (m *DeviceAppManagementTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *DeviceAppManagementTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3a
         return m.dueDateTime
     }
 }
-// Gets the priority property value. The priority. Possible values are: none, high, low.
+// GetPriority gets the priority property value. The priority. Possible values are: none, high, low.
 func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority
         return m.priority
     }
 }
-// Gets the status property value. The status. Possible values are: unknown, pending, active, completed, rejected.
+// GetStatus gets the status property value. The status. Possible values are: unknown, pending, active, completed, rejected.
 func (m *DeviceAppManagementTask) GetStatus()(*DeviceAppManagementTaskStatus) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *DeviceAppManagementTask) GetStatus()(*DeviceAppManagementTaskStatus) {
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,9 +227,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
 func (m *DeviceAppManagementTask) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceAppManagementTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -300,63 +298,43 @@ func (m *DeviceAppManagementTask) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the assignedTo property value. The name or email of the admin this task is assigned to.
-// Parameters:
-//  - value : Value to set for the assignedTo property.
+// SetAssignedTo sets the assignedTo property value. The name or email of the admin this task is assigned to.
 func (m *DeviceAppManagementTask) SetAssignedTo(value *string)() {
     m.assignedTo = value
 }
-// Sets the category property value. The category. Possible values are: unknown, advancedThreatProtection.
-// Parameters:
-//  - value : Value to set for the category property.
+// SetCategory sets the category property value. The category. Possible values are: unknown, advancedThreatProtection.
 func (m *DeviceAppManagementTask) SetCategory(value *DeviceAppManagementTaskCategory)() {
     m.category = value
 }
-// Sets the createdDateTime property value. The created date.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The created date.
 func (m *DeviceAppManagementTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the creator property value. The email address of the creator.
-// Parameters:
-//  - value : Value to set for the creator property.
+// SetCreator sets the creator property value. The email address of the creator.
 func (m *DeviceAppManagementTask) SetCreator(value *string)() {
     m.creator = value
 }
-// Sets the creatorNotes property value. Notes from the creator.
-// Parameters:
-//  - value : Value to set for the creatorNotes property.
+// SetCreatorNotes sets the creatorNotes property value. Notes from the creator.
 func (m *DeviceAppManagementTask) SetCreatorNotes(value *string)() {
     m.creatorNotes = value
 }
-// Sets the description property value. The description.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description.
 func (m *DeviceAppManagementTask) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The name.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The name.
 func (m *DeviceAppManagementTask) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the dueDateTime property value. The due date.
-// Parameters:
-//  - value : Value to set for the dueDateTime property.
+// SetDueDateTime sets the dueDateTime property value. The due date.
 func (m *DeviceAppManagementTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.dueDateTime = value
 }
-// Sets the priority property value. The priority. Possible values are: none, high, low.
-// Parameters:
-//  - value : Value to set for the priority property.
+// SetPriority sets the priority property value. The priority. Possible values are: none, high, low.
 func (m *DeviceAppManagementTask) SetPriority(value *DeviceAppManagementTaskPriority)() {
     m.priority = value
 }
-// Sets the status property value. The status. Possible values are: unknown, pending, active, completed, rejected.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. The status. Possible values are: unknown, pending, active, completed, rejected.
 func (m *DeviceAppManagementTask) SetStatus(value *DeviceAppManagementTaskStatus)() {
     m.status = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\awards\{personAward-id}
+// PersonAwardRequestBuilder builds and executes requests for operations under \me\profile\awards\{personAward-id}
 type PersonAwardRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PersonAwardRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PersonAwardRequestBuilderDeleteOptions options for Delete
 type PersonAwardRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PersonAwardRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PersonAwardRequestBuilderGetOptions options for Get
 type PersonAwardRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PersonAwardRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the details of awards or honors associated with a person.
+// PersonAwardRequestBuilderGetQueryParameters represents the details of awards or honors associated with a person.
 type PersonAwardRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PersonAwardRequestBuilderPatchOptions options for Patch
 type PersonAwardRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonAward;
@@ -53,10 +53,7 @@ type PersonAwardRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PersonAwardRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonAwardRequestBuilderInternal instantiates a new PersonAwardRequestBuilder and sets the default values.
 func NewPersonAwardRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonAwardRequestBuilder) {
     m := &PersonAwardRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPersonAwardRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PersonAwardRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonAwardRequestBuilder instantiates a new PersonAwardRequestBuilder and sets the default values.
 func NewPersonAwardRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonAwardRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPersonAwardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the details of awards or honors associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the details of awards or honors associated with a person.
 func (m *PersonAwardRequestBuilder) CreateDeleteRequestInformation(options *PersonAwardRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PersonAwardRequestBuilder) CreateDeleteRequestInformation(options *Pers
     }
     return requestInfo, nil
 }
-// Represents the details of awards or honors associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the details of awards or honors associated with a person.
 func (m *PersonAwardRequestBuilder) CreateGetRequestInformation(options *PersonAwardRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PersonAwardRequestBuilder) CreateGetRequestInformation(options *PersonA
     }
     return requestInfo, nil
 }
-// Represents the details of awards or honors associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the details of awards or honors associated with a person.
 func (m *PersonAwardRequestBuilder) CreatePatchRequestInformation(options *PersonAwardRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PersonAwardRequestBuilder) CreatePatchRequestInformation(options *Perso
     }
     return requestInfo, nil
 }
-// Represents the details of awards or honors associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the details of awards or honors associated with a person.
 func (m *PersonAwardRequestBuilder) Delete(options *PersonAwardRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PersonAwardRequestBuilder) Delete(options *PersonAwardRequestBuilderDel
     }
     return nil
 }
-// Represents the details of awards or honors associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Get represents the details of awards or honors associated with a person.
 func (m *PersonAwardRequestBuilder) Get(options *PersonAwardRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonAward, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PersonAwardRequestBuilder) Get(options *PersonAwardRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonAward), nil
 }
-// Represents the details of awards or honors associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the details of awards or honors associated with a person.
 func (m *PersonAwardRequestBuilder) Patch(options *PersonAwardRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

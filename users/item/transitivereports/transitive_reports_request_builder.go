@@ -6,7 +6,7 @@ import (
     i17c25d625c215a8a99914e27b9ded318dde75e2aba9aef737c6a5982700260b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/transitivereports/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\transitiveReports
+// TransitiveReportsRequestBuilder builds and executes requests for operations under \users\{user-id}\transitiveReports
 type TransitiveReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TransitiveReportsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TransitiveReportsRequestBuilderGetOptions options for Get
 type TransitiveReportsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TransitiveReportsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The transitive reports for a user. Read-only.
+// TransitiveReportsRequestBuilderGetQueryParameters the transitive reports for a user. Read-only.
 type TransitiveReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type TransitiveReportsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new TransitiveReportsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTransitiveReportsRequestBuilderInternal instantiates a new TransitiveReportsRequestBuilder and sets the default values.
 func NewTransitiveReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TransitiveReportsRequestBuilder) {
     m := &TransitiveReportsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewTransitiveReportsRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TransitiveReportsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTransitiveReportsRequestBuilder instantiates a new TransitiveReportsRequestBuilder and sets the default values.
 func NewTransitiveReportsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TransitiveReportsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTransitiveReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The transitive reports for a user. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the transitive reports for a user. Read-only.
 func (m *TransitiveReportsRequestBuilder) CreateGetRequestInformation(options *TransitiveReportsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *TransitiveReportsRequestBuilder) CreateGetRequestInformation(options *T
     }
     return requestInfo, nil
 }
-// The transitive reports for a user. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the transitive reports for a user. Read-only.
 func (m *TransitiveReportsRequestBuilder) Get(options *TransitiveReportsRequestBuilderGetOptions)(*TransitiveReportsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

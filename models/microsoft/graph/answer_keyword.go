@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AnswerKeyword 
 type AnswerKeyword struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type AnswerKeyword struct {
     // 
     reservedKeywords []string;
 }
-// Instantiates a new answerKeyword and sets the default values.
+// NewAnswerKeyword instantiates a new answerKeyword and sets the default values.
 func NewAnswerKeyword()(*AnswerKeyword) {
     m := &AnswerKeyword{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerKeyword) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *AnswerKeyword) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the keywords property value. 
+// GetKeywords gets the keywords property value. 
 func (m *AnswerKeyword) GetKeywords()([]string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AnswerKeyword) GetKeywords()([]string) {
         return m.keywords
     }
 }
-// Gets the matchSimilarKeywords property value. 
+// GetMatchSimilarKeywords gets the matchSimilarKeywords property value. 
 func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
         return m.matchSimilarKeywords
     }
 }
-// Gets the reservedKeywords property value. 
+// GetReservedKeywords gets the reservedKeywords property value. 
 func (m *AnswerKeyword) GetReservedKeywords()([]string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AnswerKeyword) GetReservedKeywords()([]string) {
         return m.reservedKeywords
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["keywords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,9 +100,7 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *AnswerKeyword) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AnswerKeyword) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("keywords", m.GetKeywords())
@@ -130,27 +128,19 @@ func (m *AnswerKeyword) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerKeyword) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the keywords property value. 
-// Parameters:
-//  - value : Value to set for the keywords property.
+// SetKeywords sets the keywords property value. 
 func (m *AnswerKeyword) SetKeywords(value []string)() {
     m.keywords = value
 }
-// Sets the matchSimilarKeywords property value. 
-// Parameters:
-//  - value : Value to set for the matchSimilarKeywords property.
+// SetMatchSimilarKeywords sets the matchSimilarKeywords property value. 
 func (m *AnswerKeyword) SetMatchSimilarKeywords(value *bool)() {
     m.matchSimilarKeywords = value
 }
-// Sets the reservedKeywords property value. 
-// Parameters:
-//  - value : Value to set for the reservedKeywords property.
+// SetReservedKeywords sets the reservedKeywords property value. 
 func (m *AnswerKeyword) SetReservedKeywords(value []string)() {
     m.reservedKeywords = value
 }

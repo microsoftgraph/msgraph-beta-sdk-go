@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}\updateStateSummaries\{macOSSoftwareUpdateStateSummary-id}
+// MacOSSoftwareUpdateStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}\updateStateSummaries\{macOSSoftwareUpdateStateSummary-id}
 type MacOSSoftwareUpdateStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MacOSSoftwareUpdateStateSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MacOSSoftwareUpdateStateSummaryRequestBuilderDeleteOptions options for Delete
 type MacOSSoftwareUpdateStateSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MacOSSoftwareUpdateStateSummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MacOSSoftwareUpdateStateSummaryRequestBuilderGetOptions options for Get
 type MacOSSoftwareUpdateStateSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MacOSSoftwareUpdateStateSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Summary of the update states.
+// MacOSSoftwareUpdateStateSummaryRequestBuilderGetQueryParameters summary of the update states.
 type MacOSSoftwareUpdateStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MacOSSoftwareUpdateStateSummaryRequestBuilderPatchOptions options for Patch
 type MacOSSoftwareUpdateStateSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateStateSummary;
@@ -53,10 +53,7 @@ type MacOSSoftwareUpdateStateSummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MacOSSoftwareUpdateStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMacOSSoftwareUpdateStateSummaryRequestBuilderInternal instantiates a new MacOSSoftwareUpdateStateSummaryRequestBuilder and sets the default values.
 func NewMacOSSoftwareUpdateStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MacOSSoftwareUpdateStateSummaryRequestBuilder) {
     m := &MacOSSoftwareUpdateStateSummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMacOSSoftwareUpdateStateSummaryRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MacOSSoftwareUpdateStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMacOSSoftwareUpdateStateSummaryRequestBuilder instantiates a new MacOSSoftwareUpdateStateSummaryRequestBuilder and sets the default values.
 func NewMacOSSoftwareUpdateStateSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MacOSSoftwareUpdateStateSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMacOSSoftwareUpdateStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation summary of the update states.
 func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) CreateDeleteRequestInformation(options *MacOSSoftwareUpdateStateSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation summary of the update states.
 func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) CreateGetRequestInformation(options *MacOSSoftwareUpdateStateSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation summary of the update states.
 func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) CreatePatchRequestInformation(options *MacOSSoftwareUpdateStateSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// Delete summary of the update states.
 func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) Delete(options *MacOSSoftwareUpdateStateSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) Delete(options *MacOSSof
     }
     return nil
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// Get summary of the update states.
 func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) Get(options *MacOSSoftwareUpdateStateSummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateStateSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) Get(options *MacOSSoftwa
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateStateSummary), nil
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// Patch summary of the update states.
 func (m *MacOSSoftwareUpdateStateSummaryRequestBuilder) Patch(options *MacOSSoftwareUpdateStateSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \filterOperators\{filterOperatorSchema-id}
+// FilterOperatorSchemaRequestBuilder builds and executes requests for operations under \filterOperators\{filterOperatorSchema-id}
 type FilterOperatorSchemaRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FilterOperatorSchemaRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FilterOperatorSchemaRequestBuilderDeleteOptions options for Delete
 type FilterOperatorSchemaRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type FilterOperatorSchemaRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FilterOperatorSchemaRequestBuilderGetOptions options for Get
 type FilterOperatorSchemaRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type FilterOperatorSchemaRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from filterOperators by key
+// FilterOperatorSchemaRequestBuilderGetQueryParameters get entity from filterOperators by key
 type FilterOperatorSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FilterOperatorSchemaRequestBuilderPatchOptions options for Patch
 type FilterOperatorSchemaRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FilterOperatorSchema;
@@ -53,10 +53,7 @@ type FilterOperatorSchemaRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FilterOperatorSchemaRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFilterOperatorSchemaRequestBuilderInternal instantiates a new FilterOperatorSchemaRequestBuilder and sets the default values.
 func NewFilterOperatorSchemaRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FilterOperatorSchemaRequestBuilder) {
     m := &FilterOperatorSchemaRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewFilterOperatorSchemaRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FilterOperatorSchemaRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFilterOperatorSchemaRequestBuilder instantiates a new FilterOperatorSchemaRequestBuilder and sets the default values.
 func NewFilterOperatorSchemaRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FilterOperatorSchemaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFilterOperatorSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from filterOperators
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from filterOperators
 func (m *FilterOperatorSchemaRequestBuilder) CreateDeleteRequestInformation(options *FilterOperatorSchemaRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *FilterOperatorSchemaRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get entity from filterOperators by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from filterOperators by key
 func (m *FilterOperatorSchemaRequestBuilder) CreateGetRequestInformation(options *FilterOperatorSchemaRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *FilterOperatorSchemaRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update entity in filterOperators
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in filterOperators
 func (m *FilterOperatorSchemaRequestBuilder) CreatePatchRequestInformation(options *FilterOperatorSchemaRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *FilterOperatorSchemaRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete entity from filterOperators
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from filterOperators
 func (m *FilterOperatorSchemaRequestBuilder) Delete(options *FilterOperatorSchemaRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *FilterOperatorSchemaRequestBuilder) Delete(options *FilterOperatorSchem
     }
     return nil
 }
-// Get entity from filterOperators by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from filterOperators by key
 func (m *FilterOperatorSchemaRequestBuilder) Get(options *FilterOperatorSchemaRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FilterOperatorSchema, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *FilterOperatorSchemaRequestBuilder) Get(options *FilterOperatorSchemaRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FilterOperatorSchema), nil
 }
-// Update entity in filterOperators
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in filterOperators
 func (m *FilterOperatorSchemaRequestBuilder) Patch(options *FilterOperatorSchemaRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

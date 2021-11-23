@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians
+// CustodiansRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians
 type CustodiansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CustodiansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CustodiansRequestBuilderGetOptions options for Get
 type CustodiansRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CustodiansRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns a list of case custodian objects for this case.  Nullable.
+// CustodiansRequestBuilderGetQueryParameters returns a list of case custodian objects for this case.  Nullable.
 type CustodiansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CustodiansRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CustodiansRequestBuilderPostOptions options for Post
 type CustodiansRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Custodian;
@@ -56,10 +56,7 @@ type CustodiansRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CustodiansRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustodiansRequestBuilderInternal instantiates a new CustodiansRequestBuilder and sets the default values.
 func NewCustodiansRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustodiansRequestBuilder) {
     m := &CustodiansRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCustodiansRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CustodiansRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustodiansRequestBuilder instantiates a new CustodiansRequestBuilder and sets the default values.
 func NewCustodiansRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustodiansRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustodiansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodiansRequestBuilder) CreateGetRequestInformation(options *CustodiansRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CustodiansRequestBuilder) CreateGetRequestInformation(options *Custodia
     }
     return requestInfo, nil
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodiansRequestBuilder) CreatePostRequestInformation(options *CustodiansRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CustodiansRequestBuilder) CreatePostRequestInformation(options *Custodi
     }
     return requestInfo, nil
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodiansRequestBuilder) Get(options *CustodiansRequestBuilderGetOptions)(*CustodiansResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CustodiansRequestBuilder) Get(options *CustodiansRequestBuilderGetOptio
     }
     return res.(*CustodiansResponse), nil
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodiansRequestBuilder) Post(options *CustodiansRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Custodian, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

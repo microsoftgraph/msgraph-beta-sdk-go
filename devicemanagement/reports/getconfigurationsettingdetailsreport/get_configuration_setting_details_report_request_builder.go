@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigurationSettingDetailsReport
+// GetConfigurationSettingDetailsReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigurationSettingDetailsReport
 type GetConfigurationSettingDetailsReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetConfigurationSettingDetailsReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetConfigurationSettingDetailsReportRequestBuilderPostOptions options for Post
 type GetConfigurationSettingDetailsReportRequestBuilderPostOptions struct {
     // 
     Body *GetConfigurationSettingDetailsReportRequestBody;
@@ -24,10 +24,7 @@ type GetConfigurationSettingDetailsReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetConfigurationSettingDetailsReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetConfigurationSettingDetailsReportRequestBuilderInternal instantiates a new GetConfigurationSettingDetailsReportRequestBuilder and sets the default values.
 func NewGetConfigurationSettingDetailsReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetConfigurationSettingDetailsReportRequestBuilder) {
     m := &GetConfigurationSettingDetailsReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetConfigurationSettingDetailsReportRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetConfigurationSettingDetailsReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetConfigurationSettingDetailsReportRequestBuilder instantiates a new GetConfigurationSettingDetailsReportRequestBuilder and sets the default values.
 func NewGetConfigurationSettingDetailsReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetConfigurationSettingDetailsReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetConfigurationSettingDetailsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getConfigurationSettingDetailsReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getConfigurationSettingDetailsReport
 func (m *GetConfigurationSettingDetailsReportRequestBuilder) CreatePostRequestInformation(options *GetConfigurationSettingDetailsReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetConfigurationSettingDetailsReportRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Invoke action getConfigurationSettingDetailsReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getConfigurationSettingDetailsReport
 func (m *GetConfigurationSettingDetailsReportRequestBuilder) Post(options *GetConfigurationSettingDetailsReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

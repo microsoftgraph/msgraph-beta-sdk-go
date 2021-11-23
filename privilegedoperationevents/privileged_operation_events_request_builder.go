@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedOperationEvents
+// PrivilegedOperationEventsRequestBuilder builds and executes requests for operations under \privilegedOperationEvents
 type PrivilegedOperationEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PrivilegedOperationEventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PrivilegedOperationEventsRequestBuilderGetOptions options for Get
 type PrivilegedOperationEventsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PrivilegedOperationEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from privilegedOperationEvents
+// PrivilegedOperationEventsRequestBuilderGetQueryParameters get entities from privilegedOperationEvents
 type PrivilegedOperationEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PrivilegedOperationEventsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PrivilegedOperationEventsRequestBuilderPostOptions options for Post
 type PrivilegedOperationEventsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEvent;
@@ -56,10 +56,7 @@ type PrivilegedOperationEventsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrivilegedOperationEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedOperationEventsRequestBuilderInternal instantiates a new PrivilegedOperationEventsRequestBuilder and sets the default values.
 func NewPrivilegedOperationEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedOperationEventsRequestBuilder) {
     m := &PrivilegedOperationEventsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPrivilegedOperationEventsRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivilegedOperationEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedOperationEventsRequestBuilder instantiates a new PrivilegedOperationEventsRequestBuilder and sets the default values.
 func NewPrivilegedOperationEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedOperationEventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedOperationEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from privilegedOperationEvents
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) CreateGetRequestInformation(options *PrivilegedOperationEventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PrivilegedOperationEventsRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Add new entity to privilegedOperationEvents
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) CreatePostRequestInformation(options *PrivilegedOperationEventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PrivilegedOperationEventsRequestBuilder) CreatePostRequestInformation(o
     }
     return requestInfo, nil
 }
-// Get entities from privilegedOperationEvents
-// Parameters:
-//  - options : Options for the request
+// Get get entities from privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) Get(options *PrivilegedOperationEventsRequestBuilderGetOptions)(*PrivilegedOperationEventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PrivilegedOperationEventsRequestBuilder) Get(options *PrivilegedOperati
     }
     return res.(*PrivilegedOperationEventsResponse), nil
 }
-// Add new entity to privilegedOperationEvents
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) Post(options *PrivilegedOperationEventsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEvent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

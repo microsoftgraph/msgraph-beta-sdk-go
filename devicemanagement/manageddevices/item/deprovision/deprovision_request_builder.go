@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.deprovision
+// DeprovisionRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.deprovision
 type DeprovisionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type DeprovisionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// DeprovisionRequestBuilderPostOptions options for Post
 type DeprovisionRequestBuilderPostOptions struct {
     // 
     Body *DeprovisionRequestBody;
@@ -24,10 +24,7 @@ type DeprovisionRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeprovisionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeprovisionRequestBuilderInternal instantiates a new DeprovisionRequestBuilder and sets the default values.
 func NewDeprovisionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeprovisionRequestBuilder) {
     m := &DeprovisionRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewDeprovisionRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeprovisionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeprovisionRequestBuilder instantiates a new DeprovisionRequestBuilder and sets the default values.
 func NewDeprovisionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeprovisionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeprovisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action deprovision
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action deprovision
 func (m *DeprovisionRequestBuilder) CreatePostRequestInformation(options *DeprovisionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *DeprovisionRequestBuilder) CreatePostRequestInformation(options *Deprov
     }
     return requestInfo, nil
 }
-// Invoke action deprovision
-// Parameters:
-//  - options : Options for the request
+// Post invoke action deprovision
 func (m *DeprovisionRequestBuilder) Post(options *DeprovisionRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

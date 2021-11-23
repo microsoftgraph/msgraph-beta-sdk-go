@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// VirtualEndpoint 
 type VirtualEndpoint struct {
     Entity
     // Cloud PC audit event.
@@ -26,14 +26,14 @@ type VirtualEndpoint struct {
     // Cloud PC user settings.
     userSettings []CloudPcUserSetting;
 }
-// Instantiates a new virtualEndpoint and sets the default values.
+// NewVirtualEndpoint instantiates a new virtualEndpoint and sets the default values.
 func NewVirtualEndpoint()(*VirtualEndpoint) {
     m := &VirtualEndpoint{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the auditEvents property value. Cloud PC audit event.
+// GetAuditEvents gets the auditEvents property value. Cloud PC audit event.
 func (m *VirtualEndpoint) GetAuditEvents()([]CloudPcAuditEvent) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *VirtualEndpoint) GetAuditEvents()([]CloudPcAuditEvent) {
         return m.auditEvents
     }
 }
-// Gets the cloudPCs property value. Cloud managed virtual desktops.
+// GetCloudPCs gets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) GetCloudPCs()([]CloudPC) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *VirtualEndpoint) GetCloudPCs()([]CloudPC) {
         return m.cloudPCs
     }
 }
-// Gets the deviceImages property value. The image resource on Cloud PC.
+// GetDeviceImages gets the deviceImages property value. The image resource on Cloud PC.
 func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImage) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImage) {
         return m.deviceImages
     }
 }
-// Gets the galleryImages property value. The gallery image resource on Cloud PC.
+// GetGalleryImages gets the galleryImages property value. The gallery image resource on Cloud PC.
 func (m *VirtualEndpoint) GetGalleryImages()([]CloudPcGalleryImage) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *VirtualEndpoint) GetGalleryImages()([]CloudPcGalleryImage) {
         return m.galleryImages
     }
 }
-// Gets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+// GetOnPremisesConnections gets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *VirtualEndpoint) GetOnPremisesConnections()([]CloudPcOnPremisesConnection) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *VirtualEndpoint) GetOnPremisesConnections()([]CloudPcOnPremisesConnecti
         return m.onPremisesConnections
     }
 }
-// Gets the provisioningPolicies property value. Cloud PC provisioning policy.
+// GetProvisioningPolicies gets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicy) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicy)
         return m.provisioningPolicies
     }
 }
-// Gets the servicePlans property value. Cloud PC service plans.
+// GetServicePlans gets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlan) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlan) {
         return m.servicePlans
     }
 }
-// Gets the supportedRegions property value. Cloud PC supported regions.
+// GetSupportedRegions gets the supportedRegions property value. Cloud PC supported regions.
 func (m *VirtualEndpoint) GetSupportedRegions()([]CloudPcSupportedRegion) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *VirtualEndpoint) GetSupportedRegions()([]CloudPcSupportedRegion) {
         return m.supportedRegions
     }
 }
-// Gets the userSettings property value. Cloud PC user settings.
+// GetUserSettings gets the userSettings property value. Cloud PC user settings.
 func (m *VirtualEndpoint) GetUserSettings()([]CloudPcUserSetting) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *VirtualEndpoint) GetUserSettings()([]CloudPcUserSetting) {
         return m.userSettings
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["auditEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,9 +239,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *VirtualEndpoint) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -348,57 +346,39 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the auditEvents property value. Cloud PC audit event.
-// Parameters:
-//  - value : Value to set for the auditEvents property.
+// SetAuditEvents sets the auditEvents property value. Cloud PC audit event.
 func (m *VirtualEndpoint) SetAuditEvents(value []CloudPcAuditEvent)() {
     m.auditEvents = value
 }
-// Sets the cloudPCs property value. Cloud managed virtual desktops.
-// Parameters:
-//  - value : Value to set for the cloudPCs property.
+// SetCloudPCs sets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) SetCloudPCs(value []CloudPC)() {
     m.cloudPCs = value
 }
-// Sets the deviceImages property value. The image resource on Cloud PC.
-// Parameters:
-//  - value : Value to set for the deviceImages property.
+// SetDeviceImages sets the deviceImages property value. The image resource on Cloud PC.
 func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImage)() {
     m.deviceImages = value
 }
-// Sets the galleryImages property value. The gallery image resource on Cloud PC.
-// Parameters:
-//  - value : Value to set for the galleryImages property.
+// SetGalleryImages sets the galleryImages property value. The gallery image resource on Cloud PC.
 func (m *VirtualEndpoint) SetGalleryImages(value []CloudPcGalleryImage)() {
     m.galleryImages = value
 }
-// Sets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-// Parameters:
-//  - value : Value to set for the onPremisesConnections property.
+// SetOnPremisesConnections sets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *VirtualEndpoint) SetOnPremisesConnections(value []CloudPcOnPremisesConnection)() {
     m.onPremisesConnections = value
 }
-// Sets the provisioningPolicies property value. Cloud PC provisioning policy.
-// Parameters:
-//  - value : Value to set for the provisioningPolicies property.
+// SetProvisioningPolicies sets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPolicy)() {
     m.provisioningPolicies = value
 }
-// Sets the servicePlans property value. Cloud PC service plans.
-// Parameters:
-//  - value : Value to set for the servicePlans property.
+// SetServicePlans sets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlan)() {
     m.servicePlans = value
 }
-// Sets the supportedRegions property value. Cloud PC supported regions.
-// Parameters:
-//  - value : Value to set for the supportedRegions property.
+// SetSupportedRegions sets the supportedRegions property value. Cloud PC supported regions.
 func (m *VirtualEndpoint) SetSupportedRegions(value []CloudPcSupportedRegion)() {
     m.supportedRegions = value
 }
-// Sets the userSettings property value. Cloud PC user settings.
-// Parameters:
-//  - value : Value to set for the userSettings property.
+// SetUserSettings sets the userSettings property value. Cloud PC user settings.
 func (m *VirtualEndpoint) SetUserSettings(value []CloudPcUserSetting)() {
     m.userSettings = value
 }

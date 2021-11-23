@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\countriesRegions
+// CountriesRegionsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\countriesRegions
 type CountriesRegionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CountriesRegionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CountriesRegionsRequestBuilderGetOptions options for Get
 type CountriesRegionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CountriesRegionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get countriesRegions from financials
+// CountriesRegionsRequestBuilderGetQueryParameters get countriesRegions from financials
 type CountriesRegionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CountriesRegionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CountriesRegionsRequestBuilderPostOptions options for Post
 type CountriesRegionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CountryRegion;
@@ -56,10 +56,7 @@ type CountriesRegionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CountriesRegionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCountriesRegionsRequestBuilderInternal instantiates a new CountriesRegionsRequestBuilder and sets the default values.
 func NewCountriesRegionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CountriesRegionsRequestBuilder) {
     m := &CountriesRegionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCountriesRegionsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CountriesRegionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCountriesRegionsRequestBuilder instantiates a new CountriesRegionsRequestBuilder and sets the default values.
 func NewCountriesRegionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CountriesRegionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCountriesRegionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get countriesRegions from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get countriesRegions from financials
 func (m *CountriesRegionsRequestBuilder) CreateGetRequestInformation(options *CountriesRegionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CountriesRegionsRequestBuilder) CreateGetRequestInformation(options *Co
     }
     return requestInfo, nil
 }
-// Create new navigation property to countriesRegions for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to countriesRegions for financials
 func (m *CountriesRegionsRequestBuilder) CreatePostRequestInformation(options *CountriesRegionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CountriesRegionsRequestBuilder) CreatePostRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Get countriesRegions from financials
-// Parameters:
-//  - options : Options for the request
+// Get get countriesRegions from financials
 func (m *CountriesRegionsRequestBuilder) Get(options *CountriesRegionsRequestBuilderGetOptions)(*CountriesRegionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CountriesRegionsRequestBuilder) Get(options *CountriesRegionsRequestBui
     }
     return res.(*CountriesRegionsResponse), nil
 }
-// Create new navigation property to countriesRegions for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to countriesRegions for financials
 func (m *CountriesRegionsRequestBuilder) Post(options *CountriesRegionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CountryRegion, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

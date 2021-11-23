@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\usageRights
+// UsageRightsRequestBuilder builds and executes requests for operations under \me\usageRights
 type UsageRightsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UsageRightsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UsageRightsRequestBuilderGetOptions options for Get
 type UsageRightsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UsageRightsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get usageRights from me
+// UsageRightsRequestBuilderGetQueryParameters get usageRights from me
 type UsageRightsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UsageRightsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UsageRightsRequestBuilderPostOptions options for Post
 type UsageRightsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageRight;
@@ -56,10 +56,7 @@ type UsageRightsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UsageRightsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsageRightsRequestBuilderInternal instantiates a new UsageRightsRequestBuilder and sets the default values.
 func NewUsageRightsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsageRightsRequestBuilder) {
     m := &UsageRightsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUsageRightsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UsageRightsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsageRightsRequestBuilder instantiates a new UsageRightsRequestBuilder and sets the default values.
 func NewUsageRightsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsageRightsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsageRightsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get usageRights from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get usageRights from me
 func (m *UsageRightsRequestBuilder) CreateGetRequestInformation(options *UsageRightsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UsageRightsRequestBuilder) CreateGetRequestInformation(options *UsageRi
     }
     return requestInfo, nil
 }
-// Create new navigation property to usageRights for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to usageRights for me
 func (m *UsageRightsRequestBuilder) CreatePostRequestInformation(options *UsageRightsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UsageRightsRequestBuilder) CreatePostRequestInformation(options *UsageR
     }
     return requestInfo, nil
 }
-// Get usageRights from me
-// Parameters:
-//  - options : Options for the request
+// Get get usageRights from me
 func (m *UsageRightsRequestBuilder) Get(options *UsageRightsRequestBuilderGetOptions)(*UsageRightsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UsageRightsRequestBuilder) Get(options *UsageRightsRequestBuilderGetOpt
     }
     return res.(*UsageRightsResponse), nil
 }
-// Create new navigation property to usageRights for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to usageRights for me
 func (m *UsageRightsRequestBuilder) Post(options *UsageRightsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageRight, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

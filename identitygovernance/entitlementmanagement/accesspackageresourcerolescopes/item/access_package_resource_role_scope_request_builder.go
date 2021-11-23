@@ -8,7 +8,7 @@ import (
     ib7c1c17417debcc6e3d16d81653ebc360c745c5c57c080a64d5e127b2903a0f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourcerolescopes/item/accesspackageresourcerole"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceRoleScopes\{accessPackageResourceRoleScope-id}
+// AccessPackageResourceRoleScopeRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceRoleScopes\{accessPackageResourceRoleScope-id}
 type AccessPackageResourceRoleScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type AccessPackageResourceRoleScopeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessPackageResourceRoleScopeRequestBuilderDeleteOptions options for Delete
 type AccessPackageResourceRoleScopeRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AccessPackageResourceRoleScopeRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessPackageResourceRoleScopeRequestBuilderGetOptions options for Get
 type AccessPackageResourceRoleScopeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type AccessPackageResourceRoleScopeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get accessPackageResourceRoleScopes from identityGovernance
+// AccessPackageResourceRoleScopeRequestBuilderGetQueryParameters get accessPackageResourceRoleScopes from identityGovernance
 type AccessPackageResourceRoleScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessPackageResourceRoleScopeRequestBuilderPatchOptions options for Patch
 type AccessPackageResourceRoleScopeRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRoleScope;
@@ -61,10 +61,7 @@ func (m *AccessPackageResourceRoleScopeRequestBuilder) AccessPackageResourceRole
 func (m *AccessPackageResourceRoleScopeRequestBuilder) AccessPackageResourceScope()(*i66f49820b881c610909c0cc2a7bc42fc47d5739f7b85930f3044b6681a7ae6ad.AccessPackageResourceScopeRequestBuilder) {
     return i66f49820b881c610909c0cc2a7bc42fc47d5739f7b85930f3044b6681a7ae6ad.NewAccessPackageResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AccessPackageResourceRoleScopeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageResourceRoleScopeRequestBuilderInternal instantiates a new AccessPackageResourceRoleScopeRequestBuilder and sets the default values.
 func NewAccessPackageResourceRoleScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceRoleScopeRequestBuilder) {
     m := &AccessPackageResourceRoleScopeRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewAccessPackageResourceRoleScopeRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageResourceRoleScopeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageResourceRoleScopeRequestBuilder instantiates a new AccessPackageResourceRoleScopeRequestBuilder and sets the default values.
 func NewAccessPackageResourceRoleScopeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceRoleScopeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRoleScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property accessPackageResourceRoleScopes for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property accessPackageResourceRoleScopes for identityGovernance
 func (m *AccessPackageResourceRoleScopeRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageResourceRoleScopeRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *AccessPackageResourceRoleScopeRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// Get accessPackageResourceRoleScopes from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get accessPackageResourceRoleScopes from identityGovernance
 func (m *AccessPackageResourceRoleScopeRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceRoleScopeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *AccessPackageResourceRoleScopeRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Update the navigation property accessPackageResourceRoleScopes in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property accessPackageResourceRoleScopes in identityGovernance
 func (m *AccessPackageResourceRoleScopeRequestBuilder) CreatePatchRequestInformation(options *AccessPackageResourceRoleScopeRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *AccessPackageResourceRoleScopeRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Delete navigation property accessPackageResourceRoleScopes for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property accessPackageResourceRoleScopes for identityGovernance
 func (m *AccessPackageResourceRoleScopeRequestBuilder) Delete(options *AccessPackageResourceRoleScopeRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *AccessPackageResourceRoleScopeRequestBuilder) Delete(options *AccessPac
     }
     return nil
 }
-// Get accessPackageResourceRoleScopes from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get accessPackageResourceRoleScopes from identityGovernance
 func (m *AccessPackageResourceRoleScopeRequestBuilder) Get(options *AccessPackageResourceRoleScopeRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRoleScope, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *AccessPackageResourceRoleScopeRequestBuilder) Get(options *AccessPackag
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRoleScope), nil
 }
-// Update the navigation property accessPackageResourceRoleScopes in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property accessPackageResourceRoleScopes in identityGovernance
 func (m *AccessPackageResourceRoleScopeRequestBuilder) Patch(options *AccessPackageResourceRoleScopeRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

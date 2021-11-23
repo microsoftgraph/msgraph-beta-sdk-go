@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \messageRecipients
+// MessageRecipientsRequestBuilder builds and executes requests for operations under \messageRecipients
 type MessageRecipientsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MessageRecipientsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MessageRecipientsRequestBuilderGetOptions options for Get
 type MessageRecipientsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MessageRecipientsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from messageRecipients
+// MessageRecipientsRequestBuilderGetQueryParameters get entities from messageRecipients
 type MessageRecipientsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MessageRecipientsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MessageRecipientsRequestBuilderPostOptions options for Post
 type MessageRecipientsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageRecipient;
@@ -56,10 +56,7 @@ type MessageRecipientsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MessageRecipientsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageRecipientsRequestBuilderInternal instantiates a new MessageRecipientsRequestBuilder and sets the default values.
 func NewMessageRecipientsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRecipientsRequestBuilder) {
     m := &MessageRecipientsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMessageRecipientsRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessageRecipientsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageRecipientsRequestBuilder instantiates a new MessageRecipientsRequestBuilder and sets the default values.
 func NewMessageRecipientsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRecipientsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessageRecipientsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from messageRecipients
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from messageRecipients
 func (m *MessageRecipientsRequestBuilder) CreateGetRequestInformation(options *MessageRecipientsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MessageRecipientsRequestBuilder) CreateGetRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// Add new entity to messageRecipients
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to messageRecipients
 func (m *MessageRecipientsRequestBuilder) CreatePostRequestInformation(options *MessageRecipientsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MessageRecipientsRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get entities from messageRecipients
-// Parameters:
-//  - options : Options for the request
+// Get get entities from messageRecipients
 func (m *MessageRecipientsRequestBuilder) Get(options *MessageRecipientsRequestBuilderGetOptions)(*MessageRecipientsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MessageRecipientsRequestBuilder) Get(options *MessageRecipientsRequestB
     }
     return res.(*MessageRecipientsResponse), nil
 }
-// Add new entity to messageRecipients
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to messageRecipients
 func (m *MessageRecipientsRequestBuilder) Post(options *MessageRecipientsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageRecipient, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

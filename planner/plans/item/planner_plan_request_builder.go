@@ -11,7 +11,7 @@ import (
     i9b06f2e1aa8b35ab3576a368ff33a217bf79d0fd02366dde2dcbe66960ce0e0c "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/plans/item/buckets/item"
 )
 
-// Builds and executes requests for operations under \planner\plans\{plannerPlan-id}
+// PlannerPlanRequestBuilder builds and executes requests for operations under \planner\plans\{plannerPlan-id}
 type PlannerPlanRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type PlannerPlanRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PlannerPlanRequestBuilderDeleteOptions options for Delete
 type PlannerPlanRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type PlannerPlanRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PlannerPlanRequestBuilderGetOptions options for Get
 type PlannerPlanRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type PlannerPlanRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns a collection of the specified plans
+// PlannerPlanRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified plans
 type PlannerPlanRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PlannerPlanRequestBuilderPatchOptions options for Patch
 type PlannerPlanRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlan;
@@ -61,9 +61,7 @@ type PlannerPlanRequestBuilderPatchOptions struct {
 func (m *PlannerPlanRequestBuilder) Buckets()(*ie8679f6b5605e089c699ea784d2066fedee3ad4fb0c08a0cdbc4d27dd17e5bd4.BucketsRequestBuilder) {
     return ie8679f6b5605e089c699ea784d2066fedee3ad4fb0c08a0cdbc4d27dd17e5bd4.NewBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.plans.item.buckets.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// BucketsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.plans.item.buckets.item collection
 func (m *PlannerPlanRequestBuilder) BucketsById(id string)(*i9b06f2e1aa8b35ab3576a368ff33a217bf79d0fd02366dde2dcbe66960ce0e0c.PlannerBucketRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -74,10 +72,7 @@ func (m *PlannerPlanRequestBuilder) BucketsById(id string)(*i9b06f2e1aa8b35ab357
     }
     return i9b06f2e1aa8b35ab3576a368ff33a217bf79d0fd02366dde2dcbe66960ce0e0c.NewPlannerBucketRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new PlannerPlanRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerPlanRequestBuilderInternal instantiates a new PlannerPlanRequestBuilder and sets the default values.
 func NewPlannerPlanRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerPlanRequestBuilder) {
     m := &PlannerPlanRequestBuilder{
     }
@@ -90,18 +85,13 @@ func NewPlannerPlanRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlannerPlanRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerPlanRequestBuilder instantiates a new PlannerPlanRequestBuilder and sets the default values.
 func NewPlannerPlanRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerPlanRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerPlanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns a collection of the specified plans
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable. Returns a collection of the specified plans
 func (m *PlannerPlanRequestBuilder) CreateDeleteRequestInformation(options *PlannerPlanRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,9 +108,7 @@ func (m *PlannerPlanRequestBuilder) CreateDeleteRequestInformation(options *Plan
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified plans
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified plans
 func (m *PlannerPlanRequestBuilder) CreateGetRequestInformation(options *PlannerPlanRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *PlannerPlanRequestBuilder) CreateGetRequestInformation(options *Planner
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified plans
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable. Returns a collection of the specified plans
 func (m *PlannerPlanRequestBuilder) CreatePatchRequestInformation(options *PlannerPlanRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -160,9 +146,7 @@ func (m *PlannerPlanRequestBuilder) CreatePatchRequestInformation(options *Plann
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified plans
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable. Returns a collection of the specified plans
 func (m *PlannerPlanRequestBuilder) Delete(options *PlannerPlanRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -177,9 +161,7 @@ func (m *PlannerPlanRequestBuilder) Delete(options *PlannerPlanRequestBuilderDel
 func (m *PlannerPlanRequestBuilder) Details()(*i3fca6c91c47e683b41af0acef5e1996afb378dc19dceea1c0558916fe6b07a32.DetailsRequestBuilder) {
     return i3fca6c91c47e683b41af0acef5e1996afb378dc19dceea1c0558916fe6b07a32.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Read-only. Nullable. Returns a collection of the specified plans
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns a collection of the specified plans
 func (m *PlannerPlanRequestBuilder) Get(options *PlannerPlanRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlan, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -191,9 +173,7 @@ func (m *PlannerPlanRequestBuilder) Get(options *PlannerPlanRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlan), nil
 }
-// Read-only. Nullable. Returns a collection of the specified plans
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable. Returns a collection of the specified plans
 func (m *PlannerPlanRequestBuilder) Patch(options *PlannerPlanRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -208,9 +188,7 @@ func (m *PlannerPlanRequestBuilder) Patch(options *PlannerPlanRequestBuilderPatc
 func (m *PlannerPlanRequestBuilder) Tasks()(*ic552b177328a2840b0baac75e78c11511436fb814b3756839bea9c34b2a8835c.TasksRequestBuilder) {
     return ic552b177328a2840b0baac75e78c11511436fb814b3756839bea9c34b2a8835c.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.plans.item.tasks.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.plans.item.tasks.item collection
 func (m *PlannerPlanRequestBuilder) TasksById(id string)(*i0d66f3a6ce301f6e7dcdc1d8f9bd518cc2e5fc38ffdfee943f35bd6cd07ea961.PlannerTaskRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

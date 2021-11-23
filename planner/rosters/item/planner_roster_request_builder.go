@@ -9,7 +9,7 @@ import (
     ie53712fa7eb3bcb49fdf48153b4145c0918f55b3d8a9851bfbf8ce2045244c3c "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/rosters/item/members/item"
 )
 
-// Builds and executes requests for operations under \planner\rosters\{plannerRoster-id}
+// PlannerRosterRequestBuilder builds and executes requests for operations under \planner\rosters\{plannerRoster-id}
 type PlannerRosterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type PlannerRosterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PlannerRosterRequestBuilderDeleteOptions options for Delete
 type PlannerRosterRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PlannerRosterRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PlannerRosterRequestBuilderGetOptions options for Get
 type PlannerRosterRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type PlannerRosterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
+// PlannerRosterRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified rosters
 type PlannerRosterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PlannerRosterRequestBuilderPatchOptions options for Patch
 type PlannerRosterRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerRoster;
@@ -56,10 +56,7 @@ type PlannerRosterRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PlannerRosterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerRosterRequestBuilderInternal instantiates a new PlannerRosterRequestBuilder and sets the default values.
 func NewPlannerRosterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerRosterRequestBuilder) {
     m := &PlannerRosterRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPlannerRosterRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlannerRosterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerRosterRequestBuilder instantiates a new PlannerRosterRequestBuilder and sets the default values.
 func NewPlannerRosterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerRosterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerRosterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable. Returns a collection of the specified rosters
 func (m *PlannerRosterRequestBuilder) CreateDeleteRequestInformation(options *PlannerRosterRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *PlannerRosterRequestBuilder) CreateDeleteRequestInformation(options *Pl
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified rosters
 func (m *PlannerRosterRequestBuilder) CreateGetRequestInformation(options *PlannerRosterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *PlannerRosterRequestBuilder) CreateGetRequestInformation(options *Plann
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable. Returns a collection of the specified rosters
 func (m *PlannerRosterRequestBuilder) CreatePatchRequestInformation(options *PlannerRosterRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *PlannerRosterRequestBuilder) CreatePatchRequestInformation(options *Pla
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable. Returns a collection of the specified rosters
 func (m *PlannerRosterRequestBuilder) Delete(options *PlannerRosterRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,9 +142,7 @@ func (m *PlannerRosterRequestBuilder) Delete(options *PlannerRosterRequestBuilde
     }
     return nil
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns a collection of the specified rosters
 func (m *PlannerRosterRequestBuilder) Get(options *PlannerRosterRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerRoster, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *PlannerRosterRequestBuilder) Get(options *PlannerRosterRequestBuilderGe
 func (m *PlannerRosterRequestBuilder) Members()(*i9ad7de99f1b757c4ff16ccef4d347a843f114b88ad7c9579c76ffa1dd8f293f9.MembersRequestBuilder) {
     return i9ad7de99f1b757c4ff16ccef4d347a843f114b88ad7c9579c76ffa1dd8f293f9.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.rosters.item.members.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.rosters.item.members.item collection
 func (m *PlannerRosterRequestBuilder) MembersById(id string)(*ie53712fa7eb3bcb49fdf48153b4145c0918f55b3d8a9851bfbf8ce2045244c3c.PlannerRosterMemberRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -186,9 +168,7 @@ func (m *PlannerRosterRequestBuilder) MembersById(id string)(*ie53712fa7eb3bcb49
     }
     return ie53712fa7eb3bcb49fdf48153b4145c0918f55b3d8a9851bfbf8ce2045244c3c.NewPlannerRosterMemberRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable. Returns a collection of the specified rosters
 func (m *PlannerRosterRequestBuilder) Patch(options *PlannerRosterRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

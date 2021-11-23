@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\paymentTerms
+// PaymentTermsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\paymentTerms
 type PaymentTermsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PaymentTermsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PaymentTermsRequestBuilderGetOptions options for Get
 type PaymentTermsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PaymentTermsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get paymentTerms from financials
+// PaymentTermsRequestBuilderGetQueryParameters get paymentTerms from financials
 type PaymentTermsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PaymentTermsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PaymentTermsRequestBuilderPostOptions options for Post
 type PaymentTermsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentTerm;
@@ -56,10 +56,7 @@ type PaymentTermsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PaymentTermsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPaymentTermsRequestBuilderInternal instantiates a new PaymentTermsRequestBuilder and sets the default values.
 func NewPaymentTermsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PaymentTermsRequestBuilder) {
     m := &PaymentTermsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPaymentTermsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PaymentTermsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPaymentTermsRequestBuilder instantiates a new PaymentTermsRequestBuilder and sets the default values.
 func NewPaymentTermsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PaymentTermsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPaymentTermsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get paymentTerms from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get paymentTerms from financials
 func (m *PaymentTermsRequestBuilder) CreateGetRequestInformation(options *PaymentTermsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PaymentTermsRequestBuilder) CreateGetRequestInformation(options *Paymen
     }
     return requestInfo, nil
 }
-// Create new navigation property to paymentTerms for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to paymentTerms for financials
 func (m *PaymentTermsRequestBuilder) CreatePostRequestInformation(options *PaymentTermsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PaymentTermsRequestBuilder) CreatePostRequestInformation(options *Payme
     }
     return requestInfo, nil
 }
-// Get paymentTerms from financials
-// Parameters:
-//  - options : Options for the request
+// Get get paymentTerms from financials
 func (m *PaymentTermsRequestBuilder) Get(options *PaymentTermsRequestBuilderGetOptions)(*PaymentTermsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PaymentTermsRequestBuilder) Get(options *PaymentTermsRequestBuilderGetO
     }
     return res.(*PaymentTermsResponse), nil
 }
-// Create new navigation property to paymentTerms for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to paymentTerms for financials
 func (m *PaymentTermsRequestBuilder) Post(options *PaymentTermsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentTerm, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

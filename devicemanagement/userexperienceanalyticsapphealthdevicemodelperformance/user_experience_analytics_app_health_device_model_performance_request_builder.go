@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthDeviceModelPerformance
+// UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthDeviceModelPerformance
 type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder struct
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetOpti
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics appHealth Model Performance
+// UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetQueryParameters user experience analytics appHealth Model Performance
 type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetQuer
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformance;
@@ -56,10 +56,7 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOpt
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal instantiates a new UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInte
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder instantiates a new UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics appHealth Model Performance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics appHealth Model Performance
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) C
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth Model Performance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user experience analytics appHealth Model Performance
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) C
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth Model Performance
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics appHealth Model Performance
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetOptions)(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) G
     }
     return res.(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceResponse), nil
 }
-// User experience analytics appHealth Model Performance
-// Parameters:
-//  - options : Options for the request
+// Post user experience analytics appHealth Model Performance
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

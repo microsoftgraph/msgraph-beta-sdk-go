@@ -16,7 +16,7 @@ import (
     ife64bae8f85f9d9ffa4f9b0e1f47986455765630e26bfebb51ad049410aab2c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecustomattributeshellscripts/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}
+// DeviceCustomAttributeShellScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}
 type DeviceCustomAttributeShellScriptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type DeviceCustomAttributeShellScriptRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceCustomAttributeShellScriptRequestBuilderDeleteOptions options for Delete
 type DeviceCustomAttributeShellScriptRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -34,7 +34,7 @@ type DeviceCustomAttributeShellScriptRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceCustomAttributeShellScriptRequestBuilderGetOptions options for Get
 type DeviceCustomAttributeShellScriptRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -45,14 +45,14 @@ type DeviceCustomAttributeShellScriptRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device custom attribute shell scripts associated with the tenant.
+// DeviceCustomAttributeShellScriptRequestBuilderGetQueryParameters the list of device custom attribute shell scripts associated with the tenant.
 type DeviceCustomAttributeShellScriptRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceCustomAttributeShellScriptRequestBuilderPatchOptions options for Patch
 type DeviceCustomAttributeShellScriptRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceCustomAttributeShellScript;
@@ -69,9 +69,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) Assign()(*i5860a2467c98
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) Assignments()(*i9caa21903d914933c04aab2668b67aaf07ff8c88530bbc0f796266bff7b47bb2.AssignmentsRequestBuilder) {
     return i9caa21903d914933c04aab2668b67aaf07ff8c88530bbc0f796266bff7b47bb2.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.assignments.item collection
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) AssignmentsById(id string)(*ife64bae8f85f9d9ffa4f9b0e1f47986455765630e26bfebb51ad049410aab2c6.DeviceManagementScriptAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -82,10 +80,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) AssignmentsById(id stri
     }
     return ife64bae8f85f9d9ffa4f9b0e1f47986455765630e26bfebb51ad049410aab2c6.NewDeviceManagementScriptAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DeviceCustomAttributeShellScriptRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCustomAttributeShellScriptRequestBuilderInternal instantiates a new DeviceCustomAttributeShellScriptRequestBuilder and sets the default values.
 func NewDeviceCustomAttributeShellScriptRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCustomAttributeShellScriptRequestBuilder) {
     m := &DeviceCustomAttributeShellScriptRequestBuilder{
     }
@@ -98,18 +93,13 @@ func NewDeviceCustomAttributeShellScriptRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceCustomAttributeShellScriptRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCustomAttributeShellScriptRequestBuilder instantiates a new DeviceCustomAttributeShellScriptRequestBuilder and sets the default values.
 func NewDeviceCustomAttributeShellScriptRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCustomAttributeShellScriptRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCustomAttributeShellScriptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device custom attribute shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of device custom attribute shell scripts associated with the tenant.
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) CreateDeleteRequestInformation(options *DeviceCustomAttributeShellScriptRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// The list of device custom attribute shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device custom attribute shell scripts associated with the tenant.
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) CreateGetRequestInformation(options *DeviceCustomAttributeShellScriptRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// The list of device custom attribute shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of device custom attribute shell scripts associated with the tenant.
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) CreatePatchRequestInformation(options *DeviceCustomAttributeShellScriptRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -168,9 +154,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// The list of device custom attribute shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of device custom attribute shell scripts associated with the tenant.
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) Delete(options *DeviceCustomAttributeShellScriptRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -185,9 +169,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) Delete(options *DeviceC
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) DeviceRunStates()(*ib4c60324ec4c204995c1740d3c32783fe43242863d0216859b5414b0a63bd4a6.DeviceRunStatesRequestBuilder) {
     return ib4c60324ec4c204995c1740d3c32783fe43242863d0216859b5414b0a63bd4a6.NewDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.deviceRunStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceRunStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.deviceRunStates.item collection
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) DeviceRunStatesById(id string)(*i868d4ff15f075e109c23674f69f3c9fe368b53fdc85733d5cad6217558ffb536.DeviceManagementScriptDeviceStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -198,9 +180,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) DeviceRunStatesById(id 
     }
     return i868d4ff15f075e109c23674f69f3c9fe368b53fdc85733d5cad6217558ffb536.NewDeviceManagementScriptDeviceStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The list of device custom attribute shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of device custom attribute shell scripts associated with the tenant.
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) Get(options *DeviceCustomAttributeShellScriptRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceCustomAttributeShellScript, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -215,9 +195,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) Get(options *DeviceCust
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) GroupAssignments()(*i494c760a2f26845bb6a83e1609802c363f94efb574cc06272e4db09ffdd5950e.GroupAssignmentsRequestBuilder) {
     return i494c760a2f26845bb6a83e1609802c363f94efb574cc06272e4db09ffdd5950e.NewGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.groupAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.groupAssignments.item collection
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) GroupAssignmentsById(id string)(*i076188fa8b5444fe1eee63d44522c5efaa3b78288e012e2ab0e0bf58bc49a392.DeviceManagementScriptGroupAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -228,9 +206,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) GroupAssignmentsById(id
     }
     return i076188fa8b5444fe1eee63d44522c5efaa3b78288e012e2ab0e0bf58bc49a392.NewDeviceManagementScriptGroupAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The list of device custom attribute shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of device custom attribute shell scripts associated with the tenant.
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) Patch(options *DeviceCustomAttributeShellScriptRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -248,9 +224,7 @@ func (m *DeviceCustomAttributeShellScriptRequestBuilder) RunSummary()(*i367a45f0
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) UserRunStates()(*ia6cd2ea0f3d71e372a080d28d01095fd6857f4d1b6250e215940436d6784cbba.UserRunStatesRequestBuilder) {
     return ia6cd2ea0f3d71e372a080d28d01095fd6857f4d1b6250e215940436d6784cbba.NewUserRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.userRunStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UserRunStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item.userRunStates.item collection
 func (m *DeviceCustomAttributeShellScriptRequestBuilder) UserRunStatesById(id string)(*i2d5a54257a3a154494e70602191b25e474f0eba5ac59afc7bbe7d9947af31558.DeviceManagementScriptUserStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\configManagerCollections\{configManagerCollection-id}
+// ConfigManagerCollectionRequestBuilder builds and executes requests for operations under \deviceManagement\configManagerCollections\{configManagerCollection-id}
 type ConfigManagerCollectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConfigManagerCollectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ConfigManagerCollectionRequestBuilderDeleteOptions options for Delete
 type ConfigManagerCollectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ConfigManagerCollectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ConfigManagerCollectionRequestBuilderGetOptions options for Get
 type ConfigManagerCollectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ConfigManagerCollectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of ConfigManagerCollection
+// ConfigManagerCollectionRequestBuilderGetQueryParameters a list of ConfigManagerCollection
 type ConfigManagerCollectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ConfigManagerCollectionRequestBuilderPatchOptions options for Patch
 type ConfigManagerCollectionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerCollection;
@@ -53,10 +53,7 @@ type ConfigManagerCollectionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConfigManagerCollectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigManagerCollectionRequestBuilderInternal instantiates a new ConfigManagerCollectionRequestBuilder and sets the default values.
 func NewConfigManagerCollectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigManagerCollectionRequestBuilder) {
     m := &ConfigManagerCollectionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewConfigManagerCollectionRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConfigManagerCollectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigManagerCollectionRequestBuilder instantiates a new ConfigManagerCollectionRequestBuilder and sets the default values.
 func NewConfigManagerCollectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigManagerCollectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigManagerCollectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionRequestBuilder) CreateDeleteRequestInformation(options *ConfigManagerCollectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ConfigManagerCollectionRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionRequestBuilder) CreateGetRequestInformation(options *ConfigManagerCollectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ConfigManagerCollectionRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionRequestBuilder) CreatePatchRequestInformation(options *ConfigManagerCollectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ConfigManagerCollectionRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// Delete a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionRequestBuilder) Delete(options *ConfigManagerCollectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ConfigManagerCollectionRequestBuilder) Delete(options *ConfigManagerCol
     }
     return nil
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// Get a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionRequestBuilder) Get(options *ConfigManagerCollectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerCollection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ConfigManagerCollectionRequestBuilder) Get(options *ConfigManagerCollec
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerCollection), nil
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// Patch a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionRequestBuilder) Patch(options *ConfigManagerCollectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

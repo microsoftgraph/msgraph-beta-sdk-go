@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\fileSecurityProfiles\{fileSecurityProfile-id}
+// FileSecurityProfileRequestBuilder builds and executes requests for operations under \security\fileSecurityProfiles\{fileSecurityProfile-id}
 type FileSecurityProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FileSecurityProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FileSecurityProfileRequestBuilderDeleteOptions options for Delete
 type FileSecurityProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type FileSecurityProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FileSecurityProfileRequestBuilderGetOptions options for Get
 type FileSecurityProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type FileSecurityProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get fileSecurityProfiles from security
+// FileSecurityProfileRequestBuilderGetQueryParameters get fileSecurityProfiles from security
 type FileSecurityProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FileSecurityProfileRequestBuilderPatchOptions options for Patch
 type FileSecurityProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FileSecurityProfile;
@@ -53,10 +53,7 @@ type FileSecurityProfileRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FileSecurityProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFileSecurityProfileRequestBuilderInternal instantiates a new FileSecurityProfileRequestBuilder and sets the default values.
 func NewFileSecurityProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FileSecurityProfileRequestBuilder) {
     m := &FileSecurityProfileRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewFileSecurityProfileRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FileSecurityProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFileSecurityProfileRequestBuilder instantiates a new FileSecurityProfileRequestBuilder and sets the default values.
 func NewFileSecurityProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FileSecurityProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFileSecurityProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property fileSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property fileSecurityProfiles for security
 func (m *FileSecurityProfileRequestBuilder) CreateDeleteRequestInformation(options *FileSecurityProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *FileSecurityProfileRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get fileSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get fileSecurityProfiles from security
 func (m *FileSecurityProfileRequestBuilder) CreateGetRequestInformation(options *FileSecurityProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *FileSecurityProfileRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update the navigation property fileSecurityProfiles in security
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property fileSecurityProfiles in security
 func (m *FileSecurityProfileRequestBuilder) CreatePatchRequestInformation(options *FileSecurityProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *FileSecurityProfileRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete navigation property fileSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property fileSecurityProfiles for security
 func (m *FileSecurityProfileRequestBuilder) Delete(options *FileSecurityProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *FileSecurityProfileRequestBuilder) Delete(options *FileSecurityProfileR
     }
     return nil
 }
-// Get fileSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// Get get fileSecurityProfiles from security
 func (m *FileSecurityProfileRequestBuilder) Get(options *FileSecurityProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FileSecurityProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *FileSecurityProfileRequestBuilder) Get(options *FileSecurityProfileRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FileSecurityProfile), nil
 }
-// Update the navigation property fileSecurityProfiles in security
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property fileSecurityProfiles in security
 func (m *FileSecurityProfileRequestBuilder) Patch(options *FileSecurityProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

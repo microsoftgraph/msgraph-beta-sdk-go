@@ -7,7 +7,7 @@ import (
     ief96595408b6d90be04d42476b48c41afcf93abc77748a66341abdb52270c25a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/batteryhealthmetrics/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\batteryHealthMetrics
+// BatteryHealthMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\batteryHealthMetrics
 type BatteryHealthMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type BatteryHealthMetricsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BatteryHealthMetricsRequestBuilderGetOptions options for Get
 type BatteryHealthMetricsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type BatteryHealthMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user experience analytics battery health metrics.
+// BatteryHealthMetricsRequestBuilderGetQueryParameters the user experience analytics battery health metrics.
 type BatteryHealthMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new BatteryHealthMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBatteryHealthMetricsRequestBuilderInternal instantiates a new BatteryHealthMetricsRequestBuilder and sets the default values.
 func NewBatteryHealthMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BatteryHealthMetricsRequestBuilder) {
     m := &BatteryHealthMetricsRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewBatteryHealthMetricsRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BatteryHealthMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBatteryHealthMetricsRequestBuilder instantiates a new BatteryHealthMetricsRequestBuilder and sets the default values.
 func NewBatteryHealthMetricsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BatteryHealthMetricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBatteryHealthMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user experience analytics battery health metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user experience analytics battery health metrics.
 func (m *BatteryHealthMetricsRequestBuilder) CreateGetRequestInformation(options *BatteryHealthMetricsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *BatteryHealthMetricsRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// The user experience analytics battery health metrics.
-// Parameters:
-//  - options : Options for the request
+// Get the user experience analytics battery health metrics.
 func (m *BatteryHealthMetricsRequestBuilder) Get(options *BatteryHealthMetricsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

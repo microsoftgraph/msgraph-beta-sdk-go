@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// ErfRequestBody 
 type ErfRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type ErfRequestBody struct {
     // 
     upperLimit *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
-// Instantiates a new erfRequestBody and sets the default values.
+// NewErfRequestBody instantiates a new erfRequestBody and sets the default values.
 func NewErfRequestBody()(*ErfRequestBody) {
     m := &ErfRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ErfRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ErfRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the lowerLimit property value. 
+// GetLowerLimit gets the lowerLimit property value. 
 func (m *ErfRequestBody) GetLowerLimit()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ErfRequestBody) GetLowerLimit()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.lowerLimit
     }
 }
-// Gets the upperLimit property value. 
+// GetUpperLimit gets the upperLimit property value. 
 func (m *ErfRequestBody) GetUpperLimit()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *ErfRequestBody) GetUpperLimit()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.upperLimit
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ErfRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["lowerLimit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *ErfRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *ErfRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ErfRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("lowerLimit", m.GetLowerLimit())
@@ -97,21 +95,15 @@ func (m *ErfRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ErfRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the lowerLimit property value. 
-// Parameters:
-//  - value : Value to set for the lowerLimit property.
+// SetLowerLimit sets the lowerLimit property value. 
 func (m *ErfRequestBody) SetLowerLimit(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.lowerLimit = value
 }
-// Sets the upperLimit property value. 
-// Parameters:
-//  - value : Value to set for the upperLimit property.
+// SetUpperLimit sets the upperLimit property value. 
 func (m *ErfRequestBody) SetUpperLimit(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.upperLimit = value
 }

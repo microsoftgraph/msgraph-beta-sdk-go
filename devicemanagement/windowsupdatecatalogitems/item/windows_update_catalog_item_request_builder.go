@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsUpdateCatalogItems\{windowsUpdateCatalogItem-id}
+// WindowsUpdateCatalogItemRequestBuilder builds and executes requests for operations under \deviceManagement\windowsUpdateCatalogItems\{windowsUpdateCatalogItem-id}
 type WindowsUpdateCatalogItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsUpdateCatalogItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsUpdateCatalogItemRequestBuilderDeleteOptions options for Delete
 type WindowsUpdateCatalogItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WindowsUpdateCatalogItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsUpdateCatalogItemRequestBuilderGetOptions options for Get
 type WindowsUpdateCatalogItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WindowsUpdateCatalogItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of windows update catalog items (fetaure updates item , quality updates item)
+// WindowsUpdateCatalogItemRequestBuilderGetQueryParameters a collection of windows update catalog items (fetaure updates item , quality updates item)
 type WindowsUpdateCatalogItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsUpdateCatalogItemRequestBuilderPatchOptions options for Patch
 type WindowsUpdateCatalogItemRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItem;
@@ -53,10 +53,7 @@ type WindowsUpdateCatalogItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsUpdateCatalogItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsUpdateCatalogItemRequestBuilderInternal instantiates a new WindowsUpdateCatalogItemRequestBuilder and sets the default values.
 func NewWindowsUpdateCatalogItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsUpdateCatalogItemRequestBuilder) {
     m := &WindowsUpdateCatalogItemRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWindowsUpdateCatalogItemRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsUpdateCatalogItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsUpdateCatalogItemRequestBuilder instantiates a new WindowsUpdateCatalogItemRequestBuilder and sets the default values.
 func NewWindowsUpdateCatalogItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsUpdateCatalogItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdateCatalogItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of windows update catalog items (fetaure updates item , quality updates item)
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of windows update catalog items (fetaure updates item , quality updates item)
 func (m *WindowsUpdateCatalogItemRequestBuilder) CreateDeleteRequestInformation(options *WindowsUpdateCatalogItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WindowsUpdateCatalogItemRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// A collection of windows update catalog items (fetaure updates item , quality updates item)
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of windows update catalog items (fetaure updates item , quality updates item)
 func (m *WindowsUpdateCatalogItemRequestBuilder) CreateGetRequestInformation(options *WindowsUpdateCatalogItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WindowsUpdateCatalogItemRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// A collection of windows update catalog items (fetaure updates item , quality updates item)
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of windows update catalog items (fetaure updates item , quality updates item)
 func (m *WindowsUpdateCatalogItemRequestBuilder) CreatePatchRequestInformation(options *WindowsUpdateCatalogItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WindowsUpdateCatalogItemRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// A collection of windows update catalog items (fetaure updates item , quality updates item)
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of windows update catalog items (fetaure updates item , quality updates item)
 func (m *WindowsUpdateCatalogItemRequestBuilder) Delete(options *WindowsUpdateCatalogItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WindowsUpdateCatalogItemRequestBuilder) Delete(options *WindowsUpdateCa
     }
     return nil
 }
-// A collection of windows update catalog items (fetaure updates item , quality updates item)
-// Parameters:
-//  - options : Options for the request
+// Get a collection of windows update catalog items (fetaure updates item , quality updates item)
 func (m *WindowsUpdateCatalogItemRequestBuilder) Get(options *WindowsUpdateCatalogItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WindowsUpdateCatalogItemRequestBuilder) Get(options *WindowsUpdateCatal
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItem), nil
 }
-// A collection of windows update catalog items (fetaure updates item , quality updates item)
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of windows update catalog items (fetaure updates item , quality updates item)
 func (m *WindowsUpdateCatalogItemRequestBuilder) Patch(options *WindowsUpdateCatalogItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

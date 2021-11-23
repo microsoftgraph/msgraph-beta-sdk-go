@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\additionalSources\{dataSource-id}
+// DataSourceRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\additionalSources\{dataSource-id}
 type DataSourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DataSourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DataSourceRequestBuilderDeleteOptions options for Delete
 type DataSourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DataSourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DataSourceRequestBuilderGetOptions options for Get
 type DataSourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DataSourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Adds an additional source to the sourceCollection.
+// DataSourceRequestBuilderGetQueryParameters adds an additional source to the sourceCollection.
 type DataSourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DataSourceRequestBuilderPatchOptions options for Patch
 type DataSourceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSource;
@@ -53,10 +53,7 @@ type DataSourceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DataSourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataSourceRequestBuilderInternal instantiates a new DataSourceRequestBuilder and sets the default values.
 func NewDataSourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataSourceRequestBuilder) {
     m := &DataSourceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDataSourceRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DataSourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataSourceRequestBuilder instantiates a new DataSourceRequestBuilder and sets the default values.
 func NewDataSourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataSourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDataSourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation adds an additional source to the sourceCollection.
 func (m *DataSourceRequestBuilder) CreateDeleteRequestInformation(options *DataSourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DataSourceRequestBuilder) CreateDeleteRequestInformation(options *DataS
     }
     return requestInfo, nil
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation adds an additional source to the sourceCollection.
 func (m *DataSourceRequestBuilder) CreateGetRequestInformation(options *DataSourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DataSourceRequestBuilder) CreateGetRequestInformation(options *DataSour
     }
     return requestInfo, nil
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation adds an additional source to the sourceCollection.
 func (m *DataSourceRequestBuilder) CreatePatchRequestInformation(options *DataSourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DataSourceRequestBuilder) CreatePatchRequestInformation(options *DataSo
     }
     return requestInfo, nil
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// Delete adds an additional source to the sourceCollection.
 func (m *DataSourceRequestBuilder) Delete(options *DataSourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DataSourceRequestBuilder) Delete(options *DataSourceRequestBuilderDelet
     }
     return nil
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// Get adds an additional source to the sourceCollection.
 func (m *DataSourceRequestBuilder) Get(options *DataSourceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DataSourceRequestBuilder) Get(options *DataSourceRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSource), nil
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// Patch adds an additional source to the sourceCollection.
 func (m *DataSourceRequestBuilder) Patch(options *DataSourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

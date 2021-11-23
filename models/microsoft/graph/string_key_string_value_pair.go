@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// StringKeyStringValuePair 
 type StringKeyStringValuePair struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type StringKeyStringValuePair struct {
     // Value.
     value *string;
 }
-// Instantiates a new stringKeyStringValuePair and sets the default values.
+// NewStringKeyStringValuePair instantiates a new stringKeyStringValuePair and sets the default values.
 func NewStringKeyStringValuePair()(*StringKeyStringValuePair) {
     m := &StringKeyStringValuePair{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StringKeyStringValuePair) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *StringKeyStringValuePair) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the key property value. Key.
+// GetKey gets the key property value. Key.
 func (m *StringKeyStringValuePair) GetKey()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *StringKeyStringValuePair) GetKey()(*string) {
         return m.key
     }
 }
-// Gets the value property value. Value.
+// GetValue gets the value property value. Value.
 func (m *StringKeyStringValuePair) GetValue()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *StringKeyStringValuePair) GetValue()(*string) {
         return m.value
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *StringKeyStringValuePair) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["key"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *StringKeyStringValuePair) GetFieldDeserializers()(map[string]func(inter
 func (m *StringKeyStringValuePair) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *StringKeyStringValuePair) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("key", m.GetKey())
@@ -96,21 +94,15 @@ func (m *StringKeyStringValuePair) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StringKeyStringValuePair) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the key property value. Key.
-// Parameters:
-//  - value : Value to set for the key property.
+// SetKey sets the key property value. Key.
 func (m *StringKeyStringValuePair) SetKey(value *string)() {
     m.key = value
 }
-// Sets the value property value. Value.
-// Parameters:
-//  - value : Value to set for the value property.
+// SetValue sets the value property value. Value.
 func (m *StringKeyStringValuePair) SetValue(value *string)() {
     m.value = value
 }

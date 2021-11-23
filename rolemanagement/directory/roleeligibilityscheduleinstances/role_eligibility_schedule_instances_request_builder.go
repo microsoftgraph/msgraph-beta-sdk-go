@@ -7,7 +7,7 @@ import (
     i49fbc318735f19eacde3c858843d463f156cbb40bb6e7488adcd177086c9e868 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleeligibilityscheduleinstances/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleInstances
+// RoleEligibilityScheduleInstancesRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleInstances
 type RoleEligibilityScheduleInstancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RoleEligibilityScheduleInstancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RoleEligibilityScheduleInstancesRequestBuilderGetOptions options for Get
 type RoleEligibilityScheduleInstancesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type RoleEligibilityScheduleInstancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get roleEligibilityScheduleInstances from roleManagement
+// RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters get roleEligibilityScheduleInstances from roleManagement
 type RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RoleEligibilityScheduleInstancesRequestBuilderPostOptions options for Post
 type RoleEligibilityScheduleInstancesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleEligibilityScheduleInstance;
@@ -57,10 +57,7 @@ type RoleEligibilityScheduleInstancesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleEligibilityScheduleInstancesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleEligibilityScheduleInstancesRequestBuilderInternal instantiates a new RoleEligibilityScheduleInstancesRequestBuilder and sets the default values.
 func NewRoleEligibilityScheduleInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleEligibilityScheduleInstancesRequestBuilder) {
     m := &RoleEligibilityScheduleInstancesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewRoleEligibilityScheduleInstancesRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleEligibilityScheduleInstancesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleEligibilityScheduleInstancesRequestBuilder instantiates a new RoleEligibilityScheduleInstancesRequestBuilder and sets the default values.
 func NewRoleEligibilityScheduleInstancesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleEligibilityScheduleInstancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleEligibilityScheduleInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get roleEligibilityScheduleInstances from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get roleEligibilityScheduleInstances from roleManagement
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) CreateGetRequestInformation(options *RoleEligibilityScheduleInstancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *RoleEligibilityScheduleInstancesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Create new navigation property to roleEligibilityScheduleInstances for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to roleEligibilityScheduleInstances for roleManagement
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) CreatePostRequestInformation(options *RoleEligibilityScheduleInstancesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *RoleEligibilityScheduleInstancesRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleInstances\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleInstances\microsoft.graph.filterByCurrentUser(on={on})
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i49fbc318735f19eacde3c858843d463f156cbb40bb6e7488adcd177086c9e868.FilterByCurrentUserWithOnRequestBuilder) {
     return i49fbc318735f19eacde3c858843d463f156cbb40bb6e7488adcd177086c9e868.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get roleEligibilityScheduleInstances from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get roleEligibilityScheduleInstances from roleManagement
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) Get(options *RoleEligibilityScheduleInstancesRequestBuilderGetOptions)(*RoleEligibilityScheduleInstancesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *RoleEligibilityScheduleInstancesRequestBuilder) Get(options *RoleEligib
     }
     return res.(*RoleEligibilityScheduleInstancesResponse), nil
 }
-// Create new navigation property to roleEligibilityScheduleInstances for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to roleEligibilityScheduleInstances for roleManagement
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) Post(options *RoleEligibilityScheduleInstancesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleEligibilityScheduleInstance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

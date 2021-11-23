@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Mention 
 type Mention struct {
     Entity
     // The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
@@ -25,14 +25,14 @@ type Mention struct {
     // The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
     serverCreatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new mention and sets the default values.
+// NewMention instantiates a new mention and sets the default values.
 func NewMention()(*Mention) {
     m := &Mention{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the application property value. The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
+// GetApplication gets the application property value. The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
 func (m *Mention) GetApplication()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *Mention) GetApplication()(*string) {
         return m.application
     }
 }
-// Gets the clientReference property value. A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
+// GetClientReference gets the clientReference property value. A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
 func (m *Mention) GetClientReference()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *Mention) GetClientReference()(*string) {
         return m.clientReference
     }
 }
-// Gets the createdBy property value. The email information of the user who made the mention.
+// GetCreatedBy gets the createdBy property value. The email information of the user who made the mention.
 func (m *Mention) GetCreatedBy()(*EmailAddress) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *Mention) GetCreatedBy()(*EmailAddress) {
         return m.createdBy
     }
 }
-// Gets the createdDateTime property value. The date and time that the mention is created on the client.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time that the mention is created on the client.
 func (m *Mention) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *Mention) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
         return m.createdDateTime
     }
 }
-// Gets the deepLink property value. A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
+// GetDeepLink gets the deepLink property value. A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
 func (m *Mention) GetDeepLink()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *Mention) GetDeepLink()(*string) {
         return m.deepLink
     }
 }
-// Gets the mentioned property value. 
+// GetMentioned gets the mentioned property value. 
 func (m *Mention) GetMentioned()(*EmailAddress) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *Mention) GetMentioned()(*EmailAddress) {
         return m.mentioned
     }
 }
-// Gets the mentionText property value. Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
+// GetMentionText gets the mentionText property value. Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
 func (m *Mention) GetMentionText()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *Mention) GetMentionText()(*string) {
         return m.mentionText
     }
 }
-// Gets the serverCreatedDateTime property value. The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
+// GetServerCreatedDateTime gets the serverCreatedDateTime property value. The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
 func (m *Mention) GetServerCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *Mention) GetServerCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.serverCreatedDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Mention) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["application"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,9 +184,7 @@ func (m *Mention) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
 func (m *Mention) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Mention) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -242,51 +240,35 @@ func (m *Mention) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     return nil
 }
-// Sets the application property value. The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
-// Parameters:
-//  - value : Value to set for the application property.
+// SetApplication sets the application property value. The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetApplication(value *string)() {
     m.application = value
 }
-// Sets the clientReference property value. A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
-// Parameters:
-//  - value : Value to set for the clientReference property.
+// SetClientReference sets the clientReference property value. A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetClientReference(value *string)() {
     m.clientReference = value
 }
-// Sets the createdBy property value. The email information of the user who made the mention.
-// Parameters:
-//  - value : Value to set for the createdBy property.
+// SetCreatedBy sets the createdBy property value. The email information of the user who made the mention.
 func (m *Mention) SetCreatedBy(value *EmailAddress)() {
     m.createdBy = value
 }
-// Sets the createdDateTime property value. The date and time that the mention is created on the client.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time that the mention is created on the client.
 func (m *Mention) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the deepLink property value. A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
-// Parameters:
-//  - value : Value to set for the deepLink property.
+// SetDeepLink sets the deepLink property value. A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetDeepLink(value *string)() {
     m.deepLink = value
 }
-// Sets the mentioned property value. 
-// Parameters:
-//  - value : Value to set for the mentioned property.
+// SetMentioned sets the mentioned property value. 
 func (m *Mention) SetMentioned(value *EmailAddress)() {
     m.mentioned = value
 }
-// Sets the mentionText property value. Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
-// Parameters:
-//  - value : Value to set for the mentionText property.
+// SetMentionText sets the mentionText property value. Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
 func (m *Mention) SetMentionText(value *string)() {
     m.mentionText = value
 }
-// Sets the serverCreatedDateTime property value. The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
-// Parameters:
-//  - value : Value to set for the serverCreatedDateTime property.
+// SetServerCreatedDateTime sets the serverCreatedDateTime property value. The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetServerCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.serverCreatedDateTime = value
 }

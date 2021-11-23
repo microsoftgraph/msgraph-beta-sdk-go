@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignments\{windowsAutopilotDeploymentProfileAssignment-id}
+// WindowsAutopilotDeploymentProfileAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignments\{windowsAutopilotDeploymentProfileAssignment-id}
 type WindowsAutopilotDeploymentProfileAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsAutopilotDeploymentProfileAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsAutopilotDeploymentProfileAssignmentRequestBuilderDeleteOptions options for Delete
 type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderDeleteOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsAutopilotDeploymentProfileAssignmentRequestBuilderGetOptions options for Get
 type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of group assignments for the profile.
+// WindowsAutopilotDeploymentProfileAssignmentRequestBuilderGetQueryParameters the list of group assignments for the profile.
 type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsAutopilotDeploymentProfileAssignmentRequestBuilderPatchOptions options for Patch
 type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileAssignment;
@@ -53,10 +53,7 @@ type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderPatchOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsAutopilotDeploymentProfileAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsAutopilotDeploymentProfileAssignmentRequestBuilderInternal instantiates a new WindowsAutopilotDeploymentProfileAssignmentRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeploymentProfileAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) {
     m := &WindowsAutopilotDeploymentProfileAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWindowsAutopilotDeploymentProfileAssignmentRequestBuilderInternal(pathPa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsAutopilotDeploymentProfileAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsAutopilotDeploymentProfileAssignmentRequestBuilder instantiates a new WindowsAutopilotDeploymentProfileAssignmentRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeploymentProfileAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeploymentProfileAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of group assignments for the profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of group assignments for the profile.
 func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) CreateDeleteRequestInformation(options *WindowsAutopilotDeploymentProfileAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// The list of group assignments for the profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of group assignments for the profile.
 func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) CreateGetRequestInformation(options *WindowsAutopilotDeploymentProfileAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// The list of group assignments for the profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of group assignments for the profile.
 func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) CreatePatchRequestInformation(options *WindowsAutopilotDeploymentProfileAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) CreatePatchR
     }
     return requestInfo, nil
 }
-// The list of group assignments for the profile.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of group assignments for the profile.
 func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) Delete(options *WindowsAutopilotDeploymentProfileAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) Delete(optio
     }
     return nil
 }
-// The list of group assignments for the profile.
-// Parameters:
-//  - options : Options for the request
+// Get the list of group assignments for the profile.
 func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) Get(options *WindowsAutopilotDeploymentProfileAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) Get(options 
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileAssignment), nil
 }
-// The list of group assignments for the profile.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of group assignments for the profile.
 func (m *WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) Patch(options *WindowsAutopilotDeploymentProfileAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

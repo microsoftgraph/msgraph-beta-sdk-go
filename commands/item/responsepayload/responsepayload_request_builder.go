@@ -7,7 +7,7 @@ import (
     iba18db208a8013762074839c8fb77f8d0fc88e67d4c6d1d663f90ddd47f87754 "github.com/microsoftgraph/msgraph-beta-sdk-go/commands/item/responsepayload/ref"
 )
 
-// Builds and executes requests for operations under \commands\{command-id}\responsepayload
+// ResponsepayloadRequestBuilder builds and executes requests for operations under \commands\{command-id}\responsepayload
 type ResponsepayloadRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ResponsepayloadRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ResponsepayloadRequestBuilderGetOptions options for Get
 type ResponsepayloadRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ResponsepayloadRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get responsepayload from commands
+// ResponsepayloadRequestBuilderGetQueryParameters get responsepayload from commands
 type ResponsepayloadRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ResponsepayloadRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResponsepayloadRequestBuilderInternal instantiates a new ResponsepayloadRequestBuilder and sets the default values.
 func NewResponsepayloadRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResponsepayloadRequestBuilder) {
     m := &ResponsepayloadRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewResponsepayloadRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResponsepayloadRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResponsepayloadRequestBuilder instantiates a new ResponsepayloadRequestBuilder and sets the default values.
 func NewResponsepayloadRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResponsepayloadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResponsepayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get responsepayload from commands
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get responsepayload from commands
 func (m *ResponsepayloadRequestBuilder) CreateGetRequestInformation(options *ResponsepayloadRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ResponsepayloadRequestBuilder) CreateGetRequestInformation(options *Res
     }
     return requestInfo, nil
 }
-// Get responsepayload from commands
-// Parameters:
-//  - options : Options for the request
+// Get get responsepayload from commands
 func (m *ResponsepayloadRequestBuilder) Get(options *ResponsepayloadRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PayloadResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

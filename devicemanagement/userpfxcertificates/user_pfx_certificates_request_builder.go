@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userPfxCertificates
+// UserPfxCertificatesRequestBuilder builds and executes requests for operations under \deviceManagement\userPfxCertificates
 type UserPfxCertificatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserPfxCertificatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserPfxCertificatesRequestBuilderGetOptions options for Get
 type UserPfxCertificatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserPfxCertificatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of PFX certificates associated with a user.
+// UserPfxCertificatesRequestBuilderGetQueryParameters collection of PFX certificates associated with a user.
 type UserPfxCertificatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserPfxCertificatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserPfxCertificatesRequestBuilderPostOptions options for Post
 type UserPfxCertificatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserPFXCertificate;
@@ -56,10 +56,7 @@ type UserPfxCertificatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserPfxCertificatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserPfxCertificatesRequestBuilderInternal instantiates a new UserPfxCertificatesRequestBuilder and sets the default values.
 func NewUserPfxCertificatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserPfxCertificatesRequestBuilder) {
     m := &UserPfxCertificatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserPfxCertificatesRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserPfxCertificatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserPfxCertificatesRequestBuilder instantiates a new UserPfxCertificatesRequestBuilder and sets the default values.
 func NewUserPfxCertificatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserPfxCertificatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserPfxCertificatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of PFX certificates associated with a user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of PFX certificates associated with a user.
 func (m *UserPfxCertificatesRequestBuilder) CreateGetRequestInformation(options *UserPfxCertificatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserPfxCertificatesRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Collection of PFX certificates associated with a user.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of PFX certificates associated with a user.
 func (m *UserPfxCertificatesRequestBuilder) CreatePostRequestInformation(options *UserPfxCertificatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserPfxCertificatesRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Collection of PFX certificates associated with a user.
-// Parameters:
-//  - options : Options for the request
+// Get collection of PFX certificates associated with a user.
 func (m *UserPfxCertificatesRequestBuilder) Get(options *UserPfxCertificatesRequestBuilderGetOptions)(*UserPfxCertificatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserPfxCertificatesRequestBuilder) Get(options *UserPfxCertificatesRequ
     }
     return res.(*UserPfxCertificatesResponse), nil
 }
-// Collection of PFX certificates associated with a user.
-// Parameters:
-//  - options : Options for the request
+// Post collection of PFX certificates associated with a user.
 func (m *UserPfxCertificatesRequestBuilder) Post(options *UserPfxCertificatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserPFXCertificate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

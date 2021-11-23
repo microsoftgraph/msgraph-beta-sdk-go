@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\anniversaries\{personAnnualEvent-id}
+// PersonAnnualEventRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\anniversaries\{personAnnualEvent-id}
 type PersonAnnualEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PersonAnnualEventRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PersonAnnualEventRequestBuilderDeleteOptions options for Delete
 type PersonAnnualEventRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PersonAnnualEventRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PersonAnnualEventRequestBuilderGetOptions options for Get
 type PersonAnnualEventRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PersonAnnualEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the details of meaningful dates associated with a person.
+// PersonAnnualEventRequestBuilderGetQueryParameters represents the details of meaningful dates associated with a person.
 type PersonAnnualEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PersonAnnualEventRequestBuilderPatchOptions options for Patch
 type PersonAnnualEventRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonAnnualEvent;
@@ -53,10 +53,7 @@ type PersonAnnualEventRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PersonAnnualEventRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonAnnualEventRequestBuilderInternal instantiates a new PersonAnnualEventRequestBuilder and sets the default values.
 func NewPersonAnnualEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonAnnualEventRequestBuilder) {
     m := &PersonAnnualEventRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPersonAnnualEventRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PersonAnnualEventRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonAnnualEventRequestBuilder instantiates a new PersonAnnualEventRequestBuilder and sets the default values.
 func NewPersonAnnualEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonAnnualEventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPersonAnnualEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the details of meaningful dates associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the details of meaningful dates associated with a person.
 func (m *PersonAnnualEventRequestBuilder) CreateDeleteRequestInformation(options *PersonAnnualEventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PersonAnnualEventRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Represents the details of meaningful dates associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the details of meaningful dates associated with a person.
 func (m *PersonAnnualEventRequestBuilder) CreateGetRequestInformation(options *PersonAnnualEventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PersonAnnualEventRequestBuilder) CreateGetRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// Represents the details of meaningful dates associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the details of meaningful dates associated with a person.
 func (m *PersonAnnualEventRequestBuilder) CreatePatchRequestInformation(options *PersonAnnualEventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PersonAnnualEventRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Represents the details of meaningful dates associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the details of meaningful dates associated with a person.
 func (m *PersonAnnualEventRequestBuilder) Delete(options *PersonAnnualEventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PersonAnnualEventRequestBuilder) Delete(options *PersonAnnualEventReque
     }
     return nil
 }
-// Represents the details of meaningful dates associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Get represents the details of meaningful dates associated with a person.
 func (m *PersonAnnualEventRequestBuilder) Get(options *PersonAnnualEventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonAnnualEvent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PersonAnnualEventRequestBuilder) Get(options *PersonAnnualEventRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonAnnualEvent), nil
 }
-// Represents the details of meaningful dates associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the details of meaningful dates associated with a person.
 func (m *PersonAnnualEventRequestBuilder) Patch(options *PersonAnnualEventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

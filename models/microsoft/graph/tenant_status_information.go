@@ -6,7 +6,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// 
+// TenantStatusInformation 
 type TenantStatusInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,14 +29,14 @@ type TenantStatusInformation struct {
     // The collection of workload statues for the managed tenant. Optional. Read-only.
     workloadStatuses []WorkloadStatus;
 }
-// Instantiates a new tenantStatusInformation and sets the default values.
+// NewTenantStatusInformation instantiates a new tenantStatusInformation and sets the default values.
 func NewTenantStatusInformation()(*TenantStatusInformation) {
     m := &TenantStatusInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantStatusInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *TenantStatusInformation) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
+// GetDelegatedPrivilegeStatus gets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.DelegatedPrivilegeStatus) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*i5c259213206405
         return m.delegatedPrivilegeStatus
     }
 }
-// Gets the lastDelegatedPrivilegeRefreshDateTime property value. The date and time the delegated admin privileges status was updated. Optional. Read-only.
+// GetLastDelegatedPrivilegeRefreshDateTime gets the lastDelegatedPrivilegeRefreshDateTime property value. The date and time the delegated admin privileges status was updated. Optional. Read-only.
 func (m *TenantStatusInformation) GetLastDelegatedPrivilegeRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *TenantStatusInformation) GetLastDelegatedPrivilegeRefreshDateTime()(*i3
         return m.lastDelegatedPrivilegeRefreshDateTime
     }
 }
-// Gets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
+// GetOffboardedByUserId gets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) GetOffboardedByUserId()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *TenantStatusInformation) GetOffboardedByUserId()(*string) {
         return m.offboardedByUserId
     }
 }
-// Gets the offboardedDateTime property value. The date and time when the managed tenant was offboarded. Optional. Read-only.
+// GetOffboardedDateTime gets the offboardedDateTime property value. The date and time when the managed tenant was offboarded. Optional. Read-only.
 func (m *TenantStatusInformation) GetOffboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *TenantStatusInformation) GetOffboardedDateTime()(*i336074805fc853987abe
         return m.offboardedDateTime
     }
 }
-// Gets the onboardedByUserId property value. The identifier for the account that onboarded the managed tenant. Optional. Read-only.
+// GetOnboardedByUserId gets the onboardedByUserId property value. The identifier for the account that onboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) GetOnboardedByUserId()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *TenantStatusInformation) GetOnboardedByUserId()(*string) {
         return m.onboardedByUserId
     }
 }
-// Gets the onboardedDateTime property value. The date and time when the managed tenant was onboarded. Optional. Read-only.
+// GetOnboardedDateTime gets the onboardedDateTime property value. The date and time when the managed tenant was onboarded. Optional. Read-only.
 func (m *TenantStatusInformation) GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *TenantStatusInformation) GetOnboardedDateTime()(*i336074805fc853987abe6
         return m.onboardedDateTime
     }
 }
-// Gets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
+// GetOnboardingStatus gets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) GetOnboardingStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *TenantStatusInformation) GetOnboardingStatus()(*i5c2592132064055aae4244
         return m.onboardingStatus
     }
 }
-// Gets the tenantOnboardingEligibilityReason property value. 
+// GetTenantOnboardingEligibilityReason gets the tenantOnboardingEligibilityReason property value. 
 func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*i5c259
         return m.tenantOnboardingEligibilityReason
     }
 }
-// Gets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
+// GetWorkloadStatuses gets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) GetWorkloadStatuses()([]WorkloadStatus) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *TenantStatusInformation) GetWorkloadStatuses()([]WorkloadStatus) {
         return m.workloadStatuses
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["delegatedPrivilegeStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -221,9 +221,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
 func (m *TenantStatusInformation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TenantStatusInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDelegatedPrivilegeStatus() != nil {
         cast := m.GetDelegatedPrivilegeStatus().String()
@@ -295,63 +293,43 @@ func (m *TenantStatusInformation) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantStatusInformation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the delegatedPrivilegeStatus property.
+// SetDelegatedPrivilegeStatus sets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) SetDelegatedPrivilegeStatus(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.DelegatedPrivilegeStatus)() {
     m.delegatedPrivilegeStatus = value
 }
-// Sets the lastDelegatedPrivilegeRefreshDateTime property value. The date and time the delegated admin privileges status was updated. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the lastDelegatedPrivilegeRefreshDateTime property.
+// SetLastDelegatedPrivilegeRefreshDateTime sets the lastDelegatedPrivilegeRefreshDateTime property value. The date and time the delegated admin privileges status was updated. Optional. Read-only.
 func (m *TenantStatusInformation) SetLastDelegatedPrivilegeRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastDelegatedPrivilegeRefreshDateTime = value
 }
-// Sets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the offboardedByUserId property.
+// SetOffboardedByUserId sets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetOffboardedByUserId(value *string)() {
     m.offboardedByUserId = value
 }
-// Sets the offboardedDateTime property value. The date and time when the managed tenant was offboarded. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the offboardedDateTime property.
+// SetOffboardedDateTime sets the offboardedDateTime property value. The date and time when the managed tenant was offboarded. Optional. Read-only.
 func (m *TenantStatusInformation) SetOffboardedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.offboardedDateTime = value
 }
-// Sets the onboardedByUserId property value. The identifier for the account that onboarded the managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the onboardedByUserId property.
+// SetOnboardedByUserId sets the onboardedByUserId property value. The identifier for the account that onboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardedByUserId(value *string)() {
     m.onboardedByUserId = value
 }
-// Sets the onboardedDateTime property value. The date and time when the managed tenant was onboarded. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the onboardedDateTime property.
+// SetOnboardedDateTime sets the onboardedDateTime property value. The date and time when the managed tenant was onboarded. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.onboardedDateTime = value
 }
-// Sets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the onboardingStatus property.
+// SetOnboardingStatus sets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardingStatus(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus)() {
     m.onboardingStatus = value
 }
-// Sets the tenantOnboardingEligibilityReason property value. 
-// Parameters:
-//  - value : Value to set for the tenantOnboardingEligibilityReason property.
+// SetTenantOnboardingEligibilityReason sets the tenantOnboardingEligibilityReason property value. 
 func (m *TenantStatusInformation) SetTenantOnboardingEligibilityReason(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason)() {
     m.tenantOnboardingEligibilityReason = value
 }
-// Sets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the workloadStatuses property.
+// SetWorkloadStatuses sets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetWorkloadStatuses(value []WorkloadStatus)() {
     m.workloadStatuses = value
 }

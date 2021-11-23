@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ConnectedOrganization 
 type ConnectedOrganization struct {
     Entity
     // UPN of the user who created this resource. Read-only.
@@ -29,14 +29,14 @@ type ConnectedOrganization struct {
     // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
     state *ConnectedOrganizationState;
 }
-// Instantiates a new connectedOrganization and sets the default values.
+// NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
 func NewConnectedOrganization()(*ConnectedOrganization) {
     m := &ConnectedOrganization{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the createdBy property value. UPN of the user who created this resource. Read-only.
+// GetCreatedBy gets the createdBy property value. UPN of the user who created this resource. Read-only.
 func (m *ConnectedOrganization) GetCreatedBy()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ConnectedOrganization) GetCreatedBy()(*string) {
         return m.createdBy
     }
 }
-// Gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *ConnectedOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe
         return m.createdDateTime
     }
 }
-// Gets the description property value. The description of the connected organization.
+// GetDescription gets the description property value. The description of the connected organization.
 func (m *ConnectedOrganization) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ConnectedOrganization) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name of the connected organization.
+// GetDisplayName gets the displayName property value. The display name of the connected organization.
 func (m *ConnectedOrganization) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *ConnectedOrganization) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the externalSponsors property value. Nullable.
+// GetExternalSponsors gets the externalSponsors property value. Nullable.
 func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObject) {
         return m.externalSponsors
     }
 }
-// Gets the identitySources property value. 
+// GetIdentitySources gets the identitySources property value. 
 func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySource) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySource) {
         return m.identitySources
     }
 }
-// Gets the internalSponsors property value. Nullable.
+// GetInternalSponsors gets the internalSponsors property value. Nullable.
 func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObject) {
         return m.internalSponsors
     }
 }
-// Gets the modifiedBy property value. UPN of the user who last modified this resource. Read-only.
+// GetModifiedBy gets the modifiedBy property value. UPN of the user who last modified this resource. Read-only.
 func (m *ConnectedOrganization) GetModifiedBy()(*string) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *ConnectedOrganization) GetModifiedBy()(*string) {
         return m.modifiedBy
     }
 }
-// Gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
         return m.modifiedDateTime
     }
 }
-// Gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -237,9 +237,7 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(interfac
 func (m *ConnectedOrganization) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -323,63 +321,43 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the createdBy property value. UPN of the user who created this resource. Read-only.
-// Parameters:
-//  - value : Value to set for the createdBy property.
+// SetCreatedBy sets the createdBy property value. UPN of the user who created this resource. Read-only.
 func (m *ConnectedOrganization) SetCreatedBy(value *string)() {
     m.createdBy = value
 }
-// Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the description property value. The description of the connected organization.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description of the connected organization.
 func (m *ConnectedOrganization) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name of the connected organization.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name of the connected organization.
 func (m *ConnectedOrganization) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the externalSponsors property value. Nullable.
-// Parameters:
-//  - value : Value to set for the externalSponsors property.
+// SetExternalSponsors sets the externalSponsors property value. Nullable.
 func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObject)() {
     m.externalSponsors = value
 }
-// Sets the identitySources property value. 
-// Parameters:
-//  - value : Value to set for the identitySources property.
+// SetIdentitySources sets the identitySources property value. 
 func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySource)() {
     m.identitySources = value
 }
-// Sets the internalSponsors property value. Nullable.
-// Parameters:
-//  - value : Value to set for the internalSponsors property.
+// SetInternalSponsors sets the internalSponsors property value. Nullable.
 func (m *ConnectedOrganization) SetInternalSponsors(value []DirectoryObject)() {
     m.internalSponsors = value
 }
-// Sets the modifiedBy property value. UPN of the user who last modified this resource. Read-only.
-// Parameters:
-//  - value : Value to set for the modifiedBy property.
+// SetModifiedBy sets the modifiedBy property value. UPN of the user who last modified this resource. Read-only.
 func (m *ConnectedOrganization) SetModifiedBy(value *string)() {
     m.modifiedBy = value
 }
-// Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-// Parameters:
-//  - value : Value to set for the modifiedDateTime property.
+// SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.modifiedDateTime = value
 }
-// Sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
     m.state = value
 }

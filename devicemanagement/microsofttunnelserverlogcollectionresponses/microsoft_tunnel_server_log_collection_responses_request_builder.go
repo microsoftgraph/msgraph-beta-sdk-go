@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses
+// MicrosoftTunnelServerLogCollectionResponsesRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses
 type MicrosoftTunnelServerLogCollectionResponsesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MicrosoftTunnelServerLogCollectionResponsesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetOptions options for Get
 type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+// MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions options for Post
 type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse;
@@ -56,10 +56,7 @@ type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MicrosoftTunnelServerLogCollectionResponsesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal instantiates a new MicrosoftTunnelServerLogCollectionResponsesRequestBuilder and sets the default values.
 func NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) {
     m := &MicrosoftTunnelServerLogCollectionResponsesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(pathPa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MicrosoftTunnelServerLogCollectionResponsesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilder instantiates a new MicrosoftTunnelServerLogCollectionResponsesRequestBuilder and sets the default values.
 func NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) CreateGetRequestInformation(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) CreatePostRequestInformation(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) CreatePostRe
     }
     return requestInfo, nil
 }
-// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Get collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Get(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetOptions)(*MicrosoftTunnelServerLogCollectionResponsesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Get(options 
     }
     return res.(*MicrosoftTunnelServerLogCollectionResponsesResponse), nil
 }
-// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Post collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Post(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedRoleAssignmentRequests
+// PrivilegedRoleAssignmentRequestsRequestBuilder builds and executes requests for operations under \privilegedRoleAssignmentRequests
 type PrivilegedRoleAssignmentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PrivilegedRoleAssignmentRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PrivilegedRoleAssignmentRequestsRequestBuilderGetOptions options for Get
 type PrivilegedRoleAssignmentRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PrivilegedRoleAssignmentRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from privilegedRoleAssignmentRequests
+// PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParameters get entities from privilegedRoleAssignmentRequests
 type PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions options for Post
 type PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest;
@@ -57,10 +57,7 @@ type PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrivilegedRoleAssignmentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedRoleAssignmentRequestsRequestBuilderInternal instantiates a new PrivilegedRoleAssignmentRequestsRequestBuilder and sets the default values.
 func NewPrivilegedRoleAssignmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleAssignmentRequestsRequestBuilder) {
     m := &PrivilegedRoleAssignmentRequestsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewPrivilegedRoleAssignmentRequestsRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivilegedRoleAssignmentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedRoleAssignmentRequestsRequestBuilder instantiates a new PrivilegedRoleAssignmentRequestsRequestBuilder and sets the default values.
 func NewPrivilegedRoleAssignmentRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleAssignmentRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from privilegedRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreateGetRequestInformation(options *PrivilegedRoleAssignmentRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Add new entity to privilegedRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreatePostRequestInformation(options *PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Get entities from privilegedRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// Get get entities from privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Get(options *PrivilegedRoleAssignmentRequestsRequestBuilderGetOptions)(*PrivilegedRoleAssignmentRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,13 +126,11 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Get(options *Privileged
     }
     return res.(*PrivilegedRoleAssignmentRequestsResponse), nil
 }
-// Builds and executes requests for operations under \privilegedRoleAssignmentRequests\microsoft.graph.my()
+// My builds and executes requests for operations under \privilegedRoleAssignmentRequests\microsoft.graph.my()
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) My()(*i835e2da68a9851f6b7e1b69f013e35c203624684b8d3495cd380603c465c929a.MyRequestBuilder) {
     return i835e2da68a9851f6b7e1b69f013e35c203624684b8d3495cd380603c465c929a.NewMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to privilegedRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Post(options *PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

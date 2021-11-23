@@ -13,7 +13,7 @@ import (
     ib268e3b08fe1fad55fddc2f3fcee0a20255a98eba2bf68e561d4e06a67c8ce93 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyuploadeddefinitionfiles/item/grouppolicyoperations/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}
+// GroupPolicyUploadedDefinitionFileRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}
 type GroupPolicyUploadedDefinitionFileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type GroupPolicyUploadedDefinitionFileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupPolicyUploadedDefinitionFileRequestBuilderDeleteOptions options for Delete
 type GroupPolicyUploadedDefinitionFileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type GroupPolicyUploadedDefinitionFileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupPolicyUploadedDefinitionFileRequestBuilderGetOptions options for Get
 type GroupPolicyUploadedDefinitionFileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type GroupPolicyUploadedDefinitionFileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The available group policy uploaded definition files for this account.
+// GroupPolicyUploadedDefinitionFileRequestBuilderGetQueryParameters the available group policy uploaded definition files for this account.
 type GroupPolicyUploadedDefinitionFileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupPolicyUploadedDefinitionFileRequestBuilderPatchOptions options for Patch
 type GroupPolicyUploadedDefinitionFileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedDefinitionFile;
@@ -63,10 +63,7 @@ type GroupPolicyUploadedDefinitionFileRequestBuilderPatchOptions struct {
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) AddLanguageFiles()(*i08aa694b5efe17e6cfb40a0b57c60c903682f60b25cedf6b77b700e69456e371.AddLanguageFilesRequestBuilder) {
     return i08aa694b5efe17e6cfb40a0b57c60c903682f60b25cedf6b77b700e69456e371.NewAddLanguageFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new GroupPolicyUploadedDefinitionFileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyUploadedDefinitionFileRequestBuilderInternal instantiates a new GroupPolicyUploadedDefinitionFileRequestBuilder and sets the default values.
 func NewGroupPolicyUploadedDefinitionFileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyUploadedDefinitionFileRequestBuilder) {
     m := &GroupPolicyUploadedDefinitionFileRequestBuilder{
     }
@@ -79,18 +76,13 @@ func NewGroupPolicyUploadedDefinitionFileRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyUploadedDefinitionFileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyUploadedDefinitionFileRequestBuilder instantiates a new GroupPolicyUploadedDefinitionFileRequestBuilder and sets the default values.
 func NewGroupPolicyUploadedDefinitionFileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyUploadedDefinitionFileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyUploadedDefinitionFileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The available group policy uploaded definition files for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the available group policy uploaded definition files for this account.
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicyUploadedDefinitionFileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// The available group policy uploaded definition files for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the available group policy uploaded definition files for this account.
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) CreateGetRequestInformation(options *GroupPolicyUploadedDefinitionFileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// The available group policy uploaded definition files for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the available group policy uploaded definition files for this account.
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) CreatePatchRequestInformation(options *GroupPolicyUploadedDefinitionFileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +137,7 @@ func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// The available group policy uploaded definition files for this account.
-// Parameters:
-//  - options : Options for the request
+// Delete the available group policy uploaded definition files for this account.
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) Delete(options *GroupPolicyUploadedDefinitionFileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -163,9 +149,7 @@ func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) Delete(options *GroupP
     }
     return nil
 }
-// The available group policy uploaded definition files for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the available group policy uploaded definition files for this account.
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) Get(options *GroupPolicyUploadedDefinitionFileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedDefinitionFile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) Get(options *GroupPoli
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) GroupPolicyOperations()(*i573a2f06fa9d3a5f4c3539c0c567663d335bba6395fe3de82bf7752385eacc91.GroupPolicyOperationsRequestBuilder) {
     return i573a2f06fa9d3a5f4c3539c0c567663d335bba6395fe3de82bf7752385eacc91.NewGroupPolicyOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyUploadedDefinitionFiles.item.groupPolicyOperations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupPolicyOperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyUploadedDefinitionFiles.item.groupPolicyOperations.item collection
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) GroupPolicyOperationsById(id string)(*ib268e3b08fe1fad55fddc2f3fcee0a20255a98eba2bf68e561d4e06a67c8ce93.GroupPolicyOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -193,9 +175,7 @@ func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) GroupPolicyOperationsB
     }
     return ib268e3b08fe1fad55fddc2f3fcee0a20255a98eba2bf68e561d4e06a67c8ce93.NewGroupPolicyOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The available group policy uploaded definition files for this account.
-// Parameters:
-//  - options : Options for the request
+// Patch the available group policy uploaded definition files for this account.
 func (m *GroupPolicyUploadedDefinitionFileRequestBuilder) Patch(options *GroupPolicyUploadedDefinitionFileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

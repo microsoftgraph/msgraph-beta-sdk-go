@@ -7,7 +7,7 @@ import (
     i393697226399cf670a93e7fbe15e9f895d2ed615e09bf4d24f847e104924282b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicycategories/item/parent/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\parent
+// ParentRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\parent
 type ParentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ParentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ParentRequestBuilderGetOptions options for Get
 type ParentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ParentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The parent category
+// ParentRequestBuilderGetQueryParameters the parent category
 type ParentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ParentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewParentRequestBuilderInternal instantiates a new ParentRequestBuilder and sets the default values.
 func NewParentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentRequestBuilder) {
     m := &ParentRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewParentRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ParentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewParentRequestBuilder instantiates a new ParentRequestBuilder and sets the default values.
 func NewParentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewParentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The parent category
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the parent category
 func (m *ParentRequestBuilder) CreateGetRequestInformation(options *ParentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ParentRequestBuilder) CreateGetRequestInformation(options *ParentReques
     }
     return requestInfo, nil
 }
-// The parent category
-// Parameters:
-//  - options : Options for the request
+// Get the parent category
 func (m *ParentRequestBuilder) Get(options *ParentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

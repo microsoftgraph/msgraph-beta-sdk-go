@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\shipmentMethods
+// ShipmentMethodsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\shipmentMethods
 type ShipmentMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ShipmentMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ShipmentMethodsRequestBuilderGetOptions options for Get
 type ShipmentMethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ShipmentMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get shipmentMethods from financials
+// ShipmentMethodsRequestBuilderGetQueryParameters get shipmentMethods from financials
 type ShipmentMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ShipmentMethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ShipmentMethodsRequestBuilderPostOptions options for Post
 type ShipmentMethodsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ShipmentMethod;
@@ -56,10 +56,7 @@ type ShipmentMethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ShipmentMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShipmentMethodsRequestBuilderInternal instantiates a new ShipmentMethodsRequestBuilder and sets the default values.
 func NewShipmentMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShipmentMethodsRequestBuilder) {
     m := &ShipmentMethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewShipmentMethodsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ShipmentMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShipmentMethodsRequestBuilder instantiates a new ShipmentMethodsRequestBuilder and sets the default values.
 func NewShipmentMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShipmentMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewShipmentMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get shipmentMethods from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get shipmentMethods from financials
 func (m *ShipmentMethodsRequestBuilder) CreateGetRequestInformation(options *ShipmentMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ShipmentMethodsRequestBuilder) CreateGetRequestInformation(options *Shi
     }
     return requestInfo, nil
 }
-// Create new navigation property to shipmentMethods for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to shipmentMethods for financials
 func (m *ShipmentMethodsRequestBuilder) CreatePostRequestInformation(options *ShipmentMethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ShipmentMethodsRequestBuilder) CreatePostRequestInformation(options *Sh
     }
     return requestInfo, nil
 }
-// Get shipmentMethods from financials
-// Parameters:
-//  - options : Options for the request
+// Get get shipmentMethods from financials
 func (m *ShipmentMethodsRequestBuilder) Get(options *ShipmentMethodsRequestBuilderGetOptions)(*ShipmentMethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ShipmentMethodsRequestBuilder) Get(options *ShipmentMethodsRequestBuild
     }
     return res.(*ShipmentMethodsResponse), nil
 }
-// Create new navigation property to shipmentMethods for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to shipmentMethods for financials
 func (m *ShipmentMethodsRequestBuilder) Post(options *ShipmentMethodsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ShipmentMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

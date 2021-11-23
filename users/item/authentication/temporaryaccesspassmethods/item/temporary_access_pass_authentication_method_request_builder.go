@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\authentication\temporaryAccessPassMethods\{temporaryAccessPassAuthenticationMethod-id}
+// TemporaryAccessPassAuthenticationMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\temporaryAccessPassMethods\{temporaryAccessPassAuthenticationMethod-id}
 type TemporaryAccessPassAuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TemporaryAccessPassAuthenticationMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TemporaryAccessPassAuthenticationMethodRequestBuilderDeleteOptions options for Delete
 type TemporaryAccessPassAuthenticationMethodRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TemporaryAccessPassAuthenticationMethodRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TemporaryAccessPassAuthenticationMethodRequestBuilderGetOptions options for Get
 type TemporaryAccessPassAuthenticationMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TemporaryAccessPassAuthenticationMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get temporaryAccessPassMethods from users
+// TemporaryAccessPassAuthenticationMethodRequestBuilderGetQueryParameters get temporaryAccessPassMethods from users
 type TemporaryAccessPassAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TemporaryAccessPassAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type TemporaryAccessPassAuthenticationMethodRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TemporaryAccessPassAuthenticationMethod;
@@ -53,10 +53,7 @@ type TemporaryAccessPassAuthenticationMethodRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TemporaryAccessPassAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTemporaryAccessPassAuthenticationMethodRequestBuilderInternal instantiates a new TemporaryAccessPassAuthenticationMethodRequestBuilder and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TemporaryAccessPassAuthenticationMethodRequestBuilder) {
     m := &TemporaryAccessPassAuthenticationMethodRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTemporaryAccessPassAuthenticationMethodRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TemporaryAccessPassAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTemporaryAccessPassAuthenticationMethodRequestBuilder instantiates a new TemporaryAccessPassAuthenticationMethodRequestBuilder and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TemporaryAccessPassAuthenticationMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTemporaryAccessPassAuthenticationMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property temporaryAccessPassMethods for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property temporaryAccessPassMethods for users
 func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) CreateDeleteRequestInformation(options *TemporaryAccessPassAuthenticationMethodRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// Get temporaryAccessPassMethods from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get temporaryAccessPassMethods from users
 func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) CreateGetRequestInformation(options *TemporaryAccessPassAuthenticationMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// Update the navigation property temporaryAccessPassMethods in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property temporaryAccessPassMethods in users
 func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) CreatePatchRequestInformation(options *TemporaryAccessPassAuthenticationMethodRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// Delete navigation property temporaryAccessPassMethods for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property temporaryAccessPassMethods for users
 func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) Delete(options *TemporaryAccessPassAuthenticationMethodRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) Delete(options *
     }
     return nil
 }
-// Get temporaryAccessPassMethods from users
-// Parameters:
-//  - options : Options for the request
+// Get get temporaryAccessPassMethods from users
 func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) Get(options *TemporaryAccessPassAuthenticationMethodRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TemporaryAccessPassAuthenticationMethod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) Get(options *Tem
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TemporaryAccessPassAuthenticationMethod), nil
 }
-// Update the navigation property temporaryAccessPassMethods in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property temporaryAccessPassMethods in users
 func (m *TemporaryAccessPassAuthenticationMethodRequestBuilder) Patch(options *TemporaryAccessPassAuthenticationMethodRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

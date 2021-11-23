@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignedDevices\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.assignResourceAccountToDevice
+// AssignResourceAccountToDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignedDevices\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.assignResourceAccountToDevice
 type AssignResourceAccountToDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type AssignResourceAccountToDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AssignResourceAccountToDeviceRequestBuilderPostOptions options for Post
 type AssignResourceAccountToDeviceRequestBuilderPostOptions struct {
     // 
     Body *AssignResourceAccountToDeviceRequestBody;
@@ -24,10 +24,7 @@ type AssignResourceAccountToDeviceRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AssignResourceAccountToDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignResourceAccountToDeviceRequestBuilderInternal instantiates a new AssignResourceAccountToDeviceRequestBuilder and sets the default values.
 func NewAssignResourceAccountToDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignResourceAccountToDeviceRequestBuilder) {
     m := &AssignResourceAccountToDeviceRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewAssignResourceAccountToDeviceRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignResourceAccountToDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignResourceAccountToDeviceRequestBuilder instantiates a new AssignResourceAccountToDeviceRequestBuilder and sets the default values.
 func NewAssignResourceAccountToDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignResourceAccountToDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignResourceAccountToDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Assigns resource account to Autopilot devices.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation assigns resource account to Autopilot devices.
 func (m *AssignResourceAccountToDeviceRequestBuilder) CreatePostRequestInformation(options *AssignResourceAccountToDeviceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *AssignResourceAccountToDeviceRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Assigns resource account to Autopilot devices.
-// Parameters:
-//  - options : Options for the request
+// Post assigns resource account to Autopilot devices.
 func (m *AssignResourceAccountToDeviceRequestBuilder) Post(options *AssignResourceAccountToDeviceRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

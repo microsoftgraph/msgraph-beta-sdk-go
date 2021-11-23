@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ManagedEBook 
 type ManagedEBook struct {
     Entity
     // The list of assignments for this eBook.
@@ -37,14 +37,14 @@ type ManagedEBook struct {
     // The list of installation states for this eBook.
     userStateSummary []UserInstallStateSummary;
 }
-// Instantiates a new managedEBook and sets the default values.
+// NewManagedEBook instantiates a new managedEBook and sets the default values.
 func NewManagedEBook()(*ManagedEBook) {
     m := &ManagedEBook{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the assignments property value. The list of assignments for this eBook.
+// GetAssignments gets the assignments property value. The list of assignments for this eBook.
 func (m *ManagedEBook) GetAssignments()([]ManagedEBookAssignment) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *ManagedEBook) GetAssignments()([]ManagedEBookAssignment) {
         return m.assignments
     }
 }
-// Gets the categories property value. The list of categories for this eBook.
+// GetCategories gets the categories property value. The list of categories for this eBook.
 func (m *ManagedEBook) GetCategories()([]ManagedEBookCategory) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ManagedEBook) GetCategories()([]ManagedEBookCategory) {
         return m.categories
     }
 }
-// Gets the createdDateTime property value. The date and time when the eBook file was created.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the eBook file was created.
 func (m *ManagedEBook) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *ManagedEBook) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.createdDateTime
     }
 }
-// Gets the description property value. Description.
+// GetDescription gets the description property value. Description.
 func (m *ManagedEBook) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *ManagedEBook) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the deviceStates property value. The list of installation states for this eBook.
+// GetDeviceStates gets the deviceStates property value. The list of installation states for this eBook.
 func (m *ManagedEBook) GetDeviceStates()([]DeviceInstallState) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *ManagedEBook) GetDeviceStates()([]DeviceInstallState) {
         return m.deviceStates
     }
 }
-// Gets the displayName property value. Name of the eBook.
+// GetDisplayName gets the displayName property value. Name of the eBook.
 func (m *ManagedEBook) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *ManagedEBook) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the informationUrl property value. The more information Url.
+// GetInformationUrl gets the informationUrl property value. The more information Url.
 func (m *ManagedEBook) GetInformationUrl()(*string) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *ManagedEBook) GetInformationUrl()(*string) {
         return m.informationUrl
     }
 }
-// Gets the installSummary property value. Mobile App Install Summary.
+// GetInstallSummary gets the installSummary property value. Mobile App Install Summary.
 func (m *ManagedEBook) GetInstallSummary()(*EBookInstallSummary) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *ManagedEBook) GetInstallSummary()(*EBookInstallSummary) {
         return m.installSummary
     }
 }
-// Gets the largeCover property value. Book cover.
+// GetLargeCover gets the largeCover property value. Book cover.
 func (m *ManagedEBook) GetLargeCover()(*MimeContent) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *ManagedEBook) GetLargeCover()(*MimeContent) {
         return m.largeCover
     }
 }
-// Gets the lastModifiedDateTime property value. The date and time when the eBook was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the eBook was last modified.
 func (m *ManagedEBook) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *ManagedEBook) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.lastModifiedDateTime
     }
 }
-// Gets the privacyInformationUrl property value. The privacy statement Url.
+// GetPrivacyInformationUrl gets the privacyInformationUrl property value. The privacy statement Url.
 func (m *ManagedEBook) GetPrivacyInformationUrl()(*string) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *ManagedEBook) GetPrivacyInformationUrl()(*string) {
         return m.privacyInformationUrl
     }
 }
-// Gets the publishedDateTime property value. The date and time when the eBook was published.
+// GetPublishedDateTime gets the publishedDateTime property value. The date and time when the eBook was published.
 func (m *ManagedEBook) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *ManagedEBook) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return m.publishedDateTime
     }
 }
-// Gets the publisher property value. Publisher.
+// GetPublisher gets the publisher property value. Publisher.
 func (m *ManagedEBook) GetPublisher()(*string) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *ManagedEBook) GetPublisher()(*string) {
         return m.publisher
     }
 }
-// Gets the userStateSummary property value. The list of installation states for this eBook.
+// GetUserStateSummary gets the userStateSummary property value. The list of installation states for this eBook.
 func (m *ManagedEBook) GetUserStateSummary()([]UserInstallStateSummary) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *ManagedEBook) GetUserStateSummary()([]UserInstallStateSummary) {
         return m.userStateSummary
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -320,9 +320,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *ManagedEBook) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagedEBook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -434,87 +432,59 @@ func (m *ManagedEBook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the assignments property value. The list of assignments for this eBook.
-// Parameters:
-//  - value : Value to set for the assignments property.
+// SetAssignments sets the assignments property value. The list of assignments for this eBook.
 func (m *ManagedEBook) SetAssignments(value []ManagedEBookAssignment)() {
     m.assignments = value
 }
-// Sets the categories property value. The list of categories for this eBook.
-// Parameters:
-//  - value : Value to set for the categories property.
+// SetCategories sets the categories property value. The list of categories for this eBook.
 func (m *ManagedEBook) SetCategories(value []ManagedEBookCategory)() {
     m.categories = value
 }
-// Sets the createdDateTime property value. The date and time when the eBook file was created.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the eBook file was created.
 func (m *ManagedEBook) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the description property value. Description.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description.
 func (m *ManagedEBook) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the deviceStates property value. The list of installation states for this eBook.
-// Parameters:
-//  - value : Value to set for the deviceStates property.
+// SetDeviceStates sets the deviceStates property value. The list of installation states for this eBook.
 func (m *ManagedEBook) SetDeviceStates(value []DeviceInstallState)() {
     m.deviceStates = value
 }
-// Sets the displayName property value. Name of the eBook.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Name of the eBook.
 func (m *ManagedEBook) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the informationUrl property value. The more information Url.
-// Parameters:
-//  - value : Value to set for the informationUrl property.
+// SetInformationUrl sets the informationUrl property value. The more information Url.
 func (m *ManagedEBook) SetInformationUrl(value *string)() {
     m.informationUrl = value
 }
-// Sets the installSummary property value. Mobile App Install Summary.
-// Parameters:
-//  - value : Value to set for the installSummary property.
+// SetInstallSummary sets the installSummary property value. Mobile App Install Summary.
 func (m *ManagedEBook) SetInstallSummary(value *EBookInstallSummary)() {
     m.installSummary = value
 }
-// Sets the largeCover property value. Book cover.
-// Parameters:
-//  - value : Value to set for the largeCover property.
+// SetLargeCover sets the largeCover property value. Book cover.
 func (m *ManagedEBook) SetLargeCover(value *MimeContent)() {
     m.largeCover = value
 }
-// Sets the lastModifiedDateTime property value. The date and time when the eBook was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the eBook was last modified.
 func (m *ManagedEBook) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the privacyInformationUrl property value. The privacy statement Url.
-// Parameters:
-//  - value : Value to set for the privacyInformationUrl property.
+// SetPrivacyInformationUrl sets the privacyInformationUrl property value. The privacy statement Url.
 func (m *ManagedEBook) SetPrivacyInformationUrl(value *string)() {
     m.privacyInformationUrl = value
 }
-// Sets the publishedDateTime property value. The date and time when the eBook was published.
-// Parameters:
-//  - value : Value to set for the publishedDateTime property.
+// SetPublishedDateTime sets the publishedDateTime property value. The date and time when the eBook was published.
 func (m *ManagedEBook) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.publishedDateTime = value
 }
-// Sets the publisher property value. Publisher.
-// Parameters:
-//  - value : Value to set for the publisher property.
+// SetPublisher sets the publisher property value. Publisher.
 func (m *ManagedEBook) SetPublisher(value *string)() {
     m.publisher = value
 }
-// Sets the userStateSummary property value. The list of installation states for this eBook.
-// Parameters:
-//  - value : Value to set for the userStateSummary property.
+// SetUserStateSummary sets the userStateSummary property value. The list of installation states for this eBook.
 func (m *ManagedEBook) SetUserStateSummary(value []UserInstallStateSummary)() {
     m.userStateSummary = value
 }

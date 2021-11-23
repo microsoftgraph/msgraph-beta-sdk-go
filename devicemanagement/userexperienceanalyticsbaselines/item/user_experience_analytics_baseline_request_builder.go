@@ -13,7 +13,7 @@ import (
     iecb3f73f1e42490bd6888019100a7693b3f982d354ec76f90bf067fc6fabe7de "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/resourceperformancemetrics"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}
+// UserExperienceAnalyticsBaselineRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}
 type UserExperienceAnalyticsBaselineRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type UserExperienceAnalyticsBaselineRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsBaselineRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsBaselineRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type UserExperienceAnalyticsBaselineRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsBaselineRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsBaselineRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type UserExperienceAnalyticsBaselineRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics baselines
+// UserExperienceAnalyticsBaselineRequestBuilderGetQueryParameters user experience analytics baselines
 type UserExperienceAnalyticsBaselineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsBaselineRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsBaselineRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaseline;
@@ -69,10 +69,7 @@ func (m *UserExperienceAnalyticsBaselineRequestBuilder) BatteryHealthMetrics()(*
 func (m *UserExperienceAnalyticsBaselineRequestBuilder) BestPracticesMetrics()(*iec2f756b9554ce46110f6b3f733d0617bf3ef06dc480e86cb09cbf2d74628de8.BestPracticesMetricsRequestBuilder) {
     return iec2f756b9554ce46110f6b3f733d0617bf3ef06dc480e86cb09cbf2d74628de8.NewBestPracticesMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new UserExperienceAnalyticsBaselineRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsBaselineRequestBuilderInternal instantiates a new UserExperienceAnalyticsBaselineRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBaselineRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBaselineRequestBuilder) {
     m := &UserExperienceAnalyticsBaselineRequestBuilder{
     }
@@ -85,18 +82,13 @@ func NewUserExperienceAnalyticsBaselineRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsBaselineRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsBaselineRequestBuilder instantiates a new UserExperienceAnalyticsBaselineRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBaselineRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBaselineRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBaselineRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics baselines
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics baselines
 func (m *UserExperienceAnalyticsBaselineRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsBaselineRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,9 +105,7 @@ func (m *UserExperienceAnalyticsBaselineRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// User experience analytics baselines
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics baselines
 func (m *UserExperienceAnalyticsBaselineRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsBaselineRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,9 +125,7 @@ func (m *UserExperienceAnalyticsBaselineRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// User experience analytics baselines
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics baselines
 func (m *UserExperienceAnalyticsBaselineRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsBaselineRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,9 +143,7 @@ func (m *UserExperienceAnalyticsBaselineRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// User experience analytics baselines
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics baselines
 func (m *UserExperienceAnalyticsBaselineRequestBuilder) Delete(options *UserExperienceAnalyticsBaselineRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -172,9 +158,7 @@ func (m *UserExperienceAnalyticsBaselineRequestBuilder) Delete(options *UserExpe
 func (m *UserExperienceAnalyticsBaselineRequestBuilder) DeviceBootPerformanceMetrics()(*i69e441d79d9ffb70d727d5891fb03cb7264fe1ac972103efbef3cdeff428347c.DeviceBootPerformanceMetricsRequestBuilder) {
     return i69e441d79d9ffb70d727d5891fb03cb7264fe1ac972103efbef3cdeff428347c.NewDeviceBootPerformanceMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User experience analytics baselines
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics baselines
 func (m *UserExperienceAnalyticsBaselineRequestBuilder) Get(options *UserExperienceAnalyticsBaselineRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaseline, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -186,9 +170,7 @@ func (m *UserExperienceAnalyticsBaselineRequestBuilder) Get(options *UserExperie
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaseline), nil
 }
-// User experience analytics baselines
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics baselines
 func (m *UserExperienceAnalyticsBaselineRequestBuilder) Patch(options *UserExperienceAnalyticsBaselineRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

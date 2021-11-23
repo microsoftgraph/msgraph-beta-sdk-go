@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeploymentAudience 
 type DeploymentAudience struct {
     Entity
     // Specifies the assets to exclude from the audience.
@@ -12,14 +12,14 @@ type DeploymentAudience struct {
     // Specifies the assets to include in the audience.
     members []UpdatableAsset;
 }
-// Instantiates a new deploymentAudience and sets the default values.
+// NewDeploymentAudience instantiates a new deploymentAudience and sets the default values.
 func NewDeploymentAudience()(*DeploymentAudience) {
     m := &DeploymentAudience{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the exclusions property value. Specifies the assets to exclude from the audience.
+// GetExclusions gets the exclusions property value. Specifies the assets to exclude from the audience.
 func (m *DeploymentAudience) GetExclusions()([]UpdatableAsset) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *DeploymentAudience) GetExclusions()([]UpdatableAsset) {
         return m.exclusions
     }
 }
-// Gets the members property value. Specifies the assets to include in the audience.
+// GetMembers gets the members property value. Specifies the assets to include in the audience.
 func (m *DeploymentAudience) GetMembers()([]UpdatableAsset) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *DeploymentAudience) GetMembers()([]UpdatableAsset) {
         return m.members
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["exclusions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,9 +71,7 @@ func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(interface{}
 func (m *DeploymentAudience) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeploymentAudience) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -103,15 +101,11 @@ func (m *DeploymentAudience) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the exclusions property value. Specifies the assets to exclude from the audience.
-// Parameters:
-//  - value : Value to set for the exclusions property.
+// SetExclusions sets the exclusions property value. Specifies the assets to exclude from the audience.
 func (m *DeploymentAudience) SetExclusions(value []UpdatableAsset)() {
     m.exclusions = value
 }
-// Sets the members property value. Specifies the assets to include in the audience.
-// Parameters:
-//  - value : Value to set for the members property.
+// SetMembers sets the members property value. Specifies the assets to include in the audience.
 func (m *DeploymentAudience) SetMembers(value []UpdatableAsset)() {
     m.members = value
 }

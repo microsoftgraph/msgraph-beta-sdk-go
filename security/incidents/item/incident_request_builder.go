@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\incidents\{incident-id}
+// IncidentRequestBuilder builds and executes requests for operations under \security\incidents\{incident-id}
 type IncidentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IncidentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IncidentRequestBuilderDeleteOptions options for Delete
 type IncidentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type IncidentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IncidentRequestBuilderGetOptions options for Get
 type IncidentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type IncidentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get incidents from security
+// IncidentRequestBuilderGetQueryParameters get incidents from security
 type IncidentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IncidentRequestBuilderPatchOptions options for Patch
 type IncidentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Incident;
@@ -53,10 +53,7 @@ type IncidentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IncidentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIncidentRequestBuilderInternal instantiates a new IncidentRequestBuilder and sets the default values.
 func NewIncidentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncidentRequestBuilder) {
     m := &IncidentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewIncidentRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IncidentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIncidentRequestBuilder instantiates a new IncidentRequestBuilder and sets the default values.
 func NewIncidentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncidentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIncidentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property incidents for security
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property incidents for security
 func (m *IncidentRequestBuilder) CreateDeleteRequestInformation(options *IncidentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *IncidentRequestBuilder) CreateDeleteRequestInformation(options *Inciden
     }
     return requestInfo, nil
 }
-// Get incidents from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get incidents from security
 func (m *IncidentRequestBuilder) CreateGetRequestInformation(options *IncidentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *IncidentRequestBuilder) CreateGetRequestInformation(options *IncidentRe
     }
     return requestInfo, nil
 }
-// Update the navigation property incidents in security
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property incidents in security
 func (m *IncidentRequestBuilder) CreatePatchRequestInformation(options *IncidentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *IncidentRequestBuilder) CreatePatchRequestInformation(options *Incident
     }
     return requestInfo, nil
 }
-// Delete navigation property incidents for security
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property incidents for security
 func (m *IncidentRequestBuilder) Delete(options *IncidentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *IncidentRequestBuilder) Delete(options *IncidentRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get incidents from security
-// Parameters:
-//  - options : Options for the request
+// Get get incidents from security
 func (m *IncidentRequestBuilder) Get(options *IncidentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Incident, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *IncidentRequestBuilder) Get(options *IncidentRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Incident), nil
 }
-// Update the navigation property incidents in security
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property incidents in security
 func (m *IncidentRequestBuilder) Patch(options *IncidentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

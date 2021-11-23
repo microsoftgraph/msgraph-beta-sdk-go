@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \functions\{attributeMappingFunctionSchema-id}
+// AttributeMappingFunctionSchemaRequestBuilder builds and executes requests for operations under \functions\{attributeMappingFunctionSchema-id}
 type AttributeMappingFunctionSchemaRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AttributeMappingFunctionSchemaRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AttributeMappingFunctionSchemaRequestBuilderDeleteOptions options for Delete
 type AttributeMappingFunctionSchemaRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AttributeMappingFunctionSchemaRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AttributeMappingFunctionSchemaRequestBuilderGetOptions options for Get
 type AttributeMappingFunctionSchemaRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AttributeMappingFunctionSchemaRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from functions by key
+// AttributeMappingFunctionSchemaRequestBuilderGetQueryParameters get entity from functions by key
 type AttributeMappingFunctionSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AttributeMappingFunctionSchemaRequestBuilderPatchOptions options for Patch
 type AttributeMappingFunctionSchemaRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeMappingFunctionSchema;
@@ -53,10 +53,7 @@ type AttributeMappingFunctionSchemaRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AttributeMappingFunctionSchemaRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttributeMappingFunctionSchemaRequestBuilderInternal instantiates a new AttributeMappingFunctionSchemaRequestBuilder and sets the default values.
 func NewAttributeMappingFunctionSchemaRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttributeMappingFunctionSchemaRequestBuilder) {
     m := &AttributeMappingFunctionSchemaRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAttributeMappingFunctionSchemaRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AttributeMappingFunctionSchemaRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttributeMappingFunctionSchemaRequestBuilder instantiates a new AttributeMappingFunctionSchemaRequestBuilder and sets the default values.
 func NewAttributeMappingFunctionSchemaRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttributeMappingFunctionSchemaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttributeMappingFunctionSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from functions
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from functions
 func (m *AttributeMappingFunctionSchemaRequestBuilder) CreateDeleteRequestInformation(options *AttributeMappingFunctionSchemaRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AttributeMappingFunctionSchemaRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// Get entity from functions by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from functions by key
 func (m *AttributeMappingFunctionSchemaRequestBuilder) CreateGetRequestInformation(options *AttributeMappingFunctionSchemaRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AttributeMappingFunctionSchemaRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Update entity in functions
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in functions
 func (m *AttributeMappingFunctionSchemaRequestBuilder) CreatePatchRequestInformation(options *AttributeMappingFunctionSchemaRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AttributeMappingFunctionSchemaRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Delete entity from functions
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from functions
 func (m *AttributeMappingFunctionSchemaRequestBuilder) Delete(options *AttributeMappingFunctionSchemaRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AttributeMappingFunctionSchemaRequestBuilder) Delete(options *Attribute
     }
     return nil
 }
-// Get entity from functions by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from functions by key
 func (m *AttributeMappingFunctionSchemaRequestBuilder) Get(options *AttributeMappingFunctionSchemaRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeMappingFunctionSchema, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AttributeMappingFunctionSchemaRequestBuilder) Get(options *AttributeMap
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeMappingFunctionSchema), nil
 }
-// Update entity in functions
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in functions
 func (m *AttributeMappingFunctionSchemaRequestBuilder) Patch(options *AttributeMappingFunctionSchemaRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

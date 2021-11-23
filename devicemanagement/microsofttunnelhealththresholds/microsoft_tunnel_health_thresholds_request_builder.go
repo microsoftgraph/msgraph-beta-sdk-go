@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoftTunnelHealthThresholds
+// MicrosoftTunnelHealthThresholdsRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelHealthThresholds
 type MicrosoftTunnelHealthThresholdsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MicrosoftTunnelHealthThresholdsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MicrosoftTunnelHealthThresholdsRequestBuilderGetOptions options for Get
 type MicrosoftTunnelHealthThresholdsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MicrosoftTunnelHealthThresholdsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
+// MicrosoftTunnelHealthThresholdsRequestBuilderGetQueryParameters collection of MicrosoftTunnelHealthThreshold settings associated with account.
 type MicrosoftTunnelHealthThresholdsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MicrosoftTunnelHealthThresholdsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions options for Post
 type MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThreshold;
@@ -56,10 +56,7 @@ type MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MicrosoftTunnelHealthThresholdsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal instantiates a new MicrosoftTunnelHealthThresholdsRequestBuilder and sets the default values.
 func NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelHealthThresholdsRequestBuilder) {
     m := &MicrosoftTunnelHealthThresholdsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MicrosoftTunnelHealthThresholdsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelHealthThresholdsRequestBuilder instantiates a new MicrosoftTunnelHealthThresholdsRequestBuilder and sets the default values.
 func NewMicrosoftTunnelHealthThresholdsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelHealthThresholdsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of MicrosoftTunnelHealthThreshold settings associated with account.
 func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) CreateGetRequestInformation(options *MicrosoftTunnelHealthThresholdsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of MicrosoftTunnelHealthThreshold settings associated with account.
 func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) CreatePostRequestInformation(options *MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Get collection of MicrosoftTunnelHealthThreshold settings associated with account.
 func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Get(options *MicrosoftTunnelHealthThresholdsRequestBuilderGetOptions)(*MicrosoftTunnelHealthThresholdsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Get(options *MicrosoftTu
     }
     return res.(*MicrosoftTunnelHealthThresholdsResponse), nil
 }
-// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Post collection of MicrosoftTunnelHealthThreshold settings associated with account.
 func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Post(options *MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThreshold, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

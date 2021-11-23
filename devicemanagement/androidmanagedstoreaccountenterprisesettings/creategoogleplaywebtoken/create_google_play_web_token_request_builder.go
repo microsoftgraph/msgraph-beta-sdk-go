@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings\microsoft.graph.createGooglePlayWebToken
+// CreateGooglePlayWebTokenRequestBuilder builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings\microsoft.graph.createGooglePlayWebToken
 type CreateGooglePlayWebTokenRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type CreateGooglePlayWebTokenRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CreateGooglePlayWebTokenRequestBuilderPostOptions options for Post
 type CreateGooglePlayWebTokenRequestBuilderPostOptions struct {
     // 
     Body *CreateGooglePlayWebTokenRequestBody;
@@ -24,10 +24,7 @@ type CreateGooglePlayWebTokenRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CreateGooglePlayWebTokenRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateGooglePlayWebTokenRequestBuilderInternal instantiates a new CreateGooglePlayWebTokenRequestBuilder and sets the default values.
 func NewCreateGooglePlayWebTokenRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateGooglePlayWebTokenRequestBuilder) {
     m := &CreateGooglePlayWebTokenRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewCreateGooglePlayWebTokenRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CreateGooglePlayWebTokenRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateGooglePlayWebTokenRequestBuilder instantiates a new CreateGooglePlayWebTokenRequestBuilder and sets the default values.
 func NewCreateGooglePlayWebTokenRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateGooglePlayWebTokenRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreateGooglePlayWebTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Generates a web token that is used in an embeddable component.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation generates a web token that is used in an embeddable component.
 func (m *CreateGooglePlayWebTokenRequestBuilder) CreatePostRequestInformation(options *CreateGooglePlayWebTokenRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *CreateGooglePlayWebTokenRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// Generates a web token that is used in an embeddable component.
-// Parameters:
-//  - options : Options for the request
+// Post generates a web token that is used in an embeddable component.
 func (m *CreateGooglePlayWebTokenRequestBuilder) Post(options *CreateGooglePlayWebTokenRequestBuilderPostOptions)(*string, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

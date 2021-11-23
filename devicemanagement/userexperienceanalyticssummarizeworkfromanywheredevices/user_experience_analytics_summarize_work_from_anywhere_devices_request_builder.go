@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices()
+// UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices()
 type UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder struc
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderGetOpt
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes userExperienceAnalyticsWorkFromAnywhereDevicesSummary
+// UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse union type wrapper for classes userExperienceAnalyticsWorkFromAnywhereDevicesSummary
 type UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type userExperienceAnalyticsWorkFromAnywhereDevicesSummary
     userExperienceAnalyticsWorkFromAnywhereDevicesSummary *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereDevicesSummary;
 }
-// Instantiates a new userExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse and sets the default values.
+// NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse instantiates a new userExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse and sets the default values.
 func NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse()(*UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) {
     m := &UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) GetAdd
         return m.additionalData
     }
 }
-// Gets the userExperienceAnalyticsWorkFromAnywhereDevicesSummary property value. Union type representation for type userExperienceAnalyticsWorkFromAnywhereDevicesSummary
+// GetUserExperienceAnalyticsWorkFromAnywhereDevicesSummary gets the userExperienceAnalyticsWorkFromAnywhereDevicesSummary property value. Union type representation for type userExperienceAnalyticsWorkFromAnywhereDevicesSummary
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) GetUserExperienceAnalyticsWorkFromAnywhereDevicesSummary()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) GetUse
         return m.userExperienceAnalyticsWorkFromAnywhereDevicesSummary
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["userExperienceAnalyticsWorkFromAnywhereDevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) GetFie
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("userExperienceAnalyticsWorkFromAnywhereDevicesSummary", m.GetUserExperienceAnalyticsWorkFromAnywhereDevicesSummary())
@@ -90,22 +88,15 @@ func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) Serial
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the userExperienceAnalyticsWorkFromAnywhereDevicesSummary property value. Union type representation for type userExperienceAnalyticsWorkFromAnywhereDevicesSummary
-// Parameters:
-//  - value : Value to set for the userExperienceAnalyticsWorkFromAnywhereDevicesSummary property.
+// SetUserExperienceAnalyticsWorkFromAnywhereDevicesSummary sets the userExperienceAnalyticsWorkFromAnywhereDevicesSummary property value. Union type representation for type userExperienceAnalyticsWorkFromAnywhereDevicesSummary
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse) SetUserExperienceAnalyticsWorkFromAnywhereDevicesSummary(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereDevicesSummary)() {
     m.userExperienceAnalyticsWorkFromAnywhereDevicesSummary = value
 }
-// Instantiates a new UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal instantiates a new UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) {
     m := &UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder instantiates a new UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) 
     }
     return requestInfo, nil
 }
-// Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
-// Parameters:
-//  - options : Options for the request
+// Get invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
 func (m *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) Get(options *UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderGetOptions)(*UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

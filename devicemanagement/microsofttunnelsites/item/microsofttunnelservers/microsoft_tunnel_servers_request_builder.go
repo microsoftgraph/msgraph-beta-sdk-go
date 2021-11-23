@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelServers
+// MicrosoftTunnelServersRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelServers
 type MicrosoftTunnelServersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MicrosoftTunnelServersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MicrosoftTunnelServersRequestBuilderGetOptions options for Get
 type MicrosoftTunnelServersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MicrosoftTunnelServersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
+// MicrosoftTunnelServersRequestBuilderGetQueryParameters a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 type MicrosoftTunnelServersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MicrosoftTunnelServersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MicrosoftTunnelServersRequestBuilderPostOptions options for Post
 type MicrosoftTunnelServersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServer;
@@ -56,10 +56,7 @@ type MicrosoftTunnelServersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MicrosoftTunnelServersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelServersRequestBuilderInternal instantiates a new MicrosoftTunnelServersRequestBuilder and sets the default values.
 func NewMicrosoftTunnelServersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelServersRequestBuilder) {
     m := &MicrosoftTunnelServersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMicrosoftTunnelServersRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MicrosoftTunnelServersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelServersRequestBuilder instantiates a new MicrosoftTunnelServersRequestBuilder and sets the default values.
 func NewMicrosoftTunnelServersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelServersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelServersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServersRequestBuilder) CreateGetRequestInformation(options *MicrosoftTunnelServersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MicrosoftTunnelServersRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServersRequestBuilder) CreatePostRequestInformation(options *MicrosoftTunnelServersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MicrosoftTunnelServersRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// Get a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServersRequestBuilder) Get(options *MicrosoftTunnelServersRequestBuilderGetOptions)(*MicrosoftTunnelServersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MicrosoftTunnelServersRequestBuilder) Get(options *MicrosoftTunnelServe
     }
     return res.(*MicrosoftTunnelServersResponse), nil
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// Post a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServersRequestBuilder) Post(options *MicrosoftTunnelServersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServer, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

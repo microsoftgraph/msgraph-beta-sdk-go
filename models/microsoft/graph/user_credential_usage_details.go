@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserCredentialUsageDetails 
 type UserCredentialUsageDetails struct {
     Entity
     // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
@@ -23,14 +23,14 @@ type UserCredentialUsageDetails struct {
     // User principal name of the user performing the reset or registration workflow.
     userPrincipalName *string;
 }
-// Instantiates a new userCredentialUsageDetails and sets the default values.
+// NewUserCredentialUsageDetails instantiates a new userCredentialUsageDetails and sets the default values.
 func NewUserCredentialUsageDetails()(*UserCredentialUsageDetails) {
     m := &UserCredentialUsageDetails{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
+// GetAuthMethod gets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
 func (m *UserCredentialUsageDetails) GetAuthMethod()(*UsageAuthMethod) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *UserCredentialUsageDetails) GetAuthMethod()(*UsageAuthMethod) {
         return m.authMethod
     }
 }
-// Gets the eventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetEventDateTime gets the eventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *UserCredentialUsageDetails) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *UserCredentialUsageDetails) GetEventDateTime()(*i336074805fc853987abe6f
         return m.eventDateTime
     }
 }
-// Gets the failureReason property value. Provides the failure reason for the corresponding reset or registration workflow.
+// GetFailureReason gets the failureReason property value. Provides the failure reason for the corresponding reset or registration workflow.
 func (m *UserCredentialUsageDetails) GetFailureReason()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *UserCredentialUsageDetails) GetFailureReason()(*string) {
         return m.failureReason
     }
 }
-// Gets the feature property value. Possible values are: registration, reset, unknownFutureValue.
+// GetFeature gets the feature property value. Possible values are: registration, reset, unknownFutureValue.
 func (m *UserCredentialUsageDetails) GetFeature()(*FeatureType) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *UserCredentialUsageDetails) GetFeature()(*FeatureType) {
         return m.feature
     }
 }
-// Gets the isSuccess property value. Indicates success or failure of the workflow.
+// GetIsSuccess gets the isSuccess property value. Indicates success or failure of the workflow.
 func (m *UserCredentialUsageDetails) GetIsSuccess()(*bool) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *UserCredentialUsageDetails) GetIsSuccess()(*bool) {
         return m.isSuccess
     }
 }
-// Gets the userDisplayName property value. User name of the user performing the reset or registration workflow.
+// GetUserDisplayName gets the userDisplayName property value. User name of the user performing the reset or registration workflow.
 func (m *UserCredentialUsageDetails) GetUserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *UserCredentialUsageDetails) GetUserDisplayName()(*string) {
         return m.userDisplayName
     }
 }
-// Gets the userPrincipalName property value. User principal name of the user performing the reset or registration workflow.
+// GetUserPrincipalName gets the userPrincipalName property value. User principal name of the user performing the reset or registration workflow.
 func (m *UserCredentialUsageDetails) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *UserCredentialUsageDetails) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,9 +166,7 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
 func (m *UserCredentialUsageDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserCredentialUsageDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -220,45 +218,31 @@ func (m *UserCredentialUsageDetails) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
-// Sets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
-// Parameters:
-//  - value : Value to set for the authMethod property.
+// SetAuthMethod sets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
 func (m *UserCredentialUsageDetails) SetAuthMethod(value *UsageAuthMethod)() {
     m.authMethod = value
 }
-// Sets the eventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the eventDateTime property.
+// SetEventDateTime sets the eventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *UserCredentialUsageDetails) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.eventDateTime = value
 }
-// Sets the failureReason property value. Provides the failure reason for the corresponding reset or registration workflow.
-// Parameters:
-//  - value : Value to set for the failureReason property.
+// SetFailureReason sets the failureReason property value. Provides the failure reason for the corresponding reset or registration workflow.
 func (m *UserCredentialUsageDetails) SetFailureReason(value *string)() {
     m.failureReason = value
 }
-// Sets the feature property value. Possible values are: registration, reset, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the feature property.
+// SetFeature sets the feature property value. Possible values are: registration, reset, unknownFutureValue.
 func (m *UserCredentialUsageDetails) SetFeature(value *FeatureType)() {
     m.feature = value
 }
-// Sets the isSuccess property value. Indicates success or failure of the workflow.
-// Parameters:
-//  - value : Value to set for the isSuccess property.
+// SetIsSuccess sets the isSuccess property value. Indicates success or failure of the workflow.
 func (m *UserCredentialUsageDetails) SetIsSuccess(value *bool)() {
     m.isSuccess = value
 }
-// Sets the userDisplayName property value. User name of the user performing the reset or registration workflow.
-// Parameters:
-//  - value : Value to set for the userDisplayName property.
+// SetUserDisplayName sets the userDisplayName property value. User name of the user performing the reset or registration workflow.
 func (m *UserCredentialUsageDetails) SetUserDisplayName(value *string)() {
     m.userDisplayName = value
 }
-// Sets the userPrincipalName property value. User principal name of the user performing the reset or registration workflow.
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. User principal name of the user performing the reset or registration workflow.
 func (m *UserCredentialUsageDetails) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

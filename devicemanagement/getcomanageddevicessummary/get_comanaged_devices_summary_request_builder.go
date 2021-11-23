@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoft.graph.getComanagedDevicesSummary()
+// GetComanagedDevicesSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.getComanagedDevicesSummary()
 type GetComanagedDevicesSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetComanagedDevicesSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetComanagedDevicesSummaryRequestBuilderGetOptions options for Get
 type GetComanagedDevicesSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type GetComanagedDevicesSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes comanagedDevicesSummary
+// GetComanagedDevicesSummaryResponse union type wrapper for classes comanagedDevicesSummary
 type GetComanagedDevicesSummaryResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type comanagedDevicesSummary
     comanagedDevicesSummary *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagedDevicesSummary;
 }
-// Instantiates a new getComanagedDevicesSummaryResponse and sets the default values.
+// NewGetComanagedDevicesSummaryResponse instantiates a new getComanagedDevicesSummaryResponse and sets the default values.
 func NewGetComanagedDevicesSummaryResponse()(*GetComanagedDevicesSummaryResponse) {
     m := &GetComanagedDevicesSummaryResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetComanagedDevicesSummaryResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GetComanagedDevicesSummaryResponse) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
-// Gets the comanagedDevicesSummary property value. Union type representation for type comanagedDevicesSummary
+// GetComanagedDevicesSummary gets the comanagedDevicesSummary property value. Union type representation for type comanagedDevicesSummary
 func (m *GetComanagedDevicesSummaryResponse) GetComanagedDevicesSummary()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagedDevicesSummary) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GetComanagedDevicesSummaryResponse) GetComanagedDevicesSummary()(*i5356
         return m.comanagedDevicesSummary
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetComanagedDevicesSummaryResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["comanagedDevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *GetComanagedDevicesSummaryResponse) GetFieldDeserializers()(map[string]
 func (m *GetComanagedDevicesSummaryResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetComanagedDevicesSummaryResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("comanagedDevicesSummary", m.GetComanagedDevicesSummary())
@@ -90,22 +88,15 @@ func (m *GetComanagedDevicesSummaryResponse) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetComanagedDevicesSummaryResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the comanagedDevicesSummary property value. Union type representation for type comanagedDevicesSummary
-// Parameters:
-//  - value : Value to set for the comanagedDevicesSummary property.
+// SetComanagedDevicesSummary sets the comanagedDevicesSummary property value. Union type representation for type comanagedDevicesSummary
 func (m *GetComanagedDevicesSummaryResponse) SetComanagedDevicesSummary(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagedDevicesSummary)() {
     m.comanagedDevicesSummary = value
 }
-// Instantiates a new GetComanagedDevicesSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetComanagedDevicesSummaryRequestBuilderInternal instantiates a new GetComanagedDevicesSummaryRequestBuilder and sets the default values.
 func NewGetComanagedDevicesSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetComanagedDevicesSummaryRequestBuilder) {
     m := &GetComanagedDevicesSummaryRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewGetComanagedDevicesSummaryRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetComanagedDevicesSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetComanagedDevicesSummaryRequestBuilder instantiates a new GetComanagedDevicesSummaryRequestBuilder and sets the default values.
 func NewGetComanagedDevicesSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetComanagedDevicesSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetComanagedDevicesSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getComanagedDevicesSummary
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getComanagedDevicesSummary
 func (m *GetComanagedDevicesSummaryRequestBuilder) CreateGetRequestInformation(options *GetComanagedDevicesSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *GetComanagedDevicesSummaryRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Invoke function getComanagedDevicesSummary
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getComanagedDevicesSummary
 func (m *GetComanagedDevicesSummaryRequestBuilder) Get(options *GetComanagedDevicesSummaryRequestBuilderGetOptions)(*GetComanagedDevicesSummaryResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

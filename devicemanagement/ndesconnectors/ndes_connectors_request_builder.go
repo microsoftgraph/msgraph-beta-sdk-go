@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\ndesConnectors
+// NdesConnectorsRequestBuilder builds and executes requests for operations under \deviceManagement\ndesConnectors
 type NdesConnectorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type NdesConnectorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// NdesConnectorsRequestBuilderGetOptions options for Get
 type NdesConnectorsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type NdesConnectorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of Ndes connectors for this account.
+// NdesConnectorsRequestBuilderGetQueryParameters the collection of Ndes connectors for this account.
 type NdesConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type NdesConnectorsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// NdesConnectorsRequestBuilderPostOptions options for Post
 type NdesConnectorsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NdesConnector;
@@ -56,10 +56,7 @@ type NdesConnectorsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NdesConnectorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNdesConnectorsRequestBuilderInternal instantiates a new NdesConnectorsRequestBuilder and sets the default values.
 func NewNdesConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NdesConnectorsRequestBuilder) {
     m := &NdesConnectorsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewNdesConnectorsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NdesConnectorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNdesConnectorsRequestBuilder instantiates a new NdesConnectorsRequestBuilder and sets the default values.
 func NewNdesConnectorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NdesConnectorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNdesConnectorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of Ndes connectors for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of Ndes connectors for this account.
 func (m *NdesConnectorsRequestBuilder) CreateGetRequestInformation(options *NdesConnectorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *NdesConnectorsRequestBuilder) CreateGetRequestInformation(options *Ndes
     }
     return requestInfo, nil
 }
-// The collection of Ndes connectors for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of Ndes connectors for this account.
 func (m *NdesConnectorsRequestBuilder) CreatePostRequestInformation(options *NdesConnectorsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *NdesConnectorsRequestBuilder) CreatePostRequestInformation(options *Nde
     }
     return requestInfo, nil
 }
-// The collection of Ndes connectors for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of Ndes connectors for this account.
 func (m *NdesConnectorsRequestBuilder) Get(options *NdesConnectorsRequestBuilderGetOptions)(*NdesConnectorsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *NdesConnectorsRequestBuilder) Get(options *NdesConnectorsRequestBuilder
     }
     return res.(*NdesConnectorsResponse), nil
 }
-// The collection of Ndes connectors for this account.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of Ndes connectors for this account.
 func (m *NdesConnectorsRequestBuilder) Post(options *NdesConnectorsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NdesConnector, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

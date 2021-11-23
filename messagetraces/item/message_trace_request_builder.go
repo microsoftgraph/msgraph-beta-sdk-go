@@ -8,7 +8,7 @@ import (
     i784f8f4585fbe63e879909a57ff455aab4735d6d36dfefcca7b001c7d766c074 "github.com/microsoftgraph/msgraph-beta-sdk-go/messagetraces/item/recipients/item"
 )
 
-// Builds and executes requests for operations under \messageTraces\{messageTrace-id}
+// MessageTraceRequestBuilder builds and executes requests for operations under \messageTraces\{messageTrace-id}
 type MessageTraceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type MessageTraceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MessageTraceRequestBuilderDeleteOptions options for Delete
 type MessageTraceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MessageTraceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MessageTraceRequestBuilderGetOptions options for Get
 type MessageTraceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type MessageTraceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from messageTraces by key
+// MessageTraceRequestBuilderGetQueryParameters get entity from messageTraces by key
 type MessageTraceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MessageTraceRequestBuilderPatchOptions options for Patch
 type MessageTraceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageTrace;
@@ -55,10 +55,7 @@ type MessageTraceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MessageTraceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageTraceRequestBuilderInternal instantiates a new MessageTraceRequestBuilder and sets the default values.
 func NewMessageTraceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageTraceRequestBuilder) {
     m := &MessageTraceRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewMessageTraceRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessageTraceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageTraceRequestBuilder instantiates a new MessageTraceRequestBuilder and sets the default values.
 func NewMessageTraceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageTraceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessageTraceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from messageTraces
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from messageTraces
 func (m *MessageTraceRequestBuilder) CreateDeleteRequestInformation(options *MessageTraceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *MessageTraceRequestBuilder) CreateDeleteRequestInformation(options *Mes
     }
     return requestInfo, nil
 }
-// Get entity from messageTraces by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from messageTraces by key
 func (m *MessageTraceRequestBuilder) CreateGetRequestInformation(options *MessageTraceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *MessageTraceRequestBuilder) CreateGetRequestInformation(options *Messag
     }
     return requestInfo, nil
 }
-// Update entity in messageTraces
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in messageTraces
 func (m *MessageTraceRequestBuilder) CreatePatchRequestInformation(options *MessageTraceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *MessageTraceRequestBuilder) CreatePatchRequestInformation(options *Mess
     }
     return requestInfo, nil
 }
-// Delete entity from messageTraces
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from messageTraces
 func (m *MessageTraceRequestBuilder) Delete(options *MessageTraceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *MessageTraceRequestBuilder) Delete(options *MessageTraceRequestBuilderD
     }
     return nil
 }
-// Get entity from messageTraces by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from messageTraces by key
 func (m *MessageTraceRequestBuilder) Get(options *MessageTraceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageTrace, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *MessageTraceRequestBuilder) Get(options *MessageTraceRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageTrace), nil
 }
-// Update entity in messageTraces
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in messageTraces
 func (m *MessageTraceRequestBuilder) Patch(options *MessageTraceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *MessageTraceRequestBuilder) Patch(options *MessageTraceRequestBuilderPa
 func (m *MessageTraceRequestBuilder) Recipients()(*i3ab3304bdff2112b7f44c4e3735f9f4f803cca87448b4d30efc2916bc2663f09.RecipientsRequestBuilder) {
     return i3ab3304bdff2112b7f44c4e3735f9f4f803cca87448b4d30efc2916bc2663f09.NewRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.messageTraces.item.recipients.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RecipientsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.messageTraces.item.recipients.item collection
 func (m *MessageTraceRequestBuilder) RecipientsById(id string)(*i784f8f4585fbe63e879909a57ff455aab4735d6d36dfefcca7b001c7d766c074.MessageRecipientRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

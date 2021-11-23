@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\onPremisesConnections
+// OnPremisesConnectionsRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\onPremisesConnections
 type OnPremisesConnectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OnPremisesConnectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OnPremisesConnectionsRequestBuilderGetOptions options for Get
 type OnPremisesConnectionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OnPremisesConnectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+// OnPremisesConnectionsRequestBuilderGetQueryParameters a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 type OnPremisesConnectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type OnPremisesConnectionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// OnPremisesConnectionsRequestBuilderPostOptions options for Post
 type OnPremisesConnectionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOnPremisesConnection;
@@ -56,10 +56,7 @@ type OnPremisesConnectionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OnPremisesConnectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnPremisesConnectionsRequestBuilderInternal instantiates a new OnPremisesConnectionsRequestBuilder and sets the default values.
 func NewOnPremisesConnectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnPremisesConnectionsRequestBuilder) {
     m := &OnPremisesConnectionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewOnPremisesConnectionsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnPremisesConnectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnPremisesConnectionsRequestBuilder instantiates a new OnPremisesConnectionsRequestBuilder and sets the default values.
 func NewOnPremisesConnectionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnPremisesConnectionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesConnectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *OnPremisesConnectionsRequestBuilder) CreateGetRequestInformation(options *OnPremisesConnectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *OnPremisesConnectionsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *OnPremisesConnectionsRequestBuilder) CreatePostRequestInformation(options *OnPremisesConnectionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *OnPremisesConnectionsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-// Parameters:
-//  - options : Options for the request
+// Get a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *OnPremisesConnectionsRequestBuilder) Get(options *OnPremisesConnectionsRequestBuilderGetOptions)(*OnPremisesConnectionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *OnPremisesConnectionsRequestBuilder) Get(options *OnPremisesConnections
     }
     return res.(*OnPremisesConnectionsResponse), nil
 }
-// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-// Parameters:
-//  - options : Options for the request
+// Post a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *OnPremisesConnectionsRequestBuilder) Post(options *OnPremisesConnectionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOnPremisesConnection, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

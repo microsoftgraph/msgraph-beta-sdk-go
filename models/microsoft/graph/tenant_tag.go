@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// TenantTag 
 type TenantTag struct {
     Entity
     // The identifier for the account that created the tenant tag. Required. Read-only.
@@ -25,14 +25,14 @@ type TenantTag struct {
     // The collection of managed tenants associated with the tenant tag. Optional.
     tenants []TenantInfo;
 }
-// Instantiates a new tenantTag and sets the default values.
+// NewTenantTag instantiates a new tenantTag and sets the default values.
 func NewTenantTag()(*TenantTag) {
     m := &TenantTag{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the createdByUserId property value. The identifier for the account that created the tenant tag. Required. Read-only.
+// GetCreatedByUserId gets the createdByUserId property value. The identifier for the account that created the tenant tag. Required. Read-only.
 func (m *TenantTag) GetCreatedByUserId()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *TenantTag) GetCreatedByUserId()(*string) {
         return m.createdByUserId
     }
 }
-// Gets the createdDateTime property value. The date and time when the tenant tag was created. Required. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the tenant tag was created. Required. Read-only.
 func (m *TenantTag) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *TenantTag) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.createdDateTime
     }
 }
-// Gets the deletedDateTime property value. The date and time when the tenant tag was deleted. Required. Read-only.
+// GetDeletedDateTime gets the deletedDateTime property value. The date and time when the tenant tag was deleted. Required. Read-only.
 func (m *TenantTag) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *TenantTag) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.deletedDateTime
     }
 }
-// Gets the description property value. The description for the tenant tag. Optional. Read-only.
+// GetDescription gets the description property value. The description for the tenant tag. Optional. Read-only.
 func (m *TenantTag) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *TenantTag) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name for the tenant tag. Required. Read-only.
+// GetDisplayName gets the displayName property value. The display name for the tenant tag. Required. Read-only.
 func (m *TenantTag) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *TenantTag) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastActionByUserId property value. The identifier for the account that lasted on the tenant tag. Optional. Read-only.
+// GetLastActionByUserId gets the lastActionByUserId property value. The identifier for the account that lasted on the tenant tag. Optional. Read-only.
 func (m *TenantTag) GetLastActionByUserId()(*string) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *TenantTag) GetLastActionByUserId()(*string) {
         return m.lastActionByUserId
     }
 }
-// Gets the lastActionDateTime property value. The date and time the last action was performed against the tenant tag. Optional. Read-only.
+// GetLastActionDateTime gets the lastActionDateTime property value. The date and time the last action was performed against the tenant tag. Optional. Read-only.
 func (m *TenantTag) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *TenantTag) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.lastActionDateTime
     }
 }
-// Gets the tenants property value. The collection of managed tenants associated with the tenant tag. Optional.
+// GetTenants gets the tenants property value. The collection of managed tenants associated with the tenant tag. Optional.
 func (m *TenantTag) GetTenants()([]TenantInfo) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *TenantTag) GetTenants()([]TenantInfo) {
         return m.tenants
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TenantTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdByUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,9 +188,7 @@ func (m *TenantTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
 func (m *TenantTag) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TenantTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -251,51 +249,35 @@ func (m *TenantTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     }
     return nil
 }
-// Sets the createdByUserId property value. The identifier for the account that created the tenant tag. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the createdByUserId property.
+// SetCreatedByUserId sets the createdByUserId property value. The identifier for the account that created the tenant tag. Required. Read-only.
 func (m *TenantTag) SetCreatedByUserId(value *string)() {
     m.createdByUserId = value
 }
-// Sets the createdDateTime property value. The date and time when the tenant tag was created. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the tenant tag was created. Required. Read-only.
 func (m *TenantTag) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the deletedDateTime property value. The date and time when the tenant tag was deleted. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the deletedDateTime property.
+// SetDeletedDateTime sets the deletedDateTime property value. The date and time when the tenant tag was deleted. Required. Read-only.
 func (m *TenantTag) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.deletedDateTime = value
 }
-// Sets the description property value. The description for the tenant tag. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description for the tenant tag. Optional. Read-only.
 func (m *TenantTag) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name for the tenant tag. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the tenant tag. Required. Read-only.
 func (m *TenantTag) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastActionByUserId property value. The identifier for the account that lasted on the tenant tag. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the lastActionByUserId property.
+// SetLastActionByUserId sets the lastActionByUserId property value. The identifier for the account that lasted on the tenant tag. Optional. Read-only.
 func (m *TenantTag) SetLastActionByUserId(value *string)() {
     m.lastActionByUserId = value
 }
-// Sets the lastActionDateTime property value. The date and time the last action was performed against the tenant tag. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the lastActionDateTime property.
+// SetLastActionDateTime sets the lastActionDateTime property value. The date and time the last action was performed against the tenant tag. Optional. Read-only.
 func (m *TenantTag) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastActionDateTime = value
 }
-// Sets the tenants property value. The collection of managed tenants associated with the tenant tag. Optional.
-// Parameters:
-//  - value : Value to set for the tenants property.
+// SetTenants sets the tenants property value. The collection of managed tenants associated with the tenant tag. Optional.
 func (m *TenantTag) SetTenants(value []TenantInfo)() {
     m.tenants = value
 }

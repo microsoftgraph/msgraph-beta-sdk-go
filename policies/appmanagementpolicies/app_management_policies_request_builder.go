@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\appManagementPolicies
+// AppManagementPoliciesRequestBuilder builds and executes requests for operations under \policies\appManagementPolicies
 type AppManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppManagementPoliciesRequestBuilderGetOptions options for Get
 type AppManagementPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppManagementPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// AppManagementPoliciesRequestBuilderGetQueryParameters the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 type AppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppManagementPoliciesRequestBuilderPostOptions options for Post
 type AppManagementPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicy;
@@ -56,10 +56,7 @@ type AppManagementPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppManagementPoliciesRequestBuilderInternal instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
 func NewAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppManagementPoliciesRequestBuilder) {
     m := &AppManagementPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppManagementPoliciesRequestBuilder instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
 func NewAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppManagementPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation(options *AppManagementPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 func (m *AppManagementPoliciesRequestBuilder) CreatePostRequestInformation(options *AppManagementPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AppManagementPoliciesRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-// Parameters:
-//  - options : Options for the request
+// Get the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 func (m *AppManagementPoliciesRequestBuilder) Get(options *AppManagementPoliciesRequestBuilderGetOptions)(*AppManagementPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AppManagementPoliciesRequestBuilder) Get(options *AppManagementPolicies
     }
     return res.(*AppManagementPoliciesResponse), nil
 }
-// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-// Parameters:
-//  - options : Options for the request
+// Post the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 func (m *AppManagementPoliciesRequestBuilder) Post(options *AppManagementPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -10,7 +10,7 @@ import (
     ie38c9a1118b781a8cc486e08009768123690676d39af853ebdf06098c5110f09 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/tiindicators/deletetiindicators"
 )
 
-// Builds and executes requests for operations under \security\tiIndicators
+// TiIndicatorsRequestBuilder builds and executes requests for operations under \security\tiIndicators
 type TiIndicatorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type TiIndicatorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TiIndicatorsRequestBuilderGetOptions options for Get
 type TiIndicatorsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type TiIndicatorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get tiIndicators from security
+// TiIndicatorsRequestBuilderGetQueryParameters get tiIndicators from security
 type TiIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type TiIndicatorsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TiIndicatorsRequestBuilderPostOptions options for Post
 type TiIndicatorsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TiIndicator;
@@ -60,10 +60,7 @@ type TiIndicatorsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TiIndicatorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTiIndicatorsRequestBuilderInternal instantiates a new TiIndicatorsRequestBuilder and sets the default values.
 func NewTiIndicatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TiIndicatorsRequestBuilder) {
     m := &TiIndicatorsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewTiIndicatorsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TiIndicatorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTiIndicatorsRequestBuilder instantiates a new TiIndicatorsRequestBuilder and sets the default values.
 func NewTiIndicatorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TiIndicatorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get tiIndicators from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get tiIndicators from security
 func (m *TiIndicatorsRequestBuilder) CreateGetRequestInformation(options *TiIndicatorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *TiIndicatorsRequestBuilder) CreateGetRequestInformation(options *TiIndi
     }
     return requestInfo, nil
 }
-// Create new navigation property to tiIndicators for security
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to tiIndicators for security
 func (m *TiIndicatorsRequestBuilder) CreatePostRequestInformation(options *TiIndicatorsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +123,7 @@ func (m *TiIndicatorsRequestBuilder) DeleteTiIndicators()(*ie38c9a1118b781a8cc48
 func (m *TiIndicatorsRequestBuilder) DeleteTiIndicatorsByExternalId()(*i84faad3a80813a60a94e3416bfa220426811428a0f17f7a125a8a8389a71931a.DeleteTiIndicatorsByExternalIdRequestBuilder) {
     return i84faad3a80813a60a94e3416bfa220426811428a0f17f7a125a8a8389a71931a.NewDeleteTiIndicatorsByExternalIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get tiIndicators from security
-// Parameters:
-//  - options : Options for the request
+// Get get tiIndicators from security
 func (m *TiIndicatorsRequestBuilder) Get(options *TiIndicatorsRequestBuilderGetOptions)(*TiIndicatorsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -147,9 +135,7 @@ func (m *TiIndicatorsRequestBuilder) Get(options *TiIndicatorsRequestBuilderGetO
     }
     return res.(*TiIndicatorsResponse), nil
 }
-// Create new navigation property to tiIndicators for security
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to tiIndicators for security
 func (m *TiIndicatorsRequestBuilder) Post(options *TiIndicatorsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TiIndicator, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ConnectorGroup 
 type ConnectorGroup struct {
     Entity
     // Read-only. Nullable.
@@ -20,14 +20,14 @@ type ConnectorGroup struct {
     // The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
     region *ConnectorGroupRegion;
 }
-// Instantiates a new connectorGroup and sets the default values.
+// NewConnectorGroup instantiates a new connectorGroup and sets the default values.
 func NewConnectorGroup()(*ConnectorGroup) {
     m := &ConnectorGroup{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the applications property value. Read-only. Nullable.
+// GetApplications gets the applications property value. Read-only. Nullable.
 func (m *ConnectorGroup) GetApplications()([]Application) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *ConnectorGroup) GetApplications()([]Application) {
         return m.applications
     }
 }
-// Gets the connectorGroupType property value. Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
+// GetConnectorGroupType gets the connectorGroupType property value. Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
 func (m *ConnectorGroup) GetConnectorGroupType()(*ConnectorGroupType) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *ConnectorGroup) GetConnectorGroupType()(*ConnectorGroupType) {
         return m.connectorGroupType
     }
 }
-// Gets the isDefault property value. Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
+// GetIsDefault gets the isDefault property value. Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
 func (m *ConnectorGroup) GetIsDefault()(*bool) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *ConnectorGroup) GetIsDefault()(*bool) {
         return m.isDefault
     }
 }
-// Gets the members property value. Read-only. Nullable.
+// GetMembers gets the members property value. Read-only. Nullable.
 func (m *ConnectorGroup) GetMembers()([]Connector) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *ConnectorGroup) GetMembers()([]Connector) {
         return m.members
     }
 }
-// Gets the name property value. The name associated with the connectorGroup.
+// GetName gets the name property value. The name associated with the connectorGroup.
 func (m *ConnectorGroup) GetName()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *ConnectorGroup) GetName()(*string) {
         return m.name
     }
 }
-// Gets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
+// GetRegion gets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
 func (m *ConnectorGroup) GetRegion()(*ConnectorGroupRegion) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *ConnectorGroup) GetRegion()(*ConnectorGroupRegion) {
         return m.region
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,9 +153,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *ConnectorGroup) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -211,39 +209,27 @@ func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the applications property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the applications property.
+// SetApplications sets the applications property value. Read-only. Nullable.
 func (m *ConnectorGroup) SetApplications(value []Application)() {
     m.applications = value
 }
-// Sets the connectorGroupType property value. Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
-// Parameters:
-//  - value : Value to set for the connectorGroupType property.
+// SetConnectorGroupType sets the connectorGroupType property value. Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
 func (m *ConnectorGroup) SetConnectorGroupType(value *ConnectorGroupType)() {
     m.connectorGroupType = value
 }
-// Sets the isDefault property value. Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
-// Parameters:
-//  - value : Value to set for the isDefault property.
+// SetIsDefault sets the isDefault property value. Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
 func (m *ConnectorGroup) SetIsDefault(value *bool)() {
     m.isDefault = value
 }
-// Sets the members property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the members property.
+// SetMembers sets the members property value. Read-only. Nullable.
 func (m *ConnectorGroup) SetMembers(value []Connector)() {
     m.members = value
 }
-// Sets the name property value. The name associated with the connectorGroup.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. The name associated with the connectorGroup.
 func (m *ConnectorGroup) SetName(value *string)() {
     m.name = value
 }
-// Sets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the region property.
+// SetRegion sets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
 func (m *ConnectorGroup) SetRegion(value *ConnectorGroupRegion)() {
     m.region = value
 }

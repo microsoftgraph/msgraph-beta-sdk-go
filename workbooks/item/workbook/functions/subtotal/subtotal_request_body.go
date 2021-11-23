@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// SubtotalRequestBody 
 type SubtotalRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type SubtotalRequestBody struct {
     // 
     values *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
-// Instantiates a new subtotalRequestBody and sets the default values.
+// NewSubtotalRequestBody instantiates a new subtotalRequestBody and sets the default values.
 func NewSubtotalRequestBody()(*SubtotalRequestBody) {
     m := &SubtotalRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubtotalRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *SubtotalRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the functionNum property value. 
+// GetFunctionNum gets the functionNum property value. 
 func (m *SubtotalRequestBody) GetFunctionNum()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *SubtotalRequestBody) GetFunctionNum()(*i535684e11b5500196ecb4b5c6634e06
         return m.functionNum
     }
 }
-// Gets the values property value. 
+// GetValues gets the values property value. 
 func (m *SubtotalRequestBody) GetValues()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *SubtotalRequestBody) GetValues()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.values
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SubtotalRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["functionNum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *SubtotalRequestBody) GetFieldDeserializers()(map[string]func(interface{
 func (m *SubtotalRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SubtotalRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("functionNum", m.GetFunctionNum())
@@ -97,21 +95,15 @@ func (m *SubtotalRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubtotalRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the functionNum property value. 
-// Parameters:
-//  - value : Value to set for the functionNum property.
+// SetFunctionNum sets the functionNum property value. 
 func (m *SubtotalRequestBody) SetFunctionNum(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.functionNum = value
 }
-// Sets the values property value. 
-// Parameters:
-//  - value : Value to set for the values property.
+// SetValues sets the values property value. 
 func (m *SubtotalRequestBody) SetValues(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.values = value
 }

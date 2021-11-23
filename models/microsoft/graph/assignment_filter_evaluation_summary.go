@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AssignmentFilterEvaluationSummary 
 type AssignmentFilterEvaluationSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,14 +26,14 @@ type AssignmentFilterEvaluationSummary struct {
     // Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
     evaluationResult *AssignmentFilterEvaluationResult;
 }
-// Instantiates a new assignmentFilterEvaluationSummary and sets the default values.
+// NewAssignmentFilterEvaluationSummary instantiates a new assignmentFilterEvaluationSummary and sets the default values.
 func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) {
     m := &AssignmentFilterEvaluationSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterEvaluationSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
-// Gets the assignmentFilterDisplayName property value. The admin defined name for assignment filter.
+// GetAssignmentFilterDisplayName gets the assignmentFilterDisplayName property value. The admin defined name for assignment filter.
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterDisplayName()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterDisplayName()(*st
         return m.assignmentFilterDisplayName
     }
 }
-// Gets the assignmentFilterId property value. Unique identifier for the assignment filter object
+// GetAssignmentFilterId gets the assignmentFilterId property value. Unique identifier for the assignment filter object
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterId()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterId()(*string) {
         return m.assignmentFilterId
     }
 }
-// Gets the assignmentFilterLastModifiedDateTime property value. The time the assignment filter was last modified.
+// GetAssignmentFilterLastModifiedDateTime gets the assignmentFilterLastModifiedDateTime property value. The time the assignment filter was last modified.
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterLastModifiedDateT
         return m.assignmentFilterLastModifiedDateTime
     }
 }
-// Gets the assignmentFilterPlatform property value. The platform for which this assignment filter is created. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+// GetAssignmentFilterPlatform gets the assignmentFilterPlatform property value. The platform for which this assignment filter is created. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterPlatform()(*DevicePlatformType) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterPlatform()(*Devic
         return m.assignmentFilterPlatform
     }
 }
-// Gets the assignmentFilterType property value. Indicate filter type either include or exclude. Possible values are: none, include, exclude.
+// GetAssignmentFilterType gets the assignmentFilterType property value. Indicate filter type either include or exclude. Possible values are: none, include, exclude.
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterType()(*DeviceAndAppManagementAssignmentFilterType) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterType()(*DeviceAnd
         return m.assignmentFilterType
     }
 }
-// Gets the assignmentFilterTypeAndEvaluationResults property value. A collection of filter types and their corresponding evaluation results.
+// GetAssignmentFilterTypeAndEvaluationResults gets the assignmentFilterTypeAndEvaluationResults property value. A collection of filter types and their corresponding evaluation results.
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterTypeAndEvaluationResults()([]AssignmentFilterTypeAndEvaluationResult) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterTypeAndEvaluation
         return m.assignmentFilterTypeAndEvaluationResults
     }
 }
-// Gets the evaluationDateTime property value. The time assignment filter was evaluated.
+// GetEvaluationDateTime gets the evaluationDateTime property value. The time assignment filter was evaluated.
 func (m *AssignmentFilterEvaluationSummary) GetEvaluationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *AssignmentFilterEvaluationSummary) GetEvaluationDateTime()(*i336074805f
         return m.evaluationDateTime
     }
 }
-// Gets the evaluationResult property value. Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
+// GetEvaluationResult gets the evaluationResult property value. Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
 func (m *AssignmentFilterEvaluationSummary) GetEvaluationResult()(*AssignmentFilterEvaluationResult) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *AssignmentFilterEvaluationSummary) GetEvaluationResult()(*AssignmentFil
         return m.evaluationResult
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignmentFilterDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,9 +200,7 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
 func (m *AssignmentFilterEvaluationSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AssignmentFilterEvaluationSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("assignmentFilterDisplayName", m.GetAssignmentFilterDisplayName())
@@ -268,57 +266,39 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterEvaluationSummary) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the assignmentFilterDisplayName property value. The admin defined name for assignment filter.
-// Parameters:
-//  - value : Value to set for the assignmentFilterDisplayName property.
+// SetAssignmentFilterDisplayName sets the assignmentFilterDisplayName property value. The admin defined name for assignment filter.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterDisplayName(value *string)() {
     m.assignmentFilterDisplayName = value
 }
-// Sets the assignmentFilterId property value. Unique identifier for the assignment filter object
-// Parameters:
-//  - value : Value to set for the assignmentFilterId property.
+// SetAssignmentFilterId sets the assignmentFilterId property value. Unique identifier for the assignment filter object
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterId(value *string)() {
     m.assignmentFilterId = value
 }
-// Sets the assignmentFilterLastModifiedDateTime property value. The time the assignment filter was last modified.
-// Parameters:
-//  - value : Value to set for the assignmentFilterLastModifiedDateTime property.
+// SetAssignmentFilterLastModifiedDateTime sets the assignmentFilterLastModifiedDateTime property value. The time the assignment filter was last modified.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.assignmentFilterLastModifiedDateTime = value
 }
-// Sets the assignmentFilterPlatform property value. The platform for which this assignment filter is created. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
-// Parameters:
-//  - value : Value to set for the assignmentFilterPlatform property.
+// SetAssignmentFilterPlatform sets the assignmentFilterPlatform property value. The platform for which this assignment filter is created. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterPlatform(value *DevicePlatformType)() {
     m.assignmentFilterPlatform = value
 }
-// Sets the assignmentFilterType property value. Indicate filter type either include or exclude. Possible values are: none, include, exclude.
-// Parameters:
-//  - value : Value to set for the assignmentFilterType property.
+// SetAssignmentFilterType sets the assignmentFilterType property value. Indicate filter type either include or exclude. Possible values are: none, include, exclude.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterType(value *DeviceAndAppManagementAssignmentFilterType)() {
     m.assignmentFilterType = value
 }
-// Sets the assignmentFilterTypeAndEvaluationResults property value. A collection of filter types and their corresponding evaluation results.
-// Parameters:
-//  - value : Value to set for the assignmentFilterTypeAndEvaluationResults property.
+// SetAssignmentFilterTypeAndEvaluationResults sets the assignmentFilterTypeAndEvaluationResults property value. A collection of filter types and their corresponding evaluation results.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterTypeAndEvaluationResults(value []AssignmentFilterTypeAndEvaluationResult)() {
     m.assignmentFilterTypeAndEvaluationResults = value
 }
-// Sets the evaluationDateTime property value. The time assignment filter was evaluated.
-// Parameters:
-//  - value : Value to set for the evaluationDateTime property.
+// SetEvaluationDateTime sets the evaluationDateTime property value. The time assignment filter was evaluated.
 func (m *AssignmentFilterEvaluationSummary) SetEvaluationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.evaluationDateTime = value
 }
-// Sets the evaluationResult property value. Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
-// Parameters:
-//  - value : Value to set for the evaluationResult property.
+// SetEvaluationResult sets the evaluationResult property value. Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
 func (m *AssignmentFilterEvaluationSummary) SetEvaluationResult(value *AssignmentFilterEvaluationResult)() {
     m.evaluationResult = value
 }

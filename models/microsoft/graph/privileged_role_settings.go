@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PrivilegedRoleSettings 
 type PrivilegedRoleSettings struct {
     Entity
     // true if the approval is required when activate the role. false if the approval is not required when activate the role.
@@ -28,14 +28,14 @@ type PrivilegedRoleSettings struct {
     // true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
     ticketingInfoOnElevation *bool;
 }
-// Instantiates a new privilegedRoleSettings and sets the default values.
+// NewPrivilegedRoleSettings instantiates a new privilegedRoleSettings and sets the default values.
 func NewPrivilegedRoleSettings()(*PrivilegedRoleSettings) {
     m := &PrivilegedRoleSettings{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the approvalOnElevation property value. true if the approval is required when activate the role. false if the approval is not required when activate the role.
+// GetApprovalOnElevation gets the approvalOnElevation property value. true if the approval is required when activate the role. false if the approval is not required when activate the role.
 func (m *PrivilegedRoleSettings) GetApprovalOnElevation()(*bool) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *PrivilegedRoleSettings) GetApprovalOnElevation()(*bool) {
         return m.approvalOnElevation
     }
 }
-// Gets the approverIds property value. List of Approval ids, if approval is required for activation.
+// GetApproverIds gets the approverIds property value. List of Approval ids, if approval is required for activation.
 func (m *PrivilegedRoleSettings) GetApproverIds()([]string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *PrivilegedRoleSettings) GetApproverIds()([]string) {
         return m.approverIds
     }
 }
-// Gets the elevationDuration property value. The duration when the role is activated.
+// GetElevationDuration gets the elevationDuration property value. The duration when the role is activated.
 func (m *PrivilegedRoleSettings) GetElevationDuration()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *PrivilegedRoleSettings) GetElevationDuration()(*string) {
         return m.elevationDuration
     }
 }
-// Gets the isMfaOnElevationConfigurable property value. true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.
+// GetIsMfaOnElevationConfigurable gets the isMfaOnElevationConfigurable property value. true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.
 func (m *PrivilegedRoleSettings) GetIsMfaOnElevationConfigurable()(*bool) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *PrivilegedRoleSettings) GetIsMfaOnElevationConfigurable()(*bool) {
         return m.isMfaOnElevationConfigurable
     }
 }
-// Gets the lastGlobalAdmin property value. Internal used only.
+// GetLastGlobalAdmin gets the lastGlobalAdmin property value. Internal used only.
 func (m *PrivilegedRoleSettings) GetLastGlobalAdmin()(*bool) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *PrivilegedRoleSettings) GetLastGlobalAdmin()(*bool) {
         return m.lastGlobalAdmin
     }
 }
-// Gets the maxElavationDuration property value. Maximal duration for the activated role.
+// GetMaxElavationDuration gets the maxElavationDuration property value. Maximal duration for the activated role.
 func (m *PrivilegedRoleSettings) GetMaxElavationDuration()(*string) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *PrivilegedRoleSettings) GetMaxElavationDuration()(*string) {
         return m.maxElavationDuration
     }
 }
-// Gets the mfaOnElevation property value. true if MFA is required to activate the role. false if MFA is not required to activate the role.
+// GetMfaOnElevation gets the mfaOnElevation property value. true if MFA is required to activate the role. false if MFA is not required to activate the role.
 func (m *PrivilegedRoleSettings) GetMfaOnElevation()(*bool) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *PrivilegedRoleSettings) GetMfaOnElevation()(*bool) {
         return m.mfaOnElevation
     }
 }
-// Gets the minElevationDuration property value. Minimal duration for the activated role.
+// GetMinElevationDuration gets the minElevationDuration property value. Minimal duration for the activated role.
 func (m *PrivilegedRoleSettings) GetMinElevationDuration()(*string) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *PrivilegedRoleSettings) GetMinElevationDuration()(*string) {
         return m.minElevationDuration
     }
 }
-// Gets the notificationToUserOnElevation property value. true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.
+// GetNotificationToUserOnElevation gets the notificationToUserOnElevation property value. true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.
 func (m *PrivilegedRoleSettings) GetNotificationToUserOnElevation()(*bool) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *PrivilegedRoleSettings) GetNotificationToUserOnElevation()(*bool) {
         return m.notificationToUserOnElevation
     }
 }
-// Gets the ticketingInfoOnElevation property value. true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
+// GetTicketingInfoOnElevation gets the ticketingInfoOnElevation property value. true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
 func (m *PrivilegedRoleSettings) GetTicketingInfoOnElevation()(*bool) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *PrivilegedRoleSettings) GetTicketingInfoOnElevation()(*bool) {
         return m.ticketingInfoOnElevation
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["approvalOnElevation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,9 +227,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
 func (m *PrivilegedRoleSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrivilegedRoleSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -297,63 +295,43 @@ func (m *PrivilegedRoleSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the approvalOnElevation property value. true if the approval is required when activate the role. false if the approval is not required when activate the role.
-// Parameters:
-//  - value : Value to set for the approvalOnElevation property.
+// SetApprovalOnElevation sets the approvalOnElevation property value. true if the approval is required when activate the role. false if the approval is not required when activate the role.
 func (m *PrivilegedRoleSettings) SetApprovalOnElevation(value *bool)() {
     m.approvalOnElevation = value
 }
-// Sets the approverIds property value. List of Approval ids, if approval is required for activation.
-// Parameters:
-//  - value : Value to set for the approverIds property.
+// SetApproverIds sets the approverIds property value. List of Approval ids, if approval is required for activation.
 func (m *PrivilegedRoleSettings) SetApproverIds(value []string)() {
     m.approverIds = value
 }
-// Sets the elevationDuration property value. The duration when the role is activated.
-// Parameters:
-//  - value : Value to set for the elevationDuration property.
+// SetElevationDuration sets the elevationDuration property value. The duration when the role is activated.
 func (m *PrivilegedRoleSettings) SetElevationDuration(value *string)() {
     m.elevationDuration = value
 }
-// Sets the isMfaOnElevationConfigurable property value. true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.
-// Parameters:
-//  - value : Value to set for the isMfaOnElevationConfigurable property.
+// SetIsMfaOnElevationConfigurable sets the isMfaOnElevationConfigurable property value. true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.
 func (m *PrivilegedRoleSettings) SetIsMfaOnElevationConfigurable(value *bool)() {
     m.isMfaOnElevationConfigurable = value
 }
-// Sets the lastGlobalAdmin property value. Internal used only.
-// Parameters:
-//  - value : Value to set for the lastGlobalAdmin property.
+// SetLastGlobalAdmin sets the lastGlobalAdmin property value. Internal used only.
 func (m *PrivilegedRoleSettings) SetLastGlobalAdmin(value *bool)() {
     m.lastGlobalAdmin = value
 }
-// Sets the maxElavationDuration property value. Maximal duration for the activated role.
-// Parameters:
-//  - value : Value to set for the maxElavationDuration property.
+// SetMaxElavationDuration sets the maxElavationDuration property value. Maximal duration for the activated role.
 func (m *PrivilegedRoleSettings) SetMaxElavationDuration(value *string)() {
     m.maxElavationDuration = value
 }
-// Sets the mfaOnElevation property value. true if MFA is required to activate the role. false if MFA is not required to activate the role.
-// Parameters:
-//  - value : Value to set for the mfaOnElevation property.
+// SetMfaOnElevation sets the mfaOnElevation property value. true if MFA is required to activate the role. false if MFA is not required to activate the role.
 func (m *PrivilegedRoleSettings) SetMfaOnElevation(value *bool)() {
     m.mfaOnElevation = value
 }
-// Sets the minElevationDuration property value. Minimal duration for the activated role.
-// Parameters:
-//  - value : Value to set for the minElevationDuration property.
+// SetMinElevationDuration sets the minElevationDuration property value. Minimal duration for the activated role.
 func (m *PrivilegedRoleSettings) SetMinElevationDuration(value *string)() {
     m.minElevationDuration = value
 }
-// Sets the notificationToUserOnElevation property value. true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.
-// Parameters:
-//  - value : Value to set for the notificationToUserOnElevation property.
+// SetNotificationToUserOnElevation sets the notificationToUserOnElevation property value. true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.
 func (m *PrivilegedRoleSettings) SetNotificationToUserOnElevation(value *bool)() {
     m.notificationToUserOnElevation = value
 }
-// Sets the ticketingInfoOnElevation property value. true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
-// Parameters:
-//  - value : Value to set for the ticketingInfoOnElevation property.
+// SetTicketingInfoOnElevation sets the ticketingInfoOnElevation property value. true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
 func (m *PrivilegedRoleSettings) SetTicketingInfoOnElevation(value *bool)() {
     m.ticketingInfoOnElevation = value
 }

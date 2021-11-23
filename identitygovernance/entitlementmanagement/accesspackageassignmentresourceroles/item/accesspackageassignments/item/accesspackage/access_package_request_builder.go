@@ -16,7 +16,7 @@ import (
     i8cfa8dd3f7192439b37b853de73d76338d3ffe7081a43ea439f390d0d5c1f308 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/incompatiblegroups/item"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage
+// AccessPackageRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage
 type AccessPackageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type AccessPackageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessPackageRequestBuilderDeleteOptions options for Delete
 type AccessPackageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -34,7 +34,7 @@ type AccessPackageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessPackageRequestBuilderGetOptions options for Get
 type AccessPackageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -45,14 +45,14 @@ type AccessPackageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// AccessPackageRequestBuilderGetQueryParameters read-only. Nullable.
 type AccessPackageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessPackageRequestBuilderPatchOptions options for Patch
 type AccessPackageRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackage;
@@ -66,9 +66,7 @@ type AccessPackageRequestBuilderPatchOptions struct {
 func (m *AccessPackageRequestBuilder) AccessPackageAssignmentPolicies()(*i956ee7794edaf38b74167d193d87094585a9ba4155de4f79af25a2ffd1024d48.AccessPackageAssignmentPoliciesRequestBuilder) {
     return i956ee7794edaf38b74167d193d87094585a9ba4155de4f79af25a2ffd1024d48.NewAccessPackageAssignmentPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackage.accessPackageAssignmentPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackageAssignmentPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackage.accessPackageAssignmentPolicies.item collection
 func (m *AccessPackageRequestBuilder) AccessPackageAssignmentPoliciesById(id string)(*i3d234fdcbafcb2135ca2254d45c4b7a2b570dac2e5fc962181cbc1ba3c87cd51.AccessPackageAssignmentPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -85,9 +83,7 @@ func (m *AccessPackageRequestBuilder) AccessPackageCatalog()(*i57d5b05dcb9a61732
 func (m *AccessPackageRequestBuilder) AccessPackageResourceRoleScopes()(*i1400eabda9000987457f581ea8ca73b2342b6b4f385b77d37e443ae8344b5f3f.AccessPackageResourceRoleScopesRequestBuilder) {
     return i1400eabda9000987457f581ea8ca73b2342b6b4f385b77d37e443ae8344b5f3f.NewAccessPackageResourceRoleScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackage.accessPackageResourceRoleScopes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackageResourceRoleScopesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackage.accessPackageResourceRoleScopes.item collection
 func (m *AccessPackageRequestBuilder) AccessPackageResourceRoleScopesById(id string)(*i7ef86549281f966e53e25fdd65f05cf5f69c655e98a0a2b98ae81f6cc6eb44c6.AccessPackageResourceRoleScopeRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -101,10 +97,7 @@ func (m *AccessPackageRequestBuilder) AccessPackageResourceRoleScopesById(id str
 func (m *AccessPackageRequestBuilder) AccessPackagesIncompatibleWith()(*iff51b2be3e5aca6ef1fdfa36e47e03671527601bb72bb3e34f9d991fb8695466.AccessPackagesIncompatibleWithRequestBuilder) {
     return iff51b2be3e5aca6ef1fdfa36e47e03671527601bb72bb3e34f9d991fb8695466.NewAccessPackagesIncompatibleWithRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AccessPackageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageRequestBuilderInternal instantiates a new AccessPackageRequestBuilder and sets the default values.
 func NewAccessPackageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageRequestBuilder) {
     m := &AccessPackageRequestBuilder{
     }
@@ -117,18 +110,13 @@ func NewAccessPackageRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageRequestBuilder instantiates a new AccessPackageRequestBuilder and sets the default values.
 func NewAccessPackageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable.
 func (m *AccessPackageRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *AccessPackageRequestBuilder) CreateDeleteRequestInformation(options *Ac
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *AccessPackageRequestBuilder) CreateGetRequestInformation(options *AccessPackageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -167,9 +153,7 @@ func (m *AccessPackageRequestBuilder) CreateGetRequestInformation(options *Acces
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable.
 func (m *AccessPackageRequestBuilder) CreatePatchRequestInformation(options *AccessPackageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -187,9 +171,7 @@ func (m *AccessPackageRequestBuilder) CreatePatchRequestInformation(options *Acc
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable.
 func (m *AccessPackageRequestBuilder) Delete(options *AccessPackageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -201,9 +183,7 @@ func (m *AccessPackageRequestBuilder) Delete(options *AccessPackageRequestBuilde
     }
     return nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *AccessPackageRequestBuilder) Get(options *AccessPackageRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -224,9 +204,7 @@ func (m *AccessPackageRequestBuilder) IncompatibleAccessPackages()(*i2e86cce8e81
 func (m *AccessPackageRequestBuilder) IncompatibleGroups()(*i8fcb960ee0e8ca0c8460b613fd2e9f58f576004bfd2879caf466df5cf55a6cd4.IncompatibleGroupsRequestBuilder) {
     return i8fcb960ee0e8ca0c8460b613fd2e9f58f576004bfd2879caf466df5cf55a6cd4.NewIncompatibleGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackage.incompatibleGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// IncompatibleGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackage.incompatibleGroups.item collection
 func (m *AccessPackageRequestBuilder) IncompatibleGroupsById(id string)(*i8cfa8dd3f7192439b37b853de73d76338d3ffe7081a43ea439f390d0d5c1f308.GroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -237,9 +215,7 @@ func (m *AccessPackageRequestBuilder) IncompatibleGroupsById(id string)(*i8cfa8d
     }
     return i8cfa8dd3f7192439b37b853de73d76338d3ffe7081a43ea439f390d0d5c1f308.NewGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable.
 func (m *AccessPackageRequestBuilder) Patch(options *AccessPackageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

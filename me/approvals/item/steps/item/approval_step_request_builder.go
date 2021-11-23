@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\approvals\{approval-id}\steps\{approvalStep-id}
+// ApprovalStepRequestBuilder builds and executes requests for operations under \me\approvals\{approval-id}\steps\{approvalStep-id}
 type ApprovalStepRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ApprovalStepRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ApprovalStepRequestBuilderDeleteOptions options for Delete
 type ApprovalStepRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ApprovalStepRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ApprovalStepRequestBuilderGetOptions options for Get
 type ApprovalStepRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ApprovalStepRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get steps from me
+// ApprovalStepRequestBuilderGetQueryParameters get steps from me
 type ApprovalStepRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ApprovalStepRequestBuilderPatchOptions options for Patch
 type ApprovalStepRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalStep;
@@ -53,10 +53,7 @@ type ApprovalStepRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApprovalStepRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalStepRequestBuilderInternal instantiates a new ApprovalStepRequestBuilder and sets the default values.
 func NewApprovalStepRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalStepRequestBuilder) {
     m := &ApprovalStepRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewApprovalStepRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApprovalStepRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalStepRequestBuilder instantiates a new ApprovalStepRequestBuilder and sets the default values.
 func NewApprovalStepRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalStepRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalStepRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property steps for me
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property steps for me
 func (m *ApprovalStepRequestBuilder) CreateDeleteRequestInformation(options *ApprovalStepRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ApprovalStepRequestBuilder) CreateDeleteRequestInformation(options *App
     }
     return requestInfo, nil
 }
-// Get steps from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get steps from me
 func (m *ApprovalStepRequestBuilder) CreateGetRequestInformation(options *ApprovalStepRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ApprovalStepRequestBuilder) CreateGetRequestInformation(options *Approv
     }
     return requestInfo, nil
 }
-// Update the navigation property steps in me
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property steps in me
 func (m *ApprovalStepRequestBuilder) CreatePatchRequestInformation(options *ApprovalStepRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ApprovalStepRequestBuilder) CreatePatchRequestInformation(options *Appr
     }
     return requestInfo, nil
 }
-// Delete navigation property steps for me
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property steps for me
 func (m *ApprovalStepRequestBuilder) Delete(options *ApprovalStepRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ApprovalStepRequestBuilder) Delete(options *ApprovalStepRequestBuilderD
     }
     return nil
 }
-// Get steps from me
-// Parameters:
-//  - options : Options for the request
+// Get get steps from me
 func (m *ApprovalStepRequestBuilder) Get(options *ApprovalStepRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalStep, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ApprovalStepRequestBuilder) Get(options *ApprovalStepRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalStep), nil
 }
-// Update the navigation property steps in me
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property steps in me
 func (m *ApprovalStepRequestBuilder) Patch(options *ApprovalStepRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

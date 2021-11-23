@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// CustomerPaymentJournal 
 type CustomerPaymentJournal struct {
     Entity
     // 
@@ -23,14 +23,14 @@ type CustomerPaymentJournal struct {
     // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new customerPaymentJournal and sets the default values.
+// NewCustomerPaymentJournal instantiates a new customerPaymentJournal and sets the default values.
 func NewCustomerPaymentJournal()(*CustomerPaymentJournal) {
     m := &CustomerPaymentJournal{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the account property value. 
+// GetAccount gets the account property value. 
 func (m *CustomerPaymentJournal) GetAccount()(*Account) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *CustomerPaymentJournal) GetAccount()(*Account) {
         return m.account
     }
 }
-// Gets the balancingAccountId property value. 
+// GetBalancingAccountId gets the balancingAccountId property value. 
 func (m *CustomerPaymentJournal) GetBalancingAccountId()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *CustomerPaymentJournal) GetBalancingAccountId()(*string) {
         return m.balancingAccountId
     }
 }
-// Gets the balancingAccountNumber property value. 
+// GetBalancingAccountNumber gets the balancingAccountNumber property value. 
 func (m *CustomerPaymentJournal) GetBalancingAccountNumber()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *CustomerPaymentJournal) GetBalancingAccountNumber()(*string) {
         return m.balancingAccountNumber
     }
 }
-// Gets the code property value. 
+// GetCode gets the code property value. 
 func (m *CustomerPaymentJournal) GetCode()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *CustomerPaymentJournal) GetCode()(*string) {
         return m.code
     }
 }
-// Gets the customerPayments property value. 
+// GetCustomerPayments gets the customerPayments property value. 
 func (m *CustomerPaymentJournal) GetCustomerPayments()([]CustomerPayment) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *CustomerPaymentJournal) GetCustomerPayments()([]CustomerPayment) {
         return m.customerPayments
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *CustomerPaymentJournal) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *CustomerPaymentJournal) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *CustomerPaymentJournal) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *CustomerPaymentJournal) GetLastModifiedDateTime()(*i336074805fc853987ab
         return m.lastModifiedDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,9 +168,7 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
 func (m *CustomerPaymentJournal) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CustomerPaymentJournal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -225,45 +223,31 @@ func (m *CustomerPaymentJournal) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the account property value. 
-// Parameters:
-//  - value : Value to set for the account property.
+// SetAccount sets the account property value. 
 func (m *CustomerPaymentJournal) SetAccount(value *Account)() {
     m.account = value
 }
-// Sets the balancingAccountId property value. 
-// Parameters:
-//  - value : Value to set for the balancingAccountId property.
+// SetBalancingAccountId sets the balancingAccountId property value. 
 func (m *CustomerPaymentJournal) SetBalancingAccountId(value *string)() {
     m.balancingAccountId = value
 }
-// Sets the balancingAccountNumber property value. 
-// Parameters:
-//  - value : Value to set for the balancingAccountNumber property.
+// SetBalancingAccountNumber sets the balancingAccountNumber property value. 
 func (m *CustomerPaymentJournal) SetBalancingAccountNumber(value *string)() {
     m.balancingAccountNumber = value
 }
-// Sets the code property value. 
-// Parameters:
-//  - value : Value to set for the code property.
+// SetCode sets the code property value. 
 func (m *CustomerPaymentJournal) SetCode(value *string)() {
     m.code = value
 }
-// Sets the customerPayments property value. 
-// Parameters:
-//  - value : Value to set for the customerPayments property.
+// SetCustomerPayments sets the customerPayments property value. 
 func (m *CustomerPaymentJournal) SetCustomerPayments(value []CustomerPayment)() {
     m.customerPayments = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *CustomerPaymentJournal) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *CustomerPaymentJournal) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }

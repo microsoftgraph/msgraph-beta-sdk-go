@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemoLines
+// SalesCreditMemoLinesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemoLines
 type SalesCreditMemoLinesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SalesCreditMemoLinesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SalesCreditMemoLinesRequestBuilderGetOptions options for Get
 type SalesCreditMemoLinesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SalesCreditMemoLinesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get salesCreditMemoLines from financials
+// SalesCreditMemoLinesRequestBuilderGetQueryParameters get salesCreditMemoLines from financials
 type SalesCreditMemoLinesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SalesCreditMemoLinesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SalesCreditMemoLinesRequestBuilderPostOptions options for Post
 type SalesCreditMemoLinesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesCreditMemoLine;
@@ -56,10 +56,7 @@ type SalesCreditMemoLinesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesCreditMemoLinesRequestBuilderInternal instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.
 func NewSalesCreditMemoLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesCreditMemoLinesRequestBuilder) {
     m := &SalesCreditMemoLinesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSalesCreditMemoLinesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesCreditMemoLinesRequestBuilder instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.
 func NewSalesCreditMemoLinesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesCreditMemoLinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSalesCreditMemoLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get salesCreditMemoLines from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get salesCreditMemoLines from financials
 func (m *SalesCreditMemoLinesRequestBuilder) CreateGetRequestInformation(options *SalesCreditMemoLinesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SalesCreditMemoLinesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Create new navigation property to salesCreditMemoLines for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to salesCreditMemoLines for financials
 func (m *SalesCreditMemoLinesRequestBuilder) CreatePostRequestInformation(options *SalesCreditMemoLinesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SalesCreditMemoLinesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get salesCreditMemoLines from financials
-// Parameters:
-//  - options : Options for the request
+// Get get salesCreditMemoLines from financials
 func (m *SalesCreditMemoLinesRequestBuilder) Get(options *SalesCreditMemoLinesRequestBuilderGetOptions)(*SalesCreditMemoLinesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SalesCreditMemoLinesRequestBuilder) Get(options *SalesCreditMemoLinesRe
     }
     return res.(*SalesCreditMemoLinesResponse), nil
 }
-// Create new navigation property to salesCreditMemoLines for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to salesCreditMemoLines for financials
 func (m *SalesCreditMemoLinesRequestBuilder) Post(options *SalesCreditMemoLinesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesCreditMemoLine, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

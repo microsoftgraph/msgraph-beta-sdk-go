@@ -7,7 +7,7 @@ import (
     i5c4da7ee1c24fe10468f45f0fe04d8ae862385f122bfa42d08cb50a2d412e5a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/trustframework/policies/item/value"
 )
 
-// Builds and executes requests for operations under \trustFramework\policies\{trustFrameworkPolicy-id}
+// TrustFrameworkPolicyRequestBuilder builds and executes requests for operations under \trustFramework\policies\{trustFrameworkPolicy-id}
 type TrustFrameworkPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TrustFrameworkPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TrustFrameworkPolicyRequestBuilderDeleteOptions options for Delete
 type TrustFrameworkPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type TrustFrameworkPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TrustFrameworkPolicyRequestBuilderGetOptions options for Get
 type TrustFrameworkPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type TrustFrameworkPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get policies from trustFramework
+// TrustFrameworkPolicyRequestBuilderGetQueryParameters get policies from trustFramework
 type TrustFrameworkPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TrustFrameworkPolicyRequestBuilderPatchOptions options for Patch
 type TrustFrameworkPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkPolicy;
@@ -54,10 +54,7 @@ type TrustFrameworkPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TrustFrameworkPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTrustFrameworkPolicyRequestBuilderInternal instantiates a new TrustFrameworkPolicyRequestBuilder and sets the default values.
 func NewTrustFrameworkPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TrustFrameworkPolicyRequestBuilder) {
     m := &TrustFrameworkPolicyRequestBuilder{
     }
@@ -70,10 +67,7 @@ func NewTrustFrameworkPolicyRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TrustFrameworkPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTrustFrameworkPolicyRequestBuilder instantiates a new TrustFrameworkPolicyRequestBuilder and sets the default values.
 func NewTrustFrameworkPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TrustFrameworkPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -82,9 +76,7 @@ func NewTrustFrameworkPolicyRequestBuilder(rawUrl string, requestAdapter ida96af
 func (m *TrustFrameworkPolicyRequestBuilder) Content()(*i5c4da7ee1c24fe10468f45f0fe04d8ae862385f122bfa42d08cb50a2d412e5a6.ContentRequestBuilder) {
     return i5c4da7ee1c24fe10468f45f0fe04d8ae862385f122bfa42d08cb50a2d412e5a6.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property policies for trustFramework
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property policies for trustFramework
 func (m *TrustFrameworkPolicyRequestBuilder) CreateDeleteRequestInformation(options *TrustFrameworkPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *TrustFrameworkPolicyRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get policies from trustFramework
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get policies from trustFramework
 func (m *TrustFrameworkPolicyRequestBuilder) CreateGetRequestInformation(options *TrustFrameworkPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TrustFrameworkPolicyRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update the navigation property policies in trustFramework
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property policies in trustFramework
 func (m *TrustFrameworkPolicyRequestBuilder) CreatePatchRequestInformation(options *TrustFrameworkPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *TrustFrameworkPolicyRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete navigation property policies for trustFramework
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property policies for trustFramework
 func (m *TrustFrameworkPolicyRequestBuilder) Delete(options *TrustFrameworkPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *TrustFrameworkPolicyRequestBuilder) Delete(options *TrustFrameworkPolic
     }
     return nil
 }
-// Get policies from trustFramework
-// Parameters:
-//  - options : Options for the request
+// Get get policies from trustFramework
 func (m *TrustFrameworkPolicyRequestBuilder) Get(options *TrustFrameworkPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *TrustFrameworkPolicyRequestBuilder) Get(options *TrustFrameworkPolicyRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkPolicy), nil
 }
-// Update the navigation property policies in trustFramework
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property policies in trustFramework
 func (m *TrustFrameworkPolicyRequestBuilder) Patch(options *TrustFrameworkPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

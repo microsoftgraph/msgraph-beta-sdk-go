@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails struct {
     Entity
     // The number of crashes for the app. Valid values -2147483648 to 2147483647
@@ -24,14 +24,14 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails struct {
     // Is the version of application the most used version for that app.
     isMostUsedVersion *bool;
 }
-// Instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
+// GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppCrashCount()(*int32) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
         return m.appCrashCount
     }
 }
-// Gets the appDisplayName property value. The friendly name of the application.
+// GetAppDisplayName gets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppDisplayName()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
         return m.appDisplayName
     }
 }
-// Gets the appName property value. The name of the application.
+// GetAppName gets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppName()(*string) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
         return m.appName
     }
 }
-// Gets the appPublisher property value. The publisher of the application.
+// GetAppPublisher gets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppPublisher()(*string) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
         return m.appPublisher
     }
 }
-// Gets the appVersion property value. The version of the application.
+// GetAppVersion gets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppVersion()(*string) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
         return m.appVersion
     }
 }
-// Gets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
+// GetDeviceCountWithCrashes gets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetDeviceCountWithCrashes()(*int32) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetD
         return m.deviceCountWithCrashes
     }
 }
-// Gets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
+// GetIsLatestUsedVersion gets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsLatestUsedVersion()(*bool) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetI
         return m.isLatestUsedVersion
     }
 }
-// Gets the isMostUsedVersion property value. Is the version of application the most used version for that app.
+// GetIsMostUsedVersion gets the isMostUsedVersion property value. Is the version of application the most used version for that app.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsMostUsedVersion()(*bool) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetI
         return m.isMostUsedVersion
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appCrashCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,9 +183,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetF
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -241,51 +239,35 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) Seri
     }
     return nil
 }
-// Sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the appCrashCount property.
+// SetAppCrashCount sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppCrashCount(value *int32)() {
     m.appCrashCount = value
 }
-// Sets the appDisplayName property value. The friendly name of the application.
-// Parameters:
-//  - value : Value to set for the appDisplayName property.
+// SetAppDisplayName sets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppDisplayName(value *string)() {
     m.appDisplayName = value
 }
-// Sets the appName property value. The name of the application.
-// Parameters:
-//  - value : Value to set for the appName property.
+// SetAppName sets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppName(value *string)() {
     m.appName = value
 }
-// Sets the appPublisher property value. The publisher of the application.
-// Parameters:
-//  - value : Value to set for the appPublisher property.
+// SetAppPublisher sets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppPublisher(value *string)() {
     m.appPublisher = value
 }
-// Sets the appVersion property value. The version of the application.
-// Parameters:
-//  - value : Value to set for the appVersion property.
+// SetAppVersion sets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppVersion(value *string)() {
     m.appVersion = value
 }
-// Sets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the deviceCountWithCrashes property.
+// SetDeviceCountWithCrashes sets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetDeviceCountWithCrashes(value *int32)() {
     m.deviceCountWithCrashes = value
 }
-// Sets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
-// Parameters:
-//  - value : Value to set for the isLatestUsedVersion property.
+// SetIsLatestUsedVersion sets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetIsLatestUsedVersion(value *bool)() {
     m.isLatestUsedVersion = value
 }
-// Sets the isMostUsedVersion property value. Is the version of application the most used version for that app.
-// Parameters:
-//  - value : Value to set for the isMostUsedVersion property.
+// SetIsMostUsedVersion sets the isMostUsedVersion property value. Is the version of application the most used version for that app.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetIsMostUsedVersion(value *bool)() {
     m.isMostUsedVersion = value
 }

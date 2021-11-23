@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// ForwardRequestBody 
 type ForwardRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type ForwardRequestBody struct {
     // 
     toRecipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient;
 }
-// Instantiates a new forwardRequestBody and sets the default values.
+// NewForwardRequestBody instantiates a new forwardRequestBody and sets the default values.
 func NewForwardRequestBody()(*ForwardRequestBody) {
     m := &ForwardRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ForwardRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *ForwardRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the Comment property value. 
+// GetComment gets the Comment property value. 
 func (m *ForwardRequestBody) GetComment()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *ForwardRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// Gets the Message property value. 
+// GetMessage gets the Message property value. 
 func (m *ForwardRequestBody) GetMessage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *ForwardRequestBody) GetMessage()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.message
     }
 }
-// Gets the ToRecipients property value. 
+// GetToRecipients gets the ToRecipients property value. 
 func (m *ForwardRequestBody) GetToRecipients()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *ForwardRequestBody) GetToRecipients()([]i535684e11b5500196ecb4b5c6634e0
         return m.toRecipients
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ForwardRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["comment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,9 +97,7 @@ func (m *ForwardRequestBody) GetFieldDeserializers()(map[string]func(interface{}
 func (m *ForwardRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ForwardRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("comment", m.GetComment())
@@ -132,27 +130,19 @@ func (m *ForwardRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ForwardRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the Comment property value. 
-// Parameters:
-//  - value : Value to set for the Comment property.
+// SetComment sets the Comment property value. 
 func (m *ForwardRequestBody) SetComment(value *string)() {
     m.comment = value
 }
-// Sets the Message property value. 
-// Parameters:
-//  - value : Value to set for the Message property.
+// SetMessage sets the Message property value. 
 func (m *ForwardRequestBody) SetMessage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message)() {
     m.message = value
 }
-// Sets the ToRecipients property value. 
-// Parameters:
-//  - value : Value to set for the ToRecipients property.
+// SetToRecipients sets the ToRecipients property value. 
 func (m *ForwardRequestBody) SetToRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient)() {
     m.toRecipients = value
 }

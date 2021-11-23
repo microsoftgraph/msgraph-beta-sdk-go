@@ -7,7 +7,7 @@ import (
     i078ea6e1f5b18ba78715c9e80e0de994a591985e12c627f0fa959431f324e7ee "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/connectorgroup/ref"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\connectorGroup
+// ConnectorGroupRequestBuilder builds and executes requests for operations under \applications\{application-id}\connectorGroup
 type ConnectorGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ConnectorGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConnectorGroupRequestBuilderGetOptions options for Get
 type ConnectorGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ConnectorGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+// ConnectorGroupRequestBuilderGetQueryParameters the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 type ConnectorGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ConnectorGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectorGroupRequestBuilderInternal instantiates a new ConnectorGroupRequestBuilder and sets the default values.
 func NewConnectorGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectorGroupRequestBuilder) {
     m := &ConnectorGroupRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewConnectorGroupRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConnectorGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectorGroupRequestBuilder instantiates a new ConnectorGroupRequestBuilder and sets the default values.
 func NewConnectorGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectorGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformation(options *ConnectorGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformation(options *Conn
     }
     return requestInfo, nil
 }
-// The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 func (m *ConnectorGroupRequestBuilder) Get(options *ConnectorGroupRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

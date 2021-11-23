@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\assignments\{groupPolicyConfigurationAssignment-id}
+// GroupPolicyConfigurationAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\assignments\{groupPolicyConfigurationAssignment-id}
 type GroupPolicyConfigurationAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupPolicyConfigurationAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupPolicyConfigurationAssignmentRequestBuilderDeleteOptions options for Delete
 type GroupPolicyConfigurationAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GroupPolicyConfigurationAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupPolicyConfigurationAssignmentRequestBuilderGetOptions options for Get
 type GroupPolicyConfigurationAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GroupPolicyConfigurationAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of group assignments for the configuration.
+// GroupPolicyConfigurationAssignmentRequestBuilderGetQueryParameters the list of group assignments for the configuration.
 type GroupPolicyConfigurationAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupPolicyConfigurationAssignmentRequestBuilderPatchOptions options for Patch
 type GroupPolicyConfigurationAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyConfigurationAssignment;
@@ -53,10 +53,7 @@ type GroupPolicyConfigurationAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicyConfigurationAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyConfigurationAssignmentRequestBuilderInternal instantiates a new GroupPolicyConfigurationAssignmentRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyConfigurationAssignmentRequestBuilder) {
     m := &GroupPolicyConfigurationAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGroupPolicyConfigurationAssignmentRequestBuilderInternal(pathParameters 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyConfigurationAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyConfigurationAssignmentRequestBuilder instantiates a new GroupPolicyConfigurationAssignmentRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyConfigurationAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyConfigurationAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of group assignments for the configuration.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of group assignments for the configuration.
 func (m *GroupPolicyConfigurationAssignmentRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicyConfigurationAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GroupPolicyConfigurationAssignmentRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// The list of group assignments for the configuration.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of group assignments for the configuration.
 func (m *GroupPolicyConfigurationAssignmentRequestBuilder) CreateGetRequestInformation(options *GroupPolicyConfigurationAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GroupPolicyConfigurationAssignmentRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// The list of group assignments for the configuration.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of group assignments for the configuration.
 func (m *GroupPolicyConfigurationAssignmentRequestBuilder) CreatePatchRequestInformation(options *GroupPolicyConfigurationAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GroupPolicyConfigurationAssignmentRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// The list of group assignments for the configuration.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of group assignments for the configuration.
 func (m *GroupPolicyConfigurationAssignmentRequestBuilder) Delete(options *GroupPolicyConfigurationAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GroupPolicyConfigurationAssignmentRequestBuilder) Delete(options *Group
     }
     return nil
 }
-// The list of group assignments for the configuration.
-// Parameters:
-//  - options : Options for the request
+// Get the list of group assignments for the configuration.
 func (m *GroupPolicyConfigurationAssignmentRequestBuilder) Get(options *GroupPolicyConfigurationAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyConfigurationAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GroupPolicyConfigurationAssignmentRequestBuilder) Get(options *GroupPol
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyConfigurationAssignment), nil
 }
-// The list of group assignments for the configuration.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of group assignments for the configuration.
 func (m *GroupPolicyConfigurationAssignmentRequestBuilder) Patch(options *GroupPolicyConfigurationAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\microsoft.graph.windowsUpdates.enrollAssets
+// EnrollAssetsRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\microsoft.graph.windowsUpdates.enrollAssets
 type EnrollAssetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type EnrollAssetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// EnrollAssetsRequestBuilderPostOptions options for Post
 type EnrollAssetsRequestBuilderPostOptions struct {
     // 
     Body *EnrollAssetsRequestBody;
@@ -24,10 +24,7 @@ type EnrollAssetsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EnrollAssetsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnrollAssetsRequestBuilderInternal instantiates a new EnrollAssetsRequestBuilder and sets the default values.
 func NewEnrollAssetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnrollAssetsRequestBuilder) {
     m := &EnrollAssetsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewEnrollAssetsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EnrollAssetsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnrollAssetsRequestBuilder instantiates a new EnrollAssetsRequestBuilder and sets the default values.
 func NewEnrollAssetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnrollAssetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEnrollAssetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action enrollAssets
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action enrollAssets
 func (m *EnrollAssetsRequestBuilder) CreatePostRequestInformation(options *EnrollAssetsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *EnrollAssetsRequestBuilder) CreatePostRequestInformation(options *Enrol
     }
     return requestInfo, nil
 }
-// Invoke action enrollAssets
-// Parameters:
-//  - options : Options for the request
+// Post invoke action enrollAssets
 func (m *EnrollAssetsRequestBuilder) Post(options *EnrollAssetsRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

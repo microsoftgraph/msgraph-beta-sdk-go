@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \informationProtection\policy\labels\microsoft.graph.evaluateRemoval
+// EvaluateRemovalRequestBuilder builds and executes requests for operations under \informationProtection\policy\labels\microsoft.graph.evaluateRemoval
 type EvaluateRemovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type EvaluateRemovalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// EvaluateRemovalRequestBuilderPostOptions options for Post
 type EvaluateRemovalRequestBuilderPostOptions struct {
     // 
     Body *EvaluateRemovalRequestBody;
@@ -25,10 +25,7 @@ type EvaluateRemovalRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EvaluateRemovalRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateRemovalRequestBuilderInternal instantiates a new EvaluateRemovalRequestBuilder and sets the default values.
 func NewEvaluateRemovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateRemovalRequestBuilder) {
     m := &EvaluateRemovalRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewEvaluateRemovalRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EvaluateRemovalRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateRemovalRequestBuilder instantiates a new EvaluateRemovalRequestBuilder and sets the default values.
 func NewEvaluateRemovalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateRemovalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action evaluateRemoval
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action evaluateRemoval
 func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformation(options *EvaluateRemovalRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformation(options *Ev
     }
     return requestInfo, nil
 }
-// Invoke action evaluateRemoval
-// Parameters:
-//  - options : Options for the request
+// Post invoke action evaluateRemoval
 func (m *EvaluateRemovalRequestBuilder) Post(options *EvaluateRemovalRequestBuilderPostOptions)([]EvaluateRemoval, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

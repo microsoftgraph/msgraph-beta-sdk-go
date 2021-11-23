@@ -14,7 +14,7 @@ import (
     id36a0dab0b9711923a53fbc455f85e1bbf2e30284a4ebe0147d08fdbb3b550ae "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentpolicy/accesspackagecatalog/accesspackageresourcescopes/item"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentPolicy\accessPackageCatalog
+// AccessPackageCatalogRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentPolicy\accessPackageCatalog
 type AccessPackageCatalogRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,7 +23,7 @@ type AccessPackageCatalogRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessPackageCatalogRequestBuilderDeleteOptions options for Delete
 type AccessPackageCatalogRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type AccessPackageCatalogRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessPackageCatalogRequestBuilderGetOptions options for Get
 type AccessPackageCatalogRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -43,14 +43,14 @@ type AccessPackageCatalogRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get accessPackageCatalog from identityGovernance
+// AccessPackageCatalogRequestBuilderGetQueryParameters get accessPackageCatalog from identityGovernance
 type AccessPackageCatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessPackageCatalogRequestBuilderPatchOptions options for Patch
 type AccessPackageCatalogRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageCatalog;
@@ -64,9 +64,7 @@ type AccessPackageCatalogRequestBuilderPatchOptions struct {
 func (m *AccessPackageCatalogRequestBuilder) AccessPackageResourceRoles()(*i4b8559109a14f4101aa63f51498ddf47333872d26ffe35db711c4c8266c282f7.AccessPackageResourceRolesRequestBuilder) {
     return i4b8559109a14f4101aa63f51498ddf47333872d26ffe35db711c4c8266c282f7.NewAccessPackageResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackageResourceRoles.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackageResourceRolesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackageResourceRoles.item collection
 func (m *AccessPackageCatalogRequestBuilder) AccessPackageResourceRolesById(id string)(*i1e656d445a7fbcfbbb9e136ccd6d7279fe93741f35e6d4592466250e91e5465c.AccessPackageResourceRoleRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -80,9 +78,7 @@ func (m *AccessPackageCatalogRequestBuilder) AccessPackageResourceRolesById(id s
 func (m *AccessPackageCatalogRequestBuilder) AccessPackageResources()(*i4d11056b3429517784860d1e6f9ac4877684ac4ec7a68701401c0979f56737e3.AccessPackageResourcesRequestBuilder) {
     return i4d11056b3429517784860d1e6f9ac4877684ac4ec7a68701401c0979f56737e3.NewAccessPackageResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackageResources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackageResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackageResources.item collection
 func (m *AccessPackageCatalogRequestBuilder) AccessPackageResourcesById(id string)(*i90dd58f48c1a271a5264d5ffb4c4b360c4cfa4926e771e98d89826399d099d3a.AccessPackageResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -96,9 +92,7 @@ func (m *AccessPackageCatalogRequestBuilder) AccessPackageResourcesById(id strin
 func (m *AccessPackageCatalogRequestBuilder) AccessPackageResourceScopes()(*iff6a5c9809b600a744b7bf0fc1a54d97694e0bbfcde58211b25751bfcd817eec.AccessPackageResourceScopesRequestBuilder) {
     return iff6a5c9809b600a744b7bf0fc1a54d97694e0bbfcde58211b25751bfcd817eec.NewAccessPackageResourceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackageResourceScopes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackageResourceScopesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackageResourceScopes.item collection
 func (m *AccessPackageCatalogRequestBuilder) AccessPackageResourceScopesById(id string)(*id36a0dab0b9711923a53fbc455f85e1bbf2e30284a4ebe0147d08fdbb3b550ae.AccessPackageResourceScopeRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -112,9 +106,7 @@ func (m *AccessPackageCatalogRequestBuilder) AccessPackageResourceScopesById(id 
 func (m *AccessPackageCatalogRequestBuilder) AccessPackages()(*i447ab666c6a3bf74d14350e578077a89fb8ae57ca8ff874914d2e6216f9f5140.AccessPackagesRequestBuilder) {
     return i447ab666c6a3bf74d14350e578077a89fb8ae57ca8ff874914d2e6216f9f5140.NewAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages.item collection
 func (m *AccessPackageCatalogRequestBuilder) AccessPackagesById(id string)(*i8374b884984f9c7ad4edebea9d18cfbb6abec3f73cd5165bec4153bec741137a.AccessPackageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -125,10 +117,7 @@ func (m *AccessPackageCatalogRequestBuilder) AccessPackagesById(id string)(*i837
     }
     return i8374b884984f9c7ad4edebea9d18cfbb6abec3f73cd5165bec4153bec741137a.NewAccessPackageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new AccessPackageCatalogRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageCatalogRequestBuilderInternal instantiates a new AccessPackageCatalogRequestBuilder and sets the default values.
 func NewAccessPackageCatalogRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageCatalogRequestBuilder) {
     m := &AccessPackageCatalogRequestBuilder{
     }
@@ -141,18 +130,13 @@ func NewAccessPackageCatalogRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageCatalogRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageCatalogRequestBuilder instantiates a new AccessPackageCatalogRequestBuilder and sets the default values.
 func NewAccessPackageCatalogRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageCatalogRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property accessPackageCatalog for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property accessPackageCatalog for identityGovernance
 func (m *AccessPackageCatalogRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageCatalogRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -169,9 +153,7 @@ func (m *AccessPackageCatalogRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get accessPackageCatalog from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get accessPackageCatalog from identityGovernance
 func (m *AccessPackageCatalogRequestBuilder) CreateGetRequestInformation(options *AccessPackageCatalogRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -191,9 +173,7 @@ func (m *AccessPackageCatalogRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update the navigation property accessPackageCatalog in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property accessPackageCatalog in identityGovernance
 func (m *AccessPackageCatalogRequestBuilder) CreatePatchRequestInformation(options *AccessPackageCatalogRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -211,9 +191,7 @@ func (m *AccessPackageCatalogRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete navigation property accessPackageCatalog for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property accessPackageCatalog for identityGovernance
 func (m *AccessPackageCatalogRequestBuilder) Delete(options *AccessPackageCatalogRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -225,9 +203,7 @@ func (m *AccessPackageCatalogRequestBuilder) Delete(options *AccessPackageCatalo
     }
     return nil
 }
-// Get accessPackageCatalog from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get accessPackageCatalog from identityGovernance
 func (m *AccessPackageCatalogRequestBuilder) Get(options *AccessPackageCatalogRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageCatalog, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -239,9 +215,7 @@ func (m *AccessPackageCatalogRequestBuilder) Get(options *AccessPackageCatalogRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageCatalog), nil
 }
-// Update the navigation property accessPackageCatalog in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property accessPackageCatalog in identityGovernance
 func (m *AccessPackageCatalogRequestBuilder) Patch(options *AccessPackageCatalogRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

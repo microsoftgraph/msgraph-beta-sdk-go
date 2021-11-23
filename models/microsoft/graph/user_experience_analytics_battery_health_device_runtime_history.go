@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory 
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory struct {
     Entity
     // The unique identifier of the device, Intune DeviceID or SCCM device id.
@@ -14,14 +14,14 @@ type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory struct {
     // The datetime for the instance of runtime history.
     runtimeDateTime *string;
 }
-// Instantiates a new userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory instantiates a new userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) {
     m := &UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
+// GetDeviceId gets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetDeviceId()
         return m.deviceId
     }
 }
-// Gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+// GetEstimatedRuntimeInMinutes gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetEstimatedRuntimeInMinutes()(*int32) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetEstimatedR
         return m.estimatedRuntimeInMinutes
     }
 }
-// Gets the runtimeDateTime property value. The datetime for the instance of runtime history.
+// GetRuntimeDateTime gets the runtimeDateTime property value. The datetime for the instance of runtime history.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetRuntimeDateTime()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetRuntimeDat
         return m.runtimeDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,9 +83,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetFieldDeser
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -111,21 +109,15 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) Serialize(wri
     }
     return nil
 }
-// Sets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
-// Parameters:
-//  - value : Value to set for the deviceId property.
+// SetDeviceId sets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetDeviceId(value *string)() {
     m.deviceId = value
 }
-// Sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the estimatedRuntimeInMinutes property.
+// SetEstimatedRuntimeInMinutes sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetEstimatedRuntimeInMinutes(value *int32)() {
     m.estimatedRuntimeInMinutes = value
 }
-// Sets the runtimeDateTime property value. The datetime for the instance of runtime history.
-// Parameters:
-//  - value : Value to set for the runtimeDateTime property.
+// SetRuntimeDateTime sets the runtimeDateTime property value. The datetime for the instance of runtime history.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetRuntimeDateTime(value *string)() {
     m.runtimeDateTime = value
 }

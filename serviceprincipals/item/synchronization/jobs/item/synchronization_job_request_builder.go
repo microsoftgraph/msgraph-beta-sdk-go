@@ -13,7 +13,7 @@ import (
     ie7dd06601f7be4a75e499cc220f5c87d45dca4695a9b092b00f512bf0edb0643 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/synchronization/jobs/item/start"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs\{synchronizationJob-id}
+// SynchronizationJobRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs\{synchronizationJob-id}
 type SynchronizationJobRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type SynchronizationJobRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SynchronizationJobRequestBuilderDeleteOptions options for Delete
 type SynchronizationJobRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type SynchronizationJobRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SynchronizationJobRequestBuilderGetOptions options for Get
 type SynchronizationJobRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type SynchronizationJobRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get jobs from servicePrincipals
+// SynchronizationJobRequestBuilderGetQueryParameters get jobs from servicePrincipals
 type SynchronizationJobRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SynchronizationJobRequestBuilderPatchOptions options for Patch
 type SynchronizationJobRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob;
@@ -60,10 +60,7 @@ type SynchronizationJobRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SynchronizationJobRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSynchronizationJobRequestBuilderInternal instantiates a new SynchronizationJobRequestBuilder and sets the default values.
 func NewSynchronizationJobRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SynchronizationJobRequestBuilder) {
     m := &SynchronizationJobRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewSynchronizationJobRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SynchronizationJobRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSynchronizationJobRequestBuilder instantiates a new SynchronizationJobRequestBuilder and sets the default values.
 func NewSynchronizationJobRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SynchronizationJobRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationJobRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property jobs for servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property jobs for servicePrincipals
 func (m *SynchronizationJobRequestBuilder) CreateDeleteRequestInformation(options *SynchronizationJobRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *SynchronizationJobRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get jobs from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get jobs from servicePrincipals
 func (m *SynchronizationJobRequestBuilder) CreateGetRequestInformation(options *SynchronizationJobRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *SynchronizationJobRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update the navigation property jobs in servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property jobs in servicePrincipals
 func (m *SynchronizationJobRequestBuilder) CreatePatchRequestInformation(options *SynchronizationJobRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *SynchronizationJobRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete navigation property jobs for servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property jobs for servicePrincipals
 func (m *SynchronizationJobRequestBuilder) Delete(options *SynchronizationJobRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *SynchronizationJobRequestBuilder) Delete(options *SynchronizationJobReq
     }
     return nil
 }
-// Get jobs from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Get get jobs from servicePrincipals
 func (m *SynchronizationJobRequestBuilder) Get(options *SynchronizationJobRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *SynchronizationJobRequestBuilder) Get(options *SynchronizationJobReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob), nil
 }
-// Update the navigation property jobs in servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property jobs in servicePrincipals
 func (m *SynchronizationJobRequestBuilder) Patch(options *SynchronizationJobRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

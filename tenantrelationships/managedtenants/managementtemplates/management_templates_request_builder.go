@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates
+// ManagementTemplatesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates
 type ManagementTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagementTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagementTemplatesRequestBuilderGetOptions options for Get
 type ManagementTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ManagementTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of baseline management templates across managed tenants.
+// ManagementTemplatesRequestBuilderGetQueryParameters the collection of baseline management templates across managed tenants.
 type ManagementTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ManagementTemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ManagementTemplatesRequestBuilderPostOptions options for Post
 type ManagementTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplate;
@@ -56,10 +56,7 @@ type ManagementTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagementTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplatesRequestBuilderInternal instantiates a new ManagementTemplatesRequestBuilder and sets the default values.
 func NewManagementTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplatesRequestBuilder) {
     m := &ManagementTemplatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewManagementTemplatesRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplatesRequestBuilder instantiates a new ManagementTemplatesRequestBuilder and sets the default values.
 func NewManagementTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplatesRequestBuilder) CreateGetRequestInformation(options *ManagementTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ManagementTemplatesRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplatesRequestBuilder) CreatePostRequestInformation(options *ManagementTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ManagementTemplatesRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplatesRequestBuilder) Get(options *ManagementTemplatesRequestBuilderGetOptions)(*ManagementTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ManagementTemplatesRequestBuilder) Get(options *ManagementTemplatesRequ
     }
     return res.(*ManagementTemplatesResponse), nil
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplatesRequestBuilder) Post(options *ManagementTemplatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\userStates\{deviceManagementIntentUserState-id}
+// DeviceManagementIntentUserStateRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\userStates\{deviceManagementIntentUserState-id}
 type DeviceManagementIntentUserStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementIntentUserStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementIntentUserStateRequestBuilderDeleteOptions options for Delete
 type DeviceManagementIntentUserStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementIntentUserStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementIntentUserStateRequestBuilderGetOptions options for Get
 type DeviceManagementIntentUserStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementIntentUserStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of states of all users that the intent is applied to
+// DeviceManagementIntentUserStateRequestBuilderGetQueryParameters collection of states of all users that the intent is applied to
 type DeviceManagementIntentUserStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementIntentUserStateRequestBuilderPatchOptions options for Patch
 type DeviceManagementIntentUserStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentUserState;
@@ -53,10 +53,7 @@ type DeviceManagementIntentUserStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementIntentUserStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementIntentUserStateRequestBuilderInternal instantiates a new DeviceManagementIntentUserStateRequestBuilder and sets the default values.
 func NewDeviceManagementIntentUserStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementIntentUserStateRequestBuilder) {
     m := &DeviceManagementIntentUserStateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementIntentUserStateRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementIntentUserStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementIntentUserStateRequestBuilder instantiates a new DeviceManagementIntentUserStateRequestBuilder and sets the default values.
 func NewDeviceManagementIntentUserStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementIntentUserStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementIntentUserStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of states of all users that the intent is applied to
 func (m *DeviceManagementIntentUserStateRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementIntentUserStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementIntentUserStateRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of states of all users that the intent is applied to
 func (m *DeviceManagementIntentUserStateRequestBuilder) CreateGetRequestInformation(options *DeviceManagementIntentUserStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementIntentUserStateRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of states of all users that the intent is applied to
 func (m *DeviceManagementIntentUserStateRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementIntentUserStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementIntentUserStateRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Delete collection of states of all users that the intent is applied to
 func (m *DeviceManagementIntentUserStateRequestBuilder) Delete(options *DeviceManagementIntentUserStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementIntentUserStateRequestBuilder) Delete(options *DeviceMa
     }
     return nil
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Get collection of states of all users that the intent is applied to
 func (m *DeviceManagementIntentUserStateRequestBuilder) Get(options *DeviceManagementIntentUserStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentUserState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementIntentUserStateRequestBuilder) Get(options *DeviceManag
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentUserState), nil
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Patch collection of states of all users that the intent is applied to
 func (m *DeviceManagementIntentUserStateRequestBuilder) Patch(options *DeviceManagementIntentUserStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

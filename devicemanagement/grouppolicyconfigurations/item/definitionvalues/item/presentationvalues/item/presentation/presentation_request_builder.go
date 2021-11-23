@@ -7,7 +7,7 @@ import (
     ibce7d980339eb4e8dfed6958100d61183cfd3f717eba44f73a266a76912fbc34 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyconfigurations/item/definitionvalues/item/presentationvalues/item/presentation/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}\presentationValues\{groupPolicyPresentationValue-id}\presentation
+// PresentationRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}\presentationValues\{groupPolicyPresentationValue-id}\presentation
 type PresentationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PresentationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PresentationRequestBuilderGetOptions options for Get
 type PresentationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type PresentationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The group policy presentation associated with the presentation value.
+// PresentationRequestBuilderGetQueryParameters the group policy presentation associated with the presentation value.
 type PresentationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new PresentationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPresentationRequestBuilderInternal instantiates a new PresentationRequestBuilder and sets the default values.
 func NewPresentationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresentationRequestBuilder) {
     m := &PresentationRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewPresentationRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PresentationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPresentationRequestBuilder instantiates a new PresentationRequestBuilder and sets the default values.
 func NewPresentationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresentationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPresentationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The group policy presentation associated with the presentation value.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the group policy presentation associated with the presentation value.
 func (m *PresentationRequestBuilder) CreateGetRequestInformation(options *PresentationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *PresentationRequestBuilder) CreateGetRequestInformation(options *Presen
     }
     return requestInfo, nil
 }
-// The group policy presentation associated with the presentation value.
-// Parameters:
-//  - options : Options for the request
+// Get the group policy presentation associated with the presentation value.
 func (m *PresentationRequestBuilder) Get(options *PresentationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyPresentation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

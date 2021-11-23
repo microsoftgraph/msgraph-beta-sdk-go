@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}\shipmentMethod
+// ShipmentMethodRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}\shipmentMethod
 type ShipmentMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ShipmentMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ShipmentMethodRequestBuilderDeleteOptions options for Delete
 type ShipmentMethodRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ShipmentMethodRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ShipmentMethodRequestBuilderGetOptions options for Get
 type ShipmentMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ShipmentMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get shipmentMethod from financials
+// ShipmentMethodRequestBuilderGetQueryParameters get shipmentMethod from financials
 type ShipmentMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ShipmentMethodRequestBuilderPatchOptions options for Patch
 type ShipmentMethodRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ShipmentMethod;
@@ -53,10 +53,7 @@ type ShipmentMethodRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ShipmentMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShipmentMethodRequestBuilderInternal instantiates a new ShipmentMethodRequestBuilder and sets the default values.
 func NewShipmentMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShipmentMethodRequestBuilder) {
     m := &ShipmentMethodRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewShipmentMethodRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ShipmentMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShipmentMethodRequestBuilder instantiates a new ShipmentMethodRequestBuilder and sets the default values.
 func NewShipmentMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShipmentMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewShipmentMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property shipmentMethod for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property shipmentMethod for financials
 func (m *ShipmentMethodRequestBuilder) CreateDeleteRequestInformation(options *ShipmentMethodRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ShipmentMethodRequestBuilder) CreateDeleteRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// Get shipmentMethod from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get shipmentMethod from financials
 func (m *ShipmentMethodRequestBuilder) CreateGetRequestInformation(options *ShipmentMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ShipmentMethodRequestBuilder) CreateGetRequestInformation(options *Ship
     }
     return requestInfo, nil
 }
-// Update the navigation property shipmentMethod in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property shipmentMethod in financials
 func (m *ShipmentMethodRequestBuilder) CreatePatchRequestInformation(options *ShipmentMethodRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ShipmentMethodRequestBuilder) CreatePatchRequestInformation(options *Sh
     }
     return requestInfo, nil
 }
-// Delete navigation property shipmentMethod for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property shipmentMethod for financials
 func (m *ShipmentMethodRequestBuilder) Delete(options *ShipmentMethodRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ShipmentMethodRequestBuilder) Delete(options *ShipmentMethodRequestBuil
     }
     return nil
 }
-// Get shipmentMethod from financials
-// Parameters:
-//  - options : Options for the request
+// Get get shipmentMethod from financials
 func (m *ShipmentMethodRequestBuilder) Get(options *ShipmentMethodRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ShipmentMethod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ShipmentMethodRequestBuilder) Get(options *ShipmentMethodRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ShipmentMethod), nil
 }
-// Update the navigation property shipmentMethod in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property shipmentMethod in financials
 func (m *ShipmentMethodRequestBuilder) Patch(options *ShipmentMethodRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

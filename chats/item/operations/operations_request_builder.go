@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\operations
+// OperationsRequestBuilder builds and executes requests for operations under \chats\{chat-id}\operations
 type OperationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OperationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OperationsRequestBuilderGetOptions options for Get
 type OperationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OperationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
+// OperationsRequestBuilderGetQueryParameters a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 type OperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type OperationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// OperationsRequestBuilderPostOptions options for Post
 type OperationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsAsyncOperation;
@@ -56,10 +56,7 @@ type OperationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OperationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OperationsRequestBuilder) {
     m := &OperationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewOperationsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OperationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOperationsRequestBuilder instantiates a new OperationsRequestBuilder and sets the default values.
 func NewOperationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OperationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *OperationsRequestBuilder) CreateGetRequestInformation(options *OperationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *OperationsRequestBuilder) CreateGetRequestInformation(options *Operatio
     }
     return requestInfo, nil
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *OperationsRequestBuilder) CreatePostRequestInformation(options *OperationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *OperationsRequestBuilder) CreatePostRequestInformation(options *Operati
     }
     return requestInfo, nil
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *OperationsRequestBuilder) Get(options *OperationsRequestBuilderGetOptions)(*OperationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *OperationsRequestBuilder) Get(options *OperationsRequestBuilderGetOptio
     }
     return res.(*OperationsResponse), nil
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *OperationsRequestBuilder) Post(options *OperationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsAsyncOperation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

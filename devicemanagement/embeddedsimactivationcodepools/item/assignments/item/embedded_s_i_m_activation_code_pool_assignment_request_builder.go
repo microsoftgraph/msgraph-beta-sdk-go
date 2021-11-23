@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}\assignments\{embeddedSIMActivationCodePoolAssignment-id}
+// EmbeddedSIMActivationCodePoolAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}\assignments\{embeddedSIMActivationCodePoolAssignment-id}
 type EmbeddedSIMActivationCodePoolAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EmbeddedSIMActivationCodePoolAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EmbeddedSIMActivationCodePoolAssignmentRequestBuilderDeleteOptions options for Delete
 type EmbeddedSIMActivationCodePoolAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type EmbeddedSIMActivationCodePoolAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EmbeddedSIMActivationCodePoolAssignmentRequestBuilderGetOptions options for Get
 type EmbeddedSIMActivationCodePoolAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type EmbeddedSIMActivationCodePoolAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Navigational property to a list of targets to which this pool is assigned.
+// EmbeddedSIMActivationCodePoolAssignmentRequestBuilderGetQueryParameters navigational property to a list of targets to which this pool is assigned.
 type EmbeddedSIMActivationCodePoolAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EmbeddedSIMActivationCodePoolAssignmentRequestBuilderPatchOptions options for Patch
 type EmbeddedSIMActivationCodePoolAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePoolAssignment;
@@ -53,10 +53,7 @@ type EmbeddedSIMActivationCodePoolAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EmbeddedSIMActivationCodePoolAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmbeddedSIMActivationCodePoolAssignmentRequestBuilderInternal instantiates a new EmbeddedSIMActivationCodePoolAssignmentRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) {
     m := &EmbeddedSIMActivationCodePoolAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewEmbeddedSIMActivationCodePoolAssignmentRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EmbeddedSIMActivationCodePoolAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmbeddedSIMActivationCodePoolAssignmentRequestBuilder instantiates a new EmbeddedSIMActivationCodePoolAssignmentRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMActivationCodePoolAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Navigational property to a list of targets to which this pool is assigned.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) CreateDeleteRequestInformation(options *EmbeddedSIMActivationCodePoolAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// Navigational property to a list of targets to which this pool is assigned.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) CreateGetRequestInformation(options *EmbeddedSIMActivationCodePoolAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// Navigational property to a list of targets to which this pool is assigned.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) CreatePatchRequestInformation(options *EmbeddedSIMActivationCodePoolAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// Navigational property to a list of targets to which this pool is assigned.
-// Parameters:
-//  - options : Options for the request
+// Delete navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) Delete(options *EmbeddedSIMActivationCodePoolAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) Delete(options *
     }
     return nil
 }
-// Navigational property to a list of targets to which this pool is assigned.
-// Parameters:
-//  - options : Options for the request
+// Get navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) Get(options *EmbeddedSIMActivationCodePoolAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePoolAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) Get(options *Emb
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePoolAssignment), nil
 }
-// Navigational property to a list of targets to which this pool is assigned.
-// Parameters:
-//  - options : Options for the request
+// Patch navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) Patch(options *EmbeddedSIMActivationCodePoolAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PositionDetail 
 type PositionDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,14 +23,14 @@ type PositionDetail struct {
     // Short summary of the position.
     summary *string;
 }
-// Instantiates a new positionDetail and sets the default values.
+// NewPositionDetail instantiates a new positionDetail and sets the default values.
 func NewPositionDetail()(*PositionDetail) {
     m := &PositionDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PositionDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *PositionDetail) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the company property value. Detail about the company or employer.
+// GetCompany gets the company property value. Detail about the company or employer.
 func (m *PositionDetail) GetCompany()(*CompanyDetail) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *PositionDetail) GetCompany()(*CompanyDetail) {
         return m.company
     }
 }
-// Gets the description property value. Description of the position in question.
+// GetDescription gets the description property value. Description of the position in question.
 func (m *PositionDetail) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *PositionDetail) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the endMonthYear property value. When the position ended.
+// GetEndMonthYear gets the endMonthYear property value. When the position ended.
 func (m *PositionDetail) GetEndMonthYear()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *PositionDetail) GetEndMonthYear()(*string) {
         return m.endMonthYear
     }
 }
-// Gets the jobTitle property value. The title held when in that position.
+// GetJobTitle gets the jobTitle property value. The title held when in that position.
 func (m *PositionDetail) GetJobTitle()(*string) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *PositionDetail) GetJobTitle()(*string) {
         return m.jobTitle
     }
 }
-// Gets the role property value. The role the position entailed.
+// GetRole gets the role property value. The role the position entailed.
 func (m *PositionDetail) GetRole()(*string) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *PositionDetail) GetRole()(*string) {
         return m.role
     }
 }
-// Gets the startMonthYear property value. The start month and year of the position.
+// GetStartMonthYear gets the startMonthYear property value. The start month and year of the position.
 func (m *PositionDetail) GetStartMonthYear()(*string) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *PositionDetail) GetStartMonthYear()(*string) {
         return m.startMonthYear
     }
 }
-// Gets the summary property value. Short summary of the position.
+// GetSummary gets the summary property value. Short summary of the position.
 func (m *PositionDetail) GetSummary()(*string) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *PositionDetail) GetSummary()(*string) {
         return m.summary
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PositionDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["company"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,9 +172,7 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *PositionDetail) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PositionDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("company", m.GetCompany())
@@ -226,51 +224,35 @@ func (m *PositionDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PositionDetail) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the company property value. Detail about the company or employer.
-// Parameters:
-//  - value : Value to set for the company property.
+// SetCompany sets the company property value. Detail about the company or employer.
 func (m *PositionDetail) SetCompany(value *CompanyDetail)() {
     m.company = value
 }
-// Sets the description property value. Description of the position in question.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description of the position in question.
 func (m *PositionDetail) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the endMonthYear property value. When the position ended.
-// Parameters:
-//  - value : Value to set for the endMonthYear property.
+// SetEndMonthYear sets the endMonthYear property value. When the position ended.
 func (m *PositionDetail) SetEndMonthYear(value *string)() {
     m.endMonthYear = value
 }
-// Sets the jobTitle property value. The title held when in that position.
-// Parameters:
-//  - value : Value to set for the jobTitle property.
+// SetJobTitle sets the jobTitle property value. The title held when in that position.
 func (m *PositionDetail) SetJobTitle(value *string)() {
     m.jobTitle = value
 }
-// Sets the role property value. The role the position entailed.
-// Parameters:
-//  - value : Value to set for the role property.
+// SetRole sets the role property value. The role the position entailed.
 func (m *PositionDetail) SetRole(value *string)() {
     m.role = value
 }
-// Sets the startMonthYear property value. The start month and year of the position.
-// Parameters:
-//  - value : Value to set for the startMonthYear property.
+// SetStartMonthYear sets the startMonthYear property value. The start month and year of the position.
 func (m *PositionDetail) SetStartMonthYear(value *string)() {
     m.startMonthYear = value
 }
-// Sets the summary property value. Short summary of the position.
-// Parameters:
-//  - value : Value to set for the summary property.
+// SetSummary sets the summary property value. Short summary of the position.
 func (m *PositionDetail) SetSummary(value *string)() {
     m.summary = value
 }

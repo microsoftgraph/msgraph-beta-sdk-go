@@ -7,7 +7,7 @@ import (
     ia17a50f392f233475f2726c08e20bb925fe8c75dc2a18a8c6c889953892e8e2c "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/lastestimatestatisticsoperation/ref"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\lastEstimateStatisticsOperation
+// LastEstimateStatisticsOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\lastEstimateStatisticsOperation
 type LastEstimateStatisticsOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type LastEstimateStatisticsOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LastEstimateStatisticsOperationRequestBuilderGetOptions options for Get
 type LastEstimateStatisticsOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type LastEstimateStatisticsOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The last estimate operation associated with the sourceCollection.
+// LastEstimateStatisticsOperationRequestBuilderGetQueryParameters the last estimate operation associated with the sourceCollection.
 type LastEstimateStatisticsOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new LastEstimateStatisticsOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLastEstimateStatisticsOperationRequestBuilderInternal instantiates a new LastEstimateStatisticsOperationRequestBuilder and sets the default values.
 func NewLastEstimateStatisticsOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LastEstimateStatisticsOperationRequestBuilder) {
     m := &LastEstimateStatisticsOperationRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewLastEstimateStatisticsOperationRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LastEstimateStatisticsOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLastEstimateStatisticsOperationRequestBuilder instantiates a new LastEstimateStatisticsOperationRequestBuilder and sets the default values.
 func NewLastEstimateStatisticsOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LastEstimateStatisticsOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The last estimate operation associated with the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the last estimate operation associated with the sourceCollection.
 func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformation(options *LastEstimateStatisticsOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// The last estimate operation associated with the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// Get the last estimate operation associated with the sourceCollection.
 func (m *LastEstimateStatisticsOperationRequestBuilder) Get(options *LastEstimateStatisticsOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EstimateStatisticsOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

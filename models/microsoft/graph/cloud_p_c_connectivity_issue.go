@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// CloudPCConnectivityIssue 
 type CloudPCConnectivityIssue struct {
     Entity
     // The Intune DeviceId of the device the connection is associated with.
@@ -21,14 +21,14 @@ type CloudPCConnectivityIssue struct {
     // The unique id of user who initialize the connection.
     userId *string;
 }
-// Instantiates a new cloudPCConnectivityIssue and sets the default values.
+// NewCloudPCConnectivityIssue instantiates a new cloudPCConnectivityIssue and sets the default values.
 func NewCloudPCConnectivityIssue()(*CloudPCConnectivityIssue) {
     m := &CloudPCConnectivityIssue{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
+// GetDeviceId gets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
 func (m *CloudPCConnectivityIssue) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *CloudPCConnectivityIssue) GetDeviceId()(*string) {
         return m.deviceId
     }
 }
-// Gets the errorCode property value. The error code of the connectivity issue.
+// GetErrorCode gets the errorCode property value. The error code of the connectivity issue.
 func (m *CloudPCConnectivityIssue) GetErrorCode()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *CloudPCConnectivityIssue) GetErrorCode()(*string) {
         return m.errorCode
     }
 }
-// Gets the errorDateTime property value. The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
+// GetErrorDateTime gets the errorDateTime property value. The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
 func (m *CloudPCConnectivityIssue) GetErrorDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *CloudPCConnectivityIssue) GetErrorDateTime()(*i336074805fc853987abe6f7f
         return m.errorDateTime
     }
 }
-// Gets the errorDescription property value. The detailed description of what went wrong.
+// GetErrorDescription gets the errorDescription property value. The detailed description of what went wrong.
 func (m *CloudPCConnectivityIssue) GetErrorDescription()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *CloudPCConnectivityIssue) GetErrorDescription()(*string) {
         return m.errorDescription
     }
 }
-// Gets the recommendedAction property value. The recommended action to fix the corresponding error.
+// GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
 func (m *CloudPCConnectivityIssue) GetRecommendedAction()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *CloudPCConnectivityIssue) GetRecommendedAction()(*string) {
         return m.recommendedAction
     }
 }
-// Gets the userId property value. The unique id of user who initialize the connection.
+// GetUserId gets the userId property value. The unique id of user who initialize the connection.
 func (m *CloudPCConnectivityIssue) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *CloudPCConnectivityIssue) GetUserId()(*string) {
         return m.userId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,9 +144,7 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
 func (m *CloudPCConnectivityIssue) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CloudPCConnectivityIssue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -190,39 +188,27 @@ func (m *CloudPCConnectivityIssue) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
-// Parameters:
-//  - value : Value to set for the deviceId property.
+// SetDeviceId sets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
 func (m *CloudPCConnectivityIssue) SetDeviceId(value *string)() {
     m.deviceId = value
 }
-// Sets the errorCode property value. The error code of the connectivity issue.
-// Parameters:
-//  - value : Value to set for the errorCode property.
+// SetErrorCode sets the errorCode property value. The error code of the connectivity issue.
 func (m *CloudPCConnectivityIssue) SetErrorCode(value *string)() {
     m.errorCode = value
 }
-// Sets the errorDateTime property value. The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
-// Parameters:
-//  - value : Value to set for the errorDateTime property.
+// SetErrorDateTime sets the errorDateTime property value. The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
 func (m *CloudPCConnectivityIssue) SetErrorDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.errorDateTime = value
 }
-// Sets the errorDescription property value. The detailed description of what went wrong.
-// Parameters:
-//  - value : Value to set for the errorDescription property.
+// SetErrorDescription sets the errorDescription property value. The detailed description of what went wrong.
 func (m *CloudPCConnectivityIssue) SetErrorDescription(value *string)() {
     m.errorDescription = value
 }
-// Sets the recommendedAction property value. The recommended action to fix the corresponding error.
-// Parameters:
-//  - value : Value to set for the recommendedAction property.
+// SetRecommendedAction sets the recommendedAction property value. The recommended action to fix the corresponding error.
 func (m *CloudPCConnectivityIssue) SetRecommendedAction(value *string)() {
     m.recommendedAction = value
 }
-// Sets the userId property value. The unique id of user who initialize the connection.
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. The unique id of user who initialize the connection.
 func (m *CloudPCConnectivityIssue) SetUserId(value *string)() {
     m.userId = value
 }

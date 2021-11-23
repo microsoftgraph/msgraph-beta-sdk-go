@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \programControls
+// ProgramControlsRequestBuilder builds and executes requests for operations under \programControls
 type ProgramControlsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ProgramControlsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ProgramControlsRequestBuilderGetOptions options for Get
 type ProgramControlsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ProgramControlsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from programControls
+// ProgramControlsRequestBuilderGetQueryParameters get entities from programControls
 type ProgramControlsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ProgramControlsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ProgramControlsRequestBuilderPostOptions options for Post
 type ProgramControlsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProgramControl;
@@ -56,10 +56,7 @@ type ProgramControlsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProgramControlsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProgramControlsRequestBuilderInternal instantiates a new ProgramControlsRequestBuilder and sets the default values.
 func NewProgramControlsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgramControlsRequestBuilder) {
     m := &ProgramControlsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewProgramControlsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProgramControlsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProgramControlsRequestBuilder instantiates a new ProgramControlsRequestBuilder and sets the default values.
 func NewProgramControlsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgramControlsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProgramControlsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from programControls
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from programControls
 func (m *ProgramControlsRequestBuilder) CreateGetRequestInformation(options *ProgramControlsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ProgramControlsRequestBuilder) CreateGetRequestInformation(options *Pro
     }
     return requestInfo, nil
 }
-// Add new entity to programControls
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to programControls
 func (m *ProgramControlsRequestBuilder) CreatePostRequestInformation(options *ProgramControlsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ProgramControlsRequestBuilder) CreatePostRequestInformation(options *Pr
     }
     return requestInfo, nil
 }
-// Get entities from programControls
-// Parameters:
-//  - options : Options for the request
+// Get get entities from programControls
 func (m *ProgramControlsRequestBuilder) Get(options *ProgramControlsRequestBuilderGetOptions)(*ProgramControlsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ProgramControlsRequestBuilder) Get(options *ProgramControlsRequestBuild
     }
     return res.(*ProgramControlsResponse), nil
 }
-// Add new entity to programControls
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to programControls
 func (m *ProgramControlsRequestBuilder) Post(options *ProgramControlsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProgramControl, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

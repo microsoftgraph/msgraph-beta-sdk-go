@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}\assignments\{windowsDriverUpdateProfileAssignment-id}
+// WindowsDriverUpdateProfileAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}\assignments\{windowsDriverUpdateProfileAssignment-id}
 type WindowsDriverUpdateProfileAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsDriverUpdateProfileAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsDriverUpdateProfileAssignmentRequestBuilderDeleteOptions options for Delete
 type WindowsDriverUpdateProfileAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WindowsDriverUpdateProfileAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsDriverUpdateProfileAssignmentRequestBuilderGetOptions options for Get
 type WindowsDriverUpdateProfileAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WindowsDriverUpdateProfileAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of group assignments of the profile.
+// WindowsDriverUpdateProfileAssignmentRequestBuilderGetQueryParameters the list of group assignments of the profile.
 type WindowsDriverUpdateProfileAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsDriverUpdateProfileAssignmentRequestBuilderPatchOptions options for Patch
 type WindowsDriverUpdateProfileAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfileAssignment;
@@ -53,10 +53,7 @@ type WindowsDriverUpdateProfileAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsDriverUpdateProfileAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDriverUpdateProfileAssignmentRequestBuilderInternal instantiates a new WindowsDriverUpdateProfileAssignmentRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateProfileAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDriverUpdateProfileAssignmentRequestBuilder) {
     m := &WindowsDriverUpdateProfileAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWindowsDriverUpdateProfileAssignmentRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsDriverUpdateProfileAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDriverUpdateProfileAssignmentRequestBuilder instantiates a new WindowsDriverUpdateProfileAssignmentRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateProfileAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDriverUpdateProfileAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDriverUpdateProfileAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of group assignments of the profile.
 func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) CreateDeleteRequestInformation(options *WindowsDriverUpdateProfileAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of group assignments of the profile.
 func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) CreateGetRequestInformation(options *WindowsDriverUpdateProfileAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of group assignments of the profile.
 func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) CreatePatchRequestInformation(options *WindowsDriverUpdateProfileAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of group assignments of the profile.
 func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) Delete(options *WindowsDriverUpdateProfileAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) Delete(options *Win
     }
     return nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// Get the list of group assignments of the profile.
 func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) Get(options *WindowsDriverUpdateProfileAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfileAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) Get(options *Window
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfileAssignment), nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of group assignments of the profile.
 func (m *WindowsDriverUpdateProfileAssignmentRequestBuilder) Patch(options *WindowsDriverUpdateProfileAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

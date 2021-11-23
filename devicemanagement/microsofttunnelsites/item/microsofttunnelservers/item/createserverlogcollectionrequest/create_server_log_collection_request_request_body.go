@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// CreateServerLogCollectionRequestRequestBody 
 type CreateServerLogCollectionRequestRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type CreateServerLogCollectionRequestRequestBody struct {
     // 
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new createServerLogCollectionRequestRequestBody and sets the default values.
+// NewCreateServerLogCollectionRequestRequestBody instantiates a new createServerLogCollectionRequestRequestBody and sets the default values.
 func NewCreateServerLogCollectionRequestRequestBody()(*CreateServerLogCollectionRequestRequestBody) {
     m := &CreateServerLogCollectionRequestRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateServerLogCollectionRequestRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *CreateServerLogCollectionRequestRequestBody) GetAdditionalData()(map[st
         return m.additionalData
     }
 }
-// Gets the endDateTime property value. 
+// GetEndDateTime gets the endDateTime property value. 
 func (m *CreateServerLogCollectionRequestRequestBody) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *CreateServerLogCollectionRequestRequestBody) GetEndDateTime()(*i3360748
         return m.endDateTime
     }
 }
-// Gets the startDateTime property value. 
+// GetStartDateTime gets the startDateTime property value. 
 func (m *CreateServerLogCollectionRequestRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *CreateServerLogCollectionRequestRequestBody) GetStartDateTime()(*i33607
         return m.startDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CreateServerLogCollectionRequestRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *CreateServerLogCollectionRequestRequestBody) GetFieldDeserializers()(ma
 func (m *CreateServerLogCollectionRequestRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CreateServerLogCollectionRequestRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
@@ -97,21 +95,15 @@ func (m *CreateServerLogCollectionRequestRequestBody) Serialize(writer i04eb5309
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateServerLogCollectionRequestRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the endDateTime property value. 
-// Parameters:
-//  - value : Value to set for the endDateTime property.
+// SetEndDateTime sets the endDateTime property value. 
 func (m *CreateServerLogCollectionRequestRequestBody) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// Sets the startDateTime property value. 
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. 
 func (m *CreateServerLogCollectionRequestRequestBody) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }

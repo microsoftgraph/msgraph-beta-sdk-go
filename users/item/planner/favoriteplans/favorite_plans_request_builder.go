@@ -6,7 +6,7 @@ import (
     ic123b10aaeed7f9ca1dd45407cc1fcc4fa72c511ff6d25f4e2b568a80be947be "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/planner/favoriteplans/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\planner\favoritePlans
+// FavoritePlansRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\favoritePlans
 type FavoritePlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FavoritePlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FavoritePlansRequestBuilderGetOptions options for Get
 type FavoritePlansRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type FavoritePlansRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+// FavoritePlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 type FavoritePlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type FavoritePlansRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new FavoritePlansRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFavoritePlansRequestBuilderInternal instantiates a new FavoritePlansRequestBuilder and sets the default values.
 func NewFavoritePlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FavoritePlansRequestBuilder) {
     m := &FavoritePlansRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewFavoritePlansRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FavoritePlansRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFavoritePlansRequestBuilder instantiates a new FavoritePlansRequestBuilder and sets the default values.
 func NewFavoritePlansRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FavoritePlansRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFavoritePlansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *FavoritePlansRequestBuilder) CreateGetRequestInformation(options *FavoritePlansRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *FavoritePlansRequestBuilder) CreateGetRequestInformation(options *Favor
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *FavoritePlansRequestBuilder) Get(options *FavoritePlansRequestBuilderGetOptions)(*FavoritePlansResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\unifiedGroupSources
+// UnifiedGroupSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\unifiedGroupSources
 type UnifiedGroupSourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UnifiedGroupSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UnifiedGroupSourcesRequestBuilderGetOptions options for Get
 type UnifiedGroupSourcesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UnifiedGroupSourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Data source entity for groups associated with the custodian.
+// UnifiedGroupSourcesRequestBuilderGetQueryParameters data source entity for groups associated with the custodian.
 type UnifiedGroupSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UnifiedGroupSourcesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UnifiedGroupSourcesRequestBuilderPostOptions options for Post
 type UnifiedGroupSourcesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedGroupSource;
@@ -56,10 +56,7 @@ type UnifiedGroupSourcesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedGroupSourcesRequestBuilderInternal instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.
 func NewUnifiedGroupSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedGroupSourcesRequestBuilder) {
     m := &UnifiedGroupSourcesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUnifiedGroupSourcesRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedGroupSourcesRequestBuilder instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.
 func NewUnifiedGroupSourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedGroupSourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedGroupSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Data source entity for groups associated with the custodian.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation data source entity for groups associated with the custodian.
 func (m *UnifiedGroupSourcesRequestBuilder) CreateGetRequestInformation(options *UnifiedGroupSourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UnifiedGroupSourcesRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Data source entity for groups associated with the custodian.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation data source entity for groups associated with the custodian.
 func (m *UnifiedGroupSourcesRequestBuilder) CreatePostRequestInformation(options *UnifiedGroupSourcesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UnifiedGroupSourcesRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Data source entity for groups associated with the custodian.
-// Parameters:
-//  - options : Options for the request
+// Get data source entity for groups associated with the custodian.
 func (m *UnifiedGroupSourcesRequestBuilder) Get(options *UnifiedGroupSourcesRequestBuilderGetOptions)(*UnifiedGroupSourcesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UnifiedGroupSourcesRequestBuilder) Get(options *UnifiedGroupSourcesRequ
     }
     return res.(*UnifiedGroupSourcesResponse), nil
 }
-// Data source entity for groups associated with the custodian.
-// Parameters:
-//  - options : Options for the request
+// Post data source entity for groups associated with the custodian.
 func (m *UnifiedGroupSourcesRequestBuilder) Post(options *UnifiedGroupSourcesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedGroupSource, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

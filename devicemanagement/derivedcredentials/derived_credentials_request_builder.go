@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\derivedCredentials
+// DerivedCredentialsRequestBuilder builds and executes requests for operations under \deviceManagement\derivedCredentials
 type DerivedCredentialsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DerivedCredentialsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DerivedCredentialsRequestBuilderGetOptions options for Get
 type DerivedCredentialsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DerivedCredentialsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of Derived credential settings associated with account.
+// DerivedCredentialsRequestBuilderGetQueryParameters collection of Derived credential settings associated with account.
 type DerivedCredentialsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DerivedCredentialsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DerivedCredentialsRequestBuilderPostOptions options for Post
 type DerivedCredentialsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettings;
@@ -56,10 +56,7 @@ type DerivedCredentialsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DerivedCredentialsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDerivedCredentialsRequestBuilderInternal instantiates a new DerivedCredentialsRequestBuilder and sets the default values.
 func NewDerivedCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DerivedCredentialsRequestBuilder) {
     m := &DerivedCredentialsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDerivedCredentialsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DerivedCredentialsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDerivedCredentialsRequestBuilder instantiates a new DerivedCredentialsRequestBuilder and sets the default values.
 func NewDerivedCredentialsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DerivedCredentialsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDerivedCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of Derived credential settings associated with account.
 func (m *DerivedCredentialsRequestBuilder) CreateGetRequestInformation(options *DerivedCredentialsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DerivedCredentialsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of Derived credential settings associated with account.
 func (m *DerivedCredentialsRequestBuilder) CreatePostRequestInformation(options *DerivedCredentialsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DerivedCredentialsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Get collection of Derived credential settings associated with account.
 func (m *DerivedCredentialsRequestBuilder) Get(options *DerivedCredentialsRequestBuilderGetOptions)(*DerivedCredentialsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DerivedCredentialsRequestBuilder) Get(options *DerivedCredentialsReques
     }
     return res.(*DerivedCredentialsResponse), nil
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Post collection of Derived credential settings associated with account.
 func (m *DerivedCredentialsRequestBuilder) Post(options *DerivedCredentialsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettings, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

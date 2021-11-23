@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\symantecCodeSigningCertificate
+// SymantecCodeSigningCertificateRequestBuilder builds and executes requests for operations under \deviceAppManagement\symantecCodeSigningCertificate
 type SymantecCodeSigningCertificateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SymantecCodeSigningCertificateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SymantecCodeSigningCertificateRequestBuilderDeleteOptions options for Delete
 type SymantecCodeSigningCertificateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SymantecCodeSigningCertificateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SymantecCodeSigningCertificateRequestBuilderGetOptions options for Get
 type SymantecCodeSigningCertificateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SymantecCodeSigningCertificateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The WinPhone Symantec Code Signing Certificate.
+// SymantecCodeSigningCertificateRequestBuilderGetQueryParameters the WinPhone Symantec Code Signing Certificate.
 type SymantecCodeSigningCertificateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SymantecCodeSigningCertificateRequestBuilderPatchOptions options for Patch
 type SymantecCodeSigningCertificateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SymantecCodeSigningCertificate;
@@ -53,10 +53,7 @@ type SymantecCodeSigningCertificateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SymantecCodeSigningCertificateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSymantecCodeSigningCertificateRequestBuilderInternal instantiates a new SymantecCodeSigningCertificateRequestBuilder and sets the default values.
 func NewSymantecCodeSigningCertificateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SymantecCodeSigningCertificateRequestBuilder) {
     m := &SymantecCodeSigningCertificateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSymantecCodeSigningCertificateRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SymantecCodeSigningCertificateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSymantecCodeSigningCertificateRequestBuilder instantiates a new SymantecCodeSigningCertificateRequestBuilder and sets the default values.
 func NewSymantecCodeSigningCertificateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SymantecCodeSigningCertificateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSymantecCodeSigningCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The WinPhone Symantec Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the WinPhone Symantec Code Signing Certificate.
 func (m *SymantecCodeSigningCertificateRequestBuilder) CreateDeleteRequestInformation(options *SymantecCodeSigningCertificateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// The WinPhone Symantec Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the WinPhone Symantec Code Signing Certificate.
 func (m *SymantecCodeSigningCertificateRequestBuilder) CreateGetRequestInformation(options *SymantecCodeSigningCertificateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// The WinPhone Symantec Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the WinPhone Symantec Code Signing Certificate.
 func (m *SymantecCodeSigningCertificateRequestBuilder) CreatePatchRequestInformation(options *SymantecCodeSigningCertificateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// The WinPhone Symantec Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// Delete the WinPhone Symantec Code Signing Certificate.
 func (m *SymantecCodeSigningCertificateRequestBuilder) Delete(options *SymantecCodeSigningCertificateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) Delete(options *SymantecC
     }
     return nil
 }
-// The WinPhone Symantec Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// Get the WinPhone Symantec Code Signing Certificate.
 func (m *SymantecCodeSigningCertificateRequestBuilder) Get(options *SymantecCodeSigningCertificateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SymantecCodeSigningCertificate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) Get(options *SymantecCode
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SymantecCodeSigningCertificate), nil
 }
-// The WinPhone Symantec Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// Patch the WinPhone Symantec Code Signing Certificate.
 func (m *SymantecCodeSigningCertificateRequestBuilder) Patch(options *SymantecCodeSigningCertificateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

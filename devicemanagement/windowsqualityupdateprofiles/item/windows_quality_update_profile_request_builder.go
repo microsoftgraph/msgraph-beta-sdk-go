@@ -9,7 +9,7 @@ import (
     i04d128338563166ddbb410fea932b830e3e2b8799a8d363b4dbb0797203fe43d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsqualityupdateprofiles/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsQualityUpdateProfiles\{windowsQualityUpdateProfile-id}
+// WindowsQualityUpdateProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsQualityUpdateProfiles\{windowsQualityUpdateProfile-id}
 type WindowsQualityUpdateProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type WindowsQualityUpdateProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsQualityUpdateProfileRequestBuilderDeleteOptions options for Delete
 type WindowsQualityUpdateProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type WindowsQualityUpdateProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsQualityUpdateProfileRequestBuilderGetOptions options for Get
 type WindowsQualityUpdateProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type WindowsQualityUpdateProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of windows quality update profiles
+// WindowsQualityUpdateProfileRequestBuilderGetQueryParameters a collection of windows quality update profiles
 type WindowsQualityUpdateProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsQualityUpdateProfileRequestBuilderPatchOptions options for Patch
 type WindowsQualityUpdateProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsQualityUpdateProfile;
@@ -62,9 +62,7 @@ func (m *WindowsQualityUpdateProfileRequestBuilder) Assign()(*i36baea6ccabeba8df
 func (m *WindowsQualityUpdateProfileRequestBuilder) Assignments()(*i2bb7d0bba9f4dacf992341819d973086e188fe4bac69df578a46624982bc73af.AssignmentsRequestBuilder) {
     return i2bb7d0bba9f4dacf992341819d973086e188fe4bac69df578a46624982bc73af.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsQualityUpdateProfiles.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsQualityUpdateProfiles.item.assignments.item collection
 func (m *WindowsQualityUpdateProfileRequestBuilder) AssignmentsById(id string)(*i04d128338563166ddbb410fea932b830e3e2b8799a8d363b4dbb0797203fe43d.WindowsQualityUpdateProfileAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,10 +73,7 @@ func (m *WindowsQualityUpdateProfileRequestBuilder) AssignmentsById(id string)(*
     }
     return i04d128338563166ddbb410fea932b830e3e2b8799a8d363b4dbb0797203fe43d.NewWindowsQualityUpdateProfileAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new WindowsQualityUpdateProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsQualityUpdateProfileRequestBuilderInternal instantiates a new WindowsQualityUpdateProfileRequestBuilder and sets the default values.
 func NewWindowsQualityUpdateProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsQualityUpdateProfileRequestBuilder) {
     m := &WindowsQualityUpdateProfileRequestBuilder{
     }
@@ -91,18 +86,13 @@ func NewWindowsQualityUpdateProfileRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsQualityUpdateProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsQualityUpdateProfileRequestBuilder instantiates a new WindowsQualityUpdateProfileRequestBuilder and sets the default values.
 func NewWindowsQualityUpdateProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsQualityUpdateProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsQualityUpdateProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of windows quality update profiles
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of windows quality update profiles
 func (m *WindowsQualityUpdateProfileRequestBuilder) CreateDeleteRequestInformation(options *WindowsQualityUpdateProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WindowsQualityUpdateProfileRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// A collection of windows quality update profiles
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of windows quality update profiles
 func (m *WindowsQualityUpdateProfileRequestBuilder) CreateGetRequestInformation(options *WindowsQualityUpdateProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *WindowsQualityUpdateProfileRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// A collection of windows quality update profiles
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of windows quality update profiles
 func (m *WindowsQualityUpdateProfileRequestBuilder) CreatePatchRequestInformation(options *WindowsQualityUpdateProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +147,7 @@ func (m *WindowsQualityUpdateProfileRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// A collection of windows quality update profiles
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of windows quality update profiles
 func (m *WindowsQualityUpdateProfileRequestBuilder) Delete(options *WindowsQualityUpdateProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *WindowsQualityUpdateProfileRequestBuilder) Delete(options *WindowsQuali
     }
     return nil
 }
-// A collection of windows quality update profiles
-// Parameters:
-//  - options : Options for the request
+// Get a collection of windows quality update profiles
 func (m *WindowsQualityUpdateProfileRequestBuilder) Get(options *WindowsQualityUpdateProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsQualityUpdateProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *WindowsQualityUpdateProfileRequestBuilder) Get(options *WindowsQualityU
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsQualityUpdateProfile), nil
 }
-// A collection of windows quality update profiles
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of windows quality update profiles
 func (m *WindowsQualityUpdateProfileRequestBuilder) Patch(options *WindowsQualityUpdateProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

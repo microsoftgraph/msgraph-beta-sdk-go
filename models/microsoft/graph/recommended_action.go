@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RecommendedAction 
 type RecommendedAction struct {
     // Web URL to the recommended action.
     actionWebUrl *string;
@@ -15,14 +15,14 @@ type RecommendedAction struct {
     // Title of the recommended action.
     title *string;
 }
-// Instantiates a new recommendedAction and sets the default values.
+// NewRecommendedAction instantiates a new recommendedAction and sets the default values.
 func NewRecommendedAction()(*RecommendedAction) {
     m := &RecommendedAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the actionWebUrl property value. Web URL to the recommended action.
+// GetActionWebUrl gets the actionWebUrl property value. Web URL to the recommended action.
 func (m *RecommendedAction) GetActionWebUrl()(*string) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *RecommendedAction) GetActionWebUrl()(*string) {
         return m.actionWebUrl
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecommendedAction) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *RecommendedAction) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
+// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
 func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
         return m.potentialScoreImpact
     }
 }
-// Gets the title property value. Title of the recommended action.
+// GetTitle gets the title property value. Title of the recommended action.
 func (m *RecommendedAction) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *RecommendedAction) GetTitle()(*string) {
         return m.title
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["actionWebUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(interface{},
 func (m *RecommendedAction) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RecommendedAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("actionWebUrl", m.GetActionWebUrl())
@@ -122,27 +120,19 @@ func (m *RecommendedAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the actionWebUrl property value. Web URL to the recommended action.
-// Parameters:
-//  - value : Value to set for the actionWebUrl property.
+// SetActionWebUrl sets the actionWebUrl property value. Web URL to the recommended action.
 func (m *RecommendedAction) SetActionWebUrl(value *string)() {
     m.actionWebUrl = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecommendedAction) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
-// Parameters:
-//  - value : Value to set for the potentialScoreImpact property.
+// SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
 func (m *RecommendedAction) SetPotentialScoreImpact(value *float64)() {
     m.potentialScoreImpact = value
 }
-// Sets the title property value. Title of the recommended action.
-// Parameters:
-//  - value : Value to set for the title property.
+// SetTitle sets the title property value. Title of the recommended action.
 func (m *RecommendedAction) SetTitle(value *string)() {
     m.title = value
 }

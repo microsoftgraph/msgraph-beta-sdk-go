@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \messageTraces\{messageTrace-id}\recipients
+// RecipientsRequestBuilder builds and executes requests for operations under \messageTraces\{messageTrace-id}\recipients
 type RecipientsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RecipientsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RecipientsRequestBuilderGetOptions options for Get
 type RecipientsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RecipientsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get recipients from messageTraces
+// RecipientsRequestBuilderGetQueryParameters get recipients from messageTraces
 type RecipientsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RecipientsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RecipientsRequestBuilderPostOptions options for Post
 type RecipientsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageRecipient;
@@ -56,10 +56,7 @@ type RecipientsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RecipientsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecipientsRequestBuilderInternal instantiates a new RecipientsRequestBuilder and sets the default values.
 func NewRecipientsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecipientsRequestBuilder) {
     m := &RecipientsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRecipientsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RecipientsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecipientsRequestBuilder instantiates a new RecipientsRequestBuilder and sets the default values.
 func NewRecipientsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecipientsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRecipientsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get recipients from messageTraces
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get recipients from messageTraces
 func (m *RecipientsRequestBuilder) CreateGetRequestInformation(options *RecipientsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RecipientsRequestBuilder) CreateGetRequestInformation(options *Recipien
     }
     return requestInfo, nil
 }
-// Create new navigation property to recipients for messageTraces
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to recipients for messageTraces
 func (m *RecipientsRequestBuilder) CreatePostRequestInformation(options *RecipientsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RecipientsRequestBuilder) CreatePostRequestInformation(options *Recipie
     }
     return requestInfo, nil
 }
-// Get recipients from messageTraces
-// Parameters:
-//  - options : Options for the request
+// Get get recipients from messageTraces
 func (m *RecipientsRequestBuilder) Get(options *RecipientsRequestBuilderGetOptions)(*RecipientsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RecipientsRequestBuilder) Get(options *RecipientsRequestBuilderGetOptio
     }
     return res.(*RecipientsResponse), nil
 }
-// Create new navigation property to recipients for messageTraces
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to recipients for messageTraces
 func (m *RecipientsRequestBuilder) Post(options *RecipientsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageRecipient, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

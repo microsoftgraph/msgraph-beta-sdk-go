@@ -9,7 +9,7 @@ import (
     id1d036967566825b0af9120492b03a4ec20e8592dbc04e3ef967f4a9ea9fd161 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printershares/item/allowedgroups"
 )
 
-// Builds and executes requests for operations under \print\printerShares\{printerShare-id}
+// PrinterShareRequestBuilder builds and executes requests for operations under \print\printerShares\{printerShare-id}
 type PrinterShareRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type PrinterShareRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrinterShareRequestBuilderDeleteOptions options for Delete
 type PrinterShareRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PrinterShareRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrinterShareRequestBuilderGetOptions options for Get
 type PrinterShareRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type PrinterShareRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get printerShares from print
+// PrinterShareRequestBuilderGetQueryParameters get printerShares from print
 type PrinterShareRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrinterShareRequestBuilderPatchOptions options for Patch
 type PrinterShareRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShare;
@@ -62,10 +62,7 @@ func (m *PrinterShareRequestBuilder) AllowedGroups()(*id1d036967566825b0af912049
 func (m *PrinterShareRequestBuilder) AllowedUsers()(*i8a20ab890b50d7d004d72ec88971b0682a50e050460da1b743a65b594f56cb56.AllowedUsersRequestBuilder) {
     return i8a20ab890b50d7d004d72ec88971b0682a50e050460da1b743a65b594f56cb56.NewAllowedUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PrinterShareRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrinterShareRequestBuilderInternal instantiates a new PrinterShareRequestBuilder and sets the default values.
 func NewPrinterShareRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrinterShareRequestBuilder) {
     m := &PrinterShareRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewPrinterShareRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrinterShareRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrinterShareRequestBuilder instantiates a new PrinterShareRequestBuilder and sets the default values.
 func NewPrinterShareRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrinterShareRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterShareRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property printerShares for print
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property printerShares for print
 func (m *PrinterShareRequestBuilder) CreateDeleteRequestInformation(options *PrinterShareRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *PrinterShareRequestBuilder) CreateDeleteRequestInformation(options *Pri
     }
     return requestInfo, nil
 }
-// Get printerShares from print
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get printerShares from print
 func (m *PrinterShareRequestBuilder) CreateGetRequestInformation(options *PrinterShareRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *PrinterShareRequestBuilder) CreateGetRequestInformation(options *Printe
     }
     return requestInfo, nil
 }
-// Update the navigation property printerShares in print
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property printerShares in print
 func (m *PrinterShareRequestBuilder) CreatePatchRequestInformation(options *PrinterShareRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *PrinterShareRequestBuilder) CreatePatchRequestInformation(options *Prin
     }
     return requestInfo, nil
 }
-// Delete navigation property printerShares for print
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property printerShares for print
 func (m *PrinterShareRequestBuilder) Delete(options *PrinterShareRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -162,9 +148,7 @@ func (m *PrinterShareRequestBuilder) Delete(options *PrinterShareRequestBuilderD
     }
     return nil
 }
-// Get printerShares from print
-// Parameters:
-//  - options : Options for the request
+// Get get printerShares from print
 func (m *PrinterShareRequestBuilder) Get(options *PrinterShareRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShare, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -176,9 +160,7 @@ func (m *PrinterShareRequestBuilder) Get(options *PrinterShareRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShare), nil
 }
-// Update the navigation property printerShares in print
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property printerShares in print
 func (m *PrinterShareRequestBuilder) Patch(options *PrinterShareRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

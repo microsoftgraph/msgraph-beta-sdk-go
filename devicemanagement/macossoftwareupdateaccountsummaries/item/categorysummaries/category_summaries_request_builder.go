@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries
+// CategorySummariesRequestBuilder builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries
 type CategorySummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CategorySummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CategorySummariesRequestBuilderGetOptions options for Get
 type CategorySummariesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CategorySummariesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Summary of the updates by category.
+// CategorySummariesRequestBuilderGetQueryParameters summary of the updates by category.
 type CategorySummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CategorySummariesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CategorySummariesRequestBuilderPostOptions options for Post
 type CategorySummariesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateCategorySummary;
@@ -56,10 +56,7 @@ type CategorySummariesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CategorySummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCategorySummariesRequestBuilderInternal instantiates a new CategorySummariesRequestBuilder and sets the default values.
 func NewCategorySummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CategorySummariesRequestBuilder) {
     m := &CategorySummariesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCategorySummariesRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CategorySummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCategorySummariesRequestBuilder instantiates a new CategorySummariesRequestBuilder and sets the default values.
 func NewCategorySummariesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CategorySummariesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCategorySummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation summary of the updates by category.
 func (m *CategorySummariesRequestBuilder) CreateGetRequestInformation(options *CategorySummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CategorySummariesRequestBuilder) CreateGetRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation summary of the updates by category.
 func (m *CategorySummariesRequestBuilder) CreatePostRequestInformation(options *CategorySummariesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CategorySummariesRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// Get summary of the updates by category.
 func (m *CategorySummariesRequestBuilder) Get(options *CategorySummariesRequestBuilderGetOptions)(*CategorySummariesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CategorySummariesRequestBuilder) Get(options *CategorySummariesRequestB
     }
     return res.(*CategorySummariesResponse), nil
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// Post summary of the updates by category.
 func (m *CategorySummariesRequestBuilder) Post(options *CategorySummariesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateCategorySummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

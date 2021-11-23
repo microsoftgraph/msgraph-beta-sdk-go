@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\androidForWorkEnrollmentProfiles
+// AndroidForWorkEnrollmentProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkEnrollmentProfiles
 type AndroidForWorkEnrollmentProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AndroidForWorkEnrollmentProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AndroidForWorkEnrollmentProfilesRequestBuilderGetOptions options for Get
 type AndroidForWorkEnrollmentProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AndroidForWorkEnrollmentProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Android for Work enrollment profile entities.
+// AndroidForWorkEnrollmentProfilesRequestBuilderGetQueryParameters android for Work enrollment profile entities.
 type AndroidForWorkEnrollmentProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AndroidForWorkEnrollmentProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions options for Post
 type AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfile;
@@ -56,10 +56,7 @@ type AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AndroidForWorkEnrollmentProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal instantiates a new AndroidForWorkEnrollmentProfilesRequestBuilder and sets the default values.
 func NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidForWorkEnrollmentProfilesRequestBuilder) {
     m := &AndroidForWorkEnrollmentProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AndroidForWorkEnrollmentProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidForWorkEnrollmentProfilesRequestBuilder instantiates a new AndroidForWorkEnrollmentProfilesRequestBuilder and sets the default values.
 func NewAndroidForWorkEnrollmentProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidForWorkEnrollmentProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Android for Work enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation android for Work enrollment profile entities.
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) CreateGetRequestInformation(options *AndroidForWorkEnrollmentProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Android for Work enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation android for Work enrollment profile entities.
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) CreatePostRequestInformation(options *AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Android for Work enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// Get android for Work enrollment profile entities.
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Get(options *AndroidForWorkEnrollmentProfilesRequestBuilderGetOptions)(*AndroidForWorkEnrollmentProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Get(options *AndroidFor
     }
     return res.(*AndroidForWorkEnrollmentProfilesResponse), nil
 }
-// Android for Work enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// Post android for Work enrollment profile entities.
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Post(options *AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

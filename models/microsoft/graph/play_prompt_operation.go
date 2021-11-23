@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PlayPromptOperation 
 type PlayPromptOperation struct {
     CommsOperation
     // Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
     completionReason *PlayPromptCompletionReason;
 }
-// Instantiates a new playPromptOperation and sets the default values.
+// NewPlayPromptOperation instantiates a new playPromptOperation and sets the default values.
 func NewPlayPromptOperation()(*PlayPromptOperation) {
     m := &PlayPromptOperation{
         CommsOperation: *NewCommsOperation(),
     }
     return m
 }
-// Gets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
+// GetCompletionReason gets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
 func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason)
         return m.completionReason
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     res["completionReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -44,9 +44,7 @@ func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(interface{
 func (m *PlayPromptOperation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PlayPromptOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.CommsOperation.Serialize(writer)
     if err != nil {
@@ -61,9 +59,7 @@ func (m *PlayPromptOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
-// Parameters:
-//  - value : Value to set for the completionReason property.
+// SetCompletionReason sets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
 func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionReason)() {
     m.completionReason = value
 }

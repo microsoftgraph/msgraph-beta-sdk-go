@@ -4,11 +4,14 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i170388c68b05b462f70fd530877e5751fb8c26c036b698799100779eefe3754a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/rename"
+    i3ea7449e4e31fbb2dba44ba96548c03bf21e30fa0fbc867460aef4206de9a3ab "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/reboot"
+    i7174971b3bcb6f4ec85df581ff277b07bbaf56b391c32a3f561718b3a00346fe "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/troubleshoot"
     ia073266fa87f992d3a858948753dc53b6ac9007c5febc8b5d74af59df63531cf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/reprovision"
     ic5c3712fbfc3279ed202453cc12bb33fc813457da47b3438a76bf9022c5b2f4a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/endgraceperiod"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}
+// CloudPCRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}
 type CloudPCRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +20,7 @@ type CloudPCRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPCRequestBuilderDeleteOptions options for Delete
 type CloudPCRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +29,7 @@ type CloudPCRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPCRequestBuilderGetOptions options for Get
 type CloudPCRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +40,14 @@ type CloudPCRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud managed virtual desktops.
+// CloudPCRequestBuilderGetQueryParameters cloud managed virtual desktops.
 type CloudPCRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPCRequestBuilderPatchOptions options for Patch
 type CloudPCRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPC;
@@ -55,10 +58,7 @@ type CloudPCRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPCRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPCRequestBuilderInternal instantiates a new CloudPCRequestBuilder and sets the default values.
 func NewCloudPCRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPCRequestBuilder) {
     m := &CloudPCRequestBuilder{
     }
@@ -71,18 +71,13 @@ func NewCloudPCRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPCRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPCRequestBuilder instantiates a new CloudPCRequestBuilder and sets the default values.
 func NewCloudPCRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPCRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPCRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation cloud managed virtual desktops.
 func (m *CloudPCRequestBuilder) CreateDeleteRequestInformation(options *CloudPCRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +94,7 @@ func (m *CloudPCRequestBuilder) CreateDeleteRequestInformation(options *CloudPCR
     }
     return requestInfo, nil
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud managed virtual desktops.
 func (m *CloudPCRequestBuilder) CreateGetRequestInformation(options *CloudPCRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +114,7 @@ func (m *CloudPCRequestBuilder) CreateGetRequestInformation(options *CloudPCRequ
     }
     return requestInfo, nil
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation cloud managed virtual desktops.
 func (m *CloudPCRequestBuilder) CreatePatchRequestInformation(options *CloudPCRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +132,7 @@ func (m *CloudPCRequestBuilder) CreatePatchRequestInformation(options *CloudPCRe
     }
     return requestInfo, nil
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// Delete cloud managed virtual desktops.
 func (m *CloudPCRequestBuilder) Delete(options *CloudPCRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +147,7 @@ func (m *CloudPCRequestBuilder) Delete(options *CloudPCRequestBuilderDeleteOptio
 func (m *CloudPCRequestBuilder) EndGracePeriod()(*ic5c3712fbfc3279ed202453cc12bb33fc813457da47b3438a76bf9022c5b2f4a.EndGracePeriodRequestBuilder) {
     return ic5c3712fbfc3279ed202453cc12bb33fc813457da47b3438a76bf9022c5b2f4a.NewEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// Get cloud managed virtual desktops.
 func (m *CloudPCRequestBuilder) Get(options *CloudPCRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPC, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +159,7 @@ func (m *CloudPCRequestBuilder) Get(options *CloudPCRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPC), nil
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// Patch cloud managed virtual desktops.
 func (m *CloudPCRequestBuilder) Patch(options *CloudPCRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,6 +171,15 @@ func (m *CloudPCRequestBuilder) Patch(options *CloudPCRequestBuilderPatchOptions
     }
     return nil
 }
+func (m *CloudPCRequestBuilder) Reboot()(*i3ea7449e4e31fbb2dba44ba96548c03bf21e30fa0fbc867460aef4206de9a3ab.RebootRequestBuilder) {
+    return i3ea7449e4e31fbb2dba44ba96548c03bf21e30fa0fbc867460aef4206de9a3ab.NewRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *CloudPCRequestBuilder) Rename()(*i170388c68b05b462f70fd530877e5751fb8c26c036b698799100779eefe3754a.RenameRequestBuilder) {
+    return i170388c68b05b462f70fd530877e5751fb8c26c036b698799100779eefe3754a.NewRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 func (m *CloudPCRequestBuilder) Reprovision()(*ia073266fa87f992d3a858948753dc53b6ac9007c5febc8b5d74af59df63531cf.ReprovisionRequestBuilder) {
     return ia073266fa87f992d3a858948753dc53b6ac9007c5febc8b5d74af59df63531cf.NewReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *CloudPCRequestBuilder) Troubleshoot()(*i7174971b3bcb6f4ec85df581ff277b07bbaf56b391c32a3f561718b3a00346fe.TroubleshootRequestBuilder) {
+    return i7174971b3bcb6f4ec85df581ff277b07bbaf56b391c32a3f561718b3a00346fe.NewTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

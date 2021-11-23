@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// 
+// ManagementAction 
 type ManagementAction struct {
     Entity
     // The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
@@ -21,14 +21,14 @@ type ManagementAction struct {
     // The collection of workload actions associated with the management action. Required. Read-only.
     workloadActions []WorkloadAction;
 }
-// Instantiates a new managementAction and sets the default values.
+// NewManagementAction instantiates a new managementAction and sets the default values.
 func NewManagementAction()(*ManagementAction) {
     m := &ManagementAction{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the category property value. The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
+// GetCategory gets the category property value. The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
 func (m *ManagementAction) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ManagementAction) GetCategory()(*i5c2592132064055aae424492b066923068e6d
         return m.category
     }
 }
-// Gets the description property value. The description for the management action. Optional. Read-only.
+// GetDescription gets the description property value. The description for the management action. Optional. Read-only.
 func (m *ManagementAction) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ManagementAction) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name for the management action. Optional. Read-only.
+// GetDisplayName gets the displayName property value. The display name for the management action. Optional. Read-only.
 func (m *ManagementAction) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *ManagementAction) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
+// GetReferenceTemplateId gets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
 func (m *ManagementAction) GetReferenceTemplateId()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ManagementAction) GetReferenceTemplateId()(*string) {
         return m.referenceTemplateId
     }
 }
-// Gets the referenceTemplateVersion property value. 
+// GetReferenceTemplateVersion gets the referenceTemplateVersion property value. 
 func (m *ManagementAction) GetReferenceTemplateVersion()(*int32) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *ManagementAction) GetReferenceTemplateVersion()(*int32) {
         return m.referenceTemplateVersion
     }
 }
-// Gets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
+// GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
 func (m *ManagementAction) GetWorkloadActions()([]WorkloadAction) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *ManagementAction) GetWorkloadActions()([]WorkloadAction) {
         return m.workloadActions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,9 +149,7 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *ManagementAction) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagementAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -201,39 +199,27 @@ func (m *ManagementAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the category property value. The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the category property.
+// SetCategory sets the category property value. The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
 func (m *ManagementAction) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
     m.category = value
 }
-// Sets the description property value. The description for the management action. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description for the management action. Optional. Read-only.
 func (m *ManagementAction) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name for the management action. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the management action. Optional. Read-only.
 func (m *ManagementAction) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the referenceTemplateId property.
+// SetReferenceTemplateId sets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
 func (m *ManagementAction) SetReferenceTemplateId(value *string)() {
     m.referenceTemplateId = value
 }
-// Sets the referenceTemplateVersion property value. 
-// Parameters:
-//  - value : Value to set for the referenceTemplateVersion property.
+// SetReferenceTemplateVersion sets the referenceTemplateVersion property value. 
 func (m *ManagementAction) SetReferenceTemplateVersion(value *int32)() {
     m.referenceTemplateVersion = value
 }
-// Sets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the workloadActions property.
+// SetWorkloadActions sets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
 func (m *ManagementAction) SetWorkloadActions(value []WorkloadAction)() {
     m.workloadActions = value
 }

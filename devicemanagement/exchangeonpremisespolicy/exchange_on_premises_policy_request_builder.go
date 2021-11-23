@@ -7,7 +7,7 @@ import (
     i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/exchangeonpremisespolicy/conditionalaccesssettings"
 )
 
-// Builds and executes requests for operations under \deviceManagement\exchangeOnPremisesPolicy
+// ExchangeOnPremisesPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeOnPremisesPolicy
 type ExchangeOnPremisesPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ExchangeOnPremisesPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ExchangeOnPremisesPolicyRequestBuilderDeleteOptions options for Delete
 type ExchangeOnPremisesPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ExchangeOnPremisesPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ExchangeOnPremisesPolicyRequestBuilderGetOptions options for Get
 type ExchangeOnPremisesPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ExchangeOnPremisesPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy which controls mobile device access to Exchange On Premises
+// ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters the policy which controls mobile device access to Exchange On Premises
 type ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ExchangeOnPremisesPolicyRequestBuilderPatchOptions options for Patch
 type ExchangeOnPremisesPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy;
@@ -57,10 +57,7 @@ type ExchangeOnPremisesPolicyRequestBuilderPatchOptions struct {
 func (m *ExchangeOnPremisesPolicyRequestBuilder) ConditionalAccessSettings()(*i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c.ConditionalAccessSettingsRequestBuilder) {
     return i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c.NewConditionalAccessSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ExchangeOnPremisesPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExchangeOnPremisesPolicyRequestBuilderInternal instantiates a new ExchangeOnPremisesPolicyRequestBuilder and sets the default values.
 func NewExchangeOnPremisesPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExchangeOnPremisesPolicyRequestBuilder) {
     m := &ExchangeOnPremisesPolicyRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewExchangeOnPremisesPolicyRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExchangeOnPremisesPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExchangeOnPremisesPolicyRequestBuilder instantiates a new ExchangeOnPremisesPolicyRequestBuilder and sets the default values.
 func NewExchangeOnPremisesPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExchangeOnPremisesPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeOnPremisesPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy which controls mobile device access to Exchange On Premises
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the policy which controls mobile device access to Exchange On Premises
 func (m *ExchangeOnPremisesPolicyRequestBuilder) CreateDeleteRequestInformation(options *ExchangeOnPremisesPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// The policy which controls mobile device access to Exchange On Premises
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy which controls mobile device access to Exchange On Premises
 func (m *ExchangeOnPremisesPolicyRequestBuilder) CreateGetRequestInformation(options *ExchangeOnPremisesPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The policy which controls mobile device access to Exchange On Premises
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the policy which controls mobile device access to Exchange On Premises
 func (m *ExchangeOnPremisesPolicyRequestBuilder) CreatePatchRequestInformation(options *ExchangeOnPremisesPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// The policy which controls mobile device access to Exchange On Premises
-// Parameters:
-//  - options : Options for the request
+// Delete the policy which controls mobile device access to Exchange On Premises
 func (m *ExchangeOnPremisesPolicyRequestBuilder) Delete(options *ExchangeOnPremisesPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) Delete(options *ExchangeOnPremi
     }
     return nil
 }
-// The policy which controls mobile device access to Exchange On Premises
-// Parameters:
-//  - options : Options for the request
+// Get the policy which controls mobile device access to Exchange On Premises
 func (m *ExchangeOnPremisesPolicyRequestBuilder) Get(options *ExchangeOnPremisesPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) Get(options *ExchangeOnPremises
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy), nil
 }
-// The policy which controls mobile device access to Exchange On Premises
-// Parameters:
-//  - options : Options for the request
+// Patch the policy which controls mobile device access to Exchange On Premises
 func (m *ExchangeOnPremisesPolicyRequestBuilder) Patch(options *ExchangeOnPremisesPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

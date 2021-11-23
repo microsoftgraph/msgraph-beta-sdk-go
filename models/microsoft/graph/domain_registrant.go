@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DomainRegistrant 
 type DomainRegistrant struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type DomainRegistrant struct {
     // 
     vendor_escaped *string;
 }
-// Instantiates a new domainRegistrant and sets the default values.
+// NewDomainRegistrant instantiates a new domainRegistrant and sets the default values.
 func NewDomainRegistrant()(*DomainRegistrant) {
     m := &DomainRegistrant{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DomainRegistrant) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *DomainRegistrant) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the countryOrRegionCode property value. 
+// GetCountryOrRegionCode gets the countryOrRegionCode property value. 
 func (m *DomainRegistrant) GetCountryOrRegionCode()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *DomainRegistrant) GetCountryOrRegionCode()(*string) {
         return m.countryOrRegionCode
     }
 }
-// Gets the organization property value. 
+// GetOrganization gets the organization property value. 
 func (m *DomainRegistrant) GetOrganization()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *DomainRegistrant) GetOrganization()(*string) {
         return m.organization
     }
 }
-// Gets the url property value. 
+// GetUrl gets the url property value. 
 func (m *DomainRegistrant) GetUrl()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *DomainRegistrant) GetUrl()(*string) {
         return m.url
     }
 }
-// Gets the vendor_escaped property value. 
+// GetVendor_escaped gets the vendor_escaped property value. 
 func (m *DomainRegistrant) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *DomainRegistrant) GetVendor_escaped()(*string) {
         return m.vendor_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["countryOrRegionCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *DomainRegistrant) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DomainRegistrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("countryOrRegionCode", m.GetCountryOrRegionCode())
@@ -148,33 +146,23 @@ func (m *DomainRegistrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DomainRegistrant) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the countryOrRegionCode property value. 
-// Parameters:
-//  - value : Value to set for the countryOrRegionCode property.
+// SetCountryOrRegionCode sets the countryOrRegionCode property value. 
 func (m *DomainRegistrant) SetCountryOrRegionCode(value *string)() {
     m.countryOrRegionCode = value
 }
-// Sets the organization property value. 
-// Parameters:
-//  - value : Value to set for the organization property.
+// SetOrganization sets the organization property value. 
 func (m *DomainRegistrant) SetOrganization(value *string)() {
     m.organization = value
 }
-// Sets the url property value. 
-// Parameters:
-//  - value : Value to set for the url property.
+// SetUrl sets the url property value. 
 func (m *DomainRegistrant) SetUrl(value *string)() {
     m.url = value
 }
-// Sets the vendor_escaped property value. 
-// Parameters:
-//  - value : Value to set for the vendor_escaped property.
+// SetVendor_escaped sets the vendor_escaped property value. 
 func (m *DomainRegistrant) SetVendor_escaped(value *string)() {
     m.vendor_escaped = value
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// HybridAgentUpdaterConfiguration 
 type HybridAgentUpdaterConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type HybridAgentUpdaterConfiguration struct {
     // 
     updateWindow *UpdateWindow;
 }
-// Instantiates a new hybridAgentUpdaterConfiguration and sets the default values.
+// NewHybridAgentUpdaterConfiguration instantiates a new hybridAgentUpdaterConfiguration and sets the default values.
 func NewHybridAgentUpdaterConfiguration()(*HybridAgentUpdaterConfiguration) {
     m := &HybridAgentUpdaterConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HybridAgentUpdaterConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *HybridAgentUpdaterConfiguration) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// Gets the allowUpdateConfigurationOverride property value. Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
+// GetAllowUpdateConfigurationOverride gets the allowUpdateConfigurationOverride property value. Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
 func (m *HybridAgentUpdaterConfiguration) GetAllowUpdateConfigurationOverride()(*bool) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *HybridAgentUpdaterConfiguration) GetAllowUpdateConfigurationOverride()(
         return m.allowUpdateConfigurationOverride
     }
 }
-// Gets the deferUpdateDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetDeferUpdateDateTime gets the deferUpdateDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *HybridAgentUpdaterConfiguration) GetDeferUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *HybridAgentUpdaterConfiguration) GetDeferUpdateDateTime()(*i336074805fc
         return m.deferUpdateDateTime
     }
 }
-// Gets the updateWindow property value. 
+// GetUpdateWindow gets the updateWindow property value. 
 func (m *HybridAgentUpdaterConfiguration) GetUpdateWindow()(*UpdateWindow) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *HybridAgentUpdaterConfiguration) GetUpdateWindow()(*UpdateWindow) {
         return m.updateWindow
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["allowUpdateConfigurationOverride"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
 func (m *HybridAgentUpdaterConfiguration) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *HybridAgentUpdaterConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("allowUpdateConfigurationOverride", m.GetAllowUpdateConfigurationOverride())
@@ -123,27 +121,19 @@ func (m *HybridAgentUpdaterConfiguration) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HybridAgentUpdaterConfiguration) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the allowUpdateConfigurationOverride property value. Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
-// Parameters:
-//  - value : Value to set for the allowUpdateConfigurationOverride property.
+// SetAllowUpdateConfigurationOverride sets the allowUpdateConfigurationOverride property value. Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
 func (m *HybridAgentUpdaterConfiguration) SetAllowUpdateConfigurationOverride(value *bool)() {
     m.allowUpdateConfigurationOverride = value
 }
-// Sets the deferUpdateDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the deferUpdateDateTime property.
+// SetDeferUpdateDateTime sets the deferUpdateDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *HybridAgentUpdaterConfiguration) SetDeferUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.deferUpdateDateTime = value
 }
-// Sets the updateWindow property value. 
-// Parameters:
-//  - value : Value to set for the updateWindow property.
+// SetUpdateWindow sets the updateWindow property value. 
 func (m *HybridAgentUpdaterConfiguration) SetUpdateWindow(value *UpdateWindow)() {
     m.updateWindow = value
 }

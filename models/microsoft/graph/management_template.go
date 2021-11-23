@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// 
+// ManagementTemplate 
 type ManagementTemplate struct {
     Entity
     // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
@@ -25,14 +25,14 @@ type ManagementTemplate struct {
     // The collection of workload actions associated with the management template. Optional. Read-only.
     workloadActions []WorkloadAction;
 }
-// Instantiates a new managementTemplate and sets the default values.
+// NewManagementTemplate instantiates a new managementTemplate and sets the default values.
 func NewManagementTemplate()(*ManagementTemplate) {
     m := &ManagementTemplate{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+// GetCategory gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplate) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ManagementTemplate) GetCategory()(*i5c2592132064055aae424492b066923068e
         return m.category
     }
 }
-// Gets the description property value. The description for the management template. Optional. Read-only.
+// GetDescription gets the description property value. The description for the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ManagementTemplate) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name for the management template. Required. Read-only.
+// GetDisplayName gets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplate) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ManagementTemplate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the managementTemplateCollections property value. 
+// GetManagementTemplateCollections gets the managementTemplateCollections property value. 
 func (m *ManagementTemplate) GetManagementTemplateCollections()([]ManagementTemplateCollection) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *ManagementTemplate) GetManagementTemplateCollections()([]ManagementTemp
         return m.managementTemplateCollections
     }
 }
-// Gets the managementTemplateSteps property value. 
+// GetManagementTemplateSteps gets the managementTemplateSteps property value. 
 func (m *ManagementTemplate) GetManagementTemplateSteps()([]ManagementTemplateStep) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *ManagementTemplate) GetManagementTemplateSteps()([]ManagementTemplateSt
         return m.managementTemplateSteps
     }
 }
-// Gets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
+// GetParameters gets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetParameters()([]TemplateParameter) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *ManagementTemplate) GetParameters()([]TemplateParameter) {
         return m.parameters
     }
 }
-// Gets the version property value. 
+// GetVersion gets the version property value. 
 func (m *ManagementTemplate) GetVersion()(*int32) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *ManagementTemplate) GetVersion()(*int32) {
         return m.version
     }
 }
-// Gets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
+// GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
 func (m *ManagementTemplate) GetWorkloadActions()([]WorkloadAction) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *ManagementTemplate) GetWorkloadActions()([]WorkloadAction) {
         return m.workloadActions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -201,9 +201,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
 func (m *ManagementTemplate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -280,51 +278,35 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the category property.
+// SetCategory sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplate) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
     m.category = value
 }
-// Sets the description property value. The description for the management template. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description for the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name for the management template. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplate) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the managementTemplateCollections property value. 
-// Parameters:
-//  - value : Value to set for the managementTemplateCollections property.
+// SetManagementTemplateCollections sets the managementTemplateCollections property value. 
 func (m *ManagementTemplate) SetManagementTemplateCollections(value []ManagementTemplateCollection)() {
     m.managementTemplateCollections = value
 }
-// Sets the managementTemplateSteps property value. 
-// Parameters:
-//  - value : Value to set for the managementTemplateSteps property.
+// SetManagementTemplateSteps sets the managementTemplateSteps property value. 
 func (m *ManagementTemplate) SetManagementTemplateSteps(value []ManagementTemplateStep)() {
     m.managementTemplateSteps = value
 }
-// Sets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the parameters property.
+// SetParameters sets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetParameters(value []TemplateParameter)() {
     m.parameters = value
 }
-// Sets the version property value. 
-// Parameters:
-//  - value : Value to set for the version property.
+// SetVersion sets the version property value. 
 func (m *ManagementTemplate) SetVersion(value *int32)() {
     m.version = value
 }
-// Sets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the workloadActions property.
+// SetWorkloadActions sets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetWorkloadActions(value []WorkloadAction)() {
     m.workloadActions = value
 }

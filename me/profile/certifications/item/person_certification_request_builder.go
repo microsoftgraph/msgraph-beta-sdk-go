@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\certifications\{personCertification-id}
+// PersonCertificationRequestBuilder builds and executes requests for operations under \me\profile\certifications\{personCertification-id}
 type PersonCertificationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PersonCertificationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PersonCertificationRequestBuilderDeleteOptions options for Delete
 type PersonCertificationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PersonCertificationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PersonCertificationRequestBuilderGetOptions options for Get
 type PersonCertificationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PersonCertificationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the details of certifications associated with a person.
+// PersonCertificationRequestBuilderGetQueryParameters represents the details of certifications associated with a person.
 type PersonCertificationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PersonCertificationRequestBuilderPatchOptions options for Patch
 type PersonCertificationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonCertification;
@@ -53,10 +53,7 @@ type PersonCertificationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PersonCertificationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonCertificationRequestBuilderInternal instantiates a new PersonCertificationRequestBuilder and sets the default values.
 func NewPersonCertificationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonCertificationRequestBuilder) {
     m := &PersonCertificationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPersonCertificationRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PersonCertificationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonCertificationRequestBuilder instantiates a new PersonCertificationRequestBuilder and sets the default values.
 func NewPersonCertificationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonCertificationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPersonCertificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the details of certifications associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the details of certifications associated with a person.
 func (m *PersonCertificationRequestBuilder) CreateDeleteRequestInformation(options *PersonCertificationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PersonCertificationRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Represents the details of certifications associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the details of certifications associated with a person.
 func (m *PersonCertificationRequestBuilder) CreateGetRequestInformation(options *PersonCertificationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PersonCertificationRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Represents the details of certifications associated with a person.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the details of certifications associated with a person.
 func (m *PersonCertificationRequestBuilder) CreatePatchRequestInformation(options *PersonCertificationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PersonCertificationRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Represents the details of certifications associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the details of certifications associated with a person.
 func (m *PersonCertificationRequestBuilder) Delete(options *PersonCertificationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PersonCertificationRequestBuilder) Delete(options *PersonCertificationR
     }
     return nil
 }
-// Represents the details of certifications associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Get represents the details of certifications associated with a person.
 func (m *PersonCertificationRequestBuilder) Get(options *PersonCertificationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonCertification, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PersonCertificationRequestBuilder) Get(options *PersonCertificationRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonCertification), nil
 }
-// Represents the details of certifications associated with a person.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the details of certifications associated with a person.
 func (m *PersonCertificationRequestBuilder) Patch(options *PersonCertificationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

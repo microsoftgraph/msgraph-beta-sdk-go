@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\unitsOfMeasure\{unitOfMeasure-id}
+// UnitOfMeasureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\unitsOfMeasure\{unitOfMeasure-id}
 type UnitOfMeasureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UnitOfMeasureRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnitOfMeasureRequestBuilderDeleteOptions options for Delete
 type UnitOfMeasureRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UnitOfMeasureRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnitOfMeasureRequestBuilderGetOptions options for Get
 type UnitOfMeasureRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UnitOfMeasureRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get unitsOfMeasure from financials
+// UnitOfMeasureRequestBuilderGetQueryParameters get unitsOfMeasure from financials
 type UnitOfMeasureRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnitOfMeasureRequestBuilderPatchOptions options for Patch
 type UnitOfMeasureRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnitOfMeasure;
@@ -53,10 +53,7 @@ type UnitOfMeasureRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnitOfMeasureRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnitOfMeasureRequestBuilderInternal instantiates a new UnitOfMeasureRequestBuilder and sets the default values.
 func NewUnitOfMeasureRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnitOfMeasureRequestBuilder) {
     m := &UnitOfMeasureRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUnitOfMeasureRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnitOfMeasureRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnitOfMeasureRequestBuilder instantiates a new UnitOfMeasureRequestBuilder and sets the default values.
 func NewUnitOfMeasureRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnitOfMeasureRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnitOfMeasureRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property unitsOfMeasure for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property unitsOfMeasure for financials
 func (m *UnitOfMeasureRequestBuilder) CreateDeleteRequestInformation(options *UnitOfMeasureRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UnitOfMeasureRequestBuilder) CreateDeleteRequestInformation(options *Un
     }
     return requestInfo, nil
 }
-// Get unitsOfMeasure from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get unitsOfMeasure from financials
 func (m *UnitOfMeasureRequestBuilder) CreateGetRequestInformation(options *UnitOfMeasureRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UnitOfMeasureRequestBuilder) CreateGetRequestInformation(options *UnitO
     }
     return requestInfo, nil
 }
-// Update the navigation property unitsOfMeasure in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property unitsOfMeasure in financials
 func (m *UnitOfMeasureRequestBuilder) CreatePatchRequestInformation(options *UnitOfMeasureRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UnitOfMeasureRequestBuilder) CreatePatchRequestInformation(options *Uni
     }
     return requestInfo, nil
 }
-// Delete navigation property unitsOfMeasure for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property unitsOfMeasure for financials
 func (m *UnitOfMeasureRequestBuilder) Delete(options *UnitOfMeasureRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UnitOfMeasureRequestBuilder) Delete(options *UnitOfMeasureRequestBuilde
     }
     return nil
 }
-// Get unitsOfMeasure from financials
-// Parameters:
-//  - options : Options for the request
+// Get get unitsOfMeasure from financials
 func (m *UnitOfMeasureRequestBuilder) Get(options *UnitOfMeasureRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnitOfMeasure, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UnitOfMeasureRequestBuilder) Get(options *UnitOfMeasureRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnitOfMeasure), nil
 }
-// Update the navigation property unitsOfMeasure in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property unitsOfMeasure in financials
 func (m *UnitOfMeasureRequestBuilder) Patch(options *UnitOfMeasureRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -8,7 +8,7 @@ import (
     ia7c5485c8f96f805a71d94acbf4613292476194ee458b95af149a9a68713a256 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackagecatalogs/item/accesspackages/item/accesspackagesincompatiblewith/search"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\accessPackagesIncompatibleWith
+// AccessPackagesIncompatibleWithRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\accessPackagesIncompatibleWith
 type AccessPackagesIncompatibleWithRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type AccessPackagesIncompatibleWithRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AccessPackagesIncompatibleWithRequestBuilderGetOptions options for Get
 type AccessPackagesIncompatibleWithRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type AccessPackagesIncompatibleWithRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The access packages that are incompatible with this package. Read-only.
+// AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters the access packages that are incompatible with this package. Read-only.
 type AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,10 +47,7 @@ type AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new AccessPackagesIncompatibleWithRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackagesIncompatibleWithRequestBuilderInternal instantiates a new AccessPackagesIncompatibleWithRequestBuilder and sets the default values.
 func NewAccessPackagesIncompatibleWithRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackagesIncompatibleWithRequestBuilder) {
     m := &AccessPackagesIncompatibleWithRequestBuilder{
     }
@@ -63,18 +60,13 @@ func NewAccessPackagesIncompatibleWithRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackagesIncompatibleWithRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackagesIncompatibleWithRequestBuilder instantiates a new AccessPackagesIncompatibleWithRequestBuilder and sets the default values.
 func NewAccessPackagesIncompatibleWithRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackagesIncompatibleWithRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackagesIncompatibleWithRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The access packages that are incompatible with this package. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the access packages that are incompatible with this package. Read-only.
 func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformation(options *AccessPackagesIncompatibleWithRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -94,15 +86,11 @@ func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\accessPackagesIncompatibleWith\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\accessPackagesIncompatibleWith\microsoft.graph.filterByCurrentUser(on={on})
 func (m *AccessPackagesIncompatibleWithRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i06885d40be9f04a89dcb556c337dd90628a5f15a784828aec70eb1dc774b1a93.FilterByCurrentUserWithOnRequestBuilder) {
     return i06885d40be9f04a89dcb556c337dd90628a5f15a784828aec70eb1dc774b1a93.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// The access packages that are incompatible with this package. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the access packages that are incompatible with this package. Read-only.
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Get(options *AccessPackagesIncompatibleWithRequestBuilderGetOptions)(*AccessPackagesIncompatibleWithResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -117,7 +105,7 @@ func (m *AccessPackagesIncompatibleWithRequestBuilder) Get(options *AccessPackag
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Ref()(*i1fd29760c7f6765fafd7db9eba9b53ef805c81f1cb66f6c7304e7a5fdffef8e7.RefRequestBuilder) {
     return i1fd29760c7f6765fafd7db9eba9b53ef805c81f1cb66f6c7304e7a5fdffef8e7.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\accessPackagesIncompatibleWith\microsoft.graph.Search()
+// Search builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\accessPackagesIncompatibleWith\microsoft.graph.Search()
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Search()(*ia7c5485c8f96f805a71d94acbf4613292476194ee458b95af149a9a68713a256.SearchRequestBuilder) {
     return ia7c5485c8f96f805a71d94acbf4613292476194ee458b95af149a9a68713a256.NewSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

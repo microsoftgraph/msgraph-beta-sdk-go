@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\staffMembers
+// StaffMembersRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\staffMembers
 type StaffMembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type StaffMembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// StaffMembersRequestBuilderGetOptions options for Get
 type StaffMembersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type StaffMembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
+// StaffMembersRequestBuilderGetQueryParameters all the staff members that provide services in this business. Read-only. Nullable.
 type StaffMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type StaffMembersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// StaffMembersRequestBuilderPostOptions options for Post
 type StaffMembersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMember;
@@ -56,10 +56,7 @@ type StaffMembersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new StaffMembersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStaffMembersRequestBuilderInternal instantiates a new StaffMembersRequestBuilder and sets the default values.
 func NewStaffMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StaffMembersRequestBuilder) {
     m := &StaffMembersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewStaffMembersRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new StaffMembersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStaffMembersRequestBuilder instantiates a new StaffMembersRequestBuilder and sets the default values.
 func NewStaffMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StaffMembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewStaffMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
 func (m *StaffMembersRequestBuilder) CreateGetRequestInformation(options *StaffMembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *StaffMembersRequestBuilder) CreateGetRequestInformation(options *StaffM
     }
     return requestInfo, nil
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
 func (m *StaffMembersRequestBuilder) CreatePostRequestInformation(options *StaffMembersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *StaffMembersRequestBuilder) CreatePostRequestInformation(options *Staff
     }
     return requestInfo, nil
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get all the staff members that provide services in this business. Read-only. Nullable.
 func (m *StaffMembersRequestBuilder) Get(options *StaffMembersRequestBuilderGetOptions)(*StaffMembersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *StaffMembersRequestBuilder) Get(options *StaffMembersRequestBuilderGetO
     }
     return res.(*StaffMembersResponse), nil
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post all the staff members that provide services in this business. Read-only. Nullable.
 func (m *StaffMembersRequestBuilder) Post(options *StaffMembersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMember, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

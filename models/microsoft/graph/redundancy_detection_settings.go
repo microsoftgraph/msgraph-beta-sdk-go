@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RedundancyDetectionSettings 
 type RedundancyDetectionSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type RedundancyDetectionSettings struct {
     // See Document and email similarity threshold to learn more.
     similarityThreshold *int32;
 }
-// Instantiates a new redundancyDetectionSettings and sets the default values.
+// NewRedundancyDetectionSettings instantiates a new redundancyDetectionSettings and sets the default values.
 func NewRedundancyDetectionSettings()(*RedundancyDetectionSettings) {
     m := &RedundancyDetectionSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedundancyDetectionSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *RedundancyDetectionSettings) GetAdditionalData()(map[string]interface{}
         return m.additionalData
     }
 }
-// Gets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
+// GetIsEnabled gets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
 func (m *RedundancyDetectionSettings) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *RedundancyDetectionSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// Gets the maxWords property value. See Minimum/maximum number of words to learn more.
+// GetMaxWords gets the maxWords property value. See Minimum/maximum number of words to learn more.
 func (m *RedundancyDetectionSettings) GetMaxWords()(*int32) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *RedundancyDetectionSettings) GetMaxWords()(*int32) {
         return m.maxWords
     }
 }
-// Gets the minWords property value. See Minimum/maximum number of words to learn more.
+// GetMinWords gets the minWords property value. See Minimum/maximum number of words to learn more.
 func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
         return m.minWords
     }
 }
-// Gets the similarityThreshold property value. See Document and email similarity threshold to learn more.
+// GetSimilarityThreshold gets the similarityThreshold property value. See Document and email similarity threshold to learn more.
 func (m *RedundancyDetectionSettings) GetSimilarityThreshold()(*int32) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *RedundancyDetectionSettings) GetSimilarityThreshold()(*int32) {
         return m.similarityThreshold
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(in
 func (m *RedundancyDetectionSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RedundancyDetectionSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
@@ -148,33 +146,23 @@ func (m *RedundancyDetectionSettings) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedundancyDetectionSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
-// Parameters:
-//  - value : Value to set for the isEnabled property.
+// SetIsEnabled sets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
 func (m *RedundancyDetectionSettings) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// Sets the maxWords property value. See Minimum/maximum number of words to learn more.
-// Parameters:
-//  - value : Value to set for the maxWords property.
+// SetMaxWords sets the maxWords property value. See Minimum/maximum number of words to learn more.
 func (m *RedundancyDetectionSettings) SetMaxWords(value *int32)() {
     m.maxWords = value
 }
-// Sets the minWords property value. See Minimum/maximum number of words to learn more.
-// Parameters:
-//  - value : Value to set for the minWords property.
+// SetMinWords sets the minWords property value. See Minimum/maximum number of words to learn more.
 func (m *RedundancyDetectionSettings) SetMinWords(value *int32)() {
     m.minWords = value
 }
-// Sets the similarityThreshold property value. See Document and email similarity threshold to learn more.
-// Parameters:
-//  - value : Value to set for the similarityThreshold property.
+// SetSimilarityThreshold sets the similarityThreshold property value. See Document and email similarity threshold to learn more.
 func (m *RedundancyDetectionSettings) SetSimilarityThreshold(value *int32)() {
     m.similarityThreshold = value
 }

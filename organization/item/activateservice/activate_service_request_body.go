@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ActivateServiceRequestBody 
 type ActivateServiceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type ActivateServiceRequestBody struct {
     // 
     skuId *string;
 }
-// Instantiates a new activateServiceRequestBody and sets the default values.
+// NewActivateServiceRequestBody instantiates a new activateServiceRequestBody and sets the default values.
 func NewActivateServiceRequestBody()(*ActivateServiceRequestBody) {
     m := &ActivateServiceRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateServiceRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *ActivateServiceRequestBody) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// Gets the service property value. 
+// GetService gets the service property value. 
 func (m *ActivateServiceRequestBody) GetService()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *ActivateServiceRequestBody) GetService()(*string) {
         return m.service
     }
 }
-// Gets the servicePlanId property value. 
+// GetServicePlanId gets the servicePlanId property value. 
 func (m *ActivateServiceRequestBody) GetServicePlanId()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ActivateServiceRequestBody) GetServicePlanId()(*string) {
         return m.servicePlanId
     }
 }
-// Gets the skuId property value. 
+// GetSkuId gets the skuId property value. 
 func (m *ActivateServiceRequestBody) GetSkuId()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ActivateServiceRequestBody) GetSkuId()(*string) {
         return m.skuId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["service"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(int
 func (m *ActivateServiceRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ActivateServiceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("service", m.GetService())
@@ -122,27 +120,19 @@ func (m *ActivateServiceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateServiceRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the service property value. 
-// Parameters:
-//  - value : Value to set for the service property.
+// SetService sets the service property value. 
 func (m *ActivateServiceRequestBody) SetService(value *string)() {
     m.service = value
 }
-// Sets the servicePlanId property value. 
-// Parameters:
-//  - value : Value to set for the servicePlanId property.
+// SetServicePlanId sets the servicePlanId property value. 
 func (m *ActivateServiceRequestBody) SetServicePlanId(value *string)() {
     m.servicePlanId = value
 }
-// Sets the skuId property value. 
-// Parameters:
-//  - value : Value to set for the skuId property.
+// SetSkuId sets the skuId property value. 
 func (m *ActivateServiceRequestBody) SetSkuId(value *string)() {
     m.skuId = value
 }

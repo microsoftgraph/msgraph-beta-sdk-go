@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \search\qnas
+// QnasRequestBuilder builds and executes requests for operations under \search\qnas
 type QnasRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type QnasRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// QnasRequestBuilderGetOptions options for Get
 type QnasRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type QnasRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get qnas from search
+// QnasRequestBuilderGetQueryParameters get qnas from search
 type QnasRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type QnasRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// QnasRequestBuilderPostOptions options for Post
 type QnasRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna;
@@ -56,10 +56,7 @@ type QnasRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new QnasRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewQnasRequestBuilderInternal instantiates a new QnasRequestBuilder and sets the default values.
 func NewQnasRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*QnasRequestBuilder) {
     m := &QnasRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewQnasRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new QnasRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewQnasRequestBuilder instantiates a new QnasRequestBuilder and sets the default values.
 func NewQnasRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*QnasRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewQnasRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get qnas from search
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get qnas from search
 func (m *QnasRequestBuilder) CreateGetRequestInformation(options *QnasRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *QnasRequestBuilder) CreateGetRequestInformation(options *QnasRequestBui
     }
     return requestInfo, nil
 }
-// Create new navigation property to qnas for search
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to qnas for search
 func (m *QnasRequestBuilder) CreatePostRequestInformation(options *QnasRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *QnasRequestBuilder) CreatePostRequestInformation(options *QnasRequestBu
     }
     return requestInfo, nil
 }
-// Get qnas from search
-// Parameters:
-//  - options : Options for the request
+// Get get qnas from search
 func (m *QnasRequestBuilder) Get(options *QnasRequestBuilderGetOptions)(*QnasResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *QnasRequestBuilder) Get(options *QnasRequestBuilderGetOptions)(*QnasRes
     }
     return res.(*QnasResponse), nil
 }
-// Create new navigation property to qnas for search
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to qnas for search
 func (m *QnasRequestBuilder) Post(options *QnasRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

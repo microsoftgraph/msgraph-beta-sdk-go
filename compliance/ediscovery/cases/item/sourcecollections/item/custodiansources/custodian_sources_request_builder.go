@@ -6,7 +6,7 @@ import (
     i016cdc841da321df87a610d6d28946c91e7f54e0d34ef26597a57074b9a7b341 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/custodiansources/ref"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\custodianSources
+// CustodianSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\custodianSources
 type CustodianSourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CustodianSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CustodianSourcesRequestBuilderGetOptions options for Get
 type CustodianSourcesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CustodianSourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Custodian sources that are included in the sourceCollection.
+// CustodianSourcesRequestBuilderGetQueryParameters custodian sources that are included in the sourceCollection.
 type CustodianSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type CustodianSourcesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new CustodianSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustodianSourcesRequestBuilderInternal instantiates a new CustodianSourcesRequestBuilder and sets the default values.
 func NewCustodianSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustodianSourcesRequestBuilder) {
     m := &CustodianSourcesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewCustodianSourcesRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CustodianSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustodianSourcesRequestBuilder instantiates a new CustodianSourcesRequestBuilder and sets the default values.
 func NewCustodianSourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustodianSourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustodianSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Custodian sources that are included in the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation custodian sources that are included in the sourceCollection.
 func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation(options *CustodianSourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation(options *Cu
     }
     return requestInfo, nil
 }
-// Custodian sources that are included in the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// Get custodian sources that are included in the sourceCollection.
 func (m *CustodianSourcesRequestBuilder) Get(options *CustodianSourcesRequestBuilderGetOptions)(*CustodianSourcesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

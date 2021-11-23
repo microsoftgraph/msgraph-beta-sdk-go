@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\runSummary
+// RunSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\runSummary
 type RunSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RunSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RunSummaryRequestBuilderDeleteOptions options for Delete
 type RunSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type RunSummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RunSummaryRequestBuilderGetOptions options for Get
 type RunSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type RunSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// High level run summary for device health script.
+// RunSummaryRequestBuilderGetQueryParameters high level run summary for device health script.
 type RunSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RunSummaryRequestBuilderPatchOptions options for Patch
 type RunSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRunSummary;
@@ -53,10 +53,7 @@ type RunSummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RunSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRunSummaryRequestBuilderInternal instantiates a new RunSummaryRequestBuilder and sets the default values.
 func NewRunSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RunSummaryRequestBuilder) {
     m := &RunSummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewRunSummaryRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RunSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRunSummaryRequestBuilder instantiates a new RunSummaryRequestBuilder and sets the default values.
 func NewRunSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RunSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRunSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// High level run summary for device health script.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation high level run summary for device health script.
 func (m *RunSummaryRequestBuilder) CreateDeleteRequestInformation(options *RunSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *RunSummaryRequestBuilder) CreateDeleteRequestInformation(options *RunSu
     }
     return requestInfo, nil
 }
-// High level run summary for device health script.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation high level run summary for device health script.
 func (m *RunSummaryRequestBuilder) CreateGetRequestInformation(options *RunSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RunSummaryRequestBuilder) CreateGetRequestInformation(options *RunSumma
     }
     return requestInfo, nil
 }
-// High level run summary for device health script.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation high level run summary for device health script.
 func (m *RunSummaryRequestBuilder) CreatePatchRequestInformation(options *RunSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *RunSummaryRequestBuilder) CreatePatchRequestInformation(options *RunSum
     }
     return requestInfo, nil
 }
-// High level run summary for device health script.
-// Parameters:
-//  - options : Options for the request
+// Delete high level run summary for device health script.
 func (m *RunSummaryRequestBuilder) Delete(options *RunSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *RunSummaryRequestBuilder) Delete(options *RunSummaryRequestBuilderDelet
     }
     return nil
 }
-// High level run summary for device health script.
-// Parameters:
-//  - options : Options for the request
+// Get high level run summary for device health script.
 func (m *RunSummaryRequestBuilder) Get(options *RunSummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRunSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *RunSummaryRequestBuilder) Get(options *RunSummaryRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRunSummary), nil
 }
-// High level run summary for device health script.
-// Parameters:
-//  - options : Options for the request
+// Patch high level run summary for device health script.
 func (m *RunSummaryRequestBuilder) Patch(options *RunSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

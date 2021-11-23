@@ -8,7 +8,7 @@ import (
     ibf7310ca68d55392bbdbd2da406d3078b3d0933d2dfaa641477e64ac9571c49c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androiddeviceownerenrollmentprofiles/item/createtoken"
 )
 
-// Builds and executes requests for operations under \deviceManagement\androidDeviceOwnerEnrollmentProfiles\{androidDeviceOwnerEnrollmentProfile-id}
+// AndroidDeviceOwnerEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\androidDeviceOwnerEnrollmentProfiles\{androidDeviceOwnerEnrollmentProfile-id}
 type AndroidDeviceOwnerEnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type AndroidDeviceOwnerEnrollmentProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AndroidDeviceOwnerEnrollmentProfileRequestBuilderDeleteOptions options for Delete
 type AndroidDeviceOwnerEnrollmentProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AndroidDeviceOwnerEnrollmentProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetOptions options for Get
 type AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Android device owner enrollment profile entities.
+// AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetQueryParameters android device owner enrollment profile entities.
 type AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AndroidDeviceOwnerEnrollmentProfileRequestBuilderPatchOptions options for Patch
 type AndroidDeviceOwnerEnrollmentProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfile;
@@ -55,10 +55,7 @@ type AndroidDeviceOwnerEnrollmentProfileRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AndroidDeviceOwnerEnrollmentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidDeviceOwnerEnrollmentProfileRequestBuilderInternal instantiates a new AndroidDeviceOwnerEnrollmentProfileRequestBuilder and sets the default values.
 func NewAndroidDeviceOwnerEnrollmentProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidDeviceOwnerEnrollmentProfileRequestBuilder) {
     m := &AndroidDeviceOwnerEnrollmentProfileRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewAndroidDeviceOwnerEnrollmentProfileRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AndroidDeviceOwnerEnrollmentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidDeviceOwnerEnrollmentProfileRequestBuilder instantiates a new AndroidDeviceOwnerEnrollmentProfileRequestBuilder and sets the default values.
 func NewAndroidDeviceOwnerEnrollmentProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidDeviceOwnerEnrollmentProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidDeviceOwnerEnrollmentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Android device owner enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation android device owner enrollment profile entities.
 func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) CreateDeleteRequestInformation(options *AndroidDeviceOwnerEnrollmentProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// Android device owner enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation android device owner enrollment profile entities.
 func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) CreateGetRequestInformation(options *AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// Android device owner enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation android device owner enrollment profile entities.
 func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) CreatePatchRequestInformation(options *AndroidDeviceOwnerEnrollmentProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) CreatePatchRequestIn
 func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) CreateToken()(*ibf7310ca68d55392bbdbd2da406d3078b3d0933d2dfaa641477e64ac9571c49c.CreateTokenRequestBuilder) {
     return ibf7310ca68d55392bbdbd2da406d3078b3d0933d2dfaa641477e64ac9571c49c.NewCreateTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Android device owner enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// Delete android device owner enrollment profile entities.
 func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) Delete(options *AndroidDeviceOwnerEnrollmentProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) Delete(options *Andr
     }
     return nil
 }
-// Android device owner enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// Get android device owner enrollment profile entities.
 func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) Get(options *AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) Get(options *Android
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfile), nil
 }
-// Android device owner enrollment profile entities.
-// Parameters:
-//  - options : Options for the request
+// Patch android device owner enrollment profile entities.
 func (m *AndroidDeviceOwnerEnrollmentProfileRequestBuilder) Patch(options *AndroidDeviceOwnerEnrollmentProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

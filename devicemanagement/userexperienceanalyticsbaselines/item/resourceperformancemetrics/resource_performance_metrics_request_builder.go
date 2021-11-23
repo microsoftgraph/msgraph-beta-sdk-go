@@ -7,7 +7,7 @@ import (
     i25261affe7ff0d545d65d3fbc8451209ccb35c65bc354d77402c8c440f1ff9a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/resourceperformancemetrics/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\resourcePerformanceMetrics
+// ResourcePerformanceMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\resourcePerformanceMetrics
 type ResourcePerformanceMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ResourcePerformanceMetricsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ResourcePerformanceMetricsRequestBuilderGetOptions options for Get
 type ResourcePerformanceMetricsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ResourcePerformanceMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user experience analytics resource performance metrics.
+// ResourcePerformanceMetricsRequestBuilderGetQueryParameters the user experience analytics resource performance metrics.
 type ResourcePerformanceMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ResourcePerformanceMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourcePerformanceMetricsRequestBuilderInternal instantiates a new ResourcePerformanceMetricsRequestBuilder and sets the default values.
 func NewResourcePerformanceMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourcePerformanceMetricsRequestBuilder) {
     m := &ResourcePerformanceMetricsRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewResourcePerformanceMetricsRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResourcePerformanceMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourcePerformanceMetricsRequestBuilder instantiates a new ResourcePerformanceMetricsRequestBuilder and sets the default values.
 func NewResourcePerformanceMetricsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourcePerformanceMetricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourcePerformanceMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user experience analytics resource performance metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user experience analytics resource performance metrics.
 func (m *ResourcePerformanceMetricsRequestBuilder) CreateGetRequestInformation(options *ResourcePerformanceMetricsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ResourcePerformanceMetricsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// The user experience analytics resource performance metrics.
-// Parameters:
-//  - options : Options for the request
+// Get the user experience analytics resource performance metrics.
 func (m *ResourcePerformanceMetricsRequestBuilder) Get(options *ResourcePerformanceMetricsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

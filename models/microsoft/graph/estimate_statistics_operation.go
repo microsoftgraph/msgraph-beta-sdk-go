@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// EstimateStatisticsOperation 
 type EstimateStatisticsOperation struct {
     CaseOperation
     // The estimated count of items for the sourceCollection that matched the content query.
@@ -22,14 +22,14 @@ type EstimateStatisticsOperation struct {
     // The estimated size of unindexed items for the collection.
     unindexedItemsSize *int64;
 }
-// Instantiates a new estimateStatisticsOperation and sets the default values.
+// NewEstimateStatisticsOperation instantiates a new estimateStatisticsOperation and sets the default values.
 func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
     m := &EstimateStatisticsOperation{
         CaseOperation: *NewCaseOperation(),
     }
     return m
 }
-// Gets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
+// GetIndexedItemCount gets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
         return m.indexedItemCount
     }
 }
-// Gets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
+// GetIndexedItemsSize gets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int64) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int64) {
         return m.indexedItemsSize
     }
 }
-// Gets the mailboxCount property value. The number of mailboxes that had search hits.
+// GetMailboxCount gets the mailboxCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) GetMailboxCount()(*int32) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *EstimateStatisticsOperation) GetMailboxCount()(*int32) {
         return m.mailboxCount
     }
 }
-// Gets the siteCount property value. The number of mailboxes that had search hits.
+// GetSiteCount gets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) GetSiteCount()(*int32) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *EstimateStatisticsOperation) GetSiteCount()(*int32) {
         return m.siteCount
     }
 }
-// Gets the sourceCollection property value. eDiscovery collection, commonly known as a search.
+// GetSourceCollection gets the sourceCollection property value. eDiscovery collection, commonly known as a search.
 func (m *EstimateStatisticsOperation) GetSourceCollection()(*SourceCollection) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *EstimateStatisticsOperation) GetSourceCollection()(*SourceCollection) {
         return m.sourceCollection
     }
 }
-// Gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
+// GetUnindexedItemCount gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
         return m.unindexedItemCount
     }
 }
-// Gets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
+// GetUnindexedItemsSize gets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int64) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int64) {
         return m.unindexedItemsSize
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
     res["indexedItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,9 +163,7 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
 func (m *EstimateStatisticsOperation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EstimateStatisticsOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.CaseOperation.Serialize(writer)
     if err != nil {
@@ -215,45 +213,31 @@ func (m *EstimateStatisticsOperation) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
-// Parameters:
-//  - value : Value to set for the indexedItemCount property.
+// SetIndexedItemCount sets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) SetIndexedItemCount(value *int64)() {
     m.indexedItemCount = value
 }
-// Sets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
-// Parameters:
-//  - value : Value to set for the indexedItemsSize property.
+// SetIndexedItemsSize sets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) SetIndexedItemsSize(value *int64)() {
     m.indexedItemsSize = value
 }
-// Sets the mailboxCount property value. The number of mailboxes that had search hits.
-// Parameters:
-//  - value : Value to set for the mailboxCount property.
+// SetMailboxCount sets the mailboxCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) SetMailboxCount(value *int32)() {
     m.mailboxCount = value
 }
-// Sets the siteCount property value. The number of mailboxes that had search hits.
-// Parameters:
-//  - value : Value to set for the siteCount property.
+// SetSiteCount sets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) SetSiteCount(value *int32)() {
     m.siteCount = value
 }
-// Sets the sourceCollection property value. eDiscovery collection, commonly known as a search.
-// Parameters:
-//  - value : Value to set for the sourceCollection property.
+// SetSourceCollection sets the sourceCollection property value. eDiscovery collection, commonly known as a search.
 func (m *EstimateStatisticsOperation) SetSourceCollection(value *SourceCollection)() {
     m.sourceCollection = value
 }
-// Sets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
-// Parameters:
-//  - value : Value to set for the unindexedItemCount property.
+// SetUnindexedItemCount sets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) SetUnindexedItemCount(value *int64)() {
     m.unindexedItemCount = value
 }
-// Sets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
-// Parameters:
-//  - value : Value to set for the unindexedItemsSize property.
+// SetUnindexedItemsSize sets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) SetUnindexedItemsSize(value *int64)() {
     m.unindexedItemsSize = value
 }

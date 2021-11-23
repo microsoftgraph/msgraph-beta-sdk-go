@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ItemActivityOLD 
 type ItemActivityOLD struct {
     Entity
     // 
@@ -18,14 +18,14 @@ type ItemActivityOLD struct {
     // 
     times *ItemActivityTimeSet;
 }
-// Instantiates a new itemActivityOLD and sets the default values.
+// NewItemActivityOLD instantiates a new itemActivityOLD and sets the default values.
 func NewItemActivityOLD()(*ItemActivityOLD) {
     m := &ItemActivityOLD{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the action property value. 
+// GetAction gets the action property value. 
 func (m *ItemActivityOLD) GetAction()(*ItemActionSet) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *ItemActivityOLD) GetAction()(*ItemActionSet) {
         return m.action
     }
 }
-// Gets the actor property value. 
+// GetActor gets the actor property value. 
 func (m *ItemActivityOLD) GetActor()(*IdentitySet) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *ItemActivityOLD) GetActor()(*IdentitySet) {
         return m.actor
     }
 }
-// Gets the driveItem property value. 
+// GetDriveItem gets the driveItem property value. 
 func (m *ItemActivityOLD) GetDriveItem()(*DriveItem) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *ItemActivityOLD) GetDriveItem()(*DriveItem) {
         return m.driveItem
     }
 }
-// Gets the listItem property value. 
+// GetListItem gets the listItem property value. 
 func (m *ItemActivityOLD) GetListItem()(*ListItem) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *ItemActivityOLD) GetListItem()(*ListItem) {
         return m.listItem
     }
 }
-// Gets the times property value. 
+// GetTimes gets the times property value. 
 func (m *ItemActivityOLD) GetTimes()(*ItemActivityTimeSet) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *ItemActivityOLD) GetTimes()(*ItemActivityTimeSet) {
         return m.times
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["action"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,9 +123,7 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *ItemActivityOLD) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ItemActivityOLD) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -163,33 +161,23 @@ func (m *ItemActivityOLD) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the action property value. 
-// Parameters:
-//  - value : Value to set for the action property.
+// SetAction sets the action property value. 
 func (m *ItemActivityOLD) SetAction(value *ItemActionSet)() {
     m.action = value
 }
-// Sets the actor property value. 
-// Parameters:
-//  - value : Value to set for the actor property.
+// SetActor sets the actor property value. 
 func (m *ItemActivityOLD) SetActor(value *IdentitySet)() {
     m.actor = value
 }
-// Sets the driveItem property value. 
-// Parameters:
-//  - value : Value to set for the driveItem property.
+// SetDriveItem sets the driveItem property value. 
 func (m *ItemActivityOLD) SetDriveItem(value *DriveItem)() {
     m.driveItem = value
 }
-// Sets the listItem property value. 
-// Parameters:
-//  - value : Value to set for the listItem property.
+// SetListItem sets the listItem property value. 
 func (m *ItemActivityOLD) SetListItem(value *ListItem)() {
     m.listItem = value
 }
-// Sets the times property value. 
-// Parameters:
-//  - value : Value to set for the times property.
+// SetTimes sets the times property value. 
 func (m *ItemActivityOLD) SetTimes(value *ItemActivityTimeSet)() {
     m.times = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\countriesRegions\{countryRegion-id}
+// CountryRegionRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\countriesRegions\{countryRegion-id}
 type CountryRegionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CountryRegionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CountryRegionRequestBuilderDeleteOptions options for Delete
 type CountryRegionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CountryRegionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CountryRegionRequestBuilderGetOptions options for Get
 type CountryRegionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CountryRegionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get countriesRegions from financials
+// CountryRegionRequestBuilderGetQueryParameters get countriesRegions from financials
 type CountryRegionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CountryRegionRequestBuilderPatchOptions options for Patch
 type CountryRegionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CountryRegion;
@@ -53,10 +53,7 @@ type CountryRegionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CountryRegionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCountryRegionRequestBuilderInternal instantiates a new CountryRegionRequestBuilder and sets the default values.
 func NewCountryRegionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CountryRegionRequestBuilder) {
     m := &CountryRegionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCountryRegionRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CountryRegionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCountryRegionRequestBuilder instantiates a new CountryRegionRequestBuilder and sets the default values.
 func NewCountryRegionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CountryRegionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCountryRegionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property countriesRegions for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property countriesRegions for financials
 func (m *CountryRegionRequestBuilder) CreateDeleteRequestInformation(options *CountryRegionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CountryRegionRequestBuilder) CreateDeleteRequestInformation(options *Co
     }
     return requestInfo, nil
 }
-// Get countriesRegions from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get countriesRegions from financials
 func (m *CountryRegionRequestBuilder) CreateGetRequestInformation(options *CountryRegionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CountryRegionRequestBuilder) CreateGetRequestInformation(options *Count
     }
     return requestInfo, nil
 }
-// Update the navigation property countriesRegions in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property countriesRegions in financials
 func (m *CountryRegionRequestBuilder) CreatePatchRequestInformation(options *CountryRegionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CountryRegionRequestBuilder) CreatePatchRequestInformation(options *Cou
     }
     return requestInfo, nil
 }
-// Delete navigation property countriesRegions for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property countriesRegions for financials
 func (m *CountryRegionRequestBuilder) Delete(options *CountryRegionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CountryRegionRequestBuilder) Delete(options *CountryRegionRequestBuilde
     }
     return nil
 }
-// Get countriesRegions from financials
-// Parameters:
-//  - options : Options for the request
+// Get get countriesRegions from financials
 func (m *CountryRegionRequestBuilder) Get(options *CountryRegionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CountryRegion, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CountryRegionRequestBuilder) Get(options *CountryRegionRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CountryRegion), nil
 }
-// Update the navigation property countriesRegions in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property countriesRegions in financials
 func (m *CountryRegionRequestBuilder) Patch(options *CountryRegionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcDevices\{cloudPcDevice-id}
+// CloudPcDeviceRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcDevices\{cloudPcDevice-id}
 type CloudPcDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcDeviceRequestBuilderDeleteOptions options for Delete
 type CloudPcDeviceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcDeviceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcDeviceRequestBuilderGetOptions options for Get
 type CloudPcDeviceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of cloud PC devices across managed tenants.
+// CloudPcDeviceRequestBuilderGetQueryParameters the collection of cloud PC devices across managed tenants.
 type CloudPcDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcDeviceRequestBuilderPatchOptions options for Patch
 type CloudPcDeviceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDevice;
@@ -53,10 +53,7 @@ type CloudPcDeviceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcDeviceRequestBuilderInternal instantiates a new CloudPcDeviceRequestBuilder and sets the default values.
 func NewCloudPcDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcDeviceRequestBuilder) {
     m := &CloudPcDeviceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcDeviceRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcDeviceRequestBuilder instantiates a new CloudPcDeviceRequestBuilder and sets the default values.
 func NewCloudPcDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of cloud PC devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of cloud PC devices across managed tenants.
 func (m *CloudPcDeviceRequestBuilder) CreateDeleteRequestInformation(options *CloudPcDeviceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcDeviceRequestBuilder) CreateDeleteRequestInformation(options *Cl
     }
     return requestInfo, nil
 }
-// The collection of cloud PC devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of cloud PC devices across managed tenants.
 func (m *CloudPcDeviceRequestBuilder) CreateGetRequestInformation(options *CloudPcDeviceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcDeviceRequestBuilder) CreateGetRequestInformation(options *Cloud
     }
     return requestInfo, nil
 }
-// The collection of cloud PC devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of cloud PC devices across managed tenants.
 func (m *CloudPcDeviceRequestBuilder) CreatePatchRequestInformation(options *CloudPcDeviceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcDeviceRequestBuilder) CreatePatchRequestInformation(options *Clo
     }
     return requestInfo, nil
 }
-// The collection of cloud PC devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of cloud PC devices across managed tenants.
 func (m *CloudPcDeviceRequestBuilder) Delete(options *CloudPcDeviceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcDeviceRequestBuilder) Delete(options *CloudPcDeviceRequestBuilde
     }
     return nil
 }
-// The collection of cloud PC devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of cloud PC devices across managed tenants.
 func (m *CloudPcDeviceRequestBuilder) Get(options *CloudPcDeviceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDevice, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcDeviceRequestBuilder) Get(options *CloudPcDeviceRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDevice), nil
 }
-// The collection of cloud PC devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of cloud PC devices across managed tenants.
 func (m *CloudPcDeviceRequestBuilder) Patch(options *CloudPcDeviceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

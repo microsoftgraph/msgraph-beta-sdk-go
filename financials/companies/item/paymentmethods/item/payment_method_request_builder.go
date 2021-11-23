@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\paymentMethods\{paymentMethod-id}
+// PaymentMethodRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\paymentMethods\{paymentMethod-id}
 type PaymentMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PaymentMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PaymentMethodRequestBuilderDeleteOptions options for Delete
 type PaymentMethodRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PaymentMethodRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PaymentMethodRequestBuilderGetOptions options for Get
 type PaymentMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PaymentMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get paymentMethods from financials
+// PaymentMethodRequestBuilderGetQueryParameters get paymentMethods from financials
 type PaymentMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PaymentMethodRequestBuilderPatchOptions options for Patch
 type PaymentMethodRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentMethod;
@@ -53,10 +53,7 @@ type PaymentMethodRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PaymentMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPaymentMethodRequestBuilderInternal instantiates a new PaymentMethodRequestBuilder and sets the default values.
 func NewPaymentMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PaymentMethodRequestBuilder) {
     m := &PaymentMethodRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPaymentMethodRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PaymentMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPaymentMethodRequestBuilder instantiates a new PaymentMethodRequestBuilder and sets the default values.
 func NewPaymentMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PaymentMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPaymentMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property paymentMethods for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property paymentMethods for financials
 func (m *PaymentMethodRequestBuilder) CreateDeleteRequestInformation(options *PaymentMethodRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PaymentMethodRequestBuilder) CreateDeleteRequestInformation(options *Pa
     }
     return requestInfo, nil
 }
-// Get paymentMethods from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get paymentMethods from financials
 func (m *PaymentMethodRequestBuilder) CreateGetRequestInformation(options *PaymentMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PaymentMethodRequestBuilder) CreateGetRequestInformation(options *Payme
     }
     return requestInfo, nil
 }
-// Update the navigation property paymentMethods in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property paymentMethods in financials
 func (m *PaymentMethodRequestBuilder) CreatePatchRequestInformation(options *PaymentMethodRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PaymentMethodRequestBuilder) CreatePatchRequestInformation(options *Pay
     }
     return requestInfo, nil
 }
-// Delete navigation property paymentMethods for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property paymentMethods for financials
 func (m *PaymentMethodRequestBuilder) Delete(options *PaymentMethodRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PaymentMethodRequestBuilder) Delete(options *PaymentMethodRequestBuilde
     }
     return nil
 }
-// Get paymentMethods from financials
-// Parameters:
-//  - options : Options for the request
+// Get get paymentMethods from financials
 func (m *PaymentMethodRequestBuilder) Get(options *PaymentMethodRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentMethod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PaymentMethodRequestBuilder) Get(options *PaymentMethodRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentMethod), nil
 }
-// Update the navigation property paymentMethods in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property paymentMethods in financials
 func (m *PaymentMethodRequestBuilder) Patch(options *PaymentMethodRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -8,7 +8,7 @@ import (
     i54ca4d303dc3c2edef6bb7873d8427ed6509db394ba39c0fa8453891e9657a65 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salescreditmemos/item/salescreditmemolines/item/account"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}\salesCreditMemoLines\{salesCreditMemoLine-id}
+// SalesCreditMemoLineRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}\salesCreditMemoLines\{salesCreditMemoLine-id}
 type SalesCreditMemoLineRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type SalesCreditMemoLineRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SalesCreditMemoLineRequestBuilderDeleteOptions options for Delete
 type SalesCreditMemoLineRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SalesCreditMemoLineRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SalesCreditMemoLineRequestBuilderGetOptions options for Get
 type SalesCreditMemoLineRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type SalesCreditMemoLineRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get salesCreditMemoLines from financials
+// SalesCreditMemoLineRequestBuilderGetQueryParameters get salesCreditMemoLines from financials
 type SalesCreditMemoLineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SalesCreditMemoLineRequestBuilderPatchOptions options for Patch
 type SalesCreditMemoLineRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesCreditMemoLine;
@@ -58,10 +58,7 @@ type SalesCreditMemoLineRequestBuilderPatchOptions struct {
 func (m *SalesCreditMemoLineRequestBuilder) Account()(*i54ca4d303dc3c2edef6bb7873d8427ed6509db394ba39c0fa8453891e9657a65.AccountRequestBuilder) {
     return i54ca4d303dc3c2edef6bb7873d8427ed6509db394ba39c0fa8453891e9657a65.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new SalesCreditMemoLineRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesCreditMemoLineRequestBuilderInternal instantiates a new SalesCreditMemoLineRequestBuilder and sets the default values.
 func NewSalesCreditMemoLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesCreditMemoLineRequestBuilder) {
     m := &SalesCreditMemoLineRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewSalesCreditMemoLineRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SalesCreditMemoLineRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesCreditMemoLineRequestBuilder instantiates a new SalesCreditMemoLineRequestBuilder and sets the default values.
 func NewSalesCreditMemoLineRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesCreditMemoLineRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSalesCreditMemoLineRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property salesCreditMemoLines for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property salesCreditMemoLines for financials
 func (m *SalesCreditMemoLineRequestBuilder) CreateDeleteRequestInformation(options *SalesCreditMemoLineRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *SalesCreditMemoLineRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get salesCreditMemoLines from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get salesCreditMemoLines from financials
 func (m *SalesCreditMemoLineRequestBuilder) CreateGetRequestInformation(options *SalesCreditMemoLineRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *SalesCreditMemoLineRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update the navigation property salesCreditMemoLines in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property salesCreditMemoLines in financials
 func (m *SalesCreditMemoLineRequestBuilder) CreatePatchRequestInformation(options *SalesCreditMemoLineRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *SalesCreditMemoLineRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete navigation property salesCreditMemoLines for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property salesCreditMemoLines for financials
 func (m *SalesCreditMemoLineRequestBuilder) Delete(options *SalesCreditMemoLineRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *SalesCreditMemoLineRequestBuilder) Delete(options *SalesCreditMemoLineR
     }
     return nil
 }
-// Get salesCreditMemoLines from financials
-// Parameters:
-//  - options : Options for the request
+// Get get salesCreditMemoLines from financials
 func (m *SalesCreditMemoLineRequestBuilder) Get(options *SalesCreditMemoLineRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesCreditMemoLine, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *SalesCreditMemoLineRequestBuilder) Get(options *SalesCreditMemoLineRequ
 func (m *SalesCreditMemoLineRequestBuilder) Item()(*i17418f95bbf4a60c43605413d6584a144f2f400b8d8de167f1729a805c902c66.ItemRequestBuilder) {
     return i17418f95bbf4a60c43605413d6584a144f2f400b8d8de167f1729a805c902c66.NewItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property salesCreditMemoLines in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property salesCreditMemoLines in financials
 func (m *SalesCreditMemoLineRequestBuilder) Patch(options *SalesCreditMemoLineRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

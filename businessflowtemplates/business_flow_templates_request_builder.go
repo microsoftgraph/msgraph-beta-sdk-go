@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \businessFlowTemplates
+// BusinessFlowTemplatesRequestBuilder builds and executes requests for operations under \businessFlowTemplates
 type BusinessFlowTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BusinessFlowTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BusinessFlowTemplatesRequestBuilderGetOptions options for Get
 type BusinessFlowTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type BusinessFlowTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from businessFlowTemplates
+// BusinessFlowTemplatesRequestBuilderGetQueryParameters get entities from businessFlowTemplates
 type BusinessFlowTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type BusinessFlowTemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// BusinessFlowTemplatesRequestBuilderPostOptions options for Post
 type BusinessFlowTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlowTemplate;
@@ -56,10 +56,7 @@ type BusinessFlowTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BusinessFlowTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowTemplatesRequestBuilderInternal instantiates a new BusinessFlowTemplatesRequestBuilder and sets the default values.
 func NewBusinessFlowTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowTemplatesRequestBuilder) {
     m := &BusinessFlowTemplatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewBusinessFlowTemplatesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BusinessFlowTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowTemplatesRequestBuilder instantiates a new BusinessFlowTemplatesRequestBuilder and sets the default values.
 func NewBusinessFlowTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from businessFlowTemplates
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from businessFlowTemplates
 func (m *BusinessFlowTemplatesRequestBuilder) CreateGetRequestInformation(options *BusinessFlowTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *BusinessFlowTemplatesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Add new entity to businessFlowTemplates
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to businessFlowTemplates
 func (m *BusinessFlowTemplatesRequestBuilder) CreatePostRequestInformation(options *BusinessFlowTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *BusinessFlowTemplatesRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get entities from businessFlowTemplates
-// Parameters:
-//  - options : Options for the request
+// Get get entities from businessFlowTemplates
 func (m *BusinessFlowTemplatesRequestBuilder) Get(options *BusinessFlowTemplatesRequestBuilderGetOptions)(*BusinessFlowTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *BusinessFlowTemplatesRequestBuilder) Get(options *BusinessFlowTemplates
     }
     return res.(*BusinessFlowTemplatesResponse), nil
 }
-// Add new entity to businessFlowTemplates
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to businessFlowTemplates
 func (m *BusinessFlowTemplatesRequestBuilder) Post(options *BusinessFlowTemplatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlowTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

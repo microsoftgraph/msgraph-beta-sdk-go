@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SharedAppleDeviceUser 
 type SharedAppleDeviceUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type SharedAppleDeviceUser struct {
     // User name
     userPrincipalName *string;
 }
-// Instantiates a new sharedAppleDeviceUser and sets the default values.
+// NewSharedAppleDeviceUser instantiates a new sharedAppleDeviceUser and sets the default values.
 func NewSharedAppleDeviceUser()(*SharedAppleDeviceUser) {
     m := &SharedAppleDeviceUser{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharedAppleDeviceUser) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *SharedAppleDeviceUser) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the dataQuota property value. Data quota
+// GetDataQuota gets the dataQuota property value. Data quota
 func (m *SharedAppleDeviceUser) GetDataQuota()(*int64) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *SharedAppleDeviceUser) GetDataQuota()(*int64) {
         return m.dataQuota
     }
 }
-// Gets the dataToSync property value. Data to sync
+// GetDataToSync gets the dataToSync property value. Data to sync
 func (m *SharedAppleDeviceUser) GetDataToSync()(*bool) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *SharedAppleDeviceUser) GetDataToSync()(*bool) {
         return m.dataToSync
     }
 }
-// Gets the dataUsed property value. Data quota
+// GetDataUsed gets the dataUsed property value. Data quota
 func (m *SharedAppleDeviceUser) GetDataUsed()(*int64) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *SharedAppleDeviceUser) GetDataUsed()(*int64) {
         return m.dataUsed
     }
 }
-// Gets the userPrincipalName property value. User name
+// GetUserPrincipalName gets the userPrincipalName property value. User name
 func (m *SharedAppleDeviceUser) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *SharedAppleDeviceUser) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["dataQuota"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(interfac
 func (m *SharedAppleDeviceUser) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SharedAppleDeviceUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt64Value("dataQuota", m.GetDataQuota())
@@ -148,33 +146,23 @@ func (m *SharedAppleDeviceUser) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharedAppleDeviceUser) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the dataQuota property value. Data quota
-// Parameters:
-//  - value : Value to set for the dataQuota property.
+// SetDataQuota sets the dataQuota property value. Data quota
 func (m *SharedAppleDeviceUser) SetDataQuota(value *int64)() {
     m.dataQuota = value
 }
-// Sets the dataToSync property value. Data to sync
-// Parameters:
-//  - value : Value to set for the dataToSync property.
+// SetDataToSync sets the dataToSync property value. Data to sync
 func (m *SharedAppleDeviceUser) SetDataToSync(value *bool)() {
     m.dataToSync = value
 }
-// Sets the dataUsed property value. Data quota
-// Parameters:
-//  - value : Value to set for the dataUsed property.
+// SetDataUsed sets the dataUsed property value. Data quota
 func (m *SharedAppleDeviceUser) SetDataUsed(value *int64)() {
     m.dataUsed = value
 }
-// Sets the userPrincipalName property value. User name
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. User name
 func (m *SharedAppleDeviceUser) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

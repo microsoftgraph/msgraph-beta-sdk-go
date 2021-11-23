@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// OcrSettings 
 type OcrSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type OcrSettings struct {
     // The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
     timeout *string;
 }
-// Instantiates a new ocrSettings and sets the default values.
+// NewOcrSettings instantiates a new ocrSettings and sets the default values.
 func NewOcrSettings()(*OcrSettings) {
     m := &OcrSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OcrSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *OcrSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the isEnabled property value. Indicates whether or not OCR is enabled for the case.
+// GetIsEnabled gets the isEnabled property value. Indicates whether or not OCR is enabled for the case.
 func (m *OcrSettings) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *OcrSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// Gets the maxImageSize property value. Maximum image size that will be processed in KB).
+// GetMaxImageSize gets the maxImageSize property value. Maximum image size that will be processed in KB).
 func (m *OcrSettings) GetMaxImageSize()(*int32) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *OcrSettings) GetMaxImageSize()(*int32) {
         return m.maxImageSize
     }
 }
-// Gets the timeout property value. The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
+// GetTimeout gets the timeout property value. The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
 func (m *OcrSettings) GetTimeout()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *OcrSettings) GetTimeout()(*string) {
         return m.timeout
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OcrSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *OcrSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *OcrSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OcrSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
@@ -122,27 +120,19 @@ func (m *OcrSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OcrSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isEnabled property value. Indicates whether or not OCR is enabled for the case.
-// Parameters:
-//  - value : Value to set for the isEnabled property.
+// SetIsEnabled sets the isEnabled property value. Indicates whether or not OCR is enabled for the case.
 func (m *OcrSettings) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// Sets the maxImageSize property value. Maximum image size that will be processed in KB).
-// Parameters:
-//  - value : Value to set for the maxImageSize property.
+// SetMaxImageSize sets the maxImageSize property value. Maximum image size that will be processed in KB).
 func (m *OcrSettings) SetMaxImageSize(value *int32)() {
     m.maxImageSize = value
 }
-// Sets the timeout property value. The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
-// Parameters:
-//  - value : Value to set for the timeout property.
+// SetTimeout sets the timeout property value. The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
 func (m *OcrSettings) SetTimeout(value *string)() {
     m.timeout = value
 }

@@ -7,7 +7,7 @@ import (
     i9204601907f1aaefd281cf303f206a949aea03b3276a7bcf0186f5457aac2d19 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/planner/all/delta"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\planner\all
+// AllRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\all
 type AllRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AllRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AllRequestBuilderGetOptions options for Get
 type AllRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AllRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get all from users
+// AllRequestBuilderGetQueryParameters get all from users
 type AllRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type AllRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AllRequestBuilderPostOptions options for Post
 type AllRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerDelta;
@@ -57,10 +57,7 @@ type AllRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AllRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAllRequestBuilderInternal instantiates a new AllRequestBuilder and sets the default values.
 func NewAllRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AllRequestBuilder) {
     m := &AllRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAllRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AllRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAllRequestBuilder instantiates a new AllRequestBuilder and sets the default values.
 func NewAllRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AllRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAllRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get all from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get all from users
 func (m *AllRequestBuilder) CreateGetRequestInformation(options *AllRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AllRequestBuilder) CreateGetRequestInformation(options *AllRequestBuild
     }
     return requestInfo, nil
 }
-// Create new navigation property to all for users
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to all for users
 func (m *AllRequestBuilder) CreatePostRequestInformation(options *AllRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,13 +114,11 @@ func (m *AllRequestBuilder) CreatePostRequestInformation(options *AllRequestBuil
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \users\{user-id}\planner\all\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \users\{user-id}\planner\all\microsoft.graph.delta()
 func (m *AllRequestBuilder) Delta()(*i9204601907f1aaefd281cf303f206a949aea03b3276a7bcf0186f5457aac2d19.DeltaRequestBuilder) {
     return i9204601907f1aaefd281cf303f206a949aea03b3276a7bcf0186f5457aac2d19.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get all from users
-// Parameters:
-//  - options : Options for the request
+// Get get all from users
 func (m *AllRequestBuilder) Get(options *AllRequestBuilderGetOptions)(*AllResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *AllRequestBuilder) Get(options *AllRequestBuilderGetOptions)(*AllRespon
     }
     return res.(*AllResponse), nil
 }
-// Create new navigation property to all for users
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to all for users
 func (m *AllRequestBuilder) Post(options *AllRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerDelta, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

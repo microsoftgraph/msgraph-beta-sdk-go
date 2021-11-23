@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// GeneralLedgerEntry 
 type GeneralLedgerEntry struct {
     Entity
     // 
@@ -29,14 +29,14 @@ type GeneralLedgerEntry struct {
     // 
     postingDate *string;
 }
-// Instantiates a new generalLedgerEntry and sets the default values.
+// NewGeneralLedgerEntry instantiates a new generalLedgerEntry and sets the default values.
 func NewGeneralLedgerEntry()(*GeneralLedgerEntry) {
     m := &GeneralLedgerEntry{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the account property value. 
+// GetAccount gets the account property value. 
 func (m *GeneralLedgerEntry) GetAccount()(*Account) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *GeneralLedgerEntry) GetAccount()(*Account) {
         return m.account
     }
 }
-// Gets the accountId property value. 
+// GetAccountId gets the accountId property value. 
 func (m *GeneralLedgerEntry) GetAccountId()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *GeneralLedgerEntry) GetAccountId()(*string) {
         return m.accountId
     }
 }
-// Gets the accountNumber property value. 
+// GetAccountNumber gets the accountNumber property value. 
 func (m *GeneralLedgerEntry) GetAccountNumber()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *GeneralLedgerEntry) GetAccountNumber()(*string) {
         return m.accountNumber
     }
 }
-// Gets the creditAmount property value. 
+// GetCreditAmount gets the creditAmount property value. 
 func (m *GeneralLedgerEntry) GetCreditAmount()(*float64) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *GeneralLedgerEntry) GetCreditAmount()(*float64) {
         return m.creditAmount
     }
 }
-// Gets the debitAmount property value. 
+// GetDebitAmount gets the debitAmount property value. 
 func (m *GeneralLedgerEntry) GetDebitAmount()(*float64) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *GeneralLedgerEntry) GetDebitAmount()(*float64) {
         return m.debitAmount
     }
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *GeneralLedgerEntry) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *GeneralLedgerEntry) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the documentNumber property value. 
+// GetDocumentNumber gets the documentNumber property value. 
 func (m *GeneralLedgerEntry) GetDocumentNumber()(*string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *GeneralLedgerEntry) GetDocumentNumber()(*string) {
         return m.documentNumber
     }
 }
-// Gets the documentType property value. 
+// GetDocumentType gets the documentType property value. 
 func (m *GeneralLedgerEntry) GetDocumentType()(*string) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *GeneralLedgerEntry) GetDocumentType()(*string) {
         return m.documentType
     }
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *GeneralLedgerEntry) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *GeneralLedgerEntry) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
         return m.lastModifiedDateTime
     }
 }
-// Gets the postingDate property value. 
+// GetPostingDate gets the postingDate property value. 
 func (m *GeneralLedgerEntry) GetPostingDate()(*string) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *GeneralLedgerEntry) GetPostingDate()(*string) {
         return m.postingDate
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,9 +224,7 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
 func (m *GeneralLedgerEntry) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GeneralLedgerEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -294,63 +292,43 @@ func (m *GeneralLedgerEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the account property value. 
-// Parameters:
-//  - value : Value to set for the account property.
+// SetAccount sets the account property value. 
 func (m *GeneralLedgerEntry) SetAccount(value *Account)() {
     m.account = value
 }
-// Sets the accountId property value. 
-// Parameters:
-//  - value : Value to set for the accountId property.
+// SetAccountId sets the accountId property value. 
 func (m *GeneralLedgerEntry) SetAccountId(value *string)() {
     m.accountId = value
 }
-// Sets the accountNumber property value. 
-// Parameters:
-//  - value : Value to set for the accountNumber property.
+// SetAccountNumber sets the accountNumber property value. 
 func (m *GeneralLedgerEntry) SetAccountNumber(value *string)() {
     m.accountNumber = value
 }
-// Sets the creditAmount property value. 
-// Parameters:
-//  - value : Value to set for the creditAmount property.
+// SetCreditAmount sets the creditAmount property value. 
 func (m *GeneralLedgerEntry) SetCreditAmount(value *float64)() {
     m.creditAmount = value
 }
-// Sets the debitAmount property value. 
-// Parameters:
-//  - value : Value to set for the debitAmount property.
+// SetDebitAmount sets the debitAmount property value. 
 func (m *GeneralLedgerEntry) SetDebitAmount(value *float64)() {
     m.debitAmount = value
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *GeneralLedgerEntry) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the documentNumber property value. 
-// Parameters:
-//  - value : Value to set for the documentNumber property.
+// SetDocumentNumber sets the documentNumber property value. 
 func (m *GeneralLedgerEntry) SetDocumentNumber(value *string)() {
     m.documentNumber = value
 }
-// Sets the documentType property value. 
-// Parameters:
-//  - value : Value to set for the documentType property.
+// SetDocumentType sets the documentType property value. 
 func (m *GeneralLedgerEntry) SetDocumentType(value *string)() {
     m.documentType = value
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *GeneralLedgerEntry) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the postingDate property value. 
-// Parameters:
-//  - value : Value to set for the postingDate property.
+// SetPostingDate sets the postingDate property value. 
 func (m *GeneralLedgerEntry) SetPostingDate(value *string)() {
     m.postingDate = value
 }

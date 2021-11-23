@@ -7,7 +7,7 @@ import (
     i0bc94b226dce62510a2ce62b2757eeb73a86764a65482c8afd1ef61ed6a23f8d "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/sets/item/children/item/relations/item/set/ref"
 )
 
-// Builds and executes requests for operations under \termStore\sets\{set-id}\children\{term-id}\relations\{relation-id}\set
+// SetRequestBuilder builds and executes requests for operations under \termStore\sets\{set-id}\children\{term-id}\relations\{relation-id}\set
 type SetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SetRequestBuilderGetOptions options for Get
 type SetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type SetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The [set] in which the relation is relevant.
+// SetRequestBuilderGetQueryParameters the [set] in which the relation is relevant.
 type SetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new SetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetRequestBuilderInternal instantiates a new SetRequestBuilder and sets the default values.
 func NewSetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetRequestBuilder) {
     m := &SetRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewSetRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetRequestBuilder instantiates a new SetRequestBuilder and sets the default values.
 func NewSetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The [set] in which the relation is relevant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the [set] in which the relation is relevant.
 func (m *SetRequestBuilder) CreateGetRequestInformation(options *SetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *SetRequestBuilder) CreateGetRequestInformation(options *SetRequestBuild
     }
     return requestInfo, nil
 }
-// The [set] in which the relation is relevant.
-// Parameters:
-//  - options : Options for the request
+// Get the [set] in which the relation is relevant.
 func (m *SetRequestBuilder) Get(options *SetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Set, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     if8ca9966930d7ad505e9fc8a4fd9fc00488cdc68bc25732da4bff69daa542a27 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/managementconditions/item/managementconditionstatements/getmanagementconditionstatementsforplatformwithplatform"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}\managementConditionStatements
+// ManagementConditionStatementsRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}\managementConditionStatements
 type ManagementConditionStatementsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ManagementConditionStatementsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagementConditionStatementsRequestBuilderGetOptions options for Get
 type ManagementConditionStatementsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ManagementConditionStatementsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The management condition statements associated to the management condition.
+// ManagementConditionStatementsRequestBuilderGetQueryParameters the management condition statements associated to the management condition.
 type ManagementConditionStatementsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,10 +46,7 @@ type ManagementConditionStatementsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new ManagementConditionStatementsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementConditionStatementsRequestBuilderInternal instantiates a new ManagementConditionStatementsRequestBuilder and sets the default values.
 func NewManagementConditionStatementsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementConditionStatementsRequestBuilder) {
     m := &ManagementConditionStatementsRequestBuilder{
     }
@@ -62,18 +59,13 @@ func NewManagementConditionStatementsRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementConditionStatementsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementConditionStatementsRequestBuilder instantiates a new ManagementConditionStatementsRequestBuilder and sets the default values.
 func NewManagementConditionStatementsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementConditionStatementsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementConditionStatementsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The management condition statements associated to the management condition.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the management condition statements associated to the management condition.
 func (m *ManagementConditionStatementsRequestBuilder) CreateGetRequestInformation(options *ManagementConditionStatementsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,9 +85,7 @@ func (m *ManagementConditionStatementsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The management condition statements associated to the management condition.
-// Parameters:
-//  - options : Options for the request
+// Get the management condition statements associated to the management condition.
 func (m *ManagementConditionStatementsRequestBuilder) Get(options *ManagementConditionStatementsRequestBuilderGetOptions)(*ManagementConditionStatementsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -107,9 +97,7 @@ func (m *ManagementConditionStatementsRequestBuilder) Get(options *ManagementCon
     }
     return res.(*ManagementConditionStatementsResponse), nil
 }
-// Builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
-// Parameters:
-//  - platform : Usage: platform={platform}
+// GetManagementConditionStatementsForPlatformWithPlatform builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
 func (m *ManagementConditionStatementsRequestBuilder) GetManagementConditionStatementsForPlatformWithPlatform(platform *string)(*if8ca9966930d7ad505e9fc8a4fd9fc00488cdc68bc25732da4bff69daa542a27.GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) {
     return if8ca9966930d7ad505e9fc8a4fd9fc00488cdc68bc25732da4bff69daa542a27.NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInternal(m.pathParameters, m.requestAdapter, platform);
 }

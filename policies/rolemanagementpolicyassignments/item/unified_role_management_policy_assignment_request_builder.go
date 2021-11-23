@@ -7,7 +7,7 @@ import (
     i97d43eac42c79f3cf8cefa18ac4a34500ad654efc79abac0011675b2acc3ff09 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicyassignments/item/policy"
 )
 
-// Builds and executes requests for operations under \policies\roleManagementPolicyAssignments\{unifiedRoleManagementPolicyAssignment-id}
+// UnifiedRoleManagementPolicyAssignmentRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicyAssignments\{unifiedRoleManagementPolicyAssignment-id}
 type UnifiedRoleManagementPolicyAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UnifiedRoleManagementPolicyAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedRoleManagementPolicyAssignmentRequestBuilderDeleteOptions options for Delete
 type UnifiedRoleManagementPolicyAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type UnifiedRoleManagementPolicyAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedRoleManagementPolicyAssignmentRequestBuilderGetOptions options for Get
 type UnifiedRoleManagementPolicyAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type UnifiedRoleManagementPolicyAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the role management policy assignments.
+// UnifiedRoleManagementPolicyAssignmentRequestBuilderGetQueryParameters represents the role management policy assignments.
 type UnifiedRoleManagementPolicyAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedRoleManagementPolicyAssignmentRequestBuilderPatchOptions options for Patch
 type UnifiedRoleManagementPolicyAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignment;
@@ -54,10 +54,7 @@ type UnifiedRoleManagementPolicyAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnifiedRoleManagementPolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleManagementPolicyAssignmentRequestBuilderInternal instantiates a new UnifiedRoleManagementPolicyAssignmentRequestBuilder and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleManagementPolicyAssignmentRequestBuilder) {
     m := &UnifiedRoleManagementPolicyAssignmentRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewUnifiedRoleManagementPolicyAssignmentRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedRoleManagementPolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleManagementPolicyAssignmentRequestBuilder instantiates a new UnifiedRoleManagementPolicyAssignmentRequestBuilder and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleManagementPolicyAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleManagementPolicyAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the role management policy assignments.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the role management policy assignments.
 func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleManagementPolicyAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// Represents the role management policy assignments.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the role management policy assignments.
 func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) CreateGetRequestInformation(options *UnifiedRoleManagementPolicyAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// Represents the role management policy assignments.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the role management policy assignments.
 func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleManagementPolicyAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// Represents the role management policy assignments.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the role management policy assignments.
 func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) Delete(options *UnifiedRoleManagementPolicyAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) Delete(options *Un
     }
     return nil
 }
-// Represents the role management policy assignments.
-// Parameters:
-//  - options : Options for the request
+// Get represents the role management policy assignments.
 func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) Get(options *UnifiedRoleManagementPolicyAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) Get(options *Unifi
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignment), nil
 }
-// Represents the role management policy assignments.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the role management policy assignments.
 func (m *UnifiedRoleManagementPolicyAssignmentRequestBuilder) Patch(options *UnifiedRoleManagementPolicyAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

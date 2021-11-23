@@ -12,7 +12,7 @@ import (
     id5d6fab6089b28b24032ceb492d4726a5f5b3dd8719e632a9f878e2fd9a9c9e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyconfigurations/item/definitionvalues/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}
+// GroupPolicyConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}
 type GroupPolicyConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type GroupPolicyConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupPolicyConfigurationRequestBuilderDeleteOptions options for Delete
 type GroupPolicyConfigurationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type GroupPolicyConfigurationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupPolicyConfigurationRequestBuilderGetOptions options for Get
 type GroupPolicyConfigurationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type GroupPolicyConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The group policy configurations created by this account.
+// GroupPolicyConfigurationRequestBuilderGetQueryParameters the group policy configurations created by this account.
 type GroupPolicyConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupPolicyConfigurationRequestBuilderPatchOptions options for Patch
 type GroupPolicyConfigurationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyConfiguration;
@@ -65,9 +65,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) Assign()(*if10892f25c880cff6f35
 func (m *GroupPolicyConfigurationRequestBuilder) Assignments()(*ib82d0e0e2e13d1b253232a5b5c89e5d5704adda9d4f7e9e1e53d75f5f967101d.AssignmentsRequestBuilder) {
     return ib82d0e0e2e13d1b253232a5b5c89e5d5704adda9d4f7e9e1e53d75f5f967101d.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyConfigurations.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyConfigurations.item.assignments.item collection
 func (m *GroupPolicyConfigurationRequestBuilder) AssignmentsById(id string)(*i0cb6dc720cdfefbc227fbe58a3f3d6fae0bd97db3acd773de3b5dc3e12dd5792.GroupPolicyConfigurationAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -78,10 +76,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) AssignmentsById(id string)(*i0c
     }
     return i0cb6dc720cdfefbc227fbe58a3f3d6fae0bd97db3acd773de3b5dc3e12dd5792.NewGroupPolicyConfigurationAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new GroupPolicyConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyConfigurationRequestBuilderInternal instantiates a new GroupPolicyConfigurationRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyConfigurationRequestBuilder) {
     m := &GroupPolicyConfigurationRequestBuilder{
     }
@@ -94,18 +89,13 @@ func NewGroupPolicyConfigurationRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyConfigurationRequestBuilder instantiates a new GroupPolicyConfigurationRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The group policy configurations created by this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the group policy configurations created by this account.
 func (m *GroupPolicyConfigurationRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicyConfigurationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// The group policy configurations created by this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the group policy configurations created by this account.
 func (m *GroupPolicyConfigurationRequestBuilder) CreateGetRequestInformation(options *GroupPolicyConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The group policy configurations created by this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the group policy configurations created by this account.
 func (m *GroupPolicyConfigurationRequestBuilder) CreatePatchRequestInformation(options *GroupPolicyConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -167,9 +153,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) CreatePatchRequestInformation(o
 func (m *GroupPolicyConfigurationRequestBuilder) DefinitionValues()(*i2573cd7f18c0bef6763b0cd5d5daf2b302474f359820e0e9a5b01b4456663a1b.DefinitionValuesRequestBuilder) {
     return i2573cd7f18c0bef6763b0cd5d5daf2b302474f359820e0e9a5b01b4456663a1b.NewDefinitionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyConfigurations.item.definitionValues.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DefinitionValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyConfigurations.item.definitionValues.item collection
 func (m *GroupPolicyConfigurationRequestBuilder) DefinitionValuesById(id string)(*id5d6fab6089b28b24032ceb492d4726a5f5b3dd8719e632a9f878e2fd9a9c9e8.GroupPolicyDefinitionValueRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,9 +164,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) DefinitionValuesById(id string)
     }
     return id5d6fab6089b28b24032ceb492d4726a5f5b3dd8719e632a9f878e2fd9a9c9e8.NewGroupPolicyDefinitionValueRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The group policy configurations created by this account.
-// Parameters:
-//  - options : Options for the request
+// Delete the group policy configurations created by this account.
 func (m *GroupPolicyConfigurationRequestBuilder) Delete(options *GroupPolicyConfigurationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -194,9 +176,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) Delete(options *GroupPolicyConf
     }
     return nil
 }
-// The group policy configurations created by this account.
-// Parameters:
-//  - options : Options for the request
+// Get the group policy configurations created by this account.
 func (m *GroupPolicyConfigurationRequestBuilder) Get(options *GroupPolicyConfigurationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -208,9 +188,7 @@ func (m *GroupPolicyConfigurationRequestBuilder) Get(options *GroupPolicyConfigu
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyConfiguration), nil
 }
-// The group policy configurations created by this account.
-// Parameters:
-//  - options : Options for the request
+// Patch the group policy configurations created by this account.
 func (m *GroupPolicyConfigurationRequestBuilder) Patch(options *GroupPolicyConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

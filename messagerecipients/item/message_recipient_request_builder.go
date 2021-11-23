@@ -8,7 +8,7 @@ import (
     i743383fc382e5378ae11e0a3af80773199e61bc9a09df96b661701162acd2b84 "github.com/microsoftgraph/msgraph-beta-sdk-go/messagerecipients/item/events/item"
 )
 
-// Builds and executes requests for operations under \messageRecipients\{messageRecipient-id}
+// MessageRecipientRequestBuilder builds and executes requests for operations under \messageRecipients\{messageRecipient-id}
 type MessageRecipientRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type MessageRecipientRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MessageRecipientRequestBuilderDeleteOptions options for Delete
 type MessageRecipientRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MessageRecipientRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MessageRecipientRequestBuilderGetOptions options for Get
 type MessageRecipientRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type MessageRecipientRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from messageRecipients by key
+// MessageRecipientRequestBuilderGetQueryParameters get entity from messageRecipients by key
 type MessageRecipientRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MessageRecipientRequestBuilderPatchOptions options for Patch
 type MessageRecipientRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageRecipient;
@@ -55,10 +55,7 @@ type MessageRecipientRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MessageRecipientRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageRecipientRequestBuilderInternal instantiates a new MessageRecipientRequestBuilder and sets the default values.
 func NewMessageRecipientRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRecipientRequestBuilder) {
     m := &MessageRecipientRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewMessageRecipientRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessageRecipientRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageRecipientRequestBuilder instantiates a new MessageRecipientRequestBuilder and sets the default values.
 func NewMessageRecipientRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRecipientRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessageRecipientRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from messageRecipients
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from messageRecipients
 func (m *MessageRecipientRequestBuilder) CreateDeleteRequestInformation(options *MessageRecipientRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *MessageRecipientRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get entity from messageRecipients by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from messageRecipients by key
 func (m *MessageRecipientRequestBuilder) CreateGetRequestInformation(options *MessageRecipientRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *MessageRecipientRequestBuilder) CreateGetRequestInformation(options *Me
     }
     return requestInfo, nil
 }
-// Update entity in messageRecipients
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in messageRecipients
 func (m *MessageRecipientRequestBuilder) CreatePatchRequestInformation(options *MessageRecipientRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *MessageRecipientRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete entity from messageRecipients
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from messageRecipients
 func (m *MessageRecipientRequestBuilder) Delete(options *MessageRecipientRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *MessageRecipientRequestBuilder) Delete(options *MessageRecipientRequest
 func (m *MessageRecipientRequestBuilder) Events()(*i763db342488d93b06499e840923a524b416bfbf32aecb8bb444b83d1e431f4fa.EventsRequestBuilder) {
     return i763db342488d93b06499e840923a524b416bfbf32aecb8bb444b83d1e431f4fa.NewEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.messageRecipients.item.events.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// EventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.messageRecipients.item.events.item collection
 func (m *MessageRecipientRequestBuilder) EventsById(id string)(*i743383fc382e5378ae11e0a3af80773199e61bc9a09df96b661701162acd2b84.MessageEventRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,9 +155,7 @@ func (m *MessageRecipientRequestBuilder) EventsById(id string)(*i743383fc382e537
     }
     return i743383fc382e5378ae11e0a3af80773199e61bc9a09df96b661701162acd2b84.NewMessageEventRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get entity from messageRecipients by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from messageRecipients by key
 func (m *MessageRecipientRequestBuilder) Get(options *MessageRecipientRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageRecipient, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *MessageRecipientRequestBuilder) Get(options *MessageRecipientRequestBui
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageRecipient), nil
 }
-// Update entity in messageRecipients
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in messageRecipients
 func (m *MessageRecipientRequestBuilder) Patch(options *MessageRecipientRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

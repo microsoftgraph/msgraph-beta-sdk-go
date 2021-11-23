@@ -8,7 +8,7 @@ import (
     i62bbb37b4ff02b5ca16f7b82917e5c77bb61ef37d9f086a980074411b358e71c "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs/teamsapps/item"
 )
 
-// Builds and executes requests for operations under \appCatalogs
+// AppCatalogsRequestBuilder builds and executes requests for operations under \appCatalogs
 type AppCatalogsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type AppCatalogsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppCatalogsRequestBuilderGetOptions options for Get
 type AppCatalogsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,14 +28,14 @@ type AppCatalogsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get appCatalogs
+// AppCatalogsRequestBuilderGetQueryParameters get appCatalogs
 type AppCatalogsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AppCatalogsRequestBuilderPatchOptions options for Patch
 type AppCatalogsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppCatalogs;
@@ -46,10 +46,7 @@ type AppCatalogsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppCatalogsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppCatalogsRequestBuilderInternal instantiates a new AppCatalogsRequestBuilder and sets the default values.
 func NewAppCatalogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppCatalogsRequestBuilder) {
     m := &AppCatalogsRequestBuilder{
     }
@@ -62,18 +59,13 @@ func NewAppCatalogsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppCatalogsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppCatalogsRequestBuilder instantiates a new AppCatalogsRequestBuilder and sets the default values.
 func NewAppCatalogsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppCatalogsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppCatalogsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get appCatalogs
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get appCatalogs
 func (m *AppCatalogsRequestBuilder) CreateGetRequestInformation(options *AppCatalogsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,9 +85,7 @@ func (m *AppCatalogsRequestBuilder) CreateGetRequestInformation(options *AppCata
     }
     return requestInfo, nil
 }
-// Update appCatalogs
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update appCatalogs
 func (m *AppCatalogsRequestBuilder) CreatePatchRequestInformation(options *AppCatalogsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,9 +103,7 @@ func (m *AppCatalogsRequestBuilder) CreatePatchRequestInformation(options *AppCa
     }
     return requestInfo, nil
 }
-// Get appCatalogs
-// Parameters:
-//  - options : Options for the request
+// Get get appCatalogs
 func (m *AppCatalogsRequestBuilder) Get(options *AppCatalogsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppCatalogs, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -127,9 +115,7 @@ func (m *AppCatalogsRequestBuilder) Get(options *AppCatalogsRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppCatalogs), nil
 }
-// Update appCatalogs
-// Parameters:
-//  - options : Options for the request
+// Patch update appCatalogs
 func (m *AppCatalogsRequestBuilder) Patch(options *AppCatalogsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *AppCatalogsRequestBuilder) Patch(options *AppCatalogsRequestBuilderPatc
 func (m *AppCatalogsRequestBuilder) TeamsApps()(*i1d850ff376295ba997e8b57eaf0381b0984c00e19c325987f071f170d9585f64.TeamsAppsRequestBuilder) {
     return i1d850ff376295ba997e8b57eaf0381b0984c00e19c325987f071f170d9585f64.NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.appCatalogs.teamsApps.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TeamsAppsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.appCatalogs.teamsApps.item collection
 func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*i62bbb37b4ff02b5ca16f7b82917e5c77bb61ef37d9f086a980074411b358e71c.TeamsAppRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\positions\{workPosition-id}
+// WorkPositionRequestBuilder builds and executes requests for operations under \me\profile\positions\{workPosition-id}
 type WorkPositionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WorkPositionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkPositionRequestBuilderDeleteOptions options for Delete
 type WorkPositionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WorkPositionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkPositionRequestBuilderGetOptions options for Get
 type WorkPositionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WorkPositionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents detailed information about work positions associated with a user's profile.
+// WorkPositionRequestBuilderGetQueryParameters represents detailed information about work positions associated with a user's profile.
 type WorkPositionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkPositionRequestBuilderPatchOptions options for Patch
 type WorkPositionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkPosition;
@@ -53,10 +53,7 @@ type WorkPositionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WorkPositionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkPositionRequestBuilderInternal instantiates a new WorkPositionRequestBuilder and sets the default values.
 func NewWorkPositionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkPositionRequestBuilder) {
     m := &WorkPositionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWorkPositionRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkPositionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkPositionRequestBuilder instantiates a new WorkPositionRequestBuilder and sets the default values.
 func NewWorkPositionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkPositionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkPositionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents detailed information about work positions associated with a user's profile.
 func (m *WorkPositionRequestBuilder) CreateDeleteRequestInformation(options *WorkPositionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WorkPositionRequestBuilder) CreateDeleteRequestInformation(options *Wor
     }
     return requestInfo, nil
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents detailed information about work positions associated with a user's profile.
 func (m *WorkPositionRequestBuilder) CreateGetRequestInformation(options *WorkPositionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WorkPositionRequestBuilder) CreateGetRequestInformation(options *WorkPo
     }
     return requestInfo, nil
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents detailed information about work positions associated with a user's profile.
 func (m *WorkPositionRequestBuilder) CreatePatchRequestInformation(options *WorkPositionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WorkPositionRequestBuilder) CreatePatchRequestInformation(options *Work
     }
     return requestInfo, nil
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// Delete represents detailed information about work positions associated with a user's profile.
 func (m *WorkPositionRequestBuilder) Delete(options *WorkPositionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WorkPositionRequestBuilder) Delete(options *WorkPositionRequestBuilderD
     }
     return nil
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents detailed information about work positions associated with a user's profile.
 func (m *WorkPositionRequestBuilder) Get(options *WorkPositionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkPosition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WorkPositionRequestBuilder) Get(options *WorkPositionRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkPosition), nil
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// Patch represents detailed information about work positions associated with a user's profile.
 func (m *WorkPositionRequestBuilder) Patch(options *WorkPositionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

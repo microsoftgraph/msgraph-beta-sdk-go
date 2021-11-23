@@ -11,7 +11,7 @@ import (
     ia72138d764aac9bd3a352e3057f1578dd8230b4045684066c5c0d36a2be3badb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignmentrequests/item/subject"
 )
 
-// Builds and executes requests for operations under \governanceRoleAssignmentRequests\{governanceRoleAssignmentRequest-id}
+// GovernanceRoleAssignmentRequestRequestBuilder builds and executes requests for operations under \governanceRoleAssignmentRequests\{governanceRoleAssignmentRequest-id}
 type GovernanceRoleAssignmentRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type GovernanceRoleAssignmentRequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GovernanceRoleAssignmentRequestRequestBuilderDeleteOptions options for Delete
 type GovernanceRoleAssignmentRequestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type GovernanceRoleAssignmentRequestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GovernanceRoleAssignmentRequestRequestBuilderGetOptions options for Get
 type GovernanceRoleAssignmentRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type GovernanceRoleAssignmentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from governanceRoleAssignmentRequests by key
+// GovernanceRoleAssignmentRequestRequestBuilderGetQueryParameters get entity from governanceRoleAssignmentRequests by key
 type GovernanceRoleAssignmentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GovernanceRoleAssignmentRequestRequestBuilderPatchOptions options for Patch
 type GovernanceRoleAssignmentRequestRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest;
@@ -61,10 +61,7 @@ type GovernanceRoleAssignmentRequestRequestBuilderPatchOptions struct {
 func (m *GovernanceRoleAssignmentRequestRequestBuilder) Cancel()(*i3c09d8808940e57cffe2a4b43ec6c03afed85c4d1b8c2a6b6f69170f1707c06e.CancelRequestBuilder) {
     return i3c09d8808940e57cffe2a4b43ec6c03afed85c4d1b8c2a6b6f69170f1707c06e.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new GovernanceRoleAssignmentRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceRoleAssignmentRequestRequestBuilderInternal instantiates a new GovernanceRoleAssignmentRequestRequestBuilder and sets the default values.
 func NewGovernanceRoleAssignmentRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceRoleAssignmentRequestRequestBuilder) {
     m := &GovernanceRoleAssignmentRequestRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewGovernanceRoleAssignmentRequestRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GovernanceRoleAssignmentRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceRoleAssignmentRequestRequestBuilder instantiates a new GovernanceRoleAssignmentRequestRequestBuilder and sets the default values.
 func NewGovernanceRoleAssignmentRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceRoleAssignmentRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceRoleAssignmentRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from governanceRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from governanceRoleAssignmentRequests
 func (m *GovernanceRoleAssignmentRequestRequestBuilder) CreateDeleteRequestInformation(options *GovernanceRoleAssignmentRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *GovernanceRoleAssignmentRequestRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Get entity from governanceRoleAssignmentRequests by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from governanceRoleAssignmentRequests by key
 func (m *GovernanceRoleAssignmentRequestRequestBuilder) CreateGetRequestInformation(options *GovernanceRoleAssignmentRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *GovernanceRoleAssignmentRequestRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Update entity in governanceRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in governanceRoleAssignmentRequests
 func (m *GovernanceRoleAssignmentRequestRequestBuilder) CreatePatchRequestInformation(options *GovernanceRoleAssignmentRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *GovernanceRoleAssignmentRequestRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Delete entity from governanceRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from governanceRoleAssignmentRequests
 func (m *GovernanceRoleAssignmentRequestRequestBuilder) Delete(options *GovernanceRoleAssignmentRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *GovernanceRoleAssignmentRequestRequestBuilder) Delete(options *Governan
     }
     return nil
 }
-// Get entity from governanceRoleAssignmentRequests by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from governanceRoleAssignmentRequests by key
 func (m *GovernanceRoleAssignmentRequestRequestBuilder) Get(options *GovernanceRoleAssignmentRequestRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *GovernanceRoleAssignmentRequestRequestBuilder) Get(options *GovernanceR
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest), nil
 }
-// Update entity in governanceRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in governanceRoleAssignmentRequests
 func (m *GovernanceRoleAssignmentRequestRequestBuilder) Patch(options *GovernanceRoleAssignmentRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

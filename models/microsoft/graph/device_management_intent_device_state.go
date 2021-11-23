@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceManagementIntentDeviceState 
 type DeviceManagementIntentDeviceState struct {
     Entity
     // Device name that is being reported
@@ -21,14 +21,14 @@ type DeviceManagementIntentDeviceState struct {
     // The user principal name that is being reported on a device
     userPrincipalName *string;
 }
-// Instantiates a new deviceManagementIntentDeviceState and sets the default values.
+// NewDeviceManagementIntentDeviceState instantiates a new deviceManagementIntentDeviceState and sets the default values.
 func NewDeviceManagementIntentDeviceState()(*DeviceManagementIntentDeviceState) {
     m := &DeviceManagementIntentDeviceState{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the deviceDisplayName property value. Device name that is being reported
+// GetDeviceDisplayName gets the deviceDisplayName property value. Device name that is being reported
 func (m *DeviceManagementIntentDeviceState) GetDeviceDisplayName()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *DeviceManagementIntentDeviceState) GetDeviceDisplayName()(*string) {
         return m.deviceDisplayName
     }
 }
-// Gets the deviceId property value. Device id that is being reported
+// GetDeviceId gets the deviceId property value. Device id that is being reported
 func (m *DeviceManagementIntentDeviceState) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *DeviceManagementIntentDeviceState) GetDeviceId()(*string) {
         return m.deviceId
     }
 }
-// Gets the lastReportedDateTime property value. Last modified date time of an intent report
+// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of an intent report
 func (m *DeviceManagementIntentDeviceState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *DeviceManagementIntentDeviceState) GetLastReportedDateTime()(*i33607480
         return m.lastReportedDateTime
     }
 }
-// Gets the state property value. Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetState gets the state property value. Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceManagementIntentDeviceState) GetState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *DeviceManagementIntentDeviceState) GetState()(*ComplianceStatus) {
         return m.state
     }
 }
-// Gets the userName property value. The user name that is being reported on a device
+// GetUserName gets the userName property value. The user name that is being reported on a device
 func (m *DeviceManagementIntentDeviceState) GetUserName()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *DeviceManagementIntentDeviceState) GetUserName()(*string) {
         return m.userName
     }
 }
-// Gets the userPrincipalName property value. The user principal name that is being reported on a device
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name that is being reported on a device
 func (m *DeviceManagementIntentDeviceState) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *DeviceManagementIntentDeviceState) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementIntentDeviceState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,9 +145,7 @@ func (m *DeviceManagementIntentDeviceState) GetFieldDeserializers()(map[string]f
 func (m *DeviceManagementIntentDeviceState) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementIntentDeviceState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -192,39 +190,27 @@ func (m *DeviceManagementIntentDeviceState) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
-// Sets the deviceDisplayName property value. Device name that is being reported
-// Parameters:
-//  - value : Value to set for the deviceDisplayName property.
+// SetDeviceDisplayName sets the deviceDisplayName property value. Device name that is being reported
 func (m *DeviceManagementIntentDeviceState) SetDeviceDisplayName(value *string)() {
     m.deviceDisplayName = value
 }
-// Sets the deviceId property value. Device id that is being reported
-// Parameters:
-//  - value : Value to set for the deviceId property.
+// SetDeviceId sets the deviceId property value. Device id that is being reported
 func (m *DeviceManagementIntentDeviceState) SetDeviceId(value *string)() {
     m.deviceId = value
 }
-// Sets the lastReportedDateTime property value. Last modified date time of an intent report
-// Parameters:
-//  - value : Value to set for the lastReportedDateTime property.
+// SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of an intent report
 func (m *DeviceManagementIntentDeviceState) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastReportedDateTime = value
 }
-// Sets the state property value. Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceManagementIntentDeviceState) SetState(value *ComplianceStatus)() {
     m.state = value
 }
-// Sets the userName property value. The user name that is being reported on a device
-// Parameters:
-//  - value : Value to set for the userName property.
+// SetUserName sets the userName property value. The user name that is being reported on a device
 func (m *DeviceManagementIntentDeviceState) SetUserName(value *string)() {
     m.userName = value
 }
-// Sets the userPrincipalName property value. The user principal name that is being reported on a device
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name that is being reported on a device
 func (m *DeviceManagementIntentDeviceState) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// GovernanceRoleDefinition 
 type GovernanceRoleDefinition struct {
     Entity
     // The display name of the role definition.
@@ -20,14 +20,14 @@ type GovernanceRoleDefinition struct {
     // 
     templateId *string;
 }
-// Instantiates a new governanceRoleDefinition and sets the default values.
+// NewGovernanceRoleDefinition instantiates a new governanceRoleDefinition and sets the default values.
 func NewGovernanceRoleDefinition()(*GovernanceRoleDefinition) {
     m := &GovernanceRoleDefinition{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. The display name of the role definition.
+// GetDisplayName gets the displayName property value. The display name of the role definition.
 func (m *GovernanceRoleDefinition) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *GovernanceRoleDefinition) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the externalId property value. The external id of the role definition.
+// GetExternalId gets the externalId property value. The external id of the role definition.
 func (m *GovernanceRoleDefinition) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *GovernanceRoleDefinition) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// Gets the resource property value. Read-only. The associated resource for the role definition.
+// GetResource gets the resource property value. Read-only. The associated resource for the role definition.
 func (m *GovernanceRoleDefinition) GetResource()(*GovernanceResource) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *GovernanceRoleDefinition) GetResource()(*GovernanceResource) {
         return m.resource
     }
 }
-// Gets the resourceId property value. Required. The id of the resource associated with the role definition.
+// GetResourceId gets the resourceId property value. Required. The id of the resource associated with the role definition.
 func (m *GovernanceRoleDefinition) GetResourceId()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *GovernanceRoleDefinition) GetResourceId()(*string) {
         return m.resourceId
     }
 }
-// Gets the roleSetting property value. The associated role setting for the role definition.
+// GetRoleSetting gets the roleSetting property value. The associated role setting for the role definition.
 func (m *GovernanceRoleDefinition) GetRoleSetting()(*GovernanceRoleSetting) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *GovernanceRoleDefinition) GetRoleSetting()(*GovernanceRoleSetting) {
         return m.roleSetting
     }
 }
-// Gets the templateId property value. 
+// GetTemplateId gets the templateId property value. 
 func (m *GovernanceRoleDefinition) GetTemplateId()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *GovernanceRoleDefinition) GetTemplateId()(*string) {
         return m.templateId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,9 +143,7 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
 func (m *GovernanceRoleDefinition) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GovernanceRoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -189,39 +187,27 @@ func (m *GovernanceRoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the displayName property value. The display name of the role definition.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name of the role definition.
 func (m *GovernanceRoleDefinition) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the externalId property value. The external id of the role definition.
-// Parameters:
-//  - value : Value to set for the externalId property.
+// SetExternalId sets the externalId property value. The external id of the role definition.
 func (m *GovernanceRoleDefinition) SetExternalId(value *string)() {
     m.externalId = value
 }
-// Sets the resource property value. Read-only. The associated resource for the role definition.
-// Parameters:
-//  - value : Value to set for the resource property.
+// SetResource sets the resource property value. Read-only. The associated resource for the role definition.
 func (m *GovernanceRoleDefinition) SetResource(value *GovernanceResource)() {
     m.resource = value
 }
-// Sets the resourceId property value. Required. The id of the resource associated with the role definition.
-// Parameters:
-//  - value : Value to set for the resourceId property.
+// SetResourceId sets the resourceId property value. Required. The id of the resource associated with the role definition.
 func (m *GovernanceRoleDefinition) SetResourceId(value *string)() {
     m.resourceId = value
 }
-// Sets the roleSetting property value. The associated role setting for the role definition.
-// Parameters:
-//  - value : Value to set for the roleSetting property.
+// SetRoleSetting sets the roleSetting property value. The associated role setting for the role definition.
 func (m *GovernanceRoleDefinition) SetRoleSetting(value *GovernanceRoleSetting)() {
     m.roleSetting = value
 }
-// Sets the templateId property value. 
-// Parameters:
-//  - value : Value to set for the templateId property.
+// SetTemplateId sets the templateId property value. 
 func (m *GovernanceRoleDefinition) SetTemplateId(value *string)() {
     m.templateId = value
 }

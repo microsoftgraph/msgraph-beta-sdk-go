@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageUserCounts(period='{period}')
+// GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageUserCounts(period='{period}')
 type GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderGetOptions 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderInternal instantiates a new GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder) {
     m := &GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderInternal
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder instantiates a new GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getSkypeForBusinessDeviceUsageUserCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getSkypeForBusinessDeviceUsageUserCounts
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// Invoke function getSkypeForBusinessDeviceUsageUserCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getSkypeForBusinessDeviceUsageUserCounts
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder) Get(options *GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderGetOptions)([]GetSkypeForBusinessDeviceUsageUserCountsWithPeriod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

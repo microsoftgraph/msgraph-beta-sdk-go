@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\roleAssignmentRequests
+// RoleAssignmentRequestsRequestBuilder builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\roleAssignmentRequests
 type RoleAssignmentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RoleAssignmentRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RoleAssignmentRequestsRequestBuilderGetOptions options for Get
 type RoleAssignmentRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RoleAssignmentRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of role assignment requests for the provider.
+// RoleAssignmentRequestsRequestBuilderGetQueryParameters a collection of role assignment requests for the provider.
 type RoleAssignmentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RoleAssignmentRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RoleAssignmentRequestsRequestBuilderPostOptions options for Post
 type RoleAssignmentRequestsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest;
@@ -56,10 +56,7 @@ type RoleAssignmentRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleAssignmentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleAssignmentRequestsRequestBuilderInternal instantiates a new RoleAssignmentRequestsRequestBuilder and sets the default values.
 func NewRoleAssignmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleAssignmentRequestsRequestBuilder) {
     m := &RoleAssignmentRequestsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRoleAssignmentRequestsRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleAssignmentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleAssignmentRequestsRequestBuilder instantiates a new RoleAssignmentRequestsRequestBuilder and sets the default values.
 func NewRoleAssignmentRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleAssignmentRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of role assignment requests for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of role assignment requests for the provider.
 func (m *RoleAssignmentRequestsRequestBuilder) CreateGetRequestInformation(options *RoleAssignmentRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RoleAssignmentRequestsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// A collection of role assignment requests for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of role assignment requests for the provider.
 func (m *RoleAssignmentRequestsRequestBuilder) CreatePostRequestInformation(options *RoleAssignmentRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RoleAssignmentRequestsRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// A collection of role assignment requests for the provider.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of role assignment requests for the provider.
 func (m *RoleAssignmentRequestsRequestBuilder) Get(options *RoleAssignmentRequestsRequestBuilderGetOptions)(*RoleAssignmentRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RoleAssignmentRequestsRequestBuilder) Get(options *RoleAssignmentReques
     }
     return res.(*RoleAssignmentRequestsResponse), nil
 }
-// A collection of role assignment requests for the provider.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of role assignment requests for the provider.
 func (m *RoleAssignmentRequestsRequestBuilder) Post(options *RoleAssignmentRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

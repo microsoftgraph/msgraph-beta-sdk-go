@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MessageTrace 
 type MessageTrace struct {
     Entity
     // 
@@ -25,14 +25,14 @@ type MessageTrace struct {
     // 
     subject *string;
 }
-// Instantiates a new messageTrace and sets the default values.
+// NewMessageTrace instantiates a new messageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
     m := &MessageTrace{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the destinationIPAddress property value. 
+// GetDestinationIPAddress gets the destinationIPAddress property value. 
 func (m *MessageTrace) GetDestinationIPAddress()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *MessageTrace) GetDestinationIPAddress()(*string) {
         return m.destinationIPAddress
     }
 }
-// Gets the messageId property value. 
+// GetMessageId gets the messageId property value. 
 func (m *MessageTrace) GetMessageId()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *MessageTrace) GetMessageId()(*string) {
         return m.messageId
     }
 }
-// Gets the receivedDateTime property value. 
+// GetReceivedDateTime gets the receivedDateTime property value. 
 func (m *MessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *MessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.receivedDateTime
     }
 }
-// Gets the recipients property value. 
+// GetRecipients gets the recipients property value. 
 func (m *MessageTrace) GetRecipients()([]MessageRecipient) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *MessageTrace) GetRecipients()([]MessageRecipient) {
         return m.recipients
     }
 }
-// Gets the senderEmail property value. 
+// GetSenderEmail gets the senderEmail property value. 
 func (m *MessageTrace) GetSenderEmail()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *MessageTrace) GetSenderEmail()(*string) {
         return m.senderEmail
     }
 }
-// Gets the size property value. 
+// GetSize gets the size property value. 
 func (m *MessageTrace) GetSize()(*int32) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *MessageTrace) GetSize()(*int32) {
         return m.size
     }
 }
-// Gets the sourceIPAddress property value. 
+// GetSourceIPAddress gets the sourceIPAddress property value. 
 func (m *MessageTrace) GetSourceIPAddress()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *MessageTrace) GetSourceIPAddress()(*string) {
         return m.sourceIPAddress
     }
 }
-// Gets the subject property value. 
+// GetSubject gets the subject property value. 
 func (m *MessageTrace) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *MessageTrace) GetSubject()(*string) {
         return m.subject
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["destinationIPAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,9 +188,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *MessageTrace) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MessageTrace) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -251,51 +249,35 @@ func (m *MessageTrace) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the destinationIPAddress property value. 
-// Parameters:
-//  - value : Value to set for the destinationIPAddress property.
+// SetDestinationIPAddress sets the destinationIPAddress property value. 
 func (m *MessageTrace) SetDestinationIPAddress(value *string)() {
     m.destinationIPAddress = value
 }
-// Sets the messageId property value. 
-// Parameters:
-//  - value : Value to set for the messageId property.
+// SetMessageId sets the messageId property value. 
 func (m *MessageTrace) SetMessageId(value *string)() {
     m.messageId = value
 }
-// Sets the receivedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the receivedDateTime property.
+// SetReceivedDateTime sets the receivedDateTime property value. 
 func (m *MessageTrace) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.receivedDateTime = value
 }
-// Sets the recipients property value. 
-// Parameters:
-//  - value : Value to set for the recipients property.
+// SetRecipients sets the recipients property value. 
 func (m *MessageTrace) SetRecipients(value []MessageRecipient)() {
     m.recipients = value
 }
-// Sets the senderEmail property value. 
-// Parameters:
-//  - value : Value to set for the senderEmail property.
+// SetSenderEmail sets the senderEmail property value. 
 func (m *MessageTrace) SetSenderEmail(value *string)() {
     m.senderEmail = value
 }
-// Sets the size property value. 
-// Parameters:
-//  - value : Value to set for the size property.
+// SetSize sets the size property value. 
 func (m *MessageTrace) SetSize(value *int32)() {
     m.size = value
 }
-// Sets the sourceIPAddress property value. 
-// Parameters:
-//  - value : Value to set for the sourceIPAddress property.
+// SetSourceIPAddress sets the sourceIPAddress property value. 
 func (m *MessageTrace) SetSourceIPAddress(value *string)() {
     m.sourceIPAddress = value
 }
-// Sets the subject property value. 
-// Parameters:
-//  - value : Value to set for the subject property.
+// SetSubject sets the subject property value. 
 func (m *MessageTrace) SetSubject(value *string)() {
     m.subject = value
 }

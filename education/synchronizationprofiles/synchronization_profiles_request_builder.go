@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\synchronizationProfiles
+// SynchronizationProfilesRequestBuilder builds and executes requests for operations under \education\synchronizationProfiles
 type SynchronizationProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SynchronizationProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SynchronizationProfilesRequestBuilderGetOptions options for Get
 type SynchronizationProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SynchronizationProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get synchronizationProfiles from education
+// SynchronizationProfilesRequestBuilderGetQueryParameters get synchronizationProfiles from education
 type SynchronizationProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SynchronizationProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SynchronizationProfilesRequestBuilderPostOptions options for Post
 type SynchronizationProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSynchronizationProfile;
@@ -56,10 +56,7 @@ type SynchronizationProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SynchronizationProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSynchronizationProfilesRequestBuilderInternal instantiates a new SynchronizationProfilesRequestBuilder and sets the default values.
 func NewSynchronizationProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SynchronizationProfilesRequestBuilder) {
     m := &SynchronizationProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSynchronizationProfilesRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SynchronizationProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSynchronizationProfilesRequestBuilder instantiates a new SynchronizationProfilesRequestBuilder and sets the default values.
 func NewSynchronizationProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SynchronizationProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get synchronizationProfiles from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get synchronizationProfiles from education
 func (m *SynchronizationProfilesRequestBuilder) CreateGetRequestInformation(options *SynchronizationProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SynchronizationProfilesRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Create new navigation property to synchronizationProfiles for education
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to synchronizationProfiles for education
 func (m *SynchronizationProfilesRequestBuilder) CreatePostRequestInformation(options *SynchronizationProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SynchronizationProfilesRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get synchronizationProfiles from education
-// Parameters:
-//  - options : Options for the request
+// Get get synchronizationProfiles from education
 func (m *SynchronizationProfilesRequestBuilder) Get(options *SynchronizationProfilesRequestBuilderGetOptions)(*SynchronizationProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SynchronizationProfilesRequestBuilder) Get(options *SynchronizationProf
     }
     return res.(*SynchronizationProfilesResponse), nil
 }
-// Create new navigation property to synchronizationProfiles for education
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to synchronizationProfiles for education
 func (m *SynchronizationProfilesRequestBuilder) Post(options *SynchronizationProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSynchronizationProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

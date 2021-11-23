@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod 
 type GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // 
@@ -23,14 +23,14 @@ type GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod struct {
     // 
     windowsPhone *int32;
 }
-// Instantiates a new getSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod and sets the default values.
+// NewGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod instantiates a new getSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod and sets the default values.
 func NewGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod()(*GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) {
     m := &GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
-// Gets the androidPhone property value. 
+// GetAndroidPhone gets the androidPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetAndroidPhone()(*int32) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetAndr
         return m.androidPhone
     }
 }
-// Gets the iPad property value. 
+// GetIPad gets the iPad property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetIPad()(*int32) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetIPad
         return m.iPad
     }
 }
-// Gets the iPhone property value. 
+// GetIPhone gets the iPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetIPhone()(*int32) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetIPho
         return m.iPhone
     }
 }
-// Gets the reportPeriod property value. 
+// GetReportPeriod gets the reportPeriod property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetRepo
         return m.reportPeriod
     }
 }
-// Gets the reportRefreshDate property value. 
+// GetReportRefreshDate gets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetRepo
         return m.reportRefreshDate
     }
 }
-// Gets the windows property value. 
+// GetWindows gets the windows property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetWindows()(*int32) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetWind
         return m.windows
     }
 }
-// Gets the windowsPhone property value. 
+// GetWindowsPhone gets the windowsPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetWindowsPhone()(*int32) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetWind
         return m.windowsPhone
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["androidPhone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,9 +164,7 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) GetFiel
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -216,45 +214,31 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) Seriali
     }
     return nil
 }
-// Sets the androidPhone property value. 
-// Parameters:
-//  - value : Value to set for the androidPhone property.
+// SetAndroidPhone sets the androidPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) SetAndroidPhone(value *int32)() {
     m.androidPhone = value
 }
-// Sets the iPad property value. 
-// Parameters:
-//  - value : Value to set for the iPad property.
+// SetIPad sets the iPad property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) SetIPad(value *int32)() {
     m.iPad = value
 }
-// Sets the iPhone property value. 
-// Parameters:
-//  - value : Value to set for the iPhone property.
+// SetIPhone sets the iPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) SetIPhone(value *int32)() {
     m.iPhone = value
 }
-// Sets the reportPeriod property value. 
-// Parameters:
-//  - value : Value to set for the reportPeriod property.
+// SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
-// Sets the reportRefreshDate property value. 
-// Parameters:
-//  - value : Value to set for the reportRefreshDate property.
+// SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
-// Sets the windows property value. 
-// Parameters:
-//  - value : Value to set for the windows property.
+// SetWindows sets the windows property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) SetWindows(value *int32)() {
     m.windows = value
 }
-// Sets the windowsPhone property value. 
-// Parameters:
-//  - value : Value to set for the windowsPhone property.
+// SetWindowsPhone sets the windowsPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod) SetWindowsPhone(value *int32)() {
     m.windowsPhone = value
 }

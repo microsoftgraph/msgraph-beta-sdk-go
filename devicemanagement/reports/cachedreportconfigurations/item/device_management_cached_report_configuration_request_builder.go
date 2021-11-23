@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\cachedReportConfigurations\{deviceManagementCachedReportConfiguration-id}
+// DeviceManagementCachedReportConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\reports\cachedReportConfigurations\{deviceManagementCachedReportConfiguration-id}
 type DeviceManagementCachedReportConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementCachedReportConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementCachedReportConfigurationRequestBuilderDeleteOptions options for Delete
 type DeviceManagementCachedReportConfigurationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementCachedReportConfigurationRequestBuilderDeleteOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementCachedReportConfigurationRequestBuilderGetOptions options for Get
 type DeviceManagementCachedReportConfigurationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementCachedReportConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Entity representing the configuration of a cached report
+// DeviceManagementCachedReportConfigurationRequestBuilderGetQueryParameters entity representing the configuration of a cached report
 type DeviceManagementCachedReportConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementCachedReportConfigurationRequestBuilderPatchOptions options for Patch
 type DeviceManagementCachedReportConfigurationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration;
@@ -53,10 +53,7 @@ type DeviceManagementCachedReportConfigurationRequestBuilderPatchOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementCachedReportConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementCachedReportConfigurationRequestBuilderInternal instantiates a new DeviceManagementCachedReportConfigurationRequestBuilder and sets the default values.
 func NewDeviceManagementCachedReportConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementCachedReportConfigurationRequestBuilder) {
     m := &DeviceManagementCachedReportConfigurationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementCachedReportConfigurationRequestBuilderInternal(pathPara
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementCachedReportConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementCachedReportConfigurationRequestBuilder instantiates a new DeviceManagementCachedReportConfigurationRequestBuilder and sets the default values.
 func NewDeviceManagementCachedReportConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementCachedReportConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementCachedReportConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation entity representing the configuration of a cached report
 func (m *DeviceManagementCachedReportConfigurationRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementCachedReportConfigurationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementCachedReportConfigurationRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation entity representing the configuration of a cached report
 func (m *DeviceManagementCachedReportConfigurationRequestBuilder) CreateGetRequestInformation(options *DeviceManagementCachedReportConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementCachedReportConfigurationRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation entity representing the configuration of a cached report
 func (m *DeviceManagementCachedReportConfigurationRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementCachedReportConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementCachedReportConfigurationRequestBuilder) CreatePatchReq
     }
     return requestInfo, nil
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// Delete entity representing the configuration of a cached report
 func (m *DeviceManagementCachedReportConfigurationRequestBuilder) Delete(options *DeviceManagementCachedReportConfigurationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementCachedReportConfigurationRequestBuilder) Delete(options
     }
     return nil
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// Get entity representing the configuration of a cached report
 func (m *DeviceManagementCachedReportConfigurationRequestBuilder) Get(options *DeviceManagementCachedReportConfigurationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementCachedReportConfigurationRequestBuilder) Get(options *D
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration), nil
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// Patch entity representing the configuration of a cached report
 func (m *DeviceManagementCachedReportConfigurationRequestBuilder) Patch(options *DeviceManagementCachedReportConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\defaultAppManagementPolicy
+// DefaultAppManagementPolicyRequestBuilder builds and executes requests for operations under \policies\defaultAppManagementPolicy
 type DefaultAppManagementPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DefaultAppManagementPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DefaultAppManagementPolicyRequestBuilderDeleteOptions options for Delete
 type DefaultAppManagementPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DefaultAppManagementPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DefaultAppManagementPolicyRequestBuilderGetOptions options for Get
 type DefaultAppManagementPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DefaultAppManagementPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+// DefaultAppManagementPolicyRequestBuilderGetQueryParameters the tenant-wide policy that enforces app management restrictions for all applications and service principals.
 type DefaultAppManagementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DefaultAppManagementPolicyRequestBuilderPatchOptions options for Patch
 type DefaultAppManagementPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantAppManagementPolicy;
@@ -53,10 +53,7 @@ type DefaultAppManagementPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DefaultAppManagementPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefaultAppManagementPolicyRequestBuilderInternal instantiates a new DefaultAppManagementPolicyRequestBuilder and sets the default values.
 func NewDefaultAppManagementPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefaultAppManagementPolicyRequestBuilder) {
     m := &DefaultAppManagementPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDefaultAppManagementPolicyRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DefaultAppManagementPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefaultAppManagementPolicyRequestBuilder instantiates a new DefaultAppManagementPolicyRequestBuilder and sets the default values.
 func NewDefaultAppManagementPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefaultAppManagementPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDefaultAppManagementPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *DefaultAppManagementPolicyRequestBuilder) CreateDeleteRequestInformation(options *DefaultAppManagementPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *DefaultAppManagementPolicyRequestBuilder) CreateGetRequestInformation(options *DefaultAppManagementPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *DefaultAppManagementPolicyRequestBuilder) CreatePatchRequestInformation(options *DefaultAppManagementPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-// Parameters:
-//  - options : Options for the request
+// Delete the tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *DefaultAppManagementPolicyRequestBuilder) Delete(options *DefaultAppManagementPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) Delete(options *DefaultAppMan
     }
     return nil
 }
-// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-// Parameters:
-//  - options : Options for the request
+// Get the tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *DefaultAppManagementPolicyRequestBuilder) Get(options *DefaultAppManagementPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantAppManagementPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) Get(options *DefaultAppManage
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantAppManagementPolicy), nil
 }
-// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-// Parameters:
-//  - options : Options for the request
+// Patch the tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *DefaultAppManagementPolicyRequestBuilder) Patch(options *DefaultAppManagementPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

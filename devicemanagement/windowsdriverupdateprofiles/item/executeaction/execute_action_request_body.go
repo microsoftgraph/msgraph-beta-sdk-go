@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// ExecuteActionRequestBody 
 type ExecuteActionRequestBody struct {
     // 
     actionName *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriverApprovalAction;
@@ -17,14 +17,14 @@ type ExecuteActionRequestBody struct {
     // 
     driverIds []string;
 }
-// Instantiates a new executeActionRequestBody and sets the default values.
+// NewExecuteActionRequestBody instantiates a new executeActionRequestBody and sets the default values.
 func NewExecuteActionRequestBody()(*ExecuteActionRequestBody) {
     m := &ExecuteActionRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the actionName property value. 
+// GetActionName gets the actionName property value. 
 func (m *ExecuteActionRequestBody) GetActionName()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriverApprovalAction) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *ExecuteActionRequestBody) GetActionName()(*i535684e11b5500196ecb4b5c663
         return m.actionName
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ExecuteActionRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the deploymentDate property value. 
+// GetDeploymentDate gets the deploymentDate property value. 
 func (m *ExecuteActionRequestBody) GetDeploymentDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ExecuteActionRequestBody) GetDeploymentDate()(*i336074805fc853987abe6f7
         return m.deploymentDate
     }
 }
-// Gets the driverIds property value. 
+// GetDriverIds gets the driverIds property value. 
 func (m *ExecuteActionRequestBody) GetDriverIds()([]string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ExecuteActionRequestBody) GetDriverIds()([]string) {
         return m.driverIds
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["actionName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,9 +99,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
 func (m *ExecuteActionRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExecuteActionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetActionName() != nil {
         cast := m.GetActionName().String()
@@ -130,27 +128,19 @@ func (m *ExecuteActionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the actionName property value. 
-// Parameters:
-//  - value : Value to set for the actionName property.
+// SetActionName sets the actionName property value. 
 func (m *ExecuteActionRequestBody) SetActionName(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriverApprovalAction)() {
     m.actionName = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the deploymentDate property value. 
-// Parameters:
-//  - value : Value to set for the deploymentDate property.
+// SetDeploymentDate sets the deploymentDate property value. 
 func (m *ExecuteActionRequestBody) SetDeploymentDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.deploymentDate = value
 }
-// Sets the driverIds property value. 
-// Parameters:
-//  - value : Value to set for the driverIds property.
+// SetDriverIds sets the driverIds property value. 
 func (m *ExecuteActionRequestBody) SetDriverIds(value []string)() {
     m.driverIds = value
 }

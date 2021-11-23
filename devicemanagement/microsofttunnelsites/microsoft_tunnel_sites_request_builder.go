@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoftTunnelSites
+// MicrosoftTunnelSitesRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites
 type MicrosoftTunnelSitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MicrosoftTunnelSitesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MicrosoftTunnelSitesRequestBuilderGetOptions options for Get
 type MicrosoftTunnelSitesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MicrosoftTunnelSitesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of MicrosoftTunnelSite settings associated with account.
+// MicrosoftTunnelSitesRequestBuilderGetQueryParameters collection of MicrosoftTunnelSite settings associated with account.
 type MicrosoftTunnelSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MicrosoftTunnelSitesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MicrosoftTunnelSitesRequestBuilderPostOptions options for Post
 type MicrosoftTunnelSitesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelSite;
@@ -56,10 +56,7 @@ type MicrosoftTunnelSitesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MicrosoftTunnelSitesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelSitesRequestBuilderInternal instantiates a new MicrosoftTunnelSitesRequestBuilder and sets the default values.
 func NewMicrosoftTunnelSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelSitesRequestBuilder) {
     m := &MicrosoftTunnelSitesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMicrosoftTunnelSitesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MicrosoftTunnelSitesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelSitesRequestBuilder instantiates a new MicrosoftTunnelSitesRequestBuilder and sets the default values.
 func NewMicrosoftTunnelSitesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelSitesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of MicrosoftTunnelSite settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of MicrosoftTunnelSite settings associated with account.
 func (m *MicrosoftTunnelSitesRequestBuilder) CreateGetRequestInformation(options *MicrosoftTunnelSitesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MicrosoftTunnelSitesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Collection of MicrosoftTunnelSite settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of MicrosoftTunnelSite settings associated with account.
 func (m *MicrosoftTunnelSitesRequestBuilder) CreatePostRequestInformation(options *MicrosoftTunnelSitesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MicrosoftTunnelSitesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Collection of MicrosoftTunnelSite settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Get collection of MicrosoftTunnelSite settings associated with account.
 func (m *MicrosoftTunnelSitesRequestBuilder) Get(options *MicrosoftTunnelSitesRequestBuilderGetOptions)(*MicrosoftTunnelSitesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MicrosoftTunnelSitesRequestBuilder) Get(options *MicrosoftTunnelSitesRe
     }
     return res.(*MicrosoftTunnelSitesResponse), nil
 }
-// Collection of MicrosoftTunnelSite settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Post collection of MicrosoftTunnelSite settings associated with account.
 func (m *MicrosoftTunnelSitesRequestBuilder) Post(options *MicrosoftTunnelSitesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelSite, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

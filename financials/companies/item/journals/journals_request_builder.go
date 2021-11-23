@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\journals
+// JournalsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\journals
 type JournalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type JournalsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// JournalsRequestBuilderGetOptions options for Get
 type JournalsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type JournalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get journals from financials
+// JournalsRequestBuilderGetQueryParameters get journals from financials
 type JournalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type JournalsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// JournalsRequestBuilderPostOptions options for Post
 type JournalsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Journal;
@@ -56,10 +56,7 @@ type JournalsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new JournalsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJournalsRequestBuilderInternal instantiates a new JournalsRequestBuilder and sets the default values.
 func NewJournalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalsRequestBuilder) {
     m := &JournalsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewJournalsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new JournalsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJournalsRequestBuilder instantiates a new JournalsRequestBuilder and sets the default values.
 func NewJournalsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJournalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get journals from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get journals from financials
 func (m *JournalsRequestBuilder) CreateGetRequestInformation(options *JournalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *JournalsRequestBuilder) CreateGetRequestInformation(options *JournalsRe
     }
     return requestInfo, nil
 }
-// Create new navigation property to journals for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to journals for financials
 func (m *JournalsRequestBuilder) CreatePostRequestInformation(options *JournalsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *JournalsRequestBuilder) CreatePostRequestInformation(options *JournalsR
     }
     return requestInfo, nil
 }
-// Get journals from financials
-// Parameters:
-//  - options : Options for the request
+// Get get journals from financials
 func (m *JournalsRequestBuilder) Get(options *JournalsRequestBuilderGetOptions)(*JournalsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *JournalsRequestBuilder) Get(options *JournalsRequestBuilderGetOptions)(
     }
     return res.(*JournalsResponse), nil
 }
-// Create new navigation property to journals for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to journals for financials
 func (m *JournalsRequestBuilder) Post(options *JournalsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Journal, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

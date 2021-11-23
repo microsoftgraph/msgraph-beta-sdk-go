@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.enable
+// EnableRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.enable
 type EnableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type EnableRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// EnableRequestBuilderPostOptions options for Post
 type EnableRequestBuilderPostOptions struct {
     // 
     Body *EnableRequestBody;
@@ -24,10 +24,7 @@ type EnableRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EnableRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnableRequestBuilderInternal instantiates a new EnableRequestBuilder and sets the default values.
 func NewEnableRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnableRequestBuilder) {
     m := &EnableRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewEnableRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EnableRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnableRequestBuilder instantiates a new EnableRequestBuilder and sets the default values.
 func NewEnableRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnableRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEnableRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action enable
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action enable
 func (m *EnableRequestBuilder) CreatePostRequestInformation(options *EnableRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *EnableRequestBuilder) CreatePostRequestInformation(options *EnableReque
     }
     return requestInfo, nil
 }
-// Invoke action enable
-// Parameters:
-//  - options : Options for the request
+// Post invoke action enable
 func (m *EnableRequestBuilder) Post(options *EnableRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// GroupPolicyUploadedDefinitionFile 
 type GroupPolicyUploadedDefinitionFile struct {
     GroupPolicyDefinitionFile
     // The contents of the uploaded ADMX file.
@@ -23,14 +23,14 @@ type GroupPolicyUploadedDefinitionFile struct {
     // The uploaded time of the uploaded ADMX file.
     uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new groupPolicyUploadedDefinitionFile and sets the default values.
+// NewGroupPolicyUploadedDefinitionFile instantiates a new groupPolicyUploadedDefinitionFile and sets the default values.
 func NewGroupPolicyUploadedDefinitionFile()(*GroupPolicyUploadedDefinitionFile) {
     m := &GroupPolicyUploadedDefinitionFile{
         GroupPolicyDefinitionFile: *NewGroupPolicyDefinitionFile(),
     }
     return m
 }
-// Gets the content property value. The contents of the uploaded ADMX file.
+// GetContent gets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetContent()([]byte) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetContent()([]byte) {
         return m.content
     }
 }
-// Gets the defaultLanguageCode property value. The default language of the uploaded ADMX file.
+// GetDefaultLanguageCode gets the defaultLanguageCode property value. The default language of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
         return m.defaultLanguageCode
     }
 }
-// Gets the fileName property value. The file name of the uploaded ADML file.
+// GetFileName gets the fileName property value. The file name of the uploaded ADML file.
 func (m *GroupPolicyUploadedDefinitionFile) GetFileName()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFileName()(*string) {
         return m.fileName
     }
 }
-// Gets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
+// GetGroupPolicyOperations gets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyOperations()([]GroupPolicyOperation) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyOperations()([]GroupPo
         return m.groupPolicyOperations
     }
 }
-// Gets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
+// GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyUploadedLanguageFiles()([]GroupPolicyUploadedLanguageFile) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyUploadedLanguageFiles(
         return m.groupPolicyUploadedLanguageFiles
     }
 }
-// Gets the status property value. The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
+// GetStatus gets the status property value. The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
 func (m *GroupPolicyUploadedDefinitionFile) GetStatus()(*GroupPolicyUploadedDefinitionFileStatus) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetStatus()(*GroupPolicyUploadedDefi
         return m.status
     }
 }
-// Gets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
+// GetUploadDateTime gets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetUploadDateTime()(*i336074805fc853
         return m.uploadDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.GroupPolicyDefinitionFile.GetFieldDeserializers()
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,9 +173,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
 func (m *GroupPolicyUploadedDefinitionFile) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.GroupPolicyDefinitionFile.Serialize(writer)
     if err != nil {
@@ -236,45 +234,31 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
-// Sets the content property value. The contents of the uploaded ADMX file.
-// Parameters:
-//  - value : Value to set for the content property.
+// SetContent sets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetContent(value []byte)() {
     m.content = value
 }
-// Sets the defaultLanguageCode property value. The default language of the uploaded ADMX file.
-// Parameters:
-//  - value : Value to set for the defaultLanguageCode property.
+// SetDefaultLanguageCode sets the defaultLanguageCode property value. The default language of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetDefaultLanguageCode(value *string)() {
     m.defaultLanguageCode = value
 }
-// Sets the fileName property value. The file name of the uploaded ADML file.
-// Parameters:
-//  - value : Value to set for the fileName property.
+// SetFileName sets the fileName property value. The file name of the uploaded ADML file.
 func (m *GroupPolicyUploadedDefinitionFile) SetFileName(value *string)() {
     m.fileName = value
 }
-// Sets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
-// Parameters:
-//  - value : Value to set for the groupPolicyOperations property.
+// SetGroupPolicyOperations sets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyOperations(value []GroupPolicyOperation)() {
     m.groupPolicyOperations = value
 }
-// Sets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
-// Parameters:
-//  - value : Value to set for the groupPolicyUploadedLanguageFiles property.
+// SetGroupPolicyUploadedLanguageFiles sets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyUploadedLanguageFiles(value []GroupPolicyUploadedLanguageFile)() {
     m.groupPolicyUploadedLanguageFiles = value
 }
-// Sets the status property value. The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
 func (m *GroupPolicyUploadedDefinitionFile) SetStatus(value *GroupPolicyUploadedDefinitionFileStatus)() {
     m.status = value
 }
-// Sets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
-// Parameters:
-//  - value : Value to set for the uploadDateTime property.
+// SetUploadDateTime sets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetUploadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.uploadDateTime = value
 }

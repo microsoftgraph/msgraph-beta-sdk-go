@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations
+// IosLobAppProvisioningConfigurationsRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations
 type IosLobAppProvisioningConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type IosLobAppProvisioningConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IosLobAppProvisioningConfigurationsRequestBuilderGetOptions options for Get
 type IosLobAppProvisioningConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type IosLobAppProvisioningConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The IOS Lob App Provisioning Configurations.
+// IosLobAppProvisioningConfigurationsRequestBuilderGetQueryParameters the IOS Lob App Provisioning Configurations.
 type IosLobAppProvisioningConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type IosLobAppProvisioningConfigurationsRequestBuilderGetQueryParameters struct 
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IosLobAppProvisioningConfigurationsRequestBuilderPostOptions options for Post
 type IosLobAppProvisioningConfigurationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosLobAppProvisioningConfiguration;
@@ -57,10 +57,7 @@ type IosLobAppProvisioningConfigurationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IosLobAppProvisioningConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosLobAppProvisioningConfigurationsRequestBuilderInternal instantiates a new IosLobAppProvisioningConfigurationsRequestBuilder and sets the default values.
 func NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosLobAppProvisioningConfigurationsRequestBuilder) {
     m := &IosLobAppProvisioningConfigurationsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IosLobAppProvisioningConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosLobAppProvisioningConfigurationsRequestBuilder instantiates a new IosLobAppProvisioningConfigurationsRequestBuilder and sets the default values.
 func NewIosLobAppProvisioningConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosLobAppProvisioningConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The IOS Lob App Provisioning Configurations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the IOS Lob App Provisioning Configurations.
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreateGetRequestInformation(options *IosLobAppProvisioningConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// The IOS Lob App Provisioning Configurations.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the IOS Lob App Provisioning Configurations.
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreatePostRequestInformation(options *IosLobAppProvisioningConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreatePostRequestInf
     }
     return requestInfo, nil
 }
-// The IOS Lob App Provisioning Configurations.
-// Parameters:
-//  - options : Options for the request
+// Get the IOS Lob App Provisioning Configurations.
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Get(options *IosLobAppProvisioningConfigurationsRequestBuilderGetOptions)(*IosLobAppProvisioningConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Get(options *IosLobA
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) HasPayloadLinks()(*i0ee45bbd3414d7e3fded0eaf2684c7ba588435cc6a7a055482d3f1856a44991a.HasPayloadLinksRequestBuilder) {
     return i0ee45bbd3414d7e3fded0eaf2684c7ba588435cc6a7a055482d3f1856a44991a.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The IOS Lob App Provisioning Configurations.
-// Parameters:
-//  - options : Options for the request
+// Post the IOS Lob App Provisioning Configurations.
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Post(options *IosLobAppProvisioningConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosLobAppProvisioningConfiguration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

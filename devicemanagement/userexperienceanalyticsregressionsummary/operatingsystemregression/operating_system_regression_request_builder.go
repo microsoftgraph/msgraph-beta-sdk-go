@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\operatingSystemRegression
+// OperatingSystemRegressionRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\operatingSystemRegression
 type OperatingSystemRegressionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OperatingSystemRegressionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OperatingSystemRegressionRequestBuilderGetOptions options for Get
 type OperatingSystemRegressionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OperatingSystemRegressionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The metric values for the user experience analytics operating system regression.
+// OperatingSystemRegressionRequestBuilderGetQueryParameters the metric values for the user experience analytics operating system regression.
 type OperatingSystemRegressionRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type OperatingSystemRegressionRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// OperatingSystemRegressionRequestBuilderPostOptions options for Post
 type OperatingSystemRegressionRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetric;
@@ -56,10 +56,7 @@ type OperatingSystemRegressionRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OperatingSystemRegressionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOperatingSystemRegressionRequestBuilderInternal instantiates a new OperatingSystemRegressionRequestBuilder and sets the default values.
 func NewOperatingSystemRegressionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OperatingSystemRegressionRequestBuilder) {
     m := &OperatingSystemRegressionRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewOperatingSystemRegressionRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OperatingSystemRegressionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOperatingSystemRegressionRequestBuilder instantiates a new OperatingSystemRegressionRequestBuilder and sets the default values.
 func NewOperatingSystemRegressionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OperatingSystemRegressionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOperatingSystemRegressionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The metric values for the user experience analytics operating system regression.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the metric values for the user experience analytics operating system regression.
 func (m *OperatingSystemRegressionRequestBuilder) CreateGetRequestInformation(options *OperatingSystemRegressionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *OperatingSystemRegressionRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// The metric values for the user experience analytics operating system regression.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the metric values for the user experience analytics operating system regression.
 func (m *OperatingSystemRegressionRequestBuilder) CreatePostRequestInformation(options *OperatingSystemRegressionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *OperatingSystemRegressionRequestBuilder) CreatePostRequestInformation(o
     }
     return requestInfo, nil
 }
-// The metric values for the user experience analytics operating system regression.
-// Parameters:
-//  - options : Options for the request
+// Get the metric values for the user experience analytics operating system regression.
 func (m *OperatingSystemRegressionRequestBuilder) Get(options *OperatingSystemRegressionRequestBuilderGetOptions)(*OperatingSystemRegressionResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *OperatingSystemRegressionRequestBuilder) Get(options *OperatingSystemRe
     }
     return res.(*OperatingSystemRegressionResponse), nil
 }
-// The metric values for the user experience analytics operating system regression.
-// Parameters:
-//  - options : Options for the request
+// Post the metric values for the user experience analytics operating system regression.
 func (m *OperatingSystemRegressionRequestBuilder) Post(options *OperatingSystemRegressionRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetric, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

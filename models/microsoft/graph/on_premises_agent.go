@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// OnPremisesAgent 
 type OnPremisesAgent struct {
     Entity
     // List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
@@ -18,14 +18,14 @@ type OnPremisesAgent struct {
     // 
     supportedPublishingTypes []OnPremisesPublishingType;
 }
-// Instantiates a new onPremisesAgent and sets the default values.
+// NewOnPremisesAgent instantiates a new onPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
     m := &OnPremisesAgent{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
+// GetAgentGroups gets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *OnPremisesAgent) GetAgentGroups()([]OnPremisesAgentGroup) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *OnPremisesAgent) GetAgentGroups()([]OnPremisesAgentGroup) {
         return m.agentGroups
     }
 }
-// Gets the externalIp property value. The external IP address as detected by the service for the agent machine. Read-only
+// GetExternalIp gets the externalIp property value. The external IP address as detected by the service for the agent machine. Read-only
 func (m *OnPremisesAgent) GetExternalIp()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *OnPremisesAgent) GetExternalIp()(*string) {
         return m.externalIp
     }
 }
-// Gets the machineName property value. The name of the machine that the aggent is running on. Read-only
+// GetMachineName gets the machineName property value. The name of the machine that the aggent is running on. Read-only
 func (m *OnPremisesAgent) GetMachineName()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *OnPremisesAgent) GetMachineName()(*string) {
         return m.machineName
     }
 }
-// Gets the status property value. Possible values are: active, inactive.
+// GetStatus gets the status property value. Possible values are: active, inactive.
 func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
         return m.status
     }
 }
-// Gets the supportedPublishingTypes property value. 
+// GetSupportedPublishingTypes gets the supportedPublishingTypes property value. 
 func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingTy
         return m.supportedPublishingTypes
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agentGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *OnPremisesAgent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OnPremisesAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -178,33 +176,23 @@ func (m *OnPremisesAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the agentGroups property.
+// SetAgentGroups sets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *OnPremisesAgent) SetAgentGroups(value []OnPremisesAgentGroup)() {
     m.agentGroups = value
 }
-// Sets the externalIp property value. The external IP address as detected by the service for the agent machine. Read-only
-// Parameters:
-//  - value : Value to set for the externalIp property.
+// SetExternalIp sets the externalIp property value. The external IP address as detected by the service for the agent machine. Read-only
 func (m *OnPremisesAgent) SetExternalIp(value *string)() {
     m.externalIp = value
 }
-// Sets the machineName property value. The name of the machine that the aggent is running on. Read-only
-// Parameters:
-//  - value : Value to set for the machineName property.
+// SetMachineName sets the machineName property value. The name of the machine that the aggent is running on. Read-only
 func (m *OnPremisesAgent) SetMachineName(value *string)() {
     m.machineName = value
 }
-// Sets the status property value. Possible values are: active, inactive.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Possible values are: active, inactive.
 func (m *OnPremisesAgent) SetStatus(value *AgentStatus)() {
     m.status = value
 }
-// Sets the supportedPublishingTypes property value. 
-// Parameters:
-//  - value : Value to set for the supportedPublishingTypes property.
+// SetSupportedPublishingTypes sets the supportedPublishingTypes property value. 
 func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []OnPremisesPublishingType)() {
     m.supportedPublishingTypes = value
 }

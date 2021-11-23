@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\servicePrincipalCreationPolicies\{servicePrincipalCreationPolicy-id}\excludes
+// ExcludesRequestBuilder builds and executes requests for operations under \policies\servicePrincipalCreationPolicies\{servicePrincipalCreationPolicy-id}\excludes
 type ExcludesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExcludesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExcludesRequestBuilderGetOptions options for Get
 type ExcludesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ExcludesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get excludes from policies
+// ExcludesRequestBuilderGetQueryParameters get excludes from policies
 type ExcludesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ExcludesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ExcludesRequestBuilderPostOptions options for Post
 type ExcludesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationConditionSet;
@@ -56,10 +56,7 @@ type ExcludesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExcludesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExcludesRequestBuilderInternal instantiates a new ExcludesRequestBuilder and sets the default values.
 func NewExcludesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExcludesRequestBuilder) {
     m := &ExcludesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewExcludesRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExcludesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExcludesRequestBuilder instantiates a new ExcludesRequestBuilder and sets the default values.
 func NewExcludesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExcludesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExcludesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get excludes from policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get excludes from policies
 func (m *ExcludesRequestBuilder) CreateGetRequestInformation(options *ExcludesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ExcludesRequestBuilder) CreateGetRequestInformation(options *ExcludesRe
     }
     return requestInfo, nil
 }
-// Create new navigation property to excludes for policies
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to excludes for policies
 func (m *ExcludesRequestBuilder) CreatePostRequestInformation(options *ExcludesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ExcludesRequestBuilder) CreatePostRequestInformation(options *ExcludesR
     }
     return requestInfo, nil
 }
-// Get excludes from policies
-// Parameters:
-//  - options : Options for the request
+// Get get excludes from policies
 func (m *ExcludesRequestBuilder) Get(options *ExcludesRequestBuilderGetOptions)(*ExcludesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ExcludesRequestBuilder) Get(options *ExcludesRequestBuilderGetOptions)(
     }
     return res.(*ExcludesResponse), nil
 }
-// Create new navigation property to excludes for policies
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to excludes for policies
 func (m *ExcludesRequestBuilder) Post(options *ExcludesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationConditionSet, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

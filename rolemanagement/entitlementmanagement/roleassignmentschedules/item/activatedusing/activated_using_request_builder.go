@@ -7,7 +7,7 @@ import (
     i277b60e5cadef6475591dc7033a1f4b47ac09ddabba5413f5d107ba69d5a135e "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentschedules/item/activatedusing/ref"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentSchedules\{unifiedRoleAssignmentSchedule-id}\activatedUsing
+// ActivatedUsingRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentSchedules\{unifiedRoleAssignmentSchedule-id}\activatedUsing
 type ActivatedUsingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ActivatedUsingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ActivatedUsingRequestBuilderGetOptions options for Get
 type ActivatedUsingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ActivatedUsingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
+// ActivatedUsingRequestBuilderGetQueryParameters if the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
 type ActivatedUsingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ActivatedUsingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivatedUsingRequestBuilderInternal instantiates a new ActivatedUsingRequestBuilder and sets the default values.
 func NewActivatedUsingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivatedUsingRequestBuilder) {
     m := &ActivatedUsingRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewActivatedUsingRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivatedUsingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivatedUsingRequestBuilder instantiates a new ActivatedUsingRequestBuilder and sets the default values.
 func NewActivatedUsingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivatedUsingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivatedUsingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation if the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
 func (m *ActivatedUsingRequestBuilder) CreateGetRequestInformation(options *ActivatedUsingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ActivatedUsingRequestBuilder) CreateGetRequestInformation(options *Acti
     }
     return requestInfo, nil
 }
-// If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
-// Parameters:
-//  - options : Options for the request
+// Get if the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
 func (m *ActivatedUsingRequestBuilder) Get(options *ActivatedUsingRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleEligibilitySchedule, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

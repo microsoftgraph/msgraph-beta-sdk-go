@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}\groupPolicySettingMappings\{groupPolicySettingMapping-id}
+// GroupPolicySettingMappingRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}\groupPolicySettingMappings\{groupPolicySettingMapping-id}
 type GroupPolicySettingMappingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupPolicySettingMappingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupPolicySettingMappingRequestBuilderDeleteOptions options for Delete
 type GroupPolicySettingMappingRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GroupPolicySettingMappingRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupPolicySettingMappingRequestBuilderGetOptions options for Get
 type GroupPolicySettingMappingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GroupPolicySettingMappingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of group policy settings to MDM/Intune mappings.
+// GroupPolicySettingMappingRequestBuilderGetQueryParameters a list of group policy settings to MDM/Intune mappings.
 type GroupPolicySettingMappingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupPolicySettingMappingRequestBuilderPatchOptions options for Patch
 type GroupPolicySettingMappingRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicySettingMapping;
@@ -53,10 +53,7 @@ type GroupPolicySettingMappingRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicySettingMappingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicySettingMappingRequestBuilderInternal instantiates a new GroupPolicySettingMappingRequestBuilder and sets the default values.
 func NewGroupPolicySettingMappingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicySettingMappingRequestBuilder) {
     m := &GroupPolicySettingMappingRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGroupPolicySettingMappingRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicySettingMappingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicySettingMappingRequestBuilder instantiates a new GroupPolicySettingMappingRequestBuilder and sets the default values.
 func NewGroupPolicySettingMappingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicySettingMappingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicySettingMappingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicySettingMappingRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GroupPolicySettingMappingRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingRequestBuilder) CreateGetRequestInformation(options *GroupPolicySettingMappingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GroupPolicySettingMappingRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingRequestBuilder) CreatePatchRequestInformation(options *GroupPolicySettingMappingRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GroupPolicySettingMappingRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// Delete a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingRequestBuilder) Delete(options *GroupPolicySettingMappingRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GroupPolicySettingMappingRequestBuilder) Delete(options *GroupPolicySet
     }
     return nil
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// Get a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingRequestBuilder) Get(options *GroupPolicySettingMappingRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicySettingMapping, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GroupPolicySettingMappingRequestBuilder) Get(options *GroupPolicySettin
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicySettingMapping), nil
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// Patch a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingRequestBuilder) Patch(options *GroupPolicySettingMappingRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

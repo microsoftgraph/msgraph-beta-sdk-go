@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \security\tiIndicators\microsoft.graph.deleteTiIndicators
+// DeleteTiIndicatorsRequestBuilder builds and executes requests for operations under \security\tiIndicators\microsoft.graph.deleteTiIndicators
 type DeleteTiIndicatorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type DeleteTiIndicatorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// DeleteTiIndicatorsRequestBuilderPostOptions options for Post
 type DeleteTiIndicatorsRequestBuilderPostOptions struct {
     // 
     Body *DeleteTiIndicatorsRequestBody;
@@ -25,10 +25,7 @@ type DeleteTiIndicatorsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeleteTiIndicatorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeleteTiIndicatorsRequestBuilderInternal instantiates a new DeleteTiIndicatorsRequestBuilder and sets the default values.
 func NewDeleteTiIndicatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeleteTiIndicatorsRequestBuilder) {
     m := &DeleteTiIndicatorsRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewDeleteTiIndicatorsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeleteTiIndicatorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeleteTiIndicatorsRequestBuilder instantiates a new DeleteTiIndicatorsRequestBuilder and sets the default values.
 func NewDeleteTiIndicatorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeleteTiIndicatorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeleteTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action deleteTiIndicators
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action deleteTiIndicators
 func (m *DeleteTiIndicatorsRequestBuilder) CreatePostRequestInformation(options *DeleteTiIndicatorsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *DeleteTiIndicatorsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Invoke action deleteTiIndicators
-// Parameters:
-//  - options : Options for the request
+// Post invoke action deleteTiIndicators
 func (m *DeleteTiIndicatorsRequestBuilder) Post(options *DeleteTiIndicatorsRequestBuilderPostOptions)([]DeleteTiIndicators, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

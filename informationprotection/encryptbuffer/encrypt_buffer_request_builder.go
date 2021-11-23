@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \informationProtection\microsoft.graph.encryptBuffer
+// EncryptBufferRequestBuilder builds and executes requests for operations under \informationProtection\microsoft.graph.encryptBuffer
 type EncryptBufferRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EncryptBufferRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// EncryptBufferRequestBuilderPostOptions options for Post
 type EncryptBufferRequestBuilderPostOptions struct {
     // 
     Body *EncryptBufferRequestBody;
@@ -26,21 +26,21 @@ type EncryptBufferRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes bufferEncryptionResult
+// EncryptBufferResponse union type wrapper for classes bufferEncryptionResult
 type EncryptBufferResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type bufferEncryptionResult
     bufferEncryptionResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResult;
 }
-// Instantiates a new encryptBufferResponse and sets the default values.
+// NewEncryptBufferResponse instantiates a new encryptBufferResponse and sets the default values.
 func NewEncryptBufferResponse()(*EncryptBufferResponse) {
     m := &EncryptBufferResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptBufferResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *EncryptBufferResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the bufferEncryptionResult property value. Union type representation for type bufferEncryptionResult
+// GetBufferEncryptionResult gets the bufferEncryptionResult property value. Union type representation for type bufferEncryptionResult
 func (m *EncryptBufferResponse) GetBufferEncryptionResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResult) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *EncryptBufferResponse) GetBufferEncryptionResult()(*i535684e11b5500196e
         return m.bufferEncryptionResult
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EncryptBufferResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bufferEncryptionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *EncryptBufferResponse) GetFieldDeserializers()(map[string]func(interfac
 func (m *EncryptBufferResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EncryptBufferResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("bufferEncryptionResult", m.GetBufferEncryptionResult())
@@ -92,22 +90,15 @@ func (m *EncryptBufferResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptBufferResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the bufferEncryptionResult property value. Union type representation for type bufferEncryptionResult
-// Parameters:
-//  - value : Value to set for the bufferEncryptionResult property.
+// SetBufferEncryptionResult sets the bufferEncryptionResult property value. Union type representation for type bufferEncryptionResult
 func (m *EncryptBufferResponse) SetBufferEncryptionResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResult)() {
     m.bufferEncryptionResult = value
 }
-// Instantiates a new EncryptBufferRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEncryptBufferRequestBuilderInternal instantiates a new EncryptBufferRequestBuilder and sets the default values.
 func NewEncryptBufferRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EncryptBufferRequestBuilder) {
     m := &EncryptBufferRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewEncryptBufferRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EncryptBufferRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEncryptBufferRequestBuilder instantiates a new EncryptBufferRequestBuilder and sets the default values.
 func NewEncryptBufferRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EncryptBufferRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEncryptBufferRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action encryptBuffer
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action encryptBuffer
 func (m *EncryptBufferRequestBuilder) CreatePostRequestInformation(options *EncryptBufferRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *EncryptBufferRequestBuilder) CreatePostRequestInformation(options *Encr
     }
     return requestInfo, nil
 }
-// Invoke action encryptBuffer
-// Parameters:
-//  - options : Options for the request
+// Post invoke action encryptBuffer
 func (m *EncryptBufferRequestBuilder) Post(options *EncryptBufferRequestBuilderPostOptions)(*EncryptBufferResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

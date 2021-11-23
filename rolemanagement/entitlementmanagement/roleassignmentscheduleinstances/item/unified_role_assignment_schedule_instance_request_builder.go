@@ -7,7 +7,7 @@ import (
     i8187ad8031625910f8d46cce20855184385e2d1f62b2bf94423227537d5ad4f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentscheduleinstances/item/activatedusing"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances\{unifiedRoleAssignmentScheduleInstance-id}
+// UnifiedRoleAssignmentScheduleInstanceRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances\{unifiedRoleAssignmentScheduleInstance-id}
 type UnifiedRoleAssignmentScheduleInstanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UnifiedRoleAssignmentScheduleInstanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedRoleAssignmentScheduleInstanceRequestBuilderDeleteOptions options for Delete
 type UnifiedRoleAssignmentScheduleInstanceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type UnifiedRoleAssignmentScheduleInstanceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedRoleAssignmentScheduleInstanceRequestBuilderGetOptions options for Get
 type UnifiedRoleAssignmentScheduleInstanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type UnifiedRoleAssignmentScheduleInstanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get roleAssignmentScheduleInstances from roleManagement
+// UnifiedRoleAssignmentScheduleInstanceRequestBuilderGetQueryParameters get roleAssignmentScheduleInstances from roleManagement
 type UnifiedRoleAssignmentScheduleInstanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedRoleAssignmentScheduleInstanceRequestBuilderPatchOptions options for Patch
 type UnifiedRoleAssignmentScheduleInstanceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentScheduleInstance;
@@ -57,10 +57,7 @@ type UnifiedRoleAssignmentScheduleInstanceRequestBuilderPatchOptions struct {
 func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) ActivatedUsing()(*i8187ad8031625910f8d46cce20855184385e2d1f62b2bf94423227537d5ad4f5.ActivatedUsingRequestBuilder) {
     return i8187ad8031625910f8d46cce20855184385e2d1f62b2bf94423227537d5ad4f5.NewActivatedUsingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new UnifiedRoleAssignmentScheduleInstanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleAssignmentScheduleInstanceRequestBuilderInternal instantiates a new UnifiedRoleAssignmentScheduleInstanceRequestBuilder and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleAssignmentScheduleInstanceRequestBuilder) {
     m := &UnifiedRoleAssignmentScheduleInstanceRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewUnifiedRoleAssignmentScheduleInstanceRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedRoleAssignmentScheduleInstanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleAssignmentScheduleInstanceRequestBuilder instantiates a new UnifiedRoleAssignmentScheduleInstanceRequestBuilder and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleAssignmentScheduleInstanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleAssignmentScheduleInstanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property roleAssignmentScheduleInstances for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property roleAssignmentScheduleInstances for roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleAssignmentScheduleInstanceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// Get roleAssignmentScheduleInstances from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get roleAssignmentScheduleInstances from roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) CreateGetRequestInformation(options *UnifiedRoleAssignmentScheduleInstanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// Update the navigation property roleAssignmentScheduleInstances in roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property roleAssignmentScheduleInstances in roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleAssignmentScheduleInstanceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// Delete navigation property roleAssignmentScheduleInstances for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property roleAssignmentScheduleInstances for roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) Delete(options *UnifiedRoleAssignmentScheduleInstanceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) Delete(options *Un
     }
     return nil
 }
-// Get roleAssignmentScheduleInstances from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get roleAssignmentScheduleInstances from roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) Get(options *UnifiedRoleAssignmentScheduleInstanceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentScheduleInstance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) Get(options *Unifi
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentScheduleInstance), nil
 }
-// Update the navigation property roleAssignmentScheduleInstances in roleManagement
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property roleAssignmentScheduleInstances in roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceRequestBuilder) Patch(options *UnifiedRoleAssignmentScheduleInstanceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

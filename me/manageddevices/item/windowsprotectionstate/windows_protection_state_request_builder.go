@@ -8,7 +8,7 @@ import (
     i530e43a127c1c7152cc066779fb7c924add05c3b230b14bb31c96f03c4d595d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/windowsprotectionstate/detectedmalwarestate/item"
 )
 
-// Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\windowsProtectionState
+// WindowsProtectionStateRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\windowsProtectionState
 type WindowsProtectionStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type WindowsProtectionStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsProtectionStateRequestBuilderDeleteOptions options for Delete
 type WindowsProtectionStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WindowsProtectionStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsProtectionStateRequestBuilderGetOptions options for Get
 type WindowsProtectionStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type WindowsProtectionStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The device protection status.
+// WindowsProtectionStateRequestBuilderGetQueryParameters the device protection status.
 type WindowsProtectionStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsProtectionStateRequestBuilderPatchOptions options for Patch
 type WindowsProtectionStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState;
@@ -55,10 +55,7 @@ type WindowsProtectionStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsProtectionStateRequestBuilderInternal instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
 func NewWindowsProtectionStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsProtectionStateRequestBuilder) {
     m := &WindowsProtectionStateRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewWindowsProtectionStateRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsProtectionStateRequestBuilder instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
 func NewWindowsProtectionStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsProtectionStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsProtectionStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The device protection status.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the device protection status.
 func (m *WindowsProtectionStateRequestBuilder) CreateDeleteRequestInformation(options *WindowsProtectionStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// The device protection status.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the device protection status.
 func (m *WindowsProtectionStateRequestBuilder) CreateGetRequestInformation(options *WindowsProtectionStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The device protection status.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the device protection status.
 func (m *WindowsProtectionStateRequestBuilder) CreatePatchRequestInformation(options *WindowsProtectionStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The device protection status.
-// Parameters:
-//  - options : Options for the request
+// Delete the device protection status.
 func (m *WindowsProtectionStateRequestBuilder) Delete(options *WindowsProtectionStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *WindowsProtectionStateRequestBuilder) Delete(options *WindowsProtection
 func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareState()(*i0843b4a3849e6b9fdcd05ee547059fe6e1e96eeca99fbf206b5ce80231ea384a.DetectedMalwareStateRequestBuilder) {
     return i0843b4a3849e6b9fdcd05ee547059fe6e1e96eeca99fbf206b5ce80231ea384a.NewDetectedMalwareStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.managedDevices.item.windowsProtectionState.detectedMalwareState.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DetectedMalwareStateById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.managedDevices.item.windowsProtectionState.detectedMalwareState.item collection
 func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id string)(*i530e43a127c1c7152cc066779fb7c924add05c3b230b14bb31c96f03c4d595d2.WindowsDeviceMalwareStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,9 +155,7 @@ func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id strin
     }
     return i530e43a127c1c7152cc066779fb7c924add05c3b230b14bb31c96f03c4d595d2.NewWindowsDeviceMalwareStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The device protection status.
-// Parameters:
-//  - options : Options for the request
+// Get the device protection status.
 func (m *WindowsProtectionStateRequestBuilder) Get(options *WindowsProtectionStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *WindowsProtectionStateRequestBuilder) Get(options *WindowsProtectionSta
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState), nil
 }
-// The device protection status.
-// Parameters:
-//  - options : Options for the request
+// Patch the device protection status.
 func (m *WindowsProtectionStateRequestBuilder) Patch(options *WindowsProtectionStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

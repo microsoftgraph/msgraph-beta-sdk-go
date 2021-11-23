@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}\policyStatusDetails
+// PolicyStatusDetailsRequestBuilder builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}\policyStatusDetails
 type PolicyStatusDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PolicyStatusDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PolicyStatusDetailsRequestBuilderGetOptions options for Get
 type PolicyStatusDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PolicyStatusDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Policy and application status details for this device.
+// PolicyStatusDetailsRequestBuilderGetQueryParameters policy and application status details for this device.
 type PolicyStatusDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PolicyStatusDetailsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PolicyStatusDetailsRequestBuilderPostOptions options for Post
 type PolicyStatusDetailsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetail;
@@ -56,10 +56,7 @@ type PolicyStatusDetailsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PolicyStatusDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyStatusDetailsRequestBuilderInternal instantiates a new PolicyStatusDetailsRequestBuilder and sets the default values.
 func NewPolicyStatusDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyStatusDetailsRequestBuilder) {
     m := &PolicyStatusDetailsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPolicyStatusDetailsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicyStatusDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyStatusDetailsRequestBuilder instantiates a new PolicyStatusDetailsRequestBuilder and sets the default values.
 func NewPolicyStatusDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyStatusDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyStatusDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation policy and application status details for this device.
 func (m *PolicyStatusDetailsRequestBuilder) CreateGetRequestInformation(options *PolicyStatusDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PolicyStatusDetailsRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation policy and application status details for this device.
 func (m *PolicyStatusDetailsRequestBuilder) CreatePostRequestInformation(options *PolicyStatusDetailsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PolicyStatusDetailsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// Get policy and application status details for this device.
 func (m *PolicyStatusDetailsRequestBuilder) Get(options *PolicyStatusDetailsRequestBuilderGetOptions)(*PolicyStatusDetailsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PolicyStatusDetailsRequestBuilder) Get(options *PolicyStatusDetailsRequ
     }
     return res.(*PolicyStatusDetailsResponse), nil
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// Post policy and application status details for this device.
 func (m *PolicyStatusDetailsRequestBuilder) Post(options *PolicyStatusDetailsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetail, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

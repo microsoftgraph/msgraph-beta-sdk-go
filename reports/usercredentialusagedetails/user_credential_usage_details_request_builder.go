@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\userCredentialUsageDetails
+// UserCredentialUsageDetailsRequestBuilder builds and executes requests for operations under \reports\userCredentialUsageDetails
 type UserCredentialUsageDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserCredentialUsageDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserCredentialUsageDetailsRequestBuilderGetOptions options for Get
 type UserCredentialUsageDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserCredentialUsageDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get userCredentialUsageDetails from reports
+// UserCredentialUsageDetailsRequestBuilderGetQueryParameters get userCredentialUsageDetails from reports
 type UserCredentialUsageDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserCredentialUsageDetailsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserCredentialUsageDetailsRequestBuilderPostOptions options for Post
 type UserCredentialUsageDetailsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCredentialUsageDetails;
@@ -56,10 +56,7 @@ type UserCredentialUsageDetailsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserCredentialUsageDetailsRequestBuilderInternal instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
 func NewUserCredentialUsageDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserCredentialUsageDetailsRequestBuilder) {
     m := &UserCredentialUsageDetailsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserCredentialUsageDetailsRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserCredentialUsageDetailsRequestBuilder instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
 func NewUserCredentialUsageDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserCredentialUsageDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserCredentialUsageDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get userCredentialUsageDetails from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get userCredentialUsageDetails from reports
 func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation(options *UserCredentialUsageDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Create new navigation property to userCredentialUsageDetails for reports
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to userCredentialUsageDetails for reports
 func (m *UserCredentialUsageDetailsRequestBuilder) CreatePostRequestInformation(options *UserCredentialUsageDetailsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Get userCredentialUsageDetails from reports
-// Parameters:
-//  - options : Options for the request
+// Get get userCredentialUsageDetails from reports
 func (m *UserCredentialUsageDetailsRequestBuilder) Get(options *UserCredentialUsageDetailsRequestBuilderGetOptions)(*UserCredentialUsageDetailsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Get(options *UserCredentialUs
     }
     return res.(*UserCredentialUsageDetailsResponse), nil
 }
-// Create new navigation property to userCredentialUsageDetails for reports
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to userCredentialUsageDetails for reports
 func (m *UserCredentialUsageDetailsRequestBuilder) Post(options *UserCredentialUsageDetailsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCredentialUsageDetails, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

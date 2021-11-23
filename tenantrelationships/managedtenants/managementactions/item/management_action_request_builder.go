@@ -7,7 +7,7 @@ import (
     i02a0acf8de02ec6d8ae4b62929ab4b9b5af1a13131d5aab7c33afdb467de17e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactions/item/apply"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementActions\{managementAction-id}
+// ManagementActionRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActions\{managementAction-id}
 type ManagementActionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ManagementActionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagementActionRequestBuilderDeleteOptions options for Delete
 type ManagementActionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ManagementActionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagementActionRequestBuilderGetOptions options for Get
 type ManagementActionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ManagementActionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of baseline management actions across managed tenants.
+// ManagementActionRequestBuilderGetQueryParameters the collection of baseline management actions across managed tenants.
 type ManagementActionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagementActionRequestBuilderPatchOptions options for Patch
 type ManagementActionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementAction;
@@ -57,10 +57,7 @@ type ManagementActionRequestBuilderPatchOptions struct {
 func (m *ManagementActionRequestBuilder) Apply()(*i02a0acf8de02ec6d8ae4b62929ab4b9b5af1a13131d5aab7c33afdb467de17e0.ApplyRequestBuilder) {
     return i02a0acf8de02ec6d8ae4b62929ab4b9b5af1a13131d5aab7c33afdb467de17e0.NewApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ManagementActionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementActionRequestBuilderInternal instantiates a new ManagementActionRequestBuilder and sets the default values.
 func NewManagementActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementActionRequestBuilder) {
     m := &ManagementActionRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewManagementActionRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementActionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementActionRequestBuilder instantiates a new ManagementActionRequestBuilder and sets the default values.
 func NewManagementActionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementActionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of baseline management actions across managed tenants.
 func (m *ManagementActionRequestBuilder) CreateDeleteRequestInformation(options *ManagementActionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ManagementActionRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of baseline management actions across managed tenants.
 func (m *ManagementActionRequestBuilder) CreateGetRequestInformation(options *ManagementActionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ManagementActionRequestBuilder) CreateGetRequestInformation(options *Ma
     }
     return requestInfo, nil
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of baseline management actions across managed tenants.
 func (m *ManagementActionRequestBuilder) CreatePatchRequestInformation(options *ManagementActionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *ManagementActionRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of baseline management actions across managed tenants.
 func (m *ManagementActionRequestBuilder) Delete(options *ManagementActionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *ManagementActionRequestBuilder) Delete(options *ManagementActionRequest
     }
     return nil
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of baseline management actions across managed tenants.
 func (m *ManagementActionRequestBuilder) Get(options *ManagementActionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementAction, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *ManagementActionRequestBuilder) Get(options *ManagementActionRequestBui
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementAction), nil
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of baseline management actions across managed tenants.
 func (m *ManagementActionRequestBuilder) Patch(options *ManagementActionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

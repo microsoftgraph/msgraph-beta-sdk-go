@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\authentication\phoneMethods\{phoneAuthenticationMethod-id}
+// PhoneAuthenticationMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\phoneMethods\{phoneAuthenticationMethod-id}
 type PhoneAuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PhoneAuthenticationMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PhoneAuthenticationMethodRequestBuilderDeleteOptions options for Delete
 type PhoneAuthenticationMethodRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PhoneAuthenticationMethodRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PhoneAuthenticationMethodRequestBuilderGetOptions options for Get
 type PhoneAuthenticationMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PhoneAuthenticationMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get phoneMethods from users
+// PhoneAuthenticationMethodRequestBuilderGetQueryParameters get phoneMethods from users
 type PhoneAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PhoneAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type PhoneAuthenticationMethodRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PhoneAuthenticationMethod;
@@ -53,10 +53,7 @@ type PhoneAuthenticationMethodRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PhoneAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPhoneAuthenticationMethodRequestBuilderInternal instantiates a new PhoneAuthenticationMethodRequestBuilder and sets the default values.
 func NewPhoneAuthenticationMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PhoneAuthenticationMethodRequestBuilder) {
     m := &PhoneAuthenticationMethodRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPhoneAuthenticationMethodRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PhoneAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPhoneAuthenticationMethodRequestBuilder instantiates a new PhoneAuthenticationMethodRequestBuilder and sets the default values.
 func NewPhoneAuthenticationMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PhoneAuthenticationMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPhoneAuthenticationMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property phoneMethods for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property phoneMethods for users
 func (m *PhoneAuthenticationMethodRequestBuilder) CreateDeleteRequestInformation(options *PhoneAuthenticationMethodRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PhoneAuthenticationMethodRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// Get phoneMethods from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get phoneMethods from users
 func (m *PhoneAuthenticationMethodRequestBuilder) CreateGetRequestInformation(options *PhoneAuthenticationMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PhoneAuthenticationMethodRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Update the navigation property phoneMethods in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property phoneMethods in users
 func (m *PhoneAuthenticationMethodRequestBuilder) CreatePatchRequestInformation(options *PhoneAuthenticationMethodRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PhoneAuthenticationMethodRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete navigation property phoneMethods for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property phoneMethods for users
 func (m *PhoneAuthenticationMethodRequestBuilder) Delete(options *PhoneAuthenticationMethodRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PhoneAuthenticationMethodRequestBuilder) Delete(options *PhoneAuthentic
     }
     return nil
 }
-// Get phoneMethods from users
-// Parameters:
-//  - options : Options for the request
+// Get get phoneMethods from users
 func (m *PhoneAuthenticationMethodRequestBuilder) Get(options *PhoneAuthenticationMethodRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PhoneAuthenticationMethod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PhoneAuthenticationMethodRequestBuilder) Get(options *PhoneAuthenticati
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PhoneAuthenticationMethod), nil
 }
-// Update the navigation property phoneMethods in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property phoneMethods in users
 func (m *PhoneAuthenticationMethodRequestBuilder) Patch(options *PhoneAuthenticationMethodRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

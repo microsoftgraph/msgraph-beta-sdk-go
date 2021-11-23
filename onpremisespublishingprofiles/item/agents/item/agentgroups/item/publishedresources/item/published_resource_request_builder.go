@@ -8,7 +8,7 @@ import (
     i2aacb4703472567952c422bd7725e8f8a4490b357f9438146c356f494e629957 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/agents/item/agentgroups/item/publishedresources/item/agentgroups/item"
 )
 
-// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\agents\{onPremisesAgent-id}\agentGroups\{onPremisesAgentGroup-id}\publishedResources\{publishedResource-id}
+// PublishedResourceRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\agents\{onPremisesAgent-id}\agentGroups\{onPremisesAgentGroup-id}\publishedResources\{publishedResource-id}
 type PublishedResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PublishedResourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PublishedResourceRequestBuilderDeleteOptions options for Delete
 type PublishedResourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PublishedResourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PublishedResourceRequestBuilderGetOptions options for Get
 type PublishedResourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type PublishedResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
+// PublishedResourceRequestBuilderGetQueryParameters list of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 type PublishedResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PublishedResourceRequestBuilderPatchOptions options for Patch
 type PublishedResourceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PublishedResource;
@@ -58,9 +58,7 @@ type PublishedResourceRequestBuilderPatchOptions struct {
 func (m *PublishedResourceRequestBuilder) AgentGroups()(*if5d15f473450b1625bfded738e48c555461e79a3c79557b0671cfbccdccf8f86.AgentGroupsRequestBuilder) {
     return if5d15f473450b1625bfded738e48c555461e79a3c79557b0671cfbccdccf8f86.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item.agentGroups.item.publishedResources.item.agentGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgentGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item.agentGroups.item.publishedResources.item.agentGroups.item collection
 func (m *PublishedResourceRequestBuilder) AgentGroupsById(id string)(*i2aacb4703472567952c422bd7725e8f8a4490b357f9438146c356f494e629957.OnPremisesAgentGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,10 +69,7 @@ func (m *PublishedResourceRequestBuilder) AgentGroupsById(id string)(*i2aacb4703
     }
     return i2aacb4703472567952c422bd7725e8f8a4490b357f9438146c356f494e629957.NewOnPremisesAgentGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new PublishedResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPublishedResourceRequestBuilderInternal instantiates a new PublishedResourceRequestBuilder and sets the default values.
 func NewPublishedResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PublishedResourceRequestBuilder) {
     m := &PublishedResourceRequestBuilder{
     }
@@ -87,18 +82,13 @@ func NewPublishedResourceRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PublishedResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPublishedResourceRequestBuilder instantiates a new PublishedResourceRequestBuilder and sets the default values.
 func NewPublishedResourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PublishedResourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPublishedResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *PublishedResourceRequestBuilder) CreateDeleteRequestInformation(options *PublishedResourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,9 +105,7 @@ func (m *PublishedResourceRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *PublishedResourceRequestBuilder) CreateGetRequestInformation(options *PublishedResourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *PublishedResourceRequestBuilder) CreateGetRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *PublishedResourceRequestBuilder) CreatePatchRequestInformation(options *PublishedResourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *PublishedResourceRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete list of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *PublishedResourceRequestBuilder) Delete(options *PublishedResourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *PublishedResourceRequestBuilder) Delete(options *PublishedResourceReque
     }
     return nil
 }
-// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get list of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *PublishedResourceRequestBuilder) Get(options *PublishedResourceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PublishedResource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *PublishedResourceRequestBuilder) Get(options *PublishedResourceRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PublishedResource), nil
 }
-// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch list of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *PublishedResourceRequestBuilder) Patch(options *PublishedResourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

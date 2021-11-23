@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}\uploadAgent
+// UploadAgentRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}\uploadAgent
 type UploadAgentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UploadAgentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UploadAgentRequestBuilderDeleteOptions options for Delete
 type UploadAgentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UploadAgentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UploadAgentRequestBuilderGetOptions options for Get
 type UploadAgentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UploadAgentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get uploadAgent from dataClassification
+// UploadAgentRequestBuilderGetQueryParameters get uploadAgent from dataClassification
 type UploadAgentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UploadAgentRequestBuilderPatchOptions options for Patch
 type UploadAgentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent;
@@ -53,10 +53,7 @@ type UploadAgentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UploadAgentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUploadAgentRequestBuilderInternal instantiates a new UploadAgentRequestBuilder and sets the default values.
 func NewUploadAgentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UploadAgentRequestBuilder) {
     m := &UploadAgentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUploadAgentRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UploadAgentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUploadAgentRequestBuilder instantiates a new UploadAgentRequestBuilder and sets the default values.
 func NewUploadAgentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UploadAgentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUploadAgentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property uploadAgent for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property uploadAgent for dataClassification
 func (m *UploadAgentRequestBuilder) CreateDeleteRequestInformation(options *UploadAgentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UploadAgentRequestBuilder) CreateDeleteRequestInformation(options *Uplo
     }
     return requestInfo, nil
 }
-// Get uploadAgent from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get uploadAgent from dataClassification
 func (m *UploadAgentRequestBuilder) CreateGetRequestInformation(options *UploadAgentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UploadAgentRequestBuilder) CreateGetRequestInformation(options *UploadA
     }
     return requestInfo, nil
 }
-// Update the navigation property uploadAgent in dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property uploadAgent in dataClassification
 func (m *UploadAgentRequestBuilder) CreatePatchRequestInformation(options *UploadAgentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UploadAgentRequestBuilder) CreatePatchRequestInformation(options *Uploa
     }
     return requestInfo, nil
 }
-// Delete navigation property uploadAgent for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property uploadAgent for dataClassification
 func (m *UploadAgentRequestBuilder) Delete(options *UploadAgentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UploadAgentRequestBuilder) Delete(options *UploadAgentRequestBuilderDel
     }
     return nil
 }
-// Get uploadAgent from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get uploadAgent from dataClassification
 func (m *UploadAgentRequestBuilder) Get(options *UploadAgentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UploadAgentRequestBuilder) Get(options *UploadAgentRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent), nil
 }
-// Update the navigation property uploadAgent in dataClassification
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property uploadAgent in dataClassification
 func (m *UploadAgentRequestBuilder) Patch(options *UploadAgentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

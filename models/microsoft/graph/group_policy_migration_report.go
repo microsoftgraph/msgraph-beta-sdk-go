@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// GroupPolicyMigrationReport 
 type GroupPolicyMigrationReport struct {
     Entity
     // The date and time at which the GroupPolicyMigrationReport was created.
@@ -37,14 +37,14 @@ type GroupPolicyMigrationReport struct {
     // A list of unsupported group policy extensions inside the Group Policy Object.
     unsupportedGroupPolicyExtensions []UnsupportedGroupPolicyExtension;
 }
-// Instantiates a new groupPolicyMigrationReport and sets the default values.
+// NewGroupPolicyMigrationReport instantiates a new groupPolicyMigrationReport and sets the default values.
 func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {
     m := &GroupPolicyMigrationReport{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the createdDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
 func (m *GroupPolicyMigrationReport) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *GroupPolicyMigrationReport) GetCreatedDateTime()(*i336074805fc853987abe
         return m.createdDateTime
     }
 }
-// Gets the displayName property value. The name of Group Policy Object from the GPO Xml Content
+// GetDisplayName gets the displayName property value. The name of Group Policy Object from the GPO Xml Content
 func (m *GroupPolicyMigrationReport) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *GroupPolicyMigrationReport) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the groupPolicyCreatedDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
+// GetGroupPolicyCreatedDateTime gets the groupPolicyCreatedDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
 func (m *GroupPolicyMigrationReport) GetGroupPolicyCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *GroupPolicyMigrationReport) GetGroupPolicyCreatedDateTime()(*i336074805
         return m.groupPolicyCreatedDateTime
     }
 }
-// Gets the groupPolicyLastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
+// GetGroupPolicyLastModifiedDateTime gets the groupPolicyLastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
 func (m *GroupPolicyMigrationReport) GetGroupPolicyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *GroupPolicyMigrationReport) GetGroupPolicyLastModifiedDateTime()(*i3360
         return m.groupPolicyLastModifiedDateTime
     }
 }
-// Gets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
+// GetGroupPolicyObjectId gets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
 func (m *GroupPolicyMigrationReport) GetGroupPolicyObjectId()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *GroupPolicyMigrationReport) GetGroupPolicyObjectId()(*string) {
         return m.groupPolicyObjectId
     }
 }
-// Gets the groupPolicySettingMappings property value. A list of group policy settings to MDM/Intune mappings.
+// GetGroupPolicySettingMappings gets the groupPolicySettingMappings property value. A list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicyMigrationReport) GetGroupPolicySettingMappings()([]GroupPolicySettingMapping) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *GroupPolicyMigrationReport) GetGroupPolicySettingMappings()([]GroupPoli
         return m.groupPolicySettingMappings
     }
 }
-// Gets the lastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
 func (m *GroupPolicyMigrationReport) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *GroupPolicyMigrationReport) GetLastModifiedDateTime()(*i336074805fc8539
         return m.lastModifiedDateTime
     }
 }
-// Gets the migrationReadiness property value. The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
+// GetMigrationReadiness gets the migrationReadiness property value. The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
 func (m *GroupPolicyMigrationReport) GetMigrationReadiness()(*GroupPolicyMigrationReadiness) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *GroupPolicyMigrationReport) GetMigrationReadiness()(*GroupPolicyMigrati
         return m.migrationReadiness
     }
 }
-// Gets the ouDistinguishedName property value. The distinguished name of the OU.
+// GetOuDistinguishedName gets the ouDistinguishedName property value. The distinguished name of the OU.
 func (m *GroupPolicyMigrationReport) GetOuDistinguishedName()(*string) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *GroupPolicyMigrationReport) GetOuDistinguishedName()(*string) {
         return m.ouDistinguishedName
     }
 }
-// Gets the supportedSettingsCount property value. The number of Group Policy Settings supported by Intune.
+// GetSupportedSettingsCount gets the supportedSettingsCount property value. The number of Group Policy Settings supported by Intune.
 func (m *GroupPolicyMigrationReport) GetSupportedSettingsCount()(*int32) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *GroupPolicyMigrationReport) GetSupportedSettingsCount()(*int32) {
         return m.supportedSettingsCount
     }
 }
-// Gets the supportedSettingsPercent property value. The Percentage of Group Policy Settings supported by Intune.
+// GetSupportedSettingsPercent gets the supportedSettingsPercent property value. The Percentage of Group Policy Settings supported by Intune.
 func (m *GroupPolicyMigrationReport) GetSupportedSettingsPercent()(*int32) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *GroupPolicyMigrationReport) GetSupportedSettingsPercent()(*int32) {
         return m.supportedSettingsPercent
     }
 }
-// Gets the targetedInActiveDirectory property value. The Targeted in AD property from GPO Xml Content
+// GetTargetedInActiveDirectory gets the targetedInActiveDirectory property value. The Targeted in AD property from GPO Xml Content
 func (m *GroupPolicyMigrationReport) GetTargetedInActiveDirectory()(*bool) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *GroupPolicyMigrationReport) GetTargetedInActiveDirectory()(*bool) {
         return m.targetedInActiveDirectory
     }
 }
-// Gets the totalSettingsCount property value. The total number of Group Policy Settings from GPO file.
+// GetTotalSettingsCount gets the totalSettingsCount property value. The total number of Group Policy Settings from GPO file.
 func (m *GroupPolicyMigrationReport) GetTotalSettingsCount()(*int32) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *GroupPolicyMigrationReport) GetTotalSettingsCount()(*int32) {
         return m.totalSettingsCount
     }
 }
-// Gets the unsupportedGroupPolicyExtensions property value. A list of unsupported group policy extensions inside the Group Policy Object.
+// GetUnsupportedGroupPolicyExtensions gets the unsupportedGroupPolicyExtensions property value. A list of unsupported group policy extensions inside the Group Policy Object.
 func (m *GroupPolicyMigrationReport) GetUnsupportedGroupPolicyExtensions()([]UnsupportedGroupPolicyExtension) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *GroupPolicyMigrationReport) GetUnsupportedGroupPolicyExtensions()([]Uns
         return m.unsupportedGroupPolicyExtensions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -313,9 +313,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
 func (m *GroupPolicyMigrationReport) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GroupPolicyMigrationReport) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -418,87 +416,59 @@ func (m *GroupPolicyMigrationReport) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
-// Sets the createdDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
 func (m *GroupPolicyMigrationReport) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the displayName property value. The name of Group Policy Object from the GPO Xml Content
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The name of Group Policy Object from the GPO Xml Content
 func (m *GroupPolicyMigrationReport) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the groupPolicyCreatedDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
-// Parameters:
-//  - value : Value to set for the groupPolicyCreatedDateTime property.
+// SetGroupPolicyCreatedDateTime sets the groupPolicyCreatedDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
 func (m *GroupPolicyMigrationReport) SetGroupPolicyCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.groupPolicyCreatedDateTime = value
 }
-// Sets the groupPolicyLastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
-// Parameters:
-//  - value : Value to set for the groupPolicyLastModifiedDateTime property.
+// SetGroupPolicyLastModifiedDateTime sets the groupPolicyLastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
 func (m *GroupPolicyMigrationReport) SetGroupPolicyLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.groupPolicyLastModifiedDateTime = value
 }
-// Sets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
-// Parameters:
-//  - value : Value to set for the groupPolicyObjectId property.
+// SetGroupPolicyObjectId sets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
 func (m *GroupPolicyMigrationReport) SetGroupPolicyObjectId(value *string)() {
     m.groupPolicyObjectId = value
 }
-// Sets the groupPolicySettingMappings property value. A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - value : Value to set for the groupPolicySettingMappings property.
+// SetGroupPolicySettingMappings sets the groupPolicySettingMappings property value. A list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicyMigrationReport) SetGroupPolicySettingMappings(value []GroupPolicySettingMapping)() {
     m.groupPolicySettingMappings = value
 }
-// Sets the lastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
 func (m *GroupPolicyMigrationReport) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the migrationReadiness property value. The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
-// Parameters:
-//  - value : Value to set for the migrationReadiness property.
+// SetMigrationReadiness sets the migrationReadiness property value. The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
 func (m *GroupPolicyMigrationReport) SetMigrationReadiness(value *GroupPolicyMigrationReadiness)() {
     m.migrationReadiness = value
 }
-// Sets the ouDistinguishedName property value. The distinguished name of the OU.
-// Parameters:
-//  - value : Value to set for the ouDistinguishedName property.
+// SetOuDistinguishedName sets the ouDistinguishedName property value. The distinguished name of the OU.
 func (m *GroupPolicyMigrationReport) SetOuDistinguishedName(value *string)() {
     m.ouDistinguishedName = value
 }
-// Sets the supportedSettingsCount property value. The number of Group Policy Settings supported by Intune.
-// Parameters:
-//  - value : Value to set for the supportedSettingsCount property.
+// SetSupportedSettingsCount sets the supportedSettingsCount property value. The number of Group Policy Settings supported by Intune.
 func (m *GroupPolicyMigrationReport) SetSupportedSettingsCount(value *int32)() {
     m.supportedSettingsCount = value
 }
-// Sets the supportedSettingsPercent property value. The Percentage of Group Policy Settings supported by Intune.
-// Parameters:
-//  - value : Value to set for the supportedSettingsPercent property.
+// SetSupportedSettingsPercent sets the supportedSettingsPercent property value. The Percentage of Group Policy Settings supported by Intune.
 func (m *GroupPolicyMigrationReport) SetSupportedSettingsPercent(value *int32)() {
     m.supportedSettingsPercent = value
 }
-// Sets the targetedInActiveDirectory property value. The Targeted in AD property from GPO Xml Content
-// Parameters:
-//  - value : Value to set for the targetedInActiveDirectory property.
+// SetTargetedInActiveDirectory sets the targetedInActiveDirectory property value. The Targeted in AD property from GPO Xml Content
 func (m *GroupPolicyMigrationReport) SetTargetedInActiveDirectory(value *bool)() {
     m.targetedInActiveDirectory = value
 }
-// Sets the totalSettingsCount property value. The total number of Group Policy Settings from GPO file.
-// Parameters:
-//  - value : Value to set for the totalSettingsCount property.
+// SetTotalSettingsCount sets the totalSettingsCount property value. The total number of Group Policy Settings from GPO file.
 func (m *GroupPolicyMigrationReport) SetTotalSettingsCount(value *int32)() {
     m.totalSettingsCount = value
 }
-// Sets the unsupportedGroupPolicyExtensions property value. A list of unsupported group policy extensions inside the Group Policy Object.
-// Parameters:
-//  - value : Value to set for the unsupportedGroupPolicyExtensions property.
+// SetUnsupportedGroupPolicyExtensions sets the unsupportedGroupPolicyExtensions property value. A list of unsupported group policy extensions inside the Group Policy Object.
 func (m *GroupPolicyMigrationReport) SetUnsupportedGroupPolicyExtensions(value []UnsupportedGroupPolicyExtension)() {
     m.unsupportedGroupPolicyExtensions = value
 }

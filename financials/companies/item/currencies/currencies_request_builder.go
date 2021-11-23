@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\currencies
+// CurrenciesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\currencies
 type CurrenciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CurrenciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CurrenciesRequestBuilderGetOptions options for Get
 type CurrenciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CurrenciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get currencies from financials
+// CurrenciesRequestBuilderGetQueryParameters get currencies from financials
 type CurrenciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CurrenciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CurrenciesRequestBuilderPostOptions options for Post
 type CurrenciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Currency;
@@ -56,10 +56,7 @@ type CurrenciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CurrenciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCurrenciesRequestBuilderInternal instantiates a new CurrenciesRequestBuilder and sets the default values.
 func NewCurrenciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CurrenciesRequestBuilder) {
     m := &CurrenciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCurrenciesRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CurrenciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCurrenciesRequestBuilder instantiates a new CurrenciesRequestBuilder and sets the default values.
 func NewCurrenciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CurrenciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCurrenciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get currencies from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get currencies from financials
 func (m *CurrenciesRequestBuilder) CreateGetRequestInformation(options *CurrenciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CurrenciesRequestBuilder) CreateGetRequestInformation(options *Currenci
     }
     return requestInfo, nil
 }
-// Create new navigation property to currencies for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to currencies for financials
 func (m *CurrenciesRequestBuilder) CreatePostRequestInformation(options *CurrenciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CurrenciesRequestBuilder) CreatePostRequestInformation(options *Currenc
     }
     return requestInfo, nil
 }
-// Get currencies from financials
-// Parameters:
-//  - options : Options for the request
+// Get get currencies from financials
 func (m *CurrenciesRequestBuilder) Get(options *CurrenciesRequestBuilderGetOptions)(*CurrenciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CurrenciesRequestBuilder) Get(options *CurrenciesRequestBuilderGetOptio
     }
     return res.(*CurrenciesResponse), nil
 }
-// Create new navigation property to currencies for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to currencies for financials
 func (m *CurrenciesRequestBuilder) Post(options *CurrenciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Currency, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -16,7 +16,7 @@ import (
     ib0522360ed077a6c16fe77b5b9aca7adca496e97d4d37f10bf42394220f94da8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/groupassignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}
+// DeviceShellScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}
 type DeviceShellScriptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type DeviceShellScriptRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceShellScriptRequestBuilderDeleteOptions options for Delete
 type DeviceShellScriptRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -34,7 +34,7 @@ type DeviceShellScriptRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceShellScriptRequestBuilderGetOptions options for Get
 type DeviceShellScriptRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -45,14 +45,14 @@ type DeviceShellScriptRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device shell scripts associated with the tenant.
+// DeviceShellScriptRequestBuilderGetQueryParameters the list of device shell scripts associated with the tenant.
 type DeviceShellScriptRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceShellScriptRequestBuilderPatchOptions options for Patch
 type DeviceShellScriptRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScript;
@@ -69,9 +69,7 @@ func (m *DeviceShellScriptRequestBuilder) Assign()(*ibc0bdc7d62407627f799f1887a2
 func (m *DeviceShellScriptRequestBuilder) Assignments()(*i16903a7f82aef1b9172b084c2f688434ec7df2fe7382cd313d3acfe5d99975b1.AssignmentsRequestBuilder) {
     return i16903a7f82aef1b9172b084c2f688434ec7df2fe7382cd313d3acfe5d99975b1.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.assignments.item collection
 func (m *DeviceShellScriptRequestBuilder) AssignmentsById(id string)(*i60b1d872fe3c79385687ac815dc9a345c65cf3a1d7475fcd16834aa195d0ef49.DeviceManagementScriptAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -82,10 +80,7 @@ func (m *DeviceShellScriptRequestBuilder) AssignmentsById(id string)(*i60b1d872f
     }
     return i60b1d872fe3c79385687ac815dc9a345c65cf3a1d7475fcd16834aa195d0ef49.NewDeviceManagementScriptAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DeviceShellScriptRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceShellScriptRequestBuilderInternal instantiates a new DeviceShellScriptRequestBuilder and sets the default values.
 func NewDeviceShellScriptRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceShellScriptRequestBuilder) {
     m := &DeviceShellScriptRequestBuilder{
     }
@@ -98,18 +93,13 @@ func NewDeviceShellScriptRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceShellScriptRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceShellScriptRequestBuilder instantiates a new DeviceShellScriptRequestBuilder and sets the default values.
 func NewDeviceShellScriptRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceShellScriptRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceShellScriptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of device shell scripts associated with the tenant.
 func (m *DeviceShellScriptRequestBuilder) CreateDeleteRequestInformation(options *DeviceShellScriptRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *DeviceShellScriptRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// The list of device shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device shell scripts associated with the tenant.
 func (m *DeviceShellScriptRequestBuilder) CreateGetRequestInformation(options *DeviceShellScriptRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *DeviceShellScriptRequestBuilder) CreateGetRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// The list of device shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of device shell scripts associated with the tenant.
 func (m *DeviceShellScriptRequestBuilder) CreatePatchRequestInformation(options *DeviceShellScriptRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -168,9 +154,7 @@ func (m *DeviceShellScriptRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The list of device shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of device shell scripts associated with the tenant.
 func (m *DeviceShellScriptRequestBuilder) Delete(options *DeviceShellScriptRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -185,9 +169,7 @@ func (m *DeviceShellScriptRequestBuilder) Delete(options *DeviceShellScriptReque
 func (m *DeviceShellScriptRequestBuilder) DeviceRunStates()(*ic9701e6869c3e935d0c0f54c628c153ce833fd193972ac4ccd97a4090f51262c.DeviceRunStatesRequestBuilder) {
     return ic9701e6869c3e935d0c0f54c628c153ce833fd193972ac4ccd97a4090f51262c.NewDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.deviceRunStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceRunStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.deviceRunStates.item collection
 func (m *DeviceShellScriptRequestBuilder) DeviceRunStatesById(id string)(*i4e99eee29f4d27b3c3ed9b39a732efaaadc4e736ad51030857642293b548d3cb.DeviceManagementScriptDeviceStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -198,9 +180,7 @@ func (m *DeviceShellScriptRequestBuilder) DeviceRunStatesById(id string)(*i4e99e
     }
     return i4e99eee29f4d27b3c3ed9b39a732efaaadc4e736ad51030857642293b548d3cb.NewDeviceManagementScriptDeviceStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The list of device shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of device shell scripts associated with the tenant.
 func (m *DeviceShellScriptRequestBuilder) Get(options *DeviceShellScriptRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScript, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -215,9 +195,7 @@ func (m *DeviceShellScriptRequestBuilder) Get(options *DeviceShellScriptRequestB
 func (m *DeviceShellScriptRequestBuilder) GroupAssignments()(*i1c6baf2c64fdbaacd3e4b6e2fc919aa7f1ee2113534c7b651c6f577f13cdcbd9.GroupAssignmentsRequestBuilder) {
     return i1c6baf2c64fdbaacd3e4b6e2fc919aa7f1ee2113534c7b651c6f577f13cdcbd9.NewGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.groupAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.groupAssignments.item collection
 func (m *DeviceShellScriptRequestBuilder) GroupAssignmentsById(id string)(*ib0522360ed077a6c16fe77b5b9aca7adca496e97d4d37f10bf42394220f94da8.DeviceManagementScriptGroupAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -228,9 +206,7 @@ func (m *DeviceShellScriptRequestBuilder) GroupAssignmentsById(id string)(*ib052
     }
     return ib0522360ed077a6c16fe77b5b9aca7adca496e97d4d37f10bf42394220f94da8.NewDeviceManagementScriptGroupAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The list of device shell scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of device shell scripts associated with the tenant.
 func (m *DeviceShellScriptRequestBuilder) Patch(options *DeviceShellScriptRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -248,9 +224,7 @@ func (m *DeviceShellScriptRequestBuilder) RunSummary()(*i801a613b15d2cbc0073244d
 func (m *DeviceShellScriptRequestBuilder) UserRunStates()(*i7f208efc5d45cbfede2e60d9bbf7b141234bf2bb3b1aa6abb8ccde6a36185ad5.UserRunStatesRequestBuilder) {
     return i7f208efc5d45cbfede2e60d9bbf7b141234bf2bb3b1aa6abb8ccde6a36185ad5.NewUserRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.userRunStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UserRunStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.userRunStates.item collection
 func (m *DeviceShellScriptRequestBuilder) UserRunStatesById(id string)(*i3afdf7675877765716ac7dd1dadedd54dc760d42e9a7d4d3f623971af61f9ddd.DeviceManagementScriptUserStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

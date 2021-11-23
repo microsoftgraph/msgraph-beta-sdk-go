@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\microsoft.graph.windowsUpdates.updateAudience
+// UpdateAudienceRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\microsoft.graph.windowsUpdates.updateAudience
 type UpdateAudienceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UpdateAudienceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UpdateAudienceRequestBuilderPostOptions options for Post
 type UpdateAudienceRequestBuilderPostOptions struct {
     // 
     Body *UpdateAudienceRequestBody;
@@ -24,10 +24,7 @@ type UpdateAudienceRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UpdateAudienceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdateAudienceRequestBuilderInternal instantiates a new UpdateAudienceRequestBuilder and sets the default values.
 func NewUpdateAudienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateAudienceRequestBuilder) {
     m := &UpdateAudienceRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUpdateAudienceRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdateAudienceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdateAudienceRequestBuilder instantiates a new UpdateAudienceRequestBuilder and sets the default values.
 func NewUpdateAudienceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateAudienceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateAudienceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action updateAudience
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action updateAudience
 func (m *UpdateAudienceRequestBuilder) CreatePostRequestInformation(options *UpdateAudienceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UpdateAudienceRequestBuilder) CreatePostRequestInformation(options *Upd
     }
     return requestInfo, nil
 }
-// Invoke action updateAudience
-// Parameters:
-//  - options : Options for the request
+// Post invoke action updateAudience
 func (m *UpdateAudienceRequestBuilder) Post(options *UpdateAudienceRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

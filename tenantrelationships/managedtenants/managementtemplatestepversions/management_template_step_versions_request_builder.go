@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions
+// ManagementTemplateStepVersionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions
 type ManagementTemplateStepVersionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagementTemplateStepVersionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagementTemplateStepVersionsRequestBuilderGetOptions options for Get
 type ManagementTemplateStepVersionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ManagementTemplateStepVersionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get managementTemplateStepVersions from tenantRelationships
+// ManagementTemplateStepVersionsRequestBuilderGetQueryParameters get managementTemplateStepVersions from tenantRelationships
 type ManagementTemplateStepVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ManagementTemplateStepVersionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ManagementTemplateStepVersionsRequestBuilderPostOptions options for Post
 type ManagementTemplateStepVersionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateStepVersion;
@@ -56,10 +56,7 @@ type ManagementTemplateStepVersionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagementTemplateStepVersionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateStepVersionsRequestBuilderInternal instantiates a new ManagementTemplateStepVersionsRequestBuilder and sets the default values.
 func NewManagementTemplateStepVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateStepVersionsRequestBuilder) {
     m := &ManagementTemplateStepVersionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewManagementTemplateStepVersionsRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementTemplateStepVersionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateStepVersionsRequestBuilder instantiates a new ManagementTemplateStepVersionsRequestBuilder and sets the default values.
 func NewManagementTemplateStepVersionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateStepVersionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateStepVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get managementTemplateStepVersions from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get managementTemplateStepVersions from tenantRelationships
 func (m *ManagementTemplateStepVersionsRequestBuilder) CreateGetRequestInformation(options *ManagementTemplateStepVersionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ManagementTemplateStepVersionsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Create new navigation property to managementTemplateStepVersions for tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to managementTemplateStepVersions for tenantRelationships
 func (m *ManagementTemplateStepVersionsRequestBuilder) CreatePostRequestInformation(options *ManagementTemplateStepVersionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ManagementTemplateStepVersionsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Get managementTemplateStepVersions from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Get get managementTemplateStepVersions from tenantRelationships
 func (m *ManagementTemplateStepVersionsRequestBuilder) Get(options *ManagementTemplateStepVersionsRequestBuilderGetOptions)(*ManagementTemplateStepVersionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ManagementTemplateStepVersionsRequestBuilder) Get(options *ManagementTe
     }
     return res.(*ManagementTemplateStepVersionsResponse), nil
 }
-// Create new navigation property to managementTemplateStepVersions for tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to managementTemplateStepVersions for tenantRelationships
 func (m *ManagementTemplateStepVersionsRequestBuilder) Post(options *ManagementTemplateStepVersionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateStepVersion, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

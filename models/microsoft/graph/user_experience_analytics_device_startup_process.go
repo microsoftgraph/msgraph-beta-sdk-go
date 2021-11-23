@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserExperienceAnalyticsDeviceStartupProcess 
 type UserExperienceAnalyticsDeviceStartupProcess struct {
     Entity
     // The user experience analytics device id.
@@ -18,14 +18,14 @@ type UserExperienceAnalyticsDeviceStartupProcess struct {
     // User experience analytics device startup process impact in milliseconds.
     startupImpactInMs *int32;
 }
-// Instantiates a new userExperienceAnalyticsDeviceStartupProcess and sets the default values.
+// NewUserExperienceAnalyticsDeviceStartupProcess instantiates a new userExperienceAnalyticsDeviceStartupProcess and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcess()(*UserExperienceAnalyticsDeviceStartupProcess) {
     m := &UserExperienceAnalyticsDeviceStartupProcess{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the managedDeviceId property value. The user experience analytics device id.
+// GetManagedDeviceId gets the managedDeviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetManagedDeviceId()(*string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetManagedDeviceId()(*stri
         return m.managedDeviceId
     }
 }
-// Gets the processName property value. User experience analytics device startup process name.
+// GetProcessName gets the processName property value. User experience analytics device startup process name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProcessName()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProcessName()(*string) 
         return m.processName
     }
 }
-// Gets the productName property value. The user experience analytics device startup process product name.
+// GetProductName gets the productName property value. The user experience analytics device startup process product name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProductName()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProductName()(*string) 
         return m.productName
     }
 }
-// Gets the publisher property value. The User experience analytics device startup process publisher.
+// GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetPublisher()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetPublisher()(*string) {
         return m.publisher
     }
 }
-// Gets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
+// GetStartupImpactInMs gets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetStartupImpactInMs()(*int32) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetStartupImpactInMs()(*in
         return m.startupImpactInMs
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,9 +123,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
 func (m *UserExperienceAnalyticsDeviceStartupProcess) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -163,33 +161,23 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i04eb5309
     }
     return nil
 }
-// Sets the managedDeviceId property value. The user experience analytics device id.
-// Parameters:
-//  - value : Value to set for the managedDeviceId property.
+// SetManagedDeviceId sets the managedDeviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetManagedDeviceId(value *string)() {
     m.managedDeviceId = value
 }
-// Sets the processName property value. User experience analytics device startup process name.
-// Parameters:
-//  - value : Value to set for the processName property.
+// SetProcessName sets the processName property value. User experience analytics device startup process name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetProcessName(value *string)() {
     m.processName = value
 }
-// Sets the productName property value. The user experience analytics device startup process product name.
-// Parameters:
-//  - value : Value to set for the productName property.
+// SetProductName sets the productName property value. The user experience analytics device startup process product name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetProductName(value *string)() {
     m.productName = value
 }
-// Sets the publisher property value. The User experience analytics device startup process publisher.
-// Parameters:
-//  - value : Value to set for the publisher property.
+// SetPublisher sets the publisher property value. The User experience analytics device startup process publisher.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetPublisher(value *string)() {
     m.publisher = value
 }
-// Sets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
-// Parameters:
-//  - value : Value to set for the startupImpactInMs property.
+// SetStartupImpactInMs sets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetStartupImpactInMs(value *int32)() {
     m.startupImpactInMs = value
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessActivityUserDetail(date={date})
+// GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessActivityUserDetail(date={date})
 type GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetOptions options for Get
 type GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder and sets the default values.
-// Parameters:
-//  - date : Usage: date={date}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal instantiates a new GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder and sets the default values.
 func NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) {
     m := &GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(path
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder instantiates a new GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder and sets the default values.
 func NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getSkypeForBusinessActivityUserDetail
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getSkypeForBusinessActivityUserDetail
 func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation(options *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// Invoke function getSkypeForBusinessActivityUserDetail
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getSkypeForBusinessActivityUserDetail
 func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) Get(options *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetOptions)([]GetSkypeForBusinessActivityUserDetailWithDate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

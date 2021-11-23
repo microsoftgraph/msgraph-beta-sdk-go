@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\complianceCategories
+// ComplianceCategoriesRequestBuilder builds and executes requests for operations under \deviceManagement\complianceCategories
 type ComplianceCategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ComplianceCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ComplianceCategoriesRequestBuilderGetOptions options for Get
 type ComplianceCategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ComplianceCategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of all compliance categories
+// ComplianceCategoriesRequestBuilderGetQueryParameters list of all compliance categories
 type ComplianceCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ComplianceCategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ComplianceCategoriesRequestBuilderPostOptions options for Post
 type ComplianceCategoriesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategory;
@@ -56,10 +56,7 @@ type ComplianceCategoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ComplianceCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComplianceCategoriesRequestBuilderInternal instantiates a new ComplianceCategoriesRequestBuilder and sets the default values.
 func NewComplianceCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComplianceCategoriesRequestBuilder) {
     m := &ComplianceCategoriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewComplianceCategoriesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ComplianceCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComplianceCategoriesRequestBuilder instantiates a new ComplianceCategoriesRequestBuilder and sets the default values.
 func NewComplianceCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComplianceCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComplianceCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of all compliance categories
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of all compliance categories
 func (m *ComplianceCategoriesRequestBuilder) CreateGetRequestInformation(options *ComplianceCategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ComplianceCategoriesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// List of all compliance categories
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of all compliance categories
 func (m *ComplianceCategoriesRequestBuilder) CreatePostRequestInformation(options *ComplianceCategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ComplianceCategoriesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// List of all compliance categories
-// Parameters:
-//  - options : Options for the request
+// Get list of all compliance categories
 func (m *ComplianceCategoriesRequestBuilder) Get(options *ComplianceCategoriesRequestBuilderGetOptions)(*ComplianceCategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ComplianceCategoriesRequestBuilder) Get(options *ComplianceCategoriesRe
     }
     return res.(*ComplianceCategoriesResponse), nil
 }
-// List of all compliance categories
-// Parameters:
-//  - options : Options for the request
+// Post list of all compliance categories
 func (m *ComplianceCategoriesRequestBuilder) Post(options *ComplianceCategoriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\customers
+// CustomersRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\customers
 type CustomersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CustomersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CustomersRequestBuilderGetOptions options for Get
 type CustomersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CustomersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All the customers of this business. Read-only. Nullable.
+// CustomersRequestBuilderGetQueryParameters all the customers of this business. Read-only. Nullable.
 type CustomersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CustomersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CustomersRequestBuilderPostOptions options for Post
 type CustomersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingCustomer;
@@ -56,10 +56,7 @@ type CustomersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CustomersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustomersRequestBuilderInternal instantiates a new CustomersRequestBuilder and sets the default values.
 func NewCustomersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomersRequestBuilder) {
     m := &CustomersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCustomersRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CustomersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustomersRequestBuilder instantiates a new CustomersRequestBuilder and sets the default values.
 func NewCustomersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustomersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All the customers of this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all the customers of this business. Read-only. Nullable.
 func (m *CustomersRequestBuilder) CreateGetRequestInformation(options *CustomersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CustomersRequestBuilder) CreateGetRequestInformation(options *Customers
     }
     return requestInfo, nil
 }
-// All the customers of this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation all the customers of this business. Read-only. Nullable.
 func (m *CustomersRequestBuilder) CreatePostRequestInformation(options *CustomersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CustomersRequestBuilder) CreatePostRequestInformation(options *Customer
     }
     return requestInfo, nil
 }
-// All the customers of this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get all the customers of this business. Read-only. Nullable.
 func (m *CustomersRequestBuilder) Get(options *CustomersRequestBuilderGetOptions)(*CustomersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CustomersRequestBuilder) Get(options *CustomersRequestBuilderGetOptions
     }
     return res.(*CustomersResponse), nil
 }
-// All the customers of this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post all the customers of this business. Read-only. Nullable.
 func (m *CustomersRequestBuilder) Post(options *CustomersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingCustomer, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

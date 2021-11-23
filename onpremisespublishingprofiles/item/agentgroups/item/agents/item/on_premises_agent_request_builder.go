@@ -8,7 +8,7 @@ import (
     ia814786eadcd2b0189d170254332f827e51d2e3846d822eb70beb148b8414841 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/agentgroups/item/agents/item/agentgroups/item"
 )
 
-// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\agentGroups\{onPremisesAgentGroup-id}\agents\{onPremisesAgent-id}
+// OnPremisesAgentRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\agentGroups\{onPremisesAgentGroup-id}\agents\{onPremisesAgent-id}
 type OnPremisesAgentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type OnPremisesAgentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OnPremisesAgentRequestBuilderDeleteOptions options for Delete
 type OnPremisesAgentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OnPremisesAgentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OnPremisesAgentRequestBuilderGetOptions options for Get
 type OnPremisesAgentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type OnPremisesAgentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
+// OnPremisesAgentRequestBuilderGetQueryParameters list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 type OnPremisesAgentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OnPremisesAgentRequestBuilderPatchOptions options for Patch
 type OnPremisesAgentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesAgent;
@@ -58,9 +58,7 @@ type OnPremisesAgentRequestBuilderPatchOptions struct {
 func (m *OnPremisesAgentRequestBuilder) AgentGroups()(*ic5b773b9a2f87a9a0d39beb8d04ff84c8d38fb9f333715e477637a7acdcebdc2.AgentGroupsRequestBuilder) {
     return ic5b773b9a2f87a9a0d39beb8d04ff84c8d38fb9f333715e477637a7acdcebdc2.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.agents.item.agentGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgentGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.agents.item.agentGroups.item collection
 func (m *OnPremisesAgentRequestBuilder) AgentGroupsById(id string)(*ia814786eadcd2b0189d170254332f827e51d2e3846d822eb70beb148b8414841.OnPremisesAgentGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,10 +69,7 @@ func (m *OnPremisesAgentRequestBuilder) AgentGroupsById(id string)(*ia814786eadc
     }
     return ia814786eadcd2b0189d170254332f827e51d2e3846d822eb70beb148b8414841.NewOnPremisesAgentGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new OnPremisesAgentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnPremisesAgentRequestBuilderInternal instantiates a new OnPremisesAgentRequestBuilder and sets the default values.
 func NewOnPremisesAgentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnPremisesAgentRequestBuilder) {
     m := &OnPremisesAgentRequestBuilder{
     }
@@ -87,18 +82,13 @@ func NewOnPremisesAgentRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnPremisesAgentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnPremisesAgentRequestBuilder instantiates a new OnPremisesAgentRequestBuilder and sets the default values.
 func NewOnPremisesAgentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnPremisesAgentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesAgentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentRequestBuilder) CreateDeleteRequestInformation(options *OnPremisesAgentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,9 +105,7 @@ func (m *OnPremisesAgentRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentRequestBuilder) CreateGetRequestInformation(options *OnPremisesAgentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *OnPremisesAgentRequestBuilder) CreateGetRequestInformation(options *OnP
     }
     return requestInfo, nil
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentRequestBuilder) CreatePatchRequestInformation(options *OnPremisesAgentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *OnPremisesAgentRequestBuilder) CreatePatchRequestInformation(options *O
     }
     return requestInfo, nil
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentRequestBuilder) Delete(options *OnPremisesAgentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *OnPremisesAgentRequestBuilder) Delete(options *OnPremisesAgentRequestBu
     }
     return nil
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentRequestBuilder) Get(options *OnPremisesAgentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesAgent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *OnPremisesAgentRequestBuilder) Get(options *OnPremisesAgentRequestBuild
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesAgent), nil
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentRequestBuilder) Patch(options *OnPremisesAgentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Employee 
 type Employee struct {
     Entity
     // 
@@ -45,14 +45,14 @@ type Employee struct {
     // 
     terminationDate *string;
 }
-// Instantiates a new employee and sets the default values.
+// NewEmployee instantiates a new employee and sets the default values.
 func NewEmployee()(*Employee) {
     m := &Employee{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the address property value. 
+// GetAddress gets the address property value. 
 func (m *Employee) GetAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *Employee) GetAddress()(*PostalAddressType) {
         return m.address
     }
 }
-// Gets the birthDate property value. 
+// GetBirthDate gets the birthDate property value. 
 func (m *Employee) GetBirthDate()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *Employee) GetBirthDate()(*string) {
         return m.birthDate
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *Employee) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *Employee) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the email property value. 
+// GetEmail gets the email property value. 
 func (m *Employee) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *Employee) GetEmail()(*string) {
         return m.email
     }
 }
-// Gets the employmentDate property value. 
+// GetEmploymentDate gets the employmentDate property value. 
 func (m *Employee) GetEmploymentDate()(*string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *Employee) GetEmploymentDate()(*string) {
         return m.employmentDate
     }
 }
-// Gets the givenName property value. 
+// GetGivenName gets the givenName property value. 
 func (m *Employee) GetGivenName()(*string) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *Employee) GetGivenName()(*string) {
         return m.givenName
     }
 }
-// Gets the jobTitle property value. 
+// GetJobTitle gets the jobTitle property value. 
 func (m *Employee) GetJobTitle()(*string) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *Employee) GetJobTitle()(*string) {
         return m.jobTitle
     }
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *Employee) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *Employee) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.lastModifiedDateTime
     }
 }
-// Gets the middleName property value. 
+// GetMiddleName gets the middleName property value. 
 func (m *Employee) GetMiddleName()(*string) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *Employee) GetMiddleName()(*string) {
         return m.middleName
     }
 }
-// Gets the mobilePhone property value. 
+// GetMobilePhone gets the mobilePhone property value. 
 func (m *Employee) GetMobilePhone()(*string) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *Employee) GetMobilePhone()(*string) {
         return m.mobilePhone
     }
 }
-// Gets the number property value. 
+// GetNumber gets the number property value. 
 func (m *Employee) GetNumber()(*string) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *Employee) GetNumber()(*string) {
         return m.number
     }
 }
-// Gets the personalEmail property value. 
+// GetPersonalEmail gets the personalEmail property value. 
 func (m *Employee) GetPersonalEmail()(*string) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *Employee) GetPersonalEmail()(*string) {
         return m.personalEmail
     }
 }
-// Gets the phoneNumber property value. 
+// GetPhoneNumber gets the phoneNumber property value. 
 func (m *Employee) GetPhoneNumber()(*string) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *Employee) GetPhoneNumber()(*string) {
         return m.phoneNumber
     }
 }
-// Gets the picture property value. 
+// GetPicture gets the picture property value. 
 func (m *Employee) GetPicture()([]Picture) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *Employee) GetPicture()([]Picture) {
         return m.picture
     }
 }
-// Gets the statisticsGroupCode property value. 
+// GetStatisticsGroupCode gets the statisticsGroupCode property value. 
 func (m *Employee) GetStatisticsGroupCode()(*string) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *Employee) GetStatisticsGroupCode()(*string) {
         return m.statisticsGroupCode
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *Employee) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -180,7 +180,7 @@ func (m *Employee) GetStatus()(*string) {
         return m.status
     }
 }
-// Gets the surname property value. 
+// GetSurname gets the surname property value. 
 func (m *Employee) GetSurname()(*string) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *Employee) GetSurname()(*string) {
         return m.surname
     }
 }
-// Gets the terminationDate property value. 
+// GetTerminationDate gets the terminationDate property value. 
 func (m *Employee) GetTerminationDate()(*string) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *Employee) GetTerminationDate()(*string) {
         return m.terminationDate
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Employee) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -388,9 +388,7 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *Employee) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Employee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -511,111 +509,75 @@ func (m *Employee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the address property value. 
-// Parameters:
-//  - value : Value to set for the address property.
+// SetAddress sets the address property value. 
 func (m *Employee) SetAddress(value *PostalAddressType)() {
     m.address = value
 }
-// Sets the birthDate property value. 
-// Parameters:
-//  - value : Value to set for the birthDate property.
+// SetBirthDate sets the birthDate property value. 
 func (m *Employee) SetBirthDate(value *string)() {
     m.birthDate = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *Employee) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the email property value. 
-// Parameters:
-//  - value : Value to set for the email property.
+// SetEmail sets the email property value. 
 func (m *Employee) SetEmail(value *string)() {
     m.email = value
 }
-// Sets the employmentDate property value. 
-// Parameters:
-//  - value : Value to set for the employmentDate property.
+// SetEmploymentDate sets the employmentDate property value. 
 func (m *Employee) SetEmploymentDate(value *string)() {
     m.employmentDate = value
 }
-// Sets the givenName property value. 
-// Parameters:
-//  - value : Value to set for the givenName property.
+// SetGivenName sets the givenName property value. 
 func (m *Employee) SetGivenName(value *string)() {
     m.givenName = value
 }
-// Sets the jobTitle property value. 
-// Parameters:
-//  - value : Value to set for the jobTitle property.
+// SetJobTitle sets the jobTitle property value. 
 func (m *Employee) SetJobTitle(value *string)() {
     m.jobTitle = value
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Employee) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the middleName property value. 
-// Parameters:
-//  - value : Value to set for the middleName property.
+// SetMiddleName sets the middleName property value. 
 func (m *Employee) SetMiddleName(value *string)() {
     m.middleName = value
 }
-// Sets the mobilePhone property value. 
-// Parameters:
-//  - value : Value to set for the mobilePhone property.
+// SetMobilePhone sets the mobilePhone property value. 
 func (m *Employee) SetMobilePhone(value *string)() {
     m.mobilePhone = value
 }
-// Sets the number property value. 
-// Parameters:
-//  - value : Value to set for the number property.
+// SetNumber sets the number property value. 
 func (m *Employee) SetNumber(value *string)() {
     m.number = value
 }
-// Sets the personalEmail property value. 
-// Parameters:
-//  - value : Value to set for the personalEmail property.
+// SetPersonalEmail sets the personalEmail property value. 
 func (m *Employee) SetPersonalEmail(value *string)() {
     m.personalEmail = value
 }
-// Sets the phoneNumber property value. 
-// Parameters:
-//  - value : Value to set for the phoneNumber property.
+// SetPhoneNumber sets the phoneNumber property value. 
 func (m *Employee) SetPhoneNumber(value *string)() {
     m.phoneNumber = value
 }
-// Sets the picture property value. 
-// Parameters:
-//  - value : Value to set for the picture property.
+// SetPicture sets the picture property value. 
 func (m *Employee) SetPicture(value []Picture)() {
     m.picture = value
 }
-// Sets the statisticsGroupCode property value. 
-// Parameters:
-//  - value : Value to set for the statisticsGroupCode property.
+// SetStatisticsGroupCode sets the statisticsGroupCode property value. 
 func (m *Employee) SetStatisticsGroupCode(value *string)() {
     m.statisticsGroupCode = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *Employee) SetStatus(value *string)() {
     m.status = value
 }
-// Sets the surname property value. 
-// Parameters:
-//  - value : Value to set for the surname property.
+// SetSurname sets the surname property value. 
 func (m *Employee) SetSurname(value *string)() {
     m.surname = value
 }
-// Sets the terminationDate property value. 
-// Parameters:
-//  - value : Value to set for the terminationDate property.
+// SetTerminationDate sets the terminationDate property value. 
 func (m *Employee) SetTerminationDate(value *string)() {
     m.terminationDate = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcConnections\{cloudPcConnection-id}
+// CloudPcConnectionRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcConnections\{cloudPcConnection-id}
 type CloudPcConnectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcConnectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcConnectionRequestBuilderDeleteOptions options for Delete
 type CloudPcConnectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcConnectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcConnectionRequestBuilderGetOptions options for Get
 type CloudPcConnectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcConnectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of cloud PC connections across managed tenants.
+// CloudPcConnectionRequestBuilderGetQueryParameters the collection of cloud PC connections across managed tenants.
 type CloudPcConnectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcConnectionRequestBuilderPatchOptions options for Patch
 type CloudPcConnectionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcConnection;
@@ -53,10 +53,7 @@ type CloudPcConnectionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcConnectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcConnectionRequestBuilderInternal instantiates a new CloudPcConnectionRequestBuilder and sets the default values.
 func NewCloudPcConnectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcConnectionRequestBuilder) {
     m := &CloudPcConnectionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcConnectionRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcConnectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcConnectionRequestBuilder instantiates a new CloudPcConnectionRequestBuilder and sets the default values.
 func NewCloudPcConnectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcConnectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcConnectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of cloud PC connections across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of cloud PC connections across managed tenants.
 func (m *CloudPcConnectionRequestBuilder) CreateDeleteRequestInformation(options *CloudPcConnectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcConnectionRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// The collection of cloud PC connections across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of cloud PC connections across managed tenants.
 func (m *CloudPcConnectionRequestBuilder) CreateGetRequestInformation(options *CloudPcConnectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcConnectionRequestBuilder) CreateGetRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// The collection of cloud PC connections across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of cloud PC connections across managed tenants.
 func (m *CloudPcConnectionRequestBuilder) CreatePatchRequestInformation(options *CloudPcConnectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcConnectionRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The collection of cloud PC connections across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of cloud PC connections across managed tenants.
 func (m *CloudPcConnectionRequestBuilder) Delete(options *CloudPcConnectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcConnectionRequestBuilder) Delete(options *CloudPcConnectionReque
     }
     return nil
 }
-// The collection of cloud PC connections across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of cloud PC connections across managed tenants.
 func (m *CloudPcConnectionRequestBuilder) Get(options *CloudPcConnectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcConnection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcConnectionRequestBuilder) Get(options *CloudPcConnectionRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcConnection), nil
 }
-// The collection of cloud PC connections across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of cloud PC connections across managed tenants.
 func (m *CloudPcConnectionRequestBuilder) Patch(options *CloudPcConnectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

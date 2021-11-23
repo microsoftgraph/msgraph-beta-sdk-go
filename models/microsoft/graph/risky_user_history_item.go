@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RiskyUserHistoryItem 
 type RiskyUserHistoryItem struct {
     RiskyUser
     // The activity related to user risk level change.
@@ -14,14 +14,14 @@ type RiskyUserHistoryItem struct {
     // The id of the user.
     userId *string;
 }
-// Instantiates a new riskyUserHistoryItem and sets the default values.
+// NewRiskyUserHistoryItem instantiates a new riskyUserHistoryItem and sets the default values.
 func NewRiskyUserHistoryItem()(*RiskyUserHistoryItem) {
     m := &RiskyUserHistoryItem{
         RiskyUser: *NewRiskyUser(),
     }
     return m
 }
-// Gets the activity property value. The activity related to user risk level change.
+// GetActivity gets the activity property value. The activity related to user risk level change.
 func (m *RiskyUserHistoryItem) GetActivity()(*RiskUserActivity) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *RiskyUserHistoryItem) GetActivity()(*RiskUserActivity) {
         return m.activity
     }
 }
-// Gets the initiatedBy property value. The id of actor that does the operation.
+// GetInitiatedBy gets the initiatedBy property value. The id of actor that does the operation.
 func (m *RiskyUserHistoryItem) GetInitiatedBy()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *RiskyUserHistoryItem) GetInitiatedBy()(*string) {
         return m.initiatedBy
     }
 }
-// Gets the userId property value. The id of the user.
+// GetUserId gets the userId property value. The id of the user.
 func (m *RiskyUserHistoryItem) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *RiskyUserHistoryItem) GetUserId()(*string) {
         return m.userId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RiskyUserHistoryItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.RiskyUser.GetFieldDeserializers()
     res["activity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,9 +83,7 @@ func (m *RiskyUserHistoryItem) GetFieldDeserializers()(map[string]func(interface
 func (m *RiskyUserHistoryItem) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RiskyUserHistoryItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.RiskyUser.Serialize(writer)
     if err != nil {
@@ -111,21 +109,15 @@ func (m *RiskyUserHistoryItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the activity property value. The activity related to user risk level change.
-// Parameters:
-//  - value : Value to set for the activity property.
+// SetActivity sets the activity property value. The activity related to user risk level change.
 func (m *RiskyUserHistoryItem) SetActivity(value *RiskUserActivity)() {
     m.activity = value
 }
-// Sets the initiatedBy property value. The id of actor that does the operation.
-// Parameters:
-//  - value : Value to set for the initiatedBy property.
+// SetInitiatedBy sets the initiatedBy property value. The id of actor that does the operation.
 func (m *RiskyUserHistoryItem) SetInitiatedBy(value *string)() {
     m.initiatedBy = value
 }
-// Sets the userId property value. The id of the user.
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. The id of the user.
 func (m *RiskyUserHistoryItem) SetUserId(value *string)() {
     m.userId = value
 }

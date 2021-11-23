@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RemoteAssistancePartner 
 type RemoteAssistancePartner struct {
     Entity
     // Display name of the partner.
@@ -19,14 +19,14 @@ type RemoteAssistancePartner struct {
     // URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
     onboardingUrl *string;
 }
-// Instantiates a new remoteAssistancePartner and sets the default values.
+// NewRemoteAssistancePartner instantiates a new remoteAssistancePartner and sets the default values.
 func NewRemoteAssistancePartner()(*RemoteAssistancePartner) {
     m := &RemoteAssistancePartner{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. Display name of the partner.
+// GetDisplayName gets the displayName property value. Display name of the partner.
 func (m *RemoteAssistancePartner) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *RemoteAssistancePartner) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
+// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
 func (m *RemoteAssistancePartner) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *RemoteAssistancePartner) GetLastConnectionDateTime()(*i336074805fc85398
         return m.lastConnectionDateTime
     }
 }
-// Gets the onboardingRequestExpiryDateTime property value. When the OnboardingStatus is Onboarding, This is the date time when the onboarding request expires.
+// GetOnboardingRequestExpiryDateTime gets the onboardingRequestExpiryDateTime property value. When the OnboardingStatus is Onboarding, This is the date time when the onboarding request expires.
 func (m *RemoteAssistancePartner) GetOnboardingRequestExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *RemoteAssistancePartner) GetOnboardingRequestExpiryDateTime()(*i3360748
         return m.onboardingRequestExpiryDateTime
     }
 }
-// Gets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+// GetOnboardingStatus gets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
 func (m *RemoteAssistancePartner) GetOnboardingStatus()(*RemoteAssistanceOnboardingStatus) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *RemoteAssistancePartner) GetOnboardingStatus()(*RemoteAssistanceOnboard
         return m.onboardingStatus
     }
 }
-// Gets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
+// GetOnboardingUrl gets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
 func (m *RemoteAssistancePartner) GetOnboardingUrl()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *RemoteAssistancePartner) GetOnboardingUrl()(*string) {
         return m.onboardingUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,9 +125,7 @@ func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(interf
 func (m *RemoteAssistancePartner) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RemoteAssistancePartner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -166,33 +164,23 @@ func (m *RemoteAssistancePartner) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the displayName property value. Display name of the partner.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name of the partner.
 func (m *RemoteAssistancePartner) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
-// Parameters:
-//  - value : Value to set for the lastConnectionDateTime property.
+// SetLastConnectionDateTime sets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
 func (m *RemoteAssistancePartner) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastConnectionDateTime = value
 }
-// Sets the onboardingRequestExpiryDateTime property value. When the OnboardingStatus is Onboarding, This is the date time when the onboarding request expires.
-// Parameters:
-//  - value : Value to set for the onboardingRequestExpiryDateTime property.
+// SetOnboardingRequestExpiryDateTime sets the onboardingRequestExpiryDateTime property value. When the OnboardingStatus is Onboarding, This is the date time when the onboarding request expires.
 func (m *RemoteAssistancePartner) SetOnboardingRequestExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.onboardingRequestExpiryDateTime = value
 }
-// Sets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
-// Parameters:
-//  - value : Value to set for the onboardingStatus property.
+// SetOnboardingStatus sets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
 func (m *RemoteAssistancePartner) SetOnboardingStatus(value *RemoteAssistanceOnboardingStatus)() {
     m.onboardingStatus = value
 }
-// Sets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
-// Parameters:
-//  - value : Value to set for the onboardingUrl property.
+// SetOnboardingUrl sets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
 func (m *RemoteAssistancePartner) SetOnboardingUrl(value *string)() {
     m.onboardingUrl = value
 }

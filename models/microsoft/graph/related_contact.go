@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RelatedContact 
 type RelatedContact struct {
     // Indicates whether the user has been consented to access student data.
     accessConsent *bool;
@@ -21,14 +21,14 @@ type RelatedContact struct {
     // Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
     relationship *ContactRelationship;
 }
-// Instantiates a new relatedContact and sets the default values.
+// NewRelatedContact instantiates a new relatedContact and sets the default values.
 func NewRelatedContact()(*RelatedContact) {
     m := &RelatedContact{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the accessConsent property value. Indicates whether the user has been consented to access student data.
+// GetAccessConsent gets the accessConsent property value. Indicates whether the user has been consented to access student data.
 func (m *RelatedContact) GetAccessConsent()(*bool) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *RelatedContact) GetAccessConsent()(*bool) {
         return m.accessConsent
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RelatedContact) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *RelatedContact) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the displayName property value. Name of the contact. Required.
+// GetDisplayName gets the displayName property value. Name of the contact. Required.
 func (m *RelatedContact) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *RelatedContact) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the emailAddress property value. Primary email address of the contact.
+// GetEmailAddress gets the emailAddress property value. Primary email address of the contact.
 func (m *RelatedContact) GetEmailAddress()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *RelatedContact) GetEmailAddress()(*string) {
         return m.emailAddress
     }
 }
-// Gets the id property value. Identity of the contact within Azure Active Directory.
+// GetId gets the id property value. Identity of the contact within Azure Active Directory.
 func (m *RelatedContact) GetId()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *RelatedContact) GetId()(*string) {
         return m.id
     }
 }
-// Gets the mobilePhone property value. Mobile phone number of the contact.
+// GetMobilePhone gets the mobilePhone property value. Mobile phone number of the contact.
 func (m *RelatedContact) GetMobilePhone()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *RelatedContact) GetMobilePhone()(*string) {
         return m.mobilePhone
     }
 }
-// Gets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
+// GetRelationship gets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
 func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
         return m.relationship
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RelatedContact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["accessConsent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,9 +153,7 @@ func (m *RelatedContact) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *RelatedContact) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RelatedContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("accessConsent", m.GetAccessConsent())
@@ -202,45 +200,31 @@ func (m *RelatedContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the accessConsent property value. Indicates whether the user has been consented to access student data.
-// Parameters:
-//  - value : Value to set for the accessConsent property.
+// SetAccessConsent sets the accessConsent property value. Indicates whether the user has been consented to access student data.
 func (m *RelatedContact) SetAccessConsent(value *bool)() {
     m.accessConsent = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RelatedContact) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. Name of the contact. Required.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Name of the contact. Required.
 func (m *RelatedContact) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the emailAddress property value. Primary email address of the contact.
-// Parameters:
-//  - value : Value to set for the emailAddress property.
+// SetEmailAddress sets the emailAddress property value. Primary email address of the contact.
 func (m *RelatedContact) SetEmailAddress(value *string)() {
     m.emailAddress = value
 }
-// Sets the id property value. Identity of the contact within Azure Active Directory.
-// Parameters:
-//  - value : Value to set for the id property.
+// SetId sets the id property value. Identity of the contact within Azure Active Directory.
 func (m *RelatedContact) SetId(value *string)() {
     m.id = value
 }
-// Sets the mobilePhone property value. Mobile phone number of the contact.
-// Parameters:
-//  - value : Value to set for the mobilePhone property.
+// SetMobilePhone sets the mobilePhone property value. Mobile phone number of the contact.
 func (m *RelatedContact) SetMobilePhone(value *string)() {
     m.mobilePhone = value
 }
-// Sets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the relationship property.
+// SetRelationship sets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
 func (m *RelatedContact) SetRelationship(value *ContactRelationship)() {
     m.relationship = value
 }

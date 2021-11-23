@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOSVersionPerformance\{userExperienceAnalyticsAppHealthOSVersionPerformance-id}
+// UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOSVersionPerformance\{userExperienceAnalyticsAppHealthOSVersionPerformance-id}
 type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderDeleteOpt
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderGetOption
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics appHealth OS version Performance
+// UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderGetQueryParameters user experience analytics appHealth OS version Performance
 type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthOSVersionPerformance;
@@ -53,10 +53,7 @@ type UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderPatchOpti
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal instantiates a new UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderIntern
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder instantiates a new UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics appHealth OS version Performance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics appHealth OS version Performance
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) Cre
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth OS version Performance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics appHealth OS version Performance
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) Cre
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth OS version Performance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics appHealth OS version Performance
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) Cre
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth OS version Performance
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics appHealth OS version Performance
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) Delete(options *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) Del
     }
     return nil
 }
-// User experience analytics appHealth OS version Performance
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics appHealth OS version Performance
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthOSVersionPerformance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) Get
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthOSVersionPerformance), nil
 }
-// User experience analytics appHealth OS version Performance
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics appHealth OS version Performance
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) Patch(options *UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

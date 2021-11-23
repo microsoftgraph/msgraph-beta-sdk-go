@@ -7,7 +7,7 @@ import (
     ib959247d2d05cb603ba7167a7c01244eade31add99340194087e2772c7daba23 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/policysets/getpolicysets"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\policySets
+// PolicySetsRequestBuilder builds and executes requests for operations under \deviceAppManagement\policySets
 type PolicySetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PolicySetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PolicySetsRequestBuilderGetOptions options for Get
 type PolicySetsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PolicySetsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The PolicySet of Policies and Applications
+// PolicySetsRequestBuilderGetQueryParameters the PolicySet of Policies and Applications
 type PolicySetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type PolicySetsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PolicySetsRequestBuilderPostOptions options for Post
 type PolicySetsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySet;
@@ -57,10 +57,7 @@ type PolicySetsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PolicySetsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicySetsRequestBuilderInternal instantiates a new PolicySetsRequestBuilder and sets the default values.
 func NewPolicySetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicySetsRequestBuilder) {
     m := &PolicySetsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewPolicySetsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicySetsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicySetsRequestBuilder instantiates a new PolicySetsRequestBuilder and sets the default values.
 func NewPolicySetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicySetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicySetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the PolicySet of Policies and Applications
 func (m *PolicySetsRequestBuilder) CreateGetRequestInformation(options *PolicySetsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *PolicySetsRequestBuilder) CreateGetRequestInformation(options *PolicySe
     }
     return requestInfo, nil
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the PolicySet of Policies and Applications
 func (m *PolicySetsRequestBuilder) CreatePostRequestInformation(options *PolicySetsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *PolicySetsRequestBuilder) CreatePostRequestInformation(options *PolicyS
     }
     return requestInfo, nil
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// Get the PolicySet of Policies and Applications
 func (m *PolicySetsRequestBuilder) Get(options *PolicySetsRequestBuilderGetOptions)(*PolicySetsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *PolicySetsRequestBuilder) Get(options *PolicySetsRequestBuilderGetOptio
 func (m *PolicySetsRequestBuilder) GetPolicySets()(*ib959247d2d05cb603ba7167a7c01244eade31add99340194087e2772c7daba23.GetPolicySetsRequestBuilder) {
     return ib959247d2d05cb603ba7167a7c01244eade31add99340194087e2772c7daba23.NewGetPolicySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// Post the PolicySet of Policies and Applications
 func (m *PolicySetsRequestBuilder) Post(options *PolicySetsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySet, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

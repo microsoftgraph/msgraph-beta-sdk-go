@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directory\customSecurityAttributeDefinitions\{customSecurityAttributeDefinition-id}\allowedValues\{allowedValue-id}
+// AllowedValueRequestBuilder builds and executes requests for operations under \directory\customSecurityAttributeDefinitions\{customSecurityAttributeDefinition-id}\allowedValues\{allowedValue-id}
 type AllowedValueRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AllowedValueRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AllowedValueRequestBuilderDeleteOptions options for Delete
 type AllowedValueRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AllowedValueRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AllowedValueRequestBuilderGetOptions options for Get
 type AllowedValueRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AllowedValueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get allowedValues from directory
+// AllowedValueRequestBuilderGetQueryParameters get allowedValues from directory
 type AllowedValueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AllowedValueRequestBuilderPatchOptions options for Patch
 type AllowedValueRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AllowedValue;
@@ -53,10 +53,7 @@ type AllowedValueRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AllowedValueRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAllowedValueRequestBuilderInternal instantiates a new AllowedValueRequestBuilder and sets the default values.
 func NewAllowedValueRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AllowedValueRequestBuilder) {
     m := &AllowedValueRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAllowedValueRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AllowedValueRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAllowedValueRequestBuilder instantiates a new AllowedValueRequestBuilder and sets the default values.
 func NewAllowedValueRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AllowedValueRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedValueRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property allowedValues for directory
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property allowedValues for directory
 func (m *AllowedValueRequestBuilder) CreateDeleteRequestInformation(options *AllowedValueRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AllowedValueRequestBuilder) CreateDeleteRequestInformation(options *All
     }
     return requestInfo, nil
 }
-// Get allowedValues from directory
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get allowedValues from directory
 func (m *AllowedValueRequestBuilder) CreateGetRequestInformation(options *AllowedValueRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AllowedValueRequestBuilder) CreateGetRequestInformation(options *Allowe
     }
     return requestInfo, nil
 }
-// Update the navigation property allowedValues in directory
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property allowedValues in directory
 func (m *AllowedValueRequestBuilder) CreatePatchRequestInformation(options *AllowedValueRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AllowedValueRequestBuilder) CreatePatchRequestInformation(options *Allo
     }
     return requestInfo, nil
 }
-// Delete navigation property allowedValues for directory
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property allowedValues for directory
 func (m *AllowedValueRequestBuilder) Delete(options *AllowedValueRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AllowedValueRequestBuilder) Delete(options *AllowedValueRequestBuilderD
     }
     return nil
 }
-// Get allowedValues from directory
-// Parameters:
-//  - options : Options for the request
+// Get get allowedValues from directory
 func (m *AllowedValueRequestBuilder) Get(options *AllowedValueRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AllowedValue, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AllowedValueRequestBuilder) Get(options *AllowedValueRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AllowedValue), nil
 }
-// Update the navigation property allowedValues in directory
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property allowedValues in directory
 func (m *AllowedValueRequestBuilder) Patch(options *AllowedValueRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

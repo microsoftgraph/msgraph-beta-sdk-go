@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UnifiedRbacResourceNamespace 
 type UnifiedRbacResourceNamespace struct {
     Entity
     // 
@@ -12,14 +12,14 @@ type UnifiedRbacResourceNamespace struct {
     // 
     resourceActions []UnifiedRbacResourceAction;
 }
-// Instantiates a new unifiedRbacResourceNamespace and sets the default values.
+// NewUnifiedRbacResourceNamespace instantiates a new unifiedRbacResourceNamespace and sets the default values.
 func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
     m := &UnifiedRbacResourceNamespace{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the name property value. 
+// GetName gets the name property value. 
 func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
         return m.name
     }
 }
-// Gets the resourceActions property value. 
+// GetResourceActions gets the resourceActions property value. 
 func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourceAction) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourc
         return m.resourceActions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -67,9 +67,7 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
 func (m *UnifiedRbacResourceNamespace) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UnifiedRbacResourceNamespace) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,15 +92,11 @@ func (m *UnifiedRbacResourceNamespace) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the name property value. 
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. 
 func (m *UnifiedRbacResourceNamespace) SetName(value *string)() {
     m.name = value
 }
-// Sets the resourceActions property value. 
-// Parameters:
-//  - value : Value to set for the resourceActions property.
+// SetResourceActions sets the resourceActions property value. 
 func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceAction)() {
     m.resourceActions = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementActions
+// ManagementActionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActions
 type ManagementActionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagementActionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagementActionsRequestBuilderGetOptions options for Get
 type ManagementActionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ManagementActionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of baseline management actions across managed tenants.
+// ManagementActionsRequestBuilderGetQueryParameters the collection of baseline management actions across managed tenants.
 type ManagementActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ManagementActionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ManagementActionsRequestBuilderPostOptions options for Post
 type ManagementActionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementAction;
@@ -56,10 +56,7 @@ type ManagementActionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagementActionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementActionsRequestBuilderInternal instantiates a new ManagementActionsRequestBuilder and sets the default values.
 func NewManagementActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementActionsRequestBuilder) {
     m := &ManagementActionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewManagementActionsRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementActionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementActionsRequestBuilder instantiates a new ManagementActionsRequestBuilder and sets the default values.
 func NewManagementActionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementActionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of baseline management actions across managed tenants.
 func (m *ManagementActionsRequestBuilder) CreateGetRequestInformation(options *ManagementActionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ManagementActionsRequestBuilder) CreateGetRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of baseline management actions across managed tenants.
 func (m *ManagementActionsRequestBuilder) CreatePostRequestInformation(options *ManagementActionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ManagementActionsRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of baseline management actions across managed tenants.
 func (m *ManagementActionsRequestBuilder) Get(options *ManagementActionsRequestBuilderGetOptions)(*ManagementActionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ManagementActionsRequestBuilder) Get(options *ManagementActionsRequestB
     }
     return res.(*ManagementActionsResponse), nil
 }
-// The collection of baseline management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of baseline management actions across managed tenants.
 func (m *ManagementActionsRequestBuilder) Post(options *ManagementActionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementAction, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

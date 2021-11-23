@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents
+// IntentsRequestBuilder builds and executes requests for operations under \deviceManagement\intents
 type IntentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IntentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IntentsRequestBuilderGetOptions options for Get
 type IntentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type IntentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The device management intents
+// IntentsRequestBuilderGetQueryParameters the device management intents
 type IntentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type IntentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IntentsRequestBuilderPostOptions options for Post
 type IntentsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntent;
@@ -56,10 +56,7 @@ type IntentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IntentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIntentsRequestBuilderInternal instantiates a new IntentsRequestBuilder and sets the default values.
 func NewIntentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IntentsRequestBuilder) {
     m := &IntentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewIntentsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IntentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIntentsRequestBuilder instantiates a new IntentsRequestBuilder and sets the default values.
 func NewIntentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IntentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIntentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the device management intents
 func (m *IntentsRequestBuilder) CreateGetRequestInformation(options *IntentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *IntentsRequestBuilder) CreateGetRequestInformation(options *IntentsRequ
     }
     return requestInfo, nil
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the device management intents
 func (m *IntentsRequestBuilder) CreatePostRequestInformation(options *IntentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *IntentsRequestBuilder) CreatePostRequestInformation(options *IntentsReq
     }
     return requestInfo, nil
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// Get the device management intents
 func (m *IntentsRequestBuilder) Get(options *IntentsRequestBuilderGetOptions)(*IntentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *IntentsRequestBuilder) Get(options *IntentsRequestBuilderGetOptions)(*I
     }
     return res.(*IntentsResponse), nil
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// Post the device management intents
 func (m *IntentsRequestBuilder) Post(options *IntentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

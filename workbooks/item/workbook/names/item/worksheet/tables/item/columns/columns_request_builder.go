@@ -9,7 +9,7 @@ import (
     if7090c1cd4ba5a3510cc6b5bc369993b7b9969d2ff19b450596a1ed91a832368 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/itematwithindex"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns
+// ColumnsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns
 type ColumnsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ColumnsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ColumnsRequestBuilderGetOptions options for Get
 type ColumnsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type ColumnsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents a collection of all the columns in the table. Read-only.
+// ColumnsRequestBuilderGetQueryParameters represents a collection of all the columns in the table. Read-only.
 type ColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -48,7 +48,7 @@ type ColumnsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ColumnsRequestBuilderPostOptions options for Post
 type ColumnsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTableColumn;
@@ -62,10 +62,7 @@ type ColumnsRequestBuilderPostOptions struct {
 func (m *ColumnsRequestBuilder) Add()(*ida4322234af7799d7e0bbf007b445f06b33e86e4ca6d9c81e1c407fc912afd95.AddRequestBuilder) {
     return ida4322234af7799d7e0bbf007b445f06b33e86e4ca6d9c81e1c407fc912afd95.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ColumnsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewColumnsRequestBuilderInternal instantiates a new ColumnsRequestBuilder and sets the default values.
 func NewColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ColumnsRequestBuilder) {
     m := &ColumnsRequestBuilder{
     }
@@ -78,22 +75,17 @@ func NewColumnsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ColumnsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewColumnsRequestBuilder instantiates a new ColumnsRequestBuilder and sets the default values.
 func NewColumnsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ColumnsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns\microsoft.graph.count()
+// Count builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns\microsoft.graph.count()
 func (m *ColumnsRequestBuilder) Count()(*i57895ebb057c3812df80340d22434977a17d42d30747051c0c5453eb53e2f473.CountRequestBuilder) {
     return i57895ebb057c3812df80340d22434977a17d42d30747051c0c5453eb53e2f473.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents a collection of all the columns in the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents a collection of all the columns in the table. Read-only.
 func (m *ColumnsRequestBuilder) CreateGetRequestInformation(options *ColumnsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,9 +105,7 @@ func (m *ColumnsRequestBuilder) CreateGetRequestInformation(options *ColumnsRequ
     }
     return requestInfo, nil
 }
-// Represents a collection of all the columns in the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents a collection of all the columns in the table. Read-only.
 func (m *ColumnsRequestBuilder) CreatePostRequestInformation(options *ColumnsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +123,7 @@ func (m *ColumnsRequestBuilder) CreatePostRequestInformation(options *ColumnsReq
     }
     return requestInfo, nil
 }
-// Represents a collection of all the columns in the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents a collection of all the columns in the table. Read-only.
 func (m *ColumnsRequestBuilder) Get(options *ColumnsRequestBuilderGetOptions)(*ColumnsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -147,15 +135,11 @@ func (m *ColumnsRequestBuilder) Get(options *ColumnsRequestBuilderGetOptions)(*C
     }
     return res.(*ColumnsResponse), nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns\microsoft.graph.itemAt(index={index})
-// Parameters:
-//  - index : Usage: index={index}
+// ItemAtWithIndex builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns\microsoft.graph.itemAt(index={index})
 func (m *ColumnsRequestBuilder) ItemAtWithIndex(index *int32)(*if7090c1cd4ba5a3510cc6b5bc369993b7b9969d2ff19b450596a1ed91a832368.ItemAtWithIndexRequestBuilder) {
     return if7090c1cd4ba5a3510cc6b5bc369993b7b9969d2ff19b450596a1ed91a832368.NewItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index);
 }
-// Represents a collection of all the columns in the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post represents a collection of all the columns in the table. Read-only.
 func (m *ColumnsRequestBuilder) Post(options *ColumnsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTableColumn, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

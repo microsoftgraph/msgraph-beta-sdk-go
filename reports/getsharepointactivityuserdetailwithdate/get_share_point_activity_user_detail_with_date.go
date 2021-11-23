@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// GetSharePointActivityUserDetailWithDate 
 type GetSharePointActivityUserDetailWithDate struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // 
@@ -33,14 +33,14 @@ type GetSharePointActivityUserDetailWithDate struct {
     // 
     visitedPageCount *int64;
 }
-// Instantiates a new getSharePointActivityUserDetailWithDate and sets the default values.
+// NewGetSharePointActivityUserDetailWithDate instantiates a new getSharePointActivityUserDetailWithDate and sets the default values.
 func NewGetSharePointActivityUserDetailWithDate()(*GetSharePointActivityUserDetailWithDate) {
     m := &GetSharePointActivityUserDetailWithDate{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
-// Gets the assignedProducts property value. 
+// GetAssignedProducts gets the assignedProducts property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetAssignedProducts()([]string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetAssignedProducts()([]string
         return m.assignedProducts
     }
 }
-// Gets the deletedDate property value. 
+// GetDeletedDate gets the deletedDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetDeletedDate()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetDeletedDate()(*string) {
         return m.deletedDate
     }
 }
-// Gets the isDeleted property value. 
+// GetIsDeleted gets the isDeleted property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetIsDeleted()(*bool) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetIsDeleted()(*bool) {
         return m.isDeleted
     }
 }
-// Gets the lastActivityDate property value. 
+// GetLastActivityDate gets the lastActivityDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetLastActivityDate()(*string)
         return m.lastActivityDate
     }
 }
-// Gets the reportPeriod property value. 
+// GetReportPeriod gets the reportPeriod property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetReportPeriod()(*string) {
         return m.reportPeriod
     }
 }
-// Gets the reportRefreshDate property value. 
+// GetReportRefreshDate gets the reportRefreshDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetReportRefreshDate()(*string
         return m.reportRefreshDate
     }
 }
-// Gets the sharedExternallyFileCount property value. 
+// GetSharedExternallyFileCount gets the sharedExternallyFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetSharedExternallyFileCount()(*int64) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetSharedExternallyFileCount()
         return m.sharedExternallyFileCount
     }
 }
-// Gets the sharedInternallyFileCount property value. 
+// GetSharedInternallyFileCount gets the sharedInternallyFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetSharedInternallyFileCount()(*int64) {
     if m == nil {
         return nil
@@ -104,7 +104,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetSharedInternallyFileCount()
         return m.sharedInternallyFileCount
     }
 }
-// Gets the syncedFileCount property value. 
+// GetSyncedFileCount gets the syncedFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetSyncedFileCount()(*int64) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetSyncedFileCount()(*int64) {
         return m.syncedFileCount
     }
 }
-// Gets the userPrincipalName property value. 
+// GetUserPrincipalName gets the userPrincipalName property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -120,7 +120,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetUserPrincipalName()(*string
         return m.userPrincipalName
     }
 }
-// Gets the viewedOrEditedFileCount property value. 
+// GetViewedOrEditedFileCount gets the viewedOrEditedFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetViewedOrEditedFileCount()(*int64) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetViewedOrEditedFileCount()(*
         return m.viewedOrEditedFileCount
     }
 }
-// Gets the visitedPageCount property value. 
+// GetVisitedPageCount gets the visitedPageCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) GetVisitedPageCount()(*int64) {
     if m == nil {
         return nil
@@ -136,7 +136,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetVisitedPageCount()(*int64) 
         return m.visitedPageCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetSharePointActivityUserDetailWithDate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedProducts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -268,9 +268,7 @@ func (m *GetSharePointActivityUserDetailWithDate) GetFieldDeserializers()(map[st
 func (m *GetSharePointActivityUserDetailWithDate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetSharePointActivityUserDetailWithDate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -350,75 +348,51 @@ func (m *GetSharePointActivityUserDetailWithDate) Serialize(writer i04eb5309aeaa
     }
     return nil
 }
-// Sets the assignedProducts property value. 
-// Parameters:
-//  - value : Value to set for the assignedProducts property.
+// SetAssignedProducts sets the assignedProducts property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetAssignedProducts(value []string)() {
     m.assignedProducts = value
 }
-// Sets the deletedDate property value. 
-// Parameters:
-//  - value : Value to set for the deletedDate property.
+// SetDeletedDate sets the deletedDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetDeletedDate(value *string)() {
     m.deletedDate = value
 }
-// Sets the isDeleted property value. 
-// Parameters:
-//  - value : Value to set for the isDeleted property.
+// SetIsDeleted sets the isDeleted property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetIsDeleted(value *bool)() {
     m.isDeleted = value
 }
-// Sets the lastActivityDate property value. 
-// Parameters:
-//  - value : Value to set for the lastActivityDate property.
+// SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetLastActivityDate(value *string)() {
     m.lastActivityDate = value
 }
-// Sets the reportPeriod property value. 
-// Parameters:
-//  - value : Value to set for the reportPeriod property.
+// SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
-// Sets the reportRefreshDate property value. 
-// Parameters:
-//  - value : Value to set for the reportRefreshDate property.
+// SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
-// Sets the sharedExternallyFileCount property value. 
-// Parameters:
-//  - value : Value to set for the sharedExternallyFileCount property.
+// SetSharedExternallyFileCount sets the sharedExternallyFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetSharedExternallyFileCount(value *int64)() {
     m.sharedExternallyFileCount = value
 }
-// Sets the sharedInternallyFileCount property value. 
-// Parameters:
-//  - value : Value to set for the sharedInternallyFileCount property.
+// SetSharedInternallyFileCount sets the sharedInternallyFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetSharedInternallyFileCount(value *int64)() {
     m.sharedInternallyFileCount = value
 }
-// Sets the syncedFileCount property value. 
-// Parameters:
-//  - value : Value to set for the syncedFileCount property.
+// SetSyncedFileCount sets the syncedFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetSyncedFileCount(value *int64)() {
     m.syncedFileCount = value
 }
-// Sets the userPrincipalName property value. 
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }
-// Sets the viewedOrEditedFileCount property value. 
-// Parameters:
-//  - value : Value to set for the viewedOrEditedFileCount property.
+// SetViewedOrEditedFileCount sets the viewedOrEditedFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetViewedOrEditedFileCount(value *int64)() {
     m.viewedOrEditedFileCount = value
 }
-// Sets the visitedPageCount property value. 
-// Parameters:
-//  - value : Value to set for the visitedPageCount property.
+// SetVisitedPageCount sets the visitedPageCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetVisitedPageCount(value *int64)() {
     m.visitedPageCount = value
 }

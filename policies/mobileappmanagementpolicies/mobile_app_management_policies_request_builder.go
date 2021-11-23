@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\mobileAppManagementPolicies
+// MobileAppManagementPoliciesRequestBuilder builds and executes requests for operations under \policies\mobileAppManagementPolicies
 type MobileAppManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MobileAppManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MobileAppManagementPoliciesRequestBuilderGetOptions options for Get
 type MobileAppManagementPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MobileAppManagementPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+// MobileAppManagementPoliciesRequestBuilderGetQueryParameters the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 type MobileAppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MobileAppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MobileAppManagementPoliciesRequestBuilderPostOptions options for Post
 type MobileAppManagementPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy;
@@ -56,10 +56,7 @@ type MobileAppManagementPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MobileAppManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppManagementPoliciesRequestBuilderInternal instantiates a new MobileAppManagementPoliciesRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppManagementPoliciesRequestBuilder) {
     m := &MobileAppManagementPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMobileAppManagementPoliciesRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileAppManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppManagementPoliciesRequestBuilder instantiates a new MobileAppManagementPoliciesRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppManagementPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *MobileAppManagementPoliciesRequestBuilder) CreateGetRequestInformation(options *MobileAppManagementPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MobileAppManagementPoliciesRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *MobileAppManagementPoliciesRequestBuilder) CreatePostRequestInformation(options *MobileAppManagementPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MobileAppManagementPoliciesRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
-// Parameters:
-//  - options : Options for the request
+// Get the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *MobileAppManagementPoliciesRequestBuilder) Get(options *MobileAppManagementPoliciesRequestBuilderGetOptions)(*MobileAppManagementPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MobileAppManagementPoliciesRequestBuilder) Get(options *MobileAppManage
     }
     return res.(*MobileAppManagementPoliciesResponse), nil
 }
-// The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
-// Parameters:
-//  - options : Options for the request
+// Post the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *MobileAppManagementPoliciesRequestBuilder) Post(options *MobileAppManagementPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

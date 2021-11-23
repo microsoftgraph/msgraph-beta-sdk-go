@@ -14,7 +14,7 @@ import (
     ia2a3af813d19ede6948e6cd8a4fdc1da146bb512d7519e6200eb556b45d1b28e "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles/item/scopedmembers/item"
 )
 
-// Builds and executes requests for operations under \directoryRoles\{directoryRole-id}
+// DirectoryRoleRequestBuilder builds and executes requests for operations under \directoryRoles\{directoryRole-id}
 type DirectoryRoleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,7 +23,7 @@ type DirectoryRoleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DirectoryRoleRequestBuilderDeleteOptions options for Delete
 type DirectoryRoleRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type DirectoryRoleRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DirectoryRoleRequestBuilderGetOptions options for Get
 type DirectoryRoleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -43,14 +43,14 @@ type DirectoryRoleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from directoryRoles by key
+// DirectoryRoleRequestBuilderGetQueryParameters get entity from directoryRoles by key
 type DirectoryRoleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DirectoryRoleRequestBuilderPatchOptions options for Patch
 type DirectoryRoleRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryRole;
@@ -67,10 +67,7 @@ func (m *DirectoryRoleRequestBuilder) CheckMemberGroups()(*i9935b468ea0b8a63a043
 func (m *DirectoryRoleRequestBuilder) CheckMemberObjects()(*if07c44821ea10029e12a10833d0eb1edcf1c37d67dd91ede2fd5a2dad86555f7.CheckMemberObjectsRequestBuilder) {
     return if07c44821ea10029e12a10833d0eb1edcf1c37d67dd91ede2fd5a2dad86555f7.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new DirectoryRoleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRoleRequestBuilderInternal instantiates a new DirectoryRoleRequestBuilder and sets the default values.
 func NewDirectoryRoleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleRequestBuilder) {
     m := &DirectoryRoleRequestBuilder{
     }
@@ -83,18 +80,13 @@ func NewDirectoryRoleRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryRoleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRoleRequestBuilder instantiates a new DirectoryRoleRequestBuilder and sets the default values.
 func NewDirectoryRoleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from directoryRoles
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from directoryRoles
 func (m *DirectoryRoleRequestBuilder) CreateDeleteRequestInformation(options *DirectoryRoleRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,9 +103,7 @@ func (m *DirectoryRoleRequestBuilder) CreateDeleteRequestInformation(options *Di
     }
     return requestInfo, nil
 }
-// Get entity from directoryRoles by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from directoryRoles by key
 func (m *DirectoryRoleRequestBuilder) CreateGetRequestInformation(options *DirectoryRoleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +123,7 @@ func (m *DirectoryRoleRequestBuilder) CreateGetRequestInformation(options *Direc
     }
     return requestInfo, nil
 }
-// Update entity in directoryRoles
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in directoryRoles
 func (m *DirectoryRoleRequestBuilder) CreatePatchRequestInformation(options *DirectoryRoleRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -153,9 +141,7 @@ func (m *DirectoryRoleRequestBuilder) CreatePatchRequestInformation(options *Dir
     }
     return requestInfo, nil
 }
-// Delete entity from directoryRoles
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from directoryRoles
 func (m *DirectoryRoleRequestBuilder) Delete(options *DirectoryRoleRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -167,9 +153,7 @@ func (m *DirectoryRoleRequestBuilder) Delete(options *DirectoryRoleRequestBuilde
     }
     return nil
 }
-// Get entity from directoryRoles by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from directoryRoles by key
 func (m *DirectoryRoleRequestBuilder) Get(options *DirectoryRoleRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryRole, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -190,9 +174,7 @@ func (m *DirectoryRoleRequestBuilder) GetMemberObjects()(*i4e1a4185ef1644f3671e0
 func (m *DirectoryRoleRequestBuilder) Members()(*iea9aebdcf95599ab8429a0d32f34af8848c1aaf957a501ef2affa3de9d6c4949.MembersRequestBuilder) {
     return iea9aebdcf95599ab8429a0d32f34af8848c1aaf957a501ef2affa3de9d6c4949.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in directoryRoles
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in directoryRoles
 func (m *DirectoryRoleRequestBuilder) Patch(options *DirectoryRoleRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -210,9 +192,7 @@ func (m *DirectoryRoleRequestBuilder) Restore()(*ibe15d8c336cbfe09bcf7d7a61546d4
 func (m *DirectoryRoleRequestBuilder) ScopedMembers()(*i5485bb9c491434e8f03f3f928d1e9aae35354496db691be6f7158b8c396ccd9b.ScopedMembersRequestBuilder) {
     return i5485bb9c491434e8f03f3f928d1e9aae35354496db691be6f7158b8c396ccd9b.NewScopedMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directoryRoles.item.scopedMembers.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ScopedMembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directoryRoles.item.scopedMembers.item collection
 func (m *DirectoryRoleRequestBuilder) ScopedMembersById(id string)(*ia2a3af813d19ede6948e6cd8a4fdc1da146bb512d7519e6200eb556b45d1b28e.ScopedRoleMembershipRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

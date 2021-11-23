@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\outlook\taskGroups\{outlookTaskGroup-id}\taskFolders
+// TaskFoldersRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\taskGroups\{outlookTaskGroup-id}\taskFolders
 type TaskFoldersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TaskFoldersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TaskFoldersRequestBuilderGetOptions options for Get
 type TaskFoldersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TaskFoldersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of task folders in the task group. Read-only. Nullable.
+// TaskFoldersRequestBuilderGetQueryParameters the collection of task folders in the task group. Read-only. Nullable.
 type TaskFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type TaskFoldersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TaskFoldersRequestBuilderPostOptions options for Post
 type TaskFoldersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTaskFolder;
@@ -52,10 +52,7 @@ type TaskFoldersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TaskFoldersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaskFoldersRequestBuilderInternal instantiates a new TaskFoldersRequestBuilder and sets the default values.
 func NewTaskFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaskFoldersRequestBuilder) {
     m := &TaskFoldersRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewTaskFoldersRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TaskFoldersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaskFoldersRequestBuilder instantiates a new TaskFoldersRequestBuilder and sets the default values.
 func NewTaskFoldersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaskFoldersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTaskFoldersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of task folders in the task group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of task folders in the task group. Read-only. Nullable.
 func (m *TaskFoldersRequestBuilder) CreateGetRequestInformation(options *TaskFoldersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *TaskFoldersRequestBuilder) CreateGetRequestInformation(options *TaskFol
     }
     return requestInfo, nil
 }
-// The collection of task folders in the task group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of task folders in the task group. Read-only. Nullable.
 func (m *TaskFoldersRequestBuilder) CreatePostRequestInformation(options *TaskFoldersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TaskFoldersRequestBuilder) CreatePostRequestInformation(options *TaskFo
     }
     return requestInfo, nil
 }
-// The collection of task folders in the task group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of task folders in the task group. Read-only. Nullable.
 func (m *TaskFoldersRequestBuilder) Get(options *TaskFoldersRequestBuilderGetOptions)(*TaskFoldersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *TaskFoldersRequestBuilder) Get(options *TaskFoldersRequestBuilderGetOpt
     }
     return res.(*TaskFoldersResponse), nil
 }
-// The collection of task folders in the task group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of task folders in the task group. Read-only. Nullable.
 func (m *TaskFoldersRequestBuilder) Post(options *TaskFoldersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTaskFolder, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

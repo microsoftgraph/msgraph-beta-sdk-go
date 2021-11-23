@@ -9,7 +9,7 @@ import (
     i7fe672ce2ded63745de2480f0a175b485195547bff2ac413663b22ef3172bb4e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/bulkreprovisioncloudpc"
 )
 
-// Builds and executes requests for operations under \deviceManagement\comanagedDevices
+// ComanagedDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices
 type ComanagedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ComanagedDevicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ComanagedDevicesRequestBuilderGetOptions options for Get
 type ComanagedDevicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type ComanagedDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of co-managed devices report
+// ComanagedDevicesRequestBuilderGetQueryParameters the list of co-managed devices report
 type ComanagedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -48,7 +48,7 @@ type ComanagedDevicesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ComanagedDevicesRequestBuilderPostOptions options for Post
 type ComanagedDevicesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDevice;
@@ -62,10 +62,7 @@ type ComanagedDevicesRequestBuilderPostOptions struct {
 func (m *ComanagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i7fe672ce2ded63745de2480f0a175b485195547bff2ac413663b22ef3172bb4e.BulkReprovisionCloudPcRequestBuilder) {
     return i7fe672ce2ded63745de2480f0a175b485195547bff2ac413663b22ef3172bb4e.NewBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ComanagedDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComanagedDevicesRequestBuilderInternal instantiates a new ComanagedDevicesRequestBuilder and sets the default values.
 func NewComanagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComanagedDevicesRequestBuilder) {
     m := &ComanagedDevicesRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewComanagedDevicesRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ComanagedDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComanagedDevicesRequestBuilder instantiates a new ComanagedDevicesRequestBuilder and sets the default values.
 func NewComanagedDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComanagedDevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComanagedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of co-managed devices report
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of co-managed devices report
 func (m *ComanagedDevicesRequestBuilder) CreateGetRequestInformation(options *ComanagedDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *ComanagedDevicesRequestBuilder) CreateGetRequestInformation(options *Co
     }
     return requestInfo, nil
 }
-// The list of co-managed devices report
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of co-managed devices report
 func (m *ComanagedDevicesRequestBuilder) CreatePostRequestInformation(options *ComanagedDevicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,9 +122,7 @@ func (m *ComanagedDevicesRequestBuilder) CreatePostRequestInformation(options *C
 func (m *ComanagedDevicesRequestBuilder) ExecuteAction()(*i0952f14bd3d84883aa9509ce20c436cb3a9becc286ff26416d1a9ab4f9a5188e.ExecuteActionRequestBuilder) {
     return i0952f14bd3d84883aa9509ce20c436cb3a9becc286ff26416d1a9ab4f9a5188e.NewExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of co-managed devices report
-// Parameters:
-//  - options : Options for the request
+// Get the list of co-managed devices report
 func (m *ComanagedDevicesRequestBuilder) Get(options *ComanagedDevicesRequestBuilderGetOptions)(*ComanagedDevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -149,9 +137,7 @@ func (m *ComanagedDevicesRequestBuilder) Get(options *ComanagedDevicesRequestBui
 func (m *ComanagedDevicesRequestBuilder) MoveDevicesToOU()(*i21b46d2a36281265e82fedbdddef1c20e278c5a4bbf3cf85fa0d860eccee5b55.MoveDevicesToOURequestBuilder) {
     return i21b46d2a36281265e82fedbdddef1c20e278c5a4bbf3cf85fa0d860eccee5b55.NewMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of co-managed devices report
-// Parameters:
-//  - options : Options for the request
+// Post the list of co-managed devices report
 func (m *ComanagedDevicesRequestBuilder) Post(options *ComanagedDevicesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDevice, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

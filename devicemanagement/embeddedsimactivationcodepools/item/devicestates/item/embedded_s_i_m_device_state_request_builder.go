@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}\deviceStates\{embeddedSIMDeviceState-id}
+// EmbeddedSIMDeviceStateRequestBuilder builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}\deviceStates\{embeddedSIMDeviceState-id}
 type EmbeddedSIMDeviceStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EmbeddedSIMDeviceStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EmbeddedSIMDeviceStateRequestBuilderDeleteOptions options for Delete
 type EmbeddedSIMDeviceStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type EmbeddedSIMDeviceStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EmbeddedSIMDeviceStateRequestBuilderGetOptions options for Get
 type EmbeddedSIMDeviceStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type EmbeddedSIMDeviceStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Navigational property to a list of device states for this pool.
+// EmbeddedSIMDeviceStateRequestBuilderGetQueryParameters navigational property to a list of device states for this pool.
 type EmbeddedSIMDeviceStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EmbeddedSIMDeviceStateRequestBuilderPatchOptions options for Patch
 type EmbeddedSIMDeviceStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMDeviceState;
@@ -53,10 +53,7 @@ type EmbeddedSIMDeviceStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EmbeddedSIMDeviceStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmbeddedSIMDeviceStateRequestBuilderInternal instantiates a new EmbeddedSIMDeviceStateRequestBuilder and sets the default values.
 func NewEmbeddedSIMDeviceStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmbeddedSIMDeviceStateRequestBuilder) {
     m := &EmbeddedSIMDeviceStateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewEmbeddedSIMDeviceStateRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EmbeddedSIMDeviceStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmbeddedSIMDeviceStateRequestBuilder instantiates a new EmbeddedSIMDeviceStateRequestBuilder and sets the default values.
 func NewEmbeddedSIMDeviceStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmbeddedSIMDeviceStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMDeviceStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Navigational property to a list of device states for this pool.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMDeviceStateRequestBuilder) CreateDeleteRequestInformation(options *EmbeddedSIMDeviceStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *EmbeddedSIMDeviceStateRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// Navigational property to a list of device states for this pool.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMDeviceStateRequestBuilder) CreateGetRequestInformation(options *EmbeddedSIMDeviceStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *EmbeddedSIMDeviceStateRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Navigational property to a list of device states for this pool.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMDeviceStateRequestBuilder) CreatePatchRequestInformation(options *EmbeddedSIMDeviceStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *EmbeddedSIMDeviceStateRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Navigational property to a list of device states for this pool.
-// Parameters:
-//  - options : Options for the request
+// Delete navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMDeviceStateRequestBuilder) Delete(options *EmbeddedSIMDeviceStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *EmbeddedSIMDeviceStateRequestBuilder) Delete(options *EmbeddedSIMDevice
     }
     return nil
 }
-// Navigational property to a list of device states for this pool.
-// Parameters:
-//  - options : Options for the request
+// Get navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMDeviceStateRequestBuilder) Get(options *EmbeddedSIMDeviceStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMDeviceState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *EmbeddedSIMDeviceStateRequestBuilder) Get(options *EmbeddedSIMDeviceSta
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMDeviceState), nil
 }
-// Navigational property to a list of device states for this pool.
-// Parameters:
-//  - options : Options for the request
+// Patch navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMDeviceStateRequestBuilder) Patch(options *EmbeddedSIMDeviceStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

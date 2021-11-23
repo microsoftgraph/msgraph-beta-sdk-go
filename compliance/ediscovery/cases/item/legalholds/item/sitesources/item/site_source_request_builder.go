@@ -7,7 +7,7 @@ import (
     i1dda136fe490027fed2a7976d58071740c3b232c2fba8f7ee0e9b1ed85f58031 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/legalholds/item/sitesources/item/site"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\siteSources\{siteSource-id}
+// SiteSourceRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\siteSources\{siteSource-id}
 type SiteSourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SiteSourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SiteSourceRequestBuilderDeleteOptions options for Delete
 type SiteSourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type SiteSourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SiteSourceRequestBuilderGetOptions options for Get
 type SiteSourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type SiteSourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Data source entity for SharePoint sites associated with the legal hold.
+// SiteSourceRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the legal hold.
 type SiteSourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SiteSourceRequestBuilderPatchOptions options for Patch
 type SiteSourceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SiteSource;
@@ -54,10 +54,7 @@ type SiteSourceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SiteSourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSiteSourceRequestBuilderInternal instantiates a new SiteSourceRequestBuilder and sets the default values.
 func NewSiteSourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SiteSourceRequestBuilder) {
     m := &SiteSourceRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewSiteSourceRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SiteSourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSiteSourceRequestBuilder instantiates a new SiteSourceRequestBuilder and sets the default values.
 func NewSiteSourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SiteSourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSiteSourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Data source entity for SharePoint sites associated with the legal hold.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation data source entity for SharePoint sites associated with the legal hold.
 func (m *SiteSourceRequestBuilder) CreateDeleteRequestInformation(options *SiteSourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *SiteSourceRequestBuilder) CreateDeleteRequestInformation(options *SiteS
     }
     return requestInfo, nil
 }
-// Data source entity for SharePoint sites associated with the legal hold.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation data source entity for SharePoint sites associated with the legal hold.
 func (m *SiteSourceRequestBuilder) CreateGetRequestInformation(options *SiteSourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *SiteSourceRequestBuilder) CreateGetRequestInformation(options *SiteSour
     }
     return requestInfo, nil
 }
-// Data source entity for SharePoint sites associated with the legal hold.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation data source entity for SharePoint sites associated with the legal hold.
 func (m *SiteSourceRequestBuilder) CreatePatchRequestInformation(options *SiteSourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *SiteSourceRequestBuilder) CreatePatchRequestInformation(options *SiteSo
     }
     return requestInfo, nil
 }
-// Data source entity for SharePoint sites associated with the legal hold.
-// Parameters:
-//  - options : Options for the request
+// Delete data source entity for SharePoint sites associated with the legal hold.
 func (m *SiteSourceRequestBuilder) Delete(options *SiteSourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *SiteSourceRequestBuilder) Delete(options *SiteSourceRequestBuilderDelet
     }
     return nil
 }
-// Data source entity for SharePoint sites associated with the legal hold.
-// Parameters:
-//  - options : Options for the request
+// Get data source entity for SharePoint sites associated with the legal hold.
 func (m *SiteSourceRequestBuilder) Get(options *SiteSourceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SiteSource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *SiteSourceRequestBuilder) Get(options *SiteSourceRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SiteSource), nil
 }
-// Data source entity for SharePoint sites associated with the legal hold.
-// Parameters:
-//  - options : Options for the request
+// Patch data source entity for SharePoint sites associated with the legal hold.
 func (m *SiteSourceRequestBuilder) Patch(options *SiteSourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

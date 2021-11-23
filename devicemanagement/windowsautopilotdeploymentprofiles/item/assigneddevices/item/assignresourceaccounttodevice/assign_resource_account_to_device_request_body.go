@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AssignResourceAccountToDeviceRequestBody 
 type AssignResourceAccountToDeviceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type AssignResourceAccountToDeviceRequestBody struct {
     // 
     userPrincipalName *string;
 }
-// Instantiates a new assignResourceAccountToDeviceRequestBody and sets the default values.
+// NewAssignResourceAccountToDeviceRequestBody instantiates a new assignResourceAccountToDeviceRequestBody and sets the default values.
 func NewAssignResourceAccountToDeviceRequestBody()(*AssignResourceAccountToDeviceRequestBody) {
     m := &AssignResourceAccountToDeviceRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignResourceAccountToDeviceRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *AssignResourceAccountToDeviceRequestBody) GetAdditionalData()(map[strin
         return m.additionalData
     }
 }
-// Gets the addressableUserName property value. 
+// GetAddressableUserName gets the addressableUserName property value. 
 func (m *AssignResourceAccountToDeviceRequestBody) GetAddressableUserName()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AssignResourceAccountToDeviceRequestBody) GetAddressableUserName()(*str
         return m.addressableUserName
     }
 }
-// Gets the resourceAccountName property value. 
+// GetResourceAccountName gets the resourceAccountName property value. 
 func (m *AssignResourceAccountToDeviceRequestBody) GetResourceAccountName()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AssignResourceAccountToDeviceRequestBody) GetResourceAccountName()(*str
         return m.resourceAccountName
     }
 }
-// Gets the userPrincipalName property value. 
+// GetUserPrincipalName gets the userPrincipalName property value. 
 func (m *AssignResourceAccountToDeviceRequestBody) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AssignResourceAccountToDeviceRequestBody) GetUserPrincipalName()(*strin
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AssignResourceAccountToDeviceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["addressableUserName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *AssignResourceAccountToDeviceRequestBody) GetFieldDeserializers()(map[s
 func (m *AssignResourceAccountToDeviceRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AssignResourceAccountToDeviceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("addressableUserName", m.GetAddressableUserName())
@@ -122,27 +120,19 @@ func (m *AssignResourceAccountToDeviceRequestBody) Serialize(writer i04eb5309aea
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignResourceAccountToDeviceRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the addressableUserName property value. 
-// Parameters:
-//  - value : Value to set for the addressableUserName property.
+// SetAddressableUserName sets the addressableUserName property value. 
 func (m *AssignResourceAccountToDeviceRequestBody) SetAddressableUserName(value *string)() {
     m.addressableUserName = value
 }
-// Sets the resourceAccountName property value. 
-// Parameters:
-//  - value : Value to set for the resourceAccountName property.
+// SetResourceAccountName sets the resourceAccountName property value. 
 func (m *AssignResourceAccountToDeviceRequestBody) SetResourceAccountName(value *string)() {
     m.resourceAccountName = value
 }
-// Sets the userPrincipalName property value. 
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *AssignResourceAccountToDeviceRequestBody) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

@@ -9,7 +9,7 @@ import (
     i87802417fac8dafea49fd0889f538e357ba4f700228dd931789b2c3a9194e714 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicehealthscripts/enableglobalscripts"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts
+// DeviceHealthScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts
 type DeviceHealthScriptsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type DeviceHealthScriptsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceHealthScriptsRequestBuilderGetOptions options for Get
 type DeviceHealthScriptsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type DeviceHealthScriptsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device health scripts associated with the tenant.
+// DeviceHealthScriptsRequestBuilderGetQueryParameters the list of device health scripts associated with the tenant.
 type DeviceHealthScriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -48,7 +48,7 @@ type DeviceHealthScriptsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceHealthScriptsRequestBuilderPostOptions options for Post
 type DeviceHealthScriptsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScript;
@@ -59,14 +59,11 @@ type DeviceHealthScriptsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.areGlobalScriptsAvailable()
+// AreGlobalScriptsAvailable builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.areGlobalScriptsAvailable()
 func (m *DeviceHealthScriptsRequestBuilder) AreGlobalScriptsAvailable()(*i6a873728e2a8769c250276e0c4dc8fa971581156a07a4c225120f5c5242df0a3.AreGlobalScriptsAvailableRequestBuilder) {
     return i6a873728e2a8769c250276e0c4dc8fa971581156a07a4c225120f5c5242df0a3.NewAreGlobalScriptsAvailableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new DeviceHealthScriptsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceHealthScriptsRequestBuilderInternal instantiates a new DeviceHealthScriptsRequestBuilder and sets the default values.
 func NewDeviceHealthScriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceHealthScriptsRequestBuilder) {
     m := &DeviceHealthScriptsRequestBuilder{
     }
@@ -79,18 +76,13 @@ func NewDeviceHealthScriptsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceHealthScriptsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceHealthScriptsRequestBuilder instantiates a new DeviceHealthScriptsRequestBuilder and sets the default values.
 func NewDeviceHealthScriptsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceHealthScriptsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceHealthScriptsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device health scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device health scripts associated with the tenant.
 func (m *DeviceHealthScriptsRequestBuilder) CreateGetRequestInformation(options *DeviceHealthScriptsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,9 +102,7 @@ func (m *DeviceHealthScriptsRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The list of device health scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of device health scripts associated with the tenant.
 func (m *DeviceHealthScriptsRequestBuilder) CreatePostRequestInformation(options *DeviceHealthScriptsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +123,7 @@ func (m *DeviceHealthScriptsRequestBuilder) CreatePostRequestInformation(options
 func (m *DeviceHealthScriptsRequestBuilder) EnableGlobalScripts()(*i87802417fac8dafea49fd0889f538e357ba4f700228dd931789b2c3a9194e714.EnableGlobalScriptsRequestBuilder) {
     return i87802417fac8dafea49fd0889f538e357ba4f700228dd931789b2c3a9194e714.NewEnableGlobalScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of device health scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of device health scripts associated with the tenant.
 func (m *DeviceHealthScriptsRequestBuilder) Get(options *DeviceHealthScriptsRequestBuilderGetOptions)(*DeviceHealthScriptsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -147,13 +135,11 @@ func (m *DeviceHealthScriptsRequestBuilder) Get(options *DeviceHealthScriptsRequ
     }
     return res.(*DeviceHealthScriptsResponse), nil
 }
-// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.getRemediationSummary()
+// GetRemediationSummary builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.getRemediationSummary()
 func (m *DeviceHealthScriptsRequestBuilder) GetRemediationSummary()(*i2e7b8f78fa151b32792a059a6a4155ce021c6574bebe2d5c93dfeeaa4fb76547.GetRemediationSummaryRequestBuilder) {
     return i2e7b8f78fa151b32792a059a6a4155ce021c6574bebe2d5c93dfeeaa4fb76547.NewGetRemediationSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of device health scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of device health scripts associated with the tenant.
 func (m *DeviceHealthScriptsRequestBuilder) Post(options *DeviceHealthScriptsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScript, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

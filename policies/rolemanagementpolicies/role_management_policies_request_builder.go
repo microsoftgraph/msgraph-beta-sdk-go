@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\roleManagementPolicies
+// RoleManagementPoliciesRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicies
 type RoleManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RoleManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RoleManagementPoliciesRequestBuilderGetOptions options for Get
 type RoleManagementPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RoleManagementPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the role management policies.
+// RoleManagementPoliciesRequestBuilderGetQueryParameters represents the role management policies.
 type RoleManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RoleManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RoleManagementPoliciesRequestBuilderPostOptions options for Post
 type RoleManagementPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicy;
@@ -56,10 +56,7 @@ type RoleManagementPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleManagementPoliciesRequestBuilderInternal instantiates a new RoleManagementPoliciesRequestBuilder and sets the default values.
 func NewRoleManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleManagementPoliciesRequestBuilder) {
     m := &RoleManagementPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRoleManagementPoliciesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleManagementPoliciesRequestBuilder instantiates a new RoleManagementPoliciesRequestBuilder and sets the default values.
 func NewRoleManagementPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleManagementPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the role management policies.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the role management policies.
 func (m *RoleManagementPoliciesRequestBuilder) CreateGetRequestInformation(options *RoleManagementPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RoleManagementPoliciesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Represents the role management policies.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents the role management policies.
 func (m *RoleManagementPoliciesRequestBuilder) CreatePostRequestInformation(options *RoleManagementPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RoleManagementPoliciesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Represents the role management policies.
-// Parameters:
-//  - options : Options for the request
+// Get represents the role management policies.
 func (m *RoleManagementPoliciesRequestBuilder) Get(options *RoleManagementPoliciesRequestBuilderGetOptions)(*RoleManagementPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RoleManagementPoliciesRequestBuilder) Get(options *RoleManagementPolici
     }
     return res.(*RoleManagementPoliciesResponse), nil
 }
-// Represents the role management policies.
-// Parameters:
-//  - options : Options for the request
+// Post represents the role management policies.
 func (m *RoleManagementPoliciesRequestBuilder) Post(options *RoleManagementPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

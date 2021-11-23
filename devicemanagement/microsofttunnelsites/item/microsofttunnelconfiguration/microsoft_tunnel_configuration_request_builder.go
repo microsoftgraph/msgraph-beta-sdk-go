@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelConfiguration
+// MicrosoftTunnelConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelConfiguration
 type MicrosoftTunnelConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MicrosoftTunnelConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MicrosoftTunnelConfigurationRequestBuilderDeleteOptions options for Delete
 type MicrosoftTunnelConfigurationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MicrosoftTunnelConfigurationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MicrosoftTunnelConfigurationRequestBuilderGetOptions options for Get
 type MicrosoftTunnelConfigurationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MicrosoftTunnelConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
+// MicrosoftTunnelConfigurationRequestBuilderGetQueryParameters the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 type MicrosoftTunnelConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MicrosoftTunnelConfigurationRequestBuilderPatchOptions options for Patch
 type MicrosoftTunnelConfigurationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelConfiguration;
@@ -53,10 +53,7 @@ type MicrosoftTunnelConfigurationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MicrosoftTunnelConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelConfigurationRequestBuilderInternal instantiates a new MicrosoftTunnelConfigurationRequestBuilder and sets the default values.
 func NewMicrosoftTunnelConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelConfigurationRequestBuilder) {
     m := &MicrosoftTunnelConfigurationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMicrosoftTunnelConfigurationRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MicrosoftTunnelConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelConfigurationRequestBuilder instantiates a new MicrosoftTunnelConfigurationRequestBuilder and sets the default values.
 func NewMicrosoftTunnelConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelConfigurationRequestBuilder) CreateDeleteRequestInformation(options *MicrosoftTunnelConfigurationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MicrosoftTunnelConfigurationRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelConfigurationRequestBuilder) CreateGetRequestInformation(options *MicrosoftTunnelConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MicrosoftTunnelConfigurationRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelConfigurationRequestBuilder) CreatePatchRequestInformation(options *MicrosoftTunnelConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MicrosoftTunnelConfigurationRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// Delete the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelConfigurationRequestBuilder) Delete(options *MicrosoftTunnelConfigurationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MicrosoftTunnelConfigurationRequestBuilder) Delete(options *MicrosoftTu
     }
     return nil
 }
-// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// Get the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelConfigurationRequestBuilder) Get(options *MicrosoftTunnelConfigurationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MicrosoftTunnelConfigurationRequestBuilder) Get(options *MicrosoftTunne
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelConfiguration), nil
 }
-// The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// Patch the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelConfigurationRequestBuilder) Patch(options *MicrosoftTunnelConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DirectorySizeQuota 
 type DirectorySizeQuota struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type DirectorySizeQuota struct {
     // Used amount of the directory quota.
     used *int32;
 }
-// Instantiates a new directorySizeQuota and sets the default values.
+// NewDirectorySizeQuota instantiates a new directorySizeQuota and sets the default values.
 func NewDirectorySizeQuota()(*DirectorySizeQuota) {
     m := &DirectorySizeQuota{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DirectorySizeQuota) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *DirectorySizeQuota) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the total property value. Total amount of the directory quota.
+// GetTotal gets the total property value. Total amount of the directory quota.
 func (m *DirectorySizeQuota) GetTotal()(*int32) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *DirectorySizeQuota) GetTotal()(*int32) {
         return m.total
     }
 }
-// Gets the used property value. Used amount of the directory quota.
+// GetUsed gets the used property value. Used amount of the directory quota.
 func (m *DirectorySizeQuota) GetUsed()(*int32) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *DirectorySizeQuota) GetUsed()(*int32) {
         return m.used
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DirectorySizeQuota) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["total"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *DirectorySizeQuota) GetFieldDeserializers()(map[string]func(interface{}
 func (m *DirectorySizeQuota) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DirectorySizeQuota) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("total", m.GetTotal())
@@ -96,21 +94,15 @@ func (m *DirectorySizeQuota) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DirectorySizeQuota) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the total property value. Total amount of the directory quota.
-// Parameters:
-//  - value : Value to set for the total property.
+// SetTotal sets the total property value. Total amount of the directory quota.
 func (m *DirectorySizeQuota) SetTotal(value *int32)() {
     m.total = value
 }
-// Sets the used property value. Used amount of the directory quota.
-// Parameters:
-//  - value : Value to set for the used property.
+// SetUsed sets the used property value. Used amount of the directory quota.
 func (m *DirectorySizeQuota) SetUsed(value *int32)() {
     m.used = value
 }

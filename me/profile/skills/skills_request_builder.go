@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\skills
+// SkillsRequestBuilder builds and executes requests for operations under \me\profile\skills
 type SkillsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SkillsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SkillsRequestBuilderGetOptions options for Get
 type SkillsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SkillsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents detailed information about skills associated with a user in various services.
+// SkillsRequestBuilderGetQueryParameters represents detailed information about skills associated with a user in various services.
 type SkillsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SkillsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SkillsRequestBuilderPostOptions options for Post
 type SkillsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SkillProficiency;
@@ -56,10 +56,7 @@ type SkillsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SkillsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSkillsRequestBuilderInternal instantiates a new SkillsRequestBuilder and sets the default values.
 func NewSkillsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SkillsRequestBuilder) {
     m := &SkillsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSkillsRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SkillsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSkillsRequestBuilder instantiates a new SkillsRequestBuilder and sets the default values.
 func NewSkillsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SkillsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSkillsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents detailed information about skills associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents detailed information about skills associated with a user in various services.
 func (m *SkillsRequestBuilder) CreateGetRequestInformation(options *SkillsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SkillsRequestBuilder) CreateGetRequestInformation(options *SkillsReques
     }
     return requestInfo, nil
 }
-// Represents detailed information about skills associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents detailed information about skills associated with a user in various services.
 func (m *SkillsRequestBuilder) CreatePostRequestInformation(options *SkillsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SkillsRequestBuilder) CreatePostRequestInformation(options *SkillsReque
     }
     return requestInfo, nil
 }
-// Represents detailed information about skills associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// Get represents detailed information about skills associated with a user in various services.
 func (m *SkillsRequestBuilder) Get(options *SkillsRequestBuilderGetOptions)(*SkillsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SkillsRequestBuilder) Get(options *SkillsRequestBuilderGetOptions)(*Ski
     }
     return res.(*SkillsResponse), nil
 }
-// Represents detailed information about skills associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// Post represents detailed information about skills associated with a user in various services.
 func (m *SkillsRequestBuilder) Post(options *SkillsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SkillProficiency, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

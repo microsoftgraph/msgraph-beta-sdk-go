@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\authentication\passwordlessMicrosoftAuthenticatorMethods
+// PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\passwordlessMicrosoftAuthenticatorMethods
 type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetOptions options for Get
 type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get passwordlessMicrosoftAuthenticatorMethods from users
+// PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters get passwordlessMicrosoftAuthenticatorMethods from users
 type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters s
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostOptions options for Post
 type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethod;
@@ -56,10 +56,7 @@ type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) {
     m := &PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathPara
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get passwordlessMicrosoftAuthenticatorMethods from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get passwordlessMicrosoftAuthenticatorMethods from users
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation(options *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// Create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformation(options *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequ
     }
     return requestInfo, nil
 }
-// Get passwordlessMicrosoftAuthenticatorMethods from users
-// Parameters:
-//  - options : Options for the request
+// Get get passwordlessMicrosoftAuthenticatorMethods from users
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Get(options *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(*PasswordlessMicrosoftAuthenticatorMethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Get(options *P
     }
     return res.(*PasswordlessMicrosoftAuthenticatorMethodsResponse), nil
 }
-// Create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Post(options *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

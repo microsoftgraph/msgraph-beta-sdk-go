@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.addTokenSigningCertificate
+// AddTokenSigningCertificateRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.addTokenSigningCertificate
 type AddTokenSigningCertificateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AddTokenSigningCertificateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AddTokenSigningCertificateRequestBuilderPostOptions options for Post
 type AddTokenSigningCertificateRequestBuilderPostOptions struct {
     // 
     Body *SelfSignedCertificateRequestBody;
@@ -26,10 +26,7 @@ type AddTokenSigningCertificateRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AddTokenSigningCertificateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddTokenSigningCertificateRequestBuilderInternal instantiates a new AddTokenSigningCertificateRequestBuilder and sets the default values.
 func NewAddTokenSigningCertificateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddTokenSigningCertificateRequestBuilder) {
     m := &AddTokenSigningCertificateRequestBuilder{
     }
@@ -42,18 +39,13 @@ func NewAddTokenSigningCertificateRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AddTokenSigningCertificateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddTokenSigningCertificateRequestBuilder instantiates a new AddTokenSigningCertificateRequestBuilder and sets the default values.
 func NewAddTokenSigningCertificateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddTokenSigningCertificateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAddTokenSigningCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action addTokenSigningCertificate
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action addTokenSigningCertificate
 func (m *AddTokenSigningCertificateRequestBuilder) CreatePostRequestInformation(options *AddTokenSigningCertificateRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +63,7 @@ func (m *AddTokenSigningCertificateRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Invoke action addTokenSigningCertificate
-// Parameters:
-//  - options : Options for the request
+// Post invoke action addTokenSigningCertificate
 func (m *AddTokenSigningCertificateRequestBuilder) Post(options *AddTokenSigningCertificateRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SelfSignedCertificate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

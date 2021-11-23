@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directory\sharedEmailDomains
+// SharedEmailDomainsRequestBuilder builds and executes requests for operations under \directory\sharedEmailDomains
 type SharedEmailDomainsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SharedEmailDomainsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SharedEmailDomainsRequestBuilderGetOptions options for Get
 type SharedEmailDomainsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SharedEmailDomainsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get sharedEmailDomains from directory
+// SharedEmailDomainsRequestBuilderGetQueryParameters get sharedEmailDomains from directory
 type SharedEmailDomainsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SharedEmailDomainsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SharedEmailDomainsRequestBuilderPostOptions options for Post
 type SharedEmailDomainsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SharedEmailDomain;
@@ -56,10 +56,7 @@ type SharedEmailDomainsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SharedEmailDomainsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSharedEmailDomainsRequestBuilderInternal instantiates a new SharedEmailDomainsRequestBuilder and sets the default values.
 func NewSharedEmailDomainsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SharedEmailDomainsRequestBuilder) {
     m := &SharedEmailDomainsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSharedEmailDomainsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SharedEmailDomainsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSharedEmailDomainsRequestBuilder instantiates a new SharedEmailDomainsRequestBuilder and sets the default values.
 func NewSharedEmailDomainsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SharedEmailDomainsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharedEmailDomainsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get sharedEmailDomains from directory
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get sharedEmailDomains from directory
 func (m *SharedEmailDomainsRequestBuilder) CreateGetRequestInformation(options *SharedEmailDomainsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SharedEmailDomainsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Create new navigation property to sharedEmailDomains for directory
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to sharedEmailDomains for directory
 func (m *SharedEmailDomainsRequestBuilder) CreatePostRequestInformation(options *SharedEmailDomainsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SharedEmailDomainsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get sharedEmailDomains from directory
-// Parameters:
-//  - options : Options for the request
+// Get get sharedEmailDomains from directory
 func (m *SharedEmailDomainsRequestBuilder) Get(options *SharedEmailDomainsRequestBuilderGetOptions)(*SharedEmailDomainsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SharedEmailDomainsRequestBuilder) Get(options *SharedEmailDomainsReques
     }
     return res.(*SharedEmailDomainsResponse), nil
 }
-// Create new navigation property to sharedEmailDomains for directory
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to sharedEmailDomains for directory
 func (m *SharedEmailDomainsRequestBuilder) Post(options *SharedEmailDomainsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SharedEmailDomain, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles
+// AppleUserInitiatedEnrollmentProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles
 type AppleUserInitiatedEnrollmentProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppleUserInitiatedEnrollmentProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppleUserInitiatedEnrollmentProfilesRequestBuilderGetOptions options for Get
 type AppleUserInitiatedEnrollmentProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppleUserInitiatedEnrollmentProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Apple user initiated enrollment profiles
+// AppleUserInitiatedEnrollmentProfilesRequestBuilderGetQueryParameters apple user initiated enrollment profiles
 type AppleUserInitiatedEnrollmentProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AppleUserInitiatedEnrollmentProfilesRequestBuilderGetQueryParameters struct
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppleUserInitiatedEnrollmentProfilesRequestBuilderPostOptions options for Post
 type AppleUserInitiatedEnrollmentProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppleUserInitiatedEnrollmentProfile;
@@ -56,10 +56,7 @@ type AppleUserInitiatedEnrollmentProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppleUserInitiatedEnrollmentProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal instantiates a new AppleUserInitiatedEnrollmentProfilesRequestBuilder and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppleUserInitiatedEnrollmentProfilesRequestBuilder) {
     m := &AppleUserInitiatedEnrollmentProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppleUserInitiatedEnrollmentProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppleUserInitiatedEnrollmentProfilesRequestBuilder instantiates a new AppleUserInitiatedEnrollmentProfilesRequestBuilder and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppleUserInitiatedEnrollmentProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfilesRequestBuilder) CreateGetRequestInformation(options *AppleUserInitiatedEnrollmentProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AppleUserInitiatedEnrollmentProfilesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfilesRequestBuilder) CreatePostRequestInformation(options *AppleUserInitiatedEnrollmentProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AppleUserInitiatedEnrollmentProfilesRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// Get apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfilesRequestBuilder) Get(options *AppleUserInitiatedEnrollmentProfilesRequestBuilderGetOptions)(*AppleUserInitiatedEnrollmentProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AppleUserInitiatedEnrollmentProfilesRequestBuilder) Get(options *AppleU
     }
     return res.(*AppleUserInitiatedEnrollmentProfilesResponse), nil
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// Post apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfilesRequestBuilder) Post(options *AppleUserInitiatedEnrollmentProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppleUserInitiatedEnrollmentProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

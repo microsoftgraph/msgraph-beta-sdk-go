@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\staffMembers\{bookingStaffMember-id}
+// BookingStaffMemberRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\staffMembers\{bookingStaffMember-id}
 type BookingStaffMemberRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BookingStaffMemberRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BookingStaffMemberRequestBuilderDeleteOptions options for Delete
 type BookingStaffMemberRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type BookingStaffMemberRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BookingStaffMemberRequestBuilderGetOptions options for Get
 type BookingStaffMemberRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type BookingStaffMemberRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
+// BookingStaffMemberRequestBuilderGetQueryParameters all the staff members that provide services in this business. Read-only. Nullable.
 type BookingStaffMemberRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BookingStaffMemberRequestBuilderPatchOptions options for Patch
 type BookingStaffMemberRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMember;
@@ -53,10 +53,7 @@ type BookingStaffMemberRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BookingStaffMemberRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingStaffMemberRequestBuilderInternal instantiates a new BookingStaffMemberRequestBuilder and sets the default values.
 func NewBookingStaffMemberRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingStaffMemberRequestBuilder) {
     m := &BookingStaffMemberRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewBookingStaffMemberRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BookingStaffMemberRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingStaffMemberRequestBuilder instantiates a new BookingStaffMemberRequestBuilder and sets the default values.
 func NewBookingStaffMemberRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingStaffMemberRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookingStaffMemberRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingStaffMemberRequestBuilder) CreateDeleteRequestInformation(options *BookingStaffMemberRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *BookingStaffMemberRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingStaffMemberRequestBuilder) CreateGetRequestInformation(options *BookingStaffMemberRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *BookingStaffMemberRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingStaffMemberRequestBuilder) CreatePatchRequestInformation(options *BookingStaffMemberRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *BookingStaffMemberRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete all the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingStaffMemberRequestBuilder) Delete(options *BookingStaffMemberRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *BookingStaffMemberRequestBuilder) Delete(options *BookingStaffMemberReq
     }
     return nil
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get all the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingStaffMemberRequestBuilder) Get(options *BookingStaffMemberRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMember, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *BookingStaffMemberRequestBuilder) Get(options *BookingStaffMemberReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMember), nil
 }
-// All the staff members that provide services in this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch all the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingStaffMemberRequestBuilder) Patch(options *BookingStaffMemberRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

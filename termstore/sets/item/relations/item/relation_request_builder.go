@@ -9,7 +9,7 @@ import (
     i98b51ccff4515b381bd93ffc6786538fb99a3f84c1ab9c219b62745f27a3254c "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/sets/item/relations/item/toterm"
 )
 
-// Builds and executes requests for operations under \termStore\sets\{set-id}\relations\{relation-id}
+// RelationRequestBuilder builds and executes requests for operations under \termStore\sets\{set-id}\relations\{relation-id}
 type RelationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type RelationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RelationRequestBuilderDeleteOptions options for Delete
 type RelationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type RelationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RelationRequestBuilderGetOptions options for Get
 type RelationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type RelationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Indicates which terms have been pinned or reused directly under the set.
+// RelationRequestBuilderGetQueryParameters indicates which terms have been pinned or reused directly under the set.
 type RelationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RelationRequestBuilderPatchOptions options for Patch
 type RelationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Relation;
@@ -56,10 +56,7 @@ type RelationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RelationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRelationRequestBuilderInternal instantiates a new RelationRequestBuilder and sets the default values.
 func NewRelationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RelationRequestBuilder) {
     m := &RelationRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRelationRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RelationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRelationRequestBuilder instantiates a new RelationRequestBuilder and sets the default values.
 func NewRelationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RelationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRelationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Indicates which terms have been pinned or reused directly under the set.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation indicates which terms have been pinned or reused directly under the set.
 func (m *RelationRequestBuilder) CreateDeleteRequestInformation(options *RelationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *RelationRequestBuilder) CreateDeleteRequestInformation(options *Relatio
     }
     return requestInfo, nil
 }
-// Indicates which terms have been pinned or reused directly under the set.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation indicates which terms have been pinned or reused directly under the set.
 func (m *RelationRequestBuilder) CreateGetRequestInformation(options *RelationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *RelationRequestBuilder) CreateGetRequestInformation(options *RelationRe
     }
     return requestInfo, nil
 }
-// Indicates which terms have been pinned or reused directly under the set.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation indicates which terms have been pinned or reused directly under the set.
 func (m *RelationRequestBuilder) CreatePatchRequestInformation(options *RelationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *RelationRequestBuilder) CreatePatchRequestInformation(options *Relation
     }
     return requestInfo, nil
 }
-// Indicates which terms have been pinned or reused directly under the set.
-// Parameters:
-//  - options : Options for the request
+// Delete indicates which terms have been pinned or reused directly under the set.
 func (m *RelationRequestBuilder) Delete(options *RelationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -159,9 +145,7 @@ func (m *RelationRequestBuilder) Delete(options *RelationRequestBuilderDeleteOpt
 func (m *RelationRequestBuilder) FromTerm()(*i62422d5f66b452dc96cc57571691aa3635a0fa1c7a544236ba74330a492dd9cc.FromTermRequestBuilder) {
     return i62422d5f66b452dc96cc57571691aa3635a0fa1c7a544236ba74330a492dd9cc.NewFromTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Indicates which terms have been pinned or reused directly under the set.
-// Parameters:
-//  - options : Options for the request
+// Get indicates which terms have been pinned or reused directly under the set.
 func (m *RelationRequestBuilder) Get(options *RelationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Relation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *RelationRequestBuilder) Get(options *RelationRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Relation), nil
 }
-// Indicates which terms have been pinned or reused directly under the set.
-// Parameters:
-//  - options : Options for the request
+// Patch indicates which terms have been pinned or reused directly under the set.
 func (m *RelationRequestBuilder) Patch(options *RelationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

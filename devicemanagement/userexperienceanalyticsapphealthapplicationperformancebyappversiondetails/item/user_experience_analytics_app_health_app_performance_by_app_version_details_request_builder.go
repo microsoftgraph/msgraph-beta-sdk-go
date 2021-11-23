@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails\{userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails-id}
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails\{userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails-id}
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBui
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBui
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBui
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics appHealth Application Performance by App Version details
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderGetQueryParameters user experience analytics appHealth Application Performance by App Version details
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails;
@@ -53,10 +53,7 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBui
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderInternal instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequest
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics appHealth Application Performance by App Version details
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics appHealth Application Performance by App Version details
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsReques
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth Application Performance by App Version details
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics appHealth Application Performance by App Version details
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsReques
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth Application Performance by App Version details
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics appHealth Application Performance by App Version details
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsReques
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth Application Performance by App Version details
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics appHealth Application Performance by App Version details
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder) Delete(options *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsReques
     }
     return nil
 }
-// User experience analytics appHealth Application Performance by App Version details
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics appHealth Application Performance by App Version details
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails), nil
 }
-// User experience analytics appHealth Application Performance by App Version details
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics appHealth Application Performance by App Version details
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilder) Patch(options *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

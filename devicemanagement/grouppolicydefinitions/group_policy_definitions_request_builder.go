@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions
+// GroupPolicyDefinitionsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions
 type GroupPolicyDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupPolicyDefinitionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GroupPolicyDefinitionsRequestBuilderGetOptions options for Get
 type GroupPolicyDefinitionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type GroupPolicyDefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The available group policy definitions for this account.
+// GroupPolicyDefinitionsRequestBuilderGetQueryParameters the available group policy definitions for this account.
 type GroupPolicyDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type GroupPolicyDefinitionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// GroupPolicyDefinitionsRequestBuilderPostOptions options for Post
 type GroupPolicyDefinitionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinition;
@@ -56,10 +56,7 @@ type GroupPolicyDefinitionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicyDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyDefinitionsRequestBuilderInternal instantiates a new GroupPolicyDefinitionsRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyDefinitionsRequestBuilder) {
     m := &GroupPolicyDefinitionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewGroupPolicyDefinitionsRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyDefinitionsRequestBuilder instantiates a new GroupPolicyDefinitionsRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyDefinitionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The available group policy definitions for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the available group policy definitions for this account.
 func (m *GroupPolicyDefinitionsRequestBuilder) CreateGetRequestInformation(options *GroupPolicyDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *GroupPolicyDefinitionsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The available group policy definitions for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the available group policy definitions for this account.
 func (m *GroupPolicyDefinitionsRequestBuilder) CreatePostRequestInformation(options *GroupPolicyDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *GroupPolicyDefinitionsRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The available group policy definitions for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the available group policy definitions for this account.
 func (m *GroupPolicyDefinitionsRequestBuilder) Get(options *GroupPolicyDefinitionsRequestBuilderGetOptions)(*GroupPolicyDefinitionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *GroupPolicyDefinitionsRequestBuilder) Get(options *GroupPolicyDefinitio
     }
     return res.(*GroupPolicyDefinitionsResponse), nil
 }
-// The available group policy definitions for this account.
-// Parameters:
-//  - options : Options for the request
+// Post the available group policy definitions for this account.
 func (m *GroupPolicyDefinitionsRequestBuilder) Post(options *GroupPolicyDefinitionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

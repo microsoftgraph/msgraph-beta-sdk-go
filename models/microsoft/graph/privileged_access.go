@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PrivilegedAccess 
 type PrivilegedAccess struct {
     Entity
     // The display name of the provider managed by PIM.
@@ -20,14 +20,14 @@ type PrivilegedAccess struct {
     // A collection of role settings for the provider.
     roleSettings []GovernanceRoleSetting;
 }
-// Instantiates a new privilegedAccess and sets the default values.
+// NewPrivilegedAccess instantiates a new privilegedAccess and sets the default values.
 func NewPrivilegedAccess()(*PrivilegedAccess) {
     m := &PrivilegedAccess{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. The display name of the provider managed by PIM.
+// GetDisplayName gets the displayName property value. The display name of the provider managed by PIM.
 func (m *PrivilegedAccess) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *PrivilegedAccess) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the resources property value. A collection of resources for the provider.
+// GetResources gets the resources property value. A collection of resources for the provider.
 func (m *PrivilegedAccess) GetResources()([]GovernanceResource) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *PrivilegedAccess) GetResources()([]GovernanceResource) {
         return m.resources
     }
 }
-// Gets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
+// GetRoleAssignmentRequests gets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
 func (m *PrivilegedAccess) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequest) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *PrivilegedAccess) GetRoleAssignmentRequests()([]GovernanceRoleAssignmen
         return m.roleAssignmentRequests
     }
 }
-// Gets the roleAssignments property value. A collection of role assignments for the provider.
+// GetRoleAssignments gets the roleAssignments property value. A collection of role assignments for the provider.
 func (m *PrivilegedAccess) GetRoleAssignments()([]GovernanceRoleAssignment) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *PrivilegedAccess) GetRoleAssignments()([]GovernanceRoleAssignment) {
         return m.roleAssignments
     }
 }
-// Gets the roleDefinitions property value. A collection of role defintions for the provider.
+// GetRoleDefinitions gets the roleDefinitions property value. A collection of role defintions for the provider.
 func (m *PrivilegedAccess) GetRoleDefinitions()([]GovernanceRoleDefinition) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *PrivilegedAccess) GetRoleDefinitions()([]GovernanceRoleDefinition) {
         return m.roleDefinitions
     }
 }
-// Gets the roleSettings property value. A collection of role settings for the provider.
+// GetRoleSettings gets the roleSettings property value. A collection of role settings for the provider.
 func (m *PrivilegedAccess) GetRoleSettings()([]GovernanceRoleSetting) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *PrivilegedAccess) GetRoleSettings()([]GovernanceRoleSetting) {
         return m.roleSettings
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,9 +163,7 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *PrivilegedAccess) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrivilegedAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -234,39 +232,27 @@ func (m *PrivilegedAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the displayName property value. The display name of the provider managed by PIM.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name of the provider managed by PIM.
 func (m *PrivilegedAccess) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the resources property value. A collection of resources for the provider.
-// Parameters:
-//  - value : Value to set for the resources property.
+// SetResources sets the resources property value. A collection of resources for the provider.
 func (m *PrivilegedAccess) SetResources(value []GovernanceResource)() {
     m.resources = value
 }
-// Sets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
-// Parameters:
-//  - value : Value to set for the roleAssignmentRequests property.
+// SetRoleAssignmentRequests sets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
 func (m *PrivilegedAccess) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequest)() {
     m.roleAssignmentRequests = value
 }
-// Sets the roleAssignments property value. A collection of role assignments for the provider.
-// Parameters:
-//  - value : Value to set for the roleAssignments property.
+// SetRoleAssignments sets the roleAssignments property value. A collection of role assignments for the provider.
 func (m *PrivilegedAccess) SetRoleAssignments(value []GovernanceRoleAssignment)() {
     m.roleAssignments = value
 }
-// Sets the roleDefinitions property value. A collection of role defintions for the provider.
-// Parameters:
-//  - value : Value to set for the roleDefinitions property.
+// SetRoleDefinitions sets the roleDefinitions property value. A collection of role defintions for the provider.
 func (m *PrivilegedAccess) SetRoleDefinitions(value []GovernanceRoleDefinition)() {
     m.roleDefinitions = value
 }
-// Sets the roleSettings property value. A collection of role settings for the provider.
-// Parameters:
-//  - value : Value to set for the roleSettings property.
+// SetRoleSettings sets the roleSettings property value. A collection of role settings for the provider.
 func (m *PrivilegedAccess) SetRoleSettings(value []GovernanceRoleSetting)() {
     m.roleSettings = value
 }

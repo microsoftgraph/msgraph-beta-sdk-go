@@ -5,17 +5,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// CloudPC 
 type CloudPC struct {
     Entity
+    // 
+    aadDeviceId *string;
     // The Cloud PC display name.
     displayName *string;
     // The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     gracePeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Name of the OS image that's on the Cloud PC.
     imageDisplayName *string;
+    // 
+    lastLoginResult *CloudPcLoginResult;
     // The Cloud PC's last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
+    lastRemoteActionResult *CloudPcRemoteActionResult;
     // The Cloud PC’s Intune device ID.
     managedDeviceId *string;
     // The Cloud PC’s Intune device name.
@@ -30,6 +36,8 @@ type CloudPC struct {
     servicePlanId *string;
     // The Cloud PC's service plan name.
     servicePlanName *string;
+    // 
+    servicePlanType *CloudPcServicePlanType;
     // Status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
     status *CloudPcStatus;
     // The details of the Cloud PC status.
@@ -37,14 +45,22 @@ type CloudPC struct {
     // The user principal name (UPN) of the user assigned to the Cloud PC.
     userPrincipalName *string;
 }
-// Instantiates a new cloudPC and sets the default values.
+// NewCloudPC instantiates a new cloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. The Cloud PC display name.
+// GetAadDeviceId gets the aadDeviceId property value. 
+func (m *CloudPC) GetAadDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.aadDeviceId
+    }
+}
+// GetDisplayName gets the displayName property value. The Cloud PC display name.
 func (m *CloudPC) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +68,7 @@ func (m *CloudPC) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetGracePeriodEndDateTime gets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPC) GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -60,7 +76,7 @@ func (m *CloudPC) GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return m.gracePeriodEndDateTime
     }
 }
-// Gets the imageDisplayName property value. Name of the OS image that's on the Cloud PC.
+// GetImageDisplayName gets the imageDisplayName property value. Name of the OS image that's on the Cloud PC.
 func (m *CloudPC) GetImageDisplayName()(*string) {
     if m == nil {
         return nil
@@ -68,7 +84,15 @@ func (m *CloudPC) GetImageDisplayName()(*string) {
         return m.imageDisplayName
     }
 }
-// Gets the lastModifiedDateTime property value. The Cloud PC's last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetLastLoginResult gets the lastLoginResult property value. 
+func (m *CloudPC) GetLastLoginResult()(*CloudPcLoginResult) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastLoginResult
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The Cloud PC's last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPC) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -76,7 +100,15 @@ func (m *CloudPC) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.lastModifiedDateTime
     }
 }
-// Gets the managedDeviceId property value. The Cloud PC’s Intune device ID.
+// GetLastRemoteActionResult gets the lastRemoteActionResult property value. 
+func (m *CloudPC) GetLastRemoteActionResult()(*CloudPcRemoteActionResult) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRemoteActionResult
+    }
+}
+// GetManagedDeviceId gets the managedDeviceId property value. The Cloud PC’s Intune device ID.
 func (m *CloudPC) GetManagedDeviceId()(*string) {
     if m == nil {
         return nil
@@ -84,7 +116,7 @@ func (m *CloudPC) GetManagedDeviceId()(*string) {
         return m.managedDeviceId
     }
 }
-// Gets the managedDeviceName property value. The Cloud PC’s Intune device name.
+// GetManagedDeviceName gets the managedDeviceName property value. The Cloud PC’s Intune device name.
 func (m *CloudPC) GetManagedDeviceName()(*string) {
     if m == nil {
         return nil
@@ -92,7 +124,7 @@ func (m *CloudPC) GetManagedDeviceName()(*string) {
         return m.managedDeviceName
     }
 }
-// Gets the onPremisesConnectionName property value. The on-premises connection that is applied during provisioning of Cloud PCs.
+// GetOnPremisesConnectionName gets the onPremisesConnectionName property value. The on-premises connection that is applied during provisioning of Cloud PCs.
 func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
     if m == nil {
         return nil
@@ -100,7 +132,7 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
         return m.onPremisesConnectionName
     }
 }
-// Gets the provisioningPolicyId property value. The Cloud PC's provisioning policy ID.
+// GetProvisioningPolicyId gets the provisioningPolicyId property value. The Cloud PC's provisioning policy ID.
 func (m *CloudPC) GetProvisioningPolicyId()(*string) {
     if m == nil {
         return nil
@@ -108,7 +140,7 @@ func (m *CloudPC) GetProvisioningPolicyId()(*string) {
         return m.provisioningPolicyId
     }
 }
-// Gets the provisioningPolicyName property value. The provisioning policy that is applied during provisioning of Cloud PCs.
+// GetProvisioningPolicyName gets the provisioningPolicyName property value. The provisioning policy that is applied during provisioning of Cloud PCs.
 func (m *CloudPC) GetProvisioningPolicyName()(*string) {
     if m == nil {
         return nil
@@ -116,7 +148,7 @@ func (m *CloudPC) GetProvisioningPolicyName()(*string) {
         return m.provisioningPolicyName
     }
 }
-// Gets the servicePlanId property value. The Cloud PC's service plan ID.
+// GetServicePlanId gets the servicePlanId property value. The Cloud PC's service plan ID.
 func (m *CloudPC) GetServicePlanId()(*string) {
     if m == nil {
         return nil
@@ -124,7 +156,7 @@ func (m *CloudPC) GetServicePlanId()(*string) {
         return m.servicePlanId
     }
 }
-// Gets the servicePlanName property value. The Cloud PC's service plan name.
+// GetServicePlanName gets the servicePlanName property value. The Cloud PC's service plan name.
 func (m *CloudPC) GetServicePlanName()(*string) {
     if m == nil {
         return nil
@@ -132,7 +164,15 @@ func (m *CloudPC) GetServicePlanName()(*string) {
         return m.servicePlanName
     }
 }
-// Gets the status property value. Status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
+// GetServicePlanType gets the servicePlanType property value. 
+func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePlanType
+    }
+}
+// GetStatus gets the status property value. Status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
 func (m *CloudPC) GetStatus()(*CloudPcStatus) {
     if m == nil {
         return nil
@@ -140,7 +180,7 @@ func (m *CloudPC) GetStatus()(*CloudPcStatus) {
         return m.status
     }
 }
-// Gets the statusDetails property value. The details of the Cloud PC status.
+// GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status.
 func (m *CloudPC) GetStatusDetails()(*CloudPcStatusDetails) {
     if m == nil {
         return nil
@@ -148,7 +188,7 @@ func (m *CloudPC) GetStatusDetails()(*CloudPcStatusDetails) {
         return m.statusDetails
     }
 }
-// Gets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the Cloud PC.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the Cloud PC.
 func (m *CloudPC) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -156,9 +196,19 @@ func (m *CloudPC) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["aadDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAadDeviceId(val)
+        }
+        return nil
+    }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -189,6 +239,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         }
         return nil
     }
+    res["lastLoginResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcLoginResult() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastLoginResult(val.(*CloudPcLoginResult))
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -196,6 +256,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         }
         if val != nil {
             m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["lastRemoteActionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcRemoteActionResult() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastRemoteActionResult(val.(*CloudPcRemoteActionResult))
         }
         return nil
     }
@@ -269,6 +339,17 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         }
         return nil
     }
+    res["servicePlanType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcServicePlanType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            cast := val.(CloudPcServicePlanType)
+            m.SetServicePlanType(&cast)
+        }
+        return nil
+    }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcStatus)
         if err != nil {
@@ -305,13 +386,17 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
 func (m *CloudPC) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CloudPC) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteStringValue("aadDeviceId", m.GetAadDeviceId())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -332,7 +417,19 @@ func (m *CloudPC) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     {
+        err = writer.WriteObjectValue("lastLoginResult", m.GetLastLoginResult())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("lastRemoteActionResult", m.GetLastRemoteActionResult())
         if err != nil {
             return err
         }
@@ -379,6 +476,13 @@ func (m *CloudPC) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
+    if m.GetServicePlanType() != nil {
+        cast := m.GetServicePlanType().String()
+        err = writer.WriteStringValue("servicePlanType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := m.GetStatus().String()
         err = writer.WriteStringValue("status", &cast)
@@ -400,87 +504,75 @@ func (m *CloudPC) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     return nil
 }
-// Sets the displayName property value. The Cloud PC display name.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetAadDeviceId sets the aadDeviceId property value. 
+func (m *CloudPC) SetAadDeviceId(value *string)() {
+    m.aadDeviceId = value
+}
+// SetDisplayName sets the displayName property value. The Cloud PC display name.
 func (m *CloudPC) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the gracePeriodEndDateTime property.
+// SetGracePeriodEndDateTime sets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPC) SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.gracePeriodEndDateTime = value
 }
-// Sets the imageDisplayName property value. Name of the OS image that's on the Cloud PC.
-// Parameters:
-//  - value : Value to set for the imageDisplayName property.
+// SetImageDisplayName sets the imageDisplayName property value. Name of the OS image that's on the Cloud PC.
 func (m *CloudPC) SetImageDisplayName(value *string)() {
     m.imageDisplayName = value
 }
-// Sets the lastModifiedDateTime property value. The Cloud PC's last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastLoginResult sets the lastLoginResult property value. 
+func (m *CloudPC) SetLastLoginResult(value *CloudPcLoginResult)() {
+    m.lastLoginResult = value
+}
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The Cloud PC's last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPC) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the managedDeviceId property value. The Cloud PC’s Intune device ID.
-// Parameters:
-//  - value : Value to set for the managedDeviceId property.
+// SetLastRemoteActionResult sets the lastRemoteActionResult property value. 
+func (m *CloudPC) SetLastRemoteActionResult(value *CloudPcRemoteActionResult)() {
+    m.lastRemoteActionResult = value
+}
+// SetManagedDeviceId sets the managedDeviceId property value. The Cloud PC’s Intune device ID.
 func (m *CloudPC) SetManagedDeviceId(value *string)() {
     m.managedDeviceId = value
 }
-// Sets the managedDeviceName property value. The Cloud PC’s Intune device name.
-// Parameters:
-//  - value : Value to set for the managedDeviceName property.
+// SetManagedDeviceName sets the managedDeviceName property value. The Cloud PC’s Intune device name.
 func (m *CloudPC) SetManagedDeviceName(value *string)() {
     m.managedDeviceName = value
 }
-// Sets the onPremisesConnectionName property value. The on-premises connection that is applied during provisioning of Cloud PCs.
-// Parameters:
-//  - value : Value to set for the onPremisesConnectionName property.
+// SetOnPremisesConnectionName sets the onPremisesConnectionName property value. The on-premises connection that is applied during provisioning of Cloud PCs.
 func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
     m.onPremisesConnectionName = value
 }
-// Sets the provisioningPolicyId property value. The Cloud PC's provisioning policy ID.
-// Parameters:
-//  - value : Value to set for the provisioningPolicyId property.
+// SetProvisioningPolicyId sets the provisioningPolicyId property value. The Cloud PC's provisioning policy ID.
 func (m *CloudPC) SetProvisioningPolicyId(value *string)() {
     m.provisioningPolicyId = value
 }
-// Sets the provisioningPolicyName property value. The provisioning policy that is applied during provisioning of Cloud PCs.
-// Parameters:
-//  - value : Value to set for the provisioningPolicyName property.
+// SetProvisioningPolicyName sets the provisioningPolicyName property value. The provisioning policy that is applied during provisioning of Cloud PCs.
 func (m *CloudPC) SetProvisioningPolicyName(value *string)() {
     m.provisioningPolicyName = value
 }
-// Sets the servicePlanId property value. The Cloud PC's service plan ID.
-// Parameters:
-//  - value : Value to set for the servicePlanId property.
+// SetServicePlanId sets the servicePlanId property value. The Cloud PC's service plan ID.
 func (m *CloudPC) SetServicePlanId(value *string)() {
     m.servicePlanId = value
 }
-// Sets the servicePlanName property value. The Cloud PC's service plan name.
-// Parameters:
-//  - value : Value to set for the servicePlanName property.
+// SetServicePlanName sets the servicePlanName property value. The Cloud PC's service plan name.
 func (m *CloudPC) SetServicePlanName(value *string)() {
     m.servicePlanName = value
 }
-// Sets the status property value. Status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetServicePlanType sets the servicePlanType property value. 
+func (m *CloudPC) SetServicePlanType(value *CloudPcServicePlanType)() {
+    m.servicePlanType = value
+}
+// SetStatus sets the status property value. Status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
 func (m *CloudPC) SetStatus(value *CloudPcStatus)() {
     m.status = value
 }
-// Sets the statusDetails property value. The details of the Cloud PC status.
-// Parameters:
-//  - value : Value to set for the statusDetails property.
+// SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status.
 func (m *CloudPC) SetStatusDetails(value *CloudPcStatusDetails)() {
     m.statusDetails = value
 }
-// Sets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the Cloud PC.
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the Cloud PC.
 func (m *CloudPC) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

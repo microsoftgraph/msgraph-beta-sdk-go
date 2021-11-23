@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCompliancePolicyDevicesReport
+// GetCompliancePolicyDevicesReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCompliancePolicyDevicesReport
 type GetCompliancePolicyDevicesReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetCompliancePolicyDevicesReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetCompliancePolicyDevicesReportRequestBuilderPostOptions options for Post
 type GetCompliancePolicyDevicesReportRequestBuilderPostOptions struct {
     // 
     Body *GetCompliancePolicyDevicesReportRequestBody;
@@ -24,10 +24,7 @@ type GetCompliancePolicyDevicesReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetCompliancePolicyDevicesReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCompliancePolicyDevicesReportRequestBuilderInternal instantiates a new GetCompliancePolicyDevicesReportRequestBuilder and sets the default values.
 func NewGetCompliancePolicyDevicesReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCompliancePolicyDevicesReportRequestBuilder) {
     m := &GetCompliancePolicyDevicesReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetCompliancePolicyDevicesReportRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetCompliancePolicyDevicesReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCompliancePolicyDevicesReportRequestBuilder instantiates a new GetCompliancePolicyDevicesReportRequestBuilder and sets the default values.
 func NewGetCompliancePolicyDevicesReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCompliancePolicyDevicesReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetCompliancePolicyDevicesReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getCompliancePolicyDevicesReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getCompliancePolicyDevicesReport
 func (m *GetCompliancePolicyDevicesReportRequestBuilder) CreatePostRequestInformation(options *GetCompliancePolicyDevicesReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetCompliancePolicyDevicesReportRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Invoke action getCompliancePolicyDevicesReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getCompliancePolicyDevicesReport
 func (m *GetCompliancePolicyDevicesReportRequestBuilder) Post(options *GetCompliancePolicyDevicesReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

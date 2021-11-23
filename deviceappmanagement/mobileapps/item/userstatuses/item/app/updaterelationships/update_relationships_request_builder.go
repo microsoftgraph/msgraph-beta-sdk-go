@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app\microsoft.graph.updateRelationships
+// UpdateRelationshipsRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app\microsoft.graph.updateRelationships
 type UpdateRelationshipsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UpdateRelationshipsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UpdateRelationshipsRequestBuilderPostOptions options for Post
 type UpdateRelationshipsRequestBuilderPostOptions struct {
     // 
     Body *UpdateRelationshipsRequestBody;
@@ -24,10 +24,7 @@ type UpdateRelationshipsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UpdateRelationshipsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdateRelationshipsRequestBuilderInternal instantiates a new UpdateRelationshipsRequestBuilder and sets the default values.
 func NewUpdateRelationshipsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateRelationshipsRequestBuilder) {
     m := &UpdateRelationshipsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUpdateRelationshipsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdateRelationshipsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdateRelationshipsRequestBuilder instantiates a new UpdateRelationshipsRequestBuilder and sets the default values.
 func NewUpdateRelationshipsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateRelationshipsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateRelationshipsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action updateRelationships
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action updateRelationships
 func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformation(options *UpdateRelationshipsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Invoke action updateRelationships
-// Parameters:
-//  - options : Options for the request
+// Post invoke action updateRelationships
 func (m *UpdateRelationshipsRequestBuilder) Post(options *UpdateRelationshipsRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

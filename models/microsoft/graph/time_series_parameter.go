@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// TimeSeriesParameter 
 type TimeSeriesParameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type TimeSeriesParameter struct {
     // Start time of the series being requested.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new timeSeriesParameter and sets the default values.
+// NewTimeSeriesParameter instantiates a new timeSeriesParameter and sets the default values.
 func NewTimeSeriesParameter()(*TimeSeriesParameter) {
     m := &TimeSeriesParameter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeSeriesParameter) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *TimeSeriesParameter) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the endDateTime property value. End time of the series being requested. Optional; if not specified, current time is used.
+// GetEndDateTime gets the endDateTime property value. End time of the series being requested. Optional; if not specified, current time is used.
 func (m *TimeSeriesParameter) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *TimeSeriesParameter) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.endDateTime
     }
 }
-// Gets the metricName property value. The name of the metric for which a time series is requested.
+// GetMetricName gets the metricName property value. The name of the metric for which a time series is requested.
 func (m *TimeSeriesParameter) GetMetricName()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *TimeSeriesParameter) GetMetricName()(*string) {
         return m.metricName
     }
 }
-// Gets the startDateTime property value. Start time of the series being requested.
+// GetStartDateTime gets the startDateTime property value. Start time of the series being requested.
 func (m *TimeSeriesParameter) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *TimeSeriesParameter) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.startDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TimeSeriesParameter) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *TimeSeriesParameter) GetFieldDeserializers()(map[string]func(interface{
 func (m *TimeSeriesParameter) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TimeSeriesParameter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
@@ -123,27 +121,19 @@ func (m *TimeSeriesParameter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeSeriesParameter) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the endDateTime property value. End time of the series being requested. Optional; if not specified, current time is used.
-// Parameters:
-//  - value : Value to set for the endDateTime property.
+// SetEndDateTime sets the endDateTime property value. End time of the series being requested. Optional; if not specified, current time is used.
 func (m *TimeSeriesParameter) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// Sets the metricName property value. The name of the metric for which a time series is requested.
-// Parameters:
-//  - value : Value to set for the metricName property.
+// SetMetricName sets the metricName property value. The name of the metric for which a time series is requested.
 func (m *TimeSeriesParameter) SetMetricName(value *string)() {
     m.metricName = value
 }
-// Sets the startDateTime property value. Start time of the series being requested.
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. Start time of the series being requested.
 func (m *TimeSeriesParameter) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }

@@ -7,7 +7,7 @@ import (
     i32cead955f53e67d98acbdce32f93ac20567841eba2d26ee53b382094e05fb6b "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsinformationprotectiondeviceregistrations/item/wipe"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\windowsInformationProtectionDeviceRegistrations\{windowsInformationProtectionDeviceRegistration-id}
+// WindowsInformationProtectionDeviceRegistrationRequestBuilder builds and executes requests for operations under \deviceAppManagement\windowsInformationProtectionDeviceRegistrations\{windowsInformationProtectionDeviceRegistration-id}
 type WindowsInformationProtectionDeviceRegistrationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type WindowsInformationProtectionDeviceRegistrationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsInformationProtectionDeviceRegistrationRequestBuilderDeleteOptions options for Delete
 type WindowsInformationProtectionDeviceRegistrationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type WindowsInformationProtectionDeviceRegistrationRequestBuilderDeleteOptions s
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsInformationProtectionDeviceRegistrationRequestBuilderGetOptions options for Get
 type WindowsInformationProtectionDeviceRegistrationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type WindowsInformationProtectionDeviceRegistrationRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Windows information protection device registrations that are not MDM enrolled.
+// WindowsInformationProtectionDeviceRegistrationRequestBuilderGetQueryParameters windows information protection device registrations that are not MDM enrolled.
 type WindowsInformationProtectionDeviceRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsInformationProtectionDeviceRegistrationRequestBuilderPatchOptions options for Patch
 type WindowsInformationProtectionDeviceRegistrationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsInformationProtectionDeviceRegistration;
@@ -54,10 +54,7 @@ type WindowsInformationProtectionDeviceRegistrationRequestBuilderPatchOptions st
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsInformationProtectionDeviceRegistrationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionDeviceRegistrationRequestBuilderInternal instantiates a new WindowsInformationProtectionDeviceRegistrationRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionDeviceRegistrationRequestBuilder) {
     m := &WindowsInformationProtectionDeviceRegistrationRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewWindowsInformationProtectionDeviceRegistrationRequestBuilderInternal(pat
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsInformationProtectionDeviceRegistrationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionDeviceRegistrationRequestBuilder instantiates a new WindowsInformationProtectionDeviceRegistrationRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistrationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionDeviceRegistrationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionDeviceRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Windows information protection device registrations that are not MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation windows information protection device registrations that are not MDM enrolled.
 func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) CreateDeleteRequestInformation(options *WindowsInformationProtectionDeviceRegistrationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) CreateDel
     }
     return requestInfo, nil
 }
-// Windows information protection device registrations that are not MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation windows information protection device registrations that are not MDM enrolled.
 func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) CreateGetRequestInformation(options *WindowsInformationProtectionDeviceRegistrationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// Windows information protection device registrations that are not MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation windows information protection device registrations that are not MDM enrolled.
 func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) CreatePatchRequestInformation(options *WindowsInformationProtectionDeviceRegistrationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) CreatePat
     }
     return requestInfo, nil
 }
-// Windows information protection device registrations that are not MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// Delete windows information protection device registrations that are not MDM enrolled.
 func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) Delete(options *WindowsInformationProtectionDeviceRegistrationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) Delete(op
     }
     return nil
 }
-// Windows information protection device registrations that are not MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// Get windows information protection device registrations that are not MDM enrolled.
 func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) Get(options *WindowsInformationProtectionDeviceRegistrationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsInformationProtectionDeviceRegistration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) Get(optio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsInformationProtectionDeviceRegistration), nil
 }
-// Windows information protection device registrations that are not MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// Patch windows information protection device registrations that are not MDM enrolled.
 func (m *WindowsInformationProtectionDeviceRegistrationRequestBuilder) Patch(options *WindowsInformationProtectionDeviceRegistrationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

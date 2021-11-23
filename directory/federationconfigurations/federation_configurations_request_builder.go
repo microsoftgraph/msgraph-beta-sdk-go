@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directory\federationConfigurations
+// FederationConfigurationsRequestBuilder builds and executes requests for operations under \directory\federationConfigurations
 type FederationConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type FederationConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FederationConfigurationsRequestBuilderGetOptions options for Get
 type FederationConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type FederationConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+// FederationConfigurationsRequestBuilderGetQueryParameters configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 type FederationConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type FederationConfigurationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// FederationConfigurationsRequestBuilderPostOptions options for Post
 type FederationConfigurationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProviderBase;
@@ -57,14 +57,11 @@ type FederationConfigurationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \directory\federationConfigurations\microsoft.graph.availableProviderTypes()
+// AvailableProviderTypes builds and executes requests for operations under \directory\federationConfigurations\microsoft.graph.availableProviderTypes()
 func (m *FederationConfigurationsRequestBuilder) AvailableProviderTypes()(*i4b842586be8ae0ce686f265a1097be934403c0865f0d5231b57074b1d99af0f9.AvailableProviderTypesRequestBuilder) {
     return i4b842586be8ae0ce686f265a1097be934403c0865f0d5231b57074b1d99af0f9.NewAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFederationConfigurationsRequestBuilderInternal instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
 func NewFederationConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FederationConfigurationsRequestBuilder) {
     m := &FederationConfigurationsRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewFederationConfigurationsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFederationConfigurationsRequestBuilder instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
 func NewFederationConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FederationConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFederationConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *FederationConfigurationsRequestBuilder) CreateGetRequestInformation(options *FederationConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *FederationConfigurationsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *FederationConfigurationsRequestBuilder) CreatePostRequestInformation(options *FederationConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *FederationConfigurationsRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-// Parameters:
-//  - options : Options for the request
+// Get configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *FederationConfigurationsRequestBuilder) Get(options *FederationConfigurationsRequestBuilderGetOptions)(*FederationConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *FederationConfigurationsRequestBuilder) Get(options *FederationConfigur
     }
     return res.(*FederationConfigurationsResponse), nil
 }
-// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-// Parameters:
-//  - options : Options for the request
+// Post configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *FederationConfigurationsRequestBuilder) Post(options *FederationConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProviderBase, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

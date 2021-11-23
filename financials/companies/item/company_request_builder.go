@@ -72,7 +72,7 @@ import (
     ie940ae608019de62a242d937e70fdc6a489372a4d225a99b69483a2d8f07d28f "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salescreditmemolines/item"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}
+// CompanyRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}
 type CompanyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -81,7 +81,7 @@ type CompanyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CompanyRequestBuilderDeleteOptions options for Delete
 type CompanyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -90,7 +90,7 @@ type CompanyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CompanyRequestBuilderGetOptions options for Get
 type CompanyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -101,14 +101,14 @@ type CompanyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get companies from financials
+// CompanyRequestBuilderGetQueryParameters get companies from financials
 type CompanyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CompanyRequestBuilderPatchOptions options for Patch
 type CompanyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Company;
@@ -122,9 +122,7 @@ type CompanyRequestBuilderPatchOptions struct {
 func (m *CompanyRequestBuilder) Accounts()(*ibe5eb65fe22e268725128bcf2845841605d9d1eef38f8068c89a3ccafdcb245d.AccountsRequestBuilder) {
     return ibe5eb65fe22e268725128bcf2845841605d9d1eef38f8068c89a3ccafdcb245d.NewAccountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.accounts.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccountsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.accounts.item collection
 func (m *CompanyRequestBuilder) AccountsById(id string)(*i8bb41f9aaafe2872cf4a7f16919a0ea7a6265e4e8c2dde4370cbb7a491e99b17.AccountRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -138,9 +136,7 @@ func (m *CompanyRequestBuilder) AccountsById(id string)(*i8bb41f9aaafe2872cf4a7f
 func (m *CompanyRequestBuilder) AgedAccountsPayable()(*i7d7d65e7b883cd40a4d185e170461c0df63bc2db571565c4b08605b6a6b39d56.AgedAccountsPayableRequestBuilder) {
     return i7d7d65e7b883cd40a4d185e170461c0df63bc2db571565c4b08605b6a6b39d56.NewAgedAccountsPayableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.agedAccountsPayable.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgedAccountsPayableById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.agedAccountsPayable.item collection
 func (m *CompanyRequestBuilder) AgedAccountsPayableById(id string)(*i7d7d65e7b883cd40a4d185e170461c0df63bc2db571565c4b08605b6a6b39d56.AgedAccountsPayableRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -154,9 +150,7 @@ func (m *CompanyRequestBuilder) AgedAccountsPayableById(id string)(*i7d7d65e7b88
 func (m *CompanyRequestBuilder) AgedAccountsReceivable()(*icb4ac224f7dda176b38d0f2720a5c09dc25b1e4000589439ed85ea14acbf34b7.AgedAccountsReceivableRequestBuilder) {
     return icb4ac224f7dda176b38d0f2720a5c09dc25b1e4000589439ed85ea14acbf34b7.NewAgedAccountsReceivableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.agedAccountsReceivable.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgedAccountsReceivableById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.agedAccountsReceivable.item collection
 func (m *CompanyRequestBuilder) AgedAccountsReceivableById(id string)(*icb4ac224f7dda176b38d0f2720a5c09dc25b1e4000589439ed85ea14acbf34b7.AgedAccountsReceivableRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -170,9 +164,7 @@ func (m *CompanyRequestBuilder) AgedAccountsReceivableById(id string)(*icb4ac224
 func (m *CompanyRequestBuilder) CompanyInformation()(*i4150f690ea3d8f1505214d237ce4d724022a2128b537709f0ee5446c49db5f18.CompanyInformationRequestBuilder) {
     return i4150f690ea3d8f1505214d237ce4d724022a2128b537709f0ee5446c49db5f18.NewCompanyInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.companyInformation.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CompanyInformationById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.companyInformation.item collection
 func (m *CompanyRequestBuilder) CompanyInformationById(id string)(*i4150f690ea3d8f1505214d237ce4d724022a2128b537709f0ee5446c49db5f18.CompanyInformationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -183,10 +175,7 @@ func (m *CompanyRequestBuilder) CompanyInformationById(id string)(*i4150f690ea3d
     }
     return i4150f690ea3d8f1505214d237ce4d724022a2128b537709f0ee5446c49db5f18.NewCompanyInformationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new CompanyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCompanyRequestBuilderInternal instantiates a new CompanyRequestBuilder and sets the default values.
 func NewCompanyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CompanyRequestBuilder) {
     m := &CompanyRequestBuilder{
     }
@@ -199,10 +188,7 @@ func NewCompanyRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CompanyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCompanyRequestBuilder instantiates a new CompanyRequestBuilder and sets the default values.
 func NewCompanyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CompanyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -211,9 +197,7 @@ func NewCompanyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
 func (m *CompanyRequestBuilder) CountriesRegions()(*idbb5b19dc644044a2e4208047f31e9217b3185830f415d7189bb7a15e8dd4e7b.CountriesRegionsRequestBuilder) {
     return idbb5b19dc644044a2e4208047f31e9217b3185830f415d7189bb7a15e8dd4e7b.NewCountriesRegionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.countriesRegions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CountriesRegionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.countriesRegions.item collection
 func (m *CompanyRequestBuilder) CountriesRegionsById(id string)(*ib4173258919a2470076856e048a74747e88c26282e025907c42dbae5ec6030ca.CountryRegionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -224,9 +208,7 @@ func (m *CompanyRequestBuilder) CountriesRegionsById(id string)(*ib4173258919a24
     }
     return ib4173258919a2470076856e048a74747e88c26282e025907c42dbae5ec6030ca.NewCountryRegionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete navigation property companies for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property companies for financials
 func (m *CompanyRequestBuilder) CreateDeleteRequestInformation(options *CompanyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -243,9 +225,7 @@ func (m *CompanyRequestBuilder) CreateDeleteRequestInformation(options *CompanyR
     }
     return requestInfo, nil
 }
-// Get companies from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get companies from financials
 func (m *CompanyRequestBuilder) CreateGetRequestInformation(options *CompanyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -265,9 +245,7 @@ func (m *CompanyRequestBuilder) CreateGetRequestInformation(options *CompanyRequ
     }
     return requestInfo, nil
 }
-// Update the navigation property companies in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property companies in financials
 func (m *CompanyRequestBuilder) CreatePatchRequestInformation(options *CompanyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -288,9 +266,7 @@ func (m *CompanyRequestBuilder) CreatePatchRequestInformation(options *CompanyRe
 func (m *CompanyRequestBuilder) Currencies()(*i39cfe575a2df965e199497b478ce23488c2f17f202a1ef77b208a12cad55f732.CurrenciesRequestBuilder) {
     return i39cfe575a2df965e199497b478ce23488c2f17f202a1ef77b208a12cad55f732.NewCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.currencies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CurrenciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.currencies.item collection
 func (m *CompanyRequestBuilder) CurrenciesById(id string)(*i10be44ffc518b9ffebfc696f5c34a3302d87645d22fc12694c9904aca1044d58.CurrencyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -304,9 +280,7 @@ func (m *CompanyRequestBuilder) CurrenciesById(id string)(*i10be44ffc518b9ffebfc
 func (m *CompanyRequestBuilder) CustomerPaymentJournals()(*ia4bfc6e27a07d01219c32a3c969a7dd3bd15b29d5dd4888d96948af8c47938a4.CustomerPaymentJournalsRequestBuilder) {
     return ia4bfc6e27a07d01219c32a3c969a7dd3bd15b29d5dd4888d96948af8c47938a4.NewCustomerPaymentJournalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.customerPaymentJournals.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CustomerPaymentJournalsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.customerPaymentJournals.item collection
 func (m *CompanyRequestBuilder) CustomerPaymentJournalsById(id string)(*i2fa657acc59d6b7630ef46de77a50036226d4b074450ccaebde8cf00abc68dec.CustomerPaymentJournalRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -320,9 +294,7 @@ func (m *CompanyRequestBuilder) CustomerPaymentJournalsById(id string)(*i2fa657a
 func (m *CompanyRequestBuilder) CustomerPayments()(*ia59c5b754460daf1c032eae861b2a2a0cedc8a8b7ae80231abde5c98df3e9e78.CustomerPaymentsRequestBuilder) {
     return ia59c5b754460daf1c032eae861b2a2a0cedc8a8b7ae80231abde5c98df3e9e78.NewCustomerPaymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.customerPayments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CustomerPaymentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.customerPayments.item collection
 func (m *CompanyRequestBuilder) CustomerPaymentsById(id string)(*i156a2925868947a7298582f37c6bf9442997ed01292975d5f12ae6a54051c565.CustomerPaymentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -336,9 +308,7 @@ func (m *CompanyRequestBuilder) CustomerPaymentsById(id string)(*i156a2925868947
 func (m *CompanyRequestBuilder) Customers()(*i57a164edcc262a1e7d0cc54eccb32cb5b3aba7f6bc58654ca5407f5ea88e4560.CustomersRequestBuilder) {
     return i57a164edcc262a1e7d0cc54eccb32cb5b3aba7f6bc58654ca5407f5ea88e4560.NewCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.customers.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CustomersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.customers.item collection
 func (m *CompanyRequestBuilder) CustomersById(id string)(*i0a22f9350aef914933c2bf7011f507fef010436ad65aed8403b06d3550b3f89d.CustomerRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -349,9 +319,7 @@ func (m *CompanyRequestBuilder) CustomersById(id string)(*i0a22f9350aef914933c2b
     }
     return i0a22f9350aef914933c2bf7011f507fef010436ad65aed8403b06d3550b3f89d.NewCustomerRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete navigation property companies for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property companies for financials
 func (m *CompanyRequestBuilder) Delete(options *CompanyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -366,9 +334,7 @@ func (m *CompanyRequestBuilder) Delete(options *CompanyRequestBuilderDeleteOptio
 func (m *CompanyRequestBuilder) Dimensions()(*if536310c607589fc4a894ef1c998601061419a56a998c732127ea6b48db63d8c.DimensionsRequestBuilder) {
     return if536310c607589fc4a894ef1c998601061419a56a998c732127ea6b48db63d8c.NewDimensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.dimensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DimensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.dimensions.item collection
 func (m *CompanyRequestBuilder) DimensionsById(id string)(*ib663fe9a724ce0e5ad43315594f7b7c19a9e8e35fe77f81dc1945c6e3936fe2f.DimensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -382,9 +348,7 @@ func (m *CompanyRequestBuilder) DimensionsById(id string)(*ib663fe9a724ce0e5ad43
 func (m *CompanyRequestBuilder) DimensionValues()(*i5f4c33d5e43228d9388a0cc80ea3579373e6ec1fee4977e1a4307035fa641dc8.DimensionValuesRequestBuilder) {
     return i5f4c33d5e43228d9388a0cc80ea3579373e6ec1fee4977e1a4307035fa641dc8.NewDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.dimensionValues.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DimensionValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.dimensionValues.item collection
 func (m *CompanyRequestBuilder) DimensionValuesById(id string)(*i11e6e00b839a93742244aa3549a6868991eeeed6ccefdbcf294e91fbbee4ff3a.DimensionValueRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -398,9 +362,7 @@ func (m *CompanyRequestBuilder) DimensionValuesById(id string)(*i11e6e00b839a937
 func (m *CompanyRequestBuilder) Employees()(*ib2dabce3215c46b19ea19a0fbff4f14d66ae9488d324c78fcb154a217eb7073c.EmployeesRequestBuilder) {
     return ib2dabce3215c46b19ea19a0fbff4f14d66ae9488d324c78fcb154a217eb7073c.NewEmployeesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.employees.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// EmployeesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.employees.item collection
 func (m *CompanyRequestBuilder) EmployeesById(id string)(*i1659c475e4793613cba0cab9ebd1d7cb4807826d1a70462923f4606aefaf2923.EmployeeRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -414,9 +376,7 @@ func (m *CompanyRequestBuilder) EmployeesById(id string)(*i1659c475e4793613cba0c
 func (m *CompanyRequestBuilder) GeneralLedgerEntries()(*i6945f10b9fe3e8587a632f884b54c8c2c422de572bc738b4006fa3f708463503.GeneralLedgerEntriesRequestBuilder) {
     return i6945f10b9fe3e8587a632f884b54c8c2c422de572bc738b4006fa3f708463503.NewGeneralLedgerEntriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.generalLedgerEntries.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GeneralLedgerEntriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.generalLedgerEntries.item collection
 func (m *CompanyRequestBuilder) GeneralLedgerEntriesById(id string)(*i3d03e8e7981c4382b0b7fec2f585dcb2af2df5976ea20ae1de1c5ef9996f16ae.GeneralLedgerEntryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -427,9 +387,7 @@ func (m *CompanyRequestBuilder) GeneralLedgerEntriesById(id string)(*i3d03e8e798
     }
     return i3d03e8e7981c4382b0b7fec2f585dcb2af2df5976ea20ae1de1c5ef9996f16ae.NewGeneralLedgerEntryRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get companies from financials
-// Parameters:
-//  - options : Options for the request
+// Get get companies from financials
 func (m *CompanyRequestBuilder) Get(options *CompanyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Company, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -444,9 +402,7 @@ func (m *CompanyRequestBuilder) Get(options *CompanyRequestBuilderGetOptions)(*i
 func (m *CompanyRequestBuilder) ItemCategories()(*ia681f3c1a272d62548404c0148103d3f45c07c3d2d28c94b24c5faf621ca9eea.ItemCategoriesRequestBuilder) {
     return ia681f3c1a272d62548404c0148103d3f45c07c3d2d28c94b24c5faf621ca9eea.NewItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.itemCategories.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ItemCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.itemCategories.item collection
 func (m *CompanyRequestBuilder) ItemCategoriesById(id string)(*i86e272c5906623aaa71eb00713179597400af0b135903dd413a7d82af37200de.ItemCategoryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -460,9 +416,7 @@ func (m *CompanyRequestBuilder) ItemCategoriesById(id string)(*i86e272c5906623aa
 func (m *CompanyRequestBuilder) Items()(*i9d6749cb386b81deff47b86d48c6a76416836b8b4fdee0aeec53545b4bc5c102.ItemsRequestBuilder) {
     return i9d6749cb386b81deff47b86d48c6a76416836b8b4fdee0aeec53545b4bc5c102.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.items.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.items.item collection
 func (m *CompanyRequestBuilder) ItemsById(id string)(*i301463334e1dbc7c5c31947d397ff9c42f6aa8bb9cd25e2f928c02448534b4ce.ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -476,9 +430,7 @@ func (m *CompanyRequestBuilder) ItemsById(id string)(*i301463334e1dbc7c5c31947d3
 func (m *CompanyRequestBuilder) JournalLines()(*iec2f8a5133e2722b7ee0b2f37cee34f1bbe214b8e5b888c82435c03e287828fa.JournalLinesRequestBuilder) {
     return iec2f8a5133e2722b7ee0b2f37cee34f1bbe214b8e5b888c82435c03e287828fa.NewJournalLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.journalLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// JournalLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.journalLines.item collection
 func (m *CompanyRequestBuilder) JournalLinesById(id string)(*i1e5b9e1d2db51439f7c83d74f5933dd50bab82a742de2085d38ded8ed8ba25db.JournalLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -492,9 +444,7 @@ func (m *CompanyRequestBuilder) JournalLinesById(id string)(*i1e5b9e1d2db51439f7
 func (m *CompanyRequestBuilder) Journals()(*i4daeb4853bc59f25aaa8ca4b3cb947d07e94af7f8f723a94381dab39c2e03c86.JournalsRequestBuilder) {
     return i4daeb4853bc59f25aaa8ca4b3cb947d07e94af7f8f723a94381dab39c2e03c86.NewJournalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.journals.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// JournalsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.journals.item collection
 func (m *CompanyRequestBuilder) JournalsById(id string)(*ie72c90b132e5b7adcd798955c629efd15447d563e9da1b63bdf14accfee955b3.JournalRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -505,9 +455,7 @@ func (m *CompanyRequestBuilder) JournalsById(id string)(*ie72c90b132e5b7adcd7989
     }
     return ie72c90b132e5b7adcd798955c629efd15447d563e9da1b63bdf14accfee955b3.NewJournalRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property companies in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property companies in financials
 func (m *CompanyRequestBuilder) Patch(options *CompanyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -522,9 +470,7 @@ func (m *CompanyRequestBuilder) Patch(options *CompanyRequestBuilderPatchOptions
 func (m *CompanyRequestBuilder) PaymentMethods()(*i0b33ef160f8fead222ec024e8840780deb4ab2dbfa92a870ae77d1cc4968234c.PaymentMethodsRequestBuilder) {
     return i0b33ef160f8fead222ec024e8840780deb4ab2dbfa92a870ae77d1cc4968234c.NewPaymentMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.paymentMethods.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PaymentMethodsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.paymentMethods.item collection
 func (m *CompanyRequestBuilder) PaymentMethodsById(id string)(*i76069eb1d0c9bbb6e1ddd559e78b0833a04dd47f1a8d9e0b257bb372e8385bbe.PaymentMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -538,9 +484,7 @@ func (m *CompanyRequestBuilder) PaymentMethodsById(id string)(*i76069eb1d0c9bbb6
 func (m *CompanyRequestBuilder) PaymentTerms()(*iae6b3d23c80fa7919b43dad2eea2141b6fe7958e6b757daeb35531a267b1e267.PaymentTermsRequestBuilder) {
     return iae6b3d23c80fa7919b43dad2eea2141b6fe7958e6b757daeb35531a267b1e267.NewPaymentTermsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.paymentTerms.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PaymentTermsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.paymentTerms.item collection
 func (m *CompanyRequestBuilder) PaymentTermsById(id string)(*iadc383c56ae6d955e657e8f3c19445f8290a6719a267f96792db35bd6b54360b.PaymentTermRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -554,9 +498,7 @@ func (m *CompanyRequestBuilder) PaymentTermsById(id string)(*iadc383c56ae6d955e6
 func (m *CompanyRequestBuilder) Picture()(*i5e18d51e07e898798b6ff5aee9efe5bacc623efdbcc4f25783d9b6d6c244fd86.PictureRequestBuilder) {
     return i5e18d51e07e898798b6ff5aee9efe5bacc623efdbcc4f25783d9b6d6c244fd86.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.picture.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.picture.item collection
 func (m *CompanyRequestBuilder) PictureById(id string)(*i5e18d51e07e898798b6ff5aee9efe5bacc623efdbcc4f25783d9b6d6c244fd86.PictureRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -570,9 +512,7 @@ func (m *CompanyRequestBuilder) PictureById(id string)(*i5e18d51e07e898798b6ff5a
 func (m *CompanyRequestBuilder) PurchaseInvoiceLines()(*i5cf0b22deb67122c3b9b804777f4654610ea33f2f2622da90c3c5f0692f2c11a.PurchaseInvoiceLinesRequestBuilder) {
     return i5cf0b22deb67122c3b9b804777f4654610ea33f2f2622da90c3c5f0692f2c11a.NewPurchaseInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.purchaseInvoiceLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PurchaseInvoiceLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.purchaseInvoiceLines.item collection
 func (m *CompanyRequestBuilder) PurchaseInvoiceLinesById(id string)(*ic1d69dea9cc76c8f4fc048660687abdf627bd9aa0c48a4b0f12a4f51e369b3e5.PurchaseInvoiceLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -586,9 +526,7 @@ func (m *CompanyRequestBuilder) PurchaseInvoiceLinesById(id string)(*ic1d69dea9c
 func (m *CompanyRequestBuilder) PurchaseInvoices()(*ifa3c2f447ab84ba49123c2e10b5ab6f09f9a2fc5bfcf17b38e86f5b16ca24977.PurchaseInvoicesRequestBuilder) {
     return ifa3c2f447ab84ba49123c2e10b5ab6f09f9a2fc5bfcf17b38e86f5b16ca24977.NewPurchaseInvoicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.purchaseInvoices.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PurchaseInvoicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.purchaseInvoices.item collection
 func (m *CompanyRequestBuilder) PurchaseInvoicesById(id string)(*i7cb486a3270e9b712ce5b39298bcbfc2b57bf6b95bb368048dafb6ec20554fdc.PurchaseInvoiceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -602,9 +540,7 @@ func (m *CompanyRequestBuilder) PurchaseInvoicesById(id string)(*i7cb486a3270e9b
 func (m *CompanyRequestBuilder) SalesCreditMemoLines()(*i85f9226d91c649fe1e2b3042eb0e0cb9f28e4ddf039a57a4cf3ca7ff0cbedda1.SalesCreditMemoLinesRequestBuilder) {
     return i85f9226d91c649fe1e2b3042eb0e0cb9f28e4ddf039a57a4cf3ca7ff0cbedda1.NewSalesCreditMemoLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesCreditMemoLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesCreditMemoLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesCreditMemoLines.item collection
 func (m *CompanyRequestBuilder) SalesCreditMemoLinesById(id string)(*ie940ae608019de62a242d937e70fdc6a489372a4d225a99b69483a2d8f07d28f.SalesCreditMemoLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -618,9 +554,7 @@ func (m *CompanyRequestBuilder) SalesCreditMemoLinesById(id string)(*ie940ae6080
 func (m *CompanyRequestBuilder) SalesCreditMemos()(*i5850b0e5e17f88c9d6f7fe7ed58df91a7a58ed68a07fe2e45383c1f95826ebb1.SalesCreditMemosRequestBuilder) {
     return i5850b0e5e17f88c9d6f7fe7ed58df91a7a58ed68a07fe2e45383c1f95826ebb1.NewSalesCreditMemosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesCreditMemos.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesCreditMemosById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesCreditMemos.item collection
 func (m *CompanyRequestBuilder) SalesCreditMemosById(id string)(*ia5d480bc2a01a45ad601eaa1115f60ec63562dff910b91f3deaa3c8f23c43dba.SalesCreditMemoRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -634,9 +568,7 @@ func (m *CompanyRequestBuilder) SalesCreditMemosById(id string)(*ia5d480bc2a01a4
 func (m *CompanyRequestBuilder) SalesInvoiceLines()(*i332f46d9c7722cf45bd813ad625ff9365b88c83dacb95203737d7b2c420620d6.SalesInvoiceLinesRequestBuilder) {
     return i332f46d9c7722cf45bd813ad625ff9365b88c83dacb95203737d7b2c420620d6.NewSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesInvoiceLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesInvoiceLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesInvoiceLines.item collection
 func (m *CompanyRequestBuilder) SalesInvoiceLinesById(id string)(*i9c35c34fc619450ab198d055e4b3cf4a1cab7f96ff4114906a9df998e1d21369.SalesInvoiceLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -650,9 +582,7 @@ func (m *CompanyRequestBuilder) SalesInvoiceLinesById(id string)(*i9c35c34fc6194
 func (m *CompanyRequestBuilder) SalesInvoices()(*ib2010f51431a20b492efa7c1681142b3646e7c6454fce979a6dd8919a7c8f04b.SalesInvoicesRequestBuilder) {
     return ib2010f51431a20b492efa7c1681142b3646e7c6454fce979a6dd8919a7c8f04b.NewSalesInvoicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesInvoices.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesInvoicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesInvoices.item collection
 func (m *CompanyRequestBuilder) SalesInvoicesById(id string)(*i3978e2784e815c55b4d52990268524305c63abc98ce85a086e22764f5fcffda4.SalesInvoiceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -666,9 +596,7 @@ func (m *CompanyRequestBuilder) SalesInvoicesById(id string)(*i3978e2784e815c55b
 func (m *CompanyRequestBuilder) SalesOrderLines()(*i328f372295131e7ef46207b8702c52281f757fc7fe291d1259824e4f4fc924dc.SalesOrderLinesRequestBuilder) {
     return i328f372295131e7ef46207b8702c52281f757fc7fe291d1259824e4f4fc924dc.NewSalesOrderLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesOrderLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesOrderLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesOrderLines.item collection
 func (m *CompanyRequestBuilder) SalesOrderLinesById(id string)(*i9846434aac0b13311c51deaa6afdfc6e1fab10eda8f3d43f1bb2854df18aee02.SalesOrderLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -682,9 +610,7 @@ func (m *CompanyRequestBuilder) SalesOrderLinesById(id string)(*i9846434aac0b133
 func (m *CompanyRequestBuilder) SalesOrders()(*if043e0c78816cb07629640b9329b95ecb1c729c74cef01c31dc93f710b016013.SalesOrdersRequestBuilder) {
     return if043e0c78816cb07629640b9329b95ecb1c729c74cef01c31dc93f710b016013.NewSalesOrdersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesOrders.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesOrdersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesOrders.item collection
 func (m *CompanyRequestBuilder) SalesOrdersById(id string)(*i4c029305791a428f4d91149325952557c61cb631a48256abdb31d83808246516.SalesOrderRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -698,9 +624,7 @@ func (m *CompanyRequestBuilder) SalesOrdersById(id string)(*i4c029305791a428f4d9
 func (m *CompanyRequestBuilder) SalesQuoteLines()(*i103871e8833aa81b6a751678ed468503e289f74fd4334356f22fbe48c0e66b24.SalesQuoteLinesRequestBuilder) {
     return i103871e8833aa81b6a751678ed468503e289f74fd4334356f22fbe48c0e66b24.NewSalesQuoteLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuoteLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesQuoteLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuoteLines.item collection
 func (m *CompanyRequestBuilder) SalesQuoteLinesById(id string)(*i5b30584ee167dc3eb4b88ff0d3279d8a5281517c79e75344ae87f0c6fe4c7c80.SalesQuoteLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -714,9 +638,7 @@ func (m *CompanyRequestBuilder) SalesQuoteLinesById(id string)(*i5b30584ee167dc3
 func (m *CompanyRequestBuilder) SalesQuotes()(*i264d8c8ae3f67c790cbd458ad458bb66295f8074cc2a150f8ed31ae9a8eb229d.SalesQuotesRequestBuilder) {
     return i264d8c8ae3f67c790cbd458ad458bb66295f8074cc2a150f8ed31ae9a8eb229d.NewSalesQuotesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuotes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesQuotesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuotes.item collection
 func (m *CompanyRequestBuilder) SalesQuotesById(id string)(*iac037dfe92e14a8772fe5c3815a269ac463e8c4bca84adc7dbd464941fbe1577.SalesQuoteRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -730,9 +652,7 @@ func (m *CompanyRequestBuilder) SalesQuotesById(id string)(*iac037dfe92e14a8772f
 func (m *CompanyRequestBuilder) ShipmentMethods()(*ie68804c62ab9b670efbb79712b214b095747ad5d0970b9af8547e7515614ccce.ShipmentMethodsRequestBuilder) {
     return ie68804c62ab9b670efbb79712b214b095747ad5d0970b9af8547e7515614ccce.NewShipmentMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.shipmentMethods.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ShipmentMethodsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.shipmentMethods.item collection
 func (m *CompanyRequestBuilder) ShipmentMethodsById(id string)(*i58aeaf7a36a4d971a858c890c12bf007187d01813c9ad9fd928e8a479673214a.ShipmentMethodRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -746,9 +666,7 @@ func (m *CompanyRequestBuilder) ShipmentMethodsById(id string)(*i58aeaf7a36a4d97
 func (m *CompanyRequestBuilder) TaxAreas()(*i9c4b4f369d684a41d4d589022b498cbd7f033b11c2ff47ca608bd2038ec03f7a.TaxAreasRequestBuilder) {
     return i9c4b4f369d684a41d4d589022b498cbd7f033b11c2ff47ca608bd2038ec03f7a.NewTaxAreasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.taxAreas.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TaxAreasById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.taxAreas.item collection
 func (m *CompanyRequestBuilder) TaxAreasById(id string)(*id553a6763a1078b0430a865a003eb6fc6d871225b59b6baa3a1e8c60e21486f7.TaxAreaRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -762,9 +680,7 @@ func (m *CompanyRequestBuilder) TaxAreasById(id string)(*id553a6763a1078b0430a86
 func (m *CompanyRequestBuilder) TaxGroups()(*i83151930b4fc33055bc41c29656d8bc1ccba155184559175e8523e6fa2611eec.TaxGroupsRequestBuilder) {
     return i83151930b4fc33055bc41c29656d8bc1ccba155184559175e8523e6fa2611eec.NewTaxGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.taxGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TaxGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.taxGroups.item collection
 func (m *CompanyRequestBuilder) TaxGroupsById(id string)(*i390a707b0da26114fde002ae7c016ee59e47ebd9deaea17652eb6719aaa75ee4.TaxGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -778,9 +694,7 @@ func (m *CompanyRequestBuilder) TaxGroupsById(id string)(*i390a707b0da26114fde00
 func (m *CompanyRequestBuilder) UnitsOfMeasure()(*ic2c6ec504e40a95618e6ce500464a091dc669eea42013d30fea10253e31a14bb.UnitsOfMeasureRequestBuilder) {
     return ic2c6ec504e40a95618e6ce500464a091dc669eea42013d30fea10253e31a14bb.NewUnitsOfMeasureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.unitsOfMeasure.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UnitsOfMeasureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.unitsOfMeasure.item collection
 func (m *CompanyRequestBuilder) UnitsOfMeasureById(id string)(*i43b91397b09aeedb6d1e1bcb250e49ac7a93101a0d0ba2122cdf554aa68abba8.UnitOfMeasureRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -794,9 +708,7 @@ func (m *CompanyRequestBuilder) UnitsOfMeasureById(id string)(*i43b91397b09aeedb
 func (m *CompanyRequestBuilder) Vendors()(*ibc26fe33984b8d2f64068005ad1791207561cd451ba259344b2ffa77c27c8ba0.VendorsRequestBuilder) {
     return ibc26fe33984b8d2f64068005ad1791207561cd451ba259344b2ffa77c27c8ba0.NewVendorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.vendors.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// VendorsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.vendors.item collection
 func (m *CompanyRequestBuilder) VendorsById(id string)(*i5e7a3640c332a9cd86f5c015ca58ce4c450090db118feb1bc32ead77f958303f.VendorRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\androidManagedStoreAppConfigurationSchemas
+// AndroidManagedStoreAppConfigurationSchemasRequestBuilder builds and executes requests for operations under \deviceManagement\androidManagedStoreAppConfigurationSchemas
 type AndroidManagedStoreAppConfigurationSchemasRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AndroidManagedStoreAppConfigurationSchemasRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetOptions options for Get
 type AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Android Enterprise app configuration schema entities.
+// AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetQueryParameters android Enterprise app configuration schema entities.
 type AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetQueryParameters 
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostOptions options for Post
 type AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedStoreAppConfigurationSchema;
@@ -56,10 +56,7 @@ type AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AndroidManagedStoreAppConfigurationSchemasRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal instantiates a new AndroidManagedStoreAppConfigurationSchemasRequestBuilder and sets the default values.
 func NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidManagedStoreAppConfigurationSchemasRequestBuilder) {
     m := &AndroidManagedStoreAppConfigurationSchemasRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal(pathPar
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AndroidManagedStoreAppConfigurationSchemasRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidManagedStoreAppConfigurationSchemasRequestBuilder instantiates a new AndroidManagedStoreAppConfigurationSchemasRequestBuilder and sets the default values.
 func NewAndroidManagedStoreAppConfigurationSchemasRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidManagedStoreAppConfigurationSchemasRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Android Enterprise app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation android Enterprise app configuration schema entities.
 func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreateGetRequestInformation(options *AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// Android Enterprise app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation android Enterprise app configuration schema entities.
 func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreatePostRequestInformation(options *AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// Android Enterprise app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// Get android Enterprise app configuration schema entities.
 func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) Get(options *AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetOptions)(*AndroidManagedStoreAppConfigurationSchemasResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) Get(options *
     }
     return res.(*AndroidManagedStoreAppConfigurationSchemasResponse), nil
 }
-// Android Enterprise app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// Post android Enterprise app configuration schema entities.
 func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) Post(options *AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedStoreAppConfigurationSchema, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

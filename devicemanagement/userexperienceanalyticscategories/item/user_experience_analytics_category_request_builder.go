@@ -8,7 +8,7 @@ import (
     i723c6e2ab05e2e91dea99207a63fe4f6ad55551bd1e2ce27c2f6a08a95d00d42 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticscategories/item/metricvalues/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsCategories\{userExperienceAnalyticsCategory-id}
+// UserExperienceAnalyticsCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsCategories\{userExperienceAnalyticsCategory-id}
 type UserExperienceAnalyticsCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type UserExperienceAnalyticsCategoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsCategoryRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsCategoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsCategoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsCategoryRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsCategoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type UserExperienceAnalyticsCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics categories
+// UserExperienceAnalyticsCategoryRequestBuilderGetQueryParameters user experience analytics categories
 type UserExperienceAnalyticsCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsCategoryRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsCategoryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory;
@@ -55,10 +55,7 @@ type UserExperienceAnalyticsCategoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsCategoryRequestBuilderInternal instantiates a new UserExperienceAnalyticsCategoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsCategoryRequestBuilder) {
     m := &UserExperienceAnalyticsCategoryRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewUserExperienceAnalyticsCategoryRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsCategoryRequestBuilder instantiates a new UserExperienceAnalyticsCategoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsCategoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsCategoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsCategoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics categories
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsCategoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *UserExperienceAnalyticsCategoryRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics categories
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsCategoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *UserExperienceAnalyticsCategoryRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics categories
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsCategoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *UserExperienceAnalyticsCategoryRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics categories
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) Delete(options *UserExperienceAnalyticsCategoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *UserExperienceAnalyticsCategoryRequestBuilder) Delete(options *UserExpe
     }
     return nil
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics categories
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) Get(options *UserExperienceAnalyticsCategoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *UserExperienceAnalyticsCategoryRequestBuilder) Get(options *UserExperie
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) MetricValues()(*ia7cafd794b20eca3ff11b37b8e1eefd547ec1e595639eda0f03245a3f4253fb1.MetricValuesRequestBuilder) {
     return ia7cafd794b20eca3ff11b37b8e1eefd547ec1e595639eda0f03245a3f4253fb1.NewMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsCategories.item.metricValues.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MetricValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsCategories.item.metricValues.item collection
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) MetricValuesById(id string)(*i723c6e2ab05e2e91dea99207a63fe4f6ad55551bd1e2ce27c2f6a08a95d00d42.UserExperienceAnalyticsMetricRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *UserExperienceAnalyticsCategoryRequestBuilder) MetricValuesById(id stri
     }
     return i723c6e2ab05e2e91dea99207a63fe4f6ad55551bd1e2ce27c2f6a08a95d00d42.NewUserExperienceAnalyticsMetricRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics categories
 func (m *UserExperienceAnalyticsCategoryRequestBuilder) Patch(options *UserExperienceAnalyticsCategoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

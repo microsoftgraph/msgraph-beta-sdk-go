@@ -7,7 +7,7 @@ import (
     ic7fcdfa8d159cc5da9f5b0a1259748e665fe8ac9d81baab59d1662a20cda1a52 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/events/item/calendar/calendarview/delta"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\events\{event-id}\calendar\calendarView
+// CalendarViewRequestBuilder builds and executes requests for operations under \groups\{group-id}\events\{event-id}\calendar\calendarView
 type CalendarViewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type CalendarViewRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CalendarViewRequestBuilderGetOptions options for Get
 type CalendarViewRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type CalendarViewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The calendar view for the calendar. Navigation property. Read-only.
+// CalendarViewRequestBuilderGetQueryParameters the calendar view for the calendar. Navigation property. Read-only.
 type CalendarViewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -42,7 +42,7 @@ type CalendarViewRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CalendarViewRequestBuilderPostOptions options for Post
 type CalendarViewRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event;
@@ -53,10 +53,7 @@ type CalendarViewRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CalendarViewRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarViewRequestBuilderInternal instantiates a new CalendarViewRequestBuilder and sets the default values.
 func NewCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarViewRequestBuilder) {
     m := &CalendarViewRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCalendarViewRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CalendarViewRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarViewRequestBuilder instantiates a new CalendarViewRequestBuilder and sets the default values.
 func NewCalendarViewRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarViewRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarViewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The calendar view for the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the calendar view for the calendar. Navigation property. Read-only.
 func (m *CalendarViewRequestBuilder) CreateGetRequestInformation(options *CalendarViewRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *CalendarViewRequestBuilder) CreateGetRequestInformation(options *Calend
     }
     return requestInfo, nil
 }
-// The calendar view for the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the calendar view for the calendar. Navigation property. Read-only.
 func (m *CalendarViewRequestBuilder) CreatePostRequestInformation(options *CalendarViewRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,13 +110,11 @@ func (m *CalendarViewRequestBuilder) CreatePostRequestInformation(options *Calen
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \groups\{group-id}\events\{event-id}\calendar\calendarView\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \groups\{group-id}\events\{event-id}\calendar\calendarView\microsoft.graph.delta()
 func (m *CalendarViewRequestBuilder) Delta()(*ic7fcdfa8d159cc5da9f5b0a1259748e665fe8ac9d81baab59d1662a20cda1a52.DeltaRequestBuilder) {
     return ic7fcdfa8d159cc5da9f5b0a1259748e665fe8ac9d81baab59d1662a20cda1a52.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The calendar view for the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the calendar view for the calendar. Navigation property. Read-only.
 func (m *CalendarViewRequestBuilder) Get(options *CalendarViewRequestBuilderGetOptions)(*CalendarViewResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *CalendarViewRequestBuilder) Get(options *CalendarViewRequestBuilderGetO
     }
     return res.(*CalendarViewResponse), nil
 }
-// The calendar view for the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post the calendar view for the calendar. Navigation property. Read-only.
 func (m *CalendarViewRequestBuilder) Post(options *CalendarViewRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

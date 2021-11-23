@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getTenantSecureScores(period={period})
+// GetTenantSecureScoresWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTenantSecureScores(period={period})
 type GetTenantSecureScoresWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetTenantSecureScoresWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetTenantSecureScoresWithPeriodRequestBuilderGetOptions options for Get
 type GetTenantSecureScoresWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -25,21 +25,21 @@ type GetTenantSecureScoresWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes report
+// GetTenantSecureScoresWithPeriodResponse union type wrapper for classes report
 type GetTenantSecureScoresWithPeriodResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type report
     report *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Report;
 }
-// Instantiates a new getTenantSecureScoresWithPeriodResponse and sets the default values.
+// NewGetTenantSecureScoresWithPeriodResponse instantiates a new getTenantSecureScoresWithPeriodResponse and sets the default values.
 func NewGetTenantSecureScoresWithPeriodResponse()(*GetTenantSecureScoresWithPeriodResponse) {
     m := &GetTenantSecureScoresWithPeriodResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetTenantSecureScoresWithPeriodResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *GetTenantSecureScoresWithPeriodResponse) GetAdditionalData()(map[string
         return m.additionalData
     }
 }
-// Gets the report property value. Union type representation for type report
+// GetReport gets the report property value. Union type representation for type report
 func (m *GetTenantSecureScoresWithPeriodResponse) GetReport()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Report) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *GetTenantSecureScoresWithPeriodResponse) GetReport()(*i535684e11b550019
         return m.report
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetTenantSecureScoresWithPeriodResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["report"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *GetTenantSecureScoresWithPeriodResponse) GetFieldDeserializers()(map[st
 func (m *GetTenantSecureScoresWithPeriodResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetTenantSecureScoresWithPeriodResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("report", m.GetReport())
@@ -91,23 +89,15 @@ func (m *GetTenantSecureScoresWithPeriodResponse) Serialize(writer i04eb5309aeaa
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetTenantSecureScoresWithPeriodResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the report property value. Union type representation for type report
-// Parameters:
-//  - value : Value to set for the report property.
+// SetReport sets the report property value. Union type representation for type report
 func (m *GetTenantSecureScoresWithPeriodResponse) SetReport(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Report)() {
     m.report = value
 }
-// Instantiates a new GetTenantSecureScoresWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTenantSecureScoresWithPeriodRequestBuilderInternal instantiates a new GetTenantSecureScoresWithPeriodRequestBuilder and sets the default values.
 func NewGetTenantSecureScoresWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *int32)(*GetTenantSecureScoresWithPeriodRequestBuilder) {
     m := &GetTenantSecureScoresWithPeriodRequestBuilder{
     }
@@ -123,18 +113,13 @@ func NewGetTenantSecureScoresWithPeriodRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetTenantSecureScoresWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTenantSecureScoresWithPeriodRequestBuilder instantiates a new GetTenantSecureScoresWithPeriodRequestBuilder and sets the default values.
 func NewGetTenantSecureScoresWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetTenantSecureScoresWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetTenantSecureScoresWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getTenantSecureScores
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getTenantSecureScores
 func (m *GetTenantSecureScoresWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetTenantSecureScoresWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,9 +136,7 @@ func (m *GetTenantSecureScoresWithPeriodRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Invoke function getTenantSecureScores
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getTenantSecureScores
 func (m *GetTenantSecureScoresWithPeriodRequestBuilder) Get(options *GetTenantSecureScoresWithPeriodRequestBuilderGetOptions)(*GetTenantSecureScoresWithPeriodResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

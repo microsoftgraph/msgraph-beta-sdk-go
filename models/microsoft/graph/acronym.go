@@ -5,7 +5,7 @@ import (
     id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/search"
 )
 
-// 
+// Acronym 
 type Acronym struct {
     SearchAnswer
     // 
@@ -13,14 +13,14 @@ type Acronym struct {
     // 
     state *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState;
 }
-// Instantiates a new acronym and sets the default values.
+// NewAcronym instantiates a new acronym and sets the default values.
 func NewAcronym()(*Acronym) {
     m := &Acronym{
         SearchAnswer: *NewSearchAnswer(),
     }
     return m
 }
-// Gets the standsFor property value. 
+// GetStandsFor gets the standsFor property value. 
 func (m *Acronym) GetStandsFor()(*string) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *Acronym) GetStandsFor()(*string) {
         return m.standsFor
     }
 }
-// Gets the state property value. 
+// GetState gets the state property value. 
 func (m *Acronym) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *Acronym) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Acronym) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
     res["standsFor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,9 +65,7 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
 func (m *Acronym) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Acronym) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.SearchAnswer.Serialize(writer)
     if err != nil {
@@ -88,15 +86,11 @@ func (m *Acronym) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     return nil
 }
-// Sets the standsFor property value. 
-// Parameters:
-//  - value : Value to set for the standsFor property.
+// SetStandsFor sets the standsFor property value. 
 func (m *Acronym) SetStandsFor(value *string)() {
     m.standsFor = value
 }
-// Sets the state property value. 
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. 
 func (m *Acronym) SetState(value *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)() {
     m.state = value
 }

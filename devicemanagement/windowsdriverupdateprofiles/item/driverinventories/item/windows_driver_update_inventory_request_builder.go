@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}\driverInventories\{windowsDriverUpdateInventory-id}
+// WindowsDriverUpdateInventoryRequestBuilder builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}\driverInventories\{windowsDriverUpdateInventory-id}
 type WindowsDriverUpdateInventoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsDriverUpdateInventoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsDriverUpdateInventoryRequestBuilderDeleteOptions options for Delete
 type WindowsDriverUpdateInventoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WindowsDriverUpdateInventoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsDriverUpdateInventoryRequestBuilderGetOptions options for Get
 type WindowsDriverUpdateInventoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WindowsDriverUpdateInventoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Driver inventories for this profile.
+// WindowsDriverUpdateInventoryRequestBuilderGetQueryParameters driver inventories for this profile.
 type WindowsDriverUpdateInventoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsDriverUpdateInventoryRequestBuilderPatchOptions options for Patch
 type WindowsDriverUpdateInventoryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateInventory;
@@ -53,10 +53,7 @@ type WindowsDriverUpdateInventoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsDriverUpdateInventoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDriverUpdateInventoryRequestBuilderInternal instantiates a new WindowsDriverUpdateInventoryRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateInventoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDriverUpdateInventoryRequestBuilder) {
     m := &WindowsDriverUpdateInventoryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWindowsDriverUpdateInventoryRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsDriverUpdateInventoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDriverUpdateInventoryRequestBuilder instantiates a new WindowsDriverUpdateInventoryRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateInventoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDriverUpdateInventoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDriverUpdateInventoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Driver inventories for this profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation driver inventories for this profile.
 func (m *WindowsDriverUpdateInventoryRequestBuilder) CreateDeleteRequestInformation(options *WindowsDriverUpdateInventoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WindowsDriverUpdateInventoryRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// Driver inventories for this profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation driver inventories for this profile.
 func (m *WindowsDriverUpdateInventoryRequestBuilder) CreateGetRequestInformation(options *WindowsDriverUpdateInventoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WindowsDriverUpdateInventoryRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Driver inventories for this profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation driver inventories for this profile.
 func (m *WindowsDriverUpdateInventoryRequestBuilder) CreatePatchRequestInformation(options *WindowsDriverUpdateInventoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WindowsDriverUpdateInventoryRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Driver inventories for this profile.
-// Parameters:
-//  - options : Options for the request
+// Delete driver inventories for this profile.
 func (m *WindowsDriverUpdateInventoryRequestBuilder) Delete(options *WindowsDriverUpdateInventoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WindowsDriverUpdateInventoryRequestBuilder) Delete(options *WindowsDriv
     }
     return nil
 }
-// Driver inventories for this profile.
-// Parameters:
-//  - options : Options for the request
+// Get driver inventories for this profile.
 func (m *WindowsDriverUpdateInventoryRequestBuilder) Get(options *WindowsDriverUpdateInventoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateInventory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WindowsDriverUpdateInventoryRequestBuilder) Get(options *WindowsDriverU
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateInventory), nil
 }
-// Driver inventories for this profile.
-// Parameters:
-//  - options : Options for the request
+// Patch driver inventories for this profile.
 func (m *WindowsDriverUpdateInventoryRequestBuilder) Patch(options *WindowsDriverUpdateInventoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

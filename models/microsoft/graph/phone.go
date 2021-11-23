@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Phone 
 type Phone struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type Phone struct {
     // The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
     type_escaped *PhoneType;
 }
-// Instantiates a new phone and sets the default values.
+// NewPhone instantiates a new phone and sets the default values.
 func NewPhone()(*Phone) {
     m := &Phone{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Phone) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *Phone) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the number property value. The phone number.
+// GetNumber gets the number property value. The phone number.
 func (m *Phone) GetNumber()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *Phone) GetNumber()(*string) {
         return m.number
     }
 }
-// Gets the type_escaped property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+// GetType_escaped gets the type_escaped property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) GetType_escaped()(*PhoneType) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *Phone) GetType_escaped()(*PhoneType) {
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Phone) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["number"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *Phone) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Phone) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Phone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("number", m.GetNumber())
@@ -98,21 +96,15 @@ func (m *Phone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Phone) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the number property value. The phone number.
-// Parameters:
-//  - value : Value to set for the number property.
+// SetNumber sets the number property value. The phone number.
 func (m *Phone) SetNumber(value *string)() {
     m.number = value
 }
-// Sets the type_escaped property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) SetType_escaped(value *PhoneType)() {
     m.type_escaped = value
 }

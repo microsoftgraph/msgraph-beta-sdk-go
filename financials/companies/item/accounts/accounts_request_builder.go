@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\accounts
+// AccountsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\accounts
 type AccountsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AccountsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AccountsRequestBuilderGetOptions options for Get
 type AccountsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AccountsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get accounts from financials
+// AccountsRequestBuilderGetQueryParameters get accounts from financials
 type AccountsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AccountsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AccountsRequestBuilderPostOptions options for Post
 type AccountsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Account;
@@ -56,10 +56,7 @@ type AccountsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccountsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccountsRequestBuilderInternal instantiates a new AccountsRequestBuilder and sets the default values.
 func NewAccountsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccountsRequestBuilder) {
     m := &AccountsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAccountsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccountsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccountsRequestBuilder instantiates a new AccountsRequestBuilder and sets the default values.
 func NewAccountsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccountsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccountsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get accounts from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get accounts from financials
 func (m *AccountsRequestBuilder) CreateGetRequestInformation(options *AccountsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AccountsRequestBuilder) CreateGetRequestInformation(options *AccountsRe
     }
     return requestInfo, nil
 }
-// Create new navigation property to accounts for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to accounts for financials
 func (m *AccountsRequestBuilder) CreatePostRequestInformation(options *AccountsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AccountsRequestBuilder) CreatePostRequestInformation(options *AccountsR
     }
     return requestInfo, nil
 }
-// Get accounts from financials
-// Parameters:
-//  - options : Options for the request
+// Get get accounts from financials
 func (m *AccountsRequestBuilder) Get(options *AccountsRequestBuilderGetOptions)(*AccountsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AccountsRequestBuilder) Get(options *AccountsRequestBuilderGetOptions)(
     }
     return res.(*AccountsResponse), nil
 }
-// Create new navigation property to accounts for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to accounts for financials
 func (m *AccountsRequestBuilder) Post(options *AccountsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Account, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

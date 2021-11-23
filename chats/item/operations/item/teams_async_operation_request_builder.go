@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\operations\{teamsAsyncOperation-id}
+// TeamsAsyncOperationRequestBuilder builds and executes requests for operations under \chats\{chat-id}\operations\{teamsAsyncOperation-id}
 type TeamsAsyncOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TeamsAsyncOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamsAsyncOperationRequestBuilderDeleteOptions options for Delete
 type TeamsAsyncOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TeamsAsyncOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamsAsyncOperationRequestBuilderGetOptions options for Get
 type TeamsAsyncOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TeamsAsyncOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
+// TeamsAsyncOperationRequestBuilderGetQueryParameters a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 type TeamsAsyncOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamsAsyncOperationRequestBuilderPatchOptions options for Patch
 type TeamsAsyncOperationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsAsyncOperation;
@@ -53,10 +53,7 @@ type TeamsAsyncOperationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TeamsAsyncOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAsyncOperationRequestBuilderInternal instantiates a new TeamsAsyncOperationRequestBuilder and sets the default values.
 func NewTeamsAsyncOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAsyncOperationRequestBuilder) {
     m := &TeamsAsyncOperationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTeamsAsyncOperationRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsAsyncOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAsyncOperationRequestBuilder instantiates a new TeamsAsyncOperationRequestBuilder and sets the default values.
 func NewTeamsAsyncOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAsyncOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAsyncOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *TeamsAsyncOperationRequestBuilder) CreateDeleteRequestInformation(options *TeamsAsyncOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TeamsAsyncOperationRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *TeamsAsyncOperationRequestBuilder) CreateGetRequestInformation(options *TeamsAsyncOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TeamsAsyncOperationRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *TeamsAsyncOperationRequestBuilder) CreatePatchRequestInformation(options *TeamsAsyncOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TeamsAsyncOperationRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *TeamsAsyncOperationRequestBuilder) Delete(options *TeamsAsyncOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TeamsAsyncOperationRequestBuilder) Delete(options *TeamsAsyncOperationR
     }
     return nil
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *TeamsAsyncOperationRequestBuilder) Get(options *TeamsAsyncOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsAsyncOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TeamsAsyncOperationRequestBuilder) Get(options *TeamsAsyncOperationRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsAsyncOperation), nil
 }
-// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *TeamsAsyncOperationRequestBuilder) Patch(options *TeamsAsyncOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -9,7 +9,7 @@ import (
     ibb7d5a14b18ba56a542032028c627fe3f293b78e14bb9cd30cce1fce050756f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/usersettings/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings\{cloudPcUserSetting-id}
+// CloudPcUserSettingRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings\{cloudPcUserSetting-id}
 type CloudPcUserSettingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CloudPcUserSettingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcUserSettingRequestBuilderDeleteOptions options for Delete
 type CloudPcUserSettingRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type CloudPcUserSettingRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcUserSettingRequestBuilderGetOptions options for Get
 type CloudPcUserSettingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type CloudPcUserSettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud PC user settings.
+// CloudPcUserSettingRequestBuilderGetQueryParameters cloud PC user settings.
 type CloudPcUserSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcUserSettingRequestBuilderPatchOptions options for Patch
 type CloudPcUserSettingRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserSetting;
@@ -62,9 +62,7 @@ func (m *CloudPcUserSettingRequestBuilder) Assign()(*i9d6cd161b5702397f00796096f
 func (m *CloudPcUserSettingRequestBuilder) Assignments()(*ic3ffef09d5c574354c76821568bdea6b8c13e64ec87d1de847b78ba37bc10193.AssignmentsRequestBuilder) {
     return ic3ffef09d5c574354c76821568bdea6b8c13e64ec87d1de847b78ba37bc10193.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.userSettings.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.userSettings.item.assignments.item collection
 func (m *CloudPcUserSettingRequestBuilder) AssignmentsById(id string)(*ibb7d5a14b18ba56a542032028c627fe3f293b78e14bb9cd30cce1fce050756f2.CloudPcUserSettingAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,10 +73,7 @@ func (m *CloudPcUserSettingRequestBuilder) AssignmentsById(id string)(*ibb7d5a14
     }
     return ibb7d5a14b18ba56a542032028c627fe3f293b78e14bb9cd30cce1fce050756f2.NewCloudPcUserSettingAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new CloudPcUserSettingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcUserSettingRequestBuilderInternal instantiates a new CloudPcUserSettingRequestBuilder and sets the default values.
 func NewCloudPcUserSettingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcUserSettingRequestBuilder) {
     m := &CloudPcUserSettingRequestBuilder{
     }
@@ -91,18 +86,13 @@ func NewCloudPcUserSettingRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcUserSettingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcUserSettingRequestBuilder instantiates a new CloudPcUserSettingRequestBuilder and sets the default values.
 func NewCloudPcUserSettingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcUserSettingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcUserSettingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation cloud PC user settings.
 func (m *CloudPcUserSettingRequestBuilder) CreateDeleteRequestInformation(options *CloudPcUserSettingRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcUserSettingRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud PC user settings.
 func (m *CloudPcUserSettingRequestBuilder) CreateGetRequestInformation(options *CloudPcUserSettingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *CloudPcUserSettingRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation cloud PC user settings.
 func (m *CloudPcUserSettingRequestBuilder) CreatePatchRequestInformation(options *CloudPcUserSettingRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +147,7 @@ func (m *CloudPcUserSettingRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// Delete cloud PC user settings.
 func (m *CloudPcUserSettingRequestBuilder) Delete(options *CloudPcUserSettingRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *CloudPcUserSettingRequestBuilder) Delete(options *CloudPcUserSettingReq
     }
     return nil
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// Get cloud PC user settings.
 func (m *CloudPcUserSettingRequestBuilder) Get(options *CloudPcUserSettingRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserSetting, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *CloudPcUserSettingRequestBuilder) Get(options *CloudPcUserSettingReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserSetting), nil
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// Patch cloud PC user settings.
 func (m *CloudPcUserSettingRequestBuilder) Patch(options *CloudPcUserSettingRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\ipSecurityProfiles
+// IpSecurityProfilesRequestBuilder builds and executes requests for operations under \security\ipSecurityProfiles
 type IpSecurityProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IpSecurityProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IpSecurityProfilesRequestBuilderGetOptions options for Get
 type IpSecurityProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type IpSecurityProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get ipSecurityProfiles from security
+// IpSecurityProfilesRequestBuilderGetQueryParameters get ipSecurityProfiles from security
 type IpSecurityProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type IpSecurityProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IpSecurityProfilesRequestBuilderPostOptions options for Post
 type IpSecurityProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IpSecurityProfile;
@@ -56,10 +56,7 @@ type IpSecurityProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IpSecurityProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIpSecurityProfilesRequestBuilderInternal instantiates a new IpSecurityProfilesRequestBuilder and sets the default values.
 func NewIpSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IpSecurityProfilesRequestBuilder) {
     m := &IpSecurityProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewIpSecurityProfilesRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IpSecurityProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIpSecurityProfilesRequestBuilder instantiates a new IpSecurityProfilesRequestBuilder and sets the default values.
 func NewIpSecurityProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IpSecurityProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIpSecurityProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get ipSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get ipSecurityProfiles from security
 func (m *IpSecurityProfilesRequestBuilder) CreateGetRequestInformation(options *IpSecurityProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *IpSecurityProfilesRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Create new navigation property to ipSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to ipSecurityProfiles for security
 func (m *IpSecurityProfilesRequestBuilder) CreatePostRequestInformation(options *IpSecurityProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *IpSecurityProfilesRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get ipSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// Get get ipSecurityProfiles from security
 func (m *IpSecurityProfilesRequestBuilder) Get(options *IpSecurityProfilesRequestBuilderGetOptions)(*IpSecurityProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *IpSecurityProfilesRequestBuilder) Get(options *IpSecurityProfilesReques
     }
     return res.(*IpSecurityProfilesResponse), nil
 }
-// Create new navigation property to ipSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to ipSecurityProfiles for security
 func (m *IpSecurityProfilesRequestBuilder) Post(options *IpSecurityProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IpSecurityProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

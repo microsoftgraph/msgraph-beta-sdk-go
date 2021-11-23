@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// 
+// TemplateParameter 
 type TemplateParameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,14 +20,14 @@ type TemplateParameter struct {
     // The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
     valueType *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType;
 }
-// Instantiates a new templateParameter and sets the default values.
+// NewTemplateParameter instantiates a new templateParameter and sets the default values.
 func NewTemplateParameter()(*TemplateParameter) {
     m := &TemplateParameter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateParameter) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *TemplateParameter) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the description property value. The description for the template parameter. Optional. Read-only.
+// GetDescription gets the description property value. The description for the template parameter. Optional. Read-only.
 func (m *TemplateParameter) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *TemplateParameter) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name for the template parameter. Required. Read-only.
+// GetDisplayName gets the displayName property value. The display name for the template parameter. Required. Read-only.
 func (m *TemplateParameter) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *TemplateParameter) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
+// GetJsonAllowedValues gets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
 func (m *TemplateParameter) GetJsonAllowedValues()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *TemplateParameter) GetJsonAllowedValues()(*string) {
         return m.jsonAllowedValues
     }
 }
-// Gets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
+// GetJsonDefaultValue gets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
 func (m *TemplateParameter) GetJsonDefaultValue()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *TemplateParameter) GetJsonDefaultValue()(*string) {
         return m.jsonDefaultValue
     }
 }
-// Gets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+// GetValueType gets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
 func (m *TemplateParameter) GetValueType()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *TemplateParameter) GetValueType()(*i5c2592132064055aae424492b066923068e
         return m.valueType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TemplateParameter) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,9 +134,7 @@ func (m *TemplateParameter) GetFieldDeserializers()(map[string]func(interface{},
 func (m *TemplateParameter) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TemplateParameter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("description", m.GetDescription())
@@ -177,39 +175,27 @@ func (m *TemplateParameter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateParameter) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the description property value. The description for the template parameter. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description for the template parameter. Optional. Read-only.
 func (m *TemplateParameter) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name for the template parameter. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the template parameter. Required. Read-only.
 func (m *TemplateParameter) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the jsonAllowedValues property.
+// SetJsonAllowedValues sets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
 func (m *TemplateParameter) SetJsonAllowedValues(value *string)() {
     m.jsonAllowedValues = value
 }
-// Sets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the jsonDefaultValue property.
+// SetJsonDefaultValue sets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
 func (m *TemplateParameter) SetJsonDefaultValue(value *string)() {
     m.jsonDefaultValue = value
 }
-// Sets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the valueType property.
+// SetValueType sets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
 func (m *TemplateParameter) SetValueType(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType)() {
     m.valueType = value
 }

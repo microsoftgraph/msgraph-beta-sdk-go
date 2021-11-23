@@ -8,7 +8,7 @@ import (
     ieff61d093ce682e939abbaecbc1b098cece4e7f58170d229e88f2f7f6b9511ee "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/item/roleinfo"
 )
 
-// Builds and executes requests for operations under \privilegedRoleAssignmentRequests\{privilegedRoleAssignmentRequest-id}
+// PrivilegedRoleAssignmentRequestRequestBuilder builds and executes requests for operations under \privilegedRoleAssignmentRequests\{privilegedRoleAssignmentRequest-id}
 type PrivilegedRoleAssignmentRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PrivilegedRoleAssignmentRequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrivilegedRoleAssignmentRequestRequestBuilderDeleteOptions options for Delete
 type PrivilegedRoleAssignmentRequestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PrivilegedRoleAssignmentRequestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrivilegedRoleAssignmentRequestRequestBuilderGetOptions options for Get
 type PrivilegedRoleAssignmentRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type PrivilegedRoleAssignmentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from privilegedRoleAssignmentRequests by key
+// PrivilegedRoleAssignmentRequestRequestBuilderGetQueryParameters get entity from privilegedRoleAssignmentRequests by key
 type PrivilegedRoleAssignmentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrivilegedRoleAssignmentRequestRequestBuilderPatchOptions options for Patch
 type PrivilegedRoleAssignmentRequestRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest;
@@ -58,10 +58,7 @@ type PrivilegedRoleAssignmentRequestRequestBuilderPatchOptions struct {
 func (m *PrivilegedRoleAssignmentRequestRequestBuilder) Cancel()(*ib239ddd157212e9b2de338617aed29750c7fa7cb6355343e0685a26014096aa8.CancelRequestBuilder) {
     return ib239ddd157212e9b2de338617aed29750c7fa7cb6355343e0685a26014096aa8.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PrivilegedRoleAssignmentRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedRoleAssignmentRequestRequestBuilderInternal instantiates a new PrivilegedRoleAssignmentRequestRequestBuilder and sets the default values.
 func NewPrivilegedRoleAssignmentRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleAssignmentRequestRequestBuilder) {
     m := &PrivilegedRoleAssignmentRequestRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewPrivilegedRoleAssignmentRequestRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivilegedRoleAssignmentRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedRoleAssignmentRequestRequestBuilder instantiates a new PrivilegedRoleAssignmentRequestRequestBuilder and sets the default values.
 func NewPrivilegedRoleAssignmentRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleAssignmentRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from privilegedRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestRequestBuilder) CreateDeleteRequestInformation(options *PrivilegedRoleAssignmentRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *PrivilegedRoleAssignmentRequestRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Get entity from privilegedRoleAssignmentRequests by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from privilegedRoleAssignmentRequests by key
 func (m *PrivilegedRoleAssignmentRequestRequestBuilder) CreateGetRequestInformation(options *PrivilegedRoleAssignmentRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *PrivilegedRoleAssignmentRequestRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Update entity in privilegedRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestRequestBuilder) CreatePatchRequestInformation(options *PrivilegedRoleAssignmentRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *PrivilegedRoleAssignmentRequestRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Delete entity from privilegedRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestRequestBuilder) Delete(options *PrivilegedRoleAssignmentRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *PrivilegedRoleAssignmentRequestRequestBuilder) Delete(options *Privileg
     }
     return nil
 }
-// Get entity from privilegedRoleAssignmentRequests by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from privilegedRoleAssignmentRequests by key
 func (m *PrivilegedRoleAssignmentRequestRequestBuilder) Get(options *PrivilegedRoleAssignmentRequestRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *PrivilegedRoleAssignmentRequestRequestBuilder) Get(options *PrivilegedR
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest), nil
 }
-// Update entity in privilegedRoleAssignmentRequests
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestRequestBuilder) Patch(options *PrivilegedRoleAssignmentRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

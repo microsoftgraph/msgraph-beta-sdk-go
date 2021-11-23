@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools
+// EmbeddedSIMActivationCodePoolsRequestBuilder builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools
 type EmbeddedSIMActivationCodePoolsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EmbeddedSIMActivationCodePoolsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EmbeddedSIMActivationCodePoolsRequestBuilderGetOptions options for Get
 type EmbeddedSIMActivationCodePoolsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EmbeddedSIMActivationCodePoolsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The embedded SIM activation code pools created by this account.
+// EmbeddedSIMActivationCodePoolsRequestBuilderGetQueryParameters the embedded SIM activation code pools created by this account.
 type EmbeddedSIMActivationCodePoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EmbeddedSIMActivationCodePoolsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EmbeddedSIMActivationCodePoolsRequestBuilderPostOptions options for Post
 type EmbeddedSIMActivationCodePoolsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePool;
@@ -56,10 +56,7 @@ type EmbeddedSIMActivationCodePoolsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EmbeddedSIMActivationCodePoolsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal instantiates a new EmbeddedSIMActivationCodePoolsRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmbeddedSIMActivationCodePoolsRequestBuilder) {
     m := &EmbeddedSIMActivationCodePoolsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EmbeddedSIMActivationCodePoolsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmbeddedSIMActivationCodePoolsRequestBuilder instantiates a new EmbeddedSIMActivationCodePoolsRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmbeddedSIMActivationCodePoolsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) CreateGetRequestInformation(options *EmbeddedSIMActivationCodePoolsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) CreatePostRequestInformation(options *EmbeddedSIMActivationCodePoolsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// Get the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) Get(options *EmbeddedSIMActivationCodePoolsRequestBuilderGetOptions)(*EmbeddedSIMActivationCodePoolsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) Get(options *EmbeddedSIMA
     }
     return res.(*EmbeddedSIMActivationCodePoolsResponse), nil
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// Post the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) Post(options *EmbeddedSIMActivationCodePoolsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

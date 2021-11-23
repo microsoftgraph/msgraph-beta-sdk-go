@@ -10,7 +10,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedSignupStatus
+// PrivilegedSignupStatusRequestBuilder builds and executes requests for operations under \privilegedSignupStatus
 type PrivilegedSignupStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type PrivilegedSignupStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PrivilegedSignupStatusRequestBuilderGetOptions options for Get
 type PrivilegedSignupStatusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type PrivilegedSignupStatusRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from privilegedSignupStatus
+// PrivilegedSignupStatusRequestBuilderGetQueryParameters get entities from privilegedSignupStatus
 type PrivilegedSignupStatusRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type PrivilegedSignupStatusRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PrivilegedSignupStatusRequestBuilderPostOptions options for Post
 type PrivilegedSignupStatusRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus;
@@ -60,17 +60,14 @@ type PrivilegedSignupStatusRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.canSignUp()
+// CanSignUp builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.canSignUp()
 func (m *PrivilegedSignupStatusRequestBuilder) CanSignUp()(*i576c2492be4604b88fea75e47108c8bd8db61a3de84b266733d2d7849bec46eb.CanSignUpRequestBuilder) {
     return i576c2492be4604b88fea75e47108c8bd8db61a3de84b266733d2d7849bec46eb.NewCanSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PrivilegedSignupStatusRequestBuilder) CompleteSetup()(*ib823f830e3ea0500a214b973cf170985ed37b35d907e2b81e06df8aaa8f66256.CompleteSetupRequestBuilder) {
     return ib823f830e3ea0500a214b973cf170985ed37b35d907e2b81e06df8aaa8f66256.NewCompleteSetupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedSignupStatusRequestBuilderInternal instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedSignupStatusRequestBuilder) {
     m := &PrivilegedSignupStatusRequestBuilder{
     }
@@ -83,18 +80,13 @@ func NewPrivilegedSignupStatusRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedSignupStatusRequestBuilder instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedSignupStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedSignupStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from privilegedSignupStatus
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) CreateGetRequestInformation(options *PrivilegedSignupStatusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,9 +106,7 @@ func (m *PrivilegedSignupStatusRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Add new entity to privilegedSignupStatus
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) CreatePostRequestInformation(options *PrivilegedSignupStatusRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,9 +124,7 @@ func (m *PrivilegedSignupStatusRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get entities from privilegedSignupStatus
-// Parameters:
-//  - options : Options for the request
+// Get get entities from privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) Get(options *PrivilegedSignupStatusRequestBuilderGetOptions)(*PrivilegedSignupStatusResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -148,13 +136,11 @@ func (m *PrivilegedSignupStatusRequestBuilder) Get(options *PrivilegedSignupStat
     }
     return res.(*PrivilegedSignupStatusResponse), nil
 }
-// Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.isSignedUp()
+// IsSignedUp builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.isSignedUp()
 func (m *PrivilegedSignupStatusRequestBuilder) IsSignedUp()(*i505eff958ea7946e725489038a9fbe85c297626b944e12d9c6f68697f1a65258.IsSignedUpRequestBuilder) {
     return i505eff958ea7946e725489038a9fbe85c297626b944e12d9c6f68697f1a65258.NewIsSignedUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to privilegedSignupStatus
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) Post(options *PrivilegedSignupStatusRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

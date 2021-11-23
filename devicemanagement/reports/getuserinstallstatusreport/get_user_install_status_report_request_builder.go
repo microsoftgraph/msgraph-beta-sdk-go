@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getUserInstallStatusReport
+// GetUserInstallStatusReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getUserInstallStatusReport
 type GetUserInstallStatusReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetUserInstallStatusReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetUserInstallStatusReportRequestBuilderPostOptions options for Post
 type GetUserInstallStatusReportRequestBuilderPostOptions struct {
     // 
     Body *GetUserInstallStatusReportRequestBody;
@@ -24,10 +24,7 @@ type GetUserInstallStatusReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetUserInstallStatusReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetUserInstallStatusReportRequestBuilderInternal instantiates a new GetUserInstallStatusReportRequestBuilder and sets the default values.
 func NewGetUserInstallStatusReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetUserInstallStatusReportRequestBuilder) {
     m := &GetUserInstallStatusReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetUserInstallStatusReportRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetUserInstallStatusReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetUserInstallStatusReportRequestBuilder instantiates a new GetUserInstallStatusReportRequestBuilder and sets the default values.
 func NewGetUserInstallStatusReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetUserInstallStatusReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetUserInstallStatusReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getUserInstallStatusReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getUserInstallStatusReport
 func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformation(options *GetUserInstallStatusReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Invoke action getUserInstallStatusReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getUserInstallStatusReport
 func (m *GetUserInstallStatusReportRequestBuilder) Post(options *GetUserInstallStatusReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

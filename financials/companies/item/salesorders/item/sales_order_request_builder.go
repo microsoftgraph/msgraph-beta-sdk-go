@@ -11,7 +11,7 @@ import (
     ic21a121310c89b15c2844b5275d312e77910ddae3d153823d924b5e4b6fa242d "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesorders/item/salesorderlines/item"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}
+// SalesOrderRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}
 type SalesOrderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type SalesOrderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SalesOrderRequestBuilderDeleteOptions options for Delete
 type SalesOrderRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type SalesOrderRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SalesOrderRequestBuilderGetOptions options for Get
 type SalesOrderRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type SalesOrderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get salesOrders from financials
+// SalesOrderRequestBuilderGetQueryParameters get salesOrders from financials
 type SalesOrderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SalesOrderRequestBuilderPatchOptions options for Patch
 type SalesOrderRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesOrder;
@@ -58,10 +58,7 @@ type SalesOrderRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SalesOrderRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesOrderRequestBuilderInternal instantiates a new SalesOrderRequestBuilder and sets the default values.
 func NewSalesOrderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesOrderRequestBuilder) {
     m := &SalesOrderRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewSalesOrderRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SalesOrderRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesOrderRequestBuilder instantiates a new SalesOrderRequestBuilder and sets the default values.
 func NewSalesOrderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesOrderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSalesOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property salesOrders for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property salesOrders for financials
 func (m *SalesOrderRequestBuilder) CreateDeleteRequestInformation(options *SalesOrderRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *SalesOrderRequestBuilder) CreateDeleteRequestInformation(options *Sales
     }
     return requestInfo, nil
 }
-// Get salesOrders from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get salesOrders from financials
 func (m *SalesOrderRequestBuilder) CreateGetRequestInformation(options *SalesOrderRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *SalesOrderRequestBuilder) CreateGetRequestInformation(options *SalesOrd
     }
     return requestInfo, nil
 }
-// Update the navigation property salesOrders in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property salesOrders in financials
 func (m *SalesOrderRequestBuilder) CreatePatchRequestInformation(options *SalesOrderRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *SalesOrderRequestBuilder) Currency()(*i6b4cd7f670148ff31b09be2a77ce4b56
 func (m *SalesOrderRequestBuilder) Customer()(*ibadb4e5291769990863464c32ca114ea1f6f63e02c97cd3d8b4a41cf346a6191.CustomerRequestBuilder) {
     return ibadb4e5291769990863464c32ca114ea1f6f63e02c97cd3d8b4a41cf346a6191.NewCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property salesOrders for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property salesOrders for financials
 func (m *SalesOrderRequestBuilder) Delete(options *SalesOrderRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *SalesOrderRequestBuilder) Delete(options *SalesOrderRequestBuilderDelet
     }
     return nil
 }
-// Get salesOrders from financials
-// Parameters:
-//  - options : Options for the request
+// Get get salesOrders from financials
 func (m *SalesOrderRequestBuilder) Get(options *SalesOrderRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesOrder, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -178,9 +162,7 @@ func (m *SalesOrderRequestBuilder) Get(options *SalesOrderRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesOrder), nil
 }
-// Update the navigation property salesOrders in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property salesOrders in financials
 func (m *SalesOrderRequestBuilder) Patch(options *SalesOrderRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -198,9 +180,7 @@ func (m *SalesOrderRequestBuilder) PaymentTerm()(*iacc2dab86f622a8885ab0684a56e4
 func (m *SalesOrderRequestBuilder) SalesOrderLines()(*i209641ff30673fdb09ca02368f6bdc96fd38d1226fdc4e469075752b2475704d.SalesOrderLinesRequestBuilder) {
     return i209641ff30673fdb09ca02368f6bdc96fd38d1226fdc4e469075752b2475704d.NewSalesOrderLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesOrders.item.salesOrderLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesOrderLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesOrders.item.salesOrderLines.item collection
 func (m *SalesOrderRequestBuilder) SalesOrderLinesById(id string)(*ic21a121310c89b15c2844b5275d312e77910ddae3d153823d924b5e4b6fa242d.SalesOrderLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

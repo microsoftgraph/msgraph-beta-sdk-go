@@ -10,7 +10,7 @@ import (
     ie50d1404accfd9f1f2d095ca342c1d50a359ffc201c488ebc36605b1a52c8fe8 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/exactmatchdatastores/item/sessions/item/commit"
 )
 
-// Builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}
+// ExactMatchSessionRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}
 type ExactMatchSessionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type ExactMatchSessionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ExactMatchSessionRequestBuilderDeleteOptions options for Delete
 type ExactMatchSessionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type ExactMatchSessionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ExactMatchSessionRequestBuilderGetOptions options for Get
 type ExactMatchSessionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type ExactMatchSessionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get sessions from dataClassification
+// ExactMatchSessionRequestBuilderGetQueryParameters get sessions from dataClassification
 type ExactMatchSessionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ExactMatchSessionRequestBuilderPatchOptions options for Patch
 type ExactMatchSessionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession;
@@ -63,10 +63,7 @@ func (m *ExactMatchSessionRequestBuilder) Cancel()(*ic6bdbe766584845439738d0d528
 func (m *ExactMatchSessionRequestBuilder) Commit()(*ie50d1404accfd9f1f2d095ca342c1d50a359ffc201c488ebc36605b1a52c8fe8.CommitRequestBuilder) {
     return ie50d1404accfd9f1f2d095ca342c1d50a359ffc201c488ebc36605b1a52c8fe8.NewCommitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ExactMatchSessionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExactMatchSessionRequestBuilderInternal instantiates a new ExactMatchSessionRequestBuilder and sets the default values.
 func NewExactMatchSessionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchSessionRequestBuilder) {
     m := &ExactMatchSessionRequestBuilder{
     }
@@ -79,18 +76,13 @@ func NewExactMatchSessionRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExactMatchSessionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExactMatchSessionRequestBuilder instantiates a new ExactMatchSessionRequestBuilder and sets the default values.
 func NewExactMatchSessionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchSessionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property sessions for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property sessions for dataClassification
 func (m *ExactMatchSessionRequestBuilder) CreateDeleteRequestInformation(options *ExactMatchSessionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *ExactMatchSessionRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Get sessions from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get sessions from dataClassification
 func (m *ExactMatchSessionRequestBuilder) CreateGetRequestInformation(options *ExactMatchSessionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *ExactMatchSessionRequestBuilder) CreateGetRequestInformation(options *E
     }
     return requestInfo, nil
 }
-// Update the navigation property sessions in dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property sessions in dataClassification
 func (m *ExactMatchSessionRequestBuilder) CreatePatchRequestInformation(options *ExactMatchSessionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +137,7 @@ func (m *ExactMatchSessionRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Delete navigation property sessions for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property sessions for dataClassification
 func (m *ExactMatchSessionRequestBuilder) Delete(options *ExactMatchSessionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -163,9 +149,7 @@ func (m *ExactMatchSessionRequestBuilder) Delete(options *ExactMatchSessionReque
     }
     return nil
 }
-// Get sessions from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get sessions from dataClassification
 func (m *ExactMatchSessionRequestBuilder) Get(options *ExactMatchSessionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -177,9 +161,7 @@ func (m *ExactMatchSessionRequestBuilder) Get(options *ExactMatchSessionRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession), nil
 }
-// Update the navigation property sessions in dataClassification
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property sessions in dataClassification
 func (m *ExactMatchSessionRequestBuilder) Patch(options *ExactMatchSessionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

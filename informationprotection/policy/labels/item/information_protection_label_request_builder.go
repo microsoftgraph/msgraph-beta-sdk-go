@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \informationProtection\policy\labels\{informationProtectionLabel-id}
+// InformationProtectionLabelRequestBuilder builds and executes requests for operations under \informationProtection\policy\labels\{informationProtectionLabel-id}
 type InformationProtectionLabelRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type InformationProtectionLabelRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// InformationProtectionLabelRequestBuilderDeleteOptions options for Delete
 type InformationProtectionLabelRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type InformationProtectionLabelRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// InformationProtectionLabelRequestBuilderGetOptions options for Get
 type InformationProtectionLabelRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type InformationProtectionLabelRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get labels from informationProtection
+// InformationProtectionLabelRequestBuilderGetQueryParameters get labels from informationProtection
 type InformationProtectionLabelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// InformationProtectionLabelRequestBuilderPatchOptions options for Patch
 type InformationProtectionLabelRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionLabel;
@@ -53,10 +53,7 @@ type InformationProtectionLabelRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new InformationProtectionLabelRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInformationProtectionLabelRequestBuilderInternal instantiates a new InformationProtectionLabelRequestBuilder and sets the default values.
 func NewInformationProtectionLabelRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InformationProtectionLabelRequestBuilder) {
     m := &InformationProtectionLabelRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewInformationProtectionLabelRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InformationProtectionLabelRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInformationProtectionLabelRequestBuilder instantiates a new InformationProtectionLabelRequestBuilder and sets the default values.
 func NewInformationProtectionLabelRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InformationProtectionLabelRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInformationProtectionLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property labels for informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property labels for informationProtection
 func (m *InformationProtectionLabelRequestBuilder) CreateDeleteRequestInformation(options *InformationProtectionLabelRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *InformationProtectionLabelRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// Get labels from informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get labels from informationProtection
 func (m *InformationProtectionLabelRequestBuilder) CreateGetRequestInformation(options *InformationProtectionLabelRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *InformationProtectionLabelRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Update the navigation property labels in informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property labels in informationProtection
 func (m *InformationProtectionLabelRequestBuilder) CreatePatchRequestInformation(options *InformationProtectionLabelRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *InformationProtectionLabelRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// Delete navigation property labels for informationProtection
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property labels for informationProtection
 func (m *InformationProtectionLabelRequestBuilder) Delete(options *InformationProtectionLabelRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *InformationProtectionLabelRequestBuilder) Delete(options *InformationPr
     }
     return nil
 }
-// Get labels from informationProtection
-// Parameters:
-//  - options : Options for the request
+// Get get labels from informationProtection
 func (m *InformationProtectionLabelRequestBuilder) Get(options *InformationProtectionLabelRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionLabel, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *InformationProtectionLabelRequestBuilder) Get(options *InformationProte
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionLabel), nil
 }
-// Update the navigation property labels in informationProtection
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property labels in informationProtection
 func (m *InformationProtectionLabelRequestBuilder) Patch(options *InformationProtectionLabelRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

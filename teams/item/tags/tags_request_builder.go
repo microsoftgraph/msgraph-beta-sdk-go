@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\tags
+// TagsRequestBuilder builds and executes requests for operations under \teams\{team-id}\tags
 type TagsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TagsRequestBuilderGetOptions options for Get
 type TagsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TagsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The tags associated with the team.
+// TagsRequestBuilderGetQueryParameters the tags associated with the team.
 type TagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TagsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TagsRequestBuilderPostOptions options for Post
 type TagsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkTag;
@@ -56,10 +56,7 @@ type TagsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TagsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTagsRequestBuilderInternal instantiates a new TagsRequestBuilder and sets the default values.
 func NewTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TagsRequestBuilder) {
     m := &TagsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTagsRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TagsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTagsRequestBuilder instantiates a new TagsRequestBuilder and sets the default values.
 func NewTagsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TagsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the tags associated with the team.
 func (m *TagsRequestBuilder) CreateGetRequestInformation(options *TagsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TagsRequestBuilder) CreateGetRequestInformation(options *TagsRequestBui
     }
     return requestInfo, nil
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the tags associated with the team.
 func (m *TagsRequestBuilder) CreatePostRequestInformation(options *TagsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TagsRequestBuilder) CreatePostRequestInformation(options *TagsRequestBu
     }
     return requestInfo, nil
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Get the tags associated with the team.
 func (m *TagsRequestBuilder) Get(options *TagsRequestBuilderGetOptions)(*TagsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TagsRequestBuilder) Get(options *TagsRequestBuilderGetOptions)(*TagsRes
     }
     return res.(*TagsResponse), nil
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Post the tags associated with the team.
 func (m *TagsRequestBuilder) Post(options *TagsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkTag, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

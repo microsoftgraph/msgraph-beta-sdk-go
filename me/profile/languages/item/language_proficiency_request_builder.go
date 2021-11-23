@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\languages\{languageProficiency-id}
+// LanguageProficiencyRequestBuilder builds and executes requests for operations under \me\profile\languages\{languageProficiency-id}
 type LanguageProficiencyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LanguageProficiencyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// LanguageProficiencyRequestBuilderDeleteOptions options for Delete
 type LanguageProficiencyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type LanguageProficiencyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// LanguageProficiencyRequestBuilderGetOptions options for Get
 type LanguageProficiencyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type LanguageProficiencyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents detailed information about languages that a user has added to their profile.
+// LanguageProficiencyRequestBuilderGetQueryParameters represents detailed information about languages that a user has added to their profile.
 type LanguageProficiencyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// LanguageProficiencyRequestBuilderPatchOptions options for Patch
 type LanguageProficiencyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LanguageProficiency;
@@ -53,10 +53,7 @@ type LanguageProficiencyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LanguageProficiencyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLanguageProficiencyRequestBuilderInternal instantiates a new LanguageProficiencyRequestBuilder and sets the default values.
 func NewLanguageProficiencyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LanguageProficiencyRequestBuilder) {
     m := &LanguageProficiencyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewLanguageProficiencyRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LanguageProficiencyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLanguageProficiencyRequestBuilder instantiates a new LanguageProficiencyRequestBuilder and sets the default values.
 func NewLanguageProficiencyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LanguageProficiencyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLanguageProficiencyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents detailed information about languages that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents detailed information about languages that a user has added to their profile.
 func (m *LanguageProficiencyRequestBuilder) CreateDeleteRequestInformation(options *LanguageProficiencyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *LanguageProficiencyRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Represents detailed information about languages that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents detailed information about languages that a user has added to their profile.
 func (m *LanguageProficiencyRequestBuilder) CreateGetRequestInformation(options *LanguageProficiencyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *LanguageProficiencyRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Represents detailed information about languages that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents detailed information about languages that a user has added to their profile.
 func (m *LanguageProficiencyRequestBuilder) CreatePatchRequestInformation(options *LanguageProficiencyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *LanguageProficiencyRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Represents detailed information about languages that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Delete represents detailed information about languages that a user has added to their profile.
 func (m *LanguageProficiencyRequestBuilder) Delete(options *LanguageProficiencyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *LanguageProficiencyRequestBuilder) Delete(options *LanguageProficiencyR
     }
     return nil
 }
-// Represents detailed information about languages that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents detailed information about languages that a user has added to their profile.
 func (m *LanguageProficiencyRequestBuilder) Get(options *LanguageProficiencyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LanguageProficiency, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *LanguageProficiencyRequestBuilder) Get(options *LanguageProficiencyRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LanguageProficiency), nil
 }
-// Represents detailed information about languages that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Patch represents detailed information about languages that a user has added to their profile.
 func (m *LanguageProficiencyRequestBuilder) Patch(options *LanguageProficiencyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

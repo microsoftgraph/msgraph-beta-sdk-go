@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\webAccounts\{webAccount-id}
+// WebAccountRequestBuilder builds and executes requests for operations under \me\profile\webAccounts\{webAccount-id}
 type WebAccountRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WebAccountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WebAccountRequestBuilderDeleteOptions options for Delete
 type WebAccountRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WebAccountRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WebAccountRequestBuilderGetOptions options for Get
 type WebAccountRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WebAccountRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
+// WebAccountRequestBuilderGetQueryParameters represents web accounts the user has indicated they use or has added to their user profile.
 type WebAccountRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WebAccountRequestBuilderPatchOptions options for Patch
 type WebAccountRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WebAccount;
@@ -53,10 +53,7 @@ type WebAccountRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WebAccountRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWebAccountRequestBuilderInternal instantiates a new WebAccountRequestBuilder and sets the default values.
 func NewWebAccountRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WebAccountRequestBuilder) {
     m := &WebAccountRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWebAccountRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WebAccountRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWebAccountRequestBuilder instantiates a new WebAccountRequestBuilder and sets the default values.
 func NewWebAccountRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WebAccountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWebAccountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountRequestBuilder) CreateDeleteRequestInformation(options *WebAccountRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WebAccountRequestBuilder) CreateDeleteRequestInformation(options *WebAc
     }
     return requestInfo, nil
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountRequestBuilder) CreateGetRequestInformation(options *WebAccountRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WebAccountRequestBuilder) CreateGetRequestInformation(options *WebAccou
     }
     return requestInfo, nil
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountRequestBuilder) CreatePatchRequestInformation(options *WebAccountRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WebAccountRequestBuilder) CreatePatchRequestInformation(options *WebAcc
     }
     return requestInfo, nil
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// Delete represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountRequestBuilder) Delete(options *WebAccountRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WebAccountRequestBuilder) Delete(options *WebAccountRequestBuilderDelet
     }
     return nil
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountRequestBuilder) Get(options *WebAccountRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WebAccount, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WebAccountRequestBuilder) Get(options *WebAccountRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WebAccount), nil
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// Patch represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountRequestBuilder) Patch(options *WebAccountRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

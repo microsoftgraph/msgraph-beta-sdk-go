@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// GetSharePointSiteUsageFileCountsWithPeriod 
 type GetSharePointSiteUsageFileCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // 
@@ -21,14 +21,14 @@ type GetSharePointSiteUsageFileCountsWithPeriod struct {
     // 
     total *int64;
 }
-// Instantiates a new getSharePointSiteUsageFileCountsWithPeriod and sets the default values.
+// NewGetSharePointSiteUsageFileCountsWithPeriod instantiates a new getSharePointSiteUsageFileCountsWithPeriod and sets the default values.
 func NewGetSharePointSiteUsageFileCountsWithPeriod()(*GetSharePointSiteUsageFileCountsWithPeriod) {
     m := &GetSharePointSiteUsageFileCountsWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
-// Gets the active property value. 
+// GetActive gets the active property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetActive()(*int64) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetActive()(*int64) {
         return m.active
     }
 }
-// Gets the reportDate property value. 
+// GetReportDate gets the reportDate property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetReportDate()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetReportDate()(*string) {
         return m.reportDate
     }
 }
-// Gets the reportPeriod property value. 
+// GetReportPeriod gets the reportPeriod property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetReportPeriod()(*string) 
         return m.reportPeriod
     }
 }
-// Gets the reportRefreshDate property value. 
+// GetReportRefreshDate gets the reportRefreshDate property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetReportRefreshDate()(*str
         return m.reportRefreshDate
     }
 }
-// Gets the siteType property value. 
+// GetSiteType gets the siteType property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetSiteType()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetSiteType()(*string) {
         return m.siteType
     }
 }
-// Gets the total property value. 
+// GetTotal gets the total property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetTotal()(*int64) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetTotal()(*int64) {
         return m.total
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["active"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,9 +144,7 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriod) GetFieldDeserializers()(map
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -190,39 +188,27 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriod) Serialize(writer i04eb5309a
     }
     return nil
 }
-// Sets the active property value. 
-// Parameters:
-//  - value : Value to set for the active property.
+// SetActive sets the active property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) SetActive(value *int64)() {
     m.active = value
 }
-// Sets the reportDate property value. 
-// Parameters:
-//  - value : Value to set for the reportDate property.
+// SetReportDate sets the reportDate property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) SetReportDate(value *string)() {
     m.reportDate = value
 }
-// Sets the reportPeriod property value. 
-// Parameters:
-//  - value : Value to set for the reportPeriod property.
+// SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
-// Sets the reportRefreshDate property value. 
-// Parameters:
-//  - value : Value to set for the reportRefreshDate property.
+// SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
-// Sets the siteType property value. 
-// Parameters:
-//  - value : Value to set for the siteType property.
+// SetSiteType sets the siteType property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) SetSiteType(value *string)() {
     m.siteType = value
 }
-// Sets the total property value. 
-// Parameters:
-//  - value : Value to set for the total property.
+// SetTotal sets the total property value. 
 func (m *GetSharePointSiteUsageFileCountsWithPeriod) SetTotal(value *int64)() {
     m.total = value
 }

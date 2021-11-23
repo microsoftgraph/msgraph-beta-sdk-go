@@ -7,7 +7,7 @@ import (
     i9ca1edd726cce459d5ae00020e88cee37259dd64732ed99f765519777cf3b321 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/sets/item/terms/item/relations/item/fromterm/ref"
 )
 
-// Builds and executes requests for operations under \termStore\sets\{set-id}\terms\{term-id}\relations\{relation-id}\fromTerm
+// FromTermRequestBuilder builds and executes requests for operations under \termStore\sets\{set-id}\terms\{term-id}\relations\{relation-id}\fromTerm
 type FromTermRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type FromTermRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FromTermRequestBuilderGetOptions options for Get
 type FromTermRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type FromTermRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
+// FromTermRequestBuilderGetQueryParameters the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 type FromTermRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new FromTermRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFromTermRequestBuilderInternal instantiates a new FromTermRequestBuilder and sets the default values.
 func NewFromTermRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FromTermRequestBuilder) {
     m := &FromTermRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewFromTermRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FromTermRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFromTermRequestBuilder instantiates a new FromTermRequestBuilder and sets the default values.
 func NewFromTermRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FromTermRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFromTermRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 func (m *FromTermRequestBuilder) CreateGetRequestInformation(options *FromTermRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *FromTermRequestBuilder) CreateGetRequestInformation(options *FromTermRe
     }
     return requestInfo, nil
 }
-// The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-// Parameters:
-//  - options : Options for the request
+// Get the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 func (m *FromTermRequestBuilder) Get(options *FromTermRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Term, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AuditProperty 
 type AuditProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type AuditProperty struct {
     // Old value.
     oldValue *string;
 }
-// Instantiates a new auditProperty and sets the default values.
+// NewAuditProperty instantiates a new auditProperty and sets the default values.
 func NewAuditProperty()(*AuditProperty) {
     m := &AuditProperty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditProperty) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *AuditProperty) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the displayName property value. Display name.
+// GetDisplayName gets the displayName property value. Display name.
 func (m *AuditProperty) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AuditProperty) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the newValue property value. New value.
+// GetNewValue gets the newValue property value. New value.
 func (m *AuditProperty) GetNewValue()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AuditProperty) GetNewValue()(*string) {
         return m.newValue
     }
 }
-// Gets the oldValue property value. Old value.
+// GetOldValue gets the oldValue property value. Old value.
 func (m *AuditProperty) GetOldValue()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AuditProperty) GetOldValue()(*string) {
         return m.oldValue
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AuditProperty) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *AuditProperty) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *AuditProperty) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AuditProperty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -122,27 +120,19 @@ func (m *AuditProperty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditProperty) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. Display name.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name.
 func (m *AuditProperty) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the newValue property value. New value.
-// Parameters:
-//  - value : Value to set for the newValue property.
+// SetNewValue sets the newValue property value. New value.
 func (m *AuditProperty) SetNewValue(value *string)() {
     m.newValue = value
 }
-// Sets the oldValue property value. Old value.
-// Parameters:
-//  - value : Value to set for the oldValue property.
+// SetOldValue sets the oldValue property value. Old value.
 func (m *AuditProperty) SetOldValue(value *string)() {
     m.oldValue = value
 }

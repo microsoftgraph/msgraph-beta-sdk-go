@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\publications
+// PublicationsRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\publications
 type PublicationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PublicationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PublicationsRequestBuilderGetOptions options for Get
 type PublicationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PublicationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents details of any publications a user has added to their profile.
+// PublicationsRequestBuilderGetQueryParameters represents details of any publications a user has added to their profile.
 type PublicationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PublicationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PublicationsRequestBuilderPostOptions options for Post
 type PublicationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPublication;
@@ -56,10 +56,7 @@ type PublicationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PublicationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPublicationsRequestBuilderInternal instantiates a new PublicationsRequestBuilder and sets the default values.
 func NewPublicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PublicationsRequestBuilder) {
     m := &PublicationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPublicationsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PublicationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPublicationsRequestBuilder instantiates a new PublicationsRequestBuilder and sets the default values.
 func NewPublicationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PublicationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPublicationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents details of any publications a user has added to their profile.
 func (m *PublicationsRequestBuilder) CreateGetRequestInformation(options *PublicationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PublicationsRequestBuilder) CreateGetRequestInformation(options *Public
     }
     return requestInfo, nil
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents details of any publications a user has added to their profile.
 func (m *PublicationsRequestBuilder) CreatePostRequestInformation(options *PublicationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PublicationsRequestBuilder) CreatePostRequestInformation(options *Publi
     }
     return requestInfo, nil
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents details of any publications a user has added to their profile.
 func (m *PublicationsRequestBuilder) Get(options *PublicationsRequestBuilderGetOptions)(*PublicationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PublicationsRequestBuilder) Get(options *PublicationsRequestBuilderGetO
     }
     return res.(*PublicationsResponse), nil
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Post represents details of any publications a user has added to their profile.
 func (m *PublicationsRequestBuilder) Post(options *PublicationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPublication, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

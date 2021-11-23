@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ExpressionEvaluationDetails 
 type ExpressionEvaluationDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type ExpressionEvaluationDetails struct {
     // Defines the name of the property and the value of that property.
     propertyToEvaluate *PropertyToEvaluate;
 }
-// Instantiates a new expressionEvaluationDetails and sets the default values.
+// NewExpressionEvaluationDetails instantiates a new expressionEvaluationDetails and sets the default values.
 func NewExpressionEvaluationDetails()(*ExpressionEvaluationDetails) {
     m := &ExpressionEvaluationDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionEvaluationDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *ExpressionEvaluationDetails) GetAdditionalData()(map[string]interface{}
         return m.additionalData
     }
 }
-// Gets the expression property value. Represents expression which has been evaluated.
+// GetExpression gets the expression property value. Represents expression which has been evaluated.
 func (m *ExpressionEvaluationDetails) GetExpression()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ExpressionEvaluationDetails) GetExpression()(*string) {
         return m.expression
     }
 }
-// Gets the expressionEvaluationDetails property value. Represents the details of the evaluation of the expression.
+// GetExpressionEvaluationDetails gets the expressionEvaluationDetails property value. Represents the details of the evaluation of the expression.
 func (m *ExpressionEvaluationDetails) GetExpressionEvaluationDetails()([]ExpressionEvaluationDetails) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ExpressionEvaluationDetails) GetExpressionEvaluationDetails()([]Express
         return m.expressionEvaluationDetails
     }
 }
-// Gets the expressionResult property value. Represents the value of the result of the current expression.
+// GetExpressionResult gets the expressionResult property value. Represents the value of the result of the current expression.
 func (m *ExpressionEvaluationDetails) GetExpressionResult()(*bool) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ExpressionEvaluationDetails) GetExpressionResult()(*bool) {
         return m.expressionResult
     }
 }
-// Gets the propertyToEvaluate property value. Defines the name of the property and the value of that property.
+// GetPropertyToEvaluate gets the propertyToEvaluate property value. Defines the name of the property and the value of that property.
 func (m *ExpressionEvaluationDetails) GetPropertyToEvaluate()(*PropertyToEvaluate) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *ExpressionEvaluationDetails) GetPropertyToEvaluate()(*PropertyToEvaluat
         return m.propertyToEvaluate
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["expression"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,9 +116,7 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(in
 func (m *ExpressionEvaluationDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExpressionEvaluationDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("expression", m.GetExpression())
@@ -157,33 +155,23 @@ func (m *ExpressionEvaluationDetails) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionEvaluationDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the expression property value. Represents expression which has been evaluated.
-// Parameters:
-//  - value : Value to set for the expression property.
+// SetExpression sets the expression property value. Represents expression which has been evaluated.
 func (m *ExpressionEvaluationDetails) SetExpression(value *string)() {
     m.expression = value
 }
-// Sets the expressionEvaluationDetails property value. Represents the details of the evaluation of the expression.
-// Parameters:
-//  - value : Value to set for the expressionEvaluationDetails property.
+// SetExpressionEvaluationDetails sets the expressionEvaluationDetails property value. Represents the details of the evaluation of the expression.
 func (m *ExpressionEvaluationDetails) SetExpressionEvaluationDetails(value []ExpressionEvaluationDetails)() {
     m.expressionEvaluationDetails = value
 }
-// Sets the expressionResult property value. Represents the value of the result of the current expression.
-// Parameters:
-//  - value : Value to set for the expressionResult property.
+// SetExpressionResult sets the expressionResult property value. Represents the value of the result of the current expression.
 func (m *ExpressionEvaluationDetails) SetExpressionResult(value *bool)() {
     m.expressionResult = value
 }
-// Sets the propertyToEvaluate property value. Defines the name of the property and the value of that property.
-// Parameters:
-//  - value : Value to set for the propertyToEvaluate property.
+// SetPropertyToEvaluate sets the propertyToEvaluate property value. Defines the name of the property and the value of that property.
 func (m *ExpressionEvaluationDetails) SetPropertyToEvaluate(value *PropertyToEvaluate)() {
     m.propertyToEvaluate = value
 }

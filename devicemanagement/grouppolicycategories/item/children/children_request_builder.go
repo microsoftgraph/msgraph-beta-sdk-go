@@ -6,7 +6,7 @@ import (
     i6907d8c601c7aa982e60b00cf3904e48d28ee3236bbc3c348e2d6e4d6873f0ae "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicycategories/item/children/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\children
+// ChildrenRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\children
 type ChildrenRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ChildrenRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ChildrenRequestBuilderGetOptions options for Get
 type ChildrenRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ChildrenRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The children categories
+// ChildrenRequestBuilderGetQueryParameters the children categories
 type ChildrenRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type ChildrenRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new ChildrenRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChildrenRequestBuilderInternal instantiates a new ChildrenRequestBuilder and sets the default values.
 func NewChildrenRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChildrenRequestBuilder) {
     m := &ChildrenRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewChildrenRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChildrenRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChildrenRequestBuilder instantiates a new ChildrenRequestBuilder and sets the default values.
 func NewChildrenRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChildrenRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChildrenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The children categories
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the children categories
 func (m *ChildrenRequestBuilder) CreateGetRequestInformation(options *ChildrenRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *ChildrenRequestBuilder) CreateGetRequestInformation(options *ChildrenRe
     }
     return requestInfo, nil
 }
-// The children categories
-// Parameters:
-//  - options : Options for the request
+// Get the children categories
 func (m *ChildrenRequestBuilder) Get(options *ChildrenRequestBuilderGetOptions)(*ChildrenResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

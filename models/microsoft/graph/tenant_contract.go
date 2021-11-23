@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// TenantContract 
 type TenantContract struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type TenantContract struct {
     // The display name for the tenant. Optional. Read-only.
     displayName *string;
 }
-// Instantiates a new tenantContract and sets the default values.
+// NewTenantContract instantiates a new tenantContract and sets the default values.
 func NewTenantContract()(*TenantContract) {
     m := &TenantContract{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContract) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *TenantContract) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the contractType property value. The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
+// GetContractType gets the contractType property value. The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
 func (m *TenantContract) GetContractType()(*int32) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *TenantContract) GetContractType()(*int32) {
         return m.contractType
     }
 }
-// Gets the defaultDomainName property value. The default domain name for the tenant. Required. Read-only.
+// GetDefaultDomainName gets the defaultDomainName property value. The default domain name for the tenant. Required. Read-only.
 func (m *TenantContract) GetDefaultDomainName()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *TenantContract) GetDefaultDomainName()(*string) {
         return m.defaultDomainName
     }
 }
-// Gets the displayName property value. The display name for the tenant. Optional. Read-only.
+// GetDisplayName gets the displayName property value. The display name for the tenant. Optional. Read-only.
 func (m *TenantContract) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *TenantContract) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TenantContract) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["contractType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *TenantContract) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *TenantContract) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TenantContract) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("contractType", m.GetContractType())
@@ -122,27 +120,19 @@ func (m *TenantContract) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContract) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the contractType property value. The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the contractType property.
+// SetContractType sets the contractType property value. The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
 func (m *TenantContract) SetContractType(value *int32)() {
     m.contractType = value
 }
-// Sets the defaultDomainName property value. The default domain name for the tenant. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the defaultDomainName property.
+// SetDefaultDomainName sets the defaultDomainName property value. The default domain name for the tenant. Required. Read-only.
 func (m *TenantContract) SetDefaultDomainName(value *string)() {
     m.defaultDomainName = value
 }
-// Sets the displayName property value. The display name for the tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the tenant. Optional. Read-only.
 func (m *TenantContract) SetDisplayName(value *string)() {
     m.displayName = value
 }

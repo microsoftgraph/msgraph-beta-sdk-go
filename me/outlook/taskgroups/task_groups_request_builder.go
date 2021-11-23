@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\outlook\taskGroups
+// TaskGroupsRequestBuilder builds and executes requests for operations under \me\outlook\taskGroups
 type TaskGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TaskGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TaskGroupsRequestBuilderGetOptions options for Get
 type TaskGroupsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TaskGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get taskGroups from me
+// TaskGroupsRequestBuilderGetQueryParameters get taskGroups from me
 type TaskGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type TaskGroupsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TaskGroupsRequestBuilderPostOptions options for Post
 type TaskGroupsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTaskGroup;
@@ -52,10 +52,7 @@ type TaskGroupsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TaskGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaskGroupsRequestBuilderInternal instantiates a new TaskGroupsRequestBuilder and sets the default values.
 func NewTaskGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaskGroupsRequestBuilder) {
     m := &TaskGroupsRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewTaskGroupsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TaskGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaskGroupsRequestBuilder instantiates a new TaskGroupsRequestBuilder and sets the default values.
 func NewTaskGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaskGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTaskGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get taskGroups from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get taskGroups from me
 func (m *TaskGroupsRequestBuilder) CreateGetRequestInformation(options *TaskGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *TaskGroupsRequestBuilder) CreateGetRequestInformation(options *TaskGrou
     }
     return requestInfo, nil
 }
-// Create new navigation property to taskGroups for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to taskGroups for me
 func (m *TaskGroupsRequestBuilder) CreatePostRequestInformation(options *TaskGroupsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TaskGroupsRequestBuilder) CreatePostRequestInformation(options *TaskGro
     }
     return requestInfo, nil
 }
-// Get taskGroups from me
-// Parameters:
-//  - options : Options for the request
+// Get get taskGroups from me
 func (m *TaskGroupsRequestBuilder) Get(options *TaskGroupsRequestBuilderGetOptions)(*TaskGroupsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *TaskGroupsRequestBuilder) Get(options *TaskGroupsRequestBuilderGetOptio
     }
     return res.(*TaskGroupsResponse), nil
 }
-// Create new navigation property to taskGroups for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to taskGroups for me
 func (m *TaskGroupsRequestBuilder) Post(options *TaskGroupsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTaskGroup, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

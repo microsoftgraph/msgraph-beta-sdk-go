@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurationsAllManagedDeviceCertificateStates
+// DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurationsAllManagedDeviceCertificateStates
 type DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder struct 
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetOptions options for Get
 type DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetOptio
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Summary of all certificates for all devices.
+// DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters summary of all certificates for all devices.
 type DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQuery
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderPostOptions options for Post
 type DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedAllDeviceCertificateState;
@@ -56,10 +56,7 @@ type DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderPostOpti
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInternal instantiates a new DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder and sets the default values.
 func NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) {
     m := &DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder instantiates a new DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder and sets the default values.
 func NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Summary of all certificates for all devices.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation summary of all certificates for all devices.
 func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) CreateGetRequestInformation(options *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// Summary of all certificates for all devices.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation summary of all certificates for all devices.
 func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) CreatePostRequestInformation(options *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// Summary of all certificates for all devices.
-// Parameters:
-//  - options : Options for the request
+// Get summary of all certificates for all devices.
 func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Get(options *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetOptions)(*DeviceConfigurationsAllManagedDeviceCertificateStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Ge
     }
     return res.(*DeviceConfigurationsAllManagedDeviceCertificateStatesResponse), nil
 }
-// Summary of all certificates for all devices.
-// Parameters:
-//  - options : Options for the request
+// Post summary of all certificates for all devices.
 func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Post(options *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedAllDeviceCertificateState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

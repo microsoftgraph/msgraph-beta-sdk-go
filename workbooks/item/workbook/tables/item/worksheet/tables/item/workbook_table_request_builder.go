@@ -13,7 +13,7 @@ import (
     ia19841dfd8dac02a16ef964e9ae689716da5ba326c0089ac50187e4ce5fa6e7d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/converttorange"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}
+// WorkbookTableRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}
 type WorkbookTableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type WorkbookTableRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkbookTableRequestBuilderDeleteOptions options for Delete
 type WorkbookTableRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type WorkbookTableRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkbookTableRequestBuilderGetOptions options for Get
 type WorkbookTableRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type WorkbookTableRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of tables that are part of the worksheet. Read-only.
+// WorkbookTableRequestBuilderGetQueryParameters collection of tables that are part of the worksheet. Read-only.
 type WorkbookTableRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkbookTableRequestBuilderPatchOptions options for Patch
 type WorkbookTableRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTable;
@@ -63,10 +63,7 @@ type WorkbookTableRequestBuilderPatchOptions struct {
 func (m *WorkbookTableRequestBuilder) ClearFilters()(*i8aa38c528205520959488d8f2a7e023f19e7f8a0bf2f36873d6c50ab2150f8c3.ClearFiltersRequestBuilder) {
     return i8aa38c528205520959488d8f2a7e023f19e7f8a0bf2f36873d6c50ab2150f8c3.NewClearFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new WorkbookTableRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookTableRequestBuilderInternal instantiates a new WorkbookTableRequestBuilder and sets the default values.
 func NewWorkbookTableRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookTableRequestBuilder) {
     m := &WorkbookTableRequestBuilder{
     }
@@ -79,10 +76,7 @@ func NewWorkbookTableRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookTableRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookTableRequestBuilder instantiates a new WorkbookTableRequestBuilder and sets the default values.
 func NewWorkbookTableRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookTableRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -91,9 +85,7 @@ func NewWorkbookTableRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
 func (m *WorkbookTableRequestBuilder) ConvertToRange()(*ia19841dfd8dac02a16ef964e9ae689716da5ba326c0089ac50187e4ce5fa6e7d.ConvertToRangeRequestBuilder) {
     return ia19841dfd8dac02a16ef964e9ae689716da5ba326c0089ac50187e4ce5fa6e7d.NewConvertToRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of tables that are part of the worksheet. Read-only.
 func (m *WorkbookTableRequestBuilder) CreateDeleteRequestInformation(options *WorkbookTableRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,9 +102,7 @@ func (m *WorkbookTableRequestBuilder) CreateDeleteRequestInformation(options *Wo
     }
     return requestInfo, nil
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of tables that are part of the worksheet. Read-only.
 func (m *WorkbookTableRequestBuilder) CreateGetRequestInformation(options *WorkbookTableRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,9 +122,7 @@ func (m *WorkbookTableRequestBuilder) CreateGetRequestInformation(options *Workb
     }
     return requestInfo, nil
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of tables that are part of the worksheet. Read-only.
 func (m *WorkbookTableRequestBuilder) CreatePatchRequestInformation(options *WorkbookTableRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -152,13 +140,11 @@ func (m *WorkbookTableRequestBuilder) CreatePatchRequestInformation(options *Wor
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.dataBodyRange()
+// DataBodyRange builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.dataBodyRange()
 func (m *WorkbookTableRequestBuilder) DataBodyRange()(*i33f608b1a5b1f40cbedd25ca23610dc70efd3ef30bdf83ca0364a5bcc6219b3c.DataBodyRangeRequestBuilder) {
     return i33f608b1a5b1f40cbedd25ca23610dc70efd3ef30bdf83ca0364a5bcc6219b3c.NewDataBodyRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete collection of tables that are part of the worksheet. Read-only.
 func (m *WorkbookTableRequestBuilder) Delete(options *WorkbookTableRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -170,9 +156,7 @@ func (m *WorkbookTableRequestBuilder) Delete(options *WorkbookTableRequestBuilde
     }
     return nil
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get collection of tables that are part of the worksheet. Read-only.
 func (m *WorkbookTableRequestBuilder) Get(options *WorkbookTableRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -184,13 +168,11 @@ func (m *WorkbookTableRequestBuilder) Get(options *WorkbookTableRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTable), nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.headerRowRange()
+// HeaderRowRange builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.headerRowRange()
 func (m *WorkbookTableRequestBuilder) HeaderRowRange()(*i576ef957c75800d01681f5c99bb2e8bdf4192b3bc6a0aeb0e21eeb43b3c558af.HeaderRowRangeRequestBuilder) {
     return i576ef957c75800d01681f5c99bb2e8bdf4192b3bc6a0aeb0e21eeb43b3c558af.NewHeaderRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch collection of tables that are part of the worksheet. Read-only.
 func (m *WorkbookTableRequestBuilder) Patch(options *WorkbookTableRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -202,14 +184,14 @@ func (m *WorkbookTableRequestBuilder) Patch(options *WorkbookTableRequestBuilder
     }
     return nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.range()
+// Range_escaped builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.range()
 func (m *WorkbookTableRequestBuilder) Range_escaped()(*i03e8315740e50741be28e0de5b0dbc979248935d5a52b8bd57ae1a03bb0cc9ce.RangeRequestBuilder) {
     return i03e8315740e50741be28e0de5b0dbc979248935d5a52b8bd57ae1a03bb0cc9ce.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *WorkbookTableRequestBuilder) ReapplyFilters()(*i62b751f5318254f7603879bab6c4ed76db74fc7e7c7b9e719a6a79312b0b88f1.ReapplyFiltersRequestBuilder) {
     return i62b751f5318254f7603879bab6c4ed76db74fc7e7c7b9e719a6a79312b0b88f1.NewReapplyFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.totalRowRange()
+// TotalRowRange builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.totalRowRange()
 func (m *WorkbookTableRequestBuilder) TotalRowRange()(*i32ae25ae9d9d6e1f97d393a3512d4664345ae284435f62e14907150840fb4f23.TotalRowRangeRequestBuilder) {
     return i32ae25ae9d9d6e1f97d393a3512d4664345ae284435f62e14907150840fb4f23.NewTotalRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

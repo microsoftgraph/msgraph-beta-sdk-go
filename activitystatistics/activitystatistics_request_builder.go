@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \activitystatistics
+// ActivitystatisticsRequestBuilder builds and executes requests for operations under \activitystatistics
 type ActivitystatisticsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ActivitystatisticsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ActivitystatisticsRequestBuilderGetOptions options for Get
 type ActivitystatisticsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ActivitystatisticsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from activitystatistics
+// ActivitystatisticsRequestBuilderGetQueryParameters get entities from activitystatistics
 type ActivitystatisticsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ActivitystatisticsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ActivitystatisticsRequestBuilderPostOptions options for Post
 type ActivitystatisticsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics;
@@ -56,10 +56,7 @@ type ActivitystatisticsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ActivitystatisticsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivitystatisticsRequestBuilderInternal instantiates a new ActivitystatisticsRequestBuilder and sets the default values.
 func NewActivitystatisticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivitystatisticsRequestBuilder) {
     m := &ActivitystatisticsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewActivitystatisticsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivitystatisticsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivitystatisticsRequestBuilder instantiates a new ActivitystatisticsRequestBuilder and sets the default values.
 func NewActivitystatisticsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivitystatisticsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivitystatisticsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from activitystatistics
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from activitystatistics
 func (m *ActivitystatisticsRequestBuilder) CreateGetRequestInformation(options *ActivitystatisticsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ActivitystatisticsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Add new entity to activitystatistics
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to activitystatistics
 func (m *ActivitystatisticsRequestBuilder) CreatePostRequestInformation(options *ActivitystatisticsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ActivitystatisticsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get entities from activitystatistics
-// Parameters:
-//  - options : Options for the request
+// Get get entities from activitystatistics
 func (m *ActivitystatisticsRequestBuilder) Get(options *ActivitystatisticsRequestBuilderGetOptions)(*ActivitystatisticsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ActivitystatisticsRequestBuilder) Get(options *ActivitystatisticsReques
     }
     return res.(*ActivitystatisticsResponse), nil
 }
-// Add new entity to activitystatistics
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to activitystatistics
 func (m *ActivitystatisticsRequestBuilder) Post(options *ActivitystatisticsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

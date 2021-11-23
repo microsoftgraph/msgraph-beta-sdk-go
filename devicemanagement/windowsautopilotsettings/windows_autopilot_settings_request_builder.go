@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotSettings
+// WindowsAutopilotSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotSettings
 type WindowsAutopilotSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type WindowsAutopilotSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsAutopilotSettingsRequestBuilderDeleteOptions options for Delete
 type WindowsAutopilotSettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type WindowsAutopilotSettingsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsAutopilotSettingsRequestBuilderGetOptions options for Get
 type WindowsAutopilotSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type WindowsAutopilotSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Windows autopilot account settings.
+// WindowsAutopilotSettingsRequestBuilderGetQueryParameters the Windows autopilot account settings.
 type WindowsAutopilotSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsAutopilotSettingsRequestBuilderPatchOptions options for Patch
 type WindowsAutopilotSettingsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotSettings;
@@ -54,10 +54,7 @@ type WindowsAutopilotSettingsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsAutopilotSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsAutopilotSettingsRequestBuilderInternal instantiates a new WindowsAutopilotSettingsRequestBuilder and sets the default values.
 func NewWindowsAutopilotSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsAutopilotSettingsRequestBuilder) {
     m := &WindowsAutopilotSettingsRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewWindowsAutopilotSettingsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsAutopilotSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsAutopilotSettingsRequestBuilder instantiates a new WindowsAutopilotSettingsRequestBuilder and sets the default values.
 func NewWindowsAutopilotSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsAutopilotSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Windows autopilot account settings.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Windows autopilot account settings.
 func (m *WindowsAutopilotSettingsRequestBuilder) CreateDeleteRequestInformation(options *WindowsAutopilotSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *WindowsAutopilotSettingsRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// The Windows autopilot account settings.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Windows autopilot account settings.
 func (m *WindowsAutopilotSettingsRequestBuilder) CreateGetRequestInformation(options *WindowsAutopilotSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *WindowsAutopilotSettingsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The Windows autopilot account settings.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Windows autopilot account settings.
 func (m *WindowsAutopilotSettingsRequestBuilder) CreatePatchRequestInformation(options *WindowsAutopilotSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *WindowsAutopilotSettingsRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// The Windows autopilot account settings.
-// Parameters:
-//  - options : Options for the request
+// Delete the Windows autopilot account settings.
 func (m *WindowsAutopilotSettingsRequestBuilder) Delete(options *WindowsAutopilotSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *WindowsAutopilotSettingsRequestBuilder) Delete(options *WindowsAutopilo
     }
     return nil
 }
-// The Windows autopilot account settings.
-// Parameters:
-//  - options : Options for the request
+// Get the Windows autopilot account settings.
 func (m *WindowsAutopilotSettingsRequestBuilder) Get(options *WindowsAutopilotSettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *WindowsAutopilotSettingsRequestBuilder) Get(options *WindowsAutopilotSe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotSettings), nil
 }
-// The Windows autopilot account settings.
-// Parameters:
-//  - options : Options for the request
+// Patch the Windows autopilot account settings.
 func (m *WindowsAutopilotSettingsRequestBuilder) Patch(options *WindowsAutopilotSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

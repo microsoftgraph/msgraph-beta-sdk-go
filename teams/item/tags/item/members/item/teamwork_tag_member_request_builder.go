@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\tags\{teamworkTag-id}\members\{teamworkTagMember-id}
+// TeamworkTagMemberRequestBuilder builds and executes requests for operations under \teams\{team-id}\tags\{teamworkTag-id}\members\{teamworkTagMember-id}
 type TeamworkTagMemberRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TeamworkTagMemberRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamworkTagMemberRequestBuilderDeleteOptions options for Delete
 type TeamworkTagMemberRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TeamworkTagMemberRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamworkTagMemberRequestBuilderGetOptions options for Get
 type TeamworkTagMemberRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TeamworkTagMemberRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Users assigned to the tag.
+// TeamworkTagMemberRequestBuilderGetQueryParameters users assigned to the tag.
 type TeamworkTagMemberRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamworkTagMemberRequestBuilderPatchOptions options for Patch
 type TeamworkTagMemberRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkTagMember;
@@ -53,10 +53,7 @@ type TeamworkTagMemberRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TeamworkTagMemberRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamworkTagMemberRequestBuilderInternal instantiates a new TeamworkTagMemberRequestBuilder and sets the default values.
 func NewTeamworkTagMemberRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkTagMemberRequestBuilder) {
     m := &TeamworkTagMemberRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTeamworkTagMemberRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamworkTagMemberRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamworkTagMemberRequestBuilder instantiates a new TeamworkTagMemberRequestBuilder and sets the default values.
 func NewTeamworkTagMemberRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkTagMemberRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkTagMemberRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Users assigned to the tag.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation users assigned to the tag.
 func (m *TeamworkTagMemberRequestBuilder) CreateDeleteRequestInformation(options *TeamworkTagMemberRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TeamworkTagMemberRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Users assigned to the tag.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation users assigned to the tag.
 func (m *TeamworkTagMemberRequestBuilder) CreateGetRequestInformation(options *TeamworkTagMemberRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TeamworkTagMemberRequestBuilder) CreateGetRequestInformation(options *T
     }
     return requestInfo, nil
 }
-// Users assigned to the tag.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation users assigned to the tag.
 func (m *TeamworkTagMemberRequestBuilder) CreatePatchRequestInformation(options *TeamworkTagMemberRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TeamworkTagMemberRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Users assigned to the tag.
-// Parameters:
-//  - options : Options for the request
+// Delete users assigned to the tag.
 func (m *TeamworkTagMemberRequestBuilder) Delete(options *TeamworkTagMemberRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TeamworkTagMemberRequestBuilder) Delete(options *TeamworkTagMemberReque
     }
     return nil
 }
-// Users assigned to the tag.
-// Parameters:
-//  - options : Options for the request
+// Get users assigned to the tag.
 func (m *TeamworkTagMemberRequestBuilder) Get(options *TeamworkTagMemberRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkTagMember, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TeamworkTagMemberRequestBuilder) Get(options *TeamworkTagMemberRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkTagMember), nil
 }
-// Users assigned to the tag.
-// Parameters:
-//  - options : Options for the request
+// Patch users assigned to the tag.
 func (m *TeamworkTagMemberRequestBuilder) Patch(options *TeamworkTagMemberRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

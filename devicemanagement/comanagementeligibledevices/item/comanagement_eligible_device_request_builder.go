@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\comanagementEligibleDevices\{comanagementEligibleDevice-id}
+// ComanagementEligibleDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\comanagementEligibleDevices\{comanagementEligibleDevice-id}
 type ComanagementEligibleDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ComanagementEligibleDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ComanagementEligibleDeviceRequestBuilderDeleteOptions options for Delete
 type ComanagementEligibleDeviceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ComanagementEligibleDeviceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ComanagementEligibleDeviceRequestBuilderGetOptions options for Get
 type ComanagementEligibleDeviceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ComanagementEligibleDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of co-management eligible devices report
+// ComanagementEligibleDeviceRequestBuilderGetQueryParameters the list of co-management eligible devices report
 type ComanagementEligibleDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ComanagementEligibleDeviceRequestBuilderPatchOptions options for Patch
 type ComanagementEligibleDeviceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevice;
@@ -53,10 +53,7 @@ type ComanagementEligibleDeviceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ComanagementEligibleDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComanagementEligibleDeviceRequestBuilderInternal instantiates a new ComanagementEligibleDeviceRequestBuilder and sets the default values.
 func NewComanagementEligibleDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComanagementEligibleDeviceRequestBuilder) {
     m := &ComanagementEligibleDeviceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewComanagementEligibleDeviceRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ComanagementEligibleDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComanagementEligibleDeviceRequestBuilder instantiates a new ComanagementEligibleDeviceRequestBuilder and sets the default values.
 func NewComanagementEligibleDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComanagementEligibleDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComanagementEligibleDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of co-management eligible devices report
 func (m *ComanagementEligibleDeviceRequestBuilder) CreateDeleteRequestInformation(options *ComanagementEligibleDeviceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ComanagementEligibleDeviceRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of co-management eligible devices report
 func (m *ComanagementEligibleDeviceRequestBuilder) CreateGetRequestInformation(options *ComanagementEligibleDeviceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ComanagementEligibleDeviceRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of co-management eligible devices report
 func (m *ComanagementEligibleDeviceRequestBuilder) CreatePatchRequestInformation(options *ComanagementEligibleDeviceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ComanagementEligibleDeviceRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// Delete the list of co-management eligible devices report
 func (m *ComanagementEligibleDeviceRequestBuilder) Delete(options *ComanagementEligibleDeviceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ComanagementEligibleDeviceRequestBuilder) Delete(options *ComanagementE
     }
     return nil
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// Get the list of co-management eligible devices report
 func (m *ComanagementEligibleDeviceRequestBuilder) Get(options *ComanagementEligibleDeviceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevice, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ComanagementEligibleDeviceRequestBuilder) Get(options *ComanagementElig
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevice), nil
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// Patch the list of co-management eligible devices report
 func (m *ComanagementEligibleDeviceRequestBuilder) Patch(options *ComanagementEligibleDeviceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

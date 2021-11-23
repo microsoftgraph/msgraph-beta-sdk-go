@@ -8,7 +8,7 @@ import (
     ib863e1462c6d6193ab4acd69fe517f8eae6778b1c0fa3c31325a45de31685acd "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/items/item/itemcategory"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\items\{item-id}
+// ItemRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\items\{item-id}
 type ItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ItemRequestBuilderDeleteOptions options for Delete
 type ItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ItemRequestBuilderGetOptions options for Get
 type ItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get items from financials
+// ItemRequestBuilderGetQueryParameters get items from financials
 type ItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ItemRequestBuilderPatchOptions options for Patch
 type ItemRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Item;
@@ -55,10 +55,7 @@ type ItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemRequestBuilderInternal instantiates a new ItemRequestBuilder and sets the default values.
 func NewItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemRequestBuilder) {
     m := &ItemRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewItemRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemRequestBuilder instantiates a new ItemRequestBuilder and sets the default values.
 func NewItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property items for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property items for financials
 func (m *ItemRequestBuilder) CreateDeleteRequestInformation(options *ItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ItemRequestBuilder) CreateDeleteRequestInformation(options *ItemRequest
     }
     return requestInfo, nil
 }
-// Get items from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get items from financials
 func (m *ItemRequestBuilder) CreateGetRequestInformation(options *ItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ItemRequestBuilder) CreateGetRequestInformation(options *ItemRequestBui
     }
     return requestInfo, nil
 }
-// Update the navigation property items in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property items in financials
 func (m *ItemRequestBuilder) CreatePatchRequestInformation(options *ItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ItemRequestBuilder) CreatePatchRequestInformation(options *ItemRequestB
     }
     return requestInfo, nil
 }
-// Delete navigation property items for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property items for financials
 func (m *ItemRequestBuilder) Delete(options *ItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *ItemRequestBuilder) Delete(options *ItemRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Get items from financials
-// Parameters:
-//  - options : Options for the request
+// Get get items from financials
 func (m *ItemRequestBuilder) Get(options *ItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Item, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *ItemRequestBuilder) Get(options *ItemRequestBuilderGetOptions)(*i535684
 func (m *ItemRequestBuilder) ItemCategory()(*ib863e1462c6d6193ab4acd69fe517f8eae6778b1c0fa3c31325a45de31685acd.ItemCategoryRequestBuilder) {
     return ib863e1462c6d6193ab4acd69fe517f8eae6778b1c0fa3c31325a45de31685acd.NewItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property items in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property items in financials
 func (m *ItemRequestBuilder) Patch(options *ItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *ItemRequestBuilder) Patch(options *ItemRequestBuilderPatchOptions)(erro
 func (m *ItemRequestBuilder) Picture()(*i877eab6b5643b484fd3afdcbe6e8bf055d7bca63d50a667eab1241296210e8bf.PictureRequestBuilder) {
     return i877eab6b5643b484fd3afdcbe6e8bf055d7bca63d50a667eab1241296210e8bf.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.items.item.picture.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.items.item.picture.item collection
 func (m *ItemRequestBuilder) PictureById(id string)(*i877eab6b5643b484fd3afdcbe6e8bf055d7bca63d50a667eab1241296210e8bf.PictureRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

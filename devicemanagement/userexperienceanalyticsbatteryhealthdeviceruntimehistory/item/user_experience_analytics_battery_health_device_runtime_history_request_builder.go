@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory\{userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory-id}
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory\{userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory-id}
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder stru
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderDelet
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderGetOp
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User Experience Analytics Battery Health Device Runtime History
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderGetQueryParameters user Experience Analytics Battery Health Device Runtime History
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory;
@@ -53,10 +53,7 @@ type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderPatch
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderInternal instantiates a new UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) {
     m := &UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderIn
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder instantiates a new UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User Experience Analytics Battery Health Device Runtime History
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user Experience Analytics Battery Health Device Runtime History
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder)
     }
     return requestInfo, nil
 }
-// User Experience Analytics Battery Health Device Runtime History
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user Experience Analytics Battery Health Device Runtime History
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder)
     }
     return requestInfo, nil
 }
-// User Experience Analytics Battery Health Device Runtime History
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user Experience Analytics Battery Health Device Runtime History
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder)
     }
     return requestInfo, nil
 }
-// User Experience Analytics Battery Health Device Runtime History
-// Parameters:
-//  - options : Options for the request
+// Delete user Experience Analytics Battery Health Device Runtime History
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) Delete(options *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder)
     }
     return nil
 }
-// User Experience Analytics Battery Health Device Runtime History
-// Parameters:
-//  - options : Options for the request
+// Get user Experience Analytics Battery Health Device Runtime History
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder)
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory), nil
 }
-// User Experience Analytics Battery Health Device Runtime History
-// Parameters:
-//  - options : Options for the request
+// Patch user Experience Analytics Battery Health Device Runtime History
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) Patch(options *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

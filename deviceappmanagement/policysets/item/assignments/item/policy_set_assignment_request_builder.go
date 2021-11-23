@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}\assignments\{policySetAssignment-id}
+// PolicySetAssignmentRequestBuilder builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}\assignments\{policySetAssignment-id}
 type PolicySetAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PolicySetAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PolicySetAssignmentRequestBuilderDeleteOptions options for Delete
 type PolicySetAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PolicySetAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PolicySetAssignmentRequestBuilderGetOptions options for Get
 type PolicySetAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PolicySetAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Assignments of the PolicySet.
+// PolicySetAssignmentRequestBuilderGetQueryParameters assignments of the PolicySet.
 type PolicySetAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PolicySetAssignmentRequestBuilderPatchOptions options for Patch
 type PolicySetAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetAssignment;
@@ -53,10 +53,7 @@ type PolicySetAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PolicySetAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicySetAssignmentRequestBuilderInternal instantiates a new PolicySetAssignmentRequestBuilder and sets the default values.
 func NewPolicySetAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicySetAssignmentRequestBuilder) {
     m := &PolicySetAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPolicySetAssignmentRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicySetAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicySetAssignmentRequestBuilder instantiates a new PolicySetAssignmentRequestBuilder and sets the default values.
 func NewPolicySetAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicySetAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicySetAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Assignments of the PolicySet.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation assignments of the PolicySet.
 func (m *PolicySetAssignmentRequestBuilder) CreateDeleteRequestInformation(options *PolicySetAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PolicySetAssignmentRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Assignments of the PolicySet.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation assignments of the PolicySet.
 func (m *PolicySetAssignmentRequestBuilder) CreateGetRequestInformation(options *PolicySetAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PolicySetAssignmentRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Assignments of the PolicySet.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation assignments of the PolicySet.
 func (m *PolicySetAssignmentRequestBuilder) CreatePatchRequestInformation(options *PolicySetAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PolicySetAssignmentRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Assignments of the PolicySet.
-// Parameters:
-//  - options : Options for the request
+// Delete assignments of the PolicySet.
 func (m *PolicySetAssignmentRequestBuilder) Delete(options *PolicySetAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PolicySetAssignmentRequestBuilder) Delete(options *PolicySetAssignmentR
     }
     return nil
 }
-// Assignments of the PolicySet.
-// Parameters:
-//  - options : Options for the request
+// Get assignments of the PolicySet.
 func (m *PolicySetAssignmentRequestBuilder) Get(options *PolicySetAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PolicySetAssignmentRequestBuilder) Get(options *PolicySetAssignmentRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetAssignment), nil
 }
-// Assignments of the PolicySet.
-// Parameters:
-//  - options : Options for the request
+// Patch assignments of the PolicySet.
 func (m *PolicySetAssignmentRequestBuilder) Patch(options *PolicySetAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

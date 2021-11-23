@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceManagementSettingDependency 
 type DeviceManagementSettingDependency struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type DeviceManagementSettingDependency struct {
     // The setting definition ID of the setting depended on
     definitionId *string;
 }
-// Instantiates a new deviceManagementSettingDependency and sets the default values.
+// NewDeviceManagementSettingDependency instantiates a new deviceManagementSettingDependency and sets the default values.
 func NewDeviceManagementSettingDependency()(*DeviceManagementSettingDependency) {
     m := &DeviceManagementSettingDependency{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
-// Gets the constraints property value. Collection of constraints for the dependency setting value
+// GetConstraints gets the constraints property value. Collection of constraints for the dependency setting value
 func (m *DeviceManagementSettingDependency) GetConstraints()([]DeviceManagementConstraint) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *DeviceManagementSettingDependency) GetConstraints()([]DeviceManagementC
         return m.constraints
     }
 }
-// Gets the definitionId property value. The setting definition ID of the setting depended on
+// GetDefinitionId gets the definitionId property value. The setting definition ID of the setting depended on
 func (m *DeviceManagementSettingDependency) GetDefinitionId()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *DeviceManagementSettingDependency) GetDefinitionId()(*string) {
         return m.definitionId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["constraints"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,9 +76,7 @@ func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]f
 func (m *DeviceManagementSettingDependency) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementSettingDependency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConstraints()))
@@ -105,21 +103,15 @@ func (m *DeviceManagementSettingDependency) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettingDependency) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the constraints property value. Collection of constraints for the dependency setting value
-// Parameters:
-//  - value : Value to set for the constraints property.
+// SetConstraints sets the constraints property value. Collection of constraints for the dependency setting value
 func (m *DeviceManagementSettingDependency) SetConstraints(value []DeviceManagementConstraint)() {
     m.constraints = value
 }
-// Sets the definitionId property value. The setting definition ID of the setting depended on
-// Parameters:
-//  - value : Value to set for the definitionId property.
+// SetDefinitionId sets the definitionId property value. The setting definition ID of the setting depended on
 func (m *DeviceManagementSettingDependency) SetDefinitionId(value *string)() {
     m.definitionId = value
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UnifiedRoleAssignmentScheduleInstance 
 type UnifiedRoleAssignmentScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
     // If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
@@ -23,14 +23,14 @@ type UnifiedRoleAssignmentScheduleInstance struct {
     // Time that the roleAssignmentInstance will start
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new unifiedRoleAssignmentScheduleInstance and sets the default values.
+// NewUnifiedRoleAssignmentScheduleInstance instantiates a new unifiedRoleAssignmentScheduleInstance and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleInstance) {
     m := &UnifiedRoleAssignmentScheduleInstance{
         UnifiedRoleScheduleInstanceBase: *NewUnifiedRoleScheduleInstanceBase(),
     }
     return m
 }
-// Gets the activatedUsing property value. If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
+// GetActivatedUsing gets the activatedUsing property value. If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
 func (m *UnifiedRoleAssignmentScheduleInstance) GetActivatedUsing()(*UnifiedRoleEligibilityScheduleInstance) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetActivatedUsing()(*UnifiedRole
         return m.activatedUsing
     }
 }
-// Gets the assignmentType property value. Type of the assignment. It can either be Assigned or Activated.
+// GetAssignmentType gets the assignmentType property value. Type of the assignment. It can either be Assigned or Activated.
 func (m *UnifiedRoleAssignmentScheduleInstance) GetAssignmentType()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetAssignmentType()(*string) {
         return m.assignmentType
     }
 }
-// Gets the endDateTime property value. Time that the roleAssignmentInstance will expire
+// GetEndDateTime gets the endDateTime property value. Time that the roleAssignmentInstance will expire
 func (m *UnifiedRoleAssignmentScheduleInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetEndDateTime()(*i336074805fc85
         return m.endDateTime
     }
 }
-// Gets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
+// GetMemberType gets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
 func (m *UnifiedRoleAssignmentScheduleInstance) GetMemberType()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetMemberType()(*string) {
         return m.memberType
     }
 }
-// Gets the roleAssignmentOriginId property value. ID of the roleAssignment in the directory
+// GetRoleAssignmentOriginId gets the roleAssignmentOriginId property value. ID of the roleAssignment in the directory
 func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentOriginId()(*string) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentOriginId()(*str
         return m.roleAssignmentOriginId
     }
 }
-// Gets the roleAssignmentScheduleId property value. ID of the parent roleAssignmentSchedule for this instance
+// GetRoleAssignmentScheduleId gets the roleAssignmentScheduleId property value. ID of the parent roleAssignmentSchedule for this instance
 func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentScheduleId()(*string) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentScheduleId()(*s
         return m.roleAssignmentScheduleId
     }
 }
-// Gets the startDateTime property value. Time that the roleAssignmentInstance will start
+// GetStartDateTime gets the startDateTime property value. Time that the roleAssignmentInstance will start
 func (m *UnifiedRoleAssignmentScheduleInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetStartDateTime()(*i336074805fc
         return m.startDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleAssignmentScheduleInstance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.UnifiedRoleScheduleInstanceBase.GetFieldDeserializers()
     res["activatedUsing"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,9 +164,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetFieldDeserializers()(map[stri
 func (m *UnifiedRoleAssignmentScheduleInstance) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UnifiedRoleAssignmentScheduleInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.UnifiedRoleScheduleInstanceBase.Serialize(writer)
     if err != nil {
@@ -216,45 +214,31 @@ func (m *UnifiedRoleAssignmentScheduleInstance) Serialize(writer i04eb5309aeaafa
     }
     return nil
 }
-// Sets the activatedUsing property value. If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
-// Parameters:
-//  - value : Value to set for the activatedUsing property.
+// SetActivatedUsing sets the activatedUsing property value. If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetActivatedUsing(value *UnifiedRoleEligibilityScheduleInstance)() {
     m.activatedUsing = value
 }
-// Sets the assignmentType property value. Type of the assignment. It can either be Assigned or Activated.
-// Parameters:
-//  - value : Value to set for the assignmentType property.
+// SetAssignmentType sets the assignmentType property value. Type of the assignment. It can either be Assigned or Activated.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetAssignmentType(value *string)() {
     m.assignmentType = value
 }
-// Sets the endDateTime property value. Time that the roleAssignmentInstance will expire
-// Parameters:
-//  - value : Value to set for the endDateTime property.
+// SetEndDateTime sets the endDateTime property value. Time that the roleAssignmentInstance will expire
 func (m *UnifiedRoleAssignmentScheduleInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// Sets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
-// Parameters:
-//  - value : Value to set for the memberType property.
+// SetMemberType sets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetMemberType(value *string)() {
     m.memberType = value
 }
-// Sets the roleAssignmentOriginId property value. ID of the roleAssignment in the directory
-// Parameters:
-//  - value : Value to set for the roleAssignmentOriginId property.
+// SetRoleAssignmentOriginId sets the roleAssignmentOriginId property value. ID of the roleAssignment in the directory
 func (m *UnifiedRoleAssignmentScheduleInstance) SetRoleAssignmentOriginId(value *string)() {
     m.roleAssignmentOriginId = value
 }
-// Sets the roleAssignmentScheduleId property value. ID of the parent roleAssignmentSchedule for this instance
-// Parameters:
-//  - value : Value to set for the roleAssignmentScheduleId property.
+// SetRoleAssignmentScheduleId sets the roleAssignmentScheduleId property value. ID of the parent roleAssignmentSchedule for this instance
 func (m *UnifiedRoleAssignmentScheduleInstance) SetRoleAssignmentScheduleId(value *string)() {
     m.roleAssignmentScheduleId = value
 }
-// Sets the startDateTime property value. Time that the roleAssignmentInstance will start
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. Time that the roleAssignmentInstance will start
 func (m *UnifiedRoleAssignmentScheduleInstance) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }

@@ -10,7 +10,7 @@ import (
     ie0c0fd2f52c8949442d7606cb6f684535237f75ae9a8505ddead286fdb640838 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience/exclusions/unenrollassetsbyid"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions
+// ExclusionsRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions
 type ExclusionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type ExclusionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExclusionsRequestBuilderGetOptions options for Get
 type ExclusionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type ExclusionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Specifies the assets to exclude from the audience.
+// ExclusionsRequestBuilderGetQueryParameters specifies the assets to exclude from the audience.
 type ExclusionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type ExclusionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ExclusionsRequestBuilderPostOptions options for Post
 type ExclusionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset;
@@ -60,10 +60,7 @@ type ExclusionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExclusionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExclusionsRequestBuilderInternal instantiates a new ExclusionsRequestBuilder and sets the default values.
 func NewExclusionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExclusionsRequestBuilder) {
     m := &ExclusionsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewExclusionsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExclusionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExclusionsRequestBuilder instantiates a new ExclusionsRequestBuilder and sets the default values.
 func NewExclusionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExclusionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExclusionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation specifies the assets to exclude from the audience.
 func (m *ExclusionsRequestBuilder) CreateGetRequestInformation(options *ExclusionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *ExclusionsRequestBuilder) CreateGetRequestInformation(options *Exclusio
     }
     return requestInfo, nil
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation specifies the assets to exclude from the audience.
 func (m *ExclusionsRequestBuilder) CreatePostRequestInformation(options *ExclusionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +123,7 @@ func (m *ExclusionsRequestBuilder) EnrollAssets()(*ic1f0bd7dc659fdc462a2c99f69ef
 func (m *ExclusionsRequestBuilder) EnrollAssetsById()(*i7a5ce3b3753fea9d5a62c39633c51d83d1cd2403b75643a52562b7a607be2f57.EnrollAssetsByIdRequestBuilder) {
     return i7a5ce3b3753fea9d5a62c39633c51d83d1cd2403b75643a52562b7a607be2f57.NewEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// Get specifies the assets to exclude from the audience.
 func (m *ExclusionsRequestBuilder) Get(options *ExclusionsRequestBuilderGetOptions)(*ExclusionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -147,9 +135,7 @@ func (m *ExclusionsRequestBuilder) Get(options *ExclusionsRequestBuilderGetOptio
     }
     return res.(*ExclusionsResponse), nil
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// Post specifies the assets to exclude from the audience.
 func (m *ExclusionsRequestBuilder) Post(options *ExclusionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

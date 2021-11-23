@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\auditEvents\{auditEvent-id}
+// AuditEventRequestBuilder builds and executes requests for operations under \deviceManagement\auditEvents\{auditEvent-id}
 type AuditEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AuditEventRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AuditEventRequestBuilderDeleteOptions options for Delete
 type AuditEventRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AuditEventRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AuditEventRequestBuilderGetOptions options for Get
 type AuditEventRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AuditEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Audit Events
+// AuditEventRequestBuilderGetQueryParameters the Audit Events
 type AuditEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AuditEventRequestBuilderPatchOptions options for Patch
 type AuditEventRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuditEvent;
@@ -53,10 +53,7 @@ type AuditEventRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuditEventRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuditEventRequestBuilderInternal instantiates a new AuditEventRequestBuilder and sets the default values.
 func NewAuditEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuditEventRequestBuilder) {
     m := &AuditEventRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAuditEventRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuditEventRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuditEventRequestBuilder instantiates a new AuditEventRequestBuilder and sets the default values.
 func NewAuditEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuditEventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuditEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Audit Events
 func (m *AuditEventRequestBuilder) CreateDeleteRequestInformation(options *AuditEventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AuditEventRequestBuilder) CreateDeleteRequestInformation(options *Audit
     }
     return requestInfo, nil
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Audit Events
 func (m *AuditEventRequestBuilder) CreateGetRequestInformation(options *AuditEventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AuditEventRequestBuilder) CreateGetRequestInformation(options *AuditEve
     }
     return requestInfo, nil
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Audit Events
 func (m *AuditEventRequestBuilder) CreatePatchRequestInformation(options *AuditEventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AuditEventRequestBuilder) CreatePatchRequestInformation(options *AuditE
     }
     return requestInfo, nil
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// Delete the Audit Events
 func (m *AuditEventRequestBuilder) Delete(options *AuditEventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AuditEventRequestBuilder) Delete(options *AuditEventRequestBuilderDelet
     }
     return nil
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// Get the Audit Events
 func (m *AuditEventRequestBuilder) Get(options *AuditEventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuditEvent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AuditEventRequestBuilder) Get(options *AuditEventRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuditEvent), nil
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// Patch the Audit Events
 func (m *AuditEventRequestBuilder) Patch(options *AuditEventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

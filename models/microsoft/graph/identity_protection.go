@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// IdentityProtection 
 type IdentityProtection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type IdentityProtection struct {
     // 
     riskyUsers []RiskyUser;
 }
-// Instantiates a new identityProtection and sets the default values.
+// NewIdentityProtection instantiates a new identityProtection and sets the default values.
 func NewIdentityProtection()(*IdentityProtection) {
     m := &IdentityProtection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityProtection) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *IdentityProtection) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the riskDetections property value. 
+// GetRiskDetections gets the riskDetections property value. 
 func (m *IdentityProtection) GetRiskDetections()([]RiskDetection) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *IdentityProtection) GetRiskDetections()([]RiskDetection) {
         return m.riskDetections
     }
 }
-// Gets the riskyUsers property value. 
+// GetRiskyUsers gets the riskyUsers property value. 
 func (m *IdentityProtection) GetRiskyUsers()([]RiskyUser) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *IdentityProtection) GetRiskyUsers()([]RiskyUser) {
         return m.riskyUsers
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityProtection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["riskDetections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,9 +80,7 @@ func (m *IdentityProtection) GetFieldDeserializers()(map[string]func(interface{}
 func (m *IdentityProtection) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *IdentityProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRiskDetections()))
@@ -114,21 +112,15 @@ func (m *IdentityProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityProtection) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the riskDetections property value. 
-// Parameters:
-//  - value : Value to set for the riskDetections property.
+// SetRiskDetections sets the riskDetections property value. 
 func (m *IdentityProtection) SetRiskDetections(value []RiskDetection)() {
     m.riskDetections = value
 }
-// Sets the riskyUsers property value. 
-// Parameters:
-//  - value : Value to set for the riskyUsers property.
+// SetRiskyUsers sets the riskyUsers property value. 
 func (m *IdentityProtection) SetRiskyUsers(value []RiskyUser)() {
     m.riskyUsers = value
 }

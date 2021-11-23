@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getGroupPolicySettingsDeviceSettingsReport
+// GetGroupPolicySettingsDeviceSettingsReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getGroupPolicySettingsDeviceSettingsReport
 type GetGroupPolicySettingsDeviceSettingsReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetGroupPolicySettingsDeviceSettingsReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostOptions options for Post
 type GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostOptions struct {
     // 
     Body *GetGroupPolicySettingsDeviceSettingsReportRequestBody;
@@ -24,10 +24,7 @@ type GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetGroupPolicySettingsDeviceSettingsReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilderInternal instantiates a new GetGroupPolicySettingsDeviceSettingsReportRequestBuilder and sets the default values.
 func NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) {
     m := &GetGroupPolicySettingsDeviceSettingsReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilderInternal(pathPar
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetGroupPolicySettingsDeviceSettingsReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilder instantiates a new GetGroupPolicySettingsDeviceSettingsReportRequestBuilder and sets the default values.
 func NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getGroupPolicySettingsDeviceSettingsReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getGroupPolicySettingsDeviceSettingsReport
 func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) CreatePostRequestInformation(options *GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// Invoke action getGroupPolicySettingsDeviceSettingsReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getGroupPolicySettingsDeviceSettingsReport
 func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) Post(options *GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

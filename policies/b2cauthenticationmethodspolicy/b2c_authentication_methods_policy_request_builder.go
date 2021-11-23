@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\b2cAuthenticationMethodsPolicy
+// B2cAuthenticationMethodsPolicyRequestBuilder builds and executes requests for operations under \policies\b2cAuthenticationMethodsPolicy
 type B2cAuthenticationMethodsPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type B2cAuthenticationMethodsPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// B2cAuthenticationMethodsPolicyRequestBuilderDeleteOptions options for Delete
 type B2cAuthenticationMethodsPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type B2cAuthenticationMethodsPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// B2cAuthenticationMethodsPolicyRequestBuilderGetOptions options for Get
 type B2cAuthenticationMethodsPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type B2cAuthenticationMethodsPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Azure AD B2C policies that define how end users register via local accounts.
+// B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters the Azure AD B2C policies that define how end users register via local accounts.
 type B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// B2cAuthenticationMethodsPolicyRequestBuilderPatchOptions options for Patch
 type B2cAuthenticationMethodsPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cAuthenticationMethodsPolicy;
@@ -53,10 +53,7 @@ type B2cAuthenticationMethodsPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new B2cAuthenticationMethodsPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewB2cAuthenticationMethodsPolicyRequestBuilderInternal instantiates a new B2cAuthenticationMethodsPolicyRequestBuilder and sets the default values.
 func NewB2cAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*B2cAuthenticationMethodsPolicyRequestBuilder) {
     m := &B2cAuthenticationMethodsPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewB2cAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new B2cAuthenticationMethodsPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewB2cAuthenticationMethodsPolicyRequestBuilder instantiates a new B2cAuthenticationMethodsPolicyRequestBuilder and sets the default values.
 func NewB2cAuthenticationMethodsPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*B2cAuthenticationMethodsPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2cAuthenticationMethodsPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Azure AD B2C policies that define how end users register via local accounts.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Azure AD B2C policies that define how end users register via local accounts.
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateDeleteRequestInformation(options *B2cAuthenticationMethodsPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// The Azure AD B2C policies that define how end users register via local accounts.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Azure AD B2C policies that define how end users register via local accounts.
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateGetRequestInformation(options *B2cAuthenticationMethodsPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// The Azure AD B2C policies that define how end users register via local accounts.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Azure AD B2C policies that define how end users register via local accounts.
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreatePatchRequestInformation(options *B2cAuthenticationMethodsPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// The Azure AD B2C policies that define how end users register via local accounts.
-// Parameters:
-//  - options : Options for the request
+// Delete the Azure AD B2C policies that define how end users register via local accounts.
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Delete(options *B2cAuthenticationMethodsPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Delete(options *B2cAuthen
     }
     return nil
 }
-// The Azure AD B2C policies that define how end users register via local accounts.
-// Parameters:
-//  - options : Options for the request
+// Get the Azure AD B2C policies that define how end users register via local accounts.
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Get(options *B2cAuthenticationMethodsPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cAuthenticationMethodsPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Get(options *B2cAuthentic
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cAuthenticationMethodsPolicy), nil
 }
-// The Azure AD B2C policies that define how end users register via local accounts.
-// Parameters:
-//  - options : Options for the request
+// Patch the Azure AD B2C policies that define how end users register via local accounts.
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Patch(options *B2cAuthenticationMethodsPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// GetSkypeForBusinessDeviceUsageUserDetailWithPeriod 
 type GetSkypeForBusinessDeviceUsageUserDetailWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // 
@@ -27,14 +27,14 @@ type GetSkypeForBusinessDeviceUsageUserDetailWithPeriod struct {
     // 
     userPrincipalName *string;
 }
-// Instantiates a new getSkypeForBusinessDeviceUsageUserDetailWithPeriod and sets the default values.
+// NewGetSkypeForBusinessDeviceUsageUserDetailWithPeriod instantiates a new getSkypeForBusinessDeviceUsageUserDetailWithPeriod and sets the default values.
 func NewGetSkypeForBusinessDeviceUsageUserDetailWithPeriod()(*GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) {
     m := &GetSkypeForBusinessDeviceUsageUserDetailWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
-// Gets the lastActivityDate property value. 
+// GetLastActivityDate gets the lastActivityDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetLastActivityDate()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetLastActivityDate
         return m.lastActivityDate
     }
 }
-// Gets the reportPeriod property value. 
+// GetReportPeriod gets the reportPeriod property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetReportPeriod()(*
         return m.reportPeriod
     }
 }
-// Gets the reportRefreshDate property value. 
+// GetReportRefreshDate gets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetReportRefreshDat
         return m.reportRefreshDate
     }
 }
-// Gets the usedAndroidPhone property value. 
+// GetUsedAndroidPhone gets the usedAndroidPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsedAndroidPhone()(*bool) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsedAndroidPhone
         return m.usedAndroidPhone
     }
 }
-// Gets the usediPad property value. 
+// GetUsediPad gets the usediPad property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsediPad()(*bool) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsediPad()(*bool
         return m.usediPad
     }
 }
-// Gets the usediPhone property value. 
+// GetUsediPhone gets the usediPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsediPhone()(*bool) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsediPhone()(*bo
         return m.usediPhone
     }
 }
-// Gets the usedWindows property value. 
+// GetUsedWindows gets the usedWindows property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsedWindows()(*bool) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsedWindows()(*b
         return m.usedWindows
     }
 }
-// Gets the usedWindowsPhone property value. 
+// GetUsedWindowsPhone gets the usedWindowsPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsedWindowsPhone()(*bool) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUsedWindowsPhone
         return m.usedWindowsPhone
     }
 }
-// Gets the userPrincipalName property value. 
+// GetUserPrincipalName gets the userPrincipalName property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetUserPrincipalNam
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,9 +204,7 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) GetFieldDeserialize
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -268,57 +266,39 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) Serialize(writer i0
     }
     return nil
 }
-// Sets the lastActivityDate property value. 
-// Parameters:
-//  - value : Value to set for the lastActivityDate property.
+// SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetLastActivityDate(value *string)() {
     m.lastActivityDate = value
 }
-// Sets the reportPeriod property value. 
-// Parameters:
-//  - value : Value to set for the reportPeriod property.
+// SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
-// Sets the reportRefreshDate property value. 
-// Parameters:
-//  - value : Value to set for the reportRefreshDate property.
+// SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
-// Sets the usedAndroidPhone property value. 
-// Parameters:
-//  - value : Value to set for the usedAndroidPhone property.
+// SetUsedAndroidPhone sets the usedAndroidPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsedAndroidPhone(value *bool)() {
     m.usedAndroidPhone = value
 }
-// Sets the usediPad property value. 
-// Parameters:
-//  - value : Value to set for the usediPad property.
+// SetUsediPad sets the usediPad property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsediPad(value *bool)() {
     m.usediPad = value
 }
-// Sets the usediPhone property value. 
-// Parameters:
-//  - value : Value to set for the usediPhone property.
+// SetUsediPhone sets the usediPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsediPhone(value *bool)() {
     m.usediPhone = value
 }
-// Sets the usedWindows property value. 
-// Parameters:
-//  - value : Value to set for the usedWindows property.
+// SetUsedWindows sets the usedWindows property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsedWindows(value *bool)() {
     m.usedWindows = value
 }
-// Sets the usedWindowsPhone property value. 
-// Parameters:
-//  - value : Value to set for the usedWindowsPhone property.
+// SetUsedWindowsPhone sets the usedWindowsPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsedWindowsPhone(value *bool)() {
     m.usedWindowsPhone = value
 }
-// Sets the userPrincipalName property value. 
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

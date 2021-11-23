@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicesWithoutCloudIdentity\{userExperienceAnalyticsDeviceWithoutCloudIdentity-id}
+// UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicesWithoutCloudIdentity\{userExperienceAnalyticsDeviceWithoutCloudIdentity-id}
 type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderDeleteOption
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderGetOptions s
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics devices without cloud identity.
+// UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderGetQueryParameters user experience analytics devices without cloud identity.
 type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity;
@@ -53,10 +53,7 @@ type UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderPatchOptions
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderInternal instantiates a new UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) {
     m := &UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderInternal(
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder instantiates a new UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics devices without cloud identity.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics devices without cloud identity.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// User experience analytics devices without cloud identity.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics devices without cloud identity.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// User experience analytics devices without cloud identity.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics devices without cloud identity.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// User experience analytics devices without cloud identity.
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics devices without cloud identity.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) Delete(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) Delete
     }
     return nil
 }
-// User experience analytics devices without cloud identity.
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics devices without cloud identity.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) Get(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) Get(op
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity), nil
 }
-// User experience analytics devices without cloud identity.
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics devices without cloud identity.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder) Patch(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

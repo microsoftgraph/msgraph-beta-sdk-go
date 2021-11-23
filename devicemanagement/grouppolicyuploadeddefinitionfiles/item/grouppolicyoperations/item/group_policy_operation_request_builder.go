@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}\groupPolicyOperations\{groupPolicyOperation-id}
+// GroupPolicyOperationRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}\groupPolicyOperations\{groupPolicyOperation-id}
 type GroupPolicyOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupPolicyOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupPolicyOperationRequestBuilderDeleteOptions options for Delete
 type GroupPolicyOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GroupPolicyOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupPolicyOperationRequestBuilderGetOptions options for Get
 type GroupPolicyOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GroupPolicyOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of operations on the uploaded ADMX file.
+// GroupPolicyOperationRequestBuilderGetQueryParameters the list of operations on the uploaded ADMX file.
 type GroupPolicyOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupPolicyOperationRequestBuilderPatchOptions options for Patch
 type GroupPolicyOperationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyOperation;
@@ -53,10 +53,7 @@ type GroupPolicyOperationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicyOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyOperationRequestBuilderInternal instantiates a new GroupPolicyOperationRequestBuilder and sets the default values.
 func NewGroupPolicyOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyOperationRequestBuilder) {
     m := &GroupPolicyOperationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGroupPolicyOperationRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyOperationRequestBuilder instantiates a new GroupPolicyOperationRequestBuilder and sets the default values.
 func NewGroupPolicyOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of operations on the uploaded ADMX file.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of operations on the uploaded ADMX file.
 func (m *GroupPolicyOperationRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicyOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GroupPolicyOperationRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The list of operations on the uploaded ADMX file.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of operations on the uploaded ADMX file.
 func (m *GroupPolicyOperationRequestBuilder) CreateGetRequestInformation(options *GroupPolicyOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GroupPolicyOperationRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// The list of operations on the uploaded ADMX file.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of operations on the uploaded ADMX file.
 func (m *GroupPolicyOperationRequestBuilder) CreatePatchRequestInformation(options *GroupPolicyOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GroupPolicyOperationRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The list of operations on the uploaded ADMX file.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of operations on the uploaded ADMX file.
 func (m *GroupPolicyOperationRequestBuilder) Delete(options *GroupPolicyOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GroupPolicyOperationRequestBuilder) Delete(options *GroupPolicyOperatio
     }
     return nil
 }
-// The list of operations on the uploaded ADMX file.
-// Parameters:
-//  - options : Options for the request
+// Get the list of operations on the uploaded ADMX file.
 func (m *GroupPolicyOperationRequestBuilder) Get(options *GroupPolicyOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GroupPolicyOperationRequestBuilder) Get(options *GroupPolicyOperationRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyOperation), nil
 }
-// The list of operations on the uploaded ADMX file.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of operations on the uploaded ADMX file.
 func (m *GroupPolicyOperationRequestBuilder) Patch(options *GroupPolicyOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i91e227b034f1c48ee53377456c6d0050c39ee5c3786e38db9627dc46fac9d04d "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/calendarview/item/cancel"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\calendarView\{bookingAppointment-id}
+// BookingAppointmentRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\calendarView\{bookingAppointment-id}
 type BookingAppointmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type BookingAppointmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BookingAppointmentRequestBuilderDeleteOptions options for Delete
 type BookingAppointmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type BookingAppointmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BookingAppointmentRequestBuilderGetOptions options for Get
 type BookingAppointmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,7 +36,7 @@ type BookingAppointmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The set of appointments of this business in a specified date range. Read-only. Nullable.
+// BookingAppointmentRequestBuilderGetQueryParameters the set of appointments of this business in a specified date range. Read-only. Nullable.
 type BookingAppointmentRequestBuilderGetQueryParameters struct {
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
     End *string;
@@ -47,7 +47,7 @@ type BookingAppointmentRequestBuilderGetQueryParameters struct {
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
     Start *string;
 }
-// Options for Patch
+// BookingAppointmentRequestBuilderPatchOptions options for Patch
 type BookingAppointmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointment;
@@ -61,10 +61,7 @@ type BookingAppointmentRequestBuilderPatchOptions struct {
 func (m *BookingAppointmentRequestBuilder) Cancel()(*i91e227b034f1c48ee53377456c6d0050c39ee5c3786e38db9627dc46fac9d04d.CancelRequestBuilder) {
     return i91e227b034f1c48ee53377456c6d0050c39ee5c3786e38db9627dc46fac9d04d.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new BookingAppointmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingAppointmentRequestBuilderInternal instantiates a new BookingAppointmentRequestBuilder and sets the default values.
 func NewBookingAppointmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingAppointmentRequestBuilder) {
     m := &BookingAppointmentRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewBookingAppointmentRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BookingAppointmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingAppointmentRequestBuilder instantiates a new BookingAppointmentRequestBuilder and sets the default values.
 func NewBookingAppointmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingAppointmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookingAppointmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The set of appointments of this business in a specified date range. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingAppointmentRequestBuilder) CreateDeleteRequestInformation(options *BookingAppointmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *BookingAppointmentRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// The set of appointments of this business in a specified date range. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingAppointmentRequestBuilder) CreateGetRequestInformation(options *BookingAppointmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *BookingAppointmentRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The set of appointments of this business in a specified date range. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingAppointmentRequestBuilder) CreatePatchRequestInformation(options *BookingAppointmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *BookingAppointmentRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// The set of appointments of this business in a specified date range. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingAppointmentRequestBuilder) Delete(options *BookingAppointmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *BookingAppointmentRequestBuilder) Delete(options *BookingAppointmentReq
     }
     return nil
 }
-// The set of appointments of this business in a specified date range. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingAppointmentRequestBuilder) Get(options *BookingAppointmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *BookingAppointmentRequestBuilder) Get(options *BookingAppointmentReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointment), nil
 }
-// The set of appointments of this business in a specified date range. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingAppointmentRequestBuilder) Patch(options *BookingAppointmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\microsoft.graph.ediscovery.activate
+// ActivateRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\microsoft.graph.ediscovery.activate
 type ActivateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ActivateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ActivateRequestBuilderPostOptions options for Post
 type ActivateRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type ActivateRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ActivateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivateRequestBuilderInternal instantiates a new ActivateRequestBuilder and sets the default values.
 func NewActivateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivateRequestBuilder) {
     m := &ActivateRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewActivateRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivateRequestBuilder instantiates a new ActivateRequestBuilder and sets the default values.
 func NewActivateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action activate
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action activate
 func (m *ActivateRequestBuilder) CreatePostRequestInformation(options *ActivateRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *ActivateRequestBuilder) CreatePostRequestInformation(options *ActivateR
     }
     return requestInfo, nil
 }
-// Invoke action activate
-// Parameters:
-//  - options : Options for the request
+// Post invoke action activate
 func (m *ActivateRequestBuilder) Post(options *ActivateRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

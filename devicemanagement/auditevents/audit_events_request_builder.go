@@ -8,7 +8,7 @@ import (
     ib4e5c6a7c7551cb9685aa79efe44df0077ee2b23b90f1c51ae212de08151e065 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/auditevents/getauditcategories"
 )
 
-// Builds and executes requests for operations under \deviceManagement\auditEvents
+// AuditEventsRequestBuilder builds and executes requests for operations under \deviceManagement\auditEvents
 type AuditEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type AuditEventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AuditEventsRequestBuilderGetOptions options for Get
 type AuditEventsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type AuditEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Audit Events
+// AuditEventsRequestBuilderGetQueryParameters the Audit Events
 type AuditEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type AuditEventsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AuditEventsRequestBuilderPostOptions options for Post
 type AuditEventsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuditEvent;
@@ -58,10 +58,7 @@ type AuditEventsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuditEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuditEventsRequestBuilderInternal instantiates a new AuditEventsRequestBuilder and sets the default values.
 func NewAuditEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuditEventsRequestBuilder) {
     m := &AuditEventsRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewAuditEventsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuditEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuditEventsRequestBuilder instantiates a new AuditEventsRequestBuilder and sets the default values.
 func NewAuditEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuditEventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuditEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Audit Events
 func (m *AuditEventsRequestBuilder) CreateGetRequestInformation(options *AuditEventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *AuditEventsRequestBuilder) CreateGetRequestInformation(options *AuditEv
     }
     return requestInfo, nil
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the Audit Events
 func (m *AuditEventsRequestBuilder) CreatePostRequestInformation(options *AuditEventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *AuditEventsRequestBuilder) CreatePostRequestInformation(options *AuditE
     }
     return requestInfo, nil
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// Get the Audit Events
 func (m *AuditEventsRequestBuilder) Get(options *AuditEventsRequestBuilderGetOptions)(*AuditEventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -139,19 +127,15 @@ func (m *AuditEventsRequestBuilder) Get(options *AuditEventsRequestBuilderGetOpt
     }
     return res.(*AuditEventsResponse), nil
 }
-// Builds and executes requests for operations under \deviceManagement\auditEvents\microsoft.graph.getAuditActivityTypes(category='{category}')
-// Parameters:
-//  - category : Usage: category={category}
+// GetAuditActivityTypesWithCategory builds and executes requests for operations under \deviceManagement\auditEvents\microsoft.graph.getAuditActivityTypes(category='{category}')
 func (m *AuditEventsRequestBuilder) GetAuditActivityTypesWithCategory(category *string)(*i67727b0f27c2d57d41b9f444df8b33c187a7e9b7d4bf033012802d4cd0bc0365.GetAuditActivityTypesWithCategoryRequestBuilder) {
     return i67727b0f27c2d57d41b9f444df8b33c187a7e9b7d4bf033012802d4cd0bc0365.NewGetAuditActivityTypesWithCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter, category);
 }
-// Builds and executes requests for operations under \deviceManagement\auditEvents\microsoft.graph.getAuditCategories()
+// GetAuditCategories builds and executes requests for operations under \deviceManagement\auditEvents\microsoft.graph.getAuditCategories()
 func (m *AuditEventsRequestBuilder) GetAuditCategories()(*ib4e5c6a7c7551cb9685aa79efe44df0077ee2b23b90f1c51ae212de08151e065.GetAuditCategoriesRequestBuilder) {
     return ib4e5c6a7c7551cb9685aa79efe44df0077ee2b23b90f1c51ae212de08151e065.NewGetAuditCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The Audit Events
-// Parameters:
-//  - options : Options for the request
+// Post the Audit Events
 func (m *AuditEventsRequestBuilder) Post(options *AuditEventsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuditEvent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

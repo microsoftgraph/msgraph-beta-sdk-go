@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// TopicModelingSettings 
 type TopicModelingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type TopicModelingSettings struct {
     // To learn more, see Maximum number of themes.
     topicCount *int32;
 }
-// Instantiates a new topicModelingSettings and sets the default values.
+// NewTopicModelingSettings instantiates a new topicModelingSettings and sets the default values.
 func NewTopicModelingSettings()(*TopicModelingSettings) {
     m := &TopicModelingSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TopicModelingSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *TopicModelingSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
+// GetDynamicallyAdjustTopicCount gets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
 func (m *TopicModelingSettings) GetDynamicallyAdjustTopicCount()(*bool) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *TopicModelingSettings) GetDynamicallyAdjustTopicCount()(*bool) {
         return m.dynamicallyAdjustTopicCount
     }
 }
-// Gets the ignoreNumbers property value. To learn more, see Include numbers in themes.
+// GetIgnoreNumbers gets the ignoreNumbers property value. To learn more, see Include numbers in themes.
 func (m *TopicModelingSettings) GetIgnoreNumbers()(*bool) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *TopicModelingSettings) GetIgnoreNumbers()(*bool) {
         return m.ignoreNumbers
     }
 }
-// Gets the isEnabled property value. Indicates whether themes is enabled for the case.
+// GetIsEnabled gets the isEnabled property value. Indicates whether themes is enabled for the case.
 func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// Gets the topicCount property value. To learn more, see Maximum number of themes.
+// GetTopicCount gets the topicCount property value. To learn more, see Maximum number of themes.
 func (m *TopicModelingSettings) GetTopicCount()(*int32) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *TopicModelingSettings) GetTopicCount()(*int32) {
         return m.topicCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["dynamicallyAdjustTopicCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(interfac
 func (m *TopicModelingSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TopicModelingSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("dynamicallyAdjustTopicCount", m.GetDynamicallyAdjustTopicCount())
@@ -148,33 +146,23 @@ func (m *TopicModelingSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TopicModelingSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
-// Parameters:
-//  - value : Value to set for the dynamicallyAdjustTopicCount property.
+// SetDynamicallyAdjustTopicCount sets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
 func (m *TopicModelingSettings) SetDynamicallyAdjustTopicCount(value *bool)() {
     m.dynamicallyAdjustTopicCount = value
 }
-// Sets the ignoreNumbers property value. To learn more, see Include numbers in themes.
-// Parameters:
-//  - value : Value to set for the ignoreNumbers property.
+// SetIgnoreNumbers sets the ignoreNumbers property value. To learn more, see Include numbers in themes.
 func (m *TopicModelingSettings) SetIgnoreNumbers(value *bool)() {
     m.ignoreNumbers = value
 }
-// Sets the isEnabled property value. Indicates whether themes is enabled for the case.
-// Parameters:
-//  - value : Value to set for the isEnabled property.
+// SetIsEnabled sets the isEnabled property value. Indicates whether themes is enabled for the case.
 func (m *TopicModelingSettings) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// Sets the topicCount property value. To learn more, see Maximum number of themes.
-// Parameters:
-//  - value : Value to set for the topicCount property.
+// SetTopicCount sets the topicCount property value. To learn more, see Maximum number of themes.
 func (m *TopicModelingSettings) SetTopicCount(value *int32)() {
     m.topicCount = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managedDeviceComplianceTrends\{managedDeviceComplianceTrend-id}
+// ManagedDeviceComplianceTrendRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managedDeviceComplianceTrends\{managedDeviceComplianceTrend-id}
 type ManagedDeviceComplianceTrendRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedDeviceComplianceTrendRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedDeviceComplianceTrendRequestBuilderDeleteOptions options for Delete
 type ManagedDeviceComplianceTrendRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagedDeviceComplianceTrendRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedDeviceComplianceTrendRequestBuilderGetOptions options for Get
 type ManagedDeviceComplianceTrendRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagedDeviceComplianceTrendRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Trend insights for device compliance across managed tenants.
+// ManagedDeviceComplianceTrendRequestBuilderGetQueryParameters trend insights for device compliance across managed tenants.
 type ManagedDeviceComplianceTrendRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedDeviceComplianceTrendRequestBuilderPatchOptions options for Patch
 type ManagedDeviceComplianceTrendRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceComplianceTrend;
@@ -53,10 +53,7 @@ type ManagedDeviceComplianceTrendRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedDeviceComplianceTrendRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceComplianceTrendRequestBuilderInternal instantiates a new ManagedDeviceComplianceTrendRequestBuilder and sets the default values.
 func NewManagedDeviceComplianceTrendRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceComplianceTrendRequestBuilder) {
     m := &ManagedDeviceComplianceTrendRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagedDeviceComplianceTrendRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedDeviceComplianceTrendRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceComplianceTrendRequestBuilder instantiates a new ManagedDeviceComplianceTrendRequestBuilder and sets the default values.
 func NewManagedDeviceComplianceTrendRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceComplianceTrendRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceComplianceTrendRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Trend insights for device compliance across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation trend insights for device compliance across managed tenants.
 func (m *ManagedDeviceComplianceTrendRequestBuilder) CreateDeleteRequestInformation(options *ManagedDeviceComplianceTrendRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagedDeviceComplianceTrendRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// Trend insights for device compliance across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation trend insights for device compliance across managed tenants.
 func (m *ManagedDeviceComplianceTrendRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceComplianceTrendRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedDeviceComplianceTrendRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Trend insights for device compliance across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation trend insights for device compliance across managed tenants.
 func (m *ManagedDeviceComplianceTrendRequestBuilder) CreatePatchRequestInformation(options *ManagedDeviceComplianceTrendRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagedDeviceComplianceTrendRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Trend insights for device compliance across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete trend insights for device compliance across managed tenants.
 func (m *ManagedDeviceComplianceTrendRequestBuilder) Delete(options *ManagedDeviceComplianceTrendRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagedDeviceComplianceTrendRequestBuilder) Delete(options *ManagedDevi
     }
     return nil
 }
-// Trend insights for device compliance across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get trend insights for device compliance across managed tenants.
 func (m *ManagedDeviceComplianceTrendRequestBuilder) Get(options *ManagedDeviceComplianceTrendRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceComplianceTrend, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagedDeviceComplianceTrendRequestBuilder) Get(options *ManagedDeviceC
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceComplianceTrend), nil
 }
-// Trend insights for device compliance across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch trend insights for device compliance across managed tenants.
 func (m *ManagedDeviceComplianceTrendRequestBuilder) Patch(options *ManagedDeviceComplianceTrendRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}\customer\paymentTerm
+// PaymentTermRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}\customer\paymentTerm
 type PaymentTermRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PaymentTermRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PaymentTermRequestBuilderDeleteOptions options for Delete
 type PaymentTermRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PaymentTermRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PaymentTermRequestBuilderGetOptions options for Get
 type PaymentTermRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PaymentTermRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get paymentTerm from financials
+// PaymentTermRequestBuilderGetQueryParameters get paymentTerm from financials
 type PaymentTermRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PaymentTermRequestBuilderPatchOptions options for Patch
 type PaymentTermRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentTerm;
@@ -53,10 +53,7 @@ type PaymentTermRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PaymentTermRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPaymentTermRequestBuilderInternal instantiates a new PaymentTermRequestBuilder and sets the default values.
 func NewPaymentTermRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PaymentTermRequestBuilder) {
     m := &PaymentTermRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPaymentTermRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PaymentTermRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPaymentTermRequestBuilder instantiates a new PaymentTermRequestBuilder and sets the default values.
 func NewPaymentTermRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PaymentTermRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPaymentTermRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property paymentTerm for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property paymentTerm for financials
 func (m *PaymentTermRequestBuilder) CreateDeleteRequestInformation(options *PaymentTermRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PaymentTermRequestBuilder) CreateDeleteRequestInformation(options *Paym
     }
     return requestInfo, nil
 }
-// Get paymentTerm from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get paymentTerm from financials
 func (m *PaymentTermRequestBuilder) CreateGetRequestInformation(options *PaymentTermRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PaymentTermRequestBuilder) CreateGetRequestInformation(options *Payment
     }
     return requestInfo, nil
 }
-// Update the navigation property paymentTerm in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property paymentTerm in financials
 func (m *PaymentTermRequestBuilder) CreatePatchRequestInformation(options *PaymentTermRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PaymentTermRequestBuilder) CreatePatchRequestInformation(options *Payme
     }
     return requestInfo, nil
 }
-// Delete navigation property paymentTerm for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property paymentTerm for financials
 func (m *PaymentTermRequestBuilder) Delete(options *PaymentTermRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PaymentTermRequestBuilder) Delete(options *PaymentTermRequestBuilderDel
     }
     return nil
 }
-// Get paymentTerm from financials
-// Parameters:
-//  - options : Options for the request
+// Get get paymentTerm from financials
 func (m *PaymentTermRequestBuilder) Get(options *PaymentTermRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentTerm, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PaymentTermRequestBuilder) Get(options *PaymentTermRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentTerm), nil
 }
-// Update the navigation property paymentTerm in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property paymentTerm in financials
 func (m *PaymentTermRequestBuilder) Patch(options *PaymentTermRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

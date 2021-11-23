@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthDevicePerformanceDetails\{userExperienceAnalyticsAppHealthDevicePerformanceDetails-id}
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthDevicePerformanceDetails\{userExperienceAnalyticsAppHealthDevicePerformanceDetails-id}
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder stru
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderDelet
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderGetOp
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics device performance details
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderGetQueryParameters user experience analytics device performance details
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDevicePerformanceDetails;
@@ -53,10 +53,7 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderPatch
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal instantiates a new UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderIn
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder instantiates a new UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics device performance details
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics device performance details
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder)
     }
     return requestInfo, nil
 }
-// User experience analytics device performance details
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics device performance details
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder)
     }
     return requestInfo, nil
 }
-// User experience analytics device performance details
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics device performance details
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder)
     }
     return requestInfo, nil
 }
-// User experience analytics device performance details
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics device performance details
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) Delete(options *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder)
     }
     return nil
 }
-// User experience analytics device performance details
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics device performance details
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDevicePerformanceDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder)
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDevicePerformanceDetails), nil
 }
-// User experience analytics device performance details
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics device performance details
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) Patch(options *UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

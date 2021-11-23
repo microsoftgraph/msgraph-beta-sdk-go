@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles
+// EnrollmentProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles
 type EnrollmentProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EnrollmentProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EnrollmentProfilesRequestBuilderGetOptions options for Get
 type EnrollmentProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EnrollmentProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The enrollment profiles.
+// EnrollmentProfilesRequestBuilderGetQueryParameters the enrollment profiles.
 type EnrollmentProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EnrollmentProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EnrollmentProfilesRequestBuilderPostOptions options for Post
 type EnrollmentProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnrollmentProfile;
@@ -56,10 +56,7 @@ type EnrollmentProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EnrollmentProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnrollmentProfilesRequestBuilderInternal instantiates a new EnrollmentProfilesRequestBuilder and sets the default values.
 func NewEnrollmentProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnrollmentProfilesRequestBuilder) {
     m := &EnrollmentProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEnrollmentProfilesRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EnrollmentProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnrollmentProfilesRequestBuilder instantiates a new EnrollmentProfilesRequestBuilder and sets the default values.
 func NewEnrollmentProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnrollmentProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEnrollmentProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the enrollment profiles.
 func (m *EnrollmentProfilesRequestBuilder) CreateGetRequestInformation(options *EnrollmentProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EnrollmentProfilesRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the enrollment profiles.
 func (m *EnrollmentProfilesRequestBuilder) CreatePostRequestInformation(options *EnrollmentProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EnrollmentProfilesRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// Get the enrollment profiles.
 func (m *EnrollmentProfilesRequestBuilder) Get(options *EnrollmentProfilesRequestBuilderGetOptions)(*EnrollmentProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EnrollmentProfilesRequestBuilder) Get(options *EnrollmentProfilesReques
     }
     return res.(*EnrollmentProfilesResponse), nil
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// Post the enrollment profiles.
 func (m *EnrollmentProfilesRequestBuilder) Post(options *EnrollmentProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnrollmentProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

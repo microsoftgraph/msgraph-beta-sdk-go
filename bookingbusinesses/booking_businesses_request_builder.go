@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses
+// BookingBusinessesRequestBuilder builds and executes requests for operations under \bookingBusinesses
 type BookingBusinessesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BookingBusinessesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BookingBusinessesRequestBuilderGetOptions options for Get
 type BookingBusinessesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type BookingBusinessesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from bookingBusinesses
+// BookingBusinessesRequestBuilderGetQueryParameters get entities from bookingBusinesses
 type BookingBusinessesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type BookingBusinessesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// BookingBusinessesRequestBuilderPostOptions options for Post
 type BookingBusinessesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingBusiness;
@@ -56,10 +56,7 @@ type BookingBusinessesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BookingBusinessesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingBusinessesRequestBuilderInternal instantiates a new BookingBusinessesRequestBuilder and sets the default values.
 func NewBookingBusinessesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingBusinessesRequestBuilder) {
     m := &BookingBusinessesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewBookingBusinessesRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BookingBusinessesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingBusinessesRequestBuilder instantiates a new BookingBusinessesRequestBuilder and sets the default values.
 func NewBookingBusinessesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingBusinessesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from bookingBusinesses
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from bookingBusinesses
 func (m *BookingBusinessesRequestBuilder) CreateGetRequestInformation(options *BookingBusinessesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *BookingBusinessesRequestBuilder) CreateGetRequestInformation(options *B
     }
     return requestInfo, nil
 }
-// Add new entity to bookingBusinesses
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to bookingBusinesses
 func (m *BookingBusinessesRequestBuilder) CreatePostRequestInformation(options *BookingBusinessesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *BookingBusinessesRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get entities from bookingBusinesses
-// Parameters:
-//  - options : Options for the request
+// Get get entities from bookingBusinesses
 func (m *BookingBusinessesRequestBuilder) Get(options *BookingBusinessesRequestBuilderGetOptions)(*BookingBusinessesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *BookingBusinessesRequestBuilder) Get(options *BookingBusinessesRequestB
     }
     return res.(*BookingBusinessesResponse), nil
 }
-// Add new entity to bookingBusinesses
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to bookingBusinesses
 func (m *BookingBusinessesRequestBuilder) Post(options *BookingBusinessesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingBusiness, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

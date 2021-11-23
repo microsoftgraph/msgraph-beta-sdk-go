@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RbacApplication 
 type RbacApplication struct {
     Entity
     // 
@@ -28,14 +28,14 @@ type RbacApplication struct {
     // 
     roleEligibilitySchedules []UnifiedRoleEligibilitySchedule;
 }
-// Instantiates a new rbacApplication and sets the default values.
+// NewRbacApplication instantiates a new rbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {
     m := &RbacApplication{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the resourceNamespaces property value. 
+// GetResourceNamespaces gets the resourceNamespaces property value. 
 func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespace) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespace
         return m.resourceNamespaces
     }
 }
-// Gets the roleAssignmentApprovals property value. 
+// GetRoleAssignmentApprovals gets the roleAssignmentApprovals property value. 
 func (m *RbacApplication) GetRoleAssignmentApprovals()([]Approval) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *RbacApplication) GetRoleAssignmentApprovals()([]Approval) {
         return m.roleAssignmentApprovals
     }
 }
-// Gets the roleAssignments property value. Resource to grant access to users or groups.
+// GetRoleAssignments gets the roleAssignments property value. Resource to grant access to users or groups.
 func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignment) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignment) {
         return m.roleAssignments
     }
 }
-// Gets the roleAssignmentScheduleInstances property value. 
+// GetRoleAssignmentScheduleInstances gets the roleAssignmentScheduleInstances property value. 
 func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssignmentScheduleInstance) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssi
         return m.roleAssignmentScheduleInstances
     }
 }
-// Gets the roleAssignmentScheduleRequests property value. 
+// GetRoleAssignmentScheduleRequests gets the roleAssignmentScheduleRequests property value. 
 func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssignmentScheduleRequest) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssig
         return m.roleAssignmentScheduleRequests
     }
 }
-// Gets the roleAssignmentSchedules property value. 
+// GetRoleAssignmentSchedules gets the roleAssignmentSchedules property value. 
 func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentSchedule) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentSc
         return m.roleAssignmentSchedules
     }
 }
-// Gets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+// GetRoleDefinitions gets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinition) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinition) {
         return m.roleDefinitions
     }
 }
-// Gets the roleEligibilityScheduleInstances property value. 
+// GetRoleEligibilityScheduleInstances gets the roleEligibilityScheduleInstances property value. 
 func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEligibilityScheduleInstance) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEli
         return m.roleEligibilityScheduleInstances
     }
 }
-// Gets the roleEligibilityScheduleRequests property value. 
+// GetRoleEligibilityScheduleRequests gets the roleEligibilityScheduleRequests property value. 
 func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleEligibilityScheduleRequest) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleElig
         return m.roleEligibilityScheduleRequests
     }
 }
-// Gets the roleEligibilitySchedules property value. 
+// GetRoleEligibilitySchedules gets the roleEligibilitySchedules property value. 
 func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibilitySchedule) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibility
         return m.roleEligibilitySchedules
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["resourceNamespaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,9 +263,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *RbacApplication) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -383,63 +381,43 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the resourceNamespaces property value. 
-// Parameters:
-//  - value : Value to set for the resourceNamespaces property.
+// SetResourceNamespaces sets the resourceNamespaces property value. 
 func (m *RbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespace)() {
     m.resourceNamespaces = value
 }
-// Sets the roleAssignmentApprovals property value. 
-// Parameters:
-//  - value : Value to set for the roleAssignmentApprovals property.
+// SetRoleAssignmentApprovals sets the roleAssignmentApprovals property value. 
 func (m *RbacApplication) SetRoleAssignmentApprovals(value []Approval)() {
     m.roleAssignmentApprovals = value
 }
-// Sets the roleAssignments property value. Resource to grant access to users or groups.
-// Parameters:
-//  - value : Value to set for the roleAssignments property.
+// SetRoleAssignments sets the roleAssignments property value. Resource to grant access to users or groups.
 func (m *RbacApplication) SetRoleAssignments(value []UnifiedRoleAssignment)() {
     m.roleAssignments = value
 }
-// Sets the roleAssignmentScheduleInstances property value. 
-// Parameters:
-//  - value : Value to set for the roleAssignmentScheduleInstances property.
+// SetRoleAssignmentScheduleInstances sets the roleAssignmentScheduleInstances property value. 
 func (m *RbacApplication) SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstance)() {
     m.roleAssignmentScheduleInstances = value
 }
-// Sets the roleAssignmentScheduleRequests property value. 
-// Parameters:
-//  - value : Value to set for the roleAssignmentScheduleRequests property.
+// SetRoleAssignmentScheduleRequests sets the roleAssignmentScheduleRequests property value. 
 func (m *RbacApplication) SetRoleAssignmentScheduleRequests(value []UnifiedRoleAssignmentScheduleRequest)() {
     m.roleAssignmentScheduleRequests = value
 }
-// Sets the roleAssignmentSchedules property value. 
-// Parameters:
-//  - value : Value to set for the roleAssignmentSchedules property.
+// SetRoleAssignmentSchedules sets the roleAssignmentSchedules property value. 
 func (m *RbacApplication) SetRoleAssignmentSchedules(value []UnifiedRoleAssignmentSchedule)() {
     m.roleAssignmentSchedules = value
 }
-// Sets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-// Parameters:
-//  - value : Value to set for the roleDefinitions property.
+// SetRoleDefinitions sets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *RbacApplication) SetRoleDefinitions(value []UnifiedRoleDefinition)() {
     m.roleDefinitions = value
 }
-// Sets the roleEligibilityScheduleInstances property value. 
-// Parameters:
-//  - value : Value to set for the roleEligibilityScheduleInstances property.
+// SetRoleEligibilityScheduleInstances sets the roleEligibilityScheduleInstances property value. 
 func (m *RbacApplication) SetRoleEligibilityScheduleInstances(value []UnifiedRoleEligibilityScheduleInstance)() {
     m.roleEligibilityScheduleInstances = value
 }
-// Sets the roleEligibilityScheduleRequests property value. 
-// Parameters:
-//  - value : Value to set for the roleEligibilityScheduleRequests property.
+// SetRoleEligibilityScheduleRequests sets the roleEligibilityScheduleRequests property value. 
 func (m *RbacApplication) SetRoleEligibilityScheduleRequests(value []UnifiedRoleEligibilityScheduleRequest)() {
     m.roleEligibilityScheduleRequests = value
 }
-// Sets the roleEligibilitySchedules property value. 
-// Parameters:
-//  - value : Value to set for the roleEligibilitySchedules property.
+// SetRoleEligibilitySchedules sets the roleEligibilitySchedules property value. 
 func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibilitySchedule)() {
     m.roleEligibilitySchedules = value
 }

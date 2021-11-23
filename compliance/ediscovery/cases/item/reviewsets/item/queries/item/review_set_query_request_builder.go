@@ -7,7 +7,7 @@ import (
     ia08c7b640ac1596c868212ad7eaed47d765fdf3dc85cd183467b68f95b7547b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/reviewsets/item/queries/item/applytags"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\reviewSets\{reviewSet-id}\queries\{reviewSetQuery-id}
+// ReviewSetQueryRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\reviewSets\{reviewSet-id}\queries\{reviewSetQuery-id}
 type ReviewSetQueryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ReviewSetQueryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ReviewSetQueryRequestBuilderDeleteOptions options for Delete
 type ReviewSetQueryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ReviewSetQueryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ReviewSetQueryRequestBuilderGetOptions options for Get
 type ReviewSetQueryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ReviewSetQueryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// ReviewSetQueryRequestBuilderGetQueryParameters read-only. Nullable.
 type ReviewSetQueryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ReviewSetQueryRequestBuilderPatchOptions options for Patch
 type ReviewSetQueryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ReviewSetQuery;
@@ -57,10 +57,7 @@ type ReviewSetQueryRequestBuilderPatchOptions struct {
 func (m *ReviewSetQueryRequestBuilder) ApplyTags()(*ia08c7b640ac1596c868212ad7eaed47d765fdf3dc85cd183467b68f95b7547b9.ApplyTagsRequestBuilder) {
     return ia08c7b640ac1596c868212ad7eaed47d765fdf3dc85cd183467b68f95b7547b9.NewApplyTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ReviewSetQueryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReviewSetQueryRequestBuilderInternal instantiates a new ReviewSetQueryRequestBuilder and sets the default values.
 func NewReviewSetQueryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReviewSetQueryRequestBuilder) {
     m := &ReviewSetQueryRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewReviewSetQueryRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ReviewSetQueryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReviewSetQueryRequestBuilder instantiates a new ReviewSetQueryRequestBuilder and sets the default values.
 func NewReviewSetQueryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReviewSetQueryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReviewSetQueryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable.
 func (m *ReviewSetQueryRequestBuilder) CreateDeleteRequestInformation(options *ReviewSetQueryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ReviewSetQueryRequestBuilder) CreateDeleteRequestInformation(options *R
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *ReviewSetQueryRequestBuilder) CreateGetRequestInformation(options *ReviewSetQueryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ReviewSetQueryRequestBuilder) CreateGetRequestInformation(options *Revi
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable.
 func (m *ReviewSetQueryRequestBuilder) CreatePatchRequestInformation(options *ReviewSetQueryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *ReviewSetQueryRequestBuilder) CreatePatchRequestInformation(options *Re
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable.
 func (m *ReviewSetQueryRequestBuilder) Delete(options *ReviewSetQueryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *ReviewSetQueryRequestBuilder) Delete(options *ReviewSetQueryRequestBuil
     }
     return nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *ReviewSetQueryRequestBuilder) Get(options *ReviewSetQueryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ReviewSetQuery, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *ReviewSetQueryRequestBuilder) Get(options *ReviewSetQueryRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ReviewSetQuery), nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable.
 func (m *ReviewSetQueryRequestBuilder) Patch(options *ReviewSetQueryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

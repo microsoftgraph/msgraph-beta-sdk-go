@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DirectoryDefinition 
 type DirectoryDefinition struct {
     Entity
     // Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
@@ -21,14 +21,14 @@ type DirectoryDefinition struct {
     // Read only value that indicates version discovered. null if discovery has not yet occurred.
     version *string;
 }
-// Instantiates a new directoryDefinition and sets the default values.
+// NewDirectoryDefinition instantiates a new directoryDefinition and sets the default values.
 func NewDirectoryDefinition()(*DirectoryDefinition) {
     m := &DirectoryDefinition{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the discoverabilities property value. Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
+// GetDiscoverabilities gets the discoverabilities property value. Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
 func (m *DirectoryDefinition) GetDiscoverabilities()(*DirectoryDefinitionDiscoverabilities) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *DirectoryDefinition) GetDiscoverabilities()(*DirectoryDefinitionDiscove
         return m.discoverabilities
     }
 }
-// Gets the discoveryDateTime property value. Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetDiscoveryDateTime gets the discoveryDateTime property value. Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *DirectoryDefinition) GetDiscoveryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *DirectoryDefinition) GetDiscoveryDateTime()(*i336074805fc853987abe6f7fe
         return m.discoveryDateTime
     }
 }
-// Gets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
+// GetName gets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
 func (m *DirectoryDefinition) GetName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *DirectoryDefinition) GetName()(*string) {
         return m.name
     }
 }
-// Gets the objects property value. Collection of objects supported by the directory.
+// GetObjects gets the objects property value. Collection of objects supported by the directory.
 func (m *DirectoryDefinition) GetObjects()([]ObjectDefinition) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *DirectoryDefinition) GetObjects()([]ObjectDefinition) {
         return m.objects
     }
 }
-// Gets the readOnly property value. 
+// GetReadOnly gets the readOnly property value. 
 func (m *DirectoryDefinition) GetReadOnly()(*bool) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *DirectoryDefinition) GetReadOnly()(*bool) {
         return m.readOnly
     }
 }
-// Gets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
+// GetVersion gets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
 func (m *DirectoryDefinition) GetVersion()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *DirectoryDefinition) GetVersion()(*string) {
         return m.version
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["discoverabilities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,9 +149,7 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
 func (m *DirectoryDefinition) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DirectoryDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -201,39 +199,27 @@ func (m *DirectoryDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the discoverabilities property value. Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
-// Parameters:
-//  - value : Value to set for the discoverabilities property.
+// SetDiscoverabilities sets the discoverabilities property value. Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
 func (m *DirectoryDefinition) SetDiscoverabilities(value *DirectoryDefinitionDiscoverabilities)() {
     m.discoverabilities = value
 }
-// Sets the discoveryDateTime property value. Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the discoveryDateTime property.
+// SetDiscoveryDateTime sets the discoveryDateTime property value. Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *DirectoryDefinition) SetDiscoveryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.discoveryDateTime = value
 }
-// Sets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
 func (m *DirectoryDefinition) SetName(value *string)() {
     m.name = value
 }
-// Sets the objects property value. Collection of objects supported by the directory.
-// Parameters:
-//  - value : Value to set for the objects property.
+// SetObjects sets the objects property value. Collection of objects supported by the directory.
 func (m *DirectoryDefinition) SetObjects(value []ObjectDefinition)() {
     m.objects = value
 }
-// Sets the readOnly property value. 
-// Parameters:
-//  - value : Value to set for the readOnly property.
+// SetReadOnly sets the readOnly property value. 
 func (m *DirectoryDefinition) SetReadOnly(value *bool)() {
     m.readOnly = value
 }
-// Sets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
-// Parameters:
-//  - value : Value to set for the version property.
+// SetVersion sets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
 func (m *DirectoryDefinition) SetVersion(value *string)() {
     m.version = value
 }

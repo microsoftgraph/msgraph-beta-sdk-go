@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags\microsoft.graph.hasCustomRoleScopeTag()
+// HasCustomRoleScopeTagRequestBuilder builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags\microsoft.graph.hasCustomRoleScopeTag()
 type HasCustomRoleScopeTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type HasCustomRoleScopeTagRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// HasCustomRoleScopeTagRequestBuilderGetOptions options for Get
 type HasCustomRoleScopeTagRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type HasCustomRoleScopeTagRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HasCustomRoleScopeTagRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHasCustomRoleScopeTagRequestBuilderInternal instantiates a new HasCustomRoleScopeTagRequestBuilder and sets the default values.
 func NewHasCustomRoleScopeTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HasCustomRoleScopeTagRequestBuilder) {
     m := &HasCustomRoleScopeTagRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewHasCustomRoleScopeTagRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HasCustomRoleScopeTagRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHasCustomRoleScopeTagRequestBuilder instantiates a new HasCustomRoleScopeTagRequestBuilder and sets the default values.
 func NewHasCustomRoleScopeTagRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HasCustomRoleScopeTagRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHasCustomRoleScopeTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function hasCustomRoleScopeTag
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function hasCustomRoleScopeTag
 func (m *HasCustomRoleScopeTagRequestBuilder) CreateGetRequestInformation(options *HasCustomRoleScopeTagRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *HasCustomRoleScopeTagRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Invoke function hasCustomRoleScopeTag
-// Parameters:
-//  - options : Options for the request
+// Get invoke function hasCustomRoleScopeTag
 func (m *HasCustomRoleScopeTagRequestBuilder) Get(options *HasCustomRoleScopeTagRequestBuilderGetOptions)(*bool, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

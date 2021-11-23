@@ -7,7 +7,7 @@ import (
     i2abdeba6a2120c9e857becdb50bd4401198f13618af67e4a5a7bcffdd11f7525 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/item/getsupportedproperties"
 )
 
-// Builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}
+// DeviceAndAppManagementAssignmentFilterRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}
 type DeviceAndAppManagementAssignmentFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceAndAppManagementAssignmentFilterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceAndAppManagementAssignmentFilterRequestBuilderDeleteOptions options for Delete
 type DeviceAndAppManagementAssignmentFilterRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeviceAndAppManagementAssignmentFilterRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceAndAppManagementAssignmentFilterRequestBuilderGetOptions options for Get
 type DeviceAndAppManagementAssignmentFilterRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeviceAndAppManagementAssignmentFilterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of assignment filters
+// DeviceAndAppManagementAssignmentFilterRequestBuilderGetQueryParameters the list of assignment filters
 type DeviceAndAppManagementAssignmentFilterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceAndAppManagementAssignmentFilterRequestBuilderPatchOptions options for Patch
 type DeviceAndAppManagementAssignmentFilterRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter;
@@ -54,10 +54,7 @@ type DeviceAndAppManagementAssignmentFilterRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceAndAppManagementAssignmentFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceAndAppManagementAssignmentFilterRequestBuilderInternal instantiates a new DeviceAndAppManagementAssignmentFilterRequestBuilder and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceAndAppManagementAssignmentFilterRequestBuilder) {
     m := &DeviceAndAppManagementAssignmentFilterRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewDeviceAndAppManagementAssignmentFilterRequestBuilderInternal(pathParamet
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceAndAppManagementAssignmentFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceAndAppManagementAssignmentFilterRequestBuilder instantiates a new DeviceAndAppManagementAssignmentFilterRequestBuilder and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceAndAppManagementAssignmentFilterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceAndAppManagementAssignmentFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of assignment filters
 func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) CreateDeleteRequestInformation(options *DeviceAndAppManagementAssignmentFilterRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of assignment filters
 func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) CreateGetRequestInformation(options *DeviceAndAppManagementAssignmentFilterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of assignment filters
 func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) CreatePatchRequestInformation(options *DeviceAndAppManagementAssignmentFilterRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// Delete the list of assignment filters
 func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) Delete(options *DeviceAndAppManagementAssignmentFilterRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) Delete(options *D
     }
     return nil
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// Get the list of assignment filters
 func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) Get(options *DeviceAndAppManagementAssignmentFilterRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,13 +152,11 @@ func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) Get(options *Devi
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter), nil
 }
-// Builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}\microsoft.graph.getSupportedProperties()
+// GetSupportedProperties builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}\microsoft.graph.getSupportedProperties()
 func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) GetSupportedProperties()(*i2abdeba6a2120c9e857becdb50bd4401198f13618af67e4a5a7bcffdd11f7525.GetSupportedPropertiesRequestBuilder) {
     return i2abdeba6a2120c9e857becdb50bd4401198f13618af67e4a5a7bcffdd11f7525.NewGetSupportedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// Patch the list of assignment filters
 func (m *DeviceAndAppManagementAssignmentFilterRequestBuilder) Patch(options *DeviceAndAppManagementAssignmentFilterRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

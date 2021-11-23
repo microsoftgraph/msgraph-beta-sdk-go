@@ -7,7 +7,7 @@ import (
     i5915acf2e8d9a268a32635e5ea56f83e5157d6ba7d43d97a558e26343aa476bc "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleeligibilityschedulerequests/item/targetschedule/ref"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}\targetSchedule
+// TargetScheduleRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}\targetSchedule
 type TargetScheduleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TargetScheduleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TargetScheduleRequestBuilderGetOptions options for Get
 type TargetScheduleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type TargetScheduleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Property indicating the schedule for an eligible role assignment.
+// TargetScheduleRequestBuilderGetQueryParameters property indicating the schedule for an eligible role assignment.
 type TargetScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new TargetScheduleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetScheduleRequestBuilderInternal instantiates a new TargetScheduleRequestBuilder and sets the default values.
 func NewTargetScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetScheduleRequestBuilder) {
     m := &TargetScheduleRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewTargetScheduleRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TargetScheduleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetScheduleRequestBuilder instantiates a new TargetScheduleRequestBuilder and sets the default values.
 func NewTargetScheduleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetScheduleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTargetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Property indicating the schedule for an eligible role assignment.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation property indicating the schedule for an eligible role assignment.
 func (m *TargetScheduleRequestBuilder) CreateGetRequestInformation(options *TargetScheduleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *TargetScheduleRequestBuilder) CreateGetRequestInformation(options *Targ
     }
     return requestInfo, nil
 }
-// Property indicating the schedule for an eligible role assignment.
-// Parameters:
-//  - options : Options for the request
+// Get property indicating the schedule for an eligible role assignment.
 func (m *TargetScheduleRequestBuilder) Get(options *TargetScheduleRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleEligibilitySchedule, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// AssignRequestBody 
 type AssignRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type AssignRequestBody struct {
     // 
     deviceManagementScriptGroupAssignments []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptGroupAssignment;
 }
-// Instantiates a new assignRequestBody and sets the default values.
+// NewAssignRequestBody instantiates a new assignRequestBody and sets the default values.
 func NewAssignRequestBody()(*AssignRequestBody) {
     m := &AssignRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *AssignRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the deviceManagementScriptAssignments property value. 
+// GetDeviceManagementScriptAssignments gets the deviceManagementScriptAssignments property value. 
 func (m *AssignRequestBody) GetDeviceManagementScriptAssignments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptAssignment) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *AssignRequestBody) GetDeviceManagementScriptAssignments()([]i535684e11b
         return m.deviceManagementScriptAssignments
     }
 }
-// Gets the deviceManagementScriptGroupAssignments property value. 
+// GetDeviceManagementScriptGroupAssignments gets the deviceManagementScriptGroupAssignments property value. 
 func (m *AssignRequestBody) GetDeviceManagementScriptGroupAssignments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptGroupAssignment) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *AssignRequestBody) GetDeviceManagementScriptGroupAssignments()([]i53568
         return m.deviceManagementScriptGroupAssignments
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AssignRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceManagementScriptAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,9 +81,7 @@ func (m *AssignRequestBody) GetFieldDeserializers()(map[string]func(interface{},
 func (m *AssignRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceManagementScriptAssignments()))
@@ -115,21 +113,15 @@ func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the deviceManagementScriptAssignments property value. 
-// Parameters:
-//  - value : Value to set for the deviceManagementScriptAssignments property.
+// SetDeviceManagementScriptAssignments sets the deviceManagementScriptAssignments property value. 
 func (m *AssignRequestBody) SetDeviceManagementScriptAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptAssignment)() {
     m.deviceManagementScriptAssignments = value
 }
-// Sets the deviceManagementScriptGroupAssignments property value. 
-// Parameters:
-//  - value : Value to set for the deviceManagementScriptGroupAssignments property.
+// SetDeviceManagementScriptGroupAssignments sets the deviceManagementScriptGroupAssignments property value. 
 func (m *AssignRequestBody) SetDeviceManagementScriptGroupAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptGroupAssignment)() {
     m.deviceManagementScriptGroupAssignments = value
 }

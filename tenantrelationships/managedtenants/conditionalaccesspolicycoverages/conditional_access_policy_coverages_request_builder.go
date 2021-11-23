@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\conditionalAccessPolicyCoverages
+// ConditionalAccessPolicyCoveragesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\conditionalAccessPolicyCoverages
 type ConditionalAccessPolicyCoveragesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConditionalAccessPolicyCoveragesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConditionalAccessPolicyCoveragesRequestBuilderGetOptions options for Get
 type ConditionalAccessPolicyCoveragesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ConditionalAccessPolicyCoveragesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Aggregate view of conditional access policy coverage across managed tenants.
+// ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters aggregate view of conditional access policy coverage across managed tenants.
 type ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ConditionalAccessPolicyCoveragesRequestBuilderPostOptions options for Post
 type ConditionalAccessPolicyCoveragesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConditionalAccessPolicyCoverage;
@@ -56,10 +56,7 @@ type ConditionalAccessPolicyCoveragesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConditionalAccessPolicyCoveragesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConditionalAccessPolicyCoveragesRequestBuilderInternal instantiates a new ConditionalAccessPolicyCoveragesRequestBuilder and sets the default values.
 func NewConditionalAccessPolicyCoveragesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConditionalAccessPolicyCoveragesRequestBuilder) {
     m := &ConditionalAccessPolicyCoveragesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewConditionalAccessPolicyCoveragesRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConditionalAccessPolicyCoveragesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConditionalAccessPolicyCoveragesRequestBuilder instantiates a new ConditionalAccessPolicyCoveragesRequestBuilder and sets the default values.
 func NewConditionalAccessPolicyCoveragesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConditionalAccessPolicyCoveragesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessPolicyCoveragesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Aggregate view of conditional access policy coverage across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation aggregate view of conditional access policy coverage across managed tenants.
 func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreateGetRequestInformation(options *ConditionalAccessPolicyCoveragesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Aggregate view of conditional access policy coverage across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation aggregate view of conditional access policy coverage across managed tenants.
 func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreatePostRequestInformation(options *ConditionalAccessPolicyCoveragesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Aggregate view of conditional access policy coverage across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get aggregate view of conditional access policy coverage across managed tenants.
 func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Get(options *ConditionalAccessPolicyCoveragesRequestBuilderGetOptions)(*ConditionalAccessPolicyCoveragesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Get(options *Conditiona
     }
     return res.(*ConditionalAccessPolicyCoveragesResponse), nil
 }
-// Aggregate view of conditional access policy coverage across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Post aggregate view of conditional access policy coverage across managed tenants.
 func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Post(options *ConditionalAccessPolicyCoveragesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConditionalAccessPolicyCoverage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

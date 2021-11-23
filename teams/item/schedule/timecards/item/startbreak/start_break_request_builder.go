@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\timeCards\{timeCard-id}\microsoft.graph.startBreak
+// StartBreakRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeCards\{timeCard-id}\microsoft.graph.startBreak
 type StartBreakRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type StartBreakRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// StartBreakRequestBuilderPostOptions options for Post
 type StartBreakRequestBuilderPostOptions struct {
     // 
     Body *StartBreakRequestBody;
@@ -26,21 +26,21 @@ type StartBreakRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes timeCard
+// StartBreakResponse union type wrapper for classes timeCard
 type StartBreakResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type timeCard
     timeCard *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeCard;
 }
-// Instantiates a new startBreakResponse and sets the default values.
+// NewStartBreakResponse instantiates a new startBreakResponse and sets the default values.
 func NewStartBreakResponse()(*StartBreakResponse) {
     m := &StartBreakResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StartBreakResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *StartBreakResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the timeCard property value. Union type representation for type timeCard
+// GetTimeCard gets the timeCard property value. Union type representation for type timeCard
 func (m *StartBreakResponse) GetTimeCard()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeCard) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *StartBreakResponse) GetTimeCard()(*i535684e11b5500196ecb4b5c6634e0651fe
         return m.timeCard
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *StartBreakResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["timeCard"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *StartBreakResponse) GetFieldDeserializers()(map[string]func(interface{}
 func (m *StartBreakResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *StartBreakResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("timeCard", m.GetTimeCard())
@@ -92,22 +90,15 @@ func (m *StartBreakResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StartBreakResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the timeCard property value. Union type representation for type timeCard
-// Parameters:
-//  - value : Value to set for the timeCard property.
+// SetTimeCard sets the timeCard property value. Union type representation for type timeCard
 func (m *StartBreakResponse) SetTimeCard(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeCard)() {
     m.timeCard = value
 }
-// Instantiates a new StartBreakRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStartBreakRequestBuilderInternal instantiates a new StartBreakRequestBuilder and sets the default values.
 func NewStartBreakRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StartBreakRequestBuilder) {
     m := &StartBreakRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewStartBreakRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new StartBreakRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStartBreakRequestBuilder instantiates a new StartBreakRequestBuilder and sets the default values.
 func NewStartBreakRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StartBreakRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewStartBreakRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action startBreak
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action startBreak
 func (m *StartBreakRequestBuilder) CreatePostRequestInformation(options *StartBreakRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *StartBreakRequestBuilder) CreatePostRequestInformation(options *StartBr
     }
     return requestInfo, nil
 }
-// Invoke action startBreak
-// Parameters:
-//  - options : Options for the request
+// Post invoke action startBreak
 func (m *StartBreakRequestBuilder) Post(options *StartBreakRequestBuilderPostOptions)(*StartBreakResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

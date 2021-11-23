@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}\policyStatusDetails\{deviceManagementAutopilotPolicyStatusDetail-id}
+// DeviceManagementAutopilotPolicyStatusDetailRequestBuilder builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}\policyStatusDetails\{deviceManagementAutopilotPolicyStatusDetail-id}
 type DeviceManagementAutopilotPolicyStatusDetailRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementAutopilotPolicyStatusDetailRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementAutopilotPolicyStatusDetailRequestBuilderDeleteOptions options for Delete
 type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderDeleteOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementAutopilotPolicyStatusDetailRequestBuilderGetOptions options for Get
 type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Policy and application status details for this device.
+// DeviceManagementAutopilotPolicyStatusDetailRequestBuilderGetQueryParameters policy and application status details for this device.
 type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementAutopilotPolicyStatusDetailRequestBuilderPatchOptions options for Patch
 type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetail;
@@ -53,10 +53,7 @@ type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderPatchOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementAutopilotPolicyStatusDetailRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementAutopilotPolicyStatusDetailRequestBuilderInternal instantiates a new DeviceManagementAutopilotPolicyStatusDetailRequestBuilder and sets the default values.
 func NewDeviceManagementAutopilotPolicyStatusDetailRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) {
     m := &DeviceManagementAutopilotPolicyStatusDetailRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementAutopilotPolicyStatusDetailRequestBuilderInternal(pathPa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementAutopilotPolicyStatusDetailRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementAutopilotPolicyStatusDetailRequestBuilder instantiates a new DeviceManagementAutopilotPolicyStatusDetailRequestBuilder and sets the default values.
 func NewDeviceManagementAutopilotPolicyStatusDetailRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementAutopilotPolicyStatusDetailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation policy and application status details for this device.
 func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementAutopilotPolicyStatusDetailRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation policy and application status details for this device.
 func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) CreateGetRequestInformation(options *DeviceManagementAutopilotPolicyStatusDetailRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation policy and application status details for this device.
 func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementAutopilotPolicyStatusDetailRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) CreatePatchR
     }
     return requestInfo, nil
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// Delete policy and application status details for this device.
 func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) Delete(options *DeviceManagementAutopilotPolicyStatusDetailRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) Delete(optio
     }
     return nil
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// Get policy and application status details for this device.
 func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) Get(options *DeviceManagementAutopilotPolicyStatusDetailRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetail, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) Get(options 
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetail), nil
 }
-// Policy and application status details for this device.
-// Parameters:
-//  - options : Options for the request
+// Patch policy and application status details for this device.
 func (m *DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) Patch(options *DeviceManagementAutopilotPolicyStatusDetailRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

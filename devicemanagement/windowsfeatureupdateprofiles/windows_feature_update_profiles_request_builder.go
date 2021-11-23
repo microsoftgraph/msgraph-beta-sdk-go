@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles
+// WindowsFeatureUpdateProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles
 type WindowsFeatureUpdateProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsFeatureUpdateProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WindowsFeatureUpdateProfilesRequestBuilderGetOptions options for Get
 type WindowsFeatureUpdateProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WindowsFeatureUpdateProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of windows feature update profiles
+// WindowsFeatureUpdateProfilesRequestBuilderGetQueryParameters a collection of windows feature update profiles
 type WindowsFeatureUpdateProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type WindowsFeatureUpdateProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WindowsFeatureUpdateProfilesRequestBuilderPostOptions options for Post
 type WindowsFeatureUpdateProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfile;
@@ -56,10 +56,7 @@ type WindowsFeatureUpdateProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsFeatureUpdateProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsFeatureUpdateProfilesRequestBuilderInternal instantiates a new WindowsFeatureUpdateProfilesRequestBuilder and sets the default values.
 func NewWindowsFeatureUpdateProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsFeatureUpdateProfilesRequestBuilder) {
     m := &WindowsFeatureUpdateProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewWindowsFeatureUpdateProfilesRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsFeatureUpdateProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsFeatureUpdateProfilesRequestBuilder instantiates a new WindowsFeatureUpdateProfilesRequestBuilder and sets the default values.
 func NewWindowsFeatureUpdateProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsFeatureUpdateProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsFeatureUpdateProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of windows feature update profiles
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of windows feature update profiles
 func (m *WindowsFeatureUpdateProfilesRequestBuilder) CreateGetRequestInformation(options *WindowsFeatureUpdateProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *WindowsFeatureUpdateProfilesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// A collection of windows feature update profiles
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of windows feature update profiles
 func (m *WindowsFeatureUpdateProfilesRequestBuilder) CreatePostRequestInformation(options *WindowsFeatureUpdateProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *WindowsFeatureUpdateProfilesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// A collection of windows feature update profiles
-// Parameters:
-//  - options : Options for the request
+// Get a collection of windows feature update profiles
 func (m *WindowsFeatureUpdateProfilesRequestBuilder) Get(options *WindowsFeatureUpdateProfilesRequestBuilderGetOptions)(*WindowsFeatureUpdateProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *WindowsFeatureUpdateProfilesRequestBuilder) Get(options *WindowsFeature
     }
     return res.(*WindowsFeatureUpdateProfilesResponse), nil
 }
-// A collection of windows feature update profiles
-// Parameters:
-//  - options : Options for the request
+// Post a collection of windows feature update profiles
 func (m *WindowsFeatureUpdateProfilesRequestBuilder) Post(options *WindowsFeatureUpdateProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

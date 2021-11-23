@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// GroupPolicyConfigurationAssignment 
 type GroupPolicyConfigurationAssignment struct {
     Entity
     // The date and time the entity was last modified.
@@ -13,14 +13,14 @@ type GroupPolicyConfigurationAssignment struct {
     // The type of groups targeted the group policy configuration.
     target *DeviceAndAppManagementAssignmentTarget;
 }
-// Instantiates a new groupPolicyConfigurationAssignment and sets the default values.
+// NewGroupPolicyConfigurationAssignment instantiates a new groupPolicyConfigurationAssignment and sets the default values.
 func NewGroupPolicyConfigurationAssignment()(*GroupPolicyConfigurationAssignment) {
     m := &GroupPolicyConfigurationAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyConfigurationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *GroupPolicyConfigurationAssignment) GetLastModifiedDateTime()(*i3360748
         return m.lastModifiedDateTime
     }
 }
-// Gets the target property value. The type of groups targeted the group policy configuration.
+// GetTarget gets the target property value. The type of groups targeted the group policy configuration.
 func (m *GroupPolicyConfigurationAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *GroupPolicyConfigurationAssignment) GetTarget()(*DeviceAndAppManagement
         return m.target
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyConfigurationAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,9 +64,7 @@ func (m *GroupPolicyConfigurationAssignment) GetFieldDeserializers()(map[string]
 func (m *GroupPolicyConfigurationAssignment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GroupPolicyConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -86,15 +84,11 @@ func (m *GroupPolicyConfigurationAssignment) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
-// Sets the lastModifiedDateTime property value. The date and time the entity was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyConfigurationAssignment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the target property value. The type of groups targeted the group policy configuration.
-// Parameters:
-//  - value : Value to set for the target property.
+// SetTarget sets the target property value. The type of groups targeted the group policy configuration.
 func (m *GroupPolicyConfigurationAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
     m.target = value
 }

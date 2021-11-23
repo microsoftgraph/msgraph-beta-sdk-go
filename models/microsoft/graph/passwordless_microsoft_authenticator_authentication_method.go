@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PasswordlessMicrosoftAuthenticatorAuthenticationMethod 
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
     // 
@@ -17,14 +17,14 @@ type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     // The display name of the mobile device as given by the user.
     displayName *string;
 }
-// Instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod()(*PasswordlessMicrosoftAuthenticatorAuthenticationMethod) {
     m := &PasswordlessMicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
     return m
 }
-// Gets the createdDateTime property value. 
+// GetCreatedDateTime gets the createdDateTime property value. 
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateT
         return m.createdDateTime
     }
 }
-// Gets the creationDateTime property value. The timestamp when this method was registered to the user.
+// GetCreationDateTime gets the creationDateTime property value. The timestamp when this method was registered to the user.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreationDate
         return m.creationDateTime
     }
 }
-// Gets the device property value. 
+// GetDevice gets the device property value. 
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDevice()(*Device) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDevice()(*De
         return m.device
     }
 }
-// Gets the displayName property value. The display name of the mobile device as given by the user.
+// GetDisplayName gets the displayName property value. The display name of the mobile device as given by the user.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDisplayName(
         return m.displayName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,9 +104,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetFieldDeseria
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.AuthenticationMethod.Serialize(writer)
     if err != nil {
@@ -138,27 +136,19 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) Serialize(write
     }
     return nil
 }
-// Sets the createdDateTime property value. 
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. 
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the creationDateTime property value. The timestamp when this method was registered to the user.
-// Parameters:
-//  - value : Value to set for the creationDateTime property.
+// SetCreationDateTime sets the creationDateTime property value. The timestamp when this method was registered to the user.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.creationDateTime = value
 }
-// Sets the device property value. 
-// Parameters:
-//  - value : Value to set for the device property.
+// SetDevice sets the device property value. 
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetDevice(value *Device)() {
     m.device = value
 }
-// Sets the displayName property value. The display name of the mobile device as given by the user.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name of the mobile device as given by the user.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetDisplayName(value *string)() {
     m.displayName = value
 }

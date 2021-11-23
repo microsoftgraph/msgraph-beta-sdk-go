@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurationConflictSummary\{deviceConfigurationConflictSummary-id}
+// DeviceConfigurationConflictSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurationConflictSummary\{deviceConfigurationConflictSummary-id}
 type DeviceConfigurationConflictSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceConfigurationConflictSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceConfigurationConflictSummaryRequestBuilderDeleteOptions options for Delete
 type DeviceConfigurationConflictSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceConfigurationConflictSummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceConfigurationConflictSummaryRequestBuilderGetOptions options for Get
 type DeviceConfigurationConflictSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceConfigurationConflictSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Summary of policies in conflict state for this account.
+// DeviceConfigurationConflictSummaryRequestBuilderGetQueryParameters summary of policies in conflict state for this account.
 type DeviceConfigurationConflictSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceConfigurationConflictSummaryRequestBuilderPatchOptions options for Patch
 type DeviceConfigurationConflictSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationConflictSummary;
@@ -53,10 +53,7 @@ type DeviceConfigurationConflictSummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceConfigurationConflictSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationConflictSummaryRequestBuilderInternal instantiates a new DeviceConfigurationConflictSummaryRequestBuilder and sets the default values.
 func NewDeviceConfigurationConflictSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationConflictSummaryRequestBuilder) {
     m := &DeviceConfigurationConflictSummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceConfigurationConflictSummaryRequestBuilderInternal(pathParameters 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceConfigurationConflictSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationConflictSummaryRequestBuilder instantiates a new DeviceConfigurationConflictSummaryRequestBuilder and sets the default values.
 func NewDeviceConfigurationConflictSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationConflictSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationConflictSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Summary of policies in conflict state for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation summary of policies in conflict state for this account.
 func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreateDeleteRequestInformation(options *DeviceConfigurationConflictSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// Summary of policies in conflict state for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation summary of policies in conflict state for this account.
 func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreateGetRequestInformation(options *DeviceConfigurationConflictSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// Summary of policies in conflict state for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation summary of policies in conflict state for this account.
 func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreatePatchRequestInformation(options *DeviceConfigurationConflictSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// Summary of policies in conflict state for this account.
-// Parameters:
-//  - options : Options for the request
+// Delete summary of policies in conflict state for this account.
 func (m *DeviceConfigurationConflictSummaryRequestBuilder) Delete(options *DeviceConfigurationConflictSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) Delete(options *Devic
     }
     return nil
 }
-// Summary of policies in conflict state for this account.
-// Parameters:
-//  - options : Options for the request
+// Get summary of policies in conflict state for this account.
 func (m *DeviceConfigurationConflictSummaryRequestBuilder) Get(options *DeviceConfigurationConflictSummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationConflictSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) Get(options *DeviceCo
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationConflictSummary), nil
 }
-// Summary of policies in conflict state for this account.
-// Parameters:
-//  - options : Options for the request
+// Patch summary of policies in conflict state for this account.
 func (m *DeviceConfigurationConflictSummaryRequestBuilder) Patch(options *DeviceConfigurationConflictSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

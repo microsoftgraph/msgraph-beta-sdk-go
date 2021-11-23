@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// CloudPcProvisioningPolicy 
 type CloudPcProvisioningPolicy struct {
     Entity
     // A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
@@ -26,14 +26,14 @@ type CloudPcProvisioningPolicy struct {
     // The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
     onPremisesConnectionId *string;
 }
-// Instantiates a new cloudPcProvisioningPolicy and sets the default values.
+// NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
     m := &CloudPcProvisioningPolicy{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
+// GetAssignments gets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicyAssignment) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicy
         return m.assignments
     }
 }
-// Gets the description property value. The provisioning policy description.
+// GetDescription gets the description property value. The provisioning policy description.
 func (m *CloudPcProvisioningPolicy) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *CloudPcProvisioningPolicy) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name for the provisioning policy.
+// GetDisplayName gets the displayName property value. The display name for the provisioning policy.
 func (m *CloudPcProvisioningPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *CloudPcProvisioningPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
+// GetDomainJoinConfiguration gets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
 func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(*CloudPcDomainJoinConfiguration) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(*CloudPcDomainJ
         return m.domainJoinConfiguration
     }
 }
-// Gets the imageDisplayName property value. The display name for the OS image you’re provisioning.
+// GetImageDisplayName gets the imageDisplayName property value. The display name for the OS image you’re provisioning.
 func (m *CloudPcProvisioningPolicy) GetImageDisplayName()(*string) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *CloudPcProvisioningPolicy) GetImageDisplayName()(*string) {
         return m.imageDisplayName
     }
 }
-// Gets the imageId property value. The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
+// GetImageId gets the imageId property value. The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
 func (m *CloudPcProvisioningPolicy) GetImageId()(*string) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *CloudPcProvisioningPolicy) GetImageId()(*string) {
         return m.imageId
     }
 }
-// Gets the imageType property value. The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
+// GetImageType gets the imageType property value. The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
 func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyImageType) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyIma
         return m.imageType
     }
 }
-// Gets the microsoftManagedDesktop property value. 
+// GetMicrosoftManagedDesktop gets the microsoftManagedDesktop property value. 
 func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(*MicrosoftManagedDesktop) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(*MicrosoftManag
         return m.microsoftManagedDesktop
     }
 }
-// Gets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
+// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
 func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
         return m.onPremisesConnectionId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,9 +208,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
 func (m *CloudPcProvisioningPolicy) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CloudPcProvisioningPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -278,57 +276,39 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-// Parameters:
-//  - value : Value to set for the assignments property.
+// SetAssignments sets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPolicyAssignment)() {
     m.assignments = value
 }
-// Sets the description property value. The provisioning policy description.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The provisioning policy description.
 func (m *CloudPcProvisioningPolicy) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name for the provisioning policy.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the provisioning policy.
 func (m *CloudPcProvisioningPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
-// Parameters:
-//  - value : Value to set for the domainJoinConfiguration property.
+// SetDomainJoinConfiguration sets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
 func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value *CloudPcDomainJoinConfiguration)() {
     m.domainJoinConfiguration = value
 }
-// Sets the imageDisplayName property value. The display name for the OS image you’re provisioning.
-// Parameters:
-//  - value : Value to set for the imageDisplayName property.
+// SetImageDisplayName sets the imageDisplayName property value. The display name for the OS image you’re provisioning.
 func (m *CloudPcProvisioningPolicy) SetImageDisplayName(value *string)() {
     m.imageDisplayName = value
 }
-// Sets the imageId property value. The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
-// Parameters:
-//  - value : Value to set for the imageId property.
+// SetImageId sets the imageId property value. The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
 func (m *CloudPcProvisioningPolicy) SetImageId(value *string)() {
     m.imageId = value
 }
-// Sets the imageType property value. The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
-// Parameters:
-//  - value : Value to set for the imageType property.
+// SetImageType sets the imageType property value. The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
 func (m *CloudPcProvisioningPolicy) SetImageType(value *CloudPcProvisioningPolicyImageType)() {
     m.imageType = value
 }
-// Sets the microsoftManagedDesktop property value. 
-// Parameters:
-//  - value : Value to set for the microsoftManagedDesktop property.
+// SetMicrosoftManagedDesktop sets the microsoftManagedDesktop property value. 
 func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value *MicrosoftManagedDesktop)() {
     m.microsoftManagedDesktop = value
 }
-// Sets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
-// Parameters:
-//  - value : Value to set for the onPremisesConnectionId property.
+// SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
 func (m *CloudPcProvisioningPolicy) SetOnPremisesConnectionId(value *string)() {
     m.onPremisesConnectionId = value
 }

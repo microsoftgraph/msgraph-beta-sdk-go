@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantGroups\{tenantGroup-id}
+// TenantGroupRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantGroups\{tenantGroup-id}
 type TenantGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TenantGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TenantGroupRequestBuilderDeleteOptions options for Delete
 type TenantGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TenantGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TenantGroupRequestBuilderGetOptions options for Get
 type TenantGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TenantGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+// TenantGroupRequestBuilderGetQueryParameters the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 type TenantGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TenantGroupRequestBuilderPatchOptions options for Patch
 type TenantGroupRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantGroup;
@@ -53,10 +53,7 @@ type TenantGroupRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TenantGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantGroupRequestBuilderInternal instantiates a new TenantGroupRequestBuilder and sets the default values.
 func NewTenantGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantGroupRequestBuilder) {
     m := &TenantGroupRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTenantGroupRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TenantGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantGroupRequestBuilder instantiates a new TenantGroupRequestBuilder and sets the default values.
 func NewTenantGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTenantGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupRequestBuilder) CreateDeleteRequestInformation(options *TenantGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TenantGroupRequestBuilder) CreateDeleteRequestInformation(options *Tena
     }
     return requestInfo, nil
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupRequestBuilder) CreateGetRequestInformation(options *TenantGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TenantGroupRequestBuilder) CreateGetRequestInformation(options *TenantG
     }
     return requestInfo, nil
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupRequestBuilder) CreatePatchRequestInformation(options *TenantGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TenantGroupRequestBuilder) CreatePatchRequestInformation(options *Tenan
     }
     return requestInfo, nil
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupRequestBuilder) Delete(options *TenantGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TenantGroupRequestBuilder) Delete(options *TenantGroupRequestBuilderDel
     }
     return nil
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupRequestBuilder) Get(options *TenantGroupRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TenantGroupRequestBuilder) Get(options *TenantGroupRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantGroup), nil
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupRequestBuilder) Patch(options *TenantGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

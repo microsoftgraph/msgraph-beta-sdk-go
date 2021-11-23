@@ -6,7 +6,7 @@ import (
     i982a2d08d81da2fa5b974b1400dc1c73b6ed0c5bffe779e528d8c9828a8e22ad "github.com/microsoftgraph/msgraph-beta-sdk-go/me/windowsinformationprotectiondeviceregistrations/ref"
 )
 
-// Builds and executes requests for operations under \me\windowsInformationProtectionDeviceRegistrations
+// WindowsInformationProtectionDeviceRegistrationsRequestBuilder builds and executes requests for operations under \me\windowsInformationProtectionDeviceRegistrations
 type WindowsInformationProtectionDeviceRegistrationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsInformationProtectionDeviceRegistrationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetOptions options for Get
 type WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Zero or more WIP device registrations that belong to the user.
+// WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters zero or more WIP device registrations that belong to the user.
 type WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParame
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
     m := &WindowsInformationProtectionDeviceRegistrationsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(pa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionDeviceRegistrationsRequestBuilder instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Zero or more WIP device registrations that belong to the user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation zero or more WIP device registrations that belong to the user.
 func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) CreateGetRequestInformation(options *WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// Zero or more WIP device registrations that belong to the user.
-// Parameters:
-//  - options : Options for the request
+// Get zero or more WIP device registrations that belong to the user.
 func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) Get(options *WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetOptions)(*WindowsInformationProtectionDeviceRegistrationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

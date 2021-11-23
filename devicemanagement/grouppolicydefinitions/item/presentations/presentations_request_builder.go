@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\presentations
+// PresentationsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\presentations
 type PresentationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PresentationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PresentationsRequestBuilderGetOptions options for Get
 type PresentationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PresentationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The group policy presentations associated with the definition.
+// PresentationsRequestBuilderGetQueryParameters the group policy presentations associated with the definition.
 type PresentationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PresentationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PresentationsRequestBuilderPostOptions options for Post
 type PresentationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyPresentation;
@@ -56,10 +56,7 @@ type PresentationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PresentationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPresentationsRequestBuilderInternal instantiates a new PresentationsRequestBuilder and sets the default values.
 func NewPresentationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresentationsRequestBuilder) {
     m := &PresentationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPresentationsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PresentationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPresentationsRequestBuilder instantiates a new PresentationsRequestBuilder and sets the default values.
 func NewPresentationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresentationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPresentationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The group policy presentations associated with the definition.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the group policy presentations associated with the definition.
 func (m *PresentationsRequestBuilder) CreateGetRequestInformation(options *PresentationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PresentationsRequestBuilder) CreateGetRequestInformation(options *Prese
     }
     return requestInfo, nil
 }
-// The group policy presentations associated with the definition.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the group policy presentations associated with the definition.
 func (m *PresentationsRequestBuilder) CreatePostRequestInformation(options *PresentationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PresentationsRequestBuilder) CreatePostRequestInformation(options *Pres
     }
     return requestInfo, nil
 }
-// The group policy presentations associated with the definition.
-// Parameters:
-//  - options : Options for the request
+// Get the group policy presentations associated with the definition.
 func (m *PresentationsRequestBuilder) Get(options *PresentationsRequestBuilderGetOptions)(*PresentationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PresentationsRequestBuilder) Get(options *PresentationsRequestBuilderGe
     }
     return res.(*PresentationsResponse), nil
 }
-// The group policy presentations associated with the definition.
-// Parameters:
-//  - options : Options for the request
+// Post the group policy presentations associated with the definition.
 func (m *PresentationsRequestBuilder) Post(options *PresentationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyPresentation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

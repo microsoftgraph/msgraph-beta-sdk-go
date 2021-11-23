@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SimulationEvent 
 type SimulationEvent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type SimulationEvent struct {
     // Name of the simulation event in an attack simulation and training campaign.
     eventName *string;
 }
-// Instantiates a new simulationEvent and sets the default values.
+// NewSimulationEvent instantiates a new simulationEvent and sets the default values.
 func NewSimulationEvent()(*SimulationEvent) {
     m := &SimulationEvent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationEvent) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *SimulationEvent) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the count property value. Count of occurence of the simulation event in an attack simulation and training campaign.
+// GetCount gets the count property value. Count of occurence of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) GetCount()(*int32) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *SimulationEvent) GetCount()(*int32) {
         return m.count
     }
 }
-// Gets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
+// GetEventName gets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) GetEventName()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *SimulationEvent) GetEventName()(*string) {
         return m.eventName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SimulationEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["count"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *SimulationEvent) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *SimulationEvent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SimulationEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("count", m.GetCount())
@@ -96,21 +94,15 @@ func (m *SimulationEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationEvent) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the count property value. Count of occurence of the simulation event in an attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the count property.
+// SetCount sets the count property value. Count of occurence of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) SetCount(value *int32)() {
     m.count = value
 }
-// Sets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the eventName property.
+// SetEventName sets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) SetEventName(value *string)() {
     m.eventName = value
 }

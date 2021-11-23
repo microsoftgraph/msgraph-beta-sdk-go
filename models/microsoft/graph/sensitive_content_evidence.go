@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SensitiveContentEvidence 
 type SensitiveContentEvidence struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type SensitiveContentEvidence struct {
     // 
     offset *int32;
 }
-// Instantiates a new sensitiveContentEvidence and sets the default values.
+// NewSensitiveContentEvidence instantiates a new sensitiveContentEvidence and sets the default values.
 func NewSensitiveContentEvidence()(*SensitiveContentEvidence) {
     m := &SensitiveContentEvidence{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentEvidence) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *SensitiveContentEvidence) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the length property value. 
+// GetLength gets the length property value. 
 func (m *SensitiveContentEvidence) GetLength()(*int32) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *SensitiveContentEvidence) GetLength()(*int32) {
         return m.length
     }
 }
-// Gets the match property value. 
+// GetMatch gets the match property value. 
 func (m *SensitiveContentEvidence) GetMatch()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *SensitiveContentEvidence) GetMatch()(*string) {
         return m.match
     }
 }
-// Gets the offset property value. 
+// GetOffset gets the offset property value. 
 func (m *SensitiveContentEvidence) GetOffset()(*int32) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *SensitiveContentEvidence) GetOffset()(*int32) {
         return m.offset
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SensitiveContentEvidence) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["length"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *SensitiveContentEvidence) GetFieldDeserializers()(map[string]func(inter
 func (m *SensitiveContentEvidence) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SensitiveContentEvidence) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("length", m.GetLength())
@@ -122,27 +120,19 @@ func (m *SensitiveContentEvidence) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentEvidence) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the length property value. 
-// Parameters:
-//  - value : Value to set for the length property.
+// SetLength sets the length property value. 
 func (m *SensitiveContentEvidence) SetLength(value *int32)() {
     m.length = value
 }
-// Sets the match property value. 
-// Parameters:
-//  - value : Value to set for the match property.
+// SetMatch sets the match property value. 
 func (m *SensitiveContentEvidence) SetMatch(value *string)() {
     m.match = value
 }
-// Sets the offset property value. 
-// Parameters:
-//  - value : Value to set for the offset property.
+// SetOffset sets the offset property value. 
 func (m *SensitiveContentEvidence) SetOffset(value *int32)() {
     m.offset = value
 }

@@ -8,7 +8,7 @@ import (
     i10eafe8b9031d51f633fe756b3250d9fb153bbbb882ee32b99c91a8d691b7fa4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/categories/item/settingdefinitions/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\categories\{deviceManagementSettingCategory-id}
+// DeviceManagementSettingCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\categories\{deviceManagementSettingCategory-id}
 type DeviceManagementSettingCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DeviceManagementSettingCategoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementSettingCategoryRequestBuilderDeleteOptions options for Delete
 type DeviceManagementSettingCategoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementSettingCategoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementSettingCategoryRequestBuilderGetOptions options for Get
 type DeviceManagementSettingCategoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DeviceManagementSettingCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The available categories
+// DeviceManagementSettingCategoryRequestBuilderGetQueryParameters the available categories
 type DeviceManagementSettingCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementSettingCategoryRequestBuilderPatchOptions options for Patch
 type DeviceManagementSettingCategoryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingCategory;
@@ -55,10 +55,7 @@ type DeviceManagementSettingCategoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementSettingCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementSettingCategoryRequestBuilderInternal instantiates a new DeviceManagementSettingCategoryRequestBuilder and sets the default values.
 func NewDeviceManagementSettingCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementSettingCategoryRequestBuilder) {
     m := &DeviceManagementSettingCategoryRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewDeviceManagementSettingCategoryRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementSettingCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementSettingCategoryRequestBuilder instantiates a new DeviceManagementSettingCategoryRequestBuilder and sets the default values.
 func NewDeviceManagementSettingCategoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementSettingCategoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementSettingCategoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The available categories
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the available categories
 func (m *DeviceManagementSettingCategoryRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementSettingCategoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *DeviceManagementSettingCategoryRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// The available categories
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the available categories
 func (m *DeviceManagementSettingCategoryRequestBuilder) CreateGetRequestInformation(options *DeviceManagementSettingCategoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *DeviceManagementSettingCategoryRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// The available categories
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the available categories
 func (m *DeviceManagementSettingCategoryRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementSettingCategoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *DeviceManagementSettingCategoryRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// The available categories
-// Parameters:
-//  - options : Options for the request
+// Delete the available categories
 func (m *DeviceManagementSettingCategoryRequestBuilder) Delete(options *DeviceManagementSettingCategoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *DeviceManagementSettingCategoryRequestBuilder) Delete(options *DeviceMa
     }
     return nil
 }
-// The available categories
-// Parameters:
-//  - options : Options for the request
+// Get the available categories
 func (m *DeviceManagementSettingCategoryRequestBuilder) Get(options *DeviceManagementSettingCategoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *DeviceManagementSettingCategoryRequestBuilder) Get(options *DeviceManag
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingCategory), nil
 }
-// The available categories
-// Parameters:
-//  - options : Options for the request
+// Patch the available categories
 func (m *DeviceManagementSettingCategoryRequestBuilder) Patch(options *DeviceManagementSettingCategoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *DeviceManagementSettingCategoryRequestBuilder) Patch(options *DeviceMan
 func (m *DeviceManagementSettingCategoryRequestBuilder) SettingDefinitions()(*i38d10525c92471500f30c9fc7ebd6d6b815110d129886eefbc1a76e489f5f603.SettingDefinitionsRequestBuilder) {
     return i38d10525c92471500f30c9fc7ebd6d6b815110d129886eefbc1a76e489f5f603.NewSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.categories.item.settingDefinitions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.categories.item.settingDefinitions.item collection
 func (m *DeviceManagementSettingCategoryRequestBuilder) SettingDefinitionsById(id string)(*i10eafe8b9031d51f633fe756b3250d9fb153bbbb882ee32b99c91a8d691b7fa4.DeviceManagementSettingDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

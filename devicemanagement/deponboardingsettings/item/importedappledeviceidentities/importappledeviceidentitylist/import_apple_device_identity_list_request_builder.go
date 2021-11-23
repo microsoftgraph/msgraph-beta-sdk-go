@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\importedAppleDeviceIdentities\microsoft.graph.importAppleDeviceIdentityList
+// ImportAppleDeviceIdentityListRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\importedAppleDeviceIdentities\microsoft.graph.importAppleDeviceIdentityList
 type ImportAppleDeviceIdentityListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type ImportAppleDeviceIdentityListRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ImportAppleDeviceIdentityListRequestBuilderPostOptions options for Post
 type ImportAppleDeviceIdentityListRequestBuilderPostOptions struct {
     // 
     Body *ImportAppleDeviceIdentityListRequestBody;
@@ -25,10 +25,7 @@ type ImportAppleDeviceIdentityListRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ImportAppleDeviceIdentityListRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportAppleDeviceIdentityListRequestBuilderInternal instantiates a new ImportAppleDeviceIdentityListRequestBuilder and sets the default values.
 func NewImportAppleDeviceIdentityListRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportAppleDeviceIdentityListRequestBuilder) {
     m := &ImportAppleDeviceIdentityListRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewImportAppleDeviceIdentityListRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ImportAppleDeviceIdentityListRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportAppleDeviceIdentityListRequestBuilder instantiates a new ImportAppleDeviceIdentityListRequestBuilder and sets the default values.
 func NewImportAppleDeviceIdentityListRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportAppleDeviceIdentityListRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportAppleDeviceIdentityListRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action importAppleDeviceIdentityList
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action importAppleDeviceIdentityList
 func (m *ImportAppleDeviceIdentityListRequestBuilder) CreatePostRequestInformation(options *ImportAppleDeviceIdentityListRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *ImportAppleDeviceIdentityListRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Invoke action importAppleDeviceIdentityList
-// Parameters:
-//  - options : Options for the request
+// Post invoke action importAppleDeviceIdentityList
 func (m *ImportAppleDeviceIdentityListRequestBuilder) Post(options *ImportAppleDeviceIdentityListRequestBuilderPostOptions)([]ImportAppleDeviceIdentityList, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

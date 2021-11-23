@@ -7,7 +7,7 @@ import (
     ieaf2202c22c93189365d26c49ee120c2ea910cfbac7ffbf3d9444fbcce43cd5a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/contactfolders/item/childfolders/delta"
 )
 
-// Builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\childFolders
+// ChildFoldersRequestBuilder builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\childFolders
 type ChildFoldersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ChildFoldersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ChildFoldersRequestBuilderGetOptions options for Get
 type ChildFoldersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ChildFoldersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+// ChildFoldersRequestBuilderGetQueryParameters the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 type ChildFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -44,7 +44,7 @@ type ChildFoldersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ChildFoldersRequestBuilderPostOptions options for Post
 type ChildFoldersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContactFolder;
@@ -55,10 +55,7 @@ type ChildFoldersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ChildFoldersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChildFoldersRequestBuilderInternal instantiates a new ChildFoldersRequestBuilder and sets the default values.
 func NewChildFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChildFoldersRequestBuilder) {
     m := &ChildFoldersRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewChildFoldersRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChildFoldersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChildFoldersRequestBuilder instantiates a new ChildFoldersRequestBuilder and sets the default values.
 func NewChildFoldersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChildFoldersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChildFoldersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *ChildFoldersRequestBuilder) CreateGetRequestInformation(options *ChildFoldersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *ChildFoldersRequestBuilder) CreateGetRequestInformation(options *ChildF
     }
     return requestInfo, nil
 }
-// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *ChildFoldersRequestBuilder) CreatePostRequestInformation(options *ChildFoldersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,13 +112,11 @@ func (m *ChildFoldersRequestBuilder) CreatePostRequestInformation(options *Child
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\childFolders\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\childFolders\microsoft.graph.delta()
 func (m *ChildFoldersRequestBuilder) Delta()(*ieaf2202c22c93189365d26c49ee120c2ea910cfbac7ffbf3d9444fbcce43cd5a.DeltaRequestBuilder) {
     return ieaf2202c22c93189365d26c49ee120c2ea910cfbac7ffbf3d9444fbcce43cd5a.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *ChildFoldersRequestBuilder) Get(options *ChildFoldersRequestBuilderGetOptions)(*ChildFoldersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -140,9 +128,7 @@ func (m *ChildFoldersRequestBuilder) Get(options *ChildFoldersRequestBuilderGetO
     }
     return res.(*ChildFoldersResponse), nil
 }
-// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *ChildFoldersRequestBuilder) Post(options *ChildFoldersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContactFolder, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

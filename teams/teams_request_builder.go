@@ -8,7 +8,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams
+// TeamsRequestBuilder builds and executes requests for operations under \teams
 type TeamsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type TeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TeamsRequestBuilderGetOptions options for Get
 type TeamsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type TeamsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from teams
+// TeamsRequestBuilderGetQueryParameters get entities from teams
 type TeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type TeamsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TeamsRequestBuilderPostOptions options for Post
 type TeamsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Team;
@@ -58,14 +58,11 @@ type TeamsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \teams\microsoft.graph.allMessages()
+// AllMessages builds and executes requests for operations under \teams\microsoft.graph.allMessages()
 func (m *TeamsRequestBuilder) AllMessages()(*i1354b487322b620232b94894c5e175f1dd3ef45009122d282358f2beb620c009.AllMessagesRequestBuilder) {
     return i1354b487322b620232b94894c5e175f1dd3ef45009122d282358f2beb620c009.NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TeamsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsRequestBuilderInternal instantiates a new TeamsRequestBuilder and sets the default values.
 func NewTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsRequestBuilder) {
     m := &TeamsRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewTeamsRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsRequestBuilder instantiates a new TeamsRequestBuilder and sets the default values.
 func NewTeamsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from teams
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from teams
 func (m *TeamsRequestBuilder) CreateGetRequestInformation(options *TeamsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *TeamsRequestBuilder) CreateGetRequestInformation(options *TeamsRequestB
     }
     return requestInfo, nil
 }
-// Add new entity to teams
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to teams
 func (m *TeamsRequestBuilder) CreatePostRequestInformation(options *TeamsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *TeamsRequestBuilder) CreatePostRequestInformation(options *TeamsRequest
     }
     return requestInfo, nil
 }
-// Get entities from teams
-// Parameters:
-//  - options : Options for the request
+// Get get entities from teams
 func (m *TeamsRequestBuilder) Get(options *TeamsRequestBuilderGetOptions)(*TeamsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -143,13 +131,11 @@ func (m *TeamsRequestBuilder) Get(options *TeamsRequestBuilderGetOptions)(*Teams
     }
     return res.(*TeamsResponse), nil
 }
-// Builds and executes requests for operations under \teams\microsoft.graph.getAllMessages()
+// GetAllMessages builds and executes requests for operations under \teams\microsoft.graph.getAllMessages()
 func (m *TeamsRequestBuilder) GetAllMessages()(*i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe.GetAllMessagesRequestBuilder) {
     return i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to teams
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to teams
 func (m *TeamsRequestBuilder) Post(options *TeamsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Team, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

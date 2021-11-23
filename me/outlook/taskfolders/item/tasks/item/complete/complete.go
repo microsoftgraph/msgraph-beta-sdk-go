@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// Complete 
 type Complete struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookItem
     // The name of the person who has been assigned the task in Outlook. Read-only.
@@ -45,14 +45,14 @@ type Complete struct {
     // 
     subject *string;
 }
-// Instantiates a new complete and sets the default values.
+// NewComplete instantiates a new complete and sets the default values.
 func NewComplete()(*Complete) {
     m := &Complete{
         OutlookItem: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOutlookItem(),
     }
     return m
 }
-// Gets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
+// GetAssignedTo gets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
 func (m *Complete) GetAssignedTo()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *Complete) GetAssignedTo()(*string) {
         return m.assignedTo
     }
 }
-// Gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 func (m *Complete) GetAttachments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Attachment) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *Complete) GetAttachments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78
         return m.attachments
     }
 }
-// Gets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
+// GetBody gets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
 func (m *Complete) GetBody()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *Complete) GetBody()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe
         return m.body
     }
 }
-// Gets the completedDateTime property value. The date in the specified time zone that the task was finished.
+// GetCompletedDateTime gets the completedDateTime property value. The date in the specified time zone that the task was finished.
 func (m *Complete) GetCompletedDateTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *Complete) GetCompletedDateTime()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.completedDateTime
     }
 }
-// Gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
+// GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
 func (m *Complete) GetDueDateTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *Complete) GetDueDateTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b
         return m.dueDateTime
     }
 }
-// Gets the hasAttachments property value. Set to true if the task has attachments.
+// GetHasAttachments gets the hasAttachments property value. Set to true if the task has attachments.
 func (m *Complete) GetHasAttachments()(*bool) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *Complete) GetHasAttachments()(*bool) {
         return m.hasAttachments
     }
 }
-// Gets the importance property value. 
+// GetImportance gets the importance property value. 
 func (m *Complete) GetImportance()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Importance) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *Complete) GetImportance()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.importance
     }
 }
-// Gets the isReminderOn property value. 
+// GetIsReminderOn gets the isReminderOn property value. 
 func (m *Complete) GetIsReminderOn()(*bool) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *Complete) GetIsReminderOn()(*bool) {
         return m.isReminderOn
     }
 }
-// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
 func (m *Complete) GetMultiValueExtendedProperties()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *Complete) GetMultiValueExtendedProperties()([]i535684e11b5500196ecb4b5c
         return m.multiValueExtendedProperties
     }
 }
-// Gets the owner property value. 
+// GetOwner gets the owner property value. 
 func (m *Complete) GetOwner()(*string) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *Complete) GetOwner()(*string) {
         return m.owner
     }
 }
-// Gets the parentFolderId property value. 
+// GetParentFolderId gets the parentFolderId property value. 
 func (m *Complete) GetParentFolderId()(*string) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *Complete) GetParentFolderId()(*string) {
         return m.parentFolderId
     }
 }
-// Gets the recurrence property value. 
+// GetRecurrence gets the recurrence property value. 
 func (m *Complete) GetRecurrence()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PatternedRecurrence) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *Complete) GetRecurrence()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.recurrence
     }
 }
-// Gets the reminderDateTime property value. 
+// GetReminderDateTime gets the reminderDateTime property value. 
 func (m *Complete) GetReminderDateTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *Complete) GetReminderDateTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.reminderDateTime
     }
 }
-// Gets the sensitivity property value. 
+// GetSensitivity gets the sensitivity property value. 
 func (m *Complete) GetSensitivity()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Sensitivity) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *Complete) GetSensitivity()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b
         return m.sensitivity
     }
 }
-// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
 func (m *Complete) GetSingleValueExtendedProperties()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *Complete) GetSingleValueExtendedProperties()([]i535684e11b5500196ecb4b5
         return m.singleValueExtendedProperties
     }
 }
-// Gets the startDateTime property value. 
+// GetStartDateTime gets the startDateTime property value. 
 func (m *Complete) GetStartDateTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -180,7 +180,7 @@ func (m *Complete) GetStartDateTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f7
         return m.startDateTime
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *Complete) GetStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TaskStatus) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *Complete) GetStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0f
         return m.status
     }
 }
-// Gets the subject property value. 
+// GetSubject gets the subject property value. 
 func (m *Complete) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *Complete) GetSubject()(*string) {
         return m.subject
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Complete) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["assignedTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -399,9 +399,7 @@ func (m *Complete) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *Complete) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Complete) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.OutlookItem.Serialize(writer)
     if err != nil {
@@ -535,111 +533,75 @@ func (m *Complete) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
-// Parameters:
-//  - value : Value to set for the assignedTo property.
+// SetAssignedTo sets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
 func (m *Complete) SetAssignedTo(value *string)() {
     m.assignedTo = value
 }
-// Sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the attachments property.
+// SetAttachments sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 func (m *Complete) SetAttachments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Attachment)() {
     m.attachments = value
 }
-// Sets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
-// Parameters:
-//  - value : Value to set for the body property.
+// SetBody sets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
 func (m *Complete) SetBody(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody)() {
     m.body = value
 }
-// Sets the completedDateTime property value. The date in the specified time zone that the task was finished.
-// Parameters:
-//  - value : Value to set for the completedDateTime property.
+// SetCompletedDateTime sets the completedDateTime property value. The date in the specified time zone that the task was finished.
 func (m *Complete) SetCompletedDateTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
     m.completedDateTime = value
 }
-// Sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
-// Parameters:
-//  - value : Value to set for the dueDateTime property.
+// SetDueDateTime sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
 func (m *Complete) SetDueDateTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
     m.dueDateTime = value
 }
-// Sets the hasAttachments property value. Set to true if the task has attachments.
-// Parameters:
-//  - value : Value to set for the hasAttachments property.
+// SetHasAttachments sets the hasAttachments property value. Set to true if the task has attachments.
 func (m *Complete) SetHasAttachments(value *bool)() {
     m.hasAttachments = value
 }
-// Sets the importance property value. 
-// Parameters:
-//  - value : Value to set for the importance property.
+// SetImportance sets the importance property value. 
 func (m *Complete) SetImportance(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Importance)() {
     m.importance = value
 }
-// Sets the isReminderOn property value. 
-// Parameters:
-//  - value : Value to set for the isReminderOn property.
+// SetIsReminderOn sets the isReminderOn property value. 
 func (m *Complete) SetIsReminderOn(value *bool)() {
     m.isReminderOn = value
 }
-// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the multiValueExtendedProperties property.
+// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
 func (m *Complete) SetMultiValueExtendedProperties(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
-// Sets the owner property value. 
-// Parameters:
-//  - value : Value to set for the owner property.
+// SetOwner sets the owner property value. 
 func (m *Complete) SetOwner(value *string)() {
     m.owner = value
 }
-// Sets the parentFolderId property value. 
-// Parameters:
-//  - value : Value to set for the parentFolderId property.
+// SetParentFolderId sets the parentFolderId property value. 
 func (m *Complete) SetParentFolderId(value *string)() {
     m.parentFolderId = value
 }
-// Sets the recurrence property value. 
-// Parameters:
-//  - value : Value to set for the recurrence property.
+// SetRecurrence sets the recurrence property value. 
 func (m *Complete) SetRecurrence(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PatternedRecurrence)() {
     m.recurrence = value
 }
-// Sets the reminderDateTime property value. 
-// Parameters:
-//  - value : Value to set for the reminderDateTime property.
+// SetReminderDateTime sets the reminderDateTime property value. 
 func (m *Complete) SetReminderDateTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
     m.reminderDateTime = value
 }
-// Sets the sensitivity property value. 
-// Parameters:
-//  - value : Value to set for the sensitivity property.
+// SetSensitivity sets the sensitivity property value. 
 func (m *Complete) SetSensitivity(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Sensitivity)() {
     m.sensitivity = value
 }
-// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the singleValueExtendedProperties property.
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
 func (m *Complete) SetSingleValueExtendedProperties(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }
-// Sets the startDateTime property value. 
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. 
 func (m *Complete) SetStartDateTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
     m.startDateTime = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *Complete) SetStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TaskStatus)() {
     m.status = value
 }
-// Sets the subject property value. 
-// Parameters:
-//  - value : Value to set for the subject property.
+// SetSubject sets the subject property value. 
 func (m *Complete) SetSubject(value *string)() {
     m.subject = value
 }

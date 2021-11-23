@@ -8,7 +8,7 @@ import (
     i25c803795748ee2ba5ab98a3433bc351e872e8d852e28b0bcec4e5382139b2b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/tags/item/members/item"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\tags\{teamworkTag-id}
+// TeamworkTagRequestBuilder builds and executes requests for operations under \teams\{team-id}\tags\{teamworkTag-id}
 type TeamworkTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type TeamworkTagRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamworkTagRequestBuilderDeleteOptions options for Delete
 type TeamworkTagRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TeamworkTagRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamworkTagRequestBuilderGetOptions options for Get
 type TeamworkTagRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type TeamworkTagRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The tags associated with the team.
+// TeamworkTagRequestBuilderGetQueryParameters the tags associated with the team.
 type TeamworkTagRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamworkTagRequestBuilderPatchOptions options for Patch
 type TeamworkTagRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkTag;
@@ -55,10 +55,7 @@ type TeamworkTagRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TeamworkTagRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamworkTagRequestBuilderInternal instantiates a new TeamworkTagRequestBuilder and sets the default values.
 func NewTeamworkTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkTagRequestBuilder) {
     m := &TeamworkTagRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewTeamworkTagRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamworkTagRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamworkTagRequestBuilder instantiates a new TeamworkTagRequestBuilder and sets the default values.
 func NewTeamworkTagRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkTagRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the tags associated with the team.
 func (m *TeamworkTagRequestBuilder) CreateDeleteRequestInformation(options *TeamworkTagRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *TeamworkTagRequestBuilder) CreateDeleteRequestInformation(options *Team
     }
     return requestInfo, nil
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the tags associated with the team.
 func (m *TeamworkTagRequestBuilder) CreateGetRequestInformation(options *TeamworkTagRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *TeamworkTagRequestBuilder) CreateGetRequestInformation(options *Teamwor
     }
     return requestInfo, nil
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the tags associated with the team.
 func (m *TeamworkTagRequestBuilder) CreatePatchRequestInformation(options *TeamworkTagRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *TeamworkTagRequestBuilder) CreatePatchRequestInformation(options *Teamw
     }
     return requestInfo, nil
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Delete the tags associated with the team.
 func (m *TeamworkTagRequestBuilder) Delete(options *TeamworkTagRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *TeamworkTagRequestBuilder) Delete(options *TeamworkTagRequestBuilderDel
     }
     return nil
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Get the tags associated with the team.
 func (m *TeamworkTagRequestBuilder) Get(options *TeamworkTagRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkTag, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *TeamworkTagRequestBuilder) Get(options *TeamworkTagRequestBuilderGetOpt
 func (m *TeamworkTagRequestBuilder) Members()(*i7ef667304f23dd1e4eca59b31ef36d3fb529b89a04d196af4a4475d4d763e826.MembersRequestBuilder) {
     return i7ef667304f23dd1e4eca59b31ef36d3fb529b89a04d196af4a4475d4d763e826.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.tags.item.members.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.tags.item.members.item collection
 func (m *TeamworkTagRequestBuilder) MembersById(id string)(*i25c803795748ee2ba5ab98a3433bc351e872e8d852e28b0bcec4e5382139b2b5.TeamworkTagMemberRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *TeamworkTagRequestBuilder) MembersById(id string)(*i25c803795748ee2ba5a
     }
     return i25c803795748ee2ba5ab98a3433bc351e872e8d852e28b0bcec4e5382139b2b5.NewTeamworkTagMemberRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The tags associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Patch the tags associated with the team.
 func (m *TeamworkTagRequestBuilder) Patch(options *TeamworkTagRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

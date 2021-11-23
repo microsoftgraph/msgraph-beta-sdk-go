@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\reportSchedules
+// ReportSchedulesRequestBuilder builds and executes requests for operations under \deviceManagement\reports\reportSchedules
 type ReportSchedulesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ReportSchedulesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ReportSchedulesRequestBuilderGetOptions options for Get
 type ReportSchedulesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ReportSchedulesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Entity representing a schedule for which reports are delivered
+// ReportSchedulesRequestBuilderGetQueryParameters entity representing a schedule for which reports are delivered
 type ReportSchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ReportSchedulesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ReportSchedulesRequestBuilderPostOptions options for Post
 type ReportSchedulesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReportSchedule;
@@ -56,10 +56,7 @@ type ReportSchedulesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ReportSchedulesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReportSchedulesRequestBuilderInternal instantiates a new ReportSchedulesRequestBuilder and sets the default values.
 func NewReportSchedulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportSchedulesRequestBuilder) {
     m := &ReportSchedulesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewReportSchedulesRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ReportSchedulesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReportSchedulesRequestBuilder instantiates a new ReportSchedulesRequestBuilder and sets the default values.
 func NewReportSchedulesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportSchedulesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportSchedulesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation entity representing a schedule for which reports are delivered
 func (m *ReportSchedulesRequestBuilder) CreateGetRequestInformation(options *ReportSchedulesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ReportSchedulesRequestBuilder) CreateGetRequestInformation(options *Rep
     }
     return requestInfo, nil
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation entity representing a schedule for which reports are delivered
 func (m *ReportSchedulesRequestBuilder) CreatePostRequestInformation(options *ReportSchedulesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ReportSchedulesRequestBuilder) CreatePostRequestInformation(options *Re
     }
     return requestInfo, nil
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// Get entity representing a schedule for which reports are delivered
 func (m *ReportSchedulesRequestBuilder) Get(options *ReportSchedulesRequestBuilderGetOptions)(*ReportSchedulesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ReportSchedulesRequestBuilder) Get(options *ReportSchedulesRequestBuild
     }
     return res.(*ReportSchedulesResponse), nil
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// Post entity representing a schedule for which reports are delivered
 func (m *ReportSchedulesRequestBuilder) Post(options *ReportSchedulesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReportSchedule, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

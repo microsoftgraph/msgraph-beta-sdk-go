@@ -9,7 +9,7 @@ import (
     i3f2b91af36c1c85a91b2090f64ecc402fe3be3e6030dc816276efb34d3538a56 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/appleuserinitiatedenrollmentprofiles/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles\{appleUserInitiatedEnrollmentProfile-id}
+// AppleUserInitiatedEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles\{appleUserInitiatedEnrollmentProfile-id}
 type AppleUserInitiatedEnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type AppleUserInitiatedEnrollmentProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AppleUserInitiatedEnrollmentProfileRequestBuilderDeleteOptions options for Delete
 type AppleUserInitiatedEnrollmentProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AppleUserInitiatedEnrollmentProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AppleUserInitiatedEnrollmentProfileRequestBuilderGetOptions options for Get
 type AppleUserInitiatedEnrollmentProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type AppleUserInitiatedEnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Apple user initiated enrollment profiles
+// AppleUserInitiatedEnrollmentProfileRequestBuilderGetQueryParameters apple user initiated enrollment profiles
 type AppleUserInitiatedEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AppleUserInitiatedEnrollmentProfileRequestBuilderPatchOptions options for Patch
 type AppleUserInitiatedEnrollmentProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppleUserInitiatedEnrollmentProfile;
@@ -59,9 +59,7 @@ type AppleUserInitiatedEnrollmentProfileRequestBuilderPatchOptions struct {
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) Assignments()(*i8f74274c95f6e543171df682273240e35174a6d9718f8eb24972864f87ab1031.AssignmentsRequestBuilder) {
     return i8f74274c95f6e543171df682273240e35174a6d9718f8eb24972864f87ab1031.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.appleUserInitiatedEnrollmentProfiles.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.appleUserInitiatedEnrollmentProfiles.item.assignments.item collection
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) AssignmentsById(id string)(*i3f2b91af36c1c85a91b2090f64ecc402fe3be3e6030dc816276efb34d3538a56.AppleEnrollmentProfileAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -72,10 +70,7 @@ func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) AssignmentsById(id s
     }
     return i3f2b91af36c1c85a91b2090f64ecc402fe3be3e6030dc816276efb34d3538a56.NewAppleEnrollmentProfileAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new AppleUserInitiatedEnrollmentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppleUserInitiatedEnrollmentProfileRequestBuilderInternal instantiates a new AppleUserInitiatedEnrollmentProfileRequestBuilder and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppleUserInitiatedEnrollmentProfileRequestBuilder) {
     m := &AppleUserInitiatedEnrollmentProfileRequestBuilder{
     }
@@ -88,18 +83,13 @@ func NewAppleUserInitiatedEnrollmentProfileRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppleUserInitiatedEnrollmentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppleUserInitiatedEnrollmentProfileRequestBuilder instantiates a new AppleUserInitiatedEnrollmentProfileRequestBuilder and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppleUserInitiatedEnrollmentProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppleUserInitiatedEnrollmentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) CreateDeleteRequestInformation(options *AppleUserInitiatedEnrollmentProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,9 +106,7 @@ func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) CreateGetRequestInformation(options *AppleUserInitiatedEnrollmentProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,9 +126,7 @@ func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) CreatePatchRequestInformation(options *AppleUserInitiatedEnrollmentProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -158,9 +144,7 @@ func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// Delete apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) Delete(options *AppleUserInitiatedEnrollmentProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) Delete(options *Appl
     }
     return nil
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// Get apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) Get(options *AppleUserInitiatedEnrollmentProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppleUserInitiatedEnrollmentProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) Get(options *AppleUs
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppleUserInitiatedEnrollmentProfile), nil
 }
-// Apple user initiated enrollment profiles
-// Parameters:
-//  - options : Options for the request
+// Patch apple user initiated enrollment profiles
 func (m *AppleUserInitiatedEnrollmentProfileRequestBuilder) Patch(options *AppleUserInitiatedEnrollmentProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\patents\{itemPatent-id}
+// ItemPatentRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\patents\{itemPatent-id}
 type ItemPatentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ItemPatentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ItemPatentRequestBuilderDeleteOptions options for Delete
 type ItemPatentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ItemPatentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ItemPatentRequestBuilderGetOptions options for Get
 type ItemPatentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ItemPatentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents patents that a user has added to their profile.
+// ItemPatentRequestBuilderGetQueryParameters represents patents that a user has added to their profile.
 type ItemPatentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ItemPatentRequestBuilderPatchOptions options for Patch
 type ItemPatentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPatent;
@@ -53,10 +53,7 @@ type ItemPatentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ItemPatentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemPatentRequestBuilderInternal instantiates a new ItemPatentRequestBuilder and sets the default values.
 func NewItemPatentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemPatentRequestBuilder) {
     m := &ItemPatentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewItemPatentRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ItemPatentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemPatentRequestBuilder instantiates a new ItemPatentRequestBuilder and sets the default values.
 func NewItemPatentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemPatentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPatentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents patents that a user has added to their profile.
 func (m *ItemPatentRequestBuilder) CreateDeleteRequestInformation(options *ItemPatentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ItemPatentRequestBuilder) CreateDeleteRequestInformation(options *ItemP
     }
     return requestInfo, nil
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents patents that a user has added to their profile.
 func (m *ItemPatentRequestBuilder) CreateGetRequestInformation(options *ItemPatentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ItemPatentRequestBuilder) CreateGetRequestInformation(options *ItemPate
     }
     return requestInfo, nil
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents patents that a user has added to their profile.
 func (m *ItemPatentRequestBuilder) CreatePatchRequestInformation(options *ItemPatentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ItemPatentRequestBuilder) CreatePatchRequestInformation(options *ItemPa
     }
     return requestInfo, nil
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Delete represents patents that a user has added to their profile.
 func (m *ItemPatentRequestBuilder) Delete(options *ItemPatentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ItemPatentRequestBuilder) Delete(options *ItemPatentRequestBuilderDelet
     }
     return nil
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents patents that a user has added to their profile.
 func (m *ItemPatentRequestBuilder) Get(options *ItemPatentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPatent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ItemPatentRequestBuilder) Get(options *ItemPatentRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPatent), nil
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Patch represents patents that a user has added to their profile.
 func (m *ItemPatentRequestBuilder) Patch(options *ItemPatentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

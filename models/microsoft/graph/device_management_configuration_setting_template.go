@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceManagementConfigurationSettingTemplate 
 type DeviceManagementConfigurationSettingTemplate struct {
     Entity
     // List of related Setting Definitions
@@ -12,14 +12,14 @@ type DeviceManagementConfigurationSettingTemplate struct {
     // Setting Instance Template
     settingInstanceTemplate *DeviceManagementConfigurationSettingInstanceTemplate;
 }
-// Instantiates a new deviceManagementConfigurationSettingTemplate and sets the default values.
+// NewDeviceManagementConfigurationSettingTemplate instantiates a new deviceManagementConfigurationSettingTemplate and sets the default values.
 func NewDeviceManagementConfigurationSettingTemplate()(*DeviceManagementConfigurationSettingTemplate) {
     m := &DeviceManagementConfigurationSettingTemplate{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the settingDefinitions property value. List of related Setting Definitions
+// GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions
 func (m *DeviceManagementConfigurationSettingTemplate) GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinition) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *DeviceManagementConfigurationSettingTemplate) GetSettingDefinitions()([
         return m.settingDefinitions
     }
 }
-// Gets the settingInstanceTemplate property value. Setting Instance Template
+// GetSettingInstanceTemplate gets the settingInstanceTemplate property value. Setting Instance Template
 func (m *DeviceManagementConfigurationSettingTemplate) GetSettingInstanceTemplate()(*DeviceManagementConfigurationSettingInstanceTemplate) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *DeviceManagementConfigurationSettingTemplate) GetSettingInstanceTemplat
         return m.settingInstanceTemplate
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["settingDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -67,9 +67,7 @@ func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(m
 func (m *DeviceManagementConfigurationSettingTemplate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,15 +92,11 @@ func (m *DeviceManagementConfigurationSettingTemplate) Serialize(writer i04eb530
     }
     return nil
 }
-// Sets the settingDefinitions property value. List of related Setting Definitions
-// Parameters:
-//  - value : Value to set for the settingDefinitions property.
+// SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions
 func (m *DeviceManagementConfigurationSettingTemplate) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinition)() {
     m.settingDefinitions = value
 }
-// Sets the settingInstanceTemplate property value. Setting Instance Template
-// Parameters:
-//  - value : Value to set for the settingInstanceTemplate property.
+// SetSettingInstanceTemplate sets the settingInstanceTemplate property value. Setting Instance Template
 func (m *DeviceManagementConfigurationSettingTemplate) SetSettingInstanceTemplate(value *DeviceManagementConfigurationSettingInstanceTemplate)() {
     m.settingInstanceTemplate = value
 }

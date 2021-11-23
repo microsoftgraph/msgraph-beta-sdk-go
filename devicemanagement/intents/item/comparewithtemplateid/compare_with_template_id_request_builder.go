@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\microsoft.graph.compare(templateId='{templateId}')
+// CompareWithTemplateIdRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\microsoft.graph.compare(templateId='{templateId}')
 type CompareWithTemplateIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type CompareWithTemplateIdRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CompareWithTemplateIdRequestBuilderGetOptions options for Get
 type CompareWithTemplateIdRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type CompareWithTemplateIdRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
-//  - templateId : Usage: templateId={templateId}
+// NewCompareWithTemplateIdRequestBuilderInternal instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
 func NewCompareWithTemplateIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, templateId *string)(*CompareWithTemplateIdRequestBuilder) {
     m := &CompareWithTemplateIdRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewCompareWithTemplateIdRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCompareWithTemplateIdRequestBuilder instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
 func NewCompareWithTemplateIdRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CompareWithTemplateIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompareWithTemplateIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function compare
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function compare
 func (m *CompareWithTemplateIdRequestBuilder) CreateGetRequestInformation(options *CompareWithTemplateIdRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *CompareWithTemplateIdRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Invoke function compare
-// Parameters:
-//  - options : Options for the request
+// Get invoke function compare
 func (m *CompareWithTemplateIdRequestBuilder) Get(options *CompareWithTemplateIdRequestBuilderGetOptions)([]CompareWithTemplateId, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

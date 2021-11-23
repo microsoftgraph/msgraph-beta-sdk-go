@@ -21,7 +21,7 @@ import (
     if0a4d871ad7cc2e496e78b2da0daa8ea59cf84cc6bada0cf4faf2f4fa43eb2f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devices/item/extensions/item"
 )
 
-// Builds and executes requests for operations under \devices\{device-id}
+// DeviceRequestBuilder builds and executes requests for operations under \devices\{device-id}
 type DeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type DeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceRequestBuilderDeleteOptions options for Delete
 type DeviceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -39,7 +39,7 @@ type DeviceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceRequestBuilderGetOptions options for Get
 type DeviceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -50,14 +50,14 @@ type DeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from devices by key
+// DeviceRequestBuilderGetQueryParameters get entity from devices by key
 type DeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceRequestBuilderPatchOptions options for Patch
 type DeviceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Device;
@@ -77,9 +77,7 @@ func (m *DeviceRequestBuilder) CheckMemberObjects()(*ic0e516d9ef79746d4d17a660f0
 func (m *DeviceRequestBuilder) Commands()(*i0ff7a5160416ceed56e16358c8af0f5a8032f984461e4e97dde1db62f7207fe4.CommandsRequestBuilder) {
     return i0ff7a5160416ceed56e16358c8af0f5a8032f984461e4e97dde1db62f7207fe4.NewCommandsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.devices.item.commands.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CommandsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.devices.item.commands.item collection
 func (m *DeviceRequestBuilder) CommandsById(id string)(*ic49a80ae4774e504e1e936eaa7b3278aa408c882b3991bc5bc8969383c4d4d12.CommandRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -90,10 +88,7 @@ func (m *DeviceRequestBuilder) CommandsById(id string)(*ic49a80ae4774e504e1e936e
     }
     return ic49a80ae4774e504e1e936eaa7b3278aa408c882b3991bc5bc8969383c4d4d12.NewCommandRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceRequestBuilderInternal instantiates a new DeviceRequestBuilder and sets the default values.
 func NewDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceRequestBuilder) {
     m := &DeviceRequestBuilder{
     }
@@ -106,18 +101,13 @@ func NewDeviceRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceRequestBuilder instantiates a new DeviceRequestBuilder and sets the default values.
 func NewDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from devices
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from devices
 func (m *DeviceRequestBuilder) CreateDeleteRequestInformation(options *DeviceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,9 +124,7 @@ func (m *DeviceRequestBuilder) CreateDeleteRequestInformation(options *DeviceReq
     }
     return requestInfo, nil
 }
-// Get entity from devices by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from devices by key
 func (m *DeviceRequestBuilder) CreateGetRequestInformation(options *DeviceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,9 +144,7 @@ func (m *DeviceRequestBuilder) CreateGetRequestInformation(options *DeviceReques
     }
     return requestInfo, nil
 }
-// Update entity in devices
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in devices
 func (m *DeviceRequestBuilder) CreatePatchRequestInformation(options *DeviceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -176,9 +162,7 @@ func (m *DeviceRequestBuilder) CreatePatchRequestInformation(options *DeviceRequ
     }
     return requestInfo, nil
 }
-// Delete entity from devices
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from devices
 func (m *DeviceRequestBuilder) Delete(options *DeviceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -193,9 +177,7 @@ func (m *DeviceRequestBuilder) Delete(options *DeviceRequestBuilderDeleteOptions
 func (m *DeviceRequestBuilder) Extensions()(*ie3938ac8c4c7db4930a30ba4c91d7ca7a7d9d6cac8a9274c997a3420e420b4dc.ExtensionsRequestBuilder) {
     return ie3938ac8c4c7db4930a30ba4c91d7ca7a7d9d6cac8a9274c997a3420e420b4dc.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.devices.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.devices.item.extensions.item collection
 func (m *DeviceRequestBuilder) ExtensionsById(id string)(*if0a4d871ad7cc2e496e78b2da0daa8ea59cf84cc6bada0cf4faf2f4fa43eb2f1.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -206,9 +188,7 @@ func (m *DeviceRequestBuilder) ExtensionsById(id string)(*if0a4d871ad7cc2e496e78
     }
     return if0a4d871ad7cc2e496e78b2da0daa8ea59cf84cc6bada0cf4faf2f4fa43eb2f1.NewExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get entity from devices by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from devices by key
 func (m *DeviceRequestBuilder) Get(options *DeviceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Device, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -229,9 +209,7 @@ func (m *DeviceRequestBuilder) GetMemberObjects()(*i0830d73c05d0cd2e685461a80749
 func (m *DeviceRequestBuilder) MemberOf()(*i8cc492560989153387ef40098b2cfd2301510578bd7681f8a4c9af9aa911f0c1.MemberOfRequestBuilder) {
     return i8cc492560989153387ef40098b2cfd2301510578bd7681f8a4c9af9aa911f0c1.NewMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in devices
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in devices
 func (m *DeviceRequestBuilder) Patch(options *DeviceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -258,9 +236,7 @@ func (m *DeviceRequestBuilder) TransitiveMemberOf()(*i08e90e59dc1f31b2ec2b796cb6
 func (m *DeviceRequestBuilder) UsageRights()(*if010828737e171d055e725c144a741fbeda7f194b68cc132db59f8a94634fc8b.UsageRightsRequestBuilder) {
     return if010828737e171d055e725c144a741fbeda7f194b68cc132db59f8a94634fc8b.NewUsageRightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.devices.item.usageRights.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UsageRightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.devices.item.usageRights.item collection
 func (m *DeviceRequestBuilder) UsageRightsById(id string)(*i4e492465a29843eed16f5f1c1aed7913b386ec884cccbb7bfed560c3c6f30f75.UsageRightRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

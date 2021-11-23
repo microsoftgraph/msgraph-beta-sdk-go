@@ -25,7 +25,7 @@ import (
     ie20d3efb9c88b7a4dececad1e9328ce5526d4cdbd23f6257aa72d18d9126ed81 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/intents/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}
+// DeviceManagementIntentRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}
 type DeviceManagementIntentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ type DeviceManagementIntentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementIntentRequestBuilderDeleteOptions options for Delete
 type DeviceManagementIntentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -43,7 +43,7 @@ type DeviceManagementIntentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementIntentRequestBuilderGetOptions options for Get
 type DeviceManagementIntentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -54,14 +54,14 @@ type DeviceManagementIntentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The device management intents
+// DeviceManagementIntentRequestBuilderGetQueryParameters the device management intents
 type DeviceManagementIntentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementIntentRequestBuilderPatchOptions options for Patch
 type DeviceManagementIntentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntent;
@@ -78,9 +78,7 @@ func (m *DeviceManagementIntentRequestBuilder) Assign()(*i77dceab723bbe034f83895
 func (m *DeviceManagementIntentRequestBuilder) Assignments()(*id4e165bb07af7f89bf1f315b6258bc4ffa52e23f05e7b625bca9be4b284ad5b0.AssignmentsRequestBuilder) {
     return id4e165bb07af7f89bf1f315b6258bc4ffa52e23f05e7b625bca9be4b284ad5b0.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.assignments.item collection
 func (m *DeviceManagementIntentRequestBuilder) AssignmentsById(id string)(*ie20d3efb9c88b7a4dececad1e9328ce5526d4cdbd23f6257aa72d18d9126ed81.DeviceManagementIntentAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -94,9 +92,7 @@ func (m *DeviceManagementIntentRequestBuilder) AssignmentsById(id string)(*ie20d
 func (m *DeviceManagementIntentRequestBuilder) Categories()(*ia8fb096dcfa8bad706be070aca9e18df3a577a485e053215faf223148f7c812f.CategoriesRequestBuilder) {
     return ia8fb096dcfa8bad706be070aca9e18df3a577a485e053215faf223148f7c812f.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.categories.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.categories.item collection
 func (m *DeviceManagementIntentRequestBuilder) CategoriesById(id string)(*i050af1e40f4b04a3234cd6eaef05c2dba88a1a4304262e163378332314ce51be.DeviceManagementIntentSettingCategoryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -107,16 +103,11 @@ func (m *DeviceManagementIntentRequestBuilder) CategoriesById(id string)(*i050af
     }
     return i050af1e40f4b04a3234cd6eaef05c2dba88a1a4304262e163378332314ce51be.NewDeviceManagementIntentSettingCategoryRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\microsoft.graph.compare(templateId='{templateId}')
-// Parameters:
-//  - templateId : Usage: templateId={templateId}
+// CompareWithTemplateId builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\microsoft.graph.compare(templateId='{templateId}')
 func (m *DeviceManagementIntentRequestBuilder) CompareWithTemplateId(templateId *string)(*i4f1a4c082319bee8e877418cf5db676aa138d2c05f5586a2c19d6a0251406722.CompareWithTemplateIdRequestBuilder) {
     return i4f1a4c082319bee8e877418cf5db676aa138d2c05f5586a2c19d6a0251406722.NewCompareWithTemplateIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, templateId);
 }
-// Instantiates a new DeviceManagementIntentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementIntentRequestBuilderInternal instantiates a new DeviceManagementIntentRequestBuilder and sets the default values.
 func NewDeviceManagementIntentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementIntentRequestBuilder) {
     m := &DeviceManagementIntentRequestBuilder{
     }
@@ -129,10 +120,7 @@ func NewDeviceManagementIntentRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementIntentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementIntentRequestBuilder instantiates a new DeviceManagementIntentRequestBuilder and sets the default values.
 func NewDeviceManagementIntentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementIntentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -141,9 +129,7 @@ func NewDeviceManagementIntentRequestBuilder(rawUrl string, requestAdapter ida96
 func (m *DeviceManagementIntentRequestBuilder) CreateCopy()(*ifad589ef3ce91c5f33b39c8260cfbe764d5d9bb0a50352392359f13ea1148770.CreateCopyRequestBuilder) {
     return ifad589ef3ce91c5f33b39c8260cfbe764d5d9bb0a50352392359f13ea1148770.NewCreateCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the device management intents
 func (m *DeviceManagementIntentRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementIntentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -160,9 +146,7 @@ func (m *DeviceManagementIntentRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the device management intents
 func (m *DeviceManagementIntentRequestBuilder) CreateGetRequestInformation(options *DeviceManagementIntentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -182,9 +166,7 @@ func (m *DeviceManagementIntentRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the device management intents
 func (m *DeviceManagementIntentRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementIntentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -202,9 +184,7 @@ func (m *DeviceManagementIntentRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// Delete the device management intents
 func (m *DeviceManagementIntentRequestBuilder) Delete(options *DeviceManagementIntentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -219,9 +199,7 @@ func (m *DeviceManagementIntentRequestBuilder) Delete(options *DeviceManagementI
 func (m *DeviceManagementIntentRequestBuilder) DeviceSettingStateSummaries()(*i5e948c2b0dc0310c910b94d64fbeab1a9145ed93f22976d0c6a733f47d53ba47.DeviceSettingStateSummariesRequestBuilder) {
     return i5e948c2b0dc0310c910b94d64fbeab1a9145ed93f22976d0c6a733f47d53ba47.NewDeviceSettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.deviceSettingStateSummaries.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceSettingStateSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.deviceSettingStateSummaries.item collection
 func (m *DeviceManagementIntentRequestBuilder) DeviceSettingStateSummariesById(id string)(*i844844c782791d7d5f694de937d8ad00ac682c52a360e46aa3f1340df417d61c.DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -235,9 +213,7 @@ func (m *DeviceManagementIntentRequestBuilder) DeviceSettingStateSummariesById(i
 func (m *DeviceManagementIntentRequestBuilder) DeviceStates()(*i23e71622e02878eed00b3312aa65af0ceb8cee6cb6853cdeedd5ba33f3bd24d7.DeviceStatesRequestBuilder) {
     return i23e71622e02878eed00b3312aa65af0ceb8cee6cb6853cdeedd5ba33f3bd24d7.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.deviceStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.deviceStates.item collection
 func (m *DeviceManagementIntentRequestBuilder) DeviceStatesById(id string)(*ib490048065b539bfe5b6cfa49328e603b61cfae55d4624781d0df2de10463072.DeviceManagementIntentDeviceStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -251,9 +227,7 @@ func (m *DeviceManagementIntentRequestBuilder) DeviceStatesById(id string)(*ib49
 func (m *DeviceManagementIntentRequestBuilder) DeviceStateSummary()(*i8744b36b6ccd58cfb5566d8bcfaaaa5a91c2ca5a7d99218a0d837bd74414e860.DeviceStateSummaryRequestBuilder) {
     return i8744b36b6ccd58cfb5566d8bcfaaaa5a91c2ca5a7d99218a0d837bd74414e860.NewDeviceStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// Get the device management intents
 func (m *DeviceManagementIntentRequestBuilder) Get(options *DeviceManagementIntentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -268,9 +242,7 @@ func (m *DeviceManagementIntentRequestBuilder) Get(options *DeviceManagementInte
 func (m *DeviceManagementIntentRequestBuilder) MigrateToTemplate()(*i8baeef7b87df0daa79bc3d6db8884f08954d45824e962bdd11e8d114daa152f2.MigrateToTemplateRequestBuilder) {
     return i8baeef7b87df0daa79bc3d6db8884f08954d45824e962bdd11e8d114daa152f2.NewMigrateToTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The device management intents
-// Parameters:
-//  - options : Options for the request
+// Patch the device management intents
 func (m *DeviceManagementIntentRequestBuilder) Patch(options *DeviceManagementIntentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -285,9 +257,7 @@ func (m *DeviceManagementIntentRequestBuilder) Patch(options *DeviceManagementIn
 func (m *DeviceManagementIntentRequestBuilder) Settings()(*ib10ff44e65c3ab5e68ee1890f6442340272e8295671c255a8cfe146e7d186f6c.SettingsRequestBuilder) {
     return ib10ff44e65c3ab5e68ee1890f6442340272e8295671c255a8cfe146e7d186f6c.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.settings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.settings.item collection
 func (m *DeviceManagementIntentRequestBuilder) SettingsById(id string)(*i52e44e28ad3f36bea30cd68ebb25b8657782d8b7b8c755f6add0e96288a7800a.DeviceManagementSettingInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -304,9 +274,7 @@ func (m *DeviceManagementIntentRequestBuilder) UpdateSettings()(*ie911e70a120660
 func (m *DeviceManagementIntentRequestBuilder) UserStates()(*i2195331110855a9498295e2fc8c02d9e419cef49a131e88a43c884e5f36bf2df.UserStatesRequestBuilder) {
     return i2195331110855a9498295e2fc8c02d9e419cef49a131e88a43c884e5f36bf2df.NewUserStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.userStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UserStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.userStates.item collection
 func (m *DeviceManagementIntentRequestBuilder) UserStatesById(id string)(*i292492bc5eb43f5aa2fe6644e7c97af199a20c37d91e9b0991d9fbca2bb024de.DeviceManagementIntentUserStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

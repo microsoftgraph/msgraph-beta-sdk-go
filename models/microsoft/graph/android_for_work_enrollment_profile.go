@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AndroidForWorkEnrollmentProfile 
 type AndroidForWorkEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
@@ -29,14 +29,14 @@ type AndroidForWorkEnrollmentProfile struct {
     // Value of the most recently created token for this enrollment profile.
     tokenValue *string;
 }
-// Instantiates a new androidForWorkEnrollmentProfile and sets the default values.
+// NewAndroidForWorkEnrollmentProfile instantiates a new androidForWorkEnrollmentProfile and sets the default values.
 func NewAndroidForWorkEnrollmentProfile()(*AndroidForWorkEnrollmentProfile) {
     m := &AndroidForWorkEnrollmentProfile{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the accountId property value. Tenant GUID the enrollment profile belongs to.
+// GetAccountId gets the accountId property value. Tenant GUID the enrollment profile belongs to.
 func (m *AndroidForWorkEnrollmentProfile) GetAccountId()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetAccountId()(*string) {
         return m.accountId
     }
 }
-// Gets the createdDateTime property value. Date time the enrollment profile was created.
+// GetCreatedDateTime gets the createdDateTime property value. Date time the enrollment profile was created.
 func (m *AndroidForWorkEnrollmentProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetCreatedDateTime()(*i336074805fc8539
         return m.createdDateTime
     }
 }
-// Gets the description property value. Description for the enrollment profile.
+// GetDescription gets the description property value. Description for the enrollment profile.
 func (m *AndroidForWorkEnrollmentProfile) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Display name for the enrollment profile.
+// GetDisplayName gets the displayName property value. Display name for the enrollment profile.
 func (m *AndroidForWorkEnrollmentProfile) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the enrolledDeviceCount property value. Total number of Android devices that have enrolled using this enrollment profile.
+// GetEnrolledDeviceCount gets the enrolledDeviceCount property value. Total number of Android devices that have enrolled using this enrollment profile.
 func (m *AndroidForWorkEnrollmentProfile) GetEnrolledDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetEnrolledDeviceCount()(*int32) {
         return m.enrolledDeviceCount
     }
 }
-// Gets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
 func (m *AndroidForWorkEnrollmentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetLastModifiedDateTime()(*i336074805f
         return m.lastModifiedDateTime
     }
 }
-// Gets the qrCodeContent property value. String used to generate a QR code for the token.
+// GetQrCodeContent gets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidForWorkEnrollmentProfile) GetQrCodeContent()(*string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetQrCodeContent()(*string) {
         return m.qrCodeContent
     }
 }
-// Gets the qrCodeImage property value. String used to generate a QR code for the token.
+// GetQrCodeImage gets the qrCodeImage property value. String used to generate a QR code for the token.
 func (m *AndroidForWorkEnrollmentProfile) GetQrCodeImage()(*MimeContent) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetQrCodeImage()(*MimeContent) {
         return m.qrCodeImage
     }
 }
-// Gets the tokenExpirationDateTime property value. Date time the most recently created token will expire.
+// GetTokenExpirationDateTime gets the tokenExpirationDateTime property value. Date time the most recently created token will expire.
 func (m *AndroidForWorkEnrollmentProfile) GetTokenExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetTokenExpirationDateTime()(*i3360748
         return m.tokenExpirationDateTime
     }
 }
-// Gets the tokenValue property value. Value of the most recently created token for this enrollment profile.
+// GetTokenValue gets the tokenValue property value. Value of the most recently created token for this enrollment profile.
 func (m *AndroidForWorkEnrollmentProfile) GetTokenValue()(*string) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetTokenValue()(*string) {
         return m.tokenValue
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkEnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accountId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,9 +224,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetFieldDeserializers()(map[string]fun
 func (m *AndroidForWorkEnrollmentProfile) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AndroidForWorkEnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -294,63 +292,43 @@ func (m *AndroidForWorkEnrollmentProfile) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the accountId property value. Tenant GUID the enrollment profile belongs to.
-// Parameters:
-//  - value : Value to set for the accountId property.
+// SetAccountId sets the accountId property value. Tenant GUID the enrollment profile belongs to.
 func (m *AndroidForWorkEnrollmentProfile) SetAccountId(value *string)() {
     m.accountId = value
 }
-// Sets the createdDateTime property value. Date time the enrollment profile was created.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. Date time the enrollment profile was created.
 func (m *AndroidForWorkEnrollmentProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the description property value. Description for the enrollment profile.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description for the enrollment profile.
 func (m *AndroidForWorkEnrollmentProfile) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Display name for the enrollment profile.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name for the enrollment profile.
 func (m *AndroidForWorkEnrollmentProfile) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the enrolledDeviceCount property value. Total number of Android devices that have enrolled using this enrollment profile.
-// Parameters:
-//  - value : Value to set for the enrolledDeviceCount property.
+// SetEnrolledDeviceCount sets the enrolledDeviceCount property value. Total number of Android devices that have enrolled using this enrollment profile.
 func (m *AndroidForWorkEnrollmentProfile) SetEnrolledDeviceCount(value *int32)() {
     m.enrolledDeviceCount = value
 }
-// Sets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
 func (m *AndroidForWorkEnrollmentProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the qrCodeContent property value. String used to generate a QR code for the token.
-// Parameters:
-//  - value : Value to set for the qrCodeContent property.
+// SetQrCodeContent sets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidForWorkEnrollmentProfile) SetQrCodeContent(value *string)() {
     m.qrCodeContent = value
 }
-// Sets the qrCodeImage property value. String used to generate a QR code for the token.
-// Parameters:
-//  - value : Value to set for the qrCodeImage property.
+// SetQrCodeImage sets the qrCodeImage property value. String used to generate a QR code for the token.
 func (m *AndroidForWorkEnrollmentProfile) SetQrCodeImage(value *MimeContent)() {
     m.qrCodeImage = value
 }
-// Sets the tokenExpirationDateTime property value. Date time the most recently created token will expire.
-// Parameters:
-//  - value : Value to set for the tokenExpirationDateTime property.
+// SetTokenExpirationDateTime sets the tokenExpirationDateTime property value. Date time the most recently created token will expire.
 func (m *AndroidForWorkEnrollmentProfile) SetTokenExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.tokenExpirationDateTime = value
 }
-// Sets the tokenValue property value. Value of the most recently created token for this enrollment profile.
-// Parameters:
-//  - value : Value to set for the tokenValue property.
+// SetTokenValue sets the tokenValue property value. Value of the most recently created token for this enrollment profile.
 func (m *AndroidForWorkEnrollmentProfile) SetTokenValue(value *string)() {
     m.tokenValue = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ComanagementEligibleDevicesSummary 
 type ComanagementEligibleDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type ComanagementEligibleDevicesSummary struct {
     // Count of devices that will be eligible for Co-Management after an OS update
     needsOsUpdateCount *int32;
 }
-// Instantiates a new comanagementEligibleDevicesSummary and sets the default values.
+// NewComanagementEligibleDevicesSummary instantiates a new comanagementEligibleDevicesSummary and sets the default values.
 func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary) {
     m := &ComanagementEligibleDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagementEligibleDevicesSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *ComanagementEligibleDevicesSummary) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
-// Gets the comanagedCount property value. Count of devices already Co-Managed
+// GetComanagedCount gets the comanagedCount property value. Count of devices already Co-Managed
 func (m *ComanagementEligibleDevicesSummary) GetComanagedCount()(*int32) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *ComanagementEligibleDevicesSummary) GetComanagedCount()(*int32) {
         return m.comanagedCount
     }
 }
-// Gets the eligibleButNotAzureAdJoinedCount property value. Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
+// GetEligibleButNotAzureAdJoinedCount gets the eligibleButNotAzureAdJoinedCount property value. Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
 func (m *ComanagementEligibleDevicesSummary) GetEligibleButNotAzureAdJoinedCount()(*int32) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *ComanagementEligibleDevicesSummary) GetEligibleButNotAzureAdJoinedCount
         return m.eligibleButNotAzureAdJoinedCount
     }
 }
-// Gets the eligibleCount property value. Count of devices fully eligible for Co-Management
+// GetEligibleCount gets the eligibleCount property value. Count of devices fully eligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) GetEligibleCount()(*int32) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *ComanagementEligibleDevicesSummary) GetEligibleCount()(*int32) {
         return m.eligibleCount
     }
 }
-// Gets the ineligibleCount property value. Count of devices ineligible for Co-Management
+// GetIneligibleCount gets the ineligibleCount property value. Count of devices ineligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) GetIneligibleCount()(*int32) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *ComanagementEligibleDevicesSummary) GetIneligibleCount()(*int32) {
         return m.ineligibleCount
     }
 }
-// Gets the needsOsUpdateCount property value. Count of devices that will be eligible for Co-Management after an OS update
+// GetNeedsOsUpdateCount gets the needsOsUpdateCount property value. Count of devices that will be eligible for Co-Management after an OS update
 func (m *ComanagementEligibleDevicesSummary) GetNeedsOsUpdateCount()(*int32) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *ComanagementEligibleDevicesSummary) GetNeedsOsUpdateCount()(*int32) {
         return m.needsOsUpdateCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["comanagedCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
 func (m *ComanagementEligibleDevicesSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ComanagementEligibleDevicesSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("comanagedCount", m.GetComanagedCount())
@@ -174,39 +172,27 @@ func (m *ComanagementEligibleDevicesSummary) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagementEligibleDevicesSummary) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the comanagedCount property value. Count of devices already Co-Managed
-// Parameters:
-//  - value : Value to set for the comanagedCount property.
+// SetComanagedCount sets the comanagedCount property value. Count of devices already Co-Managed
 func (m *ComanagementEligibleDevicesSummary) SetComanagedCount(value *int32)() {
     m.comanagedCount = value
 }
-// Sets the eligibleButNotAzureAdJoinedCount property value. Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
-// Parameters:
-//  - value : Value to set for the eligibleButNotAzureAdJoinedCount property.
+// SetEligibleButNotAzureAdJoinedCount sets the eligibleButNotAzureAdJoinedCount property value. Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
 func (m *ComanagementEligibleDevicesSummary) SetEligibleButNotAzureAdJoinedCount(value *int32)() {
     m.eligibleButNotAzureAdJoinedCount = value
 }
-// Sets the eligibleCount property value. Count of devices fully eligible for Co-Management
-// Parameters:
-//  - value : Value to set for the eligibleCount property.
+// SetEligibleCount sets the eligibleCount property value. Count of devices fully eligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) SetEligibleCount(value *int32)() {
     m.eligibleCount = value
 }
-// Sets the ineligibleCount property value. Count of devices ineligible for Co-Management
-// Parameters:
-//  - value : Value to set for the ineligibleCount property.
+// SetIneligibleCount sets the ineligibleCount property value. Count of devices ineligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) SetIneligibleCount(value *int32)() {
     m.ineligibleCount = value
 }
-// Sets the needsOsUpdateCount property value. Count of devices that will be eligible for Co-Management after an OS update
-// Parameters:
-//  - value : Value to set for the needsOsUpdateCount property.
+// SetNeedsOsUpdateCount sets the needsOsUpdateCount property value. Count of devices that will be eligible for Co-Management after an OS update
 func (m *ComanagementEligibleDevicesSummary) SetNeedsOsUpdateCount(value *int32)() {
     m.needsOsUpdateCount = value
 }

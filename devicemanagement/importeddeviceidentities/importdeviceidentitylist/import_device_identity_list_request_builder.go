@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\importedDeviceIdentities\microsoft.graph.importDeviceIdentityList
+// ImportDeviceIdentityListRequestBuilder builds and executes requests for operations under \deviceManagement\importedDeviceIdentities\microsoft.graph.importDeviceIdentityList
 type ImportDeviceIdentityListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type ImportDeviceIdentityListRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ImportDeviceIdentityListRequestBuilderPostOptions options for Post
 type ImportDeviceIdentityListRequestBuilderPostOptions struct {
     // 
     Body *ImportDeviceIdentityListRequestBody;
@@ -25,10 +25,7 @@ type ImportDeviceIdentityListRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ImportDeviceIdentityListRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportDeviceIdentityListRequestBuilderInternal instantiates a new ImportDeviceIdentityListRequestBuilder and sets the default values.
 func NewImportDeviceIdentityListRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportDeviceIdentityListRequestBuilder) {
     m := &ImportDeviceIdentityListRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewImportDeviceIdentityListRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ImportDeviceIdentityListRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportDeviceIdentityListRequestBuilder instantiates a new ImportDeviceIdentityListRequestBuilder and sets the default values.
 func NewImportDeviceIdentityListRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportDeviceIdentityListRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportDeviceIdentityListRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action importDeviceIdentityList
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action importDeviceIdentityList
 func (m *ImportDeviceIdentityListRequestBuilder) CreatePostRequestInformation(options *ImportDeviceIdentityListRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *ImportDeviceIdentityListRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// Invoke action importDeviceIdentityList
-// Parameters:
-//  - options : Options for the request
+// Post invoke action importDeviceIdentityList
 func (m *ImportDeviceIdentityListRequestBuilder) Post(options *ImportDeviceIdentityListRequestBuilderPostOptions)([]ImportDeviceIdentityList, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ExpressionInputObject 
 type ExpressionInputObject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type ExpressionInputObject struct {
     // Property values of the test object.
     properties []StringKeyObjectValuePair;
 }
-// Instantiates a new expressionInputObject and sets the default values.
+// NewExpressionInputObject instantiates a new expressionInputObject and sets the default values.
 func NewExpressionInputObject()(*ExpressionInputObject) {
     m := &ExpressionInputObject{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionInputObject) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *ExpressionInputObject) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the definition property value. Definition of the test object.
+// GetDefinition gets the definition property value. Definition of the test object.
 func (m *ExpressionInputObject) GetDefinition()(*ObjectDefinition) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ExpressionInputObject) GetDefinition()(*ObjectDefinition) {
         return m.definition
     }
 }
-// Gets the properties property value. Property values of the test object.
+// GetProperties gets the properties property value. Property values of the test object.
 func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePair) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePair) {
         return m.properties
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["definition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,9 +76,7 @@ func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(interfac
 func (m *ExpressionInputObject) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExpressionInputObject) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("definition", m.GetDefinition())
@@ -105,21 +103,15 @@ func (m *ExpressionInputObject) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionInputObject) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the definition property value. Definition of the test object.
-// Parameters:
-//  - value : Value to set for the definition property.
+// SetDefinition sets the definition property value. Definition of the test object.
 func (m *ExpressionInputObject) SetDefinition(value *ObjectDefinition)() {
     m.definition = value
 }
-// Sets the properties property value. Property values of the test object.
-// Parameters:
-//  - value : Value to set for the properties property.
+// SetProperties sets the properties property value. Property values of the test object.
 func (m *ExpressionInputObject) SetProperties(value []StringKeyObjectValuePair)() {
     m.properties = value
 }

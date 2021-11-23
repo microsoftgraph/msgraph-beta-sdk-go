@@ -7,7 +7,7 @@ import (
     i81d954f6bbde9039cb01411f190fff066a48fef31d6fa87ea4ad54005c369eac "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatesteps/item/managementtemplate/ref"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}\managementTemplate
+// ManagementTemplateRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}\managementTemplate
 type ManagementTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ManagementTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagementTemplateRequestBuilderGetOptions options for Get
 type ManagementTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ManagementTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get managementTemplate from tenantRelationships
+// ManagementTemplateRequestBuilderGetQueryParameters get managementTemplate from tenantRelationships
 type ManagementTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ManagementTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateRequestBuilderInternal instantiates a new ManagementTemplateRequestBuilder and sets the default values.
 func NewManagementTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateRequestBuilder) {
     m := &ManagementTemplateRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewManagementTemplateRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateRequestBuilder instantiates a new ManagementTemplateRequestBuilder and sets the default values.
 func NewManagementTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get managementTemplate from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get managementTemplate from tenantRelationships
 func (m *ManagementTemplateRequestBuilder) CreateGetRequestInformation(options *ManagementTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ManagementTemplateRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get managementTemplate from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Get get managementTemplate from tenantRelationships
 func (m *ManagementTemplateRequestBuilder) Get(options *ManagementTemplateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

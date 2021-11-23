@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentPolicy\accessPackageCatalog\accessPackages\{accessPackage-id}\incompatibleGroups
+// IncompatibleGroupsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentPolicy\accessPackageCatalog\accessPackages\{accessPackage-id}\incompatibleGroups
 type IncompatibleGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IncompatibleGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IncompatibleGroupsRequestBuilderGetOptions options for Get
 type IncompatibleGroupsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type IncompatibleGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The groups whose members are ineligible to be assigned this access package.
+// IncompatibleGroupsRequestBuilderGetQueryParameters the groups whose members are ineligible to be assigned this access package.
 type IncompatibleGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type IncompatibleGroupsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IncompatibleGroupsRequestBuilderPostOptions options for Post
 type IncompatibleGroupsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group;
@@ -56,10 +56,7 @@ type IncompatibleGroupsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IncompatibleGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIncompatibleGroupsRequestBuilderInternal instantiates a new IncompatibleGroupsRequestBuilder and sets the default values.
 func NewIncompatibleGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncompatibleGroupsRequestBuilder) {
     m := &IncompatibleGroupsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewIncompatibleGroupsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IncompatibleGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIncompatibleGroupsRequestBuilder instantiates a new IncompatibleGroupsRequestBuilder and sets the default values.
 func NewIncompatibleGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncompatibleGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIncompatibleGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The groups whose members are ineligible to be assigned this access package.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the groups whose members are ineligible to be assigned this access package.
 func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation(options *IncompatibleGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The groups whose members are ineligible to be assigned this access package.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the groups whose members are ineligible to be assigned this access package.
 func (m *IncompatibleGroupsRequestBuilder) CreatePostRequestInformation(options *IncompatibleGroupsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *IncompatibleGroupsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The groups whose members are ineligible to be assigned this access package.
-// Parameters:
-//  - options : Options for the request
+// Get the groups whose members are ineligible to be assigned this access package.
 func (m *IncompatibleGroupsRequestBuilder) Get(options *IncompatibleGroupsRequestBuilderGetOptions)(*IncompatibleGroupsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *IncompatibleGroupsRequestBuilder) Get(options *IncompatibleGroupsReques
     }
     return res.(*IncompatibleGroupsResponse), nil
 }
-// The groups whose members are ineligible to be assigned this access package.
-// Parameters:
-//  - options : Options for the request
+// Post the groups whose members are ineligible to be assigned this access package.
 func (m *IncompatibleGroupsRequestBuilder) Post(options *IncompatibleGroupsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

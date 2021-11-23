@@ -26,7 +26,7 @@ import (
     idfae2eb2f859c83384878a7565f78eb2c09250cf7b3892104836a28c6368c37a "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/participants/item"
 )
 
-// Builds and executes requests for operations under \app\calls\{call-id}
+// CallRequestBuilder builds and executes requests for operations under \app\calls\{call-id}
 type CallRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type CallRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CallRequestBuilderDeleteOptions options for Delete
 type CallRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -44,7 +44,7 @@ type CallRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CallRequestBuilderGetOptions options for Get
 type CallRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -55,14 +55,14 @@ type CallRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get calls from app
+// CallRequestBuilderGetQueryParameters get calls from app
 type CallRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CallRequestBuilderPatchOptions options for Patch
 type CallRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Call;
@@ -79,9 +79,7 @@ func (m *CallRequestBuilder) Answer()(*iea07e291a46b990a979a038612645323fe7180f5
 func (m *CallRequestBuilder) AudioRoutingGroups()(*i1b9466d0caef82626f32a61ccf84f8b293d289edb108038c604aef2d18197865.AudioRoutingGroupsRequestBuilder) {
     return i1b9466d0caef82626f32a61ccf84f8b293d289edb108038c604aef2d18197865.NewAudioRoutingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.calls.item.audioRoutingGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AudioRoutingGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.calls.item.audioRoutingGroups.item collection
 func (m *CallRequestBuilder) AudioRoutingGroupsById(id string)(*i76c60465809f227922ef886abb4be5e5ba936f1aee25121d8be66ca149691e37.AudioRoutingGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -98,10 +96,7 @@ func (m *CallRequestBuilder) CancelMediaProcessing()(*i1dcc77e9871abeb934d55bc57
 func (m *CallRequestBuilder) ChangeScreenSharingRole()(*icbe1c65482be5ba77560b0854bb72eb2fce823cdda74fb44a06b72364da1f6a2.ChangeScreenSharingRoleRequestBuilder) {
     return icbe1c65482be5ba77560b0854bb72eb2fce823cdda74fb44a06b72364da1f6a2.NewChangeScreenSharingRoleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new CallRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCallRequestBuilderInternal instantiates a new CallRequestBuilder and sets the default values.
 func NewCallRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CallRequestBuilder) {
     m := &CallRequestBuilder{
     }
@@ -114,18 +109,13 @@ func NewCallRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CallRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCallRequestBuilder instantiates a new CallRequestBuilder and sets the default values.
 func NewCallRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CallRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property calls for app
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property calls for app
 func (m *CallRequestBuilder) CreateDeleteRequestInformation(options *CallRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +132,7 @@ func (m *CallRequestBuilder) CreateDeleteRequestInformation(options *CallRequest
     }
     return requestInfo, nil
 }
-// Get calls from app
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get calls from app
 func (m *CallRequestBuilder) CreateGetRequestInformation(options *CallRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -164,9 +152,7 @@ func (m *CallRequestBuilder) CreateGetRequestInformation(options *CallRequestBui
     }
     return requestInfo, nil
 }
-// Update the navigation property calls in app
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property calls in app
 func (m *CallRequestBuilder) CreatePatchRequestInformation(options *CallRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -184,9 +170,7 @@ func (m *CallRequestBuilder) CreatePatchRequestInformation(options *CallRequestB
     }
     return requestInfo, nil
 }
-// Delete navigation property calls for app
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property calls for app
 func (m *CallRequestBuilder) Delete(options *CallRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -198,9 +182,7 @@ func (m *CallRequestBuilder) Delete(options *CallRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Get calls from app
-// Parameters:
-//  - options : Options for the request
+// Get get calls from app
 func (m *CallRequestBuilder) Get(options *CallRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Call, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -221,9 +203,7 @@ func (m *CallRequestBuilder) Mute()(*i8ba5b1d1710189d6fbeadcc3c0d5040fd10a40b9f9
 func (m *CallRequestBuilder) Operations()(*i6f1572cf2923d7161e932806b4455848280c38ad3685ab81f1a3301526b5e3c1.OperationsRequestBuilder) {
     return i6f1572cf2923d7161e932806b4455848280c38ad3685ab81f1a3301526b5e3c1.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.calls.item.operations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.calls.item.operations.item collection
 func (m *CallRequestBuilder) OperationsById(id string)(*i39deddda18f57c5a3a9987261e9e10fe2b86924c965453300c89efb467115e2a.CommsOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -237,9 +217,7 @@ func (m *CallRequestBuilder) OperationsById(id string)(*i39deddda18f57c5a3a99872
 func (m *CallRequestBuilder) Participants()(*i1cd79905fc528b166f37b3757de3739a99d140dd293c565a482a0ccfcc9151d6.ParticipantsRequestBuilder) {
     return i1cd79905fc528b166f37b3757de3739a99d140dd293c565a482a0ccfcc9151d6.NewParticipantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.calls.item.participants.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ParticipantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.calls.item.participants.item collection
 func (m *CallRequestBuilder) ParticipantsById(id string)(*idfae2eb2f859c83384878a7565f78eb2c09250cf7b3892104836a28c6368c37a.ParticipantRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -250,9 +228,7 @@ func (m *CallRequestBuilder) ParticipantsById(id string)(*idfae2eb2f859c83384878
     }
     return idfae2eb2f859c83384878a7565f78eb2c09250cf7b3892104836a28c6368c37a.NewParticipantRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property calls in app
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property calls in app
 func (m *CallRequestBuilder) Patch(options *CallRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

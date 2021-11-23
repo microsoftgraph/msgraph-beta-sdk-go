@@ -11,7 +11,7 @@ import (
     ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/alternativerecording"
 )
 
-// Builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}
+// OnlineMeetingRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}
 type OnlineMeetingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type OnlineMeetingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OnlineMeetingRequestBuilderDeleteOptions options for Delete
 type OnlineMeetingRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type OnlineMeetingRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OnlineMeetingRequestBuilderGetOptions options for Get
 type OnlineMeetingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type OnlineMeetingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get onlineMeetings from communications
+// OnlineMeetingRequestBuilderGetQueryParameters get onlineMeetings from communications
 type OnlineMeetingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OnlineMeetingRequestBuilderPatchOptions options for Patch
 type OnlineMeetingRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnlineMeeting;
@@ -64,10 +64,7 @@ func (m *OnlineMeetingRequestBuilder) AlternativeRecording()(*ifa2556b906140d075
 func (m *OnlineMeetingRequestBuilder) AttendeeReport()(*i3a2bfcc71796b9365b1b580ed5a11589b09828c31bbc6758b6afbd6ee2ee53a9.AttendeeReportRequestBuilder) {
     return i3a2bfcc71796b9365b1b580ed5a11589b09828c31bbc6758b6afbd6ee2ee53a9.NewAttendeeReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new OnlineMeetingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnlineMeetingRequestBuilderInternal instantiates a new OnlineMeetingRequestBuilder and sets the default values.
 func NewOnlineMeetingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnlineMeetingRequestBuilder) {
     m := &OnlineMeetingRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewOnlineMeetingRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnlineMeetingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnlineMeetingRequestBuilder instantiates a new OnlineMeetingRequestBuilder and sets the default values.
 func NewOnlineMeetingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnlineMeetingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property onlineMeetings for communications
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property onlineMeetings for communications
 func (m *OnlineMeetingRequestBuilder) CreateDeleteRequestInformation(options *OnlineMeetingRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *OnlineMeetingRequestBuilder) CreateDeleteRequestInformation(options *On
     }
     return requestInfo, nil
 }
-// Get onlineMeetings from communications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get onlineMeetings from communications
 func (m *OnlineMeetingRequestBuilder) CreateGetRequestInformation(options *OnlineMeetingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +120,7 @@ func (m *OnlineMeetingRequestBuilder) CreateGetRequestInformation(options *Onlin
     }
     return requestInfo, nil
 }
-// Update the navigation property onlineMeetings in communications
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property onlineMeetings in communications
 func (m *OnlineMeetingRequestBuilder) CreatePatchRequestInformation(options *OnlineMeetingRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *OnlineMeetingRequestBuilder) CreatePatchRequestInformation(options *Onl
     }
     return requestInfo, nil
 }
-// Delete navigation property onlineMeetings for communications
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property onlineMeetings for communications
 func (m *OnlineMeetingRequestBuilder) Delete(options *OnlineMeetingRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *OnlineMeetingRequestBuilder) Delete(options *OnlineMeetingRequestBuilde
     }
     return nil
 }
-// Get onlineMeetings from communications
-// Parameters:
-//  - options : Options for the request
+// Get get onlineMeetings from communications
 func (m *OnlineMeetingRequestBuilder) Get(options *OnlineMeetingRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnlineMeeting, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -181,9 +165,7 @@ func (m *OnlineMeetingRequestBuilder) Get(options *OnlineMeetingRequestBuilderGe
 func (m *OnlineMeetingRequestBuilder) MeetingAttendanceReport()(*ie765355a32ec6cb4ba90da216a62ec4fb6b7b232eb3780cefe410dc49551bbe5.MeetingAttendanceReportRequestBuilder) {
     return ie765355a32ec6cb4ba90da216a62ec4fb6b7b232eb3780cefe410dc49551bbe5.NewMeetingAttendanceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property onlineMeetings in communications
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property onlineMeetings in communications
 func (m *OnlineMeetingRequestBuilder) Patch(options *OnlineMeetingRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

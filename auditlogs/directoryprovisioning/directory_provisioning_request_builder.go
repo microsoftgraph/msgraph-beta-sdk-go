@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \auditLogs\directoryProvisioning
+// DirectoryProvisioningRequestBuilder builds and executes requests for operations under \auditLogs\directoryProvisioning
 type DirectoryProvisioningRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DirectoryProvisioningRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DirectoryProvisioningRequestBuilderGetOptions options for Get
 type DirectoryProvisioningRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DirectoryProvisioningRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get directoryProvisioning from auditLogs
+// DirectoryProvisioningRequestBuilderGetQueryParameters get directoryProvisioning from auditLogs
 type DirectoryProvisioningRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DirectoryProvisioningRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DirectoryProvisioningRequestBuilderPostOptions options for Post
 type DirectoryProvisioningRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProvisioningObjectSummary;
@@ -56,10 +56,7 @@ type DirectoryProvisioningRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DirectoryProvisioningRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryProvisioningRequestBuilderInternal instantiates a new DirectoryProvisioningRequestBuilder and sets the default values.
 func NewDirectoryProvisioningRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryProvisioningRequestBuilder) {
     m := &DirectoryProvisioningRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDirectoryProvisioningRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryProvisioningRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryProvisioningRequestBuilder instantiates a new DirectoryProvisioningRequestBuilder and sets the default values.
 func NewDirectoryProvisioningRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryProvisioningRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryProvisioningRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get directoryProvisioning from auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get directoryProvisioning from auditLogs
 func (m *DirectoryProvisioningRequestBuilder) CreateGetRequestInformation(options *DirectoryProvisioningRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DirectoryProvisioningRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Create new navigation property to directoryProvisioning for auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to directoryProvisioning for auditLogs
 func (m *DirectoryProvisioningRequestBuilder) CreatePostRequestInformation(options *DirectoryProvisioningRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DirectoryProvisioningRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get directoryProvisioning from auditLogs
-// Parameters:
-//  - options : Options for the request
+// Get get directoryProvisioning from auditLogs
 func (m *DirectoryProvisioningRequestBuilder) Get(options *DirectoryProvisioningRequestBuilderGetOptions)(*DirectoryProvisioningResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DirectoryProvisioningRequestBuilder) Get(options *DirectoryProvisioning
     }
     return res.(*DirectoryProvisioningResponse), nil
 }
-// Create new navigation property to directoryProvisioning for auditLogs
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to directoryProvisioning for auditLogs
 func (m *DirectoryProvisioningRequestBuilder) Post(options *DirectoryProvisioningRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProvisioningObjectSummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

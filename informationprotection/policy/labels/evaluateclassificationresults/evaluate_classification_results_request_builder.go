@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \informationProtection\policy\labels\microsoft.graph.evaluateClassificationResults
+// EvaluateClassificationResultsRequestBuilder builds and executes requests for operations under \informationProtection\policy\labels\microsoft.graph.evaluateClassificationResults
 type EvaluateClassificationResultsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type EvaluateClassificationResultsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// EvaluateClassificationResultsRequestBuilderPostOptions options for Post
 type EvaluateClassificationResultsRequestBuilderPostOptions struct {
     // 
     Body *EvaluateClassificationResultsRequestBody;
@@ -25,10 +25,7 @@ type EvaluateClassificationResultsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EvaluateClassificationResultsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateClassificationResultsRequestBuilderInternal instantiates a new EvaluateClassificationResultsRequestBuilder and sets the default values.
 func NewEvaluateClassificationResultsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateClassificationResultsRequestBuilder) {
     m := &EvaluateClassificationResultsRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewEvaluateClassificationResultsRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EvaluateClassificationResultsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateClassificationResultsRequestBuilder instantiates a new EvaluateClassificationResultsRequestBuilder and sets the default values.
 func NewEvaluateClassificationResultsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateClassificationResultsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateClassificationResultsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action evaluateClassificationResults
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action evaluateClassificationResults
 func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformation(options *EvaluateClassificationResultsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Invoke action evaluateClassificationResults
-// Parameters:
-//  - options : Options for the request
+// Post invoke action evaluateClassificationResults
 func (m *EvaluateClassificationResultsRequestBuilder) Post(options *EvaluateClassificationResultsRequestBuilderPostOptions)([]EvaluateClassificationResults, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

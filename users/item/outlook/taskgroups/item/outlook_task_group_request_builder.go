@@ -8,7 +8,7 @@ import (
     i9ff51a09dafb0317480e93c5051c0dab6aba16d2dd4fc769ca0378dfb685a890 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/outlook/taskgroups/item/taskfolders/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\outlook\taskGroups\{outlookTaskGroup-id}
+// OutlookTaskGroupRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\taskGroups\{outlookTaskGroup-id}
 type OutlookTaskGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type OutlookTaskGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OutlookTaskGroupRequestBuilderDeleteOptions options for Delete
 type OutlookTaskGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OutlookTaskGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OutlookTaskGroupRequestBuilderGetOptions options for Get
 type OutlookTaskGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,12 +37,12 @@ type OutlookTaskGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get taskGroups from users
+// OutlookTaskGroupRequestBuilderGetQueryParameters get taskGroups from users
 type OutlookTaskGroupRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OutlookTaskGroupRequestBuilderPatchOptions options for Patch
 type OutlookTaskGroupRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTaskGroup;
@@ -53,10 +53,7 @@ type OutlookTaskGroupRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OutlookTaskGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlookTaskGroupRequestBuilderInternal instantiates a new OutlookTaskGroupRequestBuilder and sets the default values.
 func NewOutlookTaskGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookTaskGroupRequestBuilder) {
     m := &OutlookTaskGroupRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewOutlookTaskGroupRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OutlookTaskGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlookTaskGroupRequestBuilder instantiates a new OutlookTaskGroupRequestBuilder and sets the default values.
 func NewOutlookTaskGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookTaskGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOutlookTaskGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property taskGroups for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property taskGroups for users
 func (m *OutlookTaskGroupRequestBuilder) CreateDeleteRequestInformation(options *OutlookTaskGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *OutlookTaskGroupRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get taskGroups from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get taskGroups from users
 func (m *OutlookTaskGroupRequestBuilder) CreateGetRequestInformation(options *OutlookTaskGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *OutlookTaskGroupRequestBuilder) CreateGetRequestInformation(options *Ou
     }
     return requestInfo, nil
 }
-// Update the navigation property taskGroups in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property taskGroups in users
 func (m *OutlookTaskGroupRequestBuilder) CreatePatchRequestInformation(options *OutlookTaskGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *OutlookTaskGroupRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete navigation property taskGroups for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property taskGroups for users
 func (m *OutlookTaskGroupRequestBuilder) Delete(options *OutlookTaskGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *OutlookTaskGroupRequestBuilder) Delete(options *OutlookTaskGroupRequest
     }
     return nil
 }
-// Get taskGroups from users
-// Parameters:
-//  - options : Options for the request
+// Get get taskGroups from users
 func (m *OutlookTaskGroupRequestBuilder) Get(options *OutlookTaskGroupRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTaskGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *OutlookTaskGroupRequestBuilder) Get(options *OutlookTaskGroupRequestBui
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTaskGroup), nil
 }
-// Update the navigation property taskGroups in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property taskGroups in users
 func (m *OutlookTaskGroupRequestBuilder) Patch(options *OutlookTaskGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -184,9 +166,7 @@ func (m *OutlookTaskGroupRequestBuilder) Patch(options *OutlookTaskGroupRequestB
 func (m *OutlookTaskGroupRequestBuilder) TaskFolders()(*i84e5204b6057266524dd3c5f1d89cc5397e3be53b9b6b2ff8da6fb9bcfc89145.TaskFoldersRequestBuilder) {
     return i84e5204b6057266524dd3c5f1d89cc5397e3be53b9b6b2ff8da6fb9bcfc89145.NewTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item.taskFolders.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TaskFoldersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item.taskFolders.item collection
 func (m *OutlookTaskGroupRequestBuilder) TaskFoldersById(id string)(*i9ff51a09dafb0317480e93c5051c0dab6aba16d2dd4fc769ca0378dfb685a890.OutlookTaskFolderRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

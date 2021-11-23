@@ -7,7 +7,7 @@ import (
     i742ea0c15fb1a4786773e125d954ef243952ede055128e3157f81c19fbe0265a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/rebootanalyticsmetrics/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\rebootAnalyticsMetrics
+// RebootAnalyticsMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\rebootAnalyticsMetrics
 type RebootAnalyticsMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RebootAnalyticsMetricsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RebootAnalyticsMetricsRequestBuilderGetOptions options for Get
 type RebootAnalyticsMetricsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type RebootAnalyticsMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user experience analytics reboot analytics metrics.
+// RebootAnalyticsMetricsRequestBuilderGetQueryParameters the user experience analytics reboot analytics metrics.
 type RebootAnalyticsMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new RebootAnalyticsMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRebootAnalyticsMetricsRequestBuilderInternal instantiates a new RebootAnalyticsMetricsRequestBuilder and sets the default values.
 func NewRebootAnalyticsMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RebootAnalyticsMetricsRequestBuilder) {
     m := &RebootAnalyticsMetricsRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewRebootAnalyticsMetricsRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RebootAnalyticsMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRebootAnalyticsMetricsRequestBuilder instantiates a new RebootAnalyticsMetricsRequestBuilder and sets the default values.
 func NewRebootAnalyticsMetricsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RebootAnalyticsMetricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRebootAnalyticsMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user experience analytics reboot analytics metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user experience analytics reboot analytics metrics.
 func (m *RebootAnalyticsMetricsRequestBuilder) CreateGetRequestInformation(options *RebootAnalyticsMetricsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *RebootAnalyticsMetricsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The user experience analytics reboot analytics metrics.
-// Parameters:
-//  - options : Options for the request
+// Get the user experience analytics reboot analytics metrics.
 func (m *RebootAnalyticsMetricsRequestBuilder) Get(options *RebootAnalyticsMetricsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

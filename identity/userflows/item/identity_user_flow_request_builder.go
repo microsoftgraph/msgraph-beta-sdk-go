@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\userFlows\{identityUserFlow-id}
+// IdentityUserFlowRequestBuilder builds and executes requests for operations under \identity\userFlows\{identityUserFlow-id}
 type IdentityUserFlowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IdentityUserFlowRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IdentityUserFlowRequestBuilderDeleteOptions options for Delete
 type IdentityUserFlowRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type IdentityUserFlowRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IdentityUserFlowRequestBuilderGetOptions options for Get
 type IdentityUserFlowRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type IdentityUserFlowRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get userFlows from identity
+// IdentityUserFlowRequestBuilderGetQueryParameters get userFlows from identity
 type IdentityUserFlowRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IdentityUserFlowRequestBuilderPatchOptions options for Patch
 type IdentityUserFlowRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlow;
@@ -53,10 +53,7 @@ type IdentityUserFlowRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IdentityUserFlowRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityUserFlowRequestBuilderInternal instantiates a new IdentityUserFlowRequestBuilder and sets the default values.
 func NewIdentityUserFlowRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityUserFlowRequestBuilder) {
     m := &IdentityUserFlowRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewIdentityUserFlowRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IdentityUserFlowRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityUserFlowRequestBuilder instantiates a new IdentityUserFlowRequestBuilder and sets the default values.
 func NewIdentityUserFlowRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityUserFlowRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityUserFlowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property userFlows for identity
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property userFlows for identity
 func (m *IdentityUserFlowRequestBuilder) CreateDeleteRequestInformation(options *IdentityUserFlowRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *IdentityUserFlowRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get userFlows from identity
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get userFlows from identity
 func (m *IdentityUserFlowRequestBuilder) CreateGetRequestInformation(options *IdentityUserFlowRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *IdentityUserFlowRequestBuilder) CreateGetRequestInformation(options *Id
     }
     return requestInfo, nil
 }
-// Update the navigation property userFlows in identity
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property userFlows in identity
 func (m *IdentityUserFlowRequestBuilder) CreatePatchRequestInformation(options *IdentityUserFlowRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *IdentityUserFlowRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete navigation property userFlows for identity
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property userFlows for identity
 func (m *IdentityUserFlowRequestBuilder) Delete(options *IdentityUserFlowRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *IdentityUserFlowRequestBuilder) Delete(options *IdentityUserFlowRequest
     }
     return nil
 }
-// Get userFlows from identity
-// Parameters:
-//  - options : Options for the request
+// Get get userFlows from identity
 func (m *IdentityUserFlowRequestBuilder) Get(options *IdentityUserFlowRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlow, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *IdentityUserFlowRequestBuilder) Get(options *IdentityUserFlowRequestBui
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlow), nil
 }
-// Update the navigation property userFlows in identity
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property userFlows in identity
 func (m *IdentityUserFlowRequestBuilder) Patch(options *IdentityUserFlowRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

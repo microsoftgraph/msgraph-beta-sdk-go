@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataClassification\exactMatchDataStores
+// ExactMatchDataStoresRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores
 type ExactMatchDataStoresRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExactMatchDataStoresRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExactMatchDataStoresRequestBuilderGetOptions options for Get
 type ExactMatchDataStoresRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ExactMatchDataStoresRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get exactMatchDataStores from dataClassification
+// ExactMatchDataStoresRequestBuilderGetQueryParameters get exactMatchDataStores from dataClassification
 type ExactMatchDataStoresRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ExactMatchDataStoresRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ExactMatchDataStoresRequestBuilderPostOptions options for Post
 type ExactMatchDataStoresRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchDataStore;
@@ -56,10 +56,7 @@ type ExactMatchDataStoresRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExactMatchDataStoresRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExactMatchDataStoresRequestBuilderInternal instantiates a new ExactMatchDataStoresRequestBuilder and sets the default values.
 func NewExactMatchDataStoresRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchDataStoresRequestBuilder) {
     m := &ExactMatchDataStoresRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewExactMatchDataStoresRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExactMatchDataStoresRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExactMatchDataStoresRequestBuilder instantiates a new ExactMatchDataStoresRequestBuilder and sets the default values.
 func NewExactMatchDataStoresRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchDataStoresRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchDataStoresRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get exactMatchDataStores from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get exactMatchDataStores from dataClassification
 func (m *ExactMatchDataStoresRequestBuilder) CreateGetRequestInformation(options *ExactMatchDataStoresRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ExactMatchDataStoresRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Create new navigation property to exactMatchDataStores for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to exactMatchDataStores for dataClassification
 func (m *ExactMatchDataStoresRequestBuilder) CreatePostRequestInformation(options *ExactMatchDataStoresRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ExactMatchDataStoresRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get exactMatchDataStores from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get exactMatchDataStores from dataClassification
 func (m *ExactMatchDataStoresRequestBuilder) Get(options *ExactMatchDataStoresRequestBuilderGetOptions)(*ExactMatchDataStoresResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ExactMatchDataStoresRequestBuilder) Get(options *ExactMatchDataStoresRe
     }
     return res.(*ExactMatchDataStoresResponse), nil
 }
-// Create new navigation property to exactMatchDataStores for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to exactMatchDataStores for dataClassification
 func (m *ExactMatchDataStoresRequestBuilder) Post(options *ExactMatchDataStoresRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchDataStore, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

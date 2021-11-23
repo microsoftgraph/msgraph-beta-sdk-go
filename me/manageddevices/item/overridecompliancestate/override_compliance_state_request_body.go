@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// OverrideComplianceStateRequestBody 
 type OverrideComplianceStateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type OverrideComplianceStateRequestBody struct {
     // 
     remediationUrl *string;
 }
-// Instantiates a new overrideComplianceStateRequestBody and sets the default values.
+// NewOverrideComplianceStateRequestBody instantiates a new overrideComplianceStateRequestBody and sets the default values.
 func NewOverrideComplianceStateRequestBody()(*OverrideComplianceStateRequestBody) {
     m := &OverrideComplianceStateRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OverrideComplianceStateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *OverrideComplianceStateRequestBody) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
-// Gets the complianceState property value. 
+// GetComplianceState gets the complianceState property value. 
 func (m *OverrideComplianceStateRequestBody) GetComplianceState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministratorConfiguredDeviceComplianceState) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *OverrideComplianceStateRequestBody) GetComplianceState()(*i535684e11b55
         return m.complianceState
     }
 }
-// Gets the remediationUrl property value. 
+// GetRemediationUrl gets the remediationUrl property value. 
 func (m *OverrideComplianceStateRequestBody) GetRemediationUrl()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *OverrideComplianceStateRequestBody) GetRemediationUrl()(*string) {
         return m.remediationUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OverrideComplianceStateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["complianceState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *OverrideComplianceStateRequestBody) GetFieldDeserializers()(map[string]
 func (m *OverrideComplianceStateRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OverrideComplianceStateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetComplianceState() != nil {
         cast := m.GetComplianceState().String()
@@ -99,21 +97,15 @@ func (m *OverrideComplianceStateRequestBody) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OverrideComplianceStateRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the complianceState property value. 
-// Parameters:
-//  - value : Value to set for the complianceState property.
+// SetComplianceState sets the complianceState property value. 
 func (m *OverrideComplianceStateRequestBody) SetComplianceState(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministratorConfiguredDeviceComplianceState)() {
     m.complianceState = value
 }
-// Sets the remediationUrl property value. 
-// Parameters:
-//  - value : Value to set for the remediationUrl property.
+// SetRemediationUrl sets the remediationUrl property value. 
 func (m *OverrideComplianceStateRequestBody) SetRemediationUrl(value *string)() {
     m.remediationUrl = value
 }

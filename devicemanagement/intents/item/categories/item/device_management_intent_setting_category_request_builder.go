@@ -8,7 +8,7 @@ import (
     ic0badc0b4b04a1bb99499349c8b314c126d2c085987633b9819ac2a473383b48 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/intents/item/categories/item/settings/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\categories\{deviceManagementIntentSettingCategory-id}
+// DeviceManagementIntentSettingCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\categories\{deviceManagementIntentSettingCategory-id}
 type DeviceManagementIntentSettingCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DeviceManagementIntentSettingCategoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementIntentSettingCategoryRequestBuilderDeleteOptions options for Delete
 type DeviceManagementIntentSettingCategoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementIntentSettingCategoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementIntentSettingCategoryRequestBuilderGetOptions options for Get
 type DeviceManagementIntentSettingCategoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DeviceManagementIntentSettingCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of setting categories within the intent
+// DeviceManagementIntentSettingCategoryRequestBuilderGetQueryParameters collection of setting categories within the intent
 type DeviceManagementIntentSettingCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementIntentSettingCategoryRequestBuilderPatchOptions options for Patch
 type DeviceManagementIntentSettingCategoryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentSettingCategory;
@@ -55,10 +55,7 @@ type DeviceManagementIntentSettingCategoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementIntentSettingCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementIntentSettingCategoryRequestBuilderInternal instantiates a new DeviceManagementIntentSettingCategoryRequestBuilder and sets the default values.
 func NewDeviceManagementIntentSettingCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementIntentSettingCategoryRequestBuilder) {
     m := &DeviceManagementIntentSettingCategoryRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewDeviceManagementIntentSettingCategoryRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementIntentSettingCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementIntentSettingCategoryRequestBuilder instantiates a new DeviceManagementIntentSettingCategoryRequestBuilder and sets the default values.
 func NewDeviceManagementIntentSettingCategoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementIntentSettingCategoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementIntentSettingCategoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of setting categories within the intent
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of setting categories within the intent
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementIntentSettingCategoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *DeviceManagementIntentSettingCategoryRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// Collection of setting categories within the intent
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of setting categories within the intent
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) CreateGetRequestInformation(options *DeviceManagementIntentSettingCategoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *DeviceManagementIntentSettingCategoryRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// Collection of setting categories within the intent
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of setting categories within the intent
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementIntentSettingCategoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *DeviceManagementIntentSettingCategoryRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// Collection of setting categories within the intent
-// Parameters:
-//  - options : Options for the request
+// Delete collection of setting categories within the intent
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Delete(options *DeviceManagementIntentSettingCategoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Delete(options *De
     }
     return nil
 }
-// Collection of setting categories within the intent
-// Parameters:
-//  - options : Options for the request
+// Get collection of setting categories within the intent
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Get(options *DeviceManagementIntentSettingCategoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentSettingCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Get(options *Devic
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentSettingCategory), nil
 }
-// Collection of setting categories within the intent
-// Parameters:
-//  - options : Options for the request
+// Patch collection of setting categories within the intent
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Patch(options *DeviceManagementIntentSettingCategoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Patch(options *Dev
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) Settings()(*i6f5ecbb50b3a23bb965dcb095c581105f1656c71fe958419afb828d4dd8faa3c.SettingsRequestBuilder) {
     return i6f5ecbb50b3a23bb965dcb095c581105f1656c71fe958419afb828d4dd8faa3c.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.categories.item.settings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.categories.item.settings.item collection
 func (m *DeviceManagementIntentSettingCategoryRequestBuilder) SettingsById(id string)(*ic0badc0b4b04a1bb99499349c8b314c126d2c085987633b9819ac2a473383b48.DeviceManagementSettingInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

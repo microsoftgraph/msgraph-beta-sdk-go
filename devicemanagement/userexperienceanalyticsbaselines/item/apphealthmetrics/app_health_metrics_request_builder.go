@@ -7,7 +7,7 @@ import (
     ibdf1c43d5ea6e0f16a86e9e396345cb7092f5b08aeb2b177bf56a773615849d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/apphealthmetrics/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\appHealthMetrics
+// AppHealthMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\appHealthMetrics
 type AppHealthMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AppHealthMetricsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppHealthMetricsRequestBuilderGetOptions options for Get
 type AppHealthMetricsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type AppHealthMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user experience analytics app health metrics.
+// AppHealthMetricsRequestBuilderGetQueryParameters the user experience analytics app health metrics.
 type AppHealthMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new AppHealthMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppHealthMetricsRequestBuilderInternal instantiates a new AppHealthMetricsRequestBuilder and sets the default values.
 func NewAppHealthMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppHealthMetricsRequestBuilder) {
     m := &AppHealthMetricsRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewAppHealthMetricsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppHealthMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppHealthMetricsRequestBuilder instantiates a new AppHealthMetricsRequestBuilder and sets the default values.
 func NewAppHealthMetricsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppHealthMetricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppHealthMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user experience analytics app health metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user experience analytics app health metrics.
 func (m *AppHealthMetricsRequestBuilder) CreateGetRequestInformation(options *AppHealthMetricsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *AppHealthMetricsRequestBuilder) CreateGetRequestInformation(options *Ap
     }
     return requestInfo, nil
 }
-// The user experience analytics app health metrics.
-// Parameters:
-//  - options : Options for the request
+// Get the user experience analytics app health metrics.
 func (m *AppHealthMetricsRequestBuilder) Get(options *AppHealthMetricsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

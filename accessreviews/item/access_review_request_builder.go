@@ -18,7 +18,7 @@ import (
     ia4fff597adb182643edeeb0e0ef392b36f38b279436254fb6004441a7cc386e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/mydecisions/item"
 )
 
-// Builds and executes requests for operations under \accessReviews\{accessReview-id}
+// AccessReviewRequestBuilder builds and executes requests for operations under \accessReviews\{accessReview-id}
 type AccessReviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AccessReviewRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessReviewRequestBuilderDeleteOptions options for Delete
 type AccessReviewRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -36,7 +36,7 @@ type AccessReviewRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessReviewRequestBuilderGetOptions options for Get
 type AccessReviewRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -47,14 +47,14 @@ type AccessReviewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from accessReviews by key
+// AccessReviewRequestBuilderGetQueryParameters get entity from accessReviews by key
 type AccessReviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessReviewRequestBuilderPatchOptions options for Patch
 type AccessReviewRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReview;
@@ -68,10 +68,7 @@ type AccessReviewRequestBuilderPatchOptions struct {
 func (m *AccessReviewRequestBuilder) ApplyDecisions()(*i925eb082010f3d3144e37628501079bf5f355da9fe37d9a4fefdf1a66160bec6.ApplyDecisionsRequestBuilder) {
     return i925eb082010f3d3144e37628501079bf5f355da9fe37d9a4fefdf1a66160bec6.NewApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AccessReviewRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewRequestBuilderInternal instantiates a new AccessReviewRequestBuilder and sets the default values.
 func NewAccessReviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewRequestBuilder) {
     m := &AccessReviewRequestBuilder{
     }
@@ -84,18 +81,13 @@ func NewAccessReviewRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessReviewRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewRequestBuilder instantiates a new AccessReviewRequestBuilder and sets the default values.
 func NewAccessReviewRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from accessReviews
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from accessReviews
 func (m *AccessReviewRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,9 +104,7 @@ func (m *AccessReviewRequestBuilder) CreateDeleteRequestInformation(options *Acc
     }
     return requestInfo, nil
 }
-// Get entity from accessReviews by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from accessReviews by key
 func (m *AccessReviewRequestBuilder) CreateGetRequestInformation(options *AccessReviewRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,9 +124,7 @@ func (m *AccessReviewRequestBuilder) CreateGetRequestInformation(options *Access
     }
     return requestInfo, nil
 }
-// Update entity in accessReviews
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in accessReviews
 func (m *AccessReviewRequestBuilder) CreatePatchRequestInformation(options *AccessReviewRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +145,7 @@ func (m *AccessReviewRequestBuilder) CreatePatchRequestInformation(options *Acce
 func (m *AccessReviewRequestBuilder) Decisions()(*ib639ae13590f5066540e44d9644ba6417e9c8d059dd2ed39c9d2f8a77498b365.DecisionsRequestBuilder) {
     return ib639ae13590f5066540e44d9644ba6417e9c8d059dd2ed39c9d2f8a77498b365.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.decisions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.decisions.item collection
 func (m *AccessReviewRequestBuilder) DecisionsById(id string)(*i674dbad02771f1ef76ff9b64c61a2d6be676fe415bb8516739597b979e68b51c.AccessReviewDecisionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -170,9 +156,7 @@ func (m *AccessReviewRequestBuilder) DecisionsById(id string)(*i674dbad02771f1ef
     }
     return i674dbad02771f1ef76ff9b64c61a2d6be676fe415bb8516739597b979e68b51c.NewAccessReviewDecisionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete entity from accessReviews
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from accessReviews
 func (m *AccessReviewRequestBuilder) Delete(options *AccessReviewRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *AccessReviewRequestBuilder) Delete(options *AccessReviewRequestBuilderD
     }
     return nil
 }
-// Get entity from accessReviews by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from accessReviews by key
 func (m *AccessReviewRequestBuilder) Get(options *AccessReviewRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReview, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -201,9 +183,7 @@ func (m *AccessReviewRequestBuilder) Get(options *AccessReviewRequestBuilderGetO
 func (m *AccessReviewRequestBuilder) Instances()(*ia35d22e7f0ea8d709ef1663feab561faae5adc5bcc2afe304389ef4bae030021.InstancesRequestBuilder) {
     return ia35d22e7f0ea8d709ef1663feab561faae5adc5bcc2afe304389ef4bae030021.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.instances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// InstancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.instances.item collection
 func (m *AccessReviewRequestBuilder) InstancesById(id string)(*i705becb6109e853394ffaa8ec9b9d2ca9bbc3f2d29dd2d667c6d76b0ba676d1c.AccessReviewRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -217,9 +197,7 @@ func (m *AccessReviewRequestBuilder) InstancesById(id string)(*i705becb6109e8533
 func (m *AccessReviewRequestBuilder) MyDecisions()(*i104e81d59a18f4dfbeba211da9c23eb66a86bb3c0eb75b4a45999a45d1eb3e70.MyDecisionsRequestBuilder) {
     return i104e81d59a18f4dfbeba211da9c23eb66a86bb3c0eb75b4a45999a45d1eb3e70.NewMyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.myDecisions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MyDecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.myDecisions.item collection
 func (m *AccessReviewRequestBuilder) MyDecisionsById(id string)(*ia4fff597adb182643edeeb0e0ef392b36f38b279436254fb6004441a7cc386e4.AccessReviewDecisionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -230,9 +208,7 @@ func (m *AccessReviewRequestBuilder) MyDecisionsById(id string)(*ia4fff597adb182
     }
     return ia4fff597adb182643edeeb0e0ef392b36f38b279436254fb6004441a7cc386e4.NewAccessReviewDecisionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update entity in accessReviews
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in accessReviews
 func (m *AccessReviewRequestBuilder) Patch(options *AccessReviewRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -250,9 +226,7 @@ func (m *AccessReviewRequestBuilder) ResetDecisions()(*i82bb32bf1dad608f8fc8a4d1
 func (m *AccessReviewRequestBuilder) Reviewers()(*i1154d187957e7be461e0c1c2dc6e93905e63254a5e74becc376782f3efc12e92.ReviewersRequestBuilder) {
     return i1154d187957e7be461e0c1c2dc6e93905e63254a5e74becc376782f3efc12e92.NewReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.reviewers.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ReviewersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.reviewers.item collection
 func (m *AccessReviewRequestBuilder) ReviewersById(id string)(*i9a1acb52dae713764d01984787eec0e51b4aaa96f162a6a5f7316ada71c7758b.AccessReviewReviewerRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

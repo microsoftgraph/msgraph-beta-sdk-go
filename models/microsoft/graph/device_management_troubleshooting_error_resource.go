@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceManagementTroubleshootingErrorResource 
 type DeviceManagementTroubleshootingErrorResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type DeviceManagementTroubleshootingErrorResource struct {
     // Not yet documented
     text *string;
 }
-// Instantiates a new deviceManagementTroubleshootingErrorResource and sets the default values.
+// NewDeviceManagementTroubleshootingErrorResource instantiates a new deviceManagementTroubleshootingErrorResource and sets the default values.
 func NewDeviceManagementTroubleshootingErrorResource()(*DeviceManagementTroubleshootingErrorResource) {
     m := &DeviceManagementTroubleshootingErrorResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorResource) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetAdditionalData()(map[s
         return m.additionalData
     }
 }
-// Gets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
+// GetLink gets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
 func (m *DeviceManagementTroubleshootingErrorResource) GetLink()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetLink()(*string) {
         return m.link
     }
 }
-// Gets the text property value. Not yet documented
+// GetText gets the text property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorResource) GetText()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetText()(*string) {
         return m.text
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["link"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(m
 func (m *DeviceManagementTroubleshootingErrorResource) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingErrorResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("link", m.GetLink())
@@ -96,21 +94,15 @@ func (m *DeviceManagementTroubleshootingErrorResource) Serialize(writer i04eb530
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorResource) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-// Parameters:
-//  - value : Value to set for the link property.
+// SetLink sets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
 func (m *DeviceManagementTroubleshootingErrorResource) SetLink(value *string)() {
     m.link = value
 }
-// Sets the text property value. Not yet documented
-// Parameters:
-//  - value : Value to set for the text property.
+// SetText sets the text property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorResource) SetText(value *string)() {
     m.text = value
 }

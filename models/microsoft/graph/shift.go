@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Shift 
 type Shift struct {
     ChangeTrackedEntity
     // The draft version of this shift that is viewable by managers. Required.
@@ -18,14 +18,14 @@ type Shift struct {
     // ID of the user assigned to the shift. Required.
     userId *string;
 }
-// Instantiates a new shift and sets the default values.
+// NewShift instantiates a new shift and sets the default values.
 func NewShift()(*Shift) {
     m := &Shift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
     return m
 }
-// Gets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
+// GetDraftShift gets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
 func (m *Shift) GetDraftShift()(*ShiftItem) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *Shift) GetDraftShift()(*ShiftItem) {
         return m.draftShift
     }
 }
-// Gets the isStagedForDeletion property value. 
+// GetIsStagedForDeletion gets the isStagedForDeletion property value. 
 func (m *Shift) GetIsStagedForDeletion()(*bool) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *Shift) GetIsStagedForDeletion()(*bool) {
         return m.isStagedForDeletion
     }
 }
-// Gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
+// GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) GetSchedulingGroupId()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *Shift) GetSchedulingGroupId()(*string) {
         return m.schedulingGroupId
     }
 }
-// Gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
+// GetSharedShift gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) GetSharedShift()(*ShiftItem) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *Shift) GetSharedShift()(*ShiftItem) {
         return m.sharedShift
     }
 }
-// Gets the userId property value. ID of the user assigned to the shift. Required.
+// GetUserId gets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *Shift) GetUserId()(*string) {
         return m.userId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Shift) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["draftShift"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,9 +123,7 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Shift) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Shift) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ChangeTrackedEntity.Serialize(writer)
     if err != nil {
@@ -163,33 +161,23 @@ func (m *Shift) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// Sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
-// Parameters:
-//  - value : Value to set for the draftShift property.
+// SetDraftShift sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
 func (m *Shift) SetDraftShift(value *ShiftItem)() {
     m.draftShift = value
 }
-// Sets the isStagedForDeletion property value. 
-// Parameters:
-//  - value : Value to set for the isStagedForDeletion property.
+// SetIsStagedForDeletion sets the isStagedForDeletion property value. 
 func (m *Shift) SetIsStagedForDeletion(value *bool)() {
     m.isStagedForDeletion = value
 }
-// Sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
-// Parameters:
-//  - value : Value to set for the schedulingGroupId property.
+// SetSchedulingGroupId sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) SetSchedulingGroupId(value *string)() {
     m.schedulingGroupId = value
 }
-// Sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
-// Parameters:
-//  - value : Value to set for the sharedShift property.
+// SetSharedShift sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) SetSharedShift(value *ShiftItem)() {
     m.sharedShift = value
 }
-// Sets the userId property value. ID of the user assigned to the shift. Required.
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) SetUserId(value *string)() {
     m.userId = value
 }

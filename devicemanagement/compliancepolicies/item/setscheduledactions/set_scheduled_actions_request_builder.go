@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\microsoft.graph.setScheduledActions
+// SetScheduledActionsRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\microsoft.graph.setScheduledActions
 type SetScheduledActionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type SetScheduledActionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SetScheduledActionsRequestBuilderPostOptions options for Post
 type SetScheduledActionsRequestBuilderPostOptions struct {
     // 
     Body *SetScheduledActionsRequestBody;
@@ -25,10 +25,7 @@ type SetScheduledActionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SetScheduledActionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetScheduledActionsRequestBuilderInternal instantiates a new SetScheduledActionsRequestBuilder and sets the default values.
 func NewSetScheduledActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetScheduledActionsRequestBuilder) {
     m := &SetScheduledActionsRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewSetScheduledActionsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SetScheduledActionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetScheduledActionsRequestBuilder instantiates a new SetScheduledActionsRequestBuilder and sets the default values.
 func NewSetScheduledActionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetScheduledActionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSetScheduledActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action setScheduledActions
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action setScheduledActions
 func (m *SetScheduledActionsRequestBuilder) CreatePostRequestInformation(options *SetScheduledActionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *SetScheduledActionsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Invoke action setScheduledActions
-// Parameters:
-//  - options : Options for the request
+// Post invoke action setScheduledActions
 func (m *SetScheduledActionsRequestBuilder) Post(options *SetScheduledActionsRequestBuilderPostOptions)([]SetScheduledActions, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

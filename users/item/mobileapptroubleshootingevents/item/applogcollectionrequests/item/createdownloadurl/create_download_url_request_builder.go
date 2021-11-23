@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests\{appLogCollectionRequest-id}\microsoft.graph.createDownloadUrl
+// CreateDownloadUrlRequestBuilder builds and executes requests for operations under \users\{user-id}\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests\{appLogCollectionRequest-id}\microsoft.graph.createDownloadUrl
 type CreateDownloadUrlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CreateDownloadUrlRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CreateDownloadUrlRequestBuilderPostOptions options for Post
 type CreateDownloadUrlRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type CreateDownloadUrlRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes appLogCollectionDownloadDetails
+// CreateDownloadUrlResponse union type wrapper for classes appLogCollectionDownloadDetails
 type CreateDownloadUrlResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type appLogCollectionDownloadDetails
     appLogCollectionDownloadDetails *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetails;
 }
-// Instantiates a new createDownloadUrlResponse and sets the default values.
+// NewCreateDownloadUrlResponse instantiates a new createDownloadUrlResponse and sets the default values.
 func NewCreateDownloadUrlResponse()(*CreateDownloadUrlResponse) {
     m := &CreateDownloadUrlResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateDownloadUrlResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *CreateDownloadUrlResponse) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// Gets the appLogCollectionDownloadDetails property value. Union type representation for type appLogCollectionDownloadDetails
+// GetAppLogCollectionDownloadDetails gets the appLogCollectionDownloadDetails property value. Union type representation for type appLogCollectionDownloadDetails
 func (m *CreateDownloadUrlResponse) GetAppLogCollectionDownloadDetails()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetails) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *CreateDownloadUrlResponse) GetAppLogCollectionDownloadDetails()(*i53568
         return m.appLogCollectionDownloadDetails
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CreateDownloadUrlResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["appLogCollectionDownloadDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *CreateDownloadUrlResponse) GetFieldDeserializers()(map[string]func(inte
 func (m *CreateDownloadUrlResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CreateDownloadUrlResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("appLogCollectionDownloadDetails", m.GetAppLogCollectionDownloadDetails())
@@ -90,22 +88,15 @@ func (m *CreateDownloadUrlResponse) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateDownloadUrlResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the appLogCollectionDownloadDetails property value. Union type representation for type appLogCollectionDownloadDetails
-// Parameters:
-//  - value : Value to set for the appLogCollectionDownloadDetails property.
+// SetAppLogCollectionDownloadDetails sets the appLogCollectionDownloadDetails property value. Union type representation for type appLogCollectionDownloadDetails
 func (m *CreateDownloadUrlResponse) SetAppLogCollectionDownloadDetails(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetails)() {
     m.appLogCollectionDownloadDetails = value
 }
-// Instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateDownloadUrlRequestBuilderInternal instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
 func NewCreateDownloadUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateDownloadUrlRequestBuilder) {
     m := &CreateDownloadUrlRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewCreateDownloadUrlRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateDownloadUrlRequestBuilder instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
 func NewCreateDownloadUrlRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateDownloadUrlRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreateDownloadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action createDownloadUrl
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action createDownloadUrl
 func (m *CreateDownloadUrlRequestBuilder) CreatePostRequestInformation(options *CreateDownloadUrlRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *CreateDownloadUrlRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Invoke action createDownloadUrl
-// Parameters:
-//  - options : Options for the request
+// Post invoke action createDownloadUrl
 func (m *CreateDownloadUrlRequestBuilder) Post(options *CreateDownloadUrlRequestBuilderPostOptions)(*CreateDownloadUrlResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

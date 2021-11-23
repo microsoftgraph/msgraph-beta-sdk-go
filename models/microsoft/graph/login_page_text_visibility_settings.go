@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// LoginPageTextVisibilitySettings 
 type LoginPageTextVisibilitySettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type LoginPageTextVisibilitySettings struct {
     // 
     hideTermsOfUse *bool;
 }
-// Instantiates a new loginPageTextVisibilitySettings and sets the default values.
+// NewLoginPageTextVisibilitySettings instantiates a new loginPageTextVisibilitySettings and sets the default values.
 func NewLoginPageTextVisibilitySettings()(*LoginPageTextVisibilitySettings) {
     m := &LoginPageTextVisibilitySettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LoginPageTextVisibilitySettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *LoginPageTextVisibilitySettings) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// Gets the hideCannotAccessYourAccount property value. 
+// GetHideCannotAccessYourAccount gets the hideCannotAccessYourAccount property value. 
 func (m *LoginPageTextVisibilitySettings) GetHideCannotAccessYourAccount()(*bool) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideCannotAccessYourAccount()(*bool
         return m.hideCannotAccessYourAccount
     }
 }
-// Gets the hideForgotMyPassword property value. 
+// GetHideForgotMyPassword gets the hideForgotMyPassword property value. 
 func (m *LoginPageTextVisibilitySettings) GetHideForgotMyPassword()(*bool) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideForgotMyPassword()(*bool) {
         return m.hideForgotMyPassword
     }
 }
-// Gets the hidePrivacyAndCookies property value. 
+// GetHidePrivacyAndCookies gets the hidePrivacyAndCookies property value. 
 func (m *LoginPageTextVisibilitySettings) GetHidePrivacyAndCookies()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *LoginPageTextVisibilitySettings) GetHidePrivacyAndCookies()(*bool) {
         return m.hidePrivacyAndCookies
     }
 }
-// Gets the hideResetItNow property value. 
+// GetHideResetItNow gets the hideResetItNow property value. 
 func (m *LoginPageTextVisibilitySettings) GetHideResetItNow()(*bool) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideResetItNow()(*bool) {
         return m.hideResetItNow
     }
 }
-// Gets the hideTermsOfUse property value. 
+// GetHideTermsOfUse gets the hideTermsOfUse property value. 
 func (m *LoginPageTextVisibilitySettings) GetHideTermsOfUse()(*bool) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideTermsOfUse()(*bool) {
         return m.hideTermsOfUse
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["hideCannotAccessYourAccount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
 func (m *LoginPageTextVisibilitySettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *LoginPageTextVisibilitySettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("hideCannotAccessYourAccount", m.GetHideCannotAccessYourAccount())
@@ -174,39 +172,27 @@ func (m *LoginPageTextVisibilitySettings) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LoginPageTextVisibilitySettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the hideCannotAccessYourAccount property value. 
-// Parameters:
-//  - value : Value to set for the hideCannotAccessYourAccount property.
+// SetHideCannotAccessYourAccount sets the hideCannotAccessYourAccount property value. 
 func (m *LoginPageTextVisibilitySettings) SetHideCannotAccessYourAccount(value *bool)() {
     m.hideCannotAccessYourAccount = value
 }
-// Sets the hideForgotMyPassword property value. 
-// Parameters:
-//  - value : Value to set for the hideForgotMyPassword property.
+// SetHideForgotMyPassword sets the hideForgotMyPassword property value. 
 func (m *LoginPageTextVisibilitySettings) SetHideForgotMyPassword(value *bool)() {
     m.hideForgotMyPassword = value
 }
-// Sets the hidePrivacyAndCookies property value. 
-// Parameters:
-//  - value : Value to set for the hidePrivacyAndCookies property.
+// SetHidePrivacyAndCookies sets the hidePrivacyAndCookies property value. 
 func (m *LoginPageTextVisibilitySettings) SetHidePrivacyAndCookies(value *bool)() {
     m.hidePrivacyAndCookies = value
 }
-// Sets the hideResetItNow property value. 
-// Parameters:
-//  - value : Value to set for the hideResetItNow property.
+// SetHideResetItNow sets the hideResetItNow property value. 
 func (m *LoginPageTextVisibilitySettings) SetHideResetItNow(value *bool)() {
     m.hideResetItNow = value
 }
-// Sets the hideTermsOfUse property value. 
-// Parameters:
-//  - value : Value to set for the hideTermsOfUse property.
+// SetHideTermsOfUse sets the hideTermsOfUse property value. 
 func (m *LoginPageTextVisibilitySettings) SetHideTermsOfUse(value *bool)() {
     m.hideTermsOfUse = value
 }

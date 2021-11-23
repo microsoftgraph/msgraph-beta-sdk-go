@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\publications\{itemPublication-id}
+// ItemPublicationRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\publications\{itemPublication-id}
 type ItemPublicationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ItemPublicationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ItemPublicationRequestBuilderDeleteOptions options for Delete
 type ItemPublicationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ItemPublicationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ItemPublicationRequestBuilderGetOptions options for Get
 type ItemPublicationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ItemPublicationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents details of any publications a user has added to their profile.
+// ItemPublicationRequestBuilderGetQueryParameters represents details of any publications a user has added to their profile.
 type ItemPublicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ItemPublicationRequestBuilderPatchOptions options for Patch
 type ItemPublicationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPublication;
@@ -53,10 +53,7 @@ type ItemPublicationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ItemPublicationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemPublicationRequestBuilderInternal instantiates a new ItemPublicationRequestBuilder and sets the default values.
 func NewItemPublicationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemPublicationRequestBuilder) {
     m := &ItemPublicationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewItemPublicationRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ItemPublicationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemPublicationRequestBuilder instantiates a new ItemPublicationRequestBuilder and sets the default values.
 func NewItemPublicationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemPublicationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPublicationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents details of any publications a user has added to their profile.
 func (m *ItemPublicationRequestBuilder) CreateDeleteRequestInformation(options *ItemPublicationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ItemPublicationRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents details of any publications a user has added to their profile.
 func (m *ItemPublicationRequestBuilder) CreateGetRequestInformation(options *ItemPublicationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ItemPublicationRequestBuilder) CreateGetRequestInformation(options *Ite
     }
     return requestInfo, nil
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents details of any publications a user has added to their profile.
 func (m *ItemPublicationRequestBuilder) CreatePatchRequestInformation(options *ItemPublicationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ItemPublicationRequestBuilder) CreatePatchRequestInformation(options *I
     }
     return requestInfo, nil
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Delete represents details of any publications a user has added to their profile.
 func (m *ItemPublicationRequestBuilder) Delete(options *ItemPublicationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ItemPublicationRequestBuilder) Delete(options *ItemPublicationRequestBu
     }
     return nil
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents details of any publications a user has added to their profile.
 func (m *ItemPublicationRequestBuilder) Get(options *ItemPublicationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPublication, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ItemPublicationRequestBuilder) Get(options *ItemPublicationRequestBuild
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPublication), nil
 }
-// Represents details of any publications a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Patch represents details of any publications a user has added to their profile.
 func (m *ItemPublicationRequestBuilder) Patch(options *ItemPublicationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

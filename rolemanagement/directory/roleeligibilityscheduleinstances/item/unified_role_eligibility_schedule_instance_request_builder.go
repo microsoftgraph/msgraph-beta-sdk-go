@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleInstances\{unifiedRoleEligibilityScheduleInstance-id}
+// UnifiedRoleEligibilityScheduleInstanceRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleInstances\{unifiedRoleEligibilityScheduleInstance-id}
 type UnifiedRoleEligibilityScheduleInstanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UnifiedRoleEligibilityScheduleInstanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedRoleEligibilityScheduleInstanceRequestBuilderDeleteOptions options for Delete
 type UnifiedRoleEligibilityScheduleInstanceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UnifiedRoleEligibilityScheduleInstanceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedRoleEligibilityScheduleInstanceRequestBuilderGetOptions options for Get
 type UnifiedRoleEligibilityScheduleInstanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UnifiedRoleEligibilityScheduleInstanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get roleEligibilityScheduleInstances from roleManagement
+// UnifiedRoleEligibilityScheduleInstanceRequestBuilderGetQueryParameters get roleEligibilityScheduleInstances from roleManagement
 type UnifiedRoleEligibilityScheduleInstanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedRoleEligibilityScheduleInstanceRequestBuilderPatchOptions options for Patch
 type UnifiedRoleEligibilityScheduleInstanceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleEligibilityScheduleInstance;
@@ -53,10 +53,7 @@ type UnifiedRoleEligibilityScheduleInstanceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnifiedRoleEligibilityScheduleInstanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleEligibilityScheduleInstanceRequestBuilderInternal instantiates a new UnifiedRoleEligibilityScheduleInstanceRequestBuilder and sets the default values.
 func NewUnifiedRoleEligibilityScheduleInstanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleEligibilityScheduleInstanceRequestBuilder) {
     m := &UnifiedRoleEligibilityScheduleInstanceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUnifiedRoleEligibilityScheduleInstanceRequestBuilderInternal(pathParamet
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedRoleEligibilityScheduleInstanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleEligibilityScheduleInstanceRequestBuilder instantiates a new UnifiedRoleEligibilityScheduleInstanceRequestBuilder and sets the default values.
 func NewUnifiedRoleEligibilityScheduleInstanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleEligibilityScheduleInstanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleEligibilityScheduleInstanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property roleEligibilityScheduleInstances for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property roleEligibilityScheduleInstances for roleManagement
 func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleEligibilityScheduleInstanceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// Get roleEligibilityScheduleInstances from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get roleEligibilityScheduleInstances from roleManagement
 func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) CreateGetRequestInformation(options *UnifiedRoleEligibilityScheduleInstanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// Update the navigation property roleEligibilityScheduleInstances in roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property roleEligibilityScheduleInstances in roleManagement
 func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleEligibilityScheduleInstanceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// Delete navigation property roleEligibilityScheduleInstances for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property roleEligibilityScheduleInstances for roleManagement
 func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) Delete(options *UnifiedRoleEligibilityScheduleInstanceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) Delete(options *U
     }
     return nil
 }
-// Get roleEligibilityScheduleInstances from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get roleEligibilityScheduleInstances from roleManagement
 func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) Get(options *UnifiedRoleEligibilityScheduleInstanceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleEligibilityScheduleInstance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) Get(options *Unif
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleEligibilityScheduleInstance), nil
 }
-// Update the navigation property roleEligibilityScheduleInstances in roleManagement
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property roleEligibilityScheduleInstances in roleManagement
 func (m *UnifiedRoleEligibilityScheduleInstanceRequestBuilder) Patch(options *UnifiedRoleEligibilityScheduleInstanceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

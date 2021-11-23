@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \informationProtection\policy\labels\microsoft.graph.extractLabel
+// ExtractLabelRequestBuilder builds and executes requests for operations under \informationProtection\policy\labels\microsoft.graph.extractLabel
 type ExtractLabelRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExtractLabelRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ExtractLabelRequestBuilderPostOptions options for Post
 type ExtractLabelRequestBuilderPostOptions struct {
     // 
     Body *ExtractLabelRequestBody;
@@ -26,21 +26,21 @@ type ExtractLabelRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes informationProtectionContentLabel
+// ExtractLabelResponse union type wrapper for classes informationProtectionContentLabel
 type ExtractLabelResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type informationProtectionContentLabel
     informationProtectionContentLabel *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionContentLabel;
 }
-// Instantiates a new extractLabelResponse and sets the default values.
+// NewExtractLabelResponse instantiates a new extractLabelResponse and sets the default values.
 func NewExtractLabelResponse()(*ExtractLabelResponse) {
     m := &ExtractLabelResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExtractLabelResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ExtractLabelResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the informationProtectionContentLabel property value. Union type representation for type informationProtectionContentLabel
+// GetInformationProtectionContentLabel gets the informationProtectionContentLabel property value. Union type representation for type informationProtectionContentLabel
 func (m *ExtractLabelResponse) GetInformationProtectionContentLabel()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionContentLabel) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ExtractLabelResponse) GetInformationProtectionContentLabel()(*i535684e1
         return m.informationProtectionContentLabel
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExtractLabelResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["informationProtectionContentLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *ExtractLabelResponse) GetFieldDeserializers()(map[string]func(interface
 func (m *ExtractLabelResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExtractLabelResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("informationProtectionContentLabel", m.GetInformationProtectionContentLabel())
@@ -92,22 +90,15 @@ func (m *ExtractLabelResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExtractLabelResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the informationProtectionContentLabel property value. Union type representation for type informationProtectionContentLabel
-// Parameters:
-//  - value : Value to set for the informationProtectionContentLabel property.
+// SetInformationProtectionContentLabel sets the informationProtectionContentLabel property value. Union type representation for type informationProtectionContentLabel
 func (m *ExtractLabelResponse) SetInformationProtectionContentLabel(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionContentLabel)() {
     m.informationProtectionContentLabel = value
 }
-// Instantiates a new ExtractLabelRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtractLabelRequestBuilderInternal instantiates a new ExtractLabelRequestBuilder and sets the default values.
 func NewExtractLabelRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtractLabelRequestBuilder) {
     m := &ExtractLabelRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewExtractLabelRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExtractLabelRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtractLabelRequestBuilder instantiates a new ExtractLabelRequestBuilder and sets the default values.
 func NewExtractLabelRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtractLabelRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExtractLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action extractLabel
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action extractLabel
 func (m *ExtractLabelRequestBuilder) CreatePostRequestInformation(options *ExtractLabelRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *ExtractLabelRequestBuilder) CreatePostRequestInformation(options *Extra
     }
     return requestInfo, nil
 }
-// Invoke action extractLabel
-// Parameters:
-//  - options : Options for the request
+// Post invoke action extractLabel
 func (m *ExtractLabelRequestBuilder) Post(options *ExtractLabelRequestBuilderPostOptions)(*ExtractLabelResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

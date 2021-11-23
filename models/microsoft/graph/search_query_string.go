@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SearchQueryString 
 type SearchQueryString struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Contains the actual search terms of the request.
     query *string;
 }
-// Instantiates a new searchQueryString and sets the default values.
+// NewSearchQueryString instantiates a new searchQueryString and sets the default values.
 func NewSearchQueryString()(*SearchQueryString) {
     m := &SearchQueryString{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchQueryString) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *SearchQueryString) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the query property value. Contains the actual search terms of the request.
+// GetQuery gets the query property value. Contains the actual search terms of the request.
 func (m *SearchQueryString) GetQuery()(*string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *SearchQueryString) GetQuery()(*string) {
         return m.query
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SearchQueryString) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["query"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,9 +52,7 @@ func (m *SearchQueryString) GetFieldDeserializers()(map[string]func(interface{},
 func (m *SearchQueryString) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SearchQueryString) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("query", m.GetQuery())
@@ -70,15 +68,11 @@ func (m *SearchQueryString) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchQueryString) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the query property value. Contains the actual search terms of the request.
-// Parameters:
-//  - value : Value to set for the query property.
+// SetQuery sets the query property value. Contains the actual search terms of the request.
 func (m *SearchQueryString) SetQuery(value *string)() {
     m.query = value
 }

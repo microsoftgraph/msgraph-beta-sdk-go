@@ -9,7 +9,7 @@ import (
     ia8798dbf43801d2aed7bc1af6c6151eba951b020eb6583ac3cce31a2a853d3ba "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/noncustodialdatasources/item/datasource"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources\{noncustodialDataSource-id}
+// NoncustodialDataSourceRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources\{noncustodialDataSource-id}
 type NoncustodialDataSourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type NoncustodialDataSourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// NoncustodialDataSourceRequestBuilderDeleteOptions options for Delete
 type NoncustodialDataSourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type NoncustodialDataSourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// NoncustodialDataSourceRequestBuilderGetOptions options for Get
 type NoncustodialDataSourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type NoncustodialDataSourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+// NoncustodialDataSourceRequestBuilderGetQueryParameters returns a list of case noncustodialDataSource objects for this case.  Nullable.
 type NoncustodialDataSourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// NoncustodialDataSourceRequestBuilderPatchOptions options for Patch
 type NoncustodialDataSourceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NoncustodialDataSource;
@@ -56,10 +56,7 @@ type NoncustodialDataSourceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NoncustodialDataSourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNoncustodialDataSourceRequestBuilderInternal instantiates a new NoncustodialDataSourceRequestBuilder and sets the default values.
 func NewNoncustodialDataSourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NoncustodialDataSourceRequestBuilder) {
     m := &NoncustodialDataSourceRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewNoncustodialDataSourceRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NoncustodialDataSourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNoncustodialDataSourceRequestBuilder instantiates a new NoncustodialDataSourceRequestBuilder and sets the default values.
 func NewNoncustodialDataSourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NoncustodialDataSourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNoncustodialDataSourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *NoncustodialDataSourceRequestBuilder) CreateDeleteRequestInformation(options *NoncustodialDataSourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *NoncustodialDataSourceRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *NoncustodialDataSourceRequestBuilder) CreateGetRequestInformation(options *NoncustodialDataSourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *NoncustodialDataSourceRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *NoncustodialDataSourceRequestBuilder) CreatePatchRequestInformation(options *NoncustodialDataSourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *NoncustodialDataSourceRequestBuilder) CreatePatchRequestInformation(opt
 func (m *NoncustodialDataSourceRequestBuilder) DataSource()(*ia8798dbf43801d2aed7bc1af6c6151eba951b020eb6583ac3cce31a2a853d3ba.DataSourceRequestBuilder) {
     return ia8798dbf43801d2aed7bc1af6c6151eba951b020eb6583ac3cce31a2a853d3ba.NewDataSourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *NoncustodialDataSourceRequestBuilder) Delete(options *NoncustodialDataSourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -159,9 +145,7 @@ func (m *NoncustodialDataSourceRequestBuilder) Delete(options *NoncustodialDataS
     }
     return nil
 }
-// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *NoncustodialDataSourceRequestBuilder) Get(options *NoncustodialDataSourceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NoncustodialDataSource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *NoncustodialDataSourceRequestBuilder) Get(options *NoncustodialDataSour
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NoncustodialDataSource), nil
 }
-// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *NoncustodialDataSourceRequestBuilder) Patch(options *NoncustodialDataSourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

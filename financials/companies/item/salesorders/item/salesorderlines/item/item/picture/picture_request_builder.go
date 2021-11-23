@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}\salesOrderLines\{salesOrderLine-id}\item\picture
+// PictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}\salesOrderLines\{salesOrderLine-id}\item\picture
 type PictureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PictureRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PictureRequestBuilderGetOptions options for Get
 type PictureRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PictureRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get picture from financials
+// PictureRequestBuilderGetQueryParameters get picture from financials
 type PictureRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PictureRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PictureRequestBuilderPostOptions options for Post
 type PictureRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Picture;
@@ -56,10 +56,7 @@ type PictureRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PictureRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPictureRequestBuilderInternal instantiates a new PictureRequestBuilder and sets the default values.
 func NewPictureRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PictureRequestBuilder) {
     m := &PictureRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPictureRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PictureRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPictureRequestBuilder instantiates a new PictureRequestBuilder and sets the default values.
 func NewPictureRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PictureRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPictureRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get picture from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get picture from financials
 func (m *PictureRequestBuilder) CreateGetRequestInformation(options *PictureRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PictureRequestBuilder) CreateGetRequestInformation(options *PictureRequ
     }
     return requestInfo, nil
 }
-// Create new navigation property to picture for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to picture for financials
 func (m *PictureRequestBuilder) CreatePostRequestInformation(options *PictureRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PictureRequestBuilder) CreatePostRequestInformation(options *PictureReq
     }
     return requestInfo, nil
 }
-// Get picture from financials
-// Parameters:
-//  - options : Options for the request
+// Get get picture from financials
 func (m *PictureRequestBuilder) Get(options *PictureRequestBuilderGetOptions)(*PictureResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PictureRequestBuilder) Get(options *PictureRequestBuilderGetOptions)(*P
     }
     return res.(*PictureResponse), nil
 }
-// Create new navigation property to picture for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to picture for financials
 func (m *PictureRequestBuilder) Post(options *PictureRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Picture, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PrivateLinkDetails 
 type PrivateLinkDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type PrivateLinkDetails struct {
     // 
     resourceId *string;
 }
-// Instantiates a new privateLinkDetails and sets the default values.
+// NewPrivateLinkDetails instantiates a new privateLinkDetails and sets the default values.
 func NewPrivateLinkDetails()(*PrivateLinkDetails) {
     m := &PrivateLinkDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivateLinkDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *PrivateLinkDetails) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the policyId property value. 
+// GetPolicyId gets the policyId property value. 
 func (m *PrivateLinkDetails) GetPolicyId()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *PrivateLinkDetails) GetPolicyId()(*string) {
         return m.policyId
     }
 }
-// Gets the policyName property value. 
+// GetPolicyName gets the policyName property value. 
 func (m *PrivateLinkDetails) GetPolicyName()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *PrivateLinkDetails) GetPolicyName()(*string) {
         return m.policyName
     }
 }
-// Gets the policyTenantId property value. 
+// GetPolicyTenantId gets the policyTenantId property value. 
 func (m *PrivateLinkDetails) GetPolicyTenantId()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *PrivateLinkDetails) GetPolicyTenantId()(*string) {
         return m.policyTenantId
     }
 }
-// Gets the resourceId property value. 
+// GetResourceId gets the resourceId property value. 
 func (m *PrivateLinkDetails) GetResourceId()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *PrivateLinkDetails) GetResourceId()(*string) {
         return m.resourceId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrivateLinkDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["policyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *PrivateLinkDetails) GetFieldDeserializers()(map[string]func(interface{}
 func (m *PrivateLinkDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrivateLinkDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("policyId", m.GetPolicyId())
@@ -148,33 +146,23 @@ func (m *PrivateLinkDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivateLinkDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the policyId property value. 
-// Parameters:
-//  - value : Value to set for the policyId property.
+// SetPolicyId sets the policyId property value. 
 func (m *PrivateLinkDetails) SetPolicyId(value *string)() {
     m.policyId = value
 }
-// Sets the policyName property value. 
-// Parameters:
-//  - value : Value to set for the policyName property.
+// SetPolicyName sets the policyName property value. 
 func (m *PrivateLinkDetails) SetPolicyName(value *string)() {
     m.policyName = value
 }
-// Sets the policyTenantId property value. 
-// Parameters:
-//  - value : Value to set for the policyTenantId property.
+// SetPolicyTenantId sets the policyTenantId property value. 
 func (m *PrivateLinkDetails) SetPolicyTenantId(value *string)() {
     m.policyTenantId = value
 }
-// Sets the resourceId property value. 
-// Parameters:
-//  - value : Value to set for the resourceId property.
+// SetResourceId sets the resourceId property value. 
 func (m *PrivateLinkDetails) SetResourceId(value *string)() {
     m.resourceId = value
 }

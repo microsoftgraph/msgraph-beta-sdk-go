@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// M365AlertComment 
 type M365AlertComment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type M365AlertComment struct {
     // 
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new m365AlertComment and sets the default values.
+// NewM365AlertComment instantiates a new m365AlertComment and sets the default values.
 func NewM365AlertComment()(*M365AlertComment) {
     m := &M365AlertComment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *M365AlertComment) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *M365AlertComment) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the comment property value. 
+// GetComment gets the comment property value. 
 func (m *M365AlertComment) GetComment()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *M365AlertComment) GetComment()(*string) {
         return m.comment
     }
 }
-// Gets the createdByDisplayName property value. 
+// GetCreatedByDisplayName gets the createdByDisplayName property value. 
 func (m *M365AlertComment) GetCreatedByDisplayName()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *M365AlertComment) GetCreatedByDisplayName()(*string) {
         return m.createdByDisplayName
     }
 }
-// Gets the createdDateTime property value. 
+// GetCreatedDateTime gets the createdDateTime property value. 
 func (m *M365AlertComment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *M365AlertComment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.createdDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *M365AlertComment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["comment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *M365AlertComment) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *M365AlertComment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *M365AlertComment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("comment", m.GetComment())
@@ -123,27 +121,19 @@ func (m *M365AlertComment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *M365AlertComment) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the comment property value. 
-// Parameters:
-//  - value : Value to set for the comment property.
+// SetComment sets the comment property value. 
 func (m *M365AlertComment) SetComment(value *string)() {
     m.comment = value
 }
-// Sets the createdByDisplayName property value. 
-// Parameters:
-//  - value : Value to set for the createdByDisplayName property.
+// SetCreatedByDisplayName sets the createdByDisplayName property value. 
 func (m *M365AlertComment) SetCreatedByDisplayName(value *string)() {
     m.createdByDisplayName = value
 }
-// Sets the createdDateTime property value. 
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. 
 func (m *M365AlertComment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }

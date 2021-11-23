@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SalesQuote 
 type SalesQuote struct {
     Entity
     // 
@@ -81,14 +81,14 @@ type SalesQuote struct {
     // 
     validUntilDate *string;
 }
-// Instantiates a new salesQuote and sets the default values.
+// NewSalesQuote instantiates a new salesQuote and sets the default values.
 func NewSalesQuote()(*SalesQuote) {
     m := &SalesQuote{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the acceptedDate property value. 
+// GetAcceptedDate gets the acceptedDate property value. 
 func (m *SalesQuote) GetAcceptedDate()(*string) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *SalesQuote) GetAcceptedDate()(*string) {
         return m.acceptedDate
     }
 }
-// Gets the billingPostalAddress property value. 
+// GetBillingPostalAddress gets the billingPostalAddress property value. 
 func (m *SalesQuote) GetBillingPostalAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -104,7 +104,7 @@ func (m *SalesQuote) GetBillingPostalAddress()(*PostalAddressType) {
         return m.billingPostalAddress
     }
 }
-// Gets the billToCustomerId property value. 
+// GetBillToCustomerId gets the billToCustomerId property value. 
 func (m *SalesQuote) GetBillToCustomerId()(*string) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *SalesQuote) GetBillToCustomerId()(*string) {
         return m.billToCustomerId
     }
 }
-// Gets the billToCustomerNumber property value. 
+// GetBillToCustomerNumber gets the billToCustomerNumber property value. 
 func (m *SalesQuote) GetBillToCustomerNumber()(*string) {
     if m == nil {
         return nil
@@ -120,7 +120,7 @@ func (m *SalesQuote) GetBillToCustomerNumber()(*string) {
         return m.billToCustomerNumber
     }
 }
-// Gets the billToName property value. 
+// GetBillToName gets the billToName property value. 
 func (m *SalesQuote) GetBillToName()(*string) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *SalesQuote) GetBillToName()(*string) {
         return m.billToName
     }
 }
-// Gets the currency property value. 
+// GetCurrency gets the currency property value. 
 func (m *SalesQuote) GetCurrency()(*Currency) {
     if m == nil {
         return nil
@@ -136,7 +136,7 @@ func (m *SalesQuote) GetCurrency()(*Currency) {
         return m.currency
     }
 }
-// Gets the currencyCode property value. 
+// GetCurrencyCode gets the currencyCode property value. 
 func (m *SalesQuote) GetCurrencyCode()(*string) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *SalesQuote) GetCurrencyCode()(*string) {
         return m.currencyCode
     }
 }
-// Gets the currencyId property value. 
+// GetCurrencyId gets the currencyId property value. 
 func (m *SalesQuote) GetCurrencyId()(*string) {
     if m == nil {
         return nil
@@ -152,7 +152,7 @@ func (m *SalesQuote) GetCurrencyId()(*string) {
         return m.currencyId
     }
 }
-// Gets the customer property value. 
+// GetCustomer gets the customer property value. 
 func (m *SalesQuote) GetCustomer()(*Customer) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *SalesQuote) GetCustomer()(*Customer) {
         return m.customer
     }
 }
-// Gets the customerId property value. 
+// GetCustomerId gets the customerId property value. 
 func (m *SalesQuote) GetCustomerId()(*string) {
     if m == nil {
         return nil
@@ -168,7 +168,7 @@ func (m *SalesQuote) GetCustomerId()(*string) {
         return m.customerId
     }
 }
-// Gets the customerName property value. 
+// GetCustomerName gets the customerName property value. 
 func (m *SalesQuote) GetCustomerName()(*string) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *SalesQuote) GetCustomerName()(*string) {
         return m.customerName
     }
 }
-// Gets the customerNumber property value. 
+// GetCustomerNumber gets the customerNumber property value. 
 func (m *SalesQuote) GetCustomerNumber()(*string) {
     if m == nil {
         return nil
@@ -184,7 +184,7 @@ func (m *SalesQuote) GetCustomerNumber()(*string) {
         return m.customerNumber
     }
 }
-// Gets the discountAmount property value. 
+// GetDiscountAmount gets the discountAmount property value. 
 func (m *SalesQuote) GetDiscountAmount()(*float64) {
     if m == nil {
         return nil
@@ -192,7 +192,7 @@ func (m *SalesQuote) GetDiscountAmount()(*float64) {
         return m.discountAmount
     }
 }
-// Gets the documentDate property value. 
+// GetDocumentDate gets the documentDate property value. 
 func (m *SalesQuote) GetDocumentDate()(*string) {
     if m == nil {
         return nil
@@ -200,7 +200,7 @@ func (m *SalesQuote) GetDocumentDate()(*string) {
         return m.documentDate
     }
 }
-// Gets the dueDate property value. 
+// GetDueDate gets the dueDate property value. 
 func (m *SalesQuote) GetDueDate()(*string) {
     if m == nil {
         return nil
@@ -208,7 +208,7 @@ func (m *SalesQuote) GetDueDate()(*string) {
         return m.dueDate
     }
 }
-// Gets the email property value. 
+// GetEmail gets the email property value. 
 func (m *SalesQuote) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -216,7 +216,7 @@ func (m *SalesQuote) GetEmail()(*string) {
         return m.email
     }
 }
-// Gets the externalDocumentNumber property value. 
+// GetExternalDocumentNumber gets the externalDocumentNumber property value. 
 func (m *SalesQuote) GetExternalDocumentNumber()(*string) {
     if m == nil {
         return nil
@@ -224,7 +224,7 @@ func (m *SalesQuote) GetExternalDocumentNumber()(*string) {
         return m.externalDocumentNumber
     }
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *SalesQuote) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -232,7 +232,7 @@ func (m *SalesQuote) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.lastModifiedDateTime
     }
 }
-// Gets the number property value. 
+// GetNumber gets the number property value. 
 func (m *SalesQuote) GetNumber()(*string) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *SalesQuote) GetNumber()(*string) {
         return m.number
     }
 }
-// Gets the paymentTerm property value. 
+// GetPaymentTerm gets the paymentTerm property value. 
 func (m *SalesQuote) GetPaymentTerm()(*PaymentTerm) {
     if m == nil {
         return nil
@@ -248,7 +248,7 @@ func (m *SalesQuote) GetPaymentTerm()(*PaymentTerm) {
         return m.paymentTerm
     }
 }
-// Gets the paymentTermsId property value. 
+// GetPaymentTermsId gets the paymentTermsId property value. 
 func (m *SalesQuote) GetPaymentTermsId()(*string) {
     if m == nil {
         return nil
@@ -256,7 +256,7 @@ func (m *SalesQuote) GetPaymentTermsId()(*string) {
         return m.paymentTermsId
     }
 }
-// Gets the phoneNumber property value. 
+// GetPhoneNumber gets the phoneNumber property value. 
 func (m *SalesQuote) GetPhoneNumber()(*string) {
     if m == nil {
         return nil
@@ -264,7 +264,7 @@ func (m *SalesQuote) GetPhoneNumber()(*string) {
         return m.phoneNumber
     }
 }
-// Gets the salesperson property value. 
+// GetSalesperson gets the salesperson property value. 
 func (m *SalesQuote) GetSalesperson()(*string) {
     if m == nil {
         return nil
@@ -272,7 +272,7 @@ func (m *SalesQuote) GetSalesperson()(*string) {
         return m.salesperson
     }
 }
-// Gets the salesQuoteLines property value. 
+// GetSalesQuoteLines gets the salesQuoteLines property value. 
 func (m *SalesQuote) GetSalesQuoteLines()([]SalesQuoteLine) {
     if m == nil {
         return nil
@@ -280,7 +280,7 @@ func (m *SalesQuote) GetSalesQuoteLines()([]SalesQuoteLine) {
         return m.salesQuoteLines
     }
 }
-// Gets the sellingPostalAddress property value. 
+// GetSellingPostalAddress gets the sellingPostalAddress property value. 
 func (m *SalesQuote) GetSellingPostalAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -288,7 +288,7 @@ func (m *SalesQuote) GetSellingPostalAddress()(*PostalAddressType) {
         return m.sellingPostalAddress
     }
 }
-// Gets the sentDate property value. 
+// GetSentDate gets the sentDate property value. 
 func (m *SalesQuote) GetSentDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -296,7 +296,7 @@ func (m *SalesQuote) GetSentDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
         return m.sentDate
     }
 }
-// Gets the shipmentMethod property value. 
+// GetShipmentMethod gets the shipmentMethod property value. 
 func (m *SalesQuote) GetShipmentMethod()(*ShipmentMethod) {
     if m == nil {
         return nil
@@ -304,7 +304,7 @@ func (m *SalesQuote) GetShipmentMethod()(*ShipmentMethod) {
         return m.shipmentMethod
     }
 }
-// Gets the shipmentMethodId property value. 
+// GetShipmentMethodId gets the shipmentMethodId property value. 
 func (m *SalesQuote) GetShipmentMethodId()(*string) {
     if m == nil {
         return nil
@@ -312,7 +312,7 @@ func (m *SalesQuote) GetShipmentMethodId()(*string) {
         return m.shipmentMethodId
     }
 }
-// Gets the shippingPostalAddress property value. 
+// GetShippingPostalAddress gets the shippingPostalAddress property value. 
 func (m *SalesQuote) GetShippingPostalAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -320,7 +320,7 @@ func (m *SalesQuote) GetShippingPostalAddress()(*PostalAddressType) {
         return m.shippingPostalAddress
     }
 }
-// Gets the shipToContact property value. 
+// GetShipToContact gets the shipToContact property value. 
 func (m *SalesQuote) GetShipToContact()(*string) {
     if m == nil {
         return nil
@@ -328,7 +328,7 @@ func (m *SalesQuote) GetShipToContact()(*string) {
         return m.shipToContact
     }
 }
-// Gets the shipToName property value. 
+// GetShipToName gets the shipToName property value. 
 func (m *SalesQuote) GetShipToName()(*string) {
     if m == nil {
         return nil
@@ -336,7 +336,7 @@ func (m *SalesQuote) GetShipToName()(*string) {
         return m.shipToName
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *SalesQuote) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -344,7 +344,7 @@ func (m *SalesQuote) GetStatus()(*string) {
         return m.status
     }
 }
-// Gets the totalAmountExcludingTax property value. 
+// GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. 
 func (m *SalesQuote) GetTotalAmountExcludingTax()(*float64) {
     if m == nil {
         return nil
@@ -352,7 +352,7 @@ func (m *SalesQuote) GetTotalAmountExcludingTax()(*float64) {
         return m.totalAmountExcludingTax
     }
 }
-// Gets the totalAmountIncludingTax property value. 
+// GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. 
 func (m *SalesQuote) GetTotalAmountIncludingTax()(*float64) {
     if m == nil {
         return nil
@@ -360,7 +360,7 @@ func (m *SalesQuote) GetTotalAmountIncludingTax()(*float64) {
         return m.totalAmountIncludingTax
     }
 }
-// Gets the totalTaxAmount property value. 
+// GetTotalTaxAmount gets the totalTaxAmount property value. 
 func (m *SalesQuote) GetTotalTaxAmount()(*float64) {
     if m == nil {
         return nil
@@ -368,7 +368,7 @@ func (m *SalesQuote) GetTotalTaxAmount()(*float64) {
         return m.totalTaxAmount
     }
 }
-// Gets the validUntilDate property value. 
+// GetValidUntilDate gets the validUntilDate property value. 
 func (m *SalesQuote) GetValidUntilDate()(*string) {
     if m == nil {
         return nil
@@ -376,7 +376,7 @@ func (m *SalesQuote) GetValidUntilDate()(*string) {
         return m.validUntilDate
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SalesQuote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acceptedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -748,9 +748,7 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *SalesQuote) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SalesQuote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -979,219 +977,147 @@ func (m *SalesQuote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// Sets the acceptedDate property value. 
-// Parameters:
-//  - value : Value to set for the acceptedDate property.
+// SetAcceptedDate sets the acceptedDate property value. 
 func (m *SalesQuote) SetAcceptedDate(value *string)() {
     m.acceptedDate = value
 }
-// Sets the billingPostalAddress property value. 
-// Parameters:
-//  - value : Value to set for the billingPostalAddress property.
+// SetBillingPostalAddress sets the billingPostalAddress property value. 
 func (m *SalesQuote) SetBillingPostalAddress(value *PostalAddressType)() {
     m.billingPostalAddress = value
 }
-// Sets the billToCustomerId property value. 
-// Parameters:
-//  - value : Value to set for the billToCustomerId property.
+// SetBillToCustomerId sets the billToCustomerId property value. 
 func (m *SalesQuote) SetBillToCustomerId(value *string)() {
     m.billToCustomerId = value
 }
-// Sets the billToCustomerNumber property value. 
-// Parameters:
-//  - value : Value to set for the billToCustomerNumber property.
+// SetBillToCustomerNumber sets the billToCustomerNumber property value. 
 func (m *SalesQuote) SetBillToCustomerNumber(value *string)() {
     m.billToCustomerNumber = value
 }
-// Sets the billToName property value. 
-// Parameters:
-//  - value : Value to set for the billToName property.
+// SetBillToName sets the billToName property value. 
 func (m *SalesQuote) SetBillToName(value *string)() {
     m.billToName = value
 }
-// Sets the currency property value. 
-// Parameters:
-//  - value : Value to set for the currency property.
+// SetCurrency sets the currency property value. 
 func (m *SalesQuote) SetCurrency(value *Currency)() {
     m.currency = value
 }
-// Sets the currencyCode property value. 
-// Parameters:
-//  - value : Value to set for the currencyCode property.
+// SetCurrencyCode sets the currencyCode property value. 
 func (m *SalesQuote) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
-// Sets the currencyId property value. 
-// Parameters:
-//  - value : Value to set for the currencyId property.
+// SetCurrencyId sets the currencyId property value. 
 func (m *SalesQuote) SetCurrencyId(value *string)() {
     m.currencyId = value
 }
-// Sets the customer property value. 
-// Parameters:
-//  - value : Value to set for the customer property.
+// SetCustomer sets the customer property value. 
 func (m *SalesQuote) SetCustomer(value *Customer)() {
     m.customer = value
 }
-// Sets the customerId property value. 
-// Parameters:
-//  - value : Value to set for the customerId property.
+// SetCustomerId sets the customerId property value. 
 func (m *SalesQuote) SetCustomerId(value *string)() {
     m.customerId = value
 }
-// Sets the customerName property value. 
-// Parameters:
-//  - value : Value to set for the customerName property.
+// SetCustomerName sets the customerName property value. 
 func (m *SalesQuote) SetCustomerName(value *string)() {
     m.customerName = value
 }
-// Sets the customerNumber property value. 
-// Parameters:
-//  - value : Value to set for the customerNumber property.
+// SetCustomerNumber sets the customerNumber property value. 
 func (m *SalesQuote) SetCustomerNumber(value *string)() {
     m.customerNumber = value
 }
-// Sets the discountAmount property value. 
-// Parameters:
-//  - value : Value to set for the discountAmount property.
+// SetDiscountAmount sets the discountAmount property value. 
 func (m *SalesQuote) SetDiscountAmount(value *float64)() {
     m.discountAmount = value
 }
-// Sets the documentDate property value. 
-// Parameters:
-//  - value : Value to set for the documentDate property.
+// SetDocumentDate sets the documentDate property value. 
 func (m *SalesQuote) SetDocumentDate(value *string)() {
     m.documentDate = value
 }
-// Sets the dueDate property value. 
-// Parameters:
-//  - value : Value to set for the dueDate property.
+// SetDueDate sets the dueDate property value. 
 func (m *SalesQuote) SetDueDate(value *string)() {
     m.dueDate = value
 }
-// Sets the email property value. 
-// Parameters:
-//  - value : Value to set for the email property.
+// SetEmail sets the email property value. 
 func (m *SalesQuote) SetEmail(value *string)() {
     m.email = value
 }
-// Sets the externalDocumentNumber property value. 
-// Parameters:
-//  - value : Value to set for the externalDocumentNumber property.
+// SetExternalDocumentNumber sets the externalDocumentNumber property value. 
 func (m *SalesQuote) SetExternalDocumentNumber(value *string)() {
     m.externalDocumentNumber = value
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *SalesQuote) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the number property value. 
-// Parameters:
-//  - value : Value to set for the number property.
+// SetNumber sets the number property value. 
 func (m *SalesQuote) SetNumber(value *string)() {
     m.number = value
 }
-// Sets the paymentTerm property value. 
-// Parameters:
-//  - value : Value to set for the paymentTerm property.
+// SetPaymentTerm sets the paymentTerm property value. 
 func (m *SalesQuote) SetPaymentTerm(value *PaymentTerm)() {
     m.paymentTerm = value
 }
-// Sets the paymentTermsId property value. 
-// Parameters:
-//  - value : Value to set for the paymentTermsId property.
+// SetPaymentTermsId sets the paymentTermsId property value. 
 func (m *SalesQuote) SetPaymentTermsId(value *string)() {
     m.paymentTermsId = value
 }
-// Sets the phoneNumber property value. 
-// Parameters:
-//  - value : Value to set for the phoneNumber property.
+// SetPhoneNumber sets the phoneNumber property value. 
 func (m *SalesQuote) SetPhoneNumber(value *string)() {
     m.phoneNumber = value
 }
-// Sets the salesperson property value. 
-// Parameters:
-//  - value : Value to set for the salesperson property.
+// SetSalesperson sets the salesperson property value. 
 func (m *SalesQuote) SetSalesperson(value *string)() {
     m.salesperson = value
 }
-// Sets the salesQuoteLines property value. 
-// Parameters:
-//  - value : Value to set for the salesQuoteLines property.
+// SetSalesQuoteLines sets the salesQuoteLines property value. 
 func (m *SalesQuote) SetSalesQuoteLines(value []SalesQuoteLine)() {
     m.salesQuoteLines = value
 }
-// Sets the sellingPostalAddress property value. 
-// Parameters:
-//  - value : Value to set for the sellingPostalAddress property.
+// SetSellingPostalAddress sets the sellingPostalAddress property value. 
 func (m *SalesQuote) SetSellingPostalAddress(value *PostalAddressType)() {
     m.sellingPostalAddress = value
 }
-// Sets the sentDate property value. 
-// Parameters:
-//  - value : Value to set for the sentDate property.
+// SetSentDate sets the sentDate property value. 
 func (m *SalesQuote) SetSentDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.sentDate = value
 }
-// Sets the shipmentMethod property value. 
-// Parameters:
-//  - value : Value to set for the shipmentMethod property.
+// SetShipmentMethod sets the shipmentMethod property value. 
 func (m *SalesQuote) SetShipmentMethod(value *ShipmentMethod)() {
     m.shipmentMethod = value
 }
-// Sets the shipmentMethodId property value. 
-// Parameters:
-//  - value : Value to set for the shipmentMethodId property.
+// SetShipmentMethodId sets the shipmentMethodId property value. 
 func (m *SalesQuote) SetShipmentMethodId(value *string)() {
     m.shipmentMethodId = value
 }
-// Sets the shippingPostalAddress property value. 
-// Parameters:
-//  - value : Value to set for the shippingPostalAddress property.
+// SetShippingPostalAddress sets the shippingPostalAddress property value. 
 func (m *SalesQuote) SetShippingPostalAddress(value *PostalAddressType)() {
     m.shippingPostalAddress = value
 }
-// Sets the shipToContact property value. 
-// Parameters:
-//  - value : Value to set for the shipToContact property.
+// SetShipToContact sets the shipToContact property value. 
 func (m *SalesQuote) SetShipToContact(value *string)() {
     m.shipToContact = value
 }
-// Sets the shipToName property value. 
-// Parameters:
-//  - value : Value to set for the shipToName property.
+// SetShipToName sets the shipToName property value. 
 func (m *SalesQuote) SetShipToName(value *string)() {
     m.shipToName = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *SalesQuote) SetStatus(value *string)() {
     m.status = value
 }
-// Sets the totalAmountExcludingTax property value. 
-// Parameters:
-//  - value : Value to set for the totalAmountExcludingTax property.
+// SetTotalAmountExcludingTax sets the totalAmountExcludingTax property value. 
 func (m *SalesQuote) SetTotalAmountExcludingTax(value *float64)() {
     m.totalAmountExcludingTax = value
 }
-// Sets the totalAmountIncludingTax property value. 
-// Parameters:
-//  - value : Value to set for the totalAmountIncludingTax property.
+// SetTotalAmountIncludingTax sets the totalAmountIncludingTax property value. 
 func (m *SalesQuote) SetTotalAmountIncludingTax(value *float64)() {
     m.totalAmountIncludingTax = value
 }
-// Sets the totalTaxAmount property value. 
-// Parameters:
-//  - value : Value to set for the totalTaxAmount property.
+// SetTotalTaxAmount sets the totalTaxAmount property value. 
 func (m *SalesQuote) SetTotalTaxAmount(value *float64)() {
     m.totalTaxAmount = value
 }
-// Sets the validUntilDate property value. 
-// Parameters:
-//  - value : Value to set for the validUntilDate property.
+// SetValidUntilDate sets the validUntilDate property value. 
 func (m *SalesQuote) SetValidUntilDate(value *string)() {
     m.validUntilDate = value
 }

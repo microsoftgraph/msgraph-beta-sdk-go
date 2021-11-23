@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\deviceSettingStateSummaries\{deviceManagementIntentDeviceSettingStateSummary-id}
+// DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\deviceSettingStateSummaries\{deviceManagementIntentDeviceSettingStateSummary-id}
 type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderDeleteOptions options for Delete
 type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderDeleteOptions 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderGetOptions options for Get
 type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderGetOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
+// DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderGetQueryParameters collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderPatchOptions options for Patch
 type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentDeviceSettingStateSummary;
@@ -53,10 +53,7 @@ type DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderPatchOptions s
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementIntentDeviceSettingStateSummaryRequestBuilderInternal instantiates a new DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder and sets the default values.
 func NewDeviceManagementIntentDeviceSettingStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) {
     m := &DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementIntentDeviceSettingStateSummaryRequestBuilderInternal(pa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementIntentDeviceSettingStateSummaryRequestBuilder instantiates a new DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder and sets the default values.
 func NewDeviceManagementIntentDeviceSettingStateSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementIntentDeviceSettingStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) CreateDe
     }
     return requestInfo, nil
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) CreateGetRequestInformation(options *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) CreatePa
     }
     return requestInfo, nil
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// Delete collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) Delete(options *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) Delete(o
     }
     return nil
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// Get collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) Get(options *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentDeviceSettingStateSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) Get(opti
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentDeviceSettingStateSummary), nil
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// Patch collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder) Patch(options *DeviceManagementIntentDeviceSettingStateSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

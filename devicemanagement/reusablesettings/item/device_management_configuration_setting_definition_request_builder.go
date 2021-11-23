@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reusableSettings\{deviceManagementConfigurationSettingDefinition-id}
+// DeviceManagementConfigurationSettingDefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\reusableSettings\{deviceManagementConfigurationSettingDefinition-id}
 type DeviceManagementConfigurationSettingDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementConfigurationSettingDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementConfigurationSettingDefinitionRequestBuilderDeleteOptions options for Delete
 type DeviceManagementConfigurationSettingDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementConfigurationSettingDefinitionRequestBuilderDeleteOptions s
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementConfigurationSettingDefinitionRequestBuilderGetOptions options for Get
 type DeviceManagementConfigurationSettingDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementConfigurationSettingDefinitionRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of all reusable settings
+// DeviceManagementConfigurationSettingDefinitionRequestBuilderGetQueryParameters list of all reusable settings
 type DeviceManagementConfigurationSettingDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementConfigurationSettingDefinitionRequestBuilderPatchOptions options for Patch
 type DeviceManagementConfigurationSettingDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinition;
@@ -53,10 +53,7 @@ type DeviceManagementConfigurationSettingDefinitionRequestBuilderPatchOptions st
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementConfigurationSettingDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationSettingDefinitionRequestBuilderInternal instantiates a new DeviceManagementConfigurationSettingDefinitionRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationSettingDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationSettingDefinitionRequestBuilder) {
     m := &DeviceManagementConfigurationSettingDefinitionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementConfigurationSettingDefinitionRequestBuilderInternal(pat
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementConfigurationSettingDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationSettingDefinitionRequestBuilder instantiates a new DeviceManagementConfigurationSettingDefinitionRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationSettingDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationSettingDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementConfigurationSettingDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of all reusable settings
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of all reusable settings
 func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementConfigurationSettingDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) CreateDel
     }
     return requestInfo, nil
 }
-// List of all reusable settings
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of all reusable settings
 func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) CreateGetRequestInformation(options *DeviceManagementConfigurationSettingDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// List of all reusable settings
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of all reusable settings
 func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementConfigurationSettingDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) CreatePat
     }
     return requestInfo, nil
 }
-// List of all reusable settings
-// Parameters:
-//  - options : Options for the request
+// Delete list of all reusable settings
 func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) Delete(options *DeviceManagementConfigurationSettingDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) Delete(op
     }
     return nil
 }
-// List of all reusable settings
-// Parameters:
-//  - options : Options for the request
+// Get list of all reusable settings
 func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) Get(options *DeviceManagementConfigurationSettingDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) Get(optio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinition), nil
 }
-// List of all reusable settings
-// Parameters:
-//  - options : Options for the request
+// Patch list of all reusable settings
 func (m *DeviceManagementConfigurationSettingDefinitionRequestBuilder) Patch(options *DeviceManagementConfigurationSettingDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

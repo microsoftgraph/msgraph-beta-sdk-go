@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\analytics\activityStatistics
+// ActivityStatisticsRequestBuilder builds and executes requests for operations under \me\analytics\activityStatistics
 type ActivityStatisticsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ActivityStatisticsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ActivityStatisticsRequestBuilderGetOptions options for Get
 type ActivityStatisticsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ActivityStatisticsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+// ActivityStatisticsRequestBuilderGetQueryParameters the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 type ActivityStatisticsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ActivityStatisticsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ActivityStatisticsRequestBuilderPostOptions options for Post
 type ActivityStatisticsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics;
@@ -56,10 +56,7 @@ type ActivityStatisticsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivityStatisticsRequestBuilderInternal instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
 func NewActivityStatisticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivityStatisticsRequestBuilder) {
     m := &ActivityStatisticsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewActivityStatisticsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivityStatisticsRequestBuilder instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
 func NewActivityStatisticsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivityStatisticsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivityStatisticsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *ActivityStatisticsRequestBuilder) CreateGetRequestInformation(options *ActivityStatisticsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ActivityStatisticsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *ActivityStatisticsRequestBuilder) CreatePostRequestInformation(options *ActivityStatisticsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ActivityStatisticsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *ActivityStatisticsRequestBuilder) Get(options *ActivityStatisticsRequestBuilderGetOptions)(*ActivityStatisticsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ActivityStatisticsRequestBuilder) Get(options *ActivityStatisticsReques
     }
     return res.(*ActivityStatisticsResponse), nil
 }
-// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *ActivityStatisticsRequestBuilder) Post(options *ActivityStatisticsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RemoteActionAudit 
 type RemoteActionAudit struct {
     Entity
     // The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
@@ -27,14 +27,14 @@ type RemoteActionAudit struct {
     // [deprecated] Please use InitiatedByUserPrincipalName instead.
     userName *string;
 }
-// Instantiates a new remoteActionAudit and sets the default values.
+// NewRemoteActionAudit instantiates a new remoteActionAudit and sets the default values.
 func NewRemoteActionAudit()(*RemoteActionAudit) {
     m := &RemoteActionAudit{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the action property value. The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
+// GetAction gets the action property value. The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
 func (m *RemoteActionAudit) GetAction()(*RemoteAction) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *RemoteActionAudit) GetAction()(*RemoteAction) {
         return m.action
     }
 }
-// Gets the actionState property value. Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+// GetActionState gets the actionState property value. Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
 func (m *RemoteActionAudit) GetActionState()(*ActionState) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *RemoteActionAudit) GetActionState()(*ActionState) {
         return m.actionState
     }
 }
-// Gets the deviceDisplayName property value. Intune device name.
+// GetDeviceDisplayName gets the deviceDisplayName property value. Intune device name.
 func (m *RemoteActionAudit) GetDeviceDisplayName()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *RemoteActionAudit) GetDeviceDisplayName()(*string) {
         return m.deviceDisplayName
     }
 }
-// Gets the deviceIMEI property value. IMEI of the device.
+// GetDeviceIMEI gets the deviceIMEI property value. IMEI of the device.
 func (m *RemoteActionAudit) GetDeviceIMEI()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *RemoteActionAudit) GetDeviceIMEI()(*string) {
         return m.deviceIMEI
     }
 }
-// Gets the deviceOwnerUserPrincipalName property value. Upn of the device owner.
+// GetDeviceOwnerUserPrincipalName gets the deviceOwnerUserPrincipalName property value. Upn of the device owner.
 func (m *RemoteActionAudit) GetDeviceOwnerUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *RemoteActionAudit) GetDeviceOwnerUserPrincipalName()(*string) {
         return m.deviceOwnerUserPrincipalName
     }
 }
-// Gets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
+// GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
 func (m *RemoteActionAudit) GetInitiatedByUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *RemoteActionAudit) GetInitiatedByUserPrincipalName()(*string) {
         return m.initiatedByUserPrincipalName
     }
 }
-// Gets the managedDeviceId property value. Action target.
+// GetManagedDeviceId gets the managedDeviceId property value. Action target.
 func (m *RemoteActionAudit) GetManagedDeviceId()(*string) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *RemoteActionAudit) GetManagedDeviceId()(*string) {
         return m.managedDeviceId
     }
 }
-// Gets the requestDateTime property value. Time when the action was issued, given in UTC.
+// GetRequestDateTime gets the requestDateTime property value. Time when the action was issued, given in UTC.
 func (m *RemoteActionAudit) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *RemoteActionAudit) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.requestDateTime
     }
 }
-// Gets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
+// GetUserName gets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
 func (m *RemoteActionAudit) GetUserName()(*string) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *RemoteActionAudit) GetUserName()(*string) {
         return m.userName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["action"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,9 +206,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
 func (m *RemoteActionAudit) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RemoteActionAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -272,57 +270,39 @@ func (m *RemoteActionAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the action property value. The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
-// Parameters:
-//  - value : Value to set for the action property.
+// SetAction sets the action property value. The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
 func (m *RemoteActionAudit) SetAction(value *RemoteAction)() {
     m.action = value
 }
-// Sets the actionState property value. Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
-// Parameters:
-//  - value : Value to set for the actionState property.
+// SetActionState sets the actionState property value. Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
 func (m *RemoteActionAudit) SetActionState(value *ActionState)() {
     m.actionState = value
 }
-// Sets the deviceDisplayName property value. Intune device name.
-// Parameters:
-//  - value : Value to set for the deviceDisplayName property.
+// SetDeviceDisplayName sets the deviceDisplayName property value. Intune device name.
 func (m *RemoteActionAudit) SetDeviceDisplayName(value *string)() {
     m.deviceDisplayName = value
 }
-// Sets the deviceIMEI property value. IMEI of the device.
-// Parameters:
-//  - value : Value to set for the deviceIMEI property.
+// SetDeviceIMEI sets the deviceIMEI property value. IMEI of the device.
 func (m *RemoteActionAudit) SetDeviceIMEI(value *string)() {
     m.deviceIMEI = value
 }
-// Sets the deviceOwnerUserPrincipalName property value. Upn of the device owner.
-// Parameters:
-//  - value : Value to set for the deviceOwnerUserPrincipalName property.
+// SetDeviceOwnerUserPrincipalName sets the deviceOwnerUserPrincipalName property value. Upn of the device owner.
 func (m *RemoteActionAudit) SetDeviceOwnerUserPrincipalName(value *string)() {
     m.deviceOwnerUserPrincipalName = value
 }
-// Sets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
-// Parameters:
-//  - value : Value to set for the initiatedByUserPrincipalName property.
+// SetInitiatedByUserPrincipalName sets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
 func (m *RemoteActionAudit) SetInitiatedByUserPrincipalName(value *string)() {
     m.initiatedByUserPrincipalName = value
 }
-// Sets the managedDeviceId property value. Action target.
-// Parameters:
-//  - value : Value to set for the managedDeviceId property.
+// SetManagedDeviceId sets the managedDeviceId property value. Action target.
 func (m *RemoteActionAudit) SetManagedDeviceId(value *string)() {
     m.managedDeviceId = value
 }
-// Sets the requestDateTime property value. Time when the action was issued, given in UTC.
-// Parameters:
-//  - value : Value to set for the requestDateTime property.
+// SetRequestDateTime sets the requestDateTime property value. Time when the action was issued, given in UTC.
 func (m *RemoteActionAudit) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.requestDateTime = value
 }
-// Sets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
-// Parameters:
-//  - value : Value to set for the userName property.
+// SetUserName sets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
 func (m *RemoteActionAudit) SetUserName(value *string)() {
     m.userName = value
 }

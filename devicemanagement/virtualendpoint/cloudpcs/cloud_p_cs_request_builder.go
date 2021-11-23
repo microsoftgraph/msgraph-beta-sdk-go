@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs
+// CloudPCsRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs
 type CloudPCsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPCsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CloudPCsRequestBuilderGetOptions options for Get
 type CloudPCsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CloudPCsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud managed virtual desktops.
+// CloudPCsRequestBuilderGetQueryParameters cloud managed virtual desktops.
 type CloudPCsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CloudPCsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CloudPCsRequestBuilderPostOptions options for Post
 type CloudPCsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPC;
@@ -56,10 +56,7 @@ type CloudPCsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPCsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPCsRequestBuilderInternal instantiates a new CloudPCsRequestBuilder and sets the default values.
 func NewCloudPCsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPCsRequestBuilder) {
     m := &CloudPCsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCloudPCsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPCsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPCsRequestBuilder instantiates a new CloudPCsRequestBuilder and sets the default values.
 func NewCloudPCsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPCsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPCsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud managed virtual desktops.
 func (m *CloudPCsRequestBuilder) CreateGetRequestInformation(options *CloudPCsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CloudPCsRequestBuilder) CreateGetRequestInformation(options *CloudPCsRe
     }
     return requestInfo, nil
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation cloud managed virtual desktops.
 func (m *CloudPCsRequestBuilder) CreatePostRequestInformation(options *CloudPCsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CloudPCsRequestBuilder) CreatePostRequestInformation(options *CloudPCsR
     }
     return requestInfo, nil
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// Get cloud managed virtual desktops.
 func (m *CloudPCsRequestBuilder) Get(options *CloudPCsRequestBuilderGetOptions)(*CloudPCsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CloudPCsRequestBuilder) Get(options *CloudPCsRequestBuilderGetOptions)(
     }
     return res.(*CloudPCsResponse), nil
 }
-// Cloud managed virtual desktops.
-// Parameters:
-//  - options : Options for the request
+// Post cloud managed virtual desktops.
 func (m *CloudPCsRequestBuilder) Post(options *CloudPCsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPC, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

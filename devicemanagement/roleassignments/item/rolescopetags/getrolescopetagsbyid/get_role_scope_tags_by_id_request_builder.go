@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags\microsoft.graph.getRoleScopeTagsById
+// GetRoleScopeTagsByIdRequestBuilder builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags\microsoft.graph.getRoleScopeTagsById
 type GetRoleScopeTagsByIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetRoleScopeTagsByIdRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetRoleScopeTagsByIdRequestBuilderPostOptions options for Post
 type GetRoleScopeTagsByIdRequestBuilderPostOptions struct {
     // 
     Body *GetRoleScopeTagsByIdRequestBody;
@@ -25,10 +25,7 @@ type GetRoleScopeTagsByIdRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetRoleScopeTagsByIdRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetRoleScopeTagsByIdRequestBuilderInternal instantiates a new GetRoleScopeTagsByIdRequestBuilder and sets the default values.
 func NewGetRoleScopeTagsByIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetRoleScopeTagsByIdRequestBuilder) {
     m := &GetRoleScopeTagsByIdRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewGetRoleScopeTagsByIdRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetRoleScopeTagsByIdRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetRoleScopeTagsByIdRequestBuilder instantiates a new GetRoleScopeTagsByIdRequestBuilder and sets the default values.
 func NewGetRoleScopeTagsByIdRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetRoleScopeTagsByIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetRoleScopeTagsByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getRoleScopeTagsById
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getRoleScopeTagsById
 func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformation(options *GetRoleScopeTagsByIdRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Invoke action getRoleScopeTagsById
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getRoleScopeTagsById
 func (m *GetRoleScopeTagsByIdRequestBuilder) Post(options *GetRoleScopeTagsByIdRequestBuilderPostOptions)([]GetRoleScopeTagsById, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\errors\{educationSynchronizationError-id}
+// EducationSynchronizationErrorRequestBuilder builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\errors\{educationSynchronizationError-id}
 type EducationSynchronizationErrorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EducationSynchronizationErrorRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EducationSynchronizationErrorRequestBuilderDeleteOptions options for Delete
 type EducationSynchronizationErrorRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type EducationSynchronizationErrorRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EducationSynchronizationErrorRequestBuilderGetOptions options for Get
 type EducationSynchronizationErrorRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type EducationSynchronizationErrorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All errors associated with this synchronization profile.
+// EducationSynchronizationErrorRequestBuilderGetQueryParameters all errors associated with this synchronization profile.
 type EducationSynchronizationErrorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EducationSynchronizationErrorRequestBuilderPatchOptions options for Patch
 type EducationSynchronizationErrorRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSynchronizationError;
@@ -53,10 +53,7 @@ type EducationSynchronizationErrorRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EducationSynchronizationErrorRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationSynchronizationErrorRequestBuilderInternal instantiates a new EducationSynchronizationErrorRequestBuilder and sets the default values.
 func NewEducationSynchronizationErrorRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSynchronizationErrorRequestBuilder) {
     m := &EducationSynchronizationErrorRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewEducationSynchronizationErrorRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EducationSynchronizationErrorRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationSynchronizationErrorRequestBuilder instantiates a new EducationSynchronizationErrorRequestBuilder and sets the default values.
 func NewEducationSynchronizationErrorRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSynchronizationErrorRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationSynchronizationErrorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation all errors associated with this synchronization profile.
 func (m *EducationSynchronizationErrorRequestBuilder) CreateDeleteRequestInformation(options *EducationSynchronizationErrorRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *EducationSynchronizationErrorRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all errors associated with this synchronization profile.
 func (m *EducationSynchronizationErrorRequestBuilder) CreateGetRequestInformation(options *EducationSynchronizationErrorRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *EducationSynchronizationErrorRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation all errors associated with this synchronization profile.
 func (m *EducationSynchronizationErrorRequestBuilder) CreatePatchRequestInformation(options *EducationSynchronizationErrorRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *EducationSynchronizationErrorRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// Delete all errors associated with this synchronization profile.
 func (m *EducationSynchronizationErrorRequestBuilder) Delete(options *EducationSynchronizationErrorRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *EducationSynchronizationErrorRequestBuilder) Delete(options *EducationS
     }
     return nil
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// Get all errors associated with this synchronization profile.
 func (m *EducationSynchronizationErrorRequestBuilder) Get(options *EducationSynchronizationErrorRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSynchronizationError, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *EducationSynchronizationErrorRequestBuilder) Get(options *EducationSync
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSynchronizationError), nil
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// Patch all errors associated with this synchronization profile.
 func (m *EducationSynchronizationErrorRequestBuilder) Patch(options *EducationSynchronizationErrorRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

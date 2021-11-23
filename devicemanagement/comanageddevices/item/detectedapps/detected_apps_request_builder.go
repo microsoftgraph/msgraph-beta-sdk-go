@@ -6,7 +6,7 @@ import (
     i6c1cf77fc5e61d5143cde2b97c191e75b7a0520c23860c37e97babce95a5c03a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/detectedapps/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\detectedApps
+// DetectedAppsRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\detectedApps
 type DetectedAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DetectedAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DetectedAppsRequestBuilderGetOptions options for Get
 type DetectedAppsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DetectedAppsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All applications currently installed on the device
+// DetectedAppsRequestBuilderGetQueryParameters all applications currently installed on the device
 type DetectedAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type DetectedAppsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new DetectedAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDetectedAppsRequestBuilderInternal instantiates a new DetectedAppsRequestBuilder and sets the default values.
 func NewDetectedAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DetectedAppsRequestBuilder) {
     m := &DetectedAppsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewDetectedAppsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DetectedAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDetectedAppsRequestBuilder instantiates a new DetectedAppsRequestBuilder and sets the default values.
 func NewDetectedAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DetectedAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDetectedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All applications currently installed on the device
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all applications currently installed on the device
 func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation(options *DetectedAppsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation(options *Detect
     }
     return requestInfo, nil
 }
-// All applications currently installed on the device
-// Parameters:
-//  - options : Options for the request
+// Get all applications currently installed on the device
 func (m *DetectedAppsRequestBuilder) Get(options *DetectedAppsRequestBuilderGetOptions)(*DetectedAppsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

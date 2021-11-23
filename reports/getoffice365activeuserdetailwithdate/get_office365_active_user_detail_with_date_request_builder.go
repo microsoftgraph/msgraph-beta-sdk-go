@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActiveUserDetail(date={date})
+// GetOffice365ActiveUserDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActiveUserDetail(date={date})
 type GetOffice365ActiveUserDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetOffice365ActiveUserDetailWithDateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetOffice365ActiveUserDetailWithDateRequestBuilderGetOptions options for Get
 type GetOffice365ActiveUserDetailWithDateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type GetOffice365ActiveUserDetailWithDateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetOffice365ActiveUserDetailWithDateRequestBuilder and sets the default values.
-// Parameters:
-//  - date : Usage: date={date}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal instantiates a new GetOffice365ActiveUserDetailWithDateRequestBuilder and sets the default values.
 func NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetOffice365ActiveUserDetailWithDateRequestBuilder) {
     m := &GetOffice365ActiveUserDetailWithDateRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetOffice365ActiveUserDetailWithDateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOffice365ActiveUserDetailWithDateRequestBuilder instantiates a new GetOffice365ActiveUserDetailWithDateRequestBuilder and sets the default values.
 func NewGetOffice365ActiveUserDetailWithDateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOffice365ActiveUserDetailWithDateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getOffice365ActiveUserDetail
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getOffice365ActiveUserDetail
 func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) CreateGetRequestInformation(options *GetOffice365ActiveUserDetailWithDateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Invoke function getOffice365ActiveUserDetail
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getOffice365ActiveUserDetail
 func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) Get(options *GetOffice365ActiveUserDetailWithDateRequestBuilderGetOptions)([]GetOffice365ActiveUserDetailWithDate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

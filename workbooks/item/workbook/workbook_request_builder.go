@@ -23,7 +23,7 @@ import (
     ifc040da8887c50e91cd72907529f062b905d7860286051d4744e9f5257816c1c "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook
+// WorkbookRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook
 type WorkbookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -32,7 +32,7 @@ type WorkbookRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkbookRequestBuilderDeleteOptions options for Delete
 type WorkbookRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -41,7 +41,7 @@ type WorkbookRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkbookRequestBuilderGetOptions options for Get
 type WorkbookRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -52,12 +52,12 @@ type WorkbookRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+// WorkbookRequestBuilderGetQueryParameters for files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 type WorkbookRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
 }
-// Options for Patch
+// WorkbookRequestBuilderPatchOptions options for Patch
 type WorkbookRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Workbook;
@@ -77,9 +77,7 @@ func (m *WorkbookRequestBuilder) CloseSession()(*i2f729528842fb450a3cce06c678409
 func (m *WorkbookRequestBuilder) Comments()(*i647f490057b53e37e38653c202616c3cc8a5c74f3088878e7220ceaf5f1fed4f.CommentsRequestBuilder) {
     return i647f490057b53e37e38653c202616c3cc8a5c74f3088878e7220ceaf5f1fed4f.NewCommentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.comments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CommentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.comments.item collection
 func (m *WorkbookRequestBuilder) CommentsById(id string)(*i3a0d56dad4369a5d9cf3a6a486f02ab27a978bf5bd0f244b4818a5545a33c86f.WorkbookCommentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -90,10 +88,7 @@ func (m *WorkbookRequestBuilder) CommentsById(id string)(*i3a0d56dad4369a5d9cf3a
     }
     return i3a0d56dad4369a5d9cf3a6a486f02ab27a978bf5bd0f244b4818a5545a33c86f.NewWorkbookCommentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new WorkbookRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookRequestBuilderInternal instantiates a new WorkbookRequestBuilder and sets the default values.
 func NewWorkbookRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookRequestBuilder) {
     m := &WorkbookRequestBuilder{
     }
@@ -106,18 +101,13 @@ func NewWorkbookRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookRequestBuilder instantiates a new WorkbookRequestBuilder and sets the default values.
 func NewWorkbookRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbookRequestBuilderInternal(urlParams, requestAdapter)
 }
-// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation for files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *WorkbookRequestBuilder) CreateDeleteRequestInformation(options *WorkbookRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,9 +124,7 @@ func (m *WorkbookRequestBuilder) CreateDeleteRequestInformation(options *Workboo
     }
     return requestInfo, nil
 }
-// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation for files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *WorkbookRequestBuilder) CreateGetRequestInformation(options *WorkbookRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,9 +144,7 @@ func (m *WorkbookRequestBuilder) CreateGetRequestInformation(options *WorkbookRe
     }
     return requestInfo, nil
 }
-// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation for files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *WorkbookRequestBuilder) CreatePatchRequestInformation(options *WorkbookRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -179,9 +165,7 @@ func (m *WorkbookRequestBuilder) CreatePatchRequestInformation(options *Workbook
 func (m *WorkbookRequestBuilder) CreateSession()(*i5f18479f72a009040a4c7ba0210e536e52b3a5f0aa722d93f6838671c0edaeb6.CreateSessionRequestBuilder) {
     return i5f18479f72a009040a4c7ba0210e536e52b3a5f0aa722d93f6838671c0edaeb6.NewCreateSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete for files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *WorkbookRequestBuilder) Delete(options *WorkbookRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -196,9 +180,7 @@ func (m *WorkbookRequestBuilder) Delete(options *WorkbookRequestBuilderDeleteOpt
 func (m *WorkbookRequestBuilder) Functions()(*i23c33d3b508b461c42302773e35126bafe425e3d6ca6be4bebe4f388d2b82904.FunctionsRequestBuilder) {
     return i23c33d3b508b461c42302773e35126bafe425e3d6ca6be4bebe4f388d2b82904.NewFunctionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get for files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *WorkbookRequestBuilder) Get(options *WorkbookRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Workbook, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -213,9 +195,7 @@ func (m *WorkbookRequestBuilder) Get(options *WorkbookRequestBuilderGetOptions)(
 func (m *WorkbookRequestBuilder) Names()(*if4db95c02393d77e59708772db1eaa49cba9bbeef6014323ebf4d9fd24cc0ab5.NamesRequestBuilder) {
     return if4db95c02393d77e59708772db1eaa49cba9bbeef6014323ebf4d9fd24cc0ab5.NewNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.names.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// NamesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.names.item collection
 func (m *WorkbookRequestBuilder) NamesById(id string)(*i9ac7989d9ff70ea302db904397b794ae2fad56336704a40bc51e618121e1694e.WorkbookNamedItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -229,9 +209,7 @@ func (m *WorkbookRequestBuilder) NamesById(id string)(*i9ac7989d9ff70ea302db9043
 func (m *WorkbookRequestBuilder) Operations()(*i40923e493d0991ef76895cd594cb15df12112cf184549730c58a95128ccabe0d.OperationsRequestBuilder) {
     return i40923e493d0991ef76895cd594cb15df12112cf184549730c58a95128ccabe0d.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.operations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.operations.item collection
 func (m *WorkbookRequestBuilder) OperationsById(id string)(*i68c15a4aa20a1299663783bdd656d9cb2266d4f39cc5c38fc5983467711cbb63.WorkbookOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -242,9 +220,7 @@ func (m *WorkbookRequestBuilder) OperationsById(id string)(*i68c15a4aa20a1299663
     }
     return i68c15a4aa20a1299663783bdd656d9cb2266d4f39cc5c38fc5983467711cbb63.NewWorkbookOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch for files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *WorkbookRequestBuilder) Patch(options *WorkbookRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -259,24 +235,18 @@ func (m *WorkbookRequestBuilder) Patch(options *WorkbookRequestBuilderPatchOptio
 func (m *WorkbookRequestBuilder) RefreshSession()(*ib2f23e35691917571ee0b2aacb3766e55dbbace2b8ee393fefa91f8c8b3e58cf.RefreshSessionRequestBuilder) {
     return ib2f23e35691917571ee0b2aacb3766e55dbbace2b8ee393fefa91f8c8b3e58cf.NewRefreshSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.sessionInfoResource(key='{key}')
-// Parameters:
-//  - key : Usage: key={key}
+// SessionInfoResourceWithKey builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.sessionInfoResource(key='{key}')
 func (m *WorkbookRequestBuilder) SessionInfoResourceWithKey(key *string)(*i550cf588efb032262ae1b13842a8e4052526146cc523b446a8ea2718fac7eb60.SessionInfoResourceWithKeyRequestBuilder) {
     return i550cf588efb032262ae1b13842a8e4052526146cc523b446a8ea2718fac7eb60.NewSessionInfoResourceWithKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter, key);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.tableRowOperationResult(key='{key}')
-// Parameters:
-//  - key : Usage: key={key}
+// TableRowOperationResultWithKey builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.tableRowOperationResult(key='{key}')
 func (m *WorkbookRequestBuilder) TableRowOperationResultWithKey(key *string)(*i80e956b867ff70421ffb74171ff2c5ddebb245ce55483d3c982a7228eb11eaa4.TableRowOperationResultWithKeyRequestBuilder) {
     return i80e956b867ff70421ffb74171ff2c5ddebb245ce55483d3c982a7228eb11eaa4.NewTableRowOperationResultWithKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter, key);
 }
 func (m *WorkbookRequestBuilder) Tables()(*i83c36f1293101ad37747f2f4ea8bec7d049944311a3c2750d750e2402a44b6cf.TablesRequestBuilder) {
     return i83c36f1293101ad37747f2f4ea8bec7d049944311a3c2750d750e2402a44b6cf.NewTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TablesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item collection
 func (m *WorkbookRequestBuilder) TablesById(id string)(*i4b60d00caadb08f14bf0d8baa40f4fade758c1587c4f267c5653fc188d3449dc.WorkbookTableRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -290,9 +260,7 @@ func (m *WorkbookRequestBuilder) TablesById(id string)(*i4b60d00caadb08f14bf0d8b
 func (m *WorkbookRequestBuilder) Worksheets()(*idf9992a2b81be84e0ba33cd27843ef24ca93b3fc3795c206b4e384ff32c5f927.WorksheetsRequestBuilder) {
     return idf9992a2b81be84e0ba33cd27843ef24ca93b3fc3795c206b4e384ff32c5f927.NewWorksheetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.worksheets.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// WorksheetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.worksheets.item collection
 func (m *WorkbookRequestBuilder) WorksheetsById(id string)(*ifc040da8887c50e91cd72907529f062b905d7860286051d4744e9f5257816c1c.WorkbookWorksheetRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

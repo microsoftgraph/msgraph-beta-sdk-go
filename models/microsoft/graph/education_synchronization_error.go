@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// EducationSynchronizationError 
 type EducationSynchronizationError struct {
     Entity
     // Represents the sync entity (school, section, student, teacher).
@@ -21,14 +21,14 @@ type EducationSynchronizationError struct {
     // The identifier of this error entry.
     reportableIdentifier *string;
 }
-// Instantiates a new educationSynchronizationError and sets the default values.
+// NewEducationSynchronizationError instantiates a new educationSynchronizationError and sets the default values.
 func NewEducationSynchronizationError()(*EducationSynchronizationError) {
     m := &EducationSynchronizationError{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the entryType property value. Represents the sync entity (school, section, student, teacher).
+// GetEntryType gets the entryType property value. Represents the sync entity (school, section, student, teacher).
 func (m *EducationSynchronizationError) GetEntryType()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *EducationSynchronizationError) GetEntryType()(*string) {
         return m.entryType
     }
 }
-// Gets the errorCode property value. Represents the error code for this error.
+// GetErrorCode gets the errorCode property value. Represents the error code for this error.
 func (m *EducationSynchronizationError) GetErrorCode()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *EducationSynchronizationError) GetErrorCode()(*string) {
         return m.errorCode
     }
 }
-// Gets the errorMessage property value. Contains a description of the error.
+// GetErrorMessage gets the errorMessage property value. Contains a description of the error.
 func (m *EducationSynchronizationError) GetErrorMessage()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *EducationSynchronizationError) GetErrorMessage()(*string) {
         return m.errorMessage
     }
 }
-// Gets the joiningValue property value. The unique identifier for the entry.
+// GetJoiningValue gets the joiningValue property value. The unique identifier for the entry.
 func (m *EducationSynchronizationError) GetJoiningValue()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *EducationSynchronizationError) GetJoiningValue()(*string) {
         return m.joiningValue
     }
 }
-// Gets the recordedDateTime property value. The time of occurrence of this error.
+// GetRecordedDateTime gets the recordedDateTime property value. The time of occurrence of this error.
 func (m *EducationSynchronizationError) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *EducationSynchronizationError) GetRecordedDateTime()(*i336074805fc85398
         return m.recordedDateTime
     }
 }
-// Gets the reportableIdentifier property value. The identifier of this error entry.
+// GetReportableIdentifier gets the reportableIdentifier property value. The identifier of this error entry.
 func (m *EducationSynchronizationError) GetReportableIdentifier()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *EducationSynchronizationError) GetReportableIdentifier()(*string) {
         return m.reportableIdentifier
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["entryType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,9 +144,7 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
 func (m *EducationSynchronizationError) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EducationSynchronizationError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -190,39 +188,27 @@ func (m *EducationSynchronizationError) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the entryType property value. Represents the sync entity (school, section, student, teacher).
-// Parameters:
-//  - value : Value to set for the entryType property.
+// SetEntryType sets the entryType property value. Represents the sync entity (school, section, student, teacher).
 func (m *EducationSynchronizationError) SetEntryType(value *string)() {
     m.entryType = value
 }
-// Sets the errorCode property value. Represents the error code for this error.
-// Parameters:
-//  - value : Value to set for the errorCode property.
+// SetErrorCode sets the errorCode property value. Represents the error code for this error.
 func (m *EducationSynchronizationError) SetErrorCode(value *string)() {
     m.errorCode = value
 }
-// Sets the errorMessage property value. Contains a description of the error.
-// Parameters:
-//  - value : Value to set for the errorMessage property.
+// SetErrorMessage sets the errorMessage property value. Contains a description of the error.
 func (m *EducationSynchronizationError) SetErrorMessage(value *string)() {
     m.errorMessage = value
 }
-// Sets the joiningValue property value. The unique identifier for the entry.
-// Parameters:
-//  - value : Value to set for the joiningValue property.
+// SetJoiningValue sets the joiningValue property value. The unique identifier for the entry.
 func (m *EducationSynchronizationError) SetJoiningValue(value *string)() {
     m.joiningValue = value
 }
-// Sets the recordedDateTime property value. The time of occurrence of this error.
-// Parameters:
-//  - value : Value to set for the recordedDateTime property.
+// SetRecordedDateTime sets the recordedDateTime property value. The time of occurrence of this error.
 func (m *EducationSynchronizationError) SetRecordedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.recordedDateTime = value
 }
-// Sets the reportableIdentifier property value. The identifier of this error entry.
-// Parameters:
-//  - value : Value to set for the reportableIdentifier property.
+// SetReportableIdentifier sets the reportableIdentifier property value. The identifier of this error entry.
 func (m *EducationSynchronizationError) SetReportableIdentifier(value *string)() {
     m.reportableIdentifier = value
 }

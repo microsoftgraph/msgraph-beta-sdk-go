@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \informationProtection\microsoft.graph.verifySignature
+// VerifySignatureRequestBuilder builds and executes requests for operations under \informationProtection\microsoft.graph.verifySignature
 type VerifySignatureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type VerifySignatureRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// VerifySignatureRequestBuilderPostOptions options for Post
 type VerifySignatureRequestBuilderPostOptions struct {
     // 
     Body *VerifySignatureRequestBody;
@@ -26,21 +26,21 @@ type VerifySignatureRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes verificationResult
+// VerifySignatureResponse union type wrapper for classes verificationResult
 type VerifySignatureResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type verificationResult
     verificationResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResult;
 }
-// Instantiates a new verifySignatureResponse and sets the default values.
+// NewVerifySignatureResponse instantiates a new verifySignatureResponse and sets the default values.
 func NewVerifySignatureResponse()(*VerifySignatureResponse) {
     m := &VerifySignatureResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifySignatureResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *VerifySignatureResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the verificationResult property value. Union type representation for type verificationResult
+// GetVerificationResult gets the verificationResult property value. Union type representation for type verificationResult
 func (m *VerifySignatureResponse) GetVerificationResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResult) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *VerifySignatureResponse) GetVerificationResult()(*i535684e11b5500196ecb
         return m.verificationResult
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *VerifySignatureResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["verificationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *VerifySignatureResponse) GetFieldDeserializers()(map[string]func(interf
 func (m *VerifySignatureResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *VerifySignatureResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("verificationResult", m.GetVerificationResult())
@@ -92,22 +90,15 @@ func (m *VerifySignatureResponse) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifySignatureResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the verificationResult property value. Union type representation for type verificationResult
-// Parameters:
-//  - value : Value to set for the verificationResult property.
+// SetVerificationResult sets the verificationResult property value. Union type representation for type verificationResult
 func (m *VerifySignatureResponse) SetVerificationResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResult)() {
     m.verificationResult = value
 }
-// Instantiates a new VerifySignatureRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVerifySignatureRequestBuilderInternal instantiates a new VerifySignatureRequestBuilder and sets the default values.
 func NewVerifySignatureRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VerifySignatureRequestBuilder) {
     m := &VerifySignatureRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewVerifySignatureRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new VerifySignatureRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVerifySignatureRequestBuilder instantiates a new VerifySignatureRequestBuilder and sets the default values.
 func NewVerifySignatureRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VerifySignatureRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVerifySignatureRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action verifySignature
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action verifySignature
 func (m *VerifySignatureRequestBuilder) CreatePostRequestInformation(options *VerifySignatureRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *VerifySignatureRequestBuilder) CreatePostRequestInformation(options *Ve
     }
     return requestInfo, nil
 }
-// Invoke action verifySignature
-// Parameters:
-//  - options : Options for the request
+// Post invoke action verifySignature
 func (m *VerifySignatureRequestBuilder) Post(options *VerifySignatureRequestBuilderPostOptions)(*VerifySignatureResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

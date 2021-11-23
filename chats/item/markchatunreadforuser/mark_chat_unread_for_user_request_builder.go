@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.markChatUnreadForUser
+// MarkChatUnreadForUserRequestBuilder builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.markChatUnreadForUser
 type MarkChatUnreadForUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type MarkChatUnreadForUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// MarkChatUnreadForUserRequestBuilderPostOptions options for Post
 type MarkChatUnreadForUserRequestBuilderPostOptions struct {
     // 
     Body *MarkChatUnreadForUserRequestBody;
@@ -24,10 +24,7 @@ type MarkChatUnreadForUserRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MarkChatUnreadForUserRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMarkChatUnreadForUserRequestBuilderInternal instantiates a new MarkChatUnreadForUserRequestBuilder and sets the default values.
 func NewMarkChatUnreadForUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MarkChatUnreadForUserRequestBuilder) {
     m := &MarkChatUnreadForUserRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewMarkChatUnreadForUserRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MarkChatUnreadForUserRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMarkChatUnreadForUserRequestBuilder instantiates a new MarkChatUnreadForUserRequestBuilder and sets the default values.
 func NewMarkChatUnreadForUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MarkChatUnreadForUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMarkChatUnreadForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action markChatUnreadForUser
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action markChatUnreadForUser
 func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformation(options *MarkChatUnreadForUserRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Invoke action markChatUnreadForUser
-// Parameters:
-//  - options : Options for the request
+// Post invoke action markChatUnreadForUser
 func (m *MarkChatUnreadForUserRequestBuilder) Post(options *MarkChatUnreadForUserRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

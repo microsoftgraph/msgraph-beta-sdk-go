@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DataClassificationService 
 type DataClassificationService struct {
     Entity
     // 
@@ -26,14 +26,14 @@ type DataClassificationService struct {
     // 
     sensitivityLabels []SensitivityLabel;
 }
-// Instantiates a new dataClassificationService and sets the default values.
+// NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
     m := &DataClassificationService{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the classifyFileJobs property value. 
+// GetClassifyFileJobs gets the classifyFileJobs property value. 
 func (m *DataClassificationService) GetClassifyFileJobs()([]JobResponseBase) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *DataClassificationService) GetClassifyFileJobs()([]JobResponseBase) {
         return m.classifyFileJobs
     }
 }
-// Gets the classifyTextJobs property value. 
+// GetClassifyTextJobs gets the classifyTextJobs property value. 
 func (m *DataClassificationService) GetClassifyTextJobs()([]JobResponseBase) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *DataClassificationService) GetClassifyTextJobs()([]JobResponseBase) {
         return m.classifyTextJobs
     }
 }
-// Gets the evaluateDlpPoliciesJobs property value. 
+// GetEvaluateDlpPoliciesJobs gets the evaluateDlpPoliciesJobs property value. 
 func (m *DataClassificationService) GetEvaluateDlpPoliciesJobs()([]JobResponseBase) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *DataClassificationService) GetEvaluateDlpPoliciesJobs()([]JobResponseBa
         return m.evaluateDlpPoliciesJobs
     }
 }
-// Gets the evaluateLabelJobs property value. 
+// GetEvaluateLabelJobs gets the evaluateLabelJobs property value. 
 func (m *DataClassificationService) GetEvaluateLabelJobs()([]JobResponseBase) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *DataClassificationService) GetEvaluateLabelJobs()([]JobResponseBase) {
         return m.evaluateLabelJobs
     }
 }
-// Gets the exactMatchDataStores property value. 
+// GetExactMatchDataStores gets the exactMatchDataStores property value. 
 func (m *DataClassificationService) GetExactMatchDataStores()([]ExactMatchDataStore) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *DataClassificationService) GetExactMatchDataStores()([]ExactMatchDataSt
         return m.exactMatchDataStores
     }
 }
-// Gets the exactMatchUploadAgents property value. 
+// GetExactMatchUploadAgents gets the exactMatchUploadAgents property value. 
 func (m *DataClassificationService) GetExactMatchUploadAgents()([]ExactMatchUploadAgent) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *DataClassificationService) GetExactMatchUploadAgents()([]ExactMatchUplo
         return m.exactMatchUploadAgents
     }
 }
-// Gets the jobs property value. 
+// GetJobs gets the jobs property value. 
 func (m *DataClassificationService) GetJobs()([]JobResponseBase) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *DataClassificationService) GetJobs()([]JobResponseBase) {
         return m.jobs
     }
 }
-// Gets the sensitiveTypes property value. 
+// GetSensitiveTypes gets the sensitiveTypes property value. 
 func (m *DataClassificationService) GetSensitiveTypes()([]SensitiveType) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *DataClassificationService) GetSensitiveTypes()([]SensitiveType) {
         return m.sensitiveTypes
     }
 }
-// Gets the sensitivityLabels property value. 
+// GetSensitivityLabels gets the sensitivityLabels property value. 
 func (m *DataClassificationService) GetSensitivityLabels()([]SensitivityLabel) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *DataClassificationService) GetSensitivityLabels()([]SensitivityLabel) {
         return m.sensitivityLabels
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classifyFileJobs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,9 +239,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
 func (m *DataClassificationService) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -348,57 +346,39 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the classifyFileJobs property value. 
-// Parameters:
-//  - value : Value to set for the classifyFileJobs property.
+// SetClassifyFileJobs sets the classifyFileJobs property value. 
 func (m *DataClassificationService) SetClassifyFileJobs(value []JobResponseBase)() {
     m.classifyFileJobs = value
 }
-// Sets the classifyTextJobs property value. 
-// Parameters:
-//  - value : Value to set for the classifyTextJobs property.
+// SetClassifyTextJobs sets the classifyTextJobs property value. 
 func (m *DataClassificationService) SetClassifyTextJobs(value []JobResponseBase)() {
     m.classifyTextJobs = value
 }
-// Sets the evaluateDlpPoliciesJobs property value. 
-// Parameters:
-//  - value : Value to set for the evaluateDlpPoliciesJobs property.
+// SetEvaluateDlpPoliciesJobs sets the evaluateDlpPoliciesJobs property value. 
 func (m *DataClassificationService) SetEvaluateDlpPoliciesJobs(value []JobResponseBase)() {
     m.evaluateDlpPoliciesJobs = value
 }
-// Sets the evaluateLabelJobs property value. 
-// Parameters:
-//  - value : Value to set for the evaluateLabelJobs property.
+// SetEvaluateLabelJobs sets the evaluateLabelJobs property value. 
 func (m *DataClassificationService) SetEvaluateLabelJobs(value []JobResponseBase)() {
     m.evaluateLabelJobs = value
 }
-// Sets the exactMatchDataStores property value. 
-// Parameters:
-//  - value : Value to set for the exactMatchDataStores property.
+// SetExactMatchDataStores sets the exactMatchDataStores property value. 
 func (m *DataClassificationService) SetExactMatchDataStores(value []ExactMatchDataStore)() {
     m.exactMatchDataStores = value
 }
-// Sets the exactMatchUploadAgents property value. 
-// Parameters:
-//  - value : Value to set for the exactMatchUploadAgents property.
+// SetExactMatchUploadAgents sets the exactMatchUploadAgents property value. 
 func (m *DataClassificationService) SetExactMatchUploadAgents(value []ExactMatchUploadAgent)() {
     m.exactMatchUploadAgents = value
 }
-// Sets the jobs property value. 
-// Parameters:
-//  - value : Value to set for the jobs property.
+// SetJobs sets the jobs property value. 
 func (m *DataClassificationService) SetJobs(value []JobResponseBase)() {
     m.jobs = value
 }
-// Sets the sensitiveTypes property value. 
-// Parameters:
-//  - value : Value to set for the sensitiveTypes property.
+// SetSensitiveTypes sets the sensitiveTypes property value. 
 func (m *DataClassificationService) SetSensitiveTypes(value []SensitiveType)() {
     m.sensitiveTypes = value
 }
-// Sets the sensitivityLabels property value. 
-// Parameters:
-//  - value : Value to set for the sensitivityLabels property.
+// SetSensitivityLabels sets the sensitivityLabels property value. 
 func (m *DataClassificationService) SetSensitivityLabels(value []SensitivityLabel)() {
     m.sensitivityLabels = value
 }

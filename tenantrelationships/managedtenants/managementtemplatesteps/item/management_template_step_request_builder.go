@@ -8,7 +8,7 @@ import (
     if10b50a6a639198aa7ad504cf1de7438213f4c0eaec1cc03ddfc26dc8fca7d18 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatesteps/item/stepversions"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}
+// ManagementTemplateStepRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}
 type ManagementTemplateStepRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ManagementTemplateStepRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagementTemplateStepRequestBuilderDeleteOptions options for Delete
 type ManagementTemplateStepRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ManagementTemplateStepRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagementTemplateStepRequestBuilderGetOptions options for Get
 type ManagementTemplateStepRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ManagementTemplateStepRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get managementTemplateSteps from tenantRelationships
+// ManagementTemplateStepRequestBuilderGetQueryParameters get managementTemplateSteps from tenantRelationships
 type ManagementTemplateStepRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagementTemplateStepRequestBuilderPatchOptions options for Patch
 type ManagementTemplateStepRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateStep;
@@ -55,10 +55,7 @@ type ManagementTemplateStepRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagementTemplateStepRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateStepRequestBuilderInternal instantiates a new ManagementTemplateStepRequestBuilder and sets the default values.
 func NewManagementTemplateStepRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateStepRequestBuilder) {
     m := &ManagementTemplateStepRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewManagementTemplateStepRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementTemplateStepRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateStepRequestBuilder instantiates a new ManagementTemplateStepRequestBuilder and sets the default values.
 func NewManagementTemplateStepRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateStepRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateStepRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property managementTemplateSteps for tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property managementTemplateSteps for tenantRelationships
 func (m *ManagementTemplateStepRequestBuilder) CreateDeleteRequestInformation(options *ManagementTemplateStepRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ManagementTemplateStepRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// Get managementTemplateSteps from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get managementTemplateSteps from tenantRelationships
 func (m *ManagementTemplateStepRequestBuilder) CreateGetRequestInformation(options *ManagementTemplateStepRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ManagementTemplateStepRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Update the navigation property managementTemplateSteps in tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property managementTemplateSteps in tenantRelationships
 func (m *ManagementTemplateStepRequestBuilder) CreatePatchRequestInformation(options *ManagementTemplateStepRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ManagementTemplateStepRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Delete navigation property managementTemplateSteps for tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property managementTemplateSteps for tenantRelationships
 func (m *ManagementTemplateStepRequestBuilder) Delete(options *ManagementTemplateStepRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *ManagementTemplateStepRequestBuilder) Delete(options *ManagementTemplat
     }
     return nil
 }
-// Get managementTemplateSteps from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Get get managementTemplateSteps from tenantRelationships
 func (m *ManagementTemplateStepRequestBuilder) Get(options *ManagementTemplateStepRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateStep, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *ManagementTemplateStepRequestBuilder) Get(options *ManagementTemplateSt
 func (m *ManagementTemplateStepRequestBuilder) ManagementTemplate()(*i2c949c31d0e042e40af58173f68de653d231b5aadb494a7b05bcfe32d899e0c2.ManagementTemplateRequestBuilder) {
     return i2c949c31d0e042e40af58173f68de653d231b5aadb494a7b05bcfe32d899e0c2.NewManagementTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property managementTemplateSteps in tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property managementTemplateSteps in tenantRelationships
 func (m *ManagementTemplateStepRequestBuilder) Patch(options *ManagementTemplateStepRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

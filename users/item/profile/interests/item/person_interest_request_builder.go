@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\interests\{personInterest-id}
+// PersonInterestRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\interests\{personInterest-id}
 type PersonInterestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PersonInterestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PersonInterestRequestBuilderDeleteOptions options for Delete
 type PersonInterestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PersonInterestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PersonInterestRequestBuilderGetOptions options for Get
 type PersonInterestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PersonInterestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
+// PersonInterestRequestBuilderGetQueryParameters provides detailed information about interests the user has associated with themselves in various services.
 type PersonInterestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PersonInterestRequestBuilderPatchOptions options for Patch
 type PersonInterestRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonInterest;
@@ -53,10 +53,7 @@ type PersonInterestRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PersonInterestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonInterestRequestBuilderInternal instantiates a new PersonInterestRequestBuilder and sets the default values.
 func NewPersonInterestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonInterestRequestBuilder) {
     m := &PersonInterestRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPersonInterestRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PersonInterestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonInterestRequestBuilder instantiates a new PersonInterestRequestBuilder and sets the default values.
 func NewPersonInterestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonInterestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPersonInterestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation provides detailed information about interests the user has associated with themselves in various services.
 func (m *PersonInterestRequestBuilder) CreateDeleteRequestInformation(options *PersonInterestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PersonInterestRequestBuilder) CreateDeleteRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation provides detailed information about interests the user has associated with themselves in various services.
 func (m *PersonInterestRequestBuilder) CreateGetRequestInformation(options *PersonInterestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PersonInterestRequestBuilder) CreateGetRequestInformation(options *Pers
     }
     return requestInfo, nil
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation provides detailed information about interests the user has associated with themselves in various services.
 func (m *PersonInterestRequestBuilder) CreatePatchRequestInformation(options *PersonInterestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PersonInterestRequestBuilder) CreatePatchRequestInformation(options *Pe
     }
     return requestInfo, nil
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// Delete provides detailed information about interests the user has associated with themselves in various services.
 func (m *PersonInterestRequestBuilder) Delete(options *PersonInterestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PersonInterestRequestBuilder) Delete(options *PersonInterestRequestBuil
     }
     return nil
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// Get provides detailed information about interests the user has associated with themselves in various services.
 func (m *PersonInterestRequestBuilder) Get(options *PersonInterestRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonInterest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PersonInterestRequestBuilder) Get(options *PersonInterestRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonInterest), nil
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// Patch provides detailed information about interests the user has associated with themselves in various services.
 func (m *PersonInterestRequestBuilder) Patch(options *PersonInterestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getM365AppUserCounts(period='{period}')
+// GetM365AppUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getM365AppUserCounts(period='{period}')
 type GetM365AppUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetM365AppUserCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetM365AppUserCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetM365AppUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,11 +24,7 @@ type GetM365AppUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetM365AppUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetM365AppUserCountsWithPeriodRequestBuilderInternal instantiates a new GetM365AppUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetM365AppUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetM365AppUserCountsWithPeriodRequestBuilder) {
     m := &GetM365AppUserCountsWithPeriodRequestBuilder{
     }
@@ -44,18 +40,13 @@ func NewGetM365AppUserCountsWithPeriodRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetM365AppUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetM365AppUserCountsWithPeriodRequestBuilder instantiates a new GetM365AppUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetM365AppUserCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetM365AppUserCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetM365AppUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getM365AppUserCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getM365AppUserCounts
 func (m *GetM365AppUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetM365AppUserCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -72,9 +63,7 @@ func (m *GetM365AppUserCountsWithPeriodRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Invoke function getM365AppUserCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getM365AppUserCounts
 func (m *GetM365AppUserCountsWithPeriodRequestBuilder) Get(options *GetM365AppUserCountsWithPeriodRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Report, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

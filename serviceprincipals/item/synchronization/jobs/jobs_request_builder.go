@@ -7,7 +7,7 @@ import (
     icb9fdff058603b868408b3368d12ca825ae8308bd95e6e6a1fc30bf50372b9bb "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/synchronization/jobs/validatecredentials"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs
+// JobsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs
 type JobsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type JobsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// JobsRequestBuilderGetOptions options for Get
 type JobsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type JobsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get jobs from servicePrincipals
+// JobsRequestBuilderGetQueryParameters get jobs from servicePrincipals
 type JobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type JobsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// JobsRequestBuilderPostOptions options for Post
 type JobsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob;
@@ -57,10 +57,7 @@ type JobsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new JobsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJobsRequestBuilderInternal instantiates a new JobsRequestBuilder and sets the default values.
 func NewJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JobsRequestBuilder) {
     m := &JobsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewJobsRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new JobsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJobsRequestBuilder instantiates a new JobsRequestBuilder and sets the default values.
 func NewJobsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JobsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get jobs from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get jobs from servicePrincipals
 func (m *JobsRequestBuilder) CreateGetRequestInformation(options *JobsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *JobsRequestBuilder) CreateGetRequestInformation(options *JobsRequestBui
     }
     return requestInfo, nil
 }
-// Create new navigation property to jobs for servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to jobs for servicePrincipals
 func (m *JobsRequestBuilder) CreatePostRequestInformation(options *JobsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *JobsRequestBuilder) CreatePostRequestInformation(options *JobsRequestBu
     }
     return requestInfo, nil
 }
-// Get jobs from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Get get jobs from servicePrincipals
 func (m *JobsRequestBuilder) Get(options *JobsRequestBuilderGetOptions)(*JobsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *JobsRequestBuilder) Get(options *JobsRequestBuilderGetOptions)(*JobsRes
     }
     return res.(*JobsResponse), nil
 }
-// Create new navigation property to jobs for servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to jobs for servicePrincipals
 func (m *JobsRequestBuilder) Post(options *JobsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

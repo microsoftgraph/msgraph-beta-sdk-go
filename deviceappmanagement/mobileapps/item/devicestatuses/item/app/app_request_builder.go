@@ -11,7 +11,7 @@ import (
     if3c95e63b2ea961b05101c4b865ef29a9b66d6043796833062d636adcc37fbe8 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/devicestatuses/item/app/getrelatedappstateswithuserprincipalnamewithdeviceid"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\deviceStatuses\{mobileAppInstallStatus-id}\app
+// AppRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\deviceStatuses\{mobileAppInstallStatus-id}\app
 type AppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type AppRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppRequestBuilderGetOptions options for Get
 type AppRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type AppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The navigation link to the mobile app.
+// AppRequestBuilderGetQueryParameters the navigation link to the mobile app.
 type AppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -41,10 +41,7 @@ type AppRequestBuilderGetQueryParameters struct {
 func (m *AppRequestBuilder) Assign()(*id61593f4ecef7c9ca8114d08ebdda35913106925acf434b1185bc5b0c5c8f1ac.AssignRequestBuilder) {
     return id61593f4ecef7c9ca8114d08ebdda35913106925acf434b1185bc5b0c5c8f1ac.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AppRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppRequestBuilderInternal instantiates a new AppRequestBuilder and sets the default values.
 func NewAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppRequestBuilder) {
     m := &AppRequestBuilder{
     }
@@ -57,18 +54,13 @@ func NewAppRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppRequestBuilder instantiates a new AppRequestBuilder and sets the default values.
 func NewAppRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The navigation link to the mobile app.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the navigation link to the mobile app.
 func (m *AppRequestBuilder) CreateGetRequestInformation(options *AppRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,9 +80,7 @@ func (m *AppRequestBuilder) CreateGetRequestInformation(options *AppRequestBuild
     }
     return requestInfo, nil
 }
-// The navigation link to the mobile app.
-// Parameters:
-//  - options : Options for the request
+// Get the navigation link to the mobile app.
 func (m *AppRequestBuilder) Get(options *AppRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileApp, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -102,10 +92,7 @@ func (m *AppRequestBuilder) Get(options *AppRequestBuilderGetOptions)(*i535684e1
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileApp), nil
 }
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')
-// Parameters:
-//  - deviceId : Usage: deviceId={deviceId}
-//  - userPrincipalName : Usage: userPrincipalName={userPrincipalName}
+// GetRelatedAppStatesWithUserPrincipalNameWithDeviceId builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')
 func (m *AppRequestBuilder) GetRelatedAppStatesWithUserPrincipalNameWithDeviceId(userPrincipalName *string, deviceId *string)(*if3c95e63b2ea961b05101c4b865ef29a9b66d6043796833062d636adcc37fbe8.GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) {
     return if3c95e63b2ea961b05101c4b865ef29a9b66d6043796833062d636adcc37fbe8.NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, userPrincipalName, deviceId);
 }

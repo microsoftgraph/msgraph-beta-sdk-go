@@ -7,7 +7,7 @@ import (
     i3f5fa64fce6c85f80e1275e28c48dcc727e277551da9d2d8656ea64748f415ca "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/datasharingconsents/item/consenttodatasharing"
 )
 
-// Builds and executes requests for operations under \deviceManagement\dataSharingConsents\{dataSharingConsent-id}
+// DataSharingConsentRequestBuilder builds and executes requests for operations under \deviceManagement\dataSharingConsents\{dataSharingConsent-id}
 type DataSharingConsentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DataSharingConsentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DataSharingConsentRequestBuilderDeleteOptions options for Delete
 type DataSharingConsentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DataSharingConsentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DataSharingConsentRequestBuilderGetOptions options for Get
 type DataSharingConsentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DataSharingConsentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Data sharing consents.
+// DataSharingConsentRequestBuilderGetQueryParameters data sharing consents.
 type DataSharingConsentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DataSharingConsentRequestBuilderPatchOptions options for Patch
 type DataSharingConsentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSharingConsent;
@@ -57,10 +57,7 @@ type DataSharingConsentRequestBuilderPatchOptions struct {
 func (m *DataSharingConsentRequestBuilder) ConsentToDataSharing()(*i3f5fa64fce6c85f80e1275e28c48dcc727e277551da9d2d8656ea64748f415ca.ConsentToDataSharingRequestBuilder) {
     return i3f5fa64fce6c85f80e1275e28c48dcc727e277551da9d2d8656ea64748f415ca.NewConsentToDataSharingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new DataSharingConsentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataSharingConsentRequestBuilderInternal instantiates a new DataSharingConsentRequestBuilder and sets the default values.
 func NewDataSharingConsentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataSharingConsentRequestBuilder) {
     m := &DataSharingConsentRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewDataSharingConsentRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DataSharingConsentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataSharingConsentRequestBuilder instantiates a new DataSharingConsentRequestBuilder and sets the default values.
 func NewDataSharingConsentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataSharingConsentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDataSharingConsentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation data sharing consents.
 func (m *DataSharingConsentRequestBuilder) CreateDeleteRequestInformation(options *DataSharingConsentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *DataSharingConsentRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation data sharing consents.
 func (m *DataSharingConsentRequestBuilder) CreateGetRequestInformation(options *DataSharingConsentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DataSharingConsentRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation data sharing consents.
 func (m *DataSharingConsentRequestBuilder) CreatePatchRequestInformation(options *DataSharingConsentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *DataSharingConsentRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// Delete data sharing consents.
 func (m *DataSharingConsentRequestBuilder) Delete(options *DataSharingConsentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *DataSharingConsentRequestBuilder) Delete(options *DataSharingConsentReq
     }
     return nil
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// Get data sharing consents.
 func (m *DataSharingConsentRequestBuilder) Get(options *DataSharingConsentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSharingConsent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *DataSharingConsentRequestBuilder) Get(options *DataSharingConsentReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSharingConsent), nil
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// Patch data sharing consents.
 func (m *DataSharingConsentRequestBuilder) Patch(options *DataSharingConsentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

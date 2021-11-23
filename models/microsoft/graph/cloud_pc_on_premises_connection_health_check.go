@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// CloudPcOnPremisesConnectionHealthCheck 
 type CloudPcOnPremisesConnectionHealthCheck struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,14 +24,14 @@ type CloudPcOnPremisesConnectionHealthCheck struct {
     // The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
     status *CloudPcOnPremisesConnectionStatus;
 }
-// Instantiates a new cloudPcOnPremisesConnectionHealthCheck and sets the default values.
+// NewCloudPcOnPremisesConnectionHealthCheck instantiates a new cloudPcOnPremisesConnectionHealthCheck and sets the default values.
 func NewCloudPcOnPremisesConnectionHealthCheck()(*CloudPcOnPremisesConnectionHealthCheck) {
     m := &CloudPcOnPremisesConnectionHealthCheck{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]
         return m.additionalData
     }
 }
-// Gets the additionalDetails property value. Additional details about the health check or the recommended action.
+// GetAdditionalDetails gets the additionalDetails property value. Additional details about the health check or the recommended action.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetails()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetails()(*string)
         return m.additionalDetails
     }
 }
-// Gets the displayName property value. The display name for this health check item.
+// GetDisplayName gets the displayName property value. The display name for this health check item.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the endDateTime property value. The end time of the health check item. Read-only.
+// GetEndDateTime gets the endDateTime property value. The end time of the health check item. Read-only.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetEndDateTime()(*i336074805fc8
         return m.endDateTime
     }
 }
-// Gets the errorType property value. The type of error that occurred during this health check.
+// GetErrorType gets the errorType property value. The type of error that occurred during this health check.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremisesConnectionHealthCheckErrorType) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremis
         return m.errorType
     }
 }
-// Gets the recommendedAction property value. The recommended action to fix the corresponding error.
+// GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetRecommendedAction()(*string) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetRecommendedAction()(*string)
         return m.recommendedAction
     }
 }
-// Gets the startDateTime property value. The start time of the health check item. Read-only.
+// GetStartDateTime gets the startDateTime property value. The start time of the health check item. Read-only.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetStartDateTime()(*i336074805f
         return m.startDateTime
     }
 }
-// Gets the status property value. The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+// GetStatus gets the status property value. The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetStatus()(*CloudPcOnPremisesConnectionStatus) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetStatus()(*CloudPcOnPremisesC
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["additionalDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,9 +175,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
 func (m *CloudPcOnPremisesConnectionHealthCheck) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CloudPcOnPremisesConnectionHealthCheck) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("additionalDetails", m.GetAdditionalDetails())
@@ -231,51 +229,35 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) Serialize(writer i04eb5309aeaaf
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the additionalDetails property value. Additional details about the health check or the recommended action.
-// Parameters:
-//  - value : Value to set for the additionalDetails property.
+// SetAdditionalDetails sets the additionalDetails property value. Additional details about the health check or the recommended action.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalDetails(value *string)() {
     m.additionalDetails = value
 }
-// Sets the displayName property value. The display name for this health check item.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for this health check item.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the endDateTime property value. The end time of the health check item. Read-only.
-// Parameters:
-//  - value : Value to set for the endDateTime property.
+// SetEndDateTime sets the endDateTime property value. The end time of the health check item. Read-only.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// Sets the errorType property value. The type of error that occurred during this health check.
-// Parameters:
-//  - value : Value to set for the errorType property.
+// SetErrorType sets the errorType property value. The type of error that occurred during this health check.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetErrorType(value *CloudPcOnPremisesConnectionHealthCheckErrorType)() {
     m.errorType = value
 }
-// Sets the recommendedAction property value. The recommended action to fix the corresponding error.
-// Parameters:
-//  - value : Value to set for the recommendedAction property.
+// SetRecommendedAction sets the recommendedAction property value. The recommended action to fix the corresponding error.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetRecommendedAction(value *string)() {
     m.recommendedAction = value
 }
-// Sets the startDateTime property value. The start time of the health check item. Read-only.
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. The start time of the health check item. Read-only.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// Sets the status property value. The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetStatus(value *CloudPcOnPremisesConnectionStatus)() {
     m.status = value
 }

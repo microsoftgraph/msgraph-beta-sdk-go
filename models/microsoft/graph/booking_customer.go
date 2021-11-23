@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// BookingCustomer 
 type BookingCustomer struct {
     BookingPerson
     // Addresses associated with the customer, including home, business and other addresses.
@@ -12,14 +12,14 @@ type BookingCustomer struct {
     // Phone numbers associated with the customer, including home, business and mobile numbers.
     phones []Phone;
 }
-// Instantiates a new bookingCustomer and sets the default values.
+// NewBookingCustomer instantiates a new bookingCustomer and sets the default values.
 func NewBookingCustomer()(*BookingCustomer) {
     m := &BookingCustomer{
         BookingPerson: *NewBookingPerson(),
     }
     return m
 }
-// Gets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
+// GetAddresses gets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) GetAddresses()([]PhysicalAddress) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *BookingCustomer) GetAddresses()([]PhysicalAddress) {
         return m.addresses
     }
 }
-// Gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
+// GetPhones gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) GetPhones()([]Phone) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *BookingCustomer) GetPhones()([]Phone) {
         return m.phones
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BookingPerson.GetFieldDeserializers()
     res["addresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,9 +71,7 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *BookingCustomer) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *BookingCustomer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.BookingPerson.Serialize(writer)
     if err != nil {
@@ -103,15 +101,11 @@ func (m *BookingCustomer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
-// Parameters:
-//  - value : Value to set for the addresses property.
+// SetAddresses sets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) SetAddresses(value []PhysicalAddress)() {
     m.addresses = value
 }
-// Sets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
-// Parameters:
-//  - value : Value to set for the phones property.
+// SetPhones sets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) SetPhones(value []Phone)() {
     m.phones = value
 }

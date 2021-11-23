@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources\{publishedResource-id}\agentGroups\{onPremisesAgentGroup-id}\agents
+// AgentsRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources\{publishedResource-id}\agentGroups\{onPremisesAgentGroup-id}\agents
 type AgentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AgentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AgentsRequestBuilderGetOptions options for Get
 type AgentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AgentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
+// AgentsRequestBuilderGetQueryParameters list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 type AgentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AgentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AgentsRequestBuilderPostOptions options for Post
 type AgentsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesAgent;
@@ -56,10 +56,7 @@ type AgentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AgentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgentsRequestBuilderInternal instantiates a new AgentsRequestBuilder and sets the default values.
 func NewAgentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgentsRequestBuilder) {
     m := &AgentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAgentsRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AgentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgentsRequestBuilder instantiates a new AgentsRequestBuilder and sets the default values.
 func NewAgentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *AgentsRequestBuilder) CreateGetRequestInformation(options *AgentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AgentsRequestBuilder) CreateGetRequestInformation(options *AgentsReques
     }
     return requestInfo, nil
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *AgentsRequestBuilder) CreatePostRequestInformation(options *AgentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AgentsRequestBuilder) CreatePostRequestInformation(options *AgentsReque
     }
     return requestInfo, nil
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *AgentsRequestBuilder) Get(options *AgentsRequestBuilderGetOptions)(*AgentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AgentsRequestBuilder) Get(options *AgentsRequestBuilderGetOptions)(*Age
     }
     return res.(*AgentsResponse), nil
 }
-// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *AgentsRequestBuilder) Post(options *AgentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesAgent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

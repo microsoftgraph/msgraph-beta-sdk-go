@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SimulationReportOverview 
 type SimulationReportOverview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type SimulationReportOverview struct {
     // Summary of assigned trainings in the attack simulation and training campaign.
     trainingEventsContent *TrainingEventsContent;
 }
-// Instantiates a new simulationReportOverview and sets the default values.
+// NewSimulationReportOverview instantiates a new simulationReportOverview and sets the default values.
 func NewSimulationReportOverview()(*SimulationReportOverview) {
     m := &SimulationReportOverview{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationReportOverview) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *SimulationReportOverview) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
+// GetRecommendedActions gets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
 func (m *SimulationReportOverview) GetRecommendedActions()([]RecommendedAction) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *SimulationReportOverview) GetRecommendedActions()([]RecommendedAction) 
         return m.recommendedActions
     }
 }
-// Gets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
+// GetResolvedTargetsCount gets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetResolvedTargetsCount()(*int32) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *SimulationReportOverview) GetResolvedTargetsCount()(*int32) {
         return m.resolvedTargetsCount
     }
 }
-// Gets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
+// GetSimulationEventsContent gets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetSimulationEventsContent()(*SimulationEventsContent) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *SimulationReportOverview) GetSimulationEventsContent()(*SimulationEvent
         return m.simulationEventsContent
     }
 }
-// Gets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
+// GetTrainingEventsContent gets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetTrainingEventsContent()(*TrainingEventsContent) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *SimulationReportOverview) GetTrainingEventsContent()(*TrainingEventsCon
         return m.trainingEventsContent
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["recommendedActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,9 +116,7 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(inter
 func (m *SimulationReportOverview) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SimulationReportOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecommendedActions()))
@@ -157,33 +155,23 @@ func (m *SimulationReportOverview) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationReportOverview) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
-// Parameters:
-//  - value : Value to set for the recommendedActions property.
+// SetRecommendedActions sets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
 func (m *SimulationReportOverview) SetRecommendedActions(value []RecommendedAction)() {
     m.recommendedActions = value
 }
-// Sets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the resolvedTargetsCount property.
+// SetResolvedTargetsCount sets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetResolvedTargetsCount(value *int32)() {
     m.resolvedTargetsCount = value
 }
-// Sets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the simulationEventsContent property.
+// SetSimulationEventsContent sets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetSimulationEventsContent(value *SimulationEventsContent)() {
     m.simulationEventsContent = value
 }
-// Sets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the trainingEventsContent property.
+// SetTrainingEventsContent sets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetTrainingEventsContent(value *TrainingEventsContent)() {
     m.trainingEventsContent = value
 }

@@ -12,7 +12,7 @@ import (
     icc1be3ce3319b01a9ddfc76049beefcc1ccda50b3e6821435cd16b349c738c4c "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/messages/unarchive"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\messages
+// MessagesRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages
 type MessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type MessagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MessagesRequestBuilderGetOptions options for Get
 type MessagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type MessagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// MessagesRequestBuilderGetQueryParameters a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -51,7 +51,7 @@ type MessagesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MessagesRequestBuilderPostOptions options for Post
 type MessagesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceUpdateMessage;
@@ -65,10 +65,7 @@ type MessagesRequestBuilderPostOptions struct {
 func (m *MessagesRequestBuilder) Archive()(*icbd43ca604dd53bf065ea6257222903649f6b57753bfe458b714f37a75dca208.ArchiveRequestBuilder) {
     return icbd43ca604dd53bf065ea6257222903649f6b57753bfe458b714f37a75dca208.NewArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new MessagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessagesRequestBuilderInternal instantiates a new MessagesRequestBuilder and sets the default values.
 func NewMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessagesRequestBuilder) {
     m := &MessagesRequestBuilder{
     }
@@ -81,18 +78,13 @@ func NewMessagesRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessagesRequestBuilder instantiates a new MessagesRequestBuilder and sets the default values.
 func NewMessagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,9 +104,7 @@ func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRe
     }
     return requestInfo, nil
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,9 +125,7 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesR
 func (m *MessagesRequestBuilder) Favorite()(*i5f80f1e7991cbd0c6f9ff2d8c45c4858d507b7bba3f68978bb3fe6dc2af201eb.FavoriteRequestBuilder) {
     return i5f80f1e7991cbd0c6f9ff2d8c45c4858d507b7bba3f68978bb3fe6dc2af201eb.NewFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(*MessagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -155,9 +143,7 @@ func (m *MessagesRequestBuilder) MarkRead()(*ib2da2e30bf0b9948932c34a14cde77af09
 func (m *MessagesRequestBuilder) MarkUnread()(*i7bd438807fb58b51e66ef1d0e2bdc47e74daeff3fe1a24ff3fe519435f47cf83.MarkUnreadRequestBuilder) {
     return i7bd438807fb58b51e66ef1d0e2bdc47e74daeff3fe1a24ff3fe519435f47cf83.NewMarkUnreadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceUpdateMessage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

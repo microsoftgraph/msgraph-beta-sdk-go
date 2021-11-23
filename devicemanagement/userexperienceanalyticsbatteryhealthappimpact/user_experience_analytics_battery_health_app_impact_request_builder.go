@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthAppImpact
+// UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthAppImpact
 type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User Experience Analytics Battery Health App Impact
+// UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters user Experience Analytics Battery Health App Impact
 type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParamete
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthAppImpact;
@@ -56,10 +56,7 @@ type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderPostOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderInternal instantiates a new UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) {
     m := &UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderInternal(path
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder instantiates a new UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User Experience Analytics Battery Health App Impact
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user Experience Analytics Battery Health App Impact
 func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// User Experience Analytics Battery Health App Impact
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user Experience Analytics Battery Health App Impact
 func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) CreatePost
     }
     return requestInfo, nil
 }
-// User Experience Analytics Battery Health App Impact
-// Parameters:
-//  - options : Options for the request
+// Get user Experience Analytics Battery Health App Impact
 func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetOptions)(*UserExperienceAnalyticsBatteryHealthAppImpactResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) Get(option
     }
     return res.(*UserExperienceAnalyticsBatteryHealthAppImpactResponse), nil
 }
-// User Experience Analytics Battery Health App Impact
-// Parameters:
-//  - options : Options for the request
+// Post user Experience Analytics Battery Health App Impact
 func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) Post(options *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthAppImpact, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

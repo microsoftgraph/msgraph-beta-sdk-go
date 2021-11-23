@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// TeamworkTag 
 type TeamworkTag struct {
     Entity
     // Tag description as it will appear to the user in Microsoft Teams.
@@ -20,14 +20,14 @@ type TeamworkTag struct {
     // ID of the team in which the tag is defined.
     teamId *string;
 }
-// Instantiates a new teamworkTag and sets the default values.
+// NewTeamworkTag instantiates a new teamworkTag and sets the default values.
 func NewTeamworkTag()(*TeamworkTag) {
     m := &TeamworkTag{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the description property value. Tag description as it will appear to the user in Microsoft Teams.
+// GetDescription gets the description property value. Tag description as it will appear to the user in Microsoft Teams.
 func (m *TeamworkTag) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *TeamworkTag) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Tag name as it will appear to the user in Microsoft Teams.
+// GetDisplayName gets the displayName property value. Tag name as it will appear to the user in Microsoft Teams.
 func (m *TeamworkTag) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *TeamworkTag) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the memberCount property value. The number of users assigned to the tag.
+// GetMemberCount gets the memberCount property value. The number of users assigned to the tag.
 func (m *TeamworkTag) GetMemberCount()(*int32) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *TeamworkTag) GetMemberCount()(*int32) {
         return m.memberCount
     }
 }
-// Gets the members property value. Users assigned to the tag.
+// GetMembers gets the members property value. Users assigned to the tag.
 func (m *TeamworkTag) GetMembers()([]TeamworkTagMember) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *TeamworkTag) GetMembers()([]TeamworkTagMember) {
         return m.members
     }
 }
-// Gets the tagType property value. The type of tag. Default is standard.
+// GetTagType gets the tagType property value. The type of tag. Default is standard.
 func (m *TeamworkTag) GetTagType()(*TeamworkTagType) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *TeamworkTag) GetTagType()(*TeamworkTagType) {
         return m.tagType
     }
 }
-// Gets the teamId property value. ID of the team in which the tag is defined.
+// GetTeamId gets the teamId property value. ID of the team in which the tag is defined.
 func (m *TeamworkTag) GetTeamId()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *TeamworkTag) GetTeamId()(*string) {
         return m.teamId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,9 +148,7 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *TeamworkTag) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TeamworkTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -200,39 +198,27 @@ func (m *TeamworkTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the description property value. Tag description as it will appear to the user in Microsoft Teams.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Tag description as it will appear to the user in Microsoft Teams.
 func (m *TeamworkTag) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Tag name as it will appear to the user in Microsoft Teams.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Tag name as it will appear to the user in Microsoft Teams.
 func (m *TeamworkTag) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the memberCount property value. The number of users assigned to the tag.
-// Parameters:
-//  - value : Value to set for the memberCount property.
+// SetMemberCount sets the memberCount property value. The number of users assigned to the tag.
 func (m *TeamworkTag) SetMemberCount(value *int32)() {
     m.memberCount = value
 }
-// Sets the members property value. Users assigned to the tag.
-// Parameters:
-//  - value : Value to set for the members property.
+// SetMembers sets the members property value. Users assigned to the tag.
 func (m *TeamworkTag) SetMembers(value []TeamworkTagMember)() {
     m.members = value
 }
-// Sets the tagType property value. The type of tag. Default is standard.
-// Parameters:
-//  - value : Value to set for the tagType property.
+// SetTagType sets the tagType property value. The type of tag. Default is standard.
 func (m *TeamworkTag) SetTagType(value *TeamworkTagType)() {
     m.tagType = value
 }
-// Sets the teamId property value. ID of the team in which the tag is defined.
-// Parameters:
-//  - value : Value to set for the teamId property.
+// SetTeamId sets the teamId property value. ID of the team in which the tag is defined.
 func (m *TeamworkTag) SetTeamId(value *string)() {
     m.teamId = value
 }

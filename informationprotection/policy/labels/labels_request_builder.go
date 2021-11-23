@@ -10,7 +10,7 @@ import (
     ibfb726105da3710efbd5bdd0afd208c0efb3e76fca696a1e9b866eee417fbb3d "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/policy/labels/extractlabel"
 )
 
-// Builds and executes requests for operations under \informationProtection\policy\labels
+// LabelsRequestBuilder builds and executes requests for operations under \informationProtection\policy\labels
 type LabelsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type LabelsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LabelsRequestBuilderGetOptions options for Get
 type LabelsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type LabelsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get labels from informationProtection
+// LabelsRequestBuilderGetQueryParameters get labels from informationProtection
 type LabelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type LabelsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// LabelsRequestBuilderPostOptions options for Post
 type LabelsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionLabel;
@@ -60,10 +60,7 @@ type LabelsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LabelsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLabelsRequestBuilderInternal instantiates a new LabelsRequestBuilder and sets the default values.
 func NewLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LabelsRequestBuilder) {
     m := &LabelsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewLabelsRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LabelsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLabelsRequestBuilder instantiates a new LabelsRequestBuilder and sets the default values.
 func NewLabelsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LabelsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get labels from informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get labels from informationProtection
 func (m *LabelsRequestBuilder) CreateGetRequestInformation(options *LabelsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *LabelsRequestBuilder) CreateGetRequestInformation(options *LabelsReques
     }
     return requestInfo, nil
 }
-// Create new navigation property to labels for informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to labels for informationProtection
 func (m *LabelsRequestBuilder) CreatePostRequestInformation(options *LabelsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +129,7 @@ func (m *LabelsRequestBuilder) EvaluateRemoval()(*ia970da0fc5eba52aeb4709c9bf149
 func (m *LabelsRequestBuilder) ExtractLabel()(*ibfb726105da3710efbd5bdd0afd208c0efb3e76fca696a1e9b866eee417fbb3d.ExtractLabelRequestBuilder) {
     return ibfb726105da3710efbd5bdd0afd208c0efb3e76fca696a1e9b866eee417fbb3d.NewExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get labels from informationProtection
-// Parameters:
-//  - options : Options for the request
+// Get get labels from informationProtection
 func (m *LabelsRequestBuilder) Get(options *LabelsRequestBuilderGetOptions)(*LabelsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -153,9 +141,7 @@ func (m *LabelsRequestBuilder) Get(options *LabelsRequestBuilderGetOptions)(*Lab
     }
     return res.(*LabelsResponse), nil
 }
-// Create new navigation property to labels for informationProtection
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to labels for informationProtection
 func (m *LabelsRequestBuilder) Post(options *LabelsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionLabel, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

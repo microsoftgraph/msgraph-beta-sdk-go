@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\educationalActivities
+// EducationalActivitiesRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\educationalActivities
 type EducationalActivitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EducationalActivitiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EducationalActivitiesRequestBuilderGetOptions options for Get
 type EducationalActivitiesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EducationalActivitiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// EducationalActivitiesRequestBuilderGetQueryParameters represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 type EducationalActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EducationalActivitiesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EducationalActivitiesRequestBuilderPostOptions options for Post
 type EducationalActivitiesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationalActivity;
@@ -56,10 +56,7 @@ type EducationalActivitiesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EducationalActivitiesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationalActivitiesRequestBuilderInternal instantiates a new EducationalActivitiesRequestBuilder and sets the default values.
 func NewEducationalActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationalActivitiesRequestBuilder) {
     m := &EducationalActivitiesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEducationalActivitiesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EducationalActivitiesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationalActivitiesRequestBuilder instantiates a new EducationalActivitiesRequestBuilder and sets the default values.
 func NewEducationalActivitiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationalActivitiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationalActivitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 func (m *EducationalActivitiesRequestBuilder) CreateGetRequestInformation(options *EducationalActivitiesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EducationalActivitiesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 func (m *EducationalActivitiesRequestBuilder) CreatePostRequestInformation(options *EducationalActivitiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EducationalActivitiesRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
-// Parameters:
-//  - options : Options for the request
+// Get represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 func (m *EducationalActivitiesRequestBuilder) Get(options *EducationalActivitiesRequestBuilderGetOptions)(*EducationalActivitiesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EducationalActivitiesRequestBuilder) Get(options *EducationalActivities
     }
     return res.(*EducationalActivitiesResponse), nil
 }
-// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
-// Parameters:
-//  - options : Options for the request
+// Post represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 func (m *EducationalActivitiesRequestBuilder) Post(options *EducationalActivitiesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationalActivity, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

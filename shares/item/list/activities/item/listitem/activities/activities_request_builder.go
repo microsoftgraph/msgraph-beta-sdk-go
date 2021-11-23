@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\activities\{itemActivityOLD-id}\listItem\activities
+// ActivitiesRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\activities\{itemActivityOLD-id}\listItem\activities
 type ActivitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ActivitiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ActivitiesRequestBuilderGetOptions options for Get
 type ActivitiesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ActivitiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of recent activities that took place on this item.
+// ActivitiesRequestBuilderGetQueryParameters the list of recent activities that took place on this item.
 type ActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ActivitiesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ActivitiesRequestBuilderPostOptions options for Post
 type ActivitiesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLD;
@@ -56,10 +56,7 @@ type ActivitiesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ActivitiesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivitiesRequestBuilderInternal instantiates a new ActivitiesRequestBuilder and sets the default values.
 func NewActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivitiesRequestBuilder) {
     m := &ActivitiesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewActivitiesRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivitiesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivitiesRequestBuilder instantiates a new ActivitiesRequestBuilder and sets the default values.
 func NewActivitiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivitiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of recent activities that took place on this item.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of recent activities that took place on this item.
 func (m *ActivitiesRequestBuilder) CreateGetRequestInformation(options *ActivitiesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ActivitiesRequestBuilder) CreateGetRequestInformation(options *Activiti
     }
     return requestInfo, nil
 }
-// The list of recent activities that took place on this item.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of recent activities that took place on this item.
 func (m *ActivitiesRequestBuilder) CreatePostRequestInformation(options *ActivitiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ActivitiesRequestBuilder) CreatePostRequestInformation(options *Activit
     }
     return requestInfo, nil
 }
-// The list of recent activities that took place on this item.
-// Parameters:
-//  - options : Options for the request
+// Get the list of recent activities that took place on this item.
 func (m *ActivitiesRequestBuilder) Get(options *ActivitiesRequestBuilderGetOptions)(*ActivitiesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ActivitiesRequestBuilder) Get(options *ActivitiesRequestBuilderGetOptio
     }
     return res.(*ActivitiesResponse), nil
 }
-// The list of recent activities that took place on this item.
-// Parameters:
-//  - options : Options for the request
+// Post the list of recent activities that took place on this item.
 func (m *ActivitiesRequestBuilder) Post(options *ActivitiesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLD, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

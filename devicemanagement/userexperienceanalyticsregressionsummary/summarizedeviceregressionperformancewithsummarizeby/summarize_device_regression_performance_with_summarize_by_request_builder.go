@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})
+// SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})
 type SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetOptions options for Get
 type SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetOptions
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes userExperienceAnalyticsRegressionSummary
+// SummarizeDeviceRegressionPerformanceWithSummarizeByResponse union type wrapper for classes userExperienceAnalyticsRegressionSummary
 type SummarizeDeviceRegressionPerformanceWithSummarizeByResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type userExperienceAnalyticsRegressionSummary
     userExperienceAnalyticsRegressionSummary *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummary;
 }
-// Instantiates a new summarizeDeviceRegressionPerformanceWithSummarizeByResponse and sets the default values.
+// NewSummarizeDeviceRegressionPerformanceWithSummarizeByResponse instantiates a new summarizeDeviceRegressionPerformanceWithSummarizeByResponse and sets the default values.
 func NewSummarizeDeviceRegressionPerformanceWithSummarizeByResponse()(*SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) {
     m := &SummarizeDeviceRegressionPerformanceWithSummarizeByResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetAdditio
         return m.additionalData
     }
 }
-// Gets the userExperienceAnalyticsRegressionSummary property value. Union type representation for type userExperienceAnalyticsRegressionSummary
+// GetUserExperienceAnalyticsRegressionSummary gets the userExperienceAnalyticsRegressionSummary property value. Union type representation for type userExperienceAnalyticsRegressionSummary
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetUserExperienceAnalyticsRegressionSummary()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummary) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetUserExp
         return m.userExperienceAnalyticsRegressionSummary
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["userExperienceAnalyticsRegressionSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetFieldDe
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("userExperienceAnalyticsRegressionSummary", m.GetUserExperienceAnalyticsRegressionSummary())
@@ -90,23 +88,15 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) Serialize(
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the userExperienceAnalyticsRegressionSummary property value. Union type representation for type userExperienceAnalyticsRegressionSummary
-// Parameters:
-//  - value : Value to set for the userExperienceAnalyticsRegressionSummary property.
+// SetUserExperienceAnalyticsRegressionSummary sets the userExperienceAnalyticsRegressionSummary property value. Union type representation for type userExperienceAnalyticsRegressionSummary
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) SetUserExperienceAnalyticsRegressionSummary(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummary)() {
     m.userExperienceAnalyticsRegressionSummary = value
 }
-// Instantiates a new SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
-//  - summarizeBy : Usage: summarizeBy={summarizeBy}
+// NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInternal instantiates a new SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder and sets the default values.
 func NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, summarizeBy *string)(*SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) {
     m := &SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder{
     }
@@ -122,18 +112,13 @@ func NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInterna
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder instantiates a new SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder and sets the default values.
 func NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function summarizeDeviceRegressionPerformance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function summarizeDeviceRegressionPerformance
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) CreateGetRequestInformation(options *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +135,7 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// Invoke function summarizeDeviceRegressionPerformance
-// Parameters:
-//  - options : Options for the request
+// Get invoke function summarizeDeviceRegressionPerformance
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) Get(options *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetOptions)(*SummarizeDeviceRegressionPerformanceWithSummarizeByResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

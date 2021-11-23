@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\microsoft.graph.cancelAndSend
+// CancelAndSendRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\microsoft.graph.cancelAndSend
 type CancelAndSendRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type CancelAndSendRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CancelAndSendRequestBuilderPostOptions options for Post
 type CancelAndSendRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type CancelAndSendRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CancelAndSendRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCancelAndSendRequestBuilderInternal instantiates a new CancelAndSendRequestBuilder and sets the default values.
 func NewCancelAndSendRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CancelAndSendRequestBuilder) {
     m := &CancelAndSendRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewCancelAndSendRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CancelAndSendRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCancelAndSendRequestBuilder instantiates a new CancelAndSendRequestBuilder and sets the default values.
 func NewCancelAndSendRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CancelAndSendRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCancelAndSendRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action cancelAndSend
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action cancelAndSend
 func (m *CancelAndSendRequestBuilder) CreatePostRequestInformation(options *CancelAndSendRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *CancelAndSendRequestBuilder) CreatePostRequestInformation(options *Canc
     }
     return requestInfo, nil
 }
-// Invoke action cancelAndSend
-// Parameters:
-//  - options : Options for the request
+// Post invoke action cancelAndSend
 func (m *CancelAndSendRequestBuilder) Post(options *CancelAndSendRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles\{windowsFeatureUpdateProfile-id}\assignments\{windowsFeatureUpdateProfileAssignment-id}
+// WindowsFeatureUpdateProfileAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles\{windowsFeatureUpdateProfile-id}\assignments\{windowsFeatureUpdateProfileAssignment-id}
 type WindowsFeatureUpdateProfileAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsFeatureUpdateProfileAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsFeatureUpdateProfileAssignmentRequestBuilderDeleteOptions options for Delete
 type WindowsFeatureUpdateProfileAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WindowsFeatureUpdateProfileAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsFeatureUpdateProfileAssignmentRequestBuilderGetOptions options for Get
 type WindowsFeatureUpdateProfileAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WindowsFeatureUpdateProfileAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of group assignments of the profile.
+// WindowsFeatureUpdateProfileAssignmentRequestBuilderGetQueryParameters the list of group assignments of the profile.
 type WindowsFeatureUpdateProfileAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsFeatureUpdateProfileAssignmentRequestBuilderPatchOptions options for Patch
 type WindowsFeatureUpdateProfileAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfileAssignment;
@@ -53,10 +53,7 @@ type WindowsFeatureUpdateProfileAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsFeatureUpdateProfileAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsFeatureUpdateProfileAssignmentRequestBuilderInternal instantiates a new WindowsFeatureUpdateProfileAssignmentRequestBuilder and sets the default values.
 func NewWindowsFeatureUpdateProfileAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsFeatureUpdateProfileAssignmentRequestBuilder) {
     m := &WindowsFeatureUpdateProfileAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWindowsFeatureUpdateProfileAssignmentRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsFeatureUpdateProfileAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsFeatureUpdateProfileAssignmentRequestBuilder instantiates a new WindowsFeatureUpdateProfileAssignmentRequestBuilder and sets the default values.
 func NewWindowsFeatureUpdateProfileAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsFeatureUpdateProfileAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsFeatureUpdateProfileAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) CreateDeleteRequestInformation(options *WindowsFeatureUpdateProfileAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) CreateGetRequestInformation(options *WindowsFeatureUpdateProfileAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) CreatePatchRequestInformation(options *WindowsFeatureUpdateProfileAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) Delete(options *WindowsFeatureUpdateProfileAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) Delete(options *Wi
     }
     return nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// Get the list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) Get(options *WindowsFeatureUpdateProfileAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfileAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) Get(options *Windo
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfileAssignment), nil
 }
-// The list of group assignments of the profile.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfileAssignmentRequestBuilder) Patch(options *WindowsFeatureUpdateProfileAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

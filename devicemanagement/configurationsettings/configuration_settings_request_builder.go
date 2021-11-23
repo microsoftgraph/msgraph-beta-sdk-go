@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\configurationSettings
+// ConfigurationSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\configurationSettings
 type ConfigurationSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConfigurationSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConfigurationSettingsRequestBuilderGetOptions options for Get
 type ConfigurationSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ConfigurationSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of all ConfigurationSettings
+// ConfigurationSettingsRequestBuilderGetQueryParameters list of all ConfigurationSettings
 type ConfigurationSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ConfigurationSettingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ConfigurationSettingsRequestBuilderPostOptions options for Post
 type ConfigurationSettingsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinition;
@@ -56,10 +56,7 @@ type ConfigurationSettingsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConfigurationSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigurationSettingsRequestBuilderInternal instantiates a new ConfigurationSettingsRequestBuilder and sets the default values.
 func NewConfigurationSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigurationSettingsRequestBuilder) {
     m := &ConfigurationSettingsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewConfigurationSettingsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConfigurationSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigurationSettingsRequestBuilder instantiates a new ConfigurationSettingsRequestBuilder and sets the default values.
 func NewConfigurationSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigurationSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of all ConfigurationSettings
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of all ConfigurationSettings
 func (m *ConfigurationSettingsRequestBuilder) CreateGetRequestInformation(options *ConfigurationSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ConfigurationSettingsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// List of all ConfigurationSettings
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of all ConfigurationSettings
 func (m *ConfigurationSettingsRequestBuilder) CreatePostRequestInformation(options *ConfigurationSettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ConfigurationSettingsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// List of all ConfigurationSettings
-// Parameters:
-//  - options : Options for the request
+// Get list of all ConfigurationSettings
 func (m *ConfigurationSettingsRequestBuilder) Get(options *ConfigurationSettingsRequestBuilderGetOptions)(*ConfigurationSettingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ConfigurationSettingsRequestBuilder) Get(options *ConfigurationSettings
     }
     return res.(*ConfigurationSettingsResponse), nil
 }
-// List of all ConfigurationSettings
-// Parameters:
-//  - options : Options for the request
+// Post list of all ConfigurationSettings
 func (m *ConfigurationSettingsRequestBuilder) Post(options *ConfigurationSettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

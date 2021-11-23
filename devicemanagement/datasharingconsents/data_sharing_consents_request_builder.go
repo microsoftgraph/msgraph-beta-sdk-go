@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\dataSharingConsents
+// DataSharingConsentsRequestBuilder builds and executes requests for operations under \deviceManagement\dataSharingConsents
 type DataSharingConsentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DataSharingConsentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DataSharingConsentsRequestBuilderGetOptions options for Get
 type DataSharingConsentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DataSharingConsentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Data sharing consents.
+// DataSharingConsentsRequestBuilderGetQueryParameters data sharing consents.
 type DataSharingConsentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DataSharingConsentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DataSharingConsentsRequestBuilderPostOptions options for Post
 type DataSharingConsentsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSharingConsent;
@@ -56,10 +56,7 @@ type DataSharingConsentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DataSharingConsentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataSharingConsentsRequestBuilderInternal instantiates a new DataSharingConsentsRequestBuilder and sets the default values.
 func NewDataSharingConsentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataSharingConsentsRequestBuilder) {
     m := &DataSharingConsentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDataSharingConsentsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DataSharingConsentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataSharingConsentsRequestBuilder instantiates a new DataSharingConsentsRequestBuilder and sets the default values.
 func NewDataSharingConsentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataSharingConsentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDataSharingConsentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation data sharing consents.
 func (m *DataSharingConsentsRequestBuilder) CreateGetRequestInformation(options *DataSharingConsentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DataSharingConsentsRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation data sharing consents.
 func (m *DataSharingConsentsRequestBuilder) CreatePostRequestInformation(options *DataSharingConsentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DataSharingConsentsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// Get data sharing consents.
 func (m *DataSharingConsentsRequestBuilder) Get(options *DataSharingConsentsRequestBuilderGetOptions)(*DataSharingConsentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DataSharingConsentsRequestBuilder) Get(options *DataSharingConsentsRequ
     }
     return res.(*DataSharingConsentsResponse), nil
 }
-// Data sharing consents.
-// Parameters:
-//  - options : Options for the request
+// Post data sharing consents.
 func (m *DataSharingConsentsRequestBuilder) Post(options *DataSharingConsentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSharingConsent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

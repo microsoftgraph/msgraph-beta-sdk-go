@@ -8,7 +8,7 @@ import (
     i4f0149b3e6ba09c0f520b64321fecfe210adf8765f10ecec8746545de6ac00e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templatesettings/item/settingdefinitions/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\templateSettings\{deviceManagementConfigurationSettingTemplate-id}
+// DeviceManagementConfigurationSettingTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\templateSettings\{deviceManagementConfigurationSettingTemplate-id}
 type DeviceManagementConfigurationSettingTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DeviceManagementConfigurationSettingTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementConfigurationSettingTemplateRequestBuilderDeleteOptions options for Delete
 type DeviceManagementConfigurationSettingTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementConfigurationSettingTemplateRequestBuilderDeleteOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementConfigurationSettingTemplateRequestBuilderGetOptions options for Get
 type DeviceManagementConfigurationSettingTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DeviceManagementConfigurationSettingTemplateRequestBuilderGetOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of all TemplateSettings
+// DeviceManagementConfigurationSettingTemplateRequestBuilderGetQueryParameters list of all TemplateSettings
 type DeviceManagementConfigurationSettingTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementConfigurationSettingTemplateRequestBuilderPatchOptions options for Patch
 type DeviceManagementConfigurationSettingTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingTemplate;
@@ -55,10 +55,7 @@ type DeviceManagementConfigurationSettingTemplateRequestBuilderPatchOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementConfigurationSettingTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationSettingTemplateRequestBuilderInternal instantiates a new DeviceManagementConfigurationSettingTemplateRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationSettingTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationSettingTemplateRequestBuilder) {
     m := &DeviceManagementConfigurationSettingTemplateRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewDeviceManagementConfigurationSettingTemplateRequestBuilderInternal(pathP
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementConfigurationSettingTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationSettingTemplateRequestBuilder instantiates a new DeviceManagementConfigurationSettingTemplateRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationSettingTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationSettingTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementConfigurationSettingTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of all TemplateSettings
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of all TemplateSettings
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementConfigurationSettingTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) CreateDelet
     }
     return requestInfo, nil
 }
-// List of all TemplateSettings
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of all TemplateSettings
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) CreateGetRequestInformation(options *DeviceManagementConfigurationSettingTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) CreateGetRe
     }
     return requestInfo, nil
 }
-// List of all TemplateSettings
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of all TemplateSettings
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementConfigurationSettingTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) CreatePatch
     }
     return requestInfo, nil
 }
-// List of all TemplateSettings
-// Parameters:
-//  - options : Options for the request
+// Delete list of all TemplateSettings
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) Delete(options *DeviceManagementConfigurationSettingTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) Delete(opti
     }
     return nil
 }
-// List of all TemplateSettings
-// Parameters:
-//  - options : Options for the request
+// Get list of all TemplateSettings
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) Get(options *DeviceManagementConfigurationSettingTemplateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) Get(options
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingTemplate), nil
 }
-// List of all TemplateSettings
-// Parameters:
-//  - options : Options for the request
+// Patch list of all TemplateSettings
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) Patch(options *DeviceManagementConfigurationSettingTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) Patch(optio
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) SettingDefinitions()(*ie1efa2bd65e6786a52ce44bd7a386f56e50160e67afe714c113936569e84461a.SettingDefinitionsRequestBuilder) {
     return ie1efa2bd65e6786a52ce44bd7a386f56e50160e67afe714c113936569e84461a.NewSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templateSettings.item.settingDefinitions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templateSettings.item.settingDefinitions.item collection
 func (m *DeviceManagementConfigurationSettingTemplateRequestBuilder) SettingDefinitionsById(id string)(*i4f0149b3e6ba09c0f520b64321fecfe210adf8765f10ecec8746545de6ac00e6.DeviceManagementConfigurationSettingDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

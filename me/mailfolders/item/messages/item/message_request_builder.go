@@ -29,7 +29,7 @@ import (
     ifa2e1a49bbba48dd1867ab7775f7bc0212fe78345f75addbc5353906df09475c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/singlevalueextendedproperties/item"
 )
 
-// Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}
+// MessageRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}
 type MessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type MessageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MessageRequestBuilderDeleteOptions options for Delete
 type MessageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -47,7 +47,7 @@ type MessageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MessageRequestBuilderGetOptions options for Get
 type MessageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -58,14 +58,14 @@ type MessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of messages in the mailFolder.
+// MessageRequestBuilderGetQueryParameters the collection of messages in the mailFolder.
 type MessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MessageRequestBuilderPatchOptions options for Patch
 type MessageRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message;
@@ -79,9 +79,7 @@ type MessageRequestBuilderPatchOptions struct {
 func (m *MessageRequestBuilder) Attachments()(*ibc3856e7bed2bea8783ad4cf102bbf5295cc9b7cc63847236c2fcb7a7d37d1b9.AttachmentsRequestBuilder) {
     return ibc3856e7bed2bea8783ad4cf102bbf5295cc9b7cc63847236c2fcb7a7d37d1b9.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.attachments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.attachments.item collection
 func (m *MessageRequestBuilder) AttachmentsById(id string)(*i671b494222abfe980bb8d667f8d3d2047da5dddc998c20eab8bb67f1d8672de6.AttachmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -95,10 +93,7 @@ func (m *MessageRequestBuilder) AttachmentsById(id string)(*i671b494222abfe980bb
 func (m *MessageRequestBuilder) CalendarSharingMessage()(*i0fccf38aca2f46144aa036d0c0fa6ee24e01b5a7a3993c6f341c44efcb5232f7.CalendarSharingMessageRequestBuilder) {
     return i0fccf38aca2f46144aa036d0c0fa6ee24e01b5a7a3993c6f341c44efcb5232f7.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new MessageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageRequestBuilderInternal instantiates a new MessageRequestBuilder and sets the default values.
 func NewMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRequestBuilder) {
     m := &MessageRequestBuilder{
     }
@@ -111,10 +106,7 @@ func NewMessageRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageRequestBuilder instantiates a new MessageRequestBuilder and sets the default values.
 func NewMessageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -126,9 +118,7 @@ func (m *MessageRequestBuilder) Content()(*ibd12efd1c58ab297076323c8b68a12f9e5cf
 func (m *MessageRequestBuilder) Copy()(*i72b0f6daa0bcef81a7a85e98d43a239d41374d9126783782e12898c44e092655.CopyRequestBuilder) {
     return i72b0f6daa0bcef81a7a85e98d43a239d41374d9126783782e12898c44e092655.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of messages in the mailFolder.
 func (m *MessageRequestBuilder) CreateDeleteRequestInformation(options *MessageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +138,7 @@ func (m *MessageRequestBuilder) CreateDeleteRequestInformation(options *MessageR
 func (m *MessageRequestBuilder) CreateForward()(*i05e8b869ffc519fee49d0ac259a1f1eea9becc6ebc1c5a37c2f85196b6ee8ee3.CreateForwardRequestBuilder) {
     return i05e8b869ffc519fee49d0ac259a1f1eea9becc6ebc1c5a37c2f85196b6ee8ee3.NewCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of messages in the mailFolder.
 func (m *MessageRequestBuilder) CreateGetRequestInformation(options *MessageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,9 +158,7 @@ func (m *MessageRequestBuilder) CreateGetRequestInformation(options *MessageRequ
     }
     return requestInfo, nil
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of messages in the mailFolder.
 func (m *MessageRequestBuilder) CreatePatchRequestInformation(options *MessageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -196,9 +182,7 @@ func (m *MessageRequestBuilder) CreateReply()(*ib049a164b38d6ba9b4a3b7192971ad5e
 func (m *MessageRequestBuilder) CreateReplyAll()(*i3bfc69f268f92d3eb51d630e84bcf0e900efda493e2ca9cded7df23eadb96f04.CreateReplyAllRequestBuilder) {
     return i3bfc69f268f92d3eb51d630e84bcf0e900efda493e2ca9cded7df23eadb96f04.NewCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of messages in the mailFolder.
 func (m *MessageRequestBuilder) Delete(options *MessageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -216,9 +200,7 @@ func (m *MessageRequestBuilder) EventMessageRequest()(*i36ba3a15f9b3d43bd01853e1
 func (m *MessageRequestBuilder) Extensions()(*i6757d54d5c87cd028537643e1cb39a47e345c91ea192c6abd02e016c98bbc3d3.ExtensionsRequestBuilder) {
     return i6757d54d5c87cd028537643e1cb39a47e345c91ea192c6abd02e016c98bbc3d3.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.extensions.item collection
 func (m *MessageRequestBuilder) ExtensionsById(id string)(*i9e4259eea1e8905b783d4fc86aede2440ef9a47ea5f2d15815788ac67eba3d69.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -232,9 +214,7 @@ func (m *MessageRequestBuilder) ExtensionsById(id string)(*i9e4259eea1e8905b783d
 func (m *MessageRequestBuilder) Forward()(*i272e002e7b409e74d18f258c8a21d69615f41c0248b18a4763a968e49aa9f78c.ForwardRequestBuilder) {
     return i272e002e7b409e74d18f258c8a21d69615f41c0248b18a4763a968e49aa9f78c.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of messages in the mailFolder.
 func (m *MessageRequestBuilder) Get(options *MessageRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -249,9 +229,7 @@ func (m *MessageRequestBuilder) Get(options *MessageRequestBuilderGetOptions)(*i
 func (m *MessageRequestBuilder) Mentions()(*idd4dd625416cd52060f95e8ad108f1f8964fca2bf3f61a6253fbf7068c91d62d.MentionsRequestBuilder) {
     return idd4dd625416cd52060f95e8ad108f1f8964fca2bf3f61a6253fbf7068c91d62d.NewMentionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.mentions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MentionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.mentions.item collection
 func (m *MessageRequestBuilder) MentionsById(id string)(*id8651f068bd1a845ecd012a2bfde14061474c28c5020e8285e3b05b6f3fae1fc.MentionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -268,9 +246,7 @@ func (m *MessageRequestBuilder) Move()(*i9e5b9792ff40a6736ff612b9493f83c37c80ff3
 func (m *MessageRequestBuilder) MultiValueExtendedProperties()(*i537e97523a2d84f6e4e5d67a6432c411a6c3d123670344981076f6bca0acd27f.MultiValueExtendedPropertiesRequestBuilder) {
     return i537e97523a2d84f6e4e5d67a6432c411a6c3d123670344981076f6bca0acd27f.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.multiValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.multiValueExtendedProperties.item collection
 func (m *MessageRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ie7ad4a32eeb50c09e552caa2785b20f0fd2063c38f777f192847be1c617ca319.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -281,9 +257,7 @@ func (m *MessageRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ie7
     }
     return ie7ad4a32eeb50c09e552caa2785b20f0fd2063c38f777f192847be1c617ca319.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of messages in the mailFolder.
 func (m *MessageRequestBuilder) Patch(options *MessageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -307,9 +281,7 @@ func (m *MessageRequestBuilder) Send()(*i87147cd2592bb7a4f35c0388ca4cd3212b1247c
 func (m *MessageRequestBuilder) SingleValueExtendedProperties()(*i0c991f94222b3272f1430d5abdc8d769cea7a432edd8c195e8ed7efd98dbe501.SingleValueExtendedPropertiesRequestBuilder) {
     return i0c991f94222b3272f1430d5abdc8d769cea7a432edd8c195e8ed7efd98dbe501.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.singleValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item.singleValueExtendedProperties.item collection
 func (m *MessageRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ifa2e1a49bbba48dd1867ab7775f7bc0212fe78345f75addbc5353906df09475c.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

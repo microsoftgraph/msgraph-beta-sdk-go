@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// TargetedManagedAppPolicyAssignment 
 type TargetedManagedAppPolicyAssignment struct {
     Entity
     // Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
@@ -14,14 +14,14 @@ type TargetedManagedAppPolicyAssignment struct {
     // Identifier for deployment to a group or app
     target *DeviceAndAppManagementAssignmentTarget;
 }
-// Instantiates a new targetedManagedAppPolicyAssignment and sets the default values.
+// NewTargetedManagedAppPolicyAssignment instantiates a new targetedManagedAppPolicyAssignment and sets the default values.
 func NewTargetedManagedAppPolicyAssignment()(*TargetedManagedAppPolicyAssignment) {
     m := &TargetedManagedAppPolicyAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
+// GetSource gets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
 func (m *TargetedManagedAppPolicyAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *TargetedManagedAppPolicyAssignment) GetSource()(*DeviceAndAppManagement
         return m.source
     }
 }
-// Gets the sourceId property value. Identifier for resource used for deployment to a group
+// GetSourceId gets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *TargetedManagedAppPolicyAssignment) GetSourceId()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *TargetedManagedAppPolicyAssignment) GetSourceId()(*string) {
         return m.sourceId
     }
 }
-// Gets the target property value. Identifier for deployment to a group or app
+// GetTarget gets the target property value. Identifier for deployment to a group or app
 func (m *TargetedManagedAppPolicyAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *TargetedManagedAppPolicyAssignment) GetTarget()(*DeviceAndAppManagement
         return m.target
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TargetedManagedAppPolicyAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,9 +84,7 @@ func (m *TargetedManagedAppPolicyAssignment) GetFieldDeserializers()(map[string]
 func (m *TargetedManagedAppPolicyAssignment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TargetedManagedAppPolicyAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -113,21 +111,15 @@ func (m *TargetedManagedAppPolicyAssignment) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
-// Sets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
-// Parameters:
-//  - value : Value to set for the source property.
+// SetSource sets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
 func (m *TargetedManagedAppPolicyAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     m.source = value
 }
-// Sets the sourceId property value. Identifier for resource used for deployment to a group
-// Parameters:
-//  - value : Value to set for the sourceId property.
+// SetSourceId sets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *TargetedManagedAppPolicyAssignment) SetSourceId(value *string)() {
     m.sourceId = value
 }
-// Sets the target property value. Identifier for deployment to a group or app
-// Parameters:
-//  - value : Value to set for the target property.
+// SetTarget sets the target property value. Identifier for deployment to a group or app
 func (m *TargetedManagedAppPolicyAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
     m.target = value
 }

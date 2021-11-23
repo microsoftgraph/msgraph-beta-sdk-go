@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceManagementTroubleshootingErrorDetails 
 type DeviceManagementTroubleshootingErrorDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type DeviceManagementTroubleshootingErrorDetails struct {
     // Links to helpful documentation about this failure.
     resources []DeviceManagementTroubleshootingErrorResource;
 }
-// Instantiates a new deviceManagementTroubleshootingErrorDetails and sets the default values.
+// NewDeviceManagementTroubleshootingErrorDetails instantiates a new deviceManagementTroubleshootingErrorDetails and sets the default values.
 func NewDeviceManagementTroubleshootingErrorDetails()(*DeviceManagementTroubleshootingErrorDetails) {
     m := &DeviceManagementTroubleshootingErrorDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[st
         return m.additionalData
     }
 }
-// Gets the context property value. Not yet documented
+// GetContext gets the context property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) GetContext()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetContext()(*string) {
         return m.context
     }
 }
-// Gets the failure property value. Not yet documented
+// GetFailure gets the failure property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFailure()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFailure()(*string) {
         return m.failure
     }
 }
-// Gets the failureDetails property value. The detailed description of what went wrong.
+// GetFailureDetails gets the failureDetails property value. The detailed description of what went wrong.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFailureDetails()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFailureDetails()(*strin
         return m.failureDetails
     }
 }
-// Gets the remediation property value. The detailed description of how to remediate this issue.
+// GetRemediation gets the remediation property value. The detailed description of how to remediate this issue.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetRemediation()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetRemediation()(*string) 
         return m.remediation
     }
 }
-// Gets the resources property value. Links to helpful documentation about this failure.
+// GetResources gets the resources property value. Links to helpful documentation about this failure.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetResources()([]DeviceManagementTroubleshootingErrorResource) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetResources()([]DeviceMan
         return m.resources
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["context"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,9 +136,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
 func (m *DeviceManagementTroubleshootingErrorDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("context", m.GetContext())
@@ -183,39 +181,27 @@ func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i04eb5309
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the context property value. Not yet documented
-// Parameters:
-//  - value : Value to set for the context property.
+// SetContext sets the context property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) SetContext(value *string)() {
     m.context = value
 }
-// Sets the failure property value. Not yet documented
-// Parameters:
-//  - value : Value to set for the failure property.
+// SetFailure sets the failure property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) SetFailure(value *string)() {
     m.failure = value
 }
-// Sets the failureDetails property value. The detailed description of what went wrong.
-// Parameters:
-//  - value : Value to set for the failureDetails property.
+// SetFailureDetails sets the failureDetails property value. The detailed description of what went wrong.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetFailureDetails(value *string)() {
     m.failureDetails = value
 }
-// Sets the remediation property value. The detailed description of how to remediate this issue.
-// Parameters:
-//  - value : Value to set for the remediation property.
+// SetRemediation sets the remediation property value. The detailed description of how to remediate this issue.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetRemediation(value *string)() {
     m.remediation = value
 }
-// Sets the resources property value. Links to helpful documentation about this failure.
-// Parameters:
-//  - value : Value to set for the resources property.
+// SetResources sets the resources property value. Links to helpful documentation about this failure.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetResources(value []DeviceManagementTroubleshootingErrorResource)() {
     m.resources = value
 }

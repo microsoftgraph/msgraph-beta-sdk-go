@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.getEffectiveDeviceEnrollmentConfigurations()
+// GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder builds and executes requests for operations under \me\microsoft.graph.getEffectiveDeviceEnrollmentConfigurations()
 type GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetOptions options for Get
 type GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderInternal instantiates a new GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
 func NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) {
     m := &GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderInternal(pathPar
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder instantiates a new GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
 func NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getEffectiveDeviceEnrollmentConfigurations
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getEffectiveDeviceEnrollmentConfigurations
 func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformation(options *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// Invoke function getEffectiveDeviceEnrollmentConfigurations
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getEffectiveDeviceEnrollmentConfigurations
 func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) Get(options *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetOptions)([]GetEffectiveDeviceEnrollmentConfigurations, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

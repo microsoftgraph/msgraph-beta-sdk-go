@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \domains\{domain-id}\sharedEmailDomainInvitations
+// SharedEmailDomainInvitationsRequestBuilder builds and executes requests for operations under \domains\{domain-id}\sharedEmailDomainInvitations
 type SharedEmailDomainInvitationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SharedEmailDomainInvitationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SharedEmailDomainInvitationsRequestBuilderGetOptions options for Get
 type SharedEmailDomainInvitationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SharedEmailDomainInvitationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get sharedEmailDomainInvitations from domains
+// SharedEmailDomainInvitationsRequestBuilderGetQueryParameters get sharedEmailDomainInvitations from domains
 type SharedEmailDomainInvitationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SharedEmailDomainInvitationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SharedEmailDomainInvitationsRequestBuilderPostOptions options for Post
 type SharedEmailDomainInvitationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SharedEmailDomainInvitation;
@@ -56,10 +56,7 @@ type SharedEmailDomainInvitationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SharedEmailDomainInvitationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSharedEmailDomainInvitationsRequestBuilderInternal instantiates a new SharedEmailDomainInvitationsRequestBuilder and sets the default values.
 func NewSharedEmailDomainInvitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SharedEmailDomainInvitationsRequestBuilder) {
     m := &SharedEmailDomainInvitationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSharedEmailDomainInvitationsRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SharedEmailDomainInvitationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSharedEmailDomainInvitationsRequestBuilder instantiates a new SharedEmailDomainInvitationsRequestBuilder and sets the default values.
 func NewSharedEmailDomainInvitationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SharedEmailDomainInvitationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharedEmailDomainInvitationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get sharedEmailDomainInvitations from domains
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get sharedEmailDomainInvitations from domains
 func (m *SharedEmailDomainInvitationsRequestBuilder) CreateGetRequestInformation(options *SharedEmailDomainInvitationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SharedEmailDomainInvitationsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Create new navigation property to sharedEmailDomainInvitations for domains
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to sharedEmailDomainInvitations for domains
 func (m *SharedEmailDomainInvitationsRequestBuilder) CreatePostRequestInformation(options *SharedEmailDomainInvitationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SharedEmailDomainInvitationsRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Get sharedEmailDomainInvitations from domains
-// Parameters:
-//  - options : Options for the request
+// Get get sharedEmailDomainInvitations from domains
 func (m *SharedEmailDomainInvitationsRequestBuilder) Get(options *SharedEmailDomainInvitationsRequestBuilderGetOptions)(*SharedEmailDomainInvitationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SharedEmailDomainInvitationsRequestBuilder) Get(options *SharedEmailDom
     }
     return res.(*SharedEmailDomainInvitationsResponse), nil
 }
-// Create new navigation property to sharedEmailDomainInvitations for domains
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to sharedEmailDomainInvitations for domains
 func (m *SharedEmailDomainInvitationsRequestBuilder) Post(options *SharedEmailDomainInvitationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SharedEmailDomainInvitation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

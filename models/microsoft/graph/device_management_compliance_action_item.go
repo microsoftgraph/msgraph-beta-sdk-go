@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceManagementComplianceActionItem 
 type DeviceManagementComplianceActionItem struct {
     Entity
     // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
@@ -16,14 +16,14 @@ type DeviceManagementComplianceActionItem struct {
     // What notification Message template to use
     notificationTemplateId *string;
 }
-// Instantiates a new deviceManagementComplianceActionItem and sets the default values.
+// NewDeviceManagementComplianceActionItem instantiates a new deviceManagementComplianceActionItem and sets the default values.
 func NewDeviceManagementComplianceActionItem()(*DeviceManagementComplianceActionItem) {
     m := &DeviceManagementComplianceActionItem{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
+// GetActionType gets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
 func (m *DeviceManagementComplianceActionItem) GetActionType()(*DeviceManagementComplianceActionType) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *DeviceManagementComplianceActionItem) GetActionType()(*DeviceManagement
         return m.actionType
     }
 }
-// Gets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
+// GetGracePeriodHours gets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
 func (m *DeviceManagementComplianceActionItem) GetGracePeriodHours()(*int32) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *DeviceManagementComplianceActionItem) GetGracePeriodHours()(*int32) {
         return m.gracePeriodHours
     }
 }
-// Gets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
+// GetNotificationMessageCCList gets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
 func (m *DeviceManagementComplianceActionItem) GetNotificationMessageCCList()([]string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *DeviceManagementComplianceActionItem) GetNotificationMessageCCList()([]
         return m.notificationMessageCCList
     }
 }
-// Gets the notificationTemplateId property value. What notification Message template to use
+// GetNotificationTemplateId gets the notificationTemplateId property value. What notification Message template to use
 func (m *DeviceManagementComplianceActionItem) GetNotificationTemplateId()(*string) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *DeviceManagementComplianceActionItem) GetNotificationTemplateId()(*stri
         return m.notificationTemplateId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,9 +108,7 @@ func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[strin
 func (m *DeviceManagementComplianceActionItem) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementComplianceActionItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -143,27 +141,19 @@ func (m *DeviceManagementComplianceActionItem) Serialize(writer i04eb5309aeaafad
     }
     return nil
 }
-// Sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
-// Parameters:
-//  - value : Value to set for the actionType property.
+// SetActionType sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
 func (m *DeviceManagementComplianceActionItem) SetActionType(value *DeviceManagementComplianceActionType)() {
     m.actionType = value
 }
-// Sets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
-// Parameters:
-//  - value : Value to set for the gracePeriodHours property.
+// SetGracePeriodHours sets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
 func (m *DeviceManagementComplianceActionItem) SetGracePeriodHours(value *int32)() {
     m.gracePeriodHours = value
 }
-// Sets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
-// Parameters:
-//  - value : Value to set for the notificationMessageCCList property.
+// SetNotificationMessageCCList sets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
 func (m *DeviceManagementComplianceActionItem) SetNotificationMessageCCList(value []string)() {
     m.notificationMessageCCList = value
 }
-// Sets the notificationTemplateId property value. What notification Message template to use
-// Parameters:
-//  - value : Value to set for the notificationTemplateId property.
+// SetNotificationTemplateId sets the notificationTemplateId property value. What notification Message template to use
 func (m *DeviceManagementComplianceActionItem) SetNotificationTemplateId(value *string)() {
     m.notificationTemplateId = value
 }

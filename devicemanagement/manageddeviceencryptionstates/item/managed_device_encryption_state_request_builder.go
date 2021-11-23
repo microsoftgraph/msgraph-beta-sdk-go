@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDeviceEncryptionStates\{managedDeviceEncryptionState-id}
+// ManagedDeviceEncryptionStateRequestBuilder builds and executes requests for operations under \deviceManagement\managedDeviceEncryptionStates\{managedDeviceEncryptionState-id}
 type ManagedDeviceEncryptionStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedDeviceEncryptionStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedDeviceEncryptionStateRequestBuilderDeleteOptions options for Delete
 type ManagedDeviceEncryptionStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagedDeviceEncryptionStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedDeviceEncryptionStateRequestBuilderGetOptions options for Get
 type ManagedDeviceEncryptionStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagedDeviceEncryptionStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Encryption report for devices in this account
+// ManagedDeviceEncryptionStateRequestBuilderGetQueryParameters encryption report for devices in this account
 type ManagedDeviceEncryptionStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedDeviceEncryptionStateRequestBuilderPatchOptions options for Patch
 type ManagedDeviceEncryptionStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceEncryptionState;
@@ -53,10 +53,7 @@ type ManagedDeviceEncryptionStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedDeviceEncryptionStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceEncryptionStateRequestBuilderInternal instantiates a new ManagedDeviceEncryptionStateRequestBuilder and sets the default values.
 func NewManagedDeviceEncryptionStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceEncryptionStateRequestBuilder) {
     m := &ManagedDeviceEncryptionStateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagedDeviceEncryptionStateRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedDeviceEncryptionStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceEncryptionStateRequestBuilder instantiates a new ManagedDeviceEncryptionStateRequestBuilder and sets the default values.
 func NewManagedDeviceEncryptionStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceEncryptionStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceEncryptionStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStateRequestBuilder) CreateDeleteRequestInformation(options *ManagedDeviceEncryptionStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagedDeviceEncryptionStateRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStateRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceEncryptionStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedDeviceEncryptionStateRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStateRequestBuilder) CreatePatchRequestInformation(options *ManagedDeviceEncryptionStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagedDeviceEncryptionStateRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// Delete encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStateRequestBuilder) Delete(options *ManagedDeviceEncryptionStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagedDeviceEncryptionStateRequestBuilder) Delete(options *ManagedDevi
     }
     return nil
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// Get encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStateRequestBuilder) Get(options *ManagedDeviceEncryptionStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceEncryptionState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagedDeviceEncryptionStateRequestBuilder) Get(options *ManagedDeviceE
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceEncryptionState), nil
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// Patch encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStateRequestBuilder) Patch(options *ManagedDeviceEncryptionStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

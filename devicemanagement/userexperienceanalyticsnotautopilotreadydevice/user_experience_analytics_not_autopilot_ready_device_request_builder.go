@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsNotAutopilotReadyDevice
+// UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsNotAutopilotReadyDevice
 type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics devices not Windows Autopilot ready.
+// UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetQueryParameters user experience analytics devices not Windows Autopilot ready.
 type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetQueryParamet
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsNotAutopilotReadyDevice;
@@ -56,10 +56,7 @@ type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal instantiates a new UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) {
     m := &UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal(pat
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder instantiates a new UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics devices not Windows Autopilot ready.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics devices not Windows Autopilot ready.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// User experience analytics devices not Windows Autopilot ready.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user experience analytics devices not Windows Autopilot ready.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreatePos
     }
     return requestInfo, nil
 }
-// User experience analytics devices not Windows Autopilot ready.
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics devices not Windows Autopilot ready.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) Get(options *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetOptions)(*UserExperienceAnalyticsNotAutopilotReadyDeviceResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) Get(optio
     }
     return res.(*UserExperienceAnalyticsNotAutopilotReadyDeviceResponse), nil
 }
-// User experience analytics devices not Windows Autopilot ready.
-// Parameters:
-//  - options : Options for the request
+// Post user experience analytics devices not Windows Autopilot ready.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) Post(options *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsNotAutopilotReadyDevice, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

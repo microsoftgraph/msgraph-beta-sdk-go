@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \allowedDataLocations\{allowedDataLocation-id}
+// AllowedDataLocationRequestBuilder builds and executes requests for operations under \allowedDataLocations\{allowedDataLocation-id}
 type AllowedDataLocationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AllowedDataLocationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AllowedDataLocationRequestBuilderDeleteOptions options for Delete
 type AllowedDataLocationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AllowedDataLocationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AllowedDataLocationRequestBuilderGetOptions options for Get
 type AllowedDataLocationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AllowedDataLocationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from allowedDataLocations by key
+// AllowedDataLocationRequestBuilderGetQueryParameters get entity from allowedDataLocations by key
 type AllowedDataLocationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AllowedDataLocationRequestBuilderPatchOptions options for Patch
 type AllowedDataLocationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AllowedDataLocation;
@@ -53,10 +53,7 @@ type AllowedDataLocationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AllowedDataLocationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAllowedDataLocationRequestBuilderInternal instantiates a new AllowedDataLocationRequestBuilder and sets the default values.
 func NewAllowedDataLocationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AllowedDataLocationRequestBuilder) {
     m := &AllowedDataLocationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAllowedDataLocationRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AllowedDataLocationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAllowedDataLocationRequestBuilder instantiates a new AllowedDataLocationRequestBuilder and sets the default values.
 func NewAllowedDataLocationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AllowedDataLocationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedDataLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from allowedDataLocations
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from allowedDataLocations
 func (m *AllowedDataLocationRequestBuilder) CreateDeleteRequestInformation(options *AllowedDataLocationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AllowedDataLocationRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get entity from allowedDataLocations by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from allowedDataLocations by key
 func (m *AllowedDataLocationRequestBuilder) CreateGetRequestInformation(options *AllowedDataLocationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AllowedDataLocationRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update entity in allowedDataLocations
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in allowedDataLocations
 func (m *AllowedDataLocationRequestBuilder) CreatePatchRequestInformation(options *AllowedDataLocationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AllowedDataLocationRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete entity from allowedDataLocations
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from allowedDataLocations
 func (m *AllowedDataLocationRequestBuilder) Delete(options *AllowedDataLocationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AllowedDataLocationRequestBuilder) Delete(options *AllowedDataLocationR
     }
     return nil
 }
-// Get entity from allowedDataLocations by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from allowedDataLocations by key
 func (m *AllowedDataLocationRequestBuilder) Get(options *AllowedDataLocationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AllowedDataLocation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AllowedDataLocationRequestBuilder) Get(options *AllowedDataLocationRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AllowedDataLocation), nil
 }
-// Update entity in allowedDataLocations
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in allowedDataLocations
 func (m *AllowedDataLocationRequestBuilder) Patch(options *AllowedDataLocationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

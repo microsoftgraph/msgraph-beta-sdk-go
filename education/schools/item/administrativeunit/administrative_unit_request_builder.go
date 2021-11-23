@@ -7,7 +7,7 @@ import (
     i9e89da4ed2a6ed4943a0734c0f3a054b04962d357c24cf84b8e2e7babf2dfd8a "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/item/administrativeunit/ref"
 )
 
-// Builds and executes requests for operations under \education\schools\{educationSchool-id}\administrativeUnit
+// AdministrativeUnitRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}\administrativeUnit
 type AdministrativeUnitRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AdministrativeUnitRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AdministrativeUnitRequestBuilderGetOptions options for Get
 type AdministrativeUnitRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type AdministrativeUnitRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The underlying administrativeUnit for this school.
+// AdministrativeUnitRequestBuilderGetQueryParameters the underlying administrativeUnit for this school.
 type AdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new AdministrativeUnitRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdministrativeUnitRequestBuilderInternal instantiates a new AdministrativeUnitRequestBuilder and sets the default values.
 func NewAdministrativeUnitRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdministrativeUnitRequestBuilder) {
     m := &AdministrativeUnitRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewAdministrativeUnitRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdministrativeUnitRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdministrativeUnitRequestBuilder instantiates a new AdministrativeUnitRequestBuilder and sets the default values.
 func NewAdministrativeUnitRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdministrativeUnitRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The underlying administrativeUnit for this school.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the underlying administrativeUnit for this school.
 func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformation(options *AdministrativeUnitRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The underlying administrativeUnit for this school.
-// Parameters:
-//  - options : Options for the request
+// Get the underlying administrativeUnit for this school.
 func (m *AdministrativeUnitRequestBuilder) Get(options *AdministrativeUnitRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministrativeUnit, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

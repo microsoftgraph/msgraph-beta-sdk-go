@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingCurrencies\{bookingCurrency-id}
+// BookingCurrencyRequestBuilder builds and executes requests for operations under \bookingCurrencies\{bookingCurrency-id}
 type BookingCurrencyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BookingCurrencyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BookingCurrencyRequestBuilderDeleteOptions options for Delete
 type BookingCurrencyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type BookingCurrencyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BookingCurrencyRequestBuilderGetOptions options for Get
 type BookingCurrencyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type BookingCurrencyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from bookingCurrencies by key
+// BookingCurrencyRequestBuilderGetQueryParameters get entity from bookingCurrencies by key
 type BookingCurrencyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BookingCurrencyRequestBuilderPatchOptions options for Patch
 type BookingCurrencyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingCurrency;
@@ -53,10 +53,7 @@ type BookingCurrencyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BookingCurrencyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingCurrencyRequestBuilderInternal instantiates a new BookingCurrencyRequestBuilder and sets the default values.
 func NewBookingCurrencyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingCurrencyRequestBuilder) {
     m := &BookingCurrencyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewBookingCurrencyRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BookingCurrencyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingCurrencyRequestBuilder instantiates a new BookingCurrencyRequestBuilder and sets the default values.
 func NewBookingCurrencyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingCurrencyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookingCurrencyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from bookingCurrencies
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from bookingCurrencies
 func (m *BookingCurrencyRequestBuilder) CreateDeleteRequestInformation(options *BookingCurrencyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *BookingCurrencyRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get entity from bookingCurrencies by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from bookingCurrencies by key
 func (m *BookingCurrencyRequestBuilder) CreateGetRequestInformation(options *BookingCurrencyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *BookingCurrencyRequestBuilder) CreateGetRequestInformation(options *Boo
     }
     return requestInfo, nil
 }
-// Update entity in bookingCurrencies
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in bookingCurrencies
 func (m *BookingCurrencyRequestBuilder) CreatePatchRequestInformation(options *BookingCurrencyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *BookingCurrencyRequestBuilder) CreatePatchRequestInformation(options *B
     }
     return requestInfo, nil
 }
-// Delete entity from bookingCurrencies
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from bookingCurrencies
 func (m *BookingCurrencyRequestBuilder) Delete(options *BookingCurrencyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *BookingCurrencyRequestBuilder) Delete(options *BookingCurrencyRequestBu
     }
     return nil
 }
-// Get entity from bookingCurrencies by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from bookingCurrencies by key
 func (m *BookingCurrencyRequestBuilder) Get(options *BookingCurrencyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingCurrency, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *BookingCurrencyRequestBuilder) Get(options *BookingCurrencyRequestBuild
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingCurrency), nil
 }
-// Update entity in bookingCurrencies
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in bookingCurrencies
 func (m *BookingCurrencyRequestBuilder) Patch(options *BookingCurrencyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

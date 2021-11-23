@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\credentialUserRegistrationDetails\{credentialUserRegistrationDetails-id}
+// CredentialUserRegistrationDetailsRequestBuilder builds and executes requests for operations under \reports\credentialUserRegistrationDetails\{credentialUserRegistrationDetails-id}
 type CredentialUserRegistrationDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CredentialUserRegistrationDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CredentialUserRegistrationDetailsRequestBuilderDeleteOptions options for Delete
 type CredentialUserRegistrationDetailsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CredentialUserRegistrationDetailsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CredentialUserRegistrationDetailsRequestBuilderGetOptions options for Get
 type CredentialUserRegistrationDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CredentialUserRegistrationDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get credentialUserRegistrationDetails from reports
+// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters get credentialUserRegistrationDetails from reports
 type CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CredentialUserRegistrationDetailsRequestBuilderPatchOptions options for Patch
 type CredentialUserRegistrationDetailsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUserRegistrationDetails;
@@ -53,10 +53,7 @@ type CredentialUserRegistrationDetailsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CredentialUserRegistrationDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCredentialUserRegistrationDetailsRequestBuilderInternal instantiates a new CredentialUserRegistrationDetailsRequestBuilder and sets the default values.
 func NewCredentialUserRegistrationDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CredentialUserRegistrationDetailsRequestBuilder) {
     m := &CredentialUserRegistrationDetailsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCredentialUserRegistrationDetailsRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CredentialUserRegistrationDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCredentialUserRegistrationDetailsRequestBuilder instantiates a new CredentialUserRegistrationDetailsRequestBuilder and sets the default values.
 func NewCredentialUserRegistrationDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CredentialUserRegistrationDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCredentialUserRegistrationDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property credentialUserRegistrationDetails for reports
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property credentialUserRegistrationDetails for reports
 func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateDeleteRequestInformation(options *CredentialUserRegistrationDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// Get credentialUserRegistrationDetails from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get credentialUserRegistrationDetails from reports
 func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInformation(options *CredentialUserRegistrationDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// Update the navigation property credentialUserRegistrationDetails in reports
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property credentialUserRegistrationDetails in reports
 func (m *CredentialUserRegistrationDetailsRequestBuilder) CreatePatchRequestInformation(options *CredentialUserRegistrationDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// Delete navigation property credentialUserRegistrationDetails for reports
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property credentialUserRegistrationDetails for reports
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Delete(options *CredentialUserRegistrationDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) Delete(options *Creden
     }
     return nil
 }
-// Get credentialUserRegistrationDetails from reports
-// Parameters:
-//  - options : Options for the request
+// Get get credentialUserRegistrationDetails from reports
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Get(options *CredentialUserRegistrationDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUserRegistrationDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) Get(options *Credentia
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUserRegistrationDetails), nil
 }
-// Update the navigation property credentialUserRegistrationDetails in reports
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property credentialUserRegistrationDetails in reports
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Patch(options *CredentialUserRegistrationDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

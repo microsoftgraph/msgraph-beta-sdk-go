@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MobileApp 
 type MobileApp struct {
     Entity
     // The list of group assignments for this mobile app.
@@ -59,14 +59,14 @@ type MobileApp struct {
     // The list of installation states for this mobile app.
     userStatuses []UserAppInstallStatus;
 }
-// Instantiates a new mobileApp and sets the default values.
+// NewMobileApp instantiates a new mobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {
     m := &MobileApp{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the assignments property value. The list of group assignments for this mobile app.
+// GetAssignments gets the assignments property value. The list of group assignments for this mobile app.
 func (m *MobileApp) GetAssignments()([]MobileAppAssignment) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *MobileApp) GetAssignments()([]MobileAppAssignment) {
         return m.assignments
     }
 }
-// Gets the categories property value. The list of categories for this app.
+// GetCategories gets the categories property value. The list of categories for this app.
 func (m *MobileApp) GetCategories()([]MobileAppCategory) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *MobileApp) GetCategories()([]MobileAppCategory) {
         return m.categories
     }
 }
-// Gets the createdDateTime property value. The date and time the app was created.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the app was created.
 func (m *MobileApp) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *MobileApp) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.createdDateTime
     }
 }
-// Gets the dependentAppCount property value. The total number of dependencies the child app has.
+// GetDependentAppCount gets the dependentAppCount property value. The total number of dependencies the child app has.
 func (m *MobileApp) GetDependentAppCount()(*int32) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *MobileApp) GetDependentAppCount()(*int32) {
         return m.dependentAppCount
     }
 }
-// Gets the description property value. The description of the app.
+// GetDescription gets the description property value. The description of the app.
 func (m *MobileApp) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *MobileApp) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the developer property value. The developer of the app.
+// GetDeveloper gets the developer property value. The developer of the app.
 func (m *MobileApp) GetDeveloper()(*string) {
     if m == nil {
         return nil
@@ -114,7 +114,7 @@ func (m *MobileApp) GetDeveloper()(*string) {
         return m.developer
     }
 }
-// Gets the deviceStatuses property value. The list of installation states for this mobile app.
+// GetDeviceStatuses gets the deviceStatuses property value. The list of installation states for this mobile app.
 func (m *MobileApp) GetDeviceStatuses()([]MobileAppInstallStatus) {
     if m == nil {
         return nil
@@ -122,7 +122,7 @@ func (m *MobileApp) GetDeviceStatuses()([]MobileAppInstallStatus) {
         return m.deviceStatuses
     }
 }
-// Gets the displayName property value. The admin provided or imported title of the app.
+// GetDisplayName gets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileApp) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -130,7 +130,7 @@ func (m *MobileApp) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the informationUrl property value. The more information Url.
+// GetInformationUrl gets the informationUrl property value. The more information Url.
 func (m *MobileApp) GetInformationUrl()(*string) {
     if m == nil {
         return nil
@@ -138,7 +138,7 @@ func (m *MobileApp) GetInformationUrl()(*string) {
         return m.informationUrl
     }
 }
-// Gets the installSummary property value. Mobile App Install Summary.
+// GetInstallSummary gets the installSummary property value. Mobile App Install Summary.
 func (m *MobileApp) GetInstallSummary()(*MobileAppInstallSummary) {
     if m == nil {
         return nil
@@ -146,7 +146,7 @@ func (m *MobileApp) GetInstallSummary()(*MobileAppInstallSummary) {
         return m.installSummary
     }
 }
-// Gets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
+// GetIsAssigned gets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
 func (m *MobileApp) GetIsAssigned()(*bool) {
     if m == nil {
         return nil
@@ -154,7 +154,7 @@ func (m *MobileApp) GetIsAssigned()(*bool) {
         return m.isAssigned
     }
 }
-// Gets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
+// GetIsFeatured gets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
 func (m *MobileApp) GetIsFeatured()(*bool) {
     if m == nil {
         return nil
@@ -162,7 +162,7 @@ func (m *MobileApp) GetIsFeatured()(*bool) {
         return m.isFeatured
     }
 }
-// Gets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
+// GetLargeIcon gets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
 func (m *MobileApp) GetLargeIcon()(*MimeContent) {
     if m == nil {
         return nil
@@ -170,7 +170,7 @@ func (m *MobileApp) GetLargeIcon()(*MimeContent) {
         return m.largeIcon
     }
 }
-// Gets the lastModifiedDateTime property value. The date and time the app was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the app was last modified.
 func (m *MobileApp) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -178,7 +178,7 @@ func (m *MobileApp) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return m.lastModifiedDateTime
     }
 }
-// Gets the notes property value. Notes for the app.
+// GetNotes gets the notes property value. Notes for the app.
 func (m *MobileApp) GetNotes()(*string) {
     if m == nil {
         return nil
@@ -186,7 +186,7 @@ func (m *MobileApp) GetNotes()(*string) {
         return m.notes
     }
 }
-// Gets the owner property value. The owner of the app.
+// GetOwner gets the owner property value. The owner of the app.
 func (m *MobileApp) GetOwner()(*string) {
     if m == nil {
         return nil
@@ -194,7 +194,7 @@ func (m *MobileApp) GetOwner()(*string) {
         return m.owner
     }
 }
-// Gets the privacyInformationUrl property value. The privacy statement Url.
+// GetPrivacyInformationUrl gets the privacyInformationUrl property value. The privacy statement Url.
 func (m *MobileApp) GetPrivacyInformationUrl()(*string) {
     if m == nil {
         return nil
@@ -202,7 +202,7 @@ func (m *MobileApp) GetPrivacyInformationUrl()(*string) {
         return m.privacyInformationUrl
     }
 }
-// Gets the publisher property value. The publisher of the app.
+// GetPublisher gets the publisher property value. The publisher of the app.
 func (m *MobileApp) GetPublisher()(*string) {
     if m == nil {
         return nil
@@ -210,7 +210,7 @@ func (m *MobileApp) GetPublisher()(*string) {
         return m.publisher
     }
 }
-// Gets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+// GetPublishingState gets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
 func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
     if m == nil {
         return nil
@@ -218,7 +218,7 @@ func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
         return m.publishingState
     }
 }
-// Gets the relationships property value. List of relationships for this mobile app.
+// GetRelationships gets the relationships property value. List of relationships for this mobile app.
 func (m *MobileApp) GetRelationships()([]MobileAppRelationship) {
     if m == nil {
         return nil
@@ -226,7 +226,7 @@ func (m *MobileApp) GetRelationships()([]MobileAppRelationship) {
         return m.relationships
     }
 }
-// Gets the roleScopeTagIds property value. List of scope tag ids for this mobile app.
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of scope tag ids for this mobile app.
 func (m *MobileApp) GetRoleScopeTagIds()([]string) {
     if m == nil {
         return nil
@@ -234,7 +234,7 @@ func (m *MobileApp) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
-// Gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
 func (m *MobileApp) GetSupersededAppCount()(*int32) {
     if m == nil {
         return nil
@@ -242,7 +242,7 @@ func (m *MobileApp) GetSupersededAppCount()(*int32) {
         return m.supersededAppCount
     }
 }
-// Gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
 func (m *MobileApp) GetSupersedingAppCount()(*int32) {
     if m == nil {
         return nil
@@ -250,7 +250,7 @@ func (m *MobileApp) GetSupersedingAppCount()(*int32) {
         return m.supersedingAppCount
     }
 }
-// Gets the uploadState property value. The upload state.
+// GetUploadState gets the uploadState property value. The upload state.
 func (m *MobileApp) GetUploadState()(*int32) {
     if m == nil {
         return nil
@@ -258,7 +258,7 @@ func (m *MobileApp) GetUploadState()(*int32) {
         return m.uploadState
     }
 }
-// Gets the userStatuses property value. The list of installation states for this mobile app.
+// GetUserStatuses gets the userStatuses property value. The list of installation states for this mobile app.
 func (m *MobileApp) GetUserStatuses()([]UserAppInstallStatus) {
     if m == nil {
         return nil
@@ -266,7 +266,7 @@ func (m *MobileApp) GetUserStatuses()([]UserAppInstallStatus) {
         return m.userStatuses
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -549,9 +549,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
 func (m *MobileApp) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -735,153 +733,103 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     }
     return nil
 }
-// Sets the assignments property value. The list of group assignments for this mobile app.
-// Parameters:
-//  - value : Value to set for the assignments property.
+// SetAssignments sets the assignments property value. The list of group assignments for this mobile app.
 func (m *MobileApp) SetAssignments(value []MobileAppAssignment)() {
     m.assignments = value
 }
-// Sets the categories property value. The list of categories for this app.
-// Parameters:
-//  - value : Value to set for the categories property.
+// SetCategories sets the categories property value. The list of categories for this app.
 func (m *MobileApp) SetCategories(value []MobileAppCategory)() {
     m.categories = value
 }
-// Sets the createdDateTime property value. The date and time the app was created.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the app was created.
 func (m *MobileApp) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the dependentAppCount property value. The total number of dependencies the child app has.
-// Parameters:
-//  - value : Value to set for the dependentAppCount property.
+// SetDependentAppCount sets the dependentAppCount property value. The total number of dependencies the child app has.
 func (m *MobileApp) SetDependentAppCount(value *int32)() {
     m.dependentAppCount = value
 }
-// Sets the description property value. The description of the app.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description of the app.
 func (m *MobileApp) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the developer property value. The developer of the app.
-// Parameters:
-//  - value : Value to set for the developer property.
+// SetDeveloper sets the developer property value. The developer of the app.
 func (m *MobileApp) SetDeveloper(value *string)() {
     m.developer = value
 }
-// Sets the deviceStatuses property value. The list of installation states for this mobile app.
-// Parameters:
-//  - value : Value to set for the deviceStatuses property.
+// SetDeviceStatuses sets the deviceStatuses property value. The list of installation states for this mobile app.
 func (m *MobileApp) SetDeviceStatuses(value []MobileAppInstallStatus)() {
     m.deviceStatuses = value
 }
-// Sets the displayName property value. The admin provided or imported title of the app.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileApp) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the informationUrl property value. The more information Url.
-// Parameters:
-//  - value : Value to set for the informationUrl property.
+// SetInformationUrl sets the informationUrl property value. The more information Url.
 func (m *MobileApp) SetInformationUrl(value *string)() {
     m.informationUrl = value
 }
-// Sets the installSummary property value. Mobile App Install Summary.
-// Parameters:
-//  - value : Value to set for the installSummary property.
+// SetInstallSummary sets the installSummary property value. Mobile App Install Summary.
 func (m *MobileApp) SetInstallSummary(value *MobileAppInstallSummary)() {
     m.installSummary = value
 }
-// Sets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
-// Parameters:
-//  - value : Value to set for the isAssigned property.
+// SetIsAssigned sets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
 func (m *MobileApp) SetIsAssigned(value *bool)() {
     m.isAssigned = value
 }
-// Sets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
-// Parameters:
-//  - value : Value to set for the isFeatured property.
+// SetIsFeatured sets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
 func (m *MobileApp) SetIsFeatured(value *bool)() {
     m.isFeatured = value
 }
-// Sets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
-// Parameters:
-//  - value : Value to set for the largeIcon property.
+// SetLargeIcon sets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
 func (m *MobileApp) SetLargeIcon(value *MimeContent)() {
     m.largeIcon = value
 }
-// Sets the lastModifiedDateTime property value. The date and time the app was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the app was last modified.
 func (m *MobileApp) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the notes property value. Notes for the app.
-// Parameters:
-//  - value : Value to set for the notes property.
+// SetNotes sets the notes property value. Notes for the app.
 func (m *MobileApp) SetNotes(value *string)() {
     m.notes = value
 }
-// Sets the owner property value. The owner of the app.
-// Parameters:
-//  - value : Value to set for the owner property.
+// SetOwner sets the owner property value. The owner of the app.
 func (m *MobileApp) SetOwner(value *string)() {
     m.owner = value
 }
-// Sets the privacyInformationUrl property value. The privacy statement Url.
-// Parameters:
-//  - value : Value to set for the privacyInformationUrl property.
+// SetPrivacyInformationUrl sets the privacyInformationUrl property value. The privacy statement Url.
 func (m *MobileApp) SetPrivacyInformationUrl(value *string)() {
     m.privacyInformationUrl = value
 }
-// Sets the publisher property value. The publisher of the app.
-// Parameters:
-//  - value : Value to set for the publisher property.
+// SetPublisher sets the publisher property value. The publisher of the app.
 func (m *MobileApp) SetPublisher(value *string)() {
     m.publisher = value
 }
-// Sets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
-// Parameters:
-//  - value : Value to set for the publishingState property.
+// SetPublishingState sets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
 func (m *MobileApp) SetPublishingState(value *MobileAppPublishingState)() {
     m.publishingState = value
 }
-// Sets the relationships property value. List of relationships for this mobile app.
-// Parameters:
-//  - value : Value to set for the relationships property.
+// SetRelationships sets the relationships property value. List of relationships for this mobile app.
 func (m *MobileApp) SetRelationships(value []MobileAppRelationship)() {
     m.relationships = value
 }
-// Sets the roleScopeTagIds property value. List of scope tag ids for this mobile app.
-// Parameters:
-//  - value : Value to set for the roleScopeTagIds property.
+// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of scope tag ids for this mobile app.
 func (m *MobileApp) SetRoleScopeTagIds(value []string)() {
     m.roleScopeTagIds = value
 }
-// Sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
-// Parameters:
-//  - value : Value to set for the supersededAppCount property.
+// SetSupersededAppCount sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
 func (m *MobileApp) SetSupersededAppCount(value *int32)() {
     m.supersededAppCount = value
 }
-// Sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
-// Parameters:
-//  - value : Value to set for the supersedingAppCount property.
+// SetSupersedingAppCount sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
 func (m *MobileApp) SetSupersedingAppCount(value *int32)() {
     m.supersedingAppCount = value
 }
-// Sets the uploadState property value. The upload state.
-// Parameters:
-//  - value : Value to set for the uploadState property.
+// SetUploadState sets the uploadState property value. The upload state.
 func (m *MobileApp) SetUploadState(value *int32)() {
     m.uploadState = value
 }
-// Sets the userStatuses property value. The list of installation states for this mobile app.
-// Parameters:
-//  - value : Value to set for the userStatuses property.
+// SetUserStatuses sets the userStatuses property value. The list of installation states for this mobile app.
 func (m *MobileApp) SetUserStatuses(value []UserAppInstallStatus)() {
     m.userStatuses = value
 }

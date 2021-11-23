@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthOsPerformance
+// UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthOsPerformance
 type UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetOptions s
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User Experience Analytics Battery Health Os Performance
+// UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetQueryParameters user Experience Analytics Battery Health Os Performance
 type UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetQueryPara
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthOsPerformance;
@@ -56,10 +56,7 @@ type UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderPostOptions 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderInternal instantiates a new UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) {
     m := &UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderInternal(
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder instantiates a new UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User Experience Analytics Battery Health Os Performance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user Experience Analytics Battery Health Os Performance
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// User Experience Analytics Battery Health Os Performance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user Experience Analytics Battery Health Os Performance
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// User Experience Analytics Battery Health Os Performance
-// Parameters:
-//  - options : Options for the request
+// Get user Experience Analytics Battery Health Os Performance
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetOptions)(*UserExperienceAnalyticsBatteryHealthOsPerformanceResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) Get(op
     }
     return res.(*UserExperienceAnalyticsBatteryHealthOsPerformanceResponse), nil
 }
-// User Experience Analytics Battery Health Os Performance
-// Parameters:
-//  - options : Options for the request
+// Post user Experience Analytics Battery Health Os Performance
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthOsPerformance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

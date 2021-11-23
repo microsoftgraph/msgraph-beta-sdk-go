@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\itemCategories
+// ItemCategoriesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\itemCategories
 type ItemCategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ItemCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ItemCategoriesRequestBuilderGetOptions options for Get
 type ItemCategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ItemCategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get itemCategories from financials
+// ItemCategoriesRequestBuilderGetQueryParameters get itemCategories from financials
 type ItemCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ItemCategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ItemCategoriesRequestBuilderPostOptions options for Post
 type ItemCategoriesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemCategory;
@@ -56,10 +56,7 @@ type ItemCategoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ItemCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemCategoriesRequestBuilderInternal instantiates a new ItemCategoriesRequestBuilder and sets the default values.
 func NewItemCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemCategoriesRequestBuilder) {
     m := &ItemCategoriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewItemCategoriesRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ItemCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemCategoriesRequestBuilder instantiates a new ItemCategoriesRequestBuilder and sets the default values.
 func NewItemCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get itemCategories from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get itemCategories from financials
 func (m *ItemCategoriesRequestBuilder) CreateGetRequestInformation(options *ItemCategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ItemCategoriesRequestBuilder) CreateGetRequestInformation(options *Item
     }
     return requestInfo, nil
 }
-// Create new navigation property to itemCategories for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to itemCategories for financials
 func (m *ItemCategoriesRequestBuilder) CreatePostRequestInformation(options *ItemCategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ItemCategoriesRequestBuilder) CreatePostRequestInformation(options *Ite
     }
     return requestInfo, nil
 }
-// Get itemCategories from financials
-// Parameters:
-//  - options : Options for the request
+// Get get itemCategories from financials
 func (m *ItemCategoriesRequestBuilder) Get(options *ItemCategoriesRequestBuilderGetOptions)(*ItemCategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ItemCategoriesRequestBuilder) Get(options *ItemCategoriesRequestBuilder
     }
     return res.(*ItemCategoriesResponse), nil
 }
-// Create new navigation property to itemCategories for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to itemCategories for financials
 func (m *ItemCategoriesRequestBuilder) Post(options *ItemCategoriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemCategory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

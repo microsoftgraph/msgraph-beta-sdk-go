@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directory\attributeSets
+// AttributeSetsRequestBuilder builds and executes requests for operations under \directory\attributeSets
 type AttributeSetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AttributeSetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AttributeSetsRequestBuilderGetOptions options for Get
 type AttributeSetsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AttributeSetsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get attributeSets from directory
+// AttributeSetsRequestBuilderGetQueryParameters get attributeSets from directory
 type AttributeSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AttributeSetsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AttributeSetsRequestBuilderPostOptions options for Post
 type AttributeSetsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeSet;
@@ -56,10 +56,7 @@ type AttributeSetsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AttributeSetsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttributeSetsRequestBuilderInternal instantiates a new AttributeSetsRequestBuilder and sets the default values.
 func NewAttributeSetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttributeSetsRequestBuilder) {
     m := &AttributeSetsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAttributeSetsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AttributeSetsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttributeSetsRequestBuilder instantiates a new AttributeSetsRequestBuilder and sets the default values.
 func NewAttributeSetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttributeSetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttributeSetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get attributeSets from directory
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get attributeSets from directory
 func (m *AttributeSetsRequestBuilder) CreateGetRequestInformation(options *AttributeSetsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AttributeSetsRequestBuilder) CreateGetRequestInformation(options *Attri
     }
     return requestInfo, nil
 }
-// Create new navigation property to attributeSets for directory
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to attributeSets for directory
 func (m *AttributeSetsRequestBuilder) CreatePostRequestInformation(options *AttributeSetsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AttributeSetsRequestBuilder) CreatePostRequestInformation(options *Attr
     }
     return requestInfo, nil
 }
-// Get attributeSets from directory
-// Parameters:
-//  - options : Options for the request
+// Get get attributeSets from directory
 func (m *AttributeSetsRequestBuilder) Get(options *AttributeSetsRequestBuilderGetOptions)(*AttributeSetsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AttributeSetsRequestBuilder) Get(options *AttributeSetsRequestBuilderGe
     }
     return res.(*AttributeSetsResponse), nil
 }
-// Create new navigation property to attributeSets for directory
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to attributeSets for directory
 func (m *AttributeSetsRequestBuilder) Post(options *AttributeSetsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeSet, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

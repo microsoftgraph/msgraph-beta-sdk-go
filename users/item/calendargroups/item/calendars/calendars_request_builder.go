@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\calendarGroups\{calendarGroup-id}\calendars
+// CalendarsRequestBuilder builds and executes requests for operations under \users\{user-id}\calendarGroups\{calendarGroup-id}\calendars
 type CalendarsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CalendarsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CalendarsRequestBuilderGetOptions options for Get
 type CalendarsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CalendarsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The calendars in the calendar group. Navigation property. Read-only. Nullable.
+// CalendarsRequestBuilderGetQueryParameters the calendars in the calendar group. Navigation property. Read-only. Nullable.
 type CalendarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type CalendarsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CalendarsRequestBuilderPostOptions options for Post
 type CalendarsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar;
@@ -52,10 +52,7 @@ type CalendarsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CalendarsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarsRequestBuilderInternal instantiates a new CalendarsRequestBuilder and sets the default values.
 func NewCalendarsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarsRequestBuilder) {
     m := &CalendarsRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewCalendarsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CalendarsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarsRequestBuilder instantiates a new CalendarsRequestBuilder and sets the default values.
 func NewCalendarsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The calendars in the calendar group. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarsRequestBuilder) CreateGetRequestInformation(options *CalendarsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *CalendarsRequestBuilder) CreateGetRequestInformation(options *Calendars
     }
     return requestInfo, nil
 }
-// The calendars in the calendar group. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarsRequestBuilder) CreatePostRequestInformation(options *CalendarsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CalendarsRequestBuilder) CreatePostRequestInformation(options *Calendar
     }
     return requestInfo, nil
 }
-// The calendars in the calendar group. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarsRequestBuilder) Get(options *CalendarsRequestBuilderGetOptions)(*CalendarsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *CalendarsRequestBuilder) Get(options *CalendarsRequestBuilderGetOptions
     }
     return res.(*CalendarsResponse), nil
 }
-// The calendars in the calendar group. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarsRequestBuilder) Post(options *CalendarsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

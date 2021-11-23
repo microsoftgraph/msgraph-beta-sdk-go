@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getQuietTimePolicyUserSummaryReport
+// GetQuietTimePolicyUserSummaryReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getQuietTimePolicyUserSummaryReport
 type GetQuietTimePolicyUserSummaryReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetQuietTimePolicyUserSummaryReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetQuietTimePolicyUserSummaryReportRequestBuilderPostOptions options for Post
 type GetQuietTimePolicyUserSummaryReportRequestBuilderPostOptions struct {
     // 
     Body *GetQuietTimePolicyUserSummaryReportRequestBody;
@@ -24,10 +24,7 @@ type GetQuietTimePolicyUserSummaryReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetQuietTimePolicyUserSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetQuietTimePolicyUserSummaryReportRequestBuilderInternal instantiates a new GetQuietTimePolicyUserSummaryReportRequestBuilder and sets the default values.
 func NewGetQuietTimePolicyUserSummaryReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetQuietTimePolicyUserSummaryReportRequestBuilder) {
     m := &GetQuietTimePolicyUserSummaryReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetQuietTimePolicyUserSummaryReportRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetQuietTimePolicyUserSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetQuietTimePolicyUserSummaryReportRequestBuilder instantiates a new GetQuietTimePolicyUserSummaryReportRequestBuilder and sets the default values.
 func NewGetQuietTimePolicyUserSummaryReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetQuietTimePolicyUserSummaryReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetQuietTimePolicyUserSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getQuietTimePolicyUserSummaryReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getQuietTimePolicyUserSummaryReport
 func (m *GetQuietTimePolicyUserSummaryReportRequestBuilder) CreatePostRequestInformation(options *GetQuietTimePolicyUserSummaryReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetQuietTimePolicyUserSummaryReportRequestBuilder) CreatePostRequestInf
     }
     return requestInfo, nil
 }
-// Invoke action getQuietTimePolicyUserSummaryReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getQuietTimePolicyUserSummaryReport
 func (m *GetQuietTimePolicyUserSummaryReportRequestBuilder) Post(options *GetQuietTimePolicyUserSummaryReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

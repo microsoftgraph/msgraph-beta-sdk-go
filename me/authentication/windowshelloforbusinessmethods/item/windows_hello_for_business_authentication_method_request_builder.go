@@ -7,7 +7,7 @@ import (
     i4f9db3ce868389e1f5235eb54ab431b059ccaf6e498c4773259c3da435589ddc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device"
 )
 
-// Builds and executes requests for operations under \me\authentication\windowsHelloForBusinessMethods\{windowsHelloForBusinessAuthenticationMethod-id}
+// WindowsHelloForBusinessAuthenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\windowsHelloForBusinessMethods\{windowsHelloForBusinessAuthenticationMethod-id}
 type WindowsHelloForBusinessAuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type WindowsHelloForBusinessAuthenticationMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsHelloForBusinessAuthenticationMethodRequestBuilderDeleteOptions options for Delete
 type WindowsHelloForBusinessAuthenticationMethodRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type WindowsHelloForBusinessAuthenticationMethodRequestBuilderDeleteOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetOptions options for Get
 type WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get windowsHelloForBusinessMethods from me
+// WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetQueryParameters get windowsHelloForBusinessMethods from me
 type WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsHelloForBusinessAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type WindowsHelloForBusinessAuthenticationMethodRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsHelloForBusinessAuthenticationMethod;
@@ -54,10 +54,7 @@ type WindowsHelloForBusinessAuthenticationMethodRequestBuilderPatchOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsHelloForBusinessAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsHelloForBusinessAuthenticationMethodRequestBuilderInternal instantiates a new WindowsHelloForBusinessAuthenticationMethodRequestBuilder and sets the default values.
 func NewWindowsHelloForBusinessAuthenticationMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsHelloForBusinessAuthenticationMethodRequestBuilder) {
     m := &WindowsHelloForBusinessAuthenticationMethodRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewWindowsHelloForBusinessAuthenticationMethodRequestBuilderInternal(pathPa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsHelloForBusinessAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsHelloForBusinessAuthenticationMethodRequestBuilder instantiates a new WindowsHelloForBusinessAuthenticationMethodRequestBuilder and sets the default values.
 func NewWindowsHelloForBusinessAuthenticationMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsHelloForBusinessAuthenticationMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsHelloForBusinessAuthenticationMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property windowsHelloForBusinessMethods for me
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property windowsHelloForBusinessMethods for me
 func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) CreateDeleteRequestInformation(options *WindowsHelloForBusinessAuthenticationMethodRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// Get windowsHelloForBusinessMethods from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get windowsHelloForBusinessMethods from me
 func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) CreateGetRequestInformation(options *WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// Update the navigation property windowsHelloForBusinessMethods in me
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property windowsHelloForBusinessMethods in me
 func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) CreatePatchRequestInformation(options *WindowsHelloForBusinessAuthenticationMethodRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) CreatePatchR
     }
     return requestInfo, nil
 }
-// Delete navigation property windowsHelloForBusinessMethods for me
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property windowsHelloForBusinessMethods for me
 func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) Delete(options *WindowsHelloForBusinessAuthenticationMethodRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) Delete(optio
 func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) Device()(*i4f9db3ce868389e1f5235eb54ab431b059ccaf6e498c4773259c3da435589ddc.DeviceRequestBuilder) {
     return i4f9db3ce868389e1f5235eb54ab431b059ccaf6e498c4773259c3da435589ddc.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get windowsHelloForBusinessMethods from me
-// Parameters:
-//  - options : Options for the request
+// Get get windowsHelloForBusinessMethods from me
 func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) Get(options *WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsHelloForBusinessAuthenticationMethod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) Get(options 
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsHelloForBusinessAuthenticationMethod), nil
 }
-// Update the navigation property windowsHelloForBusinessMethods in me
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property windowsHelloForBusinessMethods in me
 func (m *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) Patch(options *WindowsHelloForBusinessAuthenticationMethodRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

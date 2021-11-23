@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\hostSecurityProfiles
+// HostSecurityProfilesRequestBuilder builds and executes requests for operations under \security\hostSecurityProfiles
 type HostSecurityProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type HostSecurityProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// HostSecurityProfilesRequestBuilderGetOptions options for Get
 type HostSecurityProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type HostSecurityProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get hostSecurityProfiles from security
+// HostSecurityProfilesRequestBuilderGetQueryParameters get hostSecurityProfiles from security
 type HostSecurityProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type HostSecurityProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// HostSecurityProfilesRequestBuilderPostOptions options for Post
 type HostSecurityProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.HostSecurityProfile;
@@ -56,10 +56,7 @@ type HostSecurityProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HostSecurityProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHostSecurityProfilesRequestBuilderInternal instantiates a new HostSecurityProfilesRequestBuilder and sets the default values.
 func NewHostSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HostSecurityProfilesRequestBuilder) {
     m := &HostSecurityProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewHostSecurityProfilesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HostSecurityProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHostSecurityProfilesRequestBuilder instantiates a new HostSecurityProfilesRequestBuilder and sets the default values.
 func NewHostSecurityProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HostSecurityProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHostSecurityProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get hostSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get hostSecurityProfiles from security
 func (m *HostSecurityProfilesRequestBuilder) CreateGetRequestInformation(options *HostSecurityProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *HostSecurityProfilesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Create new navigation property to hostSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to hostSecurityProfiles for security
 func (m *HostSecurityProfilesRequestBuilder) CreatePostRequestInformation(options *HostSecurityProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *HostSecurityProfilesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get hostSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// Get get hostSecurityProfiles from security
 func (m *HostSecurityProfilesRequestBuilder) Get(options *HostSecurityProfilesRequestBuilderGetOptions)(*HostSecurityProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *HostSecurityProfilesRequestBuilder) Get(options *HostSecurityProfilesRe
     }
     return res.(*HostSecurityProfilesResponse), nil
 }
-// Create new navigation property to hostSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to hostSecurityProfiles for security
 func (m *HostSecurityProfilesRequestBuilder) Post(options *HostSecurityProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.HostSecurityProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Deployment 
 type Deployment struct {
     Entity
     // Specifies the audience to which content is deployed.
@@ -21,14 +21,14 @@ type Deployment struct {
     // Execution status of the deployment. Returned by default.
     state *DeploymentState;
 }
-// Instantiates a new deployment and sets the default values.
+// NewDeployment instantiates a new deployment and sets the default values.
 func NewDeployment()(*Deployment) {
     m := &Deployment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the audience property value. Specifies the audience to which content is deployed.
+// GetAudience gets the audience property value. Specifies the audience to which content is deployed.
 func (m *Deployment) GetAudience()(*DeploymentAudience) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *Deployment) GetAudience()(*DeploymentAudience) {
         return m.audience
     }
 }
-// Gets the content property value. Specifies what content to deploy. Cannot be changed. Returned by default.
+// GetContent gets the content property value. Specifies what content to deploy. Cannot be changed. Returned by default.
 func (m *Deployment) GetContent()(*DeployableContent) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *Deployment) GetContent()(*DeployableContent) {
         return m.content
     }
 }
-// Gets the createdDateTime property value. The date and time the deployment was created. Returned by default. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the deployment was created. Returned by default. Read-only.
 func (m *Deployment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *Deployment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
         return m.createdDateTime
     }
 }
-// Gets the lastModifiedDateTime property value. The date and time the deployment was last modified. Returned by default. Read-only.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the deployment was last modified. Returned by default. Read-only.
 func (m *Deployment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *Deployment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.lastModifiedDateTime
     }
 }
-// Gets the settings property value. Settings specified on the specific deployment governing how to deploy content. Returned by default.
+// GetSettings gets the settings property value. Settings specified on the specific deployment governing how to deploy content. Returned by default.
 func (m *Deployment) GetSettings()(*DeploymentSettings) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *Deployment) GetSettings()(*DeploymentSettings) {
         return m.settings
     }
 }
-// Gets the state property value. Execution status of the deployment. Returned by default.
+// GetState gets the state property value. Execution status of the deployment. Returned by default.
 func (m *Deployment) GetState()(*DeploymentState) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *Deployment) GetState()(*DeploymentState) {
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Deployment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["audience"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,9 +144,7 @@ func (m *Deployment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *Deployment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Deployment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -190,39 +188,27 @@ func (m *Deployment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// Sets the audience property value. Specifies the audience to which content is deployed.
-// Parameters:
-//  - value : Value to set for the audience property.
+// SetAudience sets the audience property value. Specifies the audience to which content is deployed.
 func (m *Deployment) SetAudience(value *DeploymentAudience)() {
     m.audience = value
 }
-// Sets the content property value. Specifies what content to deploy. Cannot be changed. Returned by default.
-// Parameters:
-//  - value : Value to set for the content property.
+// SetContent sets the content property value. Specifies what content to deploy. Cannot be changed. Returned by default.
 func (m *Deployment) SetContent(value *DeployableContent)() {
     m.content = value
 }
-// Sets the createdDateTime property value. The date and time the deployment was created. Returned by default. Read-only.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the deployment was created. Returned by default. Read-only.
 func (m *Deployment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the lastModifiedDateTime property value. The date and time the deployment was last modified. Returned by default. Read-only.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the deployment was last modified. Returned by default. Read-only.
 func (m *Deployment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the settings property value. Settings specified on the specific deployment governing how to deploy content. Returned by default.
-// Parameters:
-//  - value : Value to set for the settings property.
+// SetSettings sets the settings property value. Settings specified on the specific deployment governing how to deploy content. Returned by default.
 func (m *Deployment) SetSettings(value *DeploymentSettings)() {
     m.settings = value
 }
-// Sets the state property value. Execution status of the deployment. Returned by default.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. Execution status of the deployment. Returned by default.
 func (m *Deployment) SetState(value *DeploymentState)() {
     m.state = value
 }

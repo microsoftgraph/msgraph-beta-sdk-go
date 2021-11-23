@@ -7,7 +7,7 @@ import (
     ic549cd957a762c9b708cf3f98e3df1f9ff42c54339a2f5975e4ece29f7338f37 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mailfolders/item/messages/item/eventmessagerequest/decline"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.eventMessageRequest
+// EventMessageRequestRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.eventMessageRequest
 type EventMessageRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,10 +19,7 @@ type EventMessageRequestRequestBuilder struct {
 func (m *EventMessageRequestRequestBuilder) Accept()(*i4d3541020132803aaabd3cb95aebaf982a6f832643bbeab622ac5caea33037c0.AcceptRequestBuilder) {
     return i4d3541020132803aaabd3cb95aebaf982a6f832643bbeab622ac5caea33037c0.NewAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new EventMessageRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEventMessageRequestRequestBuilderInternal instantiates a new EventMessageRequestRequestBuilder and sets the default values.
 func NewEventMessageRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventMessageRequestRequestBuilder) {
     m := &EventMessageRequestRequestBuilder{
     }
@@ -35,10 +32,7 @@ func NewEventMessageRequestRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EventMessageRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEventMessageRequestRequestBuilder instantiates a new EventMessageRequestRequestBuilder and sets the default values.
 func NewEventMessageRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventMessageRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

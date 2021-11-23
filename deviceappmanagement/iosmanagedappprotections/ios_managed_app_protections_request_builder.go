@@ -7,7 +7,7 @@ import (
     ied7d406e705d08cc80c65382fe67b4bd2f7ef60187e282e985f0e2680a380f79 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/iosmanagedappprotections/haspayloadlinks"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections
+// IosManagedAppProtectionsRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections
 type IosManagedAppProtectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type IosManagedAppProtectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IosManagedAppProtectionsRequestBuilderGetOptions options for Get
 type IosManagedAppProtectionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type IosManagedAppProtectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// iOS managed app policies.
+// IosManagedAppProtectionsRequestBuilderGetQueryParameters iOS managed app policies.
 type IosManagedAppProtectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type IosManagedAppProtectionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IosManagedAppProtectionsRequestBuilderPostOptions options for Post
 type IosManagedAppProtectionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosManagedAppProtection;
@@ -57,10 +57,7 @@ type IosManagedAppProtectionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IosManagedAppProtectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosManagedAppProtectionsRequestBuilderInternal instantiates a new IosManagedAppProtectionsRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosManagedAppProtectionsRequestBuilder) {
     m := &IosManagedAppProtectionsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewIosManagedAppProtectionsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IosManagedAppProtectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosManagedAppProtectionsRequestBuilder instantiates a new IosManagedAppProtectionsRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosManagedAppProtectionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation iOS managed app policies.
 func (m *IosManagedAppProtectionsRequestBuilder) CreateGetRequestInformation(options *IosManagedAppProtectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *IosManagedAppProtectionsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation iOS managed app policies.
 func (m *IosManagedAppProtectionsRequestBuilder) CreatePostRequestInformation(options *IosManagedAppProtectionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *IosManagedAppProtectionsRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Get iOS managed app policies.
 func (m *IosManagedAppProtectionsRequestBuilder) Get(options *IosManagedAppProtectionsRequestBuilderGetOptions)(*IosManagedAppProtectionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *IosManagedAppProtectionsRequestBuilder) Get(options *IosManagedAppProte
 func (m *IosManagedAppProtectionsRequestBuilder) HasPayloadLinks()(*ied7d406e705d08cc80c65382fe67b4bd2f7ef60187e282e985f0e2680a380f79.HasPayloadLinksRequestBuilder) {
     return ied7d406e705d08cc80c65382fe67b4bd2f7ef60187e282e985f0e2680a380f79.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Post iOS managed app policies.
 func (m *IosManagedAppProtectionsRequestBuilder) Post(options *IosManagedAppProtectionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosManagedAppProtection, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

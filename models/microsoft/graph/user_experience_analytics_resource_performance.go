@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserExperienceAnalyticsResourcePerformance 
 type UserExperienceAnalyticsResourcePerformance struct {
     Entity
     // AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
@@ -34,14 +34,14 @@ type UserExperienceAnalyticsResourcePerformance struct {
     // The user experience analytics device RAM spike time score. Valid values 0 to 100
     ramSpikeTimeScore *int32;
 }
-// Instantiates a new userExperienceAnalyticsResourcePerformance and sets the default values.
+// NewUserExperienceAnalyticsResourcePerformance instantiates a new userExperienceAnalyticsResourcePerformance and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformance()(*UserExperienceAnalyticsResourcePerformance) {
     m := &UserExperienceAnalyticsResourcePerformance{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the averageSpikeTimeScore property value. AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
+// GetAverageSpikeTimeScore gets the averageSpikeTimeScore property value. AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetAverageSpikeTimeScore()(*int32) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetAverageSpikeTimeScore()(
         return m.averageSpikeTimeScore
     }
 }
-// Gets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
+// GetCpuSpikeTimePercentage gets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentage()(*float64) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentage()
         return m.cpuSpikeTimePercentage
     }
 }
-// Gets the cpuSpikeTimePercentageThreshold property value. Threshold of cpuSpikeTimeScore. Valid values 0 to 100
+// GetCpuSpikeTimePercentageThreshold gets the cpuSpikeTimePercentageThreshold property value. Threshold of cpuSpikeTimeScore. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentageThreshold()(*float64) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentageTh
         return m.cpuSpikeTimePercentageThreshold
     }
 }
-// Gets the cpuSpikeTimeScore property value. The user experience analytics device CPU spike time score. Valid values 0 to 100
+// GetCpuSpikeTimeScore gets the cpuSpikeTimeScore property value. The user experience analytics device CPU spike time score. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimeScore()(*int32) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimeScore()(*int
         return m.cpuSpikeTimeScore
     }
 }
-// Gets the deviceCount property value. User experience analytics summarized device count.
+// GetDeviceCount gets the deviceCount property value. User experience analytics summarized device count.
 func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceCount()(*int64) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceCount()(*int64) {
         return m.deviceCount
     }
 }
-// Gets the deviceId property value. The id of the device.
+// GetDeviceId gets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceId()(*string) {
         return m.deviceId
     }
 }
-// Gets the deviceName property value. The name of the device.
+// GetDeviceName gets the deviceName property value. The name of the device.
 func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceName()(*string) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceName()(*string) {
         return m.deviceName
     }
 }
-// Gets the deviceResourcePerformanceScore property value. Resource performance score of a specific device. Valid values 0 to 100
+// GetDeviceResourcePerformanceScore gets the deviceResourcePerformanceScore property value. Resource performance score of a specific device. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceResourcePerformanceScore()(*int32) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceResourcePerformanc
         return m.deviceResourcePerformanceScore
     }
 }
-// Gets the manufacturer property value. The user experience analytics device manufacturer.
+// GetManufacturer gets the manufacturer property value. The user experience analytics device manufacturer.
 func (m *UserExperienceAnalyticsResourcePerformance) GetManufacturer()(*string) {
     if m == nil {
         return nil
@@ -113,7 +113,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetManufacturer()(*string) 
         return m.manufacturer
     }
 }
-// Gets the model property value. The user experience analytics device model.
+// GetModel gets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsResourcePerformance) GetModel()(*string) {
     if m == nil {
         return nil
@@ -121,7 +121,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetModel()(*string) {
         return m.model
     }
 }
-// Gets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
+// GetRamSpikeTimePercentage gets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentage()(*float64) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentage()
         return m.ramSpikeTimePercentage
     }
 }
-// Gets the ramSpikeTimePercentageThreshold property value. Threshold of ramSpikeTimeScore. Valid values 0 to 100
+// GetRamSpikeTimePercentageThreshold gets the ramSpikeTimePercentageThreshold property value. Threshold of ramSpikeTimeScore. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentageThreshold()(*float64) {
     if m == nil {
         return nil
@@ -137,7 +137,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentageTh
         return m.ramSpikeTimePercentageThreshold
     }
 }
-// Gets the ramSpikeTimeScore property value. The user experience analytics device RAM spike time score. Valid values 0 to 100
+// GetRamSpikeTimeScore gets the ramSpikeTimeScore property value. The user experience analytics device RAM spike time score. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimeScore()(*int32) {
     if m == nil {
         return nil
@@ -145,7 +145,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimeScore()(*int
         return m.ramSpikeTimeScore
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["averageSpikeTimeScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -283,9 +283,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
 func (m *UserExperienceAnalyticsResourcePerformance) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -371,81 +369,55 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i04eb5309a
     }
     return nil
 }
-// Sets the averageSpikeTimeScore property value. AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
-// Parameters:
-//  - value : Value to set for the averageSpikeTimeScore property.
+// SetAverageSpikeTimeScore sets the averageSpikeTimeScore property value. AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetAverageSpikeTimeScore(value *int32)() {
     m.averageSpikeTimeScore = value
 }
-// Sets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
-// Parameters:
-//  - value : Value to set for the cpuSpikeTimePercentage property.
+// SetCpuSpikeTimePercentage sets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetCpuSpikeTimePercentage(value *float64)() {
     m.cpuSpikeTimePercentage = value
 }
-// Sets the cpuSpikeTimePercentageThreshold property value. Threshold of cpuSpikeTimeScore. Valid values 0 to 100
-// Parameters:
-//  - value : Value to set for the cpuSpikeTimePercentageThreshold property.
+// SetCpuSpikeTimePercentageThreshold sets the cpuSpikeTimePercentageThreshold property value. Threshold of cpuSpikeTimeScore. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetCpuSpikeTimePercentageThreshold(value *float64)() {
     m.cpuSpikeTimePercentageThreshold = value
 }
-// Sets the cpuSpikeTimeScore property value. The user experience analytics device CPU spike time score. Valid values 0 to 100
-// Parameters:
-//  - value : Value to set for the cpuSpikeTimeScore property.
+// SetCpuSpikeTimeScore sets the cpuSpikeTimeScore property value. The user experience analytics device CPU spike time score. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetCpuSpikeTimeScore(value *int32)() {
     m.cpuSpikeTimeScore = value
 }
-// Sets the deviceCount property value. User experience analytics summarized device count.
-// Parameters:
-//  - value : Value to set for the deviceCount property.
+// SetDeviceCount sets the deviceCount property value. User experience analytics summarized device count.
 func (m *UserExperienceAnalyticsResourcePerformance) SetDeviceCount(value *int64)() {
     m.deviceCount = value
 }
-// Sets the deviceId property value. The id of the device.
-// Parameters:
-//  - value : Value to set for the deviceId property.
+// SetDeviceId sets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsResourcePerformance) SetDeviceId(value *string)() {
     m.deviceId = value
 }
-// Sets the deviceName property value. The name of the device.
-// Parameters:
-//  - value : Value to set for the deviceName property.
+// SetDeviceName sets the deviceName property value. The name of the device.
 func (m *UserExperienceAnalyticsResourcePerformance) SetDeviceName(value *string)() {
     m.deviceName = value
 }
-// Sets the deviceResourcePerformanceScore property value. Resource performance score of a specific device. Valid values 0 to 100
-// Parameters:
-//  - value : Value to set for the deviceResourcePerformanceScore property.
+// SetDeviceResourcePerformanceScore sets the deviceResourcePerformanceScore property value. Resource performance score of a specific device. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetDeviceResourcePerformanceScore(value *int32)() {
     m.deviceResourcePerformanceScore = value
 }
-// Sets the manufacturer property value. The user experience analytics device manufacturer.
-// Parameters:
-//  - value : Value to set for the manufacturer property.
+// SetManufacturer sets the manufacturer property value. The user experience analytics device manufacturer.
 func (m *UserExperienceAnalyticsResourcePerformance) SetManufacturer(value *string)() {
     m.manufacturer = value
 }
-// Sets the model property value. The user experience analytics device model.
-// Parameters:
-//  - value : Value to set for the model property.
+// SetModel sets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsResourcePerformance) SetModel(value *string)() {
     m.model = value
 }
-// Sets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
-// Parameters:
-//  - value : Value to set for the ramSpikeTimePercentage property.
+// SetRamSpikeTimePercentage sets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimePercentage(value *float64)() {
     m.ramSpikeTimePercentage = value
 }
-// Sets the ramSpikeTimePercentageThreshold property value. Threshold of ramSpikeTimeScore. Valid values 0 to 100
-// Parameters:
-//  - value : Value to set for the ramSpikeTimePercentageThreshold property.
+// SetRamSpikeTimePercentageThreshold sets the ramSpikeTimePercentageThreshold property value. Threshold of ramSpikeTimeScore. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimePercentageThreshold(value *float64)() {
     m.ramSpikeTimePercentageThreshold = value
 }
-// Sets the ramSpikeTimeScore property value. The user experience analytics device RAM spike time score. Valid values 0 to 100
-// Parameters:
-//  - value : Value to set for the ramSpikeTimeScore property.
+// SetRamSpikeTimeScore sets the ramSpikeTimeScore property value. The user experience analytics device RAM spike time score. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimeScore(value *int32)() {
     m.ramSpikeTimeScore = value
 }

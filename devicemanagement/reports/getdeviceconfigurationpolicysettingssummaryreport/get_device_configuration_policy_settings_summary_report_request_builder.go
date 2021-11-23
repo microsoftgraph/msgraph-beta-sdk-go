@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getDeviceConfigurationPolicySettingsSummaryReport
+// GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getDeviceConfigurationPolicySettingsSummaryReport
 type GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostOptions options for Post
 type GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostOptions struct {
     // 
     Body *GetDeviceConfigurationPolicySettingsSummaryReportRequestBody;
@@ -24,10 +24,7 @@ type GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostOptions 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal instantiates a new GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder and sets the default values.
 func NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) {
     m := &GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal(
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder instantiates a new GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder and sets the default values.
 func NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getDeviceConfigurationPolicySettingsSummaryReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getDeviceConfigurationPolicySettingsSummaryReport
 func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) CreatePostRequestInformation(options *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// Invoke action getDeviceConfigurationPolicySettingsSummaryReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getDeviceConfigurationPolicySettingsSummaryReport
 func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) Post(options *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

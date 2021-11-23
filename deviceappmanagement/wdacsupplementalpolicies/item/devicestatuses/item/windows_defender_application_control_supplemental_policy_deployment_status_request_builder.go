@@ -7,7 +7,7 @@ import (
     i3e31f706fc76ba4e16c152454d85c280f8ac53d7c171bf7d0e1e53bb8e2eca1c "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/wdacsupplementalpolicies/item/devicestatuses/item/policy"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses\{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses\{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestB
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderDeleteOptions options for Delete
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestB
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetOptions options for Get
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestB
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetQueryParameters the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderPatchOptions options for Patch
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus;
@@ -54,10 +54,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestB
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderInternal instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) {
     m := &WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusReque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) CreateDeleteRequestInformation(options *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequ
     }
     return requestInfo, nil
 }
-// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) CreateGetRequestInformation(options *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequ
     }
     return requestInfo, nil
 }
-// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) CreatePatchRequestInformation(options *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequ
     }
     return requestInfo, nil
 }
-// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) Delete(options *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequ
     }
     return nil
 }
-// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-// Parameters:
-//  - options : Options for the request
+// Get the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) Get(options *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus), nil
 }
-// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) Patch(options *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

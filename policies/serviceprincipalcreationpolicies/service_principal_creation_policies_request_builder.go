@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\servicePrincipalCreationPolicies
+// ServicePrincipalCreationPoliciesRequestBuilder builds and executes requests for operations under \policies\servicePrincipalCreationPolicies
 type ServicePrincipalCreationPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ServicePrincipalCreationPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ServicePrincipalCreationPoliciesRequestBuilderGetOptions options for Get
 type ServicePrincipalCreationPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ServicePrincipalCreationPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get servicePrincipalCreationPolicies from policies
+// ServicePrincipalCreationPoliciesRequestBuilderGetQueryParameters get servicePrincipalCreationPolicies from policies
 type ServicePrincipalCreationPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ServicePrincipalCreationPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ServicePrincipalCreationPoliciesRequestBuilderPostOptions options for Post
 type ServicePrincipalCreationPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicy;
@@ -56,10 +56,7 @@ type ServicePrincipalCreationPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ServicePrincipalCreationPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicePrincipalCreationPoliciesRequestBuilderInternal instantiates a new ServicePrincipalCreationPoliciesRequestBuilder and sets the default values.
 func NewServicePrincipalCreationPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicePrincipalCreationPoliciesRequestBuilder) {
     m := &ServicePrincipalCreationPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewServicePrincipalCreationPoliciesRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ServicePrincipalCreationPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicePrincipalCreationPoliciesRequestBuilder instantiates a new ServicePrincipalCreationPoliciesRequestBuilder and sets the default values.
 func NewServicePrincipalCreationPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicePrincipalCreationPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalCreationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get servicePrincipalCreationPolicies from policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get servicePrincipalCreationPolicies from policies
 func (m *ServicePrincipalCreationPoliciesRequestBuilder) CreateGetRequestInformation(options *ServicePrincipalCreationPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ServicePrincipalCreationPoliciesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Create new navigation property to servicePrincipalCreationPolicies for policies
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to servicePrincipalCreationPolicies for policies
 func (m *ServicePrincipalCreationPoliciesRequestBuilder) CreatePostRequestInformation(options *ServicePrincipalCreationPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ServicePrincipalCreationPoliciesRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Get servicePrincipalCreationPolicies from policies
-// Parameters:
-//  - options : Options for the request
+// Get get servicePrincipalCreationPolicies from policies
 func (m *ServicePrincipalCreationPoliciesRequestBuilder) Get(options *ServicePrincipalCreationPoliciesRequestBuilderGetOptions)(*ServicePrincipalCreationPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ServicePrincipalCreationPoliciesRequestBuilder) Get(options *ServicePri
     }
     return res.(*ServicePrincipalCreationPoliciesResponse), nil
 }
-// Create new navigation property to servicePrincipalCreationPolicies for policies
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to servicePrincipalCreationPolicies for policies
 func (m *ServicePrincipalCreationPoliciesRequestBuilder) Post(options *ServicePrincipalCreationPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

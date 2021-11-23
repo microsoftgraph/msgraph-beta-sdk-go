@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoft.graph.scopedForResource(resource='{resource}')
+// ScopedForResourceWithResourceRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.scopedForResource(resource='{resource}')
 type ScopedForResourceWithResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ScopedForResourceWithResourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ScopedForResourceWithResourceRequestBuilderGetOptions options for Get
 type ScopedForResourceWithResourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,11 +22,7 @@ type ScopedForResourceWithResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ScopedForResourceWithResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
-//  - resource : Usage: resource={resource}
+// NewScopedForResourceWithResourceRequestBuilderInternal instantiates a new ScopedForResourceWithResourceRequestBuilder and sets the default values.
 func NewScopedForResourceWithResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, resource *string)(*ScopedForResourceWithResourceRequestBuilder) {
     m := &ScopedForResourceWithResourceRequestBuilder{
     }
@@ -42,18 +38,13 @@ func NewScopedForResourceWithResourceRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ScopedForResourceWithResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScopedForResourceWithResourceRequestBuilder instantiates a new ScopedForResourceWithResourceRequestBuilder and sets the default values.
 func NewScopedForResourceWithResourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScopedForResourceWithResourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewScopedForResourceWithResourceRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function scopedForResource
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function scopedForResource
 func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformation(options *ScopedForResourceWithResourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +61,7 @@ func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Invoke function scopedForResource
-// Parameters:
-//  - options : Options for the request
+// Get invoke function scopedForResource
 func (m *ScopedForResourceWithResourceRequestBuilder) Get(options *ScopedForResourceWithResourceRequestBuilderGetOptions)(*bool, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

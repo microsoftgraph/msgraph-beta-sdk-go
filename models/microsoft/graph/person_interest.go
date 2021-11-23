@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PersonInterest 
 type PersonInterest struct {
     ItemFacet
     // Contains categories a user has associated with the interest (for example, personal, recipies).
@@ -20,14 +20,14 @@ type PersonInterest struct {
     // Contains a link to a web page or resource about the interest.
     webUrl *string;
 }
-// Instantiates a new personInterest and sets the default values.
+// NewPersonInterest instantiates a new personInterest and sets the default values.
 func NewPersonInterest()(*PersonInterest) {
     m := &PersonInterest{
         ItemFacet: *NewItemFacet(),
     }
     return m
 }
-// Gets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
+// GetCategories gets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
 func (m *PersonInterest) GetCategories()([]string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *PersonInterest) GetCategories()([]string) {
         return m.categories
     }
 }
-// Gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
+// GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonInterest) GetCollaborationTags()([]string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *PersonInterest) GetCollaborationTags()([]string) {
         return m.collaborationTags
     }
 }
-// Gets the description property value. Contains a description of the interest.
+// GetDescription gets the description property value. Contains a description of the interest.
 func (m *PersonInterest) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *PersonInterest) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Contains a friendly name for the interest.
+// GetDisplayName gets the displayName property value. Contains a friendly name for the interest.
 func (m *PersonInterest) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *PersonInterest) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the thumbnailUrl property value. 
+// GetThumbnailUrl gets the thumbnailUrl property value. 
 func (m *PersonInterest) GetThumbnailUrl()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *PersonInterest) GetThumbnailUrl()(*string) {
         return m.thumbnailUrl
     }
 }
-// Gets the webUrl property value. Contains a link to a web page or resource about the interest.
+// GetWebUrl gets the webUrl property value. Contains a link to a web page or resource about the interest.
 func (m *PersonInterest) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *PersonInterest) GetWebUrl()(*string) {
         return m.webUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PersonInterest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,9 +151,7 @@ func (m *PersonInterest) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *PersonInterest) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PersonInterest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ItemFacet.Serialize(writer)
     if err != nil {
@@ -197,39 +195,27 @@ func (m *PersonInterest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
-// Parameters:
-//  - value : Value to set for the categories property.
+// SetCategories sets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
 func (m *PersonInterest) SetCategories(value []string)() {
     m.categories = value
 }
-// Sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
-// Parameters:
-//  - value : Value to set for the collaborationTags property.
+// SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonInterest) SetCollaborationTags(value []string)() {
     m.collaborationTags = value
 }
-// Sets the description property value. Contains a description of the interest.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Contains a description of the interest.
 func (m *PersonInterest) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Contains a friendly name for the interest.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Contains a friendly name for the interest.
 func (m *PersonInterest) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the thumbnailUrl property value. 
-// Parameters:
-//  - value : Value to set for the thumbnailUrl property.
+// SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *PersonInterest) SetThumbnailUrl(value *string)() {
     m.thumbnailUrl = value
 }
-// Sets the webUrl property value. Contains a link to a web page or resource about the interest.
-// Parameters:
-//  - value : Value to set for the webUrl property.
+// SetWebUrl sets the webUrl property value. Contains a link to a web page or resource about the interest.
 func (m *PersonInterest) SetWebUrl(value *string)() {
     m.webUrl = value
 }

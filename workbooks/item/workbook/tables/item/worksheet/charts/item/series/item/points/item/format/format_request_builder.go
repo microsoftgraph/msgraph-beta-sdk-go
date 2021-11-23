@@ -7,7 +7,7 @@ import (
     ibc3d739b583c0d0c2b040be95417c64162d4a3bdfabe6307f3f076e7133849ea "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/series/item/points/item/format/fill"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}\format
+// FormatRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}\format
 type FormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type FormatRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FormatRequestBuilderDeleteOptions options for Delete
 type FormatRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type FormatRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FormatRequestBuilderGetOptions options for Get
 type FormatRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type FormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Encapsulates the format properties chart point. Read-only.
+// FormatRequestBuilderGetQueryParameters encapsulates the format properties chart point. Read-only.
 type FormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FormatRequestBuilderPatchOptions options for Patch
 type FormatRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChartPointFormat;
@@ -54,10 +54,7 @@ type FormatRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FormatRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFormatRequestBuilderInternal instantiates a new FormatRequestBuilder and sets the default values.
 func NewFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FormatRequestBuilder) {
     m := &FormatRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewFormatRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FormatRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFormatRequestBuilder instantiates a new FormatRequestBuilder and sets the default values.
 func NewFormatRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FormatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Encapsulates the format properties chart point. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation encapsulates the format properties chart point. Read-only.
 func (m *FormatRequestBuilder) CreateDeleteRequestInformation(options *FormatRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *FormatRequestBuilder) CreateDeleteRequestInformation(options *FormatReq
     }
     return requestInfo, nil
 }
-// Encapsulates the format properties chart point. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation encapsulates the format properties chart point. Read-only.
 func (m *FormatRequestBuilder) CreateGetRequestInformation(options *FormatRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *FormatRequestBuilder) CreateGetRequestInformation(options *FormatReques
     }
     return requestInfo, nil
 }
-// Encapsulates the format properties chart point. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation encapsulates the format properties chart point. Read-only.
 func (m *FormatRequestBuilder) CreatePatchRequestInformation(options *FormatRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *FormatRequestBuilder) CreatePatchRequestInformation(options *FormatRequ
     }
     return requestInfo, nil
 }
-// Encapsulates the format properties chart point. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete encapsulates the format properties chart point. Read-only.
 func (m *FormatRequestBuilder) Delete(options *FormatRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *FormatRequestBuilder) Delete(options *FormatRequestBuilderDeleteOptions
 func (m *FormatRequestBuilder) Fill()(*ibc3d739b583c0d0c2b040be95417c64162d4a3bdfabe6307f3f076e7133849ea.FillRequestBuilder) {
     return ibc3d739b583c0d0c2b040be95417c64162d4a3bdfabe6307f3f076e7133849ea.NewFillRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Encapsulates the format properties chart point. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get encapsulates the format properties chart point. Read-only.
 func (m *FormatRequestBuilder) Get(options *FormatRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChartPointFormat, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *FormatRequestBuilder) Get(options *FormatRequestBuilderGetOptions)(*i53
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChartPointFormat), nil
 }
-// Encapsulates the format properties chart point. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch encapsulates the format properties chart point. Read-only.
 func (m *FormatRequestBuilder) Patch(options *FormatRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

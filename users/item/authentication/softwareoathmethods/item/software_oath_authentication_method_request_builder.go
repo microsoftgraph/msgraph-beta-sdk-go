@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\authentication\softwareOathMethods\{softwareOathAuthenticationMethod-id}
+// SoftwareOathAuthenticationMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\softwareOathMethods\{softwareOathAuthenticationMethod-id}
 type SoftwareOathAuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SoftwareOathAuthenticationMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SoftwareOathAuthenticationMethodRequestBuilderDeleteOptions options for Delete
 type SoftwareOathAuthenticationMethodRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SoftwareOathAuthenticationMethodRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SoftwareOathAuthenticationMethodRequestBuilderGetOptions options for Get
 type SoftwareOathAuthenticationMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SoftwareOathAuthenticationMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get softwareOathMethods from users
+// SoftwareOathAuthenticationMethodRequestBuilderGetQueryParameters get softwareOathMethods from users
 type SoftwareOathAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SoftwareOathAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type SoftwareOathAuthenticationMethodRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethod;
@@ -53,10 +53,7 @@ type SoftwareOathAuthenticationMethodRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SoftwareOathAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSoftwareOathAuthenticationMethodRequestBuilderInternal instantiates a new SoftwareOathAuthenticationMethodRequestBuilder and sets the default values.
 func NewSoftwareOathAuthenticationMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SoftwareOathAuthenticationMethodRequestBuilder) {
     m := &SoftwareOathAuthenticationMethodRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSoftwareOathAuthenticationMethodRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SoftwareOathAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSoftwareOathAuthenticationMethodRequestBuilder instantiates a new SoftwareOathAuthenticationMethodRequestBuilder and sets the default values.
 func NewSoftwareOathAuthenticationMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SoftwareOathAuthenticationMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSoftwareOathAuthenticationMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property softwareOathMethods for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property softwareOathMethods for users
 func (m *SoftwareOathAuthenticationMethodRequestBuilder) CreateDeleteRequestInformation(options *SoftwareOathAuthenticationMethodRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SoftwareOathAuthenticationMethodRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// Get softwareOathMethods from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get softwareOathMethods from users
 func (m *SoftwareOathAuthenticationMethodRequestBuilder) CreateGetRequestInformation(options *SoftwareOathAuthenticationMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SoftwareOathAuthenticationMethodRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Update the navigation property softwareOathMethods in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property softwareOathMethods in users
 func (m *SoftwareOathAuthenticationMethodRequestBuilder) CreatePatchRequestInformation(options *SoftwareOathAuthenticationMethodRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SoftwareOathAuthenticationMethodRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// Delete navigation property softwareOathMethods for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property softwareOathMethods for users
 func (m *SoftwareOathAuthenticationMethodRequestBuilder) Delete(options *SoftwareOathAuthenticationMethodRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SoftwareOathAuthenticationMethodRequestBuilder) Delete(options *Softwar
     }
     return nil
 }
-// Get softwareOathMethods from users
-// Parameters:
-//  - options : Options for the request
+// Get get softwareOathMethods from users
 func (m *SoftwareOathAuthenticationMethodRequestBuilder) Get(options *SoftwareOathAuthenticationMethodRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SoftwareOathAuthenticationMethodRequestBuilder) Get(options *SoftwareOa
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethod), nil
 }
-// Update the navigation property softwareOathMethods in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property softwareOathMethods in users
 func (m *SoftwareOathAuthenticationMethodRequestBuilder) Patch(options *SoftwareOathAuthenticationMethodRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

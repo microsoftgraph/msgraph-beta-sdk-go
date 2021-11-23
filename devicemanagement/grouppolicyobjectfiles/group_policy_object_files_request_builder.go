@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyObjectFiles
+// GroupPolicyObjectFilesRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyObjectFiles
 type GroupPolicyObjectFilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupPolicyObjectFilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GroupPolicyObjectFilesRequestBuilderGetOptions options for Get
 type GroupPolicyObjectFilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type GroupPolicyObjectFilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of Group Policy Object files uploaded.
+// GroupPolicyObjectFilesRequestBuilderGetQueryParameters a list of Group Policy Object files uploaded.
 type GroupPolicyObjectFilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type GroupPolicyObjectFilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// GroupPolicyObjectFilesRequestBuilderPostOptions options for Post
 type GroupPolicyObjectFilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyObjectFile;
@@ -56,10 +56,7 @@ type GroupPolicyObjectFilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicyObjectFilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyObjectFilesRequestBuilderInternal instantiates a new GroupPolicyObjectFilesRequestBuilder and sets the default values.
 func NewGroupPolicyObjectFilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyObjectFilesRequestBuilder) {
     m := &GroupPolicyObjectFilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewGroupPolicyObjectFilesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyObjectFilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyObjectFilesRequestBuilder instantiates a new GroupPolicyObjectFilesRequestBuilder and sets the default values.
 func NewGroupPolicyObjectFilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyObjectFilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyObjectFilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFilesRequestBuilder) CreateGetRequestInformation(options *GroupPolicyObjectFilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *GroupPolicyObjectFilesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFilesRequestBuilder) CreatePostRequestInformation(options *GroupPolicyObjectFilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *GroupPolicyObjectFilesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// Get a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFilesRequestBuilder) Get(options *GroupPolicyObjectFilesRequestBuilderGetOptions)(*GroupPolicyObjectFilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *GroupPolicyObjectFilesRequestBuilder) Get(options *GroupPolicyObjectFil
     }
     return res.(*GroupPolicyObjectFilesResponse), nil
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// Post a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFilesRequestBuilder) Post(options *GroupPolicyObjectFilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyObjectFile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\webAccounts
+// WebAccountsRequestBuilder builds and executes requests for operations under \me\profile\webAccounts
 type WebAccountsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WebAccountsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WebAccountsRequestBuilderGetOptions options for Get
 type WebAccountsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WebAccountsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
+// WebAccountsRequestBuilderGetQueryParameters represents web accounts the user has indicated they use or has added to their user profile.
 type WebAccountsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type WebAccountsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WebAccountsRequestBuilderPostOptions options for Post
 type WebAccountsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WebAccount;
@@ -56,10 +56,7 @@ type WebAccountsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WebAccountsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWebAccountsRequestBuilderInternal instantiates a new WebAccountsRequestBuilder and sets the default values.
 func NewWebAccountsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WebAccountsRequestBuilder) {
     m := &WebAccountsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewWebAccountsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WebAccountsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWebAccountsRequestBuilder instantiates a new WebAccountsRequestBuilder and sets the default values.
 func NewWebAccountsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WebAccountsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWebAccountsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountsRequestBuilder) CreateGetRequestInformation(options *WebAccountsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *WebAccountsRequestBuilder) CreateGetRequestInformation(options *WebAcco
     }
     return requestInfo, nil
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountsRequestBuilder) CreatePostRequestInformation(options *WebAccountsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *WebAccountsRequestBuilder) CreatePostRequestInformation(options *WebAcc
     }
     return requestInfo, nil
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountsRequestBuilder) Get(options *WebAccountsRequestBuilderGetOptions)(*WebAccountsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *WebAccountsRequestBuilder) Get(options *WebAccountsRequestBuilderGetOpt
     }
     return res.(*WebAccountsResponse), nil
 }
-// Represents web accounts the user has indicated they use or has added to their user profile.
-// Parameters:
-//  - options : Options for the request
+// Post represents web accounts the user has indicated they use or has added to their user profile.
 func (m *WebAccountsRequestBuilder) Post(options *WebAccountsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WebAccount, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

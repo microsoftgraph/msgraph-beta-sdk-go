@@ -18,7 +18,7 @@ import (
     ieb67a4e973c38f9a77d4f81d39f0b7685c2e72c00379ef53269c356ae983bd0d "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/calendarview/item"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}
+// BookingBusinessRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}
 type BookingBusinessRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type BookingBusinessRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BookingBusinessRequestBuilderDeleteOptions options for Delete
 type BookingBusinessRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -36,7 +36,7 @@ type BookingBusinessRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BookingBusinessRequestBuilderGetOptions options for Get
 type BookingBusinessRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -47,14 +47,14 @@ type BookingBusinessRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents a Microsot Bookings Business.
+// BookingBusinessRequestBuilderGetQueryParameters represents a Microsot Bookings Business.
 type BookingBusinessRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BookingBusinessRequestBuilderPatchOptions options for Patch
 type BookingBusinessRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingBusiness;
@@ -68,9 +68,7 @@ type BookingBusinessRequestBuilderPatchOptions struct {
 func (m *BookingBusinessRequestBuilder) Appointments()(*iaf3ac87b764e164c3d5655c1a72252a5099d53e9aa3e9fa4fe32a0d44e6edf92.AppointmentsRequestBuilder) {
     return iaf3ac87b764e164c3d5655c1a72252a5099d53e9aa3e9fa4fe32a0d44e6edf92.NewAppointmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.appointments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppointmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.appointments.item collection
 func (m *BookingBusinessRequestBuilder) AppointmentsById(id string)(*i0fae5949907818b2ae894763546198c15bc34196d1bbc68fff8d5e35bf9e62bf.BookingAppointmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -84,9 +82,7 @@ func (m *BookingBusinessRequestBuilder) AppointmentsById(id string)(*i0fae594990
 func (m *BookingBusinessRequestBuilder) CalendarView()(*i4e2baa0d10e2585111c8f7d52c8fcfc31b186c9cf6904f0475b65f6b86432585.CalendarViewRequestBuilder) {
     return i4e2baa0d10e2585111c8f7d52c8fcfc31b186c9cf6904f0475b65f6b86432585.NewCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.calendarView.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CalendarViewById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.calendarView.item collection
 func (m *BookingBusinessRequestBuilder) CalendarViewById(id string)(*ieb67a4e973c38f9a77d4f81d39f0b7685c2e72c00379ef53269c356ae983bd0d.BookingAppointmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -97,10 +93,7 @@ func (m *BookingBusinessRequestBuilder) CalendarViewById(id string)(*ieb67a4e973
     }
     return ieb67a4e973c38f9a77d4f81d39f0b7685c2e72c00379ef53269c356ae983bd0d.NewBookingAppointmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new BookingBusinessRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingBusinessRequestBuilderInternal instantiates a new BookingBusinessRequestBuilder and sets the default values.
 func NewBookingBusinessRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingBusinessRequestBuilder) {
     m := &BookingBusinessRequestBuilder{
     }
@@ -113,18 +106,13 @@ func NewBookingBusinessRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BookingBusinessRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingBusinessRequestBuilder instantiates a new BookingBusinessRequestBuilder and sets the default values.
 func NewBookingBusinessRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingBusinessRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents a Microsot Bookings Business.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents a Microsot Bookings Business.
 func (m *BookingBusinessRequestBuilder) CreateDeleteRequestInformation(options *BookingBusinessRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *BookingBusinessRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Represents a Microsot Bookings Business.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents a Microsot Bookings Business.
 func (m *BookingBusinessRequestBuilder) CreateGetRequestInformation(options *BookingBusinessRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -163,9 +149,7 @@ func (m *BookingBusinessRequestBuilder) CreateGetRequestInformation(options *Boo
     }
     return requestInfo, nil
 }
-// Represents a Microsot Bookings Business.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents a Microsot Bookings Business.
 func (m *BookingBusinessRequestBuilder) CreatePatchRequestInformation(options *BookingBusinessRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -186,9 +170,7 @@ func (m *BookingBusinessRequestBuilder) CreatePatchRequestInformation(options *B
 func (m *BookingBusinessRequestBuilder) Customers()(*i0a7cdda26cb222932b3d70abaab89b217f2509a29415fc8ea0dc313dc6cb47a5.CustomersRequestBuilder) {
     return i0a7cdda26cb222932b3d70abaab89b217f2509a29415fc8ea0dc313dc6cb47a5.NewCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.customers.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CustomersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.customers.item collection
 func (m *BookingBusinessRequestBuilder) CustomersById(id string)(*ia4fe11073e9da7c50ece70bf500822d1a07d9f1965f083164f821c9bca857112.BookingCustomerRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -199,9 +181,7 @@ func (m *BookingBusinessRequestBuilder) CustomersById(id string)(*ia4fe11073e9da
     }
     return ia4fe11073e9da7c50ece70bf500822d1a07d9f1965f083164f821c9bca857112.NewBookingCustomerRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Represents a Microsot Bookings Business.
-// Parameters:
-//  - options : Options for the request
+// Delete represents a Microsot Bookings Business.
 func (m *BookingBusinessRequestBuilder) Delete(options *BookingBusinessRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -213,9 +193,7 @@ func (m *BookingBusinessRequestBuilder) Delete(options *BookingBusinessRequestBu
     }
     return nil
 }
-// Represents a Microsot Bookings Business.
-// Parameters:
-//  - options : Options for the request
+// Get represents a Microsot Bookings Business.
 func (m *BookingBusinessRequestBuilder) Get(options *BookingBusinessRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingBusiness, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -227,9 +205,7 @@ func (m *BookingBusinessRequestBuilder) Get(options *BookingBusinessRequestBuild
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingBusiness), nil
 }
-// Represents a Microsot Bookings Business.
-// Parameters:
-//  - options : Options for the request
+// Patch represents a Microsot Bookings Business.
 func (m *BookingBusinessRequestBuilder) Patch(options *BookingBusinessRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -247,9 +223,7 @@ func (m *BookingBusinessRequestBuilder) Publish()(*ibff8216433da6211e79401e82d74
 func (m *BookingBusinessRequestBuilder) Services()(*i4d80f01302d2f12cfc7856faaf46602d45a2e40cc7854a1ede6303697bc2d4a3.ServicesRequestBuilder) {
     return i4d80f01302d2f12cfc7856faaf46602d45a2e40cc7854a1ede6303697bc2d4a3.NewServicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.services.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ServicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.services.item collection
 func (m *BookingBusinessRequestBuilder) ServicesById(id string)(*i8dfad3dfd772d23aa0ae1b04ac3fa7b45824e6084187c192928925f7bcb86a70.BookingServiceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -263,9 +237,7 @@ func (m *BookingBusinessRequestBuilder) ServicesById(id string)(*i8dfad3dfd772d2
 func (m *BookingBusinessRequestBuilder) StaffMembers()(*i131bc9ff8c2fc67a2f7430a039bbbd0a92b1ff652e2e5f0a116686e51dc82b17.StaffMembersRequestBuilder) {
     return i131bc9ff8c2fc67a2f7430a039bbbd0a92b1ff652e2e5f0a116686e51dc82b17.NewStaffMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.staffMembers.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// StaffMembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.staffMembers.item collection
 func (m *BookingBusinessRequestBuilder) StaffMembersById(id string)(*i79400fbdb20c4e1b3bc4a91d12f5b6146511a68e789f1456369fc0bfe4434560.BookingStaffMemberRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

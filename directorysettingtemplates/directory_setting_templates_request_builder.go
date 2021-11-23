@@ -9,7 +9,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directorySettingTemplates
+// DirectorySettingTemplatesRequestBuilder builds and executes requests for operations under \directorySettingTemplates
 type DirectorySettingTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type DirectorySettingTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DirectorySettingTemplatesRequestBuilderGetOptions options for Get
 type DirectorySettingTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type DirectorySettingTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from directorySettingTemplates
+// DirectorySettingTemplatesRequestBuilderGetQueryParameters get entities from directorySettingTemplates
 type DirectorySettingTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -48,7 +48,7 @@ type DirectorySettingTemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DirectorySettingTemplatesRequestBuilderPostOptions options for Post
 type DirectorySettingTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectorySettingTemplate;
@@ -59,10 +59,7 @@ type DirectorySettingTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DirectorySettingTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectorySettingTemplatesRequestBuilderInternal instantiates a new DirectorySettingTemplatesRequestBuilder and sets the default values.
 func NewDirectorySettingTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectorySettingTemplatesRequestBuilder) {
     m := &DirectorySettingTemplatesRequestBuilder{
     }
@@ -75,18 +72,13 @@ func NewDirectorySettingTemplatesRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectorySettingTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectorySettingTemplatesRequestBuilder instantiates a new DirectorySettingTemplatesRequestBuilder and sets the default values.
 func NewDirectorySettingTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectorySettingTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectorySettingTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from directorySettingTemplates
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from directorySettingTemplates
 func (m *DirectorySettingTemplatesRequestBuilder) CreateGetRequestInformation(options *DirectorySettingTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *DirectorySettingTemplatesRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Add new entity to directorySettingTemplates
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to directorySettingTemplates
 func (m *DirectorySettingTemplatesRequestBuilder) CreatePostRequestInformation(options *DirectorySettingTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *DirectorySettingTemplatesRequestBuilder) CreatePostRequestInformation(o
     }
     return requestInfo, nil
 }
-// Get entities from directorySettingTemplates
-// Parameters:
-//  - options : Options for the request
+// Get get entities from directorySettingTemplates
 func (m *DirectorySettingTemplatesRequestBuilder) Get(options *DirectorySettingTemplatesRequestBuilderGetOptions)(*DirectorySettingTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -146,9 +134,7 @@ func (m *DirectorySettingTemplatesRequestBuilder) GetByIds()(*i8b3159fe7053462b6
 func (m *DirectorySettingTemplatesRequestBuilder) GetUserOwnedObjects()(*if2eec762f4a60cfa480122020666674cae3dd0c0dd67417b7da42d6d7d9efc9f.GetUserOwnedObjectsRequestBuilder) {
     return if2eec762f4a60cfa480122020666674cae3dd0c0dd67417b7da42d6d7d9efc9f.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to directorySettingTemplates
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to directorySettingTemplates
 func (m *DirectorySettingTemplatesRequestBuilder) Post(options *DirectorySettingTemplatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectorySettingTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// NdesConnector 
 type NdesConnector struct {
     Entity
     // The friendly name of the Ndes Connector.
@@ -15,14 +15,14 @@ type NdesConnector struct {
     // Ndes Connector Status. Possible values are: none, active, inactive.
     state *NdesConnectorState;
 }
-// Instantiates a new ndesConnector and sets the default values.
+// NewNdesConnector instantiates a new ndesConnector and sets the default values.
 func NewNdesConnector()(*NdesConnector) {
     m := &NdesConnector{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. The friendly name of the Ndes Connector.
+// GetDisplayName gets the displayName property value. The friendly name of the Ndes Connector.
 func (m *NdesConnector) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *NdesConnector) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
+// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
 func (m *NdesConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *NdesConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3
         return m.lastConnectionDateTime
     }
 }
-// Gets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
+// GetState gets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
 func (m *NdesConnector) GetState()(*NdesConnectorState) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *NdesConnector) GetState()(*NdesConnectorState) {
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *NdesConnector) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,9 +85,7 @@ func (m *NdesConnector) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *NdesConnector) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *NdesConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -114,21 +112,15 @@ func (m *NdesConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the displayName property value. The friendly name of the Ndes Connector.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The friendly name of the Ndes Connector.
 func (m *NdesConnector) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
-// Parameters:
-//  - value : Value to set for the lastConnectionDateTime property.
+// SetLastConnectionDateTime sets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
 func (m *NdesConnector) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastConnectionDateTime = value
 }
-// Sets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
 func (m *NdesConnector) SetState(value *NdesConnectorState)() {
     m.state = value
 }

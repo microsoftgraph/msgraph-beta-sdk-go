@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// InvitationParticipantInfo 
 type InvitationParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type InvitationParticipantInfo struct {
     // Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
     replacesCallId *string;
 }
-// Instantiates a new invitationParticipantInfo and sets the default values.
+// NewInvitationParticipantInfo instantiates a new invitationParticipantInfo and sets the default values.
 func NewInvitationParticipantInfo()(*InvitationParticipantInfo) {
     m := &InvitationParticipantInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitationParticipantInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *InvitationParticipantInfo) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// Gets the endpointType property value. The type of endpoint. Possible values are: default, voicemail.
+// GetEndpointType gets the endpointType property value. The type of endpoint. Possible values are: default, voicemail.
 func (m *InvitationParticipantInfo) GetEndpointType()(*EndpointType) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *InvitationParticipantInfo) GetEndpointType()(*EndpointType) {
         return m.endpointType
     }
 }
-// Gets the identity property value. 
+// GetIdentity gets the identity property value. 
 func (m *InvitationParticipantInfo) GetIdentity()(*IdentitySet) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *InvitationParticipantInfo) GetIdentity()(*IdentitySet) {
         return m.identity
     }
 }
-// Gets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
+// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
 func (m *InvitationParticipantInfo) GetReplacesCallId()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *InvitationParticipantInfo) GetReplacesCallId()(*string) {
         return m.replacesCallId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["endpointType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(inte
 func (m *InvitationParticipantInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *InvitationParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetEndpointType() != nil {
         cast := m.GetEndpointType().String()
@@ -124,27 +122,19 @@ func (m *InvitationParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitationParticipantInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the endpointType property value. The type of endpoint. Possible values are: default, voicemail.
-// Parameters:
-//  - value : Value to set for the endpointType property.
+// SetEndpointType sets the endpointType property value. The type of endpoint. Possible values are: default, voicemail.
 func (m *InvitationParticipantInfo) SetEndpointType(value *EndpointType)() {
     m.endpointType = value
 }
-// Sets the identity property value. 
-// Parameters:
-//  - value : Value to set for the identity property.
+// SetIdentity sets the identity property value. 
 func (m *InvitationParticipantInfo) SetIdentity(value *IdentitySet)() {
     m.identity = value
 }
-// Sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
-// Parameters:
-//  - value : Value to set for the replacesCallId property.
+// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
 func (m *InvitationParticipantInfo) SetReplacesCallId(value *string)() {
     m.replacesCallId = value
 }

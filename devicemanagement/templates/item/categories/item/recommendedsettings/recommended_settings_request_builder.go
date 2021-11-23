@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\categories\{deviceManagementTemplateSettingCategory-id}\recommendedSettings
+// RecommendedSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\categories\{deviceManagementTemplateSettingCategory-id}\recommendedSettings
 type RecommendedSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RecommendedSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RecommendedSettingsRequestBuilderGetOptions options for Get
 type RecommendedSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RecommendedSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The settings this category contains
+// RecommendedSettingsRequestBuilderGetQueryParameters the settings this category contains
 type RecommendedSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RecommendedSettingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RecommendedSettingsRequestBuilderPostOptions options for Post
 type RecommendedSettingsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance;
@@ -56,10 +56,7 @@ type RecommendedSettingsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RecommendedSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecommendedSettingsRequestBuilderInternal instantiates a new RecommendedSettingsRequestBuilder and sets the default values.
 func NewRecommendedSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecommendedSettingsRequestBuilder) {
     m := &RecommendedSettingsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRecommendedSettingsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RecommendedSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecommendedSettingsRequestBuilder instantiates a new RecommendedSettingsRequestBuilder and sets the default values.
 func NewRecommendedSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecommendedSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendedSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The settings this category contains
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the settings this category contains
 func (m *RecommendedSettingsRequestBuilder) CreateGetRequestInformation(options *RecommendedSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RecommendedSettingsRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The settings this category contains
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the settings this category contains
 func (m *RecommendedSettingsRequestBuilder) CreatePostRequestInformation(options *RecommendedSettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RecommendedSettingsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// The settings this category contains
-// Parameters:
-//  - options : Options for the request
+// Get the settings this category contains
 func (m *RecommendedSettingsRequestBuilder) Get(options *RecommendedSettingsRequestBuilderGetOptions)(*RecommendedSettingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RecommendedSettingsRequestBuilder) Get(options *RecommendedSettingsRequ
     }
     return res.(*RecommendedSettingsResponse), nil
 }
-// The settings this category contains
-// Parameters:
-//  - options : Options for the request
+// Post the settings this category contains
 func (m *RecommendedSettingsRequestBuilder) Post(options *RecommendedSettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

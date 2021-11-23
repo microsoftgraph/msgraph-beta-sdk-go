@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ManagementActionInfo 
 type ManagementActionInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type ManagementActionInfo struct {
     // 
     managementTemplateVersion *int32;
 }
-// Instantiates a new managementActionInfo and sets the default values.
+// NewManagementActionInfo instantiates a new managementActionInfo and sets the default values.
 func NewManagementActionInfo()(*ManagementActionInfo) {
     m := &ManagementActionInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *ManagementActionInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the managementActionId property value. The identifier for the management action. Required. Read-only.
+// GetManagementActionId gets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionInfo) GetManagementActionId()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *ManagementActionInfo) GetManagementActionId()(*string) {
         return m.managementActionId
     }
 }
-// Gets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
+// GetManagementTemplateId gets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
 func (m *ManagementActionInfo) GetManagementTemplateId()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ManagementActionInfo) GetManagementTemplateId()(*string) {
         return m.managementTemplateId
     }
 }
-// Gets the managementTemplateVersion property value. 
+// GetManagementTemplateVersion gets the managementTemplateVersion property value. 
 func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
         return m.managementTemplateVersion
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["managementActionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(interface
 func (m *ManagementActionInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagementActionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("managementActionId", m.GetManagementActionId())
@@ -122,27 +120,19 @@ func (m *ManagementActionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the managementActionId property value. The identifier for the management action. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the managementActionId property.
+// SetManagementActionId sets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionInfo) SetManagementActionId(value *string)() {
     m.managementActionId = value
 }
-// Sets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the managementTemplateId property.
+// SetManagementTemplateId sets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
 func (m *ManagementActionInfo) SetManagementTemplateId(value *string)() {
     m.managementTemplateId = value
 }
-// Sets the managementTemplateVersion property value. 
-// Parameters:
-//  - value : Value to set for the managementTemplateVersion property.
+// SetManagementTemplateVersion sets the managementTemplateVersion property value. 
 func (m *ManagementActionInfo) SetManagementTemplateVersion(value *int32)() {
     m.managementTemplateVersion = value
 }

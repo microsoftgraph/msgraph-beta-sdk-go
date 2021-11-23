@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\windowsProtectionStates\{windowsProtectionState-id}
+// WindowsProtectionStateRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\windowsProtectionStates\{windowsProtectionState-id}
 type WindowsProtectionStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsProtectionStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsProtectionStateRequestBuilderDeleteOptions options for Delete
 type WindowsProtectionStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WindowsProtectionStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsProtectionStateRequestBuilderGetOptions options for Get
 type WindowsProtectionStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WindowsProtectionStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// WindowsProtectionStateRequestBuilderGetQueryParameters the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 type WindowsProtectionStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsProtectionStateRequestBuilderPatchOptions options for Patch
 type WindowsProtectionStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState;
@@ -53,10 +53,7 @@ type WindowsProtectionStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsProtectionStateRequestBuilderInternal instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
 func NewWindowsProtectionStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsProtectionStateRequestBuilder) {
     m := &WindowsProtectionStateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWindowsProtectionStateRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsProtectionStateRequestBuilder instantiates a new WindowsProtectionStateRequestBuilder and sets the default values.
 func NewWindowsProtectionStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsProtectionStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsProtectionStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *WindowsProtectionStateRequestBuilder) CreateDeleteRequestInformation(options *WindowsProtectionStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *WindowsProtectionStateRequestBuilder) CreateGetRequestInformation(options *WindowsProtectionStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *WindowsProtectionStateRequestBuilder) CreatePatchRequestInformation(options *WindowsProtectionStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *WindowsProtectionStateRequestBuilder) Delete(options *WindowsProtectionStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WindowsProtectionStateRequestBuilder) Delete(options *WindowsProtection
     }
     return nil
 }
-// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *WindowsProtectionStateRequestBuilder) Get(options *WindowsProtectionStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WindowsProtectionStateRequestBuilder) Get(options *WindowsProtectionSta
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState), nil
 }
-// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *WindowsProtectionStateRequestBuilder) Patch(options *WindowsProtectionStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

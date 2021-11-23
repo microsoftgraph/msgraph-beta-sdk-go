@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\androidForWorkAppConfigurationSchemas\{androidForWorkAppConfigurationSchema-id}
+// AndroidForWorkAppConfigurationSchemaRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkAppConfigurationSchemas\{androidForWorkAppConfigurationSchema-id}
 type AndroidForWorkAppConfigurationSchemaRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AndroidForWorkAppConfigurationSchemaRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AndroidForWorkAppConfigurationSchemaRequestBuilderDeleteOptions options for Delete
 type AndroidForWorkAppConfigurationSchemaRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AndroidForWorkAppConfigurationSchemaRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AndroidForWorkAppConfigurationSchemaRequestBuilderGetOptions options for Get
 type AndroidForWorkAppConfigurationSchemaRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AndroidForWorkAppConfigurationSchemaRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Android for Work app configuration schema entities.
+// AndroidForWorkAppConfigurationSchemaRequestBuilderGetQueryParameters android for Work app configuration schema entities.
 type AndroidForWorkAppConfigurationSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AndroidForWorkAppConfigurationSchemaRequestBuilderPatchOptions options for Patch
 type AndroidForWorkAppConfigurationSchemaRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchema;
@@ -53,10 +53,7 @@ type AndroidForWorkAppConfigurationSchemaRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AndroidForWorkAppConfigurationSchemaRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidForWorkAppConfigurationSchemaRequestBuilderInternal instantiates a new AndroidForWorkAppConfigurationSchemaRequestBuilder and sets the default values.
 func NewAndroidForWorkAppConfigurationSchemaRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidForWorkAppConfigurationSchemaRequestBuilder) {
     m := &AndroidForWorkAppConfigurationSchemaRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAndroidForWorkAppConfigurationSchemaRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AndroidForWorkAppConfigurationSchemaRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidForWorkAppConfigurationSchemaRequestBuilder instantiates a new AndroidForWorkAppConfigurationSchemaRequestBuilder and sets the default values.
 func NewAndroidForWorkAppConfigurationSchemaRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidForWorkAppConfigurationSchemaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkAppConfigurationSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Android for Work app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation android for Work app configuration schema entities.
 func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) CreateDeleteRequestInformation(options *AndroidForWorkAppConfigurationSchemaRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// Android for Work app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation android for Work app configuration schema entities.
 func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) CreateGetRequestInformation(options *AndroidForWorkAppConfigurationSchemaRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Android for Work app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation android for Work app configuration schema entities.
 func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) CreatePatchRequestInformation(options *AndroidForWorkAppConfigurationSchemaRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// Android for Work app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// Delete android for Work app configuration schema entities.
 func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) Delete(options *AndroidForWorkAppConfigurationSchemaRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) Delete(options *And
     }
     return nil
 }
-// Android for Work app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// Get android for Work app configuration schema entities.
 func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) Get(options *AndroidForWorkAppConfigurationSchemaRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchema, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) Get(options *Androi
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchema), nil
 }
-// Android for Work app configuration schema entities.
-// Parameters:
-//  - options : Options for the request
+// Patch android for Work app configuration schema entities.
 func (m *AndroidForWorkAppConfigurationSchemaRequestBuilder) Patch(options *AndroidForWorkAppConfigurationSchemaRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\userConfigurations
+// UserConfigurationsRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\userConfigurations
 type UserConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserConfigurationsRequestBuilderGetOptions options for Get
 type UserConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get userConfigurations from me
+// UserConfigurationsRequestBuilderGetQueryParameters get userConfigurations from me
 type UserConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type UserConfigurationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserConfigurationsRequestBuilderPostOptions options for Post
 type UserConfigurationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserConfiguration;
@@ -52,10 +52,7 @@ type UserConfigurationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserConfigurationsRequestBuilderInternal instantiates a new UserConfigurationsRequestBuilder and sets the default values.
 func NewUserConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserConfigurationsRequestBuilder) {
     m := &UserConfigurationsRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewUserConfigurationsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserConfigurationsRequestBuilder instantiates a new UserConfigurationsRequestBuilder and sets the default values.
 func NewUserConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get userConfigurations from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get userConfigurations from me
 func (m *UserConfigurationsRequestBuilder) CreateGetRequestInformation(options *UserConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *UserConfigurationsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Create new navigation property to userConfigurations for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to userConfigurations for me
 func (m *UserConfigurationsRequestBuilder) CreatePostRequestInformation(options *UserConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserConfigurationsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get userConfigurations from me
-// Parameters:
-//  - options : Options for the request
+// Get get userConfigurations from me
 func (m *UserConfigurationsRequestBuilder) Get(options *UserConfigurationsRequestBuilderGetOptions)(*UserConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *UserConfigurationsRequestBuilder) Get(options *UserConfigurationsReques
     }
     return res.(*UserConfigurationsResponse), nil
 }
-// Create new navigation property to userConfigurations for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to userConfigurations for me
 func (m *UserConfigurationsRequestBuilder) Post(options *UserConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserConfiguration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

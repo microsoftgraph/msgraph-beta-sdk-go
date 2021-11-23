@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// 
+// ManagementTemplateStepDeployment 
 type ManagementTemplateStepDeployment struct {
     Entity
     // 
@@ -19,14 +19,14 @@ type ManagementTemplateStepDeployment struct {
     // 
     tenantId *string;
 }
-// Instantiates a new managementTemplateStepDeployment and sets the default values.
+// NewManagementTemplateStepDeployment instantiates a new managementTemplateStepDeployment and sets the default values.
 func NewManagementTemplateStepDeployment()(*ManagementTemplateStepDeployment) {
     m := &ManagementTemplateStepDeployment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the error property value. 
+// GetError gets the error property value. 
 func (m *ManagementTemplateStepDeployment) GetError()(*GraphAPIErrorDetails) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *ManagementTemplateStepDeployment) GetError()(*GraphAPIErrorDetails) {
         return m.error
     }
 }
-// Gets the settings property value. 
+// GetSettings gets the settings property value. 
 func (m *ManagementTemplateStepDeployment) GetSettings()([]Setting) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *ManagementTemplateStepDeployment) GetSettings()([]Setting) {
         return m.settings
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *ManagementTemplateStepDeployment) GetStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementTemplateDeploymentStatus) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *ManagementTemplateStepDeployment) GetStatus()(*i5c2592132064055aae42449
         return m.status
     }
 }
-// Gets the templateStepVersion property value. 
+// GetTemplateStepVersion gets the templateStepVersion property value. 
 func (m *ManagementTemplateStepDeployment) GetTemplateStepVersion()(*ManagementTemplateStepVersion) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *ManagementTemplateStepDeployment) GetTemplateStepVersion()(*ManagementT
         return m.templateStepVersion
     }
 }
-// Gets the tenantId property value. 
+// GetTenantId gets the tenantId property value. 
 func (m *ManagementTemplateStepDeployment) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *ManagementTemplateStepDeployment) GetTenantId()(*string) {
         return m.tenantId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,9 +129,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
 func (m *ManagementTemplateStepDeployment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagementTemplateStepDeployment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -175,33 +173,23 @@ func (m *ManagementTemplateStepDeployment) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// Sets the error property value. 
-// Parameters:
-//  - value : Value to set for the error property.
+// SetError sets the error property value. 
 func (m *ManagementTemplateStepDeployment) SetError(value *GraphAPIErrorDetails)() {
     m.error = value
 }
-// Sets the settings property value. 
-// Parameters:
-//  - value : Value to set for the settings property.
+// SetSettings sets the settings property value. 
 func (m *ManagementTemplateStepDeployment) SetSettings(value []Setting)() {
     m.settings = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *ManagementTemplateStepDeployment) SetStatus(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementTemplateDeploymentStatus)() {
     m.status = value
 }
-// Sets the templateStepVersion property value. 
-// Parameters:
-//  - value : Value to set for the templateStepVersion property.
+// SetTemplateStepVersion sets the templateStepVersion property value. 
 func (m *ManagementTemplateStepDeployment) SetTemplateStepVersion(value *ManagementTemplateStepVersion)() {
     m.templateStepVersion = value
 }
-// Sets the tenantId property value. 
-// Parameters:
-//  - value : Value to set for the tenantId property.
+// SetTenantId sets the tenantId property value. 
 func (m *ManagementTemplateStepDeployment) SetTenantId(value *string)() {
     m.tenantId = value
 }

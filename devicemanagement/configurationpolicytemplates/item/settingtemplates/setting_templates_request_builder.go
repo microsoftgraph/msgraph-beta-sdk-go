@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates\{deviceManagementConfigurationPolicyTemplate-id}\settingTemplates
+// SettingTemplatesRequestBuilder builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates\{deviceManagementConfigurationPolicyTemplate-id}\settingTemplates
 type SettingTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SettingTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SettingTemplatesRequestBuilderGetOptions options for Get
 type SettingTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SettingTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Setting templates
+// SettingTemplatesRequestBuilderGetQueryParameters setting templates
 type SettingTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SettingTemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SettingTemplatesRequestBuilderPostOptions options for Post
 type SettingTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingTemplate;
@@ -56,10 +56,7 @@ type SettingTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SettingTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingTemplatesRequestBuilderInternal instantiates a new SettingTemplatesRequestBuilder and sets the default values.
 func NewSettingTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingTemplatesRequestBuilder) {
     m := &SettingTemplatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSettingTemplatesRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SettingTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingTemplatesRequestBuilder instantiates a new SettingTemplatesRequestBuilder and sets the default values.
 func NewSettingTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSettingTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Setting templates
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation setting templates
 func (m *SettingTemplatesRequestBuilder) CreateGetRequestInformation(options *SettingTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SettingTemplatesRequestBuilder) CreateGetRequestInformation(options *Se
     }
     return requestInfo, nil
 }
-// Setting templates
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation setting templates
 func (m *SettingTemplatesRequestBuilder) CreatePostRequestInformation(options *SettingTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SettingTemplatesRequestBuilder) CreatePostRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// Setting templates
-// Parameters:
-//  - options : Options for the request
+// Get setting templates
 func (m *SettingTemplatesRequestBuilder) Get(options *SettingTemplatesRequestBuilderGetOptions)(*SettingTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SettingTemplatesRequestBuilder) Get(options *SettingTemplatesRequestBui
     }
     return res.(*SettingTemplatesResponse), nil
 }
-// Setting templates
-// Parameters:
-//  - options : Options for the request
+// Post setting templates
 func (m *SettingTemplatesRequestBuilder) Post(options *SettingTemplatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

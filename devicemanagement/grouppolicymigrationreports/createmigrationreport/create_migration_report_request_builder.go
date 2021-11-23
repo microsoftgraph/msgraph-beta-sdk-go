@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\microsoft.graph.createMigrationReport
+// CreateMigrationReportRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\microsoft.graph.createMigrationReport
 type CreateMigrationReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type CreateMigrationReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CreateMigrationReportRequestBuilderPostOptions options for Post
 type CreateMigrationReportRequestBuilderPostOptions struct {
     // 
     Body *CreateMigrationReportRequestBody;
@@ -24,10 +24,7 @@ type CreateMigrationReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CreateMigrationReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateMigrationReportRequestBuilderInternal instantiates a new CreateMigrationReportRequestBuilder and sets the default values.
 func NewCreateMigrationReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateMigrationReportRequestBuilder) {
     m := &CreateMigrationReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewCreateMigrationReportRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CreateMigrationReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateMigrationReportRequestBuilder instantiates a new CreateMigrationReportRequestBuilder and sets the default values.
 func NewCreateMigrationReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateMigrationReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreateMigrationReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action createMigrationReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action createMigrationReport
 func (m *CreateMigrationReportRequestBuilder) CreatePostRequestInformation(options *CreateMigrationReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *CreateMigrationReportRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Invoke action createMigrationReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action createMigrationReport
 func (m *CreateMigrationReportRequestBuilder) Post(options *CreateMigrationReportRequestBuilderPostOptions)(*string, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

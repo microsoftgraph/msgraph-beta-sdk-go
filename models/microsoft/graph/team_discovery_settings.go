@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// TeamDiscoverySettings 
 type TeamDiscoverySettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // If set to true, the team is visible via search and suggestions from the Teams client.
     showInTeamsSearchAndSuggestions *bool;
 }
-// Instantiates a new teamDiscoverySettings and sets the default values.
+// NewTeamDiscoverySettings instantiates a new teamDiscoverySettings and sets the default values.
 func NewTeamDiscoverySettings()(*TeamDiscoverySettings) {
     m := &TeamDiscoverySettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamDiscoverySettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *TeamDiscoverySettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the showInTeamsSearchAndSuggestions property value. If set to true, the team is visible via search and suggestions from the Teams client.
+// GetShowInTeamsSearchAndSuggestions gets the showInTeamsSearchAndSuggestions property value. If set to true, the team is visible via search and suggestions from the Teams client.
 func (m *TeamDiscoverySettings) GetShowInTeamsSearchAndSuggestions()(*bool) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *TeamDiscoverySettings) GetShowInTeamsSearchAndSuggestions()(*bool) {
         return m.showInTeamsSearchAndSuggestions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TeamDiscoverySettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["showInTeamsSearchAndSuggestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,9 +52,7 @@ func (m *TeamDiscoverySettings) GetFieldDeserializers()(map[string]func(interfac
 func (m *TeamDiscoverySettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TeamDiscoverySettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("showInTeamsSearchAndSuggestions", m.GetShowInTeamsSearchAndSuggestions())
@@ -70,15 +68,11 @@ func (m *TeamDiscoverySettings) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamDiscoverySettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the showInTeamsSearchAndSuggestions property value. If set to true, the team is visible via search and suggestions from the Teams client.
-// Parameters:
-//  - value : Value to set for the showInTeamsSearchAndSuggestions property.
+// SetShowInTeamsSearchAndSuggestions sets the showInTeamsSearchAndSuggestions property value. If set to true, the team is visible via search and suggestions from the Teams client.
 func (m *TeamDiscoverySettings) SetShowInTeamsSearchAndSuggestions(value *bool)() {
     m.showInTeamsSearchAndSuggestions = value
 }

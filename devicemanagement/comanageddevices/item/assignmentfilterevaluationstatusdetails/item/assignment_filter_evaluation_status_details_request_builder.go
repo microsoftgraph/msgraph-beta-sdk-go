@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\assignmentFilterEvaluationStatusDetails\{assignmentFilterEvaluationStatusDetails-id}
+// AssignmentFilterEvaluationStatusDetailsRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\assignmentFilterEvaluationStatusDetails\{assignmentFilterEvaluationStatusDetails-id}
 type AssignmentFilterEvaluationStatusDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AssignmentFilterEvaluationStatusDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AssignmentFilterEvaluationStatusDetailsRequestBuilderDeleteOptions options for Delete
 type AssignmentFilterEvaluationStatusDetailsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AssignmentFilterEvaluationStatusDetailsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AssignmentFilterEvaluationStatusDetailsRequestBuilderGetOptions options for Get
 type AssignmentFilterEvaluationStatusDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AssignmentFilterEvaluationStatusDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Managed device mobile app configuration states for this device.
+// AssignmentFilterEvaluationStatusDetailsRequestBuilderGetQueryParameters managed device mobile app configuration states for this device.
 type AssignmentFilterEvaluationStatusDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AssignmentFilterEvaluationStatusDetailsRequestBuilderPatchOptions options for Patch
 type AssignmentFilterEvaluationStatusDetailsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluationStatusDetails;
@@ -53,10 +53,7 @@ type AssignmentFilterEvaluationStatusDetailsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AssignmentFilterEvaluationStatusDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal instantiates a new AssignmentFilterEvaluationStatusDetailsRequestBuilder and sets the default values.
 func NewAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentFilterEvaluationStatusDetailsRequestBuilder) {
     m := &AssignmentFilterEvaluationStatusDetailsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignmentFilterEvaluationStatusDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentFilterEvaluationStatusDetailsRequestBuilder instantiates a new AssignmentFilterEvaluationStatusDetailsRequestBuilder and sets the default values.
 func NewAssignmentFilterEvaluationStatusDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentFilterEvaluationStatusDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Managed device mobile app configuration states for this device.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation managed device mobile app configuration states for this device.
 func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreateDeleteRequestInformation(options *AssignmentFilterEvaluationStatusDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// Managed device mobile app configuration states for this device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation managed device mobile app configuration states for this device.
 func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreateGetRequestInformation(options *AssignmentFilterEvaluationStatusDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// Managed device mobile app configuration states for this device.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation managed device mobile app configuration states for this device.
 func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreatePatchRequestInformation(options *AssignmentFilterEvaluationStatusDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// Managed device mobile app configuration states for this device.
-// Parameters:
-//  - options : Options for the request
+// Delete managed device mobile app configuration states for this device.
 func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) Delete(options *AssignmentFilterEvaluationStatusDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) Delete(options *
     }
     return nil
 }
-// Managed device mobile app configuration states for this device.
-// Parameters:
-//  - options : Options for the request
+// Get managed device mobile app configuration states for this device.
 func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) Get(options *AssignmentFilterEvaluationStatusDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluationStatusDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) Get(options *Ass
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluationStatusDetails), nil
 }
-// Managed device mobile app configuration states for this device.
-// Parameters:
-//  - options : Options for the request
+// Patch managed device mobile app configuration states for this device.
 func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) Patch(options *AssignmentFilterEvaluationStatusDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

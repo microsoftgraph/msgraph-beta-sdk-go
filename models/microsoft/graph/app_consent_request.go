@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AppConsentRequest 
 type AppConsentRequest struct {
     Entity
     // The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
@@ -18,14 +18,14 @@ type AppConsentRequest struct {
     // A list of pending user consent requests.
     userConsentRequests []UserConsentRequest;
 }
-// Instantiates a new appConsentRequest and sets the default values.
+// NewAppConsentRequest instantiates a new appConsentRequest and sets the default values.
 func NewAppConsentRequest()(*AppConsentRequest) {
     m := &AppConsentRequest{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appDisplayName property value. The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
+// GetAppDisplayName gets the appDisplayName property value. The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
 func (m *AppConsentRequest) GetAppDisplayName()(*string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *AppConsentRequest) GetAppDisplayName()(*string) {
         return m.appDisplayName
     }
 }
-// Gets the appId property value. The identifier of the application. Required. Supports $filter (eq only) and $orderby.
+// GetAppId gets the appId property value. The identifier of the application. Required. Supports $filter (eq only) and $orderby.
 func (m *AppConsentRequest) GetAppId()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *AppConsentRequest) GetAppId()(*string) {
         return m.appId
     }
 }
-// Gets the consentType property value. The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
+// GetConsentType gets the consentType property value. The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
 func (m *AppConsentRequest) GetConsentType()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *AppConsentRequest) GetConsentType()(*string) {
         return m.consentType
     }
 }
-// Gets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
+// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
 func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScope) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScope) {
         return m.pendingScopes
     }
 }
-// Gets the userConsentRequests property value. A list of pending user consent requests.
+// GetUserConsentRequests gets the userConsentRequests property value. A list of pending user consent requests.
 func (m *AppConsentRequest) GetUserConsentRequests()([]UserConsentRequest) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *AppConsentRequest) GetUserConsentRequests()([]UserConsentRequest) {
         return m.userConsentRequests
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,9 +131,7 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(interface{},
 func (m *AppConsentRequest) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AppConsentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -181,33 +179,23 @@ func (m *AppConsentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the appDisplayName property value. The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
-// Parameters:
-//  - value : Value to set for the appDisplayName property.
+// SetAppDisplayName sets the appDisplayName property value. The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
 func (m *AppConsentRequest) SetAppDisplayName(value *string)() {
     m.appDisplayName = value
 }
-// Sets the appId property value. The identifier of the application. Required. Supports $filter (eq only) and $orderby.
-// Parameters:
-//  - value : Value to set for the appId property.
+// SetAppId sets the appId property value. The identifier of the application. Required. Supports $filter (eq only) and $orderby.
 func (m *AppConsentRequest) SetAppId(value *string)() {
     m.appId = value
 }
-// Sets the consentType property value. The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
-// Parameters:
-//  - value : Value to set for the consentType property.
+// SetConsentType sets the consentType property value. The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
 func (m *AppConsentRequest) SetConsentType(value *string)() {
     m.consentType = value
 }
-// Sets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
-// Parameters:
-//  - value : Value to set for the pendingScopes property.
+// SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
 func (m *AppConsentRequest) SetPendingScopes(value []AppConsentRequestScope)() {
     m.pendingScopes = value
 }
-// Sets the userConsentRequests property value. A list of pending user consent requests.
-// Parameters:
-//  - value : Value to set for the userConsentRequests property.
+// SetUserConsentRequests sets the userConsentRequests property value. A list of pending user consent requests.
 func (m *AppConsentRequest) SetUserConsentRequests(value []UserConsentRequest)() {
     m.userConsentRequests = value
 }

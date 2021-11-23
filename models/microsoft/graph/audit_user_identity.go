@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AuditUserIdentity 
 type AuditUserIdentity struct {
     UserIdentity
     // 
@@ -12,14 +12,14 @@ type AuditUserIdentity struct {
     // 
     homeTenantName *string;
 }
-// Instantiates a new auditUserIdentity and sets the default values.
+// NewAuditUserIdentity instantiates a new auditUserIdentity and sets the default values.
 func NewAuditUserIdentity()(*AuditUserIdentity) {
     m := &AuditUserIdentity{
         UserIdentity: *NewUserIdentity(),
     }
     return m
 }
-// Gets the homeTenantId property value. 
+// GetHomeTenantId gets the homeTenantId property value. 
 func (m *AuditUserIdentity) GetHomeTenantId()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *AuditUserIdentity) GetHomeTenantId()(*string) {
         return m.homeTenantId
     }
 }
-// Gets the homeTenantName property value. 
+// GetHomeTenantName gets the homeTenantName property value. 
 func (m *AuditUserIdentity) GetHomeTenantName()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *AuditUserIdentity) GetHomeTenantName()(*string) {
         return m.homeTenantName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AuditUserIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.UserIdentity.GetFieldDeserializers()
     res["homeTenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *AuditUserIdentity) GetFieldDeserializers()(map[string]func(interface{},
 func (m *AuditUserIdentity) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AuditUserIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.UserIdentity.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *AuditUserIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the homeTenantId property value. 
-// Parameters:
-//  - value : Value to set for the homeTenantId property.
+// SetHomeTenantId sets the homeTenantId property value. 
 func (m *AuditUserIdentity) SetHomeTenantId(value *string)() {
     m.homeTenantId = value
 }
-// Sets the homeTenantName property value. 
-// Parameters:
-//  - value : Value to set for the homeTenantName property.
+// SetHomeTenantName sets the homeTenantName property value. 
 func (m *AuditUserIdentity) SetHomeTenantName(value *string)() {
     m.homeTenantName = value
 }

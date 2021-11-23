@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\services\{bookingService-id}
+// BookingServiceRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\services\{bookingService-id}
 type BookingServiceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BookingServiceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BookingServiceRequestBuilderDeleteOptions options for Delete
 type BookingServiceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type BookingServiceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BookingServiceRequestBuilderGetOptions options for Get
 type BookingServiceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type BookingServiceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All the services offered by this business. Read-only. Nullable.
+// BookingServiceRequestBuilderGetQueryParameters all the services offered by this business. Read-only. Nullable.
 type BookingServiceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BookingServiceRequestBuilderPatchOptions options for Patch
 type BookingServiceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingService;
@@ -53,10 +53,7 @@ type BookingServiceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BookingServiceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingServiceRequestBuilderInternal instantiates a new BookingServiceRequestBuilder and sets the default values.
 func NewBookingServiceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingServiceRequestBuilder) {
     m := &BookingServiceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewBookingServiceRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BookingServiceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingServiceRequestBuilder instantiates a new BookingServiceRequestBuilder and sets the default values.
 func NewBookingServiceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingServiceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookingServiceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation all the services offered by this business. Read-only. Nullable.
 func (m *BookingServiceRequestBuilder) CreateDeleteRequestInformation(options *BookingServiceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *BookingServiceRequestBuilder) CreateDeleteRequestInformation(options *B
     }
     return requestInfo, nil
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all the services offered by this business. Read-only. Nullable.
 func (m *BookingServiceRequestBuilder) CreateGetRequestInformation(options *BookingServiceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *BookingServiceRequestBuilder) CreateGetRequestInformation(options *Book
     }
     return requestInfo, nil
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation all the services offered by this business. Read-only. Nullable.
 func (m *BookingServiceRequestBuilder) CreatePatchRequestInformation(options *BookingServiceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *BookingServiceRequestBuilder) CreatePatchRequestInformation(options *Bo
     }
     return requestInfo, nil
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete all the services offered by this business. Read-only. Nullable.
 func (m *BookingServiceRequestBuilder) Delete(options *BookingServiceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *BookingServiceRequestBuilder) Delete(options *BookingServiceRequestBuil
     }
     return nil
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get all the services offered by this business. Read-only. Nullable.
 func (m *BookingServiceRequestBuilder) Get(options *BookingServiceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingService, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *BookingServiceRequestBuilder) Get(options *BookingServiceRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingService), nil
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch all the services offered by this business. Read-only. Nullable.
 func (m *BookingServiceRequestBuilder) Patch(options *BookingServiceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

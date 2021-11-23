@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\derivedCredentials\{deviceManagementDerivedCredentialSettings-id}
+// DeviceManagementDerivedCredentialSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\derivedCredentials\{deviceManagementDerivedCredentialSettings-id}
 type DeviceManagementDerivedCredentialSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementDerivedCredentialSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementDerivedCredentialSettingsRequestBuilderDeleteOptions options for Delete
 type DeviceManagementDerivedCredentialSettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementDerivedCredentialSettingsRequestBuilderDeleteOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementDerivedCredentialSettingsRequestBuilderGetOptions options for Get
 type DeviceManagementDerivedCredentialSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementDerivedCredentialSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of Derived credential settings associated with account.
+// DeviceManagementDerivedCredentialSettingsRequestBuilderGetQueryParameters collection of Derived credential settings associated with account.
 type DeviceManagementDerivedCredentialSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementDerivedCredentialSettingsRequestBuilderPatchOptions options for Patch
 type DeviceManagementDerivedCredentialSettingsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettings;
@@ -53,10 +53,7 @@ type DeviceManagementDerivedCredentialSettingsRequestBuilderPatchOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementDerivedCredentialSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementDerivedCredentialSettingsRequestBuilderInternal instantiates a new DeviceManagementDerivedCredentialSettingsRequestBuilder and sets the default values.
 func NewDeviceManagementDerivedCredentialSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementDerivedCredentialSettingsRequestBuilder) {
     m := &DeviceManagementDerivedCredentialSettingsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementDerivedCredentialSettingsRequestBuilderInternal(pathPara
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementDerivedCredentialSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementDerivedCredentialSettingsRequestBuilder instantiates a new DeviceManagementDerivedCredentialSettingsRequestBuilder and sets the default values.
 func NewDeviceManagementDerivedCredentialSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementDerivedCredentialSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementDerivedCredentialSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of Derived credential settings associated with account.
 func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementDerivedCredentialSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of Derived credential settings associated with account.
 func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) CreateGetRequestInformation(options *DeviceManagementDerivedCredentialSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of Derived credential settings associated with account.
 func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementDerivedCredentialSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) CreatePatchReq
     }
     return requestInfo, nil
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Delete collection of Derived credential settings associated with account.
 func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) Delete(options *DeviceManagementDerivedCredentialSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) Delete(options
     }
     return nil
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Get collection of Derived credential settings associated with account.
 func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) Get(options *DeviceManagementDerivedCredentialSettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) Get(options *D
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettings), nil
 }
-// Collection of Derived credential settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Patch collection of Derived credential settings associated with account.
 func (m *DeviceManagementDerivedCredentialSettingsRequestBuilder) Patch(options *DeviceManagementDerivedCredentialSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion struct {
     Entity
     // The number of crashes for the app. Valid values -2147483648 to 2147483647
@@ -22,14 +22,14 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion struct {
     // The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
     meanTimeToFailureInMinutes *int32;
 }
-// Instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersion and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersion and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
+// GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppCrashCount()(*int32) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppCrash
         return m.appCrashCount
     }
 }
-// Gets the appDisplayName property value. The friendly name of the application.
+// GetAppDisplayName gets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppDisplayName()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppDispl
         return m.appDisplayName
     }
 }
-// Gets the appName property value. The name of the application.
+// GetAppName gets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppName()(*string) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppName(
         return m.appName
     }
 }
-// Gets the appPublisher property value. The publisher of the application.
+// GetAppPublisher gets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppPublisher()(*string) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppPubli
         return m.appPublisher
     }
 }
-// Gets the appUsageDuration property value. The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
+// GetAppUsageDuration gets the appUsageDuration property value. The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppUsageDuration()(*int32) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppUsage
         return m.appUsageDuration
     }
 }
-// Gets the appVersion property value. The version of the application.
+// GetAppVersion gets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppVersion()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppVersi
         return m.appVersion
     }
 }
-// Gets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
+// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetMeanTimeToFailureInMinutes()(*int32) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetMeanTime
         return m.meanTimeToFailureInMinutes
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appCrashCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,9 +163,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -215,45 +213,31 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) Serialize(w
     }
     return nil
 }
-// Sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the appCrashCount property.
+// SetAppCrashCount sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppCrashCount(value *int32)() {
     m.appCrashCount = value
 }
-// Sets the appDisplayName property value. The friendly name of the application.
-// Parameters:
-//  - value : Value to set for the appDisplayName property.
+// SetAppDisplayName sets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppDisplayName(value *string)() {
     m.appDisplayName = value
 }
-// Sets the appName property value. The name of the application.
-// Parameters:
-//  - value : Value to set for the appName property.
+// SetAppName sets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppName(value *string)() {
     m.appName = value
 }
-// Sets the appPublisher property value. The publisher of the application.
-// Parameters:
-//  - value : Value to set for the appPublisher property.
+// SetAppPublisher sets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppPublisher(value *string)() {
     m.appPublisher = value
 }
-// Sets the appUsageDuration property value. The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the appUsageDuration property.
+// SetAppUsageDuration sets the appUsageDuration property value. The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppUsageDuration(value *int32)() {
     m.appUsageDuration = value
 }
-// Sets the appVersion property value. The version of the application.
-// Parameters:
-//  - value : Value to set for the appVersion property.
+// SetAppVersion sets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppVersion(value *string)() {
     m.appVersion = value
 }
-// Sets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the meanTimeToFailureInMinutes property.
+// SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetMeanTimeToFailureInMinutes(value *int32)() {
     m.meanTimeToFailureInMinutes = value
 }

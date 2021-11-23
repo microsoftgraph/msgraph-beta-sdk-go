@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// GetWindowsQualityUpdateAlertSummaryReportRequestBody 
 type GetWindowsQualityUpdateAlertSummaryReportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,14 +27,14 @@ type GetWindowsQualityUpdateAlertSummaryReportRequestBody struct {
     // 
     top *int32;
 }
-// Instantiates a new getWindowsQualityUpdateAlertSummaryReportRequestBody and sets the default values.
+// NewGetWindowsQualityUpdateAlertSummaryReportRequestBody instantiates a new getWindowsQualityUpdateAlertSummaryReportRequestBody and sets the default values.
 func NewGetWindowsQualityUpdateAlertSummaryReportRequestBody()(*GetWindowsQualityUpdateAlertSummaryReportRequestBody) {
     m := &GetWindowsQualityUpdateAlertSummaryReportRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetAdditionalData
         return m.additionalData
     }
 }
-// Gets the filter property value. 
+// GetFilter gets the filter property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetFilter()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetFilter()(*stri
         return m.filter
     }
 }
-// Gets the groupBy property value. 
+// GetGroupBy gets the groupBy property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetGroupBy()([]string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetGroupBy()([]st
         return m.groupBy
     }
 }
-// Gets the name property value. 
+// GetName gets the name property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetName()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetName()(*string
         return m.name
     }
 }
-// Gets the orderBy property value. 
+// GetOrderBy gets the orderBy property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetOrderBy()([]string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetOrderBy()([]st
         return m.orderBy
     }
 }
-// Gets the search property value. 
+// GetSearch gets the search property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetSearch()(*string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetSearch()(*stri
         return m.search
     }
 }
-// Gets the select_escaped property value. 
+// GetSelect_escaped gets the select_escaped property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetSelect_escaped
         return m.select_escaped
     }
 }
-// Gets the sessionId property value. 
+// GetSessionId gets the sessionId property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetSessionId()(*string) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetSessionId()(*s
         return m.sessionId
     }
 }
-// Gets the skip property value. 
+// GetSkip gets the skip property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetSkip()(*int32) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetSkip()(*int32)
         return m.skip
     }
 }
-// Gets the top property value. 
+// GetTop gets the top property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetTop()(*int32) {
     if m == nil {
         return nil
@@ -114,7 +114,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetTop()(*int32) 
         return m.top
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["filter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,9 +224,7 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) GetFieldDeseriali
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("filter", m.GetFilter())
@@ -290,63 +288,43 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) Serialize(writer 
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the filter property value. 
-// Parameters:
-//  - value : Value to set for the filter property.
+// SetFilter sets the filter property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetFilter(value *string)() {
     m.filter = value
 }
-// Sets the groupBy property value. 
-// Parameters:
-//  - value : Value to set for the groupBy property.
+// SetGroupBy sets the groupBy property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetGroupBy(value []string)() {
     m.groupBy = value
 }
-// Sets the name property value. 
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetName(value *string)() {
     m.name = value
 }
-// Sets the orderBy property value. 
-// Parameters:
-//  - value : Value to set for the orderBy property.
+// SetOrderBy sets the orderBy property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetOrderBy(value []string)() {
     m.orderBy = value
 }
-// Sets the search property value. 
-// Parameters:
-//  - value : Value to set for the search property.
+// SetSearch sets the search property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetSearch(value *string)() {
     m.search = value
 }
-// Sets the select_escaped property value. 
-// Parameters:
-//  - value : Value to set for the select_escaped property.
+// SetSelect_escaped sets the select_escaped property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetSelect_escaped(value []string)() {
     m.select_escaped = value
 }
-// Sets the sessionId property value. 
-// Parameters:
-//  - value : Value to set for the sessionId property.
+// SetSessionId sets the sessionId property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetSessionId(value *string)() {
     m.sessionId = value
 }
-// Sets the skip property value. 
-// Parameters:
-//  - value : Value to set for the skip property.
+// SetSkip sets the skip property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetSkip(value *int32)() {
     m.skip = value
 }
-// Sets the top property value. 
-// Parameters:
-//  - value : Value to set for the top property.
+// SetTop sets the top property value. 
 func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBody) SetTop(value *int32)() {
     m.top = value
 }

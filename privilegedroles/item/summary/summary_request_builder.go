@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}\summary
+// SummaryRequestBuilder builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}\summary
 type SummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SummaryRequestBuilderDeleteOptions options for Delete
 type SummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SummaryRequestBuilderGetOptions options for Get
 type SummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The summary information for this role. Read-only. Nullable.
+// SummaryRequestBuilderGetQueryParameters the summary information for this role. Read-only. Nullable.
 type SummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SummaryRequestBuilderPatchOptions options for Patch
 type SummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleSummary;
@@ -53,10 +53,7 @@ type SummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSummaryRequestBuilderInternal instantiates a new SummaryRequestBuilder and sets the default values.
 func NewSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SummaryRequestBuilder) {
     m := &SummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSummaryRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSummaryRequestBuilder instantiates a new SummaryRequestBuilder and sets the default values.
 func NewSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The summary information for this role. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the summary information for this role. Read-only. Nullable.
 func (m *SummaryRequestBuilder) CreateDeleteRequestInformation(options *SummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SummaryRequestBuilder) CreateDeleteRequestInformation(options *SummaryR
     }
     return requestInfo, nil
 }
-// The summary information for this role. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the summary information for this role. Read-only. Nullable.
 func (m *SummaryRequestBuilder) CreateGetRequestInformation(options *SummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SummaryRequestBuilder) CreateGetRequestInformation(options *SummaryRequ
     }
     return requestInfo, nil
 }
-// The summary information for this role. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the summary information for this role. Read-only. Nullable.
 func (m *SummaryRequestBuilder) CreatePatchRequestInformation(options *SummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SummaryRequestBuilder) CreatePatchRequestInformation(options *SummaryRe
     }
     return requestInfo, nil
 }
-// The summary information for this role. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the summary information for this role. Read-only. Nullable.
 func (m *SummaryRequestBuilder) Delete(options *SummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SummaryRequestBuilder) Delete(options *SummaryRequestBuilderDeleteOptio
     }
     return nil
 }
-// The summary information for this role. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the summary information for this role. Read-only. Nullable.
 func (m *SummaryRequestBuilder) Get(options *SummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SummaryRequestBuilder) Get(options *SummaryRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleSummary), nil
 }
-// The summary information for this role. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the summary information for this role. Read-only. Nullable.
 func (m *SummaryRequestBuilder) Patch(options *SummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

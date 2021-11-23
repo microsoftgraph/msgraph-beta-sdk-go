@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataClassification\evaluateLabelJobs
+// EvaluateLabelJobsRequestBuilder builds and executes requests for operations under \dataClassification\evaluateLabelJobs
 type EvaluateLabelJobsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EvaluateLabelJobsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EvaluateLabelJobsRequestBuilderGetOptions options for Get
 type EvaluateLabelJobsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EvaluateLabelJobsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get evaluateLabelJobs from dataClassification
+// EvaluateLabelJobsRequestBuilderGetQueryParameters get evaluateLabelJobs from dataClassification
 type EvaluateLabelJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EvaluateLabelJobsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EvaluateLabelJobsRequestBuilderPostOptions options for Post
 type EvaluateLabelJobsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase;
@@ -56,10 +56,7 @@ type EvaluateLabelJobsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EvaluateLabelJobsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateLabelJobsRequestBuilderInternal instantiates a new EvaluateLabelJobsRequestBuilder and sets the default values.
 func NewEvaluateLabelJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateLabelJobsRequestBuilder) {
     m := &EvaluateLabelJobsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEvaluateLabelJobsRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EvaluateLabelJobsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateLabelJobsRequestBuilder instantiates a new EvaluateLabelJobsRequestBuilder and sets the default values.
 func NewEvaluateLabelJobsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateLabelJobsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateLabelJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get evaluateLabelJobs from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get evaluateLabelJobs from dataClassification
 func (m *EvaluateLabelJobsRequestBuilder) CreateGetRequestInformation(options *EvaluateLabelJobsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EvaluateLabelJobsRequestBuilder) CreateGetRequestInformation(options *E
     }
     return requestInfo, nil
 }
-// Create new navigation property to evaluateLabelJobs for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to evaluateLabelJobs for dataClassification
 func (m *EvaluateLabelJobsRequestBuilder) CreatePostRequestInformation(options *EvaluateLabelJobsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EvaluateLabelJobsRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get evaluateLabelJobs from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get evaluateLabelJobs from dataClassification
 func (m *EvaluateLabelJobsRequestBuilder) Get(options *EvaluateLabelJobsRequestBuilderGetOptions)(*EvaluateLabelJobsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EvaluateLabelJobsRequestBuilder) Get(options *EvaluateLabelJobsRequestB
     }
     return res.(*EvaluateLabelJobsResponse), nil
 }
-// Create new navigation property to evaluateLabelJobs for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to evaluateLabelJobs for dataClassification
 func (m *EvaluateLabelJobsRequestBuilder) Post(options *EvaluateLabelJobsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

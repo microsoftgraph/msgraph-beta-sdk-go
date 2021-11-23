@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\patents
+// PatentsRequestBuilder builds and executes requests for operations under \me\profile\patents
 type PatentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PatentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PatentsRequestBuilderGetOptions options for Get
 type PatentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PatentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents patents that a user has added to their profile.
+// PatentsRequestBuilderGetQueryParameters represents patents that a user has added to their profile.
 type PatentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PatentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PatentsRequestBuilderPostOptions options for Post
 type PatentsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPatent;
@@ -56,10 +56,7 @@ type PatentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PatentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPatentsRequestBuilderInternal instantiates a new PatentsRequestBuilder and sets the default values.
 func NewPatentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PatentsRequestBuilder) {
     m := &PatentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPatentsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PatentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPatentsRequestBuilder instantiates a new PatentsRequestBuilder and sets the default values.
 func NewPatentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PatentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPatentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents patents that a user has added to their profile.
 func (m *PatentsRequestBuilder) CreateGetRequestInformation(options *PatentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PatentsRequestBuilder) CreateGetRequestInformation(options *PatentsRequ
     }
     return requestInfo, nil
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents patents that a user has added to their profile.
 func (m *PatentsRequestBuilder) CreatePostRequestInformation(options *PatentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PatentsRequestBuilder) CreatePostRequestInformation(options *PatentsReq
     }
     return requestInfo, nil
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents patents that a user has added to their profile.
 func (m *PatentsRequestBuilder) Get(options *PatentsRequestBuilderGetOptions)(*PatentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PatentsRequestBuilder) Get(options *PatentsRequestBuilderGetOptions)(*P
     }
     return res.(*PatentsResponse), nil
 }
-// Represents patents that a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Post represents patents that a user has added to their profile.
 func (m *PatentsRequestBuilder) Post(options *PatentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPatent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

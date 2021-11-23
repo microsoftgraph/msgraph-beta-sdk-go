@@ -12,7 +12,7 @@ import (
     if7f30d88a5e2c08a355aab945ead20a738d45d9716825973a8471d163909ac9b "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/wdacsupplementalpolicies/item/devicestatuses/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}
+// WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}
 type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderDeleteOptions options for Delete
 type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderDeleteOpti
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetOptions options for Get
 type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetOptions
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of Windows Defender Application Control Supplemental Policies.
+// WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetQueryParameters the collection of Windows Defender Application Control Supplemental Policies.
 type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderPatchOptions options for Patch
 type WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicy;
@@ -65,9 +65,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Assi
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Assignments()(*idc699f5102959b816736faa2d215afc9e66f562ab6af43c03f0699e6ef2fa7f4.AssignmentsRequestBuilder) {
     return idc699f5102959b816736faa2d215afc9e66f562ab6af43c03f0699e6ef2fa7f4.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.wdacSupplementalPolicies.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.wdacSupplementalPolicies.item.assignments.item collection
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) AssignmentsById(id string)(*ibf0406f487f23a25d59623f151d2327c977ef4cb5bf52e23fcd9992cbf752eb2.WindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -78,10 +76,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Assi
     }
     return ibf0406f487f23a25d59623f151d2327c977ef4cb5bf52e23fcd9992cbf752eb2.NewWindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDefenderApplicationControlSupplementalPolicyRequestBuilderInternal instantiates a new WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) {
     m := &WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder{
     }
@@ -94,18 +89,13 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyRequestBuilderInterna
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDefenderApplicationControlSupplementalPolicyRequestBuilder instantiates a new WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDefenderApplicationControlSupplementalPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of Windows Defender Application Control Supplemental Policies.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of Windows Defender Application Control Supplemental Policies.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) CreateDeleteRequestInformation(options *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// The collection of Windows Defender Application Control Supplemental Policies.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of Windows Defender Application Control Supplemental Policies.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) CreateGetRequestInformation(options *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// The collection of Windows Defender Application Control Supplemental Policies.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of Windows Defender Application Control Supplemental Policies.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) CreatePatchRequestInformation(options *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -164,9 +150,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// The collection of Windows Defender Application Control Supplemental Policies.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of Windows Defender Application Control Supplemental Policies.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Delete(options *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Depl
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) DeviceStatuses()(*i13775af57c3f03fa03a53f3283beac6df287db3f25fa4e4ee1a441cd3996dd0b.DeviceStatusesRequestBuilder) {
     return i13775af57c3f03fa03a53f3283beac6df287db3f25fa4e4ee1a441cd3996dd0b.NewDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.wdacSupplementalPolicies.item.deviceStatuses.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.wdacSupplementalPolicies.item.deviceStatuses.item collection
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) DeviceStatusesById(id string)(*if7f30d88a5e2c08a355aab945ead20a738d45d9716825973a8471d163909ac9b.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -197,9 +179,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Devi
     }
     return if7f30d88a5e2c08a355aab945ead20a738d45d9716825973a8471d163909ac9b.NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The collection of Windows Defender Application Control Supplemental Policies.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of Windows Defender Application Control Supplemental Policies.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Get(options *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -211,9 +191,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Get(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicy), nil
 }
-// The collection of Windows Defender Application Control Supplemental Policies.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of Windows Defender Application Control Supplemental Policies.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) Patch(options *WindowsDefenderApplicationControlSupplementalPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

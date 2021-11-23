@@ -14,7 +14,7 @@ import (
     ie4d81e74e3624280f0e519971ef2c7635b27540efa521cec95913734fcecc59f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancepolicies/item/settings/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}
+// DeviceManagementCompliancePolicyRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}
 type DeviceManagementCompliancePolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,7 +23,7 @@ type DeviceManagementCompliancePolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementCompliancePolicyRequestBuilderDeleteOptions options for Delete
 type DeviceManagementCompliancePolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type DeviceManagementCompliancePolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementCompliancePolicyRequestBuilderGetOptions options for Get
 type DeviceManagementCompliancePolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -43,14 +43,14 @@ type DeviceManagementCompliancePolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of all compliance policies
+// DeviceManagementCompliancePolicyRequestBuilderGetQueryParameters list of all compliance policies
 type DeviceManagementCompliancePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementCompliancePolicyRequestBuilderPatchOptions options for Patch
 type DeviceManagementCompliancePolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCompliancePolicy;
@@ -67,9 +67,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) Assign()(*i0742bff39d39
 func (m *DeviceManagementCompliancePolicyRequestBuilder) Assignments()(*i02451624685ebfdb81d6b1930c79509f0df4294168ed18436aaa09cc42c5c946.AssignmentsRequestBuilder) {
     return i02451624685ebfdb81d6b1930c79509f0df4294168ed18436aaa09cc42c5c946.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.assignments.item collection
 func (m *DeviceManagementCompliancePolicyRequestBuilder) AssignmentsById(id string)(*i1d9a96a6a2f04ecb11762741e92d99faf72d8bfcea65eb2f15cca45f47882da5.DeviceManagementConfigurationPolicyAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -80,10 +78,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) AssignmentsById(id stri
     }
     return i1d9a96a6a2f04ecb11762741e92d99faf72d8bfcea65eb2f15cca45f47882da5.NewDeviceManagementConfigurationPolicyAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DeviceManagementCompliancePolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementCompliancePolicyRequestBuilderInternal instantiates a new DeviceManagementCompliancePolicyRequestBuilder and sets the default values.
 func NewDeviceManagementCompliancePolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementCompliancePolicyRequestBuilder) {
     m := &DeviceManagementCompliancePolicyRequestBuilder{
     }
@@ -96,18 +91,13 @@ func NewDeviceManagementCompliancePolicyRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementCompliancePolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementCompliancePolicyRequestBuilder instantiates a new DeviceManagementCompliancePolicyRequestBuilder and sets the default values.
 func NewDeviceManagementCompliancePolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementCompliancePolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementCompliancePolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of all compliance policies
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of all compliance policies
 func (m *DeviceManagementCompliancePolicyRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementCompliancePolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// List of all compliance policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of all compliance policies
 func (m *DeviceManagementCompliancePolicyRequestBuilder) CreateGetRequestInformation(options *DeviceManagementCompliancePolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// List of all compliance policies
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of all compliance policies
 func (m *DeviceManagementCompliancePolicyRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementCompliancePolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -166,9 +152,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// List of all compliance policies
-// Parameters:
-//  - options : Options for the request
+// Delete list of all compliance policies
 func (m *DeviceManagementCompliancePolicyRequestBuilder) Delete(options *DeviceManagementCompliancePolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) Delete(options *DeviceM
     }
     return nil
 }
-// List of all compliance policies
-// Parameters:
-//  - options : Options for the request
+// Get list of all compliance policies
 func (m *DeviceManagementCompliancePolicyRequestBuilder) Get(options *DeviceManagementCompliancePolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCompliancePolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -194,9 +176,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) Get(options *DeviceMana
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCompliancePolicy), nil
 }
-// List of all compliance policies
-// Parameters:
-//  - options : Options for the request
+// Patch list of all compliance policies
 func (m *DeviceManagementCompliancePolicyRequestBuilder) Patch(options *DeviceManagementCompliancePolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -211,9 +191,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) Patch(options *DeviceMa
 func (m *DeviceManagementCompliancePolicyRequestBuilder) ScheduledActionsForRule()(*iffa40ac9a6da23297b60087932a288a73ea0e6ab171a35dec05137c5d4ed2f62.ScheduledActionsForRuleRequestBuilder) {
     return iffa40ac9a6da23297b60087932a288a73ea0e6ab171a35dec05137c5d4ed2f62.NewScheduledActionsForRuleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.scheduledActionsForRule.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ScheduledActionsForRuleById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.scheduledActionsForRule.item collection
 func (m *DeviceManagementCompliancePolicyRequestBuilder) ScheduledActionsForRuleById(id string)(*i6cd919cf4ce1e5e402de893f996a02ad42aff8ec4ade9971ee45c71e8fbcb47a.DeviceManagementComplianceScheduledActionForRuleRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -230,9 +208,7 @@ func (m *DeviceManagementCompliancePolicyRequestBuilder) SetScheduledActions()(*
 func (m *DeviceManagementCompliancePolicyRequestBuilder) Settings()(*i15585ed0e13327df9171fd8499ee3db205ffd397a580c4ed84e065a5d220e628.SettingsRequestBuilder) {
     return i15585ed0e13327df9171fd8499ee3db205ffd397a580c4ed84e065a5d220e628.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.settings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.settings.item collection
 func (m *DeviceManagementCompliancePolicyRequestBuilder) SettingsById(id string)(*ie4d81e74e3624280f0e519971ef2c7635b27540efa521cec95913734fcecc59f.DeviceManagementConfigurationSettingRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

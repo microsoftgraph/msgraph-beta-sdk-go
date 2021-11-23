@@ -7,7 +7,7 @@ import (
     id874778243b5d2f2bb9ad9959305bafa80d745556f941a159c77399717295578 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceaccessprofiles/querybyplatformtype"
 )
 
-// Builds and executes requests for operations under \deviceManagement\resourceAccessProfiles
+// ResourceAccessProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\resourceAccessProfiles
 type ResourceAccessProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ResourceAccessProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ResourceAccessProfilesRequestBuilderGetOptions options for Get
 type ResourceAccessProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ResourceAccessProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of resource access settings associated with account.
+// ResourceAccessProfilesRequestBuilderGetQueryParameters collection of resource access settings associated with account.
 type ResourceAccessProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type ResourceAccessProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ResourceAccessProfilesRequestBuilderPostOptions options for Post
 type ResourceAccessProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementResourceAccessProfileBase;
@@ -57,10 +57,7 @@ type ResourceAccessProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceAccessProfilesRequestBuilderInternal instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.
 func NewResourceAccessProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceAccessProfilesRequestBuilder) {
     m := &ResourceAccessProfilesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewResourceAccessProfilesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceAccessProfilesRequestBuilder instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.
 func NewResourceAccessProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceAccessProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceAccessProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of resource access settings associated with account.
 func (m *ResourceAccessProfilesRequestBuilder) CreateGetRequestInformation(options *ResourceAccessProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *ResourceAccessProfilesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of resource access settings associated with account.
 func (m *ResourceAccessProfilesRequestBuilder) CreatePostRequestInformation(options *ResourceAccessProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *ResourceAccessProfilesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Get collection of resource access settings associated with account.
 func (m *ResourceAccessProfilesRequestBuilder) Get(options *ResourceAccessProfilesRequestBuilderGetOptions)(*ResourceAccessProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *ResourceAccessProfilesRequestBuilder) Get(options *ResourceAccessProfil
     }
     return res.(*ResourceAccessProfilesResponse), nil
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Post collection of resource access settings associated with account.
 func (m *ResourceAccessProfilesRequestBuilder) Post(options *ResourceAccessProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementResourceAccessProfileBase, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

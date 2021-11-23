@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}\updateStateSummaries
+// UpdateStateSummariesRequestBuilder builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}\updateStateSummaries
 type UpdateStateSummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UpdateStateSummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UpdateStateSummariesRequestBuilderGetOptions options for Get
 type UpdateStateSummariesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UpdateStateSummariesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Summary of the update states.
+// UpdateStateSummariesRequestBuilderGetQueryParameters summary of the update states.
 type UpdateStateSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UpdateStateSummariesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UpdateStateSummariesRequestBuilderPostOptions options for Post
 type UpdateStateSummariesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateStateSummary;
@@ -56,10 +56,7 @@ type UpdateStateSummariesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UpdateStateSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdateStateSummariesRequestBuilderInternal instantiates a new UpdateStateSummariesRequestBuilder and sets the default values.
 func NewUpdateStateSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateStateSummariesRequestBuilder) {
     m := &UpdateStateSummariesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUpdateStateSummariesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdateStateSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdateStateSummariesRequestBuilder instantiates a new UpdateStateSummariesRequestBuilder and sets the default values.
 func NewUpdateStateSummariesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateStateSummariesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateStateSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation summary of the update states.
 func (m *UpdateStateSummariesRequestBuilder) CreateGetRequestInformation(options *UpdateStateSummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UpdateStateSummariesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation summary of the update states.
 func (m *UpdateStateSummariesRequestBuilder) CreatePostRequestInformation(options *UpdateStateSummariesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UpdateStateSummariesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// Get summary of the update states.
 func (m *UpdateStateSummariesRequestBuilder) Get(options *UpdateStateSummariesRequestBuilderGetOptions)(*UpdateStateSummariesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UpdateStateSummariesRequestBuilder) Get(options *UpdateStateSummariesRe
     }
     return res.(*UpdateStateSummariesResponse), nil
 }
-// Summary of the update states.
-// Parameters:
-//  - options : Options for the request
+// Post summary of the update states.
 func (m *UpdateStateSummariesRequestBuilder) Post(options *UpdateStateSummariesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateStateSummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\microsoft.graph.uploadUrl()
+// UploadUrlRequestBuilder builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\microsoft.graph.uploadUrl()
 type UploadUrlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UploadUrlRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UploadUrlRequestBuilderGetOptions options for Get
 type UploadUrlRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type UploadUrlRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UploadUrlRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUploadUrlRequestBuilderInternal instantiates a new UploadUrlRequestBuilder and sets the default values.
 func NewUploadUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UploadUrlRequestBuilder) {
     m := &UploadUrlRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewUploadUrlRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UploadUrlRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUploadUrlRequestBuilder instantiates a new UploadUrlRequestBuilder and sets the default values.
 func NewUploadUrlRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UploadUrlRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUploadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function uploadUrl
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function uploadUrl
 func (m *UploadUrlRequestBuilder) CreateGetRequestInformation(options *UploadUrlRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *UploadUrlRequestBuilder) CreateGetRequestInformation(options *UploadUrl
     }
     return requestInfo, nil
 }
-// Invoke function uploadUrl
-// Parameters:
-//  - options : Options for the request
+// Get invoke function uploadUrl
 func (m *UploadUrlRequestBuilder) Get(options *UploadUrlRequestBuilderGetOptions)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

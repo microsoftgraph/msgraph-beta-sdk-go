@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\cloudPCConnectivityIssues\{cloudPCConnectivityIssue-id}
+// CloudPCConnectivityIssueRequestBuilder builds and executes requests for operations under \deviceManagement\cloudPCConnectivityIssues\{cloudPCConnectivityIssue-id}
 type CloudPCConnectivityIssueRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPCConnectivityIssueRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPCConnectivityIssueRequestBuilderDeleteOptions options for Delete
 type CloudPCConnectivityIssueRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPCConnectivityIssueRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPCConnectivityIssueRequestBuilderGetOptions options for Get
 type CloudPCConnectivityIssueRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPCConnectivityIssueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of CloudPC Connectivity Issue.
+// CloudPCConnectivityIssueRequestBuilderGetQueryParameters the list of CloudPC Connectivity Issue.
 type CloudPCConnectivityIssueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPCConnectivityIssueRequestBuilderPatchOptions options for Patch
 type CloudPCConnectivityIssueRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPCConnectivityIssue;
@@ -53,10 +53,7 @@ type CloudPCConnectivityIssueRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPCConnectivityIssueRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPCConnectivityIssueRequestBuilderInternal instantiates a new CloudPCConnectivityIssueRequestBuilder and sets the default values.
 func NewCloudPCConnectivityIssueRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPCConnectivityIssueRequestBuilder) {
     m := &CloudPCConnectivityIssueRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPCConnectivityIssueRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPCConnectivityIssueRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPCConnectivityIssueRequestBuilder instantiates a new CloudPCConnectivityIssueRequestBuilder and sets the default values.
 func NewCloudPCConnectivityIssueRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPCConnectivityIssueRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPCConnectivityIssueRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of CloudPC Connectivity Issue.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of CloudPC Connectivity Issue.
 func (m *CloudPCConnectivityIssueRequestBuilder) CreateDeleteRequestInformation(options *CloudPCConnectivityIssueRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPCConnectivityIssueRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// The list of CloudPC Connectivity Issue.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of CloudPC Connectivity Issue.
 func (m *CloudPCConnectivityIssueRequestBuilder) CreateGetRequestInformation(options *CloudPCConnectivityIssueRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPCConnectivityIssueRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The list of CloudPC Connectivity Issue.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of CloudPC Connectivity Issue.
 func (m *CloudPCConnectivityIssueRequestBuilder) CreatePatchRequestInformation(options *CloudPCConnectivityIssueRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPCConnectivityIssueRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// The list of CloudPC Connectivity Issue.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of CloudPC Connectivity Issue.
 func (m *CloudPCConnectivityIssueRequestBuilder) Delete(options *CloudPCConnectivityIssueRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPCConnectivityIssueRequestBuilder) Delete(options *CloudPCConnecti
     }
     return nil
 }
-// The list of CloudPC Connectivity Issue.
-// Parameters:
-//  - options : Options for the request
+// Get the list of CloudPC Connectivity Issue.
 func (m *CloudPCConnectivityIssueRequestBuilder) Get(options *CloudPCConnectivityIssueRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPCConnectivityIssue, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPCConnectivityIssueRequestBuilder) Get(options *CloudPCConnectivit
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPCConnectivityIssue), nil
 }
-// The list of CloudPC Connectivity Issue.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of CloudPC Connectivity Issue.
 func (m *CloudPCConnectivityIssueRequestBuilder) Patch(options *CloudPCConnectivityIssueRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

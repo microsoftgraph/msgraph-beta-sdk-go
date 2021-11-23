@@ -7,7 +7,7 @@ import (
     ia8c4cab071c96e21125cbe53f785c45da39afa5b7fa02d3706f75bbc7425f75e "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentscheduleinstances/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances
+// RoleAssignmentScheduleInstancesRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances
 type RoleAssignmentScheduleInstancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RoleAssignmentScheduleInstancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RoleAssignmentScheduleInstancesRequestBuilderGetOptions options for Get
 type RoleAssignmentScheduleInstancesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type RoleAssignmentScheduleInstancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get roleAssignmentScheduleInstances from roleManagement
+// RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters get roleAssignmentScheduleInstances from roleManagement
 type RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RoleAssignmentScheduleInstancesRequestBuilderPostOptions options for Post
 type RoleAssignmentScheduleInstancesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentScheduleInstance;
@@ -57,10 +57,7 @@ type RoleAssignmentScheduleInstancesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleAssignmentScheduleInstancesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleAssignmentScheduleInstancesRequestBuilderInternal instantiates a new RoleAssignmentScheduleInstancesRequestBuilder and sets the default values.
 func NewRoleAssignmentScheduleInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleAssignmentScheduleInstancesRequestBuilder) {
     m := &RoleAssignmentScheduleInstancesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewRoleAssignmentScheduleInstancesRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleAssignmentScheduleInstancesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleAssignmentScheduleInstancesRequestBuilder instantiates a new RoleAssignmentScheduleInstancesRequestBuilder and sets the default values.
 func NewRoleAssignmentScheduleInstancesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleAssignmentScheduleInstancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleAssignmentScheduleInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get roleAssignmentScheduleInstances from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get roleAssignmentScheduleInstances from roleManagement
 func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreateGetRequestInformation(options *RoleAssignmentScheduleInstancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Create new navigation property to roleAssignmentScheduleInstances for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to roleAssignmentScheduleInstances for roleManagement
 func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreatePostRequestInformation(options *RoleAssignmentScheduleInstancesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances\microsoft.graph.filterByCurrentUser(on={on})
 func (m *RoleAssignmentScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ia8c4cab071c96e21125cbe53f785c45da39afa5b7fa02d3706f75bbc7425f75e.FilterByCurrentUserWithOnRequestBuilder) {
     return ia8c4cab071c96e21125cbe53f785c45da39afa5b7fa02d3706f75bbc7425f75e.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get roleAssignmentScheduleInstances from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get roleAssignmentScheduleInstances from roleManagement
 func (m *RoleAssignmentScheduleInstancesRequestBuilder) Get(options *RoleAssignmentScheduleInstancesRequestBuilderGetOptions)(*RoleAssignmentScheduleInstancesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *RoleAssignmentScheduleInstancesRequestBuilder) Get(options *RoleAssignm
     }
     return res.(*RoleAssignmentScheduleInstancesResponse), nil
 }
-// Create new navigation property to roleAssignmentScheduleInstances for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to roleAssignmentScheduleInstances for roleManagement
 func (m *RoleAssignmentScheduleInstancesRequestBuilder) Post(options *RoleAssignmentScheduleInstancesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentScheduleInstance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

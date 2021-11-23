@@ -6,7 +6,7 @@ import (
     i396bfe954496e31281b28a8f50ec136c3f84d1fa5cd51791df5a5ce64aa3be54 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedebooks/item/categories/ref"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\categories
+// CategoriesRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\categories
 type CategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CategoriesRequestBuilderGetOptions options for Get
 type CategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of categories for this eBook.
+// CategoriesRequestBuilderGetQueryParameters the list of categories for this eBook.
 type CategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type CategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new CategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCategoriesRequestBuilderInternal instantiates a new CategoriesRequestBuilder and sets the default values.
 func NewCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CategoriesRequestBuilder) {
     m := &CategoriesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewCategoriesRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCategoriesRequestBuilder instantiates a new CategoriesRequestBuilder and sets the default values.
 func NewCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of categories for this eBook.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of categories for this eBook.
 func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *CategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *Categori
     }
     return requestInfo, nil
 }
-// The list of categories for this eBook.
-// Parameters:
-//  - options : Options for the request
+// Get the list of categories for this eBook.
 func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptions)(*CategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\paymentMethods
+// PaymentMethodsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\paymentMethods
 type PaymentMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PaymentMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PaymentMethodsRequestBuilderGetOptions options for Get
 type PaymentMethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PaymentMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get paymentMethods from financials
+// PaymentMethodsRequestBuilderGetQueryParameters get paymentMethods from financials
 type PaymentMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PaymentMethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PaymentMethodsRequestBuilderPostOptions options for Post
 type PaymentMethodsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentMethod;
@@ -56,10 +56,7 @@ type PaymentMethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PaymentMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPaymentMethodsRequestBuilderInternal instantiates a new PaymentMethodsRequestBuilder and sets the default values.
 func NewPaymentMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PaymentMethodsRequestBuilder) {
     m := &PaymentMethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPaymentMethodsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PaymentMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPaymentMethodsRequestBuilder instantiates a new PaymentMethodsRequestBuilder and sets the default values.
 func NewPaymentMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PaymentMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPaymentMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get paymentMethods from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get paymentMethods from financials
 func (m *PaymentMethodsRequestBuilder) CreateGetRequestInformation(options *PaymentMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PaymentMethodsRequestBuilder) CreateGetRequestInformation(options *Paym
     }
     return requestInfo, nil
 }
-// Create new navigation property to paymentMethods for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to paymentMethods for financials
 func (m *PaymentMethodsRequestBuilder) CreatePostRequestInformation(options *PaymentMethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PaymentMethodsRequestBuilder) CreatePostRequestInformation(options *Pay
     }
     return requestInfo, nil
 }
-// Get paymentMethods from financials
-// Parameters:
-//  - options : Options for the request
+// Get get paymentMethods from financials
 func (m *PaymentMethodsRequestBuilder) Get(options *PaymentMethodsRequestBuilderGetOptions)(*PaymentMethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PaymentMethodsRequestBuilder) Get(options *PaymentMethodsRequestBuilder
     }
     return res.(*PaymentMethodsResponse), nil
 }
-// Create new navigation property to paymentMethods for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to paymentMethods for financials
 func (m *PaymentMethodsRequestBuilder) Post(options *PaymentMethodsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PaymentMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

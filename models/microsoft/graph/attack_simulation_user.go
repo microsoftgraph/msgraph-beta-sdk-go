@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AttackSimulationUser 
 type AttackSimulationUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type AttackSimulationUser struct {
     // This is the id property value of the user resource that represents the user in the Azure AD tenant.
     userId *string;
 }
-// Instantiates a new attackSimulationUser and sets the default values.
+// NewAttackSimulationUser instantiates a new attackSimulationUser and sets the default values.
 func NewAttackSimulationUser()(*AttackSimulationUser) {
     m := &AttackSimulationUser{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttackSimulationUser) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *AttackSimulationUser) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the displayName property value. Display name of the user.
+// GetDisplayName gets the displayName property value. Display name of the user.
 func (m *AttackSimulationUser) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AttackSimulationUser) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the email property value. Email address of the user.
+// GetEmail gets the email property value. Email address of the user.
 func (m *AttackSimulationUser) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AttackSimulationUser) GetEmail()(*string) {
         return m.email
     }
 }
-// Gets the userId property value. This is the id property value of the user resource that represents the user in the Azure AD tenant.
+// GetUserId gets the userId property value. This is the id property value of the user resource that represents the user in the Azure AD tenant.
 func (m *AttackSimulationUser) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AttackSimulationUser) GetUserId()(*string) {
         return m.userId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AttackSimulationUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *AttackSimulationUser) GetFieldDeserializers()(map[string]func(interface
 func (m *AttackSimulationUser) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AttackSimulationUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -122,27 +120,19 @@ func (m *AttackSimulationUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttackSimulationUser) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. Display name of the user.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name of the user.
 func (m *AttackSimulationUser) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the email property value. Email address of the user.
-// Parameters:
-//  - value : Value to set for the email property.
+// SetEmail sets the email property value. Email address of the user.
 func (m *AttackSimulationUser) SetEmail(value *string)() {
     m.email = value
 }
-// Sets the userId property value. This is the id property value of the user resource that represents the user in the Azure AD tenant.
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. This is the id property value of the user resource that represents the user in the Azure AD tenant.
 func (m *AttackSimulationUser) SetUserId(value *string)() {
     m.userId = value
 }

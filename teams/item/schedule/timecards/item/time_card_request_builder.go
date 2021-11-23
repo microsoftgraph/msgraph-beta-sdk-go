@@ -10,7 +10,7 @@ import (
     i928cffe1d44a7c917c1e83d9a4105e827fa065d83a7a505a4f7efa3c64266fdb "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/timecards/item/clockout"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\timeCards\{timeCard-id}
+// TimeCardRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeCards\{timeCard-id}
 type TimeCardRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type TimeCardRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TimeCardRequestBuilderDeleteOptions options for Delete
 type TimeCardRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type TimeCardRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TimeCardRequestBuilderGetOptions options for Get
 type TimeCardRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type TimeCardRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get timeCards from teams
+// TimeCardRequestBuilderGetQueryParameters get timeCards from teams
 type TimeCardRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TimeCardRequestBuilderPatchOptions options for Patch
 type TimeCardRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeCard;
@@ -63,10 +63,7 @@ func (m *TimeCardRequestBuilder) ClockOut()(*i928cffe1d44a7c917c1e83d9a4105e827f
 func (m *TimeCardRequestBuilder) Confirm()(*i68e4a9fcef652132c7bebba9ebe08cb4fd8be16b5de9cd2ac842a8f4d53cc5ce.ConfirmRequestBuilder) {
     return i68e4a9fcef652132c7bebba9ebe08cb4fd8be16b5de9cd2ac842a8f4d53cc5ce.NewConfirmRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TimeCardRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeCardRequestBuilderInternal instantiates a new TimeCardRequestBuilder and sets the default values.
 func NewTimeCardRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeCardRequestBuilder) {
     m := &TimeCardRequestBuilder{
     }
@@ -79,18 +76,13 @@ func NewTimeCardRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TimeCardRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeCardRequestBuilder instantiates a new TimeCardRequestBuilder and sets the default values.
 func NewTimeCardRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeCardRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTimeCardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property timeCards for teams
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property timeCards for teams
 func (m *TimeCardRequestBuilder) CreateDeleteRequestInformation(options *TimeCardRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *TimeCardRequestBuilder) CreateDeleteRequestInformation(options *TimeCar
     }
     return requestInfo, nil
 }
-// Get timeCards from teams
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get timeCards from teams
 func (m *TimeCardRequestBuilder) CreateGetRequestInformation(options *TimeCardRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *TimeCardRequestBuilder) CreateGetRequestInformation(options *TimeCardRe
     }
     return requestInfo, nil
 }
-// Update the navigation property timeCards in teams
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property timeCards in teams
 func (m *TimeCardRequestBuilder) CreatePatchRequestInformation(options *TimeCardRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +137,7 @@ func (m *TimeCardRequestBuilder) CreatePatchRequestInformation(options *TimeCard
     }
     return requestInfo, nil
 }
-// Delete navigation property timeCards for teams
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property timeCards for teams
 func (m *TimeCardRequestBuilder) Delete(options *TimeCardRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -166,9 +152,7 @@ func (m *TimeCardRequestBuilder) Delete(options *TimeCardRequestBuilderDeleteOpt
 func (m *TimeCardRequestBuilder) EndBreak()(*i5127ef050fde02b8b8f1a5f5fe72b8694bf708f24b9f1e0b8352fb67d87e9683.EndBreakRequestBuilder) {
     return i5127ef050fde02b8b8f1a5f5fe72b8694bf708f24b9f1e0b8352fb67d87e9683.NewEndBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get timeCards from teams
-// Parameters:
-//  - options : Options for the request
+// Get get timeCards from teams
 func (m *TimeCardRequestBuilder) Get(options *TimeCardRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeCard, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *TimeCardRequestBuilder) Get(options *TimeCardRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeCard), nil
 }
-// Update the navigation property timeCards in teams
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property timeCards in teams
 func (m *TimeCardRequestBuilder) Patch(options *TimeCardRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

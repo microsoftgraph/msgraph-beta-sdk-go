@@ -6,7 +6,7 @@ import (
     i4b46f0a388612e72e4fc363736a37cd164b7507646dc94c37cef4e4c633bcc21 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/appmanagementpolicies/ref"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\appManagementPolicies
+// AppManagementPoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\appManagementPolicies
 type AppManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppManagementPoliciesRequestBuilderGetOptions options for Get
 type AppManagementPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppManagementPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The appManagementPolicy applied to this service principal.
+// AppManagementPoliciesRequestBuilderGetQueryParameters the appManagementPolicy applied to this service principal.
 type AppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type AppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppManagementPoliciesRequestBuilderInternal instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
 func NewAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppManagementPoliciesRequestBuilder) {
     m := &AppManagementPoliciesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppManagementPoliciesRequestBuilder instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
 func NewAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppManagementPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The appManagementPolicy applied to this service principal.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the appManagementPolicy applied to this service principal.
 func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation(options *AppManagementPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The appManagementPolicy applied to this service principal.
-// Parameters:
-//  - options : Options for the request
+// Get the appManagementPolicy applied to this service principal.
 func (m *AppManagementPoliciesRequestBuilder) Get(options *AppManagementPoliciesRequestBuilderGetOptions)(*AppManagementPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

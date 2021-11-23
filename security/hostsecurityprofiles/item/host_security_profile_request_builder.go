@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\hostSecurityProfiles\{hostSecurityProfile-id}
+// HostSecurityProfileRequestBuilder builds and executes requests for operations under \security\hostSecurityProfiles\{hostSecurityProfile-id}
 type HostSecurityProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type HostSecurityProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// HostSecurityProfileRequestBuilderDeleteOptions options for Delete
 type HostSecurityProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type HostSecurityProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// HostSecurityProfileRequestBuilderGetOptions options for Get
 type HostSecurityProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type HostSecurityProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get hostSecurityProfiles from security
+// HostSecurityProfileRequestBuilderGetQueryParameters get hostSecurityProfiles from security
 type HostSecurityProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// HostSecurityProfileRequestBuilderPatchOptions options for Patch
 type HostSecurityProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.HostSecurityProfile;
@@ -53,10 +53,7 @@ type HostSecurityProfileRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HostSecurityProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHostSecurityProfileRequestBuilderInternal instantiates a new HostSecurityProfileRequestBuilder and sets the default values.
 func NewHostSecurityProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HostSecurityProfileRequestBuilder) {
     m := &HostSecurityProfileRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewHostSecurityProfileRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HostSecurityProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHostSecurityProfileRequestBuilder instantiates a new HostSecurityProfileRequestBuilder and sets the default values.
 func NewHostSecurityProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HostSecurityProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHostSecurityProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property hostSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property hostSecurityProfiles for security
 func (m *HostSecurityProfileRequestBuilder) CreateDeleteRequestInformation(options *HostSecurityProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *HostSecurityProfileRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get hostSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get hostSecurityProfiles from security
 func (m *HostSecurityProfileRequestBuilder) CreateGetRequestInformation(options *HostSecurityProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *HostSecurityProfileRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update the navigation property hostSecurityProfiles in security
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property hostSecurityProfiles in security
 func (m *HostSecurityProfileRequestBuilder) CreatePatchRequestInformation(options *HostSecurityProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *HostSecurityProfileRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete navigation property hostSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property hostSecurityProfiles for security
 func (m *HostSecurityProfileRequestBuilder) Delete(options *HostSecurityProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *HostSecurityProfileRequestBuilder) Delete(options *HostSecurityProfileR
     }
     return nil
 }
-// Get hostSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// Get get hostSecurityProfiles from security
 func (m *HostSecurityProfileRequestBuilder) Get(options *HostSecurityProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.HostSecurityProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *HostSecurityProfileRequestBuilder) Get(options *HostSecurityProfileRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.HostSecurityProfile), nil
 }
-// Update the navigation property hostSecurityProfiles in security
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property hostSecurityProfiles in security
 func (m *HostSecurityProfileRequestBuilder) Patch(options *HostSecurityProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

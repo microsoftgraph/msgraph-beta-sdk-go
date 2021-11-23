@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app\microsoft.graph.iosVppApp\microsoft.graph.revokeUserLicense
+// RevokeUserLicenseRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app\microsoft.graph.iosVppApp\microsoft.graph.revokeUserLicense
 type RevokeUserLicenseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RevokeUserLicenseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RevokeUserLicenseRequestBuilderPostOptions options for Post
 type RevokeUserLicenseRequestBuilderPostOptions struct {
     // 
     Body *RevokeUserLicenseRequestBody;
@@ -24,10 +24,7 @@ type RevokeUserLicenseRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RevokeUserLicenseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRevokeUserLicenseRequestBuilderInternal instantiates a new RevokeUserLicenseRequestBuilder and sets the default values.
 func NewRevokeUserLicenseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RevokeUserLicenseRequestBuilder) {
     m := &RevokeUserLicenseRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewRevokeUserLicenseRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RevokeUserLicenseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRevokeUserLicenseRequestBuilder instantiates a new RevokeUserLicenseRequestBuilder and sets the default values.
 func NewRevokeUserLicenseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RevokeUserLicenseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRevokeUserLicenseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Revoke assigned iOS VPP user license for given app.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation revoke assigned iOS VPP user license for given app.
 func (m *RevokeUserLicenseRequestBuilder) CreatePostRequestInformation(options *RevokeUserLicenseRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *RevokeUserLicenseRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Revoke assigned iOS VPP user license for given app.
-// Parameters:
-//  - options : Options for the request
+// Post revoke assigned iOS VPP user license for given app.
 func (m *RevokeUserLicenseRequestBuilder) Post(options *RevokeUserLicenseRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

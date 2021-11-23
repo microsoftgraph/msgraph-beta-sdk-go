@@ -7,7 +7,7 @@ import (
     ia8648f7f2bb54e0b171a917fd127de5fb2c2c98ba80ddde361af2195bfcce862 "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs/teamsapps/item/appdefinitions/item/outlineicon/hostedcontent"
 )
 
-// Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\outlineIcon
+// OutlineIconRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\outlineIcon
 type OutlineIconRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type OutlineIconRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OutlineIconRequestBuilderDeleteOptions options for Delete
 type OutlineIconRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type OutlineIconRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OutlineIconRequestBuilderGetOptions options for Get
 type OutlineIconRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type OutlineIconRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The outline version of the Teams app's icon.
+// OutlineIconRequestBuilderGetQueryParameters the outline version of the Teams app's icon.
 type OutlineIconRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OutlineIconRequestBuilderPatchOptions options for Patch
 type OutlineIconRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsAppIcon;
@@ -54,10 +54,7 @@ type OutlineIconRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OutlineIconRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlineIconRequestBuilderInternal instantiates a new OutlineIconRequestBuilder and sets the default values.
 func NewOutlineIconRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlineIconRequestBuilder) {
     m := &OutlineIconRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewOutlineIconRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OutlineIconRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlineIconRequestBuilder instantiates a new OutlineIconRequestBuilder and sets the default values.
 func NewOutlineIconRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlineIconRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOutlineIconRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The outline version of the Teams app's icon.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the outline version of the Teams app's icon.
 func (m *OutlineIconRequestBuilder) CreateDeleteRequestInformation(options *OutlineIconRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *OutlineIconRequestBuilder) CreateDeleteRequestInformation(options *Outl
     }
     return requestInfo, nil
 }
-// The outline version of the Teams app's icon.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the outline version of the Teams app's icon.
 func (m *OutlineIconRequestBuilder) CreateGetRequestInformation(options *OutlineIconRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *OutlineIconRequestBuilder) CreateGetRequestInformation(options *Outline
     }
     return requestInfo, nil
 }
-// The outline version of the Teams app's icon.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the outline version of the Teams app's icon.
 func (m *OutlineIconRequestBuilder) CreatePatchRequestInformation(options *OutlineIconRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *OutlineIconRequestBuilder) CreatePatchRequestInformation(options *Outli
     }
     return requestInfo, nil
 }
-// The outline version of the Teams app's icon.
-// Parameters:
-//  - options : Options for the request
+// Delete the outline version of the Teams app's icon.
 func (m *OutlineIconRequestBuilder) Delete(options *OutlineIconRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *OutlineIconRequestBuilder) Delete(options *OutlineIconRequestBuilderDel
     }
     return nil
 }
-// The outline version of the Teams app's icon.
-// Parameters:
-//  - options : Options for the request
+// Get the outline version of the Teams app's icon.
 func (m *OutlineIconRequestBuilder) Get(options *OutlineIconRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsAppIcon, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *OutlineIconRequestBuilder) Get(options *OutlineIconRequestBuilderGetOpt
 func (m *OutlineIconRequestBuilder) HostedContent()(*ia8648f7f2bb54e0b171a917fd127de5fb2c2c98ba80ddde361af2195bfcce862.HostedContentRequestBuilder) {
     return ia8648f7f2bb54e0b171a917fd127de5fb2c2c98ba80ddde361af2195bfcce862.NewHostedContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The outline version of the Teams app's icon.
-// Parameters:
-//  - options : Options for the request
+// Patch the outline version of the Teams app's icon.
 func (m *OutlineIconRequestBuilder) Patch(options *OutlineIconRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

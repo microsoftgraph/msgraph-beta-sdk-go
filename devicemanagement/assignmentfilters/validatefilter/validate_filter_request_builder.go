@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.validateFilter
+// ValidateFilterRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.validateFilter
 type ValidateFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ValidateFilterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ValidateFilterRequestBuilderPostOptions options for Post
 type ValidateFilterRequestBuilderPostOptions struct {
     // 
     Body *ValidateFilterRequestBody;
@@ -26,21 +26,21 @@ type ValidateFilterRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes assignmentFilterValidationResult
+// ValidateFilterResponse union type wrapper for classes assignmentFilterValidationResult
 type ValidateFilterResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type assignmentFilterValidationResult
     assignmentFilterValidationResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult;
 }
-// Instantiates a new validateFilterResponse and sets the default values.
+// NewValidateFilterResponse instantiates a new validateFilterResponse and sets the default values.
 func NewValidateFilterResponse()(*ValidateFilterResponse) {
     m := &ValidateFilterResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateFilterResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ValidateFilterResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the assignmentFilterValidationResult property value. Union type representation for type assignmentFilterValidationResult
+// GetAssignmentFilterValidationResult gets the assignmentFilterValidationResult property value. Union type representation for type assignmentFilterValidationResult
 func (m *ValidateFilterResponse) GetAssignmentFilterValidationResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ValidateFilterResponse) GetAssignmentFilterValidationResult()(*i535684e
         return m.assignmentFilterValidationResult
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ValidateFilterResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignmentFilterValidationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *ValidateFilterResponse) GetFieldDeserializers()(map[string]func(interfa
 func (m *ValidateFilterResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ValidateFilterResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("assignmentFilterValidationResult", m.GetAssignmentFilterValidationResult())
@@ -92,22 +90,15 @@ func (m *ValidateFilterResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateFilterResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the assignmentFilterValidationResult property value. Union type representation for type assignmentFilterValidationResult
-// Parameters:
-//  - value : Value to set for the assignmentFilterValidationResult property.
+// SetAssignmentFilterValidationResult sets the assignmentFilterValidationResult property value. Union type representation for type assignmentFilterValidationResult
 func (m *ValidateFilterResponse) SetAssignmentFilterValidationResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult)() {
     m.assignmentFilterValidationResult = value
 }
-// Instantiates a new ValidateFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewValidateFilterRequestBuilderInternal instantiates a new ValidateFilterRequestBuilder and sets the default values.
 func NewValidateFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ValidateFilterRequestBuilder) {
     m := &ValidateFilterRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewValidateFilterRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ValidateFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewValidateFilterRequestBuilder instantiates a new ValidateFilterRequestBuilder and sets the default values.
 func NewValidateFilterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ValidateFilterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewValidateFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action validateFilter
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action validateFilter
 func (m *ValidateFilterRequestBuilder) CreatePostRequestInformation(options *ValidateFilterRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *ValidateFilterRequestBuilder) CreatePostRequestInformation(options *Val
     }
     return requestInfo, nil
 }
-// Invoke action validateFilter
-// Parameters:
-//  - options : Options for the request
+// Post invoke action validateFilter
 func (m *ValidateFilterRequestBuilder) Post(options *ValidateFilterRequestBuilderPostOptions)(*ValidateFilterResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

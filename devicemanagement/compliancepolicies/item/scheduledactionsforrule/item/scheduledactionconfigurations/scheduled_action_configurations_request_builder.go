@@ -3,10 +3,10 @@ package scheduledactionconfigurations
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i270f80d11b93f2267beef99b5035bd7467c1076e161892c73b2b7017a77b77f6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancepolicies/item/scheduledactionsforrule/item/scheduledactionconfigurations/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\scheduledActionsForRule\{deviceManagementComplianceScheduledActionForRule-id}\scheduledActionConfigurations
+// ScheduledActionConfigurationsRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\scheduledActionsForRule\{deviceManagementComplianceScheduledActionForRule-id}\scheduledActionConfigurations
 type ScheduledActionConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ScheduledActionConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ScheduledActionConfigurationsRequestBuilderGetOptions options for Get
 type ScheduledActionConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ScheduledActionConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+// ScheduledActionConfigurationsRequestBuilderGetQueryParameters the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
 type ScheduledActionConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,18 @@ type ScheduledActionConfigurationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// ScheduledActionConfigurationsRequestBuilderPostOptions options for Post
+type ScheduledActionConfigurationsRequestBuilderPostOptions struct {
+    // 
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementComplianceActionItem;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// NewScheduledActionConfigurationsRequestBuilderInternal instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.
 func NewScheduledActionConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScheduledActionConfigurationsRequestBuilder) {
     m := &ScheduledActionConfigurationsRequestBuilder{
     }
@@ -61,18 +69,13 @@ func NewScheduledActionConfigurationsRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScheduledActionConfigurationsRequestBuilder instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.
 func NewScheduledActionConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScheduledActionConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewScheduledActionConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
 func (m *ScheduledActionConfigurationsRequestBuilder) CreateGetRequestInformation(options *ScheduledActionConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +95,25 @@ func (m *ScheduledActionConfigurationsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+func (m *ScheduledActionConfigurationsRequestBuilder) CreatePostRequestInformation(options *ScheduledActionConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.POST
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+// Get the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
 func (m *ScheduledActionConfigurationsRequestBuilder) Get(options *ScheduledActionConfigurationsRequestBuilderGetOptions)(*ScheduledActionConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -106,6 +125,15 @@ func (m *ScheduledActionConfigurationsRequestBuilder) Get(options *ScheduledActi
     }
     return res.(*ScheduledActionConfigurationsResponse), nil
 }
-func (m *ScheduledActionConfigurationsRequestBuilder) Ref()(*i270f80d11b93f2267beef99b5035bd7467c1076e161892c73b2b7017a77b77f6.RefRequestBuilder) {
-    return i270f80d11b93f2267beef99b5035bd7467c1076e161892c73b2b7017a77b77f6.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// Post the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+func (m *ScheduledActionConfigurationsRequestBuilder) Post(options *ScheduledActionConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementComplianceActionItem, error) {
+    requestInfo, err := m.CreatePostRequestInformation(options);
+    if err != nil {
+        return nil, err
+    }
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementComplianceActionItem() }, nil)
+    if err != nil {
+        return nil, err
+    }
+    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementComplianceActionItem), nil
 }

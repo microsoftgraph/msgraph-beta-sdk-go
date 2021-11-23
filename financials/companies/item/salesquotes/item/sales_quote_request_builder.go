@@ -14,7 +14,7 @@ import (
     id3852f54376c295ec4d02955c83253b69237fa6ba86eb2cdb39dbbf4b1afc4ce "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesquotes/item/salesquotelines/item"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}
+// SalesQuoteRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}
 type SalesQuoteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,7 +23,7 @@ type SalesQuoteRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SalesQuoteRequestBuilderDeleteOptions options for Delete
 type SalesQuoteRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type SalesQuoteRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SalesQuoteRequestBuilderGetOptions options for Get
 type SalesQuoteRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -43,14 +43,14 @@ type SalesQuoteRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get salesQuotes from financials
+// SalesQuoteRequestBuilderGetQueryParameters get salesQuotes from financials
 type SalesQuoteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SalesQuoteRequestBuilderPatchOptions options for Patch
 type SalesQuoteRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesQuote;
@@ -61,10 +61,7 @@ type SalesQuoteRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SalesQuoteRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesQuoteRequestBuilderInternal instantiates a new SalesQuoteRequestBuilder and sets the default values.
 func NewSalesQuoteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesQuoteRequestBuilder) {
     m := &SalesQuoteRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewSalesQuoteRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SalesQuoteRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesQuoteRequestBuilder instantiates a new SalesQuoteRequestBuilder and sets the default values.
 func NewSalesQuoteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesQuoteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSalesQuoteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property salesQuotes for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property salesQuotes for financials
 func (m *SalesQuoteRequestBuilder) CreateDeleteRequestInformation(options *SalesQuoteRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *SalesQuoteRequestBuilder) CreateDeleteRequestInformation(options *Sales
     }
     return requestInfo, nil
 }
-// Get salesQuotes from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get salesQuotes from financials
 func (m *SalesQuoteRequestBuilder) CreateGetRequestInformation(options *SalesQuoteRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *SalesQuoteRequestBuilder) CreateGetRequestInformation(options *SalesQuo
     }
     return requestInfo, nil
 }
-// Update the navigation property salesQuotes in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property salesQuotes in financials
 func (m *SalesQuoteRequestBuilder) CreatePatchRequestInformation(options *SalesQuoteRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -153,9 +141,7 @@ func (m *SalesQuoteRequestBuilder) Currency()(*i1a8296a2f13ef3c5ac1362a227b917a2
 func (m *SalesQuoteRequestBuilder) Customer()(*i753033a2c9ce81017b74127e71bff7620415ec40c37877a3a9156a8a870a74e5.CustomerRequestBuilder) {
     return i753033a2c9ce81017b74127e71bff7620415ec40c37877a3a9156a8a870a74e5.NewCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property salesQuotes for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property salesQuotes for financials
 func (m *SalesQuoteRequestBuilder) Delete(options *SalesQuoteRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -167,9 +153,7 @@ func (m *SalesQuoteRequestBuilder) Delete(options *SalesQuoteRequestBuilderDelet
     }
     return nil
 }
-// Get salesQuotes from financials
-// Parameters:
-//  - options : Options for the request
+// Get get salesQuotes from financials
 func (m *SalesQuoteRequestBuilder) Get(options *SalesQuoteRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesQuote, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *SalesQuoteRequestBuilder) Get(options *SalesQuoteRequestBuilderGetOptio
 func (m *SalesQuoteRequestBuilder) MakeInvoice()(*i80936828602bda4666c4eced48786bc2c1c175251ae1bdf1e0ef93378a7b543b.MakeInvoiceRequestBuilder) {
     return i80936828602bda4666c4eced48786bc2c1c175251ae1bdf1e0ef93378a7b543b.NewMakeInvoiceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property salesQuotes in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property salesQuotes in financials
 func (m *SalesQuoteRequestBuilder) Patch(options *SalesQuoteRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -204,9 +186,7 @@ func (m *SalesQuoteRequestBuilder) PaymentTerm()(*i72ac360010a42d020b08044ba3e52
 func (m *SalesQuoteRequestBuilder) SalesQuoteLines()(*iff3796c5efae8359f95151c24f08603c4e641c88c6f20e5cee406c319745af8a.SalesQuoteLinesRequestBuilder) {
     return iff3796c5efae8359f95151c24f08603c4e641c88c6f20e5cee406c319745af8a.NewSalesQuoteLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuotes.item.salesQuoteLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesQuoteLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuotes.item.salesQuoteLines.item collection
 func (m *SalesQuoteRequestBuilder) SalesQuoteLinesById(id string)(*id3852f54376c295ec4d02955c83253b69237fa6ba86eb2cdb39dbbf4b1afc4ce.SalesQuoteLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

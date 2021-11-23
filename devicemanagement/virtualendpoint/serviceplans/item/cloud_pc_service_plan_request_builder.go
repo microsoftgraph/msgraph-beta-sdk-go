@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\servicePlans\{cloudPcServicePlan-id}
+// CloudPcServicePlanRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\servicePlans\{cloudPcServicePlan-id}
 type CloudPcServicePlanRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcServicePlanRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcServicePlanRequestBuilderDeleteOptions options for Delete
 type CloudPcServicePlanRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcServicePlanRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcServicePlanRequestBuilderGetOptions options for Get
 type CloudPcServicePlanRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcServicePlanRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud PC service plans.
+// CloudPcServicePlanRequestBuilderGetQueryParameters cloud PC service plans.
 type CloudPcServicePlanRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcServicePlanRequestBuilderPatchOptions options for Patch
 type CloudPcServicePlanRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcServicePlan;
@@ -53,10 +53,7 @@ type CloudPcServicePlanRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcServicePlanRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcServicePlanRequestBuilderInternal instantiates a new CloudPcServicePlanRequestBuilder and sets the default values.
 func NewCloudPcServicePlanRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcServicePlanRequestBuilder) {
     m := &CloudPcServicePlanRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcServicePlanRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcServicePlanRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcServicePlanRequestBuilder instantiates a new CloudPcServicePlanRequestBuilder and sets the default values.
 func NewCloudPcServicePlanRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcServicePlanRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcServicePlanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud PC service plans.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation cloud PC service plans.
 func (m *CloudPcServicePlanRequestBuilder) CreateDeleteRequestInformation(options *CloudPcServicePlanRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcServicePlanRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Cloud PC service plans.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud PC service plans.
 func (m *CloudPcServicePlanRequestBuilder) CreateGetRequestInformation(options *CloudPcServicePlanRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcServicePlanRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Cloud PC service plans.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation cloud PC service plans.
 func (m *CloudPcServicePlanRequestBuilder) CreatePatchRequestInformation(options *CloudPcServicePlanRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcServicePlanRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Cloud PC service plans.
-// Parameters:
-//  - options : Options for the request
+// Delete cloud PC service plans.
 func (m *CloudPcServicePlanRequestBuilder) Delete(options *CloudPcServicePlanRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcServicePlanRequestBuilder) Delete(options *CloudPcServicePlanReq
     }
     return nil
 }
-// Cloud PC service plans.
-// Parameters:
-//  - options : Options for the request
+// Get cloud PC service plans.
 func (m *CloudPcServicePlanRequestBuilder) Get(options *CloudPcServicePlanRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcServicePlan, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcServicePlanRequestBuilder) Get(options *CloudPcServicePlanReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcServicePlan), nil
 }
-// Cloud PC service plans.
-// Parameters:
-//  - options : Options for the request
+// Patch cloud PC service plans.
 func (m *CloudPcServicePlanRequestBuilder) Patch(options *CloudPcServicePlanRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

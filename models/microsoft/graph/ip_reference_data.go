@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// IpReferenceData 
 type IpReferenceData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type IpReferenceData struct {
     // 
     vendor_escaped *string;
 }
-// Instantiates a new ipReferenceData and sets the default values.
+// NewIpReferenceData instantiates a new ipReferenceData and sets the default values.
 func NewIpReferenceData()(*IpReferenceData) {
     m := &IpReferenceData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpReferenceData) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *IpReferenceData) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the asn property value. 
+// GetAsn gets the asn property value. 
 func (m *IpReferenceData) GetAsn()(*int64) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *IpReferenceData) GetAsn()(*int64) {
         return m.asn
     }
 }
-// Gets the city property value. 
+// GetCity gets the city property value. 
 func (m *IpReferenceData) GetCity()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *IpReferenceData) GetCity()(*string) {
         return m.city
     }
 }
-// Gets the countryOrRegionCode property value. 
+// GetCountryOrRegionCode gets the countryOrRegionCode property value. 
 func (m *IpReferenceData) GetCountryOrRegionCode()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *IpReferenceData) GetCountryOrRegionCode()(*string) {
         return m.countryOrRegionCode
     }
 }
-// Gets the organization property value. 
+// GetOrganization gets the organization property value. 
 func (m *IpReferenceData) GetOrganization()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *IpReferenceData) GetOrganization()(*string) {
         return m.organization
     }
 }
-// Gets the state property value. 
+// GetState gets the state property value. 
 func (m *IpReferenceData) GetState()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *IpReferenceData) GetState()(*string) {
         return m.state
     }
 }
-// Gets the vendor_escaped property value. 
+// GetVendor_escaped gets the vendor_escaped property value. 
 func (m *IpReferenceData) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *IpReferenceData) GetVendor_escaped()(*string) {
         return m.vendor_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["asn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,9 +152,7 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *IpReferenceData) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *IpReferenceData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt64Value("asn", m.GetAsn())
@@ -200,45 +198,31 @@ func (m *IpReferenceData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpReferenceData) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the asn property value. 
-// Parameters:
-//  - value : Value to set for the asn property.
+// SetAsn sets the asn property value. 
 func (m *IpReferenceData) SetAsn(value *int64)() {
     m.asn = value
 }
-// Sets the city property value. 
-// Parameters:
-//  - value : Value to set for the city property.
+// SetCity sets the city property value. 
 func (m *IpReferenceData) SetCity(value *string)() {
     m.city = value
 }
-// Sets the countryOrRegionCode property value. 
-// Parameters:
-//  - value : Value to set for the countryOrRegionCode property.
+// SetCountryOrRegionCode sets the countryOrRegionCode property value. 
 func (m *IpReferenceData) SetCountryOrRegionCode(value *string)() {
     m.countryOrRegionCode = value
 }
-// Sets the organization property value. 
-// Parameters:
-//  - value : Value to set for the organization property.
+// SetOrganization sets the organization property value. 
 func (m *IpReferenceData) SetOrganization(value *string)() {
     m.organization = value
 }
-// Sets the state property value. 
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. 
 func (m *IpReferenceData) SetState(value *string)() {
     m.state = value
 }
-// Sets the vendor_escaped property value. 
-// Parameters:
-//  - value : Value to set for the vendor_escaped property.
+// SetVendor_escaped sets the vendor_escaped property value. 
 func (m *IpReferenceData) SetVendor_escaped(value *string)() {
     m.vendor_escaped = value
 }

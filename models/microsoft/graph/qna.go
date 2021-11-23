@@ -6,7 +6,7 @@ import (
     id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/search"
 )
 
-// 
+// Qna 
 type Qna struct {
     SearchAnswer
     // 
@@ -28,14 +28,14 @@ type Qna struct {
     // 
     targetedVariations []AnswerVariant;
 }
-// Instantiates a new qna and sets the default values.
+// NewQna instantiates a new qna and sets the default values.
 func NewQna()(*Qna) {
     m := &Qna{
         SearchAnswer: *NewSearchAnswer(),
     }
     return m
 }
-// Gets the availabilityEndDateTime property value. 
+// GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. 
 func (m *Qna) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *Qna) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.availabilityEndDateTime
     }
 }
-// Gets the availabilityStartDateTime property value. 
+// GetAvailabilityStartDateTime gets the availabilityStartDateTime property value. 
 func (m *Qna) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *Qna) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.availabilityStartDateTime
     }
 }
-// Gets the groupIds property value. 
+// GetGroupIds gets the groupIds property value. 
 func (m *Qna) GetGroupIds()([]string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *Qna) GetGroupIds()([]string) {
         return m.groupIds
     }
 }
-// Gets the isSuggested property value. 
+// GetIsSuggested gets the isSuggested property value. 
 func (m *Qna) GetIsSuggested()(*bool) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *Qna) GetIsSuggested()(*bool) {
         return m.isSuggested
     }
 }
-// Gets the keywords property value. 
+// GetKeywords gets the keywords property value. 
 func (m *Qna) GetKeywords()(*AnswerKeyword) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *Qna) GetKeywords()(*AnswerKeyword) {
         return m.keywords
     }
 }
-// Gets the languageTags property value. 
+// GetLanguageTags gets the languageTags property value. 
 func (m *Qna) GetLanguageTags()([]string) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *Qna) GetLanguageTags()([]string) {
         return m.languageTags
     }
 }
-// Gets the platforms property value. 
+// GetPlatforms gets the platforms property value. 
 func (m *Qna) GetPlatforms()([]DevicePlatformType) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *Qna) GetPlatforms()([]DevicePlatformType) {
         return m.platforms
     }
 }
-// Gets the state property value. 
+// GetState gets the state property value. 
 func (m *Qna) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *Qna) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c
         return m.state
     }
 }
-// Gets the targetedVariations property value. 
+// GetTargetedVariations gets the targetedVariations property value. 
 func (m *Qna) GetTargetedVariations()([]AnswerVariant) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *Qna) GetTargetedVariations()([]AnswerVariant) {
         return m.targetedVariations
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
     res["availabilityEndDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,9 +222,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
 func (m *Qna) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Qna) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.SearchAnswer.Serialize(writer)
     if err != nil {
@@ -292,57 +290,39 @@ func (m *Qna) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     }
     return nil
 }
-// Sets the availabilityEndDateTime property value. 
-// Parameters:
-//  - value : Value to set for the availabilityEndDateTime property.
+// SetAvailabilityEndDateTime sets the availabilityEndDateTime property value. 
 func (m *Qna) SetAvailabilityEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.availabilityEndDateTime = value
 }
-// Sets the availabilityStartDateTime property value. 
-// Parameters:
-//  - value : Value to set for the availabilityStartDateTime property.
+// SetAvailabilityStartDateTime sets the availabilityStartDateTime property value. 
 func (m *Qna) SetAvailabilityStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.availabilityStartDateTime = value
 }
-// Sets the groupIds property value. 
-// Parameters:
-//  - value : Value to set for the groupIds property.
+// SetGroupIds sets the groupIds property value. 
 func (m *Qna) SetGroupIds(value []string)() {
     m.groupIds = value
 }
-// Sets the isSuggested property value. 
-// Parameters:
-//  - value : Value to set for the isSuggested property.
+// SetIsSuggested sets the isSuggested property value. 
 func (m *Qna) SetIsSuggested(value *bool)() {
     m.isSuggested = value
 }
-// Sets the keywords property value. 
-// Parameters:
-//  - value : Value to set for the keywords property.
+// SetKeywords sets the keywords property value. 
 func (m *Qna) SetKeywords(value *AnswerKeyword)() {
     m.keywords = value
 }
-// Sets the languageTags property value. 
-// Parameters:
-//  - value : Value to set for the languageTags property.
+// SetLanguageTags sets the languageTags property value. 
 func (m *Qna) SetLanguageTags(value []string)() {
     m.languageTags = value
 }
-// Sets the platforms property value. 
-// Parameters:
-//  - value : Value to set for the platforms property.
+// SetPlatforms sets the platforms property value. 
 func (m *Qna) SetPlatforms(value []DevicePlatformType)() {
     m.platforms = value
 }
-// Sets the state property value. 
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. 
 func (m *Qna) SetState(value *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)() {
     m.state = value
 }
-// Sets the targetedVariations property value. 
-// Parameters:
-//  - value : Value to set for the targetedVariations property.
+// SetTargetedVariations sets the targetedVariations property value. 
 func (m *Qna) SetTargetedVariations(value []AnswerVariant)() {
     m.targetedVariations = value
 }

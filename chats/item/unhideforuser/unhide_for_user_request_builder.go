@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.unhideForUser
+// UnhideForUserRequestBuilder builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.unhideForUser
 type UnhideForUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UnhideForUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UnhideForUserRequestBuilderPostOptions options for Post
 type UnhideForUserRequestBuilderPostOptions struct {
     // 
     Body *UnhideForUserRequestBody;
@@ -24,10 +24,7 @@ type UnhideForUserRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnhideForUserRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnhideForUserRequestBuilderInternal instantiates a new UnhideForUserRequestBuilder and sets the default values.
 func NewUnhideForUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnhideForUserRequestBuilder) {
     m := &UnhideForUserRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUnhideForUserRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnhideForUserRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnhideForUserRequestBuilder instantiates a new UnhideForUserRequestBuilder and sets the default values.
 func NewUnhideForUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnhideForUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnhideForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action unhideForUser
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action unhideForUser
 func (m *UnhideForUserRequestBuilder) CreatePostRequestInformation(options *UnhideForUserRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UnhideForUserRequestBuilder) CreatePostRequestInformation(options *Unhi
     }
     return requestInfo, nil
 }
-// Invoke action unhideForUser
-// Parameters:
-//  - options : Options for the request
+// Post invoke action unhideForUser
 func (m *UnhideForUserRequestBuilder) Post(options *UnhideForUserRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

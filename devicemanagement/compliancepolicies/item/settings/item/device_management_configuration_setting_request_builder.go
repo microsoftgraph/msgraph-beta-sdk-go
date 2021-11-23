@@ -7,7 +7,7 @@ import (
     i373c8ee1ecc2bc89459b79a8f241f02ed9d1095b7ab1a1597eacdf8804a7726a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancepolicies/item/settings/item/settingdefinitions"
 )
 
-// Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\settings\{deviceManagementConfigurationSetting-id}
+// DeviceManagementConfigurationSettingRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\settings\{deviceManagementConfigurationSetting-id}
 type DeviceManagementConfigurationSettingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceManagementConfigurationSettingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementConfigurationSettingRequestBuilderDeleteOptions options for Delete
 type DeviceManagementConfigurationSettingRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeviceManagementConfigurationSettingRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementConfigurationSettingRequestBuilderGetOptions options for Get
 type DeviceManagementConfigurationSettingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeviceManagementConfigurationSettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Policy settings
+// DeviceManagementConfigurationSettingRequestBuilderGetQueryParameters policy settings
 type DeviceManagementConfigurationSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementConfigurationSettingRequestBuilderPatchOptions options for Patch
 type DeviceManagementConfigurationSettingRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSetting;
@@ -54,10 +54,7 @@ type DeviceManagementConfigurationSettingRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementConfigurationSettingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationSettingRequestBuilderInternal instantiates a new DeviceManagementConfigurationSettingRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationSettingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationSettingRequestBuilder) {
     m := &DeviceManagementConfigurationSettingRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewDeviceManagementConfigurationSettingRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementConfigurationSettingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationSettingRequestBuilder instantiates a new DeviceManagementConfigurationSettingRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationSettingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationSettingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementConfigurationSettingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Policy settings
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation policy settings
 func (m *DeviceManagementConfigurationSettingRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementConfigurationSettingRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *DeviceManagementConfigurationSettingRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// Policy settings
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation policy settings
 func (m *DeviceManagementConfigurationSettingRequestBuilder) CreateGetRequestInformation(options *DeviceManagementConfigurationSettingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *DeviceManagementConfigurationSettingRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Policy settings
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation policy settings
 func (m *DeviceManagementConfigurationSettingRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementConfigurationSettingRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *DeviceManagementConfigurationSettingRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// Policy settings
-// Parameters:
-//  - options : Options for the request
+// Delete policy settings
 func (m *DeviceManagementConfigurationSettingRequestBuilder) Delete(options *DeviceManagementConfigurationSettingRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *DeviceManagementConfigurationSettingRequestBuilder) Delete(options *Dev
     }
     return nil
 }
-// Policy settings
-// Parameters:
-//  - options : Options for the request
+// Get policy settings
 func (m *DeviceManagementConfigurationSettingRequestBuilder) Get(options *DeviceManagementConfigurationSettingRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSetting, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *DeviceManagementConfigurationSettingRequestBuilder) Get(options *Device
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSetting), nil
 }
-// Policy settings
-// Parameters:
-//  - options : Options for the request
+// Patch policy settings
 func (m *DeviceManagementConfigurationSettingRequestBuilder) Patch(options *DeviceManagementConfigurationSettingRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

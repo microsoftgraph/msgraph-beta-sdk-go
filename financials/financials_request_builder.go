@@ -8,7 +8,7 @@ import (
     ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item"
 )
 
-// Builds and executes requests for operations under \financials
+// FinancialsRequestBuilder builds and executes requests for operations under \financials
 type FinancialsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type FinancialsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FinancialsRequestBuilderGetOptions options for Get
 type FinancialsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,14 +28,14 @@ type FinancialsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get financials
+// FinancialsRequestBuilderGetQueryParameters get financials
 type FinancialsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FinancialsRequestBuilderPatchOptions options for Patch
 type FinancialsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Financials;
@@ -49,9 +49,7 @@ type FinancialsRequestBuilderPatchOptions struct {
 func (m *FinancialsRequestBuilder) Companies()(*id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.CompaniesRequestBuilder) {
     return id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.NewCompaniesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CompaniesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item collection
 func (m *FinancialsRequestBuilder) CompaniesById(id string)(*ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.CompanyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -62,10 +60,7 @@ func (m *FinancialsRequestBuilder) CompaniesById(id string)(*ib1913e881039747711
     }
     return ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.NewCompanyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new FinancialsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFinancialsRequestBuilderInternal instantiates a new FinancialsRequestBuilder and sets the default values.
 func NewFinancialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FinancialsRequestBuilder) {
     m := &FinancialsRequestBuilder{
     }
@@ -78,18 +73,13 @@ func NewFinancialsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FinancialsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFinancialsRequestBuilder instantiates a new FinancialsRequestBuilder and sets the default values.
 func NewFinancialsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FinancialsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFinancialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get financials
 func (m *FinancialsRequestBuilder) CreateGetRequestInformation(options *FinancialsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +99,7 @@ func (m *FinancialsRequestBuilder) CreateGetRequestInformation(options *Financia
     }
     return requestInfo, nil
 }
-// Update financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update financials
 func (m *FinancialsRequestBuilder) CreatePatchRequestInformation(options *FinancialsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +117,7 @@ func (m *FinancialsRequestBuilder) CreatePatchRequestInformation(options *Financ
     }
     return requestInfo, nil
 }
-// Get financials
-// Parameters:
-//  - options : Options for the request
+// Get get financials
 func (m *FinancialsRequestBuilder) Get(options *FinancialsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Financials, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -143,9 +129,7 @@ func (m *FinancialsRequestBuilder) Get(options *FinancialsRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Financials), nil
 }
-// Update financials
-// Parameters:
-//  - options : Options for the request
+// Patch update financials
 func (m *FinancialsRequestBuilder) Patch(options *FinancialsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MessageRecipient 
 type MessageRecipient struct {
     Entity
     // 
@@ -14,14 +14,14 @@ type MessageRecipient struct {
     // 
     recipientEmail *string;
 }
-// Instantiates a new messageRecipient and sets the default values.
+// NewMessageRecipient instantiates a new messageRecipient and sets the default values.
 func NewMessageRecipient()(*MessageRecipient) {
     m := &MessageRecipient{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the deliveryStatus property value. 
+// GetDeliveryStatus gets the deliveryStatus property value. 
 func (m *MessageRecipient) GetDeliveryStatus()(*MessageStatus) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *MessageRecipient) GetDeliveryStatus()(*MessageStatus) {
         return m.deliveryStatus
     }
 }
-// Gets the events property value. 
+// GetEvents gets the events property value. 
 func (m *MessageRecipient) GetEvents()([]MessageEvent) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *MessageRecipient) GetEvents()([]MessageEvent) {
         return m.events
     }
 }
-// Gets the recipientEmail property value. 
+// GetRecipientEmail gets the recipientEmail property value. 
 func (m *MessageRecipient) GetRecipientEmail()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *MessageRecipient) GetRecipientEmail()(*string) {
         return m.recipientEmail
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deliveryStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,9 +88,7 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *MessageRecipient) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MessageRecipient) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -122,21 +120,15 @@ func (m *MessageRecipient) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the deliveryStatus property value. 
-// Parameters:
-//  - value : Value to set for the deliveryStatus property.
+// SetDeliveryStatus sets the deliveryStatus property value. 
 func (m *MessageRecipient) SetDeliveryStatus(value *MessageStatus)() {
     m.deliveryStatus = value
 }
-// Sets the events property value. 
-// Parameters:
-//  - value : Value to set for the events property.
+// SetEvents sets the events property value. 
 func (m *MessageRecipient) SetEvents(value []MessageEvent)() {
     m.events = value
 }
-// Sets the recipientEmail property value. 
-// Parameters:
-//  - value : Value to set for the recipientEmail property.
+// SetRecipientEmail sets the recipientEmail property value. 
 func (m *MessageRecipient) SetRecipientEmail(value *string)() {
     m.recipientEmail = value
 }

@@ -8,7 +8,7 @@ import (
     i6a16a7a28a55308dcb96ec1b969c37a3e03428984c4b8e41b74db966fd5f9974 "github.com/microsoftgraph/msgraph-beta-sdk-go/riskyusers/item/history/item"
 )
 
-// Builds and executes requests for operations under \riskyUsers\{riskyUser-id}
+// RiskyUserRequestBuilder builds and executes requests for operations under \riskyUsers\{riskyUser-id}
 type RiskyUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type RiskyUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RiskyUserRequestBuilderDeleteOptions options for Delete
 type RiskyUserRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RiskyUserRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RiskyUserRequestBuilderGetOptions options for Get
 type RiskyUserRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type RiskyUserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from riskyUsers by key
+// RiskyUserRequestBuilderGetQueryParameters get entity from riskyUsers by key
 type RiskyUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RiskyUserRequestBuilderPatchOptions options for Patch
 type RiskyUserRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser;
@@ -55,10 +55,7 @@ type RiskyUserRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RiskyUserRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRiskyUserRequestBuilderInternal instantiates a new RiskyUserRequestBuilder and sets the default values.
 func NewRiskyUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUserRequestBuilder) {
     m := &RiskyUserRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewRiskyUserRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RiskyUserRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRiskyUserRequestBuilder instantiates a new RiskyUserRequestBuilder and sets the default values.
 func NewRiskyUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from riskyUsers
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from riskyUsers
 func (m *RiskyUserRequestBuilder) CreateDeleteRequestInformation(options *RiskyUserRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *RiskyUserRequestBuilder) CreateDeleteRequestInformation(options *RiskyU
     }
     return requestInfo, nil
 }
-// Get entity from riskyUsers by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from riskyUsers by key
 func (m *RiskyUserRequestBuilder) CreateGetRequestInformation(options *RiskyUserRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *RiskyUserRequestBuilder) CreateGetRequestInformation(options *RiskyUser
     }
     return requestInfo, nil
 }
-// Update entity in riskyUsers
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in riskyUsers
 func (m *RiskyUserRequestBuilder) CreatePatchRequestInformation(options *RiskyUserRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *RiskyUserRequestBuilder) CreatePatchRequestInformation(options *RiskyUs
     }
     return requestInfo, nil
 }
-// Delete entity from riskyUsers
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from riskyUsers
 func (m *RiskyUserRequestBuilder) Delete(options *RiskyUserRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *RiskyUserRequestBuilder) Delete(options *RiskyUserRequestBuilderDeleteO
     }
     return nil
 }
-// Get entity from riskyUsers by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from riskyUsers by key
 func (m *RiskyUserRequestBuilder) Get(options *RiskyUserRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *RiskyUserRequestBuilder) Get(options *RiskyUserRequestBuilderGetOptions
 func (m *RiskyUserRequestBuilder) History()(*i814e52de0212eaf7e0b74a145db2f49f68a8270e12b3bd0f91d2a298462b1674.HistoryRequestBuilder) {
     return i814e52de0212eaf7e0b74a145db2f49f68a8270e12b3bd0f91d2a298462b1674.NewHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.riskyUsers.item.history.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// HistoryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.riskyUsers.item.history.item collection
 func (m *RiskyUserRequestBuilder) HistoryById(id string)(*i6a16a7a28a55308dcb96ec1b969c37a3e03428984c4b8e41b74db966fd5f9974.RiskyUserHistoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *RiskyUserRequestBuilder) HistoryById(id string)(*i6a16a7a28a55308dcb96e
     }
     return i6a16a7a28a55308dcb96ec1b969c37a3e03428984c4b8e41b74db966fd5f9974.NewRiskyUserHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update entity in riskyUsers
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in riskyUsers
 func (m *RiskyUserRequestBuilder) Patch(options *RiskyUserRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

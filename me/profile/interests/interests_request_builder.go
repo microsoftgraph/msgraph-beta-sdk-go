@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\interests
+// InterestsRequestBuilder builds and executes requests for operations under \me\profile\interests
 type InterestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type InterestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// InterestsRequestBuilderGetOptions options for Get
 type InterestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type InterestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
+// InterestsRequestBuilderGetQueryParameters provides detailed information about interests the user has associated with themselves in various services.
 type InterestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type InterestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// InterestsRequestBuilderPostOptions options for Post
 type InterestsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonInterest;
@@ -56,10 +56,7 @@ type InterestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new InterestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInterestsRequestBuilderInternal instantiates a new InterestsRequestBuilder and sets the default values.
 func NewInterestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InterestsRequestBuilder) {
     m := &InterestsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewInterestsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InterestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInterestsRequestBuilder instantiates a new InterestsRequestBuilder and sets the default values.
 func NewInterestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InterestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInterestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation provides detailed information about interests the user has associated with themselves in various services.
 func (m *InterestsRequestBuilder) CreateGetRequestInformation(options *InterestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *InterestsRequestBuilder) CreateGetRequestInformation(options *Interests
     }
     return requestInfo, nil
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation provides detailed information about interests the user has associated with themselves in various services.
 func (m *InterestsRequestBuilder) CreatePostRequestInformation(options *InterestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *InterestsRequestBuilder) CreatePostRequestInformation(options *Interest
     }
     return requestInfo, nil
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// Get provides detailed information about interests the user has associated with themselves in various services.
 func (m *InterestsRequestBuilder) Get(options *InterestsRequestBuilderGetOptions)(*InterestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *InterestsRequestBuilder) Get(options *InterestsRequestBuilderGetOptions
     }
     return res.(*InterestsResponse), nil
 }
-// Provides detailed information about interests the user has associated with themselves in various services.
-// Parameters:
-//  - options : Options for the request
+// Post provides detailed information about interests the user has associated with themselves in various services.
 func (m *InterestsRequestBuilder) Post(options *InterestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonInterest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

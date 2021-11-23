@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\cartToClassAssociations\{cartToClassAssociation-id}
+// CartToClassAssociationRequestBuilder builds and executes requests for operations under \deviceManagement\cartToClassAssociations\{cartToClassAssociation-id}
 type CartToClassAssociationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CartToClassAssociationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CartToClassAssociationRequestBuilderDeleteOptions options for Delete
 type CartToClassAssociationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CartToClassAssociationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CartToClassAssociationRequestBuilderGetOptions options for Get
 type CartToClassAssociationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CartToClassAssociationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Cart To Class Associations.
+// CartToClassAssociationRequestBuilderGetQueryParameters the Cart To Class Associations.
 type CartToClassAssociationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CartToClassAssociationRequestBuilderPatchOptions options for Patch
 type CartToClassAssociationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociation;
@@ -53,10 +53,7 @@ type CartToClassAssociationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CartToClassAssociationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCartToClassAssociationRequestBuilderInternal instantiates a new CartToClassAssociationRequestBuilder and sets the default values.
 func NewCartToClassAssociationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CartToClassAssociationRequestBuilder) {
     m := &CartToClassAssociationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCartToClassAssociationRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CartToClassAssociationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCartToClassAssociationRequestBuilder instantiates a new CartToClassAssociationRequestBuilder and sets the default values.
 func NewCartToClassAssociationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CartToClassAssociationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCartToClassAssociationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Cart To Class Associations.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Cart To Class Associations.
 func (m *CartToClassAssociationRequestBuilder) CreateDeleteRequestInformation(options *CartToClassAssociationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CartToClassAssociationRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// The Cart To Class Associations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Cart To Class Associations.
 func (m *CartToClassAssociationRequestBuilder) CreateGetRequestInformation(options *CartToClassAssociationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CartToClassAssociationRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The Cart To Class Associations.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Cart To Class Associations.
 func (m *CartToClassAssociationRequestBuilder) CreatePatchRequestInformation(options *CartToClassAssociationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CartToClassAssociationRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The Cart To Class Associations.
-// Parameters:
-//  - options : Options for the request
+// Delete the Cart To Class Associations.
 func (m *CartToClassAssociationRequestBuilder) Delete(options *CartToClassAssociationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CartToClassAssociationRequestBuilder) Delete(options *CartToClassAssoci
     }
     return nil
 }
-// The Cart To Class Associations.
-// Parameters:
-//  - options : Options for the request
+// Get the Cart To Class Associations.
 func (m *CartToClassAssociationRequestBuilder) Get(options *CartToClassAssociationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CartToClassAssociationRequestBuilder) Get(options *CartToClassAssociati
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociation), nil
 }
-// The Cart To Class Associations.
-// Parameters:
-//  - options : Options for the request
+// Patch the Cart To Class Associations.
 func (m *CartToClassAssociationRequestBuilder) Patch(options *CartToClassAssociationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

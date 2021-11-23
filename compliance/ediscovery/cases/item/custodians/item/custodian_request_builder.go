@@ -15,7 +15,7 @@ import (
     ifbc6f713aeb7024d6becb409b398d0478ce75f7c0d32d275eaf841964c28cf58 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/custodians/item/unifiedgroupsources/item"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}
+// CustodianRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}
 type CustodianRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,7 +24,7 @@ type CustodianRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CustodianRequestBuilderDeleteOptions options for Delete
 type CustodianRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -33,7 +33,7 @@ type CustodianRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CustodianRequestBuilderGetOptions options for Get
 type CustodianRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -44,14 +44,14 @@ type CustodianRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns a list of case custodian objects for this case.  Nullable.
+// CustodianRequestBuilderGetQueryParameters returns a list of case custodian objects for this case.  Nullable.
 type CustodianRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CustodianRequestBuilderPatchOptions options for Patch
 type CustodianRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Custodian;
@@ -65,10 +65,7 @@ type CustodianRequestBuilderPatchOptions struct {
 func (m *CustodianRequestBuilder) Activate()(*i3014ac2a78ae86bab98c7f6f34c813604de315db1e6bd4c290d1c414a901df01.ActivateRequestBuilder) {
     return i3014ac2a78ae86bab98c7f6f34c813604de315db1e6bd4c290d1c414a901df01.NewActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new CustodianRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustodianRequestBuilderInternal instantiates a new CustodianRequestBuilder and sets the default values.
 func NewCustodianRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustodianRequestBuilder) {
     m := &CustodianRequestBuilder{
     }
@@ -81,18 +78,13 @@ func NewCustodianRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CustodianRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustodianRequestBuilder instantiates a new CustodianRequestBuilder and sets the default values.
 func NewCustodianRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustodianRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustodianRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodianRequestBuilder) CreateDeleteRequestInformation(options *CustodianRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *CustodianRequestBuilder) CreateDeleteRequestInformation(options *Custod
     }
     return requestInfo, nil
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodianRequestBuilder) CreateGetRequestInformation(options *CustodianRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +121,7 @@ func (m *CustodianRequestBuilder) CreateGetRequestInformation(options *Custodian
     }
     return requestInfo, nil
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodianRequestBuilder) CreatePatchRequestInformation(options *CustodianRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,9 +139,7 @@ func (m *CustodianRequestBuilder) CreatePatchRequestInformation(options *Custodi
     }
     return requestInfo, nil
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodianRequestBuilder) Delete(options *CustodianRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -165,9 +151,7 @@ func (m *CustodianRequestBuilder) Delete(options *CustodianRequestBuilderDeleteO
     }
     return nil
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodianRequestBuilder) Get(options *CustodianRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Custodian, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -179,9 +163,7 @@ func (m *CustodianRequestBuilder) Get(options *CustodianRequestBuilderGetOptions
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Custodian), nil
 }
-// Returns a list of case custodian objects for this case.  Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch returns a list of case custodian objects for this case.  Nullable.
 func (m *CustodianRequestBuilder) Patch(options *CustodianRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -199,9 +181,7 @@ func (m *CustodianRequestBuilder) Release()(*i14f9dc63baa397b6a46050a0f68c7e4a42
 func (m *CustodianRequestBuilder) SiteSources()(*i9bee0e67d457d7d6c8a2286c0457976300c78a2d3966969af798572abae284f8.SiteSourcesRequestBuilder) {
     return i9bee0e67d457d7d6c8a2286c0457976300c78a2d3966969af798572abae284f8.NewSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.siteSources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SiteSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.siteSources.item collection
 func (m *CustodianRequestBuilder) SiteSourcesById(id string)(*i4309a7704e69fe42095a6b193ab7c02498b7ed9dfb94dfb719874f17dc467566.SiteSourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -215,9 +195,7 @@ func (m *CustodianRequestBuilder) SiteSourcesById(id string)(*i4309a7704e69fe420
 func (m *CustodianRequestBuilder) UnifiedGroupSources()(*i348ede983f3040232d895a34f25da659cbb68085d4a805c56b3b6dae93774ef7.UnifiedGroupSourcesRequestBuilder) {
     return i348ede983f3040232d895a34f25da659cbb68085d4a805c56b3b6dae93774ef7.NewUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.unifiedGroupSources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UnifiedGroupSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.unifiedGroupSources.item collection
 func (m *CustodianRequestBuilder) UnifiedGroupSourcesById(id string)(*ifbc6f713aeb7024d6becb409b398d0478ce75f7c0d32d275eaf841964c28cf58.UnifiedGroupSourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -234,9 +212,7 @@ func (m *CustodianRequestBuilder) UpdateIndex()(*ifa7d68dc98816b5bddb9c96d857975
 func (m *CustodianRequestBuilder) UserSources()(*i1575e522b5917d1f899addb4e5d37cb3091f2a22fdfd73e5c469c667c9a1c9f3.UserSourcesRequestBuilder) {
     return i1575e522b5917d1f899addb4e5d37cb3091f2a22fdfd73e5c469c667c9a1c9f3.NewUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.userSources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UserSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item.userSources.item collection
 func (m *CustodianRequestBuilder) UserSourcesById(id string)(*i6668e488b256395a9fba0e7acad7a6ccc9d7c63da93011905dfe0a8b2ccc5ff9.UserSourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

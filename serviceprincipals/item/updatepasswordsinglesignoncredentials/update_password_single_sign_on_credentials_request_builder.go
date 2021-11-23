@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.updatePasswordSingleSignOnCredentials
+// UpdatePasswordSingleSignOnCredentialsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.updatePasswordSingleSignOnCredentials
 type UpdatePasswordSingleSignOnCredentialsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UpdatePasswordSingleSignOnCredentialsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UpdatePasswordSingleSignOnCredentialsRequestBuilderPostOptions options for Post
 type UpdatePasswordSingleSignOnCredentialsRequestBuilderPostOptions struct {
     // 
     Body *UpdatePasswordSingleSignOnCredentialsRequestBody;
@@ -24,10 +24,7 @@ type UpdatePasswordSingleSignOnCredentialsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UpdatePasswordSingleSignOnCredentialsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal instantiates a new UpdatePasswordSingleSignOnCredentialsRequestBuilder and sets the default values.
 func NewUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatePasswordSingleSignOnCredentialsRequestBuilder) {
     m := &UpdatePasswordSingleSignOnCredentialsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdatePasswordSingleSignOnCredentialsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatePasswordSingleSignOnCredentialsRequestBuilder instantiates a new UpdatePasswordSingleSignOnCredentialsRequestBuilder and sets the default values.
 func NewUpdatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatePasswordSingleSignOnCredentialsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action updatePasswordSingleSignOnCredentials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action updatePasswordSingleSignOnCredentials
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(options *UpdatePasswordSingleSignOnCredentialsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// Invoke action updatePasswordSingleSignOnCredentials
-// Parameters:
-//  - options : Options for the request
+// Post invoke action updatePasswordSingleSignOnCredentials
 func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) Post(options *UpdatePasswordSingleSignOnCredentialsRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

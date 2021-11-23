@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MentionsPreview 
 type MentionsPreview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
     isMentioned *bool;
 }
-// Instantiates a new mentionsPreview and sets the default values.
+// NewMentionsPreview instantiates a new mentionsPreview and sets the default values.
 func NewMentionsPreview()(*MentionsPreview) {
     m := &MentionsPreview{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MentionsPreview) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *MentionsPreview) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the isMentioned property value. True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
+// GetIsMentioned gets the isMentioned property value. True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
 func (m *MentionsPreview) GetIsMentioned()(*bool) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *MentionsPreview) GetIsMentioned()(*bool) {
         return m.isMentioned
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MentionsPreview) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["isMentioned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,9 +52,7 @@ func (m *MentionsPreview) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *MentionsPreview) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MentionsPreview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isMentioned", m.GetIsMentioned())
@@ -70,15 +68,11 @@ func (m *MentionsPreview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MentionsPreview) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isMentioned property value. True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
-// Parameters:
-//  - value : Value to set for the isMentioned property.
+// SetIsMentioned sets the isMentioned property value. True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
 func (m *MentionsPreview) SetIsMentioned(value *bool)() {
     m.isMentioned = value
 }

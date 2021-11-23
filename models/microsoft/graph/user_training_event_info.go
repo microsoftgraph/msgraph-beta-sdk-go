@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserTrainingEventInfo 
 type UserTrainingEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type UserTrainingEventInfo struct {
     // Event details of the training when it was updated/in-progress by the user.
     trainingUpdatedProperties *UserTrainingContentEventInfo;
 }
-// Instantiates a new userTrainingEventInfo and sets the default values.
+// NewUserTrainingEventInfo instantiates a new userTrainingEventInfo and sets the default values.
 func NewUserTrainingEventInfo()(*UserTrainingEventInfo) {
     m := &UserTrainingEventInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingEventInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *UserTrainingEventInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the displayName property value. Display name of the training.
+// GetDisplayName gets the displayName property value. Display name of the training.
 func (m *UserTrainingEventInfo) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *UserTrainingEventInfo) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+// GetLatestTrainingStatus gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
 func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
         return m.latestTrainingStatus
     }
 }
-// Gets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
+// GetTrainingAssignedProperties gets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
 func (m *UserTrainingEventInfo) GetTrainingAssignedProperties()(*UserTrainingContentEventInfo) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *UserTrainingEventInfo) GetTrainingAssignedProperties()(*UserTrainingCon
         return m.trainingAssignedProperties
     }
 }
-// Gets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
+// GetTrainingCompletedProperties gets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
 func (m *UserTrainingEventInfo) GetTrainingCompletedProperties()(*UserTrainingContentEventInfo) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *UserTrainingEventInfo) GetTrainingCompletedProperties()(*UserTrainingCo
         return m.trainingCompletedProperties
     }
 }
-// Gets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
+// GetTrainingUpdatedProperties gets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
 func (m *UserTrainingEventInfo) GetTrainingUpdatedProperties()(*UserTrainingContentEventInfo) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *UserTrainingEventInfo) GetTrainingUpdatedProperties()(*UserTrainingCont
         return m.trainingUpdatedProperties
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,9 +133,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
 func (m *UserTrainingEventInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserTrainingEventInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -176,39 +174,27 @@ func (m *UserTrainingEventInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingEventInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. Display name of the training.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name of the training.
 func (m *UserTrainingEventInfo) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the latestTrainingStatus property.
+// SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
 func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)() {
     m.latestTrainingStatus = value
 }
-// Sets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
-// Parameters:
-//  - value : Value to set for the trainingAssignedProperties property.
+// SetTrainingAssignedProperties sets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
 func (m *UserTrainingEventInfo) SetTrainingAssignedProperties(value *UserTrainingContentEventInfo)() {
     m.trainingAssignedProperties = value
 }
-// Sets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
-// Parameters:
-//  - value : Value to set for the trainingCompletedProperties property.
+// SetTrainingCompletedProperties sets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
 func (m *UserTrainingEventInfo) SetTrainingCompletedProperties(value *UserTrainingContentEventInfo)() {
     m.trainingCompletedProperties = value
 }
-// Sets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
-// Parameters:
-//  - value : Value to set for the trainingUpdatedProperties property.
+// SetTrainingUpdatedProperties sets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
 func (m *UserTrainingEventInfo) SetTrainingUpdatedProperties(value *UserTrainingContentEventInfo)() {
     m.trainingUpdatedProperties = value
 }

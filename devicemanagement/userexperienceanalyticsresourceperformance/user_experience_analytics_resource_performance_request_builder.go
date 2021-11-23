@@ -7,7 +7,7 @@ import (
     i9dfdde130af06bcea2bfd024361a3ac4535811cdd4d93ebdede50b24a52080ee "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsresourceperformance/summarizedeviceresourceperformancewithsummarizeby"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsResourcePerformance
+// UserExperienceAnalyticsResourcePerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsResourcePerformance
 type UserExperienceAnalyticsResourcePerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UserExperienceAnalyticsResourcePerformanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsResourcePerformanceRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsResourcePerformanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type UserExperienceAnalyticsResourcePerformanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics resource performance
+// UserExperienceAnalyticsResourcePerformanceRequestBuilderGetQueryParameters user experience analytics resource performance
 type UserExperienceAnalyticsResourcePerformanceRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type UserExperienceAnalyticsResourcePerformanceRequestBuilderGetQueryParameters 
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsResourcePerformanceRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsResourcePerformanceRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsResourcePerformance;
@@ -57,10 +57,7 @@ type UserExperienceAnalyticsResourcePerformanceRequestBuilderPostOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsResourcePerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal instantiates a new UserExperienceAnalyticsResourcePerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsResourcePerformanceRequestBuilder) {
     m := &UserExperienceAnalyticsResourcePerformanceRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(pathPar
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsResourcePerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsResourcePerformanceRequestBuilder instantiates a new UserExperienceAnalyticsResourcePerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsResourcePerformanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics resource performance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics resource performance
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsResourcePerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// User experience analytics resource performance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user experience analytics resource performance
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsResourcePerformanceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// User experience analytics resource performance
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics resource performance
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) Get(options *UserExperienceAnalyticsResourcePerformanceRequestBuilderGetOptions)(*UserExperienceAnalyticsResourcePerformanceResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) Get(options *
     }
     return res.(*UserExperienceAnalyticsResourcePerformanceResponse), nil
 }
-// User experience analytics resource performance
-// Parameters:
-//  - options : Options for the request
+// Post user experience analytics resource performance
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) Post(options *UserExperienceAnalyticsResourcePerformanceRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsResourcePerformance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
@@ -152,9 +138,7 @@ func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) Post(options 
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsResourcePerformance), nil
 }
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsResourcePerformance\microsoft.graph.summarizeDeviceResourcePerformance(summarizeBy={summarizeBy})
-// Parameters:
-//  - summarizeBy : Usage: summarizeBy={summarizeBy}
+// SummarizeDeviceResourcePerformanceWithSummarizeBy builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsResourcePerformance\microsoft.graph.summarizeDeviceResourcePerformance(summarizeBy={summarizeBy})
 func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) SummarizeDeviceResourcePerformanceWithSummarizeBy(summarizeBy *string)(*i9dfdde130af06bcea2bfd024361a3ac4535811cdd4d93ebdede50b24a52080ee.SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) {
     return i9dfdde130af06bcea2bfd024361a3ac4535811cdd4d93ebdede50b24a52080ee.NewSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderInternal(m.pathParameters, m.requestAdapter, summarizeBy);
 }

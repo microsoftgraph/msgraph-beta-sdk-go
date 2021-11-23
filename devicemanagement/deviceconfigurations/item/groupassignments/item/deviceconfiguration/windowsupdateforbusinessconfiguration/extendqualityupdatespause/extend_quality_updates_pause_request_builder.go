@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.windowsUpdateForBusinessConfiguration\microsoft.graph.extendQualityUpdatesPause
+// ExtendQualityUpdatesPauseRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.windowsUpdateForBusinessConfiguration\microsoft.graph.extendQualityUpdatesPause
 type ExtendQualityUpdatesPauseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ExtendQualityUpdatesPauseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ExtendQualityUpdatesPauseRequestBuilderPostOptions options for Post
 type ExtendQualityUpdatesPauseRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type ExtendQualityUpdatesPauseRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExtendQualityUpdatesPauseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtendQualityUpdatesPauseRequestBuilderInternal instantiates a new ExtendQualityUpdatesPauseRequestBuilder and sets the default values.
 func NewExtendQualityUpdatesPauseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtendQualityUpdatesPauseRequestBuilder) {
     m := &ExtendQualityUpdatesPauseRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewExtendQualityUpdatesPauseRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExtendQualityUpdatesPauseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtendQualityUpdatesPauseRequestBuilder instantiates a new ExtendQualityUpdatesPauseRequestBuilder and sets the default values.
 func NewExtendQualityUpdatesPauseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtendQualityUpdatesPauseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExtendQualityUpdatesPauseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Extend Quality Updates Pause for a Windows Update for Business ring.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation extend Quality Updates Pause for a Windows Update for Business ring.
 func (m *ExtendQualityUpdatesPauseRequestBuilder) CreatePostRequestInformation(options *ExtendQualityUpdatesPauseRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *ExtendQualityUpdatesPauseRequestBuilder) CreatePostRequestInformation(o
     }
     return requestInfo, nil
 }
-// Extend Quality Updates Pause for a Windows Update for Business ring.
-// Parameters:
-//  - options : Options for the request
+// Post extend Quality Updates Pause for a Windows Update for Business ring.
 func (m *ExtendQualityUpdatesPauseRequestBuilder) Post(options *ExtendQualityUpdatesPauseRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

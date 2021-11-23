@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// GovernancePolicy 
 type GovernancePolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type GovernancePolicy struct {
     // 
     notificationPolicy *GovernanceNotificationPolicy;
 }
-// Instantiates a new governancePolicy and sets the default values.
+// NewGovernancePolicy instantiates a new governancePolicy and sets the default values.
 func NewGovernancePolicy()(*GovernancePolicy) {
     m := &GovernancePolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernancePolicy) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *GovernancePolicy) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the decisionMakerCriteria property value. 
+// GetDecisionMakerCriteria gets the decisionMakerCriteria property value. 
 func (m *GovernancePolicy) GetDecisionMakerCriteria()([]GovernanceCriteria) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *GovernancePolicy) GetDecisionMakerCriteria()([]GovernanceCriteria) {
         return m.decisionMakerCriteria
     }
 }
-// Gets the notificationPolicy property value. 
+// GetNotificationPolicy gets the notificationPolicy property value. 
 func (m *GovernancePolicy) GetNotificationPolicy()(*GovernanceNotificationPolicy) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *GovernancePolicy) GetNotificationPolicy()(*GovernanceNotificationPolicy
         return m.notificationPolicy
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GovernancePolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["decisionMakerCriteria"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,9 +76,7 @@ func (m *GovernancePolicy) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *GovernancePolicy) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GovernancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDecisionMakerCriteria()))
@@ -105,21 +103,15 @@ func (m *GovernancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernancePolicy) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the decisionMakerCriteria property value. 
-// Parameters:
-//  - value : Value to set for the decisionMakerCriteria property.
+// SetDecisionMakerCriteria sets the decisionMakerCriteria property value. 
 func (m *GovernancePolicy) SetDecisionMakerCriteria(value []GovernanceCriteria)() {
     m.decisionMakerCriteria = value
 }
-// Sets the notificationPolicy property value. 
-// Parameters:
-//  - value : Value to set for the notificationPolicy property.
+// SetNotificationPolicy sets the notificationPolicy property value. 
 func (m *GovernancePolicy) SetNotificationPolicy(value *GovernanceNotificationPolicy)() {
     m.notificationPolicy = value
 }

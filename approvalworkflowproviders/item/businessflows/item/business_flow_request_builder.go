@@ -7,7 +7,7 @@ import (
     ie12a6915e05d6a043d359c10b68f891491e9737ababf5b26608eccbcdf3d3be8 "github.com/microsoftgraph/msgraph-beta-sdk-go/approvalworkflowproviders/item/businessflows/item/recorddecisions"
 )
 
-// Builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlows\{businessFlow-id}
+// BusinessFlowRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlows\{businessFlow-id}
 type BusinessFlowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type BusinessFlowRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BusinessFlowRequestBuilderDeleteOptions options for Delete
 type BusinessFlowRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type BusinessFlowRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BusinessFlowRequestBuilderGetOptions options for Get
 type BusinessFlowRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type BusinessFlowRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get businessFlows from approvalWorkflowProviders
+// BusinessFlowRequestBuilderGetQueryParameters get businessFlows from approvalWorkflowProviders
 type BusinessFlowRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BusinessFlowRequestBuilderPatchOptions options for Patch
 type BusinessFlowRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlow;
@@ -54,10 +54,7 @@ type BusinessFlowRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BusinessFlowRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowRequestBuilderInternal instantiates a new BusinessFlowRequestBuilder and sets the default values.
 func NewBusinessFlowRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowRequestBuilder) {
     m := &BusinessFlowRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewBusinessFlowRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BusinessFlowRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowRequestBuilder instantiates a new BusinessFlowRequestBuilder and sets the default values.
 func NewBusinessFlowRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property businessFlows for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property businessFlows for approvalWorkflowProviders
 func (m *BusinessFlowRequestBuilder) CreateDeleteRequestInformation(options *BusinessFlowRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *BusinessFlowRequestBuilder) CreateDeleteRequestInformation(options *Bus
     }
     return requestInfo, nil
 }
-// Get businessFlows from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get businessFlows from approvalWorkflowProviders
 func (m *BusinessFlowRequestBuilder) CreateGetRequestInformation(options *BusinessFlowRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *BusinessFlowRequestBuilder) CreateGetRequestInformation(options *Busine
     }
     return requestInfo, nil
 }
-// Update the navigation property businessFlows in approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property businessFlows in approvalWorkflowProviders
 func (m *BusinessFlowRequestBuilder) CreatePatchRequestInformation(options *BusinessFlowRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *BusinessFlowRequestBuilder) CreatePatchRequestInformation(options *Busi
     }
     return requestInfo, nil
 }
-// Delete navigation property businessFlows for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property businessFlows for approvalWorkflowProviders
 func (m *BusinessFlowRequestBuilder) Delete(options *BusinessFlowRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *BusinessFlowRequestBuilder) Delete(options *BusinessFlowRequestBuilderD
     }
     return nil
 }
-// Get businessFlows from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Get get businessFlows from approvalWorkflowProviders
 func (m *BusinessFlowRequestBuilder) Get(options *BusinessFlowRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlow, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *BusinessFlowRequestBuilder) Get(options *BusinessFlowRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlow), nil
 }
-// Update the navigation property businessFlows in approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property businessFlows in approvalWorkflowProviders
 func (m *BusinessFlowRequestBuilder) Patch(options *BusinessFlowRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

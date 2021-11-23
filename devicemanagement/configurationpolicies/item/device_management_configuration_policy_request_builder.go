@@ -12,7 +12,7 @@ import (
     iedbbb6f68a2c0078d0b3190bbd5f0cd4f2d9a2f8875eead0f7a4e33156ffe5ba "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configurationpolicies/item/settings/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\configurationPolicies\{deviceManagementConfigurationPolicy-id}
+// DeviceManagementConfigurationPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\configurationPolicies\{deviceManagementConfigurationPolicy-id}
 type DeviceManagementConfigurationPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type DeviceManagementConfigurationPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions options for Delete
 type DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementConfigurationPolicyRequestBuilderGetOptions options for Get
 type DeviceManagementConfigurationPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type DeviceManagementConfigurationPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of all Configuration policies
+// DeviceManagementConfigurationPolicyRequestBuilderGetQueryParameters list of all Configuration policies
 type DeviceManagementConfigurationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementConfigurationPolicyRequestBuilderPatchOptions options for Patch
 type DeviceManagementConfigurationPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy;
@@ -65,9 +65,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) Assign()(*ibbfd5cc1d
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Assignments()(*i69f80c23199c4402937b20220cf1e92e26db31e6a9495384f6071feff5fb666e.AssignmentsRequestBuilder) {
     return i69f80c23199c4402937b20220cf1e92e26db31e6a9495384f6071feff5fb666e.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicies.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicies.item.assignments.item collection
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) AssignmentsById(id string)(*i5e2155a9211be69588396fffd88611feb903891dc97905be90cf3ece71e3c153.DeviceManagementConfigurationPolicyAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -78,10 +76,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) AssignmentsById(id s
     }
     return i5e2155a9211be69588396fffd88611feb903891dc97905be90cf3ece71e3c153.NewDeviceManagementConfigurationPolicyAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DeviceManagementConfigurationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationPolicyRequestBuilderInternal instantiates a new DeviceManagementConfigurationPolicyRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationPolicyRequestBuilder) {
     m := &DeviceManagementConfigurationPolicyRequestBuilder{
     }
@@ -94,10 +89,7 @@ func NewDeviceManagementConfigurationPolicyRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementConfigurationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationPolicyRequestBuilder instantiates a new DeviceManagementConfigurationPolicyRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -106,9 +98,7 @@ func NewDeviceManagementConfigurationPolicyRequestBuilder(rawUrl string, request
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateCopy()(*iab3edfc9e4992848bcd442122584eb8dcfbf0066b96fb9aee67506b106fea968.CreateCopyRequestBuilder) {
     return iab3edfc9e4992848bcd442122584eb8dcfbf0066b96fb9aee67506b106fea968.NewCreateCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of all Configuration policies
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of all Configuration policies
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateGetRequestInformation(options *DeviceManagementConfigurationPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of all Configuration policies
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementConfigurationPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -167,9 +153,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// Delete list of all Configuration policies
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Delete(options *DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -181,9 +165,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) Delete(options *Devi
     }
     return nil
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// Get list of all Configuration policies
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Get(options *DeviceManagementConfigurationPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -195,9 +177,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) Get(options *DeviceM
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy), nil
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// Patch list of all Configuration policies
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Patch(options *DeviceManagementConfigurationPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -212,9 +192,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) Patch(options *Devic
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Settings()(*i9e07f7775b89cd0dc8237114af526cce0bc28e5356bbb8234a9c06ded2bd1877.SettingsRequestBuilder) {
     return i9e07f7775b89cd0dc8237114af526cce0bc28e5356bbb8234a9c06ded2bd1877.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicies.item.settings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicies.item.settings.item collection
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) SettingsById(id string)(*iedbbb6f68a2c0078d0b3190bbd5f0cd4f2d9a2f8875eead0f7a4e33156ffe5ba.DeviceManagementConfigurationSettingRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

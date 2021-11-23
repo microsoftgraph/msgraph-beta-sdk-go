@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\generalLedgerEntries
+// GeneralLedgerEntriesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\generalLedgerEntries
 type GeneralLedgerEntriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GeneralLedgerEntriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GeneralLedgerEntriesRequestBuilderGetOptions options for Get
 type GeneralLedgerEntriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type GeneralLedgerEntriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get generalLedgerEntries from financials
+// GeneralLedgerEntriesRequestBuilderGetQueryParameters get generalLedgerEntries from financials
 type GeneralLedgerEntriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type GeneralLedgerEntriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// GeneralLedgerEntriesRequestBuilderPostOptions options for Post
 type GeneralLedgerEntriesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntry;
@@ -56,10 +56,7 @@ type GeneralLedgerEntriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GeneralLedgerEntriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGeneralLedgerEntriesRequestBuilderInternal instantiates a new GeneralLedgerEntriesRequestBuilder and sets the default values.
 func NewGeneralLedgerEntriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GeneralLedgerEntriesRequestBuilder) {
     m := &GeneralLedgerEntriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewGeneralLedgerEntriesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GeneralLedgerEntriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGeneralLedgerEntriesRequestBuilder instantiates a new GeneralLedgerEntriesRequestBuilder and sets the default values.
 func NewGeneralLedgerEntriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GeneralLedgerEntriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGeneralLedgerEntriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get generalLedgerEntries from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get generalLedgerEntries from financials
 func (m *GeneralLedgerEntriesRequestBuilder) CreateGetRequestInformation(options *GeneralLedgerEntriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *GeneralLedgerEntriesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Create new navigation property to generalLedgerEntries for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to generalLedgerEntries for financials
 func (m *GeneralLedgerEntriesRequestBuilder) CreatePostRequestInformation(options *GeneralLedgerEntriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *GeneralLedgerEntriesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get generalLedgerEntries from financials
-// Parameters:
-//  - options : Options for the request
+// Get get generalLedgerEntries from financials
 func (m *GeneralLedgerEntriesRequestBuilder) Get(options *GeneralLedgerEntriesRequestBuilderGetOptions)(*GeneralLedgerEntriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *GeneralLedgerEntriesRequestBuilder) Get(options *GeneralLedgerEntriesRe
     }
     return res.(*GeneralLedgerEntriesResponse), nil
 }
-// Create new navigation property to generalLedgerEntries for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to generalLedgerEntries for financials
 func (m *GeneralLedgerEntriesRequestBuilder) Post(options *GeneralLedgerEntriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntry, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

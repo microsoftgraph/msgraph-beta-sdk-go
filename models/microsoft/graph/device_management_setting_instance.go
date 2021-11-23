@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceManagementSettingInstance 
 type DeviceManagementSettingInstance struct {
     Entity
     // The ID of the setting definition for this instance
@@ -12,14 +12,14 @@ type DeviceManagementSettingInstance struct {
     // JSON representation of the value
     valueJson *string;
 }
-// Instantiates a new deviceManagementSettingInstance and sets the default values.
+// NewDeviceManagementSettingInstance instantiates a new deviceManagementSettingInstance and sets the default values.
 func NewDeviceManagementSettingInstance()(*DeviceManagementSettingInstance) {
     m := &DeviceManagementSettingInstance{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the definitionId property value. The ID of the setting definition for this instance
+// GetDefinitionId gets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) GetDefinitionId()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *DeviceManagementSettingInstance) GetDefinitionId()(*string) {
         return m.definitionId
     }
 }
-// Gets the valueJson property value. JSON representation of the value
+// GetValueJson gets the valueJson property value. JSON representation of the value
 func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
         return m.valueJson
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["definitionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]fun
 func (m *DeviceManagementSettingInstance) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementSettingInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *DeviceManagementSettingInstance) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the definitionId property value. The ID of the setting definition for this instance
-// Parameters:
-//  - value : Value to set for the definitionId property.
+// SetDefinitionId sets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) SetDefinitionId(value *string)() {
     m.definitionId = value
 }
-// Sets the valueJson property value. JSON representation of the value
-// Parameters:
-//  - value : Value to set for the valueJson property.
+// SetValueJson sets the valueJson property value. JSON representation of the value
 func (m *DeviceManagementSettingInstance) SetValueJson(value *string)() {
     m.valueJson = value
 }

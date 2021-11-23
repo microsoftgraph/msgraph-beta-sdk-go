@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.wipeManagedAppRegistrationByDeviceTag
+// WipeManagedAppRegistrationByDeviceTagRequestBuilder builds and executes requests for operations under \me\microsoft.graph.wipeManagedAppRegistrationByDeviceTag
 type WipeManagedAppRegistrationByDeviceTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type WipeManagedAppRegistrationByDeviceTagRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// WipeManagedAppRegistrationByDeviceTagRequestBuilderPostOptions options for Post
 type WipeManagedAppRegistrationByDeviceTagRequestBuilderPostOptions struct {
     // 
     Body *WipeManagedAppRegistrationByDeviceTagRequestBody;
@@ -24,10 +24,7 @@ type WipeManagedAppRegistrationByDeviceTagRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WipeManagedAppRegistrationByDeviceTagRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWipeManagedAppRegistrationByDeviceTagRequestBuilderInternal instantiates a new WipeManagedAppRegistrationByDeviceTagRequestBuilder and sets the default values.
 func NewWipeManagedAppRegistrationByDeviceTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WipeManagedAppRegistrationByDeviceTagRequestBuilder) {
     m := &WipeManagedAppRegistrationByDeviceTagRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewWipeManagedAppRegistrationByDeviceTagRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WipeManagedAppRegistrationByDeviceTagRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWipeManagedAppRegistrationByDeviceTagRequestBuilder instantiates a new WipeManagedAppRegistrationByDeviceTagRequestBuilder and sets the default values.
 func NewWipeManagedAppRegistrationByDeviceTagRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WipeManagedAppRegistrationByDeviceTagRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWipeManagedAppRegistrationByDeviceTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Issues a wipe operation on an app registration with specified device tag.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation issues a wipe operation on an app registration with specified device tag.
 func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) CreatePostRequestInformation(options *WipeManagedAppRegistrationByDeviceTagRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// Issues a wipe operation on an app registration with specified device tag.
-// Parameters:
-//  - options : Options for the request
+// Post issues a wipe operation on an app registration with specified device tag.
 func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) Post(options *WipeManagedAppRegistrationByDeviceTagRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

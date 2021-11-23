@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// OddLYieldRequestBody 
 type OddLYieldRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,14 +26,14 @@ type OddLYieldRequestBody struct {
     // 
     settlement *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
-// Instantiates a new oddLYieldRequestBody and sets the default values.
+// NewOddLYieldRequestBody instantiates a new oddLYieldRequestBody and sets the default values.
 func NewOddLYieldRequestBody()(*OddLYieldRequestBody) {
     m := &OddLYieldRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OddLYieldRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *OddLYieldRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the basis property value. 
+// GetBasis gets the basis property value. 
 func (m *OddLYieldRequestBody) GetBasis()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *OddLYieldRequestBody) GetBasis()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.basis
     }
 }
-// Gets the frequency property value. 
+// GetFrequency gets the frequency property value. 
 func (m *OddLYieldRequestBody) GetFrequency()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *OddLYieldRequestBody) GetFrequency()(*i535684e11b5500196ecb4b5c6634e065
         return m.frequency
     }
 }
-// Gets the lastInterest property value. 
+// GetLastInterest gets the lastInterest property value. 
 func (m *OddLYieldRequestBody) GetLastInterest()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *OddLYieldRequestBody) GetLastInterest()(*i535684e11b5500196ecb4b5c6634e
         return m.lastInterest
     }
 }
-// Gets the maturity property value. 
+// GetMaturity gets the maturity property value. 
 func (m *OddLYieldRequestBody) GetMaturity()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *OddLYieldRequestBody) GetMaturity()(*i535684e11b5500196ecb4b5c6634e0651
         return m.maturity
     }
 }
-// Gets the pr property value. 
+// GetPr gets the pr property value. 
 func (m *OddLYieldRequestBody) GetPr()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *OddLYieldRequestBody) GetPr()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f
         return m.pr
     }
 }
-// Gets the rate property value. 
+// GetRate gets the rate property value. 
 func (m *OddLYieldRequestBody) GetRate()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *OddLYieldRequestBody) GetRate()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.rate
     }
 }
-// Gets the redemption property value. 
+// GetRedemption gets the redemption property value. 
 func (m *OddLYieldRequestBody) GetRedemption()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *OddLYieldRequestBody) GetRedemption()(*i535684e11b5500196ecb4b5c6634e06
         return m.redemption
     }
 }
-// Gets the settlement property value. 
+// GetSettlement gets the settlement property value. 
 func (m *OddLYieldRequestBody) GetSettlement()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *OddLYieldRequestBody) GetSettlement()(*i535684e11b5500196ecb4b5c6634e06
         return m.settlement
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OddLYieldRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["basis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,9 +193,7 @@ func (m *OddLYieldRequestBody) GetFieldDeserializers()(map[string]func(interface
 func (m *OddLYieldRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OddLYieldRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("basis", m.GetBasis())
@@ -253,57 +251,39 @@ func (m *OddLYieldRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OddLYieldRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the basis property value. 
-// Parameters:
-//  - value : Value to set for the basis property.
+// SetBasis sets the basis property value. 
 func (m *OddLYieldRequestBody) SetBasis(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.basis = value
 }
-// Sets the frequency property value. 
-// Parameters:
-//  - value : Value to set for the frequency property.
+// SetFrequency sets the frequency property value. 
 func (m *OddLYieldRequestBody) SetFrequency(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.frequency = value
 }
-// Sets the lastInterest property value. 
-// Parameters:
-//  - value : Value to set for the lastInterest property.
+// SetLastInterest sets the lastInterest property value. 
 func (m *OddLYieldRequestBody) SetLastInterest(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.lastInterest = value
 }
-// Sets the maturity property value. 
-// Parameters:
-//  - value : Value to set for the maturity property.
+// SetMaturity sets the maturity property value. 
 func (m *OddLYieldRequestBody) SetMaturity(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.maturity = value
 }
-// Sets the pr property value. 
-// Parameters:
-//  - value : Value to set for the pr property.
+// SetPr sets the pr property value. 
 func (m *OddLYieldRequestBody) SetPr(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.pr = value
 }
-// Sets the rate property value. 
-// Parameters:
-//  - value : Value to set for the rate property.
+// SetRate sets the rate property value. 
 func (m *OddLYieldRequestBody) SetRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.rate = value
 }
-// Sets the redemption property value. 
-// Parameters:
-//  - value : Value to set for the redemption property.
+// SetRedemption sets the redemption property value. 
 func (m *OddLYieldRequestBody) SetRedemption(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.redemption = value
 }
-// Sets the settlement property value. 
-// Parameters:
-//  - value : Value to set for the settlement property.
+// SetSettlement sets the settlement property value. 
 func (m *OddLYieldRequestBody) SetSettlement(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.settlement = value
 }

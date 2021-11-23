@@ -5,7 +5,7 @@ import (
     i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// 
+// ExternalGroupMember 
 type ExternalGroupMember struct {
     Entity
     // The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
@@ -13,14 +13,14 @@ type ExternalGroupMember struct {
     // The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
     type_escaped *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType;
 }
-// Instantiates a new externalGroupMember and sets the default values.
+// NewExternalGroupMember instantiates a new externalGroupMember and sets the default values.
 func NewExternalGroupMember()(*ExternalGroupMember) {
     m := &ExternalGroupMember{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the identitySource property value. The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
+// GetIdentitySource gets the identitySource property value. The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
 func (m *ExternalGroupMember) GetIdentitySource()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.IdentitySourceType) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *ExternalGroupMember) GetIdentitySource()(*i3af76fce9a0d8c03f22ff90ccd64
         return m.identitySource
     }
 }
-// Gets the type_escaped property value. The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
+// GetType_escaped gets the type_escaped property value. The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
 func (m *ExternalGroupMember) GetType_escaped()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ExternalGroupMember) GetType_escaped()(*i3af76fce9a0d8c03f22ff90ccd64c9
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalGroupMember) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["identitySource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -66,9 +66,7 @@ func (m *ExternalGroupMember) GetFieldDeserializers()(map[string]func(interface{
 func (m *ExternalGroupMember) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExternalGroupMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -90,15 +88,11 @@ func (m *ExternalGroupMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the identitySource property value. The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
-// Parameters:
-//  - value : Value to set for the identitySource property.
+// SetIdentitySource sets the identitySource property value. The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
 func (m *ExternalGroupMember) SetIdentitySource(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.IdentitySourceType)() {
     m.identitySource = value
 }
-// Sets the type_escaped property value. The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
 func (m *ExternalGroupMember) SetType_escaped(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType)() {
     m.type_escaped = value
 }

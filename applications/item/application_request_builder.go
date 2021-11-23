@@ -30,7 +30,7 @@ import (
     icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/federatedidentitycredentials/item"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}
+// ApplicationRequestBuilder builds and executes requests for operations under \applications\{application-id}
 type ApplicationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ApplicationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ApplicationRequestBuilderDeleteOptions options for Delete
 type ApplicationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -48,7 +48,7 @@ type ApplicationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ApplicationRequestBuilderGetOptions options for Get
 type ApplicationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -59,14 +59,14 @@ type ApplicationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from applications by key
+// ApplicationRequestBuilderGetQueryParameters get entity from applications by key
 type ApplicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ApplicationRequestBuilderPatchOptions options for Patch
 type ApplicationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Application;
@@ -95,10 +95,7 @@ func (m *ApplicationRequestBuilder) CheckMemberObjects()(*ia7925ed1ce8bdc9783d4f
 func (m *ApplicationRequestBuilder) ConnectorGroup()(*i3d2f054c80bc83cd28a63a163f92036324daa39ab1bb99fd847444eaf48da698.ConnectorGroupRequestBuilder) {
     return i3d2f054c80bc83cd28a63a163f92036324daa39ab1bb99fd847444eaf48da698.NewConnectorGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ApplicationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationRequestBuilderInternal instantiates a new ApplicationRequestBuilder and sets the default values.
 func NewApplicationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationRequestBuilder) {
     m := &ApplicationRequestBuilder{
     }
@@ -111,18 +108,13 @@ func NewApplicationRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplicationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationRequestBuilder instantiates a new ApplicationRequestBuilder and sets the default values.
 func NewApplicationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from applications
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from applications
 func (m *ApplicationRequestBuilder) CreateDeleteRequestInformation(options *ApplicationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +134,7 @@ func (m *ApplicationRequestBuilder) CreateDeleteRequestInformation(options *Appl
 func (m *ApplicationRequestBuilder) CreatedOnBehalfOf()(*i7f7ea3263ae77196be6ec02b1f28a4ae4b61762fbb52e65e9c9b247a2eea8db4.CreatedOnBehalfOfRequestBuilder) {
     return i7f7ea3263ae77196be6ec02b1f28a4ae4b61762fbb52e65e9c9b247a2eea8db4.NewCreatedOnBehalfOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entity from applications by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from applications by key
 func (m *ApplicationRequestBuilder) CreateGetRequestInformation(options *ApplicationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -164,9 +154,7 @@ func (m *ApplicationRequestBuilder) CreateGetRequestInformation(options *Applica
     }
     return requestInfo, nil
 }
-// Update entity in applications
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in applications
 func (m *ApplicationRequestBuilder) CreatePatchRequestInformation(options *ApplicationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -184,9 +172,7 @@ func (m *ApplicationRequestBuilder) CreatePatchRequestInformation(options *Appli
     }
     return requestInfo, nil
 }
-// Delete entity from applications
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from applications
 func (m *ApplicationRequestBuilder) Delete(options *ApplicationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -201,9 +187,7 @@ func (m *ApplicationRequestBuilder) Delete(options *ApplicationRequestBuilderDel
 func (m *ApplicationRequestBuilder) ExtensionProperties()(*i584715a25bcd7d9dc447f3cc78f525df77e5558f3196410f39f1a78f7b92ab5b.ExtensionPropertiesRequestBuilder) {
     return i584715a25bcd7d9dc447f3cc78f525df77e5558f3196410f39f1a78f7b92ab5b.NewExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.extensionProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.extensionProperties.item collection
 func (m *ApplicationRequestBuilder) ExtensionPropertiesById(id string)(*i17d74174c0c203a9690a594729795841599510ec1474d89665b17043a9e520da.ExtensionPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -217,9 +201,7 @@ func (m *ApplicationRequestBuilder) ExtensionPropertiesById(id string)(*i17d7417
 func (m *ApplicationRequestBuilder) FederatedIdentityCredentials()(*i2d2f49a5bb637ea5dd10ccf0e7c3776123a84e80ed6d9150c2fd2cc8ca9ed2f9.FederatedIdentityCredentialsRequestBuilder) {
     return i2d2f49a5bb637ea5dd10ccf0e7c3776123a84e80ed6d9150c2fd2cc8ca9ed2f9.NewFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.federatedIdentityCredentials.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// FederatedIdentityCredentialsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.federatedIdentityCredentials.item collection
 func (m *ApplicationRequestBuilder) FederatedIdentityCredentialsById(id string)(*icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2.FederatedIdentityCredentialRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -230,9 +212,7 @@ func (m *ApplicationRequestBuilder) FederatedIdentityCredentialsById(id string)(
     }
     return icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2.NewFederatedIdentityCredentialRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get entity from applications by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from applications by key
 func (m *ApplicationRequestBuilder) Get(options *ApplicationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Application, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -259,9 +239,7 @@ func (m *ApplicationRequestBuilder) Logo()(*i7e5220a4b31236710fca1c694c533878640
 func (m *ApplicationRequestBuilder) Owners()(*id95c889c9ed4179a13db497a7b0207f4c98d0896af3341816ebb4442d2408f90.OwnersRequestBuilder) {
     return id95c889c9ed4179a13db497a7b0207f4c98d0896af3341816ebb4442d2408f90.NewOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in applications
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in applications
 func (m *ApplicationRequestBuilder) Patch(options *ApplicationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

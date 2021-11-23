@@ -8,7 +8,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \riskyUsers
+// RiskyUsersRequestBuilder builds and executes requests for operations under \riskyUsers
 type RiskyUsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type RiskyUsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RiskyUsersRequestBuilderGetOptions options for Get
 type RiskyUsersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type RiskyUsersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from riskyUsers
+// RiskyUsersRequestBuilderGetQueryParameters get entities from riskyUsers
 type RiskyUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type RiskyUsersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RiskyUsersRequestBuilderPostOptions options for Post
 type RiskyUsersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser;
@@ -61,10 +61,7 @@ type RiskyUsersRequestBuilderPostOptions struct {
 func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*i2a94e0c4cbf03995fb887ccc1adaaf1535a7095f2925bd939b1567826bf0a455.ConfirmCompromisedRequestBuilder) {
     return i2a94e0c4cbf03995fb887ccc1adaaf1535a7095f2925bd939b1567826bf0a455.NewConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new RiskyUsersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRiskyUsersRequestBuilderInternal instantiates a new RiskyUsersRequestBuilder and sets the default values.
 func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUsersRequestBuilder) {
     m := &RiskyUsersRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RiskyUsersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRiskyUsersRequestBuilder instantiates a new RiskyUsersRequestBuilder and sets the default values.
 func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskyUsersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from riskyUsers
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from riskyUsers
 func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation(options *RiskyUsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation(options *RiskyUse
     }
     return requestInfo, nil
 }
-// Add new entity to riskyUsers
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to riskyUsers
 func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(options *RiskyUsersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +121,7 @@ func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(options *RiskyUs
 func (m *RiskyUsersRequestBuilder) Dismiss()(*ide36b7543a880f8983018f236850b4ff64e2a96dae1f905da183360a2d6952ab.DismissRequestBuilder) {
     return ide36b7543a880f8983018f236850b4ff64e2a96dae1f905da183360a2d6952ab.NewDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entities from riskyUsers
-// Parameters:
-//  - options : Options for the request
+// Get get entities from riskyUsers
 func (m *RiskyUsersRequestBuilder) Get(options *RiskyUsersRequestBuilderGetOptions)(*RiskyUsersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -145,9 +133,7 @@ func (m *RiskyUsersRequestBuilder) Get(options *RiskyUsersRequestBuilderGetOptio
     }
     return res.(*RiskyUsersResponse), nil
 }
-// Add new entity to riskyUsers
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to riskyUsers
 func (m *RiskyUsersRequestBuilder) Post(options *RiskyUsersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUser, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

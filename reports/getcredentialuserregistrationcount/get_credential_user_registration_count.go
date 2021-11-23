@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// GetCredentialUserRegistrationCount 
 type GetCredentialUserRegistrationCount struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // Provides the total user count in the tenant.
@@ -13,14 +13,14 @@ type GetCredentialUserRegistrationCount struct {
     // A collection of registration count and status information for users in your tenant.
     userRegistrationCounts []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserRegistrationCount;
 }
-// Instantiates a new getCredentialUserRegistrationCount and sets the default values.
+// NewGetCredentialUserRegistrationCount instantiates a new getCredentialUserRegistrationCount and sets the default values.
 func NewGetCredentialUserRegistrationCount()(*GetCredentialUserRegistrationCount) {
     m := &GetCredentialUserRegistrationCount{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
-// Gets the totalUserCount property value. Provides the total user count in the tenant.
+// GetTotalUserCount gets the totalUserCount property value. Provides the total user count in the tenant.
 func (m *GetCredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *GetCredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
         return m.totalUserCount
     }
 }
-// Gets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
+// GetUserRegistrationCounts gets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
 func (m *GetCredentialUserRegistrationCount) GetUserRegistrationCounts()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserRegistrationCount) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *GetCredentialUserRegistrationCount) GetUserRegistrationCounts()([]i5356
         return m.userRegistrationCounts
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetCredentialUserRegistrationCount) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["totalUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -68,9 +68,7 @@ func (m *GetCredentialUserRegistrationCount) GetFieldDeserializers()(map[string]
 func (m *GetCredentialUserRegistrationCount) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetCredentialUserRegistrationCount) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -95,15 +93,11 @@ func (m *GetCredentialUserRegistrationCount) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
-// Sets the totalUserCount property value. Provides the total user count in the tenant.
-// Parameters:
-//  - value : Value to set for the totalUserCount property.
+// SetTotalUserCount sets the totalUserCount property value. Provides the total user count in the tenant.
 func (m *GetCredentialUserRegistrationCount) SetTotalUserCount(value *int64)() {
     m.totalUserCount = value
 }
-// Sets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
-// Parameters:
-//  - value : Value to set for the userRegistrationCounts property.
+// SetUserRegistrationCounts sets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
 func (m *GetCredentialUserRegistrationCount) SetUserRegistrationCounts(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserRegistrationCount)() {
     m.userRegistrationCounts = value
 }

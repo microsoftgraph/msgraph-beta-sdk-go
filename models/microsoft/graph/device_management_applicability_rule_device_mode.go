@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceManagementApplicabilityRuleDeviceMode 
 type DeviceManagementApplicabilityRuleDeviceMode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type DeviceManagementApplicabilityRuleDeviceMode struct {
     // Applicability Rule type. Possible values are: include, exclude.
     ruleType *DeviceManagementApplicabilityRuleType;
 }
-// Instantiates a new deviceManagementApplicabilityRuleDeviceMode and sets the default values.
+// NewDeviceManagementApplicabilityRuleDeviceMode instantiates a new deviceManagementApplicabilityRuleDeviceMode and sets the default values.
 func NewDeviceManagementApplicabilityRuleDeviceMode()(*DeviceManagementApplicabilityRuleDeviceMode) {
     m := &DeviceManagementApplicabilityRuleDeviceMode{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetAdditionalData()(map[st
         return m.additionalData
     }
 }
-// Gets the deviceMode property value. Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
+// GetDeviceMode gets the deviceMode property value. Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetDeviceMode()(*Windows10DeviceModeType) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetDeviceMode()(*Windows10
         return m.deviceMode
     }
 }
-// Gets the name property value. Name for object.
+// GetName gets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetName()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetName()(*string) {
         return m.name
     }
 }
-// Gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+// GetRuleType gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetRuleType()(*DeviceManag
         return m.ruleType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,9 +94,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetFieldDeserializers()(ma
 func (m *DeviceManagementApplicabilityRuleDeviceMode) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementApplicabilityRuleDeviceMode) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDeviceMode() != nil {
         cast := m.GetDeviceMode().String()
@@ -126,27 +124,19 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) Serialize(writer i04eb5309
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the deviceMode property value. Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
-// Parameters:
-//  - value : Value to set for the deviceMode property.
+// SetDeviceMode sets the deviceMode property value. Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetDeviceMode(value *Windows10DeviceModeType)() {
     m.deviceMode = value
 }
-// Sets the name property value. Name for object.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetName(value *string)() {
     m.name = value
 }
-// Sets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
-// Parameters:
-//  - value : Value to set for the ruleType property.
+// SetRuleType sets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
     m.ruleType = value
 }

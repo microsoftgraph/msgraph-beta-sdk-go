@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\cloudAppSecurityProfiles
+// CloudAppSecurityProfilesRequestBuilder builds and executes requests for operations under \security\cloudAppSecurityProfiles
 type CloudAppSecurityProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudAppSecurityProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CloudAppSecurityProfilesRequestBuilderGetOptions options for Get
 type CloudAppSecurityProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CloudAppSecurityProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get cloudAppSecurityProfiles from security
+// CloudAppSecurityProfilesRequestBuilderGetQueryParameters get cloudAppSecurityProfiles from security
 type CloudAppSecurityProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CloudAppSecurityProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CloudAppSecurityProfilesRequestBuilderPostOptions options for Post
 type CloudAppSecurityProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfile;
@@ -56,10 +56,7 @@ type CloudAppSecurityProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudAppSecurityProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudAppSecurityProfilesRequestBuilderInternal instantiates a new CloudAppSecurityProfilesRequestBuilder and sets the default values.
 func NewCloudAppSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudAppSecurityProfilesRequestBuilder) {
     m := &CloudAppSecurityProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCloudAppSecurityProfilesRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudAppSecurityProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudAppSecurityProfilesRequestBuilder instantiates a new CloudAppSecurityProfilesRequestBuilder and sets the default values.
 func NewCloudAppSecurityProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudAppSecurityProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudAppSecurityProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get cloudAppSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get cloudAppSecurityProfiles from security
 func (m *CloudAppSecurityProfilesRequestBuilder) CreateGetRequestInformation(options *CloudAppSecurityProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CloudAppSecurityProfilesRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Create new navigation property to cloudAppSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to cloudAppSecurityProfiles for security
 func (m *CloudAppSecurityProfilesRequestBuilder) CreatePostRequestInformation(options *CloudAppSecurityProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CloudAppSecurityProfilesRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// Get cloudAppSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// Get get cloudAppSecurityProfiles from security
 func (m *CloudAppSecurityProfilesRequestBuilder) Get(options *CloudAppSecurityProfilesRequestBuilderGetOptions)(*CloudAppSecurityProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CloudAppSecurityProfilesRequestBuilder) Get(options *CloudAppSecurityPr
     }
     return res.(*CloudAppSecurityProfilesResponse), nil
 }
-// Create new navigation property to cloudAppSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to cloudAppSecurityProfiles for security
 func (m *CloudAppSecurityProfilesRequestBuilder) Post(options *CloudAppSecurityProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

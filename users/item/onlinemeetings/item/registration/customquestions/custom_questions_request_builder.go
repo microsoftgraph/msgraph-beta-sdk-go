@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\registration\customQuestions
+// CustomQuestionsRequestBuilder builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\registration\customQuestions
 type CustomQuestionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CustomQuestionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CustomQuestionsRequestBuilderGetOptions options for Get
 type CustomQuestionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CustomQuestionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Custom registration questions.
+// CustomQuestionsRequestBuilderGetQueryParameters custom registration questions.
 type CustomQuestionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CustomQuestionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CustomQuestionsRequestBuilderPostOptions options for Post
 type CustomQuestionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingRegistrationQuestion;
@@ -56,10 +56,7 @@ type CustomQuestionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CustomQuestionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustomQuestionsRequestBuilderInternal instantiates a new CustomQuestionsRequestBuilder and sets the default values.
 func NewCustomQuestionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomQuestionsRequestBuilder) {
     m := &CustomQuestionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCustomQuestionsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CustomQuestionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustomQuestionsRequestBuilder instantiates a new CustomQuestionsRequestBuilder and sets the default values.
 func NewCustomQuestionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomQuestionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustomQuestionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Custom registration questions.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation custom registration questions.
 func (m *CustomQuestionsRequestBuilder) CreateGetRequestInformation(options *CustomQuestionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CustomQuestionsRequestBuilder) CreateGetRequestInformation(options *Cus
     }
     return requestInfo, nil
 }
-// Custom registration questions.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation custom registration questions.
 func (m *CustomQuestionsRequestBuilder) CreatePostRequestInformation(options *CustomQuestionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CustomQuestionsRequestBuilder) CreatePostRequestInformation(options *Cu
     }
     return requestInfo, nil
 }
-// Custom registration questions.
-// Parameters:
-//  - options : Options for the request
+// Get custom registration questions.
 func (m *CustomQuestionsRequestBuilder) Get(options *CustomQuestionsRequestBuilderGetOptions)(*CustomQuestionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CustomQuestionsRequestBuilder) Get(options *CustomQuestionsRequestBuild
     }
     return res.(*CustomQuestionsResponse), nil
 }
-// Custom registration questions.
-// Parameters:
-//  - options : Options for the request
+// Post custom registration questions.
 func (m *CustomQuestionsRequestBuilder) Post(options *CustomQuestionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingRegistrationQuestion, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

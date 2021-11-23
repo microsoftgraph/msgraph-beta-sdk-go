@@ -10,7 +10,7 @@ import (
     iee9c289ae2941351cb0e784118819fa3cbbc469a1c0ee923a3026048c7db50eb "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/planner/tasks/item/assignedtotaskboardformat"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\planner\tasks\{plannerTask-id}
+// PlannerTaskRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\tasks\{plannerTask-id}
 type PlannerTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type PlannerTaskRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PlannerTaskRequestBuilderDeleteOptions options for Delete
 type PlannerTaskRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type PlannerTaskRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PlannerTaskRequestBuilderGetOptions options for Get
 type PlannerTaskRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type PlannerTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns the plannerPlans shared with the user.
+// PlannerTaskRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans shared with the user.
 type PlannerTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PlannerTaskRequestBuilderPatchOptions options for Patch
 type PlannerTaskRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTask;
@@ -63,10 +63,7 @@ func (m *PlannerTaskRequestBuilder) AssignedToTaskBoardFormat()(*iee9c289ae29413
 func (m *PlannerTaskRequestBuilder) BucketTaskBoardFormat()(*id043a95175d02dddf55406e1e1d1aa5d905f140f81207f5b5bb643aa6ec565f7.BucketTaskBoardFormatRequestBuilder) {
     return id043a95175d02dddf55406e1e1d1aa5d905f140f81207f5b5bb643aa6ec565f7.NewBucketTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PlannerTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerTaskRequestBuilderInternal instantiates a new PlannerTaskRequestBuilder and sets the default values.
 func NewPlannerTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerTaskRequestBuilder) {
     m := &PlannerTaskRequestBuilder{
     }
@@ -79,18 +76,13 @@ func NewPlannerTaskRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlannerTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerTaskRequestBuilder instantiates a new PlannerTaskRequestBuilder and sets the default values.
 func NewPlannerTaskRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerTaskRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns the plannerPlans shared with the user.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerTaskRequestBuilder) CreateDeleteRequestInformation(options *PlannerTaskRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *PlannerTaskRequestBuilder) CreateDeleteRequestInformation(options *Plan
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns the plannerPlans shared with the user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerTaskRequestBuilder) CreateGetRequestInformation(options *PlannerTaskRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *PlannerTaskRequestBuilder) CreateGetRequestInformation(options *Planner
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns the plannerPlans shared with the user.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerTaskRequestBuilder) CreatePatchRequestInformation(options *PlannerTaskRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +137,7 @@ func (m *PlannerTaskRequestBuilder) CreatePatchRequestInformation(options *Plann
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns the plannerPlans shared with the user.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerTaskRequestBuilder) Delete(options *PlannerTaskRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -166,9 +152,7 @@ func (m *PlannerTaskRequestBuilder) Delete(options *PlannerTaskRequestBuilderDel
 func (m *PlannerTaskRequestBuilder) Details()(*i459bb48b9939c39413039a0ba04b2e589081cd9c5f281d73897d92d4c9328e4e.DetailsRequestBuilder) {
     return i459bb48b9939c39413039a0ba04b2e589081cd9c5f281d73897d92d4c9328e4e.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Read-only. Nullable. Returns the plannerPlans shared with the user.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerTaskRequestBuilder) Get(options *PlannerTaskRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTask, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *PlannerTaskRequestBuilder) Get(options *PlannerTaskRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTask), nil
 }
-// Read-only. Nullable. Returns the plannerPlans shared with the user.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerTaskRequestBuilder) Patch(options *PlannerTaskRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

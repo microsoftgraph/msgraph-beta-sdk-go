@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeploymentSettings 
 type DeploymentSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type DeploymentSettings struct {
     // Settings governing safeguard holds on offering content.
     safeguard *SafeguardSettings;
 }
-// Instantiates a new deploymentSettings and sets the default values.
+// NewDeploymentSettings instantiates a new deploymentSettings and sets the default values.
 func NewDeploymentSettings()(*DeploymentSettings) {
     m := &DeploymentSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeploymentSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *DeploymentSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the monitoring property value. Settings governing conditions to monitor and automated actions to take.
+// GetMonitoring gets the monitoring property value. Settings governing conditions to monitor and automated actions to take.
 func (m *DeploymentSettings) GetMonitoring()(*MonitoringSettings) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *DeploymentSettings) GetMonitoring()(*MonitoringSettings) {
         return m.monitoring
     }
 }
-// Gets the rollout property value. Settings governing how the content is rolled out.
+// GetRollout gets the rollout property value. Settings governing how the content is rolled out.
 func (m *DeploymentSettings) GetRollout()(*RolloutSettings) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *DeploymentSettings) GetRollout()(*RolloutSettings) {
         return m.rollout
     }
 }
-// Gets the safeguard property value. Settings governing safeguard holds on offering content.
+// GetSafeguard gets the safeguard property value. Settings governing safeguard holds on offering content.
 func (m *DeploymentSettings) GetSafeguard()(*SafeguardSettings) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *DeploymentSettings) GetSafeguard()(*SafeguardSettings) {
         return m.safeguard
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["monitoring"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(interface{}
 func (m *DeploymentSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeploymentSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("monitoring", m.GetMonitoring())
@@ -122,27 +120,19 @@ func (m *DeploymentSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeploymentSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the monitoring property value. Settings governing conditions to monitor and automated actions to take.
-// Parameters:
-//  - value : Value to set for the monitoring property.
+// SetMonitoring sets the monitoring property value. Settings governing conditions to monitor and automated actions to take.
 func (m *DeploymentSettings) SetMonitoring(value *MonitoringSettings)() {
     m.monitoring = value
 }
-// Sets the rollout property value. Settings governing how the content is rolled out.
-// Parameters:
-//  - value : Value to set for the rollout property.
+// SetRollout sets the rollout property value. Settings governing how the content is rolled out.
 func (m *DeploymentSettings) SetRollout(value *RolloutSettings)() {
     m.rollout = value
 }
-// Sets the safeguard property value. Settings governing safeguard holds on offering content.
-// Parameters:
-//  - value : Value to set for the safeguard property.
+// SetSafeguard sets the safeguard property value. Settings governing safeguard holds on offering content.
 func (m *DeploymentSettings) SetSafeguard(value *SafeguardSettings)() {
     m.safeguard = value
 }

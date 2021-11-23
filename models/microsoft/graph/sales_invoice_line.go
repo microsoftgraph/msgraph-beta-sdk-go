@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SalesInvoiceLine 
 type SalesInvoiceLine struct {
     Entity
     // 
@@ -56,14 +56,14 @@ type SalesInvoiceLine struct {
     // 
     unitPrice *float64;
 }
-// Instantiates a new salesInvoiceLine and sets the default values.
+// NewSalesInvoiceLine instantiates a new salesInvoiceLine and sets the default values.
 func NewSalesInvoiceLine()(*SalesInvoiceLine) {
     m := &SalesInvoiceLine{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the account property value. 
+// GetAccount gets the account property value. 
 func (m *SalesInvoiceLine) GetAccount()(*Account) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *SalesInvoiceLine) GetAccount()(*Account) {
         return m.account
     }
 }
-// Gets the accountId property value. 
+// GetAccountId gets the accountId property value. 
 func (m *SalesInvoiceLine) GetAccountId()(*string) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *SalesInvoiceLine) GetAccountId()(*string) {
         return m.accountId
     }
 }
-// Gets the amountExcludingTax property value. 
+// GetAmountExcludingTax gets the amountExcludingTax property value. 
 func (m *SalesInvoiceLine) GetAmountExcludingTax()(*float64) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *SalesInvoiceLine) GetAmountExcludingTax()(*float64) {
         return m.amountExcludingTax
     }
 }
-// Gets the amountIncludingTax property value. 
+// GetAmountIncludingTax gets the amountIncludingTax property value. 
 func (m *SalesInvoiceLine) GetAmountIncludingTax()(*float64) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *SalesInvoiceLine) GetAmountIncludingTax()(*float64) {
         return m.amountIncludingTax
     }
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *SalesInvoiceLine) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -103,7 +103,7 @@ func (m *SalesInvoiceLine) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the discountAmount property value. 
+// GetDiscountAmount gets the discountAmount property value. 
 func (m *SalesInvoiceLine) GetDiscountAmount()(*float64) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *SalesInvoiceLine) GetDiscountAmount()(*float64) {
         return m.discountAmount
     }
 }
-// Gets the discountAppliedBeforeTax property value. 
+// GetDiscountAppliedBeforeTax gets the discountAppliedBeforeTax property value. 
 func (m *SalesInvoiceLine) GetDiscountAppliedBeforeTax()(*bool) {
     if m == nil {
         return nil
@@ -119,7 +119,7 @@ func (m *SalesInvoiceLine) GetDiscountAppliedBeforeTax()(*bool) {
         return m.discountAppliedBeforeTax
     }
 }
-// Gets the discountPercent property value. 
+// GetDiscountPercent gets the discountPercent property value. 
 func (m *SalesInvoiceLine) GetDiscountPercent()(*float64) {
     if m == nil {
         return nil
@@ -127,7 +127,7 @@ func (m *SalesInvoiceLine) GetDiscountPercent()(*float64) {
         return m.discountPercent
     }
 }
-// Gets the documentId property value. 
+// GetDocumentId gets the documentId property value. 
 func (m *SalesInvoiceLine) GetDocumentId()(*string) {
     if m == nil {
         return nil
@@ -135,7 +135,7 @@ func (m *SalesInvoiceLine) GetDocumentId()(*string) {
         return m.documentId
     }
 }
-// Gets the invoiceDiscountAllocation property value. 
+// GetInvoiceDiscountAllocation gets the invoiceDiscountAllocation property value. 
 func (m *SalesInvoiceLine) GetInvoiceDiscountAllocation()(*float64) {
     if m == nil {
         return nil
@@ -143,7 +143,7 @@ func (m *SalesInvoiceLine) GetInvoiceDiscountAllocation()(*float64) {
         return m.invoiceDiscountAllocation
     }
 }
-// Gets the item property value. 
+// GetItem gets the item property value. 
 func (m *SalesInvoiceLine) GetItem()(*Item) {
     if m == nil {
         return nil
@@ -151,7 +151,7 @@ func (m *SalesInvoiceLine) GetItem()(*Item) {
         return m.item
     }
 }
-// Gets the itemId property value. 
+// GetItemId gets the itemId property value. 
 func (m *SalesInvoiceLine) GetItemId()(*string) {
     if m == nil {
         return nil
@@ -159,7 +159,7 @@ func (m *SalesInvoiceLine) GetItemId()(*string) {
         return m.itemId
     }
 }
-// Gets the lineType property value. 
+// GetLineType gets the lineType property value. 
 func (m *SalesInvoiceLine) GetLineType()(*string) {
     if m == nil {
         return nil
@@ -167,7 +167,7 @@ func (m *SalesInvoiceLine) GetLineType()(*string) {
         return m.lineType
     }
 }
-// Gets the netAmount property value. 
+// GetNetAmount gets the netAmount property value. 
 func (m *SalesInvoiceLine) GetNetAmount()(*float64) {
     if m == nil {
         return nil
@@ -175,7 +175,7 @@ func (m *SalesInvoiceLine) GetNetAmount()(*float64) {
         return m.netAmount
     }
 }
-// Gets the netAmountIncludingTax property value. 
+// GetNetAmountIncludingTax gets the netAmountIncludingTax property value. 
 func (m *SalesInvoiceLine) GetNetAmountIncludingTax()(*float64) {
     if m == nil {
         return nil
@@ -183,7 +183,7 @@ func (m *SalesInvoiceLine) GetNetAmountIncludingTax()(*float64) {
         return m.netAmountIncludingTax
     }
 }
-// Gets the netTaxAmount property value. 
+// GetNetTaxAmount gets the netTaxAmount property value. 
 func (m *SalesInvoiceLine) GetNetTaxAmount()(*float64) {
     if m == nil {
         return nil
@@ -191,7 +191,7 @@ func (m *SalesInvoiceLine) GetNetTaxAmount()(*float64) {
         return m.netTaxAmount
     }
 }
-// Gets the quantity property value. 
+// GetQuantity gets the quantity property value. 
 func (m *SalesInvoiceLine) GetQuantity()(*float64) {
     if m == nil {
         return nil
@@ -199,7 +199,7 @@ func (m *SalesInvoiceLine) GetQuantity()(*float64) {
         return m.quantity
     }
 }
-// Gets the sequence property value. 
+// GetSequence gets the sequence property value. 
 func (m *SalesInvoiceLine) GetSequence()(*int32) {
     if m == nil {
         return nil
@@ -207,7 +207,7 @@ func (m *SalesInvoiceLine) GetSequence()(*int32) {
         return m.sequence
     }
 }
-// Gets the shipmentDate property value. 
+// GetShipmentDate gets the shipmentDate property value. 
 func (m *SalesInvoiceLine) GetShipmentDate()(*string) {
     if m == nil {
         return nil
@@ -215,7 +215,7 @@ func (m *SalesInvoiceLine) GetShipmentDate()(*string) {
         return m.shipmentDate
     }
 }
-// Gets the taxCode property value. 
+// GetTaxCode gets the taxCode property value. 
 func (m *SalesInvoiceLine) GetTaxCode()(*string) {
     if m == nil {
         return nil
@@ -223,7 +223,7 @@ func (m *SalesInvoiceLine) GetTaxCode()(*string) {
         return m.taxCode
     }
 }
-// Gets the taxPercent property value. 
+// GetTaxPercent gets the taxPercent property value. 
 func (m *SalesInvoiceLine) GetTaxPercent()(*float64) {
     if m == nil {
         return nil
@@ -231,7 +231,7 @@ func (m *SalesInvoiceLine) GetTaxPercent()(*float64) {
         return m.taxPercent
     }
 }
-// Gets the totalTaxAmount property value. 
+// GetTotalTaxAmount gets the totalTaxAmount property value. 
 func (m *SalesInvoiceLine) GetTotalTaxAmount()(*float64) {
     if m == nil {
         return nil
@@ -239,7 +239,7 @@ func (m *SalesInvoiceLine) GetTotalTaxAmount()(*float64) {
         return m.totalTaxAmount
     }
 }
-// Gets the unitOfMeasureId property value. 
+// GetUnitOfMeasureId gets the unitOfMeasureId property value. 
 func (m *SalesInvoiceLine) GetUnitOfMeasureId()(*string) {
     if m == nil {
         return nil
@@ -247,7 +247,7 @@ func (m *SalesInvoiceLine) GetUnitOfMeasureId()(*string) {
         return m.unitOfMeasureId
     }
 }
-// Gets the unitPrice property value. 
+// GetUnitPrice gets the unitPrice property value. 
 func (m *SalesInvoiceLine) GetUnitPrice()(*float64) {
     if m == nil {
         return nil
@@ -255,7 +255,7 @@ func (m *SalesInvoiceLine) GetUnitPrice()(*float64) {
         return m.unitPrice
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SalesInvoiceLine) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -503,9 +503,7 @@ func (m *SalesInvoiceLine) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *SalesInvoiceLine) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SalesInvoiceLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -657,147 +655,99 @@ func (m *SalesInvoiceLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the account property value. 
-// Parameters:
-//  - value : Value to set for the account property.
+// SetAccount sets the account property value. 
 func (m *SalesInvoiceLine) SetAccount(value *Account)() {
     m.account = value
 }
-// Sets the accountId property value. 
-// Parameters:
-//  - value : Value to set for the accountId property.
+// SetAccountId sets the accountId property value. 
 func (m *SalesInvoiceLine) SetAccountId(value *string)() {
     m.accountId = value
 }
-// Sets the amountExcludingTax property value. 
-// Parameters:
-//  - value : Value to set for the amountExcludingTax property.
+// SetAmountExcludingTax sets the amountExcludingTax property value. 
 func (m *SalesInvoiceLine) SetAmountExcludingTax(value *float64)() {
     m.amountExcludingTax = value
 }
-// Sets the amountIncludingTax property value. 
-// Parameters:
-//  - value : Value to set for the amountIncludingTax property.
+// SetAmountIncludingTax sets the amountIncludingTax property value. 
 func (m *SalesInvoiceLine) SetAmountIncludingTax(value *float64)() {
     m.amountIncludingTax = value
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *SalesInvoiceLine) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the discountAmount property value. 
-// Parameters:
-//  - value : Value to set for the discountAmount property.
+// SetDiscountAmount sets the discountAmount property value. 
 func (m *SalesInvoiceLine) SetDiscountAmount(value *float64)() {
     m.discountAmount = value
 }
-// Sets the discountAppliedBeforeTax property value. 
-// Parameters:
-//  - value : Value to set for the discountAppliedBeforeTax property.
+// SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. 
 func (m *SalesInvoiceLine) SetDiscountAppliedBeforeTax(value *bool)() {
     m.discountAppliedBeforeTax = value
 }
-// Sets the discountPercent property value. 
-// Parameters:
-//  - value : Value to set for the discountPercent property.
+// SetDiscountPercent sets the discountPercent property value. 
 func (m *SalesInvoiceLine) SetDiscountPercent(value *float64)() {
     m.discountPercent = value
 }
-// Sets the documentId property value. 
-// Parameters:
-//  - value : Value to set for the documentId property.
+// SetDocumentId sets the documentId property value. 
 func (m *SalesInvoiceLine) SetDocumentId(value *string)() {
     m.documentId = value
 }
-// Sets the invoiceDiscountAllocation property value. 
-// Parameters:
-//  - value : Value to set for the invoiceDiscountAllocation property.
+// SetInvoiceDiscountAllocation sets the invoiceDiscountAllocation property value. 
 func (m *SalesInvoiceLine) SetInvoiceDiscountAllocation(value *float64)() {
     m.invoiceDiscountAllocation = value
 }
-// Sets the item property value. 
-// Parameters:
-//  - value : Value to set for the item property.
+// SetItem sets the item property value. 
 func (m *SalesInvoiceLine) SetItem(value *Item)() {
     m.item = value
 }
-// Sets the itemId property value. 
-// Parameters:
-//  - value : Value to set for the itemId property.
+// SetItemId sets the itemId property value. 
 func (m *SalesInvoiceLine) SetItemId(value *string)() {
     m.itemId = value
 }
-// Sets the lineType property value. 
-// Parameters:
-//  - value : Value to set for the lineType property.
+// SetLineType sets the lineType property value. 
 func (m *SalesInvoiceLine) SetLineType(value *string)() {
     m.lineType = value
 }
-// Sets the netAmount property value. 
-// Parameters:
-//  - value : Value to set for the netAmount property.
+// SetNetAmount sets the netAmount property value. 
 func (m *SalesInvoiceLine) SetNetAmount(value *float64)() {
     m.netAmount = value
 }
-// Sets the netAmountIncludingTax property value. 
-// Parameters:
-//  - value : Value to set for the netAmountIncludingTax property.
+// SetNetAmountIncludingTax sets the netAmountIncludingTax property value. 
 func (m *SalesInvoiceLine) SetNetAmountIncludingTax(value *float64)() {
     m.netAmountIncludingTax = value
 }
-// Sets the netTaxAmount property value. 
-// Parameters:
-//  - value : Value to set for the netTaxAmount property.
+// SetNetTaxAmount sets the netTaxAmount property value. 
 func (m *SalesInvoiceLine) SetNetTaxAmount(value *float64)() {
     m.netTaxAmount = value
 }
-// Sets the quantity property value. 
-// Parameters:
-//  - value : Value to set for the quantity property.
+// SetQuantity sets the quantity property value. 
 func (m *SalesInvoiceLine) SetQuantity(value *float64)() {
     m.quantity = value
 }
-// Sets the sequence property value. 
-// Parameters:
-//  - value : Value to set for the sequence property.
+// SetSequence sets the sequence property value. 
 func (m *SalesInvoiceLine) SetSequence(value *int32)() {
     m.sequence = value
 }
-// Sets the shipmentDate property value. 
-// Parameters:
-//  - value : Value to set for the shipmentDate property.
+// SetShipmentDate sets the shipmentDate property value. 
 func (m *SalesInvoiceLine) SetShipmentDate(value *string)() {
     m.shipmentDate = value
 }
-// Sets the taxCode property value. 
-// Parameters:
-//  - value : Value to set for the taxCode property.
+// SetTaxCode sets the taxCode property value. 
 func (m *SalesInvoiceLine) SetTaxCode(value *string)() {
     m.taxCode = value
 }
-// Sets the taxPercent property value. 
-// Parameters:
-//  - value : Value to set for the taxPercent property.
+// SetTaxPercent sets the taxPercent property value. 
 func (m *SalesInvoiceLine) SetTaxPercent(value *float64)() {
     m.taxPercent = value
 }
-// Sets the totalTaxAmount property value. 
-// Parameters:
-//  - value : Value to set for the totalTaxAmount property.
+// SetTotalTaxAmount sets the totalTaxAmount property value. 
 func (m *SalesInvoiceLine) SetTotalTaxAmount(value *float64)() {
     m.totalTaxAmount = value
 }
-// Sets the unitOfMeasureId property value. 
-// Parameters:
-//  - value : Value to set for the unitOfMeasureId property.
+// SetUnitOfMeasureId sets the unitOfMeasureId property value. 
 func (m *SalesInvoiceLine) SetUnitOfMeasureId(value *string)() {
     m.unitOfMeasureId = value
 }
-// Sets the unitPrice property value. 
-// Parameters:
-//  - value : Value to set for the unitPrice property.
+// SetUnitPrice sets the unitPrice property value. 
 func (m *SalesInvoiceLine) SetUnitPrice(value *float64)() {
     m.unitPrice = value
 }

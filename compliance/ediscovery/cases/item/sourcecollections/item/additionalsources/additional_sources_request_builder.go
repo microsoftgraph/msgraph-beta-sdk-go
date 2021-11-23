@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\additionalSources
+// AdditionalSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\additionalSources
 type AdditionalSourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AdditionalSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AdditionalSourcesRequestBuilderGetOptions options for Get
 type AdditionalSourcesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AdditionalSourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Adds an additional source to the sourceCollection.
+// AdditionalSourcesRequestBuilderGetQueryParameters adds an additional source to the sourceCollection.
 type AdditionalSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AdditionalSourcesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AdditionalSourcesRequestBuilderPostOptions options for Post
 type AdditionalSourcesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSource;
@@ -56,10 +56,7 @@ type AdditionalSourcesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AdditionalSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdditionalSourcesRequestBuilderInternal instantiates a new AdditionalSourcesRequestBuilder and sets the default values.
 func NewAdditionalSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdditionalSourcesRequestBuilder) {
     m := &AdditionalSourcesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAdditionalSourcesRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdditionalSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdditionalSourcesRequestBuilder instantiates a new AdditionalSourcesRequestBuilder and sets the default values.
 func NewAdditionalSourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdditionalSourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdditionalSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation adds an additional source to the sourceCollection.
 func (m *AdditionalSourcesRequestBuilder) CreateGetRequestInformation(options *AdditionalSourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AdditionalSourcesRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation adds an additional source to the sourceCollection.
 func (m *AdditionalSourcesRequestBuilder) CreatePostRequestInformation(options *AdditionalSourcesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AdditionalSourcesRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// Get adds an additional source to the sourceCollection.
 func (m *AdditionalSourcesRequestBuilder) Get(options *AdditionalSourcesRequestBuilderGetOptions)(*AdditionalSourcesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AdditionalSourcesRequestBuilder) Get(options *AdditionalSourcesRequestB
     }
     return res.(*AdditionalSourcesResponse), nil
 }
-// Adds an additional source to the sourceCollection.
-// Parameters:
-//  - options : Options for the request
+// Post adds an additional source to the sourceCollection.
 func (m *AdditionalSourcesRequestBuilder) Post(options *AdditionalSourcesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSource, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

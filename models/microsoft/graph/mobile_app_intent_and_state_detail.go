@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MobileAppIntentAndStateDetail 
 type MobileAppIntentAndStateDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type MobileAppIntentAndStateDetail struct {
     // The supported platforms for the app.
     supportedDeviceTypes []MobileAppSupportedDeviceType;
 }
-// Instantiates a new mobileAppIntentAndStateDetail and sets the default values.
+// NewMobileAppIntentAndStateDetail instantiates a new mobileAppIntentAndStateDetail and sets the default values.
 func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
     m := &MobileAppIntentAndStateDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppIntentAndStateDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *MobileAppIntentAndStateDetail) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the applicationId property value. MobieApp identifier.
+// GetApplicationId gets the applicationId property value. MobieApp identifier.
 func (m *MobileAppIntentAndStateDetail) GetApplicationId()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *MobileAppIntentAndStateDetail) GetApplicationId()(*string) {
         return m.applicationId
     }
 }
-// Gets the displayName property value. The admin provided or imported title of the app.
+// GetDisplayName gets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileAppIntentAndStateDetail) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *MobileAppIntentAndStateDetail) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the displayVersion property value. Human readable version of the application
+// GetDisplayVersion gets the displayVersion property value. Human readable version of the application
 func (m *MobileAppIntentAndStateDetail) GetDisplayVersion()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *MobileAppIntentAndStateDetail) GetDisplayVersion()(*string) {
         return m.displayVersion
     }
 }
-// Gets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
+// GetInstallState gets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
 func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
         return m.installState
     }
 }
-// Gets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
+// GetMobileAppIntent gets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
 func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
         return m.mobileAppIntent
     }
 }
-// Gets the supportedDeviceTypes property value. The supported platforms for the app.
+// GetSupportedDeviceTypes gets the supportedDeviceTypes property value. The supported platforms for the app.
 func (m *MobileAppIntentAndStateDetail) GetSupportedDeviceTypes()([]MobileAppSupportedDeviceType) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *MobileAppIntentAndStateDetail) GetSupportedDeviceTypes()([]MobileAppSup
         return m.supportedDeviceTypes
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["applicationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,9 +158,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
 func (m *MobileAppIntentAndStateDetail) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MobileAppIntentAndStateDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("applicationId", m.GetApplicationId())
@@ -213,45 +211,31 @@ func (m *MobileAppIntentAndStateDetail) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppIntentAndStateDetail) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the applicationId property value. MobieApp identifier.
-// Parameters:
-//  - value : Value to set for the applicationId property.
+// SetApplicationId sets the applicationId property value. MobieApp identifier.
 func (m *MobileAppIntentAndStateDetail) SetApplicationId(value *string)() {
     m.applicationId = value
 }
-// Sets the displayName property value. The admin provided or imported title of the app.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileAppIntentAndStateDetail) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the displayVersion property value. Human readable version of the application
-// Parameters:
-//  - value : Value to set for the displayVersion property.
+// SetDisplayVersion sets the displayVersion property value. Human readable version of the application
 func (m *MobileAppIntentAndStateDetail) SetDisplayVersion(value *string)() {
     m.displayVersion = value
 }
-// Sets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
-// Parameters:
-//  - value : Value to set for the installState property.
+// SetInstallState sets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
 func (m *MobileAppIntentAndStateDetail) SetInstallState(value *ResultantAppState)() {
     m.installState = value
 }
-// Sets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
-// Parameters:
-//  - value : Value to set for the mobileAppIntent property.
+// SetMobileAppIntent sets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
 func (m *MobileAppIntentAndStateDetail) SetMobileAppIntent(value *MobileAppIntent)() {
     m.mobileAppIntent = value
 }
-// Sets the supportedDeviceTypes property value. The supported platforms for the app.
-// Parameters:
-//  - value : Value to set for the supportedDeviceTypes property.
+// SetSupportedDeviceTypes sets the supportedDeviceTypes property value. The supported platforms for the app.
 func (m *MobileAppIntentAndStateDetail) SetSupportedDeviceTypes(value []MobileAppSupportedDeviceType)() {
     m.supportedDeviceTypes = value
 }

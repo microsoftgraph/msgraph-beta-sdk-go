@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityDistributionTotalUserCounts(period='{period}')
+// GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityDistributionTotalUserCounts(period='{period}')
 type GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder str
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,11 +22,7 @@ type GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderGetO
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderInternal instantiates a new GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder) {
     m := &GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder{
     }
@@ -42,18 +38,13 @@ func NewGetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderI
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder instantiates a new GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getTeamsUserActivityDistributionTotalUserCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getTeamsUserActivityDistributionTotalUserCounts
 func (m *GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +61,7 @@ func (m *GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder
     }
     return requestInfo, nil
 }
-// Invoke function getTeamsUserActivityDistributionTotalUserCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getTeamsUserActivityDistributionTotalUserCounts
 func (m *GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder) Get(options *GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

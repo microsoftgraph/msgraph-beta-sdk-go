@@ -11,7 +11,7 @@ import (
     i45ad6020b7b06f1d1193f8182422eaf641a20591f59d12b7f6704bccd0a06045 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salescreditmemos/item/salescreditmemolines/item"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}
+// SalesCreditMemoRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}
 type SalesCreditMemoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type SalesCreditMemoRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SalesCreditMemoRequestBuilderDeleteOptions options for Delete
 type SalesCreditMemoRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type SalesCreditMemoRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SalesCreditMemoRequestBuilderGetOptions options for Get
 type SalesCreditMemoRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type SalesCreditMemoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get salesCreditMemos from financials
+// SalesCreditMemoRequestBuilderGetQueryParameters get salesCreditMemos from financials
 type SalesCreditMemoRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SalesCreditMemoRequestBuilderPatchOptions options for Patch
 type SalesCreditMemoRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesCreditMemo;
@@ -58,10 +58,7 @@ type SalesCreditMemoRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SalesCreditMemoRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesCreditMemoRequestBuilderInternal instantiates a new SalesCreditMemoRequestBuilder and sets the default values.
 func NewSalesCreditMemoRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesCreditMemoRequestBuilder) {
     m := &SalesCreditMemoRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewSalesCreditMemoRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SalesCreditMemoRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesCreditMemoRequestBuilder instantiates a new SalesCreditMemoRequestBuilder and sets the default values.
 func NewSalesCreditMemoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesCreditMemoRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSalesCreditMemoRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property salesCreditMemos for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property salesCreditMemos for financials
 func (m *SalesCreditMemoRequestBuilder) CreateDeleteRequestInformation(options *SalesCreditMemoRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *SalesCreditMemoRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get salesCreditMemos from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get salesCreditMemos from financials
 func (m *SalesCreditMemoRequestBuilder) CreateGetRequestInformation(options *SalesCreditMemoRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *SalesCreditMemoRequestBuilder) CreateGetRequestInformation(options *Sal
     }
     return requestInfo, nil
 }
-// Update the navigation property salesCreditMemos in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property salesCreditMemos in financials
 func (m *SalesCreditMemoRequestBuilder) CreatePatchRequestInformation(options *SalesCreditMemoRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *SalesCreditMemoRequestBuilder) Currency()(*i298450934317995f84337c22e16
 func (m *SalesCreditMemoRequestBuilder) Customer()(*i198b60984c102ac71de04a9e9a675074ba97cf40609c40333010889081621189.CustomerRequestBuilder) {
     return i198b60984c102ac71de04a9e9a675074ba97cf40609c40333010889081621189.NewCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property salesCreditMemos for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property salesCreditMemos for financials
 func (m *SalesCreditMemoRequestBuilder) Delete(options *SalesCreditMemoRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *SalesCreditMemoRequestBuilder) Delete(options *SalesCreditMemoRequestBu
     }
     return nil
 }
-// Get salesCreditMemos from financials
-// Parameters:
-//  - options : Options for the request
+// Get get salesCreditMemos from financials
 func (m *SalesCreditMemoRequestBuilder) Get(options *SalesCreditMemoRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesCreditMemo, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -178,9 +162,7 @@ func (m *SalesCreditMemoRequestBuilder) Get(options *SalesCreditMemoRequestBuild
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesCreditMemo), nil
 }
-// Update the navigation property salesCreditMemos in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property salesCreditMemos in financials
 func (m *SalesCreditMemoRequestBuilder) Patch(options *SalesCreditMemoRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -198,9 +180,7 @@ func (m *SalesCreditMemoRequestBuilder) PaymentTerm()(*i7472604d594d7fc8b26a208c
 func (m *SalesCreditMemoRequestBuilder) SalesCreditMemoLines()(*i2871eb11fd553a28e1a220512b521cc37c977c7f73da911a23b028656f22cb51.SalesCreditMemoLinesRequestBuilder) {
     return i2871eb11fd553a28e1a220512b521cc37c977c7f73da911a23b028656f22cb51.NewSalesCreditMemoLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesCreditMemos.item.salesCreditMemoLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesCreditMemoLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesCreditMemos.item.salesCreditMemoLines.item collection
 func (m *SalesCreditMemoRequestBuilder) SalesCreditMemoLinesById(id string)(*i45ad6020b7b06f1d1193f8182422eaf641a20591f59d12b7f6704bccd0a06045.SalesCreditMemoLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

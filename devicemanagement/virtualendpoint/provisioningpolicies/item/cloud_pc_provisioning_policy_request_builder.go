@@ -9,7 +9,7 @@ import (
     if91535156d5443297583fcd65d99597809e9e5b6115e4948cfc32c6c18b25848 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/provisioningpolicies/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\provisioningPolicies\{cloudPcProvisioningPolicy-id}
+// CloudPcProvisioningPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\provisioningPolicies\{cloudPcProvisioningPolicy-id}
 type CloudPcProvisioningPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CloudPcProvisioningPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcProvisioningPolicyRequestBuilderDeleteOptions options for Delete
 type CloudPcProvisioningPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type CloudPcProvisioningPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcProvisioningPolicyRequestBuilderGetOptions options for Get
 type CloudPcProvisioningPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type CloudPcProvisioningPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud PC provisioning policy.
+// CloudPcProvisioningPolicyRequestBuilderGetQueryParameters cloud PC provisioning policy.
 type CloudPcProvisioningPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcProvisioningPolicyRequestBuilderPatchOptions options for Patch
 type CloudPcProvisioningPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcProvisioningPolicy;
@@ -62,9 +62,7 @@ func (m *CloudPcProvisioningPolicyRequestBuilder) Assign()(*i21d65c3429cff028859
 func (m *CloudPcProvisioningPolicyRequestBuilder) Assignments()(*i8efaf7f9224f8bf3ba72fe2c8e64b5a0019684376d8d47f60bfc6702485abc3c.AssignmentsRequestBuilder) {
     return i8efaf7f9224f8bf3ba72fe2c8e64b5a0019684376d8d47f60bfc6702485abc3c.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.provisioningPolicies.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.provisioningPolicies.item.assignments.item collection
 func (m *CloudPcProvisioningPolicyRequestBuilder) AssignmentsById(id string)(*if91535156d5443297583fcd65d99597809e9e5b6115e4948cfc32c6c18b25848.CloudPcProvisioningPolicyAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,10 +73,7 @@ func (m *CloudPcProvisioningPolicyRequestBuilder) AssignmentsById(id string)(*if
     }
     return if91535156d5443297583fcd65d99597809e9e5b6115e4948cfc32c6c18b25848.NewCloudPcProvisioningPolicyAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new CloudPcProvisioningPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcProvisioningPolicyRequestBuilderInternal instantiates a new CloudPcProvisioningPolicyRequestBuilder and sets the default values.
 func NewCloudPcProvisioningPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcProvisioningPolicyRequestBuilder) {
     m := &CloudPcProvisioningPolicyRequestBuilder{
     }
@@ -91,18 +86,13 @@ func NewCloudPcProvisioningPolicyRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcProvisioningPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcProvisioningPolicyRequestBuilder instantiates a new CloudPcProvisioningPolicyRequestBuilder and sets the default values.
 func NewCloudPcProvisioningPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcProvisioningPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcProvisioningPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation cloud PC provisioning policy.
 func (m *CloudPcProvisioningPolicyRequestBuilder) CreateDeleteRequestInformation(options *CloudPcProvisioningPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcProvisioningPolicyRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud PC provisioning policy.
 func (m *CloudPcProvisioningPolicyRequestBuilder) CreateGetRequestInformation(options *CloudPcProvisioningPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *CloudPcProvisioningPolicyRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation cloud PC provisioning policy.
 func (m *CloudPcProvisioningPolicyRequestBuilder) CreatePatchRequestInformation(options *CloudPcProvisioningPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +147,7 @@ func (m *CloudPcProvisioningPolicyRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// Delete cloud PC provisioning policy.
 func (m *CloudPcProvisioningPolicyRequestBuilder) Delete(options *CloudPcProvisioningPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *CloudPcProvisioningPolicyRequestBuilder) Delete(options *CloudPcProvisi
     }
     return nil
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// Get cloud PC provisioning policy.
 func (m *CloudPcProvisioningPolicyRequestBuilder) Get(options *CloudPcProvisioningPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcProvisioningPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *CloudPcProvisioningPolicyRequestBuilder) Get(options *CloudPcProvisioni
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcProvisioningPolicy), nil
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// Patch cloud PC provisioning policy.
 func (m *CloudPcProvisioningPolicyRequestBuilder) Patch(options *CloudPcProvisioningPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

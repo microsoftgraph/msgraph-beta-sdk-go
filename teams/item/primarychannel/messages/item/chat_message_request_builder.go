@@ -10,7 +10,7 @@ import (
     i5b233e37d8baee4d7a51632cc955aa8905e1db9922a952b63423775c3a43570a "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/replies/item"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages\{chatMessage-id}
+// ChatMessageRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages\{chatMessage-id}
 type ChatMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type ChatMessageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ChatMessageRequestBuilderDeleteOptions options for Delete
 type ChatMessageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type ChatMessageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ChatMessageRequestBuilderGetOptions options for Get
 type ChatMessageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type ChatMessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of all the messages in the channel. A navigation property. Nullable.
+// ChatMessageRequestBuilderGetQueryParameters a collection of all the messages in the channel. A navigation property. Nullable.
 type ChatMessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ChatMessageRequestBuilderPatchOptions options for Patch
 type ChatMessageRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessage;
@@ -57,10 +57,7 @@ type ChatMessageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ChatMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatMessageRequestBuilderInternal instantiates a new ChatMessageRequestBuilder and sets the default values.
 func NewChatMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatMessageRequestBuilder) {
     m := &ChatMessageRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewChatMessageRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChatMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatMessageRequestBuilder instantiates a new ChatMessageRequestBuilder and sets the default values.
 func NewChatMessageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatMessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChatMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of all the messages in the channel. A navigation property. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
 func (m *ChatMessageRequestBuilder) CreateDeleteRequestInformation(options *ChatMessageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ChatMessageRequestBuilder) CreateDeleteRequestInformation(options *Chat
     }
     return requestInfo, nil
 }
-// A collection of all the messages in the channel. A navigation property. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
 func (m *ChatMessageRequestBuilder) CreateGetRequestInformation(options *ChatMessageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ChatMessageRequestBuilder) CreateGetRequestInformation(options *ChatMes
     }
     return requestInfo, nil
 }
-// A collection of all the messages in the channel. A navigation property. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
 func (m *ChatMessageRequestBuilder) CreatePatchRequestInformation(options *ChatMessageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *ChatMessageRequestBuilder) CreatePatchRequestInformation(options *ChatM
     }
     return requestInfo, nil
 }
-// A collection of all the messages in the channel. A navigation property. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of all the messages in the channel. A navigation property. Nullable.
 func (m *ChatMessageRequestBuilder) Delete(options *ChatMessageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *ChatMessageRequestBuilder) Delete(options *ChatMessageRequestBuilderDel
     }
     return nil
 }
-// A collection of all the messages in the channel. A navigation property. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of all the messages in the channel. A navigation property. Nullable.
 func (m *ChatMessageRequestBuilder) Get(options *ChatMessageRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *ChatMessageRequestBuilder) Get(options *ChatMessageRequestBuilderGetOpt
 func (m *ChatMessageRequestBuilder) HostedContents()(*i58f2982db5184e602b87372e05e45b924a186cb16c2823dc58e2e0d4aefc9433.HostedContentsRequestBuilder) {
     return i58f2982db5184e602b87372e05e45b924a186cb16c2823dc58e2e0d4aefc9433.NewHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.primaryChannel.messages.item.hostedContents.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// HostedContentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.primaryChannel.messages.item.hostedContents.item collection
 func (m *ChatMessageRequestBuilder) HostedContentsById(id string)(*i3bf93b00c9d8a64f21168607b55a5b671b8629d16d677ef881f8c67fc3d08c86.ChatMessageHostedContentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -187,9 +169,7 @@ func (m *ChatMessageRequestBuilder) HostedContentsById(id string)(*i3bf93b00c9d8
     }
     return i3bf93b00c9d8a64f21168607b55a5b671b8629d16d677ef881f8c67fc3d08c86.NewChatMessageHostedContentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// A collection of all the messages in the channel. A navigation property. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of all the messages in the channel. A navigation property. Nullable.
 func (m *ChatMessageRequestBuilder) Patch(options *ChatMessageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -204,9 +184,7 @@ func (m *ChatMessageRequestBuilder) Patch(options *ChatMessageRequestBuilderPatc
 func (m *ChatMessageRequestBuilder) Replies()(*i2c260db421138b4b9d16bc781872e9b2bcc7212fcb3df78fccc27b29fa3afdd0.RepliesRequestBuilder) {
     return i2c260db421138b4b9d16bc781872e9b2bcc7212fcb3df78fccc27b29fa3afdd0.NewRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.primaryChannel.messages.item.replies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RepliesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.primaryChannel.messages.item.replies.item collection
 func (m *ChatMessageRequestBuilder) RepliesById(id string)(*i5b233e37d8baee4d7a51632cc955aa8905e1db9922a952b63423775c3a43570a.ChatMessageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

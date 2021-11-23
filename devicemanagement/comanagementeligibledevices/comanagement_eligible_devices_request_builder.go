@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\comanagementEligibleDevices
+// ComanagementEligibleDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\comanagementEligibleDevices
 type ComanagementEligibleDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ComanagementEligibleDevicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ComanagementEligibleDevicesRequestBuilderGetOptions options for Get
 type ComanagementEligibleDevicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ComanagementEligibleDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of co-management eligible devices report
+// ComanagementEligibleDevicesRequestBuilderGetQueryParameters the list of co-management eligible devices report
 type ComanagementEligibleDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ComanagementEligibleDevicesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ComanagementEligibleDevicesRequestBuilderPostOptions options for Post
 type ComanagementEligibleDevicesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevice;
@@ -56,10 +56,7 @@ type ComanagementEligibleDevicesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ComanagementEligibleDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComanagementEligibleDevicesRequestBuilderInternal instantiates a new ComanagementEligibleDevicesRequestBuilder and sets the default values.
 func NewComanagementEligibleDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComanagementEligibleDevicesRequestBuilder) {
     m := &ComanagementEligibleDevicesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewComanagementEligibleDevicesRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ComanagementEligibleDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComanagementEligibleDevicesRequestBuilder instantiates a new ComanagementEligibleDevicesRequestBuilder and sets the default values.
 func NewComanagementEligibleDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComanagementEligibleDevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComanagementEligibleDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of co-management eligible devices report
 func (m *ComanagementEligibleDevicesRequestBuilder) CreateGetRequestInformation(options *ComanagementEligibleDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ComanagementEligibleDevicesRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of co-management eligible devices report
 func (m *ComanagementEligibleDevicesRequestBuilder) CreatePostRequestInformation(options *ComanagementEligibleDevicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ComanagementEligibleDevicesRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// Get the list of co-management eligible devices report
 func (m *ComanagementEligibleDevicesRequestBuilder) Get(options *ComanagementEligibleDevicesRequestBuilderGetOptions)(*ComanagementEligibleDevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ComanagementEligibleDevicesRequestBuilder) Get(options *ComanagementEli
     }
     return res.(*ComanagementEligibleDevicesResponse), nil
 }
-// The list of co-management eligible devices report
-// Parameters:
-//  - options : Options for the request
+// Post the list of co-management eligible devices report
 func (m *ComanagementEligibleDevicesRequestBuilder) Post(options *ComanagementEligibleDevicesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevice, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

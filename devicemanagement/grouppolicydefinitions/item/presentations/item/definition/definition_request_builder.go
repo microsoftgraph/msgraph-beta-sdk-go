@@ -7,7 +7,7 @@ import (
     ibf5d554bb8f9fefe6759dd4bed0cdb4cda760c11c166e9ff18bf2e4b633a2224 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/presentations/item/definition/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\presentations\{groupPolicyPresentation-id}\definition
+// DefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\presentations\{groupPolicyPresentation-id}\definition
 type DefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DefinitionRequestBuilderGetOptions options for Get
 type DefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type DefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The group policy definition associated with the presentation.
+// DefinitionRequestBuilderGetQueryParameters the group policy definition associated with the presentation.
 type DefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new DefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefinitionRequestBuilderInternal instantiates a new DefinitionRequestBuilder and sets the default values.
 func NewDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefinitionRequestBuilder) {
     m := &DefinitionRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewDefinitionRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefinitionRequestBuilder instantiates a new DefinitionRequestBuilder and sets the default values.
 func NewDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The group policy definition associated with the presentation.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the group policy definition associated with the presentation.
 func (m *DefinitionRequestBuilder) CreateGetRequestInformation(options *DefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *DefinitionRequestBuilder) CreateGetRequestInformation(options *Definiti
     }
     return requestInfo, nil
 }
-// The group policy definition associated with the presentation.
-// Parameters:
-//  - options : Options for the request
+// Get the group policy definition associated with the presentation.
 func (m *DefinitionRequestBuilder) Get(options *DefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

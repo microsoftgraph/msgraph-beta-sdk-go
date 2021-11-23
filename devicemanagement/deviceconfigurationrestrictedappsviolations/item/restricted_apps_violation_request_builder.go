@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurationRestrictedAppsViolations\{restrictedAppsViolation-id}
+// RestrictedAppsViolationRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurationRestrictedAppsViolations\{restrictedAppsViolation-id}
 type RestrictedAppsViolationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RestrictedAppsViolationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RestrictedAppsViolationRequestBuilderDeleteOptions options for Delete
 type RestrictedAppsViolationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type RestrictedAppsViolationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RestrictedAppsViolationRequestBuilderGetOptions options for Get
 type RestrictedAppsViolationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type RestrictedAppsViolationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Restricted apps violations for this account.
+// RestrictedAppsViolationRequestBuilderGetQueryParameters restricted apps violations for this account.
 type RestrictedAppsViolationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RestrictedAppsViolationRequestBuilderPatchOptions options for Patch
 type RestrictedAppsViolationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RestrictedAppsViolation;
@@ -53,10 +53,7 @@ type RestrictedAppsViolationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RestrictedAppsViolationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRestrictedAppsViolationRequestBuilderInternal instantiates a new RestrictedAppsViolationRequestBuilder and sets the default values.
 func NewRestrictedAppsViolationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RestrictedAppsViolationRequestBuilder) {
     m := &RestrictedAppsViolationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewRestrictedAppsViolationRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RestrictedAppsViolationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRestrictedAppsViolationRequestBuilder instantiates a new RestrictedAppsViolationRequestBuilder and sets the default values.
 func NewRestrictedAppsViolationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RestrictedAppsViolationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRestrictedAppsViolationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation restricted apps violations for this account.
 func (m *RestrictedAppsViolationRequestBuilder) CreateDeleteRequestInformation(options *RestrictedAppsViolationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *RestrictedAppsViolationRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation restricted apps violations for this account.
 func (m *RestrictedAppsViolationRequestBuilder) CreateGetRequestInformation(options *RestrictedAppsViolationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RestrictedAppsViolationRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation restricted apps violations for this account.
 func (m *RestrictedAppsViolationRequestBuilder) CreatePatchRequestInformation(options *RestrictedAppsViolationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *RestrictedAppsViolationRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// Delete restricted apps violations for this account.
 func (m *RestrictedAppsViolationRequestBuilder) Delete(options *RestrictedAppsViolationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *RestrictedAppsViolationRequestBuilder) Delete(options *RestrictedAppsVi
     }
     return nil
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// Get restricted apps violations for this account.
 func (m *RestrictedAppsViolationRequestBuilder) Get(options *RestrictedAppsViolationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RestrictedAppsViolation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *RestrictedAppsViolationRequestBuilder) Get(options *RestrictedAppsViola
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RestrictedAppsViolation), nil
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// Patch restricted apps violations for this account.
 func (m *RestrictedAppsViolationRequestBuilder) Patch(options *RestrictedAppsViolationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

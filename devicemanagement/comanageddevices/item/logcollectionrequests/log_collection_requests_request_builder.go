@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\logCollectionRequests
+// LogCollectionRequestsRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\logCollectionRequests
 type LogCollectionRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LogCollectionRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LogCollectionRequestsRequestBuilderGetOptions options for Get
 type LogCollectionRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type LogCollectionRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of log collection requests
+// LogCollectionRequestsRequestBuilderGetQueryParameters list of log collection requests
 type LogCollectionRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type LogCollectionRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// LogCollectionRequestsRequestBuilderPostOptions options for Post
 type LogCollectionRequestsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionResponse;
@@ -56,10 +56,7 @@ type LogCollectionRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LogCollectionRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLogCollectionRequestsRequestBuilderInternal instantiates a new LogCollectionRequestsRequestBuilder and sets the default values.
 func NewLogCollectionRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LogCollectionRequestsRequestBuilder) {
     m := &LogCollectionRequestsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewLogCollectionRequestsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LogCollectionRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLogCollectionRequestsRequestBuilder instantiates a new LogCollectionRequestsRequestBuilder and sets the default values.
 func NewLogCollectionRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LogCollectionRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLogCollectionRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of log collection requests
 func (m *LogCollectionRequestsRequestBuilder) CreateGetRequestInformation(options *LogCollectionRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *LogCollectionRequestsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of log collection requests
 func (m *LogCollectionRequestsRequestBuilder) CreatePostRequestInformation(options *LogCollectionRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *LogCollectionRequestsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// Get list of log collection requests
 func (m *LogCollectionRequestsRequestBuilder) Get(options *LogCollectionRequestsRequestBuilderGetOptions)(*LogCollectionRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *LogCollectionRequestsRequestBuilder) Get(options *LogCollectionRequests
     }
     return res.(*LogCollectionRequestsResponse), nil
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// Post list of log collection requests
 func (m *LogCollectionRequestsRequestBuilder) Post(options *LogCollectionRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

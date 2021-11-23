@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.windowsPrivacyAccessControls
+// WindowsPrivacyAccessControlsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.windowsPrivacyAccessControls
 type WindowsPrivacyAccessControlsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type WindowsPrivacyAccessControlsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// WindowsPrivacyAccessControlsRequestBuilderPostOptions options for Post
 type WindowsPrivacyAccessControlsRequestBuilderPostOptions struct {
     // 
     Body *WindowsPrivacyAccessControlsRequestBody;
@@ -24,10 +24,7 @@ type WindowsPrivacyAccessControlsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsPrivacyAccessControlsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsPrivacyAccessControlsRequestBuilderInternal instantiates a new WindowsPrivacyAccessControlsRequestBuilder and sets the default values.
 func NewWindowsPrivacyAccessControlsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsPrivacyAccessControlsRequestBuilder) {
     m := &WindowsPrivacyAccessControlsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewWindowsPrivacyAccessControlsRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsPrivacyAccessControlsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsPrivacyAccessControlsRequestBuilder instantiates a new WindowsPrivacyAccessControlsRequestBuilder and sets the default values.
 func NewWindowsPrivacyAccessControlsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsPrivacyAccessControlsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsPrivacyAccessControlsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action windowsPrivacyAccessControls
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action windowsPrivacyAccessControls
 func (m *WindowsPrivacyAccessControlsRequestBuilder) CreatePostRequestInformation(options *WindowsPrivacyAccessControlsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *WindowsPrivacyAccessControlsRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Invoke action windowsPrivacyAccessControls
-// Parameters:
-//  - options : Options for the request
+// Post invoke action windowsPrivacyAccessControls
 func (m *WindowsPrivacyAccessControlsRequestBuilder) Post(options *WindowsPrivacyAccessControlsRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

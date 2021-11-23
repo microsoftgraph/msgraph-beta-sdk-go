@@ -10,7 +10,7 @@ import (
     i6aa6ac55925af7fd5c33a37eeb3aae34a47657aed51f36c14cacd2c0beb65b54 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/vendors/item/paymentterm"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\vendors\{vendor-id}
+// VendorRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\vendors\{vendor-id}
 type VendorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type VendorRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// VendorRequestBuilderDeleteOptions options for Delete
 type VendorRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type VendorRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// VendorRequestBuilderGetOptions options for Get
 type VendorRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type VendorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get vendors from financials
+// VendorRequestBuilderGetQueryParameters get vendors from financials
 type VendorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// VendorRequestBuilderPatchOptions options for Patch
 type VendorRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Vendor_escaped;
@@ -57,10 +57,7 @@ type VendorRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new VendorRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVendorRequestBuilderInternal instantiates a new VendorRequestBuilder and sets the default values.
 func NewVendorRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VendorRequestBuilder) {
     m := &VendorRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewVendorRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new VendorRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVendorRequestBuilder instantiates a new VendorRequestBuilder and sets the default values.
 func NewVendorRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VendorRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVendorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property vendors for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property vendors for financials
 func (m *VendorRequestBuilder) CreateDeleteRequestInformation(options *VendorRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *VendorRequestBuilder) CreateDeleteRequestInformation(options *VendorReq
     }
     return requestInfo, nil
 }
-// Get vendors from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get vendors from financials
 func (m *VendorRequestBuilder) CreateGetRequestInformation(options *VendorRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *VendorRequestBuilder) CreateGetRequestInformation(options *VendorReques
     }
     return requestInfo, nil
 }
-// Update the navigation property vendors in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property vendors in financials
 func (m *VendorRequestBuilder) CreatePatchRequestInformation(options *VendorRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *VendorRequestBuilder) CreatePatchRequestInformation(options *VendorRequ
 func (m *VendorRequestBuilder) Currency()(*i4f2a79af1f797f4101be13d93f559cd58600612aba723188107968599c252dcb.CurrencyRequestBuilder) {
     return i4f2a79af1f797f4101be13d93f559cd58600612aba723188107968599c252dcb.NewCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property vendors for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property vendors for financials
 func (m *VendorRequestBuilder) Delete(options *VendorRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *VendorRequestBuilder) Delete(options *VendorRequestBuilderDeleteOptions
     }
     return nil
 }
-// Get vendors from financials
-// Parameters:
-//  - options : Options for the request
+// Get get vendors from financials
 func (m *VendorRequestBuilder) Get(options *VendorRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Vendor_escaped, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *VendorRequestBuilder) Get(options *VendorRequestBuilderGetOptions)(*i53
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Vendor_escaped), nil
 }
-// Update the navigation property vendors in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property vendors in financials
 func (m *VendorRequestBuilder) Patch(options *VendorRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -197,9 +179,7 @@ func (m *VendorRequestBuilder) PaymentTerm()(*i6aa6ac55925af7fd5c33a37eeb3aae34a
 func (m *VendorRequestBuilder) Picture()(*i5b37bdd8a81f4c60eea30be142234860667502d1f43a06699b1c5170e7d5cb26.PictureRequestBuilder) {
     return i5b37bdd8a81f4c60eea30be142234860667502d1f43a06699b1c5170e7d5cb26.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.vendors.item.picture.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.vendors.item.picture.item collection
 func (m *VendorRequestBuilder) PictureById(id string)(*i5b37bdd8a81f4c60eea30be142234860667502d1f43a06699b1c5170e7d5cb26.PictureRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

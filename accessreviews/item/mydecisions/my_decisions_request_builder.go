@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \accessReviews\{accessReview-id}\myDecisions
+// MyDecisionsRequestBuilder builds and executes requests for operations under \accessReviews\{accessReview-id}\myDecisions
 type MyDecisionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MyDecisionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MyDecisionsRequestBuilderGetOptions options for Get
 type MyDecisionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MyDecisionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
+// MyDecisionsRequestBuilderGetQueryParameters the collection of decisions for the caller, if the caller is a reviewer.
 type MyDecisionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MyDecisionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MyDecisionsRequestBuilderPostOptions options for Post
 type MyDecisionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewDecision;
@@ -56,10 +56,7 @@ type MyDecisionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MyDecisionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMyDecisionsRequestBuilderInternal instantiates a new MyDecisionsRequestBuilder and sets the default values.
 func NewMyDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MyDecisionsRequestBuilder) {
     m := &MyDecisionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMyDecisionsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MyDecisionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMyDecisionsRequestBuilder instantiates a new MyDecisionsRequestBuilder and sets the default values.
 func NewMyDecisionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MyDecisionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMyDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of decisions for the caller, if the caller is a reviewer.
 func (m *MyDecisionsRequestBuilder) CreateGetRequestInformation(options *MyDecisionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MyDecisionsRequestBuilder) CreateGetRequestInformation(options *MyDecis
     }
     return requestInfo, nil
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of decisions for the caller, if the caller is a reviewer.
 func (m *MyDecisionsRequestBuilder) CreatePostRequestInformation(options *MyDecisionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MyDecisionsRequestBuilder) CreatePostRequestInformation(options *MyDeci
     }
     return requestInfo, nil
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of decisions for the caller, if the caller is a reviewer.
 func (m *MyDecisionsRequestBuilder) Get(options *MyDecisionsRequestBuilderGetOptions)(*MyDecisionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MyDecisionsRequestBuilder) Get(options *MyDecisionsRequestBuilderGetOpt
     }
     return res.(*MyDecisionsResponse), nil
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of decisions for the caller, if the caller is a reviewer.
 func (m *MyDecisionsRequestBuilder) Post(options *MyDecisionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewDecision, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

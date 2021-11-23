@@ -7,7 +7,7 @@ import (
     ia27044e0277dc87f215c2e2d5b4ea61a393a5a88f20eb27796a0236c757acc1a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \me\pendingAccessReviewInstances
+// PendingAccessReviewInstancesRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances
 type PendingAccessReviewInstancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PendingAccessReviewInstancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PendingAccessReviewInstancesRequestBuilderGetOptions options for Get
 type PendingAccessReviewInstancesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PendingAccessReviewInstancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
+// PendingAccessReviewInstancesRequestBuilderGetQueryParameters navigation property to get list of access reviews pending approval by reviewer.
 type PendingAccessReviewInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type PendingAccessReviewInstancesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PendingAccessReviewInstancesRequestBuilderPostOptions options for Post
 type PendingAccessReviewInstancesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstance;
@@ -57,10 +57,7 @@ type PendingAccessReviewInstancesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PendingAccessReviewInstancesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPendingAccessReviewInstancesRequestBuilderInternal instantiates a new PendingAccessReviewInstancesRequestBuilder and sets the default values.
 func NewPendingAccessReviewInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PendingAccessReviewInstancesRequestBuilder) {
     m := &PendingAccessReviewInstancesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewPendingAccessReviewInstancesRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PendingAccessReviewInstancesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPendingAccessReviewInstancesRequestBuilder instantiates a new PendingAccessReviewInstancesRequestBuilder and sets the default values.
 func NewPendingAccessReviewInstancesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PendingAccessReviewInstancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPendingAccessReviewInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation navigation property to get list of access reviews pending approval by reviewer.
 func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformation(options *PendingAccessReviewInstancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation navigation property to get list of access reviews pending approval by reviewer.
 func (m *PendingAccessReviewInstancesRequestBuilder) CreatePostRequestInformation(options *PendingAccessReviewInstancesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *PendingAccessReviewInstancesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \me\pendingAccessReviewInstances\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \me\pendingAccessReviewInstances\microsoft.graph.filterByCurrentUser(on={on})
 func (m *PendingAccessReviewInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ia27044e0277dc87f215c2e2d5b4ea61a393a5a88f20eb27796a0236c757acc1a.FilterByCurrentUserWithOnRequestBuilder) {
     return ia27044e0277dc87f215c2e2d5b4ea61a393a5a88f20eb27796a0236c757acc1a.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// Get navigation property to get list of access reviews pending approval by reviewer.
 func (m *PendingAccessReviewInstancesRequestBuilder) Get(options *PendingAccessReviewInstancesRequestBuilderGetOptions)(*PendingAccessReviewInstancesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *PendingAccessReviewInstancesRequestBuilder) Get(options *PendingAccessR
     }
     return res.(*PendingAccessReviewInstancesResponse), nil
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// Post navigation property to get list of access reviews pending approval by reviewer.
 func (m *PendingAccessReviewInstancesRequestBuilder) Post(options *PendingAccessReviewInstancesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

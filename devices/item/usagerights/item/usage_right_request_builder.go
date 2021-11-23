@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \devices\{device-id}\usageRights\{usageRight-id}
+// UsageRightRequestBuilder builds and executes requests for operations under \devices\{device-id}\usageRights\{usageRight-id}
 type UsageRightRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UsageRightRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UsageRightRequestBuilderDeleteOptions options for Delete
 type UsageRightRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UsageRightRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UsageRightRequestBuilderGetOptions options for Get
 type UsageRightRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UsageRightRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the usage rights a device has been granted.
+// UsageRightRequestBuilderGetQueryParameters represents the usage rights a device has been granted.
 type UsageRightRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UsageRightRequestBuilderPatchOptions options for Patch
 type UsageRightRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageRight;
@@ -53,10 +53,7 @@ type UsageRightRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UsageRightRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsageRightRequestBuilderInternal instantiates a new UsageRightRequestBuilder and sets the default values.
 func NewUsageRightRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsageRightRequestBuilder) {
     m := &UsageRightRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUsageRightRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UsageRightRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsageRightRequestBuilder instantiates a new UsageRightRequestBuilder and sets the default values.
 func NewUsageRightRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsageRightRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsageRightRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the usage rights a device has been granted.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the usage rights a device has been granted.
 func (m *UsageRightRequestBuilder) CreateDeleteRequestInformation(options *UsageRightRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UsageRightRequestBuilder) CreateDeleteRequestInformation(options *Usage
     }
     return requestInfo, nil
 }
-// Represents the usage rights a device has been granted.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the usage rights a device has been granted.
 func (m *UsageRightRequestBuilder) CreateGetRequestInformation(options *UsageRightRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UsageRightRequestBuilder) CreateGetRequestInformation(options *UsageRig
     }
     return requestInfo, nil
 }
-// Represents the usage rights a device has been granted.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the usage rights a device has been granted.
 func (m *UsageRightRequestBuilder) CreatePatchRequestInformation(options *UsageRightRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UsageRightRequestBuilder) CreatePatchRequestInformation(options *UsageR
     }
     return requestInfo, nil
 }
-// Represents the usage rights a device has been granted.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the usage rights a device has been granted.
 func (m *UsageRightRequestBuilder) Delete(options *UsageRightRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UsageRightRequestBuilder) Delete(options *UsageRightRequestBuilderDelet
     }
     return nil
 }
-// Represents the usage rights a device has been granted.
-// Parameters:
-//  - options : Options for the request
+// Get represents the usage rights a device has been granted.
 func (m *UsageRightRequestBuilder) Get(options *UsageRightRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageRight, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UsageRightRequestBuilder) Get(options *UsageRightRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageRight), nil
 }
-// Represents the usage rights a device has been granted.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the usage rights a device has been granted.
 func (m *UsageRightRequestBuilder) Patch(options *UsageRightRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

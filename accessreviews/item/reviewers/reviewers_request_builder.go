@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \accessReviews\{accessReview-id}\reviewers
+// ReviewersRequestBuilder builds and executes requests for operations under \accessReviews\{accessReview-id}\reviewers
 type ReviewersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ReviewersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ReviewersRequestBuilderGetOptions options for Get
 type ReviewersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ReviewersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+// ReviewersRequestBuilderGetQueryParameters the collection of reviewers for an access review, if access review reviewerType is of type delegated.
 type ReviewersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ReviewersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ReviewersRequestBuilderPostOptions options for Post
 type ReviewersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewer;
@@ -56,10 +56,7 @@ type ReviewersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ReviewersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReviewersRequestBuilderInternal instantiates a new ReviewersRequestBuilder and sets the default values.
 func NewReviewersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReviewersRequestBuilder) {
     m := &ReviewersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewReviewersRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ReviewersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReviewersRequestBuilder instantiates a new ReviewersRequestBuilder and sets the default values.
 func NewReviewersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReviewersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReviewersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of reviewers for an access review, if access review reviewerType is of type delegated.
 func (m *ReviewersRequestBuilder) CreateGetRequestInformation(options *ReviewersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ReviewersRequestBuilder) CreateGetRequestInformation(options *Reviewers
     }
     return requestInfo, nil
 }
-// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of reviewers for an access review, if access review reviewerType is of type delegated.
 func (m *ReviewersRequestBuilder) CreatePostRequestInformation(options *ReviewersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ReviewersRequestBuilder) CreatePostRequestInformation(options *Reviewer
     }
     return requestInfo, nil
 }
-// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of reviewers for an access review, if access review reviewerType is of type delegated.
 func (m *ReviewersRequestBuilder) Get(options *ReviewersRequestBuilderGetOptions)(*ReviewersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ReviewersRequestBuilder) Get(options *ReviewersRequestBuilderGetOptions
     }
     return res.(*ReviewersResponse), nil
 }
-// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of reviewers for an access review, if access review reviewerType is of type delegated.
 func (m *ReviewersRequestBuilder) Post(options *ReviewersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewer, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

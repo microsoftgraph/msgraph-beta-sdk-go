@@ -6,7 +6,7 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// 
+// Tag 
 type Tag struct {
     Entity
     // Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
@@ -24,14 +24,14 @@ type Tag struct {
     // Returns the parent tag of the specified tag.
     parent *Tag;
 }
-// Instantiates a new tag and sets the default values.
+// NewTag instantiates a new tag and sets the default values.
 func NewTag()(*Tag) {
     m := &Tag{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
+// GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *Tag) GetChildSelectability()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ChildSelectability) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *Tag) GetChildSelectability()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b63
         return m.childSelectability
     }
 }
-// Gets the childTags property value. Returns the tags that are a child of a tag.
+// GetChildTags gets the childTags property value. Returns the tags that are a child of a tag.
 func (m *Tag) GetChildTags()([]Tag) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *Tag) GetChildTags()([]Tag) {
         return m.childTags
     }
 }
-// Gets the createdBy property value. The user who created the tag.
+// GetCreatedBy gets the createdBy property value. The user who created the tag.
 func (m *Tag) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *Tag) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
-// Gets the description property value. The description for the tag.
+// GetDescription gets the description property value. The description for the tag.
 func (m *Tag) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *Tag) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Display name of the tag.
+// GetDisplayName gets the displayName property value. Display name of the tag.
 func (m *Tag) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *Tag) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastModifiedDateTime property value. The date and time the tag was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the tag was last modified.
 func (m *Tag) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *Tag) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.lastModifiedDateTime
     }
 }
-// Gets the parent property value. Returns the parent tag of the specified tag.
+// GetParent gets the parent property value. Returns the parent tag of the specified tag.
 func (m *Tag) GetParent()(*Tag) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *Tag) GetParent()(*Tag) {
         return m.parent
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childSelectability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,9 +170,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
 func (m *Tag) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Tag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -228,45 +226,31 @@ func (m *Tag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     }
     return nil
 }
-// Sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-// Parameters:
-//  - value : Value to set for the childSelectability property.
+// SetChildSelectability sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *Tag) SetChildSelectability(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ChildSelectability)() {
     m.childSelectability = value
 }
-// Sets the childTags property value. Returns the tags that are a child of a tag.
-// Parameters:
-//  - value : Value to set for the childTags property.
+// SetChildTags sets the childTags property value. Returns the tags that are a child of a tag.
 func (m *Tag) SetChildTags(value []Tag)() {
     m.childTags = value
 }
-// Sets the createdBy property value. The user who created the tag.
-// Parameters:
-//  - value : Value to set for the createdBy property.
+// SetCreatedBy sets the createdBy property value. The user who created the tag.
 func (m *Tag) SetCreatedBy(value *IdentitySet)() {
     m.createdBy = value
 }
-// Sets the description property value. The description for the tag.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description for the tag.
 func (m *Tag) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Display name of the tag.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name of the tag.
 func (m *Tag) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastModifiedDateTime property value. The date and time the tag was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the tag was last modified.
 func (m *Tag) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the parent property value. Returns the parent tag of the specified tag.
-// Parameters:
-//  - value : Value to set for the parent property.
+// SetParent sets the parent property value. Returns the parent tag of the specified tag.
 func (m *Tag) SetParent(value *Tag)() {
     m.parent = value
 }
