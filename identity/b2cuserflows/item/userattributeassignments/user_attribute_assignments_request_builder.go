@@ -8,7 +8,7 @@ import (
     i5240f41d615de8c637c0c8acdf6dc7282d58b03f61ba028038bdbaa1649ff59f "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userattributeassignments/setorder"
 )
 
-// userAttributeAssignmentsRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userAttributeAssignments
+// UserAttributeAssignmentsRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userAttributeAssignments
 type UserAttributeAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type UserAttributeAssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userAttributeAssignmentsRequestBuilderGetQueryParameters the user attribute assignments included in the user flow.
+// UserAttributeAssignmentsRequestBuilderGetQueryParameters the user attribute assignments included in the user flow.
 type UserAttributeAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -7,7 +7,7 @@ import (
     i4bf08e30a93ff865c23793e28f929c44147943316c9603442fdba61448f5fe30 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/sets/item/children/item/set/ref"
 )
 
-// setRequestBuilder builds and executes requests for operations under \termStore\sets\{set-id}\children\{term-id}\set
+// SetRequestBuilder builds and executes requests for operations under \termStore\sets\{set-id}\children\{term-id}\set
 type SetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type SetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// setRequestBuilderGetQueryParameters the [set] in which the term is created.
+// SetRequestBuilderGetQueryParameters the [set] in which the term is created.
 type SetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

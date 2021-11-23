@@ -11,7 +11,7 @@ import (
     ide1a987287b4abfcc07513b59b06ed6d9c26e8ca14e50b0cb0ecb6c9c589c466 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/item/checkmembergroups"
 )
 
-// directoryObjectRequestBuilder builds and executes requests for operations under \directoryObjects\{directoryObject-id}
+// DirectoryObjectRequestBuilder builds and executes requests for operations under \directoryObjects\{directoryObject-id}
 type DirectoryObjectRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type DirectoryObjectRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// directoryObjectRequestBuilderGetQueryParameters get entity from directoryObjects by key
+// DirectoryObjectRequestBuilderGetQueryParameters get entity from directoryObjects by key
 type DirectoryObjectRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

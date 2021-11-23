@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// windowsProtectionStatesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\windowsProtectionStates
+// WindowsProtectionStatesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\windowsProtectionStates
 type WindowsProtectionStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type WindowsProtectionStatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsProtectionStatesRequestBuilderGetQueryParameters the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// WindowsProtectionStatesRequestBuilderGetQueryParameters the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 type WindowsProtectionStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

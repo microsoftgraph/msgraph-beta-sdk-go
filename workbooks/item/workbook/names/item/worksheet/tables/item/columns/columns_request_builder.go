@@ -9,7 +9,7 @@ import (
     if7090c1cd4ba5a3510cc6b5bc369993b7b9969d2ff19b450596a1ed91a832368 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/itematwithindex"
 )
 
-// columnsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns
+// ColumnsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns
 type ColumnsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ColumnsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// columnsRequestBuilderGetQueryParameters represents a collection of all the columns in the table. Read-only.
+// ColumnsRequestBuilderGetQueryParameters represents a collection of all the columns in the table. Read-only.
 type ColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

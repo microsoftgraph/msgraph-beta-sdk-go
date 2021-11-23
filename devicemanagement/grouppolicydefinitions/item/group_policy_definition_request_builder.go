@@ -12,7 +12,7 @@ import (
     i755dd99b2492e3a413ac1208e4de2ede29dfb284de02d498fb55c3247fe139f0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/presentations/item"
 )
 
-// groupPolicyDefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}
+// GroupPolicyDefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}
 type GroupPolicyDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type GroupPolicyDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupPolicyDefinitionRequestBuilderGetQueryParameters the available group policy definitions for this account.
+// GroupPolicyDefinitionRequestBuilderGetQueryParameters the available group policy definitions for this account.
 type GroupPolicyDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i94ce6a8fc22ee81cd12019a34437dadc35ab6349e1e6e7761d9044dcfa52ecbb "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/synchronization/templates/item/schema"
 )
 
-// synchronizationTemplateRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\templates\{synchronizationTemplate-id}
+// SynchronizationTemplateRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\templates\{synchronizationTemplate-id}
 type SynchronizationTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type SynchronizationTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// synchronizationTemplateRequestBuilderGetQueryParameters get templates from applications
+// SynchronizationTemplateRequestBuilderGetQueryParameters get templates from applications
 type SynchronizationTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

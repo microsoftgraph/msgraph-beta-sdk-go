@@ -25,7 +25,7 @@ import (
     ie20d3efb9c88b7a4dececad1e9328ce5526d4cdbd23f6257aa72d18d9126ed81 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/intents/item/assignments/item"
 )
 
-// deviceManagementIntentRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}
+// DeviceManagementIntentRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}
 type DeviceManagementIntentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ type DeviceManagementIntentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementIntentRequestBuilderGetQueryParameters the device management intents
+// DeviceManagementIntentRequestBuilderGetQueryParameters the device management intents
 type DeviceManagementIntentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

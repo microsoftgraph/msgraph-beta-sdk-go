@@ -15,7 +15,7 @@ import (
     i9ca2634cfe73b9f5258e0a85ae4be6b9174af8d4172b8471d7cf5054a507dc5b "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedebooks/item/assignments/item"
 )
 
-// managedEBookRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}
+// ManagedEBookRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}
 type ManagedEBookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type ManagedEBookRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedEBookRequestBuilderGetQueryParameters the Managed eBook.
+// ManagedEBookRequestBuilderGetQueryParameters the Managed eBook.
 type ManagedEBookRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

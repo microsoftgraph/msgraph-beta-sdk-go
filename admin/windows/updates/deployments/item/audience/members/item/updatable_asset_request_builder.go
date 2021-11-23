@@ -10,7 +10,7 @@ import (
     ifc8dbf4c7bb3139df094118028d894b3c2fe3e806928f785bbdb075f9b3bdd30 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience/members/item/addmembers"
 )
 
-// updatableAssetRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\members\{updatableAsset-id}
+// UpdatableAssetRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\members\{updatableAsset-id}
 type UpdatableAssetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type UpdatableAssetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// updatableAssetRequestBuilderGetQueryParameters specifies the assets to include in the audience.
+// UpdatableAssetRequestBuilderGetQueryParameters specifies the assets to include in the audience.
 type UpdatableAssetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

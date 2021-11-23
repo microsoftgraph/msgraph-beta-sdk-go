@@ -7,7 +7,7 @@ import (
     i2b3f2af1c8bc472e0cb8537b228ff0d93f3f8ff8add56d5ef0a24cbb3334094e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceoperations/item/getscopesforuserwithuserid"
 )
 
-// resourceOperationRequestBuilder builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}
+// ResourceOperationRequestBuilder builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}
 type ResourceOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ResourceOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourceOperationRequestBuilderGetQueryParameters the Resource Operations.
+// ResourceOperationRequestBuilderGetQueryParameters the Resource Operations.
 type ResourceOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

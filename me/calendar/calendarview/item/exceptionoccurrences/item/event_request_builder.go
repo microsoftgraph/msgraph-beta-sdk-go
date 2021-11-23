@@ -13,7 +13,7 @@ import (
     if0c39aa7dd56f7c86762937d8ad5836cec244f2c81e0d3030ce5d03ea91584d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendar/calendarview/item/exceptionoccurrences/item/forward"
 )
 
-// eventRequestBuilder builds and executes requests for operations under \me\calendar\calendarView\{event-id}\exceptionOccurrences\{event-id1}
+// EventRequestBuilder builds and executes requests for operations under \me\calendar\calendarView\{event-id}\exceptionOccurrences\{event-id1}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventRequestBuilderGetQueryParameters get exceptionOccurrences from me
+// EventRequestBuilderGetQueryParameters get exceptionOccurrences from me
 type EventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     idabdbd0ce7782af2dce85605bd2f1cfa204eefa118389d0ac6b33b8d7c7e9ead "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/synchronization/jobs/validatecredentials"
 )
 
-// jobsRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\jobs
+// JobsRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\jobs
 type JobsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type JobsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// jobsRequestBuilderGetQueryParameters get jobs from applications
+// JobsRequestBuilderGetQueryParameters get jobs from applications
 type JobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

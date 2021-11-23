@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// deviceManagementTroubleshootingEventsRequestBuilder builds and executes requests for operations under \users\{user-id}\deviceManagementTroubleshootingEvents
+// DeviceManagementTroubleshootingEventsRequestBuilder builds and executes requests for operations under \users\{user-id}\deviceManagementTroubleshootingEvents
 type DeviceManagementTroubleshootingEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementTroubleshootingEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementTroubleshootingEventsRequestBuilderGetQueryParameters the list of troubleshooting events for this user.
+// DeviceManagementTroubleshootingEventsRequestBuilderGetQueryParameters the list of troubleshooting events for this user.
 type DeviceManagementTroubleshootingEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -7,7 +7,7 @@ import (
     ifbfe4e409b366cfd880e674e55ae37852c68132f4109dbac0ba62d28be4f0868 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeploymentprofiles/haspayloadlinks"
 )
 
-// windowsAutopilotDeploymentProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles
+// WindowsAutopilotDeploymentProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles
 type WindowsAutopilotDeploymentProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type WindowsAutopilotDeploymentProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsAutopilotDeploymentProfilesRequestBuilderGetQueryParameters windows auto pilot deployment profiles
+// WindowsAutopilotDeploymentProfilesRequestBuilderGetQueryParameters windows auto pilot deployment profiles
 type WindowsAutopilotDeploymentProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

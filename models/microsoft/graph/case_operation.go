@@ -6,7 +6,7 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// caseOperation 
+// CaseOperation 
 type CaseOperation struct {
     Entity
     // The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics

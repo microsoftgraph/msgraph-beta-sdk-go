@@ -7,7 +7,7 @@ import (
     ief96595408b6d90be04d42476b48c41afcf93abc77748a66341abdb52270c25a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/batteryhealthmetrics/ref"
 )
 
-// batteryHealthMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\batteryHealthMetrics
+// BatteryHealthMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\batteryHealthMetrics
 type BatteryHealthMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type BatteryHealthMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// batteryHealthMetricsRequestBuilderGetQueryParameters the user experience analytics battery health metrics.
+// BatteryHealthMetricsRequestBuilderGetQueryParameters the user experience analytics battery health metrics.
 type BatteryHealthMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -17,7 +17,7 @@ import (
     ie785db4b38f9f4ba6fc3e6cfb4164fd07a4b957a6f8e1b2b297b1e8dfeb71a05 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/assignments/item/submissions/item/submittedresources/item"
 )
 
-// educationSubmissionRequestBuilder builds and executes requests for operations under \education\me\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}
+// EducationSubmissionRequestBuilder builds and executes requests for operations under \education\me\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}
 type EducationSubmissionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type EducationSubmissionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// educationSubmissionRequestBuilderGetQueryParameters once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// EducationSubmissionRequestBuilderGetQueryParameters once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 type EducationSubmissionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

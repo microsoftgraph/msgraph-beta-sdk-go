@@ -15,7 +15,7 @@ import (
     if64c28382662f3e40b50d01a6d6cccdf239d73815a84e10346df6028d2331d87 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/item/roledefinitions/item"
 )
 
-// governanceResourceRequestBuilder builds and executes requests for operations under \governanceResources\{governanceResource-id}
+// GovernanceResourceRequestBuilder builds and executes requests for operations under \governanceResources\{governanceResource-id}
 type GovernanceResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type GovernanceResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// governanceResourceRequestBuilderGetQueryParameters get entity from governanceResources by key
+// GovernanceResourceRequestBuilderGetQueryParameters get entity from governanceResources by key
 type GovernanceResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

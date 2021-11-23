@@ -7,7 +7,7 @@ import (
     i0b76be23832d753e450644c4cdeb9fb66ad776701abdc8635ba5235f7092ad7e "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/photo/value"
 )
 
-// photoRequestBuilder builds and executes requests for operations under \teams\{team-id}\photo
+// PhotoRequestBuilder builds and executes requests for operations under \teams\{team-id}\photo
 type PhotoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PhotoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// photoRequestBuilderGetQueryParameters the team photo.
+// PhotoRequestBuilderGetQueryParameters the team photo.
 type PhotoRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

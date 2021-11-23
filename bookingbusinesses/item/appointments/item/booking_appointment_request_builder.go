@@ -7,7 +7,7 @@ import (
     i5eef93069e105b81bb3eeb7de23f0b8a0bee9f669d45209c4f9d7c03fdfc883c "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/appointments/item/cancel"
 )
 
-// bookingAppointmentRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\appointments\{bookingAppointment-id}
+// BookingAppointmentRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\appointments\{bookingAppointment-id}
 type BookingAppointmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type BookingAppointmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// bookingAppointmentRequestBuilderGetQueryParameters all the appointments of this business. Read-only. Nullable.
+// BookingAppointmentRequestBuilderGetQueryParameters all the appointments of this business. Read-only. Nullable.
 type BookingAppointmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

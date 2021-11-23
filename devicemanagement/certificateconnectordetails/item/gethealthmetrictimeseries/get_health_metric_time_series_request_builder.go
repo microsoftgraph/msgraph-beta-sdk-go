@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// getHealthMetricTimeSeriesRequestBuilder builds and executes requests for operations under \deviceManagement\certificateConnectorDetails\{certificateConnectorDetails-id}\microsoft.graph.getHealthMetricTimeSeries
+// GetHealthMetricTimeSeriesRequestBuilder builds and executes requests for operations under \deviceManagement\certificateConnectorDetails\{certificateConnectorDetails-id}\microsoft.graph.getHealthMetricTimeSeries
 type GetHealthMetricTimeSeriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

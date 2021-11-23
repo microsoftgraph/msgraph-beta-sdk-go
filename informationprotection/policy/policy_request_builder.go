@@ -8,7 +8,7 @@ import (
     ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/policy/labels/item"
 )
 
-// policyRequestBuilder builds and executes requests for operations under \informationProtection\policy
+// PolicyRequestBuilder builds and executes requests for operations under \informationProtection\policy
 type PolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// policyRequestBuilderGetQueryParameters get policy from informationProtection
+// PolicyRequestBuilderGetQueryParameters get policy from informationProtection
 type PolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

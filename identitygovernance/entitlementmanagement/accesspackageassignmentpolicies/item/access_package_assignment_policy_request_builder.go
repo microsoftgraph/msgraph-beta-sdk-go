@@ -8,7 +8,7 @@ import (
     idf8643844b16f4a1b09c9fb4b7ba88c6a7ea426a45227d14b77579164d571313 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog"
 )
 
-// accessPackageAssignmentPolicyRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentPolicies\{accessPackageAssignmentPolicy-id}
+// AccessPackageAssignmentPolicyRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentPolicies\{accessPackageAssignmentPolicy-id}
 type AccessPackageAssignmentPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AccessPackageAssignmentPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageAssignmentPolicyRequestBuilderGetQueryParameters get accessPackageAssignmentPolicies from identityGovernance
+// AccessPackageAssignmentPolicyRequestBuilderGetQueryParameters get accessPackageAssignmentPolicies from identityGovernance
 type AccessPackageAssignmentPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

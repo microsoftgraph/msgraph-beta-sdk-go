@@ -13,7 +13,7 @@ import (
     id18c7cf991b9a22e0a73384bb3123a5de24ee17868f1f7b779a94f0a9c5a6a3a "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentschedulerequests/item/cancel"
 )
 
-// unifiedRoleAssignmentScheduleRequestRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}
+// UnifiedRoleAssignmentScheduleRequestRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}
 type UnifiedRoleAssignmentScheduleRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type UnifiedRoleAssignmentScheduleRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleAssignmentScheduleRequestRequestBuilderGetQueryParameters get roleAssignmentScheduleRequests from roleManagement
+// UnifiedRoleAssignmentScheduleRequestRequestBuilderGetQueryParameters get roleAssignmentScheduleRequests from roleManagement
 type UnifiedRoleAssignmentScheduleRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -18,7 +18,7 @@ import (
     iff82d48b107b0f1d8ee510d162980e8db7a234cfcf7a181c6a873e365fc3ef91 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onenote/resources/item"
 )
 
-// onenoteRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote
+// OnenoteRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote
 type OnenoteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type OnenoteRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onenoteRequestBuilderGetQueryParameters read-only.
+// OnenoteRequestBuilderGetQueryParameters read-only.
 type OnenoteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

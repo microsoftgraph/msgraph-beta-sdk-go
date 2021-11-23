@@ -58,7 +58,7 @@ import (
     i88c0ef2f8129d7022e7594e01e34ed8d304c73d763ba681efe40080e626ebd3e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/deviceconfigurationstates/item"
 )
 
-// managedDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}
+// ManagedDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}
 type ManagedDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -87,7 +87,7 @@ type ManagedDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDeviceRequestBuilderGetQueryParameters the list of co-managed devices report
+// ManagedDeviceRequestBuilderGetQueryParameters the list of co-managed devices report
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

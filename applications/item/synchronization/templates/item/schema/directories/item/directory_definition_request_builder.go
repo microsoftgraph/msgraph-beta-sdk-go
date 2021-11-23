@@ -7,7 +7,7 @@ import (
     i7646aa4731f41b239760ffcd6ffc710421890cb49c86fe957ddeddb8c65e02d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/synchronization/templates/item/schema/directories/item/discover"
 )
 
-// directoryDefinitionRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\templates\{synchronizationTemplate-id}\schema\directories\{directoryDefinition-id}
+// DirectoryDefinitionRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\templates\{synchronizationTemplate-id}\schema\directories\{directoryDefinition-id}
 type DirectoryDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DirectoryDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// directoryDefinitionRequestBuilderGetQueryParameters contains the collection of directories and all of their objects.
+// DirectoryDefinitionRequestBuilderGetQueryParameters contains the collection of directories and all of their objects.
 type DirectoryDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

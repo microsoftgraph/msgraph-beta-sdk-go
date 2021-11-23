@@ -6,7 +6,7 @@ import (
     i9e69f5f43bbff82c025b14a5be5e527f925d924e89365c899e8f7b8d24bd5053 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/tokenlifetimepolicies/ref"
 )
 
-// tokenLifetimePoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\tokenLifetimePolicies
+// TokenLifetimePoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\tokenLifetimePolicies
 type TokenLifetimePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type TokenLifetimePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tokenLifetimePoliciesRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this service principal.
+// TokenLifetimePoliciesRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this service principal.
 type TokenLifetimePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

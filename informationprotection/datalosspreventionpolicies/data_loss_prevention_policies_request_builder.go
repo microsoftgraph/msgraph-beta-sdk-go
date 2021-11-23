@@ -7,7 +7,7 @@ import (
     iadfdd2c94b77829e97dfd861211edb1169aeb2788bf74e13903e390a1d17b526 "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/datalosspreventionpolicies/evaluate"
 )
 
-// dataLossPreventionPoliciesRequestBuilder builds and executes requests for operations under \informationProtection\dataLossPreventionPolicies
+// DataLossPreventionPoliciesRequestBuilder builds and executes requests for operations under \informationProtection\dataLossPreventionPolicies
 type DataLossPreventionPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DataLossPreventionPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// dataLossPreventionPoliciesRequestBuilderGetQueryParameters get dataLossPreventionPolicies from informationProtection
+// DataLossPreventionPoliciesRequestBuilderGetQueryParameters get dataLossPreventionPolicies from informationProtection
 type DataLossPreventionPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

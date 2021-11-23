@@ -7,7 +7,7 @@ import (
     i560de63bb00db0faf7e6301a5c80365674799eb326e4ba886bc732783686a539 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/calendar/events/item/exceptionoccurrences/delta"
 )
 
-// exceptionOccurrencesRequestBuilder builds and executes requests for operations under \users\{user-id}\calendar\events\{event-id}\exceptionOccurrences
+// ExceptionOccurrencesRequestBuilder builds and executes requests for operations under \users\{user-id}\calendar\events\{event-id}\exceptionOccurrences
 type ExceptionOccurrencesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ExceptionOccurrencesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// exceptionOccurrencesRequestBuilderGetQueryParameters get exceptionOccurrences from users
+// ExceptionOccurrencesRequestBuilderGetQueryParameters get exceptionOccurrences from users
 type ExceptionOccurrencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

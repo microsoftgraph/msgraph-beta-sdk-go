@@ -11,7 +11,7 @@ import (
     if1160871f4538f1c2881002e619cb11a8c41ca9ef807c8c5f7a0f39c74706b6d "github.com/microsoftgraph/msgraph-beta-sdk-go/permissiongrants/item/restore"
 )
 
-// resourceSpecificPermissionGrantRequestBuilder builds and executes requests for operations under \permissionGrants\{resourceSpecificPermissionGrant-id}
+// ResourceSpecificPermissionGrantRequestBuilder builds and executes requests for operations under \permissionGrants\{resourceSpecificPermissionGrant-id}
 type ResourceSpecificPermissionGrantRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ResourceSpecificPermissionGrantRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourceSpecificPermissionGrantRequestBuilderGetQueryParameters get entity from permissionGrants by key
+// ResourceSpecificPermissionGrantRequestBuilderGetQueryParameters get entity from permissionGrants by key
 type ResourceSpecificPermissionGrantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

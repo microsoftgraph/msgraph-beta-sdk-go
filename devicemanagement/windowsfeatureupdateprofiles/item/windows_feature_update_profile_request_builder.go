@@ -9,7 +9,7 @@ import (
     i9fc8cb618d1d2cb2bd52c185cd35fcf810ea303a5692d3f159788228e6d3514f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsfeatureupdateprofiles/item/assignments/item"
 )
 
-// windowsFeatureUpdateProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles\{windowsFeatureUpdateProfile-id}
+// WindowsFeatureUpdateProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles\{windowsFeatureUpdateProfile-id}
 type WindowsFeatureUpdateProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type WindowsFeatureUpdateProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsFeatureUpdateProfileRequestBuilderGetQueryParameters a collection of windows feature update profiles
+// WindowsFeatureUpdateProfileRequestBuilderGetQueryParameters a collection of windows feature update profiles
 type WindowsFeatureUpdateProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

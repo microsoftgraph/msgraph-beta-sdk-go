@@ -8,7 +8,7 @@ import (
     if552963b64d01abf5402660068a63a336053e969fbe13841bbe4817b65852c68 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/authorizationpolicy/item/defaultuserroleoverrides/item"
 )
 
-// authorizationPolicyRequestBuilder builds and executes requests for operations under \policies\authorizationPolicy\{authorizationPolicy-id}
+// AuthorizationPolicyRequestBuilder builds and executes requests for operations under \policies\authorizationPolicy\{authorizationPolicy-id}
 type AuthorizationPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AuthorizationPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// authorizationPolicyRequestBuilderGetQueryParameters the policy that controls Azure AD authorization settings.
+// AuthorizationPolicyRequestBuilderGetQueryParameters the policy that controls Azure AD authorization settings.
 type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

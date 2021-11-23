@@ -7,7 +7,7 @@ import (
     ia5ce2a20a1997ab6e9ce7a3c2fdcf1480e9a2af8b4f0c6b493e499880fd085c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/calendar/calendarview/delta"
 )
 
-// calendarViewRequestBuilder builds and executes requests for operations under \users\{user-id}\calendar\calendarView
+// CalendarViewRequestBuilder builds and executes requests for operations under \users\{user-id}\calendar\calendarView
 type CalendarViewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type CalendarViewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// calendarViewRequestBuilderGetQueryParameters the calendar view for the calendar. Navigation property. Read-only.
+// CalendarViewRequestBuilderGetQueryParameters the calendar view for the calendar. Navigation property. Read-only.
 type CalendarViewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

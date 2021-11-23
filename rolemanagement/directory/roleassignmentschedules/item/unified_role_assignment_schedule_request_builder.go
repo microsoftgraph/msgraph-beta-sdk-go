@@ -7,7 +7,7 @@ import (
     if41c45f47a11aadf7aa8bc36870c53d6d0bc256d61fa5d8c1f6eb83c29c96e7c "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignmentschedules/item/activatedusing"
 )
 
-// unifiedRoleAssignmentScheduleRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignmentSchedules\{unifiedRoleAssignmentSchedule-id}
+// UnifiedRoleAssignmentScheduleRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignmentSchedules\{unifiedRoleAssignmentSchedule-id}
 type UnifiedRoleAssignmentScheduleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type UnifiedRoleAssignmentScheduleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleAssignmentScheduleRequestBuilderGetQueryParameters get roleAssignmentSchedules from roleManagement
+// UnifiedRoleAssignmentScheduleRequestBuilderGetQueryParameters get roleAssignmentSchedules from roleManagement
 type UnifiedRoleAssignmentScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// itemInsightsRequestBuilder builds and executes requests for operations under \organization\{organization-id}\settings\itemInsights
+// ItemInsightsRequestBuilder builds and executes requests for operations under \organization\{organization-id}\settings\itemInsights
 type ItemInsightsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type ItemInsightsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// itemInsightsRequestBuilderGetQueryParameters contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.
+// ItemInsightsRequestBuilderGetQueryParameters contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.
 type ItemInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

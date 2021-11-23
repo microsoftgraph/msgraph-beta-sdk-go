@@ -7,7 +7,7 @@ import (
     i8984cfab10b908eba7df9c86e0231f79c5ae247d35fa0d1872eeeb90891a21a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/activities/item/listitem/analytics/ref"
 )
 
-// analyticsRequestBuilder builds and executes requests for operations under \drives\{drive-id}\activities\{itemActivityOLD-id}\listItem\analytics
+// AnalyticsRequestBuilder builds and executes requests for operations under \drives\{drive-id}\activities\{itemActivityOLD-id}\listItem\analytics
 type AnalyticsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AnalyticsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// analyticsRequestBuilderGetQueryParameters analytics about the view activities that took place on this item.
+// AnalyticsRequestBuilderGetQueryParameters analytics about the view activities that took place on this item.
 type AnalyticsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

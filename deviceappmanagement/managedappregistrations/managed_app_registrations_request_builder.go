@@ -7,7 +7,7 @@ import (
     i9915ebc3ce7676f85505b20eca74c2954fb51b3b53829740df9b267614166173 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedappregistrations/getuseridswithflaggedappregistration"
 )
 
-// managedAppRegistrationsRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations
+// ManagedAppRegistrationsRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations
 type ManagedAppRegistrationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ManagedAppRegistrationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedAppRegistrationsRequestBuilderGetQueryParameters the managed app registrations.
+// ManagedAppRegistrationsRequestBuilderGetQueryParameters the managed app registrations.
 type ManagedAppRegistrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

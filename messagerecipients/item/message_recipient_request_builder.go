@@ -8,7 +8,7 @@ import (
     i743383fc382e5378ae11e0a3af80773199e61bc9a09df96b661701162acd2b84 "github.com/microsoftgraph/msgraph-beta-sdk-go/messagerecipients/item/events/item"
 )
 
-// messageRecipientRequestBuilder builds and executes requests for operations under \messageRecipients\{messageRecipient-id}
+// MessageRecipientRequestBuilder builds and executes requests for operations under \messageRecipients\{messageRecipient-id}
 type MessageRecipientRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type MessageRecipientRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// messageRecipientRequestBuilderGetQueryParameters get entity from messageRecipients by key
+// MessageRecipientRequestBuilderGetQueryParameters get entity from messageRecipients by key
 type MessageRecipientRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

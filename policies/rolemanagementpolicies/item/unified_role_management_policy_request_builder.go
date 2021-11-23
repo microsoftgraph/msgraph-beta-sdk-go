@@ -10,7 +10,7 @@ import (
     ie226ae78525b483a512018ed5f5bf2023846009012cd463b4e7b22c6a6585ac7 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicies/item/rules/item"
 )
 
-// unifiedRoleManagementPolicyRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicies\{unifiedRoleManagementPolicy-id}
+// UnifiedRoleManagementPolicyRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicies\{unifiedRoleManagementPolicy-id}
 type UnifiedRoleManagementPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type UnifiedRoleManagementPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleManagementPolicyRequestBuilderGetQueryParameters represents the role management policies.
+// UnifiedRoleManagementPolicyRequestBuilderGetQueryParameters represents the role management policies.
 type UnifiedRoleManagementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

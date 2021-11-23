@@ -6,7 +6,7 @@ import (
     ie02f4298c665be29fce8d03acc035e2779a4defcefcd8685e889c950f9c8f982 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/users/ref"
 )
 
-// usersRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\users
+// UsersRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\users
 type UsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type UsersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// usersRequestBuilderGetQueryParameters the primary users associated with the managed device.
+// UsersRequestBuilderGetQueryParameters the primary users associated with the managed device.
 type UsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

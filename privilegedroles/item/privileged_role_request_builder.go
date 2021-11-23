@@ -11,7 +11,7 @@ import (
     ifc2ecb6356f4c50497a05265b4b0a311af52bfc4aa6302f476a92d1df6adfafb "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroles/item/selfactivate"
 )
 
-// privilegedRoleRequestBuilder builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}
+// PrivilegedRoleRequestBuilder builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}
 type PrivilegedRoleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type PrivilegedRoleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// privilegedRoleRequestBuilderGetQueryParameters get entity from privilegedRoles by key
+// PrivilegedRoleRequestBuilderGetQueryParameters get entity from privilegedRoles by key
 type PrivilegedRoleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

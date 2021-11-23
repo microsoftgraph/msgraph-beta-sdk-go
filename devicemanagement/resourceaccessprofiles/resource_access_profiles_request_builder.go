@@ -7,7 +7,7 @@ import (
     id874778243b5d2f2bb9ad9959305bafa80d745556f941a159c77399717295578 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceaccessprofiles/querybyplatformtype"
 )
 
-// resourceAccessProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\resourceAccessProfiles
+// ResourceAccessProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\resourceAccessProfiles
 type ResourceAccessProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ResourceAccessProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourceAccessProfilesRequestBuilderGetQueryParameters collection of resource access settings associated with account.
+// ResourceAccessProfilesRequestBuilderGetQueryParameters collection of resource access settings associated with account.
 type ResourceAccessProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -8,7 +8,7 @@ import (
     i25c803795748ee2ba5ab98a3433bc351e872e8d852e28b0bcec4e5382139b2b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/tags/item/members/item"
 )
 
-// teamworkTagRequestBuilder builds and executes requests for operations under \teams\{team-id}\tags\{teamworkTag-id}
+// TeamworkTagRequestBuilder builds and executes requests for operations under \teams\{team-id}\tags\{teamworkTag-id}
 type TeamworkTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type TeamworkTagRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamworkTagRequestBuilderGetQueryParameters the tags associated with the team.
+// TeamworkTagRequestBuilderGetQueryParameters the tags associated with the team.
 type TeamworkTagRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

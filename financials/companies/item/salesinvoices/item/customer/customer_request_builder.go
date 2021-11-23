@@ -11,7 +11,7 @@ import (
     i7fc93e6d4c200f8023511c8db7922c08ae366528fe9ee0ab5c9ba99b05fe57ff "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoices/item/customer/paymentmethod"
 )
 
-// customerRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\customer
+// CustomerRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\customer
 type CustomerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type CustomerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// customerRequestBuilderGetQueryParameters get customer from financials
+// CustomerRequestBuilderGetQueryParameters get customer from financials
 type CustomerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

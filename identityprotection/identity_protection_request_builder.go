@@ -10,7 +10,7 @@ import (
     i5b186cdb023bab2640affb6c67369c3f8028451aa7845fa6d84e60b0d9b0fc05 "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/riskyusers/item"
 )
 
-// identityProtectionRequestBuilder builds and executes requests for operations under \identityProtection
+// IdentityProtectionRequestBuilder builds and executes requests for operations under \identityProtection
 type IdentityProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type IdentityProtectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// identityProtectionRequestBuilderGetQueryParameters get identityProtection
+// IdentityProtectionRequestBuilderGetQueryParameters get identityProtection
 type IdentityProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

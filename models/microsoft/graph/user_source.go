@@ -5,7 +5,7 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// userSource 
+// UserSource 
 type UserSource struct {
     DataSource
     // Email address of the user's mailbox.

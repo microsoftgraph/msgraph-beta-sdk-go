@@ -7,7 +7,7 @@ import (
     ia17a50f392f233475f2726c08e20bb925fe8c75dc2a18a8c6c889953892e8e2c "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/lastestimatestatisticsoperation/ref"
 )
 
-// lastEstimateStatisticsOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\lastEstimateStatisticsOperation
+// LastEstimateStatisticsOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\lastEstimateStatisticsOperation
 type LastEstimateStatisticsOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type LastEstimateStatisticsOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// lastEstimateStatisticsOperationRequestBuilderGetQueryParameters the last estimate operation associated with the sourceCollection.
+// LastEstimateStatisticsOperationRequestBuilderGetQueryParameters the last estimate operation associated with the sourceCollection.
 type LastEstimateStatisticsOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

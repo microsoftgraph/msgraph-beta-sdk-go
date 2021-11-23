@@ -7,7 +7,7 @@ import (
     if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/haspayloadlinks"
 )
 
-// deviceManagementScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts
+// DeviceManagementScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts
 type DeviceManagementScriptsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DeviceManagementScriptsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementScriptsRequestBuilderGetQueryParameters the list of device management scripts associated with the tenant.
+// DeviceManagementScriptsRequestBuilderGetQueryParameters the list of device management scripts associated with the tenant.
 type DeviceManagementScriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

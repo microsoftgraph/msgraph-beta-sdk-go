@@ -8,7 +8,7 @@ import (
     i77364310cf65cdd95360b454958409da5533146c0b4983b7b0838edea305420c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/applepushnotificationcertificate/downloadapplepushnotificationcertificatesigningrequest"
 )
 
-// applePushNotificationCertificateRequestBuilder builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate
+// ApplePushNotificationCertificateRequestBuilder builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate
 type ApplePushNotificationCertificateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ApplePushNotificationCertificateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// applePushNotificationCertificateRequestBuilderGetQueryParameters apple push notification certificate.
+// ApplePushNotificationCertificateRequestBuilderGetQueryParameters apple push notification certificate.
 type ApplePushNotificationCertificateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

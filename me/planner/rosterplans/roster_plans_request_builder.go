@@ -6,7 +6,7 @@ import (
     i982c6d4cdae5a39a775c15461bbd3640d3530233e29f2954e6b8fbd4f12f18fe "github.com/microsoftgraph/msgraph-beta-sdk-go/me/planner/rosterplans/ref"
 )
 
-// rosterPlansRequestBuilder builds and executes requests for operations under \me\planner\rosterPlans
+// RosterPlansRequestBuilder builds and executes requests for operations under \me\planner\rosterPlans
 type RosterPlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type RosterPlansRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// rosterPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
+// RosterPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 type RosterPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

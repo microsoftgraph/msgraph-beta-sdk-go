@@ -6,7 +6,7 @@ import (
     i913d85621a777266d2f20d684d23d9b6385fdeed8f69acd4ee935a63ba22c924 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/planner/favoriteplans/ref"
 )
 
-// favoritePlansRequestBuilder builds and executes requests for operations under \me\planner\favoritePlans
+// FavoritePlansRequestBuilder builds and executes requests for operations under \me\planner\favoritePlans
 type FavoritePlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type FavoritePlansRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// favoritePlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+// FavoritePlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 type FavoritePlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

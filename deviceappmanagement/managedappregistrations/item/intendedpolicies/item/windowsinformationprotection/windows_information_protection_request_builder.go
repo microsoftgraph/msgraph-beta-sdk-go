@@ -5,7 +5,7 @@ import (
     ib74bc325529a0748fdb4e03e1ddc1fc1fed87ebed2d61f86b2cf52a3fb830d53 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedappregistrations/item/intendedpolicies/item/windowsinformationprotection/assign"
 )
 
-// windowsInformationProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}\microsoft.graph.windowsInformationProtection
+// WindowsInformationProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}\microsoft.graph.windowsInformationProtection
 type WindowsInformationProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

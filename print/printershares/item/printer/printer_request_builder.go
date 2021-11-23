@@ -10,7 +10,7 @@ import (
     ic395d901ea47de5e1da0e5f094da0bf591159f680b75575381d6eb9712c3ab17 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printershares/item/printer/getcapabilities"
 )
 
-// printerRequestBuilder builds and executes requests for operations under \print\printerShares\{printerShare-id}\printer
+// PrinterRequestBuilder builds and executes requests for operations under \print\printerShares\{printerShare-id}\printer
 type PrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type PrinterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// printerRequestBuilderGetQueryParameters the printer that this printer share is related to.
+// PrinterRequestBuilderGetQueryParameters the printer that this printer share is related to.
 type PrinterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     ie68815be795e5c46a6b775db4a53c48c75956027c4be75e1ee5c82e410c26bfd "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsmanagementapp/ref"
 )
 
-// windowsManagementAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\windowsManagementApp
+// WindowsManagementAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\windowsManagementApp
 type WindowsManagementAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type WindowsManagementAppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsManagementAppRequestBuilderGetQueryParameters windows management app.
+// WindowsManagementAppRequestBuilderGetQueryParameters windows management app.
 type WindowsManagementAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

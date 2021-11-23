@@ -7,7 +7,7 @@ import (
     i72659658ca3b6fbacbe361e8d3bffc59f5940ce43ad6b33bc228ca23b65e927c "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/androidmanagedappprotections/haspayloadlinks"
 )
 
-// androidManagedAppProtectionsRequestBuilder builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections
+// AndroidManagedAppProtectionsRequestBuilder builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections
 type AndroidManagedAppProtectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AndroidManagedAppProtectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// androidManagedAppProtectionsRequestBuilderGetQueryParameters android managed app policies.
+// AndroidManagedAppProtectionsRequestBuilderGetQueryParameters android managed app policies.
 type AndroidManagedAppProtectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

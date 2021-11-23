@@ -6,7 +6,7 @@ import (
     i93e6244a8f9ec960e02c3fce9c31eb4d0ee1153ccd00153e3ece9dbf137c389a "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/item/transitivereports/ref"
 )
 
-// transitiveReportsRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\transitiveReports
+// TransitiveReportsRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\transitiveReports
 type TransitiveReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type TransitiveReportsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// transitiveReportsRequestBuilderGetQueryParameters the transitive reports for a contact. Read-only.
+// TransitiveReportsRequestBuilderGetQueryParameters the transitive reports for a contact. Read-only.
 type TransitiveReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

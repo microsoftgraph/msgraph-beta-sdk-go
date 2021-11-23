@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// usersRegisteredByMethodRequestBuilder builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod()
+// UsersRegisteredByMethodRequestBuilder builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod()
 type UsersRegisteredByMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

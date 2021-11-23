@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// getSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageDistributionUserCounts(period='{period}')
+// GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageDistributionUserCounts(period='{period}')
 type GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

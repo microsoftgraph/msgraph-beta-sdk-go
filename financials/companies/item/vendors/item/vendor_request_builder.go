@@ -10,7 +10,7 @@ import (
     i6aa6ac55925af7fd5c33a37eeb3aae34a47657aed51f36c14cacd2c0beb65b54 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/vendors/item/paymentterm"
 )
 
-// vendorRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\vendors\{vendor-id}
+// VendorRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\vendors\{vendor-id}
 type VendorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type VendorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// vendorRequestBuilderGetQueryParameters get vendors from financials
+// VendorRequestBuilderGetQueryParameters get vendors from financials
 type VendorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

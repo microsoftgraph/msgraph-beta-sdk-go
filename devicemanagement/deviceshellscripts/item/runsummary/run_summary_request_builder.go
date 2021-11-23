@@ -7,7 +7,7 @@ import (
     i08e0afaf2b4d01311b9c9f4849e9083f87fd7222dbaee4e869f6013d09e600b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/runsummary/ref"
 )
 
-// runSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}\runSummary
+// RunSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}\runSummary
 type RunSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RunSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// runSummaryRequestBuilderGetQueryParameters run summary for device management script.
+// RunSummaryRequestBuilderGetQueryParameters run summary for device management script.
 type RunSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

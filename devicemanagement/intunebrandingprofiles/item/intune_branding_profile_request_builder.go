@@ -9,7 +9,7 @@ import (
     i43e2d15146d44703f2826df7d20b0717eda3da488c1e8099cae91884e38e54c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/intunebrandingprofiles/item/assignments/item"
 )
 
-// intuneBrandingProfileRequestBuilder builds and executes requests for operations under \deviceManagement\intuneBrandingProfiles\{intuneBrandingProfile-id}
+// IntuneBrandingProfileRequestBuilder builds and executes requests for operations under \deviceManagement\intuneBrandingProfiles\{intuneBrandingProfile-id}
 type IntuneBrandingProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type IntuneBrandingProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// intuneBrandingProfileRequestBuilderGetQueryParameters intune branding profiles targeted to AAD groups
+// IntuneBrandingProfileRequestBuilderGetQueryParameters intune branding profiles targeted to AAD groups
 type IntuneBrandingProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

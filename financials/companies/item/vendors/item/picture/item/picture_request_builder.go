@@ -7,7 +7,7 @@ import (
     i8c319285af6b7efb637be36e78dab63929a19469ea2dbccd09b6d6e58118ff8e "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/vendors/item/picture/item/content"
 )
 
-// pictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\vendors\{vendor-id}\picture\{picture-id}
+// PictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\vendors\{vendor-id}\picture\{picture-id}
 type PictureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PictureRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// pictureRequestBuilderGetQueryParameters get picture from financials
+// PictureRequestBuilderGetQueryParameters get picture from financials
 type PictureRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

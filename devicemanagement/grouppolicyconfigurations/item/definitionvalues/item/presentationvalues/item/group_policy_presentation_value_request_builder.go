@@ -8,7 +8,7 @@ import (
     i0c67a157507f229b79bb5a42860b892b4a5eafc70b612c8f218a33421b0a7dfc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyconfigurations/item/definitionvalues/item/presentationvalues/item/presentation"
 )
 
-// groupPolicyPresentationValueRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}\presentationValues\{groupPolicyPresentationValue-id}
+// GroupPolicyPresentationValueRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}\presentationValues\{groupPolicyPresentationValue-id}
 type GroupPolicyPresentationValueRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type GroupPolicyPresentationValueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupPolicyPresentationValueRequestBuilderGetQueryParameters the associated group policy presentation values with the definition value.
+// GroupPolicyPresentationValueRequestBuilderGetQueryParameters the associated group policy presentation values with the definition value.
 type GroupPolicyPresentationValueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

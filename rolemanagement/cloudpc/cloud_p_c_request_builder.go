@@ -12,7 +12,7 @@ import (
     if2fe6d33056a86a8c02bd09d388e1ad97378adc4d03f5d4afe21fd7135b39314 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/cloudpc/resourcenamespaces/item"
 )
 
-// cloudPCRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC
+// CloudPCRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC
 type CloudPCRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type CloudPCRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// cloudPCRequestBuilderGetQueryParameters get cloudPC from roleManagement
+// CloudPCRequestBuilderGetQueryParameters get cloudPC from roleManagement
 type CloudPCRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

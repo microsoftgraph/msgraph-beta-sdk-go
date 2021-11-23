@@ -7,7 +7,7 @@ import (
     i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/deviceimages/getsourceimages"
 )
 
-// deviceImagesRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages
+// DeviceImagesRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages
 type DeviceImagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DeviceImagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceImagesRequestBuilderGetQueryParameters the image resource on Cloud PC.
+// DeviceImagesRequestBuilderGetQueryParameters the image resource on Cloud PC.
 type DeviceImagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -11,7 +11,7 @@ import (
     idde5435a6a0561007c340ade46139ae9f81c57f894f4e9aae890f86aeecbef7d "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/item/checkmemberobjects"
 )
 
-// contractRequestBuilder builds and executes requests for operations under \contracts\{contract-id}
+// ContractRequestBuilder builds and executes requests for operations under \contracts\{contract-id}
 type ContractRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ContractRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// contractRequestBuilderGetQueryParameters get entity from contracts by key
+// ContractRequestBuilderGetQueryParameters get entity from contracts by key
 type ContractRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

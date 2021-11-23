@@ -8,7 +8,7 @@ import (
     ifd0bc700953e86731dc6b8f4d24856110197f3a2f3a5c274adce92d84c52a38b "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/item/childtags"
 )
 
-// tagRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}
+// TagRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}
 type TagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type TagRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tagRequestBuilderGetQueryParameters returns a list of tag objects associated to this case.
+// TagRequestBuilderGetQueryParameters returns a list of tag objects associated to this case.
 type TagRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

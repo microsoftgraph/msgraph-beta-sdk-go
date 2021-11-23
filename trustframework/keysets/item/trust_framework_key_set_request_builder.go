@@ -11,7 +11,7 @@ import (
     ie04ccf263002e1d9853509d405e0878dfbf7c145b0a12ed976019d944eb6fe4d "github.com/microsoftgraph/msgraph-beta-sdk-go/trustframework/keysets/item/generatekey"
 )
 
-// trustFrameworkKeySetRequestBuilder builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}
+// TrustFrameworkKeySetRequestBuilder builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}
 type TrustFrameworkKeySetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type TrustFrameworkKeySetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// trustFrameworkKeySetRequestBuilderGetQueryParameters get keySets from trustFramework
+// TrustFrameworkKeySetRequestBuilderGetQueryParameters get keySets from trustFramework
 type TrustFrameworkKeySetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

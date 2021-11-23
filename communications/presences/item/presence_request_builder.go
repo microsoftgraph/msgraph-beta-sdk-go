@@ -10,7 +10,7 @@ import (
     ib61b07a61e3d9e1ae2e83dcf306c1142b1e2f1e15e289603a751e740648320b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/presences/item/clearuserpreferredpresence"
 )
 
-// presenceRequestBuilder builds and executes requests for operations under \communications\presences\{presence-id}
+// PresenceRequestBuilder builds and executes requests for operations under \communications\presences\{presence-id}
 type PresenceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type PresenceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// presenceRequestBuilderGetQueryParameters get presences from communications
+// PresenceRequestBuilderGetQueryParameters get presences from communications
 type PresenceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

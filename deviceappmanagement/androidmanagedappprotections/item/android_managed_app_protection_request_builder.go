@@ -9,7 +9,7 @@ import (
     i6fdd1eff96c393b127cac2aa1f215abb604a17faa6ac98f59cd063c3cb5f55c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/androidmanagedappprotections/item/apps/item"
 )
 
-// androidManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections\{androidManagedAppProtection-id}
+// AndroidManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections\{androidManagedAppProtection-id}
 type AndroidManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type AndroidManagedAppProtectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// androidManagedAppProtectionRequestBuilderGetQueryParameters android managed app policies.
+// AndroidManagedAppProtectionRequestBuilderGetQueryParameters android managed app policies.
 type AndroidManagedAppProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

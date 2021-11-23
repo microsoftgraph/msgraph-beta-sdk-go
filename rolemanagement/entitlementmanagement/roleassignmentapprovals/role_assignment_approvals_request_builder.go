@@ -7,7 +7,7 @@ import (
     i9cf3a13f9b43dc0e5ba1aa644d973896a43d1c90427155bdb7d42f5a2419a2f6 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentapprovals/filterbycurrentuserwithon"
 )
 
-// roleAssignmentApprovalsRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentApprovals
+// RoleAssignmentApprovalsRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentApprovals
 type RoleAssignmentApprovalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RoleAssignmentApprovalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// roleAssignmentApprovalsRequestBuilderGetQueryParameters get roleAssignmentApprovals from roleManagement
+// RoleAssignmentApprovalsRequestBuilderGetQueryParameters get roleAssignmentApprovals from roleManagement
 type RoleAssignmentApprovalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

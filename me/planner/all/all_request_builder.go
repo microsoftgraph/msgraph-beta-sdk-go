@@ -7,7 +7,7 @@ import (
     ibae464e52c0d46e5534846f5df7186f40334e460974e3fa462550699a504afc7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/planner/all/delta"
 )
 
-// allRequestBuilder builds and executes requests for operations under \me\planner\all
+// AllRequestBuilder builds and executes requests for operations under \me\planner\all
 type AllRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AllRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// allRequestBuilderGetQueryParameters get all from me
+// AllRequestBuilderGetQueryParameters get all from me
 type AllRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

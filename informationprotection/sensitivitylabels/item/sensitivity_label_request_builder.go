@@ -8,7 +8,7 @@ import (
     iff26d7fa0f2645011499c6d75d66adab5f1394fad3e196f91e70e2b33c74128c "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/sensitivitylabels/item/sublabels/item"
 )
 
-// sensitivityLabelRequestBuilder builds and executes requests for operations under \informationProtection\sensitivityLabels\{sensitivityLabel-id}
+// SensitivityLabelRequestBuilder builds and executes requests for operations under \informationProtection\sensitivityLabels\{sensitivityLabel-id}
 type SensitivityLabelRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type SensitivityLabelRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sensitivityLabelRequestBuilderGetQueryParameters get sensitivityLabels from informationProtection
+// SensitivityLabelRequestBuilderGetQueryParameters get sensitivityLabels from informationProtection
 type SensitivityLabelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

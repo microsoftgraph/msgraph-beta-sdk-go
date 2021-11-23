@@ -6,7 +6,7 @@ import (
     ibd3a72ad757d52dca90e41f11285ae87ce5baf2ebcf3a2c0985168ecc5530659 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/agreementacceptances/ref"
 )
 
-// agreementAcceptancesRequestBuilder builds and executes requests for operations under \me\agreementAcceptances
+// AgreementAcceptancesRequestBuilder builds and executes requests for operations under \me\agreementAcceptances
 type AgreementAcceptancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type AgreementAcceptancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// agreementAcceptancesRequestBuilderGetQueryParameters the user's terms of use acceptance statuses. Read-only. Nullable.
+// AgreementAcceptancesRequestBuilderGetQueryParameters the user's terms of use acceptance statuses. Read-only. Nullable.
 type AgreementAcceptancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

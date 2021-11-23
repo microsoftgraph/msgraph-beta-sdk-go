@@ -7,7 +7,7 @@ import (
     ib50922c2d2a9787b10c876f2621661bd1366e024d3d5bf7c716b4df66780742d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/managedappregistrations/ref"
 )
 
-// managedAppRegistrationsRequestBuilder builds and executes requests for operations under \users\{user-id}\managedAppRegistrations
+// ManagedAppRegistrationsRequestBuilder builds and executes requests for operations under \users\{user-id}\managedAppRegistrations
 type ManagedAppRegistrationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ManagedAppRegistrationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedAppRegistrationsRequestBuilderGetQueryParameters zero or more managed app registrations that belong to the user.
+// ManagedAppRegistrationsRequestBuilderGetQueryParameters zero or more managed app registrations that belong to the user.
 type ManagedAppRegistrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

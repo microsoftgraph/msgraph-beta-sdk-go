@@ -18,7 +18,7 @@ import (
     ieb67a4e973c38f9a77d4f81d39f0b7685c2e72c00379ef53269c356ae983bd0d "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/calendarview/item"
 )
 
-// bookingBusinessRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}
+// BookingBusinessRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}
 type BookingBusinessRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type BookingBusinessRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// bookingBusinessRequestBuilderGetQueryParameters represents a Microsot Bookings Business.
+// BookingBusinessRequestBuilderGetQueryParameters represents a Microsot Bookings Business.
 type BookingBusinessRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

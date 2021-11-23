@@ -7,7 +7,7 @@ import (
     i3a868f9dbfed4c57d058675ee4a7249a023d2400743fa593c978ba0e1973b394 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/microsoftauthenticatormethods/item/device"
 )
 
-// microsoftAuthenticatorAuthenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\microsoftAuthenticatorMethods\{microsoftAuthenticatorAuthenticationMethod-id}
+// MicrosoftAuthenticatorAuthenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\microsoftAuthenticatorMethods\{microsoftAuthenticatorAuthenticationMethod-id}
 type MicrosoftAuthenticatorAuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// microsoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters get microsoftAuthenticatorMethods from me
+// MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters get microsoftAuthenticatorMethods from me
 type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

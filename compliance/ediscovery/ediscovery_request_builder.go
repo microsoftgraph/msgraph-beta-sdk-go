@@ -8,7 +8,7 @@ import (
     i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item"
 )
 
-// ediscoveryRequestBuilder builds and executes requests for operations under \compliance\ediscovery
+// EdiscoveryRequestBuilder builds and executes requests for operations under \compliance\ediscovery
 type EdiscoveryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type EdiscoveryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ediscoveryRequestBuilderGetQueryParameters get ediscovery from compliance
+// EdiscoveryRequestBuilderGetQueryParameters get ediscovery from compliance
 type EdiscoveryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     i93431a3f2d0dfd9863bd0fe671a64f433ee5cc0694c9898ce9b20c463f6f8f58 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/approvals/item/steps/item"
 )
 
-// approvalRequestBuilder builds and executes requests for operations under \me\approvals\{approval-id}
+// ApprovalRequestBuilder builds and executes requests for operations under \me\approvals\{approval-id}
 type ApprovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ApprovalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// approvalRequestBuilderGetQueryParameters get approvals from me
+// ApprovalRequestBuilderGetQueryParameters get approvals from me
 type ApprovalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

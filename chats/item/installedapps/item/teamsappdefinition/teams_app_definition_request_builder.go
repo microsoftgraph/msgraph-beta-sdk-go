@@ -7,7 +7,7 @@ import (
     i9da07ffa841c2d0db3a33a7c60fc4c31f4e1fa19593eef64f2463a5324ae559c "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/item/installedapps/item/teamsappdefinition/ref"
 )
 
-// teamsAppDefinitionRequestBuilder builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}\teamsAppDefinition
+// TeamsAppDefinitionRequestBuilder builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}\teamsAppDefinition
 type TeamsAppDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TeamsAppDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamsAppDefinitionRequestBuilderGetQueryParameters the details of this version of the app.
+// TeamsAppDefinitionRequestBuilderGetQueryParameters the details of this version of the app.
 type TeamsAppDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

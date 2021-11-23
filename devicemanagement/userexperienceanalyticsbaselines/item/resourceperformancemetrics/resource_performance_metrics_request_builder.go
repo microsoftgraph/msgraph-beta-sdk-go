@@ -7,7 +7,7 @@ import (
     i25261affe7ff0d545d65d3fbc8451209ccb35c65bc354d77402c8c440f1ff9a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/resourceperformancemetrics/ref"
 )
 
-// resourcePerformanceMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\resourcePerformanceMetrics
+// ResourcePerformanceMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\resourcePerformanceMetrics
 type ResourcePerformanceMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ResourcePerformanceMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourcePerformanceMetricsRequestBuilderGetQueryParameters the user experience analytics resource performance metrics.
+// ResourcePerformanceMetricsRequestBuilderGetQueryParameters the user experience analytics resource performance metrics.
 type ResourcePerformanceMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

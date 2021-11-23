@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// windows 
+// Windows 
 type Windows struct {
     Entity
     // Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.

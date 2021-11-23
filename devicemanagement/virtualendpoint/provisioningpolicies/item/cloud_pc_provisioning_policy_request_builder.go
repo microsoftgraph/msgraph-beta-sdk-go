@@ -9,7 +9,7 @@ import (
     if91535156d5443297583fcd65d99597809e9e5b6115e4948cfc32c6c18b25848 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/provisioningpolicies/item/assignments/item"
 )
 
-// cloudPcProvisioningPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\provisioningPolicies\{cloudPcProvisioningPolicy-id}
+// CloudPcProvisioningPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\provisioningPolicies\{cloudPcProvisioningPolicy-id}
 type CloudPcProvisioningPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type CloudPcProvisioningPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// cloudPcProvisioningPolicyRequestBuilderGetQueryParameters cloud PC provisioning policy.
+// CloudPcProvisioningPolicyRequestBuilderGetQueryParameters cloud PC provisioning policy.
 type CloudPcProvisioningPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

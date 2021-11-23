@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// b2cAuthenticationMethodsPolicy 
+// B2cAuthenticationMethodsPolicy 
 type B2cAuthenticationMethodsPolicy struct {
     Entity
     // The tenant admin can configure local accounts using email if the email and password authentication method is enabled.

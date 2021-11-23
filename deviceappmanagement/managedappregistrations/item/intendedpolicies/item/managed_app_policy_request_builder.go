@@ -10,7 +10,7 @@ import (
     ia5e8ce427876d3bb4743896822b16f0365266b66560b2c73e1b2fec2b4625524 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedappregistrations/item/intendedpolicies/item/windowsinformationprotection"
 )
 
-// managedAppPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}
+// ManagedAppPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}
 type ManagedAppPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ManagedAppPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedAppPolicyRequestBuilderGetQueryParameters zero or more policies admin intended for the app as of now.
+// ManagedAppPolicyRequestBuilderGetQueryParameters zero or more policies admin intended for the app as of now.
 type ManagedAppPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

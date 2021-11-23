@@ -7,7 +7,7 @@ import (
     i652ff1de6cfef015a3e309d14034175d4603ec679c441ab393763107684f5092 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/employees/item/picture"
 )
 
-// employeeRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\employees\{employee-id}
+// EmployeeRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\employees\{employee-id}
 type EmployeeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type EmployeeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// employeeRequestBuilderGetQueryParameters get employees from financials
+// EmployeeRequestBuilderGetQueryParameters get employees from financials
 type EmployeeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

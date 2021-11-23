@@ -43,7 +43,7 @@ import (
     if796ee537abe837147e4bdf42134467182183733786146dccb3e3c9dd5e93b54 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicies/item"
 )
 
-// policiesRequestBuilder builds and executes requests for operations under \policies
+// PoliciesRequestBuilder builds and executes requests for operations under \policies
 type PoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -63,7 +63,7 @@ type PoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// policiesRequestBuilderGetQueryParameters get policies
+// PoliciesRequestBuilderGetQueryParameters get policies
 type PoliciesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

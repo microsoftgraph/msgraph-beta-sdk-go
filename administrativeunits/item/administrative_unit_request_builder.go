@@ -16,7 +16,7 @@ import (
     ieb753c78202e5499a95653d7cfff3918b3c7124418d5e65033612f2c7fbc09c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/item/extensions/item"
 )
 
-// administrativeUnitRequestBuilder builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}
+// AdministrativeUnitRequestBuilder builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}
 type AdministrativeUnitRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type AdministrativeUnitRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// administrativeUnitRequestBuilderGetQueryParameters get entity from administrativeUnits by key
+// AdministrativeUnitRequestBuilderGetQueryParameters get entity from administrativeUnits by key
 type AdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

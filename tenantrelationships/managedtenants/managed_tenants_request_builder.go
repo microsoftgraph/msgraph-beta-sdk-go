@@ -52,7 +52,7 @@ import (
     if6d60fc8097e10a44124bc34967688bbbcf720e50c2b3034d3ecedc559f02741 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/cloudpcsoverview/item"
 )
 
-// managedTenantsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants
+// ManagedTenantsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants
 type ManagedTenantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -81,7 +81,7 @@ type ManagedTenantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedTenantsRequestBuilderGetQueryParameters the operations available to interact with the multi-tenant management platform.
+// ManagedTenantsRequestBuilderGetQueryParameters the operations available to interact with the multi-tenant management platform.
 type ManagedTenantsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

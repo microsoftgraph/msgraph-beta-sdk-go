@@ -8,7 +8,7 @@ import (
     i62acb51610a9d7331253267e6171626c9bf8b167157bceb4da07ac69ac5540ee "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/securitybaselinestates/item/settingstates/item"
 )
 
-// securityBaselineStateRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}
+// SecurityBaselineStateRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}
 type SecurityBaselineStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type SecurityBaselineStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// securityBaselineStateRequestBuilderGetQueryParameters security baseline states for this device.
+// SecurityBaselineStateRequestBuilderGetQueryParameters security baseline states for this device.
 type SecurityBaselineStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -9,7 +9,7 @@ import (
     ibb7d5a14b18ba56a542032028c627fe3f293b78e14bb9cd30cce1fce050756f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/usersettings/item/assignments/item"
 )
 
-// cloudPcUserSettingRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings\{cloudPcUserSetting-id}
+// CloudPcUserSettingRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings\{cloudPcUserSetting-id}
 type CloudPcUserSettingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type CloudPcUserSettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// cloudPcUserSettingRequestBuilderGetQueryParameters cloud PC user settings.
+// CloudPcUserSettingRequestBuilderGetQueryParameters cloud PC user settings.
 type CloudPcUserSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

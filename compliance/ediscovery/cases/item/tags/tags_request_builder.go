@@ -7,7 +7,7 @@ import (
     ie8f3ba9c9b44ad66e0036184f0a10c98d1c6c8ed469092ddfad2e345646e34c8 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/ashierarchy"
 )
 
-// tagsRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags
+// TagsRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags
 type TagsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TagsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tagsRequestBuilderGetQueryParameters returns a list of tag objects associated to this case.
+// TagsRequestBuilderGetQueryParameters returns a list of tag objects associated to this case.
 type TagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

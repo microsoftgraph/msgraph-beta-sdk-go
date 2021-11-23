@@ -11,7 +11,7 @@ import (
     ie58d03e4a8a1ff62a18e2ec91d18b2410cce187a18440bbde6c2754055d5ee34 "github.com/microsoftgraph/msgraph-beta-sdk-go/officeconfiguration/clientconfigurations/item/assignments/item"
 )
 
-// officeClientConfigurationRequestBuilder builds and executes requests for operations under \officeConfiguration\clientConfigurations\{officeClientConfiguration-id}
+// OfficeClientConfigurationRequestBuilder builds and executes requests for operations under \officeConfiguration\clientConfigurations\{officeClientConfiguration-id}
 type OfficeClientConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type OfficeClientConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// officeClientConfigurationRequestBuilderGetQueryParameters list of office Client configuration.
+// OfficeClientConfigurationRequestBuilderGetQueryParameters list of office Client configuration.
 type OfficeClientConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     i205b8ec0cfa1cc329c6ee2dea699ac1b4a920eb84807e1496c980b9b9632bff0 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentapprovals/item/steps/item"
 )
 
-// approvalRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentApprovals\{approval-id}
+// ApprovalRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentApprovals\{approval-id}
 type ApprovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ApprovalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// approvalRequestBuilderGetQueryParameters get roleAssignmentApprovals from roleManagement
+// ApprovalRequestBuilderGetQueryParameters get roleAssignmentApprovals from roleManagement
 type ApprovalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

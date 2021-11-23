@@ -7,7 +7,7 @@ import (
     ibac8eb5e8bb42c7e8c92e7024b822d703e6c45c3d6f437550124c797d08fe88a "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/generalledgerentries/item/account"
 )
 
-// generalLedgerEntryRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\generalLedgerEntries\{generalLedgerEntry-id}
+// GeneralLedgerEntryRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\generalLedgerEntries\{generalLedgerEntry-id}
 type GeneralLedgerEntryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type GeneralLedgerEntryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// generalLedgerEntryRequestBuilderGetQueryParameters get generalLedgerEntries from financials
+// GeneralLedgerEntryRequestBuilderGetQueryParameters get generalLedgerEntries from financials
 type GeneralLedgerEntryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

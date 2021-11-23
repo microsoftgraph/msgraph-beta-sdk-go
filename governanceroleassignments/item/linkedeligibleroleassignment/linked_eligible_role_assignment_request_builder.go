@@ -7,7 +7,7 @@ import (
     ifce0086a65b63cb68af1b72091f1b3cc941492ace3db6dab7be9f94d0969b8a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments/item/linkedeligibleroleassignment/ref"
 )
 
-// linkedEligibleRoleAssignmentRequestBuilder builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\linkedEligibleRoleAssignment
+// LinkedEligibleRoleAssignmentRequestBuilder builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\linkedEligibleRoleAssignment
 type LinkedEligibleRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type LinkedEligibleRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// linkedEligibleRoleAssignmentRequestBuilderGetQueryParameters read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
+// LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 type LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

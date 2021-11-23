@@ -7,7 +7,7 @@ import (
     i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/historydefinitions/item/generatedownloaduri"
 )
 
-// accessReviewHistoryDefinitionRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions\{accessReviewHistoryDefinition-id}
+// AccessReviewHistoryDefinitionRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions\{accessReviewHistoryDefinition-id}
 type AccessReviewHistoryDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AccessReviewHistoryDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessReviewHistoryDefinitionRequestBuilderGetQueryParameters get historyDefinitions from identityGovernance
+// AccessReviewHistoryDefinitionRequestBuilderGetQueryParameters get historyDefinitions from identityGovernance
 type AccessReviewHistoryDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

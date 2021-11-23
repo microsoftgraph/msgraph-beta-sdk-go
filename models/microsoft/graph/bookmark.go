@@ -6,7 +6,7 @@ import (
     id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/search"
 )
 
-// bookmark 
+// Bookmark 
 type Bookmark struct {
     SearchAnswer
     // 

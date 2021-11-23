@@ -13,7 +13,7 @@ import (
     ie7dd06601f7be4a75e499cc220f5c87d45dca4695a9b092b00f512bf0edb0643 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/synchronization/jobs/item/start"
 )
 
-// synchronizationJobRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs\{synchronizationJob-id}
+// SynchronizationJobRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs\{synchronizationJob-id}
 type SynchronizationJobRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type SynchronizationJobRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// synchronizationJobRequestBuilderGetQueryParameters get jobs from servicePrincipals
+// SynchronizationJobRequestBuilderGetQueryParameters get jobs from servicePrincipals
 type SynchronizationJobRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

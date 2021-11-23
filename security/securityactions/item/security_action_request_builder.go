@@ -7,7 +7,7 @@ import (
     ic986fc4744ac2327a648b0ac9a8f38244dea035e7dfbf613a625886852dce6f0 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securityactions/item/cancelsecurityaction"
 )
 
-// securityActionRequestBuilder builds and executes requests for operations under \security\securityActions\{securityAction-id}
+// SecurityActionRequestBuilder builds and executes requests for operations under \security\securityActions\{securityAction-id}
 type SecurityActionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type SecurityActionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// securityActionRequestBuilderGetQueryParameters get securityActions from security
+// SecurityActionRequestBuilderGetQueryParameters get securityActions from security
 type SecurityActionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

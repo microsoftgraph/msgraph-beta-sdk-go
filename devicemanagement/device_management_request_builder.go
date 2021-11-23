@@ -273,7 +273,7 @@ import (
     ifb0586ae8b6e18f17029a64d29eef03b6ab94fa47b8fb1b4e58af7b4233fc994 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/derivedcredentials/item"
 )
 
-// deviceManagementRequestBuilder builds and executes requests for operations under \deviceManagement
+// DeviceManagementRequestBuilder builds and executes requests for operations under \deviceManagement
 type DeviceManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -293,7 +293,7 @@ type DeviceManagementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementRequestBuilderGetQueryParameters get deviceManagement
+// DeviceManagementRequestBuilderGetQueryParameters get deviceManagement
 type DeviceManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

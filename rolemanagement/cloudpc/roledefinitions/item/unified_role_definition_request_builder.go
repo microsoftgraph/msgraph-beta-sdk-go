@@ -8,7 +8,7 @@ import (
     i910eeff5cdb0ea7e39c034cb7a200cb7c6a260f552de68963d047895d11d1fed "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/cloudpc/roledefinitions/item/inheritspermissionsfrom/item"
 )
 
-// unifiedRoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\roleDefinitions\{unifiedRoleDefinition-id}
+// UnifiedRoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\roleDefinitions\{unifiedRoleDefinition-id}
 type UnifiedRoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type UnifiedRoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleDefinitionRequestBuilderGetQueryParameters get roleDefinitions from roleManagement
+// UnifiedRoleDefinitionRequestBuilderGetQueryParameters get roleDefinitions from roleManagement
 type UnifiedRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

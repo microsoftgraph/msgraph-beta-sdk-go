@@ -7,7 +7,7 @@ import (
     id1528e2471ae36a0ae7981b45584b17b30e7a3e550591a6cc40dc5d26c932f61 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdeviceperformance/summarizedeviceperformancedeviceswithsummarizeby"
 )
 
-// userExperienceAnalyticsDevicePerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicePerformance
+// UserExperienceAnalyticsDevicePerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicePerformance
 type UserExperienceAnalyticsDevicePerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type UserExperienceAnalyticsDevicePerformanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userExperienceAnalyticsDevicePerformanceRequestBuilderGetQueryParameters user experience analytics device performance
+// UserExperienceAnalyticsDevicePerformanceRequestBuilderGetQueryParameters user experience analytics device performance
 type UserExperienceAnalyticsDevicePerformanceRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

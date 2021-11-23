@@ -7,7 +7,7 @@ import (
     id461c5cf6f3351b5c2dec99429bbb1a4130e9ee3e7e9bc94ce9b788e647e6aba "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/userstatuses/item/app/iosvppapp/revokedevicelicense"
 )
 
-// iosVppAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app\microsoft.graph.iosVppApp
+// IosVppAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app\microsoft.graph.iosVppApp
 type IosVppAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

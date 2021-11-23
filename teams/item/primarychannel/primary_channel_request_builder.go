@@ -16,7 +16,7 @@ import (
     icf6d8f24c127128ff064ffe65313e1ae4d46b1c21f5338abcde90ed64a944f80 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/tabs/item"
 )
 
-// primaryChannelRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel
+// PrimaryChannelRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel
 type PrimaryChannelRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type PrimaryChannelRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// primaryChannelRequestBuilderGetQueryParameters the general channel for the team.
+// PrimaryChannelRequestBuilderGetQueryParameters the general channel for the team.
 type PrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -72,7 +72,7 @@ import (
     ie940ae608019de62a242d937e70fdc6a489372a4d225a99b69483a2d8f07d28f "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salescreditmemolines/item"
 )
 
-// companyRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}
+// CompanyRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}
 type CompanyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -101,7 +101,7 @@ type CompanyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// companyRequestBuilderGetQueryParameters get companies from financials
+// CompanyRequestBuilderGetQueryParameters get companies from financials
 type CompanyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

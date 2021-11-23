@@ -9,7 +9,7 @@ import (
     ib891dce868012bc76e43b4d5605def357014a7176eba2991e50840566357283c "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/resourcenamespaces/item/resourceactions/item"
 )
 
-// unifiedRbacResourceNamespaceRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\resourceNamespaces\{unifiedRbacResourceNamespace-id}
+// UnifiedRbacResourceNamespaceRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\resourceNamespaces\{unifiedRbacResourceNamespace-id}
 type UnifiedRbacResourceNamespaceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type UnifiedRbacResourceNamespaceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRbacResourceNamespaceRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
+// UnifiedRbacResourceNamespaceRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
 type UnifiedRbacResourceNamespaceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

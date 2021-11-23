@@ -7,7 +7,7 @@ import (
     ia27044e0277dc87f215c2e2d5b4ea61a393a5a88f20eb27796a0236c757acc1a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/filterbycurrentuserwithon"
 )
 
-// pendingAccessReviewInstancesRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances
+// PendingAccessReviewInstancesRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances
 type PendingAccessReviewInstancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type PendingAccessReviewInstancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// pendingAccessReviewInstancesRequestBuilderGetQueryParameters navigation property to get list of access reviews pending approval by reviewer.
+// PendingAccessReviewInstancesRequestBuilderGetQueryParameters navigation property to get list of access reviews pending approval by reviewer.
 type PendingAccessReviewInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

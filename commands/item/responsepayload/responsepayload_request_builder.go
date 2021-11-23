@@ -7,7 +7,7 @@ import (
     iba18db208a8013762074839c8fb77f8d0fc88e67d4c6d1d663f90ddd47f87754 "github.com/microsoftgraph/msgraph-beta-sdk-go/commands/item/responsepayload/ref"
 )
 
-// responsepayloadRequestBuilder builds and executes requests for operations under \commands\{command-id}\responsepayload
+// ResponsepayloadRequestBuilder builds and executes requests for operations under \commands\{command-id}\responsepayload
 type ResponsepayloadRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ResponsepayloadRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// responsepayloadRequestBuilderGetQueryParameters get responsepayload from commands
+// ResponsepayloadRequestBuilderGetQueryParameters get responsepayload from commands
 type ResponsepayloadRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

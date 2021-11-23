@@ -15,7 +15,7 @@ import (
     ie882571704f16fce890ce1823a4378f95130fa7dd10d24c9f8cca3163c9d0344 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/listitem/activities/item"
 )
 
-// listItemRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\listItem
+// ListItemRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\listItem
 type ListItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type ListItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// listItemRequestBuilderGetQueryParameters used to access the underlying listItem
+// ListItemRequestBuilderGetQueryParameters used to access the underlying listItem
 type ListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

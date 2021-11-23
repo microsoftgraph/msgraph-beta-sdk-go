@@ -10,7 +10,7 @@ import (
     i5735f7ded85e85c94dfa2afa819e51282b06351a5a8baed9d71d2b45147a5aef "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/permissiongrantpolicies/item/includes/item"
 )
 
-// permissionGrantPolicyRequestBuilder builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}
+// PermissionGrantPolicyRequestBuilder builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}
 type PermissionGrantPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type PermissionGrantPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// permissionGrantPolicyRequestBuilderGetQueryParameters the policy that specifies the conditions under which consent can be granted.
+// PermissionGrantPolicyRequestBuilderGetQueryParameters the policy that specifies the conditions under which consent can be granted.
 type PermissionGrantPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

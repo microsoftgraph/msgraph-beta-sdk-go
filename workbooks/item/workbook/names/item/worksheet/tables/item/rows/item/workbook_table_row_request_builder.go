@@ -7,7 +7,7 @@ import (
     idcf565cc1cdf39d5129a10603e38d4b258383564bd7fb94dfecda3dfe20be641 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/rows/item/range_escaped"
 )
 
-// workbookTableRowRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\rows\{workbookTableRow-id}
+// WorkbookTableRowRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\rows\{workbookTableRow-id}
 type WorkbookTableRowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type WorkbookTableRowRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookTableRowRequestBuilderGetQueryParameters represents a collection of all the rows in the table. Read-only.
+// WorkbookTableRowRequestBuilderGetQueryParameters represents a collection of all the rows in the table. Read-only.
 type WorkbookTableRowRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

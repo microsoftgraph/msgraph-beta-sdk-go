@@ -9,7 +9,7 @@ import (
     ieb51a913c30bd6e3a9419fd5803b77bcb45da99fd6360761eff0c6d4c7e79144 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/categoryaxis"
 )
 
-// axesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes
+// AxesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes
 type AxesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type AxesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// axesRequestBuilderGetQueryParameters represents chart axes. Read-only.
+// AxesRequestBuilderGetQueryParameters represents chart axes. Read-only.
 type AxesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

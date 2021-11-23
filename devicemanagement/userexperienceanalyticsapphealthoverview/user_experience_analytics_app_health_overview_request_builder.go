@@ -8,7 +8,7 @@ import (
     i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthoverview/metricvalues/item"
 )
 
-// userExperienceAnalyticsAppHealthOverviewRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOverview
+// UserExperienceAnalyticsAppHealthOverviewRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOverview
 type UserExperienceAnalyticsAppHealthOverviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userExperienceAnalyticsAppHealthOverviewRequestBuilderGetQueryParameters user experience analytics appHealth overview
+// UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetQueryParameters user experience analytics appHealth overview
 type UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i560d2568ac9c5fe44d67759153b33140715eef5920cf17e2360ae62cdbe1a369 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/importoffice365deviceconfigurationpolicies"
 )
 
-// templatesRequestBuilder builds and executes requests for operations under \deviceManagement\templates
+// TemplatesRequestBuilder builds and executes requests for operations under \deviceManagement\templates
 type TemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// templatesRequestBuilderGetQueryParameters the available templates
+// TemplatesRequestBuilderGetQueryParameters the available templates
 type TemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

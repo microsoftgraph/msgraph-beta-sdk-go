@@ -6,7 +6,7 @@ import (
     i0a50ba98760add5399bc6628e14a1b39e91252d15e6caf8f4fa1ac083c8f1660 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/directreports/ref"
 )
 
-// directReportsRequestBuilder builds and executes requests for operations under \me\directReports
+// DirectReportsRequestBuilder builds and executes requests for operations under \me\directReports
 type DirectReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type DirectReportsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// directReportsRequestBuilderGetQueryParameters the users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+// DirectReportsRequestBuilderGetQueryParameters the users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
 type DirectReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

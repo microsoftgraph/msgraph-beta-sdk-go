@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// getOffice365GroupsActivityStorageWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityStorage(period='{period}')
+// GetOffice365GroupsActivityStorageWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityStorage(period='{period}')
 type GetOffice365GroupsActivityStorageWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

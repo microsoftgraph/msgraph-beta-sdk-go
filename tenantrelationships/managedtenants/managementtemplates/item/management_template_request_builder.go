@@ -8,7 +8,7 @@ import (
     i817300fec4353a94961a22d7d43713f1760b3be7d58d66387e43a18eed5dbe12 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplates/item/managementtemplatesteps"
 )
 
-// managementTemplateRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}
+// ManagementTemplateRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}
 type ManagementTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ManagementTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managementTemplateRequestBuilderGetQueryParameters the collection of baseline management templates across managed tenants.
+// ManagementTemplateRequestBuilderGetQueryParameters the collection of baseline management templates across managed tenants.
 type ManagementTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

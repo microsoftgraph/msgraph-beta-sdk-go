@@ -10,7 +10,7 @@ import (
     ie0c0fd2f52c8949442d7606cb6f684535237f75ae9a8505ddead286fdb640838 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience/exclusions/unenrollassetsbyid"
 )
 
-// exclusionsRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions
+// ExclusionsRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions
 type ExclusionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type ExclusionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// exclusionsRequestBuilderGetQueryParameters specifies the assets to exclude from the audience.
+// ExclusionsRequestBuilderGetQueryParameters specifies the assets to exclude from the audience.
 type ExclusionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

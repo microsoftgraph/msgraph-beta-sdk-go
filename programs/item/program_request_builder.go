@@ -8,7 +8,7 @@ import (
     i4389f3cba37530932c950ae7ea34269add1bb806749a0c4e1d0778b3b03f64cd "github.com/microsoftgraph/msgraph-beta-sdk-go/programs/item/controls/item"
 )
 
-// programRequestBuilder builds and executes requests for operations under \programs\{program-id}
+// ProgramRequestBuilder builds and executes requests for operations under \programs\{program-id}
 type ProgramRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ProgramRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// programRequestBuilderGetQueryParameters get entity from programs by key
+// ProgramRequestBuilderGetQueryParameters get entity from programs by key
 type ProgramRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     i533bf20e862e0cfd002ac11184843402fc54130b1fcc0d9fabaa59a9f85e56fd "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenanttags/item/assigntag"
 )
 
-// tenantTagRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantTags\{tenantTag-id}
+// TenantTagRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantTags\{tenantTag-id}
 type TenantTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type TenantTagRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tenantTagRequestBuilderGetQueryParameters the collection of tenant tags across managed tenants.
+// TenantTagRequestBuilderGetQueryParameters the collection of tenant tags across managed tenants.
 type TenantTagRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

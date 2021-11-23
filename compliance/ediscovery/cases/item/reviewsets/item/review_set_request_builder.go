@@ -10,7 +10,7 @@ import (
     iddd703417744884f23660dc02635324f3f6311317b830c6b4be8a93262f68548 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/reviewsets/item/queries/item"
 )
 
-// reviewSetRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\reviewSets\{reviewSet-id}
+// ReviewSetRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\reviewSets\{reviewSet-id}
 type ReviewSetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ReviewSetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// reviewSetRequestBuilderGetQueryParameters returns a list of reviewSet objects in the case. Read-only. Nullable.
+// ReviewSetRequestBuilderGetQueryParameters returns a list of reviewSet objects in the case. Read-only. Nullable.
 type ReviewSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

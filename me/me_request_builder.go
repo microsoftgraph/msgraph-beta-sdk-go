@@ -130,7 +130,7 @@ import (
     ifd2db3d8aa0a0ec27c89cb2949e6936c2d3de139fb986c5773dfe17008496fc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item"
 )
 
-// meRequestBuilder builds and executes requests for operations under \me
+// MeRequestBuilder builds and executes requests for operations under \me
 type MeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -150,7 +150,7 @@ type MeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// meRequestBuilderGetQueryParameters get me
+// MeRequestBuilderGetQueryParameters get me
 type MeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

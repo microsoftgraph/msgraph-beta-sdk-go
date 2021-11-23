@@ -10,7 +10,7 @@ import (
     iea5ba574dc595840973efcd407abcb2dd703ccd000901a3ec72565f8752fc534 "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/buckets/item/tasks/item/progresstaskboardformat"
 )
 
-// plannerTaskRequestBuilder builds and executes requests for operations under \planner\buckets\{plannerBucket-id}\tasks\{plannerTask-id}
+// PlannerTaskRequestBuilder builds and executes requests for operations under \planner\buckets\{plannerBucket-id}\tasks\{plannerTask-id}
 type PlannerTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type PlannerTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// plannerTaskRequestBuilderGetQueryParameters read-only. Nullable. The collection of tasks in the bucket.
+// PlannerTaskRequestBuilderGetQueryParameters read-only. Nullable. The collection of tasks in the bucket.
 type PlannerTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

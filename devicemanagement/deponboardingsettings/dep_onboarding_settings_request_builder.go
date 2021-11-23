@@ -7,7 +7,7 @@ import (
     ia653be664a0dd75c52af6e78b0cf052819bdf93d3b5de4be59dc76970e065611 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/getexpiringvpptokencountwithexpiringbeforedatetime"
 )
 
-// depOnboardingSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings
+// DepOnboardingSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings
 type DepOnboardingSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DepOnboardingSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// depOnboardingSettingsRequestBuilderGetQueryParameters this collections of multiple DEP tokens per-tenant.
+// DepOnboardingSettingsRequestBuilderGetQueryParameters this collections of multiple DEP tokens per-tenant.
 type DepOnboardingSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

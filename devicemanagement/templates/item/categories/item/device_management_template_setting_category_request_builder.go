@@ -8,7 +8,7 @@ import (
     i8cca88b6428aa5e0aef1f88b2eea712467f69b4bcd843cf74b8d35246b3c0873 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/categories/item/recommendedsettings/item"
 )
 
-// deviceManagementTemplateSettingCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\categories\{deviceManagementTemplateSettingCategory-id}
+// DeviceManagementTemplateSettingCategoryRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\categories\{deviceManagementTemplateSettingCategory-id}
 type DeviceManagementTemplateSettingCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DeviceManagementTemplateSettingCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementTemplateSettingCategoryRequestBuilderGetQueryParameters collection of setting categories within the template
+// DeviceManagementTemplateSettingCategoryRequestBuilderGetQueryParameters collection of setting categories within the template
 type DeviceManagementTemplateSettingCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

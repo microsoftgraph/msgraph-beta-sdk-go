@@ -6,7 +6,7 @@ import (
     i6907d8c601c7aa982e60b00cf3904e48d28ee3236bbc3c348e2d6e4d6873f0ae "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicycategories/item/children/ref"
 )
 
-// childrenRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\children
+// ChildrenRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\children
 type ChildrenRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ChildrenRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// childrenRequestBuilderGetQueryParameters the children categories
+// ChildrenRequestBuilderGetQueryParameters the children categories
 type ChildrenRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

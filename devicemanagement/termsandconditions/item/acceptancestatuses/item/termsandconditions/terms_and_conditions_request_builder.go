@@ -7,7 +7,7 @@ import (
     ic154c6b7d98226dc8edf73ea4564b2b341b7f36e9222ba2462b79b9694e1c781 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/termsandconditions/item/acceptancestatuses/item/termsandconditions/ref"
 )
 
-// termsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\acceptanceStatuses\{termsAndConditionsAcceptanceStatus-id}\termsAndConditions
+// TermsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\acceptanceStatuses\{termsAndConditionsAcceptanceStatus-id}\termsAndConditions
 type TermsAndConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TermsAndConditionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// termsAndConditionsRequestBuilderGetQueryParameters navigation link to the terms and conditions that are assigned.
+// TermsAndConditionsRequestBuilderGetQueryParameters navigation link to the terms and conditions that are assigned.
 type TermsAndConditionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

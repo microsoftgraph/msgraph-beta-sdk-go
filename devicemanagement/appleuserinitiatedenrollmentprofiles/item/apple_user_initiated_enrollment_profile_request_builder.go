@@ -9,7 +9,7 @@ import (
     i3f2b91af36c1c85a91b2090f64ecc402fe3be3e6030dc816276efb34d3538a56 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/appleuserinitiatedenrollmentprofiles/item/assignments/item"
 )
 
-// appleUserInitiatedEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles\{appleUserInitiatedEnrollmentProfile-id}
+// AppleUserInitiatedEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles\{appleUserInitiatedEnrollmentProfile-id}
 type AppleUserInitiatedEnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type AppleUserInitiatedEnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appleUserInitiatedEnrollmentProfileRequestBuilderGetQueryParameters apple user initiated enrollment profiles
+// AppleUserInitiatedEnrollmentProfileRequestBuilderGetQueryParameters apple user initiated enrollment profiles
 type AppleUserInitiatedEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

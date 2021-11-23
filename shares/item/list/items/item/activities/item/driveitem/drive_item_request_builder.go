@@ -7,7 +7,7 @@ import (
     i26d23dc78389a82d8dc567bdfe28ae9cbd51902a7c6df01144f0bd55d85a1743 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/items/item/activities/item/driveitem/content"
 )
 
-// driveItemRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\items\{listItem-id}\activities\{itemActivityOLD-id}\driveItem
+// DriveItemRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\items\{listItem-id}\activities\{itemActivityOLD-id}\driveItem
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveItemRequestBuilderGetQueryParameters get driveItem from shares
+// DriveItemRequestBuilderGetQueryParameters get driveItem from shares
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

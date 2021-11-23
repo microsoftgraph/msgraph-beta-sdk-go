@@ -11,7 +11,7 @@ import (
     ia72138d764aac9bd3a352e3057f1578dd8230b4045684066c5c0d36a2be3badb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignmentrequests/item/subject"
 )
 
-// governanceRoleAssignmentRequestRequestBuilder builds and executes requests for operations under \governanceRoleAssignmentRequests\{governanceRoleAssignmentRequest-id}
+// GovernanceRoleAssignmentRequestRequestBuilder builds and executes requests for operations under \governanceRoleAssignmentRequests\{governanceRoleAssignmentRequest-id}
 type GovernanceRoleAssignmentRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type GovernanceRoleAssignmentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// governanceRoleAssignmentRequestRequestBuilderGetQueryParameters get entity from governanceRoleAssignmentRequests by key
+// GovernanceRoleAssignmentRequestRequestBuilderGetQueryParameters get entity from governanceRoleAssignmentRequests by key
 type GovernanceRoleAssignmentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

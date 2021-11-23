@@ -6,7 +6,7 @@ import (
     ica50cfb2088b283b8a6b4645e0bbc23915d17751c7f962249dbb41345b564d56 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/oauth2permissiongrants/ref"
 )
 
-// oauth2PermissionGrantsRequestBuilder builds and executes requests for operations under \me\oauth2PermissionGrants
+// Oauth2PermissionGrantsRequestBuilder builds and executes requests for operations under \me\oauth2PermissionGrants
 type Oauth2PermissionGrantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type Oauth2PermissionGrantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// oauth2PermissionGrantsRequestBuilderGetQueryParameters get oauth2PermissionGrants from me
+// Oauth2PermissionGrantsRequestBuilderGetQueryParameters get oauth2PermissionGrants from me
 type Oauth2PermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

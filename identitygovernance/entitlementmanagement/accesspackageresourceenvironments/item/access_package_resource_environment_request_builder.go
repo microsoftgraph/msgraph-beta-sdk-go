@@ -7,7 +7,7 @@ import (
     i5ae24f9a3712044143bf6c8de4d6dd2c51855b65924b9f12aa5fbf5998b667c7 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourceenvironments/item/accesspackageresources"
 )
 
-// accessPackageResourceEnvironmentRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceEnvironments\{accessPackageResourceEnvironment-id}
+// AccessPackageResourceEnvironmentRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceEnvironments\{accessPackageResourceEnvironment-id}
 type AccessPackageResourceEnvironmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AccessPackageResourceEnvironmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageResourceEnvironmentRequestBuilderGetQueryParameters get accessPackageResourceEnvironments from identityGovernance
+// AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters get accessPackageResourceEnvironments from identityGovernance
 type AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

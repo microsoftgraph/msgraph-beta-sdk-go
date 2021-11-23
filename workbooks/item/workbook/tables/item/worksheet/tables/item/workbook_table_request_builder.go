@@ -13,7 +13,7 @@ import (
     ia19841dfd8dac02a16ef964e9ae689716da5ba326c0089ac50187e4ce5fa6e7d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/item/converttorange"
 )
 
-// workbookTableRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}
+// WorkbookTableRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}
 type WorkbookTableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type WorkbookTableRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookTableRequestBuilderGetQueryParameters collection of tables that are part of the worksheet. Read-only.
+// WorkbookTableRequestBuilderGetQueryParameters collection of tables that are part of the worksheet. Read-only.
 type WorkbookTableRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/operations/item/caseexportoperation"
 )
 
-// caseOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}
+// CaseOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}
 type CaseOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type CaseOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// caseOperationRequestBuilderGetQueryParameters returns a list of case operation objects for this case. Nullable.
+// CaseOperationRequestBuilderGetQueryParameters returns a list of case operation objects for this case. Nullable.
 type CaseOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

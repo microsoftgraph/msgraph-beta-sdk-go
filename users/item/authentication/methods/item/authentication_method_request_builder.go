@@ -9,7 +9,7 @@ import (
     i6be5096e68eb6930981cc451db948a4e546dbf716a6d9ce5edf1a0b87c64a4cd "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/methods/item/enablesmssignin"
 )
 
-// authenticationMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\methods\{authenticationMethod-id}
+// AuthenticationMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\methods\{authenticationMethod-id}
 type AuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type AuthenticationMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// authenticationMethodRequestBuilderGetQueryParameters get methods from users
+// AuthenticationMethodRequestBuilderGetQueryParameters get methods from users
 type AuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

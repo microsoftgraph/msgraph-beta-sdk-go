@@ -7,7 +7,7 @@ import (
     i3e31f706fc76ba4e16c152454d85c280f8ac53d7c171bf7d0e1e53bb8e2eca1c "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/wdacsupplementalpolicies/item/devicestatuses/item/policy"
 )
 
-// windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses\{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses\{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestB
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetQueryParameters the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetQueryParameters the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

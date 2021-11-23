@@ -8,7 +8,7 @@ import (
     i75138276537be7f359112029ca90eee1631bb436b9f9db869b58bf15fd0cd092 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations/item"
 )
 
-// teamworkRequestBuilder builds and executes requests for operations under \teamwork
+// TeamworkRequestBuilder builds and executes requests for operations under \teamwork
 type TeamworkRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type TeamworkRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamworkRequestBuilderGetQueryParameters get teamwork
+// TeamworkRequestBuilderGetQueryParameters get teamwork
 type TeamworkRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

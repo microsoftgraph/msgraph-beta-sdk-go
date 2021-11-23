@@ -9,7 +9,7 @@ import (
     i52b737a53d0c03e6a268168d1f82ff2bdff242cee05a2ee607462da8e246d8ba "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/userstatuses/item/devicestatuses/item"
 )
 
-// userAppInstallStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}
+// UserAppInstallStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}
 type UserAppInstallStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type UserAppInstallStatusRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userAppInstallStatusRequestBuilderGetQueryParameters the list of installation states for this mobile app.
+// UserAppInstallStatusRequestBuilderGetQueryParameters the list of installation states for this mobile app.
 type UserAppInstallStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

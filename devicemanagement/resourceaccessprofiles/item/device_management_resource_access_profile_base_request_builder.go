@@ -9,7 +9,7 @@ import (
     i4c6649ed921058137d23369f25fb530c052e741c6026b182c9c66a0903b527cd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceaccessprofiles/item/assignments/item"
 )
 
-// deviceManagementResourceAccessProfileBaseRequestBuilder builds and executes requests for operations under \deviceManagement\resourceAccessProfiles\{deviceManagementResourceAccessProfileBase-id}
+// DeviceManagementResourceAccessProfileBaseRequestBuilder builds and executes requests for operations under \deviceManagement\resourceAccessProfiles\{deviceManagementResourceAccessProfileBase-id}
 type DeviceManagementResourceAccessProfileBaseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type DeviceManagementResourceAccessProfileBaseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementResourceAccessProfileBaseRequestBuilderGetQueryParameters collection of resource access settings associated with account.
+// DeviceManagementResourceAccessProfileBaseRequestBuilderGetQueryParameters collection of resource access settings associated with account.
 type DeviceManagementResourceAccessProfileBaseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     ie56f34c670a0240ffc9813245b1aeb627629abdb5deb1fba39a36235ceecb0af "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience"
 )
 
-// deploymentRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}
+// DeploymentRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}
 type DeploymentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DeploymentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deploymentRequestBuilderGetQueryParameters deployments created using the deployment service. Read-only.
+// DeploymentRequestBuilderGetQueryParameters deployments created using the deployment service. Read-only.
 type DeploymentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

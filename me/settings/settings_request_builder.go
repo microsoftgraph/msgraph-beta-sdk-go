@@ -9,7 +9,7 @@ import (
     ic8da2b4e0c465d56c7595968118808ea50a2f0d8955625b7d847e0fea28e0efa "github.com/microsoftgraph/msgraph-beta-sdk-go/me/settings/shiftpreferences"
 )
 
-// settingsRequestBuilder builds and executes requests for operations under \me\settings
+// SettingsRequestBuilder builds and executes requests for operations under \me\settings
 type SettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type SettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// settingsRequestBuilderGetQueryParameters read-only. Nullable.
+// SettingsRequestBuilderGetQueryParameters read-only. Nullable.
 type SettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

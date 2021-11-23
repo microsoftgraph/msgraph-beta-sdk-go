@@ -13,7 +13,7 @@ import (
     if5e944aeb623a0c93576fab9b79580c8d8d3906a670d3cd546a45efed62b8da9 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/calendar/events/item/exceptionoccurrences/item/snoozereminder"
 )
 
-// eventRequestBuilder builds and executes requests for operations under \groups\{group-id}\calendar\events\{event-id}\exceptionOccurrences\{event-id1}
+// EventRequestBuilder builds and executes requests for operations under \groups\{group-id}\calendar\events\{event-id}\exceptionOccurrences\{event-id1}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventRequestBuilderGetQueryParameters get exceptionOccurrences from groups
+// EventRequestBuilderGetQueryParameters get exceptionOccurrences from groups
 type EventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/catalog/entries/item"
 )
 
-// catalogRequestBuilder builds and executes requests for operations under \admin\windows\updates\catalog
+// CatalogRequestBuilder builds and executes requests for operations under \admin\windows\updates\catalog
 type CatalogRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type CatalogRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// catalogRequestBuilderGetQueryParameters catalog of content that can be approved for deployment by the deployment service. Read-only.
+// CatalogRequestBuilderGetQueryParameters catalog of content that can be approved for deployment by the deployment service. Read-only.
 type CatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

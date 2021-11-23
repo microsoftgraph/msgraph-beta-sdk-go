@@ -8,7 +8,7 @@ import (
     i03d87a623fe34b68802111f1431fdc0d15908728141aff85793118f211fa2ed2 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/publishedresources/item/agentgroups/item/agents/item/agentgroups/item"
 )
 
-// onPremisesAgentRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources\{publishedResource-id}\agentGroups\{onPremisesAgentGroup-id}\agents\{onPremisesAgent-id}
+// OnPremisesAgentRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources\{publishedResource-id}\agentGroups\{onPremisesAgentGroup-id}\agents\{onPremisesAgent-id}
 type OnPremisesAgentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type OnPremisesAgentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onPremisesAgentRequestBuilderGetQueryParameters list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
+// OnPremisesAgentRequestBuilderGetQueryParameters list of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 type OnPremisesAgentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

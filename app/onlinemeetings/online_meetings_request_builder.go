@@ -7,7 +7,7 @@ import (
     ie7c9e57d363d5edfeba5715775d5074f4b54ea19741349d205aeb371a2936d57 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/createorget"
 )
 
-// onlineMeetingsRequestBuilder builds and executes requests for operations under \app\onlineMeetings
+// OnlineMeetingsRequestBuilder builds and executes requests for operations under \app\onlineMeetings
 type OnlineMeetingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type OnlineMeetingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onlineMeetingsRequestBuilderGetQueryParameters get onlineMeetings from app
+// OnlineMeetingsRequestBuilderGetQueryParameters get onlineMeetings from app
 type OnlineMeetingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

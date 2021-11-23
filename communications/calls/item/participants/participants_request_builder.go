@@ -8,7 +8,7 @@ import (
     id90c6009e7514ca326295b847c2f946d08d2743bb5d25f3c9e1786150a281870 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/participants/muteall"
 )
 
-// participantsRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants
+// ParticipantsRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants
 type ParticipantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type ParticipantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// participantsRequestBuilderGetQueryParameters read-only. Nullable.
+// ParticipantsRequestBuilderGetQueryParameters read-only. Nullable.
 type ParticipantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

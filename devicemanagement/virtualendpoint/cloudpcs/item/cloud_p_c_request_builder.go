@@ -11,7 +11,7 @@ import (
     ic5c3712fbfc3279ed202453cc12bb33fc813457da47b3438a76bf9022c5b2f4a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/endgraceperiod"
 )
 
-// cloudPCRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}
+// CloudPCRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}
 type CloudPCRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type CloudPCRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// cloudPCRequestBuilderGetQueryParameters cloud managed virtual desktops.
+// CloudPCRequestBuilderGetQueryParameters cloud managed virtual desktops.
 type CloudPCRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     ibf7310ca68d55392bbdbd2da406d3078b3d0933d2dfaa641477e64ac9571c49c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androiddeviceownerenrollmentprofiles/item/createtoken"
 )
 
-// androidDeviceOwnerEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\androidDeviceOwnerEnrollmentProfiles\{androidDeviceOwnerEnrollmentProfile-id}
+// AndroidDeviceOwnerEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\androidDeviceOwnerEnrollmentProfiles\{androidDeviceOwnerEnrollmentProfile-id}
 type AndroidDeviceOwnerEnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// androidDeviceOwnerEnrollmentProfileRequestBuilderGetQueryParameters android device owner enrollment profile entities.
+// AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetQueryParameters android device owner enrollment profile entities.
 type AndroidDeviceOwnerEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -13,7 +13,7 @@ import (
     ic2aca819f825d9c17ae3dc918c051897a82985726f8ef22ddb89aabed82293b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/events/item/instances/item/cancel"
 )
 
-// eventRequestBuilder builds and executes requests for operations under \me\events\{event-id}\instances\{event-id1}
+// EventRequestBuilder builds and executes requests for operations under \me\events\{event-id}\instances\{event-id1}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// EventRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

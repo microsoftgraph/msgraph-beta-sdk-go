@@ -17,7 +17,7 @@ import (
     id3508c1f1aa1eff5970c7a4fe8b1bb7b16a0d219f157caf9278141e89295cd00 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/outlook/tasks/item"
 )
 
-// outlookRequestBuilder builds and executes requests for operations under \me\outlook
+// OutlookRequestBuilder builds and executes requests for operations under \me\outlook
 type OutlookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type OutlookRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// outlookRequestBuilderGetQueryParameters read-only.
+// OutlookRequestBuilderGetQueryParameters read-only.
 type OutlookRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

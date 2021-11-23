@@ -58,7 +58,7 @@ import (
     ie4fe9c1b0775a3ba213a1b61d1fec1140c6cb4da5fc41c5c5997e96597f42ba8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/securitybaselinestates/item"
 )
 
-// managedDeviceRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}
+// ManagedDeviceRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}
 type ManagedDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -87,7 +87,7 @@ type ManagedDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDeviceRequestBuilderGetQueryParameters the managed devices associated with the user.
+// ManagedDeviceRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i51cb6449bd391c2d84a6c68c41a7de235fe9dcc5015fc92c3a5cce1b8addba7b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/deviceenrollmentconfigurations/haspayloadlinks"
 )
 
-// deviceEnrollmentConfigurationsRequestBuilder builds and executes requests for operations under \users\{user-id}\deviceEnrollmentConfigurations
+// DeviceEnrollmentConfigurationsRequestBuilder builds and executes requests for operations under \users\{user-id}\deviceEnrollmentConfigurations
 type DeviceEnrollmentConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DeviceEnrollmentConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceEnrollmentConfigurationsRequestBuilderGetQueryParameters get enrollment configurations targeted to the user
+// DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters get enrollment configurations targeted to the user
 type DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

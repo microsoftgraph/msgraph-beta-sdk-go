@@ -9,7 +9,7 @@ import (
     i3f11bffb7dba7ee4ad416d2fb7daa8d13e95c1d6616fb962c02e09217e9c6cf7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reusablepolicysettings/item/referencingconfigurationpolicies/item"
 )
 
-// deviceManagementReusablePolicySettingRequestBuilder builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}
+// DeviceManagementReusablePolicySettingRequestBuilder builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}
 type DeviceManagementReusablePolicySettingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type DeviceManagementReusablePolicySettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementReusablePolicySettingRequestBuilderGetQueryParameters list of all reusable settings that can be referred in a policy
+// DeviceManagementReusablePolicySettingRequestBuilderGetQueryParameters list of all reusable settings that can be referred in a policy
 type DeviceManagementReusablePolicySettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

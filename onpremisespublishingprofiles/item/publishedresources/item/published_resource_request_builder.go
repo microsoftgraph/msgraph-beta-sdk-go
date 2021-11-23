@@ -8,7 +8,7 @@ import (
     i83bee4233fba4981064deea45d3ffb62e786c642221c519df7083c565af4041e "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/publishedresources/item/agentgroups/item"
 )
 
-// publishedResourceRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources\{publishedResource-id}
+// PublishedResourceRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources\{publishedResource-id}
 type PublishedResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PublishedResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// publishedResourceRequestBuilderGetQueryParameters list of existing publishedResource objects. Read-only. Nullable.
+// PublishedResourceRequestBuilderGetQueryParameters list of existing publishedResource objects. Read-only. Nullable.
 type PublishedResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

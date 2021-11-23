@@ -8,7 +8,7 @@ import (
     i50ec8564a3573ab218480a77da34dfd3ec06dcd6cc87f5f81ab4cc9acfcfd9d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulations/item"
 )
 
-// attackSimulationRequestBuilder builds and executes requests for operations under \security\attackSimulation
+// AttackSimulationRequestBuilder builds and executes requests for operations under \security\attackSimulation
 type AttackSimulationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AttackSimulationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// attackSimulationRequestBuilderGetQueryParameters provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+// AttackSimulationRequestBuilderGetQueryParameters provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
 type AttackSimulationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

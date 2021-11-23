@@ -8,7 +8,7 @@ import (
     ie391dc3382801307bb68740c42b4f1301ab41dd9b59ec3276fbdd441fda52bfa "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/purchaseinvoices/item/purchaseinvoicelines/item/item"
 )
 
-// purchaseInvoiceLineRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\purchaseInvoices\{purchaseInvoice-id}\purchaseInvoiceLines\{purchaseInvoiceLine-id}
+// PurchaseInvoiceLineRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\purchaseInvoices\{purchaseInvoice-id}\purchaseInvoiceLines\{purchaseInvoiceLine-id}
 type PurchaseInvoiceLineRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PurchaseInvoiceLineRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// purchaseInvoiceLineRequestBuilderGetQueryParameters get purchaseInvoiceLines from financials
+// PurchaseInvoiceLineRequestBuilderGetQueryParameters get purchaseInvoiceLines from financials
 type PurchaseInvoiceLineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

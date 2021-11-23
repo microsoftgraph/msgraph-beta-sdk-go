@@ -8,7 +8,7 @@ import (
     i77b3caa890238c2e63b357fa8fb1a4582acced3f5ce3a51847b85fd8f5bc33a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/vpptokens/item/revokelicenses"
 )
 
-// vppTokenRequestBuilder builds and executes requests for operations under \deviceAppManagement\vppTokens\{vppToken-id}
+// VppTokenRequestBuilder builds and executes requests for operations under \deviceAppManagement\vppTokens\{vppToken-id}
 type VppTokenRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type VppTokenRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// vppTokenRequestBuilderGetQueryParameters list of Vpp tokens for this organization.
+// VppTokenRequestBuilderGetQueryParameters list of Vpp tokens for this organization.
 type VppTokenRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

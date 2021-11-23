@@ -9,7 +9,7 @@ import (
     i7fe672ce2ded63745de2480f0a175b485195547bff2ac413663b22ef3172bb4e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/bulkreprovisioncloudpc"
 )
 
-// comanagedDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices
+// ComanagedDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices
 type ComanagedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ComanagedDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// comanagedDevicesRequestBuilderGetQueryParameters the list of co-managed devices report
+// ComanagedDevicesRequestBuilderGetQueryParameters the list of co-managed devices report
 type ComanagedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

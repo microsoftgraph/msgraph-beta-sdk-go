@@ -12,7 +12,7 @@ import (
     idbe71426e8a7cf17f46df86ea54d1a8d22e20242b9a4e0a5c7d1e8c8405dd581 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/synchronization/templates/item"
 )
 
-// synchronizationRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization
+// SynchronizationRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization
 type SynchronizationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type SynchronizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// synchronizationRequestBuilderGetQueryParameters get synchronization from servicePrincipals
+// SynchronizationRequestBuilderGetQueryParameters get synchronization from servicePrincipals
 type SynchronizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

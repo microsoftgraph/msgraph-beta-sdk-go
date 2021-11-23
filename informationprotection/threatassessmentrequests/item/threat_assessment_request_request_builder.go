@@ -8,7 +8,7 @@ import (
     i49b97f74066b80fc2f06e1a623b395eb4de07f58502cf70313d6e6838b92b518 "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/threatassessmentrequests/item/results/item"
 )
 
-// threatAssessmentRequestRequestBuilder builds and executes requests for operations under \informationProtection\threatAssessmentRequests\{threatAssessmentRequest-id}
+// ThreatAssessmentRequestRequestBuilder builds and executes requests for operations under \informationProtection\threatAssessmentRequests\{threatAssessmentRequest-id}
 type ThreatAssessmentRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ThreatAssessmentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// threatAssessmentRequestRequestBuilderGetQueryParameters get threatAssessmentRequests from informationProtection
+// ThreatAssessmentRequestRequestBuilderGetQueryParameters get threatAssessmentRequests from informationProtection
 type ThreatAssessmentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     i8ecfa16c52894e44bb461e7c08ef3386d762b546ef55959bfffbff3585e33939 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roledefinitions/item/inheritspermissionsfrom/item"
 )
 
-// unifiedRoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleDefinitions\{unifiedRoleDefinition-id}
+// UnifiedRoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleDefinitions\{unifiedRoleDefinition-id}
 type UnifiedRoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type UnifiedRoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleDefinitionRequestBuilderGetQueryParameters resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+// UnifiedRoleDefinitionRequestBuilderGetQueryParameters resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 type UnifiedRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

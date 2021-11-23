@@ -10,7 +10,7 @@ import (
     ieba9935f611e8dffd6c4a595723c566237eca57407b2ce3912312f1d48019de6 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/authenticationmethods/usersregisteredbyfeature"
 )
 
-// authenticationMethodsRequestBuilder builds and executes requests for operations under \reports\authenticationMethods
+// AuthenticationMethodsRequestBuilder builds and executes requests for operations under \reports\authenticationMethods
 type AuthenticationMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type AuthenticationMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// authenticationMethodsRequestBuilderGetQueryParameters get authenticationMethods from reports
+// AuthenticationMethodsRequestBuilderGetQueryParameters get authenticationMethods from reports
 type AuthenticationMethodsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

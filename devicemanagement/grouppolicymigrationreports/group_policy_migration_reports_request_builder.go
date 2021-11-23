@@ -7,7 +7,7 @@ import (
     id171944cf343fa2036802b84e24a061ba16a3bb530b13186963b3a3e9787cac7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicymigrationreports/createmigrationreport"
 )
 
-// groupPolicyMigrationReportsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports
+// GroupPolicyMigrationReportsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports
 type GroupPolicyMigrationReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type GroupPolicyMigrationReportsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupPolicyMigrationReportsRequestBuilderGetQueryParameters a list of Group Policy migration reports.
+// GroupPolicyMigrationReportsRequestBuilderGetQueryParameters a list of Group Policy migration reports.
 type GroupPolicyMigrationReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

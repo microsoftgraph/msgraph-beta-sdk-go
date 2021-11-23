@@ -7,7 +7,7 @@ import (
     ifd31a3e36ec294a0032acde68f76fc0ddc7a900ad292d52922a35ae87687c2df "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/timecards/clockin"
 )
 
-// timeCardsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeCards
+// TimeCardsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeCards
 type TimeCardsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TimeCardsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// timeCardsRequestBuilderGetQueryParameters get timeCards from teams
+// TimeCardsRequestBuilderGetQueryParameters get timeCards from teams
 type TimeCardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

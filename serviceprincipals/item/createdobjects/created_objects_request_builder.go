@@ -6,7 +6,7 @@ import (
     i59bda87d98098d2d67e12050f8280752afc4041915969b63587c4d41a7e437a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/createdobjects/ref"
 )
 
-// createdObjectsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\createdObjects
+// CreatedObjectsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\createdObjects
 type CreatedObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type CreatedObjectsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// createdObjectsRequestBuilderGetQueryParameters directory objects created by this service principal. Read-only. Nullable.
+// CreatedObjectsRequestBuilderGetQueryParameters directory objects created by this service principal. Read-only. Nullable.
 type CreatedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

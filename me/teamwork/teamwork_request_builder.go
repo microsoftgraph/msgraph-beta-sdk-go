@@ -9,7 +9,7 @@ import (
     i2f8fc19d0ffa378974d134d26c9bd4ed6b3083770f50add7d052132db4ad8e8b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/teamwork/installedapps/item"
 )
 
-// teamworkRequestBuilder builds and executes requests for operations under \me\teamwork
+// TeamworkRequestBuilder builds and executes requests for operations under \me\teamwork
 type TeamworkRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type TeamworkRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamworkRequestBuilderGetQueryParameters a container for Microsoft Teams features available for the user. Read-only. Nullable.
+// TeamworkRequestBuilderGetQueryParameters a container for Microsoft Teams features available for the user. Read-only. Nullable.
 type TeamworkRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

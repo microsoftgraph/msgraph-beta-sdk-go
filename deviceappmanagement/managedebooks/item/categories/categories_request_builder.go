@@ -6,7 +6,7 @@ import (
     i396bfe954496e31281b28a8f50ec136c3f84d1fa5cd51791df5a5ce64aa3be54 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedebooks/item/categories/ref"
 )
 
-// categoriesRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\categories
+// CategoriesRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\categories
 type CategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type CategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// categoriesRequestBuilderGetQueryParameters the list of categories for this eBook.
+// CategoriesRequestBuilderGetQueryParameters the list of categories for this eBook.
 type CategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

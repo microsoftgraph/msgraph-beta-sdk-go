@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// getOffice365ActiveUserCountsWithPeriod 
+// GetOffice365ActiveUserCountsWithPeriod 
 type GetOffice365ActiveUserCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // The number of active users in Exchange. Any user who can read and send email is considered an active user.

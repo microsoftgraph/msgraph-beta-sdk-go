@@ -12,7 +12,7 @@ import (
     ic7b354fd2efd9673bdefbd282eeff6bb6291327de8753e174e035a4bfada36a4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/assignments/item"
 )
 
-// deviceComplianceScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceComplianceScripts\{deviceComplianceScript-id}
+// DeviceComplianceScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceComplianceScripts\{deviceComplianceScript-id}
 type DeviceComplianceScriptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type DeviceComplianceScriptRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceComplianceScriptRequestBuilderGetQueryParameters the list of device compliance scripts associated with the tenant.
+// DeviceComplianceScriptRequestBuilderGetQueryParameters the list of device compliance scripts associated with the tenant.
 type DeviceComplianceScriptRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

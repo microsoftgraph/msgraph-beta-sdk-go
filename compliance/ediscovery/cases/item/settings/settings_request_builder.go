@@ -7,7 +7,7 @@ import (
     i121b330b32b21fc63e6f5a8dbcdb026f0240914b98757485a760fd62236e7fc5 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/settings/resettodefault"
 )
 
-// settingsRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\settings
+// SettingsRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\settings
 type SettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type SettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// settingsRequestBuilderGetQueryParameters get settings from compliance
+// SettingsRequestBuilderGetQueryParameters get settings from compliance
 type SettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

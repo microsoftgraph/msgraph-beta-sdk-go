@@ -13,7 +13,7 @@ import (
     ib268e3b08fe1fad55fddc2f3fcee0a20255a98eba2bf68e561d4e06a67c8ce93 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyuploadeddefinitionfiles/item/grouppolicyoperations/item"
 )
 
-// groupPolicyUploadedDefinitionFileRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}
+// GroupPolicyUploadedDefinitionFileRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}
 type GroupPolicyUploadedDefinitionFileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type GroupPolicyUploadedDefinitionFileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupPolicyUploadedDefinitionFileRequestBuilderGetQueryParameters the available group policy uploaded definition files for this account.
+// GroupPolicyUploadedDefinitionFileRequestBuilderGetQueryParameters the available group policy uploaded definition files for this account.
 type GroupPolicyUploadedDefinitionFileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

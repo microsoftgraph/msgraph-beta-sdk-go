@@ -6,7 +6,7 @@ import (
     ib92ebbbea36889a9fec709e0da373842b47450c73f967b22166c89a7912f5c4c "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/item/memberof/ref"
 )
 
-// memberOfRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\memberOf
+// MemberOfRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\memberOf
 type MemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type MemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// memberOfRequestBuilderGetQueryParameters groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+// MemberOfRequestBuilderGetQueryParameters groups that this contact is a member of. Read-only. Nullable. Supports $expand.
 type MemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

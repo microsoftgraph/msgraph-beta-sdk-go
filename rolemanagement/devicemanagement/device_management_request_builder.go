@@ -12,7 +12,7 @@ import (
     id1e540118321507d6c775d35c43257337ecb59533ab19347820eefca0118bb2c "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/devicemanagement/roledefinitions/item"
 )
 
-// deviceManagementRequestBuilder builds and executes requests for operations under \roleManagement\deviceManagement
+// DeviceManagementRequestBuilder builds and executes requests for operations under \roleManagement\deviceManagement
 type DeviceManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type DeviceManagementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementRequestBuilderGetQueryParameters the RbacApplication for Device Management
+// DeviceManagementRequestBuilderGetQueryParameters the RbacApplication for Device Management
 type DeviceManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

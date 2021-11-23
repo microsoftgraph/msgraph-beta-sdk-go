@@ -10,7 +10,7 @@ import (
     if09247f50a62b73060b83df7a38cb520f78f6d06ce735570e8585a8632ca9542 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience/exclusions/item/addmembers"
 )
 
-// updatableAssetRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\{updatableAsset-id}
+// UpdatableAssetRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\{updatableAsset-id}
 type UpdatableAssetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type UpdatableAssetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// updatableAssetRequestBuilderGetQueryParameters specifies the assets to exclude from the audience.
+// UpdatableAssetRequestBuilderGetQueryParameters specifies the assets to exclude from the audience.
 type UpdatableAssetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -6,7 +6,7 @@ import (
     i79760522376675a27c0bb443928a73359202ae76f6aca75d5b740c883d3ff75d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/groupassignments/item/deviceconfiguration/windowsupdateforbusinessconfiguration/extendfeatureupdatespause"
 )
 
-// windowsUpdateForBusinessConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.windowsUpdateForBusinessConfiguration
+// WindowsUpdateForBusinessConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.windowsUpdateForBusinessConfiguration
 type WindowsUpdateForBusinessConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

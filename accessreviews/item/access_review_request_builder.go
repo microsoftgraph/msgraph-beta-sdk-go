@@ -18,7 +18,7 @@ import (
     ia4fff597adb182643edeeb0e0ef392b36f38b279436254fb6004441a7cc386e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/mydecisions/item"
 )
 
-// accessReviewRequestBuilder builds and executes requests for operations under \accessReviews\{accessReview-id}
+// AccessReviewRequestBuilder builds and executes requests for operations under \accessReviews\{accessReview-id}
 type AccessReviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type AccessReviewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessReviewRequestBuilderGetQueryParameters get entity from accessReviews by key
+// AccessReviewRequestBuilderGetQueryParameters get entity from accessReviews by key
 type AccessReviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     ic336a74dd231e92a55f2f6f8163c6c60e5571a9aec689ac40d866e03c3299adc "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/format/fill/setsolidcolor"
 )
 
-// fillRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\format\fill
+// FillRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\format\fill
 type FillRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type FillRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// fillRequestBuilderGetQueryParameters represents the fill format of an object, which includes background formatting information. Read-only.
+// FillRequestBuilderGetQueryParameters represents the fill format of an object, which includes background formatting information. Read-only.
 type FillRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

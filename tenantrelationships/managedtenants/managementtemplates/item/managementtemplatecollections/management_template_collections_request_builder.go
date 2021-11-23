@@ -6,7 +6,7 @@ import (
     if2cb735b8e1f5a4dc100e2d27310069fcdb495776e2b40116f0238c1a3805e9c "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplates/item/managementtemplatecollections/ref"
 )
 
-// managementTemplateCollectionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}\managementTemplateCollections
+// ManagementTemplateCollectionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}\managementTemplateCollections
 type ManagementTemplateCollectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ManagementTemplateCollectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managementTemplateCollectionsRequestBuilderGetQueryParameters get managementTemplateCollections from tenantRelationships
+// ManagementTemplateCollectionsRequestBuilderGetQueryParameters get managementTemplateCollections from tenantRelationships
 type ManagementTemplateCollectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

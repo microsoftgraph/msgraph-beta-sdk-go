@@ -8,7 +8,7 @@ import (
     id4b926af3cd2cdb02d0fb7b0357c1be3b3a9997a3c006f0ff4e8455060f554eb "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/versions/item/content"
 )
 
-// driveItemVersionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\versions\{driveItemVersion-id}
+// DriveItemVersionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\versions\{driveItemVersion-id}
 type DriveItemVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DriveItemVersionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveItemVersionRequestBuilderGetQueryParameters the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// DriveItemVersionRequestBuilderGetQueryParameters the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 type DriveItemVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

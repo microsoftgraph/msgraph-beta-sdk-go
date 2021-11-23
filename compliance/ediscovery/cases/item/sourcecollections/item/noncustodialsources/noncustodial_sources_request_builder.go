@@ -6,7 +6,7 @@ import (
     i2b53e8d32167b7b8d9dbd842472314407904e34f8d9feeb85454bc41d81e5372 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/ref"
 )
 
-// noncustodialSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\noncustodialSources
+// NoncustodialSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\noncustodialSources
 type NoncustodialSourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type NoncustodialSourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// noncustodialSourcesRequestBuilderGetQueryParameters noncustodialDataSource sources that are included in the sourceCollection
+// NoncustodialSourcesRequestBuilderGetQueryParameters noncustodialDataSource sources that are included in the sourceCollection
 type NoncustodialSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

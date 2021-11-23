@@ -7,7 +7,7 @@ import (
     ifac04764f62467483ae92e2f881527331a818498994808d123def46d76dec96c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/managementconditionstatements/item/managementconditions/getmanagementconditionsforplatformwithplatform"
 )
 
-// managementConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditionStatements\{managementConditionStatement-id}\managementConditions
+// ManagementConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditionStatements\{managementConditionStatement-id}\managementConditions
 type ManagementConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ManagementConditionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managementConditionsRequestBuilderGetQueryParameters the management conditions associated to the management condition statement.
+// ManagementConditionsRequestBuilderGetQueryParameters the management conditions associated to the management condition statement.
 type ManagementConditionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

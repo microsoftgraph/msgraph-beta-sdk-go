@@ -23,7 +23,7 @@ import (
     iec03053e92d095e4b0c7ff7cef308162ec4e18612ecc279c203b4dc1727f41cf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/assignments/item"
 )
 
-// deviceConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}
+// DeviceConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}
 type DeviceConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +52,7 @@ type DeviceConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceConfigurationRequestBuilderGetQueryParameters the device configurations.
+// DeviceConfigurationRequestBuilderGetQueryParameters the device configurations.
 type DeviceConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

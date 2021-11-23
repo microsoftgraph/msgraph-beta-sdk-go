@@ -7,7 +7,7 @@ import (
     i5c4da7ee1c24fe10468f45f0fe04d8ae862385f122bfa42d08cb50a2d412e5a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/trustframework/policies/item/value"
 )
 
-// trustFrameworkPolicyRequestBuilder builds and executes requests for operations under \trustFramework\policies\{trustFrameworkPolicy-id}
+// TrustFrameworkPolicyRequestBuilder builds and executes requests for operations under \trustFramework\policies\{trustFrameworkPolicy-id}
 type TrustFrameworkPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type TrustFrameworkPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// trustFrameworkPolicyRequestBuilderGetQueryParameters get policies from trustFramework
+// TrustFrameworkPolicyRequestBuilderGetQueryParameters get policies from trustFramework
 type TrustFrameworkPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     ib863e1462c6d6193ab4acd69fe517f8eae6778b1c0fa3c31325a45de31685acd "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/items/item/itemcategory"
 )
 
-// itemRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\items\{item-id}
+// ItemRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\items\{item-id}
 type ItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// itemRequestBuilderGetQueryParameters get items from financials
+// ItemRequestBuilderGetQueryParameters get items from financials
 type ItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

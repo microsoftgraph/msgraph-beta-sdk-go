@@ -15,7 +15,7 @@ import (
     id2974620d1311e128536a57b4b13ac7c35b1363dee58758242283afc01d5b273 "github.com/microsoftgraph/msgraph-beta-sdk-go/domains/item/verificationdnsrecords/item"
 )
 
-// domainRequestBuilder builds and executes requests for operations under \domains\{domain-id}
+// DomainRequestBuilder builds and executes requests for operations under \domains\{domain-id}
 type DomainRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type DomainRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// domainRequestBuilderGetQueryParameters get entity from domains by key
+// DomainRequestBuilderGetQueryParameters get entity from domains by key
 type DomainRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

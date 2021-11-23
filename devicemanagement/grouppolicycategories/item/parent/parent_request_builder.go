@@ -7,7 +7,7 @@ import (
     i393697226399cf670a93e7fbe15e9f895d2ed615e09bf4d24f847e104924282b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicycategories/item/parent/ref"
 )
 
-// parentRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\parent
+// ParentRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\parent
 type ParentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ParentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// parentRequestBuilderGetQueryParameters the parent category
+// ParentRequestBuilderGetQueryParameters the parent category
 type ParentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

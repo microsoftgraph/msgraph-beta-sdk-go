@@ -6,7 +6,7 @@ import (
     i75a0c010b2ccbd8239dbd7599b62909300889b067bc49fd8e5045133974916c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/devicemanagement/roleassignments/item/directoryscopes/ref"
 )
 
-// directoryScopesRequestBuilder builds and executes requests for operations under \roleManagement\deviceManagement\roleAssignments\{unifiedRoleAssignmentMultiple-id}\directoryScopes
+// DirectoryScopesRequestBuilder builds and executes requests for operations under \roleManagement\deviceManagement\roleAssignments\{unifiedRoleAssignmentMultiple-id}\directoryScopes
 type DirectoryScopesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type DirectoryScopesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// directoryScopesRequestBuilderGetQueryParameters read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// DirectoryScopesRequestBuilderGetQueryParameters read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 type DirectoryScopesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

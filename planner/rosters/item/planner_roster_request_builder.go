@@ -9,7 +9,7 @@ import (
     ie53712fa7eb3bcb49fdf48153b4145c0918f55b3d8a9851bfbf8ce2045244c3c "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/rosters/item/members/item"
 )
 
-// plannerRosterRequestBuilder builds and executes requests for operations under \planner\rosters\{plannerRoster-id}
+// PlannerRosterRequestBuilder builds and executes requests for operations under \planner\rosters\{plannerRoster-id}
 type PlannerRosterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type PlannerRosterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// plannerRosterRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified rosters
+// PlannerRosterRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified rosters
 type PlannerRosterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

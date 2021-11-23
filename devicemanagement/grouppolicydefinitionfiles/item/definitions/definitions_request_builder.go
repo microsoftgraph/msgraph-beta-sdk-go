@@ -6,7 +6,7 @@ import (
     ibfdff5a4a1960d80d80be04679a29c9735133ccc446b1e6ab7320b199313abde "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitionfiles/item/definitions/ref"
 )
 
-// definitionsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitionFiles\{groupPolicyDefinitionFile-id}\definitions
+// DefinitionsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitionFiles\{groupPolicyDefinitionFile-id}\definitions
 type DefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type DefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// definitionsRequestBuilderGetQueryParameters the group policy definitions associated with the file.
+// DefinitionsRequestBuilderGetQueryParameters the group policy definitions associated with the file.
 type DefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

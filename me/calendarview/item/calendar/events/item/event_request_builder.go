@@ -13,7 +13,7 @@ import (
     ie6b8c9d4d7ee4732942cf4b26dea4203b8f72ce4fe118a35c1788c82b7e275c7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendarview/item/calendar/events/item/cancel"
 )
 
-// eventRequestBuilder builds and executes requests for operations under \me\calendarView\{event-id}\calendar\events\{event-id1}
+// EventRequestBuilder builds and executes requests for operations under \me\calendarView\{event-id}\calendar\events\{event-id1}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventRequestBuilderGetQueryParameters the events in the calendar. Navigation property. Read-only.
+// EventRequestBuilderGetQueryParameters the events in the calendar. Navigation property. Read-only.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

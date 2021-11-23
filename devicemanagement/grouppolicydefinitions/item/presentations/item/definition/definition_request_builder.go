@@ -7,7 +7,7 @@ import (
     ibf5d554bb8f9fefe6759dd4bed0cdb4cda760c11c166e9ff18bf2e4b633a2224 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/presentations/item/definition/ref"
 )
 
-// definitionRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\presentations\{groupPolicyPresentation-id}\definition
+// DefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\presentations\{groupPolicyPresentation-id}\definition
 type DefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// definitionRequestBuilderGetQueryParameters the group policy definition associated with the presentation.
+// DefinitionRequestBuilderGetQueryParameters the group policy definition associated with the presentation.
 type DefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -372,7 +372,7 @@ import (
     iff5d1b1deb3b8f2c2d3de6f2d3cbbc8961c3a069683ac3268635178bc77155cc "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/sheets"
 )
 
-// functionsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions
+// FunctionsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions
 type FunctionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -401,7 +401,7 @@ type FunctionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// functionsRequestBuilderGetQueryParameters get functions from workbooks
+// FunctionsRequestBuilderGetQueryParameters get functions from workbooks
 type FunctionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

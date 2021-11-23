@@ -7,7 +7,7 @@ import (
     i75db8086de07b488e4993b77b048297bb1fa20f29d602d19f656b7fc5d1af9bb "github.com/microsoftgraph/msgraph-beta-sdk-go/me/contacts/delta"
 )
 
-// contactsRequestBuilder builds and executes requests for operations under \me\contacts
+// ContactsRequestBuilder builds and executes requests for operations under \me\contacts
 type ContactsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ContactsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// contactsRequestBuilderGetQueryParameters the user's contacts. Read-only. Nullable.
+// ContactsRequestBuilderGetQueryParameters the user's contacts. Read-only. Nullable.
 type ContactsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -7,7 +7,7 @@ import (
     i8a259409215ade9230da33cd772df83ffd3fb56d6e0feedce6800757cfe3df34 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/importedwindowsautopilotdeviceidentities/import_escaped"
 )
 
-// importedWindowsAutopilotDeviceIdentitiesRequestBuilder builds and executes requests for operations under \deviceManagement\importedWindowsAutopilotDeviceIdentities
+// ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder builds and executes requests for operations under \deviceManagement\importedWindowsAutopilotDeviceIdentities
 type ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// importedWindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters collection of imported Windows autopilot devices.
+// ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters collection of imported Windows autopilot devices.
 type ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

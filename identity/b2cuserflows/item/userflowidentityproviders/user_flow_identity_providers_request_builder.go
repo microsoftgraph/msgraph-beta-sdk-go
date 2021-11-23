@@ -7,7 +7,7 @@ import (
     i8ab7bf9c75474f49faf98dbb1be0651a168ad02f853ea1051c2d43fba4af072b "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userflowidentityproviders/availableprovidertypes"
 )
 
-// userFlowIdentityProvidersRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userFlowIdentityProviders
+// UserFlowIdentityProvidersRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userFlowIdentityProviders
 type UserFlowIdentityProvidersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type UserFlowIdentityProvidersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userFlowIdentityProvidersRequestBuilderGetQueryParameters get userFlowIdentityProviders from identity
+// UserFlowIdentityProvidersRequestBuilderGetQueryParameters get userFlowIdentityProviders from identity
 type UserFlowIdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

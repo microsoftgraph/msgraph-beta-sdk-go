@@ -7,7 +7,7 @@ import (
     ief6421855eb394b19aa9d50c97e59aeb214db154eb1c5f68884cfca84a7680e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/auditevents/getauditactivitytypes"
 )
 
-// auditEventsRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\auditEvents
+// AuditEventsRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\auditEvents
 type AuditEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AuditEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// auditEventsRequestBuilderGetQueryParameters cloud PC audit event.
+// AuditEventsRequestBuilderGetQueryParameters cloud PC audit event.
 type AuditEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

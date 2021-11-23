@@ -8,7 +8,7 @@ import (
     if5b87021c025556e733e9a1ca47027358d94300c780d268156325a9b54465bd9 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/allmessages"
 )
 
-// channelsRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels
+// ChannelsRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels
 type ChannelsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type ChannelsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// channelsRequestBuilderGetQueryParameters the collection of channels & messages associated with the team.
+// ChannelsRequestBuilderGetQueryParameters the collection of channels & messages associated with the team.
 type ChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

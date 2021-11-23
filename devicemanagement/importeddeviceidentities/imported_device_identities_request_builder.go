@@ -8,7 +8,7 @@ import (
     i76339fd2d40042286c7a9b4333ff7246712608a8ec9a407e5fc00e4a39473d6a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/importeddeviceidentities/importdeviceidentitylist"
 )
 
-// importedDeviceIdentitiesRequestBuilder builds and executes requests for operations under \deviceManagement\importedDeviceIdentities
+// ImportedDeviceIdentitiesRequestBuilder builds and executes requests for operations under \deviceManagement\importedDeviceIdentities
 type ImportedDeviceIdentitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type ImportedDeviceIdentitiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// importedDeviceIdentitiesRequestBuilderGetQueryParameters the imported device identities.
+// ImportedDeviceIdentitiesRequestBuilderGetQueryParameters the imported device identities.
 type ImportedDeviceIdentitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

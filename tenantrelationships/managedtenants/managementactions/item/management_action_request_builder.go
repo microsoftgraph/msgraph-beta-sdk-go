@@ -7,7 +7,7 @@ import (
     i02a0acf8de02ec6d8ae4b62929ab4b9b5af1a13131d5aab7c33afdb467de17e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactions/item/apply"
 )
 
-// managementActionRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActions\{managementAction-id}
+// ManagementActionRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActions\{managementAction-id}
 type ManagementActionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ManagementActionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managementActionRequestBuilderGetQueryParameters the collection of baseline management actions across managed tenants.
+// ManagementActionRequestBuilderGetQueryParameters the collection of baseline management actions across managed tenants.
 type ManagementActionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

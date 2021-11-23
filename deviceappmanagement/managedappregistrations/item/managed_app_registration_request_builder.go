@@ -12,7 +12,7 @@ import (
     id0b04ce4d5e56adfc6f008d1080876eacead82cead17447895ea3eb8353b96ac "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedappregistrations/item/intendedpolicies/item"
 )
 
-// managedAppRegistrationRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}
+// ManagedAppRegistrationRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}
 type ManagedAppRegistrationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type ManagedAppRegistrationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedAppRegistrationRequestBuilderGetQueryParameters the managed app registrations.
+// ManagedAppRegistrationRequestBuilderGetQueryParameters the managed app registrations.
 type ManagedAppRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i5cad8ef86dc95ddf4ad899618000e669a92e76bdb8d952086dd1b1ac1b69d619 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/roleassignments/item/rolescopetags"
 )
 
-// deviceAndAppManagementRoleAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}
+// DeviceAndAppManagementRoleAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}
 type DeviceAndAppManagementRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DeviceAndAppManagementRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceAndAppManagementRoleAssignmentRequestBuilderGetQueryParameters the Role Assignments.
+// DeviceAndAppManagementRoleAssignmentRequestBuilderGetQueryParameters the Role Assignments.
 type DeviceAndAppManagementRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

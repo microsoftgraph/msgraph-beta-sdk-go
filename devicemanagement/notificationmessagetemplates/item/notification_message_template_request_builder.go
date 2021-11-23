@@ -9,7 +9,7 @@ import (
     i8f7ffa70b6e5e6cd3a41114a81ef71a7ef4f81cad3974df901008b8a88e8cf8e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/notificationmessagetemplates/item/localizednotificationmessages/item"
 )
 
-// notificationMessageTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}
+// NotificationMessageTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}
 type NotificationMessageTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type NotificationMessageTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// notificationMessageTemplateRequestBuilderGetQueryParameters the Notification Message Templates.
+// NotificationMessageTemplateRequestBuilderGetQueryParameters the Notification Message Templates.
 type NotificationMessageTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

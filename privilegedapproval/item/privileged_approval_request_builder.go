@@ -8,7 +8,7 @@ import (
     icabadae564a2179c7440bf1946d7104ec3e921c8ba84f19c0f5398af00d4e66f "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedapproval/item/roleinfo"
 )
 
-// privilegedApprovalRequestBuilder builds and executes requests for operations under \privilegedApproval\{privilegedApproval-id}
+// PrivilegedApprovalRequestBuilder builds and executes requests for operations under \privilegedApproval\{privilegedApproval-id}
 type PrivilegedApprovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PrivilegedApprovalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// privilegedApprovalRequestBuilderGetQueryParameters get entity from privilegedApproval by key
+// PrivilegedApprovalRequestBuilderGetQueryParameters get entity from privilegedApproval by key
 type PrivilegedApprovalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

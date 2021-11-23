@@ -5,7 +5,7 @@ import (
     i853045a1c17d869baaeeca6d724b0704bd59922311548198cc7c32c73ab5d870 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/operations/item/caseexportoperation/getdownloadurl"
 )
 
-// caseExportOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}\microsoft.graph.ediscovery.caseExportOperation
+// CaseExportOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}\microsoft.graph.ediscovery.caseExportOperation
 type CaseExportOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

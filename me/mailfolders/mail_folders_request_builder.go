@@ -7,7 +7,7 @@ import (
     ida684cc509215d4d1b8a561ad90df09a07dcec1a948e1dd533f07b4be618fbf8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/delta"
 )
 
-// mailFoldersRequestBuilder builds and executes requests for operations under \me\mailFolders
+// MailFoldersRequestBuilder builds and executes requests for operations under \me\mailFolders
 type MailFoldersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type MailFoldersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mailFoldersRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
+// MailFoldersRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
 type MailFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

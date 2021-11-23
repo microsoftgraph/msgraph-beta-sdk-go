@@ -11,7 +11,7 @@ import (
     ibf1ad675b59509c5f3216e9d430e98ab3b887534afb4bca984ab70b32d39075b "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item"
 )
 
-// updatesRequestBuilder builds and executes requests for operations under \admin\windows\updates
+// UpdatesRequestBuilder builds and executes requests for operations under \admin\windows\updates
 type UpdatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type UpdatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// updatesRequestBuilderGetQueryParameters entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+// UpdatesRequestBuilderGetQueryParameters entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 type UpdatesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

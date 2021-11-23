@@ -10,7 +10,7 @@ import (
     ibe96689de55a51f0c56d2a0e70225b89a766a6c4cdc8d088380eb648b999dd3f "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item"
 )
 
-// appRequestBuilder builds and executes requests for operations under \app
+// AppRequestBuilder builds and executes requests for operations under \app
 type AppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type AppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appRequestBuilderGetQueryParameters get app
+// AppRequestBuilderGetQueryParameters get app
 type AppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

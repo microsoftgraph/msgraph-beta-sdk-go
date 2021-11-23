@@ -7,7 +7,7 @@ import (
     i6f9f07ee01f750e99fe7698694790f809ea40d7e5a800bc6568552c7183f82bf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/deviceimages/item/reupload"
 )
 
-// cloudPcDeviceImageRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\{cloudPcDeviceImage-id}
+// CloudPcDeviceImageRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\{cloudPcDeviceImage-id}
 type CloudPcDeviceImageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type CloudPcDeviceImageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// cloudPcDeviceImageRequestBuilderGetQueryParameters the image resource on Cloud PC.
+// CloudPcDeviceImageRequestBuilderGetQueryParameters the image resource on Cloud PC.
 type CloudPcDeviceImageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

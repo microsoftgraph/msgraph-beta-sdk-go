@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// profileCardProperty 
+// ProfileCardProperty 
 type ProfileCardProperty struct {
     Entity
     // Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.

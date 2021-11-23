@@ -7,7 +7,7 @@ import (
     ie17d2b7dd4022f93c2c71a67b7a20a78bffcf7d8ccf29ebcee200a1107a650ad "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item/contenttypes/item/basetypes/addcopy"
 )
 
-// baseTypesRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\baseTypes
+// BaseTypesRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\baseTypes
 type BaseTypesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type BaseTypesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// baseTypesRequestBuilderGetQueryParameters the collection of content types that are ancestors of this content type.
+// BaseTypesRequestBuilderGetQueryParameters the collection of content types that are ancestors of this content type.
 type BaseTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

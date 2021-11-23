@@ -7,7 +7,7 @@ import (
     i6229002faff283185edbba998e3bb5d6cedfb563e9f4cc9be423234d46b86be4 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/contenttypes/addcopy"
 )
 
-// contentTypesRequestBuilder builds and executes requests for operations under \drive\list\contentTypes
+// ContentTypesRequestBuilder builds and executes requests for operations under \drive\list\contentTypes
 type ContentTypesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ContentTypesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// contentTypesRequestBuilderGetQueryParameters the collection of content types present in this list.
+// ContentTypesRequestBuilderGetQueryParameters the collection of content types present in this list.
 type ContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

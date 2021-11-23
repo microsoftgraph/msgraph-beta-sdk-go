@@ -7,7 +7,7 @@ import (
     ia88ec5f38bd918c1127abbf0b892d25bb4b180c2be1556a8da6a28a3e4f6960a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/contactfolders/item/contacts/item/photo/value"
 )
 
-// photoRequestBuilder builds and executes requests for operations under \users\{user-id}\contactFolders\{contactFolder-id}\contacts\{contact-id}\photo
+// PhotoRequestBuilder builds and executes requests for operations under \users\{user-id}\contactFolders\{contactFolder-id}\contacts\{contact-id}\photo
 type PhotoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PhotoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// photoRequestBuilderGetQueryParameters optional contact picture. You can get or set a photo for a contact.
+// PhotoRequestBuilderGetQueryParameters optional contact picture. You can get or set a photo for a contact.
 type PhotoRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

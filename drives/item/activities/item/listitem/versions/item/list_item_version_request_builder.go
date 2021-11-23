@@ -8,7 +8,7 @@ import (
     ia1f10785b061aa5b9f87998f13c3f45ccd97e5bce2a7c6cb95be1ca027b24515 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/activities/item/listitem/versions/item/fields"
 )
 
-// listItemVersionRequestBuilder builds and executes requests for operations under \drives\{drive-id}\activities\{itemActivityOLD-id}\listItem\versions\{listItemVersion-id}
+// ListItemVersionRequestBuilder builds and executes requests for operations under \drives\{drive-id}\activities\{itemActivityOLD-id}\listItem\versions\{listItemVersion-id}
 type ListItemVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ListItemVersionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// listItemVersionRequestBuilderGetQueryParameters the list of previous versions of the list item.
+// ListItemVersionRequestBuilderGetQueryParameters the list of previous versions of the list item.
 type ListItemVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

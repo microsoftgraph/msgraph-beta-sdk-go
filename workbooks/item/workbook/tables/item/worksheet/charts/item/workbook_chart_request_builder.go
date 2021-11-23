@@ -20,7 +20,7 @@ import (
     i7d3d41b3c182984a4875637200cb5f4c401fec09228cccd72c9da2b28993aea9 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/series/item"
 )
 
-// workbookChartRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}
+// WorkbookChartRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}
 type WorkbookChartRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type WorkbookChartRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookChartRequestBuilderGetQueryParameters returns collection of charts that are part of the worksheet. Read-only.
+// WorkbookChartRequestBuilderGetQueryParameters returns collection of charts that are part of the worksheet. Read-only.
 type WorkbookChartRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -10,7 +10,7 @@ import (
     id2162c282756356f4cf3805ba782e3632722a8ad528000abd031c5fae5bc20fe "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/validatexml"
 )
 
-// mobileAppsRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps
+// MobileAppsRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps
 type MobileAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type MobileAppsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mobileAppsRequestBuilderGetQueryParameters the mobile apps.
+// MobileAppsRequestBuilderGetQueryParameters the mobile apps.
 type MobileAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

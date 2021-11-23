@@ -7,7 +7,7 @@ import (
     i9e2d26f5b014ceb73cd9188acf0978bf21c9e00b3d25d4d4fb82633f8d6e47b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentresourceroles/item/accesspackagesubject/connectedorganization"
 )
 
-// accessPackageSubjectRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageSubject
+// AccessPackageSubjectRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageSubject
 type AccessPackageSubjectRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type AccessPackageSubjectRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageSubjectRequestBuilderGetQueryParameters read-only. Nullable.
+// AccessPackageSubjectRequestBuilderGetQueryParameters read-only. Nullable.
 type AccessPackageSubjectRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

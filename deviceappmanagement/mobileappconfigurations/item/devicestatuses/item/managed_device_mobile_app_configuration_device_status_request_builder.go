@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// managedDeviceMobileAppConfigurationDeviceStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\deviceStatuses\{managedDeviceMobileAppConfigurationDeviceStatus-id}
+// ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\deviceStatuses\{managedDeviceMobileAppConfigurationDeviceStatus-id}
 type ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilderGetOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDeviceMobileAppConfigurationDeviceStatusRequestBuilderGetQueryParameters list of ManagedDeviceMobileAppConfigurationDeviceStatus.
+// ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilderGetQueryParameters list of ManagedDeviceMobileAppConfigurationDeviceStatus.
 type ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

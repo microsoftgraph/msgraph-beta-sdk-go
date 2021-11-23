@@ -130,7 +130,7 @@ import (
     ifeea6837d24ad8765a5cb2092fe2e730b4403b36aa4e813a9cdfdb831a8f7974 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approvals/item"
 )
 
-// userRequestBuilder builds and executes requests for operations under \users\{user-id}
+// UserRequestBuilder builds and executes requests for operations under \users\{user-id}
 type UserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -159,7 +159,7 @@ type UserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userRequestBuilderGetQueryParameters get entity from users by key
+// UserRequestBuilderGetQueryParameters get entity from users by key
 type UserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

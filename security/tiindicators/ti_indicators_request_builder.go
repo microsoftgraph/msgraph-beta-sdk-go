@@ -10,7 +10,7 @@ import (
     ie38c9a1118b781a8cc486e08009768123690676d39af853ebdf06098c5110f09 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/tiindicators/deletetiindicators"
 )
 
-// tiIndicatorsRequestBuilder builds and executes requests for operations under \security\tiIndicators
+// TiIndicatorsRequestBuilder builds and executes requests for operations under \security\tiIndicators
 type TiIndicatorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type TiIndicatorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tiIndicatorsRequestBuilderGetQueryParameters get tiIndicators from security
+// TiIndicatorsRequestBuilderGetQueryParameters get tiIndicators from security
 type TiIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

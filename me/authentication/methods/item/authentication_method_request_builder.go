@@ -9,7 +9,7 @@ import (
     ida6186e59b7d46b210722f00360284059fb02e165f3d3a13c9cbd4943a50a6f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/methods/item/resetpassword"
 )
 
-// authenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}
+// AuthenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}
 type AuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type AuthenticationMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// authenticationMethodRequestBuilderGetQueryParameters get methods from me
+// AuthenticationMethodRequestBuilderGetQueryParameters get methods from me
 type AuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

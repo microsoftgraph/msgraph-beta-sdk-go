@@ -7,7 +7,7 @@ import (
     i8242c9798419db1e104ab5b2055bd23844fe7778516b605a70680bbd8020cb44 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/category/ref"
 )
 
-// categoryRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\category
+// CategoryRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\category
 type CategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type CategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// categoryRequestBuilderGetQueryParameters the group policy category associated with the definition.
+// CategoryRequestBuilderGetQueryParameters the group policy category associated with the definition.
 type CategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

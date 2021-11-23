@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// scopedRoleMembershipRequestBuilder builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\scopedRoleMembers\{scopedRoleMembership-id}
+// ScopedRoleMembershipRequestBuilder builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\scopedRoleMembers\{scopedRoleMembership-id}
 type ScopedRoleMembershipRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type ScopedRoleMembershipRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// scopedRoleMembershipRequestBuilderGetQueryParameters scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+// ScopedRoleMembershipRequestBuilderGetQueryParameters scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 type ScopedRoleMembershipRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

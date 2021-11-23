@@ -7,7 +7,7 @@ import (
     ic0f34eb05ee86e1f4fa938395d0feec9b577cfcd78533c67a155562b35abea89 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/alerts/updatealerts"
 )
 
-// alertsRequestBuilder builds and executes requests for operations under \security\alerts
+// AlertsRequestBuilder builds and executes requests for operations under \security\alerts
 type AlertsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AlertsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// alertsRequestBuilderGetQueryParameters read-only. Nullable.
+// AlertsRequestBuilderGetQueryParameters read-only. Nullable.
 type AlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

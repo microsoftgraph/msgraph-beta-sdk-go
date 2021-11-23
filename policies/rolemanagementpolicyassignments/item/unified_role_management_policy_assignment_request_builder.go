@@ -7,7 +7,7 @@ import (
     i97d43eac42c79f3cf8cefa18ac4a34500ad654efc79abac0011675b2acc3ff09 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicyassignments/item/policy"
 )
 
-// unifiedRoleManagementPolicyAssignmentRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicyAssignments\{unifiedRoleManagementPolicyAssignment-id}
+// UnifiedRoleManagementPolicyAssignmentRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicyAssignments\{unifiedRoleManagementPolicyAssignment-id}
 type UnifiedRoleManagementPolicyAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type UnifiedRoleManagementPolicyAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleManagementPolicyAssignmentRequestBuilderGetQueryParameters represents the role management policy assignments.
+// UnifiedRoleManagementPolicyAssignmentRequestBuilderGetQueryParameters represents the role management policy assignments.
 type UnifiedRoleManagementPolicyAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

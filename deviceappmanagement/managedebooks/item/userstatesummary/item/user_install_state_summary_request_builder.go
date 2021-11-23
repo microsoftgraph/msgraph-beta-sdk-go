@@ -8,7 +8,7 @@ import (
     idc329a0e0b09b202736e7f9a9174d125e0d5561944e9e3f9cae9eb436a61c885 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedebooks/item/userstatesummary/item/devicestates/item"
 )
 
-// userInstallStateSummaryRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\userStateSummary\{userInstallStateSummary-id}
+// UserInstallStateSummaryRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\userStateSummary\{userInstallStateSummary-id}
 type UserInstallStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type UserInstallStateSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userInstallStateSummaryRequestBuilderGetQueryParameters the list of installation states for this eBook.
+// UserInstallStateSummaryRequestBuilderGetQueryParameters the list of installation states for this eBook.
 type UserInstallStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

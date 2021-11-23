@@ -7,7 +7,7 @@ import (
     i106ae4a64185b703dd114c8258d85e3b9839e89d699595fbaad115db19827ce3 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/sensitivitylabels/item/sublabels/evaluate"
 )
 
-// sublabelsRequestBuilder builds and executes requests for operations under \dataClassification\sensitivityLabels\{sensitivityLabel-id}\sublabels
+// SublabelsRequestBuilder builds and executes requests for operations under \dataClassification\sensitivityLabels\{sensitivityLabel-id}\sublabels
 type SublabelsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type SublabelsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sublabelsRequestBuilderGetQueryParameters get sublabels from dataClassification
+// SublabelsRequestBuilderGetQueryParameters get sublabels from dataClassification
 type SublabelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

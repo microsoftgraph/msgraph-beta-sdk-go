@@ -11,7 +11,7 @@ import (
     if044a617b4d30ce4a26c463e72b94403997b338b8aeafd10eb8d535111e4cc01 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/embeddedsimactivationcodepools/item/devicestates/item"
 )
 
-// embeddedSIMActivationCodePoolRequestBuilder builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}
+// EmbeddedSIMActivationCodePoolRequestBuilder builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}
 type EmbeddedSIMActivationCodePoolRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type EmbeddedSIMActivationCodePoolRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// embeddedSIMActivationCodePoolRequestBuilderGetQueryParameters the embedded SIM activation code pools created by this account.
+// EmbeddedSIMActivationCodePoolRequestBuilderGetQueryParameters the embedded SIM activation code pools created by this account.
 type EmbeddedSIMActivationCodePoolRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

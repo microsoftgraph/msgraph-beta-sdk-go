@@ -9,7 +9,7 @@ import (
     ib1e327aceeb5e9922727d013c2c01c946d786d4f0dd97da14c83069b74440142 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/participants/item/startholdmusic"
 )
 
-// participantRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants\{participant-id}
+// ParticipantRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants\{participant-id}
 type ParticipantRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type ParticipantRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// participantRequestBuilderGetQueryParameters read-only. Nullable.
+// ParticipantRequestBuilderGetQueryParameters read-only. Nullable.
 type ParticipantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

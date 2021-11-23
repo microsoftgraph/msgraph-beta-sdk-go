@@ -7,7 +7,7 @@ import (
     i921c7daf7038d4669201e8b431c1432b5dd40208e7bd9839b51615fdb18f2277 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/item/parent/ref"
 )
 
-// parentRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\parent
+// ParentRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\parent
 type ParentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ParentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// parentRequestBuilderGetQueryParameters returns the parent tag of the specified tag.
+// ParentRequestBuilderGetQueryParameters returns the parent tag of the specified tag.
 type ParentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

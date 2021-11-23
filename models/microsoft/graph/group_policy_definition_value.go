@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// groupPolicyDefinitionValue 
+// GroupPolicyDefinitionValue 
 type GroupPolicyDefinitionValue struct {
     Entity
     // Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.

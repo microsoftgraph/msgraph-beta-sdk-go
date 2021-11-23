@@ -6,7 +6,7 @@ import (
     ifa64d871455b5584acb1fd6b3deaa81a92a07cc7887b760f852636ea17627602 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancepolicies/item/settings/item/settingdefinitions/ref"
 )
 
-// settingDefinitionsRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\settings\{deviceManagementConfigurationSetting-id}\settingDefinitions
+// SettingDefinitionsRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\settings\{deviceManagementConfigurationSetting-id}\settingDefinitions
 type SettingDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type SettingDefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// settingDefinitionsRequestBuilderGetQueryParameters list of related Setting Definitions. This property is read-only.
+// SettingDefinitionsRequestBuilderGetQueryParameters list of related Setting Definitions. This property is read-only.
 type SettingDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

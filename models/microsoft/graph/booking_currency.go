@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// bookingCurrency 
+// BookingCurrency 
 type BookingCurrency struct {
     Entity
     // The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.

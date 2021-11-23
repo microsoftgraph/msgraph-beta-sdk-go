@@ -10,7 +10,7 @@ import (
     i34835e4f604126539f2c916992cff760482a1c7bf03f1d5d4928a2099ac5183d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/registration/registrants/item"
 )
 
-// registrationRequestBuilder builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\registration
+// RegistrationRequestBuilder builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\registration
 type RegistrationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type RegistrationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// registrationRequestBuilderGetQueryParameters the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+// RegistrationRequestBuilderGetQueryParameters the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 type RegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

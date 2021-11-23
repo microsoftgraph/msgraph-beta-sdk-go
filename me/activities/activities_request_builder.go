@@ -7,7 +7,7 @@ import (
     i976a7315c670106fdfd6998ff6e172d996a7562887465abdb68642a6c95908d9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/activities/recent"
 )
 
-// activitiesRequestBuilder builds and executes requests for operations under \me\activities
+// ActivitiesRequestBuilder builds and executes requests for operations under \me\activities
 type ActivitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ActivitiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// activitiesRequestBuilderGetQueryParameters the user's activities across devices. Read-only. Nullable.
+// ActivitiesRequestBuilderGetQueryParameters the user's activities across devices. Read-only. Nullable.
 type ActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

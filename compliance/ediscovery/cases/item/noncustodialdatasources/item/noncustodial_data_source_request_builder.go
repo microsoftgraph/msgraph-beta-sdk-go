@@ -9,7 +9,7 @@ import (
     ia8798dbf43801d2aed7bc1af6c6151eba951b020eb6583ac3cce31a2a853d3ba "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/noncustodialdatasources/item/datasource"
 )
 
-// noncustodialDataSourceRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources\{noncustodialDataSource-id}
+// NoncustodialDataSourceRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources\{noncustodialDataSource-id}
 type NoncustodialDataSourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type NoncustodialDataSourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// noncustodialDataSourceRequestBuilderGetQueryParameters returns a list of case noncustodialDataSource objects for this case.  Nullable.
+// NoncustodialDataSourceRequestBuilderGetQueryParameters returns a list of case noncustodialDataSource objects for this case.  Nullable.
 type NoncustodialDataSourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i82b4c5a0bc2e9bc4d52e4c0355cbdebbeebabd6b9d1ab1eb6e2b9e1ae213e959 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/teamwork/installedapps/item/chat"
 )
 
-// userScopeTeamsAppInstallationRequestBuilder builds and executes requests for operations under \users\{user-id}\teamwork\installedApps\{userScopeTeamsAppInstallation-id}
+// UserScopeTeamsAppInstallationRequestBuilder builds and executes requests for operations under \users\{user-id}\teamwork\installedApps\{userScopeTeamsAppInstallation-id}
 type UserScopeTeamsAppInstallationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type UserScopeTeamsAppInstallationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userScopeTeamsAppInstallationRequestBuilderGetQueryParameters the apps installed in the personal scope of this user.
+// UserScopeTeamsAppInstallationRequestBuilderGetQueryParameters the apps installed in the personal scope of this user.
 type UserScopeTeamsAppInstallationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

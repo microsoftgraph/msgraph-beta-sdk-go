@@ -10,7 +10,7 @@ import (
     ib81ff97ec65f62c7e3bf45944864f15e6a426c2a95656377c94aedf6454d4d96 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/termsofuse/agreementacceptances/item"
 )
 
-// termsOfUseRequestBuilder builds and executes requests for operations under \identityGovernance\termsOfUse
+// TermsOfUseRequestBuilder builds and executes requests for operations under \identityGovernance\termsOfUse
 type TermsOfUseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type TermsOfUseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// termsOfUseRequestBuilderGetQueryParameters get termsOfUse from identityGovernance
+// TermsOfUseRequestBuilderGetQueryParameters get termsOfUse from identityGovernance
 type TermsOfUseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

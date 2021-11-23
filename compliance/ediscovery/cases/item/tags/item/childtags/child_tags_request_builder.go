@@ -7,7 +7,7 @@ import (
     ifdcd1631502f3f3c71c9fc98000e43ad8b96769caa5b48a321bfb319bda76469 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/item/childtags/ashierarchy"
 )
 
-// childTagsRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags
+// ChildTagsRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags
 type ChildTagsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ChildTagsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// childTagsRequestBuilderGetQueryParameters returns the tags that are a child of a tag.
+// ChildTagsRequestBuilderGetQueryParameters returns the tags that are a child of a tag.
 type ChildTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -7,7 +7,7 @@ import (
     ia1f3eb78ab210f32411efef91c5b9decec8c452f4f37bd3ea6f8d8e1f93d5dab "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/bestpracticesmetrics/ref"
 )
 
-// bestPracticesMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\bestPracticesMetrics
+// BestPracticesMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\bestPracticesMetrics
 type BestPracticesMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type BestPracticesMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// bestPracticesMetricsRequestBuilderGetQueryParameters the user experience analytics best practices metrics.
+// BestPracticesMetricsRequestBuilderGetQueryParameters the user experience analytics best practices metrics.
 type BestPracticesMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

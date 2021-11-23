@@ -7,7 +7,7 @@ import (
     i3e461ab8d8fb4c7edda4b883dc3fc5ec0a6c31a0ada6ed226bb5392ee265e579 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/addtoreviewsetoperation/ref"
 )
 
-// addToReviewSetOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\addToReviewSetOperation
+// AddToReviewSetOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\addToReviewSetOperation
 type AddToReviewSetOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AddToReviewSetOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// addToReviewSetOperationRequestBuilderGetQueryParameters adds the results of the sourceCollection to the specified reviewSet.
+// AddToReviewSetOperationRequestBuilderGetQueryParameters adds the results of the sourceCollection to the specified reviewSet.
 type AddToReviewSetOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

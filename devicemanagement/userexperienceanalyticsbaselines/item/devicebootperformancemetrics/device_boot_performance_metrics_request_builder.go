@@ -7,7 +7,7 @@ import (
     i5b5cd12f65bfb5c953148247de1040135ed1d9fabecb7dac731c36d12cfc7bd1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/devicebootperformancemetrics/ref"
 )
 
-// deviceBootPerformanceMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\deviceBootPerformanceMetrics
+// DeviceBootPerformanceMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\deviceBootPerformanceMetrics
 type DeviceBootPerformanceMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DeviceBootPerformanceMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceBootPerformanceMetricsRequestBuilderGetQueryParameters the user experience analytics device boot performance metrics.
+// DeviceBootPerformanceMetricsRequestBuilderGetQueryParameters the user experience analytics device boot performance metrics.
 type DeviceBootPerformanceMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

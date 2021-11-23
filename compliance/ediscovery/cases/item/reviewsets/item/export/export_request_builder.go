@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// exportRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\reviewSets\{reviewSet-id}\microsoft.graph.ediscovery.export
+// ExportRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\reviewSets\{reviewSet-id}\microsoft.graph.ediscovery.export
 type ExportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

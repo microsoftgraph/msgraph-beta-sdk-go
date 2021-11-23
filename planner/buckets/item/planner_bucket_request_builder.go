@@ -8,7 +8,7 @@ import (
     i047e53f169a088b215f8da8917a7b7c9e2a94af0f9a2dffadbbdc1cf758f30ff "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/buckets/item/tasks/item"
 )
 
-// plannerBucketRequestBuilder builds and executes requests for operations under \planner\buckets\{plannerBucket-id}
+// PlannerBucketRequestBuilder builds and executes requests for operations under \planner\buckets\{plannerBucket-id}
 type PlannerBucketRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PlannerBucketRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// plannerBucketRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified buckets
+// PlannerBucketRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified buckets
 type PlannerBucketRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     id0d53dab897cd68adbdccb455d85697abd98f9e5792c35eb1a92375c1451257b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/remoteassistancepartners/item/beginonboarding"
 )
 
-// remoteAssistancePartnerRequestBuilder builds and executes requests for operations under \deviceManagement\remoteAssistancePartners\{remoteAssistancePartner-id}
+// RemoteAssistancePartnerRequestBuilder builds and executes requests for operations under \deviceManagement\remoteAssistancePartners\{remoteAssistancePartner-id}
 type RemoteAssistancePartnerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type RemoteAssistancePartnerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// remoteAssistancePartnerRequestBuilderGetQueryParameters the remote assist partners.
+// RemoteAssistancePartnerRequestBuilderGetQueryParameters the remote assist partners.
 type RemoteAssistancePartnerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

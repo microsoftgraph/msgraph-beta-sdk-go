@@ -143,7 +143,7 @@ import (
     if50f0dbd8a90dfcd7816cc16a43a257b56afed52876190fb217ae57a9d4679e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/dailyprintusagesummariesbyuser/item"
 )
 
-// reportsRequestBuilder builds and executes requests for operations under \reports
+// ReportsRequestBuilder builds and executes requests for operations under \reports
 type ReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -163,7 +163,7 @@ type ReportsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// reportsRequestBuilderGetQueryParameters get reports
+// ReportsRequestBuilderGetQueryParameters get reports
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

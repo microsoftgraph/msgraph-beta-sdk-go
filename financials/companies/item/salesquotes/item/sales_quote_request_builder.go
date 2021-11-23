@@ -14,7 +14,7 @@ import (
     id3852f54376c295ec4d02955c83253b69237fa6ba86eb2cdb39dbbf4b1afc4ce "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesquotes/item/salesquotelines/item"
 )
 
-// salesQuoteRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}
+// SalesQuoteRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}
 type SalesQuoteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +43,7 @@ type SalesQuoteRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// salesQuoteRequestBuilderGetQueryParameters get salesQuotes from financials
+// SalesQuoteRequestBuilderGetQueryParameters get salesQuotes from financials
 type SalesQuoteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

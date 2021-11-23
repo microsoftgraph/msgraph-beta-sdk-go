@@ -16,7 +16,7 @@ import (
     ia6c25f4c749e8beb990221d7c4363a8d4383190388b2db9197c94a520cdfffde "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectors/item"
 )
 
-// onPremisesPublishingProfileRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}
+// OnPremisesPublishingProfileRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}
 type OnPremisesPublishingProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type OnPremisesPublishingProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onPremisesPublishingProfileRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key
+// OnPremisesPublishingProfileRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key
 type OnPremisesPublishingProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

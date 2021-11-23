@@ -7,7 +7,7 @@ import (
     i6d6449aaea4edbbbf8c420350999c1712f4c33809edee768a4a43a5ae7f4278b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicemetrichistory/item/userexperienceanalyticsmetric/ref"
 )
 
-// userExperienceAnalyticsMetricRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDeviceMetricHistory\{userExperienceAnalyticsMetricHistory-id}\userExperienceAnalyticsMetric
+// UserExperienceAnalyticsMetricRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDeviceMetricHistory\{userExperienceAnalyticsMetricHistory-id}\userExperienceAnalyticsMetric
 type UserExperienceAnalyticsMetricRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type UserExperienceAnalyticsMetricRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userExperienceAnalyticsMetricRequestBuilderGetQueryParameters user experience analytics metric.
+// UserExperienceAnalyticsMetricRequestBuilderGetQueryParameters user experience analytics metric.
 type UserExperienceAnalyticsMetricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

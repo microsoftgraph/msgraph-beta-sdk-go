@@ -7,7 +7,7 @@ import (
     id920dd530951dd8aa52041eac83c9d12a6950e67893570ff211dee476b50a53f "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/item/members/add"
 )
 
-// membersRequestBuilder builds and executes requests for operations under \chats\{chat-id}\members
+// MembersRequestBuilder builds and executes requests for operations under \chats\{chat-id}\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// membersRequestBuilderGetQueryParameters a collection of all the members in the chat. Nullable.
+// MembersRequestBuilderGetQueryParameters a collection of all the members in the chat. Nullable.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

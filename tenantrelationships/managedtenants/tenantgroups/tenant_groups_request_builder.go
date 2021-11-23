@@ -7,7 +7,7 @@ import (
     i86e8e63e85de67171644c463e36cc57d3c920f484f6937360f52c82139946fb4 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantgroups/tenantsearch"
 )
 
-// tenantGroupsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantGroups
+// TenantGroupsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantGroups
 type TenantGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TenantGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tenantGroupsRequestBuilderGetQueryParameters the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+// TenantGroupsRequestBuilderGetQueryParameters the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 type TenantGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

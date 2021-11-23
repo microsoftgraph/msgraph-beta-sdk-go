@@ -7,7 +7,7 @@ import (
     i8f9b6ad5f0598cf0938cc32f8579da86887d78326a0f91c58da613e758555c9a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/item/importedappledeviceidentities/importappledeviceidentitylist"
 )
 
-// importedAppleDeviceIdentitiesRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\importedAppleDeviceIdentities
+// ImportedAppleDeviceIdentitiesRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\importedAppleDeviceIdentities
 type ImportedAppleDeviceIdentitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ImportedAppleDeviceIdentitiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// importedAppleDeviceIdentitiesRequestBuilderGetQueryParameters the imported Apple device identities.
+// ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters the imported Apple device identities.
 type ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

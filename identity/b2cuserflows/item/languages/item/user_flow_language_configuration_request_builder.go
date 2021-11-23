@@ -10,7 +10,7 @@ import (
     ia8cb0ef728fb55863ea7e003c3f99fbd388a2e1017ae424b5f63e5e4b1660d67 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/languages/item/overridespages/item"
 )
 
-// userFlowLanguageConfigurationRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}
+// UserFlowLanguageConfigurationRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}
 type UserFlowLanguageConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type UserFlowLanguageConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userFlowLanguageConfigurationRequestBuilderGetQueryParameters the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
+// UserFlowLanguageConfigurationRequestBuilderGetQueryParameters the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 type UserFlowLanguageConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

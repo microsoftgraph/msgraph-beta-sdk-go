@@ -13,7 +13,7 @@ import (
     id3fbc20e2aaca189e5a1a34399bb63266b91e90673fe015d4987e17f6eff56c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/additionalsources/item"
 )
 
-// sourceCollectionRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}
+// SourceCollectionRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}
 type SourceCollectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type SourceCollectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sourceCollectionRequestBuilderGetQueryParameters returns a list of sourceCollection objects associated with this case.
+// SourceCollectionRequestBuilderGetQueryParameters returns a list of sourceCollection objects associated with this case.
 type SourceCollectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

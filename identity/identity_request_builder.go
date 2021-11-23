@@ -20,7 +20,7 @@ import (
     id9b7138b09b41c1638c96829912584afe356128a86a38484a5041a342124094b "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/apiconnectors/item"
 )
 
-// identityRequestBuilder builds and executes requests for operations under \identity
+// IdentityRequestBuilder builds and executes requests for operations under \identity
 type IdentityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type IdentityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// identityRequestBuilderGetQueryParameters get identity
+// IdentityRequestBuilderGetQueryParameters get identity
 type IdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

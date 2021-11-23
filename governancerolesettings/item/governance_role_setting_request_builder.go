@@ -8,7 +8,7 @@ import (
     if7affa9318bef602a65be1c503ca12adc07ccd64637093c9fe9a2d5f3d2199f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/governancerolesettings/item/resource"
 )
 
-// governanceRoleSettingRequestBuilder builds and executes requests for operations under \governanceRoleSettings\{governanceRoleSetting-id}
+// GovernanceRoleSettingRequestBuilder builds and executes requests for operations under \governanceRoleSettings\{governanceRoleSetting-id}
 type GovernanceRoleSettingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type GovernanceRoleSettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// governanceRoleSettingRequestBuilderGetQueryParameters get entity from governanceRoleSettings by key
+// GovernanceRoleSettingRequestBuilderGetQueryParameters get entity from governanceRoleSettings by key
 type GovernanceRoleSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

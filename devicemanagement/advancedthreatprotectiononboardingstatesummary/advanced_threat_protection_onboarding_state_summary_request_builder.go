@@ -8,7 +8,7 @@ import (
     i8ac982e4babd498ccfdca8159c2c00708b65a8c1d00512bc9fe29edca2a507ca "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/advancedthreatprotectiononboardingstatesummary/advancedthreatprotectiononboardingdevicesettingstates/item"
 )
 
-// advancedThreatProtectionOnboardingStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\advancedThreatProtectionOnboardingStateSummary
+// AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\advancedThreatProtectionOnboardingStateSummary
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// advancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParameters the summary state of ATP onboarding state for this account.
+// AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParameters the summary state of ATP onboarding state for this account.
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

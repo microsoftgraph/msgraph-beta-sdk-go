@@ -8,7 +8,7 @@ import (
     i713975e39bc7487cfddec34a297f2838a38d0cb95233f6ec086ad03f7f38bb21 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onenote/notebooks/item/sections/item/parentsectiongroup/sections/item/copytonotebook"
 )
 
-// onenoteSectionRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\notebooks\{notebook-id}\sections\{onenoteSection-id}\parentSectionGroup\sections\{onenoteSection-id1}
+// OnenoteSectionRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\notebooks\{notebook-id}\sections\{onenoteSection-id}\parentSectionGroup\sections\{onenoteSection-id1}
 type OnenoteSectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type OnenoteSectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onenoteSectionRequestBuilderGetQueryParameters the sections in the section group. Read-only. Nullable.
+// OnenoteSectionRequestBuilderGetQueryParameters the sections in the section group. Read-only. Nullable.
 type OnenoteSectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
